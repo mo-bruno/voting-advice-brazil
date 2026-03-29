@@ -1,0 +1,134 @@
+[
+  {
+    "id": "lula",
+    "name": "Luiz Inácio Lula da Silva",
+    "party": "PT",
+    "coalition": "Coligação Brasil da Esperança",
+    "number": 13,
+    "running_mate": "Geraldo Alckmin",
+    "spectrum": "esquerda",
+    "pdf_file": "5_1659820284477 (2).pdf",
+    "party_logo": "data/logos/partidos/pt.png"
+  },
+  {
+    "id": "bolsonaro",
+    "name": "Jair Bolsonaro",
+    "party": "PL",
+    "coalition": null,
+    "number": 22,
+    "running_mate": "Walter Braga Netto",
+    "spectrum": "direita",
+    "pdf_file": "5_1660093698051 (1).pdf",
+    "party_logo": "data/logos/partidos/pl.png"
+  },
+  {
+    "id": "ciro",
+    "name": "Ciro Gomes",
+    "party": "PDT",
+    "coalition": null,
+    "number": 12,
+    "running_mate": "Ana Paula Melo",
+    "spectrum": "centro-esquerda",
+    "pdf_file": "5_1659989903215.pdf",
+    "party_logo": "data/logos/partidos/pdt.png"
+  },
+  {
+    "id": "tebet",
+    "name": "Simone Tebet",
+    "party": "MDB",
+    "coalition": "MDB / PSDB / Cidadania / Podemos",
+    "number": 15,
+    "running_mate": "Mara Gabrilli",
+    "spectrum": "centro",
+    "pdf_file": "pje-c6a5300b-Proposta de governo (1).pdf",
+    "party_logo": "data/logos/partidos/mdb.png"
+  },
+  {
+    "id": "soraya",
+    "name": "Soraya Thronicke",
+    "party": "União Brasil",
+    "coalition": null,
+    "number": 77,
+    "running_mate": "Marcos Hister",
+    "spectrum": "centro-direita",
+    "pdf_file": "5_1660315476677.pdf",
+    "party_logo": "data/logos/partidos/uniao_brasil.png"
+  },
+  {
+    "id": "d_avila",
+    "name": "Felipe D'Avila",
+    "party": "Novo",
+    "coalition": null,
+    "number": 30,
+    "running_mate": "Tiago Mitraud",
+    "spectrum": "direita-liberal",
+    "pdf_file": "5_1659557501045.pdf",
+    "party_logo": "data/logos/partidos/novo.png"
+  },
+  {
+    "id": "marcal",
+    "name": "Pablo Marçal",
+    "party": "PROS",
+    "coalition": null,
+    "number": 18,
+    "running_mate": null,
+    "spectrum": "direita",
+    "pdf_file": "5_1659339174798.pdf",
+    "party_logo": "data/logos/partidos/pros.png"
+  },
+  {
+    "id": "bob_jeff",
+    "name": "Roberto Jefferson",
+    "party": "PTB",
+    "coalition": null,
+    "number": 14,
+    "running_mate": null,
+    "spectrum": "direita",
+    "pdf_file": "5_1660343714472.pdf",
+    "party_logo": "data/logos/partidos/ptb.png"
+  },
+  {
+    "id": "sofia",
+    "name": "Sofia Manzano",
+    "party": "PCB",
+    "coalition": null,
+    "number": 40,
+    "running_mate": "Antonio Alves",
+    "spectrum": "extrema-esquerda",
+    "pdf_file": "programa.pdf",
+    "party_logo": "data/logos/partidos/pcb.png"
+  },
+  {
+    "id": "pericles",
+    "name": "Leonardo Péricles",
+    "party": "UP",
+    "coalition": null,
+    "number": 80,
+    "running_mate": "Samara Martins",
+    "spectrum": "extrema-esquerda",
+    "pdf_file": "PROPOSTAS.pdf",
+    "party_logo": "data/logos/partidos/up.png"
+  },
+  {
+    "id": "vera",
+    "name": "Vera Lúcia",
+    "party": "PSTU",
+    "coalition": null,
+    "number": 16,
+    "running_mate": null,
+    "spectrum": "extrema-esquerda",
+    "pdf_file": "5_1659739349964.pdf",
+    "party_logo": "data/logos/partidos/pstu.png"
+  },
+  {
+    "id": "eymael",
+    "name": "José Maria Eymael",
+    "party": "DC",
+    "coalition": null,
+    "number": 27,
+    "running_mate": null,
+    "spectrum": "centro",
+    "pdf_file": "5_1660324288072.pdf",
+    "party_logo": "data/logos/partidos/dc.png"
+  }
+]

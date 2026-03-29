@@ -1,0 +1,1672 @@
+{
+  "metadata": {
+    "election": "2022",
+    "type": "presidencial",
+    "country": "BR",
+    "generated_by": "claude-opus-4-6",
+    "generated_at": "2026-03-18",
+    "methodology": "wahl-o-mat",
+    "scoring": {
+      "scale": [0, 1, 2],
+      "labels": {
+        "0": "discordo",
+        "1": "neutro",
+        "2": "concordo"
+      },
+      "special": "sem_posicao"
+    },
+    "sources": "Propostas de governo registradas no TSE para as Eleicoes 2022"
+  },
+  "theses": [
+    {
+      "id": 1,
+      "text": "A Petrobras deve permanecer como empresa 100% estatal, sem participacao de capital privado.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Defende reverter a privatizacao da Petrobras e mante-la como empresa estatal integrada de energia, preservando o regime de partilha do pre-sal."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende a continuidade do programa de desestatizacao e a venda de ativos da Petrobras, como refinarias, seguindo a logica de reducao do Estado."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe recuperar e ampliar a capacidade das refinarias da Petrobras e transforma-la em empresa de energia limpa, mantendo controle estatal."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Nao menciona especificamente a Petrobras, mas defende desestatizacao coordenada pelo BNDES com recursos destinados a reducao da pobreza."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Nao se posiciona explicitamente sobre a Petrobras; foca em fortalecer agencias reguladoras e parcerias publico-privadas."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende explicitamente a privatizacao e a reducao da presenca do Estado na economia, incluindo o fim de monopolios estatais."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Propoe privatizar empresas estatais que geram prejuizo ao erario publico para promover eficiencia."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende privatizacao ampla de todos os servicos e producao onde o setor privado e capaz. O Estado nao deve competir com a iniciativa privada."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe reestatizar a Petrobras com 100% de controle estatal, cancelar contratos de risco e restaurar o monopolio estatal do petroleo."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende retomar refinarias privatizadas sob gestao estatal e popular da Petrobras."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe reestatizar a Petrobras sob controle dos trabalhadores, permitindo gasolina e gas de cozinha a preco de custo."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda especificamente a questao da Petrobras em sua proposta de governo."
+        }
+      }
+    },
+    {
+      "id": 2,
+      "text": "O governo deve implementar um imposto sobre grandes fortunas.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe taxar os super-ricos com imposto de renda, usando a receita para programas de crescimento e igualdade."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende reducao e simplificacao de impostos; nao propoe novos tributos, e sim desoneracao tributaria."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe taxacao de grandes fortunas de 0,5% sobre patrimonios acima de R$20 milhoes, estimando R$60 bilhoes de receita."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe reforma tributaria com justica social e fim da regressividade, mas nao menciona explicitamente imposto sobre grandes fortunas."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Foca na criacao do IUF (Imposto Unico Federal) para simplificacao, sem mencionar taxacao de fortunas."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende reducao de impostos, fim de subsidios e menor intervencao estatal; opoe-se a criacao de novos tributos."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Propoe simplificacao tributaria com imposto unico (RAP) substituindo 11 tributos federais, sem novos impostos."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende reducao significativa da carga tributaria e simplificacao extrema do sistema de impostos."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe imposto especial sobre lucros, dividendos, transacoes financeiras, grandes fortunas e herancas, com aliquota maxima de IRPF de 50%."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende taxacao de grandes fortunas e reforma tributaria popular que reduza impostos indiretos sobre a populacao."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe aliquota progressiva com teto de 50% para os mais ricos, alem de eliminar isencoes fiscais de grandes corporacoes."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende reforma do sistema tributario com simplificacao e respeito a capacidade contributiva, sem mencionar imposto sobre fortunas."
+        }
+      }
+    },
+    {
+      "id": 3,
+      "text": "O teto constitucional de gastos publicos deve ser mantido.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Propoe revogar o teto de gastos e substitui-lo por um novo arcabouco fiscal com credibilidade, previsibilidade e capacidade contracíclica."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Defende consolidacao fiscal de medio e longo prazo para reduzir a relacao divida/PIB, mantendo o equilibrio fiscal."
+        },
+        "ciro": {
+          "position": "discordo",
+          "justification": "Propoe orcamento base zero e Lei de Qualidade do Gasto em substituicao as regras fiscais vigentes, mantendo equilibrio fiscal por outros meios."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe reorganizar as regras fiscais com maior clareza e transparencia, substituindo o teto por um plano de despesas de medio prazo baseado na metodologia OCDE."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Nao se posiciona explicitamente sobre o teto de gastos; foca em reformas estruturais para economia de baixo carbono."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Defende responsabilidade fiscal rigorosa com teto de gastos e superavit primario."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Defende a manutencao do tripe macroeconomico: cambio flutuante, responsabilidade fiscal e metas de inflacao."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende reducao dos gastos do Estado ao minimo necessario; o Estado e um fardo insuportavel para o contribuinte."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "Propoe revogar a Lei de Responsabilidade Fiscal e o teto de gastos, criando uma Lei de Responsabilidade Social."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Defende revogar o Teto de Gastos (EC 95/2016 de Temer) via referendo popular."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Defende suspensao do pagamento da divida publica e redirecionamento dos recursos para saude, educacao e habitacao."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende gestao eficiente do gasto publico para viabilizar novos investimentos, sem se posicionar especificamente sobre o teto."
+        }
+      }
+    },
+    {
+      "id": 4,
+      "text": "A reforma trabalhista de 2017 deve ser revogada para restaurar direitos dos trabalhadores.",
+      "topic": "trabalho",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe revogar aspectos regressivos da reforma trabalhista e criar nova legislacao estendendo protecao social a todas as formas de trabalho."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende manter a nova legislacao trabalhista para seguranca juridica, combatendo abusos tanto de empregadores quanto de sindicatos."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe um novo Codigo Brasileiro do Trabalho incorporando convencoes da OIT, substituindo a legislacao atual."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Foca em qualificacao profissional, formalizacao e microcredito sem mencionar explicitamente revogacao ou manutencao da reforma."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a reforma trabalhista de forma especifica em sua proposta."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende modernizar a CLT sem remover protecoes, mas mantendo flexibilidade; trabalhadores escolhem entre CLT e novo regime."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Propoe reformas trabalhistas e tributarias adicionais via programa DigiTec para reduzir encargos fiscais."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende reformar e simplificar a legislacao trabalhista para se adaptar ao mercado moderno, sem intervencao estatal nas relacoes de trabalho."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe revogar as reformas trabalhista e previdenciaria de Temer e Bolsonaro, alem de proibir terceirizacao e pejotizacao."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende revogar via referendo as reformas Trabalhista e da Terceirizacao Irrestrita de Temer e a reforma Previdenciaria de Bolsonaro."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe revogar a reforma trabalhista e previdenciaria, acabar com todo trabalho precario e garantir estabilidade no emprego."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda especificamente a reforma trabalhista em sua proposta de governo."
+        }
+      }
+    },
+    {
+      "id": 5,
+      "text": "O acesso a armas de fogo por civis deve ser facilitado como direito de autodefesa.",
+      "topic": "seguranca",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Nao menciona ampliacao do acesso a armas; propoe politica de seguranca focada em prevencao e investigacao, nao em armamento civil."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Defende preservar e ampliar o acesso a armas de fogo como direito fundamental de autodefesa, citando reducao de 25% em homicidios por arma."
+        },
+        "ciro": {
+          "position": "discordo",
+          "justification": "Propoe uso de tecnologias de rastreamento de armas e municoes para controlar a expansao do armamento."
+        },
+        "tebet": {
+          "position": "discordo",
+          "justification": "Propoe revogar decretos que fragilizaram o controle do porte e posse de armas, aumentando fiscalizacao e rastreamento."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do acesso civil a armas de fogo em sua proposta."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda explicitamente a questao de armas de fogo para civis em sua proposta."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do acesso civil a armas de fogo em sua proposta."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende que cidadaos tem direito a legitima defesa e portanto devem ter direito a possuir e portar armas, conforme referendo popular."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "No contexto de desmilitarizacao da policia e fim do aparato repressivo, posiciona-se contra a cultura armamentista."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Propoe desmilitarizacao da policia e combate ao crime organizado via inteligencia, nao armamento civil."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Propoe desmilitarizar as forcas policiais e desmantelar o aparato repressivo; defende abordagem social, nao armamentista."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do acesso a armas de fogo em sua proposta."
+        }
+      }
+    },
+    {
+      "id": 6,
+      "text": "O uso de drogas deve ser descriminalizado e tratado como questao de saude publica.",
+      "topic": "seguranca",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe nova politica de drogas focada em reducao de danos, tratamento e assistencia aos usuarios, substituindo o modelo belico."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende intensificar a repressao ao trafico com aumento de apreensoes de cocaina (+131%) e maconha (+172%)."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe abordagem intersetorial de reducao de riscos e danos, integrando justica, saude e assistencia social."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Foca em assistencia a dependentes de alcool e drogas pelo SUS e unidades terapeuticas, sem mencionar descriminalizacao."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Propoe politica nacional antidrogas com abordagem multidisciplinar, sem se posicionar sobre descriminalizacao."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao da descriminalizacao de drogas em sua proposta."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Menciona programas de emancipacao de drogas no Sudeste, mas nao se posiciona sobre descriminalizacao."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Proibe explicitamente a legalizacao, cultivo e venda de maconha no Brasil."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe legalizar a maconha a curto prazo e acabar com a guerra as drogas, tratando o tema como saude publica."
+        },
+        "pericles": {
+          "position": "sem_posicao",
+          "justification": "Nao se posiciona explicitamente sobre descriminalizacao ou legalizacao de drogas."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe descriminalizar todas as drogas como questao de saude publica, citando o exemplo da Lei Seca dos EUA."
+        },
+        "eymael": {
+          "position": "discordo",
+          "justification": "Defende combate as drogas via integracao de politicas publicas federais, estaduais e municipais, com foco na recuperacao de dependentes."
+        }
+      }
+    },
+    {
+      "id": 7,
+      "text": "O Estado deve garantir direitos especificos e protecao legal a populacao LGBTQIA+.",
+      "topic": "direitos_sociais",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe politicas garantindo direito a saude integral, inclusao educacional e no mercado de trabalho para LGBTQIA+, reconhecendo identidades de genero."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Nao menciona politicas LGBTQIA+ em sua proposta; enfatiza valores conservadores e a familia tradicional como base da sociedade."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe Comite Nacional LGBTI+, Secretaria Nacional, Plano Nacional de Cidadania LGBTI+ e acoes afirmativas contra discriminacao."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Defende respeitar liberdades, direitos humanos, diversidade, identidades e livre orientacao; igualdade de oportunidades para LGBTQIA+."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao de direitos LGBTQIA+ em sua proposta de governo."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Apoia explicitamente legislacao antidiscriminacao, uniao civil homoafetiva e combate a homofobia."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao de direitos LGBTQIA+ em sua proposta de governo."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Nao menciona direitos LGBTQIA+; foca em criminalizar cristofobia e proteger valores cristãos tradicionais."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe combater machismo, racismo e LGBTfobia com garantias efetivas de direitos."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe treinamento profissional, insercao no mercado de trabalho, saude e previdencia especificas e punicao de violencia contra LGBTQIA+."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe cotas para pessoas trans, atendimento SUS especializado, delegacias e abrigos para LGBTIs, educacao sexual nas escolas."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda direitos LGBTQIA+; enfatiza protecao dos valores eticos da familia."
+        }
+      }
+    },
+    {
+      "id": 8,
+      "text": "As cotas raciais em universidades e concursos publicos devem ser mantidas e ampliadas.",
+      "topic": "direitos_sociais",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Defende continuar e expandir cotas raciais e sociais no ensino superior e servico publico federal, alem de ampliar para outras politicas."
+        },
+        "bolsonaro": {
+          "position": "sem_posicao",
+          "justification": "Nao menciona cotas raciais em sua proposta de governo."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Defende avaliar e prorrogar o sistema de cotas, alem de acoes afirmativas em compras publicas e credito para empreendedores negros."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Defende ampliar cotas e acoes afirmativas raciais, sociais e de genero, com politicas de permanencia ate conclusao dos estudos."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao se posiciona sobre cotas raciais em sua proposta."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda cotas raciais especificamente em sua proposta."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Nao se posiciona sobre cotas raciais em sua proposta."
+        },
+        "bob_jeff": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda cotas raciais em sua proposta."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Defende manter cotas raciais na educacao e reparacoes para a populacao negra."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe reforma agraria e urbana na perspectiva de reparacao historica a populacao negra; ampliar vagas no setor publico."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Defende reparacoes historicas para a populacao negra e fim do genocidio da juventude negra."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende igualdade de oportunidades para todos, mas nao menciona cotas raciais especificamente."
+        }
+      }
+    },
+    {
+      "id": 9,
+      "text": "Todas as terras indigenas devem ser demarcadas imediatamente.",
+      "topic": "direitos_sociais",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Defende proteger direitos e territorios dos povos indigenas, quilombolas e tradicionais, assegurando a posse da terra."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Propoe etnodesenvolvimento com autonomia via FUNAI, mas nao menciona novas demarcacoes; prioriza regularizacao fundiaria de nao-indigenas."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Defende respeitar e preservar reservas territoriais indigenas e a cultura dos povos originarios."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Propoe cumprir rigorosamente a legislacao de defesa dos direitos indigenas e protecao de territorios; recuperar e fortalecer a FUNAI."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Defende preservar areas indigenas, mas com preocupacao quanto a interferencia de ONGs em areas de fronteira e soberania nacional."
+        },
+        "d_avila": {
+          "position": "neutro",
+          "justification": "Reconhece direitos de propriedade indigena e atividades sustentaveis em terras indigenas, sem mencionar novas demarcacoes."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe repensar politicas para povos indigenas focando em inclusao no crescimento nacional, nao apenas preservacao."
+        },
+        "bob_jeff": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao da demarcacao de terras indigenas."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe demarcar todas as terras indigenas, quilombolas e de povos ribeirinhos."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende demarcacao imediata de todas as terras indigenas e fortalecimento da FUNAI."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe demarcacao imediata de todas as terras indigenas, rejeitando o marco temporal."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao de terras indigenas em sua proposta."
+        }
+      }
+    },
+    {
+      "id": 10,
+      "text": "O aborto deve ser legalizado e oferecido pelo sistema publico de saude.",
+      "topic": "direitos_sociais",
+      "positions": {
+        "lula": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda explicitamente a questao do aborto em sua proposta de governo."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende explicitamente o direito a vida do nascituro e possui Programa Pro-Vida."
+        },
+        "ciro": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do aborto em sua proposta; menciona programas informativos de prevencao a gravidez."
+        },
+        "tebet": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda explicitamente a legalizacao do aborto em sua proposta."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do aborto em sua proposta."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do aborto em sua proposta."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Posiciona-se contra o aborto, defendendo o 'nascimento com vida'."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende a vida desde a concepcao ate a morte natural."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Defende a legalizacao do aborto com garantia pelo sistema publico de saude."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende descriminalizar e legalizar o aborto pela perspectiva da saude publica."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe legalizar o aborto: seguro, legal e gratuito, com direito a educacao sexual e contraceptivos."
+        },
+        "eymael": {
+          "position": "discordo",
+          "justification": "Defende os valores eticos da familia como pilar central, incluindo a criacao de um Ministerio da Familia."
+        }
+      }
+    },
+    {
+      "id": 11,
+      "text": "A Policia Militar deve ser desmilitarizada e unificada com a Policia Civil.",
+      "topic": "seguranca",
+      "positions": {
+        "lula": {
+          "position": "neutro",
+          "justification": "Propoe implementar o SUSP e modernizar instituicoes policiais, sem mencionar explicitamente desmilitarizacao."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende fortalecer as forcas de seguranca existentes, incluindo protecao legal para policiais em operacoes ('excludente de ilicitude')."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Propoe implantacao do SUSP com atuacao conjunta e reestruturacao de carreiras policiais, sem mencionar explicitamente desmilitarizacao."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe recriar Ministerio da Seguranca Publica e integrar forcas via SUSP, sem mencionar desmilitarizacao."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Propoe integrar sistemas de seguranca e profissionalizar policias, sem mencionar desmilitarizacao."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Propoe integracao de bancos de dados policiais e autonomia da PF, sem mencionar estrutura PM."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Foca em modernizacao das Forcas Armadas e inteligencia analitica, sem mencionar estrutura da PM."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende concentracao de forcas policiais nos municipios, sem propor desmilitarizacao."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe desmilitarizacao completa da policia, unificacao sob comando civil com ciclo completo, e abolicao da PM."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende fim da PM, desmilitarizacao das policias estaduais e reorganizacao da seguranca com participacao popular."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe desmilitarizar as forcas policiais e criar nova policia com comandantes eleitos pela populacao."
+        },
+        "eymael": {
+          "position": "discordo",
+          "justification": "Defende integracao das forcas incluindo participacao das Forcas Armadas na protecao de fronteiras."
+        }
+      }
+    },
+    {
+      "id": 12,
+      "text": "O preco dos combustiveis deve ser desvinculado da cotacao internacional do petroleo.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe nova politica de precos desvinculada do dolar internacional, ampliando capacidade de refino domestico e 'abrasileirando' os precos."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Considera controle de precos incompativel com a liberdade economica; nao propoe tabelamento ou intervencao nos precos de combustiveis."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Critica a politica de PPI que beneficia importadores e acionistas; propoe recuperar refinarias para autossuficiencia em derivados."
+        },
+        "tebet": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda especificamente a politica de precos de combustiveis."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Propoe reducao de custos de energia via IUF, sem se posicionar diretamente sobre o PPI da Petrobras."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende economia de livre mercado com fim de subsidios, incluindo combustiveis fosseis."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao do preco dos combustiveis em sua proposta."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende livre mercado e livre movimento de capitais, sem intervencao estatal em precos."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe controle estatal de precos e reestatizacao da Petrobras para precos acessiveis; fim do PPI."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe retomar refinarias sob gestao estatal, acabando com a politica de paridade internacional."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe reestatizar a Petrobras e vender gasolina e gas a preco de custo para a populacao."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao de precos de combustiveis."
+        }
+      }
+    },
+    {
+      "id": 13,
+      "text": "O desmatamento ilegal na Amazonia deve ser combatido com tolerancia zero.",
+      "topic": "meio_ambiente",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe meta de desmatamento liquido zero, reflorestamento de areas degradadas e fortalecimento do IBAMA e ICMBio."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Propoe Operacao Guardioes do Bioma para combater incendios e desmatamento ilegal com tecnologia e bases permanentes na Amazonia."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe zoneamento economico-ecologico imediato e estrategia de desenvolvimento regional para reduzir desmatamento."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Defende desmatamento ilegal zero com tolerancia zero; rever medidas que incentivaram desmatamento; fortalecer ICMBio e IBAMA."
+        },
+        "soraya": {
+          "position": "concordo",
+          "justification": "Propoe combater desmatamento ilegal, resolver conflitos fundiarios responsaveis por desmatamento e parceria com paises vizinhos."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe Brasil Carbono Zero com desmatamento liquido zero ate 2030 e mercado de creditos de carbono."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe politicas de incentivo e controle para extracao de madeira e mineracao, prevenindo fraudes e preservando biodiversidade."
+        },
+        "bob_jeff": {
+          "position": "neutro",
+          "justification": "Defende exploracao racional dos recursos naturais equilibrando conservacao e desenvolvimento economico."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe monopolio estatal sobre exploracao da biodiversidade e forte controle ambiental."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe proibir destruicao de florestas, controle popular sobre a Amazonia e expulsao de monopolios estrangeiros."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe expropriacao de madeireiras, prisao de garimpeiros e grileiros ilegais, e fortalecimento de orgaos ambientais."
+        },
+        "eymael": {
+          "position": "concordo",
+          "justification": "Defende protecao do meio ambiente como causa global, orientando acoes de governo nesse principio."
+        }
+      }
+    },
+    {
+      "id": 14,
+      "text": "O Brasil deve priorizar relacoes com paises do Sul Global (BRICS, America Latina, Africa) em vez de buscar alinhamento com OCDE e paises desenvolvidos.",
+      "topic": "politica_externa",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe politica externa ativa com cooperacao Sul-Sul, fortalecimento do Mercosul, Unasul, Celac e BRICS."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Prioriza entrada na OCDE e EFTA, alinhamento com nacoes democraticas e politica externa baseada em liberdade economica."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Defende soberania e defesa dos interesses nacionais nas negociacoes, sem alinhamento explicito com um bloco."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Busca equilibrio: aprofundar Mercosul e BRICS, mas tambem avancar no acesso a OCDE e multiplos acordos comerciais."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Propoe reposicionar o Brasil internacionalmente em compromissos climaticos e cooperar com paises vizinhos."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Prioriza entrada na OCDE, acordos de livre comercio e fortalecimento do acordo Mercosul-UE."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe integrar blocos economicos de paises prosperos E criar Bloco Brasil-Africa; manter soberania acima de acordos."
+        },
+        "bob_jeff": {
+          "position": "neutro",
+          "justification": "Defende autodeterminacao dos povos e nao-intervencao, sem priorizar blocos especificos."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe aliancas anti-imperialistas Sul-Sul, fortalecer ALBA, UNASUL e Mercosul; criar organizacao de exportadores de energia."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende diplomacia anti-hegemonica com parceiros latino-americanos, africanos e asiaticos; independencia dos EUA."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe romper com o imperialismo, rever tratados comerciais e buscar integracao revolucionaria latino-americana."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende solidariedade entre nacoes e politica externa como instrumento de desenvolvimento, sem priorizar blocos."
+        }
+      }
+    },
+    {
+      "id": 15,
+      "text": "O salario minimo deve ter politica permanente de valorizacao acima da inflacao.",
+      "topic": "trabalho",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe valorizar o salario minimo para recuperar o poder de compra dos trabalhadores."
+        },
+        "bolsonaro": {
+          "position": "neutro",
+          "justification": "Propoe manter o Auxilio Brasil em R$600 e incentivos a formalizacao, sem politica explicita de valorizacao do salario minimo."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe Renda Minima Universal unificando programas sociais e plano emergencial de pleno emprego."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Propoe preservar o poder de compra do salario minimo com reajustes pelo menos pela inflacao."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda politica de valorizacao do salario minimo em sua proposta."
+        },
+        "d_avila": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda politica de salario minimo em sua proposta."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe estabelecer e manter o melhor salario minimo da America do Sul e pisos salariais para profissoes nao regulamentadas."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende um salario minimo digno com crescimento progressivo."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe recuperar o poder de compra do salario minimo ao nivel DIEESE em 4 anos, com reajuste automatico pela inflacao."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende salario minimo acima da inflacao e piso salarial para todas as categorias."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe dobrar o salario minimo imediatamente, caminhando para o minimo DIEESE de R$6.388."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda politica de salario minimo diretamente em sua proposta."
+        }
+      }
+    },
+    {
+      "id": 16,
+      "text": "O ensino religioso e a educacao moral e civica devem fazer parte do curriculo escolar.",
+      "topic": "educacao",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Defende educacao publica, universal, democratica, gratuita, laica e inclusiva."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Defende educacao livre de 'conotacoes ideologicas', com desideologizacao do ensino e pais como atores principais da educacao."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Foca em metas de aprendizagem, competencias socioemocionais e educacao integral, sem mencionar ensino religioso."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Foca em cidadania, ensino tecnico e profissionalizante, implementacao da BNCC, sem mencionar educacao moral e civica."
+        },
+        "soraya": {
+          "position": "concordo",
+          "justification": "Propoe escolas civico-militares e programa PROFESP, indicando apoio a disciplina e valores civicos."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Foca em STEM, ensino tecnico e meritocracia no ensino; nao propoe ensino religioso ou moral civica."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe gestao emocional, financas e empreendedorismo no curriculo, mas nao menciona educacao moral e civica ou religiosa."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende a familia como base da sociedade e que o Estado nao pode interferir na educacao moral dos filhos; valores cristaos centrais."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "Defende educacao 100% publica, gratuita e laica; propoe revogar a lei das escolas civico-militares."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Defende educacao publica, gratuita e laica com reforma popular do ensino medio liderada por sindicatos e movimentos estudantis."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Defende educacao publica, gratuita e de qualidade com total liberdade de criacao; contra qualquer forma de censura ou imposicao."
+        },
+        "eymael": {
+          "position": "concordo",
+          "justification": "Propoe introduzir Educacao Moral e Civica como disciplina na educacao basica."
+        }
+      }
+    },
+    {
+      "id": 17,
+      "text": "O SUS deve ser o unico sistema de saude, incorporando hospitais e clinicas privadas.",
+      "topic": "saude",
+      "positions": {
+        "lula": {
+          "position": "neutro",
+          "justification": "Propoe fortalecer o SUS como sistema universal, mas nao menciona nacionalizacao do setor privado de saude."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende articulacao publico-privada na saude, com SUS complementar e suplementar coexistindo com setor privado."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Propoe reconstruir o SUS com central de regulacao e parcerias com rede privada para reduzir filas."
+        },
+        "tebet": {
+          "position": "discordo",
+          "justification": "Propoe fortalecer o SUS mas tambem apoiar Santas Casas e hospitais filantropicos; nao propoe incorporacao do setor privado."
+        },
+        "soraya": {
+          "position": "discordo",
+          "justification": "Propoe melhorar o SUS atraves de PPPs com o setor privado."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende permitir competicao do setor privado na saude com metricas de desempenho."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Propoe Polos Tecnologicos de Saude e informatizacao do SUS, mas nao incorporacao do setor privado."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende papel limitado do governo na saude; o cidadao e responsavel por sua propria saude e de sua familia."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar todo o sistema privado de saude: hospitais, clinicas, laboratorios, industria farmaceutica."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Defende saude 100% publica, gratuita e universal; fim da exploracao dos planos privados de saude."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizacao completa da saude: expropriar todos os hospitais e grupos de saude privados."
+        },
+        "eymael": {
+          "position": "discordo",
+          "justification": "Propoe desenvolver e implementar o SUS de forma efetiva, sem mencionar incorporacao do setor privado."
+        }
+      }
+    },
+    {
+      "id": 18,
+      "text": "O Brasil deve realizar uma reforma agraria ampla, redistribuindo terras improdutivas.",
+      "topic": "agricultura",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe reforma agraria agroecologica com novo modelo de ocupacao e uso da terra, apoio a agricultura familiar."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Foca em regularizacao fundiaria e titulacao de terras (326 mil titulos em 3 anos), nao em redistribuicao."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Propoe regularizacao fundiaria e financiamento de reformas de moradias, sem mencionar reforma agraria explicita."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Foca em credito agricola, agricultura de baixo carbono e cooperativismo, sem mencionar redistribuicao de terras."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Foca em fortalecer agricultura familiar via PRONAF e programas de financiamento, sem redistribuicao."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Foca em abertura de mercados agricolas e agricultura baseada em tecnologia, sem mencionar reforma agraria."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Foca em tecnologia para agronegocio (IoT), exportacao e industrializacao, sem reforma agraria."
+        },
+        "bob_jeff": {
+          "position": "neutro",
+          "justification": "Defende a agricultura como prioridade e promove agricultura familiar, sem mencionar redistribuicao de terras."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe confiscar sem indenizacao todas as grandes propriedades rurais para producao de alimentos."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe reforma agraria radical com nacionalizacao da terra e fim do monopolio privado da propriedade rural."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe expropriacao e nacionalizacao de grandes latifundios do agronegocio sob controle dos trabalhadores."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Propoe valorizar o agronegocio e apoiar pequenos e medios produtores, sem mencionar redistribuicao."
+        }
+      }
+    },
+    {
+      "id": 19,
+      "text": "O transporte publico deve ser gratuito para a populacao.",
+      "topic": "infraestrutura",
+      "positions": {
+        "lula": {
+          "position": "neutro",
+          "justification": "Propoe investir em transporte publico e mobilidade urbana, sem mencionar gratuidade universal."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Foca em intermodalidade, concessoes e investimento privado em transporte, sem gratuidade."
+        },
+        "ciro": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda gratuidade do transporte publico em sua proposta."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe mobilidade urbana com reducao de emissoes e bilhete unico, mas nao gratuidade."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda gratuidade do transporte publico em sua proposta."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende menos Estado e fim de subsidios; nao propoe gratuidade de servicos publicos."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Propoe TranspTech com gestao digital de transporte, sem mencionar gratuidade."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende Estado minimo; servicos devem ser pagos pelos usuarios quando possivel."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar empresas de transporte com tarifa zero como meta; gratuidade para estudantes e trabalhadores ate 5 SM."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar todo transporte publico com foco em acessibilidade para a populacao."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar todas as empresas de transporte publico e tornar o transporte gratuito."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda a questao da gratuidade do transporte publico."
+        }
+      }
+    },
+    {
+      "id": 20,
+      "text": "O numero de ministerios deve ser drasticamente reduzido para tornar o governo mais eficiente.",
+      "topic": "governanca",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Propoe restaurar ministerios e instancias de participacao popular extintas pelo governo anterior, incluindo recriar conselhos e conferencias."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Defende reducao do Estado para focar em funcoes essenciais: saude, educacao, seguranca e bem-estar."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Propoe reformas amplas nos seis primeiros meses, mas nao menciona especificamente reducao de ministerios."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe reforma administrativa para Estado mais eficiente, sem mencionar numero de ministerios."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao se posiciona sobre numero de ministerios em sua proposta."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe explicitamente reduzir numero de ministerios e cargos comissionados, com reforma administrativa."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe reorganizar ministerios em 7 Superintendencias, reduzindo a estrutura tradicional de governo."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende Estado minimo necessario com limitacao de carreiras estatais a magistrados, diplomatas, militares e policiais."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "Propoe ampliar a presenca do Estado com conselhos populares em todos os niveis de governo."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Propoe ampliar participacao popular com Conselhos Populares Regionais com poder orcamentario."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Propoe governo dos trabalhadores baseado em conselhos populares, nao reducao do Estado."
+        },
+        "eymael": {
+          "position": "concordo",
+          "justification": "Propoe reducao drastica do numero de ministerios, incluindo criacao de um Ministerio da Familia."
+        }
+      }
+    },
+    {
+      "id": 21,
+      "text": "Os bancos e o sistema financeiro devem ser nacionalizados e controlados pelo Estado.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "neutro",
+          "justification": "Propoe fortalecer bancos publicos (BB, CEF, BNDES) como instrumentos de desenvolvimento, sem nacionalizar bancos privados."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende independencia do Banco Central e livre mercado financeiro."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Propoe BNDES forte e bancos publicos para financiamento, mas nao nacionalizacao do sistema financeiro."
+        },
+        "tebet": {
+          "position": "discordo",
+          "justification": "Defende BC independente e BNDES restaurado como fomentador, sem nacionalizacao bancaria."
+        },
+        "soraya": {
+          "position": "discordo",
+          "justification": "Defende fortalecimento de agencias reguladoras e setor privado, nao nacionalizacao."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Propoe fim do BNDES subsidiado, reducao de spreads bancarios e fim de depositos compulsorios; anti-estatizacao."
+        },
+        "marcal": {
+          "position": "discordo",
+          "justification": "Propoe fintechizacao do sistema bancario e Open Banking, nao nacionalizacao."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende livre mercado e o Estado nao deve competir com a iniciativa privada."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe estatizar todo o sistema financeiro, criando Banco Unico dos Trabalhadores."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar o sistema bancario com controle estatal e popular do Banco Central."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizacao de todo o sistema financeiro e cancelamento de dividas de trabalhadores com bancos."
+        },
+        "eymael": {
+          "position": "discordo",
+          "justification": "Propoe politica macroeconomica para reduzir custos de credito, sem mencionar nacionalizacao."
+        }
+      }
+    },
+    {
+      "id": 22,
+      "text": "A jornada de trabalho deve ser reduzida para 30 horas semanais sem reducao salarial.",
+      "topic": "trabalho",
+      "positions": {
+        "lula": {
+          "position": "sem_posicao",
+          "justification": "Nao propoe reducao de jornada para 30 horas, mas defende nova legislacao de protecao ao trabalhador."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende mercado de trabalho flexivel e livre negociacao entre trabalhadores e empregadores."
+        },
+        "ciro": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda reducao de jornada de trabalho em sua proposta."
+        },
+        "tebet": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda reducao de jornada de trabalho em sua proposta."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda reducao de jornada de trabalho em sua proposta."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende modernizacao da CLT com flexibilidade e arranjos de trabalho flexiveis, nao reducao de jornada."
+        },
+        "marcal": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda reducao de jornada de trabalho em sua proposta."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende simplificacao trabalhista e livre negociacao, sem imposicao de reducao de jornada."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe jornada de 30 horas semanais sem reducao salarial, com debate sobre semana de 4 dias."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe jornada de 30 horas semanais (6 horas diarias) com aumento salarial."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe jornada de 30 horas semanais (6 horas/dia, 5 dias) sem reducao salarial para criar mais empregos."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda reducao de jornada de trabalho em sua proposta."
+        }
+      }
+    },
+    {
+      "id": 23,
+      "text": "A educacao deve ser oferecida em tempo integral em todas as escolas publicas.",
+      "topic": "educacao",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Defende investir em educacao publica de qualidade da creche a pos-graduacao e retomar metas do Plano Nacional de Educacao."
+        },
+        "bolsonaro": {
+          "position": "neutro",
+          "justification": "Foca em ensino profissionalizante e tecnologico, com internet nas escolas, mas sem mencionar ensino integral universal."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe ensino fundamental progressivamente integral em 4 anos e ensino medio profissionalizante em tempo integral."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Propoe educacao em tempo integral baseada no novo ensino medio, em todas as etapas."
+        },
+        "soraya": {
+          "position": "neutro",
+          "justification": "Foca em escolas civico-militares e programas esportivos, sem mencionar ensino integral universal."
+        },
+        "d_avila": {
+          "position": "neutro",
+          "justification": "Foca em STEM, ensino tecnico e charter schools, sem mencionar explicitamente ensino integral universal."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe formacao integral preparando para a vida (nao apenas vestibular), com multiplas trilhas no ensino medio."
+        },
+        "bob_jeff": {
+          "position": "neutro",
+          "justification": "Defende ensino basico de qualidade e ensino tecnico, sem mencionar ensino em tempo integral."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Defende educacao publica de qualidade em todos os niveis com expansao de Institutos Federais e Escolas Tecnicas."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe Plano Nacional de Infraestrutura Escolar (Escola Integral) com renovacao sistematica de escolas publicas."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe educacao publica, gratuita e de qualidade em todos os niveis, com creches e escolas em tempo integral."
+        },
+        "eymael": {
+          "position": "concordo",
+          "justification": "Propoe promover escolaridade integral na educacao basica."
+        }
+      }
+    },
+    {
+      "id": 24,
+      "text": "O foro privilegiado para autoridades deve ser extinto.",
+      "topic": "governanca",
+      "positions": {
+        "lula": {
+          "position": "neutro",
+          "justification": "Propoe reforma politica e combate a corrupcao, mas nao menciona especificamente o fim do foro privilegiado."
+        },
+        "bolsonaro": {
+          "position": "neutro",
+          "justification": "Propoe plano anticorrupcao com 153 acoes, mas nao menciona extincao do foro privilegiado."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe extincao do foro especial por funcao (foro privilegiado), exceto para chefes de poderes."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe tolerancia zero com corrupcao e transparencia, sem mencionar explicitamente o foro privilegiado."
+        },
+        "soraya": {
+          "position": "concordo",
+          "justification": "Propoe fim do foro privilegiado e criacao de Corte Nacional Anticorrupcao especializada."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe explicitamente o fim do foro privilegiado para todas as autoridades."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe ranking de politicos com indicadores de desempenho, mas nao menciona foro privilegiado."
+        },
+        "bob_jeff": {
+          "position": "sem_posicao",
+          "justification": "Nao menciona especificamente o foro privilegiado em sua proposta."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe reforma do judiciario com juizes eleitos e revogaveis, eliminando privilegios do sistema atual."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe juizes eleitos pelo povo e confisco de bens de todos os corruptos."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe igualar salarios de politicos ao de professores e mandatos revogaveis a qualquer momento."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Propoe governar com etica e combater corrupcao, sem mencionar foro privilegiado."
+        }
+      }
+    },
+    {
+      "id": 25,
+      "text": "O Brasil deve acelerar a transicao para uma matriz energetica 100% renovavel.",
+      "topic": "meio_ambiente",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe transicao ecologica mudando padroes de producao e consumo, expandindo energia limpa e renovavel."
+        },
+        "bolsonaro": {
+          "position": "neutro",
+          "justification": "Apoia energia eolica e solar, mas sem meta de 100%; defende crescimento verde sem comprometer o desenvolvimento."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe eliminar energia termeletrica ate 2030 e meta de matriz energetica 100% limpa."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Propoe transicao para matriz mais limpa com eolica, solar, biomassa, hidrogenio verde, etanol."
+        },
+        "soraya": {
+          "position": "concordo",
+          "justification": "Prioriza energias limpas e renovaveis (solar, eolica, biomassa, biocombustiveis, hidraulica) com transicao da matriz."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe expansao de energias renovaveis e fim de subsidios a combustiveis fosseis."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe expandir producao de energia limpa (solar, eolica, ondas, hidraulica) e programa de energia a partir de residuos."
+        },
+        "bob_jeff": {
+          "position": "neutro",
+          "justification": "Defende melhor uso de alternativas energeticas e pesquisa em novas fontes, sem meta de 100% renovavel."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe transicao energetica como parte da transformacao socialista, com controle estatal."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe programa de transicao energetica para matrizes renovaveis respeitando a natureza."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe transicao para energia limpa (eolica) para expandir geracao; contra mega-projetos como Belo Monte."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende protecao ambiental como causa global e investimento em infraestrutura energetica, sem meta especifica."
+        }
+      }
+    },
+    {
+      "id": 26,
+      "text": "Os meios de comunicacao devem ser regulados pelo Estado para garantir pluralidade e combater desinformacao.",
+      "topic": "governanca",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe regular a midia, democratizar acesso a informacao, garantir pluralidade e combater fake news e discurso de odio."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende liberdade de expressao e nao propoe regulacao; cita liberdade de imprensa como valor democratico."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe ANCINE como regulador audiovisual e obrigacao de servicos de streaming investirem em producao local."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe inclusao digital como direito e transparencia, sem mencionar regulacao da midia."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda regulacao dos meios de comunicacao em sua proposta."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Defende liberdade de mercado e desregulamentacao; nao propoe regulacao estatal da midia."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe aplicativo governamental de comunicacao, mas nao regulacao dos meios privados."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende liberdade de ensino e expressao; o Estado nao deve interferir."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe nova Lei Geral das Comunicacoes acabando com oligopolio privado, e monopolio estatal de telecomunicacoes."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe socializar grandes canais de TV, jornais e radios, garantindo acesso cidadao a midia."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Defende total liberdade de criacao cultural com suporte estatal a cultura popular, contra monopolios."
+        },
+        "eymael": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda regulacao dos meios de comunicacao em sua proposta."
+        }
+      }
+    },
+    {
+      "id": 27,
+      "text": "O Bolsa Familia (ou Auxilio Brasil) deve evoluir para uma renda basica universal.",
+      "topic": "politica_social",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe renovar o Bolsa Familia como caminho para uma renda basica universal para todos os brasileiros."
+        },
+        "bolsonaro": {
+          "position": "discordo",
+          "justification": "Defende manter o Auxilio Brasil com incentivos a formalizacao, promovendo autonomia e nao dependencia do Estado."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe Renda Minima Universal (referencia Eduardo Suplicy) unificando Auxilio Brasil, Seguro Desemprego e Aposentadoria Rural."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe programa permanente de transferencia de renda com condicionalidades e integracao ao mercado de trabalho."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda evolucao de programas de transferencia de renda em sua proposta."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe renda basica universal substituindo programas fragmentados como Bolsa Familia e BPC."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe credito social via gamificacao para promover beneficiarios a produtividade, nao renda basica universal."
+        },
+        "bob_jeff": {
+          "position": "discordo",
+          "justification": "Defende Estado minimo; protecao social limitada ao basico, promovendo autonomia dos cidadaos."
+        },
+        "sofia": {
+          "position": "neutro",
+          "justification": "Propoe transformacao socialista da economia que eliminaria a necessidade de programas de transferencia de renda."
+        },
+        "pericles": {
+          "position": "neutro",
+          "justification": "Propoe Politica Nacional de Garantia de Emprego com contratacao direta pelo Estado, priorizando emprego sobre transferencia."
+        },
+        "vera": {
+          "position": "neutro",
+          "justification": "Propoe auxilio minimo emergencial para desempregados ate o pleno emprego ser alcancado; foco em emprego, nao renda passiva."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Propoe Programa de Metas Sociais orientado a inclusao, sem mencionar renda basica universal."
+        }
+      }
+    },
+    {
+      "id": 28,
+      "text": "A educacao deve ser livre de qualquer orientacao ideologica, com foco exclusivo em conteudos tecnicos.",
+      "topic": "educacao",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Defende educacao democratica, inclusiva, que forme pensamento critico; propoe participacao popular e conselhos na gestao educacional."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Defende desideologizacao do ensino: alunos devem desenvolver pensamento critico 'sem conotacoes ideologicas'; pais como atores principais."
+        },
+        "ciro": {
+          "position": "neutro",
+          "justification": "Foca em metas de aprendizagem e competencias socioemocionais, sem se posicionar sobre 'ideologia' na educacao."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Foca em cidadania, ensino tecnico e profissionalizante alinhado ao mercado, sem mencionar ideologia."
+        },
+        "soraya": {
+          "position": "concordo",
+          "justification": "Propoe escolas civico-militares com enfase em disciplina e valores civicos."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Foca em STEM, ensino tecnico e merito; charter schools com autonomia pedagogica."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe incluir gestao emocional, financas e empreendedorismo no curriculo; foco pratico sem mencionar ideologia."
+        },
+        "bob_jeff": {
+          "position": "concordo",
+          "justification": "Defende liberdade de ensino; familia como base e o Estado nao pode interferir na educacao moral dos filhos."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "Defende educacao laica e democratica com participacao de sindicatos; propoe revogar escolas civico-militares."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Propoe reforma popular do ensino liderada por sindicatos e movimentos estudantis com assembleias anuais."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Defende total liberdade de criacao e educacao; contra censura; propoe educacao sexual nas escolas."
+        },
+        "eymael": {
+          "position": "concordo",
+          "justification": "Propoe educacao baseada nos pilares da ONU e Educacao Moral e Civica, com foco formativo e tecnico."
+        }
+      }
+    },
+    {
+      "id": 29,
+      "text": "O governo deve investir em programas de renegociacao massiva das dividas de familias inadimplentes.",
+      "topic": "economia",
+      "positions": {
+        "lula": {
+          "position": "concordo",
+          "justification": "Propoe renegociar dividas de 66 milhoes de inadimplentes via bancos publicos, ampliar credito e reduzir custos."
+        },
+        "bolsonaro": {
+          "position": "neutro",
+          "justification": "Propoe SIM Digital (microcredito para vulneraveis) e democratizacao do credito, sem renegociacao massiva."
+        },
+        "ciro": {
+          "position": "concordo",
+          "justification": "Propoe programa agressivo de renegociacao com desconto de 70% e financiamento via Caixa/BB em 36 vezes com 3 anos de carencia."
+        },
+        "tebet": {
+          "position": "neutro",
+          "justification": "Propoe ampliar microcredito produtivo e 'Poupanca Seguro Familia', sem programa de renegociacao massiva."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda renegociacao de dividas em sua proposta."
+        },
+        "d_avila": {
+          "position": "discordo",
+          "justification": "Foca em reforma de credito, reducao de spreads e menos intervencao estatal, nao renegociacao."
+        },
+        "marcal": {
+          "position": "concordo",
+          "justification": "Propoe Renegocia Brasil: renegociacao massiva para 70 milhoes de individuos no SPC/Serasa e 30% das empresas negativadas."
+        },
+        "bob_jeff": {
+          "position": "sem_posicao",
+          "justification": "Nao aborda renegociacao de dividas em sua proposta."
+        },
+        "sofia": {
+          "position": "concordo",
+          "justification": "Propoe reestruturar a divida interna e cancelar dividas de trabalhadores com bancos apos nacionalizacao bancaria."
+        },
+        "pericles": {
+          "position": "concordo",
+          "justification": "Propoe suspender pagamento da divida publica e criar bancos publicos regionais com credito popular."
+        },
+        "vera": {
+          "position": "concordo",
+          "justification": "Propoe nacionalizar bancos e cancelar dividas de trabalhadores e pequenas empresas."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Propoe politica macroeconomica para reduzir custos de credito, sem programa de renegociacao."
+        }
+      }
+    },
+    {
+      "id": 30,
+      "text": "O Brasil deve buscar a entrada na OCDE como prioridade de politica externa.",
+      "topic": "politica_externa",
+      "positions": {
+        "lula": {
+          "position": "discordo",
+          "justification": "Prioriza cooperacao Sul-Sul, Mercosul, BRICS e multilateralismo, sem mencionar adesao a OCDE."
+        },
+        "bolsonaro": {
+          "position": "concordo",
+          "justification": "Prioriza explicitamente a entrada na OCDE, com roteiro de adesao aprovado em 2022."
+        },
+        "ciro": {
+          "position": "sem_posicao",
+          "justification": "Foca em soberania e defesa de interesses nacionais, sem mencionar OCDE."
+        },
+        "tebet": {
+          "position": "concordo",
+          "justification": "Defende avancar no acesso a OCDE como parte de maior integracao a economia internacional."
+        },
+        "soraya": {
+          "position": "sem_posicao",
+          "justification": "Nao menciona OCDE em sua proposta."
+        },
+        "d_avila": {
+          "position": "concordo",
+          "justification": "Propoe explicitamente a entrada na OCDE como prioridade de politica externa."
+        },
+        "marcal": {
+          "position": "neutro",
+          "justification": "Propoe integrar blocos economicos de paises prosperos, sem mencionar OCDE especificamente."
+        },
+        "bob_jeff": {
+          "position": "sem_posicao",
+          "justification": "Nao menciona OCDE em sua proposta."
+        },
+        "sofia": {
+          "position": "discordo",
+          "justification": "Rejeita alinhamento com paises desenvolvidos; propoe aliancas anti-imperialistas Sul-Sul."
+        },
+        "pericles": {
+          "position": "discordo",
+          "justification": "Propoe independencia total de paises imperialistas, especialmente os EUA."
+        },
+        "vera": {
+          "position": "discordo",
+          "justification": "Propoe ruptura com o imperialismo e rever todos os tratados comerciais impostos por paises ricos."
+        },
+        "eymael": {
+          "position": "neutro",
+          "justification": "Defende politica externa como instrumento de desenvolvimento sem mencionar OCDE."
+        }
+      }
+    }
+  ]
+}
