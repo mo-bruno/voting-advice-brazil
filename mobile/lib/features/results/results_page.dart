@@ -166,14 +166,11 @@ class _TopResultCard extends StatelessWidget {
                   color: AppTheme.surfaceContainerHigh,
                   border: Border.all(color: AppTheme.outlineVariant),
                 ),
-                child: Center(
-                  child: Text(
-                    result.party.abbreviation,
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w800,
-                      color: AppTheme.primary,
-                    ),
+                child: Padding(
+                  padding: const EdgeInsets.all(4),
+                  child: Image.asset(
+                    result.party.logoAsset,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),
@@ -213,13 +210,18 @@ class _PartyResultRow extends StatelessWidget {
             color: AppTheme.surfaceContainerHigh,
             border: Border.all(color: AppTheme.outlineVariant),
           ),
-          child: Center(
-            child: Text(
-              result.party.abbreviation,
-              style: const TextStyle(
-                fontSize: 10,
-                fontWeight: FontWeight.w800,
-                color: AppTheme.onSurface,
+          child: Padding(
+            padding: const EdgeInsets.all(4),
+            child: Image.asset(
+              result.party.logoAsset,
+              fit: BoxFit.contain,
+              errorBuilder: (_, __, ___) => Text(
+                result.party.abbreviation,
+                style: const TextStyle(
+                  fontSize: 10,
+                  fontWeight: FontWeight.w800,
+                  color: AppTheme.onSurface,
+                ),
               ),
             ),
           ),

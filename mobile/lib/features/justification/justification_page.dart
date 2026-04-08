@@ -199,6 +199,22 @@ class _PartyPositionCard extends StatelessWidget {
         children: [
           Row(
             children: [
+              Container(
+                width: 28,
+                height: 28,
+                decoration: BoxDecoration(
+                  color: AppTheme.surfaceContainerHigh,
+                  border: Border.all(color: AppTheme.outlineVariant),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(2),
+                  child: Image.asset(
+                    party.logoAsset,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
               Text(
                 party.abbreviation,
                 style: textTheme.titleLarge?.copyWith(

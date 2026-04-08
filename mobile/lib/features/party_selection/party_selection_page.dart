@@ -195,17 +195,22 @@ class _PartyGrid extends StatelessWidget {
                 width: isSelected ? 2 : 1,
               ),
             ),
-            child: Center(
-              child: Text(
-                party.abbreviation,
-                style: TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.w800,
-                  color: isSelected
-                      ? AppTheme.primary
-                      : AppTheme.onSurfaceVariant,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Image.asset(
+                party.logoAsset,
+                fit: BoxFit.contain,
+                errorBuilder: (_, __, ___) => Text(
+                  party.abbreviation,
+                  style: TextStyle(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w800,
+                    color: isSelected
+                        ? AppTheme.primary
+                        : AppTheme.onSurfaceVariant,
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),
