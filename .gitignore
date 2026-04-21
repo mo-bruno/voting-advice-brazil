@@ -211,3 +211,8 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 .claude/
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
