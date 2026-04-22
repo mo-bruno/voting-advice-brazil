@@ -354,3 +354,56 @@ class TestRank:
     def test_returns_ranked_candidate_instances(self):
         result = rank([("c1", "Alice", _sb(50.0))])
         assert isinstance(result[0], RankedCandidate)
+
+
+from hypothesis import given, strategies as st
+
+
+_user_stances = st.sampled_from([Stance.AGREE, Stance.NEUTRAL, Stance.DISAGREE])
+_cand_stances = st.sampled_from([Stance.AGREE, Stance.NEUTRAL, Stance.DISAGREE])
+
+
+@st.composite
+def _answer_pairs(draw, n: int = 10):
+    ids = list(range(1, n + 1))
+    answers = [
+        UserAnswer(
+            thesis_id=i,
+            stance=draw(_user_stances),
+            weight=draw(st.sampled_from([Weight.NORMAL, Weight.DOUBLE])),
+        )
+        for i in ids
+    ]
+    stances = [
+        CandidateStance(thesis_id=i, stance=draw(_cand_stances)) for i in ids
+    ]
+    return answers, stances
+
+
+class TestScoreProperties:
+    @given(_answer_pairs(n=10))
+    def test_score_always_in_bounds(self, pair):
+        answers, stances = pair
+        sb = score(answers, stances)
+        assert 0.0 <= sb.score_percent <= 100.0
+        assert 0 <= sb.total_distance <= sb.max_distance
+
+    @given(_answer_pairs(n=10))
+    def test_score_order_independent(self, pair):
+        import random
+        answers, stances = pair
+        shuffled_a = answers[:]
+        shuffled_s = stances[:]
+        random.seed(42)
+        random.shuffle(shuffled_a)
+        random.shuffle(shuffled_s)
+        assert score(answers, stances) == score(shuffled_a, shuffled_s)
+
+    @given(_answer_pairs(n=5))
+    def test_adding_exact_match_never_lowers_score(self, pair):
+        answers, stances = pair
+        base = score(answers, stances)
+        extra_a = UserAnswer(thesis_id=999, stance=Stance.AGREE)
+        extra_c = CandidateStance(thesis_id=999, stance=Stance.AGREE)
+        new = score([*answers, extra_a], [*stances, extra_c])
+        assert new.score_percent >= base.score_percent
