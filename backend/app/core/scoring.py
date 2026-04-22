@@ -6,6 +6,7 @@ Ver docs/superpowers/specs/2026-04-21-algoritmo-match-score-design.md.
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass
 from enum import Enum
 from typing import Final
@@ -56,6 +57,60 @@ class RankedCandidate:
     name: str
     score: ScoreBreakdown
     rank: int
+
+
+_STANCE_VALUE: Final[dict[Stance, int]] = {
+    Stance.AGREE: 2,
+    Stance.NEUTRAL: 1,
+    Stance.DISAGREE: 0,
+}
+
+
+def score(
+    answers: Iterable[UserAnswer],
+    candidate_stances: Iterable[CandidateStance],
+) -> ScoreBreakdown:
+    """Calcula ScoreBreakdown para um candidato (funcao pura, deterministica).
+
+    Teses com `UserAnswer.stance == SKIP` ou `CandidateStance.stance == NO_OPINION`
+    sao excluidas do numerador, denominador e contadores. Se nenhuma tese e
+    contavel, retorna `score_percent = 0.0` como sentinela (caller deve ter
+    validado o minimo antes).
+    """
+    by_thesis: dict[int, CandidateStance] = {
+        cs.thesis_id: cs for cs in candidate_stances
+    }
+    total_d = max_d = exact = mismatches = counted = 0
+
+    for ans in answers:
+        if ans.stance is Stance.SKIP:
+            continue
+        cs = by_thesis.get(ans.thesis_id)
+        if cs is None or cs.stance is Stance.NO_OPINION:
+            continue
+
+        u = _STANCE_VALUE[ans.stance]
+        c = _STANCE_VALUE[cs.stance]
+        raw = abs(u - c)
+        w = ans.weight.value
+
+        total_d += w * raw
+        max_d += w * 2
+        counted += 1
+        if raw == 0:
+            exact += 1
+        elif raw == 2:
+            mismatches += 1
+
+    score_pct = 0.0 if max_d == 0 else round((1 - total_d / max_d) * 100, 2)
+    return ScoreBreakdown(
+        total_distance=total_d,
+        max_distance=max_d,
+        score_percent=score_pct,
+        exact_matches=exact,
+        total_mismatches=mismatches,
+        counted_theses=counted,
+    )
 
 
 MIN_ANSWERS: Final[int] = 5
