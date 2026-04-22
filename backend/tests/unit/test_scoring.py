@@ -1,13 +1,20 @@
+import random
+
 import pytest
+from hypothesis import given, strategies as st
 
 from app.core.scoring import (
     CandidateStance,
     InsufficientAnswersError,
     MIN_ANSWERS,
+    RankedCandidate,
     ScoreBreakdown,
     Stance,
     UserAnswer,
     Weight,
+    rank,
+    score,
+    validate_minimum,
 )
 
 
@@ -80,9 +87,6 @@ class TestScoreBreakdownDataclass:
         )
         with pytest.raises(Exception):
             sb.score_percent = 0.0  # type: ignore[misc]
-
-
-from app.core.scoring import score
 
 
 def _u(tid: int, s: Stance, w: Weight = Weight.NORMAL) -> UserAnswer:
@@ -228,9 +232,6 @@ class TestScoreWeighting:
         assert sb.total_mismatches == 1
 
 
-from app.core.scoring import validate_minimum
-
-
 class TestValidateMinimum:
     def test_accepts_exactly_five(self):
         answers = [_u(i, Stance.AGREE) for i in range(1, 6)]
@@ -259,9 +260,6 @@ class TestValidateMinimum:
         with pytest.raises(InsufficientAnswersError) as exc:
             validate_minimum(answers)
         assert exc.value.provided == 3
-
-
-from app.core.scoring import RankedCandidate, rank
 
 
 def _sb(
@@ -356,9 +354,6 @@ class TestRank:
         assert isinstance(result[0], RankedCandidate)
 
 
-from hypothesis import given, strategies as st
-
-
 _user_stances = st.sampled_from([Stance.AGREE, Stance.NEUTRAL, Stance.DISAGREE])
 _cand_stances = st.sampled_from([Stance.AGREE, Stance.NEUTRAL, Stance.DISAGREE])
 
@@ -390,7 +385,6 @@ class TestScoreProperties:
 
     @given(_answer_pairs(n=10))
     def test_score_order_independent(self, pair):
-        import random
         answers, stances = pair
         shuffled_a = answers[:]
         shuffled_s = stances[:]
