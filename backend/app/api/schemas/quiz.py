@@ -56,6 +56,7 @@ class CandidateResultOut(BaseModel):
     party_logo: str | None
     score_percent: float
     score_by_theme: dict[str, float]
+    rank: int
     matches: list[ThesisMatchOut]
 
 
