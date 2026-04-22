@@ -124,3 +124,10 @@ class InsufficientAnswersError(ValueError):
             f"Quiz exige ao menos {required} respostas não-puladas; "
             f"recebidas {provided}."
         )
+
+
+def validate_minimum(answers: Iterable[UserAnswer]) -> None:
+    """Lança InsufficientAnswersError se respostas não-SKIP < MIN_ANSWERS."""
+    answered = sum(1 for a in answers if a.stance is not Stance.SKIP)
+    if answered < MIN_ANSWERS:
+        raise InsufficientAnswersError(provided=answered)

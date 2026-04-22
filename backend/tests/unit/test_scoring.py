@@ -226,3 +226,36 @@ class TestScoreWeighting:
             [_u(1, Stance.AGREE, Weight.DOUBLE)], [_c(1, Stance.DISAGREE)]
         )
         assert sb.total_mismatches == 1
+
+
+from app.core.scoring import validate_minimum
+
+
+class TestValidateMinimum:
+    def test_accepts_exactly_five(self):
+        answers = [_u(i, Stance.AGREE) for i in range(1, 6)]
+        validate_minimum(answers)
+
+    def test_accepts_more_than_five(self):
+        answers = [_u(i, Stance.AGREE) for i in range(1, 11)]
+        validate_minimum(answers)
+
+    def test_rejects_four(self):
+        answers = [_u(i, Stance.AGREE) for i in range(1, 5)]
+        with pytest.raises(InsufficientAnswersError) as exc:
+            validate_minimum(answers)
+        assert exc.value.provided == 4
+        assert exc.value.required == 5
+
+    def test_rejects_zero(self):
+        with pytest.raises(InsufficientAnswersError) as exc:
+            validate_minimum([])
+        assert exc.value.provided == 0
+
+    def test_skip_does_not_count(self):
+        answers = [_u(i, Stance.AGREE) for i in range(1, 6)]
+        answers[0] = _u(1, Stance.SKIP)
+        answers[1] = _u(2, Stance.SKIP)
+        with pytest.raises(InsufficientAnswersError) as exc:
+            validate_minimum(answers)
+        assert exc.value.provided == 3
