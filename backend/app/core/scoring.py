@@ -6,6 +6,7 @@ Ver docs/superpowers/specs/2026-04-21-algoritmo-match-score-design.md.
 
 from __future__ import annotations
 
+import unicodedata
 from collections.abc import Iterable
 from dataclasses import dataclass
 from enum import Enum
@@ -131,3 +132,49 @@ def validate_minimum(answers: Iterable[UserAnswer]) -> None:
     answered = sum(1 for a in answers if a.stance is not Stance.SKIP)
     if answered < MIN_ANSWERS:
         raise InsufficientAnswersError(provided=answered)
+
+
+def _normalize_name(name: str) -> str:
+    """NFKD + casefold para ordenação alfabética insensível a acentos."""
+    nfkd = unicodedata.normalize("NFKD", name)
+    without_marks = "".join(c for c in nfkd if not unicodedata.combining(c))
+    return without_marks.casefold()
+
+
+def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple:
+    _cid, name, b = item
+    return (
+        -b.score_percent,
+        -b.exact_matches,
+        b.total_mismatches,
+        _normalize_name(name),
+    )
+
+
+def _tie_key(item: tuple[str, str, ScoreBreakdown]) -> tuple:
+    """Chave de empate real (sem o nome) para atribuição de rank olímpico."""
+    _cid, _name, b = item
+    return (b.score_percent, b.exact_matches, b.total_mismatches)
+
+
+def rank(
+    scored: Iterable[tuple[str, str, ScoreBreakdown]],
+) -> list[RankedCandidate]:
+    """Ordena candidatos pelos 4 critérios do spec e atribui rank olímpico.
+
+    Critérios (cascata): score_percent desc → exact_matches desc →
+    total_mismatches asc → nome asc (normalizado).
+    """
+    items = sorted(scored, key=_sort_key)
+    out: list[RankedCandidate] = []
+    prev_tie_key: tuple | None = None
+    prev_rank = 0
+    for idx, (cid, name, sb) in enumerate(items, start=1):
+        tk = _tie_key((cid, name, sb))
+        current_rank = prev_rank if tk == prev_tie_key else idx
+        out.append(
+            RankedCandidate(candidate_id=cid, name=name, score=sb, rank=current_rank)
+        )
+        prev_tie_key = tk
+        prev_rank = current_rank
+    return out

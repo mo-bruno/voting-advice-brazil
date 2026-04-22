@@ -259,3 +259,98 @@ class TestValidateMinimum:
         with pytest.raises(InsufficientAnswersError) as exc:
             validate_minimum(answers)
         assert exc.value.provided == 3
+
+
+from app.core.scoring import RankedCandidate, rank
+
+
+def _sb(
+    score_pct: float, exact: int = 0, mismatches: int = 0, counted: int = 10
+) -> ScoreBreakdown:
+    return ScoreBreakdown(
+        total_distance=0,
+        max_distance=20,
+        score_percent=score_pct,
+        exact_matches=exact,
+        total_mismatches=mismatches,
+        counted_theses=counted,
+    )
+
+
+class TestRank:
+    def test_sorts_by_score_desc(self):
+        result = rank([
+            ("c1", "Alice", _sb(50.0)),
+            ("c2", "Bob", _sb(80.0)),
+            ("c3", "Carol", _sb(30.0)),
+        ])
+        assert [r.candidate_id for r in result] == ["c2", "c1", "c3"]
+        assert [r.rank for r in result] == [1, 2, 3]
+
+    def test_tiebreak_by_exact_matches_desc(self):
+        result = rank([
+            ("c1", "Alice", _sb(70.0, exact=3)),
+            ("c2", "Bob", _sb(70.0, exact=5)),
+        ])
+        assert [r.candidate_id for r in result] == ["c2", "c1"]
+        assert [r.rank for r in result] == [1, 2]
+
+    def test_tiebreak_by_total_mismatches_asc(self):
+        result = rank([
+            ("c1", "Alice", _sb(70.0, exact=5, mismatches=2)),
+            ("c2", "Bob", _sb(70.0, exact=5, mismatches=1)),
+        ])
+        assert [r.candidate_id for r in result] == ["c2", "c1"]
+
+    def test_tiebreak_by_name_asc(self):
+        result = rank([
+            ("c1", "Bob", _sb(70.0, exact=5, mismatches=1)),
+            ("c2", "Alice", _sb(70.0, exact=5, mismatches=1)),
+        ])
+        assert [r.candidate_id for r in result] == ["c2", "c1"]
+
+    def test_name_normalization_accent_insensitive(self):
+        result = rank([
+            ("c1", "Bruno", _sb(70.0, exact=5, mismatches=1)),
+            ("c2", "Álvaro", _sb(70.0, exact=5, mismatches=1)),
+        ])
+        assert [r.candidate_id for r in result] == ["c2", "c1"]
+
+    def test_true_tie_shares_rank_olympic(self):
+        result = rank([
+            ("c1", "Alice", _sb(70.0, exact=5, mismatches=1)),
+            ("c2", "Alice", _sb(70.0, exact=5, mismatches=1)),
+            ("c3", "Alice", _sb(70.0, exact=5, mismatches=1)),
+            ("c4", "Zoe",   _sb(60.0)),
+        ])
+        ranks = {r.candidate_id: r.rank for r in result}
+        assert ranks["c1"] == ranks["c2"] == ranks["c3"] == 1
+        assert ranks["c4"] == 4
+
+    def test_empty_input(self):
+        assert rank([]) == []
+
+    def test_idempotent(self):
+        inputs = [
+            ("c1", "Alice", _sb(50.0, exact=2)),
+            ("c2", "Bob", _sb(50.0, exact=3)),
+            ("c3", "Carol", _sb(80.0)),
+        ]
+        once = rank(inputs)
+        twice = rank([(r.candidate_id, r.name, r.score) for r in once])
+        assert [r.candidate_id for r in once] == [r.candidate_id for r in twice]
+
+    def test_permutation_invariant(self):
+        a = rank([
+            ("c1", "Alice", _sb(50.0)),
+            ("c2", "Bob", _sb(80.0)),
+        ])
+        b = rank([
+            ("c2", "Bob", _sb(80.0)),
+            ("c1", "Alice", _sb(50.0)),
+        ])
+        assert [r.candidate_id for r in a] == [r.candidate_id for r in b]
+
+    def test_returns_ranked_candidate_instances(self):
+        result = rank([("c1", "Alice", _sb(50.0))])
+        assert isinstance(result[0], RankedCandidate)
