@@ -5,6 +5,7 @@ Toda a regra matemática vive em `app.core.scoring` — este módulo é I/O glue
 """
 
 from dataclasses import dataclass, field
+from typing import Any
 
 from app.core.entities.candidate import CandidatePosition
 from app.core.scoring import (
@@ -116,12 +117,7 @@ def _score_by_theme(
         pos = positions.get(ans.thesis_id)
         if pos is None or pos.position == "sem_posicao":
             continue
-        theme_answers = [ans]
-        theme_stances = [_to_candidate_stance(pos)]
-        sb = score(
-            (_to_user_answer(a) for a in theme_answers),
-            theme_stances,
-        )
+        sb = score([_to_user_answer(ans)], [_to_candidate_stance(pos)])
         d, m = buckets.get(pos.theme_id, (0, 0))
         buckets[pos.theme_id] = (d + sb.total_distance, m + sb.max_distance)
 
@@ -149,8 +145,8 @@ def submit_quiz(
     )
     theses = {t.id: t for t in thesis_repo.get_by_ids(answered_ids)}
 
-    scored: list[tuple[str, str, object]] = []
-    intermediate: dict[str, dict] = {}
+    scored: list[tuple[str, str, ScoreBreakdown]] = []
+    intermediate: dict[str, Any] = {}
     for candidate in candidates:
         cand_positions = positions_map.get(candidate.id, {})
         stances = [_to_candidate_stance(p) for p in cand_positions.values()]

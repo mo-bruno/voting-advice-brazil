@@ -141,7 +141,7 @@ def _normalize_name(name: str) -> str:
     return without_marks.casefold()
 
 
-def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple:
+def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple[float, int, int, str]:
     _cid, name, b = item
     return (
         -b.score_percent,
@@ -151,7 +151,7 @@ def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple:
     )
 
 
-def _tie_key(item: tuple[str, str, ScoreBreakdown]) -> tuple:
+def _tie_key(item: tuple[str, str, ScoreBreakdown]) -> tuple[float, int, int]:
     """Chave de empate real (sem o nome) para atribuição de rank olímpico."""
     _cid, _name, b = item
     return (b.score_percent, b.exact_matches, b.total_mismatches)
@@ -167,7 +167,7 @@ def rank(
     """
     items = sorted(scored, key=_sort_key)
     out: list[RankedCandidate] = []
-    prev_tie_key: tuple | None = None
+    prev_tie_key: tuple[float, int, int] | None = None
     prev_rank = 0
     for idx, (cid, name, sb) in enumerate(items, start=1):
         tk = _tie_key((cid, name, sb))
