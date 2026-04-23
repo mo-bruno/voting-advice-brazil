@@ -23,7 +23,9 @@ def list_all(
     response = [
         ThemeOut(
             id=t.id,
+            slug=t.slug,
             nome=t.name,
+            area=t.area,
             descricao=t.description,
             icone_slug=t.icon_slug,
             total_teses_aprovadas=t.total_approved_theses,

@@ -6,8 +6,13 @@ from pydantic import ValidationError
 from app.core.config import Settings
 
 
-def test_settings_defaults():
-    s = Settings()
+def test_settings_defaults(monkeypatch):
+    # conftest sets APP_ENV=test for the app lifespan; clear it to verify defaults
+    monkeypatch.delenv("APP_ENV", raising=False)
+    monkeypatch.delenv("DATABASE_URL", raising=False)
+    monkeypatch.delenv("GROQ_API_KEY", raising=False)
+    monkeypatch.delenv("MQTT_BROKER_URL", raising=False)
+    s = Settings(_env_file=None)
     assert s.app_env == "dev"
     assert s.database_url.startswith("sqlite:///")
     assert s.mqtt_broker_url == "mqtts://broker.hivemq.com:8883"

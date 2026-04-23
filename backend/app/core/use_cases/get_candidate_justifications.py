@@ -21,7 +21,7 @@ class JustificationResult:
 
 def get_candidate_justifications(
     repo: PositionRepository,
-    candidate_id: str,
+    candidate_id: int,
     group_by_theme: bool = False,
 ) -> JustificationResult:
     positions = repo.get_by_candidate(candidate_id)
@@ -37,11 +37,11 @@ def get_candidate_justifications(
         no_position_count=counts["sem_posicao"],
     )
 
-    grouped = None
+    grouped: dict[str, list[CandidatePosition]] | None = None
     if group_by_theme:
         grouped = {}
         for p in sorted(positions, key=lambda x: (x.theme_id, x.thesis_id)):
-            grouped.setdefault(p.theme_id, []).append(p)
+            grouped.setdefault(p.theme_slug, []).append(p)
 
     return JustificationResult(
         positions=sorted(positions, key=lambda x: x.thesis_id),

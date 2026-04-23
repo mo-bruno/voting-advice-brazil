@@ -4,13 +4,13 @@ from app.core.entities.candidate import CandidatePosition
 from app.core.use_cases.interfaces import CandidateRepository, PositionRepository, ThesisRepository
 
 _POSITION_SCORE = {"concordo": 2, "neutro": 1, "discordo": 0}
-_ANSWER_SCORE = {"agree": 2, "neutral": 1, "disagree": 0}
+_ANSWER_SCORE = {"concordo": 2, "neutro": 1, "discordo": 0}
 
 
 @dataclass
 class QuizAnswer:
     thesis_id: int
-    answer: str  # "agree" | "disagree" | "neutral" | "skip"
+    answer: str  # "concordo" | "discordo" | "neutro" | "pulou"
     weight: int = 1  # 1 or 2
 
 
@@ -18,7 +18,7 @@ class QuizAnswer:
 class ThesisMatch:
     thesis_id: int
     thesis_text: str
-    theme_id: str
+    theme_id: int
     user_answer: str
     candidate_position: str
     match_type: str  # "match" | "mismatch" | "partial" | "skipped"
@@ -26,24 +26,21 @@ class ThesisMatch:
 
 @dataclass
 class CandidateResult:
-    candidate_id: str
+    candidate_id: int
     name: str
-    party: str
-    party_logo: str | None
+    party_acronym: str
+    party_logo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     matches: list[ThesisMatch] = field(default_factory=list)
 
 
 def _match_type(user_answer: str, candidate_position: str) -> str:
-    if user_answer == "skip" or candidate_position == "sem_posicao":
+    if user_answer == "pulou" or candidate_position == "sem_posicao":
         return "skipped"
-    c_norm = {"concordo": "agree", "discordo": "disagree", "neutro": "neutral"}.get(
-        candidate_position, "neutral"
-    )
-    if user_answer == c_norm:
+    if user_answer == candidate_position:
         return "match"
-    if {user_answer, c_norm} == {"agree", "disagree"}:
+    if {user_answer, candidate_position} == {"concordo", "discordo"}:
         return "mismatch"
     return "partial"
 
@@ -57,7 +54,7 @@ def _score_candidate(
     theme_data: dict[str, list[float]] = {}
 
     for ans in answers:
-        if ans.answer == "skip":
+        if ans.answer == "pulou":
             continue
         pos = positions.get(ans.thesis_id)
         if pos is None or pos.position == "sem_posicao":
@@ -72,7 +69,7 @@ def _score_candidate(
         total_dist += dist
         max_dist += mx
 
-        theme = pos.theme_id
+        theme = pos.theme_slug
         if theme not in theme_data:
             theme_data[theme] = [0.0, 0.0]
         theme_data[theme][0] += dist
@@ -95,7 +92,7 @@ def submit_quiz(
     position_repo: PositionRepository,
     thesis_repo: ThesisRepository,
 ) -> list[CandidateResult]:
-    answered_ids = [a.thesis_id for a in answers if a.answer != "skip"]
+    answered_ids = [a.thesis_id for a in answers if a.answer != "pulou"]
     if not answered_ids:
         return []
 
@@ -131,8 +128,8 @@ def submit_quiz(
             CandidateResult(
                 candidate_id=candidate.id,
                 name=candidate.name,
-                party=candidate.party,
-                party_logo=candidate.party_logo,
+                party_acronym=candidate.party_acronym,
+                party_logo_url=candidate.party_logo_url,
                 score_percent=score,
                 score_by_theme=by_theme,
                 matches=matches,

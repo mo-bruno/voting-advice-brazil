@@ -9,7 +9,7 @@ class Settings(BaseSettings):
     # App
     app_name: str = "Farol Político API"
     app_version: str = "0.1.0"
-    app_env: Literal["dev", "staging", "prod"] = "dev"
+    app_env: Literal["dev", "test", "staging", "prod"] = "dev"
     debug: bool = False
 
     # Database

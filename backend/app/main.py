@@ -19,8 +19,9 @@ limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    with SessionLocal() as db:
-        seed(db)
+    if settings.app_env != "test":
+        with SessionLocal() as db:
+            seed(db)
     yield
 
 

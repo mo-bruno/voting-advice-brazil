@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 class ThesisOut(BaseModel):
     id: int
     text: str
-    theme_id: str
+    theme_id: int
     theme_name: str
     coverage: float = Field(description="% candidatos com posição definida")
 
@@ -18,7 +18,7 @@ class QuestionsResponse(BaseModel):
 
 class AnswerIn(BaseModel):
     thesis_id: int
-    answer: str = Field(pattern="^(agree|disagree|neutral|skip)$")
+    answer: str = Field(pattern="^(concordo|discordo|neutro|pulou)$")
     weight: int = Field(default=1, ge=1, le=2)
 
 
@@ -30,9 +30,9 @@ class SubmitQuizIn(BaseModel):
             "examples": [
                 {
                     "answers": [
-                        {"thesis_id": 1, "answer": "agree", "weight": 2},
-                        {"thesis_id": 2, "answer": "disagree", "weight": 1},
-                        {"thesis_id": 3, "answer": "neutral", "weight": 1},
+                        {"thesis_id": 1, "answer": "concordo", "weight": 2},
+                        {"thesis_id": 2, "answer": "discordo", "weight": 1},
+                        {"thesis_id": 3, "answer": "neutro", "weight": 1},
                     ]
                 }
             ]
@@ -43,17 +43,17 @@ class SubmitQuizIn(BaseModel):
 class ThesisMatchOut(BaseModel):
     thesis_id: int
     thesis_text: str
-    theme_id: str
+    theme_id: int
     user_answer: str
     candidate_position: str
     match_type: str
 
 
 class CandidateResultOut(BaseModel):
-    candidate_id: str
+    candidate_id: int
     name: str
-    party: str
-    party_logo: str | None
+    party_acronym: str
+    party_logo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     matches: list[ThesisMatchOut]
