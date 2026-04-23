@@ -17,7 +17,7 @@ class ThesisRepository(ABC):
 
 class CandidateRepository(ABC):
     @abstractmethod
-    def get_by_id(self, candidate_id: str) -> Candidate | None: ...
+    def get_by_id(self, candidate_id: int) -> Candidate | None: ...
 
     @abstractmethod
     def list(
@@ -33,14 +33,14 @@ class CandidateRepository(ABC):
 
 class PositionRepository(ABC):
     @abstractmethod
-    def get_by_candidate(self, candidate_id: str) -> list[CandidatePosition]: ...
+    def get_by_candidate(self, candidate_id: int) -> list[CandidatePosition]: ...
 
     @abstractmethod
     def get_by_candidates_and_theses(
         self,
-        candidate_ids: list[str],
+        candidate_ids: list[int],
         thesis_ids: list[int],
-    ) -> dict[str, dict[int, CandidatePosition]]: ...
+    ) -> dict[int, dict[int, CandidatePosition]]: ...
 
 
 class ThemeRepository(ABC):
