@@ -1,17 +1,60 @@
+"""Orquestrador do endpoint /quiz/submit. Converte entidades dos repos em
+tipos do módulo `scoring`, delega o cálculo e monta o DTO de resposta.
+
+Toda a regra matemática vive em `app.core.scoring` — este módulo é I/O glue.
+"""
+
 from dataclasses import dataclass, field
+from typing import Any
 
 from app.core.entities.candidate import CandidatePosition
-from app.core.use_cases.interfaces import CandidateRepository, PositionRepository, ThesisRepository
+from app.core.scoring import (
+    CandidateStance,
+    InsufficientAnswersError,  # re-exportado para o router
+    ScoreBreakdown,
+    Stance,
+    UserAnswer,
+    Weight,
+    rank,
+    score,
+    validate_minimum,
+)
+from app.core.use_cases.interfaces import (
+    CandidateRepository,
+    PositionRepository,
+    ThesisRepository,
+)
 
-_POSITION_SCORE = {"concordo": 2, "neutro": 1, "discordo": 0}
-_ANSWER_SCORE = {"concordo": 2, "neutro": 1, "discordo": 0}
+__all__ = [
+    "CandidateResult",
+    "InsufficientAnswersError",
+    "QuizAnswer",
+    "ThesisMatch",
+    "submit_quiz",
+]
+
+_ANSWER_TO_STANCE = {
+    "agree": Stance.AGREE,
+    "neutral": Stance.NEUTRAL,
+    "disagree": Stance.DISAGREE,
+    "skip": Stance.SKIP,
+}
+
+_POSITION_TO_STANCE = {
+    "concordo": Stance.AGREE,
+    "neutro": Stance.NEUTRAL,
+    "discordo": Stance.DISAGREE,
+    "sem_posicao": Stance.NO_OPINION,
+}
 
 
 @dataclass
 class QuizAnswer:
+    """DTO do router — strings por compat. com o schema atual."""
+
     thesis_id: int
-    answer: str  # "concordo" | "discordo" | "neutro" | "pulou"
-    weight: int = 1  # 1 or 2
+    answer: str  # "agree" | "disagree" | "neutral" | "skip"
+    weight: int = 1
 
 
 @dataclass
@@ -32,58 +75,57 @@ class CandidateResult:
     party_logo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
+    rank: int
     matches: list[ThesisMatch] = field(default_factory=list)
 
 
+def _to_user_answer(a: QuizAnswer) -> UserAnswer:
+    return UserAnswer(
+        thesis_id=a.thesis_id,
+        stance=_ANSWER_TO_STANCE[a.answer],
+        weight=Weight(a.weight),
+    )
+
+
+def _to_candidate_stance(p: CandidatePosition) -> CandidateStance:
+    return CandidateStance(
+        thesis_id=p.thesis_id,
+        stance=_POSITION_TO_STANCE[p.position],
+    )
+
+
 def _match_type(user_answer: str, candidate_position: str) -> str:
-    if user_answer == "pulou" or candidate_position == "sem_posicao":
+    if user_answer == "skip" or candidate_position == "sem_posicao":
         return "skipped"
-    if user_answer == candidate_position:
+    c_norm = {"concordo": "agree", "discordo": "disagree", "neutro": "neutral"}.get(
+        candidate_position, "neutral"
+    )
+    if user_answer == c_norm:
         return "match"
-    if {user_answer, candidate_position} == {"concordo", "discordo"}:
+    if {user_answer, c_norm} == {"agree", "disagree"}:
         return "mismatch"
     return "partial"
 
 
-def _score_candidate(
+def _score_by_theme(
     answers: list[QuizAnswer],
     positions: dict[int, CandidatePosition],
-) -> tuple[float, dict[str, float]]:
-    total_dist = 0.0
-    max_dist = 0.0
-    theme_data: dict[str, list[float]] = {}
-
+) -> dict[str, float]:
+    buckets: dict[str, tuple[int, int]] = {}
     for ans in answers:
-        if ans.answer == "pulou":
+        if ans.answer == "skip":
             continue
         pos = positions.get(ans.thesis_id)
         if pos is None or pos.position == "sem_posicao":
             continue
+        sb = score([_to_user_answer(ans)], [_to_candidate_stance(pos)])
+        d, m = buckets.get(pos.theme_slug, (0, 0))
+        buckets[pos.theme_slug] = (d + sb.total_distance, m + sb.max_distance)
 
-        u = _ANSWER_SCORE[ans.answer]
-        c = _POSITION_SCORE[pos.position]
-        w = ans.weight
-        dist = w * abs(u - c)
-        mx = w * 2
-
-        total_dist += dist
-        max_dist += mx
-
-        theme = pos.theme_slug
-        if theme not in theme_data:
-            theme_data[theme] = [0.0, 0.0]
-        theme_data[theme][0] += dist
-        theme_data[theme][1] += mx
-
-    if max_dist == 0:
-        return 0.0, {}
-
-    overall = (1 - total_dist / max_dist) * 100
-    by_theme = {
-        t: (1 - d / m) * 100 if m > 0 else 0.0
-        for t, (d, m) in theme_data.items()
+    return {
+        theme: round((1 - d / m) * 100, 2) if m > 0 else 0.0
+        for theme, (d, m) in buckets.items()
     }
-    return round(overall, 2), {k: round(v, 2) for k, v in by_theme.items()}
 
 
 def submit_quiz(
@@ -92,21 +134,27 @@ def submit_quiz(
     position_repo: PositionRepository,
     thesis_repo: ThesisRepository,
 ) -> list[CandidateResult]:
-    answered_ids = [a.thesis_id for a in answers if a.answer != "pulou"]
-    if not answered_ids:
-        return []
+    """Pipeline: valida mínimo → busca dados → score por candidato → rank."""
+    user_answers = [_to_user_answer(a) for a in answers]
+    validate_minimum(user_answers)  # lança InsufficientAnswersError se < 5
 
+    answered_ids = [a.thesis_id for a in answers if a.answer != "skip"]
     candidates, _ = candidate_repo.list(page_size=100)
     candidate_ids = [c.id for c in candidates]
-    positions_map = position_repo.get_by_candidates_and_theses(candidate_ids, answered_ids)
+    positions_map = position_repo.get_by_candidates_and_theses(
+        candidate_ids, answered_ids
+    )
     theses = {t.id: t for t in thesis_repo.get_by_ids(answered_ids)}
 
-    results: list[CandidateResult] = []
+    scored: list[tuple[int, str, ScoreBreakdown]] = []
+    intermediate: dict[int, Any] = {}
     for candidate in candidates:
         cand_positions = positions_map.get(candidate.id, {})
-        score, by_theme = _score_candidate(answers, cand_positions)
+        stances = [_to_candidate_stance(p) for p in cand_positions.values()]
+        breakdown = score(user_answers, stances)
+        by_theme = _score_by_theme(answers, cand_positions)
 
-        matches = []
+        matches: list[ThesisMatch] = []
         for ans in answers:
             thesis = theses.get(ans.thesis_id)
             if thesis is None:
@@ -124,16 +172,30 @@ def submit_quiz(
                 )
             )
 
+        intermediate[candidate.id] = {
+            "candidate": candidate,
+            "breakdown": breakdown,
+            "by_theme": by_theme,
+            "matches": matches,
+        }
+        scored.append((candidate.id, candidate.name, breakdown))
+
+    ranked = rank(scored)
+
+    results: list[CandidateResult] = []
+    for rc in ranked:
+        data = intermediate[rc.candidate_id]
+        candidate = data["candidate"]
         results.append(
             CandidateResult(
                 candidate_id=candidate.id,
                 name=candidate.name,
                 party_acronym=candidate.party_acronym,
                 party_logo_url=candidate.party_logo_url,
-                score_percent=score,
-                score_by_theme=by_theme,
-                matches=matches,
+                score_percent=rc.score.score_percent,
+                score_by_theme=data["by_theme"],
+                rank=rc.rank,
+                matches=data["matches"],
             )
         )
-
-    return sorted(results, key=lambda r: r.score_percent, reverse=True)
+    return results

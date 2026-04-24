@@ -1,109 +1,14 @@
-from app.core.entities.candidate import CandidatePosition
-from app.core.use_cases.submit_quiz import QuizAnswer, _match_type, _score_candidate
+"""Testes de integração do router /quiz/*.
+
+Testes da fórmula de scoring estão em tests/unit/test_scoring.py.
+Aqui cobrimos: endpoints HTTP, conversão de entidades e contratos JSON.
+"""
 
 
-def _pos(thesis_id: int, theme_slug: str, position: str) -> CandidatePosition:
-    return CandidatePosition(
-        thesis_id=thesis_id,
-        thesis_text="",
-        theme_id=1,
-        theme_slug=theme_slug,
-        theme_name="",
-        position=position,
-        justification=None,
-        quote=None,
-    )
-
-
-class TestMatchType:
-    def test_perfect_match_agree(self):
-        assert _match_type("concordo", "concordo") == "match"
-
-    def test_perfect_match_disagree(self):
-        assert _match_type("discordo", "discordo") == "match"
-
-    def test_mismatch(self):
-        assert _match_type("concordo", "discordo") == "mismatch"
-
-    def test_partial_agree_neutral(self):
-        assert _match_type("concordo", "neutro") == "partial"
-
-    def test_skip_returns_skipped(self):
-        assert _match_type("pulou", "concordo") == "skipped"
-
-    def test_sem_posicao_returns_skipped(self):
-        assert _match_type("concordo", "sem_posicao") == "skipped"
-
-
-class TestScoreCandidate:
-    def test_perfect_agreement(self):
-        answers = [QuizAnswer(thesis_id=1, answer="concordo", weight=1)]
-        positions = {1: _pos(1, "economia", "concordo")}
-        score, by_theme = _score_candidate(answers, positions)
-        assert score == 100.0
-
-    def test_total_disagreement(self):
-        answers = [QuizAnswer(thesis_id=1, answer="concordo", weight=1)]
-        positions = {1: _pos(1, "economia", "discordo")}
-        score, _ = _score_candidate(answers, positions)
-        assert score == 0.0
-
-    def test_neutral_gives_50_vs_agree(self):
-        answers = [QuizAnswer(thesis_id=1, answer="concordo", weight=1)]
-        positions = {1: _pos(1, "economia", "neutro")}
-        score, _ = _score_candidate(answers, positions)
-        assert score == 50.0
-
-    def test_skip_excluded_from_calculation(self):
-        answers = [
-            QuizAnswer(thesis_id=1, answer="pulou", weight=1),
-            QuizAnswer(thesis_id=2, answer="concordo", weight=1),
-        ]
-        positions = {
-            1: _pos(1, "economia", "discordo"),
-            2: _pos(2, "economia", "concordo"),
-        }
-        score, _ = _score_candidate(answers, positions)
-        assert score == 100.0
-
-    def test_sem_posicao_excluded_from_denominator(self):
-        answers = [
-            QuizAnswer(thesis_id=1, answer="concordo", weight=1),
-            QuizAnswer(thesis_id=2, answer="concordo", weight=1),
-        ]
-        positions = {
-            1: _pos(1, "economia", "concordo"),
-            2: _pos(2, "economia", "sem_posicao"),
-        }
-        score, _ = _score_candidate(answers, positions)
-        assert score == 100.0
-
-    def test_weight_double_amplifies(self):
-        answers = [QuizAnswer(thesis_id=1, answer="concordo", weight=2)]
-        positions = {1: _pos(1, "economia", "discordo")}
-        score, _ = _score_candidate(answers, positions)
-        assert score == 0.0
-
-    def test_score_by_theme(self):
-        answers = [
-            QuizAnswer(thesis_id=1, answer="concordo", weight=1),
-            QuizAnswer(thesis_id=2, answer="discordo", weight=1),
-        ]
-        positions = {
-            1: _pos(1, "economia", "concordo"),
-            2: _pos(2, "seguranca", "discordo"),
-        }
-        score, by_theme = _score_candidate(answers, positions)
-        assert score == 100.0
-        assert by_theme["economia"] == 100.0
-        assert by_theme["seguranca"] == 100.0
-
-    def test_no_answerable_questions_returns_zero(self):
-        answers = [QuizAnswer(thesis_id=1, answer="pulou", weight=1)]
-        positions = {1: _pos(1, "economia", "concordo")}
-        score, by_theme = _score_candidate(answers, positions)
-        assert score == 0.0
-        assert by_theme == {}
+def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
+    """Payload mínimo válido (5 respostas não-skip) a partir do seed de teste."""
+    ids = [thesis_ids[f"Tese {i}"] for i in range(1, 6)]
+    return [{"thesis_id": tid, "answer": "agree", "weight": 1} for tid in ids]
 
 
 class TestEndpointQuestions:
@@ -132,64 +37,88 @@ class TestEndpointQuestions:
 
     def test_limit_respected(self, client):
         r = client.get("/api/v1/quiz/questions?limit=2")
-        data = r.json()
-        assert len(data["theses"]) <= 2
+        assert len(r.json()["theses"]) <= 2
 
     def test_theses_have_coverage(self, client):
         r = client.get("/api/v1/quiz/questions")
         for t in r.json()["theses"]:
-            assert "coverage" in t
             assert 0 <= t["coverage"] <= 100
 
 
 class TestEndpointSubmit:
     def test_returns_ranked_results(self, client, thesis_ids):
-        t1 = thesis_ids["Tese 1"]
         r = client.post(
             "/api/v1/quiz/submit",
-            json={"answers": [{"thesis_id": t1, "answer": "concordo", "weight": 1}]},
+            json={"answers": _agree5(thesis_ids)},
         )
         assert r.status_code == 200
         results = r.json()["results"]
         assert len(results) == 3
 
     def test_results_ordered_by_score_desc(self, client, thesis_ids):
-        t1 = thesis_ids["Tese 1"]
-        t2 = thesis_ids["Tese 2"]
         r = client.post(
             "/api/v1/quiz/submit",
-            json={"answers": [
-                {"thesis_id": t1, "answer": "concordo", "weight": 1},
-                {"thesis_id": t2, "answer": "concordo", "weight": 1},
-            ]},
+            json={"answers": _agree5(thesis_ids)},
         )
         scores = [res["score_percent"] for res in r.json()["results"]]
         assert scores == sorted(scores, reverse=True)
 
-    def test_matches_present(self, client, thesis_ids):
-        t1 = thesis_ids["Tese 1"]
+    def test_response_has_rank_field(self, client, thesis_ids):
         r = client.post(
             "/api/v1/quiz/submit",
-            json={"answers": [{"thesis_id": t1, "answer": "concordo", "weight": 1}]},
+            json={"answers": _agree5(thesis_ids)},
+        )
+        ranks = [res["rank"] for res in r.json()["results"]]
+        assert ranks[0] == 1
+        assert all(isinstance(rk, int) and rk >= 1 for rk in ranks)
+
+    def test_matches_present(self, client, thesis_ids):
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"answers": _agree5(thesis_ids)},
         )
         for result in r.json()["results"]:
             assert len(result["matches"]) > 0
 
     def test_weight_2_accepted(self, client, thesis_ids):
-        t1 = thesis_ids["Tese 1"]
-        r = client.post(
-            "/api/v1/quiz/submit",
-            json={"answers": [{"thesis_id": t1, "answer": "concordo", "weight": 2}]},
-        )
+        payload = [
+            {"thesis_id": tid, "answer": "agree", "weight": 2}
+            for tid in (thesis_ids[f"Tese {i}"] for i in range(1, 6))
+        ]
+        r = client.post("/api/v1/quiz/submit", json={"answers": payload})
         assert r.status_code == 200
 
-    def test_empty_answers_rejected(self, client):
+    def test_below_minimum_returns_422(self, client, thesis_ids):
+        payload = [
+            {"thesis_id": thesis_ids[f"Tese {i}"], "answer": "agree", "weight": 1}
+            for i in range(1, 5)
+        ]
+        r = client.post("/api/v1/quiz/submit", json={"answers": payload})
+        assert r.status_code == 422
+        detail = r.json()["detail"]
+        assert detail["code"] == "insufficient_answers"
+        assert detail["provided"] == 4
+        assert detail["required"] == 5
+
+    def test_skip_does_not_count_for_minimum(self, client, thesis_ids):
+        t = [thesis_ids[f"Tese {i}"] for i in range(1, 7)]
+        payload = [
+            {"thesis_id": t[0], "answer": "skip", "weight": 1},
+            {"thesis_id": t[1], "answer": "skip", "weight": 1},
+            *[{"thesis_id": tid, "answer": "agree", "weight": 1} for tid in t[2:6]],
+        ]
+        r = client.post("/api/v1/quiz/submit", json={"answers": payload})
+        assert r.status_code == 422
+        assert r.json()["detail"]["provided"] == 4
+
+    def test_empty_answers_rejected_by_pydantic(self, client):
         r = client.post("/api/v1/quiz/submit", json={"answers": []})
         assert r.status_code == 422
 
-    def test_invalid_answer_value_rejected(self, client):
+    def test_invalid_answer_value_rejected(self, client, thesis_ids):
+        tid = thesis_ids["Tese 1"]
         r = client.post(
             "/api/v1/quiz/submit",
-            json={"answers": [{"thesis_id": 1, "answer": "sim"}]},
+            json={"answers": [{"thesis_id": tid, "answer": "sim"}]},
         )
         assert r.status_code == 422

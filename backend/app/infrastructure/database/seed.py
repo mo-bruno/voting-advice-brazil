@@ -6,6 +6,7 @@ from pathlib import Path
 
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
 from app.infrastructure.database.models import (
     CandidateModel,
     CandidatePositionModel,
@@ -13,7 +14,6 @@ from app.infrastructure.database.models import (
     ThemeModel,
     ThesisModel,
 )
-from app.infrastructure.database.session import SessionLocal
 
 _THEME_META: dict[str, dict[str, object]] = {
     "economia":         {"name": "Economia",          "area": "economica",       "icon_slug": "chart-bar", "sort_order": 1},
@@ -32,8 +32,16 @@ _THEME_META: dict[str, dict[str, object]] = {
 
 
 def _data_dir() -> Path:
-    here = Path(__file__).parent
-    return (here / "../../../../data").resolve()
+    configured = Path(settings.data_dir)
+    base = configured if configured.is_absolute() else (Path(__file__).parent / "../../../" / configured)
+    resolved = base.resolve()
+    if not resolved.is_dir():
+        raise FileNotFoundError(
+            f"Diretorio de dados nao encontrado: {resolved} "
+            f"(settings.data_dir={settings.data_dir}). "
+            f"Configure DATA_DIR no .env ou ajuste o layout do repo."
+        )
+    return resolved
 
 
 def seed(db: Session) -> None:
@@ -156,6 +164,8 @@ def _seed_theses_and_positions(
 
 
 def main() -> None:
+    from app.infrastructure.database.session import SessionLocal
+
     with SessionLocal() as db:
         seed(db)
         print(

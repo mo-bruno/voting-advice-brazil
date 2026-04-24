@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.cache import cache_get, cache_set
 from app.api.deps import get_candidate_repo, get_position_repo, get_thesis_repo
@@ -11,7 +11,11 @@ from app.api.schemas.quiz import (
     ThesisOut,
 )
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
-from app.core.use_cases.submit_quiz import QuizAnswer, submit_quiz
+from app.core.use_cases.submit_quiz import (
+    InsufficientAnswersError,
+    QuizAnswer,
+    submit_quiz,
+)
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
     SqlPositionRepository,
@@ -52,7 +56,11 @@ def questions(
     return response
 
 
-@router.post("/submit", response_model=SubmitQuizResponse, summary="Calcula ranking de candidatos")
+@router.post(
+    "/submit",
+    response_model=SubmitQuizResponse,
+    summary="Calcula ranking de candidatos",
+)
 def submit(
     body: SubmitQuizIn,
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
@@ -63,7 +71,19 @@ def submit(
         QuizAnswer(thesis_id=a.thesis_id, answer=a.answer, weight=a.weight)
         for a in body.answers
     ]
-    results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
+    try:
+        results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
+    except InsufficientAnswersError as err:
+        raise HTTPException(
+            status_code=422,
+            detail={
+                "code": "insufficient_answers",
+                "message": str(err),
+                "provided": err.provided,
+                "required": err.required,
+            },
+        ) from err
+
     return SubmitQuizResponse(
         results=[
             CandidateResultOut(
@@ -73,6 +93,7 @@ def submit(
                 party_logo_url=r.party_logo_url,
                 score_percent=r.score_percent,
                 score_by_theme=r.score_by_theme,
+                rank=r.rank,
                 matches=[
                     ThesisMatchOut(
                         thesis_id=m.thesis_id,

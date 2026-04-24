@@ -155,7 +155,9 @@ class QuizResponseModel(Base):
     weight: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
-    updated_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
 
     device: Mapped["DeviceModel"] = relationship(back_populates="responses")
 

@@ -83,6 +83,7 @@ class SqlThesisRepository(ThesisRepository):
         )
         if themes:
             stmt = stmt.join(ThemeModel).where(ThemeModel.slug.in_(themes))
+        stmt = stmt.order_by(func.random()).limit(limit)
         rows = self._db.execute(stmt).scalars().all()
         return [_to_thesis(r, total_candidates) for r in rows]
 
