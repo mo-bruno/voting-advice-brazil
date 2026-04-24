@@ -10,7 +10,9 @@ import unicodedata
 from collections.abc import Iterable
 from dataclasses import dataclass
 from enum import Enum
-from typing import Final
+from typing import Final, Generic, TypeVar
+
+TId = TypeVar("TId")
 
 
 class Stance(str, Enum):
@@ -53,8 +55,8 @@ class ScoreBreakdown:
 
 
 @dataclass(frozen=True, slots=True)
-class RankedCandidate:
-    candidate_id: str
+class RankedCandidate(Generic[TId]):
+    candidate_id: TId
     name: str
     score: ScoreBreakdown
     rank: int
@@ -141,7 +143,7 @@ def _normalize_name(name: str) -> str:
     return without_marks.casefold()
 
 
-def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple[float, int, int, str]:
+def _sort_key(item: tuple[TId, str, ScoreBreakdown]) -> tuple[float, int, int, str]:
     _cid, name, b = item
     return (
         -b.score_percent,
@@ -151,22 +153,22 @@ def _sort_key(item: tuple[str, str, ScoreBreakdown]) -> tuple[float, int, int, s
     )
 
 
-def _tie_key(item: tuple[str, str, ScoreBreakdown]) -> tuple[float, int, int]:
+def _tie_key(item: tuple[TId, str, ScoreBreakdown]) -> tuple[float, int, int]:
     """Chave de empate real (sem o nome) para atribuição de rank olímpico."""
     _cid, _name, b = item
     return (b.score_percent, b.exact_matches, b.total_mismatches)
 
 
 def rank(
-    scored: Iterable[tuple[str, str, ScoreBreakdown]],
-) -> list[RankedCandidate]:
+    scored: Iterable[tuple[TId, str, ScoreBreakdown]],
+) -> list[RankedCandidate[TId]]:
     """Ordena candidatos pelos 4 critérios do spec e atribui rank olímpico.
 
     Critérios (cascata): score_percent desc → exact_matches desc →
     total_mismatches asc → nome asc (normalizado).
     """
     items = sorted(scored, key=_sort_key)
-    out: list[RankedCandidate] = []
+    out: list[RankedCandidate[TId]] = []
     prev_tie_key: tuple[float, int, int] | None = None
     prev_rank = 0
     for idx, (cid, name, sb) in enumerate(items, start=1):

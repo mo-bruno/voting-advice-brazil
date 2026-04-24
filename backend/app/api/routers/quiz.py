@@ -3,12 +3,12 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from app.api.cache import cache_get, cache_set
 from app.api.deps import get_candidate_repo, get_position_repo, get_thesis_repo
 from app.api.schemas.quiz import (
+    CandidateResultOut,
     QuestionsResponse,
     SubmitQuizIn,
     SubmitQuizResponse,
     ThesisMatchOut,
     ThesisOut,
-    CandidateResultOut,
 )
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
 from app.core.use_cases.submit_quiz import (
@@ -89,8 +89,8 @@ def submit(
             CandidateResultOut(
                 candidate_id=r.candidate_id,
                 name=r.name,
-                party=r.party,
-                party_logo=r.party_logo,
+                party_acronym=r.party_acronym,
+                party_logo_url=r.party_logo_url,
                 score_percent=r.score_percent,
                 score_by_theme=r.score_by_theme,
                 rank=r.rank,

@@ -11,17 +11,18 @@ from slowapi.util import get_remote_address
 
 from app.api.routers import candidates, health, quiz, themes
 from app.core.config import settings
-from app.infrastructure.database.seed import seed
-from app.infrastructure.database.session import SessionLocal, create_tables
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    create_tables()
-    with SessionLocal() as db:
-        seed(db)
+    if settings.app_env == "dev":
+        from app.infrastructure.database.seed import seed
+        from app.infrastructure.database.session import SessionLocal
+
+        with SessionLocal() as db:
+            seed(db)
     yield
 
 
