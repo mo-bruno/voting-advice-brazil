@@ -21,11 +21,11 @@ def test_settings_defaults(monkeypatch):
 
 def test_settings_reads_env(monkeypatch):
     monkeypatch.setenv("APP_ENV", "prod")
-    monkeypatch.setenv("DATABASE_URL", "postgresql://x:y@z/d")
+    monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://x:y@z/d")
     monkeypatch.setenv("GROQ_API_KEY", "gsk_test")
     s = Settings()
     assert s.app_env == "prod"
-    assert s.database_url == "postgresql://x:y@z/d"
+    assert s.database_url == "postgresql+psycopg://x:y@z/d"
     assert s.groq_api_key == "gsk_test"
 
 

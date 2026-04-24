@@ -33,7 +33,8 @@ _THEME_META: dict[str, dict[str, object]] = {
 
 def _data_dir() -> Path:
     configured = Path(settings.data_dir)
-    base = configured if configured.is_absolute() else (Path(__file__).parent / "../../../" / configured)
+    backend_dir = Path(__file__).resolve().parents[3]
+    base = configured if configured.is_absolute() else (backend_dir / configured)
     resolved = base.resolve()
     if not resolved.is_dir():
         raise FileNotFoundError(

@@ -48,7 +48,7 @@ uv run alembic downgrade -1
 | Variável | dev | staging/prod |
 |---|---|---|
 | `APP_ENV` | `dev` | `staging` ou `prod` |
-| `DATABASE_URL` | `sqlite:///./voting_advice.db` | `postgresql://...` |
+| `DATABASE_URL` | `sqlite:///./voting_advice.db` | `postgresql+psycopg://...` |
 | `GROQ_API_KEY` | opcional | obrigatório |
 | `MQTT_BROKER_URL` | default HiveMQ | configurável |
 
