@@ -72,6 +72,7 @@ class CandidateResult:
     name: str
     party: str
     party_logo: str | None
+    foto_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     rank: int
@@ -191,6 +192,7 @@ def submit_quiz(
                 name=candidate.name,
                 party=candidate.party,
                 party_logo=candidate.party_logo,
+                foto_url=candidate.foto_url,
                 score_percent=rc.score.score_percent,
                 score_by_theme=data["by_theme"],
                 rank=rc.rank,

@@ -1,0 +1,156 @@
+import 'package:flutter/material.dart';
+
+import '../modelos/pergunta.dart';
+import '../modelos/resposta_quiz.dart';
+import '../widgets/quiz/conteudo_revisao_quiz.dart';
+import '../widgets/quiz/rodape_revisao_quiz.dart';
+import '../widgets/topo_padrao.dart';
+import 'tela_escolha_partidos.dart';
+
+class TelaRevisaoRespostas extends StatefulWidget {
+  final List<Pergunta> perguntas;
+  final Map<int, RespostaQuiz> respostas;
+  final Set<int> pesosDuplos;
+  final ValueChanged<Set<int>> onPesosAlterados;
+
+  const TelaRevisaoRespostas({
+    super.key,
+    required this.perguntas,
+    required this.respostas,
+    required this.pesosDuplos,
+    required this.onPesosAlterados,
+  });
+
+  @override
+  State<TelaRevisaoRespostas> createState() => _TelaRevisaoRespostasState();
+}
+
+class _TelaRevisaoRespostasState extends State<TelaRevisaoRespostas> {
+  late final Set<int> _pesosDuplos;
+
+  int? _idPerguntaEmEdicao;
+
+  @override
+  void initState() {
+    super.initState();
+    _pesosDuplos = {...widget.pesosDuplos};
+  }
+
+  List<Pergunta> get _perguntasRespondidas {
+    return widget.perguntas.where((pergunta) {
+      return widget.respostas.containsKey(pergunta.id);
+    }).toList();
+  }
+
+  void _alternarPeso(int idPergunta) {
+    setState(() {
+      if (_pesosDuplos.contains(idPergunta)) {
+        _pesosDuplos.remove(idPergunta);
+      } else {
+        _pesosDuplos.add(idPergunta);
+      }
+    });
+
+    widget.onPesosAlterados(_pesosDuplos);
+  }
+
+  void _alternarEdicao(Pergunta pergunta) {
+    setState(() {
+      if (_idPerguntaEmEdicao == pergunta.id) {
+        _idPerguntaEmEdicao = null;
+      } else {
+        _idPerguntaEmEdicao = pergunta.id;
+      }
+    });
+  }
+
+  void _alterarResposta(Pergunta pergunta, String answer) {
+    setState(() {
+      widget.respostas[pergunta.id] = RespostaQuiz(
+        thesisId: pergunta.id,
+        answer: answer,
+        weight: 1,
+      );
+
+      _idPerguntaEmEdicao = null;
+    });
+
+    widget.onPesosAlterados(_pesosDuplos);
+  }
+
+  void _continuarParaPartidos() {
+    final respostasComPeso = widget.respostas.values.map((resposta) {
+      return RespostaQuiz(
+        thesisId: resposta.thesisId,
+        answer: resposta.answer,
+        weight: _pesosDuplos.contains(resposta.thesisId) ? 2 : 1,
+      );
+    }).toList();
+
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (_, __, ___) => TelaEscolhaPartidos(
+          respostas: respostasComPeso,
+        ),
+        transitionDuration: Duration.zero,
+        reverseTransitionDuration: Duration.zero,
+      ),
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final perguntasRespondidas = _perguntasRespondidas;
+
+    return Scaffold(
+      backgroundColor: const Color(0xFF050505),
+      body: SafeArea(
+        child: Column(
+          children: [
+            const TopoPadrao(
+              mostrarVoltar: true,
+              titulo: 'Peso dos temas',
+            ),
+            Expanded(
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  final telaGrande = constraints.maxWidth > 900;
+                  final larguraMaxima = telaGrande ? 760.0 : 430.0;
+
+                  return Center(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(maxWidth: larguraMaxima),
+                      child: SingleChildScrollView(
+                        padding: EdgeInsets.fromLTRB(
+                          telaGrande ? 40 : 24,
+                          28,
+                          telaGrande ? 40 : 24,
+                          28,
+                        ),
+                        child: ConteudoRevisaoQuiz(
+                          perguntas: perguntasRespondidas,
+                          respostas: widget.respostas,
+                          pesosDuplos: _pesosDuplos,
+                          idPerguntaEmEdicao: _idPerguntaEmEdicao,
+                          onAlternarPeso: _alternarPeso,
+                          onAlternarEdicao: _alternarEdicao,
+                          onAlterarResposta: _alterarResposta,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            RodapeRevisaoQuiz(
+              enviando: false,
+              textoContinuar: 'ESCOLHER PARTIDOS',
+              onContinuar: _continuarParaPartidos,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

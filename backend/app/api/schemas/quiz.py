@@ -54,6 +54,7 @@ class CandidateResultOut(BaseModel):
     name: str
     party: str
     party_logo: str | None
+    foto_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     rank: int
