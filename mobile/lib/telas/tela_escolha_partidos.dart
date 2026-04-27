@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/layout/app_scaffold.dart';
+import '../core/theme/app_theme.dart';
 import '../modelos/partido.dart';
 import '../modelos/resposta_quiz.dart';
 import '../routes/app_routes.dart';
@@ -7,7 +9,6 @@ import '../services/quiz_service.dart';
 import '../widgets/partidos/conteudo_escolha_partidos.dart';
 import '../widgets/partidos/dialog_detalhe_partido.dart';
 import '../widgets/partidos/rodape_escolha_partidos.dart';
-import '../widgets/topo_padrao.dart';
 
 class TelaEscolhaPartidos extends StatefulWidget {
   final List<RespostaQuiz> respostas;
@@ -47,11 +48,11 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
         _selecionados.addAll(partidos.map((partido) => partido.sigla));
         _carregando = false;
       });
-    } catch (e) {
+    } catch (_) {
       if (!mounted) return;
 
       setState(() {
-        _erro = e.toString();
+        _erro = QuizService.mensagemErroPadrao;
         _carregando = false;
       });
     }
@@ -82,7 +83,7 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
   void _mostrarDetalhe(Partido partido) {
     showDialog<void>(
       context: context,
-      barrierColor: Colors.black.withValues(alpha: 0.72),
+      barrierColor: AppColors.scrim.withValues(alpha: 0.72),
       builder: (context) => DialogDetalhePartido(partido: partido),
     );
   }
@@ -115,7 +116,7 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
       setState(() {
         _enviando = false;
       });
-    } catch (e) {
+    } catch (_) {
       if (!mounted) return;
 
       setState(() {
@@ -123,8 +124,8 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
       });
 
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('Erro ao calcular resultado: $e'),
+        const SnackBar(
+          content: Text(QuizService.mensagemErroPadrao),
         ),
       );
     }
@@ -134,47 +135,32 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
   Widget build(BuildContext context) {
     final podeContinuar = _selecionados.isNotEmpty && !_enviando;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const TopoPadrao(
-              mostrarVoltar: true,
-              titulo: 'Escolha os partidos',
-            ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final telaGrande = constraints.maxWidth > 900;
-                  final larguraMaxima = telaGrande ? 760.0 : 430.0;
-
-                  return Center(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: larguraMaxima),
-                      child: ConteudoEscolhaPartidos(
-                        carregando: _carregando,
-                        erro: _erro,
-                        partidos: _partidos,
-                        selecionados: _selecionados,
-                        telaGrande: telaGrande,
-                        onAlternarTodos: _alternarTodos,
-                        onAlternarPartido: _alternarPartido,
-                        onMostrarDetalhe: _mostrarDetalhe,
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            RodapeEscolhaPartidos(
-              enviando: _enviando,
-              podeContinuar: podeContinuar,
-              selecionados: _selecionados.length,
-              total: _partidos.length,
-              onContinuar: _continuar,
-            ),
-          ],
-        ),
+    return AppScaffold(
+      mostrarVoltar: true,
+      titulo: 'Escolha os partidos',
+      larguraMaxima: 430,
+      larguraMaximaTelaGrande: 760,
+      scrollable: false,
+      padding: EdgeInsets.zero,
+      paddingTelaGrande: EdgeInsets.zero,
+      bodyBuilder: (context, telaGrande) {
+        return ConteudoEscolhaPartidos(
+          carregando: _carregando,
+          erro: _erro,
+          partidos: _partidos,
+          selecionados: _selecionados,
+          telaGrande: telaGrande,
+          onAlternarTodos: _alternarTodos,
+          onAlternarPartido: _alternarPartido,
+          onMostrarDetalhe: _mostrarDetalhe,
+        );
+      },
+      footer: RodapeEscolhaPartidos(
+        enviando: _enviando,
+        podeContinuar: podeContinuar,
+        selecionados: _selecionados.length,
+        total: _partidos.length,
+        onContinuar: _continuar,
       ),
     );
   }

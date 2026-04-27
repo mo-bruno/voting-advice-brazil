@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import '../core/layout/app_scaffold.dart';
+import '../core/theme/app_theme.dart';
 import '../modelos/resultado_quiz.dart';
-import '../widgets/quiz/botao_fixo_inferior.dart';
 import '../widgets/quiz/card_resultado_quiz.dart';
-import '../widgets/topo_padrao.dart';
 
 class TelaResultadoQuiz extends StatelessWidget {
   final List<ResultadoQuiz> resultados;
@@ -14,64 +14,16 @@ class TelaResultadoQuiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xFF050505),
-      body: SafeArea(
-        child: Column(
-          children: [
-            const TopoPadrao(
-              mostrarVoltar: true,
-              titulo: 'Resultado',
-            ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final telaGrande = constraints.maxWidth > 900;
-                  final larguraMaxima = telaGrande ? 760.0 : 430.0;
-
-                  return Center(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: larguraMaxima),
-                      child: SingleChildScrollView(
-                        padding: EdgeInsets.fromLTRB(
-                          telaGrande ? 40 : 24,
-                          28,
-                          telaGrande ? 40 : 24,
-                          28,
-                        ),
-                        child: _ConteudoResultado(resultados: resultados),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.fromLTRB(24, 14, 24, 18),
-              decoration: const BoxDecoration(
-                color: Color(0xFF050505),
-                border: Border(
-                  top: BorderSide(
-                    color: Color(0xFF242424),
-                    width: 1,
-                  ),
-                ),
-              ),
-              child: Center(
-                child: ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 760),
-                  child: const BotaoFixoInferior(
-                    texto: 'IR PARA O SITE',
-                    preenchido: true,
-                    onPressed: null,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
+    return AppScaffold(
+      mostrarVoltar: true,
+      titulo: 'Resultado',
+      larguraMaxima: 430,
+      larguraMaximaTelaGrande: 760,
+      padding: const EdgeInsets.fromLTRB(24, 28, 24, 28),
+      paddingTelaGrande: const EdgeInsets.fromLTRB(40, 28, 40, 28),
+      bodyBuilder: (context, telaGrande) {
+        return _ConteudoResultado(resultados: resultados);
+      },
     );
   }
 }
@@ -99,7 +51,7 @@ class _ConteudoResultado extends StatelessWidget {
         Text(
           'Maior compatibilidade: ${principal.name}',
           style: const TextStyle(
-            color: Colors.white70,
+            color: AppColors.textSecondary,
             fontSize: 16,
             height: 1.5,
           ),
@@ -125,7 +77,7 @@ class _CabecalhoResultado extends StatelessWidget {
           child: Text(
             'SEU\nRESULTADO',
             style: TextStyle(
-              color: Colors.white,
+              color: AppColors.textPrimary,
               fontSize: 36,
               height: 1.05,
               fontWeight: FontWeight.w900,
@@ -137,7 +89,7 @@ class _CabecalhoResultado extends StatelessWidget {
           child: Text(
             'PASSO 4 DE 4',
             style: TextStyle(
-              color: Colors.white54,
+              color: AppColors.textMuted,
               fontSize: 13,
               fontWeight: FontWeight.w800,
               letterSpacing: 1.4,
@@ -157,7 +109,7 @@ class _ResultadoVazio extends StatelessWidget {
     return const Text(
       'Não foi possível montar um resultado com as respostas enviadas.',
       style: TextStyle(
-        color: Colors.white70,
+        color: AppColors.textSecondary,
         fontSize: 16,
         height: 1.5,
       ),

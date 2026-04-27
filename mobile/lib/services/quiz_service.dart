@@ -11,6 +11,10 @@ import 'api_media_resolver.dart';
 import 'partido_catalogo.dart';
 
 class QuizService {
+  static const String mensagemErroPadrao =
+      'Nao foi possivel carregar os dados. Verifique sua conexao e tente novamente.';
+  static const Duration _timeout = Duration(seconds: 10);
+
   static const String baseUrl = String.fromEnvironment(
     'API_BASE_URL',
     defaultValue: 'http://localhost:8000/api/v1',
@@ -32,7 +36,10 @@ class QuizService {
     final data = await _getJson(
       '$baseUrl/quiz/questions?limit=${QuizConfig.totalPerguntas}',
     );
-    final List lista = data['theses'];
+    final lista = data['theses'];
+    if (lista is! List) {
+      throw Exception(mensagemErroPadrao);
+    }
 
     return lista.map((item) => Pergunta.fromJson(item)).toList();
   }
@@ -45,7 +52,10 @@ class QuizService {
     while (temProxima) {
       final data =
           await _getJson('$baseUrl/candidates?page=$pagina&page_size=50');
-      final List lista = data['candidates'];
+      final lista = data['candidates'];
+      if (lista is! List) {
+        throw Exception(mensagemErroPadrao);
+      }
 
       for (final item in lista) {
         final sigla = (item['party'] ?? '').toString().trim();
@@ -78,7 +88,10 @@ class QuizService {
         'answers': respostas.map((resposta) => resposta.toJson()).toList(),
       },
     );
-    final List lista = data['results'];
+    final lista = data['results'];
+    if (lista is! List) {
+      throw Exception(mensagemErroPadrao);
+    }
 
     final resultados = lista.map((item) => ResultadoQuiz.fromJson(item)).where(
       (resultado) {
@@ -98,29 +111,44 @@ class QuizService {
   }
 
   Future<Map<String, dynamic>> _getJson(String url) async {
-    final response = await http.get(Uri.parse(url));
+    try {
+      final response = await http.get(Uri.parse(url)).timeout(_timeout);
 
-    if (response.statusCode != 200) {
-      throw Exception('Erro ao buscar dados: ${response.body}');
+      return _decodeResponse(response);
+    } catch (_) {
+      throw Exception(mensagemErroPadrao);
     }
-
-    return jsonDecode(response.body);
   }
 
   Future<Map<String, dynamic>> _postJson(
     String url,
     Map<String, dynamic> body,
   ) async {
-    final response = await http.post(
-      Uri.parse(url),
-      headers: {'Content-Type': 'application/json'},
-      body: jsonEncode(body),
-    );
+    try {
+      final response = await http
+          .post(
+            Uri.parse(url),
+            headers: {'Content-Type': 'application/json'},
+            body: jsonEncode(body),
+          )
+          .timeout(_timeout);
 
-    if (response.statusCode != 200) {
-      throw Exception('Erro ao enviar dados: ${response.body}');
+      return _decodeResponse(response);
+    } catch (_) {
+      throw Exception(mensagemErroPadrao);
+    }
+  }
+
+  Map<String, dynamic> _decodeResponse(http.Response response) {
+    if (response.statusCode < 200 || response.statusCode >= 300) {
+      throw Exception(mensagemErroPadrao);
     }
 
-    return jsonDecode(response.body);
+    final data = jsonDecode(response.body);
+    if (data is! Map<String, dynamic>) {
+      throw Exception(mensagemErroPadrao);
+    }
+
+    return data;
   }
 }

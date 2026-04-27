@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import '../core/layout/app_scaffold.dart';
 import '../modelos/pergunta.dart';
 import '../modelos/resposta_quiz.dart';
 import '../routes/app_routes.dart';
 import '../widgets/quiz/conteudo_revisao_quiz.dart';
 import '../widgets/quiz/rodape_revisao_quiz.dart';
-import '../widgets/topo_padrao.dart';
 
 class TelaRevisaoRespostas extends StatefulWidget {
   final List<Pergunta> perguntas;
@@ -95,53 +95,28 @@ class _TelaRevisaoRespostasState extends State<TelaRevisaoRespostas> {
   Widget build(BuildContext context) {
     final perguntasRespondidas = _perguntasRespondidas;
 
-    return Scaffold(
-      backgroundColor: const Color(0xFF050505),
-      body: SafeArea(
-        child: Column(
-          children: [
-            const TopoPadrao(
-              mostrarVoltar: true,
-              titulo: 'Peso dos temas',
-            ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final telaGrande = constraints.maxWidth > 900;
-                  final larguraMaxima = telaGrande ? 760.0 : 430.0;
-
-                  return Center(
-                    child: ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: larguraMaxima),
-                      child: SingleChildScrollView(
-                        padding: EdgeInsets.fromLTRB(
-                          telaGrande ? 40 : 24,
-                          28,
-                          telaGrande ? 40 : 24,
-                          28,
-                        ),
-                        child: ConteudoRevisaoQuiz(
-                          perguntas: perguntasRespondidas,
-                          respostas: widget.respostas,
-                          pesosDuplos: _pesosDuplos,
-                          idPerguntaEmEdicao: _idPerguntaEmEdicao,
-                          onAlternarPeso: _alternarPeso,
-                          onAlternarEdicao: _alternarEdicao,
-                          onAlterarResposta: _alterarResposta,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            RodapeRevisaoQuiz(
-              enviando: false,
-              textoContinuar: 'ESCOLHER PARTIDOS',
-              onContinuar: _continuarParaPartidos,
-            ),
-          ],
-        ),
+    return AppScaffold(
+      mostrarVoltar: true,
+      titulo: 'Peso dos temas',
+      larguraMaxima: 430,
+      larguraMaximaTelaGrande: 760,
+      padding: const EdgeInsets.fromLTRB(24, 28, 24, 28),
+      paddingTelaGrande: const EdgeInsets.fromLTRB(40, 28, 40, 28),
+      bodyBuilder: (context, telaGrande) {
+        return ConteudoRevisaoQuiz(
+          perguntas: perguntasRespondidas,
+          respostas: widget.respostas,
+          pesosDuplos: _pesosDuplos,
+          idPerguntaEmEdicao: _idPerguntaEmEdicao,
+          onAlternarPeso: _alternarPeso,
+          onAlternarEdicao: _alternarEdicao,
+          onAlterarResposta: _alterarResposta,
+        );
+      },
+      footer: RodapeRevisaoQuiz(
+        enviando: false,
+        textoContinuar: 'ESCOLHER PARTIDOS',
+        onContinuar: _continuarParaPartidos,
       ),
     );
   }

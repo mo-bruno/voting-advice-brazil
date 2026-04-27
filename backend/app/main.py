@@ -52,9 +52,13 @@ app.add_middleware(
 
 app.add_middleware(SlowAPIMiddleware)
 
-STATIC_DIR = Path(__file__).resolve().parents[2] / "data"
-if STATIC_DIR.exists():
-    app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
+STATIC_LOGOS_DIR = Path(__file__).resolve().parents[2] / "data" / "logos"
+if STATIC_LOGOS_DIR.exists():
+    app.mount(
+        "/static/logos",
+        StaticFiles(directory=STATIC_LOGOS_DIR),
+        name="static_logos",
+    )
 
 PREFIX = "/api/v1"
 app.include_router(quiz.router, prefix=PREFIX)

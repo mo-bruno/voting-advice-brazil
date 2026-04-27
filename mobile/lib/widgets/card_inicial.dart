@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../core/theme/app_theme.dart';
 import '../routes/app_routes.dart';
 import 'botao_contorno.dart';
 
@@ -20,9 +21,9 @@ class CardInicial extends StatelessWidget {
             vertical: telaGrande ? 36 : 28,
           ),
           decoration: BoxDecoration(
-            color: const Color(0xFF0D0D0D),
+            color: AppColors.surface,
             borderRadius: BorderRadius.circular(24),
-            border: Border.all(color: Colors.white24),
+            border: Border.all(color: AppColors.borderStrong),
             boxShadow: const [
               BoxShadow(
                 color: Colors.black54,
@@ -40,7 +41,7 @@ class CardInicial extends StatelessWidget {
                 style: TextStyle(
                   fontSize: telaGrande ? 32 : 24,
                   fontWeight: FontWeight.w700,
-                  color: Colors.white,
+                  color: AppColors.textPrimary,
                   height: 1.3,
                 ),
               ),
@@ -51,7 +52,7 @@ class CardInicial extends StatelessWidget {
                 style: TextStyle(
                   fontSize: telaGrande ? 16 : 15,
                   height: 1.6,
-                  color: Colors.white70,
+                  color: AppColors.textSecondary,
                 ),
               ),
               const SizedBox(height: 18),
@@ -61,7 +62,7 @@ class CardInicial extends StatelessWidget {
                 style: TextStyle(
                   fontSize: telaGrande ? 16 : 15,
                   height: 1.5,
-                  color: Colors.white,
+                  color: AppColors.textPrimary,
                 ),
               ),
               const SizedBox(height: 28),
@@ -70,11 +71,6 @@ class CardInicial extends StatelessWidget {
                 onPressed: () {
                   Navigator.pushNamed(context, AppRoutes.tutorial);
                 },
-              ),
-              const SizedBox(height: 12),
-              const BotaoContorno(
-                texto: 'Não quero',
-                onPressed: null,
               ),
             ],
           ),

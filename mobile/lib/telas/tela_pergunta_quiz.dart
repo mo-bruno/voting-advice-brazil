@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+
+import '../core/layout/app_scaffold.dart';
+import '../core/theme/app_theme.dart';
 import '../modelos/pergunta.dart';
 import '../modelos/resposta_quiz.dart';
 import '../routes/app_routes.dart';
 import '../services/quiz_service.dart';
-import '../widgets/topo_padrao.dart';
 
 class TelaPerguntaQuiz extends StatefulWidget {
   const TelaPerguntaQuiz({super.key});
@@ -33,13 +35,17 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
     try {
       final lista = await service.buscarPerguntas();
 
+      if (!mounted) return;
+
       setState(() {
         perguntas = lista;
         carregando = false;
       });
-    } catch (e) {
+    } catch (_) {
+      if (!mounted) return;
+
       setState(() {
-        erro = e.toString();
+        erro = QuizService.mensagemErroPadrao;
         carregando = false;
       });
     }
@@ -89,37 +95,30 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
   @override
   Widget build(BuildContext context) {
     if (carregando) {
-      return const Scaffold(
+      return const AppScaffold.plain(
         body: Center(
-          child: CircularProgressIndicator(color: Colors.white),
+          child: CircularProgressIndicator(color: AppColors.textPrimary),
         ),
       );
     }
 
     if (erro != null) {
-      return Scaffold(
-        body: SafeArea(
-          child: Column(
-            children: [
-              TopoPadrao(
-                mostrarVoltar: true,
-                onVoltar: voltarTelaAnterior,
+      return AppScaffold(
+        mostrarVoltar: true,
+        onVoltar: voltarTelaAnterior,
+        scrollable: false,
+        bodyBuilder: (context, telaGrande) {
+          return Center(
+            child: Padding(
+              padding: const EdgeInsets.all(24),
+              child: Text(
+                erro!,
+                textAlign: TextAlign.center,
+                style: const TextStyle(color: AppColors.textSecondary),
               ),
-              Expanded(
-                child: Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(24),
-                    child: Text(
-                      erro!,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(color: Colors.white70),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
+            ),
+          );
+        },
       );
     }
 
@@ -127,141 +126,158 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
     final numeroPergunta = indiceAtual + 1;
     final totalPerguntas = perguntas.length;
 
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
+    return AppScaffold(
+      mostrarVoltar: true,
+      onVoltar: voltarTelaAnterior,
+      larguraMaxima: 380,
+      larguraMaximaTelaGrande: 560,
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      paddingTelaGrande: const EdgeInsets.symmetric(
+        horizontal: 40,
+        vertical: 20,
+      ),
+      bodyBuilder: (context, telaGrande) {
+        return Column(
           children: [
-            TopoPadrao(
-              mostrarVoltar: true,
-              onVoltar: voltarTelaAnterior,
-            ),
-            Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  final telaGrande = constraints.maxWidth > 900;
-                  final larguraMaxima = telaGrande ? 560.0 : 380.0;
-
-                  return Center(
-                    child: SingleChildScrollView(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: telaGrande ? 40 : 24,
-                        vertical: 20,
-                      ),
-                      child: ConstrainedBox(
-                        constraints: BoxConstraints(maxWidth: larguraMaxima),
-                        child: Column(
-                          children: [
-                            if (indiceAtual > 0)
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: TextButton.icon(
-                                  onPressed: voltarPergunta,
-                                  icon: const Icon(
-                                    Icons.arrow_back_rounded,
-                                    color: Colors.white70,
-                                    size: 18,
-                                  ),
-                                  label: const Text(
-                                    'Voltar pergunta',
-                                    style: TextStyle(
-                                      color: Colors.white70,
-                                      fontWeight: FontWeight.w700,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            const SizedBox(height: 6),
-                            Container(
-                              width: double.infinity,
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: 24,
-                                vertical: 28,
-                              ),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFF0D0D0D),
-                                borderRadius: BorderRadius.circular(26),
-                                border: Border.all(color: Colors.white24),
-                              ),
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 14,
-                                      vertical: 6,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: const Color(0xFF1A1A1A),
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(color: Colors.white12),
-                                    ),
-                                    child: Text(
-                                      '$numeroPergunta/$totalPerguntas',
-                                      style: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w700,
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 28),
-                                  SizedBox(
-                                    height: telaGrande ? 220 : 180,
-                                    child: Center(
-                                      child: Text(
-                                        pergunta.texto,
-                                        textAlign: TextAlign.center,
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: telaGrande ? 24 : 20,
-                                          height: 1.45,
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                  const SizedBox(height: 20),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      _BotaoAcaoQuiz(
-                                        icone: Icons.close_rounded,
-                                        onTap: () => responder(
-                                          RespostaQuizValor.discordo,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 18),
-                                      _BotaoAcaoQuiz(
-                                        icone: Icons.remove_rounded,
-                                        onTap: () => responder(
-                                          RespostaQuizValor.neutro,
-                                        ),
-                                      ),
-                                      const SizedBox(width: 18),
-                                      _BotaoAcaoQuiz(
-                                        icone: Icons.check_rounded,
-                                        onTap: () => responder(
-                                          RespostaQuizValor.concordo,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const SizedBox(height: 20),
-                            _IndicadorProgressoLinear(
-                              total: totalPerguntas,
-                              atual: indiceAtual,
-                            ),
-                          ],
-                        ),
-                      ),
+            if (indiceAtual > 0)
+              Align(
+                alignment: Alignment.centerLeft,
+                child: TextButton.icon(
+                  onPressed: voltarPergunta,
+                  icon: const Icon(
+                    Icons.arrow_back_rounded,
+                    color: AppColors.textSecondary,
+                    size: 18,
+                  ),
+                  label: const Text(
+                    'Voltar pergunta',
+                    style: TextStyle(
+                      color: AppColors.textSecondary,
+                      fontWeight: FontWeight.w700,
                     ),
-                  );
-                },
+                  ),
+                ),
               ),
+            const SizedBox(height: 6),
+            _CartaoPergunta(
+              pergunta: pergunta,
+              numeroPergunta: numeroPergunta,
+              totalPerguntas: totalPerguntas,
+              telaGrande: telaGrande,
+              onResponder: responder,
+            ),
+            const SizedBox(height: 20),
+            _IndicadorProgressoLinear(
+              total: totalPerguntas,
+              atual: indiceAtual,
             ),
           ],
+        );
+      },
+    );
+  }
+}
+
+class _CartaoPergunta extends StatelessWidget {
+  final Pergunta pergunta;
+  final int numeroPergunta;
+  final int totalPerguntas;
+  final bool telaGrande;
+  final ValueChanged<String> onResponder;
+
+  const _CartaoPergunta({
+    required this.pergunta,
+    required this.numeroPergunta,
+    required this.totalPerguntas,
+    required this.telaGrande,
+    required this.onResponder,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 24,
+        vertical: 28,
+      ),
+      decoration: BoxDecoration(
+        color: AppColors.surface,
+        borderRadius: BorderRadius.circular(26),
+        border: Border.all(color: AppColors.borderStrong),
+      ),
+      child: Column(
+        children: [
+          _ContadorPergunta(
+            numeroPergunta: numeroPergunta,
+            totalPerguntas: totalPerguntas,
+          ),
+          const SizedBox(height: 28),
+          SizedBox(
+            height: telaGrande ? 220 : 180,
+            child: Center(
+              child: Text(
+                pergunta.texto,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: AppColors.textPrimary,
+                  fontSize: telaGrande ? 24 : 20,
+                  height: 1.45,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              _BotaoAcaoQuiz(
+                icone: Icons.close_rounded,
+                onTap: () => onResponder(RespostaQuizValor.discordo),
+              ),
+              const SizedBox(width: 18),
+              _BotaoAcaoQuiz(
+                icone: Icons.remove_rounded,
+                onTap: () => onResponder(RespostaQuizValor.neutro),
+              ),
+              const SizedBox(width: 18),
+              _BotaoAcaoQuiz(
+                icone: Icons.check_rounded,
+                onTap: () => onResponder(RespostaQuizValor.concordo),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _ContadorPergunta extends StatelessWidget {
+  final int numeroPergunta;
+  final int totalPerguntas;
+
+  const _ContadorPergunta({
+    required this.numeroPergunta,
+    required this.totalPerguntas,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+      decoration: BoxDecoration(
+        color: AppColors.surfaceMuted,
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(color: AppColors.borderSoft),
+      ),
+      child: Text(
+        '$numeroPergunta/$totalPerguntas',
+        style: const TextStyle(
+          color: AppColors.textPrimary,
+          fontSize: 18,
+          fontWeight: FontWeight.w700,
         ),
       ),
     );
@@ -303,10 +319,14 @@ class _IndicadorProgressoLinear extends StatelessWidget {
           width: selecionado ? 18 : 10,
           height: 10,
           decoration: BoxDecoration(
-            color: selecionado ? Colors.white : Colors.transparent,
+            color: selecionado
+                ? AppColors.textPrimary
+                : AppColors.transparent,
             borderRadius: BorderRadius.circular(20),
             border: Border.all(
-              color: selecionado ? Colors.white : Colors.white38,
+              color: selecionado
+                  ? AppColors.textPrimary
+                  : AppColors.borderControl,
             ),
           ),
         );
@@ -333,13 +353,13 @@ class _BotaoAcaoQuiz extends StatelessWidget {
         width: 62,
         height: 62,
         decoration: BoxDecoration(
-          color: const Color(0xFF0F0F0F),
+          color: AppColors.surfaceAlt,
           shape: BoxShape.circle,
-          border: Border.all(color: Colors.white38),
+          border: Border.all(color: AppColors.borderControl),
         ),
         child: Icon(
           icone,
-          color: Colors.white,
+          color: AppColors.textPrimary,
           size: 30,
         ),
       ),
