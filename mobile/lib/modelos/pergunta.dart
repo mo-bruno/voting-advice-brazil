@@ -14,12 +14,15 @@ class Pergunta {
   });
 
   factory Pergunta.fromJson(Map<String, dynamic> json) {
+    final id = json['id'];
+    final coverage = json['coverage'];
+
     return Pergunta(
-      id: json['id'],
-      texto: json['text'],
-      temaId: json['theme_id'],
-      temaNome: json['theme_name'],
-      coverage: (json['coverage'] as num?)?.toDouble(),
+      id: id is num ? id.toInt() : int.parse(id.toString()),
+      texto: json['text'] as String? ?? '',
+      temaId: json['theme_id'] as String?,
+      temaNome: json['theme_name'] as String?,
+      coverage: coverage is num ? coverage.toDouble() : null,
     );
   }
 }

@@ -29,7 +29,7 @@ class ResultadoQuiz {
       name: json['name'] ?? '',
       party: json['party'] ?? '',
       partyLogo: json['party_logo'],
-      fotoUrl: json['foto_url'],
+      fotoUrl: json['photo_url'] ?? json['foto_url'],
       scorePercent: (json['score_percent'] as num).toDouble(),
       rank: json['rank'],
       matches: matches,

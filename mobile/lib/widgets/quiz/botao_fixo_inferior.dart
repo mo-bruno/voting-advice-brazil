@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class BotaoFixoInferior extends StatelessWidget {
   final String texto;
   final bool preenchido;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   const BotaoFixoInferior({
     super.key,
@@ -20,9 +20,13 @@ class BotaoFixoInferior extends StatelessWidget {
       child: OutlinedButton(
         onPressed: onPressed,
         style: OutlinedButton.styleFrom(
-          backgroundColor: preenchido ? Colors.white : Colors.transparent,
-          side: const BorderSide(
-            color: Colors.white,
+          backgroundColor: onPressed == null
+              ? const Color(0xFF1A1A1A)
+              : (preenchido ? Colors.white : Colors.transparent),
+          disabledBackgroundColor: const Color(0xFF1A1A1A),
+          disabledForegroundColor: Colors.white38,
+          side: BorderSide(
+            color: onPressed == null ? Colors.white24 : Colors.white,
             width: 1.2,
           ),
           shape: RoundedRectangleBorder(
@@ -32,7 +36,9 @@ class BotaoFixoInferior extends StatelessWidget {
         child: Text(
           texto,
           style: TextStyle(
-            color: preenchido ? Colors.black : Colors.white,
+            color: onPressed == null
+                ? Colors.white38
+                : (preenchido ? Colors.black : Colors.white),
             fontSize: 14,
             fontWeight: FontWeight.w900,
             letterSpacing: 1,

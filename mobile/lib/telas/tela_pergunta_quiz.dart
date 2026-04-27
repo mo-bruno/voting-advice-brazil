@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import '../modelos/pergunta.dart';
 import '../modelos/resposta_quiz.dart';
+import '../routes/app_routes.dart';
 import '../services/quiz_service.dart';
-import '../widgets/quiz/cartao_pergunta_quiz.dart';
-import '../widgets/quiz/indicador_progresso_quiz.dart';
 import '../widgets/topo_padrao.dart';
-import 'tela_revisao_respostas.dart';
 
 class TelaPerguntaQuiz extends StatefulWidget {
   const TelaPerguntaQuiz({super.key});
@@ -15,97 +13,82 @@ class TelaPerguntaQuiz extends StatefulWidget {
 }
 
 class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
-  final QuizService _service = QuizService();
-  final Map<int, RespostaQuiz> _respostas = {};
-  final Set<int> _pesosDuplos = {};
+  final QuizService service = QuizService();
 
-  List<Pergunta> _perguntas = [];
-  int _indiceAtual = 0;
-  bool _carregando = true;
-  String? _erro;
+  List<Pergunta> perguntas = [];
+  final Map<int, String> respostas = {};
+  final Set<int> pesosDuplos = {};
+
+  int indiceAtual = 0;
+  bool carregando = true;
+  String? erro;
 
   @override
   void initState() {
     super.initState();
-    _carregarPerguntas();
+    carregarPerguntas();
   }
 
-  Future<void> _carregarPerguntas() async {
+  Future<void> carregarPerguntas() async {
     try {
-      final lista = await _service.buscarPerguntas();
-
-      if (!mounted) return;
+      final lista = await service.buscarPerguntas();
 
       setState(() {
-        _perguntas = lista;
-        _carregando = false;
+        perguntas = lista;
+        carregando = false;
       });
     } catch (e) {
-      if (!mounted) return;
-
       setState(() {
-        _erro = e.toString();
-        _carregando = false;
+        erro = e.toString();
+        carregando = false;
       });
     }
   }
 
-  void _responder(String answer) {
-    final pergunta = _perguntas[_indiceAtual];
+  void responder(String answer) {
+    final pergunta = perguntas[indiceAtual];
 
-    _respostas[pergunta.id] = RespostaQuiz(
-      thesisId: pergunta.id,
-      answer: answer,
-      weight: 1,
-    );
+    respostas[pergunta.id] = answer;
 
-    if (_indiceAtual < _perguntas.length - 1) {
+    if (indiceAtual < perguntas.length - 1) {
       setState(() {
-        _indiceAtual++;
+        indiceAtual++;
       });
-      return;
-    }
-
-    _abrirRevisao();
-  }
-
-  void _abrirRevisao() {
-    Navigator.push(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => TelaRevisaoRespostas(
-          perguntas: _perguntas,
-          respostas: _respostas,
-          pesosDuplos: _pesosDuplos,
-          onPesosAlterados: _atualizarPesos,
+    } else {
+      Navigator.pushNamed(
+        context,
+        AppRoutes.revisaoRespostas,
+        arguments: RevisaoRespostasArgs(
+          perguntas: perguntas,
+          respostas: respostas,
+          pesosDuplos: pesosDuplos,
+          onPesosAlterados: atualizarPesos,
         ),
-        transitionDuration: Duration.zero,
-        reverseTransitionDuration: Duration.zero,
-      ),
-    );
+      );
+    }
   }
 
-  void _atualizarPesos(Set<int> pesosDuplos) {
-    _pesosDuplos
+  void atualizarPesos(Set<int> novosPesosDuplos) {
+    pesosDuplos
       ..clear()
-      ..addAll(pesosDuplos);
+      ..addAll(novosPesosDuplos);
   }
 
-  void _voltarPergunta() {
-    if (_indiceAtual > 0) {
+  void voltarPergunta() {
+    if (indiceAtual > 0) {
       setState(() {
-        _indiceAtual--;
+        indiceAtual--;
       });
     }
   }
 
-  void _voltarInicio() {
-    Navigator.popUntil(context, (route) => route.isFirst);
+  void voltarTelaAnterior() {
+    Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
-    if (_carregando) {
+    if (carregando) {
       return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(color: Colors.white),
@@ -113,19 +96,36 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
       );
     }
 
-    if (_erro != null) {
-      return _TelaPerguntaErro(erro: _erro!);
-    }
-
-    if (_perguntas.isEmpty) {
-      return const _TelaPerguntaErro(
-        erro: 'Nenhuma pergunta foi encontrada.',
+    if (erro != null) {
+      return Scaffold(
+        body: SafeArea(
+          child: Column(
+            children: [
+              TopoPadrao(
+                mostrarVoltar: true,
+                onVoltar: voltarTelaAnterior,
+              ),
+              Expanded(
+                child: Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Text(
+                      erro!,
+                      textAlign: TextAlign.center,
+                      style: const TextStyle(color: Colors.white70),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       );
     }
 
-    final pergunta = _perguntas[_indiceAtual];
-    final numeroPergunta = _indiceAtual + 1;
-    final totalPerguntas = _perguntas.length;
+    final pergunta = perguntas[indiceAtual];
+    final numeroPergunta = indiceAtual + 1;
+    final totalPerguntas = perguntas.length;
 
     return Scaffold(
       body: SafeArea(
@@ -133,7 +133,7 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
           children: [
             TopoPadrao(
               mostrarVoltar: true,
-              onVoltar: _voltarInicio,
+              onVoltar: voltarTelaAnterior,
             ),
             Expanded(
               child: LayoutBuilder(
@@ -151,27 +151,107 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
                         constraints: BoxConstraints(maxWidth: larguraMaxima),
                         child: Column(
                           children: [
-                            CartaoPerguntaQuiz(
-                              pergunta: pergunta,
-                              numeroPergunta: numeroPergunta,
-                              totalPerguntas: totalPerguntas,
-                              telaGrande: telaGrande,
-                              onDiscordar: () => _responder(
-                                RespostaQuizValor.discordo,
+                            if (indiceAtual > 0)
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: TextButton.icon(
+                                  onPressed: voltarPergunta,
+                                  icon: const Icon(
+                                    Icons.arrow_back_rounded,
+                                    color: Colors.white70,
+                                    size: 18,
+                                  ),
+                                  label: const Text(
+                                    'Voltar pergunta',
+                                    style: TextStyle(
+                                      color: Colors.white70,
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                                ),
                               ),
-                              onNeutro: () => _responder(
-                                RespostaQuizValor.neutro,
+                            const SizedBox(height: 6),
+                            Container(
+                              width: double.infinity,
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 24,
+                                vertical: 28,
                               ),
-                              onConcordar: () => _responder(
-                                RespostaQuizValor.concordo,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFF0D0D0D),
+                                borderRadius: BorderRadius.circular(26),
+                                border: Border.all(color: Colors.white24),
                               ),
-                              podeVoltarPergunta: _indiceAtual > 0,
-                              onVoltarPergunta: _voltarPergunta,
+                              child: Column(
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                      horizontal: 14,
+                                      vertical: 6,
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFF1A1A1A),
+                                      borderRadius: BorderRadius.circular(12),
+                                      border: Border.all(color: Colors.white12),
+                                    ),
+                                    child: Text(
+                                      '$numeroPergunta/$totalPerguntas',
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w700,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 28),
+                                  SizedBox(
+                                    height: telaGrande ? 220 : 180,
+                                    child: Center(
+                                      child: Text(
+                                        pergunta.texto,
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: telaGrande ? 24 : 20,
+                                          height: 1.45,
+                                          fontWeight: FontWeight.w500,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      _BotaoAcaoQuiz(
+                                        icone: Icons.close_rounded,
+                                        onTap: () => responder(
+                                          RespostaQuizValor.discordo,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 18),
+                                      _BotaoAcaoQuiz(
+                                        icone: Icons.remove_rounded,
+                                        onTap: () => responder(
+                                          RespostaQuizValor.neutro,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 18),
+                                      _BotaoAcaoQuiz(
+                                        icone: Icons.check_rounded,
+                                        onTap: () => responder(
+                                          RespostaQuizValor.concordo,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ),
                             const SizedBox(height: 20),
-                            IndicadorProgressoQuiz(
+                            _IndicadorProgressoLinear(
                               total: totalPerguntas,
-                              atual: _indiceAtual,
+                              atual: indiceAtual,
                             ),
                           ],
                         ),
@@ -188,31 +268,79 @@ class _TelaPerguntaQuizState extends State<TelaPerguntaQuiz> {
   }
 }
 
-class _TelaPerguntaErro extends StatelessWidget {
-  final String erro;
+class _IndicadorProgressoLinear extends StatelessWidget {
+  final int total;
+  final int atual;
 
-  const _TelaPerguntaErro({required this.erro});
+  const _IndicadorProgressoLinear({
+    required this.total,
+    required this.atual,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: [
-            const TopoPadrao(mostrarVoltar: true),
-            Expanded(
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Text(
-                    erro,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(color: Colors.white70),
-                  ),
-                ),
-              ),
+    const maxVisiveis = 11;
+
+    int inicio = atual - (maxVisiveis ~/ 2);
+    if (inicio < 0) inicio = 0;
+
+    int fim = inicio + maxVisiveis;
+    if (fim > total) {
+      fim = total;
+      inicio = fim - maxVisiveis;
+      if (inicio < 0) inicio = 0;
+    }
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: List.generate(fim - inicio, (i) {
+        final index = inicio + i;
+        final selecionado = index == atual;
+
+        return AnimatedContainer(
+          duration: const Duration(milliseconds: 180),
+          margin: const EdgeInsets.symmetric(horizontal: 4),
+          width: selecionado ? 18 : 10,
+          height: 10,
+          decoration: BoxDecoration(
+            color: selecionado ? Colors.white : Colors.transparent,
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: selecionado ? Colors.white : Colors.white38,
             ),
-          ],
+          ),
+        );
+      }),
+    );
+  }
+}
+
+class _BotaoAcaoQuiz extends StatelessWidget {
+  final IconData icone;
+  final VoidCallback onTap;
+
+  const _BotaoAcaoQuiz({
+    required this.icone,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      borderRadius: BorderRadius.circular(40),
+      onTap: onTap,
+      child: Container(
+        width: 62,
+        height: 62,
+        decoration: BoxDecoration(
+          color: const Color(0xFF0F0F0F),
+          shape: BoxShape.circle,
+          border: Border.all(color: Colors.white38),
+        ),
+        child: Icon(
+          icone,
+          color: Colors.white,
+          size: 30,
         ),
       ),
     );

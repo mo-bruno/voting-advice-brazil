@@ -10,7 +10,7 @@ class CandidateOut(BaseModel):
     running_mate: str | None
     spectrum: str | None
     party_logo: str | None
-    foto_url: str | None
+    photo_url: str | None
     cargo: str | None
     estado: str | None
 

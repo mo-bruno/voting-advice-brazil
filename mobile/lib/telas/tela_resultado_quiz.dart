@@ -61,18 +61,10 @@ class TelaResultadoQuiz extends StatelessWidget {
               child: Center(
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 760),
-                  child: BotaoFixoInferior(
+                  child: const BotaoFixoInferior(
                     texto: 'IR PARA O SITE',
                     preenchido: true,
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content: Text(
-                            'Essa parte do site ainda será implementada.',
-                          ),
-                        ),
-                      );
-                    },
+                    onPressed: null,
                   ),
                 ),
               ),

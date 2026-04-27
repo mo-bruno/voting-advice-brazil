@@ -72,17 +72,9 @@ class CardInicial extends StatelessWidget {
                 },
               ),
               const SizedBox(height: 12),
-              BotaoContorno(
-                texto: 'Não responder',
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(
-                      content: Text(
-                        'Essa opção ainda será implementada.',
-                      ),
-                    ),
-                  );
-                },
+              const BotaoContorno(
+                texto: 'Não quero',
+                onPressed: null,
               ),
             ],
           ),

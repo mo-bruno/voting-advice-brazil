@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../../modelos/pergunta.dart';
-import '../../modelos/resposta_quiz.dart';
 import 'card_tema_peso.dart';
 
 class ConteudoRevisaoQuiz extends StatelessWidget {
   final List<Pergunta> perguntas;
-  final Map<int, RespostaQuiz> respostas;
+  final Map<int, String> respostas;
   final Set<int> pesosDuplos;
   final int? idPerguntaEmEdicao;
   final ValueChanged<int> onAlternarPeso;

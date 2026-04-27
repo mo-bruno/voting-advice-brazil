@@ -84,19 +84,19 @@ class _ResumoResultado extends StatelessWidget {
   Widget build(BuildContext context) {
     final percentual = resultado.scorePercent.toStringAsFixed(1);
     final logoUrl = QuizService.resolverUrlLogoPartido(resultado.party);
-    final logoUrlApi = QuizService.resolverUrlMidia(resultado.partyLogo);
+    final fotoUrlApi = QuizService.resolverUrlMidia(resultado.fotoUrl);
 
     return Row(
       children: [
         BadgeRanking(rank: resultado.rank),
         const SizedBox(width: 12),
         ImagemPolitica(
-          url: logoUrl,
-          urlSecundaria: logoUrlApi,
-          fallbackText: resultado.party,
+          url: fotoUrlApi,
+          urlSecundaria: logoUrl,
+          fallbackText: resultado.name,
           size: 58,
           circular: false,
-          fit: BoxFit.contain,
+          fit: fotoUrlApi == null ? BoxFit.contain : BoxFit.cover,
         ),
         const SizedBox(width: 14),
         Expanded(child: _TextoResultado(resultado: resultado)),

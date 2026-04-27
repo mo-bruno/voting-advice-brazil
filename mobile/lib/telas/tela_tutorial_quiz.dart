@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../config/quiz_config.dart';
 import '../routes/app_routes.dart';
 import '../widgets/botao_contorno.dart';
 import '../widgets/topo_padrao.dart';
@@ -42,7 +43,7 @@ class TelaTutorialQuiz extends StatelessWidget {
                             mainAxisSize: MainAxisSize.min,
                             children: [
                               Text(
-                                'Neste teste, você responderá a 38 perguntas para descobrir com quais posicionamentos políticos mais combina.',
+                                'Neste teste, você responderá a ${QuizConfig.totalPerguntas} perguntas para descobrir com quais posicionamentos políticos mais combina.',
                                 textAlign: TextAlign.center,
                                 style: TextStyle(
                                   color: Colors.white,

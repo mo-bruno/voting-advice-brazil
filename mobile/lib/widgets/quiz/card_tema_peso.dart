@@ -6,7 +6,7 @@ import 'editor_resposta_tema.dart';
 class CardTemaPeso extends StatelessWidget {
   final int numero;
   final Pergunta pergunta;
-  final RespostaQuiz? resposta;
+  final String? resposta;
   final bool marcado;
   final bool editando;
   final VoidCallback onAlternarPeso;
@@ -65,7 +65,7 @@ class CardTemaPeso extends StatelessWidget {
               child: editando
                   ? EditorRespostaTema(
                       key: const ValueKey('editor'),
-                      respostaAtual: resposta?.answer,
+                      respostaAtual: resposta,
                       onAlterarResposta: onAlterarResposta,
                     )
                   : const SizedBox.shrink(key: ValueKey('fechado')),
@@ -80,7 +80,7 @@ class CardTemaPeso extends StatelessWidget {
 class _TextoTema extends StatelessWidget {
   final int numero;
   final Pergunta pergunta;
-  final RespostaQuiz? resposta;
+  final String? resposta;
 
   const _TextoTema({
     required this.numero,
@@ -114,7 +114,7 @@ class _TextoTema extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         Text(
-          'Sua resposta: ${resposta?.textoResposta ?? 'Sem resposta'}',
+          'Sua resposta: ${RespostaQuizValor.texto(resposta)}',
           style: const TextStyle(
             color: Colors.white60,
             fontSize: 13,

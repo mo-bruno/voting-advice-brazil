@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import '../modelos/pergunta.dart';
 import '../modelos/resposta_quiz.dart';
+import '../routes/app_routes.dart';
 import '../widgets/quiz/conteudo_revisao_quiz.dart';
 import '../widgets/quiz/rodape_revisao_quiz.dart';
 import '../widgets/topo_padrao.dart';
-import 'tela_escolha_partidos.dart';
 
 class TelaRevisaoRespostas extends StatefulWidget {
   final List<Pergunta> perguntas;
-  final Map<int, RespostaQuiz> respostas;
+  final Map<int, String> respostas;
   final Set<int> pesosDuplos;
   final ValueChanged<Set<int>> onPesosAlterados;
 
@@ -66,12 +66,7 @@ class _TelaRevisaoRespostasState extends State<TelaRevisaoRespostas> {
 
   void _alterarResposta(Pergunta pergunta, String answer) {
     setState(() {
-      widget.respostas[pergunta.id] = RespostaQuiz(
-        thesisId: pergunta.id,
-        answer: answer,
-        weight: 1,
-      );
-
+      widget.respostas[pergunta.id] = answer;
       _idPerguntaEmEdicao = null;
     });
 
@@ -79,22 +74,19 @@ class _TelaRevisaoRespostasState extends State<TelaRevisaoRespostas> {
   }
 
   void _continuarParaPartidos() {
-    final respostasComPeso = widget.respostas.values.map((resposta) {
+    final respostasComPeso = widget.respostas.entries.map((entry) {
       return RespostaQuiz(
-        thesisId: resposta.thesisId,
-        answer: resposta.answer,
-        weight: _pesosDuplos.contains(resposta.thesisId) ? 2 : 1,
+        thesisId: entry.key,
+        answer: entry.value,
+        weight: _pesosDuplos.contains(entry.key) ? 2 : 1,
       );
     }).toList();
 
-    Navigator.push(
+    Navigator.pushNamed(
       context,
-      PageRouteBuilder(
-        pageBuilder: (_, __, ___) => TelaEscolhaPartidos(
-          respostas: respostasComPeso,
-        ),
-        transitionDuration: Duration.zero,
-        reverseTransitionDuration: Duration.zero,
+      AppRoutes.escolhaPartidos,
+      arguments: EscolhaPartidosArgs(
+        respostas: respostasComPeso,
       ),
     );
   }

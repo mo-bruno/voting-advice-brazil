@@ -4,6 +4,21 @@ class RespostaQuizValor {
   static const neutro = 'neutral';
 
   const RespostaQuizValor._();
+
+  static String texto(String? answer) {
+    switch (answer) {
+      case concordo:
+        return 'Concordo';
+      case discordo:
+        return 'Discordo';
+      case neutro:
+        return 'Resposta neutra';
+      case null:
+        return 'Sem resposta';
+      default:
+        return 'Resposta não reconhecida';
+    }
+  }
 }
 
 class RespostaQuiz {
@@ -25,16 +40,5 @@ class RespostaQuiz {
     };
   }
 
-  String get textoResposta {
-    switch (answer) {
-      case RespostaQuizValor.concordo:
-        return 'Concordo';
-      case RespostaQuizValor.discordo:
-        return 'Discordo';
-      case RespostaQuizValor.neutro:
-        return 'Resposta neutra';
-      default:
-        return 'Resposta não reconhecida';
-    }
-  }
+  String get textoResposta => RespostaQuizValor.texto(answer);
 }

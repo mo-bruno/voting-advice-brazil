@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../modelos/partido.dart';
 import '../modelos/resposta_quiz.dart';
+import '../routes/app_routes.dart';
 import '../services/quiz_service.dart';
 import '../widgets/partidos/conteudo_escolha_partidos.dart';
 import '../widgets/partidos/dialog_detalhe_partido.dart';
 import '../widgets/partidos/rodape_escolha_partidos.dart';
 import '../widgets/topo_padrao.dart';
-import 'tela_resultado_quiz.dart';
 
 class TelaEscolhaPartidos extends StatefulWidget {
   final List<RespostaQuiz> respostas;
@@ -102,14 +102,11 @@ class _TelaEscolhaPartidosState extends State<TelaEscolhaPartidos> {
 
       if (!mounted) return;
 
-      await Navigator.push(
+      await Navigator.pushNamed(
         context,
-        PageRouteBuilder(
-          pageBuilder: (_, __, ___) => TelaResultadoQuiz(
-            resultados: resultados,
-          ),
-          transitionDuration: Duration.zero,
-          reverseTransitionDuration: Duration.zero,
+        AppRoutes.resultadoQuiz,
+        arguments: ResultadoQuizArgs(
+          resultados: resultados,
         ),
       );
 
