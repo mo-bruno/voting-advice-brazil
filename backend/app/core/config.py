@@ -1,3 +1,6 @@
+from typing import Any
+
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -9,6 +12,18 @@ class Settings(BaseSettings):
     database_url: str = "sqlite:///./voting_advice.db"
     data_dir: str = "../data"
     debug: bool = False
+
+    @field_validator("debug", mode="before")
+    @classmethod
+    def parse_debug(cls, value: Any) -> Any:
+        if isinstance(value, str):
+            normalized = value.strip().lower()
+            if normalized in {"release", "profile", "prod", "production"}:
+                return False
+            if normalized in {"debug", "dev", "development"}:
+                return True
+
+        return value
 
 
 settings = Settings()

@@ -35,7 +35,7 @@ def _make_candidate_out(c: object) -> CandidateOut:
         running_mate=c.running_mate,  # type: ignore[attr-defined]
         spectrum=c.spectrum,  # type: ignore[attr-defined]
         party_logo=c.party_logo,  # type: ignore[attr-defined]
-        foto_url=c.foto_url,  # type: ignore[attr-defined]
+        photo_url=c.foto_url,  # type: ignore[attr-defined]
         cargo=c.cargo,  # type: ignore[attr-defined]
         estado=c.estado,  # type: ignore[attr-defined]
     )

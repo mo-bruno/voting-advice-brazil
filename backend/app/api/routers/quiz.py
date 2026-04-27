@@ -91,6 +91,7 @@ def submit(
                 name=r.name,
                 party=r.party,
                 party_logo=r.party_logo,
+                photo_url=r.foto_url,
                 score_percent=r.score_percent,
                 score_by_theme=r.score_by_theme,
                 rank=r.rank,
