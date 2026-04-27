@@ -8,12 +8,13 @@ class PartidoCatalogo {
 
   const PartidoCatalogo(this._mediaResolver);
 
-  Partido criar(String sigla) {
+  Partido criar(String sigla, {String? logoUrl}) {
     return Partido(
       sigla: sigla,
       nome: nome(sigla),
       descricao: descricao(sigla),
-      logoUrl: resolverUrlLogo(sigla),
+      logoUrl: _mediaResolver.resolver(logoUrl),
+      logoUrlSecundaria: resolverUrlLogo(sigla),
     );
   }
 

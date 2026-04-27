@@ -53,7 +53,10 @@ class QuizService {
         if (sigla.isEmpty || partidos.containsKey(sigla)) continue;
         if (_partidoCatalogo.estaOculto(sigla)) continue;
 
-        partidos[sigla] = _partidoCatalogo.criar(sigla);
+        partidos[sigla] = _partidoCatalogo.criar(
+          sigla,
+          logoUrl: item['party_logo']?.toString(),
+        );
       }
 
       temProxima = data['has_next'] == true;

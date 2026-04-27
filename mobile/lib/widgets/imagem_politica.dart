@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class ImagemPolitica extends StatelessWidget {
   final String? url;
   final String? urlSecundaria;
+  final String? urlTerciaria;
   final String fallbackText;
   final double size;
   final bool circular;
@@ -12,6 +13,7 @@ class ImagemPolitica extends StatelessWidget {
     super.key,
     required this.url,
     this.urlSecundaria,
+    this.urlTerciaria,
     required this.fallbackText,
     required this.size,
     this.circular = true,
@@ -31,6 +33,7 @@ class ImagemPolitica extends StatelessWidget {
         child: _ImagemRemota(
           url: url,
           urlSecundaria: urlSecundaria,
+          urlTerciaria: urlTerciaria,
           fallbackText: fallbackText,
           fit: fit,
         ),
@@ -42,12 +45,14 @@ class ImagemPolitica extends StatelessWidget {
 class _ImagemRemota extends StatelessWidget {
   final String? url;
   final String? urlSecundaria;
+  final String? urlTerciaria;
   final String fallbackText;
   final BoxFit fit;
 
   const _ImagemRemota({
     required this.url,
     required this.urlSecundaria,
+    required this.urlTerciaria,
     required this.fallbackText,
     required this.fit,
   });
@@ -72,6 +77,18 @@ class _ImagemRemota extends StatelessWidget {
 
     return Image.network(
       urlSecundaria!,
+      fit: BoxFit.contain,
+      errorBuilder: (_, __, ___) => _imagemTerciariaOuFallback(),
+    );
+  }
+
+  Widget _imagemTerciariaOuFallback() {
+    if (urlTerciaria == null || urlTerciaria!.isEmpty) {
+      return _FallbackImagem(texto: fallbackText);
+    }
+
+    return Image.network(
+      urlTerciaria!,
       fit: BoxFit.contain,
       errorBuilder: (_, __, ___) => _FallbackImagem(texto: fallbackText),
     );

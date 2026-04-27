@@ -34,6 +34,7 @@ class DialogDetalhePartido extends StatelessWidget {
                 children: [
                   ImagemPolitica(
                     url: partido.logoUrl,
+                    urlSecundaria: partido.logoUrlSecundaria,
                     fallbackText: partido.sigla,
                     size: 58,
                     circular: false,

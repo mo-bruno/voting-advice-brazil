@@ -52,7 +52,7 @@ app.add_middleware(
 
 app.add_middleware(SlowAPIMiddleware)
 
-STATIC_DIR = Path(__file__).resolve().parents[1] / "static"
+STATIC_DIR = Path(__file__).resolve().parents[2] / "data"
 if STATIC_DIR.exists():
     app.mount("/static", StaticFiles(directory=STATIC_DIR), name="static")
 
