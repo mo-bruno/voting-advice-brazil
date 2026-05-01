@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '../../core/theme/app_theme.dart';
+import '../../shared/quiz_session.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -17,7 +19,7 @@ class HomePage extends StatelessWidget {
             center: Alignment(0.0, -0.3),
             radius: 1.2,
             colors: [
-              Color(0xFF1A2A1A),
+              AppTheme.surface,
               Color(0xFF131313),
             ],
           ),
@@ -27,6 +29,7 @@ class HomePage extends StatelessWidget {
             builder: (context, constraints) {
               final maxWidth =
                   constraints.maxWidth > 600 ? 600.0 : constraints.maxWidth;
+
               return Center(
                 child: ConstrainedBox(
                   constraints: BoxConstraints(maxWidth: maxWidth),
@@ -36,9 +39,7 @@ class HomePage extends StatelessWidget {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: constraints.maxHeight * 0.1,
-                          ),
+                          SizedBox(height: constraints.maxHeight * 0.1),
                           Text(
                             'GUIA\nELEITORAL',
                             style: textTheme.displayLarge?.copyWith(
@@ -72,7 +73,8 @@ class HomePage extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, '/quiz');
+                                QuizSession.instance.resetQuiz();
+                                Navigator.pushNamed(context, '/quiz-intro');
                               },
                               child: const Text('COMEÇAR'),
                             ),

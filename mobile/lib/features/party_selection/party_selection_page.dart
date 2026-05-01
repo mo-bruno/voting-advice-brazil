@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/app_theme.dart';
+
 import '../../core/layout/app_scaffold.dart';
+import '../../core/theme/app_theme.dart';
 import '../../shared/models/party.dart';
+import '../../shared/quiz_session.dart';
 
 class PartySelectionPage extends StatefulWidget {
   const PartySelectionPage({super.key});
@@ -11,10 +13,36 @@ class PartySelectionPage extends StatefulWidget {
 }
 
 class _PartySelectionPageState extends State<PartySelectionPage> {
-  final List<Party> _parties = Party.getSampleParties();
-  final Set<String> _selected = {};
+  final QuizSession _session = QuizSession.instance;
   bool _allSelected = false;
+  bool _isLoading = true;
+  bool _isSubmitting = false;
+  String? _errorMessage;
   String? _expandedPartyId;
+
+  List<Party> get _parties => _session.candidates;
+  Set<String> get _selected => _session.selectedCandidateIds;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadCandidates();
+  }
+
+  Future<void> _loadCandidates() async {
+    setState(() {
+      _isLoading = true;
+      _errorMessage = null;
+    });
+    try {
+      await _session.loadCandidates();
+      _allSelected = _selected.length == _parties.length && _parties.isNotEmpty;
+    } catch (error) {
+      _errorMessage = error.toString();
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
 
   void _toggleAll() {
     setState(() {
@@ -36,83 +64,120 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
         _selected.add(id);
         _allSelected = _selected.length == _parties.length;
       }
+      _expandedPartyId = id;
     });
   }
 
-  void _toggleExpanded(String id) {
+  Future<void> _submitAndNavigate() async {
     setState(() {
-      _expandedPartyId = _expandedPartyId == id ? null : id;
+      _isSubmitting = true;
+      _errorMessage = null;
     });
+    try {
+      await _session.submit();
+      if (mounted) Navigator.pushNamed(context, '/results');
+    } catch (error) {
+      if (mounted) setState(() => _errorMessage = error.toString());
+    } finally {
+      if (mounted) setState(() => _isSubmitting = false);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
     return AppScaffold(
       title: 'GUIA ELEITORAL',
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, '/weighting');
+        },
+      ),
       body: Column(
         children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 24),
-                    Text(
-                      'ESCOLHA OS\nPARTIDOS',
-                      style: textTheme.displayMedium,
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      'Selecione os partidos que você deseja comparar com suas respostas. Você pode escolher todos ou apenas os de seu interesse.',
-                      style: textTheme.bodyMedium,
-                    ),
-                    const SizedBox(height: 24),
-                    _SelectAllButton(
-                      isSelected: _allSelected,
-                      onTap: _toggleAll,
-                    ),
-                    const SizedBox(height: 24),
-                    _PartyGrid(
-                      parties: _parties,
-                      selected: _selected,
-                      onToggle: _toggleParty,
-                    ),
-                    const SizedBox(height: 24),
-                    if (_expandedPartyId != null)
-                      _PartyDetailCard(
-                        party: _parties.firstWhere(
-                          (p) => p.id == _expandedPartyId,
-                        ),
-                      ),
-                    if (_expandedPartyId == null && _selected.isNotEmpty)
-                      _PartyDetailCard(
-                        party: _parties.firstWhere(
-                          (p) => _selected.contains(p.id),
-                        ),
-                      ),
-                    const SizedBox(height: 24),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          Expanded(child: _buildBody(Theme.of(context).textTheme)),
           Padding(
             padding: const EdgeInsets.all(24),
             child: SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: _selected.isNotEmpty
-                    ? () => Navigator.pushNamed(context, '/results')
+                onPressed: _selected.isNotEmpty && !_isSubmitting
+                    ? _submitAndNavigate
                     : null,
-                child: const Text('VER RESULTADOS'),
+                child: Text(_isSubmitting ? 'CALCULANDO...' : 'VER RESULTADOS'),
               ),
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildBody(TextTheme textTheme) {
+    if (_isLoading) return const Center(child: CircularProgressIndicator());
+
+    if (_errorMessage != null) {
+      return Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'Nao foi possivel carregar os candidatos.',
+                style: textTheme.headlineSmall,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 12),
+              Text(
+                _errorMessage!,
+                style: textTheme.bodyMedium,
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: _loadCandidates,
+                child: const Text('TENTAR NOVAMENTE'),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 24),
+            Text('ESCOLHA OS\nPARTIDOS', style: textTheme.displayMedium),
+            const SizedBox(height: 16),
+            Text(
+              'Selecione os partidos que voce deseja comparar com suas respostas.',
+              style: textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 24),
+            _SelectAllButton(isSelected: _allSelected, onTap: _toggleAll),
+            const SizedBox(height: 24),
+            _PartyGrid(
+              parties: _parties,
+              selected: _selected,
+              onToggle: _toggleParty,
+            ),
+            const SizedBox(height: 24),
+            if (_expandedPartyId != null)
+              _PartyDetailCard(
+                party: _parties.firstWhere((p) => p.id == _expandedPartyId),
+              ),
+            if (_expandedPartyId == null && _selected.isNotEmpty)
+              _PartyDetailCard(
+                party: _parties.firstWhere((p) => _selected.contains(p.id)),
+              ),
+            const SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }
@@ -146,7 +211,7 @@ class _SelectAllButton extends StatelessWidget {
             ),
             const SizedBox(width: 12),
             Text(
-              'SELECIONAR TODOS OS PARTIDOS',
+              'SELECIONAR TODOS',
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w700,
@@ -189,33 +254,54 @@ class _PartyGrid extends StatelessWidget {
                   ? AppTheme.surfaceContainerHigh
                   : AppTheme.surfaceContainer,
               border: Border.all(
-                color: isSelected
-                    ? AppTheme.primary
-                    : AppTheme.outlineVariant,
+                color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
                 width: isSelected ? 2 : 1,
               ),
             ),
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: Image.asset(
-                party.logoAsset,
-                fit: BoxFit.contain,
-                errorBuilder: (_, __, ___) => Text(
-                  party.abbreviation,
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.w800,
-                    color: isSelected
-                        ? AppTheme.primary
-                        : AppTheme.onSurfaceVariant,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ),
+              child: party.hasLogoAsset
+                  ? Image.asset(
+                      party.logoAsset,
+                      fit: BoxFit.contain,
+                      errorBuilder: (_, __, ___) => _PartyFallbackLogo(
+                        party: party,
+                        isSelected: isSelected,
+                      ),
+                    )
+                  : _PartyFallbackLogo(
+                      party: party,
+                      isSelected: isSelected,
+                    ),
             ),
           ),
         );
       }).toList(),
+    );
+  }
+}
+
+class _PartyFallbackLogo extends StatelessWidget {
+  final Party party;
+  final bool isSelected;
+
+  const _PartyFallbackLogo({
+    required this.party,
+    required this.isSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        party.abbreviation,
+        style: TextStyle(
+          fontSize: 12,
+          fontWeight: FontWeight.w800,
+          color: isSelected ? AppTheme.primary : AppTheme.onSurfaceVariant,
+        ),
+        textAlign: TextAlign.center,
+      ),
     );
   }
 }
@@ -240,14 +326,11 @@ class _PartyDetailCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '${party.name} (${party.abbreviation})',
+            'O QUE ${party.abbreviation} DEFENDE',
             style: textTheme.headlineSmall,
           ),
           const SizedBox(height: 12),
-          Text(
-            party.description,
-            style: textTheme.bodyMedium,
-          ),
+          Text(party.description, style: textTheme.bodyMedium),
         ],
       ),
     );
