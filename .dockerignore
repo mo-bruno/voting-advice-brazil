@@ -1,0 +1,28 @@
+# Backend artefatos locais
+backend/.venv/
+backend/**/__pycache__/
+backend/**/*.pyc
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/.ruff_cache/
+backend/tests/
+backend/*.db
+backend/*.sqlite
+
+# Outros módulos do monorepo (não vão pra imagem do backend)
+mobile/
+firmware/
+
+# Docs e meta
+docs/
+.git/
+.github/
+.claude/
+*.md
+.env*
+
+# Dados pesados que NÃO são usados em runtime (PDFs originais)
+data/propostas/2022/*.pdf
+
+# Lockfiles de outras linguagens
+mobile/pubspec.lock

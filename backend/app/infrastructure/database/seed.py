@@ -28,6 +28,10 @@ _THEME_META: dict[str, dict[str, str]] = {
 
 
 def _data_dir() -> Path:
+    from app.core.config import settings
+    configured = Path(settings.data_dir)
+    if configured.is_absolute():
+        return configured
     here = Path(__file__).parent
     return (here / "../../../../data").resolve()
 

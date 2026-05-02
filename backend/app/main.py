@@ -1,9 +1,12 @@
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
@@ -54,3 +57,7 @@ app.include_router(quiz.router, prefix=PREFIX)
 app.include_router(candidates.router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
 app.include_router(health.router)
+
+_data_path = Path(settings.data_dir)
+if _data_path.is_dir():
+    app.mount("/data", StaticFiles(directory=str(_data_path)), name="data")
