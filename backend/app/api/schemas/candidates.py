@@ -2,17 +2,23 @@ from pydantic import BaseModel
 
 
 class CandidateOut(BaseModel):
-    id: str
+    id: int
+    external_id: str
     name: str
-    party: str
+    party_id: int
+    party_acronym: str
+    party_name: str
+    party_logo_url: str | None
     coalition: str | None
-    number: int | None
+    ballot_number: int | None
     running_mate: str | None
     spectrum: str | None
-    party_logo: str | None
-    foto_url: str | None
-    cargo: str | None
-    estado: str | None
+    photo_url: str | None
+    office: str
+    state: str | None
+    city: str | None
+    election_year: int
+    election_round: int
 
     model_config = {"from_attributes": True}
 
@@ -28,7 +34,7 @@ class CandidateListResponse(BaseModel):
 class PositionOut(BaseModel):
     thesis_id: int
     text: str
-    theme_id: str
+    theme_id: int
     theme_name: str
     position: str
 
@@ -36,7 +42,7 @@ class PositionOut(BaseModel):
 
 
 class PositionsResponse(BaseModel):
-    candidate_id: str
+    candidate_id: int
     positions: list[PositionOut]
 
 
@@ -58,7 +64,7 @@ class JustificationSummaryOut(BaseModel):
 
 
 class JustificationsResponse(BaseModel):
-    candidate_id: str
+    candidate_id: int
     justifications: list[JustificationOut]
     summary: JustificationSummaryOut
     grouped: dict[str, list[JustificationOut]] | None = None

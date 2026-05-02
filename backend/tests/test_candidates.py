@@ -18,7 +18,7 @@ class TestListCandidates:
         r = client.get("/api/v1/candidates?partido=PT")
         data = r.json()
         assert data["total_count"] == 1
-        assert data["candidates"][0]["party"] == "PT"
+        assert data["candidates"][0]["party_acronym"] == "PT"
 
     def test_filter_by_search(self, client):
         r = client.get("/api/v1/candidates?search=Candidato+A")
@@ -37,52 +37,60 @@ class TestListCandidates:
 
 
 class TestGetCandidate:
-    def test_returns_profile(self, client):
-        r = client.get("/api/v1/candidates/cand_a")
+    def test_returns_profile(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}")
         assert r.status_code == 200
         data = r.json()
-        assert data["id"] == "cand_a"
-        assert data["party"] == "PT"
+        assert data["id"] == cand_a_id
+        assert data["external_id"] == "cand_a"
+        assert data["party_acronym"] == "PT"
 
     def test_404_for_unknown(self, client):
-        r = client.get("/api/v1/candidates/nao_existe")
+        r = client.get("/api/v1/candidates/999999")
         assert r.status_code == 404
         assert "não encontrado" in r.json()["detail"]
 
 
 class TestCandidatePositions:
-    def test_returns_positions(self, client):
-        r = client.get("/api/v1/candidates/cand_a/positions")
+    def test_returns_positions(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/positions")
         assert r.status_code == 200
         data = r.json()
-        assert data["candidate_id"] == "cand_a"
+        assert data["candidate_id"] == cand_a_id
         assert len(data["positions"]) > 0
 
-    def test_only_approved_theses(self, client):
-        r = client.get("/api/v1/candidates/cand_a/positions")
-        thesis_ids = [p["thesis_id"] for p in r.json()["positions"]]
-        assert 7 not in thesis_ids
+    def test_only_approved_theses(self, client, candidate_ids, thesis_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/positions")
+        thesis_id_list = [p["thesis_id"] for p in r.json()["positions"]]
+        draft_id = thesis_ids["Tese 7 rascunho"]
+        assert draft_id not in thesis_id_list
 
-    def test_ordered_by_theme(self, client):
-        r = client.get("/api/v1/candidates/cand_a/positions")
+    def test_ordered_by_theme(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/positions")
         theme_ids = [p["theme_id"] for p in r.json()["positions"]]
         assert theme_ids == sorted(theme_ids)
 
     def test_404_for_unknown_candidate(self, client):
-        r = client.get("/api/v1/candidates/nao_existe/positions")
+        r = client.get("/api/v1/candidates/999999/positions")
         assert r.status_code == 404
 
 
 class TestCandidateJustifications:
-    def test_returns_justifications(self, client):
-        r = client.get("/api/v1/candidates/cand_a/justifications")
+    def test_returns_justifications(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/justifications")
         assert r.status_code == 200
         data = r.json()
         assert "justifications" in data
         assert "summary" in data
 
-    def test_summary_counts(self, client):
-        r = client.get("/api/v1/candidates/cand_a/justifications")
+    def test_summary_counts(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/justifications")
         summary = r.json()["summary"]
         total = (
             summary["agree_count"]
@@ -92,18 +100,20 @@ class TestCandidateJustifications:
         )
         assert total == len(r.json()["justifications"])
 
-    def test_group_by_theme(self, client):
-        r = client.get("/api/v1/candidates/cand_a/justifications?group_by=theme")
+    def test_group_by_theme(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/justifications?group_by=theme")
         data = r.json()
         assert data["grouped"] is not None
         for theme, items in data["grouped"].items():
             for item in items:
                 assert item["theme"] == theme
 
-    def test_no_group_by_returns_null_grouped(self, client):
-        r = client.get("/api/v1/candidates/cand_a/justifications")
+    def test_no_group_by_returns_null_grouped(self, client, candidate_ids):
+        cand_a_id = candidate_ids["cand_a"]
+        r = client.get(f"/api/v1/candidates/{cand_a_id}/justifications")
         assert r.json()["grouped"] is None
 
     def test_404_for_unknown_candidate(self, client):
-        r = client.get("/api/v1/candidates/nao_existe/justifications")
+        r = client.get("/api/v1/candidates/999999/justifications")
         assert r.status_code == 404
