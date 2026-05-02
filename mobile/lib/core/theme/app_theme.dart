@@ -109,6 +109,8 @@ class AppTheme {
       backgroundColor: background,
       foregroundColor: primary,
       elevation: 0,
+      scrolledUnderElevation: 0,
+      surfaceTintColor: Colors.transparent,
     ),
     cardTheme: CardThemeData(
       color: surfaceContainer,

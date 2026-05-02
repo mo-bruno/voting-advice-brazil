@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../core/theme/app_theme.dart';
+
 import '../../core/layout/app_scaffold.dart';
+import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis.dart';
 import 'quiz_controller.dart';
 
@@ -18,8 +19,9 @@ class _QuizPageState extends State<QuizPage> {
   void initState() {
     super.initState();
     controller.addListener(() {
-      setState(() {});
+      if (mounted) setState(() {});
     });
+    controller.loadQuestions();
   }
 
   @override
@@ -34,106 +36,156 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
     final thesis = controller.currentThesis;
 
     return AppScaffold(
       title: 'GUIA ELEITORAL',
       leading: IconButton(
-        icon: const Icon(Icons.menu),
-        onPressed: () {},
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () {
+          Navigator.pushReplacementNamed(context, '/quiz-intro');
+        },
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
-                  children: [
-                    const SizedBox(height: 24),
-                    _ProgressIndicator(
-                      current: controller.currentIndex + 1,
-                      total: controller.totalTheses,
-                    ),
-                    const SizedBox(height: 32),
-                    _ThesisCard(thesis: thesis),
-                    const SizedBox(height: 32),
-                    _ChoiceButton(
-                      icon: Icons.thumb_up,
-                      label: 'CONCORDO',
-                      onPressed: () {
-                        controller.answer(ThesisAnswer.agree);
-                        if (controller.isLast) _onFinishQuiz();
-                      },
-                    ),
-                    const SizedBox(height: 12),
-                    _ChoiceButton(
-                      icon: Icons.help_outline,
-                      label: 'NEUTRO',
-                      onPressed: () {
-                        controller.answer(ThesisAnswer.neutral);
-                        if (controller.isLast) _onFinishQuiz();
-                      },
-                    ),
-                    const SizedBox(height: 12),
-                    _ChoiceButton(
-                      icon: Icons.thumb_down,
-                      label: 'DISCORDO',
-                      onPressed: () {
-                        controller.answer(ThesisAnswer.disagree);
-                        if (controller.isLast) _onFinishQuiz();
-                      },
-                    ),
-                    const SizedBox(height: 24),
-                    TextButton(
-                      onPressed: () {
-                        controller.skip();
-                        if (controller.isLast) _onFinishQuiz();
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'PULAR ESTA QUESTÃO',
-                            style: textTheme.labelMedium,
-                          ),
-                          const SizedBox(width: 4),
-                          const Icon(
-                            Icons.chevron_right,
-                            size: 18,
-                            color: AppTheme.onSurfaceVariant,
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(height: 24),
-                  ],
-                ),
+      body: _buildBody(thesis),
+    );
+  }
+
+  Widget _buildBody(Thesis? thesis) {
+    if (controller.isLoading) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
+    if (controller.errorMessage != null) {
+      return _StateMessage(
+        title: 'Nao foi possivel carregar as perguntas.',
+        message: controller.errorMessage!,
+        actionLabel: 'TENTAR NOVAMENTE',
+        onPressed: controller.loadQuestions,
+      );
+    }
+
+    if (thesis == null) {
+      return _StateMessage(
+        title: 'Nenhuma pergunta encontrada.',
+        message: 'Confira se o backend esta rodando e com dados carregados.',
+        actionLabel: 'RECARREGAR',
+        onPressed: controller.loadQuestions,
+      );
+    }
+
+    final textTheme = Theme.of(context).textTheme;
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 24),
+        child: Column(
+          children: [
+            const SizedBox(height: 24),
+            _ProgressIndicator(
+              current: controller.currentIndex + 1,
+              total: controller.totalTheses,
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              height: 40,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: !controller.isFirst
+                    ? TextButton.icon(
+                        onPressed: controller.previous,
+                        icon: const Icon(Icons.arrow_back, size: 18),
+                        label: Text('VOLTAR', style: textTheme.labelMedium),
+                      )
+                    : const SizedBox.shrink(),
               ),
             ),
-          ),
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            color: AppTheme.surface,
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.thumb_up_outlined, size: 20),
-                  onPressed: () {},
-                  color: AppTheme.onSurfaceVariant,
-                ),
-                const Spacer(),
-                if (!controller.isFirst)
-                  IconButton(
-                    icon: const Icon(Icons.arrow_back, size: 20),
-                    onPressed: controller.previous,
+            const SizedBox(height: 8),
+            _ThesisCard(thesis: thesis),
+            const SizedBox(height: 32),
+            _ChoiceButton(
+              icon: Icons.thumb_up,
+              label: 'CONCORDO',
+              onPressed: () {
+                if (controller.answer(ThesisAnswer.agree)) _onFinishQuiz();
+              },
+            ),
+            const SizedBox(height: 12),
+            _ChoiceButton(
+              icon: Icons.help_outline,
+              label: 'NEUTRO',
+              onPressed: () {
+                if (controller.answer(ThesisAnswer.neutral)) _onFinishQuiz();
+              },
+            ),
+            const SizedBox(height: 12),
+            _ChoiceButton(
+              icon: Icons.thumb_down,
+              label: 'DISCORDO',
+              onPressed: () {
+                if (controller.answer(ThesisAnswer.disagree)) _onFinishQuiz();
+              },
+            ),
+            const SizedBox(height: 24),
+            TextButton(
+              onPressed: () {
+                if (controller.skip()) _onFinishQuiz();
+              },
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text('PULAR ESTA QUESTAO', style: textTheme.labelMedium),
+                  const SizedBox(width: 4),
+                  const Icon(
+                    Icons.chevron_right,
+                    size: 18,
                     color: AppTheme.onSurfaceVariant,
                   ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            const SizedBox(height: 24),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _StateMessage extends StatelessWidget {
+  final String title;
+  final String message;
+  final String actionLabel;
+  final VoidCallback onPressed;
+
+  const _StateMessage({
+    required this.title,
+    required this.message,
+    required this.actionLabel,
+    required this.onPressed,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              title,
+              style: Theme.of(context).textTheme.headlineSmall,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 12),
+            Text(
+              message,
+              style: Theme.of(context).textTheme.bodyMedium,
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 24),
+            ElevatedButton(onPressed: onPressed, child: Text(actionLabel)),
+          ],
+        ),
       ),
     );
   }
@@ -147,34 +199,28 @@ class _ProgressIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final visibleDots = total > 10 ? 10 : total;
     return Column(
       children: [
-        Text(
-          '$current/$total',
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
+        Text('$current/$total', style: Theme.of(context).textTheme.titleMedium),
         const SizedBox(height: 12),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: List.generate(
-            total > 10 ? 10 : total,
-            (index) {
-              final mappedIndex =
-                  (index * total / (total > 10 ? 10 : total)).round();
-              final isActive = mappedIndex < current;
-              return Container(
-                width: 8,
-                height: 8,
-                margin: const EdgeInsets.symmetric(horizontal: 3),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: isActive
-                      ? AppTheme.primary
-                      : AppTheme.surfaceContainerHighest,
-                ),
-              );
-            },
-          ),
+          children: List.generate(visibleDots, (index) {
+            final mappedIndex = (index * total / visibleDots).round();
+            final isActive = mappedIndex < current;
+            return Container(
+              width: 8,
+              height: 8,
+              margin: const EdgeInsets.symmetric(horizontal: 3),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: isActive
+                    ? AppTheme.primary
+                    : AppTheme.surfaceContainerHighest,
+              ),
+            );
+          }),
         ),
       ],
     );
@@ -186,19 +232,37 @@ class _ThesisCard extends StatelessWidget {
 
   const _ThesisCard({required this.thesis});
 
+  TextStyle _textStyle(BuildContext context) {
+    final base = Theme.of(context).textTheme.headlineLarge!;
+    if (thesis.title.length > 150) {
+      return base.copyWith(fontSize: 18, height: 1.25);
+    }
+    if (thesis.title.length > 95) {
+      return base.copyWith(fontSize: 20, height: 1.25);
+    }
+    return base.copyWith(fontSize: 24, height: 1.2);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: double.infinity,
-      padding: const EdgeInsets.all(32),
-      decoration: BoxDecoration(
-        color: AppTheme.surfaceContainer,
-        border: Border.all(color: AppTheme.outlineVariant),
-      ),
-      child: Text(
-        thesis.title,
-        style: Theme.of(context).textTheme.headlineLarge,
-        textAlign: TextAlign.center,
+      height: 150,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+        decoration: BoxDecoration(
+          color: AppTheme.surfaceContainer,
+          border: Border.all(color: AppTheme.outlineVariant),
+        ),
+        child: Center(
+          child: Text(
+            thesis.title,
+            style: _textStyle(context),
+            textAlign: TextAlign.center,
+            maxLines: 5,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ),
       ),
     );
   }
@@ -219,19 +283,13 @@ class _ChoiceButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: OutlinedButton(
+      child: OutlinedButton.icon(
         onPressed: onPressed,
+        icon: Icon(icon, size: 20),
+        label: Text(label),
         style: OutlinedButton.styleFrom(
           padding: const EdgeInsets.symmetric(vertical: 18),
           side: const BorderSide(color: AppTheme.outlineVariant),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 20),
-            const SizedBox(width: 12),
-            Text(label),
-          ],
         ),
       ),
     );
