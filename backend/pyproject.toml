@@ -10,6 +10,7 @@ dependencies = [
     "pydantic-settings>=2.7.0",
     "slowapi>=0.1.9",
     "limits>=3.14.0",
+    "psycopg[binary]>=3.2.0",
 ]
 
 [project.optional-dependencies]
@@ -42,3 +43,11 @@ strict = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "hypothesis>=6.152.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+]
