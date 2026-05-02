@@ -28,16 +28,22 @@ _CANDIDATE_TTL = 3600  # 1 hour
 def _make_candidate_out(c: object) -> CandidateOut:
     return CandidateOut(
         id=c.id,  # type: ignore[attr-defined]
+        external_id=c.external_id,  # type: ignore[attr-defined]
         name=c.name,  # type: ignore[attr-defined]
-        party=c.party,  # type: ignore[attr-defined]
+        party_id=c.party_id,  # type: ignore[attr-defined]
+        party_acronym=c.party_acronym,  # type: ignore[attr-defined]
+        party_name=c.party_name,  # type: ignore[attr-defined]
+        party_logo_url=c.party_logo_url,  # type: ignore[attr-defined]
         coalition=c.coalition,  # type: ignore[attr-defined]
-        number=c.number,  # type: ignore[attr-defined]
+        ballot_number=c.ballot_number,  # type: ignore[attr-defined]
         running_mate=c.running_mate,  # type: ignore[attr-defined]
         spectrum=c.spectrum,  # type: ignore[attr-defined]
-        party_logo=c.party_logo,  # type: ignore[attr-defined]
-        foto_url=c.foto_url,  # type: ignore[attr-defined]
-        cargo=c.cargo,  # type: ignore[attr-defined]
-        estado=c.estado,  # type: ignore[attr-defined]
+        photo_url=c.photo_url,  # type: ignore[attr-defined]
+        office=c.office,  # type: ignore[attr-defined]
+        state=c.state,  # type: ignore[attr-defined]
+        city=c.city,  # type: ignore[attr-defined]
+        election_year=c.election_year,  # type: ignore[attr-defined]
+        election_round=c.election_round,  # type: ignore[attr-defined]
     )
 
 
@@ -73,7 +79,7 @@ def list_all(
 
 @router.get("/{candidate_id}", response_model=CandidateOut, summary="Perfil completo do candidato")
 def get_one(
-    candidate_id: str,
+    candidate_id: int,
     repo: SqlCandidateRepository = Depends(get_candidate_repo),
 ) -> CandidateOut:
     cache_key = f"candidates:one:{candidate_id}"
@@ -92,7 +98,7 @@ def get_one(
 
 @router.get("/{candidate_id}/positions", response_model=PositionsResponse, summary="Posições do candidato nas teses")
 def get_positions(
-    candidate_id: str,
+    candidate_id: int,
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
 ) -> PositionsResponse:
@@ -125,7 +131,7 @@ def get_positions(
 
 @router.get("/{candidate_id}/justifications", response_model=JustificationsResponse, summary="Posições e justificativas do candidato")
 def get_justifications(
-    candidate_id: str,
+    candidate_id: int,
     group_by: str | None = Query(default=None, description="Use 'theme' para agrupar por tema"),
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
@@ -146,7 +152,7 @@ def get_justifications(
         return JustificationOut(
             thesis_id=p.thesis_id,  # type: ignore[attr-defined]
             thesis_text=p.thesis_text,  # type: ignore[attr-defined]
-            theme=p.theme_id,  # type: ignore[attr-defined]
+            theme=p.theme_slug,  # type: ignore[attr-defined]
             theme_name=p.theme_name,  # type: ignore[attr-defined]
             position=p.position,  # type: ignore[attr-defined]
             justification=p.justification,  # type: ignore[attr-defined]
