@@ -56,6 +56,7 @@ class DefaultFirebaseOptions {
     projectId: 'farol-politico-495210',
     authDomain: 'farol-politico-495210.firebaseapp.com',
     storageBucket: 'farol-politico-495210.firebasestorage.app',
+    measurementId: 'G-0P9XLRYVWT',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
