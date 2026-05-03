@@ -8,7 +8,7 @@ steps:
       - -f
       - backend/Dockerfile
       - -t
-      - $_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$SHORT_SHA
+      - $_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID
       - -t
       - $_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:latest
       - .
@@ -21,13 +21,13 @@ steps:
       - $_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend
 
   # 3. Aplicar migrations Alembic contra o Neon Postgres
-  - name: '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$SHORT_SHA'
+  - name: '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID'
     entrypoint: 'sh'
     args: ['-c', 'cd /app && alembic upgrade head']
     secretEnv: ['DATABASE_URL']
     env:
       - 'DATA_DIR=/data'
-      - 'APP_ENV=production'
+      - 'APP_ENV=prod'
 
   # 4. Deploy da nova revisão no Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -36,7 +36,7 @@ steps:
       - run
       - deploy
       - farol-politico-api
-      - --image=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$SHORT_SHA
+      - --image=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID
       - --region=$_REGION
       - --platform=managed
       - --allow-unauthenticated
@@ -47,7 +47,7 @@ steps:
       - --concurrency=80
       - --timeout=60s
       - --port=8080
-      - --set-env-vars=DATA_DIR=/data,APP_ENV=production
+      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod
       - --set-secrets=DATABASE_URL=database-url:latest
 
 availableSecrets:
