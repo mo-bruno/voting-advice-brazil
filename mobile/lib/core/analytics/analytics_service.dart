@@ -25,7 +25,8 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
 }
 
 class AnalyticsService {
-  const AnalyticsService(this._sink);
+  AnalyticsService({AnalyticsSink? sink})
+      : _sink = sink ?? const FirebaseAnalyticsSink();
 
   final AnalyticsSink _sink;
 
@@ -41,15 +42,21 @@ class AnalyticsService {
     return _sink.logEvent(name: 'quiz_restarted');
   }
 
-  Future<void> thesisViewed({required String thesisId}) {
+  Future<void> thesisViewed({
+    required int thesisId,
+    required int thesisIndex,
+  }) {
     return _sink.logEvent(
       name: 'thesis_viewed',
-      parameters: {'thesis_id': thesisId},
+      parameters: {
+        'thesis_id': thesisId,
+        'thesis_index': thesisIndex,
+      },
     );
   }
 
   Future<void> thesisAnswered({
-    required String thesisId,
+    required int thesisId,
     required String stance,
     required int timeToAnswerMs,
   }) {
@@ -63,30 +70,24 @@ class AnalyticsService {
     );
   }
 
-  Future<void> thesisSkipped({
-    required String thesisId,
-    required int timeToAnswerMs,
-  }) {
+  Future<void> thesisSkipped({required int thesisId}) {
     return _sink.logEvent(
       name: 'thesis_skipped',
-      parameters: {
-        'thesis_id': thesisId,
-        'time_to_answer_ms': timeToAnswerMs,
-      },
+      parameters: {'thesis_id': thesisId},
     );
   }
 
   Future<void> quizCompleted({
-    required int answeredCount,
-    required int skippedCount,
-    required int timeToCompleteMs,
+    required int totalAnswered,
+    required int totalSkipped,
+    required int durationMs,
   }) {
     return _sink.logEvent(
       name: 'quiz_completed',
       parameters: {
-        'answered_count': answeredCount,
-        'skipped_count': skippedCount,
-        'time_to_complete_ms': timeToCompleteMs,
+        'total_answered': totalAnswered,
+        'total_skipped': totalSkipped,
+        'duration_ms': durationMs,
       },
     );
   }
@@ -95,24 +96,24 @@ class AnalyticsService {
     return _sink.logEvent(name: 'weighting_started');
   }
 
-  Future<void> weightAdded({required String themeId}) {
+  Future<void> weightAdded({required int thesisId}) {
     return _sink.logEvent(
       name: 'weight_added',
-      parameters: {'theme_id': themeId},
+      parameters: {'thesis_id': thesisId},
     );
   }
 
-  Future<void> weightRemoved({required String themeId}) {
+  Future<void> weightRemoved({required int thesisId}) {
     return _sink.logEvent(
       name: 'weight_removed',
-      parameters: {'theme_id': themeId},
+      parameters: {'thesis_id': thesisId},
     );
   }
 
-  Future<void> weightingCompleted({required int weightCount}) {
+  Future<void> weightingCompleted({required int countWeighted}) {
     return _sink.logEvent(
       name: 'weighting_completed',
-      parameters: {'weight_count': weightCount},
+      parameters: {'count_weighted': countWeighted},
     );
   }
 
@@ -133,10 +134,10 @@ class AnalyticsService {
     );
   }
 
-  Future<void> partySelectionCompleted({required int selectedPartyCount}) {
+  Future<void> partySelectionCompleted({required int countSelected}) {
     return _sink.logEvent(
       name: 'party_selection_completed',
-      parameters: {'selected_party_count': selectedPartyCount},
+      parameters: {'count_selected': countSelected},
     );
   }
 
@@ -153,22 +154,19 @@ class AnalyticsService {
     );
   }
 
-  Future<void> comparisonOpened({required String candidateId}) {
-    return _sink.logEvent(
-      name: 'comparison_opened',
-      parameters: {'candidate_id': candidateId},
-    );
+  Future<void> comparisonOpened() {
+    return _sink.logEvent(name: 'comparison_opened');
   }
 
   Future<void> comparisonCandidateAdded({
     required String candidateId,
-    required int candidateCount,
+    required int position,
   }) {
     return _sink.logEvent(
       name: 'comparison_candidate_added',
       parameters: {
         'candidate_id': candidateId,
-        'candidate_count': candidateCount,
+        'position': position,
       },
     );
   }
