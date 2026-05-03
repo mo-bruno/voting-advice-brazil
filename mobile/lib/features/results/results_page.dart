@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
@@ -14,9 +17,15 @@ class ResultsPage extends StatefulWidget {
 }
 
 class _ResultsPageState extends State<ResultsPage> {
+  final AnalyticsService _analytics = AnalyticsService();
   final QuizSession _session = QuizSession.instance;
+  bool _hasTrackedResultsViewed = false;
 
   List<CandidateResult> get _results => _session.visibleResults;
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +68,15 @@ class _ResultsPageState extends State<ResultsPage> {
 
   Widget _content(TextTheme textTheme) {
     final topResult = _results.first;
+    if (!_hasTrackedResultsViewed) {
+      _hasTrackedResultsViewed = true;
+      _track(
+        _analytics.resultsViewed(
+          topCandidateId: topResult.candidateId,
+          topScorePercent: topResult.scorePercent,
+        ),
+      );
+    }
 
     return SingleChildScrollView(
       child: Padding(

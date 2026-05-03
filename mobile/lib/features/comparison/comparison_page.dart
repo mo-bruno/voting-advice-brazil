@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
@@ -15,6 +18,7 @@ class ComparisonPage extends StatefulWidget {
 }
 
 class _ComparisonPageState extends State<ComparisonPage> {
+  final AnalyticsService _analytics = AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   final Set<String> _selectedCandidateIds = {};
   final Map<String, Map<int, CandidateJustification>> _justifications = {};
@@ -36,6 +40,10 @@ class _ComparisonPageState extends State<ComparisonPage> {
     }
   }
 
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
   void _handleBack() {
     if (_showComparison) {
       setState(() => _showComparison = false);
@@ -45,6 +53,8 @@ class _ComparisonPageState extends State<ComparisonPage> {
   }
 
   void _toggleCandidate(String candidateId) {
+    var candidateAdded = false;
+    var position = 0;
     setState(() {
       if (_selectedCandidateIds.contains(candidateId)) {
         _selectedCandidateIds.remove(candidateId);
@@ -58,11 +68,22 @@ class _ComparisonPageState extends State<ComparisonPage> {
           return;
         }
         _selectedCandidateIds.add(candidateId);
+        candidateAdded = true;
+        position = _selectedCandidateIds.length;
       }
     });
+    if (candidateAdded) {
+      _track(
+        _analytics.comparisonCandidateAdded(
+          candidateId: candidateId,
+          position: position,
+        ),
+      );
+    }
   }
 
   Future<void> _startComparison() async {
+    _track(_analytics.comparisonOpened());
     setState(() {
       _showComparison = true;
       _isLoadingJustifications = true;
@@ -71,6 +92,11 @@ class _ComparisonPageState extends State<ComparisonPage> {
     try {
       for (final result in _selectedResults) {
         if (_justifications.containsKey(result.candidateId)) continue;
+        _track(
+          _analytics.candidatePositionsViewed(
+            candidateId: result.candidateId,
+          ),
+        );
         final data =
             await _session.api.fetchCandidateJustifications(result.candidateId);
         _justifications[result.candidateId] = {
