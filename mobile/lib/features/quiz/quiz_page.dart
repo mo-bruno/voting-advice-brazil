@@ -105,7 +105,9 @@ class _QuizPageState extends State<QuizPage> {
               icon: Icons.thumb_up,
               label: 'CONCORDO',
               onPressed: () {
-                if (controller.answer(ThesisAnswer.agree)) _onFinishQuiz();
+                controller.answer(ThesisAnswer.agree).then((finished) {
+                  if (finished && mounted) _onFinishQuiz();
+                });
               },
             ),
             const SizedBox(height: 12),
@@ -113,7 +115,9 @@ class _QuizPageState extends State<QuizPage> {
               icon: Icons.help_outline,
               label: 'NEUTRO',
               onPressed: () {
-                if (controller.answer(ThesisAnswer.neutral)) _onFinishQuiz();
+                controller.answer(ThesisAnswer.neutral).then((finished) {
+                  if (finished && mounted) _onFinishQuiz();
+                });
               },
             ),
             const SizedBox(height: 12),
@@ -121,13 +125,17 @@ class _QuizPageState extends State<QuizPage> {
               icon: Icons.thumb_down,
               label: 'DISCORDO',
               onPressed: () {
-                if (controller.answer(ThesisAnswer.disagree)) _onFinishQuiz();
+                controller.answer(ThesisAnswer.disagree).then((finished) {
+                  if (finished && mounted) _onFinishQuiz();
+                });
               },
             ),
             const SizedBox(height: 24),
             TextButton(
               onPressed: () {
-                if (controller.skip()) _onFinishQuiz();
+                controller.skip().then((finished) {
+                  if (finished && mounted) _onFinishQuiz();
+                });
               },
               child: Row(
                 mainAxisSize: MainAxisSize.min,
