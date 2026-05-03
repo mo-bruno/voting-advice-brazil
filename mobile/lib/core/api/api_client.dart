@@ -18,7 +18,7 @@ class ApiException implements Exception {
 class ApiClient {
   static const String defaultBaseUrl = String.fromEnvironment(
     'API_BASE_URL',
-    defaultValue: 'http://localhost:8000/api/v1',
+    defaultValue: 'https://farol-politico-api-ia6m2uvoba-uk.a.run.app/api/v1',
   );
 
   final String baseUrl;
