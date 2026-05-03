@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/party.dart';
@@ -13,6 +16,7 @@ class PartySelectionPage extends StatefulWidget {
 }
 
 class _PartySelectionPageState extends State<PartySelectionPage> {
+  final AnalyticsService _analytics = AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   bool _allSelected = false;
   bool _isLoading = true;
@@ -26,7 +30,12 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   @override
   void initState() {
     super.initState();
+    _track(_analytics.partySelectionViewed());
     _loadCandidates();
+  }
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
   }
 
   Future<void> _loadCandidates() async {
@@ -66,9 +75,19 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       }
       _expandedPartyId = id;
     });
+    final party = _parties.firstWhere((p) => p.id == id);
+    _track(
+      _analytics.partyToggled(
+        partyAcronym: party.abbreviation,
+        selected: _selected.contains(id),
+      ),
+    );
   }
 
   Future<void> _submitAndNavigate() async {
+    _track(
+      _analytics.partySelectionCompleted(countSelected: _selected.length),
+    );
     setState(() {
       _isSubmitting = true;
       _errorMessage = null;

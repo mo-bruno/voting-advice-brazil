@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis.dart';
@@ -13,15 +16,31 @@ class WeightingPage extends StatefulWidget {
 }
 
 class _WeightingPageState extends State<WeightingPage> {
+  final AnalyticsService _analytics = AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   int? _editingThesisId;
 
   List<Thesis> get _theses => _session.theses;
 
+  @override
+  void initState() {
+    super.initState();
+    _track(_analytics.weightingStarted());
+  }
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
   void _toggleWeight(int index) {
+    final thesis = _theses[index];
     setState(() {
-      _theses[index].doubleWeight = !_theses[index].doubleWeight;
+      thesis.doubleWeight = !thesis.doubleWeight;
     });
+    final event = thesis.doubleWeight
+        ? _analytics.weightAdded(thesisId: thesis.id)
+        : _analytics.weightRemoved(thesisId: thesis.id);
+    _track(event);
   }
 
   void _toggleEditor(Thesis thesis) {
@@ -129,6 +148,11 @@ class _WeightingPageState extends State<WeightingPage> {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
+                _track(
+                  _analytics.weightingCompleted(
+                    countWeighted: _session.countWeighted,
+                  ),
+                );
                 Navigator.pushNamed(context, '/party-selection');
               },
               child: const Text('CONTINUAR PARA SELEÇÃO'),
