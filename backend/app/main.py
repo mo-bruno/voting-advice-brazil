@@ -20,12 +20,21 @@ limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    if settings.app_env == "dev":
+    # Schema é gerenciado por Alembic via Cloud Build pré-deploy.
+    # Lifespan apenas popula dados estáticos (idempotente: retorna cedo
+    # se PartyModel.count() > 0 dentro de seed()). Em ambiente de teste,
+    # o conftest configura o DB próprio e a seed é dispensável.
+    if settings.app_env != "test":
         from app.infrastructure.database.seed import seed
         from app.infrastructure.database.session import SessionLocal
 
         with SessionLocal() as db:
             seed(db)
+
+    print(
+        f"farol-politico-api startup: env={settings.app_env} "
+        f"version={settings.app_version}"
+    )
     yield
 
 

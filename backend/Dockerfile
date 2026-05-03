@@ -14,6 +14,8 @@ WORKDIR /build
 
 COPY backend/pyproject.toml backend/uv.lock ./
 COPY backend/app/ ./app/
+COPY backend/alembic.ini ./
+COPY backend/alembic/ ./alembic/
 
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
@@ -35,6 +37,8 @@ WORKDIR /app
 
 COPY --from=builder --chown=app:app /opt/venv /opt/venv
 COPY --from=builder --chown=app:app /build/app /app/app
+COPY --from=builder --chown=app:app /build/alembic.ini /app/alembic.ini
+COPY --from=builder --chown=app:app /build/alembic /app/alembic
 COPY --chown=app:app data/ /data/
 
 # Lowercase nos logos (Linux é case-sensitive; candidates.json usa lowercase)
