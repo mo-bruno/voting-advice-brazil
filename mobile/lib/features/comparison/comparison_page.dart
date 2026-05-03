@@ -353,7 +353,7 @@ class _ComparisonRow extends StatelessWidget {
       orElse: () => ThesisMatch(
         thesisId: thesisId,
         thesisText: thesisText,
-        themeId: '',
+        themeId: 0,
         userAnswer: 'skip',
         candidatePosition: 'sem_posicao',
         matchType: 'skipped',
