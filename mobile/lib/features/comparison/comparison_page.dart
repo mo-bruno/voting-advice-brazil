@@ -52,7 +52,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
         if (_selectedCandidateIds.length >= 2) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Escolha no maximo 2 candidatos para comparar.'),
+              content: Text('Escolha no máximo 2 candidatos para comparar.'),
             ),
           );
           return;
@@ -93,7 +93,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: _handleBack,
@@ -131,12 +131,12 @@ class _ComparisonPageState extends State<ComparisonPage> {
                 children: [
                   const SizedBox(height: 24),
                   Text(
-                    'ESCOLHA A\nCOMPARACAO',
+                    'ESCOLHA A\nCOMPARAÇÃO',
                     style: textTheme.displayMedium,
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Selecione os candidatos que voce quer comparar com suas respostas.',
+                    'Selecione os candidatos que você quer comparar com suas respostas.',
                     style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 24),
@@ -183,7 +183,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24),
-            Text('COMPARACAO\nDE RESPOSTAS', style: textTheme.displayMedium),
+            Text('COMPARAÇÃO\nDE RESPOSTAS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
               'Toque em uma pergunta para ver a justificativa dos candidatos selecionados.',
@@ -305,7 +305,7 @@ class _ComparisonHeader extends StatelessWidget {
           SizedBox(
             width: 46,
             child: Text(
-              'VOCE',
+              'VOCÊ',
               style: textTheme.labelSmall,
               textAlign: TextAlign.center,
             ),

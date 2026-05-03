@@ -40,7 +40,7 @@ class _WeightingPageState extends State<WeightingPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       body: _theses.isEmpty ? _emptyState(context) : _content(context),
     );
   }
@@ -95,7 +95,7 @@ class _WeightingPageState extends State<WeightingPage> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Marque as perguntas que devem ter peso duplo no calculo.',
+                    'Marque as perguntas que devem ter peso duplo no cálculo.',
                     style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 24),
@@ -131,7 +131,7 @@ class _WeightingPageState extends State<WeightingPage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/party-selection');
               },
-              child: const Text('CONTINUAR PARA SELECAO'),
+              child: const Text('CONTINUAR PARA SELEÇÃO'),
             ),
           ),
         ),

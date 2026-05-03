@@ -33,33 +33,33 @@ class Party {
     final abbreviation = partyAbbreviation(party);
     const summaries = {
       'PT':
-          'Defende maior presenca do Estado na economia, fortalecimento de politicas sociais, valorizacao do salario minimo e investimentos publicos.',
+          'Defende maior presença do Estado na economia, fortalecimento de políticas sociais, valorização do salário mínimo e investimentos públicos.',
       'PL':
-          'Defende pautas conservadoras, seguranca publica, reducao do tamanho do Estado e agenda economica mais liberal.',
+          'Defende pautas conservadoras, segurança pública, redução do tamanho do Estado e agenda econômica mais liberal.',
       'PDT':
-          'Defende um projeto nacional-desenvolvimentista, com investimento em educacao, industria, trabalho e soberania economica.',
+          'Defende um projeto nacional-desenvolvimentista, com investimento em educação, indústria, trabalho e soberania econômica.',
       'MDB':
-          'Defende uma linha de centro, com conciliacao politica, responsabilidade fiscal e manutencao de programas sociais.',
+          'Defende uma linha de centro, com conciliação política, responsabilidade fiscal e manutenção de programas sociais.',
       'UNIAO':
-          'Defende uma agenda de centro-direita, com eficiencia do Estado, parcerias com o setor privado e foco em seguranca e gestao.',
+          'Defende uma agenda de centro-direita, com eficiência do Estado, parcerias com o setor privado e foco em segurança e gestão.',
       'NOVO':
-          'Defende liberalismo economico, privatizacoes, reducao de impostos, responsabilidade fiscal e menor intervencao estatal.',
+          'Defende liberalismo econômico, privatizações, redução de impostos, responsabilidade fiscal e menor intervenção estatal.',
       'PROS':
-          'Defende empreendedorismo, desenvolvimento economico, programas sociais focalizados e ampliacao de oportunidades.',
+          'Defende empreendedorismo, desenvolvimento econômico, programas sociais focalizados e ampliação de oportunidades.',
       'PTB':
-          'Defende pautas conservadoras, livre iniciativa, reducao da intervencao estatal e valores tradicionais.',
+          'Defende pautas conservadoras, livre iniciativa, redução da intervenção estatal e valores tradicionais.',
       'PCB':
-          'Defende ruptura com o modelo capitalista, estatizacoes, direitos trabalhistas amplos e organizacao popular.',
+          'Defende ruptura com o modelo capitalista, estatizações, direitos trabalhistas amplos e organização popular.',
       'UP':
-          'Defende reformas populares, combate a desigualdade, direitos sociais e maior controle publico sobre setores estrategicos.',
+          'Defende reformas populares, combate à desigualdade, direitos sociais e maior controle público sobre setores estratégicos.',
       'PSTU':
-          'Defende uma agenda socialista, estatizacao de grandes empresas, direitos trabalhistas e ruptura com politicas de austeridade.',
+          'Defende uma agenda socialista, estatização de grandes empresas, direitos trabalhistas e ruptura com políticas de austeridade.',
       'DC':
-          'Defende valores democrata-cristaos, familia, economia social de mercado e politicas publicas com base comunitaria.',
+          'Defende valores democrata-cristãos, família, economia social de mercado e políticas públicas com base comunitária.',
     };
 
     return summaries[abbreviation] ??
-        'Defende propostas ligadas ao campo ${spectrum ?? 'politico'} e ao programa apresentado para a eleicao.';
+        'Defende propostas ligadas ao campo ${spectrum ?? 'político'} e ao programa apresentado para a eleição.';
   }
 
   static String partyAbbreviation(String party) {

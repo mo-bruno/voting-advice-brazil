@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           SizedBox(height: constraints.maxHeight * 0.1),
                           Text(
-                            'GUIA\nELEITORAL',
+                            'FAROL\nPOLÍTICO',
                             style: textTheme.displayLarge?.copyWith(
                               fontSize: 52,
                               height: 0.95,
@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 48),
                           Text(
-                            'UMA FERRAMENTA DE INFORMAÇÃO NEUTRA PARA FORTALECER A DEMOCRACIA BRASILEIRA.',
+                            'UMA FERRAMENTA INTERATIVA QUE AJUDA VOCÊ A IDENTIFICAR QUAIS POSIÇÕES POLÍTICAS ESTÃO MAIS ALINHADAS ÀS SUAS OPINIÕES.',
                             style: textTheme.bodyMedium?.copyWith(
                               letterSpacing: 0.5,
                               height: 1.5,
@@ -90,7 +90,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 64),
                           Text(
-                            'PARCEIROS E INSTITUIÇÕES',
+                            'PROJETO ACADÊMICO',
                             style: textTheme.labelMedium,
                             textAlign: TextAlign.center,
                           ),
@@ -116,7 +116,7 @@ class _PartnersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final partners = ['TSE', 'Observatório', 'Folha', 'Estadão', 'UNI-Brasil'];
+    final partners = ['Mackenzie'];
 
     return Wrap(
       spacing: 12,

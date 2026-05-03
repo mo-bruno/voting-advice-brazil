@@ -20,7 +20,7 @@
   "theses": [
     {
       "id": 1,
-      "text": "A Petrobras deve permanecer como empresa 100% estatal, sem participacao de capital privado.",
+      "text": "A Petrobras deve permanecer como empresa 100% estatal, sem participação de capital privado.",
       "topic": "economia",
       "positions": {
         "lula": {
@@ -130,7 +130,7 @@
     },
     {
       "id": 3,
-      "text": "O teto constitucional de gastos publicos deve ser mantido.",
+      "text": "O teto constitucional de gastos públicos deve ser mantido.",
       "topic": "economia",
       "positions": {
         "lula": {
@@ -240,7 +240,7 @@
     },
     {
       "id": 5,
-      "text": "O acesso a armas de fogo por civis deve ser facilitado como direito de autodefesa.",
+      "text": "O acesso de civis a armas de fogo deve ser facilitado como direito de autodefesa.",
       "topic": "seguranca",
       "positions": {
         "lula": {
@@ -295,7 +295,7 @@
     },
     {
       "id": 6,
-      "text": "O uso de drogas deve ser descriminalizado e tratado como questao de saude publica.",
+      "text": "O uso de drogas deve ser descriminalizado e tratado como questão de saúde pública.",
       "topic": "seguranca",
       "positions": {
         "lula": {
@@ -350,7 +350,7 @@
     },
     {
       "id": 7,
-      "text": "O Estado deve garantir direitos especificos e protecao legal a populacao LGBTQIA+.",
+      "text": "O Estado deve garantir direitos específicos e proteção legal à população LGBTQIA+.",
       "topic": "direitos_sociais",
       "positions": {
         "lula": {
@@ -405,7 +405,7 @@
     },
     {
       "id": 8,
-      "text": "As cotas raciais em universidades e concursos publicos devem ser mantidas e ampliadas.",
+      "text": "As cotas raciais em universidades e concursos públicos devem ser mantidas e ampliadas.",
       "topic": "direitos_sociais",
       "positions": {
         "lula": {
@@ -460,7 +460,7 @@
     },
     {
       "id": 9,
-      "text": "Todas as terras indigenas devem ser demarcadas imediatamente.",
+      "text": "Todas as terras indígenas devem ser demarcadas imediatamente.",
       "topic": "direitos_sociais",
       "positions": {
         "lula": {
@@ -515,7 +515,7 @@
     },
     {
       "id": 10,
-      "text": "O aborto deve ser legalizado e oferecido pelo sistema publico de saude.",
+      "text": "O aborto deve ser legalizado e oferecido pelo sistema público de saúde.",
       "topic": "direitos_sociais",
       "positions": {
         "lula": {
@@ -570,7 +570,7 @@
     },
     {
       "id": 11,
-      "text": "A Policia Militar deve ser desmilitarizada e unificada com a Policia Civil.",
+      "text": "A Polícia Militar deve ser desmilitarizada e unificada com a Polícia Civil.",
       "topic": "seguranca",
       "positions": {
         "lula": {
@@ -625,7 +625,7 @@
     },
     {
       "id": 12,
-      "text": "O preco dos combustiveis deve ser desvinculado da cotacao internacional do petroleo.",
+      "text": "O preço dos combustíveis deve ser desvinculado da cotação internacional do petróleo.",
       "topic": "economia",
       "positions": {
         "lula": {
@@ -680,7 +680,7 @@
     },
     {
       "id": 13,
-      "text": "O desmatamento ilegal na Amazonia deve ser combatido com tolerancia zero.",
+      "text": "O desmatamento ilegal na Amazônia deve ser combatido com tolerância zero.",
       "topic": "meio_ambiente",
       "positions": {
         "lula": {
@@ -735,7 +735,7 @@
     },
     {
       "id": 14,
-      "text": "O Brasil deve priorizar relacoes com paises do Sul Global (BRICS, America Latina, Africa) em vez de buscar alinhamento com OCDE e paises desenvolvidos.",
+      "text": "O Brasil deve priorizar relações com países do Sul Global (BRICS, América Latina, África) em vez de buscar alinhamento com a OCDE e países desenvolvidos.",
       "topic": "politica_externa",
       "positions": {
         "lula": {
@@ -790,7 +790,7 @@
     },
     {
       "id": 15,
-      "text": "O salario minimo deve ter politica permanente de valorizacao acima da inflacao.",
+      "text": "O salário mínimo deve ter política permanente de valorização acima da inflação.",
       "topic": "trabalho",
       "positions": {
         "lula": {
@@ -845,7 +845,7 @@
     },
     {
       "id": 16,
-      "text": "O ensino religioso e a educacao moral e civica devem fazer parte do curriculo escolar.",
+      "text": "O ensino religioso e a educação moral e cívica devem fazer parte do currículo escolar.",
       "topic": "educacao",
       "positions": {
         "lula": {
@@ -900,7 +900,7 @@
     },
     {
       "id": 17,
-      "text": "O SUS deve ser o unico sistema de saude, incorporando hospitais e clinicas privadas.",
+      "text": "O SUS deve ser o único sistema de saúde, incorporando hospitais e clínicas privadas.",
       "topic": "saude",
       "positions": {
         "lula": {
@@ -955,7 +955,7 @@
     },
     {
       "id": 18,
-      "text": "O Brasil deve realizar uma reforma agraria ampla, redistribuindo terras improdutivas.",
+      "text": "O Brasil deve realizar uma reforma agrária ampla, redistribuindo terras improdutivas.",
       "topic": "agricultura",
       "positions": {
         "lula": {
@@ -1010,7 +1010,7 @@
     },
     {
       "id": 19,
-      "text": "O transporte publico deve ser gratuito para a populacao.",
+      "text": "O transporte público deve ser gratuito para a população.",
       "topic": "infraestrutura",
       "positions": {
         "lula": {
@@ -1065,7 +1065,7 @@
     },
     {
       "id": 20,
-      "text": "O numero de ministerios deve ser drasticamente reduzido para tornar o governo mais eficiente.",
+      "text": "O número de ministérios deve ser drasticamente reduzido para tornar o governo mais eficiente.",
       "topic": "governanca",
       "positions": {
         "lula": {
@@ -1175,7 +1175,7 @@
     },
     {
       "id": 22,
-      "text": "A jornada de trabalho deve ser reduzida para 30 horas semanais sem reducao salarial.",
+      "text": "A jornada de trabalho deve ser reduzida para 30 horas semanais sem redução salarial.",
       "topic": "trabalho",
       "positions": {
         "lula": {
@@ -1230,7 +1230,7 @@
     },
     {
       "id": 23,
-      "text": "A educacao deve ser oferecida em tempo integral em todas as escolas publicas.",
+      "text": "A educação deve ser oferecida em tempo integral em todas as escolas públicas.",
       "topic": "educacao",
       "positions": {
         "lula": {
@@ -1340,7 +1340,7 @@
     },
     {
       "id": 25,
-      "text": "O Brasil deve acelerar a transicao para uma matriz energetica 100% renovavel.",
+      "text": "O Brasil deve acelerar a transição para uma matriz energética 100% renovável.",
       "topic": "meio_ambiente",
       "positions": {
         "lula": {
@@ -1395,7 +1395,7 @@
     },
     {
       "id": 26,
-      "text": "Os meios de comunicacao devem ser regulados pelo Estado para garantir pluralidade e combater desinformacao.",
+      "text": "Os meios de comunicação devem ser regulados pelo Estado para garantir pluralidade e combater desinformação.",
       "topic": "governanca",
       "positions": {
         "lula": {
@@ -1450,7 +1450,7 @@
     },
     {
       "id": 27,
-      "text": "O Bolsa Familia (ou Auxilio Brasil) deve evoluir para uma renda basica universal.",
+      "text": "O Bolsa Família (ou Auxílio Brasil) deve evoluir para uma renda básica universal.",
       "topic": "politica_social",
       "positions": {
         "lula": {
@@ -1505,7 +1505,7 @@
     },
     {
       "id": 28,
-      "text": "A educacao deve ser livre de qualquer orientacao ideologica, com foco exclusivo em conteudos tecnicos.",
+      "text": "A educação deve ser livre de qualquer orientação ideológica, com foco exclusivo em conteúdos técnicos.",
       "topic": "educacao",
       "positions": {
         "lula": {
@@ -1560,7 +1560,7 @@
     },
     {
       "id": 29,
-      "text": "O governo deve investir em programas de renegociacao massiva das dividas de familias inadimplentes.",
+      "text": "O governo deve investir em programas de renegociação em massa das dívidas de famílias inadimplentes.",
       "topic": "economia",
       "positions": {
         "lula": {
@@ -1615,7 +1615,7 @@
     },
     {
       "id": 30,
-      "text": "O Brasil deve buscar a entrada na OCDE como prioridade de politica externa.",
+      "text": "O Brasil deve buscar a entrada na OCDE como prioridade de política externa.",
       "topic": "politica_externa",
       "positions": {
         "lula": {

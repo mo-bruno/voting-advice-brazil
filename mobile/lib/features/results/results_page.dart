@@ -23,7 +23,7 @@ class _ResultsPageState extends State<ResultsPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'ELEICAO 2026',
+      title: 'ELEIÇÃO 2026',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
@@ -103,7 +103,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 border: Border.all(color: AppTheme.outlineVariant),
               ),
               child: Text(
-                'O resultado e calculado pelo backend com base nas suas respostas e nas posicoes cadastradas para cada candidato.',
+                'O resultado é calculado pelo backend com base nas suas respostas e nas posições cadastradas para cada candidato.',
                 style: textTheme.bodySmall,
               ),
             ),

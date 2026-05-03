@@ -86,7 +86,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
@@ -124,7 +124,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                'Nao foi possivel carregar os candidatos.',
+                'Não foi possível carregar os candidatos.',
                 style: textTheme.headlineSmall,
                 textAlign: TextAlign.center,
               ),
@@ -155,7 +155,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
             Text('ESCOLHA OS\nPARTIDOS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
-              'Selecione os partidos que voce deseja comparar com suas respostas.',
+              'Selecione os partidos que você deseja comparar com suas respostas.',
               style: textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
