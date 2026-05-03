@@ -57,7 +57,7 @@ class _QuizPageState extends State<QuizPage> {
 
     if (controller.errorMessage != null) {
       return _StateMessage(
-        title: 'Nao foi possivel carregar as perguntas.',
+        title: 'Não foi possível carregar as perguntas.',
         message: controller.errorMessage!,
         actionLabel: 'TENTAR NOVAMENTE',
         onPressed: controller.loadQuestions,
@@ -67,7 +67,7 @@ class _QuizPageState extends State<QuizPage> {
     if (thesis == null) {
       return _StateMessage(
         title: 'Nenhuma pergunta encontrada.',
-        message: 'Confira se o backend esta rodando e com dados carregados.',
+        message: 'Confira se o backend está rodando e com dados carregados.',
         actionLabel: 'RECARREGAR',
         onPressed: controller.loadQuestions,
       );
@@ -132,7 +132,7 @@ class _QuizPageState extends State<QuizPage> {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text('PULAR ESTA QUESTAO', style: textTheme.labelMedium),
+                  Text('PULAR ESTA QUESTÃO', style: textTheme.labelMedium),
                   const SizedBox(width: 4),
                   const Icon(
                     Icons.chevron_right,
