@@ -4,7 +4,7 @@ import 'thesis.dart';
 class ThesisMatch {
   final int thesisId;
   final String thesisText;
-  final String themeId;
+  final int themeId;
   final String userAnswer;
   final String candidatePosition;
   final String matchType;
@@ -22,7 +22,7 @@ class ThesisMatch {
     return ThesisMatch(
       thesisId: json['thesis_id'] as int,
       thesisText: json['thesis_text'] as String,
-      themeId: json['theme_id'] as String,
+      themeId: json['theme_id'] as int,
       userAnswer: json['user_answer'] as String,
       candidatePosition: json['candidate_position'] as String,
       matchType: json['match_type'] as String,
@@ -78,9 +78,9 @@ class CandidateResult {
 
   factory CandidateResult.fromJson(Map<String, dynamic> json) {
     return CandidateResult(
-      candidateId: json['candidate_id'] as String,
+      candidateId: (json['candidate_id'] as int).toString(),
       name: json['name'] as String,
-      party: json['party'] as String,
+      party: json['party_acronym'] as String,
       scorePercent: (json['score_percent'] as num).toDouble(),
       rank: json['rank'] as int,
       matches: (json['matches'] as List<dynamic>)

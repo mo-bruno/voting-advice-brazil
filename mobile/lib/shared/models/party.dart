@@ -16,11 +16,11 @@ class Party {
   });
 
   factory Party.fromCandidateJson(Map<String, dynamic> json) {
-    final party = json['party'] as String? ?? '';
+    final party = json['party_acronym'] as String;
     final spectrum = json['spectrum'] as String?;
 
     return Party(
-      id: json['id'] as String,
+      id: (json['id'] as int).toString(),
       name: json['name'] as String,
       abbreviation: partyAbbreviation(party),
       description: platformSummary(party, spectrum),

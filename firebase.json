@@ -1,0 +1,17 @@
+{
+  "hosting": {
+    "site": "farol-politico-495210",
+    "public": "mobile/build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
