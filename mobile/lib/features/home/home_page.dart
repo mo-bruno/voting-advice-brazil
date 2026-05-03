@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/quiz_session.dart';
 
@@ -73,6 +76,11 @@ class HomePage extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
+                                if (QuizSession.instance.hasStartedFlow) {
+                                  unawaited(
+                                    AnalyticsService().quizRestarted(),
+                                  );
+                                }
                                 QuizSession.instance.resetQuiz();
                                 Navigator.pushNamed(context, '/quiz-intro');
                               },
