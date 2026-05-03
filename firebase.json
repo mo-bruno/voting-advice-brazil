@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "farol-politico-495210",
     "public": "mobile/build/web",
     "ignore": [
       "firebase.json",
