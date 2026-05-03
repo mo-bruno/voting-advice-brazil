@@ -1,9 +1,12 @@
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
 
+from pathlib import Path
+
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from fastapi.staticfiles import StaticFiles
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
@@ -11,17 +14,27 @@ from slowapi.util import get_remote_address
 
 from app.api.routers import candidates, health, quiz, themes
 from app.core.config import settings
-from app.infrastructure.database.seed import seed
-from app.infrastructure.database.session import SessionLocal, create_tables
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
-    create_tables()
-    with SessionLocal() as db:
-        seed(db)
+    # Schema é gerenciado por Alembic via Cloud Build pré-deploy.
+    # Lifespan apenas popula dados estáticos (idempotente: retorna cedo
+    # se PartyModel.count() > 0 dentro de seed()). Em ambiente de teste,
+    # o conftest configura o DB próprio e a seed é dispensável.
+    if settings.app_env != "test":
+        from app.infrastructure.database.seed import seed
+        from app.infrastructure.database.session import SessionLocal
+
+        with SessionLocal() as db:
+            seed(db)
+
+    print(
+        f"farol-politico-api startup: env={settings.app_env} "
+        f"version={settings.app_version}"
+    )
     yield
 
 
@@ -54,3 +67,7 @@ app.include_router(quiz.router, prefix=PREFIX)
 app.include_router(candidates.router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
 app.include_router(health.router)
+
+_data_path = Path(settings.data_dir)
+if _data_path.is_dir():
+    app.mount("/data", StaticFiles(directory=str(_data_path)), name="data")

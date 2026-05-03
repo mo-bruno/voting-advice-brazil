@@ -16,11 +16,11 @@ class Party {
   });
 
   factory Party.fromCandidateJson(Map<String, dynamic> json) {
-    final party = json['party'] as String? ?? '';
+    final party = json['party_acronym'] as String;
     final spectrum = json['spectrum'] as String?;
 
     return Party(
-      id: json['id'] as String,
+      id: (json['id'] as int).toString(),
       name: json['name'] as String,
       abbreviation: partyAbbreviation(party),
       description: platformSummary(party, spectrum),
@@ -51,7 +51,7 @@ class Party {
       'PCB':
           'Defende ruptura com o modelo capitalista, estatizações, direitos trabalhistas amplos e organização popular.',
       'UP':
-          'Defende reformas populares, combate à desigualdade, direitos sociais e maior controle público sobre setores estratégicos.',
+          'Defende reformas populares, combate a desigualdade, direitos sociais e maior controle público sobre setores estratégicos.',
       'PSTU':
           'Defende uma agenda socialista, estatização de grandes empresas, direitos trabalhistas e ruptura com políticas de austeridade.',
       'DC':

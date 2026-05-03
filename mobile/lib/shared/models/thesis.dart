@@ -19,7 +19,7 @@ class Thesis {
     return Thesis(
       id: json['id'] as int,
       title: json['text'] as String,
-      category: json['theme_name'] as String? ?? json['theme_id'] as String,
+      category: json['theme_name'] as String,
     );
   }
 

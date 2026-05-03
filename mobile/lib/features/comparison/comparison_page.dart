@@ -52,7 +52,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
         if (_selectedCandidateIds.length >= 2) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
-              content: Text('Escolha no máximo 2 candidatos para comparar.'),
+              content: Text('Escolha no maximo 2 candidatos para comparar.'),
             ),
           );
           return;
@@ -131,7 +131,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
                 children: [
                   const SizedBox(height: 24),
                   Text(
-                    'ESCOLHA A\nCOMPARAÇÃO',
+                    'ESCOLHA A\nCOMPARACAO',
                     style: textTheme.displayMedium,
                   ),
                   const SizedBox(height: 16),
@@ -353,7 +353,7 @@ class _ComparisonRow extends StatelessWidget {
       orElse: () => ThesisMatch(
         thesisId: thesisId,
         thesisText: thesisText,
-        themeId: '',
+        themeId: 0,
         userAnswer: 'skip',
         candidatePosition: 'sem_posicao',
         matchType: 'skipped',
@@ -423,7 +423,8 @@ class _ComparisonRow extends StatelessWidget {
                 ...selectedResults.map(
                   (result) => SizedBox(
                     width: 46,
-                    child: Center(child: _buildIndicator(_candidateAnswer(result))),
+                    child: Center(
+                        child: _buildIndicator(_candidateAnswer(result))),
                   ),
                 ),
               ],
@@ -436,8 +437,9 @@ class _ComparisonRow extends StatelessWidget {
               selectedResults: selectedResults,
               justifications: justifications,
             ),
-            crossFadeState:
-                isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            crossFadeState: isExpanded
+                ? CrossFadeState.showSecond
+                : CrossFadeState.showFirst,
             duration: const Duration(milliseconds: 160),
           ),
         ],

@@ -11,6 +11,7 @@ from app.core.entities.candidate import CandidatePosition
 from app.core.scoring import (
     CandidateStance,
     InsufficientAnswersError,  # re-exportado para o router
+    ScoreBreakdown,
     Stance,
     UserAnswer,
     Weight,
@@ -60,7 +61,7 @@ class QuizAnswer:
 class ThesisMatch:
     thesis_id: int
     thesis_text: str
-    theme_id: str
+    theme_id: int
     user_answer: str
     candidate_position: str
     match_type: str  # "match" | "mismatch" | "partial" | "skipped"
@@ -68,10 +69,10 @@ class ThesisMatch:
 
 @dataclass
 class CandidateResult:
-    candidate_id: str
+    candidate_id: int
     name: str
-    party: str
-    party_logo: str | None
+    party_acronym: str
+    party_logo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     rank: int
@@ -118,8 +119,8 @@ def _score_by_theme(
         if pos is None or pos.position == "sem_posicao":
             continue
         sb = score([_to_user_answer(ans)], [_to_candidate_stance(pos)])
-        d, m = buckets.get(pos.theme_id, (0, 0))
-        buckets[pos.theme_id] = (d + sb.total_distance, m + sb.max_distance)
+        d, m = buckets.get(pos.theme_slug, (0, 0))
+        buckets[pos.theme_slug] = (d + sb.total_distance, m + sb.max_distance)
 
     return {
         theme: round((1 - d / m) * 100, 2) if m > 0 else 0.0
@@ -145,8 +146,8 @@ def submit_quiz(
     )
     theses = {t.id: t for t in thesis_repo.get_by_ids(answered_ids)}
 
-    scored: list[tuple[str, str, ScoreBreakdown]] = []
-    intermediate: dict[str, Any] = {}
+    scored: list[tuple[int, str, ScoreBreakdown]] = []
+    intermediate: dict[int, Any] = {}
     for candidate in candidates:
         cand_positions = positions_map.get(candidate.id, {})
         stances = [_to_candidate_stance(p) for p in cand_positions.values()]
@@ -189,8 +190,8 @@ def submit_quiz(
             CandidateResult(
                 candidate_id=candidate.id,
                 name=candidate.name,
-                party=candidate.party,
-                party_logo=candidate.party_logo,
+                party_acronym=candidate.party_acronym,
+                party_logo_url=candidate.party_logo_url,
                 score_percent=rc.score.score_percent,
                 score_by_theme=data["by_theme"],
                 rank=rc.rank,

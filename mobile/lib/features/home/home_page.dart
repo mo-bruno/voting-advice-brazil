@@ -81,7 +81,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 48),
                           Text(
-                            'UMA FERRAMENTA INTERATIVA QUE AJUDA VOCÊ A IDENTIFICAR QUAIS POSIÇÕES POLÍTICAS ESTÃO MAIS ALINHADAS ÀS SUAS OPINIÕES.',
+                            'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',
                             style: textTheme.bodyMedium?.copyWith(
                               letterSpacing: 0.5,
                               height: 1.5,

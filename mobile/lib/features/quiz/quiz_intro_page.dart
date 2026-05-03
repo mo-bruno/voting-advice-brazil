@@ -47,7 +47,8 @@ class QuizIntroPage extends StatelessWidget {
                     const _TutorialStep(
                       icon: Icons.remove,
                       title: 'Neutro',
-                      text: 'Use quando você não tem posição forte sobre o tema.',
+                      text:
+                          'Use quando você não tem posição forte sobre o tema.',
                     ),
                     const SizedBox(height: 12),
                     const _TutorialStep(
