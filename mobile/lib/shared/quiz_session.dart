@@ -8,6 +8,9 @@ import 'models/thesis.dart';
 class QuizSession extends ChangeNotifier {
   QuizSession._();
 
+  @visibleForTesting
+  factory QuizSession.testOnly() => QuizSession._();
+
   static final QuizSession instance = QuizSession._();
 
   final ApiClient api = ApiClient();
@@ -15,11 +18,42 @@ class QuizSession extends ChangeNotifier {
   List<Party> candidates = [];
   List<CandidateResult> results = [];
   Set<String> selectedCandidateIds = {};
+  DateTime? quizStartedAt;
+
+  bool get hasStartedFlow =>
+      theses.isNotEmpty ||
+      results.isNotEmpty ||
+      selectedCandidateIds.isNotEmpty;
+
+  int get totalAnswered => theses
+      .where(
+        (thesis) =>
+            thesis.answer != ThesisAnswer.unanswered &&
+            thesis.answer != ThesisAnswer.skipped,
+      )
+      .length;
+
+  int get totalSkipped =>
+      theses.where((thesis) => thesis.answer == ThesisAnswer.skipped).length;
+
+  int get countWeighted => theses.where((thesis) => thesis.doubleWeight).length;
+
+  void markQuizStarted([DateTime? now]) {
+    quizStartedAt = now ?? DateTime.now();
+    notifyListeners();
+  }
+
+  int quizDurationMs({DateTime? now}) {
+    final startedAt = quizStartedAt;
+    if (startedAt == null) return 0;
+    return (now ?? DateTime.now()).difference(startedAt).inMilliseconds;
+  }
 
   void resetQuiz() {
     theses = [];
     results = [];
     selectedCandidateIds = {};
+    quizStartedAt = null;
     notifyListeners();
   }
 

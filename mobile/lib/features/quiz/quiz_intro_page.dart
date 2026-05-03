@@ -1,10 +1,25 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
+import '../../shared/quiz_session.dart';
 
-class QuizIntroPage extends StatelessWidget {
+class QuizIntroPage extends StatefulWidget {
   const QuizIntroPage({super.key});
+
+  @override
+  State<QuizIntroPage> createState() => _QuizIntroPageState();
+}
+
+class _QuizIntroPageState extends State<QuizIntroPage> {
+  @override
+  void initState() {
+    super.initState();
+    unawaited(AnalyticsService().quizIntroViewed());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +85,8 @@ class QuizIntroPage extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+                  QuizSession.instance.markQuizStarted();
+                  unawaited(AnalyticsService().quizStarted());
                   Navigator.pushNamed(context, '/quiz');
                 },
                 child: const Text('COMEÇAR PERGUNTAS'),
