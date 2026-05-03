@@ -95,7 +95,7 @@ class _WeightingPageState extends State<WeightingPage> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Marque as perguntas que devem ter peso duplo no calculo.',
+                    'Marque as perguntas que devem ter peso duplo no cálculo.',
                     style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 24),
@@ -131,7 +131,7 @@ class _WeightingPageState extends State<WeightingPage> {
               onPressed: () {
                 Navigator.pushNamed(context, '/party-selection');
               },
-              child: const Text('CONTINUAR PARA SELECAO'),
+              child: const Text('CONTINUAR PARA SELEÇÃO'),
             ),
           ),
         ),
@@ -258,8 +258,9 @@ class _ThemeWeightCard extends StatelessWidget {
                         child: Icon(
                           Icons.edit,
                           size: 16,
-                          color:
-                              isEditing ? AppTheme.background : AppTheme.onSurface,
+                          color: isEditing
+                              ? AppTheme.background
+                              : AppTheme.onSurface,
                         ),
                       ),
                     ),
@@ -274,8 +275,9 @@ class _ThemeWeightCard extends StatelessWidget {
               currentAnswer: thesis.answer,
               onSelected: onAnswerSelected,
             ),
-            crossFadeState:
-                isEditing ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            crossFadeState: isEditing
+                ? CrossFadeState.showSecond
+                : CrossFadeState.showFirst,
             duration: const Duration(milliseconds: 160),
           ),
         ],
@@ -303,7 +305,8 @@ class _InlineAnswerEditor extends StatelessWidget {
         children: [
           const Divider(color: AppTheme.outlineVariant, height: 1),
           const SizedBox(height: 12),
-          Text('EDITAR RESPOSTA', style: Theme.of(context).textTheme.labelSmall),
+          Text('EDITAR RESPOSTA',
+              style: Theme.of(context).textTheme.labelSmall),
           const SizedBox(height: 10),
           Wrap(
             spacing: 8,

@@ -34,32 +34,33 @@ class QuizIntroPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      'Voce vai responder a uma serie de teses politicas. Para cada uma, escolha se concorda, discorda, fica neutro ou prefere pular.',
+                      'Você vai responder a uma série de teses políticas. Para cada uma, escolha se concorda, discorda, fica neutro ou prefere pular.',
                       style: textTheme.bodyMedium?.copyWith(height: 1.5),
                     ),
                     const SizedBox(height: 24),
                     const _TutorialStep(
                       icon: Icons.check,
                       title: 'Concordo',
-                      text: 'Use quando a frase representa sua opiniao.',
+                      text: 'Use quando a frase representa sua opinião.',
                     ),
                     const SizedBox(height: 12),
                     const _TutorialStep(
                       icon: Icons.remove,
                       title: 'Neutro',
-                      text: 'Use quando voce nao tem posicao forte sobre o tema.',
+                      text:
+                          'Use quando você não tem posição forte sobre o tema.',
                     ),
                     const SizedBox(height: 12),
                     const _TutorialStep(
                       icon: Icons.close,
                       title: 'Discordo',
-                      text: 'Use quando voce pensa o contrario da frase.',
+                      text: 'Use quando você pensa o contrário da frase.',
                     ),
                     const SizedBox(height: 12),
                     const _TutorialStep(
                       icon: Icons.skip_next,
                       title: 'Pular',
-                      text: 'Perguntas puladas nao entram no calculo.',
+                      text: 'Perguntas puladas não entram no cálculo.',
                     ),
                   ],
                 ),

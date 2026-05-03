@@ -136,7 +136,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    'Selecione os candidatos que voce quer comparar com suas respostas.',
+                    'Selecione os candidatos que você quer comparar com suas respostas.',
                     style: textTheme.bodyMedium,
                   ),
                   const SizedBox(height: 24),
@@ -183,7 +183,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24),
-            Text('COMPARACAO\nDE RESPOSTAS', style: textTheme.displayMedium),
+            Text('COMPARAÇÃO\nDE RESPOSTAS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
               'Toque em uma pergunta para ver a justificativa dos candidatos selecionados.',
@@ -305,7 +305,7 @@ class _ComparisonHeader extends StatelessWidget {
           SizedBox(
             width: 46,
             child: Text(
-              'VOCE',
+              'VOCÊ',
               style: textTheme.labelSmall,
               textAlign: TextAlign.center,
             ),
@@ -423,7 +423,8 @@ class _ComparisonRow extends StatelessWidget {
                 ...selectedResults.map(
                   (result) => SizedBox(
                     width: 46,
-                    child: Center(child: _buildIndicator(_candidateAnswer(result))),
+                    child: Center(
+                        child: _buildIndicator(_candidateAnswer(result))),
                   ),
                 ),
               ],
@@ -436,8 +437,9 @@ class _ComparisonRow extends StatelessWidget {
               selectedResults: selectedResults,
               justifications: justifications,
             ),
-            crossFadeState:
-                isExpanded ? CrossFadeState.showSecond : CrossFadeState.showFirst,
+            crossFadeState: isExpanded
+                ? CrossFadeState.showSecond
+                : CrossFadeState.showFirst,
             duration: const Duration(milliseconds: 160),
           ),
         ],

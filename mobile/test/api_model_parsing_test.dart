@@ -52,7 +52,7 @@ void main() {
         expect(party.abbreviation, 'PT');
         expect(party.logoAsset, 'assets/logos/PT.png');
         expect(party.hasLogoAsset, isTrue);
-        expect(party.description, contains('politicas sociais'));
+        expect(party.description, contains('políticas sociais'));
       },
     );
   });
