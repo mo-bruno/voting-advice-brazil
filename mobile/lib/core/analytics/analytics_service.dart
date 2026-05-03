@@ -121,14 +121,14 @@ class AnalyticsService {
   }
 
   Future<void> partyToggled({
-    required String partyId,
+    required String partyAcronym,
     required bool selected,
   }) {
     return _sink.logEvent(
       name: 'party_toggled',
       parameters: {
-        'party_id': partyId,
-        'selected': selected,
+        'party_acronym': partyAcronym,
+        'selected': selected ? 1 : 0,
       },
     );
   }

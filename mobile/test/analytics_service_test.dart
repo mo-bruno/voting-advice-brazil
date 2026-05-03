@@ -58,6 +58,19 @@ void main() {
       expect(sink.events.single.name, 'party_selection_completed');
       expect(sink.events.single.parameters, {'selected_party_count': 7});
     });
+
+    test('logs party_toggled with acronym and numeric selected flag', () async {
+      final sink = FakeAnalyticsSink();
+      final service = AnalyticsService(sink);
+
+      await service.partyToggled(partyAcronym: 'PT', selected: true);
+
+      expect(sink.events.single.name, 'party_toggled');
+      expect(sink.events.single.parameters, {
+        'party_acronym': 'PT',
+        'selected': 1,
+      });
+    });
   });
 }
 
