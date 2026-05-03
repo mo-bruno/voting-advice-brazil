@@ -119,7 +119,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: _handleBack,

@@ -39,7 +39,7 @@ class _QuizPageState extends State<QuizPage> {
     final thesis = controller.currentThesis;
 
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {

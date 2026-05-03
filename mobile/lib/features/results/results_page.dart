@@ -32,7 +32,7 @@ class _ResultsPageState extends State<ResultsPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'ELEIÇÃO 2026',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {

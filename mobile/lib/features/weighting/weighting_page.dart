@@ -59,7 +59,7 @@ class _WeightingPageState extends State<WeightingPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       body: _theses.isEmpty ? _emptyState(context) : _content(context),
     );
   }

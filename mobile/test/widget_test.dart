@@ -9,7 +9,7 @@ void main() {
 
     await tester.pumpWidget(const MyApp());
 
-    expect(find.text('GUIA\nELEITORAL'), findsOneWidget);
+    expect(find.text('FAROL\nPOLÍTICO'), findsOneWidget);
     expect(find.text('COMEÇAR'), findsOneWidget);
   });
 }
