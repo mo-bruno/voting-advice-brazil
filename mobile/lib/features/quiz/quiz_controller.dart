@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
@@ -15,6 +17,7 @@ class QuizController extends ChangeNotifier {
   String? errorMessage;
   DateTime? _currentThesisViewedAt;
   final Set<int> _viewedThesisIds = {};
+  bool _answering = false;
 
   QuizController({
     QuizSession? session,
@@ -31,12 +34,26 @@ class QuizController extends ChangeNotifier {
   bool get isFirst => _currentIndex == 0;
   bool get isLast => _currentIndex == theses.length - 1;
 
-  Future<void> loadQuestions() async {
+  /// Clears per-quiz state so a fresh run emits funnel events from scratch.
+  ///
+  /// The controller is normally created per [QuizPage] push, but this method
+  /// makes the invariant explicit when callers reuse a controller instance
+  /// or when [loadQuestions] is invoked with `force: true`.
+  void resetForNewQuiz() {
+    _currentIndex = 0;
+    _viewedThesisIds.clear();
+    _currentThesisViewedAt = null;
+  }
+
+  Future<void> loadQuestions({bool force = false}) async {
     isLoading = true;
     errorMessage = null;
+    if (force) {
+      resetForNewQuiz();
+    }
     notifyListeners();
     try {
-      await session.loadQuestions();
+      await session.loadQuestions(force: force);
       if (_currentIndex >= theses.length) {
         _currentIndex = 0;
       }
@@ -54,43 +71,51 @@ class QuizController extends ChangeNotifier {
     if (thesis == null) return;
     _currentThesisViewedAt = now();
     if (_viewedThesisIds.add(thesis.id)) {
-      analytics.thesisViewed(
-        thesisId: thesis.id,
-        thesisIndex: _currentIndex + 1,
+      unawaited(
+        analytics.thesisViewed(
+          thesisId: thesis.id,
+          thesisIndex: _currentIndex + 1,
+        ),
       );
     }
   }
 
   Future<bool> answer(ThesisAnswer answer) async {
-    final thesis = currentThesis;
-    if (thesis == null) return false;
-    thesis.answer = answer;
+    if (_answering) return false;
+    _answering = true;
+    try {
+      final thesis = currentThesis;
+      if (thesis == null) return false;
+      thesis.answer = answer;
 
-    final viewedAt = _currentThesisViewedAt ?? now();
-    final timeToAnswerMs = now().difference(viewedAt).inMilliseconds;
-    await analytics.thesisAnswered(
-      thesisId: thesis.id,
-      stance: thesis.apiAnswer,
-      timeToAnswerMs: timeToAnswerMs < 0 ? 0 : timeToAnswerMs,
-    );
-    if (answer == ThesisAnswer.skipped) {
-      await analytics.thesisSkipped(thesisId: thesis.id);
-    }
-
-    if (isLast) {
-      await analytics.quizCompleted(
-        totalAnswered: session.totalAnswered,
-        totalSkipped: session.totalSkipped,
-        durationMs: session.quizDurationMs(now: now()),
+      final viewedAt = _currentThesisViewedAt ?? now();
+      final timeToAnswerMs = now().difference(viewedAt).inMilliseconds;
+      await analytics.thesisAnswered(
+        thesisId: thesis.id,
+        stance: thesis.apiAnswer,
+        timeToAnswerMs: timeToAnswerMs < 0 ? 0 : timeToAnswerMs,
       );
-      notifyListeners();
-      return true;
-    }
+      if (answer == ThesisAnswer.skipped) {
+        await analytics.thesisSkipped(thesisId: thesis.id);
+      }
 
-    _currentIndex++;
-    markCurrentThesisViewed();
-    notifyListeners();
-    return false;
+      if (isLast) {
+        await analytics.quizCompleted(
+          totalAnswered: session.totalAnswered,
+          totalSkipped: session.totalSkipped,
+          durationMs: session.quizDurationMs(now: now()),
+        );
+        notifyListeners();
+        return true;
+      }
+
+      _currentIndex++;
+      markCurrentThesisViewed();
+      notifyListeners();
+      return false;
+    } finally {
+      _answering = false;
+    }
   }
 
   Future<bool> skip() => answer(ThesisAnswer.skipped);
