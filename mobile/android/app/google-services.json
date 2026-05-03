@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "694093414765",
+    "project_id": "farol-politico-495210",
+    "storage_bucket": "farol-politico-495210.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:694093414765:android:21a368c57bc51c81e89a64",
+        "android_client_info": {
+          "package_name": "com.example.guia_eleitoral"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJD0MpdQRBAqRs6KwATThaSTN2zsMFWX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
