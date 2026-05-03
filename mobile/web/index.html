@@ -38,6 +38,30 @@
     })(window, document, "clarity", "script", "wljkkpkyyc");
   </script>
 
+  <!-- Google Analytics 4 web fallback for MVP validation events -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0P9XLRYVWT"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+
+    (function() {
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("debug_analytics")) {
+        window.localStorage.setItem("farol_analytics_debug", "1");
+      }
+
+      window.farolAnalyticsDebug =
+        window.localStorage.getItem("farol_analytics_debug") === "1";
+
+      gtag("js", new Date());
+      gtag(
+        "config",
+        "G-0P9XLRYVWT",
+        window.farolAnalyticsDebug ? {"debug_mode": true} : {}
+      );
+    })();
+  </script>
+
   <title>guia_eleitoral</title>
   <link rel="manifest" href="manifest.json">
 </head>
