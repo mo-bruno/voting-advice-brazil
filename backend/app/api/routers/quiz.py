@@ -1,3 +1,5 @@
+from typing import cast
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.cache import cache_get, cache_set
@@ -36,7 +38,7 @@ def questions(
     cache_key = f"quiz:questions:{','.join(sorted(themes or []))}:{limit}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(QuestionsResponse, cached)
 
     theses = get_quiz_questions(thesis_repo, themes=themes, limit=limit)
     response = QuestionsResponse(

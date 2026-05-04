@@ -1,12 +1,13 @@
 import random
 
 import pytest
-from hypothesis import given, strategies as st
+from hypothesis import given
+from hypothesis import strategies as st
 
 from app.core.scoring import (
+    MIN_ANSWERS,
     CandidateStance,
     InsufficientAnswersError,
-    MIN_ANSWERS,
     RankedCandidate,
     ScoreBreakdown,
     Stance,

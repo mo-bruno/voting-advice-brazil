@@ -1,3 +1,5 @@
+from typing import cast
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.cache import cache_get, cache_set
@@ -6,8 +8,8 @@ from app.api.schemas.candidates import (
     CandidateListResponse,
     CandidateOut,
     JustificationOut,
-    JustificationSummaryOut,
     JustificationsResponse,
+    JustificationSummaryOut,
     PositionOut,
     PositionsResponse,
 )
@@ -60,7 +62,7 @@ def list_all(
     cache_key = f"candidates:list:{cargo}:{estado}:{partido}:{search}:{page}:{page_size}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(CandidateListResponse, cached)
 
     candidates, total = list_candidates(
         repo, cargo=cargo, estado=estado, partido=partido,
@@ -85,7 +87,7 @@ def get_one(
     cache_key = f"candidates:one:{candidate_id}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(CandidateOut, cached)
 
     candidate = get_candidate(repo, candidate_id)
     if candidate is None:
@@ -109,7 +111,7 @@ def get_positions(
     cache_key = f"candidates:positions:{candidate_id}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(PositionsResponse, cached)
 
     positions = get_candidate_positions(position_repo, candidate_id)
     response = PositionsResponse(
@@ -144,7 +146,7 @@ def get_justifications(
     cache_key = f"candidates:justifications:{candidate_id}:{group_by_theme}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(JustificationsResponse, cached)
 
     result = get_candidate_justifications(position_repo, candidate_id, group_by_theme=group_by_theme)
 

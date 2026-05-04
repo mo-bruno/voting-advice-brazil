@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 from sqlalchemy.orm import Session
 
@@ -69,10 +70,10 @@ def _seed_themes(db: Session) -> None:
     db.flush()
 
 
-def _load_candidates_json(data_dir: Path) -> list[dict]:
+def _load_candidates_json(data_dir: Path) -> list[dict[str, Any]]:
     candidates_file = data_dir / "propostas/2022/candidates.json"
     with candidates_file.open(encoding="utf-8") as f:
-        raw = json.load(f)
+        raw: Any = json.load(f)
     return raw if isinstance(raw, list) else raw.get("candidates", [])
 
 

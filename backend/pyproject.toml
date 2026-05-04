@@ -20,6 +20,8 @@ dev = [
     "httpx>=0.27.0",
     "anyio>=4.0.0",
     "hypothesis>=6.100.0",
+    "mypy>=1.14.0",
+    "ruff>=0.8.0",
 ]
 
 [build-system]
@@ -35,6 +37,7 @@ line-length = 88
 
 [tool.ruff.lint]
 select = ["E", "F", "I"]
+ignore = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"
@@ -48,6 +51,8 @@ addopts = "--cov=app --cov-report=term-missing --cov-fail-under=80"
 dev = [
     "httpx>=0.28.1",
     "hypothesis>=6.152.1",
+    "mypy>=1.14.0",
     "pytest>=9.0.3",
     "pytest-cov>=7.1.0",
+    "ruff>=0.8.0",
 ]
