@@ -27,6 +27,12 @@ class _ResultsPageState extends State<ResultsPage> {
     unawaited(event.catchError((_) {}));
   }
 
+  void _restartQuiz() {
+    _track(_analytics.quizRestarted());
+    _session.resetQuiz();
+    Navigator.pushNamedAndRemoveUntil(context, '/quiz-intro', (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -129,8 +135,8 @@ class _ResultsPageState extends State<ResultsPage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
-                child: const Text('CONTINUAR'),
+                onPressed: _restartQuiz,
+                child: const Text('REFAZER QUIZ'),
               ),
             ),
             const SizedBox(height: 32),
