@@ -23,7 +23,7 @@ class AnswerIn(BaseModel):
 
 
 class SubmitQuizIn(BaseModel):
-    answers: list[AnswerIn] = Field(min_length=1)
+    answers: list[AnswerIn] = Field(min_length=1, max_length=60)
 
     model_config = {
         "json_schema_extra": {

@@ -115,6 +115,12 @@ class TestEndpointSubmit:
         r = client.post("/api/v1/quiz/submit", json={"answers": []})
         assert r.status_code == 422
 
+    def test_too_many_answers_rejected_by_pydantic(self, client, thesis_ids):
+        tid = thesis_ids["Tese 1"]
+        payload = [{"thesis_id": tid, "answer": "agree", "weight": 1}] * 61
+        r = client.post("/api/v1/quiz/submit", json={"answers": payload})
+        assert r.status_code == 422
+
     def test_invalid_answer_value_rejected(self, client, thesis_ids):
         tid = thesis_ids["Tese 1"]
         r = client.post(
