@@ -4,6 +4,8 @@ Testes da fórmula de scoring estão em tests/unit/test_scoring.py.
 Aqui cobrimos: endpoints HTTP, conversão de entidades e contratos JSON.
 """
 
+from app.infrastructure.database.models import DeviceModel, QuizResponseModel
+
 
 def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
     """Payload mínimo válido (5 respostas não-skip) a partir do seed de teste."""
@@ -54,6 +56,118 @@ class TestEndpointSubmit:
         assert r.status_code == 200
         results = r.json()["results"]
         assert len(results) == 3
+
+    def test_submit_with_device_id_persists_answers(self, client, db_session, thesis_ids):
+        device_id = "550e8400-e29b-41d4-a716-446655440000"
+        payload = _agree5(thesis_ids)
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": payload},
+        )
+
+        assert r.status_code == 200
+        device = db_session.get(DeviceModel, device_id)
+        assert device is not None
+        assert device.created_at is not None
+        assert device.last_seen_at is not None
+
+        rows = (
+            db_session.query(QuizResponseModel)
+            .filter_by(device_id=device_id)
+            .order_by(QuizResponseModel.thesis_id)
+            .all()
+        )
+        assert len(rows) == len(payload)
+        assert [(row.thesis_id, row.answer, row.weight) for row in rows] == [
+            (answer["thesis_id"], answer["answer"], answer["weight"])
+            for answer in sorted(payload, key=lambda item: item["thesis_id"])
+        ]
+        assert {row.election_year for row in rows} == {2022}
+
+    def test_submit_with_same_device_id_updates_existing_answers(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        device_id = "550e8400-e29b-41d4-a716-446655440001"
+        first_payload = _agree5(thesis_ids)
+        updated_payload = [
+            {
+                "thesis_id": first_payload[0]["thesis_id"],
+                "answer": "disagree",
+                "weight": 2,
+            },
+            *first_payload[1:],
+        ]
+
+        first = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": first_payload},
+        )
+        second = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": updated_payload},
+        )
+
+        assert first.status_code == 200
+        assert second.status_code == 200
+        rows = (
+            db_session.query(QuizResponseModel)
+            .filter_by(device_id=device_id)
+            .order_by(QuizResponseModel.thesis_id)
+            .all()
+        )
+        assert len(rows) == len(first_payload)
+        changed = next(
+            row for row in rows if row.thesis_id == first_payload[0]["thesis_id"]
+        )
+        assert changed.answer == "disagree"
+        assert changed.weight == 2
+
+    def test_submit_persists_skip_answers_when_payload_is_valid(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        device_id = "550e8400-e29b-41d4-a716-446655440002"
+        payload = [
+            *_agree5(thesis_ids),
+            {"thesis_id": thesis_ids["Tese 6"], "answer": "skip", "weight": 1},
+        ]
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": payload},
+        )
+
+        assert r.status_code == 200
+        skipped = (
+            db_session.query(QuizResponseModel)
+            .filter_by(device_id=device_id, thesis_id=thesis_ids["Tese 6"])
+            .one()
+        )
+        assert skipped.answer == "skip"
+        assert skipped.weight == 1
+
+    def test_submit_without_device_id_does_not_persist_answers(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        before = db_session.query(QuizResponseModel).count()
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"answers": _agree5(thesis_ids)},
+        )
+
+        assert r.status_code == 200
+        after = db_session.query(QuizResponseModel).count()
+        assert after == before
 
     def test_results_ordered_by_score_desc(self, client, thesis_ids):
         r = client.post(

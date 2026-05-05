@@ -3,7 +3,12 @@ from typing import cast
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.cache import cache_get, cache_set
-from app.api.deps import get_candidate_repo, get_position_repo, get_thesis_repo
+from app.api.deps import (
+    get_candidate_repo,
+    get_position_repo,
+    get_quiz_response_repo,
+    get_thesis_repo,
+)
 from app.api.schemas.quiz import (
     CandidateResultOut,
     QuestionsResponse,
@@ -21,6 +26,7 @@ from app.core.use_cases.submit_quiz import (
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
     SqlPositionRepository,
+    SqlQuizResponseRepository,
     SqlThesisRepository,
 )
 
@@ -68,6 +74,7 @@ def submit(
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
+    quiz_response_repo: SqlQuizResponseRepository = Depends(get_quiz_response_repo),
 ) -> SubmitQuizResponse:
     answers = [
         QuizAnswer(thesis_id=a.thesis_id, answer=a.answer, weight=a.weight)
@@ -85,6 +92,9 @@ def submit(
                 "required": err.required,
             },
         ) from err
+
+    if body.device_id is not None:
+        quiz_response_repo.upsert_answers(str(body.device_id), answers)
 
     return SubmitQuizResponse(
         results=[

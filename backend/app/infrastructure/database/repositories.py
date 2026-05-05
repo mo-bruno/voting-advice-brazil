@@ -1,3 +1,5 @@
+from datetime import datetime, timezone
+
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session, selectinload
 
@@ -8,10 +10,13 @@ from app.core.use_cases.interfaces import (
     ThemeRepository,
     ThesisRepository,
 )
+from app.core.use_cases.submit_quiz import QuizAnswer
 from app.infrastructure.database.models import (
     CandidateModel,
     CandidatePositionModel,
+    DeviceModel,
     PartyModel,
+    QuizResponseModel,
     ThemeModel,
     ThesisModel,
 )
@@ -202,3 +207,63 @@ class SqlThemeRepository(ThemeRepository):
             )
             for row in rows
         ]
+
+
+class SqlQuizResponseRepository:
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def upsert_answers(self, device_id: str, answers: list[QuizAnswer]) -> None:
+        now = datetime.now(timezone.utc)
+        device = self._db.get(DeviceModel, device_id)
+        if device is None:
+            device = DeviceModel(
+                id=device_id,
+                created_at=now,
+                last_seen_at=now,
+            )
+            self._db.add(device)
+        else:
+            device.last_seen_at = now
+
+        thesis_ids = [answer.thesis_id for answer in answers]
+        year_rows = self._db.execute(
+            select(ThesisModel.id, ThesisModel.election_year).where(
+                ThesisModel.id.in_(thesis_ids)
+            )
+        ).all()
+        election_year_by_thesis_id = {
+            thesis_id: election_year for thesis_id, election_year in year_rows
+        }
+
+        for answer in answers:
+            election_year = election_year_by_thesis_id.get(answer.thesis_id)
+            if election_year is None:
+                continue
+
+            existing = self._db.execute(
+                select(QuizResponseModel).where(
+                    QuizResponseModel.device_id == device_id,
+                    QuizResponseModel.thesis_id == answer.thesis_id,
+                    QuizResponseModel.election_year == election_year,
+                )
+            ).scalar_one_or_none()
+
+            if existing is None:
+                self._db.add(
+                    QuizResponseModel(
+                        device_id=device_id,
+                        thesis_id=answer.thesis_id,
+                        answer=answer.answer,
+                        weight=answer.weight,
+                        election_year=election_year,
+                        created_at=now,
+                        updated_at=now,
+                    )
+                )
+            else:
+                existing.answer = answer.answer
+                existing.weight = answer.weight
+                existing.updated_at = now
+
+        self._db.commit()
