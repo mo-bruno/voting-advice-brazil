@@ -152,6 +152,37 @@ class TestEndpointSubmit:
         assert skipped.answer == "skip"
         assert skipped.weight == 1
 
+    def test_submit_with_duplicate_thesis_ids_persists_latest_answer(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        device_id = "550e8400-e29b-41d4-a716-446655440003"
+        thesis_id = thesis_ids["Tese 1"]
+        payload = [
+            {"thesis_id": thesis_id, "answer": "agree", "weight": 1},
+            {"thesis_id": thesis_id, "answer": "neutral", "weight": 1},
+            {"thesis_id": thesis_id, "answer": "disagree", "weight": 2},
+            {"thesis_id": thesis_id, "answer": "agree", "weight": 2},
+            {"thesis_id": thesis_id, "answer": "neutral", "weight": 2},
+        ]
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": payload},
+        )
+
+        assert r.status_code == 200
+        rows = (
+            db_session.query(QuizResponseModel)
+            .filter_by(device_id=device_id, thesis_id=thesis_id)
+            .all()
+        )
+        assert len(rows) == 1
+        assert rows[0].answer == "neutral"
+        assert rows[0].weight == 2
+
     def test_submit_without_device_id_does_not_persist_answers(
         self,
         client,

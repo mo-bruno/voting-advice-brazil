@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import func, select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session, selectinload
 
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
@@ -214,6 +215,22 @@ class SqlQuizResponseRepository:
         self._db = db
 
     def upsert_answers(self, device_id: str, answers: list[QuizAnswer]) -> None:
+        deduplicated_answers = self._deduplicate_answers(answers)
+        try:
+            self._upsert_answers_once(device_id, deduplicated_answers)
+            self._db.commit()
+        except IntegrityError:
+            self._db.rollback()
+            self._upsert_answers_once(device_id, deduplicated_answers)
+            self._db.commit()
+
+    def _deduplicate_answers(self, answers: list[QuizAnswer]) -> list[QuizAnswer]:
+        latest_by_thesis_id: dict[int, QuizAnswer] = {}
+        for answer in answers:
+            latest_by_thesis_id[answer.thesis_id] = answer
+        return list(latest_by_thesis_id.values())
+
+    def _upsert_answers_once(self, device_id: str, answers: list[QuizAnswer]) -> None:
         now = datetime.now(timezone.utc)
         device = self._db.get(DeviceModel, device_id)
         if device is None:
@@ -265,5 +282,3 @@ class SqlQuizResponseRepository:
                 existing.answer = answer.answer
                 existing.weight = answer.weight
                 existing.updated_at = now
-
-        self._db.commit()
