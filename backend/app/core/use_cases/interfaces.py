@@ -1,6 +1,13 @@
 from abc import ABC, abstractmethod
+from datetime import datetime
 
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
+from app.core.entities.political_actor import (
+    FollowedActor,
+    OfficialEvidence,
+    PoliticalActor,
+    TrendingActor,
+)
 
 
 class ThesisRepository(ABC):
@@ -46,3 +53,56 @@ class PositionRepository(ABC):
 class ThemeRepository(ABC):
     @abstractmethod
     def list_with_min_theses(self, min_theses: int = 3) -> list[Theme]: ...
+
+
+class PoliticalActorRepository(ABC):
+    @abstractmethod
+    def get_by_id(self, actor_id: int) -> PoliticalActor | None: ...
+
+    @abstractmethod
+    def get_by_source(self, source: str, source_id: str) -> PoliticalActor | None: ...
+
+    @abstractmethod
+    def list(
+        self,
+        search: str | None = None,
+        state: str | None = None,
+        party: str | None = None,
+        page: int = 1,
+        page_size: int = 20,
+    ) -> tuple[list[PoliticalActor], int]: ...
+
+
+class OfficialEvidenceRepository(ABC):
+    @abstractmethod
+    def list_by_actor(
+        self,
+        actor_id: int,
+        now: datetime,
+    ) -> tuple[list[OfficialEvidence], bool]: ...
+
+    @abstractmethod
+    def replace_for_actor_type(
+        self,
+        actor_id: int,
+        evidence_type: str,
+        rows: list[dict[str, object]],
+    ) -> None: ...
+
+
+class FollowedActorRepository(ABC):
+    @abstractmethod
+    def get_followed(self, anonymous_id: str) -> FollowedActor | None: ...
+
+    @abstractmethod
+    def set_followed(self, anonymous_id: str, actor_id: int) -> FollowedActor: ...
+
+    @abstractmethod
+    def delete_followed(self, anonymous_id: str) -> bool: ...
+
+    @abstractmethod
+    def list_trending(
+        self,
+        limit: int = 10,
+        min_followers: int = 2,
+    ) -> list[TrendingActor]: ...
