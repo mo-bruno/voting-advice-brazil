@@ -254,3 +254,17 @@ class CamaraClient:
 
     def list_votes_for_voting(self, voting_id: str) -> list[dict[str, Any]]:
         return self._get(f"/votacoes/{voting_id}/votos")
+
+
+class CamaraDeputyIndexSource:
+    def __init__(self, client: CamaraClient) -> None:
+        self._client = client
+
+    def list_current_deputies_for_index(
+        self,
+        now: datetime,
+    ) -> list[dict[str, object]]:
+        return [
+            normalize_deputy(row, now=now)
+            for row in self._client.list_current_deputies()
+        ]

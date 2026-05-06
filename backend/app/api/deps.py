@@ -9,6 +9,7 @@ from app.infrastructure.database.repositories import (
     SqlThesisRepository,
 )
 from app.infrastructure.database.session import get_db
+from app.infrastructure.sources.camara import CamaraClient, CamaraDeputyIndexSource
 
 
 def get_thesis_repo(db: Session = Depends(get_db)) -> SqlThesisRepository:
@@ -25,3 +26,7 @@ def get_position_repo(db: Session = Depends(get_db)) -> SqlPositionRepository:
 
 def get_theme_repo(db: Session = Depends(get_db)) -> SqlThemeRepository:
     return SqlThemeRepository(db)
+
+
+def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:
+    return CamaraDeputyIndexSource(CamaraClient())

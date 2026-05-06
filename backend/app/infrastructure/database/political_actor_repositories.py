@@ -57,6 +57,12 @@ class SqlPoliticalActorRepository:
     def __init__(self, db: Session) -> None:
         self._db = db
 
+    def count(self) -> int:
+        return self._db.scalar(select(func.count(PoliticalActorModel.id))) or 0
+
+    def newest_indexed_at(self) -> datetime | None:
+        return self._db.scalar(select(func.max(PoliticalActorModel.last_indexed_at)))
+
     def get_by_id(self, actor_id: int) -> PoliticalActor | None:
         model = self._db.get(PoliticalActorModel, actor_id)
         return _to_actor(model) if model else None
