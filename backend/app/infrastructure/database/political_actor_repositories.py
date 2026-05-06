@@ -13,6 +13,11 @@ from app.core.entities.political_actor import (
     PoliticalActor,
     TrendingActor,
 )
+from app.core.use_cases.interfaces import (
+    FollowedActorRepository,
+    OfficialEvidenceRepository,
+    PoliticalActorRepository,
+)
 from app.infrastructure.database.models import (
     FollowedActorModel,
     OfficialEvidenceModel,
@@ -53,7 +58,13 @@ def _to_evidence(model: OfficialEvidenceModel) -> OfficialEvidence:
     )
 
 
-class SqlPoliticalActorRepository:
+def _comparable_datetime(value: datetime, reference: datetime) -> datetime:
+    if value.tzinfo is None and reference.tzinfo is not None:
+        return value.replace(tzinfo=reference.tzinfo)
+    return value
+
+
+class SqlPoliticalActorRepository(PoliticalActorRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
 
@@ -123,7 +134,7 @@ class SqlPoliticalActorRepository:
         return count
 
 
-class SqlOfficialEvidenceRepository:
+class SqlOfficialEvidenceRepository(OfficialEvidenceRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
 
@@ -141,7 +152,9 @@ class SqlOfficialEvidenceRepository:
             )
         )
         rows = self._db.execute(stmt).scalars().all()
-        is_fresh = bool(rows) and all(row.expires_at > now for row in rows)
+        is_fresh = bool(rows) and all(
+            _comparable_datetime(row.expires_at, now) > now for row in rows
+        )
         return [_to_evidence(row) for row in rows], is_fresh
 
     def replace_for_actor_type(
@@ -164,7 +177,7 @@ class SqlOfficialEvidenceRepository:
         self._db.commit()
 
 
-class SqlFollowedActorRepository:
+class SqlFollowedActorRepository(FollowedActorRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
 

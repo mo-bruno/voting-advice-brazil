@@ -2,6 +2,11 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
+from app.infrastructure.database.political_actor_repositories import (
+    SqlFollowedActorRepository,
+    SqlOfficialEvidenceRepository,
+    SqlPoliticalActorRepository,
+)
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
     SqlPositionRepository,
@@ -26,6 +31,24 @@ def get_position_repo(db: Session = Depends(get_db)) -> SqlPositionRepository:
 
 def get_theme_repo(db: Session = Depends(get_db)) -> SqlThemeRepository:
     return SqlThemeRepository(db)
+
+
+def get_political_actor_repo(
+    db: Session = Depends(get_db),
+) -> SqlPoliticalActorRepository:
+    return SqlPoliticalActorRepository(db)
+
+
+def get_official_evidence_repo(
+    db: Session = Depends(get_db),
+) -> SqlOfficialEvidenceRepository:
+    return SqlOfficialEvidenceRepository(db)
+
+
+def get_followed_actor_repo(
+    db: Session = Depends(get_db),
+) -> SqlFollowedActorRepository:
+    return SqlFollowedActorRepository(db)
 
 
 def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:
