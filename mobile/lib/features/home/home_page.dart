@@ -87,6 +87,19 @@ class HomePage extends StatelessWidget {
                               child: const Text('COMEÇAR'),
                             ),
                           ),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  '/political-actors',
+                                );
+                              },
+                              child: const Text('ACOMPANHAR POLITICO'),
+                            ),
+                          ),
                           const SizedBox(height: 48),
                           Text(
                             'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',
