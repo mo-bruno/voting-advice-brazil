@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
 
 import '../core/api/api_client.dart';
+import '../core/device/device_identity_store.dart';
 import 'models/candidate_result.dart';
 import 'models/party.dart';
 import 'models/thesis.dart';
 
 class QuizSession extends ChangeNotifier {
-  QuizSession._();
+  QuizSession._({
+    ApiClient? api,
+    DeviceIdentityStore? deviceIdentityStore,
+  })  : api = api ?? ApiClient(),
+        deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
 
   @visibleForTesting
-  factory QuizSession.testOnly() => QuizSession._();
+  factory QuizSession.testOnly({
+    ApiClient? api,
+    DeviceIdentityStore? deviceIdentityStore,
+  }) =>
+      QuizSession._(
+        api: api,
+        deviceIdentityStore: deviceIdentityStore,
+      );
 
   static final QuizSession instance = QuizSession._();
 
-  final ApiClient api = ApiClient();
+  final ApiClient api;
+  final DeviceIdentityStore deviceIdentityStore;
   List<Thesis> theses = [];
   List<Party> candidates = [];
   List<CandidateResult> results = [];
@@ -70,7 +83,8 @@ class QuizSession extends ChangeNotifier {
   }
 
   Future<void> submit() async {
-    results = await api.submitQuiz(theses);
+    final deviceId = await deviceIdentityStore.getOrCreateDeviceId();
+    results = await api.submitQuiz(theses, deviceId: deviceId);
     notifyListeners();
   }
 
