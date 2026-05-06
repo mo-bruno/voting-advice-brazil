@@ -5,6 +5,7 @@ from fastapi import APIRouter, Depends, Header, HTTPException, Query, Response
 
 from app.api.deps import (
     get_camara_deputy_index_source,
+    get_camara_evidence_source,
     get_followed_actor_repo,
     get_official_evidence_repo,
     get_political_actor_repo,
@@ -28,7 +29,10 @@ from app.core.use_cases.follow_political_actor import (
     follow_political_actor,
     get_followed_political_actor,
 )
-from app.core.use_cases.get_official_evidence import get_official_evidence
+from app.core.use_cases.get_official_evidence import (
+    get_official_evidence,
+    get_or_refresh_official_evidence,
+)
 from app.core.use_cases.get_political_actor import get_political_actor
 from app.core.use_cases.list_political_actors import list_political_actors
 from app.core.use_cases.list_trending_political_actors import (
@@ -41,6 +45,7 @@ from app.infrastructure.database.political_actor_repositories import (
 )
 from app.infrastructure.sources.camara import (
     CamaraDeputyIndexSource,
+    CamaraEvidenceSource,
     CamaraSourceError,
 )
 
@@ -128,15 +133,26 @@ def evidence(
     actor_id: int,
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     evidence_repo: SqlOfficialEvidenceRepository = Depends(get_official_evidence_repo),
+    source: CamaraEvidenceSource = Depends(get_camara_evidence_source),
 ) -> EvidenceResponse:
     actor = get_political_actor(actor_repo, actor_id)
     if actor is None:
         raise HTTPException(status_code=404, detail="Politico nao encontrado.")
-    rows, cache_status = get_official_evidence(
-        evidence_repo,
-        actor_id,
-        datetime.now(timezone.utc),
-    )
+    now = datetime.now(timezone.utc)
+    try:
+        rows, cache_status = get_or_refresh_official_evidence(
+            evidence_repo,
+            actor,
+            source,
+            now,
+        )
+    except CamaraSourceError as exc:
+        rows, cache_status = get_official_evidence(evidence_repo, actor_id, now)
+        if not rows:
+            raise HTTPException(
+                status_code=503,
+                detail="Fonte oficial temporariamente indisponivel.",
+            ) from exc
     return EvidenceResponse(
         political_actor_id=actor_id,
         cache_status=cache_status,

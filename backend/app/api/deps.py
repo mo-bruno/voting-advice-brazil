@@ -14,7 +14,11 @@ from app.infrastructure.database.repositories import (
     SqlThesisRepository,
 )
 from app.infrastructure.database.session import get_db
-from app.infrastructure.sources.camara import CamaraClient, CamaraDeputyIndexSource
+from app.infrastructure.sources.camara import (
+    CamaraClient,
+    CamaraDeputyIndexSource,
+    CamaraEvidenceSource,
+)
 
 
 def get_thesis_repo(db: Session = Depends(get_db)) -> SqlThesisRepository:
@@ -53,3 +57,7 @@ def get_followed_actor_repo(
 
 def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:
     return CamaraDeputyIndexSource(CamaraClient())
+
+
+def get_camara_evidence_source() -> CamaraEvidenceSource:
+    return CamaraEvidenceSource(CamaraClient())

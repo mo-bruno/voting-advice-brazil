@@ -7,6 +7,8 @@ from unicodedata import normalize as unicode_normalize
 
 import httpx
 
+from app.core.entities.political_actor import PoliticalActor
+
 BASE_URL = "https://dadosabertos.camara.leg.br/api/v2"
 QueryParamValue = str | int | float | bool | None
 
@@ -268,3 +270,39 @@ class CamaraDeputyIndexSource:
             normalize_deputy(row, now=now)
             for row in self._client.list_current_deputies()
         ]
+
+
+class CamaraEvidenceSource:
+    def __init__(self, client: CamaraClient) -> None:
+        self._client = client
+
+    def fetch_evidence_for_actor(
+        self,
+        actor: PoliticalActor,
+    ) -> dict[str, list[dict[str, object]]]:
+        fetched_at = datetime.now(timezone.utc)
+        propositions = [
+            normalize_proposition(actor.id, row, fetched_at)
+            for row in self._client.list_propositions(actor.source_id, limit=20)
+        ][:20]
+        expenses = [
+            normalize_expense(actor.id, row, fetched_at)
+            for row in self._client.list_expenses(actor.source_id, limit=20)
+        ][:20]
+        votes: list[dict[str, object]] = []
+        for voting in self._client.list_recent_votings(scan_limit=30):
+            voting_id = str(voting.get("id"))
+            for vote_payload in self._client.list_votes_for_voting(voting_id):
+                normalized = normalize_vote(
+                    actor.id,
+                    actor.source_id,
+                    vote_payload,
+                    voting,
+                    fetched_at,
+                )
+                if normalized is not None:
+                    votes.append(normalized)
+                    break
+            if len(votes) >= 20:
+                break
+        return {"proposition": propositions, "expense": expenses, "vote": votes}

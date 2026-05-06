@@ -2,8 +2,10 @@ from datetime import datetime, timezone
 
 import pytest
 
+from app.core.entities.political_actor import PoliticalActor
 from app.infrastructure.sources.camara import (
     CamaraClient,
+    CamaraEvidenceSource,
     CamaraSourceError,
     normalize_deputy,
     normalize_expense,
@@ -33,6 +35,41 @@ class _FakeHttpClient:
     ) -> _FakeResponse:
         self.requests.append((url, params))
         return self._responses.pop(0)
+
+
+class _FakeCamaraClient:
+    def list_propositions(
+        self,
+        deputy_id: str,
+        limit: int = 20,
+    ) -> list[dict[str, object]]:
+        return [
+            {
+                "id": 9001,
+                "siglaTipo": "PL",
+                "numero": 123,
+                "ano": 2026,
+                "ementa": "Cria politica publica de saude.",
+            }
+        ]
+
+    def list_expenses(
+        self,
+        deputy_id: str,
+        limit: int = 20,
+    ) -> list[dict[str, object]]:
+        return []
+
+    def list_recent_votings(self, scan_limit: int = 30) -> list[dict[str, object]]:
+        return [{"id": "2468-1", "descricao": "Votacao nominal"}]
+
+    def list_votes_for_voting(self, voting_id: str) -> list[dict[str, object]]:
+        return [
+            {
+                "tipoVoto": "Sim",
+                "deputado_": {"id": 101, "nome": "Maria Silva"},
+            }
+        ]
 
 
 def test_normalizes_deputy_index_payload():
@@ -156,3 +193,27 @@ def test_camara_client_raises_source_error_on_http_failure():
 
     with pytest.raises(CamaraSourceError):
         client.list_expenses("101")
+
+
+def test_evidence_source_groups_normalized_evidence():
+    actor = PoliticalActor(
+        id=1,
+        source="camara",
+        source_id="101",
+        normalized_name="maria silva",
+        display_name="Maria Silva",
+        party="PT",
+        state="SP",
+        role="federal_deputy",
+        status="active",
+        photo_url=None,
+        source_url=None,
+        last_indexed_at=datetime(2026, 5, 6, tzinfo=timezone.utc),
+    )
+    source = CamaraEvidenceSource(_FakeCamaraClient())
+
+    grouped = source.fetch_evidence_for_actor(actor)
+
+    assert grouped["proposition"][0]["evidence_type"] == "proposition"
+    assert grouped["vote"][0]["source_id"] == "vote:2468-1:101"
+    assert grouped["expense"] == []
