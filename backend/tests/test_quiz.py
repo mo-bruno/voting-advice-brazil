@@ -85,6 +85,22 @@ class TestEndpointSubmit:
         ]
         assert {row.election_year for row in rows} == {2022}
 
+    def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        device_id = "6ba7b810-9dad-11d1-80b4-00c04fd430c8"
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": _agree5(thesis_ids)},
+        )
+
+        assert r.status_code == 422
+        assert db_session.get(DeviceModel, device_id) is None
+
     def test_submit_with_same_device_id_updates_existing_answers(
         self,
         client,
@@ -162,9 +178,14 @@ class TestEndpointSubmit:
         thesis_id = thesis_ids["Tese 1"]
         payload = [
             {"thesis_id": thesis_id, "answer": "agree", "weight": 1},
-            {"thesis_id": thesis_id, "answer": "neutral", "weight": 1},
-            {"thesis_id": thesis_id, "answer": "disagree", "weight": 2},
-            {"thesis_id": thesis_id, "answer": "agree", "weight": 2},
+            *[
+                {
+                    "thesis_id": thesis_ids[f"Tese {i}"],
+                    "answer": "agree",
+                    "weight": 1,
+                }
+                for i in range(2, 6)
+            ],
             {"thesis_id": thesis_id, "answer": "neutral", "weight": 2},
         ]
 
@@ -182,6 +203,77 @@ class TestEndpointSubmit:
         assert len(rows) == 1
         assert rows[0].answer == "neutral"
         assert rows[0].weight == 2
+
+    def test_submit_with_duplicate_thesis_ids_scores_and_persists_latest_answers(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        duplicate_device_id = "550e8400-e29b-41d4-a716-446655440004"
+        canonical_device_id = "550e8400-e29b-41d4-a716-446655440005"
+        thesis_1 = thesis_ids["Tese 1"]
+        canonical_payload = [
+            *[
+                {
+                    "thesis_id": thesis_ids[f"Tese {i}"],
+                    "answer": "agree",
+                    "weight": 1,
+                }
+                for i in range(2, 6)
+            ],
+            {"thesis_id": thesis_1, "answer": "disagree", "weight": 2},
+        ]
+        duplicate_payload = [
+            {"thesis_id": thesis_1, "answer": "agree", "weight": 1},
+            *canonical_payload[:2],
+            {"thesis_id": thesis_1, "answer": "neutral", "weight": 1},
+            *canonical_payload[2:4],
+            canonical_payload[4],
+        ]
+
+        duplicate = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": duplicate_device_id, "answers": duplicate_payload},
+        )
+        canonical = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": canonical_device_id, "answers": canonical_payload},
+        )
+
+        assert duplicate.status_code == 200
+        assert canonical.status_code == 200
+        assert duplicate.json()["results"] == canonical.json()["results"]
+
+        duplicate_rows = (
+            db_session.query(QuizResponseModel)
+            .filter_by(device_id=duplicate_device_id)
+            .order_by(QuizResponseModel.thesis_id)
+            .all()
+        )
+        assert [(row.thesis_id, row.answer, row.weight) for row in duplicate_rows] == [
+            (answer["thesis_id"], answer["answer"], answer["weight"])
+            for answer in sorted(canonical_payload, key=lambda item: item["thesis_id"])
+        ]
+
+    def test_submit_with_only_duplicate_non_skip_answers_returns_422(
+        self,
+        client,
+        thesis_ids,
+    ):
+        thesis_id = thesis_ids["Tese 1"]
+        payload = [
+            {"thesis_id": thesis_id, "answer": "agree", "weight": 1},
+            {"thesis_id": thesis_id, "answer": "neutral", "weight": 1},
+            {"thesis_id": thesis_id, "answer": "disagree", "weight": 2},
+            {"thesis_id": thesis_id, "answer": "agree", "weight": 2},
+            {"thesis_id": thesis_id, "answer": "neutral", "weight": 2},
+        ]
+
+        r = client.post("/api/v1/quiz/submit", json={"answers": payload})
+
+        assert r.status_code == 422
+        assert r.json()["detail"]["provided"] == 1
 
     def test_submit_without_device_id_does_not_persist_answers(
         self,

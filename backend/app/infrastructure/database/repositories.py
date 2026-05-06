@@ -227,6 +227,7 @@ class SqlQuizResponseRepository:
     def _deduplicate_answers(self, answers: list[QuizAnswer]) -> list[QuizAnswer]:
         latest_by_thesis_id: dict[int, QuizAnswer] = {}
         for answer in answers:
+            latest_by_thesis_id.pop(answer.thesis_id, None)
             latest_by_thesis_id[answer.thesis_id] = answer
         return list(latest_by_thesis_id.values())
 

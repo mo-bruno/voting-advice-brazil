@@ -35,6 +35,14 @@ router = APIRouter(prefix="/quiz", tags=["Quiz"])
 _QUESTIONS_TTL = 3600  # 1 hour
 
 
+def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
+    latest_by_thesis_id: dict[int, QuizAnswer] = {}
+    for answer in answers:
+        latest_by_thesis_id.pop(answer.thesis_id, None)
+        latest_by_thesis_id[answer.thesis_id] = answer
+    return list(latest_by_thesis_id.values())
+
+
 @router.get("/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz")
 def questions(
     themes: list[str] | None = Query(default=None, description="Filtrar por tema(s)"),
@@ -80,6 +88,7 @@ def submit(
         QuizAnswer(thesis_id=a.thesis_id, answer=a.answer, weight=a.weight)
         for a in body.answers
     ]
+    answers = _deduplicate_answers(answers)
     try:
         results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
     except InsufficientAnswersError as err:
