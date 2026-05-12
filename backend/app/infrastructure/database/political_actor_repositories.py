@@ -6,6 +6,7 @@ from datetime import datetime
 from typing import Any, cast
 
 from sqlalchemy import func, or_, select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.core.entities.political_actor import (
@@ -295,6 +296,14 @@ def _to_sentinela_summary(model: SentinelaSummaryModel) -> SentinelaSummary:
     )
 
 
+def _apply_sentinela_summary_data(
+    model: SentinelaSummaryModel,
+    data: dict[str, object],
+) -> None:
+    for key, value in data.items():
+        setattr(model, key, value)
+
+
 class SqlSentinelaSummaryRepository(SentinelaSummaryRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
@@ -320,11 +329,18 @@ class SqlSentinelaSummaryRepository(SentinelaSummaryRepository):
         )
         model = self._db.execute(stmt).scalar_one_or_none()
         if model:
-            for key, value in data.items():
-                setattr(model, key, value)
+            _apply_sentinela_summary_data(model, data)
         else:
             model = SentinelaSummaryModel(**data)
             self._db.add(model)
-        self._db.commit()
+        try:
+            self._db.commit()
+        except IntegrityError:
+            self._db.rollback()
+            model = self._db.execute(stmt).scalar_one_or_none()
+            if model is None:
+                raise
+            _apply_sentinela_summary_data(model, data)
+            self._db.commit()
         self._db.refresh(model)
         return _to_sentinela_summary(model)

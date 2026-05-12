@@ -86,6 +86,23 @@ def _seed_evidence(db_session, actor_id, evidence_type, source_id, days_ago=10):
     return evidence
 
 
+def _sentinela_summary_data(
+    actor_id, now, synthesis="O deputado participou ativamente."
+):
+    return {
+        "political_actor_id": actor_id,
+        "period": "quarter",
+        "generated_at": now,
+        "expires_at": now + timedelta(hours=24),
+        "votes_summary": json.dumps(
+            {"summary": "Votou Sim em 5 ocasiões.", "citations": []}
+        ),
+        "propositions_summary": json.dumps({"summary": "Sem dados.", "citations": []}),
+        "expenses_summary": json.dumps({"summary": "Sem dados.", "citations": []}),
+        "synthesis": synthesis,
+    }
+
+
 def test_sentinela_repo_returns_none_when_no_cache(db_session):
     from app.infrastructure.database.political_actor_repositories import (
         SqlSentinelaSummaryRepository,
@@ -164,6 +181,35 @@ def test_sentinela_repo_upsert_and_get(db_session):
     assert result.votes.summary == "Votou Sim em 5 ocasiões."
     assert result.votes.citations[0]["label"] == "Votação 1"
     assert result.synthesis == "O deputado participou ativamente."
+
+
+def test_sentinela_repo_upsert_updates_existing_actor_period(db_session):
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlSentinelaSummaryRepository,
+    )
+
+    actor = _seed_actor(db_session)
+    now = datetime.now(timezone.utc)
+    repo = SqlSentinelaSummaryRepository(db_session)
+
+    first = repo.upsert(
+        _sentinela_summary_data(actor.id, now, synthesis="Primeira síntese.")
+    )
+    second = repo.upsert(
+        _sentinela_summary_data(actor.id, now, synthesis="Síntese atualizada.")
+    )
+
+    row_count = (
+        db_session.query(SentinelaSummaryModel)
+        .filter_by(
+            political_actor_id=actor.id,
+            period="quarter",
+        )
+        .count()
+    )
+    assert row_count == 1
+    assert second.id == first.id
+    assert second.synthesis == "Síntese atualizada."
 
 
 def test_evidence_repo_list_by_actor_since_filters_by_date(db_session):
