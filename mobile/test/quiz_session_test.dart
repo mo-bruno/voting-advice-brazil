@@ -1,4 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/api/api_client.dart';
+import 'package:guia_eleitoral/core/device/device_identity_store.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:guia_eleitoral/shared/models/thesis.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
@@ -80,5 +82,58 @@ void main() {
       expect(session.quizStartedAt, isNull);
       expect(session.hasStartedFlow, isFalse);
     });
+
+    test('submit sends the anonymous device id to the API client', () async {
+      const deviceId = '550e8400-e29b-41d4-a716-446655440000';
+      final api = _FakeApiClient();
+      final deviceStore = _FakeDeviceIdentityStore(deviceId);
+      final session = QuizSession.testOnly(
+        api: api,
+        deviceIdentityStore: deviceStore,
+      )..theses = [
+          Thesis(
+            id: 1,
+            title: 'Thesis 1',
+            category: 'Economia',
+            answer: ThesisAnswer.agree,
+          ),
+        ];
+
+      await session.submit();
+
+      expect(api.receivedDeviceId, deviceId);
+      expect(session.results, hasLength(1));
+    });
   });
+}
+
+class _FakeApiClient extends ApiClient {
+  String? receivedDeviceId;
+
+  @override
+  Future<List<CandidateResult>> submitQuiz(
+    List<Thesis> theses, {
+    String? deviceId,
+  }) async {
+    receivedDeviceId = deviceId;
+    return const [
+      CandidateResult(
+        candidateId: '13',
+        name: 'Candidate',
+        party: 'PT',
+        scorePercent: 88,
+        rank: 1,
+        matches: [],
+      ),
+    ];
+  }
+}
+
+class _FakeDeviceIdentityStore extends DeviceIdentityStore {
+  final String deviceId;
+
+  _FakeDeviceIdentityStore(this.deviceId);
+
+  @override
+  Future<String> getOrCreateDeviceId() async => deviceId;
 }
