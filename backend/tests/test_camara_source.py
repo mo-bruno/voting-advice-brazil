@@ -82,6 +82,36 @@ class _FakeCamaraClient:
         ]
 
 
+class _PartiallyFailingCamaraClient:
+    def list_propositions(
+        self,
+        deputy_id: str,
+        limit: int = 20,
+    ) -> list[dict[str, object]]:
+        raise CamaraSourceError("propositions unavailable")
+
+    def list_expenses(
+        self,
+        deputy_id: str,
+        limit: int = 20,
+    ) -> list[dict[str, object]]:
+        return [
+            {
+                "ano": 2026,
+                "mes": 1,
+                "tipoDespesa": "COMBUSTIVEIS",
+                "valorLiquido": 119.72,
+                "urlDocumento": "https://example.com/doc.pdf",
+            }
+        ]
+
+    def list_recent_votings(self, scan_limit: int = 30) -> list[dict[str, object]]:
+        raise CamaraSourceError("votings unavailable")
+
+    def list_votes_for_voting(self, voting_id: str) -> list[dict[str, object]]:
+        return []
+
+
 def test_normalizes_deputy_index_payload():
     now = datetime(2026, 5, 6, tzinfo=timezone.utc)
     row = normalize_deputy(
@@ -197,6 +227,28 @@ def test_camara_client_reads_dados_list():
     ]
 
 
+def test_camara_client_uses_valid_proposition_ordering():
+    fake_client = _FakeHttpClient([
+        _FakeResponse(200, {"dados": [{"id": 9001}]})
+    ])
+    client = CamaraClient(base_url="https://camara.test", client=fake_client)
+
+    rows = client.list_propositions("101", limit=1)
+
+    assert rows == [{"id": 9001}]
+    assert fake_client.requests == [
+        (
+            "https://camara.test/proposicoes",
+            {
+                "idDeputadoAutor": "101",
+                "itens": 1,
+                "ordem": "DESC",
+                "ordenarPor": "id",
+            },
+        )
+    ]
+
+
 def test_camara_client_raises_source_error_on_http_failure():
     fake_client = _FakeHttpClient([_FakeResponse(500, {"dados": []})])
     client = CamaraClient(base_url="https://camara.test", client=fake_client)
@@ -234,3 +286,27 @@ def test_evidence_source_groups_normalized_evidence():
     assert grouped["proposition"][0]["evidence_type"] == "proposition"
     assert grouped["vote"][0]["source_id"] == "vote:2468-1:101"
     assert grouped["expense"] == []
+
+
+def test_evidence_source_returns_available_categories_when_one_fails():
+    actor = PoliticalActor(
+        id=1,
+        source="camara",
+        source_id="101",
+        normalized_name="maria silva",
+        display_name="Maria Silva",
+        party="PT",
+        state="SP",
+        role="federal_deputy",
+        status="active",
+        photo_url=None,
+        source_url=None,
+        last_indexed_at=datetime(2026, 5, 6, tzinfo=timezone.utc),
+    )
+    source = CamaraEvidenceSource(_PartiallyFailingCamaraClient())
+
+    grouped = source.fetch_evidence_for_actor(actor)
+
+    assert grouped["proposition"] == []
+    assert grouped["vote"] == []
+    assert grouped["expense"][0]["evidence_type"] == "expense"

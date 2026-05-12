@@ -233,7 +233,7 @@ class CamaraClient:
                 "idDeputadoAutor": deputy_id,
                 "itens": limit,
                 "ordem": "DESC",
-                "ordenarPor": "dataApresentacao",
+                "ordenarPor": "id",
             },
         )
 
@@ -279,23 +279,49 @@ class CamaraEvidenceSource:
     def __init__(self, client: CamaraClient) -> None:
         self._client = client
 
-    def fetch_evidence_for_actor(
+    def _fetch_propositions(
         self,
         actor: PoliticalActor,
-    ) -> dict[str, list[dict[str, object]]]:
-        fetched_at = datetime.now(timezone.utc)
-        propositions = [
-            normalize_proposition(actor.id, row, fetched_at)
-            for row in self._client.list_propositions(actor.source_id, limit=20)
-        ][:20]
-        expenses = [
-            normalize_expense(actor.id, row, fetched_at)
-            for row in self._client.list_expenses(actor.source_id, limit=20)
-        ][:20]
+        fetched_at: datetime,
+    ) -> list[dict[str, object]]:
+        try:
+            return [
+                normalize_proposition(actor.id, row, fetched_at)
+                for row in self._client.list_propositions(actor.source_id, limit=20)
+            ][:20]
+        except CamaraSourceError:
+            return []
+
+    def _fetch_expenses(
+        self,
+        actor: PoliticalActor,
+        fetched_at: datetime,
+    ) -> list[dict[str, object]]:
+        try:
+            return [
+                normalize_expense(actor.id, row, fetched_at)
+                for row in self._client.list_expenses(actor.source_id, limit=20)
+            ][:20]
+        except CamaraSourceError:
+            return []
+
+    def _fetch_votes(
+        self,
+        actor: PoliticalActor,
+        fetched_at: datetime,
+    ) -> list[dict[str, object]]:
         votes: list[dict[str, object]] = []
-        for voting in self._client.list_recent_votings(scan_limit=30):
+        try:
+            votings = self._client.list_recent_votings(scan_limit=5)
+        except CamaraSourceError:
+            return votes
+        for voting in votings:
             voting_id = str(voting.get("id"))
-            for vote_payload in self._client.list_votes_for_voting(voting_id):
+            try:
+                vote_payloads = self._client.list_votes_for_voting(voting_id)
+            except CamaraSourceError:
+                continue
+            for vote_payload in vote_payloads:
                 normalized = normalize_vote(
                     actor.id,
                     actor.source_id,
@@ -308,4 +334,14 @@ class CamaraEvidenceSource:
                     break
             if len(votes) >= 20:
                 break
+        return votes
+
+    def fetch_evidence_for_actor(
+        self,
+        actor: PoliticalActor,
+    ) -> dict[str, list[dict[str, object]]]:
+        fetched_at = datetime.now(timezone.utc)
+        propositions = self._fetch_propositions(actor, fetched_at)
+        expenses = self._fetch_expenses(actor, fetched_at)
+        votes = self._fetch_votes(actor, fetched_at)
         return {"proposition": propositions, "expense": expenses, "vote": votes}
