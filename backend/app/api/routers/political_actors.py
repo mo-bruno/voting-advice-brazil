@@ -231,15 +231,13 @@ def delete_followed(
 @router.get("/{actor_id}/summary", response_model=SentinelaSummaryOut)
 def get_sentinela_summary(
     actor_id: int,
-    period: Literal["quarter", "full"] = "quarter",
+    response: Response,
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     evidence_repo: SqlOfficialEvidenceRepository = Depends(get_official_evidence_repo),
     summary_repo: SqlSentinelaSummaryRepository = Depends(get_sentinela_summary_repo),
-    response: Response = Response(),
+    period: Literal["quarter", "full"] = Query(default="quarter"),
 ) -> SentinelaSummaryOut:
     now = datetime.now(timezone.utc)
-    cached_before = summary_repo.get_valid(actor_id=actor_id, period=period, now=now)
-    is_cached = cached_before is not None
 
     try:
         summary = generate_sentinela_summary(
@@ -253,6 +251,13 @@ def get_sentinela_summary(
         )
     except ActorNotFoundError:
         raise HTTPException(status_code=404, detail="Político não encontrado.")
+
+    # Derived from time: if generated_at < now by >1s, it was cached
+    generated_at = summary.generated_at
+    # Handle naive datetimes from SQLite
+    if generated_at.tzinfo is None:
+        generated_at = generated_at.replace(tzinfo=timezone.utc)
+    is_cached = (now - generated_at).total_seconds() > 1
 
     response.headers["X-Sentinela-Cached"] = "true" if is_cached else "false"
     response.headers["X-Sentinela-Generated-At"] = summary.generated_at.isoformat()
