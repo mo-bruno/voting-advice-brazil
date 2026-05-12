@@ -308,3 +308,31 @@ class SourceSyncCursorModel(Base):
     expires_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True
     )
+
+
+class SentinelaSummaryModel(Base):
+    __tablename__ = "sentinela_summaries"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    political_actor_id: Mapped[int] = mapped_column(
+        ForeignKey("political_actors.id"), nullable=False
+    )
+    period: Mapped[str] = mapped_column(String(16), nullable=False)
+    generated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+    votes_summary: Mapped[str] = mapped_column(Text, nullable=False)
+    propositions_summary: Mapped[str] = mapped_column(Text, nullable=False)
+    expenses_summary: Mapped[str] = mapped_column(Text, nullable=False)
+    synthesis: Mapped[str] = mapped_column(Text, nullable=False)
+
+    __table_args__ = (
+        UniqueConstraint(
+            "political_actor_id", "period",
+            name="uq_sentinela_summaries_actor_period",
+        ),
+        Index("ix_sentinela_summaries_actor_period", "political_actor_id", "period"),
+    )
