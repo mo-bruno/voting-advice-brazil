@@ -1,5 +1,6 @@
 import json
 from datetime import datetime, timedelta, timezone
+from unittest.mock import MagicMock, patch
 
 import pytest
 
@@ -243,12 +244,9 @@ def test_evidence_repo_list_by_actor_since_returns_all_when_no_filter(db_session
     assert len(result) == 2
 
 
-from unittest.mock import MagicMock, patch
-
-
 def test_generate_section_summary_returns_section_with_valid_citations():
-    from app.infrastructure.llm.sentinela import generate_section_summary
     from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
 
     now = datetime.now(timezone.utc)
     evidence = [
@@ -293,8 +291,8 @@ def test_generate_section_summary_returns_section_with_valid_citations():
 
 
 def test_generate_section_summary_removes_invalid_citations():
-    from app.infrastructure.llm.sentinela import generate_section_summary
     from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
 
     now = datetime.now(timezone.utc)
     evidence = [
@@ -351,3 +349,59 @@ def test_generate_section_summary_handles_empty_evidence():
 
     assert result.summary == "Sem registros neste período."
     assert result.citations == []
+
+
+def test_generate_section_summary_handles_client_construction_error():
+    from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL real.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    with patch(
+        "app.infrastructure.llm.sentinela.genai.Client",
+        side_effect=RuntimeError("client error"),
+    ):
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert result.summary == "Não foi possível gerar o resumo neste momento."
+    assert result.citations == []
+
+
+def test_generate_synthesis_handles_client_construction_error():
+    from app.infrastructure.llm.sentinela import generate_synthesis
+
+    with patch(
+        "app.infrastructure.llm.sentinela.genai.Client",
+        side_effect=RuntimeError("client error"),
+    ):
+        result = generate_synthesis(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            votes_summary="Votou Sim.",
+            propositions_summary="Apresentou proposição.",
+            expenses_summary="Declarou despesas.",
+            period_label="último trimestre",
+        )
+
+    assert result == "Não foi possível gerar a síntese neste momento."

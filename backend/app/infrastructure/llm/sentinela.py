@@ -83,8 +83,8 @@ def generate_section_summary(
         'Schema obrigatório: {"summary": "string", "citations": [{"label": "string", "source_url": "string"}]}'
     )
 
-    client = genai.Client(api_key=api_key)
     try:
+        client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
             model=GEMINI_MODEL,
             contents=prompt,
@@ -123,8 +123,8 @@ def generate_synthesis(
         f"Resumo de despesas: {expenses_summary}\n"
     )
 
-    client = genai.Client(api_key=api_key)
     try:
+        client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
             model=GEMINI_MODEL,
             contents=prompt,
