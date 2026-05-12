@@ -9,7 +9,9 @@ import '../../shared/models/political_actor.dart';
 import '../../shared/political_actor_session.dart';
 
 class PoliticalActorProfilePage extends StatefulWidget {
-  const PoliticalActorProfilePage({super.key});
+  final PoliticalActorSession? session;
+
+  const PoliticalActorProfilePage({super.key, this.session});
 
   @override
   State<PoliticalActorProfilePage> createState() =>
@@ -17,7 +19,7 @@ class PoliticalActorProfilePage extends StatefulWidget {
 }
 
 class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
-  final _session = PoliticalActorSession.instance;
+  late final _session = widget.session ?? PoliticalActorSession.instance;
   bool _loading = true;
   String? _error;
   int? _loadedActorId;
@@ -39,14 +41,39 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
       _error = null;
     });
     try {
-      final response = await _session.api.fetchOfficialEvidence(actorId);
+      final response = await _fetchEvidenceWithRetry(actorId);
       _session.evidence = response.evidence;
       _session.cacheStatus = response.cacheStatus;
     } catch (error) {
-      _error = error.toString();
+      _error = _friendlyEvidenceError(error);
     } finally {
       if (mounted) setState(() => _loading = false);
     }
+  }
+
+  Future<EvidenceResponse> _fetchEvidenceWithRetry(int actorId) async {
+    try {
+      return await _session.api.fetchOfficialEvidence(actorId);
+    } catch (error) {
+      if (!_isTransientFetchError(error)) rethrow;
+      await Future<void>.delayed(const Duration(milliseconds: 250));
+      return _session.api.fetchOfficialEvidence(actorId);
+    }
+  }
+
+  bool _isTransientFetchError(Object error) {
+    final message = error.toString().toLowerCase();
+    return message.contains('failed to fetch') ||
+        message.contains('connection closed') ||
+        message.contains('connection reset');
+  }
+
+  String _friendlyEvidenceError(Object error) {
+    final message = error.toString();
+    if (message.contains('Fonte oficial temporariamente indisponivel')) {
+      return message;
+    }
+    return 'Nao foi possivel carregar dados oficiais agora.';
   }
 
   Future<void> _follow(PoliticalActor actor) async {
@@ -86,6 +113,10 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
     if (mounted) setState(() {});
   }
 
+  void _changeFollowedActor() {
+    Navigator.of(context, rootNavigator: true).pushNamed('/political-actors');
+  }
+
   @override
   Widget build(BuildContext context) {
     final actor = ModalRoute.of(context)!.settings.arguments! as PoliticalActor;
@@ -107,6 +138,7 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
               _ActorHeader(
                 actor: actor,
                 onFollow: () => _follow(actor),
+                onChange: _changeFollowedActor,
                 isFollowed: _session.followedActor?.id == actor.id,
               ),
               const SizedBox(height: 24),
@@ -122,7 +154,11 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
               ),
               const SizedBox(height: 16),
               if (_loading) const LinearProgressIndicator(minHeight: 2),
-              if (_error != null) Text(_error!, style: textTheme.bodySmall),
+              if (_error != null)
+                _EvidenceError(
+                  message: _error!,
+                  onRetry: () => _loadEvidence(actor.id),
+                ),
               if (!_loading && _session.evidence.isEmpty && _error == null)
                 Text(
                   'Nenhuma evidencia recente encontrada na fonte oficial.',
@@ -146,11 +182,13 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
 class _ActorHeader extends StatelessWidget {
   final PoliticalActor actor;
   final VoidCallback onFollow;
+  final VoidCallback onChange;
   final bool isFollowed;
 
   const _ActorHeader({
     required this.actor,
     required this.onFollow,
+    required this.onChange,
     required this.isFollowed,
   });
 
@@ -177,12 +215,46 @@ class _ActorHeader extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: onFollow,
+              onPressed: isFollowed ? null : onFollow,
               child: Text(isFollowed ? 'ACOMPANHANDO' : 'ACOMPANHAR POLITICO'),
             ),
           ),
+          if (isFollowed) ...[
+            const SizedBox(height: 10),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: onChange,
+                child: const Text('TROCAR POLITICO'),
+              ),
+            ),
+          ],
         ],
       ),
+    );
+  }
+}
+
+class _EvidenceError extends StatelessWidget {
+  final String message;
+  final VoidCallback onRetry;
+
+  const _EvidenceError({required this.message, required this.onRetry});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(message, style: textTheme.bodySmall),
+        const SizedBox(height: 10),
+        OutlinedButton(
+          onPressed: onRetry,
+          child: const Text('TENTAR NOVAMENTE'),
+        ),
+        const SizedBox(height: 12),
+      ],
     );
   }
 }
