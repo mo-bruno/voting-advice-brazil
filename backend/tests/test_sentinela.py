@@ -567,3 +567,78 @@ def test_generate_synthesis_handles_empty_response_text():
         )
 
     assert result == "Não foi possível gerar a síntese neste momento."
+
+
+def test_generate_sentinela_summary_returns_cached_when_valid(db_session):
+    from unittest.mock import patch
+
+    from app.core.use_cases.generate_sentinela_summary import generate_sentinela_summary
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlOfficialEvidenceRepository,
+        SqlPoliticalActorRepository,
+        SqlSentinelaSummaryRepository,
+    )
+
+    actor = _seed_actor(db_session)
+    now = datetime.now(timezone.utc)
+    empty_section = json.dumps({"summary": "Sem dados.", "citations": []})
+    db_session.add(
+        SentinelaSummaryModel(
+            political_actor_id=actor.id,
+            period="quarter",
+            generated_at=now - timedelta(hours=1),
+            expires_at=now + timedelta(hours=23),
+            votes_summary=empty_section,
+            propositions_summary=empty_section,
+            expenses_summary=empty_section,
+            synthesis="Resumo cacheado.",
+        )
+    )
+    db_session.commit()
+
+    actor_repo = SqlPoliticalActorRepository(db_session)
+    evidence_repo = SqlOfficialEvidenceRepository(db_session)
+    summary_repo = SqlSentinelaSummaryRepository(db_session)
+
+    with patch(
+        "app.core.use_cases.generate_sentinela_summary.generate_section_summary"
+    ) as mock_gen:
+        result = generate_sentinela_summary(
+            actor_id=actor.id,
+            period="quarter",
+            actor_repo=actor_repo,
+            evidence_repo=evidence_repo,
+            summary_repo=summary_repo,
+            api_key="fake-key",
+            now=now,
+        )
+
+    mock_gen.assert_not_called()
+    assert result.synthesis == "Resumo cacheado."
+
+
+def test_generate_sentinela_summary_raises_when_actor_not_found(db_session):
+    from app.core.use_cases.generate_sentinela_summary import (
+        ActorNotFoundError,
+        generate_sentinela_summary,
+    )
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlOfficialEvidenceRepository,
+        SqlPoliticalActorRepository,
+        SqlSentinelaSummaryRepository,
+    )
+
+    actor_repo = SqlPoliticalActorRepository(db_session)
+    evidence_repo = SqlOfficialEvidenceRepository(db_session)
+    summary_repo = SqlSentinelaSummaryRepository(db_session)
+
+    with pytest.raises(ActorNotFoundError):
+        generate_sentinela_summary(
+            actor_id=9999,
+            period="quarter",
+            actor_repo=actor_repo,
+            evidence_repo=evidence_repo,
+            summary_repo=summary_repo,
+            api_key="fake-key",
+            now=datetime.now(timezone.utc),
+        )
