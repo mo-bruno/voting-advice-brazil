@@ -24,6 +24,7 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
   @override
   void initState() {
     super.initState();
+    unawaited(_loadFollowedActor());
     unawaited(_loadTrending());
   }
 
@@ -44,6 +45,16 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
       _error = error.toString();
     } finally {
       if (mounted) setState(() => _loading = false);
+    }
+  }
+
+  Future<void> _loadFollowedActor() async {
+    try {
+      await _session.loadFollowedActor();
+    } catch (_) {
+      // Followed actor recovery is opportunistic; search still works without it.
+    } finally {
+      if (mounted) setState(() {});
     }
   }
 
@@ -110,6 +121,14 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
                 ),
               ),
               const SizedBox(height: 20),
+              if (!hasQuery && _session.followedActor != null)
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 20),
+                  child: _FollowedActorSection(
+                    actor: _session.followedActor!,
+                    onTap: _openActor,
+                  ),
+                ),
               if (_loading) const LinearProgressIndicator(minHeight: 2),
               if (_error != null) Text(_error!, style: textTheme.bodySmall),
               if (!hasQuery && _session.trending.isNotEmpty)
@@ -132,6 +151,26 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _FollowedActorSection extends StatelessWidget {
+  final PoliticalActor actor;
+  final ValueChanged<PoliticalActor> onTap;
+
+  const _FollowedActorSection({required this.actor, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('POLITICO ACOMPANHADO', style: textTheme.labelMedium),
+        const SizedBox(height: 12),
+        _PoliticalActorListItem(actor: actor, onTap: () => onTap(actor)),
+      ],
     );
   }
 }

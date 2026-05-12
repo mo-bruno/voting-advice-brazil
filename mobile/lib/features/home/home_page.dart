@@ -4,10 +4,24 @@ import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
+import '../../shared/political_actor_session.dart';
 import '../../shared/quiz_session.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _politicalActorSession = PoliticalActorSession.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_politicalActorSession.loadFollowedActor());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -88,17 +102,36 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           const SizedBox(height: 12),
-                          SizedBox(
-                            width: double.infinity,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                  context,
-                                  '/political-actors',
-                                );
-                              },
-                              child: const Text('ACOMPANHAR POLITICO'),
-                            ),
+                          AnimatedBuilder(
+                            animation: _politicalActorSession,
+                            builder: (context, _) {
+                              final followed =
+                                  _politicalActorSession.followedActor;
+                              return SizedBox(
+                                width: double.infinity,
+                                child: OutlinedButton(
+                                  onPressed: () {
+                                    if (followed == null) {
+                                      Navigator.pushNamed(
+                                        context,
+                                        '/political-actors',
+                                      );
+                                      return;
+                                    }
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/political-actor-profile',
+                                      arguments: followed,
+                                    );
+                                  },
+                                  child: Text(
+                                    followed == null
+                                        ? 'ACOMPANHAR POLITICO'
+                                        : 'VER POLITICO ACOMPANHADO',
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                           const SizedBox(height: 48),
                           Text(

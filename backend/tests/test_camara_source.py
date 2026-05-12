@@ -1,5 +1,6 @@
 from datetime import datetime, timezone
 
+import httpx
 import pytest
 
 from app.core.entities.political_actor import PoliticalActor
@@ -35,6 +36,15 @@ class _FakeHttpClient:
     ) -> _FakeResponse:
         self.requests.append((url, params))
         return self._responses.pop(0)
+
+
+class _TimeoutHttpClient:
+    def get(
+        self,
+        url: str,
+        params: dict[str, object] | None = None,
+    ) -> _FakeResponse:
+        raise httpx.ReadTimeout("timed out")
 
 
 class _FakeCamaraClient:
@@ -193,6 +203,13 @@ def test_camara_client_raises_source_error_on_http_failure():
 
     with pytest.raises(CamaraSourceError):
         client.list_expenses("101")
+
+
+def test_camara_client_wraps_timeout_as_source_error():
+    client = CamaraClient(base_url="https://camara.test", client=_TimeoutHttpClient())
+
+    with pytest.raises(CamaraSourceError):
+        client.list_propositions("101")
 
 
 def test_evidence_source_groups_normalized_evidence():

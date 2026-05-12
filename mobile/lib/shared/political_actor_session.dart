@@ -1,33 +1,52 @@
 import 'package:flutter/material.dart';
 
 import '../core/api/api_client.dart';
+import '../core/device/device_identity_store.dart';
 import 'models/official_evidence.dart';
 import 'models/political_actor.dart';
 
 class PoliticalActorSession extends ChangeNotifier {
-  PoliticalActorSession._({ApiClient? api, String? anonymousId})
-      : api = api ?? ApiClient(),
-        anonymousId = anonymousId ?? _newAnonymousId();
+  PoliticalActorSession._({
+    ApiClient? api,
+    DeviceIdentityStore? deviceIdentityStore,
+  })  : api = api ?? ApiClient(),
+        deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
 
   @visibleForTesting
   factory PoliticalActorSession.testOnly({
     ApiClient? api,
-    String anonymousId = 'anon-test',
+    DeviceIdentityStore? deviceIdentityStore,
   }) =>
-      PoliticalActorSession._(api: api, anonymousId: anonymousId);
+      PoliticalActorSession._(
+        api: api,
+        deviceIdentityStore: deviceIdentityStore,
+      );
 
   static final PoliticalActorSession instance = PoliticalActorSession._();
 
   final ApiClient api;
-  final String anonymousId;
+  final DeviceIdentityStore deviceIdentityStore;
   PoliticalActor? followedActor;
   List<TrendingPoliticalActor> trending = [];
   List<PoliticalActor> searchResults = [];
   List<OfficialEvidence> evidence = [];
   String? cacheStatus;
 
-  static String _newAnonymousId() {
-    return 'anon-${DateTime.now().microsecondsSinceEpoch}';
+  Future<void> loadFollowedActor() async {
+    final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+    followedActor = await api.fetchFollowedPoliticalActor(
+      anonymousId: anonymousId,
+    );
+    notifyListeners();
+  }
+
+  Future<void> followActor(PoliticalActor actor) async {
+    final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+    followedActor = await api.followPoliticalActor(
+      actorId: actor.id,
+      anonymousId: anonymousId,
+    );
+    notifyListeners();
   }
 
   void replaceFollowedActor(PoliticalActor actor) {
