@@ -642,3 +642,44 @@ def test_generate_sentinela_summary_raises_when_actor_not_found(db_session):
             api_key="fake-key",
             now=datetime.now(timezone.utc),
         )
+
+
+def test_summary_endpoint_returns_cached_summary(client, db_session):
+    actor = _seed_actor(db_session)
+    now = datetime.now(timezone.utc)
+    valid_section = json.dumps({
+        "summary": "Votou Sim em 10 ocasiões.",
+        "citations": [{"label": "Votação 1", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/1"}],
+    })
+    db_session.add(SentinelaSummaryModel(
+        political_actor_id=actor.id,
+        period="quarter",
+        generated_at=now - timedelta(hours=1),
+        expires_at=now + timedelta(hours=23),
+        votes_summary=valid_section,
+        propositions_summary=json.dumps({"summary": "Sem dados.", "citations": []}),
+        expenses_summary=json.dumps({"summary": "Sem dados.", "citations": []}),
+        synthesis="O deputado participou ativamente.",
+    ))
+    db_session.commit()
+
+    response = client.get(f"/api/v1/political-actors/{actor.id}/summary?period=quarter")
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["period"] == "quarter"
+    assert data["cached"] is True
+    assert data["synthesis"] == "O deputado participou ativamente."
+    assert data["sections"]["votes"]["summary"] == "Votou Sim em 10 ocasiões."
+    assert response.headers["x-sentinela-cached"] == "true"
+
+
+def test_summary_endpoint_returns_404_for_unknown_actor(client):
+    response = client.get("/api/v1/political-actors/99999/summary?period=quarter")
+    assert response.status_code == 404
+
+
+def test_summary_endpoint_rejects_invalid_period(client, db_session):
+    actor = _seed_actor(db_session)
+    response = client.get(f"/api/v1/political-actors/{actor.id}/summary?period=invalid")
+    assert response.status_code == 422
