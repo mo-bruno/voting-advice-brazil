@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from collections.abc import Mapping, Sequence
 from datetime import datetime
 from typing import Any, cast
@@ -11,17 +12,21 @@ from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
     PoliticalActor,
+    SectionSummary,
+    SentinelaSummary,
     TrendingActor,
 )
 from app.core.use_cases.interfaces import (
     FollowedActorRepository,
     OfficialEvidenceRepository,
     PoliticalActorRepository,
+    SentinelaSummaryRepository,
 )
 from app.infrastructure.database.models import (
     FollowedActorModel,
     OfficialEvidenceModel,
     PoliticalActorModel,
+    SentinelaSummaryModel,
 )
 
 
@@ -163,12 +168,16 @@ class SqlOfficialEvidenceRepository(OfficialEvidenceRepository):
         evidence_type: str,
         rows: Sequence[Mapping[str, object]],
     ) -> None:
-        existing = self._db.execute(
-            select(OfficialEvidenceModel).where(
-                OfficialEvidenceModel.political_actor_id == actor_id,
-                OfficialEvidenceModel.evidence_type == evidence_type,
+        existing = (
+            self._db.execute(
+                select(OfficialEvidenceModel).where(
+                    OfficialEvidenceModel.political_actor_id == actor_id,
+                    OfficialEvidenceModel.evidence_type == evidence_type,
+                )
             )
-        ).scalars().all()
+            .scalars()
+            .all()
+        )
         for existing_model in existing:
             self._db.delete(existing_model)
         if existing:
@@ -241,9 +250,7 @@ class SqlFollowedActorRepository(FollowedActorRepository):
         limit: int = 10,
         min_followers: int = 2,
     ) -> list[TrendingActor]:
-        count_label = func.count(FollowedActorModel.anonymous_id).label(
-            "follow_count"
-        )
+        count_label = func.count(FollowedActorModel.anonymous_id).label("follow_count")
         stmt = (
             select(PoliticalActorModel, count_label)
             .join(
@@ -264,3 +271,60 @@ class SqlFollowedActorRepository(FollowedActorRepository):
             )
             for index, row in enumerate(rows)
         ]
+
+
+def _to_section(raw: str) -> SectionSummary:
+    data = json.loads(raw)
+    return SectionSummary(
+        summary=data["summary"],
+        citations=data.get("citations", []),
+    )
+
+
+def _to_sentinela_summary(model: SentinelaSummaryModel) -> SentinelaSummary:
+    return SentinelaSummary(
+        id=model.id,
+        political_actor_id=model.political_actor_id,
+        period=model.period,
+        generated_at=model.generated_at,
+        expires_at=model.expires_at,
+        votes=_to_section(model.votes_summary),
+        propositions=_to_section(model.propositions_summary),
+        expenses=_to_section(model.expenses_summary),
+        synthesis=model.synthesis,
+    )
+
+
+class SqlSentinelaSummaryRepository(SentinelaSummaryRepository):
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def get_valid(
+        self,
+        actor_id: int,
+        period: str,
+        now: datetime,
+    ) -> SentinelaSummary | None:
+        stmt = select(SentinelaSummaryModel).where(
+            SentinelaSummaryModel.political_actor_id == actor_id,
+            SentinelaSummaryModel.period == period,
+            SentinelaSummaryModel.expires_at > now,
+        )
+        model = self._db.execute(stmt).scalar_one_or_none()
+        return _to_sentinela_summary(model) if model else None
+
+    def upsert(self, data: dict[str, object]) -> SentinelaSummary:
+        stmt = select(SentinelaSummaryModel).where(
+            SentinelaSummaryModel.political_actor_id == data["political_actor_id"],
+            SentinelaSummaryModel.period == data["period"],
+        )
+        model = self._db.execute(stmt).scalar_one_or_none()
+        if model:
+            for key, value in data.items():
+                setattr(model, key, value)
+        else:
+            model = SentinelaSummaryModel(**data)
+            self._db.add(model)
+        self._db.commit()
+        self._db.refresh(model)
+        return _to_sentinela_summary(model)
