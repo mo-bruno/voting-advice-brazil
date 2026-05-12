@@ -241,3 +241,113 @@ def test_evidence_repo_list_by_actor_since_returns_all_when_no_filter(db_session
     repo = SqlOfficialEvidenceRepository(db_session)
     result = repo.list_by_actor_since(actor.id, since=None)
     assert len(result) == 2
+
+
+from unittest.mock import MagicMock, patch
+
+
+def test_generate_section_summary_returns_section_with_valid_citations():
+    from app.infrastructure.llm.sentinela import generate_section_summary
+    from app.core.entities.political_actor import OfficialEvidence
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL 1234/2026 - Reforma tributária.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    fake_response = MagicMock()
+    fake_response.text = json.dumps({
+        "summary": "Votou Sim na reforma tributária.",
+        "citations": [
+            {"label": "Votação 123", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"}
+        ],
+    })
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert result.summary == "Votou Sim na reforma tributária."
+    assert len(result.citations) == 1
+    assert result.citations[0]["source_url"] == "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"
+
+
+def test_generate_section_summary_removes_invalid_citations():
+    from app.infrastructure.llm.sentinela import generate_section_summary
+    from app.core.entities.political_actor import OfficialEvidence
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL real.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    fake_response = MagicMock()
+    fake_response.text = json.dumps({
+        "summary": "Votou em algo inventado.",
+        "citations": [
+            {"label": "Real", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"},
+            {"label": "Inventado", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/INVENTADO"},
+        ],
+    })
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert len(result.citations) == 1
+    assert result.citations[0]["label"] == "Real"
+
+
+def test_generate_section_summary_handles_empty_evidence():
+    from app.infrastructure.llm.sentinela import generate_section_summary
+
+    result = generate_section_summary(
+        api_key="fake-key",
+        actor_name="Maria Silva",
+        evidence_type="vote",
+        evidence_list=[],
+        period_label="último trimestre",
+    )
+
+    assert result.summary == "Sem registros neste período."
+    assert result.citations == []
