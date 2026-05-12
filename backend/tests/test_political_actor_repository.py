@@ -9,6 +9,7 @@ from app.infrastructure.database.models import (
 )
 from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
+    SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
 )
 
@@ -144,3 +145,51 @@ def test_trending_requires_minimum_threshold(db_session):
     trending = follow_repo.list_trending(limit=10, min_followers=2)
 
     assert [item.actor.display_name for item in trending] == ["Maria Silva"]
+
+
+def test_replace_evidence_allows_same_source_id_for_same_type(db_session):
+    actor = _actor("101", "Maria Silva", "PT", "SP")
+    db_session.add(actor)
+    db_session.flush()
+    now = datetime(2026, 5, 12, tzinfo=timezone.utc)
+    db_session.add(
+        OfficialEvidenceModel(
+            political_actor_id=actor.id,
+            source="camara",
+            source_id="proposition:9001",
+            evidence_type="proposition",
+            title="Apresentou PL antigo",
+            summary="Versao antiga.",
+            evidence_date=now,
+            source_url="https://example.test/proposicao/9001",
+            normalized_payload={"sigla_tipo": "PL"},
+            fetched_at=now,
+            expires_at=now + timedelta(hours=12),
+        )
+    )
+    db_session.commit()
+    repo = SqlOfficialEvidenceRepository(db_session)
+
+    repo.replace_for_actor_type(
+        actor.id,
+        "proposition",
+        [
+            {
+                "political_actor_id": actor.id,
+                "source": "camara",
+                "source_id": "proposition:9001",
+                "evidence_type": "proposition",
+                "title": "Apresentou PL atualizado",
+                "summary": "Versao atualizada.",
+                "evidence_date": now,
+                "source_url": "https://example.test/proposicao/9001",
+                "normalized_payload": {"sigla_tipo": "PL"},
+                "fetched_at": now,
+                "expires_at": now + timedelta(hours=12),
+            }
+        ],
+    )
+
+    rows, _ = repo.list_by_actor(actor.id, now=now)
+    assert len(rows) == 1
+    assert rows[0].title == "Apresentou PL atualizado"

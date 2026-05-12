@@ -171,6 +171,8 @@ class SqlOfficialEvidenceRepository(OfficialEvidenceRepository):
         ).scalars().all()
         for existing_model in existing:
             self._db.delete(existing_model)
+        if existing:
+            self._db.flush()
         for row in rows:
             row_data = cast("dict[str, Any]", dict(row))
             self._db.add(OfficialEvidenceModel(**row_data))
