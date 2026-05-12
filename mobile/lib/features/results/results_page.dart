@@ -110,6 +110,16 @@ class _ResultsPageState extends State<ResultsPage> {
                 child: const Text('COMPARAR RESPOSTAS'),
               ),
             ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/political-actors');
+                },
+                child: const Text('ACOMPANHAR POLITICOS'),
+              ),
+            ),
             const SizedBox(height: 32),
             ...List.generate(_results.length - 1, (index) {
               final result = _results[index + 1];

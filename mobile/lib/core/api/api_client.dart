@@ -3,7 +3,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
+import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
+import '../../shared/models/political_actor.dart';
 import '../../shared/models/thesis.dart';
 
 class ApiException implements Exception {
@@ -77,6 +79,63 @@ class ApiClient {
         .toList();
   }
 
+  Future<PoliticalActorListResponse> fetchPoliticalActors({
+    String? search,
+    String? state,
+    String? party,
+    int page = 1,
+    int pageSize = 20,
+  }) async {
+    final uri = Uri.parse('$baseUrl/political-actors').replace(
+      queryParameters: {
+        if (search != null && search.trim().isNotEmpty) 'search': search.trim(),
+        if (state != null && state.trim().isNotEmpty) 'state': state.trim(),
+        if (party != null && party.trim().isNotEmpty) 'party': party.trim(),
+        'page': '$page',
+        'page_size': '$pageSize',
+      },
+    );
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return PoliticalActorListResponse.fromJson(json);
+  }
+
+  Future<List<TrendingPoliticalActor>> fetchTrendingPoliticalActors() async {
+    final uri = Uri.parse('$baseUrl/political-actors/trending');
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return (json['actors'] as List<dynamic>)
+        .map((item) => TrendingPoliticalActor.fromJson(
+              item as Map<String, dynamic>,
+            ))
+        .toList();
+  }
+
+  Future<PoliticalActor> fetchPoliticalActor(int actorId) async {
+    final uri = Uri.parse('$baseUrl/political-actors/$actorId');
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return PoliticalActor.fromJson(json);
+  }
+
+  Future<EvidenceResponse> fetchOfficialEvidence(int actorId) async {
+    final uri = Uri.parse('$baseUrl/political-actors/$actorId/evidence');
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return EvidenceResponse.fromJson(json);
+  }
+
+  Future<PoliticalActor> followPoliticalActor({
+    required int actorId,
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/followed-actor');
+    final json = await _putJson(
+      uri,
+      {'political_actor_id': actorId},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+    return PoliticalActor.fromJson(
+      json['political_actor'] as Map<String, dynamic>,
+    );
+  }
+
   Future<dynamic> _getJson(Uri uri) async {
     final response = await _client.get(uri);
     return _decode(response);
@@ -86,6 +145,19 @@ class ApiClient {
     final response = await _client.post(
       uri,
       headers: {'Content-Type': 'application/json'},
+      body: jsonEncode(body),
+    );
+    return _decode(response);
+  }
+
+  Future<dynamic> _putJson(
+    Uri uri,
+    Map<String, dynamic> body, {
+    Map<String, String>? headers,
+  }) async {
+    final response = await _client.put(
+      uri,
+      headers: {'Content-Type': 'application/json', ...?headers},
       body: jsonEncode(body),
     );
     return _decode(response);
