@@ -174,6 +174,35 @@ def test_normalizes_expense_as_neutral_evidence():
     assert evidence["source_url"] == "https://example.com/doc.pdf"
 
 
+def test_normalizes_expense_source_id_with_document_code():
+    fetched_at = datetime(2026, 5, 6, tzinfo=timezone.utc)
+    first = normalize_expense(
+        actor_id=1,
+        payload={
+            "ano": 2026,
+            "mes": 4,
+            "tipoDespesa": "COMBUSTIVEIS E LUBRIFICANTES.",
+            "valorLiquido": 150.0,
+            "codDocumento": "8077962",
+        },
+        fetched_at=fetched_at,
+    )
+    second = normalize_expense(
+        actor_id=1,
+        payload={
+            "ano": 2026,
+            "mes": 4,
+            "tipoDespesa": "COMBUSTIVEIS E LUBRIFICANTES.",
+            "valorLiquido": 150.0,
+            "codDocumento": "8077963",
+        },
+        fetched_at=fetched_at,
+    )
+
+    assert first["source_id"] == "expense:document:8077962"
+    assert second["source_id"] == "expense:document:8077963"
+
+
 def test_normalizes_vote_for_selected_deputy_only():
     evidence = normalize_vote(
         actor_id=1,
