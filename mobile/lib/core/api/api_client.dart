@@ -45,14 +45,21 @@ class ApiClient {
         .toList();
   }
 
-  Future<List<CandidateResult>> submitQuiz(List<Thesis> theses) async {
+  Future<List<CandidateResult>> submitQuiz(
+    List<Thesis> theses, {
+    String? deviceId,
+  }) async {
     final answers = theses
         .where((thesis) => thesis.wasAnswered)
         .map((thesis) => thesis.toSubmitJson())
         .toList();
+    final body = <String, dynamic>{'answers': answers};
+    if (deviceId != null) {
+      body['device_id'] = deviceId;
+    }
+
     final uri = Uri.parse('$baseUrl/quiz/submit');
-    final json = await _postJson(uri, {'answers': answers})
-        as Map<String, dynamic>;
+    final json = await _postJson(uri, body) as Map<String, dynamic>;
     return (json['results'] as List<dynamic>)
         .cast<Map<String, dynamic>>()
         .map(CandidateResult.fromJson)
