@@ -49,6 +49,26 @@ void main() {
 
     expect(find.text('search page'), findsOneWidget);
   });
+
+  testWidgets('groups evidence by category and limits each category to five',
+      (tester) async {
+    final actor = _actor(id: 172, name: 'Erika Hilton');
+    final session = PoliticalActorSession.testOnly(
+      api: _GroupedEvidenceApiClient(),
+    );
+
+    await tester.pumpWidget(_profileApp(actor: actor, session: session));
+    await tester.pumpAndSettle();
+
+    expect(find.text('PROPOSICOES'), findsOneWidget);
+    expect(find.text('DESPESAS PARLAMENTARES'), findsOneWidget);
+    expect(find.text('VOTACOES RECENTES'), findsOneWidget);
+    expect(find.text('Proposicao 1'), findsOneWidget);
+    expect(find.text('Proposicao 5'), findsOneWidget);
+    expect(find.text('Proposicao 6'), findsNothing);
+    expect(find.text('Despesa 1'), findsOneWidget);
+    expect(find.text('Voto 1'), findsOneWidget);
+  });
 }
 
 Widget _profileApp({
@@ -114,6 +134,64 @@ class _StableEvidenceApiClient extends ApiClient {
       ],
     );
   }
+}
+
+class _GroupedEvidenceApiClient extends ApiClient {
+  _GroupedEvidenceApiClient() : super(baseUrl: 'https://example.test');
+
+  @override
+  Future<EvidenceResponse> fetchOfficialEvidence(int actorId) async {
+    final now = DateTime(2026, 5, 12);
+    return EvidenceResponse(
+      cacheStatus: 'fresh',
+      evidence: [
+        for (var i = 1; i <= 6; i++)
+          _evidence(
+            actorId: actorId,
+            id: i,
+            type: EvidenceType.proposition,
+            title: 'Proposicao $i',
+            now: now,
+          ),
+        _evidence(
+          actorId: actorId,
+          id: 7,
+          type: EvidenceType.expense,
+          title: 'Despesa 1',
+          now: now,
+        ),
+        _evidence(
+          actorId: actorId,
+          id: 8,
+          type: EvidenceType.vote,
+          title: 'Voto 1',
+          now: now,
+        ),
+      ],
+    );
+  }
+}
+
+OfficialEvidence _evidence({
+  required int actorId,
+  required int id,
+  required EvidenceType type,
+  required String title,
+  required DateTime now,
+}) {
+  return OfficialEvidence(
+    id: id,
+    politicalActorId: actorId,
+    source: 'camara',
+    sourceId: '$type:$id',
+    type: type,
+    title: title,
+    summary: 'Resumo oficial.',
+    evidenceDate: now,
+    sourceUrl: null,
+    fetchedAt: now,
+    expiresAt: now,
+  );
 }
 
 PoliticalActor _actor({required int id, required String name}) {

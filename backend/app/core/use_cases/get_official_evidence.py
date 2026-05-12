@@ -12,6 +12,16 @@ class EvidenceSource(Protocol):
     ) -> dict[str, list[dict[str, object]]]: ...
 
 
+def _has_complete_visible_cache(
+    actor: PoliticalActor,
+    evidence: list[OfficialEvidence],
+) -> bool:
+    if actor.role != "federal_deputy":
+        return True
+    types = {row.evidence_type for row in evidence}
+    return {"proposition", "expense"}.issubset(types)
+
+
 def get_official_evidence(
     repo: OfficialEvidenceRepository,
     actor_id: int,
@@ -30,7 +40,7 @@ def get_or_refresh_official_evidence(
     now: datetime,
 ) -> tuple[list[OfficialEvidence], str]:
     existing, is_fresh = evidence_repo.list_by_actor(actor.id, now=now)
-    if is_fresh:
+    if is_fresh and _has_complete_visible_cache(actor, existing):
         return existing, "fresh"
 
     grouped = source.fetch_evidence_for_actor(actor)

@@ -147,7 +147,7 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
                   Container(width: 4, height: 46, color: AppTheme.primary),
                   const SizedBox(width: 12),
                   Text(
-                    'O QUE ESSE POLITICO\nFEZ NO MANDATO?',
+                    'ATIVIDADES OFICIAIS\nDO MANDATO',
                     style: textTheme.headlineMedium,
                   ),
                 ],
@@ -164,12 +164,8 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
                   'Nenhuma evidencia recente encontrada na fonte oficial.',
                   style: textTheme.bodyMedium,
                 ),
-              ..._session.evidence.map(
-                (item) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: _EvidenceCard(evidence: item),
-                ),
-              ),
+              if (_session.evidence.isNotEmpty)
+                _EvidenceSections(evidence: _session.evidence),
               const SizedBox(height: 32),
             ],
           ),
@@ -255,6 +251,76 @@ class _EvidenceError extends StatelessWidget {
         ),
         const SizedBox(height: 12),
       ],
+    );
+  }
+}
+
+class _EvidenceSections extends StatelessWidget {
+  final List<OfficialEvidence> evidence;
+
+  const _EvidenceSections({required this.evidence});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        _EvidenceSection(
+          title: 'PROPOSICOES',
+          emptyMessage: 'Nenhuma proposicao recente encontrada.',
+          items: _itemsFor(EvidenceType.proposition),
+        ),
+        _EvidenceSection(
+          title: 'DESPESAS PARLAMENTARES',
+          emptyMessage: 'Nenhuma despesa recente encontrada.',
+          items: _itemsFor(EvidenceType.expense),
+        ),
+        _EvidenceSection(
+          title: 'VOTACOES RECENTES',
+          emptyMessage: 'Nenhuma votacao recente encontrada nesta fase.',
+          items: _itemsFor(EvidenceType.vote),
+        ),
+      ],
+    );
+  }
+
+  List<OfficialEvidence> _itemsFor(EvidenceType type) {
+    return evidence.where((item) => item.type == type).take(5).toList();
+  }
+}
+
+class _EvidenceSection extends StatelessWidget {
+  final String title;
+  final String emptyMessage;
+  final List<OfficialEvidence> items;
+
+  const _EvidenceSection({
+    required this.title,
+    required this.emptyMessage,
+    required this.items,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 18),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(title, style: textTheme.labelMedium),
+          const SizedBox(height: 10),
+          if (items.isEmpty)
+            Text(emptyMessage, style: textTheme.bodySmall)
+          else
+            ...items.map(
+              (item) => Padding(
+                padding: const EdgeInsets.only(bottom: 12),
+                child: _EvidenceCard(evidence: item),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }
