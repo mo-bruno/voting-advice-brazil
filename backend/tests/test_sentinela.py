@@ -269,7 +269,11 @@ def test_generate_section_summary_returns_section_with_valid_citations():
     fake_response.text = json.dumps({
         "summary": "Votou Sim na reforma tributária.",
         "citations": [
-            {"label": "Votação 123", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"}
+            {
+                "label": "Votação 123",
+                "source_id": "vote:123:456",
+                "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            }
         ],
     })
 
@@ -287,6 +291,7 @@ def test_generate_section_summary_returns_section_with_valid_citations():
 
     assert result.summary == "Votou Sim na reforma tributária."
     assert len(result.citations) == 1
+    assert result.citations[0]["source_id"] == "vote:123:456"
     assert result.citations[0]["source_url"] == "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"
 
 
@@ -315,8 +320,16 @@ def test_generate_section_summary_removes_invalid_citations():
     fake_response.text = json.dumps({
         "summary": "Votou em algo inventado.",
         "citations": [
-            {"label": "Real", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123"},
-            {"label": "Inventado", "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/INVENTADO"},
+            {
+                "label": "Real",
+                "source_id": "vote:123:456",
+                "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            },
+            {
+                "label": "Fonte cruzada",
+                "source_id": "vote:123:456",
+                "source_url": "https://dadosabertos.camara.leg.br/api/v2/votacoes/INVENTADO",
+            },
         ],
     })
 
@@ -334,6 +347,7 @@ def test_generate_section_summary_removes_invalid_citations():
 
     assert len(result.citations) == 1
     assert result.citations[0]["label"] == "Real"
+    assert result.citations[0]["source_id"] == "vote:123:456"
 
 
 def test_generate_section_summary_handles_empty_evidence():
@@ -348,6 +362,92 @@ def test_generate_section_summary_handles_empty_evidence():
     )
 
     assert result.summary == "Sem registros neste período."
+    assert result.citations == []
+
+
+def test_generate_section_summary_rejects_summary_without_citations():
+    from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL real.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    fake_response = MagicMock()
+    fake_response.text = json.dumps({
+        "summary": "Votou em algo factual sem fonte.",
+        "citations": [],
+    })
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert result.summary == "Sem registros verificáveis neste período."
+    assert result.citations == []
+
+
+def test_generate_section_summary_preserves_insufficient_data_without_citations():
+    from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL real.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    fake_response = MagicMock()
+    fake_response.text = json.dumps({
+        "summary": "Sem registros suficientes neste período.",
+        "citations": [],
+    })
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert result.summary == "Sem registros suficientes neste período."
     assert result.citations == []
 
 
@@ -388,6 +488,46 @@ def test_generate_section_summary_handles_client_construction_error():
     assert result.citations == []
 
 
+def test_generate_section_summary_handles_empty_response_text():
+    from app.core.entities.political_actor import OfficialEvidence
+    from app.infrastructure.llm.sentinela import generate_section_summary
+
+    now = datetime.now(timezone.utc)
+    evidence = [
+        OfficialEvidence(
+            id=1,
+            political_actor_id=1,
+            source="camara",
+            source_id="vote:123:456",
+            evidence_type="vote",
+            title="Votou Sim",
+            summary="PL real.",
+            evidence_date=now,
+            source_url="https://dadosabertos.camara.leg.br/api/v2/votacoes/123",
+            fetched_at=now,
+            expires_at=now + timedelta(days=1),
+        )
+    ]
+
+    fake_response = MagicMock()
+    fake_response.text = None
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
+        result = generate_section_summary(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            evidence_type="vote",
+            evidence_list=evidence,
+            period_label="último trimestre",
+        )
+
+    assert result.summary == "Não foi possível gerar o resumo neste momento."
+    assert result.citations == []
+
+
 def test_generate_synthesis_handles_client_construction_error():
     from app.infrastructure.llm.sentinela import generate_synthesis
 
@@ -395,6 +535,28 @@ def test_generate_synthesis_handles_client_construction_error():
         "app.infrastructure.llm.sentinela.genai.Client",
         side_effect=RuntimeError("client error"),
     ):
+        result = generate_synthesis(
+            api_key="fake-key",
+            actor_name="Maria Silva",
+            votes_summary="Votou Sim.",
+            propositions_summary="Apresentou proposição.",
+            expenses_summary="Declarou despesas.",
+            period_label="último trimestre",
+        )
+
+    assert result == "Não foi possível gerar a síntese neste momento."
+
+
+def test_generate_synthesis_handles_empty_response_text():
+    from app.infrastructure.llm.sentinela import generate_synthesis
+
+    fake_response = MagicMock()
+    fake_response.text = None
+
+    with patch("app.infrastructure.llm.sentinela.genai.Client") as MockClient:
+        instance = MockClient.return_value
+        instance.models.generate_content.return_value = fake_response
+
         result = generate_synthesis(
             api_key="fake-key",
             actor_name="Maria Silva",
