@@ -136,6 +136,21 @@ class ApiClient {
     );
   }
 
+  Future<PoliticalActor?> fetchFollowedPoliticalActor({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/followed-actor');
+    final response = await _client.get(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    if (response.statusCode == 404) return null;
+    final json = _decode(response) as Map<String, dynamic>;
+    return PoliticalActor.fromJson(
+      json['political_actor'] as Map<String, dynamic>,
+    );
+  }
+
   Future<dynamic> _getJson(Uri uri) async {
     final response = await _client.get(uri);
     return _decode(response);

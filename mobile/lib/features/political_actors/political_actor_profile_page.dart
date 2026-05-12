@@ -72,13 +72,16 @@ class _PoliticalActorProfilePageState extends State<PoliticalActorProfilePage> {
       if (confirm != true) return;
     }
     try {
-      final followed = await _session.api.followPoliticalActor(
-        actorId: actor.id,
-        anonymousId: _session.anonymousId,
+      await _session.followActor(actor);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Politico acompanhado.')),
       );
-      _session.replaceFollowedActor(followed);
-    } catch (_) {
-      _session.replaceFollowedActor(actor);
+    } catch (error) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(error.toString())),
+      );
     }
     if (mounted) setState(() {});
   }

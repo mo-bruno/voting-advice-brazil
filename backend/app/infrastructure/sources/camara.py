@@ -178,7 +178,10 @@ class CamaraClient:
         path: str,
         params: dict[str, QueryParamValue] | None = None,
     ) -> list[dict[str, Any]]:
-        response = self._client.get(f"{self._base_url}{path}", params=params)
+        try:
+            response = self._client.get(f"{self._base_url}{path}", params=params)
+        except httpx.RequestError as exc:
+            raise CamaraSourceError("Camara request failed") from exc
         if response.status_code >= 400:
             raise CamaraSourceError(
                 f"Camara request failed: {response.status_code}"
