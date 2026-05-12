@@ -128,6 +128,21 @@ def test_returns_cached_evidence_with_freshness_flag(client, db_session):
             expires_at=now + timedelta(hours=12),
         )
     )
+    db_session.add(
+        OfficialEvidenceModel(
+            political_actor_id=actor.id,
+            source="camara",
+            source_id="expense:2026:1:COMBUSTIVEIS",
+            evidence_type="expense",
+            title="Registrou R$ 119,72 em despesa parlamentar",
+            summary="Despesa oficial registrada na Camara.",
+            evidence_date=now,
+            source_url="https://example.test/despesa",
+            normalized_payload={"tipoDespesa": "COMBUSTIVEIS"},
+            fetched_at=now,
+            expires_at=now + timedelta(hours=12),
+        )
+    )
     db_session.commit()
 
     response = client.get(f"/api/v1/political-actors/{actor.id}/evidence")
@@ -135,4 +150,7 @@ def test_returns_cached_evidence_with_freshness_flag(client, db_session):
     assert response.status_code == 200
     data = response.json()
     assert data["cache_status"] == "fresh"
-    assert data["evidence"][0]["title"] == "Apresentou PL 123/2026"
+    assert {item["evidence_type"] for item in data["evidence"]} == {
+        "proposition",
+        "expense",
+    }
