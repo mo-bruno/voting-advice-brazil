@@ -45,3 +45,22 @@ class TrendingActor:
     actor: PoliticalActor
     rank: int
     follow_count: int
+
+
+@dataclass(frozen=True)
+class SectionSummary:
+    summary: str
+    citations: list[dict[str, str]]
+
+
+@dataclass(frozen=True)
+class SentinelaSummary:
+    id: int
+    political_actor_id: int
+    period: str
+    generated_at: datetime
+    expires_at: datetime
+    votes: SectionSummary
+    propositions: SectionSummary
+    expenses: SectionSummary
+    synthesis: str

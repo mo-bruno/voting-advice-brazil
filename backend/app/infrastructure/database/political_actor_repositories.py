@@ -178,6 +178,23 @@ class SqlOfficialEvidenceRepository(OfficialEvidenceRepository):
             self._db.add(OfficialEvidenceModel(**row_data))
         self._db.commit()
 
+    def list_by_actor_since(
+        self,
+        actor_id: int,
+        since: datetime | None = None,
+    ) -> list[OfficialEvidence]:
+        stmt = select(OfficialEvidenceModel).where(
+            OfficialEvidenceModel.political_actor_id == actor_id
+        )
+        if since is not None:
+            stmt = stmt.where(OfficialEvidenceModel.evidence_date >= since)
+        stmt = stmt.order_by(
+            OfficialEvidenceModel.evidence_date.desc(),
+            OfficialEvidenceModel.id.desc(),
+        )
+        rows = self._db.execute(stmt).scalars().all()
+        return [_to_evidence(row) for row in rows]
+
 
 class SqlFollowedActorRepository(FollowedActorRepository):
     def __init__(self, db: Session) -> None:
