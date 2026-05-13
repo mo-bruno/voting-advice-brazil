@@ -41,6 +41,7 @@ from app.core.use_cases.follow_political_actor import (
 )
 from app.core.use_cases.generate_sentinela_summary import (
     ActorNotFoundError,
+    GenerationFailedError,
     generate_sentinela_summary,
 )
 from app.core.use_cases.get_official_evidence import (
@@ -240,7 +241,7 @@ def get_sentinela_summary(
     now = datetime.now(timezone.utc)
 
     try:
-        summary = generate_sentinela_summary(
+        summary, cached = generate_sentinela_summary(
             actor_id=actor_id,
             period=period,
             actor_repo=actor_repo,
@@ -251,15 +252,13 @@ def get_sentinela_summary(
         )
     except ActorNotFoundError:
         raise HTTPException(status_code=404, detail="Político não encontrado.")
+    except GenerationFailedError:
+        raise HTTPException(
+            status_code=503,
+            detail="Não foi possível gerar o resumo no momento. Tente novamente em instantes.",
+        )
 
-    # Derived from time: if generated_at < now by >1s, it was cached
-    generated_at = summary.generated_at
-    # Handle naive datetimes from SQLite
-    if generated_at.tzinfo is None:
-        generated_at = generated_at.replace(tzinfo=timezone.utc)
-    is_cached = (now - generated_at).total_seconds() > 1
-
-    response.headers["X-Sentinela-Cached"] = "true" if is_cached else "false"
+    response.headers["X-Sentinela-Cached"] = "true" if cached else "false"
     response.headers["X-Sentinela-Generated-At"] = summary.generated_at.isoformat()
 
     def _section_out(section: SectionSummary) -> SectionSummaryOut:
@@ -275,7 +274,7 @@ def get_sentinela_summary(
     return SentinelaSummaryOut(
         period=summary.period,
         generated_at=summary.generated_at,
-        cached=is_cached,
+        cached=cached,
         synthesis=summary.synthesis,
         sections=SentinelaSectionsOut(
             votes=_section_out(summary.votes),

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from collections.abc import Mapping, Sequence
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Any, cast
 
 from sqlalchemy import func, or_, select
@@ -282,13 +282,19 @@ def _to_section(raw: str) -> SectionSummary:
     )
 
 
+def _ensure_utc(dt: datetime) -> datetime:
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=timezone.utc)
+    return dt
+
+
 def _to_sentinela_summary(model: SentinelaSummaryModel) -> SentinelaSummary:
     return SentinelaSummary(
         id=model.id,
         political_actor_id=model.political_actor_id,
         period=model.period,
-        generated_at=model.generated_at,
-        expires_at=model.expires_at,
+        generated_at=_ensure_utc(model.generated_at),
+        expires_at=_ensure_utc(model.expires_at),
         votes=_to_section(model.votes_summary),
         propositions=_to_section(model.propositions_summary),
         expenses=_to_section(model.expenses_summary),

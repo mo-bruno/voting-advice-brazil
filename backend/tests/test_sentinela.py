@@ -603,7 +603,7 @@ def test_generate_sentinela_summary_returns_cached_when_valid(db_session):
     with patch(
         "app.core.use_cases.generate_sentinela_summary.generate_section_summary"
     ) as mock_gen:
-        result = generate_sentinela_summary(
+        result, cached = generate_sentinela_summary(
             actor_id=actor.id,
             period="quarter",
             actor_repo=actor_repo,
@@ -614,6 +614,7 @@ def test_generate_sentinela_summary_returns_cached_when_valid(db_session):
         )
 
     mock_gen.assert_not_called()
+    assert cached is True
     assert result.synthesis == "Resumo cacheado."
 
 
@@ -683,3 +684,111 @@ def test_summary_endpoint_rejects_invalid_period(client, db_session):
     actor = _seed_actor(db_session)
     response = client.get(f"/api/v1/political-actors/{actor.id}/summary?period=invalid")
     assert response.status_code == 422
+
+
+def test_build_actor_label_omits_null_party_and_state():
+    from app.core.use_cases.generate_sentinela_summary import _build_actor_label
+
+    assert _build_actor_label("João Silva", None, None) == "João Silva"
+    assert _build_actor_label("João Silva", "PT", None) == "João Silva (PT)"
+    assert _build_actor_label("João Silva", None, "SP") == "João Silva (SP)"
+    assert _build_actor_label("João Silva", "PT", "SP") == "João Silva (PT-SP)"
+
+
+def test_generate_sentinela_summary_raises_when_api_key_missing(db_session):
+    from app.core.use_cases.generate_sentinela_summary import (
+        GenerationFailedError,
+        generate_sentinela_summary,
+    )
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlOfficialEvidenceRepository,
+        SqlPoliticalActorRepository,
+        SqlSentinelaSummaryRepository,
+    )
+
+    actor = _seed_actor(db_session)
+    actor_repo = SqlPoliticalActorRepository(db_session)
+    evidence_repo = SqlOfficialEvidenceRepository(db_session)
+    summary_repo = SqlSentinelaSummaryRepository(db_session)
+
+    with pytest.raises(GenerationFailedError):
+        generate_sentinela_summary(
+            actor_id=actor.id,
+            period="quarter",
+            actor_repo=actor_repo,
+            evidence_repo=evidence_repo,
+            summary_repo=summary_repo,
+            api_key="",
+            now=datetime.now(timezone.utc),
+        )
+
+    # CRITICAL: no row was written, so a future fix to the key generates fresh
+    row_count = (
+        db_session.query(SentinelaSummaryModel)
+        .filter_by(political_actor_id=actor.id, period="quarter")
+        .count()
+    )
+    assert row_count == 0
+
+
+def test_generate_sentinela_summary_does_not_cache_when_synthesis_fails(db_session):
+    from app.core.use_cases.generate_sentinela_summary import (
+        GenerationFailedError,
+        generate_sentinela_summary,
+    )
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlOfficialEvidenceRepository,
+        SqlPoliticalActorRepository,
+        SqlSentinelaSummaryRepository,
+    )
+
+    actor = _seed_actor(db_session)
+    _seed_evidence(db_session, actor.id, "vote", "vote:1", days_ago=10)
+    actor_repo = SqlPoliticalActorRepository(db_session)
+    evidence_repo = SqlOfficialEvidenceRepository(db_session)
+    summary_repo = SqlSentinelaSummaryRepository(db_session)
+
+    with patch(
+        "app.core.use_cases.generate_sentinela_summary.generate_synthesis",
+        return_value="Não foi possível gerar a síntese neste momento.",
+    ), patch(
+        "app.core.use_cases.generate_sentinela_summary.generate_section_summary"
+    ) as mock_section:
+        from app.core.entities.political_actor import SectionSummary
+
+        mock_section.return_value = SectionSummary(summary="ok", citations=[])
+
+        with pytest.raises(GenerationFailedError):
+            generate_sentinela_summary(
+                actor_id=actor.id,
+                period="quarter",
+                actor_repo=actor_repo,
+                evidence_repo=evidence_repo,
+                summary_repo=summary_repo,
+                api_key="fake-key",
+                now=datetime.now(timezone.utc),
+            )
+
+    row_count = (
+        db_session.query(SentinelaSummaryModel)
+        .filter_by(political_actor_id=actor.id, period="quarter")
+        .count()
+    )
+    assert row_count == 0
+
+
+def test_summary_endpoint_returns_503_when_generation_fails(client, db_session):
+    actor = _seed_actor(db_session)
+    # No GEMINI_API_KEY set via override: the global setting defaults to empty
+    from app.core import config as config_module
+
+    original = config_module.settings.gemini_api_key
+    config_module.settings.gemini_api_key = None
+    try:
+        response = client.get(
+            f"/api/v1/political-actors/{actor.id}/summary?period=quarter"
+        )
+    finally:
+        config_module.settings.gemini_api_key = original
+
+    assert response.status_code == 503
