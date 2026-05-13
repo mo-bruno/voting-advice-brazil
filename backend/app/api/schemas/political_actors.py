@@ -61,3 +61,27 @@ class FollowActorRequest(BaseModel):
 class FollowedActorResponse(BaseModel):
     political_actor: PoliticalActorOut
     updated_at: datetime
+
+
+class CitationOut(BaseModel):
+    label: str
+    source_url: str
+
+
+class SectionSummaryOut(BaseModel):
+    summary: str
+    citations: list[CitationOut]
+
+
+class SentinelaSectionsOut(BaseModel):
+    votes: SectionSummaryOut
+    propositions: SectionSummaryOut
+    expenses: SectionSummaryOut
+
+
+class SentinelaSummaryOut(BaseModel):
+    period: str
+    generated_at: datetime
+    cached: bool
+    synthesis: str
+    sections: SentinelaSectionsOut

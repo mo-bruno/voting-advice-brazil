@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta, timezone
-from typing import Annotated
+from typing import Annotated, Literal
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Query, Response
 
@@ -9,18 +9,28 @@ from app.api.deps import (
     get_followed_actor_repo,
     get_official_evidence_repo,
     get_political_actor_repo,
+    get_sentinela_summary_repo,
 )
 from app.api.schemas.political_actors import (
+    CitationOut,
     EvidenceResponse,
     FollowActorRequest,
     FollowedActorResponse,
     OfficialEvidenceOut,
     PoliticalActorListResponse,
     PoliticalActorOut,
+    SectionSummaryOut,
+    SentinelaSectionsOut,
+    SentinelaSummaryOut,
     TrendingActorOut,
     TrendingActorResponse,
 )
-from app.core.entities.political_actor import OfficialEvidence, PoliticalActor
+from app.core.config import settings
+from app.core.entities.political_actor import (
+    OfficialEvidence,
+    PoliticalActor,
+    SectionSummary,
+)
 from app.core.use_cases.ensure_political_actor_index import (
     ensure_political_actor_index,
 )
@@ -28,6 +38,11 @@ from app.core.use_cases.follow_political_actor import (
     delete_followed_political_actor,
     follow_political_actor,
     get_followed_political_actor,
+)
+from app.core.use_cases.generate_sentinela_summary import (
+    ActorNotFoundError,
+    GenerationFailedError,
+    generate_sentinela_summary,
 )
 from app.core.use_cases.get_official_evidence import (
     get_official_evidence,
@@ -42,6 +57,7 @@ from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
     SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
+    SqlSentinelaSummaryRepository,
 )
 from app.infrastructure.sources.camara import (
     CamaraDeputyIndexSource,
@@ -211,3 +227,58 @@ def delete_followed(
     delete_followed_political_actor(follow_repo, x_farol_anonymous_id)
     response.status_code = 204
     return response
+
+
+@router.get("/{actor_id}/summary", response_model=SentinelaSummaryOut)
+def get_sentinela_summary(
+    actor_id: int,
+    response: Response,
+    actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
+    evidence_repo: SqlOfficialEvidenceRepository = Depends(get_official_evidence_repo),
+    summary_repo: SqlSentinelaSummaryRepository = Depends(get_sentinela_summary_repo),
+    period: Literal["quarter", "full"] = Query(default="quarter"),
+) -> SentinelaSummaryOut:
+    now = datetime.now(timezone.utc)
+
+    try:
+        summary, cached = generate_sentinela_summary(
+            actor_id=actor_id,
+            period=period,
+            actor_repo=actor_repo,
+            evidence_repo=evidence_repo,
+            summary_repo=summary_repo,
+            api_key=settings.gemini_api_key or "",
+            now=now,
+        )
+    except ActorNotFoundError:
+        raise HTTPException(status_code=404, detail="Político não encontrado.")
+    except GenerationFailedError:
+        raise HTTPException(
+            status_code=503,
+            detail="Não foi possível gerar o resumo no momento. Tente novamente em instantes.",
+        )
+
+    response.headers["X-Sentinela-Cached"] = "true" if cached else "false"
+    response.headers["X-Sentinela-Generated-At"] = summary.generated_at.isoformat()
+
+    def _section_out(section: SectionSummary) -> SectionSummaryOut:
+        return SectionSummaryOut(
+            summary=section.summary,
+            citations=[
+                CitationOut(label=c["label"], source_url=c["source_url"])
+                for c in section.citations
+                if "label" in c and "source_url" in c
+            ],
+        )
+
+    return SentinelaSummaryOut(
+        period=summary.period,
+        generated_at=summary.generated_at,
+        cached=cached,
+        synthesis=summary.synthesis,
+        sections=SentinelaSectionsOut(
+            votes=_section_out(summary.votes),
+            propositions=_section_out(summary.propositions),
+            expenses=_section_out(summary.expenses),
+        ),
+    )

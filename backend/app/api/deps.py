@@ -6,6 +6,7 @@ from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
     SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
+    SqlSentinelaSummaryRepository,
 )
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
@@ -58,6 +59,12 @@ def get_followed_actor_repo(
     db: Session = Depends(get_db),
 ) -> SqlFollowedActorRepository:
     return SqlFollowedActorRepository(db)
+
+
+def get_sentinela_summary_repo(
+    db: Session = Depends(get_db),
+) -> SqlSentinelaSummaryRepository:
+    return SqlSentinelaSummaryRepository(db)
 
 
 def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:

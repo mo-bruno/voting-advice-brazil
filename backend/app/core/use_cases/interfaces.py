@@ -6,6 +6,7 @@ from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
     PoliticalActor,
+    SentinelaSummary,
     TrendingActor,
 )
 
@@ -89,6 +90,13 @@ class OfficialEvidenceRepository(ABC):
         rows: list[dict[str, object]],
     ) -> None: ...
 
+    @abstractmethod
+    def list_by_actor_since(
+        self,
+        actor_id: int,
+        since: datetime | None = None,
+    ) -> list[OfficialEvidence]: ...
+
 
 class FollowedActorRepository(ABC):
     @abstractmethod
@@ -106,3 +114,16 @@ class FollowedActorRepository(ABC):
         limit: int = 10,
         min_followers: int = 2,
     ) -> list[TrendingActor]: ...
+
+
+class SentinelaSummaryRepository(ABC):
+    @abstractmethod
+    def get_valid(
+        self,
+        actor_id: int,
+        period: str,
+        now: datetime,
+    ) -> SentinelaSummary | None: ...
+
+    @abstractmethod
+    def upsert(self, data: dict[str, object]) -> SentinelaSummary: ...
