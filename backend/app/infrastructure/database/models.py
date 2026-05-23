@@ -276,6 +276,50 @@ class FollowedActorModel(Base):
     __table_args__ = (Index("ix_followed_actors_actor", "political_actor_id"),)
 
 
+class IotDeviceLinkModel(Base):
+    __tablename__ = "iot_device_links"
+
+    device_token: Mapped[str] = mapped_column(String(64), primary_key=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    status: Mapped[str] = mapped_column(String(32), nullable=False, default="linked")
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+    last_seen_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    __table_args__ = (
+        UniqueConstraint("anonymous_id", name="uq_iot_device_links_anonymous_id"),
+        Index("ix_iot_device_links_anonymous_id", "anonymous_id"),
+        Index("ix_iot_device_links_updated_at", "updated_at"),
+    )
+
+
+class IotPairingSessionModel(Base):
+    __tablename__ = "iot_pairing_sessions"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    device_token: Mapped[str] = mapped_column(String(64), nullable=False)
+    pairing_code_hash: Mapped[str] = mapped_column(String(128), nullable=False)
+    qr_payload: Mapped[str] = mapped_column(String(512), nullable=False)
+    firmware_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    consumed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    __table_args__ = (
+        Index("ix_iot_pairing_sessions_device_expires", "device_token", "expires_at"),
+    )
+
+
 class SourceSyncRunModel(Base):
     __tablename__ = "source_sync_runs"
 
