@@ -77,7 +77,7 @@ class _IotPairingPageState extends State<IotPairingPage> {
                         break;
                       }
                     }
-                    if (raw != null) _pairFromRaw(raw);
+                    if (raw != null && mounted) _pairFromRaw(raw);
                   },
                 ),
               ),

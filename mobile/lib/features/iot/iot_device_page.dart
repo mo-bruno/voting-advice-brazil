@@ -29,7 +29,7 @@ class _IotDevicePageState extends State<IotDevicePage> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return AppScaffold(
-      title: 'FAROL POLITICO',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () => Navigator.pop(context),
