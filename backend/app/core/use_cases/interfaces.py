@@ -143,8 +143,8 @@ class IotPairingSessionRepository(ABC):
         pairing_code_hash: str,
         qr_payload: str,
         firmware_version: str | None,
-        expires_at: datetime,
         now: datetime,
+        expires_at: datetime,
     ) -> IotPairingSession: ...
 
     @abstractmethod

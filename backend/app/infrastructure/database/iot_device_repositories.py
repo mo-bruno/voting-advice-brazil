@@ -70,6 +70,10 @@ class SqlIotDeviceLinkRepository(IotDeviceLinkRepository):
         device_token: str,
         now: datetime,
     ) -> IotDeviceLink:
+        model = self._db.get(IotDeviceLinkModel, device_token)
+        if model is not None and model.anonymous_id != anonymous_id:
+            raise ValueError("device token already linked")
+
         existing_for_anonymous = self._db.execute(
             select(IotDeviceLinkModel).where(
                 IotDeviceLinkModel.anonymous_id == anonymous_id
@@ -82,7 +86,6 @@ class SqlIotDeviceLinkRepository(IotDeviceLinkRepository):
             self._db.delete(existing_for_anonymous)
             self._db.flush()
 
-        model = self._db.get(IotDeviceLinkModel, device_token)
         if model is None:
             model = IotDeviceLinkModel(
                 device_token=device_token,
@@ -123,8 +126,8 @@ class SqlIotPairingSessionRepository(IotPairingSessionRepository):
         pairing_code_hash: str,
         qr_payload: str,
         firmware_version: str | None,
-        expires_at: datetime,
         now: datetime,
+        expires_at: datetime,
     ) -> IotPairingSession:
         existing_sessions = self._db.execute(
             select(IotPairingSessionModel).where(
