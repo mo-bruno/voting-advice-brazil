@@ -11,5 +11,6 @@ void main() {
 
     expect(find.text('FAROL\nPOLÍTICO'), findsOneWidget);
     expect(find.text('COMEÇAR'), findsOneWidget);
+    expect(find.text('MEU FAROL'), findsOneWidget);
   });
 }
