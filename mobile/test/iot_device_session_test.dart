@@ -44,6 +44,19 @@ class FakeDeviceIdentityStore extends DeviceIdentityStore {
   Future<String> getOrCreateDeviceId() async => 'anon-1';
 }
 
+class FakeThrowingApiClient extends ApiClient {
+  FakeThrowingApiClient() : super(baseUrl: 'https://example.test');
+
+  @override
+  Future<IotDevice> pairIotDevice({
+    required String anonymousId,
+    required String deviceToken,
+    required String pairingCode,
+  }) async {
+    throw Exception('network error');
+  }
+}
+
 void main() {
   test('loadStatus uses persisted anonymous id', () async {
     final api = FakeApiClient();
@@ -76,5 +89,25 @@ void main() {
     expect(api.pairedDeviceToken, '550e8400-e29b-41d4-a716-446655440000');
     expect(api.pairedCode, '482913');
     expect(session.device?.isLinked, isTrue);
+  });
+
+  test('pairWithPayload sets error and rethrows on failure', () async {
+    final session = IotDeviceSession.testOnly(
+      api: FakeThrowingApiClient(),
+      deviceIdentityStore: FakeDeviceIdentityStore(),
+    );
+
+    await expectLater(
+      session.pairWithPayload(
+        const IotPairingPayload(
+          deviceToken: '550e8400-e29b-41d4-a716-446655440000',
+          pairingCode: '482913',
+        ),
+      ),
+      throwsA(isA<Exception>()),
+    );
+
+    expect(session.error, isNotNull);
+    expect(session.loading, isFalse);
   });
 }

@@ -41,6 +41,18 @@ void main() {
 
     expect(device, isNull);
   });
+
+  test('deleteIotDevice succeeds on 204 with empty body', () async {
+    final api = ApiClient(
+      baseUrl: 'https://example.test/api/v1',
+      client: _StatusClient(204),
+    );
+
+    await expectLater(
+      api.deleteIotDevice(anonymousId: 'anon-1'),
+      completes,
+    );
+  });
 }
 
 class _CapturingClient extends http.BaseClient {
