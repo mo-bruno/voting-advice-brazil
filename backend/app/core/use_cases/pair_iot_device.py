@@ -82,16 +82,21 @@ def pair_iot_device(
         raise DeviceAlreadyLinkedError("Gadget ja vinculado a outro app.") from exc
 
     session_repo.consume_session(session.id, now)
-    publisher.publish(
-        f"farol/{device_token}",
-        {
-            "type": "pairing_confirmed",
-            "color": "green",
-            "deputy_name": "Farol Politico",
-            "vote_summary": "Dispositivo conectado ao app com sucesso.",
-            "timestamp_utc": now.isoformat().replace("+00:00", "Z"),
-        },
-    )
+    try:
+        publisher.publish(
+            f"farol/{device_token}",
+            {
+                "type": "pairing_confirmed",
+                "color": "green",
+                "deputy_name": "Farol Politico",
+                "vote_summary": "Dispositivo conectado ao app com sucesso.",
+                "timestamp_utc": now.isoformat().replace("+00:00", "Z"),
+            },
+        )
+    except Exception:
+        # Pairing state is persisted; transient MQTT confirmation failure should
+        # not roll it back. A future outbox/worker can retry this notification.
+        pass
     return link
 
 

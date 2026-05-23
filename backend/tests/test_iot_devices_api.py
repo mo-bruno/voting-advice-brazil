@@ -21,6 +21,11 @@ class FakePublisher:
         self.messages.append((topic, payload))
 
 
+class FailingPublisher:
+    def publish(self, topic: str, payload: dict[str, str]) -> None:
+        raise RuntimeError("mqtt offline")
+
+
 @pytest.fixture(autouse=True)
 def clean_iot_tables(db_session):
     db_session.query(IotPairingSessionModel).delete()
@@ -85,6 +90,32 @@ def test_pair_flow_links_device_and_publishes_confirmation(client) -> None:
     assert get_response.json()["device_token"] == TOKEN
     assert publisher.messages[0][0] == f"farol/{TOKEN}"
     assert publisher.messages[0][1]["type"] == "pairing_confirmed"
+
+
+def test_pair_flow_still_succeeds_when_mqtt_publish_fails(client) -> None:
+    app.dependency_overrides[get_iot_mqtt_publisher] = FailingPublisher
+    try:
+        client.post(
+            f"/api/v1/iot-devices/{TOKEN}/pairing-session",
+            json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+        )
+
+        pair_response = client.put(
+            "/api/v1/me/iot-device",
+            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
+        )
+        get_response = client.get(
+            "/api/v1/me/iot-device",
+            headers={"X-Farol-Anonymous-Id": "anon-1"},
+        )
+    finally:
+        app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
+
+    assert pair_response.status_code == 200
+    assert pair_response.json()["status"] == "linked"
+    assert get_response.status_code == 200
+    assert get_response.json()["device_token"] == TOKEN
 
 
 def test_consumed_session_is_rejected(client) -> None:
