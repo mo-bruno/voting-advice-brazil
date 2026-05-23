@@ -15,7 +15,11 @@ static bool previousButtonState = HIGH;
 static uint32_t buttonPressedAt = 0;
 
 static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
-    char buffer[length + 1];
+    char buffer[512];
+    if (length >= sizeof(buffer)) {
+        Serial.println("[MQTT] Payload truncado (>= 512 bytes), descartado.");
+        return;
+    }
     memcpy(buffer, payload, length);
     buffer[length] = '\0';
 

@@ -30,6 +30,7 @@ void setLed(LedColor color) {
         case BLUE:
             analogWrite(LED_PIN_R, 0);
             analogWrite(LED_PIN_G, 0);
+            analogWrite(LED_PIN_B, 200);
             break;
     }
 }
