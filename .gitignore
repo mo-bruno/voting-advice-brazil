@@ -18,6 +18,8 @@ lib/
 lib64/
 !mobile/lib/
 !mobile/lib/**/
+!firmware/esp32/lib/
+!firmware/esp32/lib/**/
 parts/
 sdist/
 var/
