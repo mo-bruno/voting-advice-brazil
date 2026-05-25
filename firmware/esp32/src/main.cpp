@@ -34,6 +34,7 @@ static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
 static void startPairing() {
     setLed(BLUE);
     sendStatusToDisplay("Pareamento", "Registrando sessao", "Aguarde...");
+    delay(800);
     String code = generatePairingCode();
     PairingSessionResponse response = createPairingSession(deviceToken, code);
     if (!response.ok) {

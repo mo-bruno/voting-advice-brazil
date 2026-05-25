@@ -87,7 +87,7 @@ static void showEventScreen(
 }
 
 static void drawQr(const String& payload) {
-    const uint8_t QR_VERSION = 10;
+    const uint8_t QR_VERSION = 5;
     QRCode qrcode;
     uint8_t qrcodeData[qrcode_getBufferSize(QR_VERSION)];
     qrcode_initText(&qrcode, qrcodeData, QR_VERSION, ECC_LOW, payload.c_str());
