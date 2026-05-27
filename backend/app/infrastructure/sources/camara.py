@@ -363,6 +363,12 @@ class CamaraEvidenceSource:
                 break
         return votes
 
+    def fetch_votes_for_actor(
+        self,
+        actor: PoliticalActor,
+    ) -> list[dict[str, object]]:
+        return self._fetch_votes(actor, datetime.now(timezone.utc))
+
     def fetch_evidence_for_actor(
         self,
         actor: PoliticalActor,
