@@ -4,7 +4,7 @@ from collections.abc import Mapping, Sequence
 from datetime import datetime
 from typing import Any, cast
 
-from sqlalchemy import func, or_, select
+from sqlalchemy import distinct, func, or_, select
 from sqlalchemy.orm import Session
 
 from app.core.entities.political_actor import (
@@ -249,7 +249,6 @@ class SqlFollowedActorRepository(FollowedActorRepository):
         ]
 
     def list_followed_political_actor_ids(self) -> list[int]:
-        from sqlalchemy import distinct
         rows = self._db.execute(
             select(distinct(FollowedActorModel.political_actor_id))
         ).scalars().all()
