@@ -16,7 +16,7 @@ def test_settings_defaults(monkeypatch):
     assert s.app_env == "dev"
     assert s.database_url.startswith("sqlite:///")
     assert s.allowed_origins_list == ["https://farol-politico-495210.web.app"]
-    assert s.mqtt_broker_url == "mqtts://broker.hivemq.com:8883"
+    assert s.mqtt_broker_url == "mqtt://broker.hivemq.com:1883"
     assert s.groq_api_key is None
 
 
