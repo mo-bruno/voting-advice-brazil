@@ -4,7 +4,6 @@ import pytest
 
 from app.core.entities.iot_device import IotDeviceLink, IotPairingSession
 from app.core.use_cases.pair_iot_device import (
-    DeviceAlreadyLinkedError,
     InvalidPairingCodeError,
     create_pairing_session,
     pair_iot_device,

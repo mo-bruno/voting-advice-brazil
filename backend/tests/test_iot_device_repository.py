@@ -1,7 +1,5 @@
 from datetime import datetime, timedelta, timezone
 
-import pytest
-
 from app.infrastructure.database.iot_device_repositories import (
     SqlIotDeviceLinkRepository,
     SqlIotPairingSessionRepository,
