@@ -128,33 +128,54 @@ static void showEventScreen(const String& deputyName, const String& party,
 // Z|current|total|answer
 static void showQuizScreen(const String& current, const String& total, const String& answer) {
     tft.fillScreen(C_BG);
-    drawHeader("QUIZ", current + " / " + total);
+    drawHeader("QUIZ", current + "/" + total);
 
     int cur = current.toInt();
     int tot = total.toInt();
     if (tot <= 0) tot = 1;
-    int barW = (int)(460.0f * cur / tot);
     uint16_t barColor = answerColor(answer);
-    tft.fillRect(10, 60, 460, 8, C_DIVIDER);
-    tft.fillRect(10, 60, barW, 8, barColor);
 
-    // Badge grande centralizado
+    // Barra de progresso (fina, discreta)
+    tft.fillRect(0, 50, 480, 4, C_DIVIDER);
+    tft.fillRect(0, 50, (int)(480.0f * cur / tot), 4, barColor);
+
+    // Numero da pergunta
+    tft.setFont(&FreeSansBold9pt7b);
+    tft.setTextColor(C_MUTED);
+    String prog = "Pergunta " + current + " de " + total;
+    tft.setCursor((480 - (int)prog.length() * 9) / 2, 74);
+    tft.print(prog);
+
+    // Badge de resposta — maior e mais centralizado (420x100px)
     String label = answer == "agree"    ? "CONCORDO"
                  : answer == "disagree" ? "DISCORDO" : "NEUTRO";
-    int bw = 300, bh = 80;
-    int bx = (480 - bw) / 2, by = 100;
+    int bw = 420, bh = 100;
+    int bx = (480 - bw) / 2;
+    int by = 90;
     tft.fillRect(bx, by, bw, bh, barColor);
+    // Borda interna sutil
+    tft.drawRect(bx + 2, by + 2, bw - 4, bh - 4,
+                 isLightColor(barColor) ? C_BG : C_WHITE);
     tft.setFont(&FreeSansBold12pt7b);
     tft.setTextColor(isLightColor(barColor) ? C_BLACK : C_WHITE);
     int textW = label.length() * 14;
-    tft.setCursor(bx + (bw - textW) / 2, by + bh - 20);
+    tft.setCursor(bx + (bw - textW) / 2, by + bh / 2 + 8);
     tft.print(label);
 
+    drawDivider(210);
+
+    // Confirmacao + icone checkmark
     tft.setFont(&FreeSansBold9pt7b);
+    tft.setTextColor(barColor);
+    tft.setCursor(14, 234);
+    tft.print("Resposta registrada");
+
+    // Percentual de conclusao
+    int pct = (int)(100.0f * cur / tot);
     tft.setTextColor(C_MUTED);
-    String reg = "Resposta registrada";
-    tft.setCursor(480 - (int)(reg.length() * 9) - 8, 210);
-    tft.print(reg);
+    String pctStr = String(pct) + "% concluido";
+    tft.setCursor(480 - (int)pctStr.length() * 9 - 14, 234);
+    tft.print(pctStr);
 }
 
 // N|index|total|title|source|date
@@ -223,45 +244,61 @@ static void showStatusScreen(const String& title, const String& line1, const Str
     tft.print(line2);
 }
 
-static void drawQr(const String& payload) {
-    const uint8_t QR_VERSION = 5;
-    QRCode qrcode;
-    uint8_t qrcodeData[qrcode_getBufferSize(QR_VERSION)];
-    qrcode_initText(&qrcode, qrcodeData, QR_VERSION, ECC_LOW, payload.c_str());
-    int moduleSize = 4;
-    int qrSize = qrcode.size * moduleSize;
-    int startX = (480 - qrSize) / 2;
-    int startY = 65;
-    tft.fillRect(startX - 8, startY - 8, qrSize + 16, qrSize + 16, C_WHITE);
-    for (uint8_t y = 0; y < qrcode.size; y++) {
-        for (uint8_t x = 0; x < qrcode.size; x++) {
-            tft.fillRect(
-                startX + x * moduleSize,
-                startY + y * moduleSize,
-                moduleSize, moduleSize,
-                qrcode_getModule(&qrcode, x, y) ? C_BLACK : C_WHITE
-            );
-        }
-    }
-}
-
 // Q|qrPayload|code|shortId
 static void showPairingScreen(const String& qrPayload, const String& code, const String& shortId) {
     tft.fillScreen(C_BG);
     drawHeader("CONECTAR FAROL");
-    drawQr(qrPayload);
-    int badgeW = code.length() * 14 + 20;
-    int badgeX = (480 - badgeW) / 2;
-    tft.fillRect(badgeX, 290, badgeW, 26, C_YELLOW);
-    tft.setFont(&FreeSansBold12pt7b);
-    tft.setTextColor(C_BLACK);
-    tft.setCursor(badgeX + 10, 308);
-    tft.print(code);
+
+    // QR: version 5 = 37 modules, moduleSize=4 → 148px, quietZone=16px (4 modulos, padrao ISO)
+    const uint8_t QR_VERSION = 5;
+    const int moduleSize = 4;
+    const int quietZone  = moduleSize * 4;  // 16px — minimo exigido pelo padrao
+    QRCode qrcode;
+    uint8_t qrcodeData[qrcode_getBufferSize(QR_VERSION)];
+    qrcode_initText(&qrcode, qrcodeData, QR_VERSION, ECC_LOW, qrPayload.c_str());
+    int qrPx  = qrcode.size * moduleSize;            // 37*4 = 148
+    int bgSize = qrPx + quietZone * 2;               // 148+32 = 180
+    int bgX   = (480 - bgSize) / 2;                  // (480-180)/2 = 150
+    int bgY   = 52;
+    int qrX   = bgX + quietZone;                     // 150+16 = 166
+    int qrY   = bgY + quietZone;                     // 52+16  = 68
+    // Fundo branco com zona silenciosa correta
+    tft.fillRect(bgX, bgY, bgSize, bgSize, C_WHITE);
+    for (uint8_t row = 0; row < qrcode.size; row++) {
+        for (uint8_t col = 0; col < qrcode.size; col++) {
+            tft.fillRect(
+                qrX + col * moduleSize,
+                qrY + row * moduleSize,
+                moduleSize, moduleSize,
+                qrcode_getModule(&qrcode, col, row) ? C_BLACK : C_WHITE
+            );
+        }
+    }
+    // bgY + bgSize = 52+180 = 232 — tudo abaixo daqui e livre
+
+    // Instrucao de escaneamento
     tft.setFont(&FreeSansBold9pt7b);
     tft.setTextColor(C_MUTED);
+    const char* instr = "Escaneie com o app Farol";
+    int instrX = (480 - (int)strlen(instr) * 9) / 2;
+    tft.setCursor(instrX, 248);
+    tft.print(instr);
+
+    // Badge do codigo (y=255..287)
+    int badgeW = code.length() * 14 + 20;
+    int badgeX = (480 - badgeW) / 2;
+    tft.fillRect(badgeX, 255, badgeW, 32, C_YELLOW);
+    tft.setFont(&FreeSansBold12pt7b);
+    tft.setTextColor(C_BLACK);
+    tft.setCursor(badgeX + 10, 275);
+    tft.print(code);
+
+    // ID curto — bem abaixo do badge, sem sobreposicao
+    tft.setFont(&FreeSansBold9pt7b);
+    tft.setTextColor(C_DIVIDER);
     String idLabel = "ID: " + shortId;
     int idX = (480 - (int)idLabel.length() * 9) / 2;
-    tft.setCursor(idX, 318);
+    tft.setCursor(idX, 307);
     tft.print(idLabel);
 }
 
