@@ -108,6 +108,9 @@ class FollowedActorRepository(ABC):
         min_followers: int = 2,
     ) -> list[TrendingActor]: ...
 
+    @abstractmethod
+    def list_all_followed(self) -> list[tuple[int, str]]: ...
+
 
 class IotDeviceLinkRepository(ABC):
     @abstractmethod
