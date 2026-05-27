@@ -96,10 +96,6 @@ def pair_iot_device(
     pairing_code: str,
     now: datetime,
 ) -> IotDeviceLink:
-    conflict = link_repo.get_conflicting_link(anonymous_id, device_token)
-    if conflict is not None:
-        raise DeviceAlreadyLinkedError("Gadget ja vinculado a outro app.")
-
     session = session_repo.get_active_session(
         device_token=device_token,
         pairing_code_hash=_pairing_code_hash(device_token, pairing_code),
@@ -108,14 +104,11 @@ def pair_iot_device(
     if session is None:
         raise InvalidPairingCodeError("Codigo de pareamento invalido ou expirado.")
 
-    try:
-        link = link_repo.set_link(
-            anonymous_id=anonymous_id,
-            device_token=device_token,
-            now=now,
-        )
-    except ValueError as exc:
-        raise DeviceAlreadyLinkedError("Gadget ja vinculado a outro app.") from exc
+    link = link_repo.set_link(
+        anonymous_id=anonymous_id,
+        device_token=device_token,
+        now=now,
+    )
 
     session_repo.consume_session(session.id, now)
     try:

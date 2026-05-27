@@ -43,27 +43,32 @@ class FakeLinkRepo:
         now: datetime,
     ) -> IotDeviceLink:
         existing_token_link = self.by_token.get(device_token)
-        if (
-            existing_token_link is not None
-            and existing_token_link.anonymous_id != anonymous_id
-        ):
-            raise ValueError("device token already linked")
-
-        existing_anonymous_link = self.by_anonymous.get(anonymous_id)
-        if (
-            existing_anonymous_link is not None
-            and existing_anonymous_link.device_token != device_token
-        ):
-            del self.by_token[existing_anonymous_link.device_token]
-
-        link = IotDeviceLink(
-            device_token=device_token,
-            anonymous_id=anonymous_id,
-            status="linked",
-            created_at=now,
-            updated_at=now,
-            last_seen_at=None,
-        )
+        if existing_token_link is not None:
+            if existing_token_link.anonymous_id != anonymous_id:
+                del self.by_anonymous[existing_token_link.anonymous_id]
+            link = IotDeviceLink(
+                device_token=device_token,
+                anonymous_id=anonymous_id,
+                status="linked",
+                created_at=existing_token_link.created_at,
+                updated_at=now,
+                last_seen_at=None,
+            )
+        else:
+            existing_anonymous_link = self.by_anonymous.get(anonymous_id)
+            if (
+                existing_anonymous_link is not None
+                and existing_anonymous_link.device_token != device_token
+            ):
+                del self.by_token[existing_anonymous_link.device_token]
+            link = IotDeviceLink(
+                device_token=device_token,
+                anonymous_id=anonymous_id,
+                status="linked",
+                created_at=now,
+                updated_at=now,
+                last_seen_at=None,
+            )
         self.by_token[device_token] = link
         self.by_anonymous[anonymous_id] = link
         return link
@@ -186,19 +191,20 @@ def test_pair_iot_device_rejects_invalid_pairing_code() -> None:
         )
 
 
-def test_pair_iot_device_rejects_token_linked_to_another_user() -> None:
+def test_pair_iot_device_allows_repair_token_linked_to_another_user() -> None:
     links = FakeLinkRepo()
     links.set_link("anon-existing", TOKEN, NOW)
     sessions = FakeSessionRepo()
     create_pairing_session(sessions, TOKEN, PAIRING_CODE, "0.1.0", NOW)
 
-    with pytest.raises(DeviceAlreadyLinkedError):
-        pair_iot_device(
-            links,
-            sessions,
-            FakePublisher(),
-            "anon-1",
-            TOKEN,
-            PAIRING_CODE,
-            NOW,
-        )
+    result = pair_iot_device(
+        links,
+        sessions,
+        FakePublisher(),
+        "anon-1",
+        TOKEN,
+        PAIRING_CODE,
+        NOW,
+    )
+    assert result.device_token == TOKEN
+    assert result.anonymous_id == "anon-1"
