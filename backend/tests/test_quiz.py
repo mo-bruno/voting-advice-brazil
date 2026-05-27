@@ -85,6 +85,43 @@ class TestEndpointSubmit:
         ]
         assert {row.election_year for row in rows} == {2022}
 
+    def test_submit_with_device_id_pushes_news_inline(
+        self,
+        client,
+        monkeypatch,
+        thesis_ids,
+    ):
+        from app.api.routers import quiz as quiz_router
+
+        device_id = "550e8400-e29b-41d4-a716-446655440000"
+        pushed_for: list[str] = []
+
+        def fake_push_news(anonymous_id: str) -> None:
+            pushed_for.append(anonymous_id)
+
+        class NoopThread:
+            def __init__(self, *args, **kwargs):
+                pass
+
+            def start(self) -> None:
+                pass
+
+        monkeypatch.setattr(
+            quiz_router,
+            "_push_news_for_quiz_submission",
+            fake_push_news,
+            raising=False,
+        )
+        monkeypatch.setattr(quiz_router, "Thread", NoopThread, raising=False)
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": _agree5(thesis_ids)},
+        )
+
+        assert r.status_code == 200
+        assert pushed_for == [device_id]
+
     def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
         self,
         client,
