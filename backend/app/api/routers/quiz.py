@@ -1,7 +1,14 @@
+from typing import cast
+
 from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.cache import cache_get, cache_set
-from app.api.deps import get_candidate_repo, get_position_repo, get_thesis_repo
+from app.api.deps import (
+    get_candidate_repo,
+    get_position_repo,
+    get_quiz_response_repo,
+    get_thesis_repo,
+)
 from app.api.schemas.quiz import (
     CandidateResultOut,
     QuestionsResponse,
@@ -19,12 +26,21 @@ from app.core.use_cases.submit_quiz import (
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
     SqlPositionRepository,
+    SqlQuizResponseRepository,
     SqlThesisRepository,
 )
 
 router = APIRouter(prefix="/quiz", tags=["Quiz"])
 
 _QUESTIONS_TTL = 3600  # 1 hour
+
+
+def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
+    latest_by_thesis_id: dict[int, QuizAnswer] = {}
+    for answer in answers:
+        latest_by_thesis_id.pop(answer.thesis_id, None)
+        latest_by_thesis_id[answer.thesis_id] = answer
+    return list(latest_by_thesis_id.values())
 
 
 @router.get("/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz")
@@ -36,7 +52,7 @@ def questions(
     cache_key = f"quiz:questions:{','.join(sorted(themes or []))}:{limit}"
     cached = cache_get(cache_key)
     if cached is not None:
-        return cached
+        return cast(QuestionsResponse, cached)
 
     theses = get_quiz_questions(thesis_repo, themes=themes, limit=limit)
     response = QuestionsResponse(
@@ -66,11 +82,13 @@ def submit(
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
+    quiz_response_repo: SqlQuizResponseRepository = Depends(get_quiz_response_repo),
 ) -> SubmitQuizResponse:
     answers = [
         QuizAnswer(thesis_id=a.thesis_id, answer=a.answer, weight=a.weight)
         for a in body.answers
     ]
+    answers = _deduplicate_answers(answers)
     try:
         results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
     except InsufficientAnswersError as err:
@@ -83,6 +101,9 @@ def submit(
                 "required": err.required,
             },
         ) from err
+
+    if body.device_id is not None:
+        quiz_response_repo.upsert_answers(str(body.device_id), answers)
 
     return SubmitQuizResponse(
         results=[

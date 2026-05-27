@@ -27,12 +27,18 @@ class _ResultsPageState extends State<ResultsPage> {
     unawaited(event.catchError((_) {}));
   }
 
+  void _restartQuiz() {
+    _track(_analytics.quizRestarted());
+    _session.resetQuiz();
+    Navigator.pushNamedAndRemoveUntil(context, '/quiz-intro', (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'ELEIÇÃO 2026',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
@@ -104,6 +110,16 @@ class _ResultsPageState extends State<ResultsPage> {
                 child: const Text('COMPARAR RESPOSTAS'),
               ),
             ),
+            const SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, '/political-actors');
+                },
+                child: const Text('ACOMPANHAR POLITICOS'),
+              ),
+            ),
             const SizedBox(height: 32),
             ...List.generate(_results.length - 1, (index) {
               final result = _results[index + 1];
@@ -129,8 +145,8 @@ class _ResultsPageState extends State<ResultsPage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
-                child: const Text('CONTINUAR'),
+                onPressed: _restartQuiz,
+                child: const Text('REFAZER QUIZ'),
               ),
             ),
             const SizedBox(height: 32),

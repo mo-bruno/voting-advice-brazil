@@ -1,3 +1,5 @@
+from typing import cast
+
 from fastapi import APIRouter, Depends
 
 from app.api.cache import cache_get, cache_set
@@ -17,7 +19,7 @@ def list_all(
 ) -> list[ThemeOut]:
     cached = cache_get("themes:all")
     if cached is not None:
-        return cached
+        return cast(list[ThemeOut], cached)
 
     themes = list_themes(repo, min_theses=3)
     response = [

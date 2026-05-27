@@ -1,18 +1,23 @@
 from collections.abc import AsyncGenerator
 from contextlib import asynccontextmanager
-
 from pathlib import Path
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.util import get_remote_address
 
-from app.api.routers import candidates, health, quiz, themes
+from app.api.routers import (
+    candidates,
+    health,
+    iot_devices,
+    political_actors,
+    quiz,
+    themes,
+)
 from app.core.config import settings
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
@@ -52,19 +57,26 @@ app = FastAPI(
 )
 
 app.state.limiter = limiter
-app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+app.add_exception_handler(
+    RateLimitExceeded,
+    _rate_limit_exceeded_handler,  # type: ignore[arg-type]
+)
 app.add_middleware(SlowAPIMiddleware)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=settings.allowed_origins_list,
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "X-Farol-Anonymous-Id"],
 )
 
 PREFIX = "/api/v1"
 app.include_router(quiz.router, prefix=PREFIX)
 app.include_router(candidates.router, prefix=PREFIX)
+app.include_router(political_actors.router, prefix=PREFIX)
+app.include_router(political_actors.me_router, prefix=PREFIX)
+app.include_router(iot_devices.router, prefix=PREFIX)
+app.include_router(iot_devices.me_router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
 app.include_router(health.router)
 

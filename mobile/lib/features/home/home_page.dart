@@ -4,10 +4,24 @@ import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
+import '../../shared/political_actor_session.dart';
 import '../../shared/quiz_session.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final _politicalActorSession = PoliticalActorSession.instance;
+
+  @override
+  void initState() {
+    super.initState();
+    unawaited(_politicalActorSession.loadFollowedActor());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +58,7 @@ class HomePage extends StatelessWidget {
                         children: [
                           SizedBox(height: constraints.maxHeight * 0.1),
                           Text(
-                            'GUIA\nELEITORAL',
+                            'FAROL\nPOLÍTICO',
                             style: textTheme.displayLarge?.copyWith(
                               fontSize: 52,
                               height: 0.95,
@@ -87,9 +101,51 @@ class HomePage extends StatelessWidget {
                               child: const Text('COMEÇAR'),
                             ),
                           ),
+                          const SizedBox(height: 12),
+                          AnimatedBuilder(
+                            animation: _politicalActorSession,
+                            builder: (context, _) {
+                              final followed =
+                                  _politicalActorSession.followedActor;
+                              return SizedBox(
+                                width: double.infinity,
+                                child: OutlinedButton(
+                                  onPressed: () {
+                                    if (followed == null) {
+                                      Navigator.pushNamed(
+                                        context,
+                                        '/political-actors',
+                                      );
+                                      return;
+                                    }
+                                    Navigator.pushNamed(
+                                      context,
+                                      '/political-actor-profile',
+                                      arguments: followed,
+                                    );
+                                  },
+                                  child: Text(
+                                    followed == null
+                                        ? 'ACOMPANHAR POLITICO'
+                                        : 'VER POLITICO ACOMPANHADO',
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/iot-device');
+                              },
+                              child: const Text('MEU FAROL'),
+                            ),
+                          ),
                           const SizedBox(height: 48),
                           Text(
-                            'UMA FERRAMENTA DE INFORMAÇÃO NEUTRA PARA FORTALECER A DEMOCRACIA BRASILEIRA.',
+                            'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',
                             style: textTheme.bodyMedium?.copyWith(
                               letterSpacing: 0.5,
                               height: 1.5,
@@ -98,7 +154,7 @@ class HomePage extends StatelessWidget {
                           ),
                           const SizedBox(height: 64),
                           Text(
-                            'PARCEIROS E INSTITUIÇÕES',
+                            'PROJETO ACADÊMICO',
                             style: textTheme.labelMedium,
                             textAlign: TextAlign.center,
                           ),
@@ -124,7 +180,7 @@ class _PartnersGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final partners = ['TSE', 'Observatório', 'Folha', 'Estadão', 'UNI-Brasil'];
+    final partners = ['Mackenzie'];
 
     return Wrap(
       spacing: 12,

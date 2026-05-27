@@ -105,7 +105,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {

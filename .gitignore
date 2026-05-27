@@ -18,6 +18,8 @@ lib/
 lib64/
 !mobile/lib/
 !mobile/lib/**/
+!firmware/esp32/lib/
+!firmware/esp32/lib/**/
 parts/
 sdist/
 var/
@@ -222,3 +224,11 @@ __marimo__/
 *.db
 *.db-shm
 *.db-wal
+
+# AI agent configs
+.agents/
+.superpowers/
+skills-lock.json
+
+# Research docs
+research/

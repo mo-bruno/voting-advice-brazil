@@ -26,7 +26,7 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
     final textTheme = Theme.of(context).textTheme;
 
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {

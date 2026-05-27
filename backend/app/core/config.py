@@ -15,10 +15,20 @@ class Settings(BaseSettings):
     # Database
     database_url: str = "sqlite:///./voting_advice.db"
     data_dir: str = "../data"
+    allowed_origins: str = "https://farol-politico-495210.web.app"
 
     # External services
     groq_api_key: str | None = None
+    gemini_api_key: str | None = None
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"
+
+    @property
+    def allowed_origins_list(self) -> list[str]:
+        return [
+            origin.strip()
+            for origin in self.allowed_origins.split(",")
+            if origin.strip()
+        ]
 
 
 settings = Settings()

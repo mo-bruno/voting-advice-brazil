@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import (
+    JSON,
     DateTime,
     ForeignKey,
     Index,
@@ -165,4 +166,189 @@ class QuizResponseModel(Base):
         UniqueConstraint("device_id", "thesis_id", "election_year",
                          name="uq_responses_device_thesis_year"),
         Index("ix_responses_device_year", "device_id", "election_year"),
+    )
+
+
+class PoliticalActorModel(Base):
+    __tablename__ = "political_actors"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    source: Mapped[str] = mapped_column(String(32), nullable=False)
+    source_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    normalized_name: Mapped[str] = mapped_column(String(256), nullable=False)
+    display_name: Mapped[str] = mapped_column(String(256), nullable=False)
+    party: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    state: Mapped[str | None] = mapped_column(String(2), nullable=True)
+    role: Mapped[str] = mapped_column(String(64), nullable=False)
+    status: Mapped[str] = mapped_column(
+        String(32), nullable=False, default="active"
+    )
+    photo_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
+    source_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
+    last_indexed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+
+    evidence: Mapped[list["OfficialEvidenceModel"]] = relationship(
+        back_populates="actor"
+    )
+    followers: Mapped[list["FollowedActorModel"]] = relationship(
+        back_populates="actor"
+    )
+
+    __table_args__ = (
+        UniqueConstraint(
+            "source", "source_id", name="uq_political_actors_source_id"
+        ),
+        Index("ix_political_actors_role_state_party", "role", "state", "party"),
+        Index("ix_political_actors_normalized_name", "normalized_name"),
+    )
+
+
+class OfficialEvidenceModel(Base):
+    __tablename__ = "official_evidence"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    political_actor_id: Mapped[int] = mapped_column(
+        ForeignKey("political_actors.id"), nullable=False
+    )
+    source: Mapped[str] = mapped_column(String(32), nullable=False)
+    source_id: Mapped[str] = mapped_column(String(128), nullable=False)
+    evidence_type: Mapped[str] = mapped_column(String(32), nullable=False)
+    title: Mapped[str] = mapped_column(String(512), nullable=False)
+    summary: Mapped[str] = mapped_column(Text, nullable=False)
+    evidence_date: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+    source_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
+    normalized_payload: Mapped[dict[str, object] | None] = mapped_column(
+        JSON, nullable=True
+    )
+    fetched_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
+
+    actor: Mapped["PoliticalActorModel"] = relationship(back_populates="evidence")
+
+    __table_args__ = (
+        UniqueConstraint(
+            "political_actor_id",
+            "source",
+            "source_id",
+            "evidence_type",
+            name="uq_evidence_actor_source_type",
+        ),
+        Index(
+            "ix_evidence_actor_type_date",
+            "political_actor_id",
+            "evidence_type",
+            "evidence_date",
+        ),
+        Index("ix_evidence_expires_at", "expires_at"),
+    )
+
+
+class FollowedActorModel(Base):
+    __tablename__ = "followed_actors"
+
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    political_actor_id: Mapped[int] = mapped_column(
+        ForeignKey("political_actors.id"), nullable=False
+    )
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+
+    actor: Mapped["PoliticalActorModel"] = relationship(back_populates="followers")
+
+    __table_args__ = (Index("ix_followed_actors_actor", "political_actor_id"),)
+
+
+class IotDeviceLinkModel(Base):
+    __tablename__ = "iot_device_links"
+
+    device_token: Mapped[str] = mapped_column(String(64), primary_key=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    status: Mapped[str] = mapped_column(String(32), nullable=False, default="linked")
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
+    )
+    last_seen_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    __table_args__ = (
+        UniqueConstraint("anonymous_id", name="uq_iot_device_links_anonymous_id"),
+        Index("ix_iot_device_links_anonymous_id", "anonymous_id"),
+        Index("ix_iot_device_links_updated_at", "updated_at"),
+    )
+
+
+class IotPairingSessionModel(Base):
+    __tablename__ = "iot_pairing_sessions"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    device_token: Mapped[str] = mapped_column(String(64), nullable=False)
+    pairing_code_hash: Mapped[str] = mapped_column(String(128), nullable=False)
+    qr_payload: Mapped[str] = mapped_column(String(512), nullable=False)
+    firmware_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    consumed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    __table_args__ = (
+        Index("ix_iot_pairing_sessions_device_expires", "device_token", "expires_at"),
+    )
+
+
+class SourceSyncRunModel(Base):
+    __tablename__ = "source_sync_runs"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    source: Mapped[str] = mapped_column(String(32), nullable=False)
+    operation: Mapped[str] = mapped_column(String(64), nullable=False)
+    status: Mapped[str] = mapped_column(String(32), nullable=False)
+    message: Mapped[str | None] = mapped_column(Text, nullable=True)
+    started_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    finished_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+
+    __table_args__ = (
+        Index("ix_source_sync_runs_source_operation", "source", "operation"),
+    )
+
+
+class SourceSyncCursorModel(Base):
+    __tablename__ = "source_sync_cursors"
+
+    source: Mapped[str] = mapped_column(String(32), primary_key=True)
+    cursor_name: Mapped[str] = mapped_column(String(64), primary_key=True)
+    cursor_value: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    refreshed_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    expires_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
     )

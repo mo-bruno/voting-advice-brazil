@@ -39,7 +39,7 @@ class _QuizPageState extends State<QuizPage> {
     final thesis = controller.currentThesis;
 
     return AppScaffold(
-      title: 'GUIA ELEITORAL',
+      title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
@@ -243,10 +243,10 @@ class _ThesisCard extends StatelessWidget {
   TextStyle _textStyle(BuildContext context) {
     final base = Theme.of(context).textTheme.headlineLarge!;
     if (thesis.title.length > 150) {
-      return base.copyWith(fontSize: 18, height: 1.25);
+      return base.copyWith(fontSize: 17, height: 1.25);
     }
     if (thesis.title.length > 95) {
-      return base.copyWith(fontSize: 20, height: 1.25);
+      return base.copyWith(fontSize: 19, height: 1.25);
     }
     return base.copyWith(fontSize: 24, height: 1.2);
   }
@@ -255,20 +255,20 @@ class _ThesisCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 150,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-        decoration: BoxDecoration(
-          color: AppTheme.surfaceContainer,
-          border: Border.all(color: AppTheme.outlineVariant),
-        ),
-        child: Center(
-          child: Text(
-            thesis.title,
-            style: _textStyle(context),
-            textAlign: TextAlign.center,
-            maxLines: 5,
-            overflow: TextOverflow.ellipsis,
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(minHeight: 150),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
+          decoration: BoxDecoration(
+            color: AppTheme.surfaceContainer,
+            border: Border.all(color: AppTheme.outlineVariant),
+          ),
+          child: Center(
+            child: Text(
+              thesis.title,
+              style: _textStyle(context),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),

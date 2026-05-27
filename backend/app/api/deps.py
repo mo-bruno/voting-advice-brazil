@@ -1,15 +1,30 @@
-from collections.abc import Generator
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
+from app.infrastructure.database.iot_device_repositories import (
+    SqlIotDeviceLinkRepository,
+    SqlIotPairingSessionRepository,
+)
+from app.infrastructure.database.political_actor_repositories import (
+    SqlFollowedActorRepository,
+    SqlOfficialEvidenceRepository,
+    SqlPoliticalActorRepository,
+)
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
     SqlPositionRepository,
+    SqlQuizResponseRepository,
     SqlThemeRepository,
     SqlThesisRepository,
 )
 from app.infrastructure.database.session import get_db
+from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
+from app.infrastructure.sources.camara import (
+    CamaraClient,
+    CamaraDeputyIndexSource,
+    CamaraEvidenceSource,
+)
 
 
 def get_thesis_repo(db: Session = Depends(get_db)) -> SqlThesisRepository:
@@ -24,5 +39,51 @@ def get_position_repo(db: Session = Depends(get_db)) -> SqlPositionRepository:
     return SqlPositionRepository(db)
 
 
+def get_quiz_response_repo(db: Session = Depends(get_db)) -> SqlQuizResponseRepository:
+    return SqlQuizResponseRepository(db)
+
+
 def get_theme_repo(db: Session = Depends(get_db)) -> SqlThemeRepository:
     return SqlThemeRepository(db)
+
+
+def get_political_actor_repo(
+    db: Session = Depends(get_db),
+) -> SqlPoliticalActorRepository:
+    return SqlPoliticalActorRepository(db)
+
+
+def get_official_evidence_repo(
+    db: Session = Depends(get_db),
+) -> SqlOfficialEvidenceRepository:
+    return SqlOfficialEvidenceRepository(db)
+
+
+def get_followed_actor_repo(
+    db: Session = Depends(get_db),
+) -> SqlFollowedActorRepository:
+    return SqlFollowedActorRepository(db)
+
+
+def get_iot_device_link_repo(
+    db: Session = Depends(get_db),
+) -> SqlIotDeviceLinkRepository:
+    return SqlIotDeviceLinkRepository(db)
+
+
+def get_iot_pairing_session_repo(
+    db: Session = Depends(get_db),
+) -> SqlIotPairingSessionRepository:
+    return SqlIotPairingSessionRepository(db)
+
+
+def get_iot_mqtt_publisher() -> PahoIotMqttPublisher:
+    return PahoIotMqttPublisher()
+
+
+def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:
+    return CamaraDeputyIndexSource(CamaraClient())
+
+
+def get_camara_evidence_source() -> CamaraEvidenceSource:
+    return CamaraEvidenceSource(CamaraClient())
