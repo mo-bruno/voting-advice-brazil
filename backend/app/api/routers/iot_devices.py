@@ -13,8 +13,8 @@ from app.api.schemas.iot_devices import (
     CreatePairingSessionIn,
     IotDeviceOut,
     PairingSessionOut,
-    PairIotDeviceIn,
     PairingStatusOut,
+    PairIotDeviceIn,
 )
 from app.core.entities.iot_device import IotDeviceLink
 from app.core.use_cases.interfaces import IotMqttPublisher
