@@ -21,6 +21,7 @@ class Settings(BaseSettings):
     groq_api_key: str | None = None
     gemini_api_key: str | None = None
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"
+    gnews_api_key: str | None = None
 
     @property
     def allowed_origins_list(self) -> list[str]:
