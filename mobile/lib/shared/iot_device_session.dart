@@ -90,4 +90,20 @@ class IotDeviceSession extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> unlink() async {
+    loading = true;
+    error = null;
+    notifyListeners();
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      await api.deleteIotDevice(anonymousId: anonymousId);
+      device = null;
+    } catch (err) {
+      error = err.toString();
+    } finally {
+      loading = false;
+      notifyListeners();
+    }
+  }
 }
