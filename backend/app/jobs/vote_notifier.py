@@ -3,8 +3,6 @@ from __future__ import annotations
 import logging
 from datetime import datetime, timezone
 
-_log = logging.getLogger(__name__)
-
 from app.core.use_cases.interfaces import (
     FollowedActorRepository,
     IotDeviceLinkRepository,
@@ -14,6 +12,8 @@ from app.core.use_cases.interfaces import (
 )
 from app.core.use_cases.notify_iot_for_vote import VoteEventInput, notify_iot_for_vote
 from app.infrastructure.sources.camara import CamaraEvidenceSource
+
+_log = logging.getLogger(__name__)
 
 
 def run_once(
@@ -47,7 +47,8 @@ def run_once(
         for row in new_votes:
             if row["source_id"] in known_ids:
                 continue
-            normalized = row.get("normalized_payload") or {}
+            raw_payload = row.get("normalized_payload")
+            normalized: dict[str, object] = raw_payload if isinstance(raw_payload, dict) else {}
             vote_input = VoteEventInput(
                 political_actor_id=actor_id,
                 deputy_name=actor.display_name,
@@ -71,7 +72,9 @@ def _iso(value: object, fallback: datetime) -> str:
 
 
 if __name__ == "__main__":
-    from app.infrastructure.database.iot_device_repositories import SqlIotDeviceLinkRepository
+    from app.infrastructure.database.iot_device_repositories import (
+        SqlIotDeviceLinkRepository,
+    )
     from app.infrastructure.database.political_actor_repositories import (
         SqlFollowedActorRepository,
         SqlOfficialEvidenceRepository,
