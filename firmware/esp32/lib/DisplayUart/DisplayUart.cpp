@@ -4,10 +4,12 @@
 static String sanitize(const String& value) {
     String out = value;
     out.replace("|", "/");
+    out.replace("\n", " ");
+    out.replace("\r", "");
     return out;
 }
 
-static String utf8ToLatin1(const String& s) {
+static String utf8ToAscii(const String& s) {
     String out;
     const uint8_t* p = reinterpret_cast<const uint8_t*>(s.c_str());
     while (*p) {
@@ -27,36 +29,10 @@ static String utf8ToLatin1(const String& s) {
     return out;
 }
 
-static void wrapText(const String& text, String lines[3], int maxLen = 28) {
-    String remaining = text;
-    for (int i = 0; i < 3; i++) {
-        if (remaining.length() == 0) {
-            lines[i] = "";
-        } else if (static_cast<int>(remaining.length()) <= maxLen) {
-            lines[i] = remaining;
-            remaining = "";
-        } else {
-            int cut = maxLen;
-            while (cut > 0 && remaining.charAt(cut) != ' ') cut--;
-            if (cut == 0) cut = maxLen;
-            lines[i] = remaining.substring(0, cut);
-            remaining = remaining.substring(cut);
-            remaining.trim();
-        }
-    }
-}
-
-static String colorLabel(const String& color) {
-    if (color == "green") return "CONECTADO";
-    if (color == "yellow") return "ABSTENCAO";
-    if (color == "red") return "DIVERGENTE";
-    return "PENDENTE";
-}
-
 static String formatTimestamp(const String& ts) {
     if (ts.length() < 16) return ts;
-    return ts.substring(8, 10) + "/" + ts.substring(5, 7) + " " +
-           ts.substring(11, 13) + ":" + ts.substring(14, 16);
+    return ts.substring(11, 16) + " " +
+           ts.substring(8, 10) + "/" + ts.substring(5, 7);
 }
 
 void initDisplayUart() {
@@ -64,27 +40,54 @@ void initDisplayUart() {
 }
 
 void sendStatusToDisplay(const String& title, const String& line1, const String& line2) {
-    String frame = "V|" + sanitize(title) + "|||INFO|" +
-                   sanitize(line1) + "|" + sanitize(line2) + "||\n";
+    String frame = "S|" + sanitize(title) + "|" +
+                   sanitize(line1) + "|" + sanitize(line2) + "\n";
     Serial2.print(frame);
     Serial.print("[UART] " + frame);
 }
 
+// V|deputyName|party|state|vote|alignment|description|timestamp
 void sendEventToDisplay(const FarolEvent& event) {
-    String summary = sanitize(utf8ToLatin1(event.voteSummary));
-    String lines[3];
-    wrapText(summary, lines);
-    String frame = "V|" + sanitize(utf8ToLatin1(event.deputyName)) + "|" +
-                   colorLabel(event.color) + "|1/1|" + event.color + "|" +
-                   lines[0] + "|" + lines[1] + "|" + lines[2] + "|" +
-                   formatTimestamp(event.timestampUtc) + "\n";
+    String ts = formatTimestamp(event.timestampUtc);
+    String frame = "V|" + sanitize(utf8ToAscii(event.deputyName)) + "|" +
+                   sanitize(event.party) + "|" +
+                   sanitize(event.state) + "|" +
+                   sanitize(event.vote) + "|" +
+                   sanitize(event.alignment) + "|" +
+                   sanitize(utf8ToAscii(event.description.length() > 0 ? event.description : event.voteSummary)) + "|" +
+                   sanitize(ts) + "\n";
     Serial2.print(frame);
     Serial.print("[UART] " + frame);
 }
 
-void sendPairingToDisplay(const String& title, const String& qrPayload, const String& code, const String& shortId) {
-    String frame = "Q|" + sanitize(title) + "|" + sanitize(qrPayload) + "|" +
+// Q|qrPayload|code|shortId
+void sendPairingToDisplay(const String& qrPayload, const String& code, const String& shortId) {
+    String frame = "Q|" + sanitize(qrPayload) + "|" +
                    sanitize(code) + "|" + sanitize(shortId) + "\n";
+    Serial2.print(frame);
+    Serial.print("[UART] " + frame);
+}
+
+// Z|current|total|answer
+void sendQuizToDisplay(int current, int total, const String& answer) {
+    String frame = "Z|" + String(current) + "|" + String(total) + "|" + sanitize(answer) + "\n";
+    Serial2.print(frame);
+    Serial.print("[UART] " + frame);
+}
+
+// N|index|total|title|source|date
+void sendNewsToDisplay(int index, int total, const String& title,
+                       const String& source, const String& date) {
+    String frame = "N|" + String(index) + "|" + String(total) + "|" +
+                   sanitize(utf8ToAscii(title)) + "|" +
+                   sanitize(source) + "|" + sanitize(date) + "\n";
+    Serial2.print(frame);
+    Serial.print("[UART] " + frame);
+}
+
+// I|shortId
+void sendIdleToDisplay(const String& shortId) {
+    String frame = "I|" + sanitize(shortId) + "\n";
     Serial2.print(frame);
     Serial.print("[UART] " + frame);
 }

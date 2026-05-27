@@ -10,18 +10,19 @@ bool parseFarolEvent(const char* json, FarolEvent& out) {
         return false;
     }
 
-    if (!doc["color"].is<const char*>() ||
-        !doc["deputy_name"].is<const char*>() ||
-        !doc["vote_summary"].is<const char*>() ||
-        !doc["timestamp_utc"].is<const char*>()) {
-        Serial.println("[Parser] Campos obrigatorios ausentes.");
+    if (!doc["type"].is<const char*>()) {
         return false;
     }
 
-    out.type = doc["type"].is<const char*>() ? doc["type"].as<String>() : "vote_event";
-    out.color = doc["color"].as<String>();
-    out.deputyName = doc["deputy_name"].as<String>();
-    out.voteSummary = doc["vote_summary"].as<String>();
-    out.timestampUtc = doc["timestamp_utc"].as<String>();
+    out.type        = doc["type"].as<String>();
+    out.color       = doc["color"] | "yellow";
+    out.alignment   = doc["alignment"] | "abstained";
+    out.deputyName  = doc["deputy_name"] | "";
+    out.party       = doc["party"] | "";
+    out.state       = doc["state"] | "";
+    out.vote        = doc["vote"] | "";
+    out.description = doc["description"] | "";
+    out.voteSummary = doc["vote_summary"] | out.description;
+    out.timestampUtc = doc["timestamp_utc"] | "";
     return true;
 }
