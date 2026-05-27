@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class IotPairingPayload {
   final String deviceToken;
   final String pairingCode;
@@ -50,8 +52,6 @@ class IotManualPairingInput {
         RegExp(r'^[0-9a-f]{8}$').hasMatch(normalizedShortId);
   }
 }
-
-import 'package:flutter/material.dart';
 
 class IotDevice {
   final String deviceToken;
