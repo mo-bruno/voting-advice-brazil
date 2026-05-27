@@ -33,11 +33,15 @@ class PoliticalActorSession extends ChangeNotifier {
   String? cacheStatus;
 
   Future<void> loadFollowedActor() async {
-    final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
-    followedActor = await api.fetchFollowedPoliticalActor(
-      anonymousId: anonymousId,
-    );
-    notifyListeners();
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      followedActor = await api.fetchFollowedPoliticalActor(
+        anonymousId: anonymousId,
+      );
+      notifyListeners();
+    } catch (_) {
+      // Network failures are non-fatal; UI degrades gracefully.
+    }
   }
 
   Future<void> followActor(PoliticalActor actor) async {

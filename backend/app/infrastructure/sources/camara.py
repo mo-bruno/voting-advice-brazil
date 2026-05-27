@@ -42,6 +42,25 @@ def _expires_at(fetched_at: datetime, evidence_type: str) -> datetime:
     return fetched_at + timedelta(hours=24)
 
 
+def _expense_source_id(
+    payload: dict[str, Any],
+    year: int,
+    month: int,
+    expense_type: str,
+    value: Decimal,
+) -> str:
+    document_code = payload.get("codDocumento")
+    if document_code:
+        return f"expense:document:{document_code}"
+    document_url = payload.get("urlDocumento")
+    if document_url:
+        return f"expense:url:{document_url}"
+    document_number = payload.get("numDocumento")
+    if document_number:
+        return f"expense:{year}:{month}:{expense_type}:{value}:{document_number}"
+    return f"expense:{year}:{month}:{expense_type}:{value}"
+
+
 def normalize_deputy(
     payload: dict[str, Any],
     now: datetime,
@@ -111,7 +130,13 @@ def normalize_expense(
     return {
         "political_actor_id": actor_id,
         "source": "camara",
-        "source_id": f"expense:{year}:{month}:{expense_type}:{value}",
+        "source_id": _expense_source_id(
+            payload,
+            year,
+            month,
+            expense_type,
+            value,
+        ),
         "evidence_type": "expense",
         "title": f"Registrou {value_text} em despesa parlamentar",
         "summary": f"Despesa oficial de {expense_type}.",
@@ -122,6 +147,8 @@ def normalize_expense(
             "month": month,
             "expense_type": expense_type,
             "value": float(value),
+            "document_code": payload.get("codDocumento"),
+            "document_number": payload.get("numDocumento"),
         },
         "fetched_at": fetched_at,
         "expires_at": _expires_at(fetched_at, "expense"),

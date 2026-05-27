@@ -50,6 +50,38 @@ Para trocar a API em build/run:
 flutter run --dart-define=API_BASE_URL=http://localhost:8000/api/v1
 ```
 
+### Firmware
+
+```bash
+# ESP32
+cp firmware/esp32/include/secrets.h.example firmware/esp32/include/secrets.h
+# editar WIFI_SSID e WIFI_PASSWORD
+pio run --project-dir firmware/esp32
+
+# Arduino Mega
+pio run --project-dir firmware/mega
+```
+
+O ESP32 gera um `device_token` persistente no primeiro boot, registra sessoes de pareamento no backend e assina `farol/{device_token}` via MQTT. O Mega recebe frames UART do ESP32 e renderiza telas `V|...` e QR de pareamento `Q|...`.
+
+> **Importante — Mega com shield TFT 16-bits:**  
+> A biblioteca `MCUFRIEND_kbv` precisa ser configurada para o barramento de 16 bits do Mega.  
+> Edite os arquivos na pasta de dependencias do PlatformIO:
+>
+> **1.** `firmware/mega/.pio/libdeps/megaatmega2560/MCUFRIEND_kbv/utility/mcufriend_shield.h`  
+> Descomente a linha:
+> ```cpp
+> #define USE_SPECIAL
+> ```
+>
+> **2.** `firmware/mega/.pio/libdeps/megaatmega2560/MCUFRIEND_kbv/utility/mcufriend_special.h`  
+> Descomente a linha:
+> ```cpp
+> #define USE_MEGA_16BIT_SHIELD
+> ```
+>
+> Apos editar, recompile e envie: `pio run --target upload --project-dir firmware/mega --upload-port <PORTA>`.
+
 ## Testes
 
 ```bash

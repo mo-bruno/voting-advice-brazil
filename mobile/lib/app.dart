@@ -8,6 +8,8 @@ import 'features/political_actors/political_actor_search_page.dart';
 import 'features/quiz/quiz_intro_page.dart';
 import 'features/quiz/quiz_page.dart';
 import 'features/results/results_page.dart';
+import 'features/iot/iot_device_page.dart';
+import 'features/iot/iot_pairing_page.dart';
 import 'features/weighting/weighting_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -31,6 +33,8 @@ class MyApp extends StatelessWidget {
         '/political-actors': (context) => const PoliticalActorSearchPage(),
         '/political-actor-profile': (context) =>
             const PoliticalActorProfilePage(),
+        '/iot-device': (context) => const IotDevicePage(),
+        '/iot-pairing': (context) => const IotPairingPage(),
       },
     );
   }

@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
+from app.core.entities.iot_device import IotDeviceLink, IotPairingSession
 from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
@@ -106,3 +107,65 @@ class FollowedActorRepository(ABC):
         limit: int = 10,
         min_followers: int = 2,
     ) -> list[TrendingActor]: ...
+
+
+class IotDeviceLinkRepository(ABC):
+    @abstractmethod
+    def get_by_anonymous_id(self, anonymous_id: str) -> IotDeviceLink | None: ...
+
+    @abstractmethod
+    def get_by_token(self, device_token: str) -> IotDeviceLink | None: ...
+
+    @abstractmethod
+    def get_conflicting_link(
+        self,
+        anonymous_id: str,
+        device_token: str,
+    ) -> IotDeviceLink | None: ...
+
+    @abstractmethod
+    def set_link(
+        self,
+        anonymous_id: str,
+        device_token: str,
+        now: datetime,
+    ) -> IotDeviceLink: ...
+
+    @abstractmethod
+    def delete_by_anonymous_id(self, anonymous_id: str) -> bool: ...
+
+
+class IotPairingSessionRepository(ABC):
+    @abstractmethod
+    def create_session(
+        self,
+        device_token: str,
+        pairing_code_hash: str,
+        qr_payload: str,
+        firmware_version: str | None,
+        now: datetime,
+        expires_at: datetime,
+    ) -> IotPairingSession: ...
+
+    @abstractmethod
+    def get_active_session(
+        self,
+        device_token: str,
+        pairing_code_hash: str,
+        now: datetime,
+    ) -> IotPairingSession | None: ...
+
+    @abstractmethod
+    def list_active_sessions_by_token_prefix(
+        self,
+        device_token_prefix: str,
+        now: datetime,
+    ) -> list[IotPairingSession]: ...
+
+    @abstractmethod
+    def consume_session(self, session_id: int, now: datetime) -> None: ...
+
+
+class IotMqttPublisher(ABC):
+    @abstractmethod
+    def publish(self, topic: str, payload: dict[str, str]) -> None: ...

@@ -133,6 +133,16 @@ class _HomePageState extends State<HomePage> {
                               );
                             },
                           ),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(context, '/iot-device');
+                              },
+                              child: const Text('MEU FAROL'),
+                            ),
+                          ),
                           const SizedBox(height: 48),
                           Text(
                             'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',

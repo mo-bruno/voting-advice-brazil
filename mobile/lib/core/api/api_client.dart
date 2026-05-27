@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
+import '../../shared/models/iot_device.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
 import '../../shared/models/political_actor.dart';
@@ -149,6 +150,56 @@ class ApiClient {
     return PoliticalActor.fromJson(
       json['political_actor'] as Map<String, dynamic>,
     );
+  }
+
+  Future<IotDevice?> fetchIotDevice({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device');
+    final response = await _client.get(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    if (response.statusCode == 404) return null;
+    final json = _decode(response) as Map<String, dynamic>;
+    return IotDevice.fromJson(json);
+  }
+
+  Future<IotDevice> pairIotDevice({
+    required String anonymousId,
+    String? deviceToken,
+    String? deviceTokenPrefix,
+    required String pairingCode,
+  }) async {
+    if ((deviceToken == null) == (deviceTokenPrefix == null)) {
+      throw ArgumentError(
+        'Informe deviceToken ou deviceTokenPrefix, mas nao ambos.',
+      );
+    }
+    final body = <String, dynamic>{
+      if (deviceToken != null) 'device_token': deviceToken,
+      if (deviceTokenPrefix != null)
+        'device_token_prefix': deviceTokenPrefix.toLowerCase(),
+      'pairing_code': pairingCode,
+    };
+    final uri = Uri.parse('$baseUrl/me/iot-device');
+    final json = await _putJson(
+      uri,
+      body,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+    return IotDevice.fromJson(json);
+  }
+
+  Future<void> deleteIotDevice({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device');
+    final response = await _client.delete(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    _decode(response);
   }
 
   Future<dynamic> _getJson(Uri uri) async {

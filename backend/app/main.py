@@ -10,7 +10,14 @@ from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from slowapi.util import get_remote_address
 
-from app.api.routers import candidates, health, political_actors, quiz, themes
+from app.api.routers import (
+    candidates,
+    health,
+    iot_devices,
+    political_actors,
+    quiz,
+    themes,
+)
 from app.core.config import settings
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
@@ -68,6 +75,8 @@ app.include_router(quiz.router, prefix=PREFIX)
 app.include_router(candidates.router, prefix=PREFIX)
 app.include_router(political_actors.router, prefix=PREFIX)
 app.include_router(political_actors.me_router, prefix=PREFIX)
+app.include_router(iot_devices.router, prefix=PREFIX)
+app.include_router(iot_devices.me_router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
 app.include_router(health.router)
 

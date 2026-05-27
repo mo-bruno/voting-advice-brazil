@@ -48,7 +48,7 @@ steps:
       - --timeout=60s
       - --port=8080
       - --set-env-vars=DATA_DIR=/data,APP_ENV=prod
-      - --set-secrets=DATABASE_URL=database-url:latest
+      - --set-secrets=DATABASE_URL=database-url:latest,GEMINI_API_KEY=gemini-api-key:latest
 
 availableSecrets:
   secretManager:
