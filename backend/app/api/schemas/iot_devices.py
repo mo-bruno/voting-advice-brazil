@@ -60,3 +60,20 @@ class IotDeviceOut(BaseModel):
 class PairingStatusOut(BaseModel):
     paired: bool
     status: str
+
+
+class QuizPulseIn(BaseModel):
+    answer: str = Field(pattern=r"^(agree|neutral|disagree)$")
+    current: int = Field(ge=1)
+    total: int = Field(ge=1)
+
+
+class LastEventOut(BaseModel):
+    deputy_name: str
+    party: str
+    state: str
+    vote: str
+    alignment: str
+    color: str
+    description: str
+    timestamp_utc: datetime
