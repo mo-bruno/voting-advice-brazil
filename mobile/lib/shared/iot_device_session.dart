@@ -98,7 +98,6 @@ class IotDeviceSession extends ChangeNotifier {
     required int current,
     required int total,
   }) async {
-    if (device == null) return;
     try {
       final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
       await api.sendQuizPulse(

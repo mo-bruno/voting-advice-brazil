@@ -1,5 +1,4 @@
 import logging
-from threading import Thread
 from typing import cast
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -106,7 +105,7 @@ def submit(
 
     if body.device_id is not None:
         quiz_response_repo.upsert_answers(str(body.device_id), answers)
-        _push_news_async(str(body.device_id))
+        _push_news_for_quiz_submission(str(body.device_id))
 
     return SubmitQuizResponse(
         results=[
@@ -138,7 +137,7 @@ def submit(
 _log_quiz = logging.getLogger(__name__)
 
 
-def _push_news_async(anonymous_id: str) -> None:
+def _push_news_for_quiz_submission(anonymous_id: str) -> None:
     from datetime import datetime, timezone
 
     from sqlalchemy import select
@@ -153,39 +152,36 @@ def _push_news_async(anonymous_id: str) -> None:
     from app.infrastructure.database.session import SessionLocal
     from app.infrastructure.sources.gnews import fetch_news_for_themes
 
-    def _run() -> None:
-        try:
-            with SessionLocal() as session:
-                rows = session.execute(
-                    select(ThemeModel.slug)
-                    .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
-                    .join(QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id)
-                    .where(
-                        QuizResponseModel.device_id == anonymous_id,
-                        QuizResponseModel.answer.in_(["agree", "disagree"]),
-                    )
-                    .distinct()
-                ).scalars().all()
-                themes = list(rows)
-
-                from app.infrastructure.database.iot_device_repositories import (
-                    SqlIotDeviceEventRepository,
-                    SqlIotDeviceLinkRepository,
+    try:
+        with SessionLocal() as session:
+            rows = session.execute(
+                select(ThemeModel.slug)
+                .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
+                .join(QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id)
+                .where(
+                    QuizResponseModel.device_id == anonymous_id,
+                    QuizResponseModel.answer.in_(["agree", "disagree"]),
                 )
-                from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
+                .distinct()
+            ).scalars().all()
+            themes = list(rows)
 
-                push_news_for_user(
-                    anonymous_id=anonymous_id,
-                    now=datetime.now(timezone.utc),
-                    link_repo=SqlIotDeviceLinkRepository(session),
-                    event_repo=SqlIotDeviceEventRepository(session),
-                    publisher=PahoIotMqttPublisher(),
-                    fetch_themes=lambda _: themes,
-                    fetch_articles=lambda t: fetch_news_for_themes(
-                        t, api_key=settings.gnews_api_key or ""
-                    ),
-                )
-        except Exception:
-            _log_quiz.exception("Falha ao pushear news para %s", anonymous_id)
+            from app.infrastructure.database.iot_device_repositories import (
+                SqlIotDeviceEventRepository,
+                SqlIotDeviceLinkRepository,
+            )
+            from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
 
-    Thread(target=_run, daemon=True).start()
+            push_news_for_user(
+                anonymous_id=anonymous_id,
+                now=datetime.now(timezone.utc),
+                link_repo=SqlIotDeviceLinkRepository(session),
+                event_repo=SqlIotDeviceEventRepository(session),
+                publisher=PahoIotMqttPublisher(),
+                fetch_themes=lambda _: themes,
+                fetch_articles=lambda t: fetch_news_for_themes(
+                    t, api_key=settings.gnews_api_key or ""
+                ),
+            )
+    except Exception:
+        _log_quiz.exception("Falha ao pushear news para %s", anonymous_id)
