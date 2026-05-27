@@ -69,7 +69,10 @@ class _IotDevicePageState extends State<IotDevicePage> {
                     ),
                     child: device == null
                         ? _DisconnectedState(onConnect: _openPairing)
-                        : _LinkedState(shortToken: device.shortToken),
+                        : _LinkedState(
+                            shortToken: device.shortToken,
+                            onUnlink: _confirmUnlink,
+                          ),
                   ),
                 ],
               ),
@@ -83,6 +86,31 @@ class _IotDevicePageState extends State<IotDevicePage> {
   Future<void> _openPairing() async {
     await Navigator.pushNamed(context, '/iot-pairing');
     if (mounted) unawaited(_session.loadStatus());
+  }
+
+  Future<void> _confirmUnlink() async {
+    final confirm = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        title: const Text('Desvincular Farol?'),
+        content: const Text(
+          'O gadget sera desvinculado deste app e parara de receber atualizacoes.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('CANCELAR'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('DESVINCULAR'),
+          ),
+        ],
+      ),
+    );
+    if (confirm == true && mounted) {
+      await _session.unlink();
+    }
   }
 }
 
@@ -118,8 +146,9 @@ class _DisconnectedState extends StatelessWidget {
 
 class _LinkedState extends StatelessWidget {
   final String shortToken;
+  final VoidCallback onUnlink;
 
-  const _LinkedState({required this.shortToken});
+  const _LinkedState({required this.shortToken, required this.onUnlink});
 
   @override
   Widget build(BuildContext context) {
@@ -134,6 +163,15 @@ class _LinkedState extends StatelessWidget {
         Text(
           'Este app esta vinculado ao gadget fisico.',
           style: textTheme.bodySmall,
+        ),
+        const SizedBox(height: 16),
+        SizedBox(
+          width: double.infinity,
+          child: OutlinedButton(
+            onPressed: onUnlink,
+            style: OutlinedButton.styleFrom(foregroundColor: Colors.red),
+            child: const Text('DESVINCULAR FAROL'),
+          ),
         ),
       ],
     );
