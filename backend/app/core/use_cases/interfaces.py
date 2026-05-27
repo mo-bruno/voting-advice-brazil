@@ -108,6 +108,12 @@ class FollowedActorRepository(ABC):
         min_followers: int = 2,
     ) -> list[TrendingActor]: ...
 
+    @abstractmethod
+    def list_followed_political_actor_ids(self) -> list[int]: ...
+
+    @abstractmethod
+    def list_anonymous_ids_by_political_actor(self, actor_id: int) -> list[str]: ...
+
 
 class IotDeviceLinkRepository(ABC):
     @abstractmethod

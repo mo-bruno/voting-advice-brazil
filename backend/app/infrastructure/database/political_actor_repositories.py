@@ -247,3 +247,18 @@ class SqlFollowedActorRepository(FollowedActorRepository):
             )
             for index, row in enumerate(rows)
         ]
+
+    def list_followed_political_actor_ids(self) -> list[int]:
+        from sqlalchemy import distinct
+        rows = self._db.execute(
+            select(distinct(FollowedActorModel.political_actor_id))
+        ).scalars().all()
+        return list(rows)
+
+    def list_anonymous_ids_by_political_actor(self, actor_id: int) -> list[str]:
+        rows = self._db.execute(
+            select(FollowedActorModel.anonymous_id).where(
+                FollowedActorModel.political_actor_id == actor_id
+            )
+        ).scalars().all()
+        return list(rows)
