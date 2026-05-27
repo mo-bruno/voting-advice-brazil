@@ -78,9 +78,61 @@ def _run_vote_notifier_job() -> None:
                 actor_repo=SqlPoliticalActorRepository(db),
                 fetch_recent_votes=_fetch_recent_votes_for_actor,
             )
+            _push_news_for_all_followers(db, now)
     except Exception:
         _log.exception("vote_notifier: erro inesperado")
     _log.info("vote_notifier: concluido")
+
+
+def _push_news_for_all_followers(db: object, now: datetime) -> None:
+    from sqlalchemy import select
+    from sqlalchemy.orm import Session
+
+    from app.core.config import settings
+    from app.core.use_cases.news_notifier import push_news_for_user
+    from app.infrastructure.database.iot_device_repositories import (
+        SqlIotDeviceEventRepository,
+        SqlIotDeviceLinkRepository,
+    )
+    from app.infrastructure.database.models import QuizResponseModel, ThemeModel, ThesisModel
+    from app.infrastructure.database.political_actor_repositories import SqlFollowedActorRepository
+    from app.infrastructure.sources.gnews import fetch_news_for_themes
+
+    session = db  # type: ignore[assignment]
+    assert isinstance(session, Session)
+
+    followed_repo = SqlFollowedActorRepository(session)
+    all_followed = followed_repo.list_all_followed()
+    seen_anon_ids: set[str] = set()
+
+    for _, anon_id in all_followed:
+        if anon_id in seen_anon_ids:
+            continue
+        seen_anon_ids.add(anon_id)
+
+        rows = session.execute(
+            select(ThemeModel.slug)
+            .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
+            .join(QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id)
+            .where(
+                QuizResponseModel.device_id == anon_id,
+                QuizResponseModel.answer.in_(["agree", "disagree"]),
+            )
+            .distinct()
+        ).scalars().all()
+        themes = list(rows)
+
+        push_news_for_user(
+            anonymous_id=anon_id,
+            now=now,
+            link_repo=SqlIotDeviceLinkRepository(session),
+            event_repo=SqlIotDeviceEventRepository(session),
+            publisher=PahoIotMqttPublisher(),
+            fetch_themes=lambda _, t=themes: t,
+            fetch_articles=lambda t: fetch_news_for_themes(
+                t, api_key=settings.gnews_api_key or ""
+            ),
+        )
 
 
 def start() -> None:
