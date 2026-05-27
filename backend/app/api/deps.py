@@ -3,6 +3,7 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from app.infrastructure.database.iot_device_repositories import (
+    SqlIotDeviceEventRepository,
     SqlIotDeviceLinkRepository,
     SqlIotPairingSessionRepository,
 )
@@ -79,6 +80,12 @@ def get_iot_pairing_session_repo(
 
 def get_iot_mqtt_publisher() -> PahoIotMqttPublisher:
     return PahoIotMqttPublisher()
+
+
+def get_iot_device_event_repo(
+    db: Session = Depends(get_db),
+) -> SqlIotDeviceEventRepository:
+    return SqlIotDeviceEventRepository(db)
 
 
 def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:

@@ -247,3 +247,11 @@ class SqlFollowedActorRepository(FollowedActorRepository):
             )
             for index, row in enumerate(rows)
         ]
+
+    def list_all_followed(self) -> list[tuple[int, str]]:
+        stmt = select(
+            FollowedActorModel.political_actor_id,
+            FollowedActorModel.anonymous_id,
+        )
+        rows = self._db.execute(stmt).all()
+        return [(int(row[0]), str(row[1])) for row in rows]

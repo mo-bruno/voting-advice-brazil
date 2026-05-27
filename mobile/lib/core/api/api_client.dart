@@ -202,15 +202,46 @@ class ApiClient {
     _decode(response);
   }
 
-  Future<dynamic> _getJson(Uri uri) async {
-    final response = await _client.get(uri);
+  Future<void> sendQuizPulse({
+    required String anonymousId,
+    required String answer,
+    required int current,
+    required int total,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device/quiz-pulse');
+    await _postJson(
+      uri,
+      {'answer': answer, 'current': current, 'total': total},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+  }
+
+  Future<IotLastEvent?> fetchLastIotEvent({required String anonymousId}) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device/last-event');
+    try {
+      final json = await _getJson(
+        uri,
+        headers: {'X-Farol-Anonymous-Id': anonymousId},
+      ) as Map<String, dynamic>;
+      return IotLastEvent.fromJson(json);
+    } on ApiException {
+      return null;
+    }
+  }
+
+  Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {
+    final response = await _client.get(uri, headers: headers);
     return _decode(response);
   }
 
-  Future<dynamic> _postJson(Uri uri, Map<String, dynamic> body) async {
+  Future<dynamic> _postJson(
+    Uri uri,
+    Map<String, dynamic> body, {
+    Map<String, String>? headers,
+  }) async {
     final response = await _client.post(
       uri,
-      headers: {'Content-Type': 'application/json'},
+      headers: {'Content-Type': 'application/json', ...?headers},
       body: jsonEncode(body),
     );
     return _decode(response);

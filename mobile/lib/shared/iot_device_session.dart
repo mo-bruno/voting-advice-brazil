@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../core/api/api_client.dart';
@@ -89,6 +91,36 @@ class IotDeviceSession extends ChangeNotifier {
       loading = false;
       notifyListeners();
     }
+  }
+
+  Future<void> sendQuizPulse({
+    required String answer,
+    required int current,
+    required int total,
+  }) async {
+    if (device == null) return;
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      await api.sendQuizPulse(
+        anonymousId: anonymousId,
+        answer: answer,
+        current: current,
+        total: total,
+      );
+    } catch (_) {
+      // Ignora erros, é fire-and-forget
+    }
+  }
+
+  IotLastEvent? lastEvent;
+
+  Future<void> loadLastEvent() async {
+    if (device == null) return;
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      lastEvent = await api.fetchLastIotEvent(anonymousId: anonymousId);
+      notifyListeners();
+    } catch (_) {}
   }
 
   Future<void> unlink() async {

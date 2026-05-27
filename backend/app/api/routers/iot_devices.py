@@ -5,6 +5,7 @@ from uuid import UUID
 from fastapi import APIRouter, Depends, Header, HTTPException, Response
 
 from app.api.deps import (
+    get_iot_device_event_repo,
     get_iot_device_link_repo,
     get_iot_mqtt_publisher,
     get_iot_pairing_session_repo,
@@ -12,9 +13,11 @@ from app.api.deps import (
 from app.api.schemas.iot_devices import (
     CreatePairingSessionIn,
     IotDeviceOut,
+    LastEventOut,
     PairingSessionOut,
     PairingStatusOut,
     PairIotDeviceIn,
+    QuizPulseIn,
 )
 from app.core.entities.iot_device import IotDeviceLink
 from app.core.use_cases.interfaces import IotMqttPublisher
@@ -29,7 +32,9 @@ from app.core.use_cases.pair_iot_device import (
     resolve_pairing_device_token,
     unlink_iot_device,
 )
+from app.core.use_cases.quiz_pulse import publish_quiz_pulse
 from app.infrastructure.database.iot_device_repositories import (
+    SqlIotDeviceEventRepository,
     SqlIotDeviceLinkRepository,
     SqlIotPairingSessionRepository,
 )
@@ -149,3 +154,46 @@ def delete_current_iot_device(
 ) -> Response:
     unlink_iot_device(repo, x_farol_anonymous_id)
     return Response(status_code=204)
+
+
+@me_router.post("/iot-device/quiz-pulse", status_code=204)
+def quiz_pulse(
+    body: QuizPulseIn,
+    x_farol_anonymous_id: AnonymousHeader,
+    link_repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
+    publisher: IotMqttPublisher = Depends(get_iot_mqtt_publisher),
+) -> Response:
+    publish_quiz_pulse(
+        anonymous_id=x_farol_anonymous_id,
+        answer=body.answer,
+        current=body.current,
+        total=body.total,
+        link_repo=link_repo,
+        publisher=publisher,
+    )
+    return Response(status_code=204)
+
+
+@me_router.get("/iot-device/last-event", response_model=LastEventOut)
+def get_last_event(
+    x_farol_anonymous_id: AnonymousHeader,
+    link_repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
+    event_repo: SqlIotDeviceEventRepository = Depends(get_iot_device_event_repo),
+) -> LastEventOut:
+    link = get_iot_device_link(link_repo, x_farol_anonymous_id)
+    if link is None:
+        raise HTTPException(status_code=404, detail="Nenhum Farol conectado.")
+    event = event_repo.get_latest(link.device_token, "vote_alert")
+    if event is None:
+        raise HTTPException(status_code=404, detail="Nenhum evento registrado.")
+    p = event.payload
+    return LastEventOut(
+        deputy_name=str(p.get("deputy_name", "")),
+        party=str(p.get("party", "")),
+        state=str(p.get("state", "")),
+        vote=str(p.get("vote", "")),
+        alignment=str(p.get("alignment", "")),
+        color=str(p.get("color", "")),
+        description=str(p.get("description", "")),
+        timestamp_utc=datetime.fromisoformat(str(p.get("timestamp_utc", ""))),
+    )

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class IotPairingPayload {
   final String deviceToken;
   final String pairingCode;
@@ -84,4 +86,58 @@ class IotDevice {
   }
 
   bool get isLinked => status == 'linked';
+}
+
+class IotLastEvent {
+  final String deputyName;
+  final String party;
+  final String state;
+  final String vote;
+  final String alignment;
+  final String description;
+  final DateTime timestampUtc;
+
+  const IotLastEvent({
+    required this.deputyName,
+    required this.party,
+    required this.state,
+    required this.vote,
+    required this.alignment,
+    required this.description,
+    required this.timestampUtc,
+  });
+
+  factory IotLastEvent.fromJson(Map<String, dynamic> json) {
+    return IotLastEvent(
+      deputyName: json['deputy_name'] as String,
+      party: json['party'] as String,
+      state: json['state'] as String,
+      vote: json['vote'] as String,
+      alignment: json['alignment'] as String,
+      description: json['description'] as String,
+      timestampUtc: DateTime.parse(json['timestamp_utc'] as String),
+    );
+  }
+
+  Color get alignmentColor {
+    switch (alignment) {
+      case 'aligned':
+        return const Color(0xFF1B6D24);
+      case 'divergent':
+        return const Color(0xFFBA1A1A);
+      default:
+        return const Color(0xFFFFE000);
+    }
+  }
+
+  String get alignmentLabel {
+    switch (alignment) {
+      case 'aligned':
+        return 'ALINHADO';
+      case 'divergent':
+        return 'DIVERGENTE';
+      default:
+        return 'ABSTENCAO';
+    }
+  }
 }

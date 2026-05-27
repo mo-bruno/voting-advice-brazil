@@ -16,6 +16,23 @@ static bool previousButtonState = HIGH;
 static uint32_t buttonPressedAt = 0;
 static bool pairingConfirmed = false;
 
+// Noticias em memoria
+struct NewsArticle {
+    String title;
+    String source;
+    String date;
+};
+static const int MAX_NEWS = 5;
+static NewsArticle newsArticles[MAX_NEWS];
+static int newsCount = 0;
+static int newsCurrentIndex = 0;
+
+// Controle de estado
+static uint32_t lastEventAt = 0;
+static uint32_t nextNewsCycleAt = 0;
+static uint32_t ledRestoreAt = 0;
+static LedColor savedLedColor = BLUE;
+
 static String shortDeviceId() {
     String id = deviceToken.substring(0, 8);
     id.toUpperCase();
@@ -32,9 +49,9 @@ static bool isPairingConfirmation(const char* payload) {
 }
 
 static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
-    char buffer[512];
+    char buffer[768];
     if (length >= sizeof(buffer)) {
-        Serial.println("[MQTT] Payload truncado (>= 512 bytes), descartado.");
+        Serial.println("[MQTT] Payload truncado, descartado.");
         return;
     }
     memcpy(buffer, payload, length);
@@ -47,12 +64,70 @@ static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
         return;
     }
 
-    FarolEvent event;
-    if (!parseFarolEvent(buffer, event)) {
+    JsonDocument doc;
+    DeserializationError err = deserializeJson(doc, buffer);
+    if (err || !doc["type"].is<const char*>()) {
         return;
     }
-    setLed(ledColorFromString(event.color));
-    sendEventToDisplay(event);
+
+    String type = doc["type"].as<String>();
+
+    if (type == "quiz_answer") {
+        String answer  = doc["answer"] | "neutral";
+        int current    = String(doc["current"] | "1").toInt();
+        int total      = String(doc["total"]   | "1").toInt();
+
+        LedColor color = (answer == "agree") ? GREEN
+                       : (answer == "disagree") ? RED : YELLOW;
+        savedLedColor = color;
+        setLed(color);
+        ledRestoreAt = millis() + 1500;
+        sendQuizToDisplay(current, total, answer);
+        lastEventAt = millis();
+        return;
+    }
+
+    if (type == "vote_alert") {
+        FarolEvent event;
+        if (!parseFarolEvent(buffer, event)) return;
+
+        LedColor color = (event.alignment == "aligned")   ? GREEN
+                       : (event.alignment == "divergent") ? RED : YELLOW;
+        savedLedColor = color;
+        setLed(color);
+        sendEventToDisplay(event);
+        lastEventAt = millis();
+        // Reinicia ciclo de noticias apos 10s
+        if (newsCount > 0) nextNewsCycleAt = millis() + 10000;
+        return;
+    }
+
+    if (type == "news_batch") {
+        // articles: "title1#source1#date1|title2#source2#date2|..."
+        String articlesStr = doc["articles"] | "";
+        newsCount = 0;
+        newsCurrentIndex = 0;
+        int start = 0;
+        while (newsCount < MAX_NEWS) {
+            int pipe = articlesStr.indexOf('|', start);
+            String item = (pipe >= 0) ? articlesStr.substring(start, pipe)
+                                      : articlesStr.substring(start);
+            int h1 = item.indexOf('#');
+            int h2 = item.indexOf('#', h1 + 1);
+            if (h1 > 0 && h2 > h1) {
+                newsArticles[newsCount].title  = item.substring(0, h1);
+                newsArticles[newsCount].source = item.substring(h1 + 1, h2);
+                newsArticles[newsCount].date   = item.substring(h2 + 1);
+                newsCount++;
+            }
+            if (pipe < 0) break;
+            start = pipe + 1;
+        }
+        // Começa a mostrar noticias apos 10s sem outro evento
+        nextNewsCycleAt = millis() + 10000;
+        Serial.printf("[MQTT] news_batch: %d artigos recebidos\n", newsCount);
+        return;
+    }
 }
 
 static bool waitForPairingConfirmation() {
@@ -98,11 +173,12 @@ static void startPairing() {
         sendStatusToDisplay("Erro", "Falha ao parear", "Tente novamente");
         return;
     }
-    sendPairingToDisplay("Conectar Farol", response.qrPayload, response.pairingCode, shortDeviceId());
+    sendPairingToDisplay(response.qrPayload, response.pairingCode, shortDeviceId());
 
     if (waitForPairingConfirmation()) {
         setLed(GREEN);
         sendStatusToDisplay("Pareado", "Farol conectado", "Pronto para uso");
+        sendIdleToDisplay(shortDeviceId());
     } else {
         setLed(YELLOW);
         sendStatusToDisplay("Pareamento", "Tempo esgotado", "Segure para tentar");
@@ -142,10 +218,34 @@ void setup() {
 
     sendStatusToDisplay("WiFi OK", "Conectando MQTT", mqttTopic);
     mqttInit(mqttTopic, onMqttMessage);
-    sendStatusToDisplay("Aguardando", "Segure o botao", "para parear");
+    sendIdleToDisplay(shortDeviceId());
 }
 
 void loop() {
+    // Restaurar LED apos quiz pulse
+    if (ledRestoreAt > 0 && millis() >= ledRestoreAt) {
+        ledRestoreAt = 0;
+        setLed(savedLedColor);
+        // Volta ao idle se nao houver evento recente
+        if (millis() - lastEventAt > 5000) {
+            sendIdleToDisplay(shortDeviceId());
+        }
+    }
+
+    // Ciclo de noticias quando idle (>10s sem evento)
+    if (newsCount > 0 && nextNewsCycleAt > 0 && millis() >= nextNewsCycleAt) {
+        int displayIndex = newsCurrentIndex % newsCount;
+        sendNewsToDisplay(
+            displayIndex + 1,
+            newsCount,
+            newsArticles[displayIndex].title,
+            newsArticles[displayIndex].source,
+            newsArticles[displayIndex].date
+        );
+        newsCurrentIndex = (newsCurrentIndex + 1) % newsCount;
+        nextNewsCycleAt = millis() + 8000;
+    }
+
     handleButton();
     mqttLoop();
     updateLed();

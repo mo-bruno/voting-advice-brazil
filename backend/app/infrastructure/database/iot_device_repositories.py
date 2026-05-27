@@ -3,12 +3,18 @@ from datetime import datetime
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.core.entities.iot_device import IotDeviceLink, IotPairingSession
+from app.core.entities.iot_device import (
+    IotDeviceEvent,
+    IotDeviceLink,
+    IotPairingSession,
+)
 from app.core.use_cases.interfaces import (
+    IotDeviceEventRepository,
     IotDeviceLinkRepository,
     IotPairingSessionRepository,
 )
 from app.infrastructure.database.models import (
+    IotDeviceEventModel,
     IotDeviceLinkModel,
     IotPairingSessionModel,
 )
@@ -189,3 +195,52 @@ class SqlIotPairingSessionRepository(IotPairingSessionRepository):
             return
         model.consumed_at = now
         self._db.commit()
+
+
+def _to_event(model: IotDeviceEventModel) -> IotDeviceEvent:
+    return IotDeviceEvent(
+        id=model.id,
+        device_token=model.device_token,
+        event_type=model.event_type,
+        payload=model.payload,
+        published_at=model.published_at,
+    )
+
+
+class SqlIotDeviceEventRepository(IotDeviceEventRepository):
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def record(
+        self,
+        device_token: str,
+        event_type: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent:
+        model = IotDeviceEventModel(
+            device_token=device_token,
+            event_type=event_type,
+            payload=payload,
+            published_at=now,
+        )
+        self._db.add(model)
+        self._db.commit()
+        self._db.refresh(model)
+        return _to_event(model)
+
+    def get_latest(
+        self,
+        device_token: str,
+        event_type: str,
+    ) -> IotDeviceEvent | None:
+        model = self._db.execute(
+            select(IotDeviceEventModel)
+            .where(
+                IotDeviceEventModel.device_token == device_token,
+                IotDeviceEventModel.event_type == event_type,
+            )
+            .order_by(IotDeviceEventModel.published_at.desc())
+            .limit(1)
+        ).scalar_one_or_none()
+        return _to_event(model) if model else None

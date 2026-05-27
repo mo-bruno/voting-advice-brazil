@@ -32,15 +32,23 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
     if settings.app_env != "test":
         from app.infrastructure.database.seed import seed
         from app.infrastructure.database.session import SessionLocal
+        from app.infrastructure.scheduler import start as start_scheduler
 
         with SessionLocal() as db:
             seed(db)
+
+        start_scheduler()
 
     print(
         f"farol-politico-api startup: env={settings.app_env} "
         f"version={settings.app_version}"
     )
     yield
+
+    if settings.app_env != "test":
+        from app.infrastructure.scheduler import stop as stop_scheduler
+
+        stop_scheduler()
 
 
 app = FastAPI(

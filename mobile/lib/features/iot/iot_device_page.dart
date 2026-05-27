@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/iot_device_session.dart';
+import '../../shared/models/iot_device.dart';
 
 class IotDevicePage extends StatefulWidget {
   final IotDeviceSession? session;
@@ -18,11 +19,23 @@ class IotDevicePage extends StatefulWidget {
 class _IotDevicePageState extends State<IotDevicePage> {
   late final IotDeviceSession _session =
       widget.session ?? IotDeviceSession.instance;
+  Timer? _pollTimer;
 
   @override
   void initState() {
     super.initState();
-    unawaited(_session.loadStatus());
+    unawaited(_session.loadStatus().then((_) {
+      unawaited(_session.loadLastEvent());
+    }));
+    _pollTimer = Timer.periodic(const Duration(seconds: 60), (_) {
+      unawaited(_session.loadLastEvent());
+    });
+  }
+
+  @override
+  void dispose() {
+    _pollTimer?.cancel();
+    super.dispose();
   }
 
   @override
@@ -173,7 +186,65 @@ class _LinkedState extends StatelessWidget {
             child: const Text('DESVINCULAR FAROL'),
           ),
         ),
+        const SizedBox(height: 16),
+        AnimatedBuilder(
+          animation: IotDeviceSession.instance,
+          builder: (context, _) {
+            final ev = IotDeviceSession.instance.lastEvent;
+            if (ev == null) return const SizedBox.shrink();
+            return _LastEventCard(event: ev);
+          },
+        ),
       ],
+    );
+  }
+}
+
+class _LastEventCard extends StatelessWidget {
+  final IotLastEvent event;
+  const _LastEventCard({required this.event});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Container(
+      width: double.infinity,
+      margin: const EdgeInsets.only(top: 16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: AppTheme.surfaceContainer,
+        border: Border.all(color: AppTheme.outlineVariant),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(width: 4, height: 20, color: AppTheme.primary),
+              const SizedBox(width: 8),
+              Text('ÚLTIMO EVENTO', style: textTheme.labelLarge),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(event.deputyName, style: textTheme.titleLarge),
+          Text('${event.party} • ${event.state}', style: textTheme.bodySmall),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+            color: event.alignmentColor,
+            child: Text(
+              event.alignmentLabel,
+              style: textTheme.labelLarge!.copyWith(
+                color: event.alignment == 'divergent' ? Colors.white : Colors.black,
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text('Votou ${event.vote}', style: textTheme.bodyMedium),
+          if (event.description.isNotEmpty)
+            Text(event.description, style: textTheme.bodySmall),
+        ],
+      ),
     );
   }
 }

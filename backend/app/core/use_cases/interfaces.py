@@ -2,7 +2,11 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
-from app.core.entities.iot_device import IotDeviceLink, IotPairingSession
+from app.core.entities.iot_device import (
+    IotDeviceEvent,
+    IotDeviceLink,
+    IotPairingSession,
+)
 from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
@@ -108,6 +112,9 @@ class FollowedActorRepository(ABC):
         min_followers: int = 2,
     ) -> list[TrendingActor]: ...
 
+    @abstractmethod
+    def list_all_followed(self) -> list[tuple[int, str]]: ...
+
 
 class IotDeviceLinkRepository(ABC):
     @abstractmethod
@@ -169,3 +176,21 @@ class IotPairingSessionRepository(ABC):
 class IotMqttPublisher(ABC):
     @abstractmethod
     def publish(self, topic: str, payload: dict[str, str]) -> None: ...
+
+
+class IotDeviceEventRepository(ABC):
+    @abstractmethod
+    def record(
+        self,
+        device_token: str,
+        event_type: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent: ...
+
+    @abstractmethod
+    def get_latest(
+        self,
+        device_token: str,
+        event_type: str,
+    ) -> IotDeviceEvent | None: ...

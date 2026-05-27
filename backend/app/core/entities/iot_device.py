@@ -28,3 +28,12 @@ class IotPairingSession:
 class IotMqttMessage:
     topic: str
     payload: dict[str, str]
+
+
+@dataclass(frozen=True)
+class IotDeviceEvent:
+    id: int
+    device_token: str
+    event_type: str
+    payload: dict[str, object]
+    published_at: datetime
