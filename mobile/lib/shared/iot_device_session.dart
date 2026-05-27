@@ -112,6 +112,17 @@ class IotDeviceSession extends ChangeNotifier {
     }
   }
 
+  IotLastEvent? lastEvent;
+
+  Future<void> loadLastEvent() async {
+    if (device == null) return;
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      lastEvent = await api.fetchLastIotEvent(anonymousId: anonymousId);
+      notifyListeners();
+    } catch (_) {}
+  }
+
   Future<void> unlink() async {
     loading = true;
     error = null;

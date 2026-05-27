@@ -216,6 +216,19 @@ class ApiClient {
     );
   }
 
+  Future<IotLastEvent?> fetchLastIotEvent({required String anonymousId}) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device/last-event');
+    try {
+      final json = await _getJson(
+        uri,
+        headers: {'X-Farol-Anonymous-Id': anonymousId},
+      ) as Map<String, dynamic>;
+      return IotLastEvent.fromJson(json);
+    } on ApiException {
+      return null;
+    }
+  }
+
   Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {
     final response = await _client.get(uri, headers: headers);
     return _decode(response);
