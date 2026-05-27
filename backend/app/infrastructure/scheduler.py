@@ -3,7 +3,9 @@ from __future__ import annotations
 import logging
 from datetime import datetime, timezone
 
-from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.background import (  # type: ignore[import-untyped]
+    BackgroundScheduler,
+)
 
 from app.infrastructure.database.session import SessionLocal
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
@@ -13,7 +15,7 @@ _log = logging.getLogger(__name__)
 _scheduler = BackgroundScheduler(timezone="UTC")
 
 
-def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict]:
+def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict[str, object]]:
     client = CamaraClient()
     votes = []
     try:
@@ -55,6 +57,7 @@ def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict]
 
 
 def _run_vote_notifier_job() -> None:
+    from app.core.use_cases.vote_notifier import run_vote_notifier
     from app.infrastructure.database.iot_device_repositories import (
         SqlIotDeviceEventRepository,
         SqlIotDeviceLinkRepository,
@@ -63,21 +66,50 @@ def _run_vote_notifier_job() -> None:
         SqlFollowedActorRepository,
         SqlPoliticalActorRepository,
     )
-    from app.core.use_cases.vote_notifier import run_vote_notifier
 
     _log.info("vote_notifier: iniciando")
     now = datetime.now(timezone.utc)
+    since = now.replace(hour=0, minute=0, second=0, microsecond=0)
     try:
         with SessionLocal() as db:
-            run_vote_notifier(
-                now=now,
-                followed_repo=SqlFollowedActorRepository(db),
-                link_repo=SqlIotDeviceLinkRepository(db),
-                event_repo=SqlIotDeviceEventRepository(db),
-                publisher=PahoIotMqttPublisher(),
-                actor_repo=SqlPoliticalActorRepository(db),
-                fetch_recent_votes=_fetch_recent_votes_for_actor,
-            )
+            followed_repo = SqlFollowedActorRepository(db)
+            link_repo = SqlIotDeviceLinkRepository(db)
+            event_repo = SqlIotDeviceEventRepository(db)
+            publisher = PahoIotMqttPublisher()
+            actor_repo = SqlPoliticalActorRepository(db)
+
+            # Deduplica actores
+            seen_actor_ids: set[int] = set()
+            for actor_id, _ in followed_repo.list_all_followed():
+                if actor_id in seen_actor_ids:
+                    continue
+                seen_actor_ids.add(actor_id)
+
+                actor = actor_repo.get_by_id(actor_id)
+                if actor is None or actor.source != "camara":
+                    continue
+
+                try:
+                    votes = _fetch_recent_votes_for_actor(actor.source_id, since)
+                except Exception:
+                    _log.exception("Erro ao buscar votos do actor %s", actor_id)
+                    continue
+
+                for vote_data in votes:
+                    run_vote_notifier(
+                        followed_repo=followed_repo,
+                        link_repo=link_repo,
+                        event_repo=event_repo,
+                        publisher=publisher,
+                        political_actor_id=actor_id,
+                        deputy_name=actor.display_name,
+                        party=actor.party,
+                        state=actor.state,
+                        vote=str(vote_data.get("vote", "")),
+                        alignment=str(vote_data.get("alignment", "abstained")),
+                        now=now,
+                    )
+
             _push_news_for_all_followers(db, now)
     except Exception:
         _log.exception("vote_notifier: erro inesperado")
@@ -94,12 +126,18 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
         SqlIotDeviceEventRepository,
         SqlIotDeviceLinkRepository,
     )
-    from app.infrastructure.database.models import QuizResponseModel, ThemeModel, ThesisModel
-    from app.infrastructure.database.political_actor_repositories import SqlFollowedActorRepository
-    from app.infrastructure.sources.gnews import fetch_news_for_themes
+    from app.infrastructure.database.models import (
+        QuizResponseModel,
+        ThemeModel,
+        ThesisModel,
+    )
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlFollowedActorRepository,
+    )
+    from app.infrastructure.sources.gnews import NewsArticle, fetch_news_for_themes
 
-    session = db  # type: ignore[assignment]
-    assert isinstance(session, Session)
+    assert isinstance(db, Session)
+    session = db
 
     followed_repo = SqlFollowedActorRepository(session)
     all_followed = followed_repo.list_all_followed()
@@ -122,16 +160,22 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
         ).scalars().all()
         themes = list(rows)
 
+        captured_themes = themes
+
+        def _get_themes(_: str) -> list[str]:
+            return captured_themes
+
+        def _get_articles(t: list[str]) -> list[NewsArticle]:
+            return fetch_news_for_themes(t, api_key=settings.gnews_api_key or "")
+
         push_news_for_user(
             anonymous_id=anon_id,
             now=now,
             link_repo=SqlIotDeviceLinkRepository(session),
             event_repo=SqlIotDeviceEventRepository(session),
             publisher=PahoIotMqttPublisher(),
-            fetch_themes=lambda _, t=themes: t,
-            fetch_articles=lambda t: fetch_news_for_themes(
-                t, api_key=settings.gnews_api_key or ""
-            ),
+            fetch_themes=_get_themes,
+            fetch_articles=_get_articles,
         )
 
 
