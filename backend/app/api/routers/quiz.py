@@ -150,10 +150,22 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
         ThesisModel,
     )
     from app.infrastructure.database.session import SessionLocal
-    from app.infrastructure.sources.gnews import fetch_news_for_themes
+    from app.infrastructure.sources.gnews import NewsArticle, fetch_news_for_themes
 
     try:
         with SessionLocal() as session:
+            from app.infrastructure.database.iot_device_repositories import (
+                SqlIotDeviceEventRepository,
+                SqlIotDeviceLinkRepository,
+            )
+            from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
+
+            link_repo = SqlIotDeviceLinkRepository(session)
+            link = link_repo.get_by_anonymous_id(anonymous_id)
+            if link is None:
+                _log_quiz.warning("news push: device nao pareado para anonymous_id=%s", anonymous_id)
+                return
+
             rows = session.execute(
                 select(ThemeModel.slug)
                 .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
@@ -165,23 +177,30 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
                 .distinct()
             ).scalars().all()
             themes = list(rows)
+            _log_quiz.info("news push: device=%s themes=%s gnews_key=%s",
+                           anonymous_id, themes, bool(settings.gnews_api_key))
 
-            from app.infrastructure.database.iot_device_repositories import (
-                SqlIotDeviceEventRepository,
-                SqlIotDeviceLinkRepository,
-            )
-            from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
+            def _fetch_articles(t: list[str]) -> list[NewsArticle]:
+                if settings.gnews_api_key:
+                    articles = fetch_news_for_themes(t, api_key=settings.gnews_api_key)
+                    if articles:
+                        return articles
+                    _log_quiz.warning("news push: GNews retornou vazio para temas=%s", t)
+                else:
+                    _log_quiz.warning("news push: GNEWS_API_KEY nao configurada, usando fallback")
+                today = datetime.now().strftime("%d/%m")
+                return [NewsArticle(title="Política em foco — quiz concluído",
+                                    source="Farol Político", date=today)]
 
             push_news_for_user(
                 anonymous_id=anonymous_id,
                 now=datetime.now(timezone.utc),
-                link_repo=SqlIotDeviceLinkRepository(session),
+                link_repo=link_repo,
                 event_repo=SqlIotDeviceEventRepository(session),
                 publisher=PahoIotMqttPublisher(),
-                fetch_themes=lambda _: themes,
-                fetch_articles=lambda t: fetch_news_for_themes(
-                    t, api_key=settings.gnews_api_key or ""
-                ),
+                fetch_themes=lambda _: themes if themes else ["política"],
+                fetch_articles=_fetch_articles,
             )
+            _log_quiz.info("news push: concluido para device=%s", anonymous_id)
     except Exception:
         _log_quiz.exception("Falha ao pushear news para %s", anonymous_id)
