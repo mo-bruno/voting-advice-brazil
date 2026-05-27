@@ -1,9 +1,12 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis.dart';
 import 'quiz_controller.dart';
+import '../../shared/iot_device_session.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
@@ -32,6 +35,32 @@ class _QuizPageState extends State<QuizPage> {
 
   void _onFinishQuiz() {
     Navigator.pushNamed(context, '/weighting');
+  }
+
+  String _getAnswerValue(ThesisAnswer answer) {
+    switch (answer) {
+      case ThesisAnswer.agree:
+        return 'agree';
+      case ThesisAnswer.neutral:
+        return 'neutral';
+      case ThesisAnswer.disagree:
+        return 'disagree';
+      default:
+        return '';
+    }
+  }
+
+  void _handleAnswer(ThesisAnswer value) {
+    unawaited(
+      IotDeviceSession.instance.sendQuizPulse(
+        answer: _getAnswerValue(value),
+        current: controller.currentIndex + 1,
+        total: controller.totalTheses,
+      ),
+    );
+    controller.answer(value).then((finished) {
+      if (finished && mounted) _onFinishQuiz();
+    });
   }
 
   @override
@@ -104,31 +133,19 @@ class _QuizPageState extends State<QuizPage> {
             _ChoiceButton(
               icon: Icons.thumb_up,
               label: 'CONCORDO',
-              onPressed: () {
-                controller.answer(ThesisAnswer.agree).then((finished) {
-                  if (finished && mounted) _onFinishQuiz();
-                });
-              },
+              onPressed: () => _handleAnswer(ThesisAnswer.agree),
             ),
             const SizedBox(height: 12),
             _ChoiceButton(
               icon: Icons.help_outline,
               label: 'NEUTRO',
-              onPressed: () {
-                controller.answer(ThesisAnswer.neutral).then((finished) {
-                  if (finished && mounted) _onFinishQuiz();
-                });
-              },
+              onPressed: () => _handleAnswer(ThesisAnswer.neutral),
             ),
             const SizedBox(height: 12),
             _ChoiceButton(
               icon: Icons.thumb_down,
               label: 'DISCORDO',
-              onPressed: () {
-                controller.answer(ThesisAnswer.disagree).then((finished) {
-                  if (finished && mounted) _onFinishQuiz();
-                });
-              },
+              onPressed: () => _handleAnswer(ThesisAnswer.disagree),
             ),
             const SizedBox(height: 24),
             TextButton(

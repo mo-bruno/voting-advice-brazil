@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
-import '../../shared/models/iot_device.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
 import '../../shared/models/political_actor.dart';
@@ -202,15 +201,33 @@ class ApiClient {
     _decode(response);
   }
 
-  Future<dynamic> _getJson(Uri uri) async {
-    final response = await _client.get(uri);
+  Future<void> sendQuizPulse({
+    required String anonymousId,
+    required String answer,
+    required int current,
+    required int total,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/iot-device/quiz-pulse');
+    await _postJson(
+      uri,
+      {'answer': answer, 'current': current, 'total': total},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+  }
+
+  Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {
+    final response = await _client.get(uri, headers: headers);
     return _decode(response);
   }
 
-  Future<dynamic> _postJson(Uri uri, Map<String, dynamic> body) async {
+  Future<dynamic> _postJson(
+    Uri uri,
+    Map<String, dynamic> body, {
+    Map<String, String>? headers,
+  }) async {
     final response = await _client.post(
       uri,
-      headers: {'Content-Type': 'application/json'},
+      headers: {'Content-Type': 'application/json', ...?headers},
       body: jsonEncode(body),
     );
     return _decode(response);
