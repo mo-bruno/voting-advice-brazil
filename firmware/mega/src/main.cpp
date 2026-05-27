@@ -129,6 +129,12 @@ void setup() {
 
     tft.begin(0x9486);
     tft.setRotation(1);
+    tft.fillScreen(RED);
+    delay(250);
+    tft.fillScreen(GREEN);
+    delay(250);
+    tft.fillScreen(BLUE);
+    delay(250);
     tft.fillScreen(BLACK);
     tft.setTextColor(WHITE);
     tft.setTextSize(3);

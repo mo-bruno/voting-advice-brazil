@@ -167,16 +167,25 @@ class ApiClient {
 
   Future<IotDevice> pairIotDevice({
     required String anonymousId,
-    required String deviceToken,
+    String? deviceToken,
+    String? deviceTokenPrefix,
     required String pairingCode,
   }) async {
+    if ((deviceToken == null) == (deviceTokenPrefix == null)) {
+      throw ArgumentError(
+        'Informe deviceToken ou deviceTokenPrefix, mas nao ambos.',
+      );
+    }
+    final body = <String, dynamic>{
+      if (deviceToken != null) 'device_token': deviceToken,
+      if (deviceTokenPrefix != null)
+        'device_token_prefix': deviceTokenPrefix.toLowerCase(),
+      'pairing_code': pairingCode,
+    };
     final uri = Uri.parse('$baseUrl/me/iot-device');
     final json = await _putJson(
       uri,
-      {
-        'device_token': deviceToken,
-        'pairing_code': pairingCode,
-      },
+      body,
       headers: {'X-Farol-Anonymous-Id': anonymousId},
     ) as Map<String, dynamic>;
     return IotDevice.fromJson(json);

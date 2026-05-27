@@ -11,6 +11,8 @@ from app.main import app
 
 TOKEN = "550e8400-e29b-41d4-a716-446655440000"
 PAIRING_CODE = "482913"
+AMBIGUOUS_TOKEN_A = "12345678-1234-4abc-8abc-123456789abc"
+AMBIGUOUS_TOKEN_B = "12345678-abcd-4def-9def-abcdef123456"
 
 
 class FakePublisher:
@@ -90,6 +92,108 @@ def test_pair_flow_links_device_and_publishes_confirmation(client) -> None:
     assert get_response.json()["device_token"] == TOKEN
     assert publisher.messages[0][0] == f"farol/{TOKEN}"
     assert publisher.messages[0][1]["type"] == "pairing_confirmed"
+
+
+def test_manual_pair_flow_links_device_and_publishes_confirmation(client) -> None:
+    publisher = FakePublisher()
+    app.dependency_overrides[get_iot_mqtt_publisher] = lambda: publisher
+    try:
+        client.post(
+            f"/api/v1/iot-devices/{TOKEN}/pairing-session",
+            json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+        )
+
+        pair_response = client.put(
+            "/api/v1/me/iot-device",
+            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            json={
+                "device_token_prefix": TOKEN[:8],
+                "pairing_code": PAIRING_CODE,
+            },
+        )
+        get_response = client.get(
+            "/api/v1/me/iot-device",
+            headers={"X-Farol-Anonymous-Id": "anon-1"},
+        )
+    finally:
+        app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
+
+    assert pair_response.status_code == 200
+    assert pair_response.json()["status"] == "linked"
+    assert get_response.status_code == 200
+    assert get_response.json()["device_token"] == TOKEN
+    assert publisher.messages[0][0] == f"farol/{TOKEN}"
+    assert publisher.messages[0][1]["type"] == "pairing_confirmed"
+
+
+def test_manual_pair_flow_rejects_unknown_device_token_prefix(client) -> None:
+    client.post(
+        f"/api/v1/iot-devices/{TOKEN}/pairing-session",
+        json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+    )
+
+    response = client.put(
+        "/api/v1/me/iot-device",
+        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        json={"device_token_prefix": "deadbeef", "pairing_code": PAIRING_CODE},
+    )
+
+    assert response.status_code == 422
+    assert response.json()["detail"] == "Codigo de pareamento invalido ou expirado."
+
+
+def test_manual_pair_flow_rejects_ambiguous_device_token_prefix(client) -> None:
+    client.post(
+        f"/api/v1/iot-devices/{AMBIGUOUS_TOKEN_A}/pairing-session",
+        json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+    )
+    client.post(
+        f"/api/v1/iot-devices/{AMBIGUOUS_TOKEN_B}/pairing-session",
+        json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+    )
+
+    response = client.put(
+        "/api/v1/me/iot-device",
+        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        json={
+            "device_token_prefix": AMBIGUOUS_TOKEN_A[:8],
+            "pairing_code": PAIRING_CODE,
+        },
+    )
+
+    assert response.status_code == 409
+    assert response.json()["detail"] == (
+        "Prefixo do dispositivo corresponde a mais de uma sessao ativa."
+    )
+
+
+def test_pairing_status_reports_unlinked_then_linked(client) -> None:
+    publisher = FakePublisher()
+    app.dependency_overrides[get_iot_mqtt_publisher] = lambda: publisher
+    try:
+        before_response = client.get(
+            f"/api/v1/iot-devices/{TOKEN}/pairing-status",
+        )
+        client.post(
+            f"/api/v1/iot-devices/{TOKEN}/pairing-session",
+            json={"pairing_code": PAIRING_CODE, "firmware_version": "0.1.0"},
+        )
+        pair_response = client.put(
+            "/api/v1/me/iot-device",
+            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
+        )
+        after_response = client.get(
+            f"/api/v1/iot-devices/{TOKEN}/pairing-status",
+        )
+    finally:
+        app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
+
+    assert before_response.status_code == 200
+    assert before_response.json() == {"paired": False, "status": "unlinked"}
+    assert pair_response.status_code == 200
+    assert after_response.status_code == 200
+    assert after_response.json() == {"paired": True, "status": "linked"}
 
 
 def test_pair_flow_still_succeeds_when_mqtt_publish_fails(client) -> None:

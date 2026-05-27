@@ -13,6 +13,10 @@ concurrency:
   group: deploy-backend-${{ github.ref }}
   cancel-in-progress: false
 
+env:
+  GCP_PROJECT_ID: farol-politico-495210
+  CLOUD_BUILD_SOURCE: https://github.com/mo-bruno/voting-advice-brazil.git
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -28,4 +32,8 @@ jobs:
         uses: google-github-actions/setup-gcloud@v2
 
       - name: Submit Cloud Build
-        run: gcloud builds submit --config=cloudbuild.yaml --project=farol-politico-495210 .
+        run: |
+          gcloud builds submit "$CLOUD_BUILD_SOURCE" \
+            --git-source-revision="$GITHUB_SHA" \
+            --config=cloudbuild.yaml \
+            --project="$GCP_PROJECT_ID"

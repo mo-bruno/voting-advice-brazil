@@ -13,16 +13,20 @@ from app.api.schemas.iot_devices import (
     CreatePairingSessionIn,
     IotDeviceOut,
     PairingSessionOut,
+    PairingStatusOut,
     PairIotDeviceIn,
 )
 from app.core.entities.iot_device import IotDeviceLink
 from app.core.use_cases.interfaces import IotMqttPublisher
 from app.core.use_cases.pair_iot_device import (
+    AmbiguousPairingCodeError,
     DeviceAlreadyLinkedError,
     InvalidPairingCodeError,
     create_pairing_session,
     get_iot_device_link,
+    get_iot_device_link_by_token,
     pair_iot_device,
+    resolve_pairing_device_token,
     unlink_iot_device,
 )
 from app.infrastructure.database.iot_device_repositories import (
@@ -73,6 +77,20 @@ def create_session(
     )
 
 
+@router.get("/{device_token}/pairing-status", response_model=PairingStatusOut)
+def get_pairing_status(
+    device_token: UUID,
+    repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
+) -> PairingStatusOut:
+    if device_token.version != 4:
+        raise HTTPException(status_code=422, detail="device_token must be a UUID v4")
+
+    link = get_iot_device_link_by_token(repo, str(device_token))
+    if link is None:
+        return PairingStatusOut(paired=False, status="unlinked")
+    return PairingStatusOut(paired=True, status=link.status)
+
+
 @me_router.get("/iot-device", response_model=IotDeviceOut)
 def get_current_iot_device(
     x_farol_anonymous_id: AnonymousHeader,
@@ -94,17 +112,30 @@ def pair_current_iot_device(
     ),
     publisher: IotMqttPublisher = Depends(get_iot_mqtt_publisher),
 ) -> IotDeviceOut:
+    now = datetime.now(timezone.utc)
     try:
+        device_token = (
+            str(body.device_token)
+            if body.device_token is not None
+            else resolve_pairing_device_token(
+                session_repo,
+                body.device_token_prefix or "",
+                body.pairing_code,
+                now,
+            )
+        )
         link = pair_iot_device(
             link_repo,
             session_repo,
             publisher,
             x_farol_anonymous_id,
-            str(body.device_token),
+            device_token,
             body.pairing_code,
-            datetime.now(timezone.utc),
+            now,
         )
     except DeviceAlreadyLinkedError as exc:
+        raise HTTPException(status_code=409, detail=str(exc)) from exc
+    except AmbiguousPairingCodeError as exc:
         raise HTTPException(status_code=409, detail=str(exc)) from exc
     except InvalidPairingCodeError as exc:
         raise HTTPException(status_code=422, detail=str(exc)) from exc

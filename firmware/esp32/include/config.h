@@ -2,7 +2,7 @@
 
 #define API_BASE_URL      "https://farol-politico-api-ia6m2uvoba-uk.a.run.app/api/v1"
 #define MQTT_BROKER       "broker.hivemq.com"
-#define MQTT_PORT         8883
+#define MQTT_PORT         1883
 #define MQTT_TOPIC_PREFIX "farol/"
 
 #define UART_BAUD         115200
@@ -21,3 +21,5 @@
 #define PAIRING_CODE_MAX  999999
 #define PAIRING_DEBOUNCE_MS 50
 #define PAIRING_HOLD_MS   1500
+#define PAIRING_CONFIRM_TIMEOUT_MS 60000
+#define PAIRING_STATUS_POLL_MS 2000

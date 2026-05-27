@@ -8,6 +8,7 @@ class FakeApiClient extends ApiClient {
   String? fetchedAnonymousId;
   String? pairedAnonymousId;
   String? pairedDeviceToken;
+  String? pairedDeviceTokenPrefix;
   String? pairedCode;
 
   FakeApiClient() : super(baseUrl: 'https://example.test');
@@ -21,14 +22,17 @@ class FakeApiClient extends ApiClient {
   @override
   Future<IotDevice> pairIotDevice({
     required String anonymousId,
-    required String deviceToken,
+    String? deviceToken,
+    String? deviceTokenPrefix,
     required String pairingCode,
   }) async {
     pairedAnonymousId = anonymousId;
     pairedDeviceToken = deviceToken;
+    pairedDeviceTokenPrefix = deviceTokenPrefix;
     pairedCode = pairingCode;
     return IotDevice(
-      deviceToken: deviceToken,
+      deviceToken:
+          deviceToken ?? '$deviceTokenPrefix-e29b-41d4-a716-446655440000',
       status: 'linked',
       linkedAt: DateTime(2026, 5, 22),
       updatedAt: DateTime(2026, 5, 22),
@@ -50,7 +54,8 @@ class FakeThrowingApiClient extends ApiClient {
   @override
   Future<IotDevice> pairIotDevice({
     required String anonymousId,
-    required String deviceToken,
+    String? deviceToken,
+    String? deviceTokenPrefix,
     required String pairingCode,
   }) async {
     throw Exception('network error');
@@ -89,6 +94,50 @@ void main() {
     expect(api.pairedDeviceToken, '550e8400-e29b-41d4-a716-446655440000');
     expect(api.pairedCode, '482913');
     expect(session.device?.isLinked, isTrue);
+  });
+
+  test('pairWithManualCode stores linked device using normalized input',
+      () async {
+    final api = FakeApiClient();
+    final session = IotDeviceSession.testOnly(
+      api: api,
+      deviceIdentityStore: FakeDeviceIdentityStore(),
+    );
+
+    await session.pairWithManualCode(
+      const IotManualPairingInput(
+        pairingCode: '482 913',
+        shortId: '2D90 AE25',
+      ),
+    );
+
+    expect(api.pairedAnonymousId, 'anon-1');
+    expect(api.pairedDeviceToken, isNull);
+    expect(api.pairedDeviceTokenPrefix, '2d90ae25');
+    expect(api.pairedCode, '482913');
+    expect(session.device?.isLinked, isTrue);
+    expect(session.loading, isFalse);
+    expect(session.error, isNull);
+  });
+
+  test('pairWithManualCode rejects invalid input without calling api',
+      () async {
+    final api = FakeApiClient();
+    final session = IotDeviceSession.testOnly(
+      api: api,
+      deviceIdentityStore: FakeDeviceIdentityStore(),
+    );
+
+    await session.pairWithManualCode(
+      const IotManualPairingInput(
+        pairingCode: '48291',
+        shortId: '2D90 AE25',
+      ),
+    );
+
+    expect(api.pairedAnonymousId, isNull);
+    expect(session.error, isNotNull);
+    expect(session.loading, isFalse);
   });
 
   test('pairWithPayload sets error and rethrows on failure', () async {

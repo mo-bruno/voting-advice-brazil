@@ -63,4 +63,31 @@ class IotDeviceSession extends ChangeNotifier {
       notifyListeners();
     }
   }
+
+  Future<void> pairWithManualCode(IotManualPairingInput input) async {
+    if (!input.isValid) {
+      error = 'Informe o codigo de 6 digitos e o ID curto de 8 caracteres.';
+      loading = false;
+      notifyListeners();
+      return;
+    }
+
+    loading = true;
+    error = null;
+    notifyListeners();
+    try {
+      final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
+      device = await api.pairIotDevice(
+        anonymousId: anonymousId,
+        deviceTokenPrefix: input.normalizedShortId,
+        pairingCode: input.normalizedPairingCode,
+      );
+    } catch (err) {
+      error = err.toString();
+      rethrow;
+    } finally {
+      loading = false;
+      notifyListeners();
+    }
+  }
 }

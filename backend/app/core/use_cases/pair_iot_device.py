@@ -15,6 +15,10 @@ class InvalidPairingCodeError(ValueError):
     pass
 
 
+class AmbiguousPairingCodeError(ValueError):
+    pass
+
+
 class DeviceAlreadyLinkedError(ValueError):
     pass
 
@@ -49,6 +53,38 @@ def get_iot_device_link(
     anonymous_id: str,
 ) -> IotDeviceLink | None:
     return repo.get_by_anonymous_id(anonymous_id)
+
+
+def get_iot_device_link_by_token(
+    repo: IotDeviceLinkRepository,
+    device_token: str,
+) -> IotDeviceLink | None:
+    return repo.get_by_token(device_token)
+
+
+def resolve_pairing_device_token(
+    session_repo: IotPairingSessionRepository,
+    device_token_prefix: str,
+    pairing_code: str,
+    now: datetime,
+) -> str:
+    sessions = session_repo.list_active_sessions_by_token_prefix(
+        device_token_prefix=device_token_prefix,
+        now=now,
+    )
+    matching_tokens = {
+        session.device_token
+        for session in sessions
+        if session.pairing_code_hash
+        == _pairing_code_hash(session.device_token, pairing_code)
+    }
+    if not matching_tokens:
+        raise InvalidPairingCodeError("Codigo de pareamento invalido ou expirado.")
+    if len(matching_tokens) > 1:
+        raise AmbiguousPairingCodeError(
+            "Prefixo do dispositivo corresponde a mais de uma sessao ativa."
+        )
+    return next(iter(matching_tokens))
 
 
 def pair_iot_device(

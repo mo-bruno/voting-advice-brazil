@@ -168,6 +168,21 @@ class SqlIotPairingSessionRepository(IotPairingSessionRepository):
         ).scalar_one_or_none()
         return _to_session(model) if model else None
 
+    def list_active_sessions_by_token_prefix(
+        self,
+        device_token_prefix: str,
+        now: datetime,
+    ) -> list[IotPairingSession]:
+        prefix = device_token_prefix.lower()
+        models = self._db.execute(
+            select(IotPairingSessionModel).where(
+                IotPairingSessionModel.device_token.startswith(prefix),
+                IotPairingSessionModel.consumed_at.is_(None),
+                IotPairingSessionModel.expires_at > now,
+            )
+        ).scalars()
+        return [_to_session(model) for model in models]
+
     def consume_session(self, session_id: int, now: datetime) -> None:
         model = self._db.get(IotPairingSessionModel, session_id)
         if model is None:

@@ -82,9 +82,9 @@ void sendEventToDisplay(const FarolEvent& event) {
     Serial.print("[UART] " + frame);
 }
 
-void sendPairingToDisplay(const String& title, const String& qrPayload, const String& code) {
+void sendPairingToDisplay(const String& title, const String& qrPayload, const String& code, const String& shortId) {
     String frame = "Q|" + sanitize(title) + "|" + sanitize(qrPayload) + "|" +
-                   sanitize(code) + "\n";
+                   sanitize(code) + "|" + sanitize(shortId) + "\n";
     Serial2.print(frame);
     Serial.print("[UART] " + frame);
 }

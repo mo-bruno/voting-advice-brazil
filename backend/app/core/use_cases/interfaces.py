@@ -156,6 +156,13 @@ class IotPairingSessionRepository(ABC):
     ) -> IotPairingSession | None: ...
 
     @abstractmethod
+    def list_active_sessions_by_token_prefix(
+        self,
+        device_token_prefix: str,
+        now: datetime,
+    ) -> list[IotPairingSession]: ...
+
+    @abstractmethod
     def consume_session(self, session_id: int, now: datetime) -> None: ...
 
 

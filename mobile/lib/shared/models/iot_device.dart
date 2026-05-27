@@ -28,6 +28,29 @@ class IotPairingPayload {
   }
 }
 
+class IotManualPairingInput {
+  final String pairingCode;
+  final String shortId;
+
+  const IotManualPairingInput({
+    required this.pairingCode,
+    required this.shortId,
+  });
+
+  String get normalizedPairingCode {
+    return pairingCode.replaceAll(RegExp(r'[^0-9]'), '');
+  }
+
+  String get normalizedShortId {
+    return shortId.replaceAll(RegExp(r'[^0-9a-fA-F]'), '').toLowerCase();
+  }
+
+  bool get isValid {
+    return RegExp(r'^[0-9]{6}$').hasMatch(normalizedPairingCode) &&
+        RegExp(r'^[0-9a-f]{8}$').hasMatch(normalizedShortId);
+  }
+}
+
 class IotDevice {
   final String deviceToken;
   final String status;

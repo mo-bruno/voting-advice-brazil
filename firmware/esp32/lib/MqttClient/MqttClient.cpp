@@ -1,9 +1,9 @@
 #include "MqttClient.h"
 #include "config.h"
-#include <WiFiClientSecure.h>
+#include <WiFi.h>
 #include <esp_random.h>
 
-static WiFiClientSecure wifiClient;
+static WiFiClient wifiClient;
 static PubSubClient client(wifiClient);
 static String topic;
 static MqttMessageCallback userCallback = nullptr;
@@ -29,7 +29,6 @@ static bool tryConnectOnce() {
 void mqttInit(const String& subscribeTopic, MqttMessageCallback callback) {
     topic = subscribeTopic;
     userCallback = callback;
-    wifiClient.setInsecure();
     client.setServer(MQTT_BROKER, MQTT_PORT);
     client.setCallback(dispatch);
     tryConnectOnce();
@@ -46,4 +45,8 @@ void mqttLoop() {
         return;
     }
     client.loop();
+}
+
+bool mqttIsConnected() {
+    return client.connected();
 }

@@ -6,3 +6,4 @@ using MqttMessageCallback = void (*)(char* topic, byte* payload, unsigned int le
 
 void mqttInit(const String& topic, MqttMessageCallback callback);
 void mqttLoop();
+bool mqttIsConnected();

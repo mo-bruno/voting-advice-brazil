@@ -224,3 +224,11 @@ __marimo__/
 *.db
 *.db-shm
 *.db-wal
+
+# AI agent configs
+.agents/
+.superpowers/
+skills-lock.json
+
+# Research docs
+research/

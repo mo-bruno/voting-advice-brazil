@@ -19,6 +19,7 @@ class Settings(BaseSettings):
 
     # External services
     groq_api_key: str | None = None
+    gemini_api_key: str | None = None
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"
 
     @property

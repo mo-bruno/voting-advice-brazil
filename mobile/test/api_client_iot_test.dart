@@ -13,7 +13,8 @@ void main() {
       'updated_at': '2026-05-22T20:00:00Z',
       'last_seen_at': null,
     });
-    final api = ApiClient(baseUrl: 'https://example.test/api/v1', client: client);
+    final api =
+        ApiClient(baseUrl: 'https://example.test/api/v1', client: client);
 
     final device = await api.pairIotDevice(
       anonymousId: 'anon-1',
@@ -23,12 +24,39 @@ void main() {
 
     expect(device.deviceToken, '550e8400-e29b-41d4-a716-446655440000');
     expect(client.lastMethod, 'PUT');
-    expect(client.lastUri.toString(), 'https://example.test/api/v1/me/iot-device');
+    expect(
+        client.lastUri.toString(), 'https://example.test/api/v1/me/iot-device');
     expect(client.lastHeaders['X-Farol-Anonymous-Id'], 'anon-1');
     expect(client.lastBody, {
       'device_token': '550e8400-e29b-41d4-a716-446655440000',
       'pairing_code': '482913',
     });
+  });
+
+  test('pairIotDevice sends manual prefix body without device token', () async {
+    final client = _CapturingClient({
+      'device_token': '2d90ae25-e29b-41d4-a716-446655440000',
+      'status': 'linked',
+      'linked_at': '2026-05-22T20:00:00Z',
+      'updated_at': '2026-05-22T20:00:00Z',
+      'last_seen_at': null,
+    });
+    final api =
+        ApiClient(baseUrl: 'https://example.test/api/v1', client: client);
+
+    final device = await api.pairIotDevice(
+      anonymousId: 'anon-1',
+      deviceTokenPrefix: '2d90ae25',
+      pairingCode: '482913',
+    );
+
+    expect(device.deviceToken, '2d90ae25-e29b-41d4-a716-446655440000');
+    expect(client.lastMethod, 'PUT');
+    expect(client.lastBody, {
+      'device_token_prefix': '2d90ae25',
+      'pairing_code': '482913',
+    });
+    expect(client.lastBody!.containsKey('device_token'), isFalse);
   });
 
   test('fetchIotDevice returns null on 404', () async {

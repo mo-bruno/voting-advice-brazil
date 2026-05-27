@@ -45,3 +45,32 @@ PairingSessionResponse createPairingSession(const String& deviceToken, const Str
     }
     return {true, doc["qr_payload"].as<String>(), pairingCode};
 }
+
+PairingStatusResponse getPairingStatus(const String& deviceToken) {
+    WiFiClientSecure client;
+    client.setInsecure();
+    HTTPClient http;
+    String url = String(API_BASE_URL) + "/iot-devices/" + deviceToken + "/pairing-status";
+    http.begin(client, url);
+    http.addHeader("Accept", "application/json");
+
+    int code = http.GET();
+    if (code != 200) {
+        Serial.print("[Pairing] Status HTTP ");
+        Serial.println(code);
+        http.end();
+        return {false, false, ""};
+    }
+
+    String payload = http.getString();
+    http.end();
+
+    JsonDocument doc;
+    DeserializationError err = deserializeJson(doc, payload);
+    if (err || !doc["paired"].is<bool>() || !doc["status"].is<const char*>()) {
+        Serial.println("[Pairing] Status invalido.");
+        return {false, false, ""};
+    }
+
+    return {true, doc["paired"].as<bool>(), doc["status"].as<String>()};
+}
