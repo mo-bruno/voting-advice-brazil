@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink
 from app.core.use_cases.vote_notifier import run_vote_notifier
@@ -155,3 +155,138 @@ def test_run_vote_notifier_defaults_to_pending_alignment():
     assert payload["description"] == "Voto pendente."
     assert payload["party"] == ""
     assert payload["state"] == ""
+
+
+def test_run_vote_notifier_converts_timestamp_to_utc():
+    now = datetime(2026, 1, 1, 3, 0, tzinfo=timezone(timedelta(hours=-3)))
+    followed_repo = FakeFollowedActorRepository([(10, "anon-1")])
+    link_repo = FakeIotDeviceLinkRepository(
+        {
+            "anon-1": IotDeviceLink(
+                device_token="tok-3",
+                anonymous_id="anon-1",
+                status="linked",
+                created_at=now,
+                updated_at=now,
+                last_seen_at=None,
+            )
+        }
+    )
+    event_repo = FakeIotDeviceEventRepository()
+    publisher = FakeIotMqttPublisher()
+
+    run_vote_notifier(
+        followed_repo=followed_repo,
+        link_repo=link_repo,
+        event_repo=event_repo,
+        publisher=publisher,
+        political_actor_id=10,
+        deputy_name="Deputy C",
+        party="XYZ",
+        state="RJ",
+        vote="Nao",
+        alignment="divergent",
+        now=now,
+    )
+
+    payload = publisher.published[0]["payload"]
+    assert payload["timestamp_utc"] == "2026-01-01T06:00:00Z"
+
+
+def test_run_vote_notifier_assumes_naive_timestamp_is_utc():
+    now = datetime(2026, 1, 1, 0, 0)
+    followed_repo = FakeFollowedActorRepository([(10, "anon-1")])
+    link_repo = FakeIotDeviceLinkRepository(
+        {
+            "anon-1": IotDeviceLink(
+                device_token="tok-4",
+                anonymous_id="anon-1",
+                status="linked",
+                created_at=now,
+                updated_at=now,
+                last_seen_at=None,
+            )
+        }
+    )
+    event_repo = FakeIotDeviceEventRepository()
+    publisher = FakeIotMqttPublisher()
+
+    run_vote_notifier(
+        followed_repo=followed_repo,
+        link_repo=link_repo,
+        event_repo=event_repo,
+        publisher=publisher,
+        political_actor_id=10,
+        deputy_name="Deputy D",
+        party=None,
+        state=None,
+        vote="Sim",
+        alignment="aligned",
+        now=now,
+    )
+
+    payload = publisher.published[0]["payload"]
+    assert payload["timestamp_utc"] == "2026-01-01T00:00:00Z"
+
+
+def test_run_vote_notifier_skips_when_actor_not_followed():
+    now = datetime(2026, 1, 3, tzinfo=timezone.utc)
+    followed_repo = FakeFollowedActorRepository([(99, "anon-1")])
+    link_repo = FakeIotDeviceLinkRepository(
+        {
+            "anon-1": IotDeviceLink(
+                device_token="tok-5",
+                anonymous_id="anon-1",
+                status="linked",
+                created_at=now,
+                updated_at=now,
+                last_seen_at=None,
+            )
+        }
+    )
+    event_repo = FakeIotDeviceEventRepository()
+    publisher = FakeIotMqttPublisher()
+
+    notified = run_vote_notifier(
+        followed_repo=followed_repo,
+        link_repo=link_repo,
+        event_repo=event_repo,
+        publisher=publisher,
+        political_actor_id=10,
+        deputy_name="Deputy E",
+        party="ABC",
+        state="SP",
+        vote="Sim",
+        alignment="aligned",
+        now=now,
+    )
+
+    assert notified == 0
+    assert publisher.published == []
+    assert event_repo.recorded == []
+
+
+def test_run_vote_notifier_skips_when_link_missing():
+    now = datetime(2026, 1, 4, tzinfo=timezone.utc)
+    followed_repo = FakeFollowedActorRepository([(10, "anon-1")])
+    link_repo = FakeIotDeviceLinkRepository({})
+    event_repo = FakeIotDeviceEventRepository()
+    publisher = FakeIotMqttPublisher()
+
+    notified = run_vote_notifier(
+        followed_repo=followed_repo,
+        link_repo=link_repo,
+        event_repo=event_repo,
+        publisher=publisher,
+        political_actor_id=10,
+        deputy_name="Deputy F",
+        party="ABC",
+        state="SP",
+        vote="Sim",
+        alignment="aligned",
+        now=now,
+    )
+
+    assert notified == 0
+    assert publisher.published == []
+    assert event_repo.recorded == []

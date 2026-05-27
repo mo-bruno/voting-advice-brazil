@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timezone
 
 from app.core.use_cases.interfaces import (
     FollowedActorRepository,
@@ -30,6 +30,9 @@ def _payload(
     alignment: str,
     now: datetime,
 ) -> dict[str, str]:
+    if now.tzinfo is None:
+        now = now.replace(tzinfo=timezone.utc)
+    now_utc = now.astimezone(timezone.utc)
     normalized = _normalize_alignment(alignment)
     meta = ALIGNMENT_METADATA[normalized]
     return {
@@ -41,7 +44,7 @@ def _payload(
         "alignment": normalized,
         "color": meta["color"],
         "description": meta["description"],
-        "timestamp_utc": now.isoformat().replace("+00:00", "Z"),
+        "timestamp_utc": now_utc.isoformat().replace("+00:00", "Z"),
     }
 
 
