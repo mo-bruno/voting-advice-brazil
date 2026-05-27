@@ -101,6 +101,16 @@ static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
         ledRestoreAt = millis() + 1500;
         sendQuizToDisplay(current, total, answer);
         lastEventAt = millis();
+
+        if (current == total) {
+            // Quiz completo: reseta guard para proximo quiz e mostra noticias em breve
+            lastQuizCurrent = 0;
+            lastQuizTotal   = 0;
+            if (newsCount > 0) nextNewsCycleAt = millis() + 2000;
+        } else if (newsCount > 0) {
+            // Adia noticias enquanto o quiz esta ativo
+            nextNewsCycleAt = millis() + 3000;
+        }
         return;
     }
 
