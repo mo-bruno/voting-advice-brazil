@@ -5,9 +5,9 @@ from unittest.mock import MagicMock
 
 from fastapi.testclient import TestClient
 
-from app.main import app
-from app.api.deps import get_iot_device_link_repo, get_iot_device_event_repo
+from app.api.deps import get_iot_device_event_repo, get_iot_device_link_repo
 from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink
+from app.main import app
 
 
 def _fake_link():

@@ -2,7 +2,11 @@ from abc import ABC, abstractmethod
 from datetime import datetime
 
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
-from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink, IotPairingSession
+from app.core.entities.iot_device import (
+    IotDeviceEvent,
+    IotDeviceLink,
+    IotPairingSession,
+)
 from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,

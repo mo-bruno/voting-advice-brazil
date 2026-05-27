@@ -3,7 +3,9 @@ from datetime import datetime, timezone
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
-from app.infrastructure.database.iot_device_repositories import SqlIotDeviceEventRepository
+from app.infrastructure.database.iot_device_repositories import (
+    SqlIotDeviceEventRepository,
+)
 from app.infrastructure.database.models import Base
 
 

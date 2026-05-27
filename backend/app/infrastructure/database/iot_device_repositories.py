@@ -3,7 +3,11 @@ from datetime import datetime
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink, IotPairingSession
+from app.core.entities.iot_device import (
+    IotDeviceEvent,
+    IotDeviceLink,
+    IotPairingSession,
+)
 from app.core.use_cases.interfaces import (
     IotDeviceEventRepository,
     IotDeviceLinkRepository,

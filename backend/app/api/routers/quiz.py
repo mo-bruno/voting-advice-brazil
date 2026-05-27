@@ -1,3 +1,5 @@
+import logging
+from threading import Thread
 from typing import cast
 
 from fastapi import APIRouter, Depends, HTTPException, Query
@@ -133,25 +135,25 @@ def submit(
     )
 
 
-import logging
-from threading import Thread
-
-
 _log_quiz = logging.getLogger(__name__)
 
 
 def _push_news_async(anonymous_id: str) -> None:
+    from datetime import datetime, timezone
+
+    from sqlalchemy import select
+
+    from app.core.config import settings
     from app.core.use_cases.news_notifier import push_news_for_user
+    from app.infrastructure.database.models import (
+        QuizResponseModel,
+        ThemeModel,
+        ThesisModel,
+    )
     from app.infrastructure.database.session import SessionLocal
     from app.infrastructure.sources.gnews import fetch_news_for_themes
-    from app.core.config import settings
-    from datetime import datetime, timezone
-    from sqlalchemy import select
-    from app.infrastructure.database.models import (
-        QuizResponseModel, ThesisModel, ThemeModel
-    )
 
-    def _run():
+    def _run() -> None:
         try:
             with SessionLocal() as session:
                 rows = session.execute(

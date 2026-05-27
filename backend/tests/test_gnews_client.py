@@ -1,6 +1,6 @@
-from unittest.mock import patch, MagicMock
+from unittest.mock import MagicMock, patch
 
-from app.infrastructure.sources.gnews import fetch_news_for_themes, NewsArticle, _CACHE
+from app.infrastructure.sources.gnews import _CACHE, fetch_news_for_themes
 
 
 def _mock_response(articles):

@@ -29,7 +29,7 @@ def _payload(
     vote: str,
     alignment: str,
     now: datetime,
-) -> dict[str, str]:
+) -> dict[str, object]:
     if now.tzinfo is None:
         now = now.replace(tzinfo=timezone.utc)
     now_utc = now.astimezone(timezone.utc)
@@ -77,7 +77,7 @@ def run_vote_notifier(
         link = link_repo.get_by_anonymous_id(anonymous_id)
         if link is None:
             continue
-        publisher.publish(topic=f"farol/{link.device_token}", payload=payload)
+        publisher.publish(topic=f"farol/{link.device_token}", payload={k: str(v) for k, v in payload.items()})
         event_repo.record(
             device_token=link.device_token,
             event_type="vote_alert",

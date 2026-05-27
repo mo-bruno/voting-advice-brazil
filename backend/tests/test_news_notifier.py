@@ -1,9 +1,13 @@
 from datetime import datetime, timezone
 
-from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink
+from app.core.entities.iot_device import IotDeviceLink
 from app.core.use_cases.news_notifier import push_news_for_user
 from app.infrastructure.sources.gnews import NewsArticle
-from tests.test_vote_notifier import FakeIotDeviceLinkRepository, FakeIotDeviceEventRepository, FakeIotMqttPublisher
+from tests.test_vote_notifier import (
+    FakeIotDeviceEventRepository,
+    FakeIotDeviceLinkRepository,
+    FakeIotMqttPublisher,
+)
 
 
 def _make_link():
