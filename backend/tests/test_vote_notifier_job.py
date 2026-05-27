@@ -2,6 +2,13 @@ from datetime import datetime, timezone
 
 from app.core.entities.iot_device import IotDeviceLink
 from app.core.entities.political_actor import OfficialEvidence, PoliticalActor
+from app.core.use_cases.interfaces import (
+    FollowedActorRepository,
+    IotDeviceLinkRepository,
+    IotMqttPublisher,
+    OfficialEvidenceRepository,
+    PoliticalActorRepository,
+)
 from app.jobs.vote_notifier import run_once
 
 NOW = datetime(2026, 5, 27, 12, 0, tzinfo=timezone.utc)
@@ -48,7 +55,7 @@ NEW_VOTE = {
 }
 
 
-class FakeFollowedRepo:
+class FakeFollowedRepo(FollowedActorRepository):
     def get_followed(self, anonymous_id): return None
     def set_followed(self, *_): raise NotImplementedError
     def delete_followed(self, *_): return False
@@ -61,7 +68,7 @@ class FakeFollowedRepo:
         return [ANON] if actor_id == ACTOR_ID else []
 
 
-class FakeActorRepo:
+class FakeActorRepo(PoliticalActorRepository):
     def get_by_id(self, actor_id: int):
         return ACTOR if actor_id == ACTOR_ID else None
 
@@ -69,7 +76,7 @@ class FakeActorRepo:
     def list(self, **_): return [], 0
 
 
-class FakeLinkRepo:
+class FakeLinkRepo(IotDeviceLinkRepository):
     def get_by_anonymous_id(self, anonymous_id: str):
         return LINK if anonymous_id == ANON else None
 
@@ -79,7 +86,7 @@ class FakeLinkRepo:
     def delete_by_anonymous_id(self, *_): return False
 
 
-class FakeEvidenceRepo:
+class FakeEvidenceRepo(OfficialEvidenceRepository):
     def __init__(self, existing=None) -> None:
         self._existing = existing or []
         self.replaced: list[dict] = []
@@ -99,7 +106,7 @@ class FakeCamaraSource:
         return self._votes
 
 
-class FakePublisher:
+class FakePublisher(IotMqttPublisher):
     def __init__(self) -> None:
         self.messages: list[tuple[str, dict]] = []
 

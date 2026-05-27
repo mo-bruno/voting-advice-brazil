@@ -1,6 +1,9 @@
 from __future__ import annotations
 
+import logging
 from datetime import datetime, timezone
+
+_log = logging.getLogger(__name__)
 
 from app.core.use_cases.interfaces import (
     FollowedActorRepository,
@@ -36,6 +39,7 @@ def run_once(
         try:
             new_votes = camara.fetch_votes_for_actor(actor)
         except Exception:
+            _log.exception("Camara fetch failed for actor_id=%s", actor_id)
             continue
 
         evidence_repo.replace_for_actor_type(actor_id, "vote", new_votes)
