@@ -45,8 +45,10 @@ class _QuizPageState extends State<QuizPage> {
         return 'neutral';
       case ThesisAnswer.disagree:
         return 'disagree';
-      default:
-        return '';
+      case ThesisAnswer.skipped:
+        return 'skip';
+      case ThesisAnswer.unanswered:
+        return 'skip';
     }
   }
 

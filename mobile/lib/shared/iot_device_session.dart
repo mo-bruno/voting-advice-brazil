@@ -101,14 +101,11 @@ class IotDeviceSession extends ChangeNotifier {
     if (device == null) return;
     try {
       final anonymousId = await deviceIdentityStore.getOrCreateDeviceId();
-      // Fire-and-forget
-      unawaited(
-        api.sendQuizPulse(
-          anonymousId: anonymousId,
-          answer: answer,
-          current: current,
-          total: total,
-        ),
+      await api.sendQuizPulse(
+        anonymousId: anonymousId,
+        answer: answer,
+        current: current,
+        total: total,
       );
     } catch (_) {
       // Ignora erros, é fire-and-forget

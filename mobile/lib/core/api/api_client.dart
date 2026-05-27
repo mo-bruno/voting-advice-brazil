@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
+import '../../shared/models/iot_device.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
 import '../../shared/models/political_actor.dart';
