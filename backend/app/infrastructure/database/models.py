@@ -2,10 +2,12 @@ from datetime import datetime, timezone
 
 from sqlalchemy import (
     JSON,
+    Boolean,
     DateTime,
     ForeignKey,
     Index,
     Integer,
+    SmallInteger,
     String,
     Text,
     UniqueConstraint,
@@ -371,3 +373,79 @@ class IotDeviceEventModel(Base):
             "published_at",
         ),
     )
+
+
+class PostModel(Base):
+    __tablename__ = "posts"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    political_actor_id: Mapped[int | None] = mapped_column(
+        Integer, ForeignKey("political_actors.id", ondelete="SET NULL"), nullable=True
+    )
+    theme_slug: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    score: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    comments: Mapped[list["CommentModel"]] = relationship(
+        back_populates="post", cascade="all, delete-orphan"
+    )
+    votes: Mapped[list["PostVoteModel"]] = relationship(
+        back_populates="post", cascade="all, delete-orphan"
+    )
+
+    __table_args__ = (
+        Index("ix_posts_anonymous_id", "anonymous_id"),
+        Index("ix_posts_score_created", "score", "created_at"),
+        Index("ix_posts_actor_id", "political_actor_id"),
+    )
+
+
+class CommentModel(Base):
+    __tablename__ = "comments"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    post_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("posts.id", ondelete="CASCADE"), nullable=False
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    post: Mapped["PostModel"] = relationship(back_populates="comments")
+
+    __table_args__ = (Index("ix_comments_post_id", "post_id"),)
+
+
+class PostVoteModel(Base):
+    __tablename__ = "post_votes"
+
+    post_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("posts.id", ondelete="CASCADE"), primary_key=True
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    value: Mapped[int] = mapped_column(SmallInteger, nullable=False)
+
+    post: Mapped["PostModel"] = relationship(back_populates="votes")
+
+
+class ModerationLogModel(Base):
+    __tablename__ = "moderation_log"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    post_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    approved: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    model_used: Mapped[str] = mapped_column(String(128), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    __table_args__ = (Index("ix_moderation_log_post_id", "post_id"),)
