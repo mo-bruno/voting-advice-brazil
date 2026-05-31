@@ -12,6 +12,7 @@ from slowapi.util import get_remote_address
 
 from app.api.routers import (
     candidates,
+    community,
     health,
     iot_devices,
     political_actors,
@@ -86,6 +87,7 @@ app.include_router(political_actors.me_router, prefix=PREFIX)
 app.include_router(iot_devices.router, prefix=PREFIX)
 app.include_router(iot_devices.me_router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
+app.include_router(community.router, prefix=PREFIX)
 app.include_router(health.router)
 
 _data_path = Path(settings.data_dir)
