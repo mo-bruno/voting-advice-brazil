@@ -18,7 +18,7 @@ from app.api.schemas.community import (
     PostOut,
     VoteIn,
 )
-from app.core.entities.community import Post, Comment
+from app.core.entities.community import Comment, Post
 from app.core.use_cases.create_comment import create_comment
 from app.core.use_cases.get_post import get_post
 from app.core.use_cases.list_posts import list_posts
@@ -30,7 +30,10 @@ from app.infrastructure.database.community_repositories import (
     SqlPostRepository,
     SqlPostVoteRepository,
 )
-from app.infrastructure.llm.moderation_client import ModerationPort, ModerationUnavailable
+from app.infrastructure.llm.moderation_client import (
+    ModerationPort,
+    ModerationUnavailable,
+)
 
 router = APIRouter(prefix="/community", tags=["Comunidade"])
 AnonymousHeader = Annotated[str, Header(min_length=1, max_length=64)]
