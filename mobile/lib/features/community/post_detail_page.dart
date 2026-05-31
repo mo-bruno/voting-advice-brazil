@@ -413,7 +413,13 @@ class _CommentInput extends StatelessWidget {
                 ),
                 maxLines: null,
                 textCapitalization: TextCapitalization.sentences,
+                textInputAction: TextInputAction.send,
                 onChanged: (_) => onChanged(),
+                onSubmitted: (_) {
+                  if (controller.text.trim().isNotEmpty && !sending) {
+                    onSend();
+                  }
+                },
               ),
             ),
             const SizedBox(width: 4),

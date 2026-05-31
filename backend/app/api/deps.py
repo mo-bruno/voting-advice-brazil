@@ -2,6 +2,7 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from app.core.config import settings
+from app.core.entities.community import ModerationResult
 from app.infrastructure.database.community_repositories import (
     SqlCommentRepository,
     SqlModerationLogRepository,
@@ -27,9 +28,9 @@ from app.infrastructure.database.repositories import (
 )
 from app.infrastructure.database.session import get_db
 from app.infrastructure.llm.moderation_client import (
-    FakeModerationClient,
     GroqModerationClient,
     ModerationPort,
+    ModerationUnavailable,
 )
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
 from app.infrastructure.sources.camara import (
@@ -123,7 +124,14 @@ def get_moderation_log_repo(db: Session = Depends(get_db)) -> SqlModerationLogRe
     return SqlModerationLogRepository(db)
 
 
+class _UnconfiguredModerationClient(ModerationPort):
+    """Usado quando GROQ_API_KEY não está configurada — retorna 503 em vez de aprovar tudo."""
+
+    def moderate(self, content: str) -> ModerationResult:
+        raise ModerationUnavailable("GROQ_API_KEY não configurada")
+
+
 def get_moderation_client() -> ModerationPort:
     if settings.groq_api_key:
         return GroqModerationClient(settings.groq_api_key)
-    return FakeModerationClient(approved=True)
+    return _UnconfiguredModerationClient()

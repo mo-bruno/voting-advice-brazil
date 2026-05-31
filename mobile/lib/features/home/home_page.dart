@@ -6,7 +6,6 @@ import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/political_actor_session.dart';
 import '../../shared/quiz_session.dart';
-import '../community/community_feed_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -149,12 +148,7 @@ class _HomePageState extends State<HomePage> {
                             width: double.infinity,
                             child: OutlinedButton(
                               onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (_) => const CommunityFeedPage(),
-                                  ),
-                                );
+                                Navigator.pushNamed(context, '/community');
                               },
                               child: const Text('COMUNIDADE'),
                             ),
