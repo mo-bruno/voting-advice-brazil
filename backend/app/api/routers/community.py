@@ -18,18 +18,25 @@ from app.api.schemas.community import (
     PostOut,
     VoteIn,
 )
+from app.core.entities.community import Post, Comment
 from app.core.use_cases.create_comment import create_comment
 from app.core.use_cases.get_post import get_post
 from app.core.use_cases.list_posts import list_posts
 from app.core.use_cases.moderate_and_create_post import moderate_and_create_post
 from app.core.use_cases.vote_post import vote_post
-from app.infrastructure.llm.moderation_client import ModerationUnavailable
+from app.infrastructure.database.community_repositories import (
+    SqlCommentRepository,
+    SqlModerationLogRepository,
+    SqlPostRepository,
+    SqlPostVoteRepository,
+)
+from app.infrastructure.llm.moderation_client import ModerationPort, ModerationUnavailable
 
 router = APIRouter(prefix="/community", tags=["Comunidade"])
 AnonymousHeader = Annotated[str, Header(min_length=1, max_length=64)]
 
 
-def _post_out(post) -> PostOut:
+def _post_out(post: Post) -> PostOut:
     return PostOut(
         id=post.id,
         anonymous_id=post.anonymous_id,
@@ -41,7 +48,7 @@ def _post_out(post) -> PostOut:
     )
 
 
-def _comment_out(comment) -> CommentOut:
+def _comment_out(comment: Comment) -> CommentOut:
     return CommentOut(
         id=comment.id,
         post_id=comment.post_id,
@@ -55,9 +62,9 @@ def _comment_out(comment) -> CommentOut:
 def create_post_endpoint(
     body: PostIn,
     x_farol_anonymous_id: AnonymousHeader,
-    post_repo=Depends(get_post_repo),
-    log_repo=Depends(get_moderation_log_repo),
-    moderation_client=Depends(get_moderation_client),
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+    log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
+    moderation_client: ModerationPort = Depends(get_moderation_client),
 ) -> PostOut:
     try:
         post, result = moderate_and_create_post(
@@ -81,7 +88,7 @@ def list_posts_endpoint(
     page_size: int = Query(default=20, ge=1, le=50),
     political_actor_id: int | None = Query(default=None),
     theme_slug: str | None = Query(default=None),
-    post_repo=Depends(get_post_repo),
+    post_repo: SqlPostRepository = Depends(get_post_repo),
 ) -> PostListResponse:
     posts, total = list_posts(
         post_repo, page=page, page_size=page_size,
@@ -97,8 +104,8 @@ def list_posts_endpoint(
 @router.get("/posts/{post_id}", response_model=PostDetailOut)
 def get_post_endpoint(
     post_id: str,
-    post_repo=Depends(get_post_repo),
-    comment_repo=Depends(get_comment_repo),
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+    comment_repo: SqlCommentRepository = Depends(get_comment_repo),
 ) -> PostDetailOut:
     result = get_post(post_repo, comment_repo, post_id)
     if result is None:
@@ -112,8 +119,8 @@ def vote_post_endpoint(
     post_id: str,
     body: VoteIn,
     x_farol_anonymous_id: AnonymousHeader,
-    post_repo=Depends(get_post_repo),
-    vote_repo=Depends(get_vote_repo),
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+    vote_repo: SqlPostVoteRepository = Depends(get_vote_repo),
 ) -> PostOut:
     updated = vote_post(post_repo, vote_repo, post_id, x_farol_anonymous_id, body.value)
     if updated is None:
@@ -130,8 +137,8 @@ def create_comment_endpoint(
     post_id: str,
     body: CommentIn,
     x_farol_anonymous_id: AnonymousHeader,
-    post_repo=Depends(get_post_repo),
-    comment_repo=Depends(get_comment_repo),
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+    comment_repo: SqlCommentRepository = Depends(get_comment_repo),
 ) -> CommentOut:
     comment = create_comment(post_repo, comment_repo, post_id, x_farol_anonymous_id, body.content)
     if comment is None:
