@@ -6,6 +6,7 @@ import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/political_actor_session.dart';
 import '../../shared/quiz_session.dart';
+import '../community/community_feed_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -141,6 +142,21 @@ class _HomePageState extends State<HomePage> {
                                 Navigator.pushNamed(context, '/iot-device');
                               },
                               child: const Text('MEU FAROL'),
+                            ),
+                          ),
+                          const SizedBox(height: 12),
+                          SizedBox(
+                            width: double.infinity,
+                            child: OutlinedButton(
+                              onPressed: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (_) => const CommunityFeedPage(),
+                                  ),
+                                );
+                              },
+                              child: const Text('COMUNIDADE'),
                             ),
                           ),
                           const SizedBox(height: 48),

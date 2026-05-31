@@ -1,7 +1,13 @@
-
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
+from app.core.config import settings
+from app.infrastructure.database.community_repositories import (
+    SqlCommentRepository,
+    SqlModerationLogRepository,
+    SqlPostRepository,
+    SqlPostVoteRepository,
+)
 from app.infrastructure.database.iot_device_repositories import (
     SqlIotDeviceEventRepository,
     SqlIotDeviceLinkRepository,
@@ -20,6 +26,11 @@ from app.infrastructure.database.repositories import (
     SqlThesisRepository,
 )
 from app.infrastructure.database.session import get_db
+from app.infrastructure.llm.moderation_client import (
+    FakeModerationClient,
+    GroqModerationClient,
+    ModerationPort,
+)
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
 from app.infrastructure.sources.camara import (
     CamaraClient,
@@ -94,3 +105,25 @@ def get_camara_deputy_index_source() -> CamaraDeputyIndexSource:
 
 def get_camara_evidence_source() -> CamaraEvidenceSource:
     return CamaraEvidenceSource(CamaraClient())
+
+
+def get_post_repo(db: Session = Depends(get_db)) -> SqlPostRepository:
+    return SqlPostRepository(db)
+
+
+def get_comment_repo(db: Session = Depends(get_db)) -> SqlCommentRepository:
+    return SqlCommentRepository(db)
+
+
+def get_vote_repo(db: Session = Depends(get_db)) -> SqlPostVoteRepository:
+    return SqlPostVoteRepository(db)
+
+
+def get_moderation_log_repo(db: Session = Depends(get_db)) -> SqlModerationLogRepository:
+    return SqlModerationLogRepository(db)
+
+
+def get_moderation_client() -> ModerationPort:
+    if settings.groq_api_key:
+        return GroqModerationClient(settings.groq_api_key)
+    return FakeModerationClient(approved=True)
