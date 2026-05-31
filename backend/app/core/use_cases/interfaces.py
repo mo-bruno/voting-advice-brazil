@@ -194,3 +194,57 @@ class IotDeviceEventRepository(ABC):
         device_token: str,
         event_type: str,
     ) -> IotDeviceEvent | None: ...
+
+
+# ── Community ──────────────────────────────────────────────────────────────
+
+from app.core.entities.community import Comment, Post, PostVote  # noqa: E402
+
+
+class PostRepository(ABC):
+    @abstractmethod
+    def create(self, post: Post) -> Post: ...
+
+    @abstractmethod
+    def get_by_id(self, post_id: str) -> Post | None: ...
+
+    @abstractmethod
+    def list(
+        self,
+        page: int = 1,
+        page_size: int = 20,
+        political_actor_id: int | None = None,
+        theme_slug: str | None = None,
+    ) -> tuple[list[Post], int]: ...
+
+    @abstractmethod
+    def update_score(self, post_id: str, new_score: int) -> None: ...
+
+
+class CommentRepository(ABC):
+    @abstractmethod
+    def create(self, comment: Comment) -> Comment: ...
+
+    @abstractmethod
+    def list_by_post(self, post_id: str) -> list[Comment]: ...
+
+
+class PostVoteRepository(ABC):
+    @abstractmethod
+    def upsert(self, vote: PostVote) -> int: ...
+
+    @abstractmethod
+    def get(self, post_id: str, anonymous_id: str) -> PostVote | None: ...
+
+
+class ModerationLogRepository(ABC):
+    @abstractmethod
+    def record(
+        self,
+        post_id: str | None,
+        anonymous_id: str,
+        content_hash: str,
+        approved: bool,
+        reason: str | None,
+        model_used: str,
+    ) -> None: ...
