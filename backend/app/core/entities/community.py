@@ -11,6 +11,7 @@ class Post:
     theme_slug: str | None
     score: int
     created_at: datetime
+    image_data: str | None = None
 
 
 @dataclass(frozen=True)

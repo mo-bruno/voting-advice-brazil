@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 import '../../core/api/api_client.dart';
@@ -19,12 +21,13 @@ class _PostDetailPageState extends State<PostDetailPage> {
   PostDetail? _detail;
   bool _loading = true;
   bool _sendingComment = false;
+  String? _anonymousId;
   final _commentController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _load();
+    _init();
   }
 
   @override
@@ -33,10 +36,14 @@ class _PostDetailPageState extends State<PostDetailPage> {
     super.dispose();
   }
 
+  Future<void> _init() async {
+    _anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
+    await _load();
+  }
+
   Future<void> _load() async {
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
     final data =
-        await ApiClient().getPost(widget.postId, anonymousId: anonymousId);
+        await ApiClient().getPost(widget.postId, anonymousId: _anonymousId!);
     if (mounted) {
       setState(() {
         _detail = PostDetail.fromJson(data);
@@ -46,14 +53,17 @@ class _PostDetailPageState extends State<PostDetailPage> {
   }
 
   Future<void> _vote(int value) async {
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
     final data = await ApiClient()
-        .votePost(widget.postId, value, anonymousId: anonymousId);
+        .votePost(widget.postId, value, anonymousId: _anonymousId!);
     final updated = PostSummary.fromJson(data);
     CommunitySession().updatePost(updated);
     if (mounted) {
       setState(() {
-        _detail = PostDetail(post: updated, comments: _detail!.comments);
+        _detail = PostDetail(
+          post: updated,
+          imageData: _detail!.imageData,
+          comments: _detail!.comments,
+        );
       });
     }
   }
@@ -62,18 +72,125 @@ class _PostDetailPageState extends State<PostDetailPage> {
     final content = _commentController.text.trim();
     if (content.isEmpty) return;
     setState(() => _sendingComment = true);
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
     final data = await ApiClient()
-        .createComment(widget.postId, content, anonymousId: anonymousId);
+        .createComment(widget.postId, content, anonymousId: _anonymousId!);
     final comment = PostComment.fromJson(data);
     _commentController.clear();
     if (mounted) {
       setState(() {
         _detail = PostDetail(
           post: _detail!.post,
+          imageData: _detail!.imageData,
           comments: [..._detail!.comments, comment],
         );
         _sendingComment = false;
+      });
+    }
+  }
+
+  Future<void> _deleteComment(String commentId) async {
+    final confirmed = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppTheme.surfaceContainer,
+        title: const Text('Apagar comentário?',
+            style: TextStyle(color: AppTheme.onSurface)),
+        content: const Text('Esta ação não pode ser desfeita.',
+            style: TextStyle(color: AppTheme.onSurfaceVariant)),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('CANCELAR',
+                style: TextStyle(color: AppTheme.onSurfaceVariant)),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child:
+                const Text('APAGAR', style: TextStyle(color: AppTheme.error)),
+          ),
+        ],
+      ),
+    );
+    if (confirmed != true) return;
+    await ApiClient()
+        .deleteComment(widget.postId, commentId, anonymousId: _anonymousId!);
+    if (mounted) {
+      setState(() {
+        _detail = PostDetail(
+          post: _detail!.post,
+          imageData: _detail!.imageData,
+          comments:
+              _detail!.comments.where((c) => c.id != commentId).toList(),
+        );
+      });
+    }
+  }
+
+  Future<void> _editComment(PostComment comment) async {
+    final controller = TextEditingController(text: comment.content);
+    final newContent = await showDialog<String>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppTheme.surfaceContainer,
+        title: const Text('Editar comentário',
+            style: TextStyle(color: AppTheme.onSurface)),
+        content: TextField(
+          controller: controller,
+          maxLength: 300,
+          maxLines: 4,
+          autofocus: true,
+          style: const TextStyle(color: AppTheme.onSurface),
+          decoration: const InputDecoration(
+            filled: true,
+            fillColor: AppTheme.surfaceContainerHigh,
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+              borderSide: BorderSide(color: AppTheme.outlineVariant),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+              borderSide: BorderSide(color: AppTheme.outlineVariant),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+              borderSide: BorderSide(color: AppTheme.primary),
+            ),
+            counterStyle: TextStyle(color: AppTheme.onSurfaceVariant),
+            contentPadding: EdgeInsets.all(10),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('CANCELAR',
+                style: TextStyle(color: AppTheme.onSurfaceVariant)),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, controller.text.trim()),
+            child: const Text('SALVAR',
+                style: TextStyle(color: AppTheme.primary)),
+          ),
+        ],
+      ),
+    );
+    controller.dispose();
+    if (newContent == null || newContent.isEmpty) return;
+    final data = await ApiClient().editComment(
+      widget.postId,
+      comment.id,
+      newContent,
+      anonymousId: _anonymousId!,
+    );
+    final updated = PostComment.fromJson(data);
+    if (mounted) {
+      setState(() {
+        _detail = PostDetail(
+          post: _detail!.post,
+          imageData: _detail!.imageData,
+          comments: _detail!.comments
+              .map((c) => c.id == comment.id ? updated : c)
+              .toList(),
+        );
       });
     }
   }
@@ -100,7 +217,11 @@ class _PostDetailPageState extends State<PostDetailPage> {
             child: ListView(
               padding: EdgeInsets.zero,
               children: [
-                _PostBody(post: post, onVote: _vote),
+                _PostBody(
+                  post: post,
+                  imageData: _detail!.imageData,
+                  onVote: _vote,
+                ),
                 const SizedBox(height: 8),
                 if (comments.isNotEmpty)
                   const Padding(
@@ -115,7 +236,14 @@ class _PostDetailPageState extends State<PostDetailPage> {
                       ),
                     ),
                   ),
-                ...comments.map((c) => _CommentTile(comment: c)),
+                ...comments.map(
+                  (c) => _CommentTile(
+                    comment: c,
+                    isOwner: c.anonymousId == _anonymousId,
+                    onEdit: () => _editComment(c),
+                    onDelete: () => _deleteComment(c.id),
+                  ),
+                ),
                 const SizedBox(height: 80),
               ],
             ),
@@ -134,9 +262,14 @@ class _PostDetailPageState extends State<PostDetailPage> {
 
 class _PostBody extends StatelessWidget {
   final PostSummary post;
+  final String? imageData;
   final void Function(int value) onVote;
 
-  const _PostBody({required this.post, required this.onVote});
+  const _PostBody({
+    required this.post,
+    required this.imageData,
+    required this.onVote,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +282,17 @@ class _PostBody extends StatelessWidget {
           _AuthorRow(anonymousId: post.anonymousId, createdAt: post.createdAt),
           const SizedBox(height: 12),
           Text(post.content, style: Theme.of(context).textTheme.bodyLarge),
+          if (imageData != null) ...[
+            const SizedBox(height: 12),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(2),
+              child: Image.memory(
+                base64Decode(imageData!),
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ],
           if (post.themeSlug != null) ...[
             const SizedBox(height: 10),
             Container(
@@ -296,7 +440,16 @@ class _VoteButton extends StatelessWidget {
 
 class _CommentTile extends StatelessWidget {
   final PostComment comment;
-  const _CommentTile({required this.comment});
+  final bool isOwner;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  const _CommentTile({
+    required this.comment,
+    required this.isOwner,
+    required this.onEdit,
+    required this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -337,8 +490,8 @@ class _CommentTile extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 5),
                 child: Text(
                   '·',
-                  style:
-                      TextStyle(color: AppTheme.onSurfaceVariant, fontSize: 12),
+                  style: TextStyle(
+                      color: AppTheme.onSurfaceVariant, fontSize: 12),
                 ),
               ),
               Text(
@@ -348,12 +501,61 @@ class _CommentTile extends StatelessWidget {
                   color: AppTheme.onSurfaceVariant,
                 ),
               ),
+              const Spacer(),
+              if (isOwner)
+                _CommentMenu(onEdit: onEdit, onDelete: onDelete),
             ],
           ),
           const SizedBox(height: 7),
-          Text(comment.content, style: Theme.of(context).textTheme.bodyMedium),
+          Text(comment.content,
+              style: Theme.of(context).textTheme.bodyMedium),
         ],
       ),
+    );
+  }
+}
+
+class _CommentMenu extends StatelessWidget {
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
+
+  const _CommentMenu({required this.onEdit, required this.onDelete});
+
+  @override
+  Widget build(BuildContext context) {
+    return PopupMenuButton<String>(
+      icon: const Icon(Icons.more_horiz,
+          size: 18, color: AppTheme.onSurfaceVariant),
+      color: AppTheme.surfaceContainerHigh,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(4)),
+      ),
+      onSelected: (value) {
+        if (value == 'edit') onEdit();
+        if (value == 'delete') onDelete();
+      },
+      itemBuilder: (_) => [
+        const PopupMenuItem(
+          value: 'edit',
+          child: Row(
+            children: [
+              Icon(Icons.edit_rounded, size: 16, color: AppTheme.onSurface),
+              SizedBox(width: 10),
+              Text('Editar', style: TextStyle(color: AppTheme.onSurface)),
+            ],
+          ),
+        ),
+        const PopupMenuItem(
+          value: 'delete',
+          child: Row(
+            children: [
+              Icon(Icons.delete_rounded, size: 16, color: AppTheme.error),
+              SizedBox(width: 10),
+              Text('Apagar', style: TextStyle(color: AppTheme.error)),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
@@ -386,7 +588,8 @@ class _CommentInput extends StatelessWidget {
             Expanded(
               child: TextField(
                 controller: controller,
-                style: const TextStyle(fontSize: 14, color: AppTheme.onSurface),
+                style:
+                    const TextStyle(fontSize: 14, color: AppTheme.onSurface),
                 decoration: const InputDecoration(
                   hintText: 'Adicionar comentário...',
                   hintStyle: TextStyle(

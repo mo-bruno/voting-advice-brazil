@@ -10,8 +10,10 @@ from app.api.deps import (
     get_vote_repo,
 )
 from app.api.schemas.community import (
+    CommentEditIn,
     CommentIn,
     CommentOut,
+    PostDetailItemOut,
     PostDetailOut,
     PostIn,
     PostListResponse,
@@ -20,6 +22,8 @@ from app.api.schemas.community import (
 )
 from app.core.entities.community import Comment, Post
 from app.core.use_cases.create_comment import create_comment
+from app.core.use_cases.delete_comment import delete_comment
+from app.core.use_cases.edit_comment import edit_comment
 from app.core.use_cases.get_post import get_post
 from app.core.use_cases.list_posts import list_posts
 from app.core.use_cases.moderate_and_create_post import moderate_and_create_post
@@ -47,6 +51,21 @@ def _post_out(post: Post) -> PostOut:
         political_actor_id=post.political_actor_id,
         theme_slug=post.theme_slug,
         score=post.score,
+        has_image=post.image_data is not None,
+        created_at=post.created_at,
+    )
+
+
+def _post_detail_item_out(post: Post) -> PostDetailItemOut:
+    return PostDetailItemOut(
+        id=post.id,
+        anonymous_id=post.anonymous_id,
+        content=post.content,
+        political_actor_id=post.political_actor_id,
+        theme_slug=post.theme_slug,
+        score=post.score,
+        has_image=post.image_data is not None,
+        image_data=post.image_data,
         created_at=post.created_at,
     )
 
@@ -74,6 +93,7 @@ def create_post_endpoint(
             post_repo, log_repo, moderation_client,
             x_farol_anonymous_id, body.content,
             body.political_actor_id, body.theme_slug,
+            body.image_data,
         )
     except ModerationUnavailable:
         raise HTTPException(
@@ -114,7 +134,10 @@ def get_post_endpoint(
     if result is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     post, comments = result
-    return PostDetailOut(post=_post_out(post), comments=[_comment_out(c) for c in comments])
+    return PostDetailOut(
+        post=_post_detail_item_out(post),
+        comments=[_comment_out(c) for c in comments],
+    )
 
 
 @router.post("/posts/{post_id}/votes", response_model=PostOut)
@@ -147,3 +170,36 @@ def create_comment_endpoint(
     if comment is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     return _comment_out(comment)
+
+
+@router.patch("/posts/{post_id}/comments/{comment_id}", response_model=CommentOut)
+def edit_comment_endpoint(
+    post_id: str,
+    comment_id: str,
+    body: CommentEditIn,
+    x_farol_anonymous_id: AnonymousHeader,
+    comment_repo: SqlCommentRepository = Depends(get_comment_repo),
+) -> CommentOut:
+    result = edit_comment(comment_repo, comment_id, x_farol_anonymous_id, body.content)
+    if result is None:
+        raise HTTPException(status_code=404, detail="Comentário não encontrado.")
+    if result is False:
+        raise HTTPException(status_code=403, detail="Sem permissão para editar este comentário.")
+    return _comment_out(result)  # type: ignore[arg-type]
+
+
+@router.delete(
+    "/posts/{post_id}/comments/{comment_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+)
+def delete_comment_endpoint(
+    post_id: str,
+    comment_id: str,
+    x_farol_anonymous_id: AnonymousHeader,
+    comment_repo: SqlCommentRepository = Depends(get_comment_repo),
+) -> None:
+    result = delete_comment(comment_repo, comment_id, x_farol_anonymous_id)
+    if result is None:
+        raise HTTPException(status_code=404, detail="Comentário não encontrado.")
+    if result is False:
+        raise HTTPException(status_code=403, detail="Sem permissão para deletar este comentário.")

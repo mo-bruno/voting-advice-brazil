@@ -228,6 +228,15 @@ class CommentRepository(ABC):
     @abstractmethod
     def list_by_post(self, post_id: str) -> list[Comment]: ...
 
+    @abstractmethod
+    def get_by_id(self, comment_id: str) -> Comment | None: ...
+
+    @abstractmethod
+    def delete(self, comment_id: str) -> None: ...
+
+    @abstractmethod
+    def update_content(self, comment_id: str, new_content: str) -> Comment: ...
+
 
 class PostVoteRepository(ABC):
     @abstractmethod

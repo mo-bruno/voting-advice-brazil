@@ -1,4 +1,8 @@
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
@@ -16,11 +20,36 @@ class _CreatePostPageState extends State<CreatePostPage> {
   final _controller = TextEditingController();
   bool _loading = false;
   String? _error;
+  Uint8List? _imageBytes;
+  String? _imageBase64;
 
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  Future<void> _pickImage() async {
+    final picker = ImagePicker();
+    final picked = await picker.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 800,
+      maxHeight: 800,
+      imageQuality: 70,
+    );
+    if (picked == null) return;
+    final bytes = await picked.readAsBytes();
+    setState(() {
+      _imageBytes = bytes;
+      _imageBase64 = base64Encode(bytes);
+    });
+  }
+
+  void _removeImage() {
+    setState(() {
+      _imageBytes = null;
+      _imageBase64 = null;
+    });
   }
 
   Future<void> _submit() async {
@@ -32,7 +61,11 @@ class _CreatePostPageState extends State<CreatePostPage> {
     });
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      await ApiClient().createPost(content: content, anonymousId: anonymousId);
+      await ApiClient().createPost(
+        content: content,
+        anonymousId: anonymousId,
+        imageData: _imageBase64,
+      );
       CommunitySession().invalidate();
       if (mounted) Navigator.pop(context, true);
     } catch (e) {
@@ -151,6 +184,15 @@ class _CreatePostPageState extends State<CreatePostPage> {
                 onChanged: (_) => setState(() {}),
               ),
             ),
+            const SizedBox(height: 12),
+            // Image preview or picker button
+            if (_imageBytes != null)
+              _ImagePreview(
+                imageBytes: _imageBytes!,
+                onRemove: _removeImage,
+              )
+            else
+              _ImagePickerButton(onTap: _pickImage),
             if (_error != null) ...[
               const SizedBox(height: 12),
               Container(
@@ -183,6 +225,76 @@ class _CreatePostPageState extends State<CreatePostPage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class _ImagePickerButton extends StatelessWidget {
+  final VoidCallback onTap;
+  const _ImagePickerButton({required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+        decoration: BoxDecoration(
+          color: AppTheme.surfaceContainer,
+          border: Border.all(color: AppTheme.outlineVariant),
+          borderRadius: BorderRadius.circular(2),
+        ),
+        child: const Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(Icons.add_photo_alternate_rounded,
+                size: 18, color: AppTheme.onSurfaceVariant),
+            SizedBox(width: 8),
+            Text(
+              'Adicionar foto',
+              style: TextStyle(fontSize: 13, color: AppTheme.onSurfaceVariant),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _ImagePreview extends StatelessWidget {
+  final Uint8List imageBytes;
+  final VoidCallback onRemove;
+  const _ImagePreview({required this.imageBytes, required this.onRemove});
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        ClipRRect(
+          borderRadius: BorderRadius.circular(2),
+          child: Image.memory(
+            imageBytes,
+            height: 160,
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
+        ),
+        Positioned(
+          top: 6,
+          right: 6,
+          child: GestureDetector(
+            onTap: onRemove,
+            child: Container(
+              padding: const EdgeInsets.all(4),
+              decoration: BoxDecoration(
+                color: Colors.black54,
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: const Icon(Icons.close, size: 16, color: Colors.white),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

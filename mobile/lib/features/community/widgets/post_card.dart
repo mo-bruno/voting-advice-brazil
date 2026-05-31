@@ -34,6 +34,32 @@ class PostCard extends StatelessWidget {
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
+            if (post.hasImage) ...[
+              const SizedBox(height: 8),
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                decoration: BoxDecoration(
+                  color: AppTheme.surfaceContainerHighest,
+                  borderRadius: BorderRadius.circular(2),
+                ),
+                child: const Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(Icons.image_rounded,
+                        size: 12, color: AppTheme.onSurfaceVariant),
+                    SizedBox(width: 4),
+                    Text(
+                      'foto',
+                      style: TextStyle(
+                        fontSize: 10,
+                        color: AppTheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
             if (post.themeSlug != null) ...[
               const SizedBox(height: 8),
               _ThemeTag(slug: post.themeSlug!),

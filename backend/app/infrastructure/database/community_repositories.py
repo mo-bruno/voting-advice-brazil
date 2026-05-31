@@ -32,6 +32,7 @@ def _to_post(m: PostModel) -> Post:
         theme_slug=m.theme_slug,
         score=m.score,
         created_at=m.created_at,
+        image_data=m.image_data,
     )
 
 
@@ -57,6 +58,7 @@ class SqlPostRepository(PostRepository):
             political_actor_id=post.political_actor_id,
             theme_slug=post.theme_slug,
             score=post.score,
+            image_data=post.image_data,
             created_at=post.created_at,
         )
         self._db.add(model)
@@ -96,6 +98,25 @@ class SqlPostRepository(PostRepository):
 class SqlCommentRepository(CommentRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
+
+    def get_by_id(self, comment_id: str) -> Comment | None:
+        model = self._db.get(CommentModel, comment_id)
+        return _to_comment(model) if model else None
+
+    def delete(self, comment_id: str) -> None:
+        model = self._db.get(CommentModel, comment_id)
+        if model:
+            self._db.delete(model)
+            self._db.commit()
+
+    def update_content(self, comment_id: str, new_content: str) -> Comment:
+        model = self._db.get(CommentModel, comment_id)
+        if model is None:
+            raise ValueError(f"Comment {comment_id} not found")
+        model.content = new_content
+        self._db.commit()
+        self._db.refresh(model)
+        return _to_comment(model)
 
     def create(self, comment: Comment) -> Comment:
         model = CommentModel(

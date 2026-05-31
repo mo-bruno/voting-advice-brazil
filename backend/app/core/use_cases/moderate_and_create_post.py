@@ -15,6 +15,7 @@ def moderate_and_create_post(
     content: str,
     political_actor_id: int | None = None,
     theme_slug: str | None = None,
+    image_data: str | None = None,
 ) -> tuple[Post | None, ModerationResult]:
     result = moderation_client.moderate(content)
     content_hash = hashlib.sha256(content.encode()).hexdigest()
@@ -29,7 +30,7 @@ def moderate_and_create_post(
     post = Post(
         id=str(uuid.uuid4()), anonymous_id=anonymous_id, content=content,
         political_actor_id=political_actor_id, theme_slug=theme_slug,
-        score=0, created_at=datetime.now(timezone.utc),
+        score=0, created_at=datetime.now(timezone.utc), image_data=image_data,
     )
     saved = post_repo.create(post)
     log_repo.record(

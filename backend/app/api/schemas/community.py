@@ -2,14 +2,21 @@ from datetime import datetime
 
 from pydantic import BaseModel, Field
 
+_MAX_IMAGE_B64 = 700_000  # ~500 KB de imagem comprimida
+
 
 class PostIn(BaseModel):
     content: str = Field(min_length=1, max_length=500)
     political_actor_id: int | None = Field(default=None, gt=0)
     theme_slug: str | None = None
+    image_data: str | None = Field(default=None, max_length=_MAX_IMAGE_B64)
 
 
 class CommentIn(BaseModel):
+    content: str = Field(min_length=1, max_length=300)
+
+
+class CommentEditIn(BaseModel):
     content: str = Field(min_length=1, max_length=300)
 
 
@@ -24,7 +31,12 @@ class PostOut(BaseModel):
     political_actor_id: int | None
     theme_slug: str | None
     score: int
+    has_image: bool
     created_at: datetime
+
+
+class PostDetailItemOut(PostOut):
+    image_data: str | None
 
 
 class CommentOut(BaseModel):
@@ -36,7 +48,7 @@ class CommentOut(BaseModel):
 
 
 class PostDetailOut(BaseModel):
-    post: PostOut
+    post: PostDetailItemOut
     comments: list[CommentOut]
 
 

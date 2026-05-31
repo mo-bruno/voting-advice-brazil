@@ -234,10 +234,12 @@ class ApiClient {
     required String content,
     int? politicalActorId,
     String? themeSlug,
+    String? imageData,
   }) async {
     final body = <String, dynamic>{'content': content};
     if (politicalActorId != null) body['political_actor_id'] = politicalActorId;
     if (themeSlug != null) body['theme_slug'] = themeSlug;
+    if (imageData != null) body['image_data'] = imageData;
     final uri = Uri.parse('$baseUrl/community/posts');
     return await _postJson(
       uri,
@@ -305,6 +307,35 @@ class ApiClient {
     ) as Map<String, dynamic>;
   }
 
+  Future<Map<String, dynamic>> editComment(
+    String postId,
+    String commentId,
+    String content, {
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/comments/$commentId');
+    return await _patchJson(
+      uri,
+      {'content': content},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
+  Future<void> deleteComment(
+    String postId,
+    String commentId, {
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/comments/$commentId');
+    final response = await _client.delete(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    if (response.statusCode != 204) {
+      _decode(response);
+    }
+  }
+
   Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {
     final response = await _client.get(uri, headers: headers);
     return _decode(response);
@@ -329,6 +360,19 @@ class ApiClient {
     Map<String, String>? headers,
   }) async {
     final response = await _client.put(
+      uri,
+      headers: {'Content-Type': 'application/json', ...?headers},
+      body: jsonEncode(body),
+    );
+    return _decode(response);
+  }
+
+  Future<dynamic> _patchJson(
+    Uri uri,
+    Map<String, dynamic> body, {
+    Map<String, String>? headers,
+  }) async {
+    final response = await _client.patch(
       uri,
       headers: {'Content-Type': 'application/json', ...?headers},
       body: jsonEncode(body),
