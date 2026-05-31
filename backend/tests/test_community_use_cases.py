@@ -1,5 +1,4 @@
 from datetime import datetime, timezone
-import pytest
 
 from app.core.entities.community import Comment, Post, PostVote
 from app.infrastructure.llm.moderation_client import FakeModerationClient

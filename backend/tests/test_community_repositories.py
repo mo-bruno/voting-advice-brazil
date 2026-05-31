@@ -1,16 +1,17 @@
 from datetime import datetime, timezone
+
 import pytest
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.infrastructure.database.models import Base
+from app.core.entities.community import Comment, Post, PostVote
 from app.infrastructure.database.community_repositories import (
-    SqlPostRepository,
     SqlCommentRepository,
-    SqlPostVoteRepository,
     SqlModerationLogRepository,
+    SqlPostRepository,
+    SqlPostVoteRepository,
 )
-from app.core.entities.community import Post, Comment, PostVote
+from app.infrastructure.database.models import Base
 
 
 @pytest.fixture()
