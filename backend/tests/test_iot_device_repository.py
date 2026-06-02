@@ -1,7 +1,5 @@
 from datetime import datetime, timedelta, timezone
 
-import pytest
-
 from app.infrastructure.database.iot_device_repositories import (
     SqlIotDeviceLinkRepository,
     SqlIotPairingSessionRepository,
@@ -14,8 +12,12 @@ from app.infrastructure.database.models import (
 TOKEN_000 = "550e8400-e29b-41d4-a716-446655440000"
 TOKEN_001 = "550e8400-e29b-41d4-a716-446655440001"
 NOW = datetime(2026, 5, 22, tzinfo=timezone.utc)
-QR_PAYLOAD_000 = "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440000&pairing_code=111111"
-QR_PAYLOAD_001 = "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440001&pairing_code=222222"
+QR_PAYLOAD_000 = (
+    "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440000&pairing_code=111111"
+)
+QR_PAYLOAD_001 = (
+    "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440001&pairing_code=222222"
+)
 
 
 def _clean(db_session) -> None:
@@ -48,16 +50,17 @@ def test_refuses_token_linked_to_other_anonymous_id(db_session) -> None:
     assert conflict.anonymous_id == "anon-1"
 
 
-def test_set_link_refuses_token_stealing_from_other_anonymous_id(db_session) -> None:
+def test_set_link_allows_repair_by_different_anonymous_id(db_session) -> None:
     _clean(db_session)
     repo = SqlIotDeviceLinkRepository(db_session)
     repo.set_link("anon-1", TOKEN_000, now=NOW)
 
-    with pytest.raises(ValueError, match="already linked"):
-        repo.set_link("anon-2", TOKEN_000, now=NOW + timedelta(seconds=1))
+    result = repo.set_link("anon-2", TOKEN_000, now=NOW + timedelta(seconds=1))
 
-    assert repo.get_by_token(TOKEN_000).anonymous_id == "anon-1"
-    assert repo.get_by_anonymous_id("anon-2") is None
+    assert result.anonymous_id == "anon-2"
+    assert result.device_token == TOKEN_000
+    assert repo.get_by_token(TOKEN_000).anonymous_id == "anon-2"
+    assert repo.get_by_anonymous_id("anon-1") is None
 
 
 def test_pairing_session_lifecycle(db_session) -> None:

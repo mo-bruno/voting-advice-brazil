@@ -33,6 +33,10 @@ static uint32_t nextNewsCycleAt = 0;
 static uint32_t ledRestoreAt = 0;
 static LedColor savedLedColor = BLUE;
 
+// Controle de ordem do quiz: descarta mensagens atrasadas/fora de ordem
+static int lastQuizCurrent = 0;
+static int lastQuizTotal = 0;
+
 static String shortDeviceId() {
     String id = deviceToken.substring(0, 8);
     id.toUpperCase();
@@ -77,6 +81,19 @@ static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
         int current    = String(doc["current"] | "1").toInt();
         int total      = String(doc["total"]   | "1").toInt();
 
+        // Reinicia contagem se for novo quiz (total diferente)
+        if (total != lastQuizTotal) {
+            lastQuizCurrent = 0;
+            lastQuizTotal = total;
+        }
+        // Descarta mensagens atrasadas que chegaram fora de ordem
+        if (current <= lastQuizCurrent) {
+            Serial.printf("[MQTT] quiz ignorado (fora de ordem): %d/%d, ultimo visto: %d\n",
+                          current, total, lastQuizCurrent);
+            return;
+        }
+        lastQuizCurrent = current;
+
         LedColor color = (answer == "agree") ? GREEN
                        : (answer == "disagree") ? RED : YELLOW;
         savedLedColor = color;
@@ -84,6 +101,16 @@ static void onMqttMessage(char* topic, byte* payload, unsigned int length) {
         ledRestoreAt = millis() + 1500;
         sendQuizToDisplay(current, total, answer);
         lastEventAt = millis();
+
+        if (current == total) {
+            // Quiz completo: reseta guard para proximo quiz e mostra noticias em breve
+            lastQuizCurrent = 0;
+            lastQuizTotal   = 0;
+            if (newsCount > 0) nextNewsCycleAt = millis() + 2000;
+        } else if (newsCount > 0) {
+            // Adia noticias enquanto o quiz esta ativo
+            nextNewsCycleAt = millis() + 3000;
+        }
         return;
     }
 

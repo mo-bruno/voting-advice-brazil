@@ -229,6 +229,81 @@ class ApiClient {
     }
   }
 
+  Future<Map<String, dynamic>> createPost({
+    required String anonymousId,
+    required String content,
+    int? politicalActorId,
+    String? themeSlug,
+  }) async {
+    final body = <String, dynamic>{'content': content};
+    if (politicalActorId != null) body['political_actor_id'] = politicalActorId;
+    if (themeSlug != null) body['theme_slug'] = themeSlug;
+    final uri = Uri.parse('$baseUrl/community/posts');
+    return await _postJson(
+      uri,
+      body,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> listPosts({
+    required String anonymousId,
+    int page = 1,
+    int pageSize = 20,
+    int? politicalActorId,
+    String? themeSlug,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts').replace(
+      queryParameters: {
+        'page': '$page',
+        'page_size': '$pageSize',
+        if (politicalActorId != null) 'political_actor_id': '$politicalActorId',
+        if (themeSlug != null) 'theme_slug': themeSlug,
+      },
+    );
+    return await _getJson(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> getPost(
+    String postId, {
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId');
+    return await _getJson(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> votePost(
+    String postId,
+    int value, {
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/votes');
+    return await _postJson(
+      uri,
+      {'value': value},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
+  Future<Map<String, dynamic>> createComment(
+    String postId,
+    String content, {
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/comments');
+    return await _postJson(
+      uri,
+      {'content': content},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+  }
+
   Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {
     final response = await _client.get(uri, headers: headers);
     return _decode(response);

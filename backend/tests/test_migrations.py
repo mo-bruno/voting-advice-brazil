@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 BACKEND_DIR = Path(__file__).parent.parent
@@ -9,7 +10,7 @@ def _alembic(args: list[str], db_url: str) -> subprocess.CompletedProcess[str]:
     env = os.environ.copy()
     env["DATABASE_URL"] = db_url
     return subprocess.run(
-        ["uv", "run", "alembic", *args],
+        [sys.executable, "-m", "alembic", *args],
         cwd=BACKEND_DIR,
         env=env,
         capture_output=True,

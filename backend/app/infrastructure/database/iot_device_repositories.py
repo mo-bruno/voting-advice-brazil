@@ -77,8 +77,6 @@ class SqlIotDeviceLinkRepository(IotDeviceLinkRepository):
         now: datetime,
     ) -> IotDeviceLink:
         model = self._db.get(IotDeviceLinkModel, device_token)
-        if model is not None and model.anonymous_id != anonymous_id:
-            raise ValueError("device token already linked")
 
         existing_for_anonymous = self._db.execute(
             select(IotDeviceLinkModel).where(

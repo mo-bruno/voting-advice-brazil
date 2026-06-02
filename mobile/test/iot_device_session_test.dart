@@ -10,6 +10,10 @@ class FakeApiClient extends ApiClient {
   String? pairedDeviceToken;
   String? pairedDeviceTokenPrefix;
   String? pairedCode;
+  String? pulseAnonymousId;
+  String? pulseAnswer;
+  int? pulseCurrent;
+  int? pulseTotal;
 
   FakeApiClient() : super(baseUrl: 'https://example.test');
 
@@ -38,6 +42,19 @@ class FakeApiClient extends ApiClient {
       updatedAt: DateTime(2026, 5, 22),
       lastSeenAt: null,
     );
+  }
+
+  @override
+  Future<void> sendQuizPulse({
+    required String anonymousId,
+    required String answer,
+    required int current,
+    required int total,
+  }) async {
+    pulseAnonymousId = anonymousId;
+    pulseAnswer = answer;
+    pulseCurrent = current;
+    pulseTotal = total;
   }
 }
 
@@ -158,5 +175,21 @@ void main() {
 
     expect(session.error, isNotNull);
     expect(session.loading, isFalse);
+  });
+
+  test('sendQuizPulse does not require cached device status', () async {
+    final api = FakeApiClient();
+    final session = IotDeviceSession.testOnly(
+      api: api,
+      deviceIdentityStore: FakeDeviceIdentityStore(),
+    );
+
+    await session.sendQuizPulse(answer: 'agree', current: 3, total: 30);
+
+    expect(session.device, isNull);
+    expect(api.pulseAnonymousId, 'anon-1');
+    expect(api.pulseAnswer, 'agree');
+    expect(api.pulseCurrent, 3);
+    expect(api.pulseTotal, 30);
   });
 }

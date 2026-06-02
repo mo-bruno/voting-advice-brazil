@@ -45,7 +45,9 @@ def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
     return list(latest_by_thesis_id.values())
 
 
-@router.get("/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz")
+@router.get(
+    "/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz"
+)
 def questions(
     themes: list[str] | None = Query(default=None, description="Filtrar por tema(s)"),
     limit: int = Query(default=30, ge=1, le=60),
@@ -106,7 +108,7 @@ def submit(
 
     if body.device_id is not None:
         quiz_response_repo.upsert_answers(str(body.device_id), answers)
-        _push_news_async(str(body.device_id))
+        _push_news_for_quiz_submission(str(body.device_id))
 
     return SubmitQuizResponse(
         results=[
@@ -138,7 +140,7 @@ def submit(
 _log_quiz = logging.getLogger(__name__)
 
 
-def _push_news_async(anonymous_id: str) -> None:
+def _push_news_for_quiz_submission(anonymous_id: str) -> None:
     from datetime import datetime, timezone
 
     from sqlalchemy import select
@@ -156,16 +158,23 @@ def _push_news_async(anonymous_id: str) -> None:
     def _run() -> None:
         try:
             with SessionLocal() as session:
-                rows = session.execute(
-                    select(ThemeModel.slug)
-                    .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
-                    .join(QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id)
-                    .where(
-                        QuizResponseModel.device_id == anonymous_id,
-                        QuizResponseModel.answer.in_(["agree", "disagree"]),
+                rows = (
+                    session.execute(
+                        select(ThemeModel.slug)
+                        .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
+                        .join(
+                            QuizResponseModel,
+                            QuizResponseModel.thesis_id == ThesisModel.id,
+                        )
+                        .where(
+                            QuizResponseModel.device_id == anonymous_id,
+                            QuizResponseModel.answer.in_(["agree", "disagree"]),
+                        )
+                        .distinct()
                     )
-                    .distinct()
-                ).scalars().all()
+                    .scalars()
+                    .all()
+                )
                 themes = list(rows)
 
                 from app.infrastructure.database.iot_device_repositories import (

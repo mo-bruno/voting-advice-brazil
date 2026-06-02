@@ -2,10 +2,12 @@ from datetime import datetime, timezone
 
 from sqlalchemy import (
     JSON,
+    Boolean,
     DateTime,
     ForeignKey,
     Index,
     Integer,
+    SmallInteger,
     String,
     Text,
     UniqueConstraint,
@@ -30,7 +32,9 @@ class PartyModel(Base):
     number: Mapped[int | None] = mapped_column(Integer, nullable=True, unique=True)
     logo_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
     spectrum: Mapped[str | None] = mapped_column(String(32), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
 
     candidates: Mapped[list["CandidateModel"]] = relationship(back_populates="party")
 
@@ -52,15 +56,26 @@ class CandidateModel(Base):
     city: Mapped[str | None] = mapped_column(String(128), nullable=True)
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
     election_round: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
 
     party: Mapped["PartyModel"] = relationship(back_populates="candidates")
-    positions: Mapped[list["CandidatePositionModel"]] = relationship(back_populates="candidate")
-    government_plan: Mapped["GovernmentPlanModel | None"] = relationship(back_populates="candidate", uselist=False)
+    positions: Mapped[list["CandidatePositionModel"]] = relationship(
+        back_populates="candidate"
+    )
+    government_plan: Mapped["GovernmentPlanModel | None"] = relationship(
+        back_populates="candidate", uselist=False
+    )
 
     __table_args__ = (
-        UniqueConstraint("external_id", "office", "election_year", "election_round",
-                         name="uq_candidates_external_office_year_round"),
+        UniqueConstraint(
+            "external_id",
+            "office",
+            "election_year",
+            "election_round",
+            name="uq_candidates_external_office_year_round",
+        ),
         Index("ix_candidates_party_id", "party_id"),
         Index("ix_candidates_office_year_state", "office", "election_year", "state"),
     )
@@ -90,31 +105,43 @@ class ThesisModel(Base):
     theme_id: Mapped[int] = mapped_column(ForeignKey("themes.id"), nullable=False)
     status: Mapped[str] = mapped_column(String(32), nullable=False, default="approved")
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
 
     theme: Mapped["ThemeModel"] = relationship(back_populates="theses")
-    positions: Mapped[list["CandidatePositionModel"]] = relationship(back_populates="thesis")
+    positions: Mapped[list["CandidatePositionModel"]] = relationship(
+        back_populates="thesis"
+    )
 
-    __table_args__ = (Index("ix_theses_theme_status_year", "theme_id", "status", "election_year"),)
+    __table_args__ = (
+        Index("ix_theses_theme_status_year", "theme_id", "status", "election_year"),
+    )
 
 
 class CandidatePositionModel(Base):
     __tablename__ = "candidate_positions"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.id"), nullable=False)
+    candidate_id: Mapped[int] = mapped_column(
+        ForeignKey("candidates.id"), nullable=False
+    )
     thesis_id: Mapped[int] = mapped_column(ForeignKey("theses.id"), nullable=False)
     position: Mapped[str] = mapped_column(String(32), nullable=False)
     justification: Mapped[str | None] = mapped_column(Text, nullable=True)
     quote: Mapped[str | None] = mapped_column(Text, nullable=True)
     source_ref: Mapped[str | None] = mapped_column(String(256), nullable=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
 
     candidate: Mapped["CandidateModel"] = relationship(back_populates="positions")
     thesis: Mapped["ThesisModel"] = relationship(back_populates="positions")
 
     __table_args__ = (
-        UniqueConstraint("candidate_id", "thesis_id", name="uq_positions_candidate_thesis"),
+        UniqueConstraint(
+            "candidate_id", "thesis_id", name="uq_positions_candidate_thesis"
+        ),
         Index("ix_positions_thesis", "thesis_id"),
     )
 
@@ -123,10 +150,14 @@ class GovernmentPlanModel(Base):
     __tablename__ = "government_plans"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
-    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.id"), nullable=False, unique=True)
+    candidate_id: Mapped[int] = mapped_column(
+        ForeignKey("candidates.id"), nullable=False, unique=True
+    )
     source_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
     raw_text: Mapped[str] = mapped_column(Text, nullable=False)
-    extracted_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    extracted_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
     extractor_version: Mapped[str | None] = mapped_column(String(64), nullable=True)
 
     candidate: Mapped["CandidateModel"] = relationship(back_populates="government_plan")
@@ -136,8 +167,12 @@ class DeviceModel(Base):
     __tablename__ = "devices"
 
     id: Mapped[str] = mapped_column(String(36), primary_key=True)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
-    last_seen_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+    last_seen_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
     app_version: Mapped[str | None] = mapped_column(String(32), nullable=True)
     platform: Mapped[str | None] = mapped_column(String(16), nullable=True)
 
@@ -155,7 +190,9 @@ class QuizResponseModel(Base):
     answer: Mapped[str] = mapped_column(String(32), nullable=False)
     weight: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
-    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow, onupdate=_utcnow
     )
@@ -163,8 +200,12 @@ class QuizResponseModel(Base):
     device: Mapped["DeviceModel"] = relationship(back_populates="responses")
 
     __table_args__ = (
-        UniqueConstraint("device_id", "thesis_id", "election_year",
-                         name="uq_responses_device_thesis_year"),
+        UniqueConstraint(
+            "device_id",
+            "thesis_id",
+            "election_year",
+            name="uq_responses_device_thesis_year",
+        ),
         Index("ix_responses_device_year", "device_id", "election_year"),
     )
 
@@ -180,9 +221,7 @@ class PoliticalActorModel(Base):
     party: Mapped[str | None] = mapped_column(String(32), nullable=True)
     state: Mapped[str | None] = mapped_column(String(2), nullable=True)
     role: Mapped[str] = mapped_column(String(64), nullable=False)
-    status: Mapped[str] = mapped_column(
-        String(32), nullable=False, default="active"
-    )
+    status: Mapped[str] = mapped_column(String(32), nullable=False, default="active")
     photo_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
     source_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
     last_indexed_at: Mapped[datetime] = mapped_column(
@@ -198,14 +237,10 @@ class PoliticalActorModel(Base):
     evidence: Mapped[list["OfficialEvidenceModel"]] = relationship(
         back_populates="actor"
     )
-    followers: Mapped[list["FollowedActorModel"]] = relationship(
-        back_populates="actor"
-    )
+    followers: Mapped[list["FollowedActorModel"]] = relationship(back_populates="actor")
 
     __table_args__ = (
-        UniqueConstraint(
-            "source", "source_id", name="uq_political_actors_source_id"
-        ),
+        UniqueConstraint("source", "source_id", name="uq_political_actors_source_id"),
         Index("ix_political_actors_role_state_party", "role", "state", "party"),
         Index("ix_political_actors_normalized_name", "normalized_name"),
     )
@@ -310,7 +345,9 @@ class IotPairingSessionModel(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
-    expires_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    expires_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
     consumed_at: Mapped[datetime | None] = mapped_column(
         DateTime(timezone=True), nullable=True
     )
@@ -361,7 +398,9 @@ class IotDeviceEventModel(Base):
     device_token: Mapped[str] = mapped_column(String(64), nullable=False)
     event_type: Mapped[str] = mapped_column(String(32), nullable=False)
     payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False)
-    published_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    published_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False
+    )
 
     __table_args__ = (
         Index(
@@ -371,3 +410,79 @@ class IotDeviceEventModel(Base):
             "published_at",
         ),
     )
+
+
+class PostModel(Base):
+    __tablename__ = "posts"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    political_actor_id: Mapped[int | None] = mapped_column(
+        Integer, ForeignKey("political_actors.id", ondelete="SET NULL"), nullable=True
+    )
+    theme_slug: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    score: Mapped[int] = mapped_column(Integer, nullable=False, default=0)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    comments: Mapped[list["CommentModel"]] = relationship(
+        back_populates="post", cascade="all, delete-orphan"
+    )
+    votes: Mapped[list["PostVoteModel"]] = relationship(
+        back_populates="post", cascade="all, delete-orphan"
+    )
+
+    __table_args__ = (
+        Index("ix_posts_anonymous_id", "anonymous_id"),
+        Index("ix_posts_score_created", "score", "created_at"),
+        Index("ix_posts_actor_id", "political_actor_id"),
+    )
+
+
+class CommentModel(Base):
+    __tablename__ = "comments"
+
+    id: Mapped[str] = mapped_column(String(36), primary_key=True)
+    post_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("posts.id", ondelete="CASCADE"), nullable=False
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    post: Mapped["PostModel"] = relationship(back_populates="comments")
+
+    __table_args__ = (Index("ix_comments_post_id", "post_id"),)
+
+
+class PostVoteModel(Base):
+    __tablename__ = "post_votes"
+
+    post_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("posts.id", ondelete="CASCADE"), primary_key=True
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    value: Mapped[int] = mapped_column(SmallInteger, nullable=False)
+
+    post: Mapped["PostModel"] = relationship(back_populates="votes")
+
+
+class ModerationLogModel(Base):
+    __tablename__ = "moderation_log"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True, autoincrement=True)
+    post_id: Mapped[str | None] = mapped_column(String(36), nullable=True)
+    anonymous_id: Mapped[str] = mapped_column(String(64), nullable=False)
+    content_hash: Mapped[str] = mapped_column(String(64), nullable=False)
+    approved: Mapped[bool] = mapped_column(Boolean, nullable=False)
+    reason: Mapped[str | None] = mapped_column(Text, nullable=True)
+    model_used: Mapped[str] = mapped_column(String(128), nullable=False)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+    __table_args__ = (Index("ix_moderation_log_post_id", "post_id"),)
