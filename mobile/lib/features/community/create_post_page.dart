@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
+import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
 
@@ -49,35 +50,36 @@ class _CreatePostPageState extends State<CreatePostPage> {
     final charCount = _controller.text.length;
     final canSubmit = charCount > 0 && !_loading;
 
-    return Scaffold(
-      backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: const Text('Nova publicação'),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8),
-            child: TextButton(
-              onPressed: canSubmit ? _submit : null,
-              child: _loading
-                  ? const SizedBox(
-                      width: 16,
-                      height: 16,
-                      child: CircularProgressIndicator(strokeWidth: 2),
-                    )
-                  : Text(
-                      'PUBLICAR',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w700,
-                        letterSpacing: 1.0,
-                        color: canSubmit
-                            ? AppTheme.primary
-                            : AppTheme.onSurfaceVariant,
-                      ),
-                    ),
-            ),
-          ),
-        ],
+    return AppScaffold(
+      title: 'NOVA PUBLICAÇÃO',
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Navigator.pop(context),
       ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 8),
+          child: TextButton(
+            onPressed: canSubmit ? _submit : null,
+            child: _loading
+                ? const SizedBox(
+                    width: 16,
+                    height: 16,
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  )
+                : Text(
+                    'PUBLICAR',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.0,
+                      color: canSubmit
+                          ? AppTheme.primary
+                          : AppTheme.onSurfaceVariant,
+                    ),
+                  ),
+          ),
+        ),
+      ],
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -123,7 +125,8 @@ class _CreatePostPageState extends State<CreatePostPage> {
                   height: 1.5,
                 ),
                 decoration: const InputDecoration(
-                  hintText: 'Compartilhe sua visão sobre política brasileira...',
+                  hintText:
+                      'Compartilhe sua visão sobre política brasileira...',
                   hintStyle: TextStyle(
                     color: AppTheme.onSurfaceVariant,
                     fontSize: 15,
