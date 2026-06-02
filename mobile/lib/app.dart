@@ -21,6 +21,22 @@ class MyApp extends StatelessWidget {
       title: 'Guia Eleitoral',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
+      builder: (context, child) {
+        return SafeArea(
+          child: LayoutBuilder(
+            builder: (context, constraints) {
+              final maxWidth =
+                  constraints.maxWidth > 600 ? 600.0 : constraints.maxWidth;
+              return Center(
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: maxWidth),
+                  child: child ?? const SizedBox.shrink(),
+                ),
+              );
+            },
+          ),
+        );
+      },
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),

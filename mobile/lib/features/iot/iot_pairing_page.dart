@@ -150,6 +150,7 @@ class _IotPairingPageState extends State<IotPairingPage> {
                   controller: _manualCodeController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
+                    labelText: 'Codigo do Farol',
                     hintText: '482 913',
                   ),
                   keyboardType: TextInputType.number,
@@ -161,6 +162,7 @@ class _IotPairingPageState extends State<IotPairingPage> {
                   controller: _manualShortIdController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
+                    labelText: 'ID curto',
                     hintText: '2D90 AE25',
                   ),
                 ),
@@ -181,6 +183,7 @@ class _IotPairingPageState extends State<IotPairingPage> {
                   controller: _qrPayloadController,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
+                    labelText: 'Link do QR',
                     hintText: 'farol://pair?...',
                   ),
                 ),

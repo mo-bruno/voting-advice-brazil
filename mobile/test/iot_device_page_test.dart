@@ -11,7 +11,8 @@ class _StubApiClient extends ApiClient {
   _StubApiClient() : super(baseUrl: 'https://example.test');
 
   @override
-  Future<IotDevice?> fetchIotDevice({required String anonymousId}) async => null;
+  Future<IotDevice?> fetchIotDevice({required String anonymousId}) async =>
+      null;
 }
 
 class _StubIdentityStore extends DeviceIdentityStore {

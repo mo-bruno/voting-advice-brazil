@@ -824,7 +824,7 @@ Esperado: `ok`
 - [ ] **Step 3: Commit**
 
 ```bash
-git add app/infrastructure/llm/ 
+git add app/infrastructure/llm/
 git commit -m "feat(community): ModerationClient Groq + FakeModerationClient para testes"
 ```
 

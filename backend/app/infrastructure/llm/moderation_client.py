@@ -60,7 +60,9 @@ class GroqModerationClient(ModerationPort):
 
         approved = bool(data.get("approved", False))
         reason = str(data.get("reason", ""))[:200]
-        return ModerationResult(approved=approved, reason=reason, model_used=self._model)
+        return ModerationResult(
+            approved=approved, reason=reason, model_used=self._model
+        )
 
 
 class FakeModerationClient(ModerationPort):

@@ -15,7 +15,10 @@ def create_comment(
     if post_repo.get_by_id(post_id) is None:
         return None
     comment = Comment(
-        id=str(uuid.uuid4()), post_id=post_id, anonymous_id=anonymous_id,
-        content=content, created_at=datetime.now(timezone.utc),
+        id=str(uuid.uuid4()),
+        post_id=post_id,
+        anonymous_id=anonymous_id,
+        content=content,
+        created_at=datetime.now(timezone.utc),
     )
     return comment_repo.create(comment)

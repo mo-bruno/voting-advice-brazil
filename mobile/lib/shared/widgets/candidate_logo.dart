@@ -28,6 +28,7 @@ class CandidateLogo extends StatelessWidget {
             ? Image.asset(
                 result.logoAsset,
                 fit: BoxFit.contain,
+                semanticLabel: 'Logo ${result.abbreviation}',
                 errorBuilder: (_, __, ___) => _FallbackLogo(result: result),
               )
             : _FallbackLogo(result: result),

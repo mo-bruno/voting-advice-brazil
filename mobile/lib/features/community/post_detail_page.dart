@@ -388,6 +388,7 @@ class _CommentInput extends StatelessWidget {
                 controller: controller,
                 style: const TextStyle(fontSize: 14, color: AppTheme.onSurface),
                 decoration: const InputDecoration(
+                  labelText: 'Comentario',
                   hintText: 'Adicionar comentário...',
                   hintStyle: TextStyle(
                     color: AppTheme.onSurfaceVariant,
@@ -434,8 +435,7 @@ class _CommentInput extends StatelessWidget {
                     color: controller.text.trim().isEmpty
                         ? AppTheme.onSurfaceVariant
                         : AppTheme.primary,
-                    onPressed:
-                        controller.text.trim().isEmpty ? null : onSend,
+                    onPressed: controller.text.trim().isEmpty ? null : onSend,
                   ),
           ],
         ),

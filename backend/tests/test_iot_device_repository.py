@@ -12,8 +12,12 @@ from app.infrastructure.database.models import (
 TOKEN_000 = "550e8400-e29b-41d4-a716-446655440000"
 TOKEN_001 = "550e8400-e29b-41d4-a716-446655440001"
 NOW = datetime(2026, 5, 22, tzinfo=timezone.utc)
-QR_PAYLOAD_000 = "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440000&pairing_code=111111"
-QR_PAYLOAD_001 = "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440001&pairing_code=222222"
+QR_PAYLOAD_000 = (
+    "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440000&pairing_code=111111"
+)
+QR_PAYLOAD_001 = (
+    "farol://pair?device_token=550e8400-e29b-41d4-a716-446655440001&pairing_code=222222"
+)
 
 
 def _clean(db_session) -> None:

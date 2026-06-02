@@ -119,7 +119,9 @@ def get_vote_repo(db: Session = Depends(get_db)) -> SqlPostVoteRepository:
     return SqlPostVoteRepository(db)
 
 
-def get_moderation_log_repo(db: Session = Depends(get_db)) -> SqlModerationLogRepository:
+def get_moderation_log_repo(
+    db: Session = Depends(get_db),
+) -> SqlModerationLogRepository:
     return SqlModerationLogRepository(db)
 
 

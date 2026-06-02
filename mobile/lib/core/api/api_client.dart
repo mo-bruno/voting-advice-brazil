@@ -257,8 +257,7 @@ class ApiClient {
       queryParameters: {
         'page': '$page',
         'page_size': '$pageSize',
-        if (politicalActorId != null)
-          'political_actor_id': '$politicalActorId',
+        if (politicalActorId != null) 'political_actor_id': '$politicalActorId',
         if (themeSlug != null) 'theme_slug': themeSlug,
       },
     );

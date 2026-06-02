@@ -11,6 +11,8 @@ def vote_post(
 ) -> Post | None:
     if post_repo.get_by_id(post_id) is None:
         return None
-    new_score = vote_repo.upsert(PostVote(post_id=post_id, anonymous_id=anonymous_id, value=value))
+    new_score = vote_repo.upsert(
+        PostVote(post_id=post_id, anonymous_id=anonymous_id, value=value)
+    )
     post_repo.update_score(post_id, new_score)
     return post_repo.get_by_id(post_id)

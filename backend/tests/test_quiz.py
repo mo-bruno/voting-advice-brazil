@@ -31,6 +31,7 @@ class TestEndpointQuestions:
 
     def test_filter_by_theme(self, client, db_session):
         from app.infrastructure.database.models import ThemeModel
+
         seguranca = db_session.query(ThemeModel).filter_by(slug="seguranca").one()
         r = client.get("/api/v1/quiz/questions?themes=seguranca")
         data = r.json()
@@ -57,7 +58,9 @@ class TestEndpointSubmit:
         results = r.json()["results"]
         assert len(results) == 3
 
-    def test_submit_with_device_id_persists_answers(self, client, db_session, thesis_ids):
+    def test_submit_with_device_id_persists_answers(
+        self, client, db_session, thesis_ids
+    ):
         device_id = "550e8400-e29b-41d4-a716-446655440000"
         payload = _agree5(thesis_ids)
 

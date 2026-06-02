@@ -123,7 +123,9 @@ class _CreatePostPageState extends State<CreatePostPage> {
                   height: 1.5,
                 ),
                 decoration: const InputDecoration(
-                  hintText: 'Compartilhe sua visão sobre política brasileira...',
+                  labelText: 'Publicacao',
+                  hintText:
+                      'Compartilhe sua visão sobre política brasileira...',
                   hintStyle: TextStyle(
                     color: AppTheme.onSurfaceVariant,
                     fontSize: 15,

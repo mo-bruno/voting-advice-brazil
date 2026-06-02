@@ -9,5 +9,9 @@ def list_posts(
     political_actor_id: int | None = None,
     theme_slug: str | None = None,
 ) -> tuple[list[Post], int]:
-    return repo.list(page=page, page_size=page_size,
-                     political_actor_id=political_actor_id, theme_slug=theme_slug)
+    return repo.list(
+        page=page,
+        page_size=page_size,
+        political_actor_id=political_actor_id,
+        theme_slug=theme_slug,
+    )

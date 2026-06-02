@@ -85,7 +85,8 @@ class _PostHeader extends StatelessWidget {
         ),
         Text(
           timeAgo(post.createdAt),
-          style: const TextStyle(fontSize: 12, color: AppTheme.onSurfaceVariant),
+          style:
+              const TextStyle(fontSize: 12, color: AppTheme.onSurfaceVariant),
         ),
       ],
     );

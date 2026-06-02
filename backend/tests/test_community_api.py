@@ -140,10 +140,12 @@ def test_vote_replaces_previous(client):
         headers=HEADERS,
     ).json()["id"]
 
-    client.post(f"/api/v1/community/posts/{post_id}/votes",
-                json={"value": 1}, headers=HEADERS)
-    resp = client.post(f"/api/v1/community/posts/{post_id}/votes",
-                       json={"value": -1}, headers=HEADERS)
+    client.post(
+        f"/api/v1/community/posts/{post_id}/votes", json={"value": 1}, headers=HEADERS
+    )
+    resp = client.post(
+        f"/api/v1/community/posts/{post_id}/votes", json={"value": -1}, headers=HEADERS
+    )
     assert resp.json()["score"] == -1
 
 

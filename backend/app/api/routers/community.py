@@ -71,9 +71,13 @@ def create_post_endpoint(
 ) -> PostOut:
     try:
         post, result = moderate_and_create_post(
-            post_repo, log_repo, moderation_client,
-            x_farol_anonymous_id, body.content,
-            body.political_actor_id, body.theme_slug,
+            post_repo,
+            log_repo,
+            moderation_client,
+            x_farol_anonymous_id,
+            body.content,
+            body.political_actor_id,
+            body.theme_slug,
         )
     except ModerationUnavailable:
         raise HTTPException(
@@ -94,12 +98,17 @@ def list_posts_endpoint(
     post_repo: SqlPostRepository = Depends(get_post_repo),
 ) -> PostListResponse:
     posts, total = list_posts(
-        post_repo, page=page, page_size=page_size,
-        political_actor_id=political_actor_id, theme_slug=theme_slug,
+        post_repo,
+        page=page,
+        page_size=page_size,
+        political_actor_id=political_actor_id,
+        theme_slug=theme_slug,
     )
     return PostListResponse(
         posts=[_post_out(p) for p in posts],
-        total_count=total, page=page, page_size=page_size,
+        total_count=total,
+        page=page,
+        page_size=page_size,
         has_next=(page * page_size) < total,
     )
 
@@ -114,7 +123,9 @@ def get_post_endpoint(
     if result is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     post, comments = result
-    return PostDetailOut(post=_post_out(post), comments=[_comment_out(c) for c in comments])
+    return PostDetailOut(
+        post=_post_out(post), comments=[_comment_out(c) for c in comments]
+    )
 
 
 @router.post("/posts/{post_id}/votes", response_model=PostOut)
@@ -143,7 +154,9 @@ def create_comment_endpoint(
     post_repo: SqlPostRepository = Depends(get_post_repo),
     comment_repo: SqlCommentRepository = Depends(get_comment_repo),
 ) -> CommentOut:
-    comment = create_comment(post_repo, comment_repo, post_id, x_farol_anonymous_id, body.content)
+    comment = create_comment(
+        post_repo, comment_repo, post_id, x_farol_anonymous_id, body.content
+    )
     if comment is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     return _comment_out(comment)

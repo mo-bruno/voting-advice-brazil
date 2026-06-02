@@ -210,35 +210,40 @@ class _SelectAllButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        width: double.infinity,
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: isSelected ? AppTheme.primary : AppTheme.surfaceContainer,
-          border: Border.all(
-            color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      label: 'Selecionar todos os partidos',
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          width: double.infinity,
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: isSelected ? AppTheme.primary : AppTheme.surfaceContainer,
+            border: Border.all(
+              color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
+            ),
           ),
-        ),
-        child: Row(
-          children: [
-            Icon(
-              isSelected ? Icons.check_box : Icons.check_box_outline_blank,
-              color: isSelected ? AppTheme.background : AppTheme.onSurface,
-              size: 20,
-            ),
-            const SizedBox(width: 12),
-            Text(
-              'SELECIONAR TODOS',
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w700,
+          child: Row(
+            children: [
+              Icon(
+                isSelected ? Icons.check_box : Icons.check_box_outline_blank,
                 color: isSelected ? AppTheme.background : AppTheme.onSurface,
-                letterSpacing: 0.8,
+                size: 20,
               ),
-            ),
-          ],
+              const SizedBox(width: 12),
+              Text(
+                'SELECIONAR TODOS',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: isSelected ? AppTheme.background : AppTheme.onSurface,
+                  letterSpacing: 0.8,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -263,35 +268,43 @@ class _PartyGrid extends StatelessWidget {
       runSpacing: 12,
       children: parties.map((party) {
         final isSelected = selected.contains(party.id);
-        return GestureDetector(
-          onTap: () => onToggle(party.id),
-          child: Container(
-            width: 80,
-            height: 80,
-            decoration: BoxDecoration(
-              color: isSelected
-                  ? AppTheme.surfaceContainerHigh
-                  : AppTheme.surfaceContainer,
-              border: Border.all(
-                color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
-                width: isSelected ? 2 : 1,
+        return Semantics(
+          button: true,
+          selected: isSelected,
+          label: '${isSelected ? 'Remover' : 'Selecionar'} '
+              '${party.abbreviation}',
+          child: InkWell(
+            onTap: () => onToggle(party.id),
+            child: Container(
+              width: 80,
+              height: 80,
+              decoration: BoxDecoration(
+                color: isSelected
+                    ? AppTheme.surfaceContainerHigh
+                    : AppTheme.surfaceContainer,
+                border: Border.all(
+                  color:
+                      isSelected ? AppTheme.primary : AppTheme.outlineVariant,
+                  width: isSelected ? 2 : 1,
+                ),
               ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.all(8),
-              child: party.hasLogoAsset
-                  ? Image.asset(
-                      party.logoAsset,
-                      fit: BoxFit.contain,
-                      errorBuilder: (_, __, ___) => _PartyFallbackLogo(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: party.hasLogoAsset
+                    ? Image.asset(
+                        party.logoAsset,
+                        fit: BoxFit.contain,
+                        semanticLabel: 'Logo ${party.abbreviation}',
+                        errorBuilder: (_, __, ___) => _PartyFallbackLogo(
+                          party: party,
+                          isSelected: isSelected,
+                        ),
+                      )
+                    : _PartyFallbackLogo(
                         party: party,
                         isSelected: isSelected,
                       ),
-                    )
-                  : _PartyFallbackLogo(
-                      party: party,
-                      isSelected: isSelected,
-                    ),
+              ),
             ),
           ),
         );

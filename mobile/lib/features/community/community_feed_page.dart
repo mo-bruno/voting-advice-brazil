@@ -73,8 +73,8 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
 
   Future<void> _vote(String postId, int value) async {
     if (_anonymousId == null) return;
-    final data = await ApiClient()
-        .votePost(postId, value, anonymousId: _anonymousId!);
+    final data =
+        await ApiClient().votePost(postId, value, anonymousId: _anonymousId!);
     final updated = PostSummary.fromJson(data);
     _session.updatePost(updated);
     if (mounted) setState(() {});
@@ -109,7 +109,8 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.search_rounded, color: AppTheme.onSurfaceVariant),
+            icon: const Icon(Icons.search_rounded,
+                color: AppTheme.onSurfaceVariant),
             onPressed: () {},
           ),
         ],
@@ -221,24 +222,29 @@ class _SortChip extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-          color: selected ? AppTheme.primary : Colors.transparent,
-          border: Border.all(
-            color: selected ? AppTheme.primary : AppTheme.outlineVariant,
+    return Semantics(
+      button: true,
+      selected: selected,
+      child: InkWell(
+        onTap: onTap,
+        borderRadius: BorderRadius.circular(2),
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          decoration: BoxDecoration(
+            color: selected ? AppTheme.primary : Colors.transparent,
+            border: Border.all(
+              color: selected ? AppTheme.primary : AppTheme.outlineVariant,
+            ),
+            borderRadius: BorderRadius.circular(2),
           ),
-          borderRadius: BorderRadius.circular(2),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: selected ? AppTheme.background : AppTheme.onSurfaceVariant,
-            letterSpacing: 0.3,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.w600,
+              color: selected ? AppTheme.background : AppTheme.onSurfaceVariant,
+              letterSpacing: 0.3,
+            ),
           ),
         ),
       ),

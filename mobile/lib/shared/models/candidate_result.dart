@@ -30,7 +30,8 @@ class ThesisMatch {
   }
 
   ThesisAnswer get userAnswerEnum => answerFromApi(userAnswer);
-  ThesisAnswer get candidateAnswerEnum => answerFromCandidate(candidatePosition);
+  ThesisAnswer get candidateAnswerEnum =>
+      answerFromCandidate(candidatePosition);
 
   static ThesisAnswer answerFromApi(String value) {
     switch (value) {

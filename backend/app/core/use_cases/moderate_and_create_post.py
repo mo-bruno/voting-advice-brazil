@@ -21,19 +21,31 @@ def moderate_and_create_post(
 
     if not result.approved:
         log_repo.record(
-            post_id=None, anonymous_id=anonymous_id, content_hash=content_hash,
-            approved=False, reason=result.reason, model_used=result.model_used,
+            post_id=None,
+            anonymous_id=anonymous_id,
+            content_hash=content_hash,
+            approved=False,
+            reason=result.reason,
+            model_used=result.model_used,
         )
         return None, result
 
     post = Post(
-        id=str(uuid.uuid4()), anonymous_id=anonymous_id, content=content,
-        political_actor_id=political_actor_id, theme_slug=theme_slug,
-        score=0, created_at=datetime.now(timezone.utc),
+        id=str(uuid.uuid4()),
+        anonymous_id=anonymous_id,
+        content=content,
+        political_actor_id=political_actor_id,
+        theme_slug=theme_slug,
+        score=0,
+        created_at=datetime.now(timezone.utc),
     )
     saved = post_repo.create(post)
     log_repo.record(
-        post_id=saved.id, anonymous_id=anonymous_id, content_hash=content_hash,
-        approved=True, reason=None, model_used=result.model_used,
+        post_id=saved.id,
+        anonymous_id=anonymous_id,
+        content_hash=content_hash,
+        approved=True,
+        reason=None,
+        model_used=result.model_used,
     )
     return saved, result

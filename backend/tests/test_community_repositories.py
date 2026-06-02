@@ -99,7 +99,9 @@ def test_vote_upsert_replaces_previous(db):
     post_repo.create(_make_post())
     vote_repo = SqlPostVoteRepository(db)
     vote_repo.upsert(PostVote(post_id="post-1", anonymous_id="anon-1", value=1))
-    score = vote_repo.upsert(PostVote(post_id="post-1", anonymous_id="anon-1", value=-1))
+    score = vote_repo.upsert(
+        PostVote(post_id="post-1", anonymous_id="anon-1", value=-1)
+    )
     assert score == -1
 
 
