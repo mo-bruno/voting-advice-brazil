@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
+import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
 import 'create_post_page.dart';
@@ -73,8 +74,8 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
 
   Future<void> _vote(String postId, int value) async {
     if (_anonymousId == null) return;
-    final data = await ApiClient()
-        .votePost(postId, value, anonymousId: _anonymousId!);
+    final data =
+        await ApiClient().votePost(postId, value, anonymousId: _anonymousId!);
     final updated = PostSummary.fromJson(data);
     _session.updatePost(updated);
     if (mounted) setState(() {});
@@ -83,37 +84,22 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   @override
   Widget build(BuildContext context) {
     final feed = _session.feed;
-    return Scaffold(
-      backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Fórum Político',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w800,
-                color: AppTheme.primary,
-              ),
-            ),
-            Text(
-              'discussão anônima',
-              style: TextStyle(
-                fontSize: 11,
-                color: AppTheme.onSurfaceVariant,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search_rounded, color: AppTheme.onSurfaceVariant),
-            onPressed: () {},
-          ),
-        ],
+    return AppScaffold(
+      title: 'FÓRUM POLÍTICO',
+      subtitle: 'discussão anônima',
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Navigator.pop(context),
       ),
+      actions: [
+        IconButton(
+          icon: const Icon(
+            Icons.search_rounded,
+            color: AppTheme.onSurfaceVariant,
+          ),
+          onPressed: () {},
+        ),
+      ],
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () async {
           final created = await Navigator.push<bool>(

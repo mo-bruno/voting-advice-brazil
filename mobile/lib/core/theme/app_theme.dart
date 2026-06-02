@@ -1,3 +1,10 @@
+// lib/core/theme/app_theme.dart
+//
+// Configuração visual centralizada do app (tema escuro). Reúne num só lugar as
+// cores, a tipografia e os estilos dos componentes (botões, cards, AppBar...),
+// evitando estilos espalhados pelas telas e garantindo consistência. Aplica a
+// separação entre estrutura, conteúdo e estilo ensinada em aula.
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

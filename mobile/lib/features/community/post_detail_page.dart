@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
+import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
 import 'models/community_models.dart';
@@ -81,18 +82,23 @@ class _PostDetailPageState extends State<PostDetailPage> {
   @override
   Widget build(BuildContext context) {
     if (_loading) {
-      return const Scaffold(body: Center(child: CircularProgressIndicator()));
+      return AppScaffold(
+        title: 'COMENTÁRIOS',
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+        body: const Center(child: CircularProgressIndicator()),
+      );
     }
     final post = _detail!.post;
     final comments = _detail!.comments;
 
-    return Scaffold(
-      backgroundColor: AppTheme.background,
-      appBar: AppBar(
-        title: Text(
-          '${comments.length} comentário${comments.length != 1 ? 's' : ''}',
-          style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-        ),
+    return AppScaffold(
+      title: '${comments.length} COMENTÁRIO${comments.length != 1 ? 'S' : ''}',
+      leading: IconButton(
+        icon: const Icon(Icons.arrow_back),
+        onPressed: () => Navigator.pop(context),
       ),
       body: Column(
         children: [
@@ -434,8 +440,7 @@ class _CommentInput extends StatelessWidget {
                     color: controller.text.trim().isEmpty
                         ? AppTheme.onSurfaceVariant
                         : AppTheme.primary,
-                    onPressed:
-                        controller.text.trim().isEmpty ? null : onSend,
+                    onPressed: controller.text.trim().isEmpty ? null : onSend,
                   ),
           ],
         ),
