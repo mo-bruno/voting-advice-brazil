@@ -28,20 +28,7 @@ class AppScaffold extends StatelessWidget {
         leading: leading,
         centerTitle: false,
       ),
-      body: SafeArea(
-        child: LayoutBuilder(
-          builder: (context, constraints) {
-            final maxWidth =
-                constraints.maxWidth > 600 ? 600.0 : constraints.maxWidth;
-            return Center(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: maxWidth),
-                child: body,
-              ),
-            );
-          },
-        ),
-      ),
+      body: body,
     );
   }
 }
