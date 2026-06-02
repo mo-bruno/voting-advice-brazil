@@ -9,6 +9,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../shared/widgets/app_drawer.dart';
+
 class AppScaffold extends StatelessWidget {
   final String title;
   final String? subtitle;
@@ -36,6 +38,8 @@ class AppScaffold extends StatelessWidget {
     );
 
     return Scaffold(
+      // Menu lateral global compartilhado por todas as telas.
+      drawer: const AppDrawer(),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: subtitle == null
@@ -48,7 +52,17 @@ class AppScaffold extends StatelessWidget {
                   Text(subtitle!, style: Theme.of(context).textTheme.bodySmall),
                 ],
               ),
-        leading: leading,
+        // Quando a tela não traz um botão próprio (ex.: voltar), exibimos o
+        // ícone "hamburguer" que abre o menu lateral. O Builder garante um
+        // contexto abaixo do Scaffold, exigido por Scaffold.of(context).
+        leading: leading ??
+            Builder(
+              builder: (context) => IconButton(
+                icon: const Icon(Icons.menu),
+                tooltip: 'Abrir menu',
+                onPressed: () => Scaffold.of(context).openDrawer(),
+              ),
+            ),
         actions: actions,
         centerTitle: false,
       ),

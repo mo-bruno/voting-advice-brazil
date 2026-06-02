@@ -6,7 +6,7 @@ import '../../core/analytics/analytics_service.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/political_actor_session.dart';
 import '../../shared/quiz_session.dart';
-import '../community/community_feed_page.dart';
+import '../../shared/widgets/app_drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -29,6 +29,9 @@ class _HomePageState extends State<HomePage> {
     final textTheme = Theme.of(context).textTheme;
 
     return Scaffold(
+      // Menu lateral global; o botão de menu abaixo dá acesso a ele a partir
+      // desta tela inicial, que não possui AppBar.
+      drawer: const AppDrawer(),
       body: Container(
         width: double.infinity,
         height: double.infinity,
@@ -42,139 +45,148 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
-        // A área segura e o limite de largura responsivo são aplicados
-        // globalmente pelo `builder` do MaterialApp (ver app.dart); aqui a tela
-        // cuida apenas do seu conteúdo.
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: MediaQuery.sizeOf(context).height * 0.1,
-                ),
-                Text(
-                  'FAROL\nPOLÍTICO',
-                  style: textTheme.displayLarge?.copyWith(
-                    fontSize: 52,
-                    height: 0.95,
-                    letterSpacing: 2,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 8),
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 16,
-                    vertical: 4,
-                  ),
-                  decoration: BoxDecoration(
-                    border: Border.all(
-                      color: AppTheme.primary,
-                      width: 1,
+        child: Stack(
+          children: [
+            // A área segura e o limite de largura responsivo são aplicados
+            // globalmente pelo `builder` do MaterialApp (ver app.dart); aqui a
+            // tela cuida apenas do seu conteúdo.
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 32),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: MediaQuery.sizeOf(context).height * 0.1,
                     ),
-                  ),
-                  child: Text(
-                    'BRASIL 2026',
-                    style: textTheme.titleLarge?.copyWith(
-                      letterSpacing: 4,
+                    Text(
+                      'FAROL\nPOLÍTICO',
+                      style: textTheme.displayLarge?.copyWith(
+                        fontSize: 52,
+                        height: 0.95,
+                        letterSpacing: 2,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                  ),
-                ),
-                const SizedBox(height: 48),
-                SizedBox(
-                  width: double.infinity,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (QuizSession.instance.hasStartedFlow) {
-                        unawaited(
-                          AnalyticsService().quizRestarted(),
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          color: AppTheme.primary,
+                          width: 1,
+                        ),
+                      ),
+                      child: Text(
+                        'BRASIL 2026',
+                        style: textTheme.titleLarge?.copyWith(
+                          letterSpacing: 4,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    SizedBox(
+                      width: double.infinity,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (QuizSession.instance.hasStartedFlow) {
+                            unawaited(
+                              AnalyticsService().quizRestarted(),
+                            );
+                          }
+                          QuizSession.instance.resetQuiz();
+                          Navigator.pushNamed(context, '/quiz-intro');
+                        },
+                        child: const Text('COMEÇAR'),
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                    AnimatedBuilder(
+                      animation: _politicalActorSession,
+                      builder: (context, _) {
+                        final followed = _politicalActorSession.followedActor;
+                        return SizedBox(
+                          width: double.infinity,
+                          child: OutlinedButton(
+                            onPressed: () {
+                              if (followed == null) {
+                                Navigator.pushNamed(
+                                  context,
+                                  '/political-actors',
+                                );
+                                return;
+                              }
+                              Navigator.pushNamed(
+                                context,
+                                '/political-actor-profile',
+                                arguments: followed,
+                              );
+                            },
+                            child: Text(
+                              followed == null
+                                  ? 'ACOMPANHAR POLITICO'
+                                  : 'VER POLITICO ACOMPANHADO',
+                            ),
+                          ),
                         );
-                      }
-                      QuizSession.instance.resetQuiz();
-                      Navigator.pushNamed(context, '/quiz-intro');
-                    },
-                    child: const Text('COMEÇAR'),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                AnimatedBuilder(
-                  animation: _politicalActorSession,
-                  builder: (context, _) {
-                    final followed = _politicalActorSession.followedActor;
-                    return SizedBox(
+                      },
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
                       width: double.infinity,
                       child: OutlinedButton(
                         onPressed: () {
-                          if (followed == null) {
-                            Navigator.pushNamed(
-                              context,
-                              '/political-actors',
-                            );
-                            return;
-                          }
-                          Navigator.pushNamed(
-                            context,
-                            '/political-actor-profile',
-                            arguments: followed,
-                          );
+                          Navigator.pushNamed(context, '/iot-device');
                         },
-                        child: Text(
-                          followed == null
-                              ? 'ACOMPANHAR POLITICO'
-                              : 'VER POLITICO ACOMPANHADO',
-                        ),
+                        child: const Text('MEU FAROL'),
                       ),
-                    );
-                  },
+                    ),
+                    const SizedBox(height: 12),
+                    SizedBox(
+                      width: double.infinity,
+                      child: OutlinedButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/comunidade');
+                        },
+                        child: const Text('COMUNIDADE'),
+                      ),
+                    ),
+                    const SizedBox(height: 48),
+                    Text(
+                      'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',
+                      style: textTheme.bodyMedium?.copyWith(
+                        letterSpacing: 0.5,
+                        height: 1.5,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 64),
+                    Text(
+                      'PROJETO ACADÊMICO',
+                      style: textTheme.labelMedium,
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 24),
+                    const _PartnersGrid(),
+                    const SizedBox(height: 48),
+                  ],
                 ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/iot-device');
-                    },
-                    child: const Text('MEU FAROL'),
-                  ),
-                ),
-                const SizedBox(height: 12),
-                SizedBox(
-                  width: double.infinity,
-                  child: OutlinedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => const CommunityFeedPage(),
-                        ),
-                      );
-                    },
-                    child: const Text('COMUNIDADE'),
-                  ),
-                ),
-                const SizedBox(height: 48),
-                Text(
-                  'Uma ferramenta interativa que ajuda você a identificar quais posições políticas estão mais alinhadas às suas opiniões.',
-                  style: textTheme.bodyMedium?.copyWith(
-                    letterSpacing: 0.5,
-                    height: 1.5,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 64),
-                Text(
-                  'PROJETO ACADÊMICO',
-                  style: textTheme.labelMedium,
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 24),
-                const _PartnersGrid(),
-                const SizedBox(height: 48),
-              ],
+              ),
             ),
-          ),
+            Builder(
+              builder: (context) => Align(
+                alignment: Alignment.topLeft,
+                child: IconButton(
+                  icon: const Icon(Icons.menu, color: AppTheme.onSurface),
+                  tooltip: 'Abrir menu',
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

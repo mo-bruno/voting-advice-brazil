@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/theme/app_theme.dart';
+import 'features/community/community_feed_page.dart';
 import 'features/comparison/comparison_page.dart';
 import 'features/home/home_page.dart';
 import 'features/party_selection/party_selection_page.dart';
@@ -62,6 +63,7 @@ class MyApp extends StatelessWidget {
             const PoliticalActorProfilePage(),
         '/iot-device': (context) => const IotDevicePage(),
         '/iot-pairing': (context) => const IotPairingPage(),
+        '/comunidade': (context) => const CommunityFeedPage(),
       },
     );
   }
