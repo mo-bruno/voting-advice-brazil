@@ -66,7 +66,8 @@ class _IotDevicePageState extends State<IotDevicePage> {
                     ],
                   ),
                   const SizedBox(height: 24),
-                  if (_session.loading) const LinearProgressIndicator(minHeight: 2),
+                  if (_session.loading)
+                    const LinearProgressIndicator(minHeight: 2),
                   if (_session.error != null)
                     Padding(
                       padding: const EdgeInsets.only(top: 12),
@@ -235,7 +236,9 @@ class _LastEventCard extends StatelessWidget {
             child: Text(
               event.alignmentLabel,
               style: textTheme.labelLarge!.copyWith(
-                color: event.alignment == 'divergent' ? Colors.white : Colors.black,
+                color: event.alignment == 'divergent'
+                    ? Colors.white
+                    : Colors.black,
               ),
             ),
           ),

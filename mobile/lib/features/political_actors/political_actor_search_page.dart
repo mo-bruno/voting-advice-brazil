@@ -116,6 +116,7 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
                 controller: _controller,
                 onChanged: _search,
                 decoration: const InputDecoration(
+                  labelText: 'Busca',
                   hintText: 'Busque por nome, partido ou estado',
                   border: OutlineInputBorder(),
                 ),

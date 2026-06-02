@@ -236,55 +236,68 @@ class _ThemeWeightCard extends StatelessWidget {
                 const SizedBox(width: 12),
                 Row(
                   children: [
-                    GestureDetector(
-                      onTap: onToggle,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 10,
-                          vertical: 6,
-                        ),
-                        decoration: BoxDecoration(
-                          color: thesis.doubleWeight
-                              ? AppTheme.primary
-                              : Colors.transparent,
-                          border: Border.all(
+                    Semantics(
+                      button: true,
+                      selected: thesis.doubleWeight,
+                      label: thesis.doubleWeight
+                          ? 'Remover peso duplo'
+                          : 'Adicionar peso duplo',
+                      child: InkWell(
+                        onTap: onToggle,
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                            vertical: 6,
+                          ),
+                          decoration: BoxDecoration(
                             color: thesis.doubleWeight
                                 ? AppTheme.primary
-                                : AppTheme.outlineVariant,
+                                : Colors.transparent,
+                            border: Border.all(
+                              color: thesis.doubleWeight
+                                  ? AppTheme.primary
+                                  : AppTheme.outlineVariant,
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          'x2',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: thesis.doubleWeight
-                                ? AppTheme.background
-                                : AppTheme.onSurface,
+                          child: Text(
+                            'x2',
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w700,
+                              color: thesis.doubleWeight
+                                  ? AppTheme.background
+                                  : AppTheme.onSurface,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     const SizedBox(width: 8),
-                    GestureDetector(
-                      onTap: onEdit,
-                      child: Container(
-                        padding: const EdgeInsets.all(7),
-                        decoration: BoxDecoration(
-                          color:
-                              isEditing ? AppTheme.primary : Colors.transparent,
-                          border: Border.all(
+                    Semantics(
+                      button: true,
+                      selected: isEditing,
+                      label: 'Editar resposta',
+                      child: InkWell(
+                        onTap: onEdit,
+                        child: Container(
+                          padding: const EdgeInsets.all(7),
+                          decoration: BoxDecoration(
                             color: isEditing
                                 ? AppTheme.primary
-                                : AppTheme.outlineVariant,
+                                : Colors.transparent,
+                            border: Border.all(
+                              color: isEditing
+                                  ? AppTheme.primary
+                                  : AppTheme.outlineVariant,
+                            ),
                           ),
-                        ),
-                        child: Icon(
-                          Icons.edit,
-                          size: 16,
-                          color: isEditing
-                              ? AppTheme.background
-                              : AppTheme.onSurface,
+                          child: Icon(
+                            Icons.edit,
+                            size: 16,
+                            color: isEditing
+                                ? AppTheme.background
+                                : AppTheme.onSurface,
+                          ),
                         ),
                       ),
                     ),

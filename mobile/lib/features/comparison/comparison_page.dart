@@ -271,39 +271,45 @@ class _CandidateSelectionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return GestureDetector(
-      onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: AppTheme.surfaceContainer,
-          border: Border.all(
-            color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
-            width: isSelected ? 2 : 1,
+    return Semantics(
+      button: true,
+      selected: isSelected,
+      label: '${isSelected ? 'Remover' : 'Selecionar'} ${result.name}',
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          padding: const EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: AppTheme.surfaceContainer,
+            border: Border.all(
+              color: isSelected ? AppTheme.primary : AppTheme.outlineVariant,
+              width: isSelected ? 2 : 1,
+            ),
           ),
-        ),
-        child: Row(
-          children: [
-            CandidateLogo(result: result, size: 42),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(result.name, style: textTheme.titleMedium),
-                  const SizedBox(height: 4),
-                  Text(
-                    '${result.abbreviation} - ${result.scorePercent.toStringAsFixed(1)}%',
-                    style: textTheme.bodySmall,
-                  ),
-                ],
+          child: Row(
+            children: [
+              CandidateLogo(result: result, size: 42),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(result.name, style: textTheme.titleMedium),
+                    const SizedBox(height: 4),
+                    Text(
+                      '${result.abbreviation} - ${result.scorePercent.toStringAsFixed(1)}%',
+                      style: textTheme.bodySmall,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Icon(
-              isSelected ? Icons.check_box : Icons.check_box_outline_blank,
-              color: isSelected ? AppTheme.primary : AppTheme.onSurfaceVariant,
-            ),
-          ],
+              Icon(
+                isSelected ? Icons.check_box : Icons.check_box_outline_blank,
+                color:
+                    isSelected ? AppTheme.primary : AppTheme.onSurfaceVariant,
+              ),
+            ],
+          ),
         ),
       ),
     );
