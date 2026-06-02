@@ -19,6 +19,9 @@ import 'features/weighting/weighting_page.dart';
 /// onde a tela é mais estreita, usa-se a largura total disponível.
 const double kMaxContentWidth = 600;
 
+/// Configuração global da aplicação: tema, rotas nomeadas e a camada de layout
+/// aplicada a todas as telas (ver `builder`). Mantém a configuração separada do
+/// ponto de entrada (main.dart).
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
