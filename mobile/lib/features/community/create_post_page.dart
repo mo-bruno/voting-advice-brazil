@@ -37,9 +37,21 @@ class _CreatePostPageState extends State<CreatePostPage> {
       CommunitySession().invalidate();
       if (mounted) Navigator.pop(context, true);
     } catch (e) {
-      setState(() => _error = e.toString().contains('422')
-          ? 'Post rejeitado pela moderação. Revise o conteúdo e tente novamente.'
-          : 'Erro ao publicar. Verifique sua conexão e tente novamente.');
+      setState(() {
+        final texto = e.toString();
+        if (texto.contains('429')) {
+          _error = 'Você publicou demais nos últimos minutos. '
+              'Aguarde alguns instantes.';
+        } else if (texto.contains('422')) {
+          _error = 'Post rejeitado pela moderação. '
+              'Revise o conteúdo e tente novamente.';
+        } else if (texto.contains('503')) {
+          _error = 'A moderação está indisponível no momento. '
+              'Tente novamente em instantes.';
+        } else {
+          _error = 'Erro ao publicar. Verifique sua conexão e tente novamente.';
+        }
+      });
     } finally {
       if (mounted) setState(() => _loading = false);
     }

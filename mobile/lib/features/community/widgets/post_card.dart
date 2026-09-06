@@ -14,13 +14,28 @@ class PostCard extends StatelessWidget {
   /// ainda estava rodando.
   final bool votePending;
 
+  /// Usado para decidir se o post e do proprio dispositivo — e portanto se a
+  /// acao de apagar aparece.
+  final String? currentAnonymousId;
+  final VoidCallback? onDelete;
+  final VoidCallback? onReport;
+
   const PostCard({
     super.key,
     required this.post,
     required this.onTap,
     this.onVote,
     this.votePending = false,
+    this.currentAnonymousId,
+    this.onDelete,
+    this.onReport,
   });
+
+  bool get _isMine =>
+      currentAnonymousId != null && post.anonymousId == currentAnonymousId;
+
+  bool get _hasActions =>
+      !post.removed && (onReport != null || (onDelete != null && _isMine));
 
   @override
   Widget build(BuildContext context) {
@@ -32,14 +47,54 @@ class PostCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _PostHeader(post: post),
-            const SizedBox(height: 10),
-            Text(
-              post.content,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: Theme.of(context).textTheme.bodyMedium,
+            Row(
+              children: [
+                Expanded(child: _PostHeader(post: post)),
+                if (_hasActions)
+                  PopupMenuButton<String>(
+                    icon: const Icon(
+                      Icons.more_vert,
+                      size: 18,
+                      color: AppTheme.onSurfaceVariant,
+                    ),
+                    padding: EdgeInsets.zero,
+                    color: AppTheme.surfaceContainerHigh,
+                    onSelected: (v) {
+                      if (v == 'report') onReport?.call();
+                      if (v == 'delete') onDelete?.call();
+                    },
+                    itemBuilder: (_) => [
+                      if (onReport != null)
+                        const PopupMenuItem(
+                          value: 'report',
+                          child: Text('Denunciar'),
+                        ),
+                      if (onDelete != null && _isMine)
+                        const PopupMenuItem(
+                          value: 'delete',
+                          child: Text('Apagar'),
+                        ),
+                    ],
+                  ),
+              ],
             ),
+            const SizedBox(height: 10),
+            if (post.removed)
+              Text(
+                post.tombstoneLabel,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontStyle: FontStyle.italic,
+                  color: AppTheme.onSurfaceVariant,
+                ),
+              )
+            else
+              Text(
+                post.content,
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
             if (post.themeSlug != null) ...[
               const SizedBox(height: 8),
               _ThemeTag(slug: post.themeSlug!),

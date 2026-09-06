@@ -376,6 +376,38 @@ class ApiClient {
     return '$baseUrl/news/image?url=${Uri.encodeQueryComponent(original)}';
   }
 
+
+  Future<void> reportPost(
+    String postId, {
+    required String reason,
+    String? detail,
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/reports');
+    final response = await _client.post(
+      uri,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Farol-Anonymous-Id': anonymousId,
+      },
+      body: jsonEncode({'reason': reason, if (detail != null) 'detail': detail}),
+    );
+    if (response.statusCode >= 400) {
+      throw ApiException('Erro ${response.statusCode} ao denunciar.');
+    }
+  }
+
+  Future<void> deletePost(String postId, {required String anonymousId}) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId');
+    final response = await _client.delete(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    if (response.statusCode >= 400) {
+      throw ApiException('Erro ${response.statusCode} ao remover o post.');
+    }
+  }
+
 }
 
 /// Resposta de `GET /news/weekly`: o recorte e os artigos.

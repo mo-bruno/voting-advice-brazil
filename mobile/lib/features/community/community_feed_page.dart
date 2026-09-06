@@ -128,6 +128,64 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     }
   }
 
+  Future<void> _reportPost(String postId) async {
+    final id = _anonymousId;
+    if (id == null) return;
+    final motivo = await showModalBottomSheet<String>(
+      context: context,
+      backgroundColor: AppTheme.surface,
+      builder: (_) => const _ReportSheet(),
+    );
+    if (motivo == null) return;
+    try {
+      await _api.reportPost(postId, reason: motivo, anonymousId: id);
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Denúncia registrada. Obrigado.')),
+      );
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Não foi possível enviar a denúncia.')),
+      );
+    }
+  }
+
+  Future<void> _deletePost(String postId) async {
+    final id = _anonymousId;
+    if (id == null) return;
+    final confirmar = await showDialog<bool>(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: AppTheme.surface,
+        title: const Text('Apagar este post?'),
+        content: const Text(
+          'O texto some, mas os comentários das outras pessoas continuam.',
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, false),
+            child: const Text('CANCELAR'),
+          ),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx, true),
+            child: const Text('APAGAR'),
+          ),
+        ],
+      ),
+    );
+    if (confirmar != true) return;
+    try {
+      await _api.deletePost(postId, anonymousId: id);
+      await _loadPage(1);
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Não foi possível apagar o post.')),
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final feed = _session.feed;
@@ -213,6 +271,9 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                                 final post = feed[index];
                                 return PostCard(
                                   post: post,
+                                  currentAnonymousId: _anonymousId,
+                                  onReport: () => _reportPost(post.id),
+                                  onDelete: () => _deletePost(post.id),
                                   onTap: () async {
                                     await Navigator.push(
                                       context,
@@ -357,6 +418,48 @@ class _FeedMessage extends StatelessWidget {
             ],
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ReportSheet extends StatelessWidget {
+  const _ReportSheet();
+
+  static const _motivos = <String, String>{
+    'desinformacao': 'Desinformação',
+    'discurso_de_odio': 'Discurso de ódio',
+    'spam': 'Spam',
+    'outro': 'Outro',
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'POR QUE DENUNCIAR?',
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w700,
+                letterSpacing: 1.2,
+                color: AppTheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          for (final e in _motivos.entries)
+            ListTile(
+              title: Text(
+                e.value,
+                style: const TextStyle(color: AppTheme.onSurface),
+              ),
+              onTap: () => Navigator.pop(context, e.key),
+            ),
+        ],
       ),
     );
   }
