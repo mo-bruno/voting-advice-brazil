@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
 import '../../shared/models/iot_device.dart';
+import '../../shared/models/news_article.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
 import '../../shared/models/political_actor.dart';
@@ -353,4 +354,25 @@ class ApiClient {
     }
     throw ApiException('Erro ${response.statusCode} ao conectar com a API.');
   }
+
+  Future<WeeklyNews> fetchWeeklyNews({int limit = 10}) async {
+    final uri = Uri.parse('$baseUrl/news/weekly?limit=$limit');
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return WeeklyNews(
+      periodLabel: json['period_label'] as String? ?? '',
+      articles: (json['articles'] as List<dynamic>)
+          .cast<Map<String, dynamic>>()
+          .map(NewsArticle.fromJson)
+          .toList(),
+    );
+  }
+
+}
+
+/// Resposta de `GET /news/weekly`: o recorte e os artigos.
+class WeeklyNews {
+  const WeeklyNews({required this.periodLabel, required this.articles});
+
+  final String periodLabel;
+  final List<NewsArticle> articles;
 }
