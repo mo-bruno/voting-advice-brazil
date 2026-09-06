@@ -5,6 +5,7 @@ from app.core.config import settings
 from app.infrastructure.database.community_repositories import (
     SqlCommentRepository,
     SqlModerationLogRepository,
+    SqlPostReportRepository,
     SqlPostRepository,
     SqlPostVoteRepository,
 )
@@ -30,6 +31,7 @@ from app.infrastructure.llm.moderation_client import (
     FakeModerationClient,
     GroqModerationClient,
     ModerationPort,
+    UnavailableModerationClient,
 )
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
 from app.infrastructure.sources.camara import (
@@ -125,10 +127,19 @@ def get_moderation_log_repo(db: Session = Depends(get_db)) -> SqlModerationLogRe
 
 
 def get_moderation_client() -> ModerationPort:
+    # Fecha por padrao: sem chave e em enforce, o UnavailableModerationClient
+    # levanta ModerationUnavailable e o router devolve 503 — o mesmo caminho do
+    # Groq fora do ar. Aprovar em silencio so acontece por declaracao explicita.
+    if settings.moderation_mode == "disabled":
+        return FakeModerationClient(approved=True)
     if settings.groq_api_key:
         return GroqModerationClient(settings.groq_api_key)
-    return FakeModerationClient(approved=True)
+    return UnavailableModerationClient()
 
 
 def get_weekly_news_source() -> CamaraNewsSource:
     return CamaraNewsSource()
+
+
+def get_post_report_repo(db: Session = Depends(get_db)) -> SqlPostReportRepository:
+    return SqlPostReportRepository(db)

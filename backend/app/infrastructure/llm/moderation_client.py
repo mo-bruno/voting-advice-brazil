@@ -24,7 +24,11 @@ _TIMEOUT = 10.0
 
 class ModerationPort(ABC):
     @abstractmethod
-    def moderate(self, content: str) -> ModerationResult: ...
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult: ...
 
 
 class GroqModerationClient(ModerationPort):
@@ -32,13 +36,27 @@ class GroqModerationClient(ModerationPort):
         self._api_key = api_key
         self._model = model
 
-    def moderate(self, content: str) -> ModerationResult:
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult:
+        user_content = content[:1000]
+        if report_reasons:
+            # So os motivos enumerados entram aqui. Texto livre de terceiros num
+            # prompt e vetor de injecao.
+            motivos = ", ".join(sorted(set(report_reasons)))
+            user_content = (
+                user_content
+                + "\n\n[Este texto foi denunciado por outros usuários. "
+                + f"Motivos alegados: {motivos}. Reavalie com atenção.]"
+            )
         payload = {
             "model": self._model,
             "temperature": 0,
             "messages": [
                 {"role": "system", "content": _SYSTEM_PROMPT},
-                {"role": "user", "content": content[:1000]},
+                {"role": "user", "content": user_content},
             ],
         }
         try:
@@ -70,7 +88,11 @@ class FakeModerationClient(ModerationPort):
         self._approved = approved
         self._reason = reason
 
-    def moderate(self, content: str) -> ModerationResult:
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult:
         return ModerationResult(
             approved=self._approved,
             reason=self._reason,
@@ -80,3 +102,18 @@ class FakeModerationClient(ModerationPort):
 
 class ModerationUnavailable(Exception):
     """Raised when Groq is unreachable or returns an unparseable response."""
+
+
+class UnavailableModerationClient(ModerationPort):
+    """Usado quando `MODERATION_MODE=enforce` e nao ha chave configurada.
+
+    Levanta a mesma excecao do Groq fora do ar, de proposito: assim o 503 que o
+    router ja trata cobre os dois casos, sem ramo novo.
+    """
+
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult:
+        raise ModerationUnavailable("Moderacao exigida mas nao configurada.")
