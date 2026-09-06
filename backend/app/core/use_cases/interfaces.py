@@ -198,7 +198,12 @@ class IotDeviceEventRepository(ABC):
 
 # ── Community ──────────────────────────────────────────────────────────────
 
-from app.core.entities.community import Comment, Post, PostVote  # noqa: E402
+from app.core.entities.community import (  # noqa: E402
+    Comment,
+    Post,
+    PostReport,
+    PostVote,
+)
 
 
 class PostRepository(ABC):
@@ -220,6 +225,12 @@ class PostRepository(ABC):
     @abstractmethod
     def update_score(self, post_id: str, new_score: int) -> None: ...
 
+    @abstractmethod
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int: ...
+
+    @abstractmethod
+    def mark_removed(self, post_id: str, removed_by: str, now: datetime) -> None: ...
+
 
 class CommentRepository(ABC):
     @abstractmethod
@@ -235,6 +246,17 @@ class PostVoteRepository(ABC):
 
     @abstractmethod
     def get(self, post_id: str, anonymous_id: str) -> PostVote | None: ...
+
+
+class PostReportRepository(ABC):
+    @abstractmethod
+    def upsert(self, report: PostReport) -> None: ...
+
+    @abstractmethod
+    def count_distinct_reporters(self, post_id: str) -> int: ...
+
+    @abstractmethod
+    def reasons_for_post(self, post_id: str) -> list[str]: ...
 
 
 class ModerationLogRepository(ABC):
