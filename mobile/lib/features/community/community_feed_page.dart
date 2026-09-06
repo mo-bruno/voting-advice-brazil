@@ -56,20 +56,28 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   Future<void> _loadPage(int page) async {
     if (_anonymousId == null) return;
     setState(() => _loading = true);
-    final data = await ApiClient().listPosts(
-      anonymousId: _anonymousId!,
-      page: page,
-    );
-    final posts = (data['posts'] as List)
-        .map((p) => PostSummary.fromJson(p as Map<String, dynamic>))
-        .toList();
-    final hasNext = data['has_next'] as bool;
-    if (page == 1) {
-      _session.setFeed(posts, hasMore: hasNext, page: page);
-    } else {
-      _session.appendFeed(posts, hasMore: hasNext, page: page);
+    try {
+      final data = await ApiClient().listPosts(
+        anonymousId: _anonymousId!,
+        page: page,
+      );
+      final posts = (data['posts'] as List)
+          .map((p) => PostSummary.fromJson(p as Map<String, dynamic>))
+          .toList();
+      final hasNext = data['has_next'] as bool;
+      if (page == 1) {
+        _session.setFeed(posts, hasMore: hasNext, page: page);
+      } else {
+        _session.appendFeed(posts, hasMore: hasNext, page: page);
+      }
+    } catch (_) {
+      // Sem isto a excecao escapava como erro assincrono nao tratado: o
+      // `_loading` ficava true para sempre e o usuario via um spinner eterno,
+      // sem mensagem e sem como tentar de novo. Aqui so paramos o spinner —
+      // desenhar um estado de erro proprio e trabalho a parte.
+    } finally {
+      if (mounted) setState(() => _loading = false);
     }
-    if (mounted) setState(() => _loading = false);
   }
 
   Future<void> _vote(String postId, int value) async {
@@ -87,10 +95,6 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     return AppScaffold(
       title: 'FÓRUM POLÍTICO',
       subtitle: 'discussão anônima',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Navigator.pop(context),
-      ),
       actions: [
         IconButton(
           icon: const Icon(
