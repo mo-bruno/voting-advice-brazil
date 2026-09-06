@@ -1,12 +1,22 @@
+from datetime import datetime, timezone
 from typing import Annotated
 
-from fastapi import APIRouter, Depends, Header, HTTPException, Query, status
+from fastapi import (
+    APIRouter,
+    Depends,
+    Header,
+    HTTPException,
+    Query,
+    Response,
+    status,
+)
 
 from app.api.deps import (
     get_comment_repo,
     get_moderation_client,
     get_moderation_log_repo,
     get_post_repo,
+    get_post_report_repo,
     get_vote_repo,
 )
 from app.api.schemas.community import (
@@ -16,6 +26,7 @@ from app.api.schemas.community import (
     PostIn,
     PostListResponse,
     PostOut,
+    ReportIn,
     VoteIn,
 )
 from app.core.entities.community import Comment, Post
@@ -23,10 +34,18 @@ from app.core.use_cases.create_comment import create_comment
 from app.core.use_cases.get_post import get_post
 from app.core.use_cases.list_posts import list_posts
 from app.core.use_cases.moderate_and_create_post import moderate_and_create_post
+from app.core.use_cases.post_rate_limit import (
+    WINDOW,
+    PostRateLimitExceeded,
+    check_post_rate_limit,
+)
+from app.core.use_cases.remove_post import NotThePostAuthorError, remove_own_post
+from app.core.use_cases.report_post import report_post
 from app.core.use_cases.vote_post import vote_post
 from app.infrastructure.database.community_repositories import (
     SqlCommentRepository,
     SqlModerationLogRepository,
+    SqlPostReportRepository,
     SqlPostRepository,
     SqlPostVoteRepository,
 )
@@ -48,6 +67,8 @@ def _post_out(post: Post) -> PostOut:
         theme_slug=post.theme_slug,
         score=post.score,
         created_at=post.created_at,
+        removed=post.removed_at is not None,
+        removed_by=post.removed_by,
     )
 
 
@@ -69,6 +90,21 @@ def create_post_endpoint(
     log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
     moderation_client: ModerationPort = Depends(get_moderation_client),
 ) -> PostOut:
+    since = datetime.now(timezone.utc) - WINDOW
+    try:
+        check_post_rate_limit(
+            post_repo.count_by_author_since(x_farol_anonymous_id, since)
+        )
+    except PostRateLimitExceeded as exc:
+        raise HTTPException(
+            status_code=429,
+            detail=(
+                "Você publicou demais nos últimos minutos. "
+                "Tente novamente em breve."
+            ),
+            headers={"Retry-After": str(exc.retry_after_seconds)},
+        ) from None
+
     try:
         post, result = moderate_and_create_post(
             post_repo, log_repo, moderation_client,
@@ -147,3 +183,62 @@ def create_comment_endpoint(
     if comment is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     return _comment_out(comment)
+
+
+@router.post(
+    "/posts/{post_id}/reports",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Denuncia um post",
+)
+def report_post_endpoint(
+    post_id: str,
+    body: ReportIn,
+    x_farol_anonymous_id: AnonymousHeader,
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+    report_repo: SqlPostReportRepository = Depends(get_post_report_repo),
+    log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
+    moderation_client: ModerationPort = Depends(get_moderation_client),
+) -> Response:
+    if post_repo.get_by_id(post_id) is None:
+        raise HTTPException(status_code=404, detail="Post não encontrado.")
+
+    report_post(
+        report_repo=report_repo,
+        post_repo=post_repo,
+        log_repo=log_repo,
+        moderation_client=moderation_client,
+        post_id=post_id,
+        anonymous_id=x_farol_anonymous_id,
+        reason=body.reason,
+        detail=body.detail,
+        now=datetime.now(timezone.utc),
+    )
+    # 204 sempre, inclusive na denuncia repetida: revelar contagem ou limiar
+    # permitiria sondar o estado da moderacao.
+    return Response(status_code=status.HTTP_204_NO_CONTENT)
+
+
+@router.delete(
+    "/posts/{post_id}",
+    status_code=status.HTTP_204_NO_CONTENT,
+    summary="Remove o próprio post",
+)
+def delete_post_endpoint(
+    post_id: str,
+    x_farol_anonymous_id: AnonymousHeader,
+    post_repo: SqlPostRepository = Depends(get_post_repo),
+) -> Response:
+    try:
+        existe = remove_own_post(
+            post_repo,
+            post_id=post_id,
+            anonymous_id=x_farol_anonymous_id,
+            now=datetime.now(timezone.utc),
+        )
+    except NotThePostAuthorError:
+        raise HTTPException(
+            status_code=403, detail="Só o autor pode remover este post."
+        ) from None
+    if not existe:
+        raise HTTPException(status_code=404, detail="Post não encontrado.")
+    return Response(status_code=status.HTTP_204_NO_CONTENT)

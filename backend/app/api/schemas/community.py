@@ -1,4 +1,5 @@
 from datetime import datetime
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -25,6 +26,8 @@ class PostOut(BaseModel):
     theme_slug: str | None
     score: int
     created_at: datetime
+    removed: bool = False
+    removed_by: str | None = None
 
 
 class CommentOut(BaseModel):
@@ -46,3 +49,8 @@ class PostListResponse(BaseModel):
     page: int
     page_size: int
     has_next: bool
+
+
+class ReportIn(BaseModel):
+    reason: Literal["desinformacao", "discurso_de_odio", "spam", "outro"]
+    detail: str | None = Field(default=None, max_length=500)
