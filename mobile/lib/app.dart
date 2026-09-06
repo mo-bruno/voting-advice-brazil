@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'core/shell/main_shell.dart';
 import 'core/theme/app_theme.dart';
 import 'features/community/community_feed_page.dart';
 import 'features/comparison/comparison_page.dart';
-import 'features/home/home_page.dart';
 import 'features/party_selection/party_selection_page.dart';
 import 'features/political_actors/political_actor_profile_page.dart';
 import 'features/political_actors/political_actor_search_page.dart';
@@ -54,7 +54,13 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: '/',
       routes: {
-        '/': (context) => const HomePage(),
+        // O shell le a aba de abertura dos arguments da rota, o que permite a
+        // telas como a de resultados voltarem direto para a aba do quiz.
+        '/': (context) => MainShell(
+              initialTab: MainShell.tabFromArguments(
+                ModalRoute.of(context)?.settings.arguments,
+              ),
+            ),
         '/quiz-intro': (context) => const QuizIntroPage(),
         '/quiz': (context) => const QuizPage(),
         '/weighting': (context) => const WeightingPage(),
