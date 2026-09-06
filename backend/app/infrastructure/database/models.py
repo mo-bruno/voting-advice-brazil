@@ -390,6 +390,11 @@ class PostModel(Base):
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
 
+    removed_at: Mapped[datetime | None] = mapped_column(
+        DateTime(timezone=True), nullable=True
+    )
+    removed_by: Mapped[str | None] = mapped_column(String(16), nullable=True)
+
     comments: Mapped[list["CommentModel"]] = relationship(
         back_populates="post", cascade="all, delete-orphan"
     )
@@ -432,6 +437,20 @@ class PostVoteModel(Base):
     value: Mapped[int] = mapped_column(SmallInteger, nullable=False)
 
     post: Mapped["PostModel"] = relationship(back_populates="votes")
+
+
+class PostReportModel(Base):
+    __tablename__ = "post_reports"
+
+    post_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("posts.id", ondelete="CASCADE"), primary_key=True
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    reason: Mapped[str] = mapped_column(String(32), nullable=False)
+    detail: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
 
 
 class ModerationLogModel(Base):
