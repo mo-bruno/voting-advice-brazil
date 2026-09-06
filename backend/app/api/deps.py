@@ -37,6 +37,7 @@ from app.infrastructure.sources.camara import (
     CamaraDeputyIndexSource,
     CamaraEvidenceSource,
 )
+from app.infrastructure.sources.camara_news import CamaraNewsSource
 
 
 def get_thesis_repo(db: Session = Depends(get_db)) -> SqlThesisRepository:
@@ -127,3 +128,7 @@ def get_moderation_client() -> ModerationPort:
     if settings.groq_api_key:
         return GroqModerationClient(settings.groq_api_key)
     return FakeModerationClient(approved=True)
+
+
+def get_weekly_news_source() -> CamaraNewsSource:
+    return CamaraNewsSource()

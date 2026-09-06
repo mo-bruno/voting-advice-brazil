@@ -15,6 +15,7 @@ from app.api.routers import (
     community,
     health,
     iot_devices,
+    news,
     political_actors,
     quiz,
     themes,
@@ -88,6 +89,7 @@ app.include_router(iot_devices.router, prefix=PREFIX)
 app.include_router(iot_devices.me_router, prefix=PREFIX)
 app.include_router(themes.router, prefix=PREFIX)
 app.include_router(community.router, prefix=PREFIX)
+app.include_router(news.router, prefix=PREFIX)
 app.include_router(health.router)
 
 _data_path = Path(settings.data_dir)
