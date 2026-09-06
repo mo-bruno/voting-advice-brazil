@@ -82,11 +82,18 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
 
   Future<void> _vote(String postId, int value) async {
     if (_anonymousId == null) return;
-    final data =
-        await ApiClient().votePost(postId, value, anonymousId: _anonymousId!);
-    final updated = PostSummary.fromJson(data);
-    _session.updatePost(updated);
-    if (mounted) setState(() {});
+    try {
+      final data =
+          await ApiClient().votePost(postId, value, anonymousId: _anonymousId!);
+      final updated = PostSummary.fromJson(data);
+      _session.updatePost(updated);
+      if (mounted) setState(() {});
+    } catch (_) {
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Não foi possível registrar seu voto.')),
+      );
+    }
   }
 
   @override
