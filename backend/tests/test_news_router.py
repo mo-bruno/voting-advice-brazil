@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
+import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from app.api.cache import cache_delete_prefix
@@ -91,3 +93,101 @@ def test_limit_fora_do_intervalo_e_422() -> None:
 
     assert client.get("/api/v1/news/weekly?limit=0").status_code == 422
     assert client.get("/api/v1/news/weekly?limit=99").status_code == 422
+
+
+# ── Proxy de imagens ───────────────────────────────────────────────────────
+#
+# A Camara serve as imagens sem `access-control-allow-origin`, entao o
+# CanvasKit do Flutter Web nao consegue desenha-las. Este endpoint busca no
+# servidor e reserve com o CORS da nossa API.
+
+
+class _FakeUpstream:
+    def __init__(self, content: bytes, content_type: str, status: int = 200) -> None:
+        self.content = content
+        self.headers = {"content-type": content_type}
+        self._status = status
+
+    def raise_for_status(self) -> None:
+        if self._status >= 400:
+            raise httpx.HTTPStatusError("erro", request=None, response=None)  # type: ignore[arg-type]
+
+
+def test_proxy_devolve_a_imagem(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        "app.api.routers.news.httpx.get",
+        lambda *a, **k: _FakeUpstream(b"bytes-de-um-jpeg", "image/jpeg"),
+    )
+    client = TestClient(app)
+
+    response = client.get(
+        "/api/v1/news/image",
+        params={"url": "https://www.camara.leg.br/midias/image/foto.jpg"},
+    )
+
+    assert response.status_code == 200
+    assert response.headers["content-type"] == "image/jpeg"
+    assert response.content == b"bytes-de-um-jpeg"
+    assert "max-age" in response.headers.get("cache-control", "")
+
+
+def test_proxy_recusa_host_fora_da_allowlist() -> None:
+    client = TestClient(app)
+
+    response = client.get(
+        "/api/v1/news/image", params={"url": "https://evil.example.com/x.jpg"}
+    )
+
+    assert response.status_code == 400
+
+
+def test_proxy_recusa_host_que_apenas_parece_da_camara() -> None:
+    client = TestClient(app)
+
+    for url in (
+        "https://camara.leg.br.evil.com/x.jpg",
+        "https://evil-camara.leg.br/x.jpg",
+        "https://sub.camara.leg.br/x.jpg",
+    ):
+        assert client.get("/api/v1/news/image", params={"url": url}).status_code == 400
+
+
+def test_proxy_recusa_esquema_nao_http() -> None:
+    client = TestClient(app)
+
+    for url in ("file:///etc/passwd", "gopher://camara.leg.br/x"):
+        assert client.get("/api/v1/news/image", params={"url": url}).status_code == 400
+
+
+def test_proxy_recusa_recurso_que_nao_e_imagem(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(
+        "app.api.routers.news.httpx.get",
+        lambda *a, **k: _FakeUpstream(b"<html>", "text/html"),
+    )
+    client = TestClient(app)
+
+    response = client.get(
+        "/api/v1/news/image",
+        params={"url": "https://www.camara.leg.br/pagina.html"},
+    )
+
+    assert response.status_code == 415
+
+
+def test_proxy_devolve_502_quando_a_origem_falha(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def _boom(*a: object, **k: object) -> None:
+        raise httpx.ConnectError("sem rede")
+
+    monkeypatch.setattr("app.api.routers.news.httpx.get", _boom)
+    client = TestClient(app)
+
+    response = client.get(
+        "/api/v1/news/image",
+        params={"url": "https://www.camara.leg.br/midias/image/foto.jpg"},
+    )
+
+    assert response.status_code == 502
