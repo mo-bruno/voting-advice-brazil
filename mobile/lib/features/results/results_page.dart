@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
+import '../../core/shell/main_shell.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
 import '../../shared/quiz_session.dart';
@@ -30,7 +31,15 @@ class _ResultsPageState extends State<ResultsPage> {
   void _restartQuiz() {
     _track(_analytics.quizRestarted());
     _session.resetQuiz();
-    Navigator.pushNamedAndRemoveUntil(context, '/quiz-intro', (route) => false);
+    // Voltar para o shell na aba do quiz, e nao empilhar /quiz-intro sozinha:
+    // aquele gesto removia todas as rotas — o shell junto — e deixava o
+    // usuario sem barra inferior e sem caminho de volta.
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/',
+      (route) => false,
+      arguments: MainShellTab.quiz,
+    );
   }
 
   @override
