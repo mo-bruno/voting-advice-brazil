@@ -363,8 +363,17 @@ class ApiClient {
       articles: (json['articles'] as List<dynamic>)
           .cast<Map<String, dynamic>>()
           .map(NewsArticle.fromJson)
+          .map((a) => a.withImageUrl(proxiedImageUrl(a.imageUrl)))
           .toList(),
     );
+  }
+
+  /// A Camara serve as imagens sem `access-control-allow-origin`, o que faz o
+  /// Flutter Web falhar ao desenha-las. A reescrita acontece aqui porque este
+  /// e o unico lugar que conhece a `baseUrl` da API.
+  String? proxiedImageUrl(String? original) {
+    if (original == null || original.isEmpty) return null;
+    return '$baseUrl/news/image?url=${Uri.encodeQueryComponent(original)}';
   }
 
 }

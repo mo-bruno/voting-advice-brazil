@@ -66,4 +66,19 @@ class NewsArticle {
   /// Usada no lugar da miniatura quando a matéria não traz imagem.
   String get themeInitial =>
       themeLabel.isEmpty ? '?' : themeLabel[0].toUpperCase();
+
+  /// Copia o artigo trocando apenas a URL da imagem. Usada pelo `ApiClient`
+  /// para apontar a miniatura ao proxy da nossa API.
+  NewsArticle withImageUrl(String? newImageUrl) => NewsArticle(
+        id: id,
+        title: title,
+        summary: summary,
+        imageUrl: newImageUrl,
+        themeSlug: themeSlug,
+        themeLabel: themeLabel,
+        publishedAt: publishedAt,
+        readingMinutes: readingMinutes,
+        url: url,
+      );
+
 }

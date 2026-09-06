@@ -77,4 +77,41 @@ void main() {
 
     expect(api.fetchWeeklyNews(), throwsA(isA<ApiException>()));
   });
+
+  test('reescreve a imagem para o proxy da nossa api', () async {
+    // A Camara nao manda CORS nas imagens; o Flutter Web nao consegue
+    // desenha-las direto. O ApiClient aponta a miniatura para o nosso proxy.
+    final payload = <String, dynamic>{
+      ..._payload,
+      'articles': <Map<String, dynamic>>[
+        <String, dynamic>{
+          ...(_payload['articles'] as List)[0] as Map<String, dynamic>,
+          'image_url': 'https://www.camara.leg.br/midias/image/foto.jpg',
+        },
+      ],
+    };
+    final api = ApiClient(
+      baseUrl: 'https://api.test/api/v1',
+      client: _StubClient(payload),
+    );
+
+    final result = await api.fetchWeeklyNews();
+
+    final url = result.articles.first.imageUrl!;
+    expect(url, startsWith('https://api.test/api/v1/news/image?url='));
+    expect(Uri.parse(url).queryParameters['url'],
+        'https://www.camara.leg.br/midias/image/foto.jpg');
+  });
+
+  test('imagem nula continua nula depois da reescrita', () async {
+    final api = ApiClient(
+      baseUrl: 'https://api.test/api/v1',
+      client: _StubClient(_payload),
+    );
+
+    final result = await api.fetchWeeklyNews();
+
+    expect(result.articles.first.imageUrl, isNull);
+  });
+
 }
