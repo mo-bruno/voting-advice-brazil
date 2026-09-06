@@ -8,7 +8,11 @@ import '../../core/theme/app_theme.dart';
 import '../../shared/quiz_session.dart';
 
 class QuizIntroPage extends StatefulWidget {
-  const QuizIntroPage({super.key});
+  const QuizIntroPage({super.key, this.analytics});
+
+  /// Injetavel para teste, seguindo o padrao que o QuizController ja usa:
+  /// sem isto a tela chama o Firebase no initState e nao monta em teste.
+  final AnalyticsService? analytics;
 
   @override
   State<QuizIntroPage> createState() => _QuizIntroPageState();
@@ -18,7 +22,7 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
   @override
   void initState() {
     super.initState();
-    unawaited(AnalyticsService().quizIntroViewed());
+    unawaited((widget.analytics ?? AnalyticsService()).quizIntroViewed());
   }
 
   @override
@@ -27,12 +31,6 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
 
     return AppScaffold(
       title: 'FAROL POLÍTICO',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-        },
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
