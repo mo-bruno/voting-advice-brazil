@@ -14,27 +14,15 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Os quatro destinos primarios (Inicio, Acompanhar, Quiz, Comunidade) vivem
+    // na barra inferior do MainShell. Aqui fica so o que nao esta la: o Meu
+    // Farol e raro por natureza — so serve a quem tem o hardware, e o
+    // pareamento e acao unica.
     final menuItems = <Map<String, dynamic>>[
-      {'icon': Icons.home_rounded, 'title': 'Início', 'route': '/'},
-      {
-        'icon': Icons.how_to_vote_rounded,
-        'title': 'Responder quiz',
-        'route': '/quiz-intro',
-      },
-      {
-        'icon': Icons.person_search_rounded,
-        'title': 'Acompanhar político',
-        'route': '/political-actors',
-      },
       {
         'icon': Icons.lightbulb_rounded,
         'title': 'Meu Farol',
-        'route': '/iot-device'
-      },
-      {
-        'icon': Icons.forum_rounded,
-        'title': 'Comunidade',
-        'route': '/comunidade'
+        'route': '/iot-device',
       },
     ];
 
