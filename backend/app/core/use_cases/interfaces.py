@@ -248,3 +248,13 @@ class ModerationLogRepository(ABC):
         reason: str | None,
         model_used: str,
     ) -> None: ...
+
+
+# ── News ───────────────────────────────────────────────────────────────────
+
+from app.core.entities.news import NewsArticle  # noqa: E402
+
+
+class WeeklyNewsSource(ABC):
+    @abstractmethod
+    def fetch_recent(self) -> list[NewsArticle]: ...
