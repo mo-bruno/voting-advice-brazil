@@ -9,11 +9,17 @@ class PostCard extends StatelessWidget {
   final VoidCallback onTap;
   final void Function(int value)? onVote;
 
+  /// Enquanto o voto esta em voo as setas ficam inertes e esmaecidas: sem isso
+  /// cada toque disparava uma requisicao nova, e nada indicava que a anterior
+  /// ainda estava rodando.
+  final bool votePending;
+
   const PostCard({
     super.key,
     required this.post,
     required this.onTap,
     this.onVote,
+    this.votePending = false,
   });
 
   @override
@@ -39,7 +45,12 @@ class PostCard extends StatelessWidget {
               _ThemeTag(slug: post.themeSlug!),
             ],
             const SizedBox(height: 10),
-            _PostActions(post: post, onVote: onVote, onCommentTap: onTap),
+            _PostActions(
+              post: post,
+              onVote: onVote,
+              votePending: votePending,
+              onCommentTap: onTap,
+            ),
           ],
         ),
       ),
@@ -85,7 +96,8 @@ class _PostHeader extends StatelessWidget {
         ),
         Text(
           timeAgo(post.createdAt),
-          style: const TextStyle(fontSize: 12, color: AppTheme.onSurfaceVariant),
+          style:
+              const TextStyle(fontSize: 12, color: AppTheme.onSurfaceVariant),
         ),
       ],
     );
@@ -120,11 +132,13 @@ class _ThemeTag extends StatelessWidget {
 class _PostActions extends StatelessWidget {
   final PostSummary post;
   final void Function(int value)? onVote;
+  final bool votePending;
   final VoidCallback onCommentTap;
 
   const _PostActions({
     required this.post,
     this.onVote,
+    this.votePending = false,
     required this.onCommentTap,
   });
 
@@ -148,7 +162,7 @@ class _PostActions extends StatelessWidget {
             children: [
               _VoteButton(
                 icon: Icons.keyboard_arrow_up_rounded,
-                onTap: () => onVote?.call(1),
+                onTap: votePending ? null : () => onVote?.call(1),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 4),
@@ -157,13 +171,14 @@ class _PostActions extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.w700,
-                    color: _scoreColor,
+                    color:
+                        votePending ? AppTheme.onSurfaceVariant : _scoreColor,
                   ),
                 ),
               ),
               _VoteButton(
                 icon: Icons.keyboard_arrow_down_rounded,
-                onTap: () => onVote?.call(-1),
+                onTap: votePending ? null : () => onVote?.call(-1),
               ),
             ],
           ),
@@ -188,7 +203,9 @@ class _PostActions extends StatelessWidget {
 
 class _VoteButton extends StatelessWidget {
   final IconData icon;
-  final VoidCallback onTap;
+
+  /// Nulo desabilita o botao — e assim que o estado de voto pendente aparece.
+  final VoidCallback? onTap;
 
   const _VoteButton({required this.icon, required this.onTap});
 
@@ -199,7 +216,13 @@ class _VoteButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(2),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 6),
-        child: Icon(icon, size: 18, color: AppTheme.onSurfaceVariant),
+        child: Icon(
+          icon,
+          size: 18,
+          color: onTap == null
+              ? AppTheme.surfaceContainerHighest
+              : AppTheme.onSurfaceVariant,
+        ),
       ),
     );
   }

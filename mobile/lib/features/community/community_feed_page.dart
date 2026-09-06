@@ -31,6 +31,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   bool _loading = true;
   bool _failed = false;
   bool _loadMoreFailed = false;
+
+  /// Posts com voto em voo. Sem isto cada toque na seta disparava uma
+  /// requisicao nova, concorrente com a anterior.
+  final Set<String> _voting = {};
   String? _anonymousId;
   _SortMode _sort = _SortMode.quente;
   final _scrollController = ScrollController();
@@ -106,7 +110,8 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   }
 
   Future<void> _vote(String postId, int value) async {
-    if (_anonymousId == null) return;
+    if (_anonymousId == null || _voting.contains(postId)) return;
+    setState(() => _voting.add(postId));
     try {
       final data =
           await _api.votePost(postId, value, anonymousId: _anonymousId!);
@@ -118,6 +123,8 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Não foi possível registrar seu voto.')),
       );
+    } finally {
+      if (mounted) setState(() => _voting.remove(postId));
     }
   }
 

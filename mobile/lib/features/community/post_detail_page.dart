@@ -21,6 +21,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
   bool _loading = true;
   bool _failed = false;
   bool _sendingComment = false;
+  bool _voting = false;
   final _commentController = TextEditingController();
 
   @override
@@ -36,7 +37,12 @@ class _PostDetailPageState extends State<PostDetailPage> {
   }
 
   Future<void> _load() async {
-    if (mounted) setState(() { _loading = true; _failed = false; });
+    if (mounted) {
+      setState(() {
+        _loading = true;
+        _failed = false;
+      });
+    }
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
       final data =
@@ -60,7 +66,10 @@ class _PostDetailPageState extends State<PostDetailPage> {
 
   Future<void> _vote(int value) async {
     final atual = _detail;
-    if (atual == null) return;
+    // Mesma trava do feed: sem ela, toques repetidos enquanto a requisicao
+    // esta em voo disparam votos concorrentes.
+    if (atual == null || _voting) return;
+    setState(() => _voting = true);
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
       final data = await ApiClient()
@@ -74,6 +83,8 @@ class _PostDetailPageState extends State<PostDetailPage> {
       }
     } catch (_) {
       _avisar('Não foi possível registrar seu voto.');
+    } finally {
+      if (mounted) setState(() => _voting = false);
     }
   }
 
