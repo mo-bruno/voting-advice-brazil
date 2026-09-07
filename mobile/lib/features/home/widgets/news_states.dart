@@ -104,39 +104,48 @@ class _NewsMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 56, horizontal: 8),
-      child: Column(
-        children: [
-          Icon(icon, size: 44, color: iconColor),
-          const SizedBox(height: 18),
-          Text(
-            title,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 16,
-              fontWeight: FontWeight.w800,
-              color: AppTheme.onSurface,
-            ),
-          ),
-          const SizedBox(height: 12),
-          ConstrainedBox(
-            constraints: const BoxConstraints(maxWidth: 280),
-            child: Text(
-              body,
+    // A largura explicita e o que faz a centralizacao valer. A home empilha
+    // este bloco numa Column com `crossAxisAlignment.start`, que passa
+    // restricao frouxa: sem isto a Column de dentro encolhe ate o texto mais
+    // largo e encosta na esquerda — centralizada dentro de si mesma, torta na
+    // tela. Nao da para usar `Center` como o forum faz, porque aqui o bloco
+    // vive dentro de um scroll e ele tentaria ocupar a altura toda.
+    return SizedBox(
+      width: double.infinity,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 56, horizontal: 8),
+        child: Column(
+          children: [
+            Icon(icon, size: 44, color: iconColor),
+            const SizedBox(height: 18),
+            Text(
+              title,
               textAlign: TextAlign.center,
               style: const TextStyle(
-                fontSize: 12,
-                height: 1.55,
-                color: AppTheme.onSurfaceVariant,
+                fontSize: 16,
+                fontWeight: FontWeight.w800,
+                color: AppTheme.onSurface,
               ),
             ),
-          ),
-          if (action != null) ...[
-            const SizedBox(height: 24),
-            action!,
+            const SizedBox(height: 12),
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 280),
+              child: Text(
+                body,
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  fontSize: 12,
+                  height: 1.55,
+                  color: AppTheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            if (action != null) ...[
+              const SizedBox(height: 24),
+              action!,
+            ],
           ],
-        ],
+        ),
       ),
     );
   }
