@@ -28,17 +28,19 @@ class _ResultsPageState extends State<ResultsPage> {
     unawaited(event.catchError((_) {}));
   }
 
-  void _restartQuiz() {
-    _track(_analytics.quizRestarted());
-    _session.resetQuiz();
-    // Voltar para o shell na aba do quiz, e nao empilhar /quiz-intro sozinha:
-    // aquele gesto removia todas as rotas — o shell junto — e deixava o
-    // usuario sem barra inferior e sem caminho de volta.
+  /// Sair da tela nao descarta mais o teste. Este botao ja foi "REFAZER QUIZ" e
+  /// chamava `resetQuiz()` para poder navegar — quem so queria sair da tela
+  /// perdia o resultado junto. O descarte mudou para a QuizIntroPage, onde ele
+  /// significa alguma coisa: comecar outro quiz.
+  ///
+  /// `pushNamedAndRemoveUntil` e nao `popUntil` porque so ele escolhe a aba de
+  /// destino, e o pedido e voltar ao Inicio — nao a aba de onde se veio.
+  void _backToHome() {
     Navigator.pushNamedAndRemoveUntil(
       context,
       '/',
       (route) => false,
-      arguments: MainShellTab.quiz,
+      arguments: MainShellTab.inicio,
     );
   }
 
@@ -154,8 +156,8 @@ class _ResultsPageState extends State<ResultsPage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: _restartQuiz,
-                child: const Text('REFAZER QUIZ'),
+                onPressed: _backToHome,
+                child: const Text('VOLTAR AO INÍCIO'),
               ),
             ),
             const SizedBox(height: 32),
