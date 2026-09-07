@@ -4,10 +4,12 @@ from fastapi.testclient import TestClient
 
 from app.api.deps import (
     get_moderation_client,
+    get_moderation_log_repo,
     get_post_repo,
     get_post_report_repo,
 )
 from app.core.entities.community import ModerationResult, Post, PostReport
+from app.core.use_cases.interfaces import ModerationLogRepository
 from app.infrastructure.llm.moderation_client import (
     ModerationPort,
     ModerationUnavailable,
@@ -89,6 +91,31 @@ class _DownModeration(ModerationPort):
         raise ModerationUnavailable("fora do ar")
 
 
+class _FakeModerationLog(ModerationLogRepository):
+    """Log de moderacao em memoria.
+
+    Sem ele o endpoint resolve `get_moderation_log_repo` pela sessao real e
+    grava em `sqlite:///./voting_advice.db` — o banco de desenvolvimento de quem
+    roda os testes. Na maquina do autor esse arquivo existe com as tabelas e o
+    teste passava; num checkout limpo o SQLite cria um arquivo vazio e o INSERT
+    morre em "no such table: moderation_log". Era assim que o CI falhava.
+    """
+
+    def __init__(self) -> None:
+        self.registros: list[tuple[str | None, str, bool]] = []
+
+    def record(
+        self,
+        post_id: str | None,
+        anonymous_id: str,
+        content_hash: str,
+        approved: bool,
+        reason: str | None,
+        model_used: str,
+    ) -> None:
+        self.registros.append((post_id, anonymous_id, approved))
+
+
 def teardown_function() -> None:
     app.dependency_overrides.clear()
 
@@ -97,6 +124,7 @@ def _client(post_repo: _FakePostRepo, report_repo: _FakeReportRepo) -> TestClien
     app.dependency_overrides[get_post_repo] = lambda: post_repo
     app.dependency_overrides[get_post_report_repo] = lambda: report_repo
     app.dependency_overrides[get_moderation_client] = _OkModeration
+    app.dependency_overrides[get_moderation_log_repo] = _FakeModerationLog
     return TestClient(app)
 
 
@@ -208,6 +236,7 @@ def test_moderacao_indisponivel_recusa_publicacao() -> None:
     app.dependency_overrides[get_post_repo] = lambda: _FakePostRepo(_post())
     app.dependency_overrides[get_post_report_repo] = _FakeReportRepo
     app.dependency_overrides[get_moderation_client] = _DownModeration
+    app.dependency_overrides[get_moderation_log_repo] = _FakeModerationLog
     client = TestClient(app)
 
     r = client.post(
