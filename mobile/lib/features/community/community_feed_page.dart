@@ -10,7 +10,16 @@ import 'models/community_models.dart';
 import 'post_detail_page.dart';
 import 'widgets/post_card.dart';
 
-enum _SortMode { quente, recente }
+enum _SortMode {
+  votados('score'),
+  recentes('recent');
+
+  const _SortMode(this.apiValue);
+
+  /// O valor que o backend entende. Antes desta entrega o enum existia mas
+  /// nunca chegava ao servidor: as abas eram decorativas.
+  final String apiValue;
+}
 
 class CommunityFeedPage extends StatefulWidget {
   const CommunityFeedPage({super.key, this.apiClient});
@@ -36,7 +45,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   /// requisicao nova, concorrente com a anterior.
   final Set<String> _voting = {};
   String? _anonymousId;
-  _SortMode _sort = _SortMode.quente;
+  _SortMode _sort = _SortMode.votados;
   final _scrollController = ScrollController();
 
   @override
@@ -78,6 +87,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
       final data = await _api.listPosts(
         anonymousId: _anonymousId!,
         page: page,
+        sort: _sort.apiValue,
       );
       final posts = (data['posts'] as List)
           .map((p) => PostSummary.fromJson(p as Map<String, dynamic>))
@@ -192,31 +202,6 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     return AppScaffold(
       title: 'FÓRUM POLÍTICO',
       subtitle: 'discussão anônima',
-      actions: [
-        IconButton(
-          icon: const Icon(
-            Icons.search_rounded,
-            color: AppTheme.onSurfaceVariant,
-          ),
-          onPressed: () {},
-        ),
-      ],
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () async {
-          final created = await Navigator.push<bool>(
-            context,
-            MaterialPageRoute(builder: (_) => const CreatePostPage()),
-          );
-          if (created == true) _loadPage(1);
-        },
-        backgroundColor: AppTheme.primary,
-        foregroundColor: AppTheme.background,
-        icon: const Icon(Icons.edit_rounded, size: 18),
-        label: const Text(
-          'POSTAR',
-          style: TextStyle(fontWeight: FontWeight.w700, letterSpacing: 1.0),
-        ),
-      ),
       body: Column(
         children: [
           _buildSortBar(),
@@ -248,8 +233,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                               controller: _scrollController,
                               itemCount:
                                   feed.length + (_session.hasMore ? 1 : 0),
-                              separatorBuilder: (_, __) =>
-                                  const SizedBox(height: 8),
+                              separatorBuilder: (_, __) => const Divider(
+                                height: 1,
+                                color: AppTheme.outlineVariant,
+                              ),
                               itemBuilder: (context, index) {
                                 if (index == feed.length) {
                                   // Se a paginacao falhou, o rodape vira um botao em
@@ -290,6 +277,32 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                             ),
                           ),
           ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: const BoxDecoration(
+              border: Border(top: BorderSide(color: AppTheme.outlineVariant)),
+            ),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () async {
+                  final created = await Navigator.push<bool>(
+                    context,
+                    MaterialPageRoute(builder: (_) => const CreatePostPage()),
+                  );
+                  if (created == true) _loadPage(1);
+                },
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.edit_rounded, size: 17),
+                    SizedBox(width: 10),
+                    Text('ESCREVER UM POST'),
+                  ],
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -297,77 +310,80 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
 
   Widget _buildSortBar() {
     return Container(
-      color: AppTheme.surface,
-      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: const BoxDecoration(
+        border: Border(bottom: BorderSide(color: AppTheme.outlineVariant)),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Row(
         children: [
-          _SortChip(
-            label: '🔥  Quente',
-            selected: _sort == _SortMode.quente,
-            onTap: () {
-              if (_sort != _SortMode.quente) {
-                setState(() => _sort = _SortMode.quente);
-                _loadPage(1);
-              }
-            },
+          _SortTab(
+            label: 'MAIS VOTADOS',
+            selected: _sort == _SortMode.votados,
+            onTap: () => _changeSort(_SortMode.votados),
           ),
-          const SizedBox(width: 8),
-          _SortChip(
-            label: '✨  Recente',
-            selected: _sort == _SortMode.recente,
-            onTap: () {
-              if (_sort != _SortMode.recente) {
-                setState(() => _sort = _SortMode.recente);
-                _loadPage(1);
-              }
-            },
+          const SizedBox(width: 24),
+          _SortTab(
+            label: 'RECENTES',
+            selected: _sort == _SortMode.recentes,
+            onTap: () => _changeSort(_SortMode.recentes),
           ),
         ],
       ),
     );
   }
+
+  void _changeSort(_SortMode modo) {
+    if (_sort == modo) return;
+    setState(() => _sort = modo);
+    _loadPage(1);
+  }
 }
 
-class _SortChip extends StatelessWidget {
-  final String label;
-  final bool selected;
-  final VoidCallback onTap;
-
-  const _SortChip({
+class _SortTab extends StatelessWidget {
+  const _SortTab({
     required this.label,
     required this.selected,
     required this.onTap,
   });
 
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-        decoration: BoxDecoration(
-          color: selected ? AppTheme.primary : Colors.transparent,
-          border: Border.all(
-            color: selected ? AppTheme.primary : AppTheme.outlineVariant,
-          ),
-          borderRadius: BorderRadius.circular(2),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.w600,
-            color: selected ? AppTheme.background : AppTheme.onSurfaceVariant,
-            letterSpacing: 0.3,
-          ),
+      child: Padding(
+        padding: const EdgeInsets.only(top: 14),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Text(
+                label,
+                style: TextStyle(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1,
+                  color:
+                      selected ? AppTheme.primary : AppTheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Container(
+              height: 2,
+              color: selected ? AppTheme.primary : Colors.transparent,
+            ),
+          ],
         ),
       ),
     );
   }
 }
 
-/// Mensagem centralizada de estado vazio ou de erro, no mesmo molde que a tela
-/// de noticias usa em `news_states.dart`.
 class _FeedMessage extends StatelessWidget {
   const _FeedMessage({
     required this.icon,
