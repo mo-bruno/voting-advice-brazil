@@ -239,7 +239,15 @@ class _PostBody extends StatelessWidget {
         children: [
           _AuthorRow(anonymousId: post.anonymousId, createdAt: post.createdAt),
           const SizedBox(height: 12),
-          Text(post.content, style: Theme.of(context).textTheme.bodyLarge),
+          // Maior que no card: aqui o post e o assunto, nao um item de lista.
+          Text(
+            post.content,
+            style: const TextStyle(
+              fontSize: 16,
+              height: 1.55,
+              color: AppTheme.onSurface,
+            ),
+          ),
           if (post.themeSlug != null) ...[
             const SizedBox(height: 10),
             Container(
@@ -394,8 +402,10 @@ class _CommentTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: const BoxDecoration(
+        // Mais sutil que a regua do feed: aqui os comentarios sao subordinados
+        // ao post, nao itens de mesma hierarquia.
         border: Border(
-          bottom: BorderSide(color: AppTheme.outlineVariant, width: 1),
+          bottom: BorderSide(color: AppTheme.surfaceContainer, width: 1),
         ),
       ),
       child: Column(
@@ -442,7 +452,18 @@ class _CommentTile extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 7),
-          Text(comment.content, style: Theme.of(context).textTheme.bodyMedium),
+          // Recuado para alinhar com o nome do autor, acima.
+          Padding(
+            padding: const EdgeInsets.only(left: 29),
+            child: Text(
+              comment.content,
+              style: const TextStyle(
+                fontSize: 14,
+                height: 1.5,
+                color: AppTheme.onSurface,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -487,15 +508,15 @@ class _CommentInput extends StatelessWidget {
                   filled: true,
                   fillColor: AppTheme.surfaceContainer,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.primary),
                   ),
                   contentPadding:
