@@ -6,10 +6,14 @@
 // `body`. Os parâmetros opcionais (`subtitle`, `leading`, `actions`,
 // `floatingActionButton`) permitem que telas com necessidades específicas
 // reutilizem a mesma estrutura sem recriá-la — separando estrutura de conteúdo.
+//
+// A gaveta NÃO nasce aqui: ela é uma só e vive no Scaffold do MainShell. O que
+// nasce aqui é o botão que a abre, e a regra de quando ele dá lugar à seta de
+// voltar (ver `_defaultLeading`).
 
 import 'package:flutter/material.dart';
 
-import '../../shared/widgets/app_drawer.dart';
+import '../shell/shell_drawer_scope.dart';
 
 class AppScaffold extends StatelessWidget {
   final String title;
@@ -29,6 +33,36 @@ class AppScaffold extends StatelessWidget {
     this.floatingActionButton,
   });
 
+  /// O botao da esquerda quando a tela nao pede um proprio, decidido por ONDE a
+  /// tela esta e nao por qual tela e:
+  ///
+  /// - dentro do shell -> hamburguer, que abre a gaveta do shell;
+  /// - empilhada       -> seta de voltar;
+  /// - nenhum dos dois -> nada, porque uma seta na unica rota da pilha deixaria
+  ///   o app em branco.
+  ///
+  /// Decidir aqui, e nao em cada tela, e o que impede o caso que ja aconteceu
+  /// duas vezes: uma tela-aba empilhada sozinha, presa no hamburguer, sem barra
+  /// inferior e sem caminho de volta.
+  Widget? _defaultLeading(BuildContext context) {
+    final openShellDrawer = ShellDrawerScope.maybeOf(context);
+    if (openShellDrawer != null) {
+      return IconButton(
+        icon: const Icon(Icons.menu),
+        tooltip: 'Abrir menu',
+        onPressed: openShellDrawer,
+      );
+    }
+    if (Navigator.canPop(context)) {
+      return IconButton(
+        icon: const Icon(Icons.arrow_back),
+        tooltip: 'Voltar',
+        onPressed: () => Navigator.pop(context),
+      );
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
     const titleStyle = TextStyle(
@@ -38,8 +72,8 @@ class AppScaffold extends StatelessWidget {
     );
 
     return Scaffold(
-      // Menu lateral global compartilhado por todas as telas.
-      drawer: const AppDrawer(),
+      // Sem `drawer`: a gaveta e uma so e vive no Scaffold do MainShell, para
+      // cobrir a tela inteira e nao pertencer a nenhuma aba.
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: subtitle == null
@@ -52,17 +86,7 @@ class AppScaffold extends StatelessWidget {
                   Text(subtitle!, style: Theme.of(context).textTheme.bodySmall),
                 ],
               ),
-        // Quando a tela não traz um botão próprio (ex.: voltar), exibimos o
-        // ícone "hamburguer" que abre o menu lateral. O Builder garante um
-        // contexto abaixo do Scaffold, exigido por Scaffold.of(context).
-        leading: leading ??
-            Builder(
-              builder: (context) => IconButton(
-                icon: const Icon(Icons.menu),
-                tooltip: 'Abrir menu',
-                onPressed: () => Scaffold.of(context).openDrawer(),
-              ),
-            ),
+        leading: leading ?? _defaultLeading(context),
         actions: actions,
         centerTitle: false,
       ),

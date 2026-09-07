@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../core/link/link_opener.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/political_actor_session.dart';
-import '../../shared/widgets/app_drawer.dart';
+import '../../core/shell/shell_drawer_scope.dart';
 import 'news_session.dart';
 import 'widgets/news_card.dart';
 import 'widgets/news_states.dart';
@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: const AppDrawer(),
+      // Sem `drawer`: a gaveta e uma so e vive no Scaffold do MainShell.
       backgroundColor: AppTheme.background,
       body: SafeArea(
         child: Column(
@@ -142,12 +142,12 @@ class _TopBar extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Builder(
-            builder: (context) => IconButton(
-              icon: const Icon(Icons.menu, color: AppTheme.onSurface),
-              tooltip: 'Abrir menu',
-              onPressed: () => Scaffold.of(context).openDrawer(),
-            ),
+          IconButton(
+            icon: const Icon(Icons.menu, color: AppTheme.onSurface),
+            tooltip: 'Abrir menu',
+            // Fora do shell nao ha gaveta para abrir; o botao fica inerte em vez
+            // de estourar. Na pratica esta tela e sempre a primeira aba.
+            onPressed: ShellDrawerScope.maybeOf(context),
           ),
           const Expanded(
             child: Text(

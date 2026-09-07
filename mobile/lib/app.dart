@@ -6,7 +6,6 @@ import 'features/comparison/comparison_page.dart';
 import 'features/party_selection/party_selection_page.dart';
 import 'features/political_actors/political_actor_profile_page.dart';
 import 'features/political_actors/political_actor_search_page.dart';
-import 'features/quiz/quiz_intro_page.dart';
 import 'features/quiz/quiz_page.dart';
 import 'features/results/results_page.dart';
 import 'features/iot/iot_device_page.dart';
@@ -61,7 +60,6 @@ class MyApp extends StatelessWidget {
                 ModalRoute.of(context)?.settings.arguments,
               ),
             ),
-        '/quiz-intro': (context) => const QuizIntroPage(),
         '/quiz': (context) => const QuizPage(),
         '/weighting': (context) => const WeightingPage(),
         '/party-selection': (context) => const PartySelectionPage(),

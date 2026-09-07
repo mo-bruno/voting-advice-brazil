@@ -74,7 +74,16 @@ class _QuizPageState extends State<QuizPage> {
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
         onPressed: () {
-          Navigator.pushReplacementNamed(context, '/quiz-intro');
+          // Desempilha ate o shell em vez de empilhar /quiz-intro: aquela rota
+          // monta a QuizIntroPage FORA do shell, sem barra inferior, e como ela
+          // e uma tela-aba mostra o hamburguer no lugar da seta — o usuario
+          // ficava sem barra e sem volta.
+          //
+          // Aqui e `popUntil` e nao o `pushNamedAndRemoveUntil` que a
+          // ResultsPage usa: sair do quiz e voltar de onde se veio, e o shell
+          // ja esta na aba certa. Recria-lo jogaria fora as telas que ele
+          // mantem vivas de proposito (ver MainShell._pages).
+          Navigator.popUntil(context, (route) => route.isFirst);
         },
       ),
       body: _buildBody(thesis),
