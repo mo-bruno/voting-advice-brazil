@@ -78,13 +78,19 @@ class SqlPostRepository(PostRepository):
         page_size: int = 20,
         political_actor_id: int | None = None,
         theme_slug: str | None = None,
+        sort: str = "score",
     ) -> tuple[list[Post], int]:
         stmt = select(PostModel)
         if political_actor_id is not None:
             stmt = stmt.where(PostModel.political_actor_id == political_actor_id)
         if theme_slug is not None:
             stmt = stmt.where(PostModel.theme_slug == theme_slug)
-        stmt = stmt.order_by(PostModel.score.desc(), PostModel.created_at.desc())
+        if sort == "recent":
+            stmt = stmt.order_by(PostModel.created_at.desc())
+        else:
+            stmt = stmt.order_by(
+                PostModel.score.desc(), PostModel.created_at.desc()
+            )
         total = self._db.scalar(select(func.count()).select_from(stmt.subquery())) or 0
         offset = (page - 1) * page_size
         rows = self._db.execute(stmt.offset(offset).limit(page_size)).scalars().all()

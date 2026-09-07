@@ -1,5 +1,5 @@
 from datetime import datetime, timezone
-from typing import Annotated
+from typing import Annotated, Literal
 
 from fastapi import (
     APIRouter,
@@ -127,11 +127,13 @@ def list_posts_endpoint(
     page_size: int = Query(default=20, ge=1, le=50),
     political_actor_id: int | None = Query(default=None),
     theme_slug: str | None = Query(default=None),
+    sort: Literal["score", "recent"] = Query(default="score"),
     post_repo: SqlPostRepository = Depends(get_post_repo),
 ) -> PostListResponse:
     posts, total = list_posts(
         post_repo, page=page, page_size=page_size,
         political_actor_id=political_actor_id, theme_slug=theme_slug,
+        sort=sort,
     )
     return PostListResponse(
         posts=[_post_out(p) for p in posts],

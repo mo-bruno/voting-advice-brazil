@@ -220,6 +220,7 @@ class PostRepository(ABC):
         page_size: int = 20,
         political_actor_id: int | None = None,
         theme_slug: str | None = None,
+        sort: str = "score",
     ) -> tuple[list[Post], int]: ...
 
     @abstractmethod
