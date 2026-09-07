@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 
-String timeAgo(DateTime dt) {
-  final diff = DateTime.now().difference(dt);
-  if (diff.inSeconds < 60) return 'agora';
-  if (diff.inMinutes < 60) return 'há ${diff.inMinutes}min';
-  if (diff.inHours < 24) return 'há ${diff.inHours}h';
-  if (diff.inDays < 7) return 'há ${diff.inDays}d';
-  if (diff.inDays < 30) return 'há ${(diff.inDays / 7).floor()}sem';
-  if (diff.inDays < 365) return 'há ${(diff.inDays / 30).floor()}m';
-  return 'há ${(diff.inDays / 365).floor()}a';
-}
+// `timeAgo` saiu daqui para `shared/utils/` quando a gaveta passou a datar o
+// ultimo evento do Farol. Reexportado para que as telas da comunidade sigam
+// importando um arquivo so.
+export '../../../shared/utils/time_ago.dart';
 
 Color avatarColor(String anonymousId) {
   const colors = [

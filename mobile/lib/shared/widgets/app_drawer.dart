@@ -1,92 +1,221 @@
 // lib/shared/widgets/app_drawer.dart
 //
-// Menu lateral ("hamburguer") reutilizável e compartilhado por todas as telas.
-// Os itens são definidos como dados (lista de mapas), e não como widgets fixos,
-// o que permite gerá-los dinamicamente e facilita adicionar novos destinos no
-// futuro. A navegação usa rotas nomeadas, desacoplando o menu das telas.
+// Menu lateral compartilhado por todas as telas. Os quatro destinos primarios
+// (Inicio, Acompanhar, Quiz, Comunidade) vivem na barra inferior, entao a
+// gaveta nao e uma lista de links: e um painel do que e SEU dentro do app — o
+// Farol na sua mesa, o parlamentar que voce segue, o resultado do seu quiz.
+//
+// Ela nao busca nada. Le as tres sessions que ja estao em memoria e desenha o
+// que houver; bloco sem dado vira convite, nunca some. Abrir a gaveta e um
+// gesto de um toque, e um spinner dentro dela custaria mais do que informa.
 
 import 'package:flutter/material.dart';
 
+import '../../core/device/device_identity_store.dart';
+import '../../core/shell/main_shell.dart';
 import '../../core/theme/app_theme.dart';
+import '../iot_device_session.dart';
+import '../political_actor_session.dart';
+import '../quiz_session.dart';
+import 'drawer/drawer_footer.dart';
+import 'drawer/farol_drawer_header.dart';
+import 'drawer/farol_led_state.dart';
+import 'drawer/farol_status_tile.dart';
+import 'drawer/followed_actor_tile.dart';
+import 'drawer/quiz_affinity_tile.dart';
 
-class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+class AppDrawer extends StatefulWidget {
+  const AppDrawer({super.key, this.deviceIdentityStore});
+
+  /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
+  /// que o resto do app.
+  final DeviceIdentityStore? deviceIdentityStore;
+
+  @override
+  State<AppDrawer> createState() => _AppDrawerState();
+}
+
+class _AppDrawerState extends State<AppDrawer> {
+  /// Uma unica assinatura para as tres sessions: qualquer uma que mude
+  /// redesenha a gaveta. Montada aqui e nao no `build` para nao criar um
+  /// Listenable novo a cada frame.
+  late final Listenable _sessions = Listenable.merge([
+    IotDeviceSession.instance,
+    PoliticalActorSession.instance,
+    QuizSession.instance,
+  ]);
+
+  String? _shortId;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadShortId();
+  }
+
+  Future<void> _loadShortId() async {
+    final store = widget.deviceIdentityStore ?? DeviceIdentityStore();
+    final id = await store.getOrCreateDeviceId();
+    if (!mounted) return;
+    setState(() => _shortId = _shorten(id));
+  }
+
+  /// Os oito primeiros digitos, no mesmo formato do `shortToken` do gadget —
+  /// curto o bastante para caber no rodape e longo o bastante para a pessoa
+  /// reconhecer o proprio aparelho num suporte.
+  static String _shorten(String id) {
+    final compact = id.replaceAll('-', '');
+    if (compact.length <= 8) return compact.toUpperCase();
+    return compact.substring(0, 8).toUpperCase();
+  }
+
+  /// Fecha a gaveta antes de navegar. Sem isso ela fica aberta por baixo da
+  /// tela nova e reaparece quando a pessoa volta.
+  void _go(void Function(NavigatorState navigator) action) {
+    final navigator = Navigator.of(context);
+    navigator.pop();
+    action(navigator);
+  }
+
+  void _openTab(MainShellTab tab) {
+    _go((navigator) => navigator.pushNamedAndRemoveUntil(
+          '/',
+          (_) => false,
+          arguments: tab,
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Os quatro destinos primarios (Inicio, Acompanhar, Quiz, Comunidade) vivem
-    // na barra inferior do MainShell. Aqui fica so o que nao esta la: o Meu
-    // Farol e raro por natureza — so serve a quem tem o hardware, e o
-    // pareamento e acao unica.
-    final menuItems = <Map<String, dynamic>>[
-      {
-        'icon': Icons.lightbulb_rounded,
-        'title': 'Meu Farol',
-        'route': '/iot-device',
-      },
-    ];
-
     return Drawer(
       backgroundColor: AppTheme.surface,
-      child: ListView(
-        padding: EdgeInsets.zero,
-        children: [
-          const DrawerHeader(
-            decoration: BoxDecoration(color: AppTheme.background),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  'FAROL\nPOLÍTICO',
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.w900,
-                    color: AppTheme.primary,
-                    height: 1.0,
-                    letterSpacing: 1.5,
-                  ),
-                ),
-                SizedBox(height: 8),
-                Text(
-                  'BRASIL 2026',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: AppTheme.onSurfaceVariant,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          // O operador `...` (spread) expande o resultado do `map`, inserindo
-          // um ListTile para cada item de navegação definido acima.
-          ...menuItems.map((item) {
-            final route = item['route'] as String;
-            return ListTile(
-              leading:
-                  Icon(item['icon'] as IconData, color: AppTheme.onSurface),
-              title: Text(
-                item['title'] as String,
-                style: const TextStyle(
-                  color: AppTheme.onSurface,
-                  fontWeight: FontWeight.w600,
+      child: ListenableBuilder(
+        listenable: _sessions,
+        builder: (context, _) {
+          final iot = IotDeviceSession.instance;
+          final followed = PoliticalActorSession.instance.followedActor;
+          final results = QuizSession.instance.visibleResults;
+
+          return Column(
+            children: [
+              FarolDrawerHeader(
+                state: farolLedStateFor(
+                  device: iot.device,
+                  lastEvent: iot.lastEvent,
+                  now: DateTime.now(),
                 ),
               ),
-              onTap: () {
-                Navigator.pop(context); // fecha o menu lateral
-                if (route == '/') {
-                  // Volta para a tela inicial limpando a pilha de navegação.
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, route, (_) => false);
-                } else {
-                  Navigator.pushNamed(context, route);
-                }
-              },
-            );
-          }),
-        ],
+              Expanded(
+                child: ListView(
+                  padding: EdgeInsets.zero,
+                  children: [
+                    FarolStatusTile(
+                      device: iot.device,
+                      lastEvent: iot.lastEvent,
+                      onOpenDevice: () => _go(
+                        (navigator) => navigator.pushNamed('/iot-device'),
+                      ),
+                      onPair: () => _go(
+                        (navigator) => navigator.pushNamed('/iot-pairing'),
+                      ),
+                    ),
+                    const _Rule(),
+                    FollowedActorTile(
+                      actor: followed,
+                      onOpenProfile: () => _go(
+                        (navigator) => navigator.pushNamed(
+                          '/political-actor-profile',
+                          arguments: followed,
+                        ),
+                      ),
+                      onChoose: () => _openTab(MainShellTab.acompanhar),
+                    ),
+                    const _Rule(),
+                    QuizAffinityTile(
+                      top: results.isEmpty ? null : results.first,
+                      onOpenResults: () => _go(
+                        (navigator) => navigator.pushNamed('/results'),
+                      ),
+                      onStartQuiz: () => _openTab(MainShellTab.quiz),
+                    ),
+                    // Sem regua depois do ultimo bloco: com a gaveta mais alta
+                    // que o conteudo ela ficaria pendurada no meio do vazio, e
+                    // a borda de cima do rodape ja fecha a lista.
+                  ],
+                ),
+              ),
+              DrawerFooter(
+                shortId: _shortId,
+                onAbout: () => _showAbout(context),
+                onPrivacy: () => _showPrivacy(context, _shortId),
+              ),
+            ],
+          );
+        },
       ),
     );
   }
+}
+
+class _Rule extends StatelessWidget {
+  const _Rule();
+
+  @override
+  Widget build(BuildContext context) {
+    return const Divider(
+      height: 1,
+      thickness: 1,
+      color: AppTheme.outlineVariant,
+    );
+  }
+}
+
+/// Sobre e Privacidade sao dois paragrafos cada. Como dialogo eles nao
+/// precisam de rota, de tela e de botao de voltar — e a gaveta continua aberta
+/// atras, que e de onde a pessoa veio.
+void _showAbout(BuildContext context) {
+  _showNote(
+    context,
+    title: 'Sobre o Farol Político',
+    body: 'O Farol Político compara suas posições com o que os candidatos '
+        'escreveram em seus planos de governo e, quando eleitos, com os votos '
+        'que registraram na Câmara dos Deputados.\n\n'
+        'Os dados vêm das APIs abertas do TSE e da Câmara. O projeto é '
+        'acadêmico e não tem vínculo com nenhum partido ou candidato.',
+  );
+}
+
+void _showPrivacy(BuildContext context, String? shortId) {
+  final id = shortId == null ? '' : '\n\nO seu é $shortId.';
+  _showNote(
+    context,
+    title: 'Privacidade',
+    body: 'O app não pede e não guarda nome, e-mail, telefone ou qualquer '
+        'outro dado que identifique você.\n\n'
+        'Seu aparelho recebe um identificador aleatório, gerado nele mesmo, '
+        'usado só para lembrar quem você segue e a qual Farol físico este '
+        'aparelho está ligado. Suas respostas do quiz não saem do aparelho.$id',
+  );
+}
+
+void _showNote(
+  BuildContext context, {
+  required String title,
+  required String body,
+}) {
+  showDialog<void>(
+    context: context,
+    builder: (context) => AlertDialog(
+      backgroundColor: AppTheme.surfaceContainer,
+      shape: const RoundedRectangleBorder(),
+      title: Text(title, style: Theme.of(context).textTheme.headlineSmall),
+      content: Text(body, style: Theme.of(context).textTheme.bodyMedium),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('FECHAR'),
+        ),
+      ],
+    ),
+  );
 }
