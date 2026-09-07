@@ -88,10 +88,9 @@ class _PoliticalActorSearchPageState extends State<PoliticalActorSearchPage> {
 
     return AppScaffold(
       title: 'FAROL POLITICO',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Navigator.pop(context),
-      ),
+      // Esta tela e aba do MainShell E rota empilhada (results_page.dart:127,
+      // political_actor_profile_page.dart:117). Sem `leading`, o AppScaffold
+      // decide pelos dois casos — ver `_defaultLeading`.
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24),

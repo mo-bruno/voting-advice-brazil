@@ -4,10 +4,11 @@ from sqlalchemy import func, select
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.orm import Session
 
-from app.core.entities.community import Comment, Post, PostVote
+from app.core.entities.community import Comment, Post, PostReport, PostVote
 from app.core.use_cases.interfaces import (
     CommentRepository,
     ModerationLogRepository,
+    PostReportRepository,
     PostRepository,
     PostVoteRepository,
 )
@@ -15,6 +16,7 @@ from app.infrastructure.database.models import (
     CommentModel,
     ModerationLogModel,
     PostModel,
+    PostReportModel,
     PostVoteModel,
 )
 
@@ -32,6 +34,8 @@ def _to_post(m: PostModel) -> Post:
         theme_slug=m.theme_slug,
         score=m.score,
         created_at=m.created_at,
+        removed_at=m.removed_at,
+        removed_by=m.removed_by,
     )
 
 
@@ -74,13 +78,19 @@ class SqlPostRepository(PostRepository):
         page_size: int = 20,
         political_actor_id: int | None = None,
         theme_slug: str | None = None,
+        sort: str = "score",
     ) -> tuple[list[Post], int]:
         stmt = select(PostModel)
         if political_actor_id is not None:
             stmt = stmt.where(PostModel.political_actor_id == political_actor_id)
         if theme_slug is not None:
             stmt = stmt.where(PostModel.theme_slug == theme_slug)
-        stmt = stmt.order_by(PostModel.score.desc(), PostModel.created_at.desc())
+        if sort == "recent":
+            stmt = stmt.order_by(PostModel.created_at.desc())
+        else:
+            stmt = stmt.order_by(
+                PostModel.score.desc(), PostModel.created_at.desc()
+            )
         total = self._db.scalar(select(func.count()).select_from(stmt.subquery())) or 0
         offset = (page - 1) * page_size
         rows = self._db.execute(stmt.offset(offset).limit(page_size)).scalars().all()
@@ -91,6 +101,28 @@ class SqlPostRepository(PostRepository):
         if model:
             model.score = new_score
             self._db.commit()
+
+
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int:
+        stmt = (
+            select(func.count())
+            .select_from(PostModel)
+            .where(
+                PostModel.anonymous_id == anonymous_id,
+                PostModel.created_at >= since,
+            )
+        )
+        return int(self._db.execute(stmt).scalar_one())
+
+    def mark_removed(self, post_id: str, removed_by: str, now: datetime) -> None:
+        model = self._db.get(PostModel, post_id)
+        if model is None:
+            return
+        model.removed_at = now
+        model.removed_by = removed_by
+        # A lapide nao guarda o texto.
+        model.content = ""
+        self._db.commit()
 
 
 class SqlCommentRepository(CommentRepository):
@@ -184,3 +216,41 @@ class SqlModerationLogRepository(ModerationLogRepository):
         )
         self._db.add(entry)
         self._db.commit()
+
+
+class SqlPostReportRepository(PostReportRepository):
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def upsert(self, report: PostReport) -> None:
+        existing = self._db.get(
+            PostReportModel, (report.post_id, report.anonymous_id)
+        )
+        if existing is None:
+            self._db.add(
+                PostReportModel(
+                    post_id=report.post_id,
+                    anonymous_id=report.anonymous_id,
+                    reason=report.reason,
+                    detail=report.detail,
+                    created_at=report.created_at,
+                )
+            )
+        else:
+            existing.reason = report.reason
+            existing.detail = report.detail
+        self._db.commit()
+
+    def count_distinct_reporters(self, post_id: str) -> int:
+        stmt = (
+            select(func.count())
+            .select_from(PostReportModel)
+            .where(PostReportModel.post_id == post_id)
+        )
+        return int(self._db.execute(stmt).scalar_one())
+
+    def reasons_for_post(self, post_id: str) -> list[str]:
+        stmt = select(PostReportModel.reason).where(
+            PostReportModel.post_id == post_id
+        )
+        return list(self._db.execute(stmt).scalars().all())

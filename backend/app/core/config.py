@@ -18,6 +18,7 @@ class Settings(BaseSettings):
     allowed_origins: str = "https://farol-politico-495210.web.app"
 
     # External services
+    moderation_mode: Literal["enforce", "disabled"] = "enforce"
     groq_api_key: str | None = None
     gemini_api_key: str | None = None
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"

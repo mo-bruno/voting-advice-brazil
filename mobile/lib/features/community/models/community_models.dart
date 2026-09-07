@@ -6,6 +6,8 @@ class PostSummary {
   final String? themeSlug;
   final int score;
   final DateTime createdAt;
+  final bool removed;
+  final String? removedBy;
 
   const PostSummary({
     required this.id,
@@ -15,6 +17,8 @@ class PostSummary {
     this.themeSlug,
     required this.score,
     required this.createdAt,
+    this.removed = false,
+    this.removedBy,
   });
 
   factory PostSummary.fromJson(Map<String, dynamic> json) => PostSummary(
@@ -25,7 +29,14 @@ class PostSummary {
         themeSlug: json['theme_slug'] as String?,
         score: json['score'] as int,
         createdAt: DateTime.parse(json['created_at'] as String),
+        removed: json['removed'] as bool? ?? false,
+        removedBy: json['removed_by'] as String?,
       );
+
+  /// Texto exibido no lugar do conteudo quando o post foi removido.
+  String get tombstoneLabel => removedBy == 'moderation'
+      ? 'Removido pela moderação'
+      : 'Removido pelo autor';
 }
 
 class PostComment {

@@ -19,7 +19,9 @@ class PostDetailPage extends StatefulWidget {
 class _PostDetailPageState extends State<PostDetailPage> {
   PostDetail? _detail;
   bool _loading = true;
+  bool _failed = false;
   bool _sendingComment = false;
+  bool _voting = false;
   final _commentController = TextEditingController();
 
   @override
@@ -35,47 +37,82 @@ class _PostDetailPageState extends State<PostDetailPage> {
   }
 
   Future<void> _load() async {
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-    final data =
-        await ApiClient().getPost(widget.postId, anonymousId: anonymousId);
     if (mounted) {
       setState(() {
-        _detail = PostDetail.fromJson(data);
-        _loading = false;
+        _loading = true;
+        _failed = false;
       });
+    }
+    try {
+      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
+      final data =
+          await ApiClient().getPost(widget.postId, anonymousId: anonymousId);
+      if (mounted) setState(() => _detail = PostDetail.fromJson(data));
+    } catch (_) {
+      // Sem este catch a excecao escapava e `_loading` ficava true para sempre.
+      // O `_failed` existe porque o build faz `_detail!`: liberar o loading sem
+      // um ramo de erro trocaria o spinner eterno por um crash.
+      if (mounted) setState(() => _failed = true);
+    } finally {
+      if (mounted) setState(() => _loading = false);
     }
   }
 
+  void _avisar(String mensagem) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text(mensagem)));
+  }
+
   Future<void> _vote(int value) async {
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-    final data = await ApiClient()
-        .votePost(widget.postId, value, anonymousId: anonymousId);
-    final updated = PostSummary.fromJson(data);
-    CommunitySession().updatePost(updated);
-    if (mounted) {
-      setState(() {
-        _detail = PostDetail(post: updated, comments: _detail!.comments);
-      });
+    final atual = _detail;
+    // Mesma trava do feed: sem ela, toques repetidos enquanto a requisicao
+    // esta em voo disparam votos concorrentes.
+    if (atual == null || _voting) return;
+    setState(() => _voting = true);
+    try {
+      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
+      final data = await ApiClient()
+          .votePost(widget.postId, value, anonymousId: anonymousId);
+      final updated = PostSummary.fromJson(data);
+      CommunitySession().updatePost(updated);
+      if (mounted) {
+        setState(() {
+          _detail = PostDetail(post: updated, comments: atual.comments);
+        });
+      }
+    } catch (_) {
+      _avisar('Não foi possível registrar seu voto.');
+    } finally {
+      if (mounted) setState(() => _voting = false);
     }
   }
 
   Future<void> _addComment() async {
     final content = _commentController.text.trim();
-    if (content.isEmpty) return;
+    final atual = _detail;
+    if (content.isEmpty || atual == null) return;
     setState(() => _sendingComment = true);
-    final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-    final data = await ApiClient()
-        .createComment(widget.postId, content, anonymousId: anonymousId);
-    final comment = PostComment.fromJson(data);
-    _commentController.clear();
-    if (mounted) {
-      setState(() {
-        _detail = PostDetail(
-          post: _detail!.post,
-          comments: [..._detail!.comments, comment],
-        );
-        _sendingComment = false;
-      });
+    try {
+      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
+      final data = await ApiClient()
+          .createComment(widget.postId, content, anonymousId: anonymousId);
+      final comment = PostComment.fromJson(data);
+      _commentController.clear();
+      if (mounted) {
+        setState(() {
+          _detail = PostDetail(
+            post: atual.post,
+            comments: [...atual.comments, comment],
+          );
+        });
+      }
+    } catch (_) {
+      // Sem o finally o `_sendingComment` ficava true e o botao de enviar
+      // ficava travado para sempre.
+      _avisar('Não foi possível enviar seu comentário.');
+    } finally {
+      if (mounted) setState(() => _sendingComment = false);
     }
   }
 
@@ -91,8 +128,56 @@ class _PostDetailPageState extends State<PostDetailPage> {
         body: const Center(child: CircularProgressIndicator()),
       );
     }
-    final post = _detail!.post;
-    final comments = _detail!.comments;
+    final detail = _detail;
+    if (_failed || detail == null) {
+      return AppScaffold(
+        title: 'COMENTÁRIOS',
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(Icons.warning_amber_rounded,
+                    size: 44, color: AppTheme.error),
+                const SizedBox(height: 18),
+                const Text(
+                  'Não foi possível carregar a discussão',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w800,
+                    color: AppTheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 12),
+                const Text(
+                  'Verifique sua conexão e tente novamente.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 12,
+                    height: 1.55,
+                    color: AppTheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 24),
+                OutlinedButton(
+                  onPressed: _load,
+                  child: const Text('TENTAR DE NOVO'),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    final post = detail.post;
+    final comments = detail.comments;
 
     return AppScaffold(
       title: '${comments.length} COMENTÁRIO${comments.length != 1 ? 'S' : ''}',
@@ -154,7 +239,15 @@ class _PostBody extends StatelessWidget {
         children: [
           _AuthorRow(anonymousId: post.anonymousId, createdAt: post.createdAt),
           const SizedBox(height: 12),
-          Text(post.content, style: Theme.of(context).textTheme.bodyLarge),
+          // Maior que no card: aqui o post e o assunto, nao um item de lista.
+          Text(
+            post.content,
+            style: const TextStyle(
+              fontSize: 16,
+              height: 1.55,
+              color: AppTheme.onSurface,
+            ),
+          ),
           if (post.themeSlug != null) ...[
             const SizedBox(height: 10),
             Container(
@@ -309,8 +402,10 @@ class _CommentTile extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
       decoration: const BoxDecoration(
+        // Mais sutil que a regua do feed: aqui os comentarios sao subordinados
+        // ao post, nao itens de mesma hierarquia.
         border: Border(
-          bottom: BorderSide(color: AppTheme.outlineVariant, width: 1),
+          bottom: BorderSide(color: AppTheme.surfaceContainer, width: 1),
         ),
       ),
       child: Column(
@@ -357,7 +452,18 @@ class _CommentTile extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 7),
-          Text(comment.content, style: Theme.of(context).textTheme.bodyMedium),
+          // Recuado para alinhar com o nome do autor, acima.
+          Padding(
+            padding: const EdgeInsets.only(left: 29),
+            child: Text(
+              comment.content,
+              style: const TextStyle(
+                fontSize: 14,
+                height: 1.5,
+                color: AppTheme.onSurface,
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -402,15 +508,15 @@ class _CommentInput extends StatelessWidget {
                   filled: true,
                   fillColor: AppTheme.surfaceContainer,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.primary),
                   ),
                   contentPadding:

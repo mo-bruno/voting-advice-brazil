@@ -23,6 +23,16 @@ class AppTheme {
   static const Color outline = Color(0xFF767683);
   static const Color outlineVariant = Color(0xFF393939);
 
+  // As cores do LED do gadget fisico, nomeadas pelo que significam e nao pelo
+  // papel que teriam numa tela. Verde/vermelho reaproveitam os tokens que ja
+  // existiam; `ledPending` e novo porque `primaryContainer` (0xFF0C2B6E) e
+  // escuro demais para ler como luz acesa sobre o fundo do app.
+  static const Color ledAligned = secondary;
+  static const Color ledAbstention = Color(0xFFFFE000);
+  static const Color ledDivergent = error;
+  static const Color ledPending = Color(0xFF2F6BE0);
+  static const Color ledOff = outline;
+
   static final ThemeData dark = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,

@@ -4,6 +4,8 @@ import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
 import '../../shared/models/iot_device.dart';
+import '../../features/community/models/community_theme.dart';
+import '../../shared/models/news_article.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
 import '../../shared/models/political_actor.dart';
@@ -229,6 +231,17 @@ class ApiClient {
     }
   }
 
+  /// `GET /themes` existe desde a Fase 1 e nunca foi consumido pelo app.
+  /// A comunidade usa a lista como categoria opcional do post.
+  Future<List<CommunityTheme>> fetchThemes() async {
+    final uri = Uri.parse('$baseUrl/themes');
+    final json = await _getJson(uri) as List<dynamic>;
+    return json
+        .cast<Map<String, dynamic>>()
+        .map(CommunityTheme.fromJson)
+        .toList();
+  }
+
   Future<Map<String, dynamic>> createPost({
     required String anonymousId,
     required String content,
@@ -252,6 +265,7 @@ class ApiClient {
     int pageSize = 20,
     int? politicalActorId,
     String? themeSlug,
+    String? sort,
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts').replace(
       queryParameters: {
@@ -260,6 +274,8 @@ class ApiClient {
         if (politicalActorId != null)
           'political_actor_id': '$politicalActorId',
         if (themeSlug != null) 'theme_slug': themeSlug,
+        // Omitido quando nulo: mantem a URL limpa e o padrao do servidor.
+        if (sort != null) 'sort': sort,
       },
     );
     return await _getJson(
@@ -353,4 +369,66 @@ class ApiClient {
     }
     throw ApiException('Erro ${response.statusCode} ao conectar com a API.');
   }
+
+  Future<WeeklyNews> fetchWeeklyNews({int limit = 10}) async {
+    final uri = Uri.parse('$baseUrl/news/weekly?limit=$limit');
+    final json = await _getJson(uri) as Map<String, dynamic>;
+    return WeeklyNews(
+      periodLabel: json['period_label'] as String? ?? '',
+      articles: (json['articles'] as List<dynamic>)
+          .cast<Map<String, dynamic>>()
+          .map(NewsArticle.fromJson)
+          .map((a) => a.withImageUrl(proxiedImageUrl(a.imageUrl)))
+          .toList(),
+    );
+  }
+
+  /// A Camara serve as imagens sem `access-control-allow-origin`, o que faz o
+  /// Flutter Web falhar ao desenha-las. A reescrita acontece aqui porque este
+  /// e o unico lugar que conhece a `baseUrl` da API.
+  String? proxiedImageUrl(String? original) {
+    if (original == null || original.isEmpty) return null;
+    return '$baseUrl/news/image?url=${Uri.encodeQueryComponent(original)}';
+  }
+
+
+  Future<void> reportPost(
+    String postId, {
+    required String reason,
+    String? detail,
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId/reports');
+    final response = await _client.post(
+      uri,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Farol-Anonymous-Id': anonymousId,
+      },
+      body: jsonEncode({'reason': reason, if (detail != null) 'detail': detail}),
+    );
+    if (response.statusCode >= 400) {
+      throw ApiException('Erro ${response.statusCode} ao denunciar.');
+    }
+  }
+
+  Future<void> deletePost(String postId, {required String anonymousId}) async {
+    final uri = Uri.parse('$baseUrl/community/posts/$postId');
+    final response = await _client.delete(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    if (response.statusCode >= 400) {
+      throw ApiException('Erro ${response.statusCode} ao remover o post.');
+    }
+  }
+
+}
+
+/// Resposta de `GET /news/weekly`: o recorte e os artigos.
+class WeeklyNews {
+  const WeeklyNews({required this.periodLabel, required this.articles});
+
+  final String periodLabel;
+  final List<NewsArticle> articles;
 }

@@ -5,9 +5,15 @@ import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
+import 'models/community_theme.dart';
+import 'utils/community_utils.dart';
 
 class CreatePostPage extends StatefulWidget {
-  const CreatePostPage({super.key});
+  const CreatePostPage({super.key, this.apiClient});
+
+  /// Injetavel para teste, seguindo o padrao do feed.
+  @visibleForTesting
+  final ApiClient? apiClient;
 
   @override
   State<CreatePostPage> createState() => _CreatePostPageState();
@@ -15,8 +21,29 @@ class CreatePostPage extends StatefulWidget {
 
 class _CreatePostPageState extends State<CreatePostPage> {
   final _controller = TextEditingController();
+  late final ApiClient _api = widget.apiClient ?? ApiClient();
   bool _loading = false;
   String? _error;
+  String? _anonymousId;
+  List<CommunityTheme> _themes = [];
+  String? _selectedTheme;
+
+  @override
+  void initState() {
+    super.initState();
+    _carregar();
+  }
+
+  Future<void> _carregar() async {
+    final id = await DeviceIdentityStore().getOrCreateDeviceId();
+    if (mounted) setState(() => _anonymousId = id);
+    try {
+      final themes = await _api.fetchThemes();
+      if (mounted) setState(() => _themes = themes);
+    } catch (_) {
+      // Sem temas a tela continua util: o seletor e opcional.
+    }
+  }
 
   @override
   void dispose() {
@@ -32,14 +59,31 @@ class _CreatePostPageState extends State<CreatePostPage> {
       _error = null;
     });
     try {
-      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      await ApiClient().createPost(content: content, anonymousId: anonymousId);
+      final anonymousId =
+          _anonymousId ?? await DeviceIdentityStore().getOrCreateDeviceId();
+      await _api.createPost(
+        content: content,
+        anonymousId: anonymousId,
+        themeSlug: _selectedTheme,
+      );
       CommunitySession().invalidate();
       if (mounted) Navigator.pop(context, true);
     } catch (e) {
-      setState(() => _error = e.toString().contains('422')
-          ? 'Post rejeitado pela moderação. Revise o conteúdo e tente novamente.'
-          : 'Erro ao publicar. Verifique sua conexão e tente novamente.');
+      setState(() {
+        final texto = e.toString();
+        if (texto.contains('429')) {
+          _error = 'Você publicou demais nos últimos minutos. '
+              'Aguarde alguns instantes.';
+        } else if (texto.contains('422')) {
+          _error = 'Post rejeitado pela moderação. '
+              'Revise o conteúdo e tente novamente.';
+        } else if (texto.contains('503')) {
+          _error = 'A moderação está indisponível no momento. '
+              'Tente novamente em instantes.';
+        } else {
+          _error = 'Erro ao publicar. Verifique sua conexão e tente novamente.';
+        }
+      });
     } finally {
       if (mounted) setState(() => _loading = false);
     }
@@ -85,32 +129,60 @@ class _CreatePostPageState extends State<CreatePostPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-              decoration: BoxDecoration(
-                color: AppTheme.surfaceContainer,
-                border: Border.all(color: AppTheme.outlineVariant),
-              ),
-              child: const Row(
-                children: [
-                  Icon(
-                    Icons.visibility_off_rounded,
-                    size: 14,
-                    color: AppTheme.onSurfaceVariant,
-                  ),
-                  SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      'Publicação anônima — sua identidade é protegida',
-                      style: TextStyle(
-                        fontSize: 11,
-                        color: AppTheme.onSurfaceVariant,
+            if (_anonymousId != null)
+              Container(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                decoration: BoxDecoration(
+                  border: Border.all(color: AppTheme.outlineVariant),
+                ),
+                child: Row(
+                  children: [
+                    Container(
+                      width: 22,
+                      height: 22,
+                      decoration: BoxDecoration(
+                        color: avatarColor(_anonymousId!),
+                        shape: BoxShape.circle,
+                      ),
+                      alignment: Alignment.center,
+                      child: Text(
+                        avatarInitials(_anonymousId!),
+                        style: const TextStyle(
+                          fontSize: 9,
+                          fontWeight: FontWeight.w700,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                    const SizedBox(width: 10),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            shortUsername(_anonymousId!),
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: AppTheme.onSurface,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          const Text(
+                            'Este é o seu nome no fórum. '
+                            'Ninguém vê mais que isso.',
+                            style: TextStyle(
+                              fontSize: 11,
+                              color: AppTheme.onSurfaceVariant,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
             const SizedBox(height: 16),
             Expanded(
               child: TextField(
@@ -134,21 +206,90 @@ class _CreatePostPageState extends State<CreatePostPage> {
                   filled: true,
                   fillColor: AppTheme.surfaceContainer,
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.outlineVariant),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(2)),
+                    borderRadius: BorderRadius.zero,
                     borderSide: BorderSide(color: AppTheme.primary),
                   ),
                   counterStyle: TextStyle(color: AppTheme.onSurfaceVariant),
                   contentPadding: EdgeInsets.all(12),
                 ),
                 onChanged: (_) => setState(() {}),
+              ),
+            ),
+            if (_themes.isNotEmpty) ...[
+              const SizedBox(height: 20),
+              const Text(
+                'TEMA (OPCIONAL)',
+                style: TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.w700,
+                  letterSpacing: 1.5,
+                  color: AppTheme.onSurfaceVariant,
+                ),
+              ),
+              const SizedBox(height: 12),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: _themes.map((t) {
+                  final selected = _selectedTheme == t.slug;
+                  return InkWell(
+                    onTap: () => setState(
+                      () => _selectedTheme = selected ? null : t.slug,
+                    ),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 7,
+                      ),
+                      decoration: BoxDecoration(
+                        color: selected ? AppTheme.primary : Colors.transparent,
+                        border: Border.all(
+                          color: selected
+                              ? AppTheme.primary
+                              : AppTheme.outlineVariant,
+                        ),
+                      ),
+                      child: Text(
+                        t.nome.toUpperCase(),
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight:
+                              selected ? FontWeight.w700 : FontWeight.w600,
+                          letterSpacing: 0.5,
+                          color: selected
+                              ? AppTheme.background
+                              : AppTheme.onSurfaceVariant,
+                        ),
+                      ),
+                    ),
+                  );
+                }).toList(),
+              ),
+            ],
+            const SizedBox(height: 20),
+            Container(
+              padding: const EdgeInsets.only(left: 12),
+              decoration: const BoxDecoration(
+                border: Border(
+                  left: BorderSide(color: AppTheme.outlineVariant, width: 2),
+                ),
+              ),
+              child: const Text(
+                'Todo post passa por uma verificação automática de relevância '
+                'e de checagem factual antes de aparecer no fórum.',
+                style: TextStyle(
+                  fontSize: 12,
+                  height: 1.55,
+                  color: AppTheme.onSurfaceVariant,
+                ),
               ),
             ),
             if (_error != null) ...[

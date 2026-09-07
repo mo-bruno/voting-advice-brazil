@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
+import '../../core/shell/main_shell.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
 import '../../shared/quiz_session.dart';
@@ -27,10 +28,20 @@ class _ResultsPageState extends State<ResultsPage> {
     unawaited(event.catchError((_) {}));
   }
 
-  void _restartQuiz() {
-    _track(_analytics.quizRestarted());
-    _session.resetQuiz();
-    Navigator.pushNamedAndRemoveUntil(context, '/quiz-intro', (route) => false);
+  /// Sair da tela nao descarta mais o teste. Este botao ja foi "REFAZER QUIZ" e
+  /// chamava `resetQuiz()` para poder navegar — quem so queria sair da tela
+  /// perdia o resultado junto. O descarte mudou para a QuizIntroPage, onde ele
+  /// significa alguma coisa: comecar outro quiz.
+  ///
+  /// `pushNamedAndRemoveUntil` e nao `popUntil` porque so ele escolhe a aba de
+  /// destino, e o pedido e voltar ao Inicio — nao a aba de onde se veio.
+  void _backToHome() {
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/',
+      (route) => false,
+      arguments: MainShellTab.inicio,
+    );
   }
 
   @override
@@ -145,8 +156,8 @@ class _ResultsPageState extends State<ResultsPage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: _restartQuiz,
-                child: const Text('REFAZER QUIZ'),
+                onPressed: _backToHome,
+                child: const Text('VOLTAR AO INÍCIO'),
               ),
             ),
             const SizedBox(height: 32),

@@ -15,7 +15,10 @@ class FakePostRepository:
     def get_by_id(self, post_id: str) -> Post | None:
         return self._store.get(post_id)
 
-    def list(self, page=1, page_size=20, political_actor_id=None, theme_slug=None):
+    def list(
+        self, page=1, page_size=20, political_actor_id=None,
+        theme_slug=None, sort="score",
+    ):
         posts = list(self._store.values())
         return posts, len(posts)
 

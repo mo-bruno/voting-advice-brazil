@@ -8,17 +8,41 @@ import '../../core/theme/app_theme.dart';
 import '../../shared/quiz_session.dart';
 
 class QuizIntroPage extends StatefulWidget {
-  const QuizIntroPage({super.key});
+  const QuizIntroPage({super.key, this.analytics});
+
+  /// Injetavel para teste, seguindo o padrao que o QuizController ja usa:
+  /// sem isto a tela chama o Firebase no initState e nao monta em teste.
+  final AnalyticsService? analytics;
 
   @override
   State<QuizIntroPage> createState() => _QuizIntroPageState();
 }
 
 class _QuizIntroPageState extends State<QuizIntroPage> {
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
+
   @override
   void initState() {
     super.initState();
-    unawaited(AnalyticsService().quizIntroViewed());
+    unawaited(_analytics.quizIntroViewed());
+  }
+
+  /// Comecar e o momento de descartar o teste anterior. Antes isso vivia no
+  /// botao da tela de resultados, que precisava limpar tudo so para navegar;
+  /// agora o resultado sobrevive a navegacao e so sai de cena quando outro
+  /// quiz comeca de fato.
+  void _startQuiz() {
+    final session = QuizSession.instance;
+    if (session.hasStartedFlow) {
+      unawaited(_analytics.quizRestarted());
+      // Antes de `markQuizStarted`: `resetQuiz` zera `quizStartedAt`, e na
+      // ordem inversa a duracao do quiz sairia sem inicio.
+      session.resetQuiz();
+    }
+    session.markQuizStarted();
+    unawaited(_analytics.quizStarted());
+    Navigator.pushNamed(context, '/quiz');
   }
 
   @override
@@ -27,12 +51,9 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
 
     return AppScaffold(
       title: 'FAROL POLÍTICO',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-        },
-      ),
+      // Sem `leading`: o AppScaffold da o hamburguer dentro do shell e a seta
+      // de voltar se esta tela for empilhada — que foi como ela virou um beco
+      // sem saida uma vez (ver `_defaultLeading`).
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
@@ -84,11 +105,7 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {
-                  QuizSession.instance.markQuizStarted();
-                  unawaited(AnalyticsService().quizStarted());
-                  Navigator.pushNamed(context, '/quiz');
-                },
+                onPressed: _startQuiz,
                 child: const Text('COMEÇAR PERGUNTAS'),
               ),
             ),
