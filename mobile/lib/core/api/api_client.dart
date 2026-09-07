@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
 import '../../shared/models/iot_device.dart';
+import '../../features/community/models/community_theme.dart';
 import '../../shared/models/news_article.dart';
 import '../../shared/models/official_evidence.dart';
 import '../../shared/models/party.dart';
@@ -230,6 +231,17 @@ class ApiClient {
     }
   }
 
+  /// `GET /themes` existe desde a Fase 1 e nunca foi consumido pelo app.
+  /// A comunidade usa a lista como categoria opcional do post.
+  Future<List<CommunityTheme>> fetchThemes() async {
+    final uri = Uri.parse('$baseUrl/themes');
+    final json = await _getJson(uri) as List<dynamic>;
+    return json
+        .cast<Map<String, dynamic>>()
+        .map(CommunityTheme.fromJson)
+        .toList();
+  }
+
   Future<Map<String, dynamic>> createPost({
     required String anonymousId,
     required String content,
@@ -253,6 +265,7 @@ class ApiClient {
     int pageSize = 20,
     int? politicalActorId,
     String? themeSlug,
+    String? sort,
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts').replace(
       queryParameters: {
@@ -261,6 +274,8 @@ class ApiClient {
         if (politicalActorId != null)
           'political_actor_id': '$politicalActorId',
         if (themeSlug != null) 'theme_slug': themeSlug,
+        // Omitido quando nulo: mantem a URL limpa e o padrao do servidor.
+        if (sort != null) 'sort': sort,
       },
     );
     return await _getJson(
