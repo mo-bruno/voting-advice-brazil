@@ -56,6 +56,11 @@ class FakeCommentRepository:
         self._store.append(comment)
         return comment
 
+    def create_with_rate_limit(self, comment: Comment, since: datetime, max_comments: int) -> Comment | None:
+        if self.count_by_author_since(comment.anonymous_id, since) >= max_comments:
+            return None
+        return self.create(comment)
+
     def list_by_post(self, post_id: str) -> list[Comment]:
         return [c for c in self._store if c.post_id == post_id]
 

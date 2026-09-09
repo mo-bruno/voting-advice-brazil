@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 from sqlalchemy import func, select
+from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.orm import Session
 
@@ -13,6 +14,7 @@ from app.core.use_cases.interfaces import (
     PostVoteRepository,
 )
 from app.infrastructure.database.models import (
+    CommentAdmissionLockModel,
     CommentModel,
     ModerationLogModel,
     PostModel,
@@ -141,6 +143,39 @@ class SqlCommentRepository(CommentRepository):
         self._db.commit()
         self._db.refresh(model)
         return _to_comment(model)
+
+    def create_with_rate_limit(
+        self, comment: Comment, since: datetime, max_comments: int,
+    ) -> Comment | None:
+        dialect = self._db.get_bind().dialect.name
+        if dialect not in {"postgresql", "sqlite"}:
+            raise NotImplementedError(f"Comment admission is unsupported for {dialect}")
+        insert_lock = (
+            pg_insert(CommentAdmissionLockModel)
+            if dialect == "postgresql"
+            else sqlite_insert(CommentAdmissionLockModel)
+        )
+
+        try:
+            # Even on conflict, SQLite obtains its writer lock before counting.
+            # PostgreSQL also needs the author row lock when the row already exists.
+            self._db.execute(
+                insert_lock.values(anonymous_id=comment.anonymous_id)
+                .on_conflict_do_nothing(index_elements=["anonymous_id"])
+            )
+            self._db.execute(
+                select(CommentAdmissionLockModel.anonymous_id)
+                .where(CommentAdmissionLockModel.anonymous_id == comment.anonymous_id)
+                .with_for_update()
+            ).scalar_one()
+            if self.count_by_author_since(comment.anonymous_id, since) >= max_comments:
+                self._db.rollback()
+                return None
+            # create commits both admission and comment, releasing the DB lock.
+            return self.create(comment)
+        except Exception:
+            self._db.rollback()
+            raise
 
     def list_by_post(self, post_id: str) -> list[Comment]:
         rows = (

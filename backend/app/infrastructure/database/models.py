@@ -431,6 +431,12 @@ class CommentModel(Base):
     __table_args__ = (Index("ix_comments_post_id", "post_id"),)
 
 
+class CommentAdmissionLockModel(Base):
+    __tablename__ = "comment_admission_locks"
+
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+
+
 class PostVoteModel(Base):
     __tablename__ = "post_votes"
 

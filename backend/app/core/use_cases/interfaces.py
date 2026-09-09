@@ -262,6 +262,13 @@ class CommentRepository(ABC):
     def create(self, comment: Comment) -> Comment: ...
 
     @abstractmethod
+    def create_with_rate_limit(
+        self, comment: Comment, since: datetime, max_comments: int,
+    ) -> Comment | None:
+        """Atomically count and insert; return None if the author quota is full."""
+        ...
+
+    @abstractmethod
     def list_by_post(self, post_id: str) -> list[Comment]: ...
 
     @abstractmethod

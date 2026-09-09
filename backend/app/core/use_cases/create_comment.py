@@ -4,8 +4,9 @@ from datetime import datetime, timedelta, timezone
 
 from app.core.entities.community import Comment, ModerationResult
 from app.core.use_cases.comment_rate_limit import (
+    MAX_COMMENTS_PER_WINDOW,
     WINDOW_MINUTES,
-    check_comment_rate_limit,
+    CommentRateLimitExceeded,
 )
 from app.core.use_cases.community_errors import PostRemovedError
 from app.core.use_cases.interfaces import (
@@ -41,14 +42,17 @@ def moderate_and_create_comment(
         return None, result
 
     now = datetime.now(timezone.utc)
-    check_comment_rate_limit(comment_repo.count_by_author_since(
-        anonymous_id, now - timedelta(minutes=WINDOW_MINUTES),
-    ))
     comment = Comment(
         id=str(uuid.uuid4()), post_id=post_id, anonymous_id=anonymous_id,
         content=content, created_at=now,
     )
-    saved = comment_repo.create(comment)
+    saved = comment_repo.create_with_rate_limit(
+        comment,
+        since=comment.created_at - timedelta(minutes=WINDOW_MINUTES),
+        max_comments=MAX_COMMENTS_PER_WINDOW,
+    )
+    if saved is None:
+        raise CommentRateLimitExceeded()
     log_repo.record(
         post_id=post_id, anonymous_id=anonymous_id, content_hash=content_hash,
         approved=True, reason=None, model_used=result.model_used,
