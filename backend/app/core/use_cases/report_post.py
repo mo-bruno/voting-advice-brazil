@@ -15,12 +15,10 @@ from typing import Final
 from app.core.entities.community import PostReport
 from app.core.use_cases.interfaces import (
     ModerationLogRepository,
-    PostReportRepository,
-    PostRepository,
-)
-from app.infrastructure.llm.moderation_client import (
     ModerationPort,
     ModerationUnavailable,
+    PostReportRepository,
+    PostRepository,
 )
 
 REPORT_THRESHOLD: Final[int] = 3

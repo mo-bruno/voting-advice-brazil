@@ -3,21 +3,18 @@ from __future__ import annotations
 import logging
 from collections.abc import Callable
 from datetime import datetime
-from typing import TYPE_CHECKING
 
+from app.core.entities.news import DeviceNewsArticle
 from app.core.use_cases.interfaces import (
     IotDeviceEventRepository,
     IotDeviceLinkRepository,
     IotMqttPublisher,
 )
 
-if TYPE_CHECKING:
-    from app.infrastructure.sources.gnews import NewsArticle
-
 _log = logging.getLogger(__name__)
 
 ThemesFetcher = Callable[[str], list[str]]
-ArticlesFetcher = Callable[[list[str]], list["NewsArticle"]]
+ArticlesFetcher = Callable[[list[str]], list[DeviceNewsArticle]]
 
 
 def push_news_for_user(

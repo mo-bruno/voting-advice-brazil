@@ -1,8 +1,8 @@
 from datetime import datetime, timezone
 
 from app.core.entities.iot_device import IotDeviceLink
+from app.core.entities.news import DeviceNewsArticle
 from app.core.use_cases.news_notifier import push_news_for_user
-from app.infrastructure.sources.gnews import NewsArticle
 from tests.test_vote_notifier import (
     FakeIotDeviceEventRepository,
     FakeIotDeviceLinkRepository,
@@ -34,7 +34,9 @@ def test_push_news_publishes_mqtt():
         event_repo=event_repo,
         publisher=publisher,
         fetch_themes=lambda anon_id: ["educacao", "saude"],
-        fetch_articles=lambda themes: [NewsArticle("Titulo", "G1", "27/05")],
+        fetch_articles=lambda themes: [
+            DeviceNewsArticle("Titulo", "G1", "27/05")
+        ],
     )
 
     assert len(publisher.published) == 1
@@ -54,7 +56,7 @@ def test_push_news_skips_without_device():
         event_repo=event_repo,
         publisher=publisher,
         fetch_themes=lambda _: ["saude"],
-        fetch_articles=lambda _: [NewsArticle("T", "S", "01/01")],
+        fetch_articles=lambda _: [DeviceNewsArticle("T", "S", "01/01")],
     )
 
     assert publisher.published == []

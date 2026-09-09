@@ -1,9 +1,9 @@
 import json
-from abc import ABC, abstractmethod
 
 import httpx
 
 from app.core.entities.community import ModerationResult
+from app.core.use_cases.interfaces import ModerationPort, ModerationUnavailable
 
 _SYSTEM_PROMPT = """Você é um moderador de conteúdo para uma plataforma de debate político brasileiro.
 Avalie o texto do usuário segundo dois critérios:
@@ -20,15 +20,6 @@ Responda SOMENTE com JSON, sem markdown, sem texto fora do JSON:
 
 _GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
 _TIMEOUT = 10.0
-
-
-class ModerationPort(ABC):
-    @abstractmethod
-    def moderate(
-        self,
-        content: str,
-        report_reasons: list[str] | None = None,
-    ) -> ModerationResult: ...
 
 
 class GroqModerationClient(ModerationPort):
@@ -98,10 +89,6 @@ class FakeModerationClient(ModerationPort):
             reason=self._reason,
             model_used="fake",
         )
-
-
-class ModerationUnavailable(Exception):
-    """Raised when Groq is unreachable or returns an unparseable response."""
 
 
 class UnavailableModerationClient(ModerationPort):

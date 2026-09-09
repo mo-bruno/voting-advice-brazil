@@ -1,7 +1,24 @@
 from datetime import datetime, timezone
 
-from app.core.entities.community import Comment, Post, PostVote
-from app.infrastructure.llm.moderation_client import FakeModerationClient
+from app.core.entities.community import Comment, ModerationResult, Post, PostVote
+from app.core.use_cases.interfaces import ModerationPort
+
+
+class FakeModerationClient(ModerationPort):
+    def __init__(self, approved: bool = True, reason: str = "") -> None:
+        self._approved = approved
+        self._reason = reason
+
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult:
+        return ModerationResult(
+            approved=self._approved,
+            reason=self._reason,
+            model_used="fake",
+        )
 
 
 class FakePostRepository:

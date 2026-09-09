@@ -3,8 +3,11 @@ import uuid
 from datetime import datetime, timezone
 
 from app.core.entities.community import ModerationResult, Post
-from app.core.use_cases.interfaces import ModerationLogRepository, PostRepository
-from app.infrastructure.llm.moderation_client import ModerationPort
+from app.core.use_cases.interfaces import (
+    ModerationLogRepository,
+    ModerationPort,
+    PostRepository,
+)
 
 
 def moderate_and_create_post(

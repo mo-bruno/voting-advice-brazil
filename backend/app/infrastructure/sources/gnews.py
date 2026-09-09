@@ -2,20 +2,14 @@ from __future__ import annotations
 
 import hashlib
 import time
-from dataclasses import dataclass
 
 import httpx
 
+from app.core.entities.news import DeviceNewsArticle
+
 GNEWS_BASE = "https://gnews.io/api/v4/search"
-_CACHE: dict[str, tuple[list["NewsArticle"], float]] = {}
+_CACHE: dict[str, tuple[list[DeviceNewsArticle], float]] = {}
 _CACHE_TTL_SECONDS = 3600
-
-
-@dataclass(frozen=True)
-class NewsArticle:
-    title: str
-    source: str
-    date: str  # DD/MM format
 
 
 def _cache_key(themes: list[str]) -> str:
@@ -27,7 +21,7 @@ def fetch_news_for_themes(
     themes: list[str],
     api_key: str,
     max_articles: int = 5,
-) -> list[NewsArticle]:
+) -> list[DeviceNewsArticle]:
     if not themes or not api_key:
         return []
 
@@ -65,7 +59,9 @@ def fetch_news_for_themes(
 
             source = item.get("source", {}).get("name", "")
             title = item.get("title", "")[:100]
-            articles.append(NewsArticle(title=title, source=source, date=date_str))
+            articles.append(
+                DeviceNewsArticle(title=title, source=source, date=date_str)
+            )
     except Exception:
         return []
 
