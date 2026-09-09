@@ -56,7 +56,9 @@ class NvidiaNimModerationClient(ModerationPort):
             "temperature": 0,
             "max_tokens": 512,
             "stream": False,
-            "chat_template_kwargs": {"enable_thinking": True},
+            "reasoning_effort": "high",
+            # Reserve half of the output budget for the required JSON decision.
+            "reasoning_budget": 256,
             "messages": [
                 {"role": "system", "content": _SYSTEM_PROMPT},
                 {"role": "user", "content": user_content},

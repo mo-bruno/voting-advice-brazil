@@ -77,7 +77,9 @@ def test_moderation_uses_bounded_nvidia_nim_request(
         assert json["temperature"] == 0
         assert json["max_tokens"] == 512
         assert json["stream"] is False
-        assert json["chat_template_kwargs"] == {"enable_thinking": True}
+        assert json["reasoning_effort"] == "high"
+        assert json["reasoning_budget"] == 256
+        assert "chat_template_kwargs" not in json
         assert headers == {
             "Authorization": "Bearer nvapi-test",
             "Accept": "application/json",
