@@ -1,3 +1,4 @@
+import logging
 from datetime import datetime, timezone
 
 from app.core.use_cases.interfaces import (
@@ -6,6 +7,8 @@ from app.core.use_cases.interfaces import (
     IotDeviceLinkRepository,
     IotMqttPublisher,
 )
+
+_log = logging.getLogger(__name__)
 
 ALIGNMENT_METADATA = {
     "aligned": {"color": "green", "description": "Voto alinhado ao usuario."},
@@ -91,6 +94,14 @@ def run_vote_notifier(
         )
         if event is None:
             continue
-        publisher.publish(topic=f"farol/{link.device_token}", payload={k: str(v) for k, v in payload.items()})
+        try:
+            publisher.publish(
+                topic=f"farol/{link.device_token}",
+                payload={k: str(v) for k, v in payload.items()},
+            )
+        except Exception:
+            # Broker exceptions can contain credentials or device tokens.
+            _log.error("Falha ao publicar voto reservado; nova tentativa suprimida.")
+            continue
         notified += 1
     return notified

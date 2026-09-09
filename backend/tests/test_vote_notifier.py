@@ -104,14 +104,62 @@ def test_same_source_vote_is_reserved_before_publish_and_never_repeated(broker_f
         alignment="pending",
         now=now,
     )
-    if broker_fails:
-        with pytest.raises(RuntimeError, match="broker unavailable"):
-            run_vote_notifier(source_event_id="vote:123:456", **dependencies)
-    else:
-        assert run_vote_notifier(source_event_id="vote:123:456", **dependencies) == 1
+    expected_count = 0 if broker_fails else 1
+    assert run_vote_notifier(source_event_id="vote:123:456", **dependencies) == expected_count
     assert run_vote_notifier(source_event_id="vote:123:456", **dependencies) == 0
     assert len(publisher.published) == 1
     assert len(events.recorded) == 1
+
+
+@pytest.mark.parametrize("failed_device", ["tok-1", "tok-2", "tok-3"])
+def test_publish_failure_preserves_success_count_and_continues_followers(failed_device, caplog):
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    events = FakeIotDeviceEventRepository()
+    attempts = []
+
+    class Publisher(FakeIotMqttPublisher):
+        def publish(self, topic: str, payload: dict[str, str]) -> None:
+            token = topic.removeprefix("farol/")
+            assert (token, "vote_alert", "vote:123:456") in events.reserved
+            attempts.append(topic)
+            if token == failed_device:
+                raise RuntimeError(f"MQTT password=broker-secret topic={topic}")
+            super().publish(topic, payload)
+
+    publisher = Publisher()
+    dependencies = dict(
+        followed_repo=FakeFollowedActorRepository([
+            (10, "anon-1"), (10, "anon-2"), (10, "anon-3"),
+        ]),
+        link_repo=FakeIotDeviceLinkRepository({
+            f"anon-{index}": IotDeviceLink(
+                f"tok-{index}", f"anon-{index}", "linked", now, now, None,
+            ) for index in (1, 2, 3)
+        }),
+        event_repo=events,
+        publisher=publisher,
+        political_actor_id=10,
+        source_event_id="vote:123:456",
+        deputy_name="Deputy A",
+        party=None,
+        state=None,
+        vote="Sim",
+        alignment="pending",
+        now=now,
+    )
+
+    assert run_vote_notifier(**dependencies) == 2
+    assert attempts == ["farol/tok-1", "farol/tok-2", "farol/tok-3"]
+    assert len(publisher.published) == 2
+    assert all(item["topic"] != f"farol/{failed_device}" for item in publisher.published)
+    assert len(events.reserved) == 3
+    assert run_vote_notifier(**dependencies) == 0
+    assert len(attempts) == 3
+    assert len(caplog.records) == 1
+    assert caplog.records[0].levelname == "ERROR"
+    assert "broker-secret" not in caplog.text
+    assert "tok-" not in caplog.text
+    assert "anon-" not in caplog.text
 
 
 def test_run_vote_notifier_publishes_and_records():

@@ -3,6 +3,7 @@ from __future__ import annotations
 import logging
 import unicodedata
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
 from app.config import settings
 from app.infrastructure.database.session import SessionLocal
@@ -34,7 +35,10 @@ def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict[
                 voting_date = datetime.fromisoformat(
                     voting_date_str.replace("Z", "+00:00")
                 )
-                if voting_date < since:
+                if voting_date.tzinfo is None:
+                    # Câmara's offset-free dates and times use Brasília civil time.
+                    voting_date = voting_date.replace(tzinfo=ZoneInfo("America/Sao_Paulo"))
+                if voting_date.astimezone(timezone.utc) < since:
                     continue
             except ValueError:
                 pass
