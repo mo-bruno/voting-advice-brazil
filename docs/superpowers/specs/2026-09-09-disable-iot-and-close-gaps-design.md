@@ -144,9 +144,9 @@ API can retain the existing HTTP 404 behavior for unknown IDs.
 ## Clean Architecture
 
 Move `ModerationPort` and `ModerationUnavailable` into the core boundary. The
-Groq, fake, and unavailable implementations in `infrastructure/llm` implement
-and import that core contract. Community use cases import only core entities
-and core ports.
+NVIDIA NIM, fake, and unavailable implementations in `infrastructure/llm`
+implement and import that core contract. Community use cases import only core
+entities and core ports.
 
 The hardware-news use case must likewise avoid type references to the GNews
 adapter. A small core entity or protocol represents the title/source/date data

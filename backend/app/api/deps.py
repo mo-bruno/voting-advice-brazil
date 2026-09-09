@@ -29,8 +29,8 @@ from app.infrastructure.database.repositories import (
 from app.infrastructure.database.session import get_db
 from app.infrastructure.llm.moderation_client import (
     FakeModerationClient,
-    GroqModerationClient,
     ModerationPort,
+    NvidiaNimModerationClient,
     UnavailableModerationClient,
 )
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
@@ -129,11 +129,14 @@ def get_moderation_log_repo(db: Session = Depends(get_db)) -> SqlModerationLogRe
 def get_moderation_client() -> ModerationPort:
     # Fecha por padrao: sem chave e em enforce, o UnavailableModerationClient
     # levanta ModerationUnavailable e o router devolve 503 — o mesmo caminho do
-    # Groq fora do ar. Aprovar em silencio so acontece por declaracao explicita.
+    # NIM fora do ar. Aprovar em silencio so acontece por declaracao explicita.
     if settings.moderation_mode == "disabled":
         return FakeModerationClient(approved=True)
-    if settings.groq_api_key:
-        return GroqModerationClient(settings.groq_api_key)
+    if settings.nvidia_api_key:
+        return NvidiaNimModerationClient(
+            settings.nvidia_api_key,
+            model=settings.nvidia_moderation_model,
+        )
     return UnavailableModerationClient()
 
 

@@ -1026,8 +1026,8 @@ flag, and current environment variables.
 
 `CLAUDE.md` must remove claims that the present quiz scores voting records,
 that a consistency index exists, that quiz responses are not persisted, and
-that a batch Gemini pipeline is implemented. Describe Groq moderation as a
-synchronous post/comment gate and Câmara/GNews as separate integrations.
+that a batch Gemini pipeline is implemented. Describe NVIDIA NIM moderation as
+a synchronous post/comment gate and Câmara/GNews as separate integrations.
 
 - [ ] **Step 5: Mark historical documents and firmware accurately**
 
