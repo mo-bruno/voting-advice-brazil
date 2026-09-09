@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/app.dart';
@@ -18,5 +19,9 @@ void main() {
     expect(find.text('FAROL POLÍTICO'), findsOneWidget);
     expect(find.text('NOTÍCIAS DA SEMANA'), findsOneWidget);
     expect(find.text('VER TODAS AS NOTÍCIAS'), findsOneWidget);
+
+    final app = tester.widget<MaterialApp>(find.byType(MaterialApp));
+    expect(app.routes!.containsKey('/iot-device'), isFalse);
+    expect(app.routes!.containsKey('/iot-pairing'), isFalse);
   });
 }

@@ -85,7 +85,7 @@ void main() {
           // /quiz-intro NAO e registrada de proposito: se a seta de voltar
           // tentar empilha-la de novo, o teste morre em "route not found" em
           // vez de passar despercebido.
-          '/quiz': (_) => const QuizPage(),
+          '/quiz': (_) => const QuizPage(iotEnabled: false),
         },
       ));
 

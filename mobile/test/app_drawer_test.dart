@@ -63,7 +63,10 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       routes: {
-        '/': (_) => const Scaffold(drawer: AppDrawer(), body: SizedBox()),
+        '/': (_) => const Scaffold(
+              drawer: AppDrawer(iotEnabled: true),
+              body: SizedBox(),
+            ),
         '/iot-device': (_) => const Scaffold(body: Text('tela do dispositivo')),
         '/iot-pairing': (_) => const Scaffold(body: Text('tela de pareamento')),
       },

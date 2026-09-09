@@ -12,6 +12,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/device/device_identity_store.dart';
+import '../../core/features/feature_flags.dart';
 import '../../core/shell/main_shell.dart';
 import '../../core/theme/app_theme.dart';
 import '../iot_device_session.dart';
@@ -25,11 +26,18 @@ import 'drawer/followed_actor_tile.dart';
 import 'drawer/quiz_affinity_tile.dart';
 
 class AppDrawer extends StatefulWidget {
-  const AppDrawer({super.key, this.deviceIdentityStore});
+  const AppDrawer({
+    super.key,
+    this.deviceIdentityStore,
+    this.iotEnabled,
+  });
 
   /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
   /// que o resto do app.
   final DeviceIdentityStore? deviceIdentityStore;
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? iotEnabled;
 
   @override
   State<AppDrawer> createState() => _AppDrawerState();
@@ -40,7 +48,8 @@ class _AppDrawerState extends State<AppDrawer> {
   /// redesenha a gaveta. Montada aqui e nao no `build` para nao criar um
   /// Listenable novo a cada frame.
   late final Listenable _sessions = Listenable.merge([
-    IotDeviceSession.instance,
+    if (widget.iotEnabled ?? FeatureFlags.environment.iotEnabled)
+      IotDeviceSession.instance,
     PoliticalActorSession.instance,
     QuizSession.instance,
   ]);
@@ -87,39 +96,46 @@ class _AppDrawerState extends State<AppDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
+
     return Drawer(
       backgroundColor: AppTheme.surface,
       child: ListenableBuilder(
         listenable: _sessions,
         builder: (context, _) {
-          final iot = IotDeviceSession.instance;
           final followed = PoliticalActorSession.instance.followedActor;
           final results = QuizSession.instance.visibleResults;
+          final iot = iotEnabled ? IotDeviceSession.instance : null;
 
           return Column(
             children: [
-              FarolDrawerHeader(
-                state: farolLedStateFor(
-                  device: iot.device,
-                  lastEvent: iot.lastEvent,
-                  now: DateTime.now(),
-                ),
-              ),
+              if (iotEnabled)
+                FarolDrawerHeader(
+                  state: farolLedStateFor(
+                    device: iot!.device,
+                    lastEvent: iot.lastEvent,
+                    now: DateTime.now(),
+                  ),
+                )
+              else
+                const _BrandedDrawerHeader(),
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: [
-                    FarolStatusTile(
-                      device: iot.device,
-                      lastEvent: iot.lastEvent,
-                      onOpenDevice: () => _go(
-                        (navigator) => navigator.pushNamed('/iot-device'),
+                    if (iotEnabled) ...[
+                      FarolStatusTile(
+                        device: iot!.device,
+                        lastEvent: iot.lastEvent,
+                        onOpenDevice: () => _go(
+                          (navigator) => navigator.pushNamed('/iot-device'),
+                        ),
+                        onPair: () => _go(
+                          (navigator) => navigator.pushNamed('/iot-pairing'),
+                        ),
                       ),
-                      onPair: () => _go(
-                        (navigator) => navigator.pushNamed('/iot-pairing'),
-                      ),
-                    ),
-                    const _Rule(),
+                      const _Rule(),
+                    ],
                     FollowedActorTile(
                       actor: followed,
                       onOpenProfile: () => _go(
@@ -152,6 +168,47 @@ class _AppDrawerState extends State<AppDrawer> {
             ],
           );
         },
+      ),
+    );
+  }
+}
+
+class _BrandedDrawerHeader extends StatelessWidget {
+  const _BrandedDrawerHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    return DrawerHeader(
+      margin: EdgeInsets.zero,
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
+        color: AppTheme.background,
+        border: Border(
+          bottom: BorderSide(color: AppTheme.outlineVariant),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const Text(
+            'FAROL\nPOLÍTICO',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: AppTheme.primary,
+              height: 1,
+              letterSpacing: 1.5,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'BRASIL 2026',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  letterSpacing: 2,
+                ),
+          ),
+        ],
       ),
     );
   }

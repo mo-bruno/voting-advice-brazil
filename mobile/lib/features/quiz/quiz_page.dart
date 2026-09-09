@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/features/feature_flags.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis.dart';
@@ -9,14 +10,28 @@ import 'quiz_controller.dart';
 import '../../shared/iot_device_session.dart';
 
 class QuizPage extends StatefulWidget {
-  const QuizPage({super.key});
+  const QuizPage({
+    super.key,
+    this.iotEnabled,
+    this.controller,
+    this.iotSession,
+  });
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? iotEnabled;
+
+  @visibleForTesting
+  final QuizController? controller;
+
+  @visibleForTesting
+  final IotDeviceSession? iotSession;
 
   @override
   State<QuizPage> createState() => _QuizPageState();
 }
 
 class _QuizPageState extends State<QuizPage> {
-  final QuizController controller = QuizController();
+  late final QuizController controller = widget.controller ?? QuizController();
 
   @override
   void initState() {
@@ -53,13 +68,16 @@ class _QuizPageState extends State<QuizPage> {
   }
 
   void _handleAnswer(ThesisAnswer value) {
-    unawaited(
-      IotDeviceSession.instance.sendQuizPulse(
-        answer: _getAnswerValue(value),
-        current: controller.currentIndex + 1,
-        total: controller.totalTheses,
-      ),
-    );
+    final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
+    if (iotEnabled) {
+      unawaited(
+        (widget.iotSession ?? IotDeviceSession.instance).sendQuizPulse(
+          answer: _getAnswerValue(value),
+          current: controller.currentIndex + 1,
+          total: controller.totalTheses,
+        ),
+      );
+    }
     controller.answer(value).then((finished) {
       if (finished && mounted) _onFinishQuiz();
     });
