@@ -63,18 +63,25 @@ class GroqModerationClient(ModerationPort):
                 timeout=_TIMEOUT,
             )
             resp.raise_for_status()
-        except (httpx.TimeoutException, httpx.HTTPStatusError) as exc:
-            raise ModerationUnavailable("Groq indisponível") from exc
+        except httpx.HTTPError:
+            # Provider errors may embed credentials, URLs or response content.
+            raise ModerationUnavailable("Groq indisponível") from None
 
-        raw = resp.json()["choices"][0]["message"]["content"].strip()
         try:
+            raw = resp.json()["choices"][0]["message"]["content"]
+            if not isinstance(raw, str):
+                raise ValueError("Expected model content as text")
             data = json.loads(raw)
-        except json.JSONDecodeError as exc:
-            raise ModerationUnavailable("Resposta inválida do modelo") from exc
+            if not isinstance(data, dict) or not isinstance(data.get("approved"), bool):
+                raise ValueError("Expected a boolean moderation decision")
+            approved = data["approved"]
+            reason = data.get("reason", "")
+            if not isinstance(reason, str):
+                raise ValueError("Expected a textual moderation reason")
+        except (ValueError, KeyError, IndexError, TypeError):
+            raise ModerationUnavailable("Resposta inválida do modelo") from None
 
-        approved = bool(data.get("approved", False))
-        reason = str(data.get("reason", ""))[:200]
-        return ModerationResult(approved=approved, reason=reason, model_used=self._model)
+        return ModerationResult(approved=approved, reason=reason[:200], model_used=self._model)
 
 
 class FakeModerationClient(ModerationPort):
