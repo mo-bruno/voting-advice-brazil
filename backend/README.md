@@ -74,7 +74,7 @@ Fora do prefixo: `GET /health`, `/docs`, `/redoc`, `/openapi.json` e arquivos `/
 
 ## Integridade da comunidade
 
-Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de forma síncrona antes da publicação em modo `enforce`. O modelo padrão é `nvidia/nemotron-3-super-120b-a12b` e pode ser trocado por configuração. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout, resposta inválida ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
+Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de forma síncrona antes da publicação em modo `enforce`. A política rejeita conteúdo fora do tema, alegações claramente inventadas ou manipuladoras e ataques contra pessoas ou grupos — incluindo xingamentos direcionados, humilhação sexual, ameaças, incentivo à violência, assédio e discurso de ódio. Críticas duras a projetos, governos e atos públicos continuam permitidas quando não atacam pessoas. O modelo padrão é `nvidia/nemotron-3-super-120b-a12b` e pode ser trocado por configuração. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout, resposta inválida ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
 
 Há limite persistido no banco por `anonymous_id`: cinco posts a cada dez minutos e dez comentários a cada dez minutos. Excesso retorna 429 com `Retry-After: 600`. Posts removidos continuam contando para a cota. O limite geral por IP de 60 requisições/minuto usa memória do processo; ele não é uma cota distribuída entre instâncias.
 
