@@ -13,7 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Map<String, dynamic> _post(String id, {int score = 3}) => {
       'id': id,
-      'anonymous_id': 'anon-1',
+      'author_alias': 'u/abc123def0',
+      'is_mine': false,
       'content': 'Conteudo do post $id',
       'political_actor_id': null,
       'theme_slug': null,
@@ -65,7 +66,8 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       home: CommunityFeedPage(
-        apiClient: ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
+        apiClient:
+            ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
       ),
     ));
     await tester.pump();
@@ -99,7 +101,8 @@ void main() {
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       home: CommunityFeedPage(
-        apiClient: ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
+        apiClient:
+            ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
       ),
     ));
     await tester.pump();

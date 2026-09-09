@@ -6,7 +6,6 @@ import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
 import 'models/community_theme.dart';
-import 'utils/community_utils.dart';
 
 class CreatePostPage extends StatefulWidget {
   const CreatePostPage({super.key, this.apiClient});
@@ -141,18 +140,15 @@ class _CreatePostPageState extends State<CreatePostPage> {
                     Container(
                       width: 22,
                       height: 22,
-                      decoration: BoxDecoration(
-                        color: avatarColor(_anonymousId!),
+                      decoration: const BoxDecoration(
+                        color: AppTheme.surfaceContainerHigh,
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: Text(
-                        avatarInitials(_anonymousId!),
-                        style: const TextStyle(
-                          fontSize: 9,
-                          fontWeight: FontWeight.w700,
-                          color: Colors.white,
-                        ),
+                      child: const Icon(
+                        Icons.person_outline,
+                        size: 16,
+                        color: AppTheme.onSurfaceVariant,
                       ),
                     ),
                     const SizedBox(width: 10),
@@ -160,9 +156,9 @@ class _CreatePostPageState extends State<CreatePostPage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            shortUsername(_anonymousId!),
-                            style: const TextStyle(
+                          const Text(
+                            'Publicação anônima',
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                               color: AppTheme.onSurface,
@@ -170,8 +166,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
                           ),
                           const SizedBox(height: 2),
                           const Text(
-                            'Este é o seu nome no fórum. '
-                            'Ninguém vê mais que isso.',
+                            'Seu post será identificado por um apelido público.',
                             style: TextStyle(
                               fontSize: 11,
                               color: AppTheme.onSurfaceVariant,

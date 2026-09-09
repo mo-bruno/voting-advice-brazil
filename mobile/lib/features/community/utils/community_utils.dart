@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // importando um arquivo so.
 export '../../../shared/utils/time_ago.dart';
 
-Color avatarColor(String anonymousId) {
+Color avatarColor(String authorAlias) {
   const colors = [
     Color(0xFF1B6D24),
     Color(0xFF0C2B6E),
@@ -15,15 +15,12 @@ Color avatarColor(String anonymousId) {
     Color(0xFF8B7000),
     Color(0xFF8B2222),
   ];
-  return colors[anonymousId.hashCode.abs() % colors.length];
+  return colors[authorAlias.hashCode.abs() % colors.length];
 }
 
-String shortUsername(String anonymousId) {
-  final len = anonymousId.length;
-  return 'u/${anonymousId.substring(0, len < 6 ? len : 6)}';
-}
-
-String avatarInitials(String anonymousId) {
-  if (anonymousId.length >= 2) return anonymousId.substring(0, 2).toUpperCase();
+String avatarInitials(String authorAlias) {
+  final name =
+      authorAlias.startsWith('u/') ? authorAlias.substring(2) : authorAlias;
+  if (name.length >= 2) return name.substring(0, 2).toUpperCase();
   return '??';
 }

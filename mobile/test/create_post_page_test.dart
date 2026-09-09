@@ -62,11 +62,13 @@ void main() {
     SharedPreferences.setMockInitialValues({});
   });
 
-  testWidgets('mostra a identidade anonima antes de escrever', (tester) async {
+  testWidgets('explica o alias publico sem exibir o identificador privado',
+      (tester) async {
     await _pump(tester, _StubClient());
 
-    expect(find.textContaining('u/'), findsOneWidget);
-    expect(find.textContaining('Ninguém vê mais que isso'), findsOneWidget);
+    expect(find.text('Publicação anônima'), findsOneWidget);
+    expect(find.textContaining('apelido público'), findsOneWidget);
+    expect(find.textContaining('u/'), findsNothing);
   });
 
   testWidgets('avisa sobre a verificacao automatica', (tester) async {

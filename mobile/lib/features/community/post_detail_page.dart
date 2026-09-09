@@ -237,7 +237,7 @@ class _PostBody extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          _AuthorRow(anonymousId: post.anonymousId, createdAt: post.createdAt),
+          _AuthorRow(authorAlias: post.authorAlias, createdAt: post.createdAt),
           const SizedBox(height: 12),
           // Maior que no card: aqui o post e o assunto, nao um item de lista.
           Text(
@@ -276,10 +276,10 @@ class _PostBody extends StatelessWidget {
 }
 
 class _AuthorRow extends StatelessWidget {
-  final String anonymousId;
+  final String authorAlias;
   final DateTime createdAt;
 
-  const _AuthorRow({required this.anonymousId, required this.createdAt});
+  const _AuthorRow({required this.authorAlias, required this.createdAt});
 
   @override
   Widget build(BuildContext context) {
@@ -287,9 +287,9 @@ class _AuthorRow extends StatelessWidget {
       children: [
         CircleAvatar(
           radius: 14,
-          backgroundColor: avatarColor(anonymousId),
+          backgroundColor: avatarColor(authorAlias),
           child: Text(
-            avatarInitials(anonymousId),
+            avatarInitials(authorAlias),
             style: const TextStyle(
               fontSize: 11,
               fontWeight: FontWeight.w700,
@@ -302,7 +302,7 @@ class _AuthorRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              shortUsername(anonymousId),
+              authorAlias,
               style: const TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
@@ -415,9 +415,9 @@ class _CommentTile extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 11,
-                backgroundColor: avatarColor(comment.anonymousId),
+                backgroundColor: avatarColor(comment.authorAlias),
                 child: Text(
-                  avatarInitials(comment.anonymousId),
+                  avatarInitials(comment.authorAlias),
                   style: const TextStyle(
                     fontSize: 9,
                     fontWeight: FontWeight.w700,
@@ -427,7 +427,7 @@ class _CommentTile extends StatelessWidget {
               ),
               const SizedBox(width: 7),
               Text(
-                shortUsername(comment.anonymousId),
+                comment.authorAlias,
                 style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w600,

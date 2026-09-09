@@ -16,7 +16,6 @@ class PostCard extends StatelessWidget {
     required this.onTap,
     this.onVote,
     this.votePending = false,
-    this.currentAnonymousId,
     this.onDelete,
     this.onReport,
   });
@@ -29,17 +28,11 @@ class PostCard extends StatelessWidget {
   /// disparava uma requisicao nova, concorrente com a anterior.
   final bool votePending;
 
-  /// Usado para decidir se o post e do proprio dispositivo — e portanto se a
-  /// acao de apagar aparece.
-  final String? currentAnonymousId;
   final VoidCallback? onDelete;
   final VoidCallback? onReport;
 
-  bool get isMine =>
-      currentAnonymousId != null && post.anonymousId == currentAnonymousId;
-
   bool get _hasActions =>
-      !post.removed && (onReport != null || (onDelete != null && isMine));
+      !post.removed && (onReport != null || (onDelete != null && post.isMine));
 
   @override
   Widget build(BuildContext context) {
@@ -211,12 +204,12 @@ class _Header extends StatelessWidget {
           decoration: BoxDecoration(
             color: post.removed
                 ? AppTheme.surfaceContainerHigh
-                : avatarColor(post.anonymousId),
+                : avatarColor(post.authorAlias),
             shape: BoxShape.circle,
           ),
           alignment: Alignment.center,
           child: Text(
-            avatarInitials(post.anonymousId),
+            avatarInitials(post.authorAlias),
             style: const TextStyle(
               fontSize: 9,
               fontWeight: FontWeight.w700,
@@ -225,7 +218,7 @@ class _Header extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 8),
-        Text(shortUsername(post.anonymousId), style: meta),
+        Text(post.authorAlias, style: meta),
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 6),
           child: Text(
@@ -251,7 +244,7 @@ class _Header extends StatelessWidget {
             itemBuilder: (_) => [
               if (card.onReport != null)
                 const PopupMenuItem(value: 'report', child: Text('Denunciar')),
-              if (card.onDelete != null && card.isMine)
+              if (card.onDelete != null && post.isMine)
                 const PopupMenuItem(value: 'delete', child: Text('Apagar')),
             ],
           ),
