@@ -6,7 +6,8 @@ from uuid import UUID
 
 from fastapi import Header, HTTPException
 
-_AnonymousHeader = Annotated[str | None, Header(alias="X-Farol-Anonymous-Id")]
+_RequiredAnonymousHeader = Annotated[str, Header(alias="X-Farol-Anonymous-Id")]
+_OptionalAnonymousHeader = Annotated[str | None, Header(alias="X-Farol-Anonymous-Id")]
 
 
 def _validated_uuid4(raw: str) -> str:
@@ -19,13 +20,11 @@ def _validated_uuid4(raw: str) -> str:
     return str(parsed)
 
 
-def require_anonymous_id(value: _AnonymousHeader = None) -> str:
-    if value is None:
-        raise HTTPException(status_code=422, detail="X-Farol-Anonymous-Id is required.")
+def require_anonymous_id(value: _RequiredAnonymousHeader) -> str:
     return _validated_uuid4(value)
 
 
-def optional_anonymous_id(value: _AnonymousHeader = None) -> str | None:
+def optional_anonymous_id(value: _OptionalAnonymousHeader = None) -> str | None:
     return None if value is None else _validated_uuid4(value)
 
 

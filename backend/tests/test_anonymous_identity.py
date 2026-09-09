@@ -77,9 +77,18 @@ def test_required_anonymous_header_rejects_invalid_credentials(
     headers = {} if identity is None else {HEADER: identity}
     response = client.request(method, path, headers=headers, json=body)
     assert response.status_code == 422
-    # A domain/body validation error must not mask a missing header validator.
-    assert isinstance(response.json()["detail"], str)
-    assert "Anonymous" in response.json()["detail"]
+    # Verify the header error, so body/domain validation cannot mask a missing validator.
+    if identity is None:
+        errors = response.json()["detail"]
+        assert isinstance(errors, list)
+        assert len(errors) == 1
+        assert errors[0]["loc"] == ["header", HEADER]
+        assert errors[0]["type"] == "missing"
+        assert errors[0]["input"] is None
+    else:
+        assert response.json()["detail"] == "Anonymous ID must be a UUID v4."
+        if identity:
+            assert identity not in response.text
 
 
 @pytest.mark.parametrize("path", [POSTS, f"{POSTS}/missing"])
@@ -89,6 +98,9 @@ def test_optional_viewer_header_rejects_invalid_credentials(
 ) -> None:
     response = client.get(path, headers={HEADER: identity})
     assert response.status_code == 422
+    assert response.json()["detail"] == "Anonymous ID must be a UUID v4."
+    if identity:
+        assert identity not in response.text
 
 
 def _create_post(client: TestClient, identity: str = OWNER) -> dict[str, object]:
@@ -191,3 +203,37 @@ def test_public_response_schemas_do_not_publish_anonymous_id(client: TestClient)
         properties = schemas[name]["properties"]
         assert "anonymous_id" not in properties
         assert {"author_alias", "is_mine"} <= properties.keys()
+
+
+@pytest.mark.parametrize(
+    ("method", "path", "required"),
+    [
+        ("post", POSTS, True),
+        ("post", f"{POSTS}/{{post_id}}/votes", True),
+        ("post", f"{POSTS}/{{post_id}}/comments", True),
+        ("post", f"{POSTS}/{{post_id}}/reports", True),
+        ("delete", f"{POSTS}/{{post_id}}", True),
+        ("get", "/api/v1/me/followed-actor", True),
+        ("put", "/api/v1/me/followed-actor", True),
+        ("delete", "/api/v1/me/followed-actor", True),
+        ("get", "/api/v1/me/iot-device", True),
+        ("put", "/api/v1/me/iot-device", True),
+        ("delete", "/api/v1/me/iot-device", True),
+        ("post", "/api/v1/me/iot-device/quiz-pulse", True),
+        ("get", "/api/v1/me/iot-device/last-event", True),
+        ("get", POSTS, False),
+        ("get", f"{POSTS}/{{post_id}}", False),
+    ],
+)
+def test_openapi_documents_anonymous_header_requirement(
+    client: TestClient, method: str, path: str, required: bool,
+) -> None:
+    operation = client.get("/openapi.json").json()["paths"][path][method]
+    headers = [
+        parameter for parameter in operation["parameters"]
+        if parameter["in"] == "header" and parameter["name"] == HEADER
+    ]
+    assert len(headers) == 1
+    assert headers[0]["required"] is required
+    if required:
+        assert headers[0]["schema"]["type"] == "string"
