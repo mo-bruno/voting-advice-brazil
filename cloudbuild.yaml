@@ -47,8 +47,8 @@ steps:
       - --concurrency=80
       - --timeout=60s
       - --port=8080
-      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod,IOT_FEATURE_ENABLED=false
-      - --set-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,GROQ_API_KEY=groq-api-key:latest
+      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod,IOT_FEATURE_ENABLED=false,NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b
+      - --set-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,NVIDIA_API_KEY=nvidia-api-key:latest
 
 availableSecrets:
   secretManager:

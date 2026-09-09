@@ -4,15 +4,17 @@ import traceback
 import httpx
 import pytest
 
+from app.api import deps
+from app.config import settings
 from app.core.use_cases.interfaces import ModerationUnavailable
-from app.infrastructure.llm.moderation_client import GroqModerationClient
+from app.infrastructure.llm.moderation_client import NvidiaNimModerationClient
 
 _PRIVATE_MARKER = "private-provider-body-and-credential"
 
 
 def _assert_unavailable_without_provider_details() -> None:
     with pytest.raises(ModerationUnavailable) as caught:
-        GroqModerationClient(api_key=_PRIVATE_MARKER).moderate("Debate político")
+        NvidiaNimModerationClient(api_key=_PRIVATE_MARKER).moderate("Debate político")
     rendered = "".join(traceback.format_exception(caught.value))
     assert _PRIVATE_MARKER not in rendered
     assert caught.value.__cause__ is None
@@ -58,6 +60,78 @@ def test_http_status_failure_is_unavailable_without_provider_details(
     )
     monkeypatch.setattr(httpx, "post", lambda *args, **kwargs: response)
     _assert_unavailable_without_provider_details()
+
+
+def test_moderation_uses_bounded_nvidia_nim_request(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    def record_post(
+        url: str,
+        *,
+        json: dict[str, object],
+        headers: dict[str, str],
+        timeout: float,
+    ) -> httpx.Response:
+        assert url == "https://integrate.api.nvidia.com/v1/chat/completions"
+        assert json["model"] == "nvidia/test-model"
+        assert json["temperature"] == 0
+        assert json["max_tokens"] == 512
+        assert json["stream"] is False
+        assert json["chat_template_kwargs"] == {"enable_thinking": True}
+        assert headers == {
+            "Authorization": "Bearer nvapi-test",
+            "Accept": "application/json",
+        }
+        assert 0 < timeout <= 30
+        messages = json["messages"]
+        assert isinstance(messages, list)
+        assert [message["role"] for message in messages] == ["system", "user"]
+        assert messages[1]["content"] == "Debate político"
+        return httpx.Response(
+            200,
+            json={"choices": [{"message": {"content": '{"approved": true}'}}]},
+            request=httpx.Request("POST", url),
+        )
+
+    monkeypatch.setattr(httpx, "post", record_post)
+
+    result = NvidiaNimModerationClient(
+        api_key="nvapi-test", model="nvidia/test-model"
+    ).moderate("Debate político")
+
+    assert result.approved is True
+
+
+def test_dependency_uses_configured_nvidia_model(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(settings, "moderation_mode", "enforce")
+    monkeypatch.setattr(settings, "nvidia_api_key", "nvapi-test")
+    monkeypatch.setattr(
+        settings,
+        "nvidia_moderation_model",
+        "nvidia/configured-model",
+    )
+
+    def approve(
+        url: str,
+        *,
+        json: dict[str, object],
+        headers: dict[str, str],
+        timeout: float,
+    ) -> httpx.Response:
+        assert json["model"] == "nvidia/configured-model"
+        return httpx.Response(
+            200,
+            json={"choices": [{"message": {"content": '{"approved": true}'}}]},
+            request=httpx.Request("POST", url),
+        )
+
+    monkeypatch.setattr(httpx, "post", approve)
+
+    result = deps.get_moderation_client().moderate("Debate político")
+
+    assert result.approved is True
 
 
 @pytest.mark.parametrize(
@@ -136,7 +210,7 @@ def test_valid_decisions_preserve_approval_rejection_and_reason_limit(
         request=httpx.Request("POST", "https://provider.invalid"),
     )
     monkeypatch.setattr(httpx, "post", lambda *args, **kwargs: response)
-    result = GroqModerationClient(api_key="test", model="test-model").moderate(
+    result = NvidiaNimModerationClient(api_key="test", model="test-model").moderate(
         "Debate político", report_reasons=["spam"]
     )
     assert result.approved is approved

@@ -27,7 +27,7 @@ uv run fastapi dev app/main.py
 
 API: [localhost:8000](http://localhost:8000). Contrato interativo: [/docs](http://localhost:8000/docs), [/redoc](http://localhost:8000/redoc) e [/openapi.json](http://localhost:8000/openapi.json).
 
-O exemplo de ambiente usa `MODERATION_MODE=disabled` para desenvolvimento: posts e comentários são aprovados sem chamar o provedor. O padrão da aplicação é `enforce`, que exige uma chave Groq válida para publicar. Consulte a [configuração do backend](backend/README.md).
+O exemplo de ambiente usa `MODERATION_MODE=disabled` para desenvolvimento: posts e comentários são aprovados sem chamar o provedor. O padrão da aplicação é `enforce`, que exige uma chave NVIDIA Build/NIM válida para publicar. Consulte a [configuração do backend](backend/README.md).
 
 Em outro terminal:
 

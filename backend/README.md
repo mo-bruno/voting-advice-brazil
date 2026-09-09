@@ -29,8 +29,9 @@ API em [localhost:8000](http://localhost:8000); contrato em [/docs](http://local
 | `DATABASE_URL` | `sqlite:///./voting_advice.db` | SQLite local; produção usa `postgresql+psycopg://...` |
 | `DATA_DIR` | `../data` | Seed e arquivos estáticos; `/data` no container |
 | `ALLOWED_ORIGINS` | `https://farol-politico-495210.web.app` | Origens CORS separadas por vírgulas |
-| `MODERATION_MODE` | `enforce` | `enforce` chama Groq; `disabled` aprova sem modelo, para desenvolvimento |
-| `GROQ_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
+| `MODERATION_MODE` | `enforce` | `enforce` chama NVIDIA NIM; `disabled` aprova sem modelo, para desenvolvimento |
+| `NVIDIA_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
+| `NVIDIA_MODERATION_MODEL` | `nvidia/nemotron-3-super-120b-a12b` | Modelo hospedado usado pelo gate de moderação |
 | `IOT_FEATURE_ENABLED` | `false` | Mantém rotas e efeitos do hardware dormentes |
 | `MQTT_BROKER_URL` | `mqtts://broker.hivemq.com:8883` | Broker da integração IoT histórica |
 | `GNEWS_API_KEY` | ausente | Notícias temáticas do fluxo IoT histórico; não alimenta `/news/weekly` |
@@ -73,7 +74,7 @@ Fora do prefixo: `GET /health`, `/docs`, `/redoc`, `/openapi.json` e arquivos `/
 
 ## Integridade da comunidade
 
-Posts (até 500 caracteres) e comentários (até 300) passam pelo Groq de forma síncrona antes da publicação em modo `enforce`. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
+Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de forma síncrona antes da publicação em modo `enforce`. O modelo padrão é `nvidia/nemotron-3-super-120b-a12b` e pode ser trocado por configuração. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout, resposta inválida ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
 
 Há limite persistido no banco por `anonymous_id`: cinco posts a cada dez minutos e dez comentários a cada dez minutos. Excesso retorna 429 com `Retry-After: 600`. Posts removidos continuam contando para a cota. O limite geral por IP de 60 requisições/minuto usa memória do processo; ele não é uma cota distribuída entre instâncias.
 

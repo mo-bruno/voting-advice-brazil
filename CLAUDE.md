@@ -13,11 +13,11 @@ Quiz answers submitted by the app are persisted on the backend under its local U
 - `backend/app/core/`: framework-free entities, scoring, use cases and ports. Do not introduce FastAPI, SQLAlchemy, Pydantic Settings or vendor clients here.
 - `backend/app/config.py`: application settings, outside core.
 - `backend/app/api/`: HTTP validation, private identity headers, public response projection and dependency wiring.
-- `backend/app/infrastructure/`: database, Groq moderation and official-source adapters, plus retained dormant integrations.
+- `backend/app/infrastructure/`: database, NVIDIA NIM moderation and official-source adapters, plus retained dormant integrations.
 - `mobile/lib/`: Flutter features and shared API/models. Treat response shapes strictly; do not restore fallback parsing of public private-identity fields.
 - `data/`: checked-in proposals, curated theses and logos used for the 2022 quiz.
 
-Groq is a synchronous moderation gate on post/comment creation, with audited decisions. `MODERATION_MODE=enforce` is the default; missing credentials or provider failures fail publication with 503, and rejected content returns 422. `disabled` explicitly bypasses the model for local development. No batch generative analysis pipeline is implemented.
+NVIDIA NIM is a synchronous moderation gate on post/comment creation, with audited decisions. The default model is `nvidia/nemotron-3-super-120b-a12b`; `MODERATION_MODE=enforce` is the default, missing credentials or provider failures fail publication with 503, and rejected content returns 422. `disabled` explicitly bypasses the model for local development. No batch generative analysis pipeline is implemented.
 
 Câmara's official APIs provide deputies/evidence, and its official news source provides `/news/weekly`. These are separate from the retained GNews integration for historical physical-device news. Do not describe GNews as the current weekly feed or LLM output as verified legislative alignment.
 
