@@ -1117,7 +1117,9 @@ rm -f "$verification_db"
 ```
 
 Expected: upgrade exits 0 and current reports
-`0007_iot_event_deduplication (head)`.
+`0008_comment_admission_locks (head)`. The additional head comes from the
+approved database-serialized comment-admission fix recorded in the execution
+ledger.
 
 - [ ] **Step 4: Run the complete Flutter suite and analysis**
 
@@ -1165,8 +1167,8 @@ no core-to-infrastructure imports; status contains only intentional changes.
 Read:
 
 ```bash
-git diff --stat HEAD~8..HEAD
-git diff HEAD~8..HEAD -- README.md backend/README.md CLAUDE.md backend/app mobile/lib cloudbuild.yaml .github/workflows/deploy-web.yml
+git diff --stat 7c4a1cd..HEAD
+git diff 7c4a1cd..HEAD -- README.md backend/README.md CLAUDE.md backend/app mobile/lib cloudbuild.yaml .github/workflows/deploy-web.yml
 ```
 
 Check every acceptance item in the specification against a passing test or a

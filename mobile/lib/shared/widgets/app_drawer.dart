@@ -234,24 +234,29 @@ void _showAbout(BuildContext context) {
   _showNote(
     context,
     title: 'Sobre o Farol Político',
-    body: 'O Farol Político compara suas posições com o que os candidatos '
-        'escreveram em seus planos de governo e, quando eleitos, com os votos '
-        'que registraram na Câmara dos Deputados.\n\n'
-        'Os dados vêm das APIs abertas do TSE e da Câmara. O projeto é '
+    body: 'O quiz compara suas respostas com propostas publicadas por '
+        'candidatos nas eleições de 2022. A área Acompanhar apresenta '
+        'deputados atuais e evidências oficiais da Câmara; esses votos são '
+        'informativos e não alteram o ranking do quiz.\n\n'
+        'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
         'acadêmico e não tem vínculo com nenhum partido ou candidato.',
   );
 }
 
 void _showPrivacy(BuildContext context, String? shortId) {
-  final id = shortId == null ? '' : '\n\nO seu é $shortId.';
+  final id = shortId == null
+      ? ''
+      : '\n\nO trecho do identificador exibido neste aparelho é $shortId.';
   _showNote(
     context,
     title: 'Privacidade',
-    body: 'O app não pede e não guarda nome, e-mail, telefone ou qualquer '
-        'outro dado que identifique você.\n\n'
-        'Seu aparelho recebe um identificador aleatório, gerado nele mesmo, '
-        'usado só para lembrar quem você segue e a qual Farol físico este '
-        'aparelho está ligado. Suas respostas do quiz não saem do aparelho.$id',
+    body: 'O app não solicita nome, e-mail ou telefone. Ele cria um '
+        'identificador aleatório no aparelho e o envia como credencial '
+        'privada para salvar respostas do quiz, lembrar quem você segue e '
+        'participar da comunidade. Publicações e comentários exibem somente '
+        'um apelido público; o identificador completo não aparece para outras '
+        'pessoas.\n\nNão há conta nem recuperação de acesso. Não compartilhe o '
+        'identificador completo.$id',
   );
 }
 
