@@ -1,10 +1,9 @@
 from datetime import datetime, timezone
-from typing import Annotated, Literal
+from typing import Literal
 
 from fastapi import (
     APIRouter,
     Depends,
-    Header,
     HTTPException,
     Query,
     Response,
@@ -18,6 +17,11 @@ from app.api.deps import (
     get_post_repo,
     get_post_report_repo,
     get_vote_repo,
+)
+from app.api.identity import (
+    optional_anonymous_id,
+    public_author_alias,
+    require_anonymous_id,
 )
 from app.api.schemas.community import (
     CommentIn,
@@ -55,13 +59,13 @@ from app.infrastructure.llm.moderation_client import (
 )
 
 router = APIRouter(prefix="/community", tags=["Comunidade"])
-AnonymousHeader = Annotated[str, Header(min_length=1, max_length=64)]
 
 
-def _post_out(post: Post) -> PostOut:
+def _post_out(post: Post, viewer_id: str | None) -> PostOut:
     return PostOut(
         id=post.id,
-        anonymous_id=post.anonymous_id,
+        author_alias=public_author_alias(post.anonymous_id),
+        is_mine=viewer_id == post.anonymous_id,
         content=post.content,
         political_actor_id=post.political_actor_id,
         theme_slug=post.theme_slug,
@@ -72,11 +76,12 @@ def _post_out(post: Post) -> PostOut:
     )
 
 
-def _comment_out(comment: Comment) -> CommentOut:
+def _comment_out(comment: Comment, viewer_id: str | None) -> CommentOut:
     return CommentOut(
         id=comment.id,
         post_id=comment.post_id,
-        anonymous_id=comment.anonymous_id,
+        author_alias=public_author_alias(comment.anonymous_id),
+        is_mine=viewer_id == comment.anonymous_id,
         content=comment.content,
         created_at=comment.created_at,
     )
@@ -85,7 +90,7 @@ def _comment_out(comment: Comment) -> CommentOut:
 @router.post("/posts", response_model=PostOut, status_code=status.HTTP_201_CREATED)
 def create_post_endpoint(
     body: PostIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
     moderation_client: ModerationPort = Depends(get_moderation_client),
@@ -118,7 +123,7 @@ def create_post_endpoint(
         )
     if post is None:
         raise HTTPException(status_code=422, detail=result.reason)
-    return _post_out(post)
+    return _post_out(post, x_farol_anonymous_id)
 
 
 @router.get("/posts", response_model=PostListResponse)
@@ -128,6 +133,7 @@ def list_posts_endpoint(
     political_actor_id: int | None = Query(default=None),
     theme_slug: str | None = Query(default=None),
     sort: Literal["score", "recent"] = Query(default="score"),
+    viewer_id: str | None = Depends(optional_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
 ) -> PostListResponse:
     posts, total = list_posts(
@@ -136,7 +142,7 @@ def list_posts_endpoint(
         sort=sort,
     )
     return PostListResponse(
-        posts=[_post_out(p) for p in posts],
+        posts=[_post_out(p, viewer_id) for p in posts],
         total_count=total, page=page, page_size=page_size,
         has_next=(page * page_size) < total,
     )
@@ -145,6 +151,7 @@ def list_posts_endpoint(
 @router.get("/posts/{post_id}", response_model=PostDetailOut)
 def get_post_endpoint(
     post_id: str,
+    viewer_id: str | None = Depends(optional_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     comment_repo: SqlCommentRepository = Depends(get_comment_repo),
 ) -> PostDetailOut:
@@ -152,21 +159,24 @@ def get_post_endpoint(
     if result is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     post, comments = result
-    return PostDetailOut(post=_post_out(post), comments=[_comment_out(c) for c in comments])
+    return PostDetailOut(
+        post=_post_out(post, viewer_id),
+        comments=[_comment_out(c, viewer_id) for c in comments],
+    )
 
 
 @router.post("/posts/{post_id}/votes", response_model=PostOut)
 def vote_post_endpoint(
     post_id: str,
     body: VoteIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     vote_repo: SqlPostVoteRepository = Depends(get_vote_repo),
 ) -> PostOut:
     updated = vote_post(post_repo, vote_repo, post_id, x_farol_anonymous_id, body.value)
     if updated is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
-    return _post_out(updated)
+    return _post_out(updated, x_farol_anonymous_id)
 
 
 @router.post(
@@ -177,14 +187,14 @@ def vote_post_endpoint(
 def create_comment_endpoint(
     post_id: str,
     body: CommentIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     comment_repo: SqlCommentRepository = Depends(get_comment_repo),
 ) -> CommentOut:
     comment = create_comment(post_repo, comment_repo, post_id, x_farol_anonymous_id, body.content)
     if comment is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
-    return _comment_out(comment)
+    return _comment_out(comment, x_farol_anonymous_id)
 
 
 @router.post(
@@ -195,7 +205,7 @@ def create_comment_endpoint(
 def report_post_endpoint(
     post_id: str,
     body: ReportIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     report_repo: SqlPostReportRepository = Depends(get_post_report_repo),
     log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
@@ -227,7 +237,7 @@ def report_post_endpoint(
 )
 def delete_post_endpoint(
     post_id: str,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
 ) -> Response:
     try:

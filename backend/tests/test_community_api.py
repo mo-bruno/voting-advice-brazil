@@ -8,8 +8,8 @@ from app.api.deps import get_db, get_moderation_client
 from app.infrastructure.database.models import Base
 from app.infrastructure.llm.moderation_client import FakeModerationClient
 from app.main import app
+from tests.conftest import ANONYMOUS_OWNER as ANON
 
-ANON = "test-device-001"
 HEADERS = {"x-farol-anonymous-id": ANON}
 
 

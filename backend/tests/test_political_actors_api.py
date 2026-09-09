@@ -7,6 +7,7 @@ from app.infrastructure.database.models import (
     OfficialEvidenceModel,
     PoliticalActorModel,
 )
+from tests.conftest import ANONYMOUS_OTHER, ANONYMOUS_OWNER, ANONYMOUS_THIRD
 
 
 @pytest.fixture(autouse=True)
@@ -57,7 +58,7 @@ def test_lists_political_actors(client, db_session):
 
 def test_returns_trending_only_when_threshold_is_met(client, db_session):
     actor = _seed_actor(db_session)
-    headers = {"X-Farol-Anonymous-Id": "anon-1"}
+    headers = {"X-Farol-Anonymous-Id": ANONYMOUS_OWNER}
     client.put(
         "/api/v1/me/followed-actor",
         json={"political_actor_id": actor.id},
@@ -71,7 +72,7 @@ def test_returns_trending_only_when_threshold_is_met(client, db_session):
     client.put(
         "/api/v1/me/followed-actor",
         json={"political_actor_id": actor.id},
-        headers={"X-Farol-Anonymous-Id": "anon-2"},
+        headers={"X-Farol-Anonymous-Id": ANONYMOUS_OTHER},
     )
 
     high = client.get("/api/v1/political-actors/trending")
@@ -82,7 +83,7 @@ def test_returns_trending_only_when_threshold_is_met(client, db_session):
 
 def test_follow_get_and_delete_actor(client, db_session):
     actor = _seed_actor(db_session)
-    headers = {"X-Farol-Anonymous-Id": "anon-follow"}
+    headers = {"X-Farol-Anonymous-Id": ANONYMOUS_THIRD}
 
     put = client.put(
         "/api/v1/me/followed-actor",

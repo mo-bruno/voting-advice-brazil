@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta, timezone
-from typing import Annotated
 
-from fastapi import APIRouter, Depends, Header, HTTPException, Query, Response
+from fastapi import APIRouter, Depends, HTTPException, Query, Response
 
 from app.api.deps import (
     get_camara_deputy_index_source,
@@ -10,6 +9,7 @@ from app.api.deps import (
     get_official_evidence_repo,
     get_political_actor_repo,
 )
+from app.api.identity import require_anonymous_id
 from app.api.schemas.political_actors import (
     EvidenceResponse,
     FollowActorRequest,
@@ -51,7 +51,6 @@ from app.infrastructure.sources.camara import (
 
 router = APIRouter(prefix="/political-actors", tags=["Politicos"])
 me_router = APIRouter(prefix="/me", tags=["Politicos"])
-AnonymousHeader = Annotated[str, Header(min_length=1, max_length=64)]
 
 
 def _actor_out(actor: PoliticalActor) -> PoliticalActorOut:
@@ -163,7 +162,7 @@ def evidence(
 @me_router.put("/followed-actor", response_model=FollowedActorResponse)
 def set_followed(
     body: FollowActorRequest,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
 ) -> FollowedActorResponse:
@@ -186,7 +185,7 @@ def set_followed(
 
 @me_router.get("/followed-actor", response_model=FollowedActorResponse)
 def get_followed(
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
 ) -> FollowedActorResponse:
@@ -205,7 +204,7 @@ def get_followed(
 @me_router.delete("/followed-actor", status_code=204)
 def delete_followed(
     response: Response,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
 ) -> Response:
     delete_followed_political_actor(follow_repo, x_farol_anonymous_id)

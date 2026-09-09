@@ -15,12 +15,13 @@ from app.infrastructure.llm.moderation_client import (
     ModerationUnavailable,
 )
 from app.main import app
+from tests.conftest import ANONYMOUS_OTHER, ANONYMOUS_OWNER
 
 NOW = datetime.now(timezone.utc)
-HEADERS = {"X-Farol-Anonymous-Id": "dispositivo-1"}
+HEADERS = {"X-Farol-Anonymous-Id": ANONYMOUS_OWNER}
 
 
-def _post(anonymous_id: str = "dispositivo-1", removed: bool = False) -> Post:
+def _post(anonymous_id: str = ANONYMOUS_OWNER, removed: bool = False) -> Post:
     return Post(
         id="p1",
         anonymous_id=anonymous_id,
@@ -177,7 +178,7 @@ def test_denuncia_em_post_inexistente_e_404() -> None:
 
 
 def test_autor_apaga_o_proprio_post() -> None:
-    repo = _FakePostRepo(_post(anonymous_id="dispositivo-1"))
+    repo = _FakePostRepo(_post(anonymous_id=ANONYMOUS_OWNER))
     client = _client(repo, _FakeReportRepo())
 
     r = client.delete("/api/v1/community/posts/p1", headers=HEADERS)
@@ -187,7 +188,7 @@ def test_autor_apaga_o_proprio_post() -> None:
 
 
 def test_apagar_post_alheio_e_403() -> None:
-    repo = _FakePostRepo(_post(anonymous_id="outro-dispositivo"))
+    repo = _FakePostRepo(_post(anonymous_id=ANONYMOUS_OTHER))
     client = _client(repo, _FakeReportRepo())
 
     r = client.delete("/api/v1/community/posts/p1", headers=HEADERS)

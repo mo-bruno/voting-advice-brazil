@@ -1,8 +1,7 @@
 from datetime import datetime, timezone
-from typing import Annotated
 from uuid import UUID
 
-from fastapi import APIRouter, Depends, Header, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response
 
 from app.api.deps import (
     get_iot_device_event_repo,
@@ -10,6 +9,7 @@ from app.api.deps import (
     get_iot_mqtt_publisher,
     get_iot_pairing_session_repo,
 )
+from app.api.identity import require_anonymous_id
 from app.api.schemas.iot_devices import (
     CreatePairingSessionIn,
     IotDeviceOut,
@@ -41,7 +41,6 @@ from app.infrastructure.database.iot_device_repositories import (
 
 router = APIRouter(prefix="/iot-devices", tags=["IoT"])
 me_router = APIRouter(prefix="/me", tags=["IoT"])
-AnonymousHeader = Annotated[str, Header(min_length=1, max_length=64)]
 
 
 def _device_out(link: IotDeviceLink) -> IotDeviceOut:
@@ -98,7 +97,7 @@ def get_pairing_status(
 
 @me_router.get("/iot-device", response_model=IotDeviceOut)
 def get_current_iot_device(
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
 ) -> IotDeviceOut:
     link = get_iot_device_link(repo, x_farol_anonymous_id)
@@ -110,7 +109,7 @@ def get_current_iot_device(
 @me_router.put("/iot-device", response_model=IotDeviceOut)
 def pair_current_iot_device(
     body: PairIotDeviceIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     link_repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
     session_repo: SqlIotPairingSessionRepository = Depends(
         get_iot_pairing_session_repo
@@ -149,7 +148,7 @@ def pair_current_iot_device(
 
 @me_router.delete("/iot-device", status_code=204)
 def delete_current_iot_device(
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
 ) -> Response:
     unlink_iot_device(repo, x_farol_anonymous_id)
@@ -159,7 +158,7 @@ def delete_current_iot_device(
 @me_router.post("/iot-device/quiz-pulse", status_code=204)
 def quiz_pulse(
     body: QuizPulseIn,
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     link_repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
     publisher: IotMqttPublisher = Depends(get_iot_mqtt_publisher),
 ) -> Response:
@@ -176,7 +175,7 @@ def quiz_pulse(
 
 @me_router.get("/iot-device/last-event", response_model=LastEventOut)
 def get_last_event(
-    x_farol_anonymous_id: AnonymousHeader,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
     link_repo: SqlIotDeviceLinkRepository = Depends(get_iot_device_link_repo),
     event_repo: SqlIotDeviceEventRepository = Depends(get_iot_device_event_repo),
 ) -> LastEventOut:

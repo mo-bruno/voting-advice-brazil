@@ -8,12 +8,13 @@ from fastapi.testclient import TestClient
 from app.api.deps import get_iot_device_event_repo, get_iot_device_link_repo
 from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink
 from app.main import app
+from tests.conftest import ANONYMOUS_OWNER as ANON
 
 
 def _fake_link():
     return IotDeviceLink(
         device_token="tok-abc",
-        anonymous_id="user-1",
+        anonymous_id=ANON,
         status="linked",
         created_at=datetime.now(timezone.utc),
         updated_at=datetime.now(timezone.utc),
@@ -49,7 +50,7 @@ def test_get_last_event_returns_event():
     app.dependency_overrides[get_iot_device_event_repo] = lambda: event_repo
 
     client = TestClient(app)
-    resp = client.get("/api/v1/me/iot-device/last-event", headers={"X-Farol-Anonymous-Id": "user-1"})
+    resp = client.get("/api/v1/me/iot-device/last-event", headers={"X-Farol-Anonymous-Id": ANON})
 
     assert resp.status_code == 200
     data = resp.json()
@@ -68,7 +69,7 @@ def test_get_last_event_404_when_no_device():
     app.dependency_overrides[get_iot_device_event_repo] = lambda: event_repo
 
     client = TestClient(app)
-    resp = client.get("/api/v1/me/iot-device/last-event", headers={"X-Farol-Anonymous-Id": "user-1"})
+    resp = client.get("/api/v1/me/iot-device/last-event", headers={"X-Farol-Anonymous-Id": ANON})
 
     assert resp.status_code == 404
 
