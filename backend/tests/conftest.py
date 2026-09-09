@@ -2,6 +2,7 @@ import os
 
 # Isolate test execution before importing Settings/app
 os.environ.setdefault("APP_ENV", "test")
+os.environ["IOT_FEATURE_ENABLED"] = "true"
 
 import pytest
 from fastapi.testclient import TestClient

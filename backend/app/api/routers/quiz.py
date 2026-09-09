@@ -18,6 +18,7 @@ from app.api.schemas.quiz import (
     ThesisMatchOut,
     ThesisOut,
 )
+from app.core.config import settings
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
 from app.core.use_cases.submit_quiz import (
     InsufficientAnswersError,
@@ -104,8 +105,10 @@ def submit(
         ) from err
 
     if body.device_id is not None:
-        quiz_response_repo.upsert_answers(str(body.device_id), answers)
-        _push_news_for_quiz_submission(str(body.device_id))
+        anonymous_id = str(body.device_id)
+        quiz_response_repo.upsert_answers(anonymous_id, answers)
+        if settings.iot_feature_enabled:
+            _push_news_for_quiz_submission(anonymous_id)
 
     return SubmitQuizResponse(
         results=[
@@ -142,7 +145,6 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
 
     from sqlalchemy import select
 
-    from app.core.config import settings
     from app.core.use_cases.news_notifier import push_news_for_user
     from app.infrastructure.database.models import (
         QuizResponseModel,

@@ -122,6 +122,34 @@ class TestEndpointSubmit:
         assert r.status_code == 200
         assert pushed_for == [device_id]
 
+    def test_submit_with_device_id_skips_news_push_when_iot_is_disabled(
+        self,
+        client,
+        monkeypatch,
+        thesis_ids,
+    ):
+        from app.api.routers import quiz as quiz_router
+
+        def fail_if_called(anonymous_id: str) -> None:
+            raise AssertionError(f"unexpected hardware push for {anonymous_id}")
+
+        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", False)
+        monkeypatch.setattr(
+            quiz_router,
+            "_push_news_for_quiz_submission",
+            fail_if_called,
+        )
+
+        r = client.post(
+            "/api/v1/quiz/submit",
+            json={
+                "device_id": "550e8400-e29b-41d4-a716-446655440006",
+                "answers": _agree5(thesis_ids),
+            },
+        )
+
+        assert r.status_code == 200
+
     def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
         self,
         client,

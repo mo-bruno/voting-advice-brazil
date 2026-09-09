@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     app_env: Literal["dev", "test", "staging", "prod"] = "dev"
     debug: bool = False
+    iot_feature_enabled: bool = False
 
     # Database
     database_url: str = "sqlite:///./voting_advice.db"

@@ -12,18 +12,21 @@ def test_settings_defaults(monkeypatch):
     monkeypatch.delenv("GROQ_API_KEY", raising=False)
     monkeypatch.delenv("MQTT_BROKER_URL", raising=False)
     monkeypatch.delenv("ALLOWED_ORIGINS", raising=False)
+    monkeypatch.delenv("IOT_FEATURE_ENABLED", raising=False)
     s = Settings(_env_file=None)
     assert s.app_env == "dev"
     assert s.database_url.startswith("sqlite:///")
     assert s.allowed_origins_list == ["https://farol-politico-495210.web.app"]
     assert s.mqtt_broker_url == "mqtts://broker.hivemq.com:8883"
     assert s.groq_api_key is None
+    assert s.iot_feature_enabled is False
 
 
 def test_settings_reads_env(monkeypatch):
     monkeypatch.setenv("APP_ENV", "prod")
     monkeypatch.setenv("DATABASE_URL", "postgresql+psycopg://x:y@z/d")
     monkeypatch.setenv("GROQ_API_KEY", "gsk_test")
+    monkeypatch.setenv("IOT_FEATURE_ENABLED", "true")
     monkeypatch.setenv(
         "ALLOWED_ORIGINS",
         "https://farol-politico-495210.web.app, http://localhost:3000",
@@ -32,6 +35,7 @@ def test_settings_reads_env(monkeypatch):
     assert s.app_env == "prod"
     assert s.database_url == "postgresql+psycopg://x:y@z/d"
     assert s.groq_api_key == "gsk_test"
+    assert s.iot_feature_enabled is True
     assert s.allowed_origins_list == [
         "https://farol-politico-495210.web.app",
         "http://localhost:3000",
