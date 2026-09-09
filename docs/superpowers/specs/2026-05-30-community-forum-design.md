@@ -1,3 +1,13 @@
+> **Status: historical community design, superseded in part.** Current behavior
+> is documented in [backend/README.md](../../../backend/README.md) and the
+> [2026-09-09 design](2026-09-09-disable-iot-and-close-gaps-design.md).
+> Physical IoT is dormant and disabled by default. Posts and comments now require
+> synchronous moderation and per-identity rate limits. Reports and author removal
+> are implemented; removed posts reject new votes/comments with 410.
+> The private local UUID is `anonymous_id`, sent in `X-Farol-Anonymous-Id`;
+> public responses expose only `author_alias` and `is_mine` for author identity.
+> Remaining original scope and implementation examples below are historical.
+
 # Fase 3 — Comunidade Anônima com Moderação por IA
 
 **Data:** 2026-05-30
@@ -8,7 +18,7 @@
 
 ## Contexto
 
-O Farol Político já entrega quiz de orientação de voto (Fase 1) e rastreamento de políticos em tempo real com IoT (Fase 2). A Fase 3 adiciona uma comunidade pública onde usuários anônimos podem discutir política brasileira. A identidade continua baseada em `device_token` (UUID v4 local), sem PII, mantendo conformidade com a LGPD.
+O Farol Político entrega o quiz de propostas de 2022 e consulta de políticos com evidências oficiais. O IoT da antiga Fase 2 está dormente e desativado; não há motor completo de alinhamento ou scheduler de produção. Esta fase descreveu uma comunidade pública para debate político. Sua identidade usa `anonymous_id`, UUID v4 gerado e guardado localmente pelo app, distinto do token físico histórico. Não exige cadastro pessoal; isso, por si só, não estabelece conformidade com a LGPD.
 
 ---
 
@@ -63,7 +73,7 @@ api/
 | Coluna | Tipo | Restrições |
 |---|---|---|
 | `id` | UUID | PK |
-| `device_token` | VARCHAR | NOT NULL, FK → `devices.token` |
+| `anonymous_id` | VARCHAR | NOT NULL, UUID v4 local do app |
 | `content` | TEXT | NOT NULL, max 500 chars |
 | `political_actor_id` | INTEGER | NULL, FK → `political_actors.id` |
 | `theme_slug` | VARCHAR | NULL |
@@ -75,7 +85,7 @@ api/
 |---|---|---|
 | `id` | UUID | PK |
 | `post_id` | UUID | NOT NULL, FK → `posts.id` |
-| `device_token` | VARCHAR | NOT NULL |
+| `anonymous_id` | VARCHAR | NOT NULL |
 | `content` | TEXT | NOT NULL, max 300 chars |
 | `created_at` | DATETIME | NOT NULL |
 
@@ -83,16 +93,16 @@ api/
 | Coluna | Tipo | Restrições |
 |---|---|---|
 | `post_id` | UUID | NOT NULL, FK → `posts.id` |
-| `device_token` | VARCHAR | NOT NULL |
+| `anonymous_id` | VARCHAR | NOT NULL |
 | `value` | SMALLINT | NOT NULL, +1 ou -1 |
-| **PK** | (post_id, device_token) | unique por par |
+| **PK** | (post_id, anonymous_id) | unique por par |
 
 **`moderation_log`**
 | Coluna | Tipo | Restrições |
 |---|---|---|
 | `id` | INTEGER | PK autoincrement |
 | `post_id` | UUID | NULL (se rejeitado, post não existe) |
-| `device_token` | VARCHAR | NOT NULL |
+| `anonymous_id` | VARCHAR | NOT NULL |
 | `content_hash` | VARCHAR | NOT NULL (SHA-256 do conteúdo) |
 | `approved` | BOOLEAN | NOT NULL |
 | `reason` | TEXT | NULL se aprovado |
@@ -158,7 +168,7 @@ grava ModerationLog (approved=False, post_id=None)
 
 ### `POST /api/v1/community/posts`
 
-**Headers:** `X-Device-Token: <uuid>`
+**Headers:** `X-Farol-Anonymous-Id: <uuid-v4-local>`
 **Body:** `PostIn { content: str, political_actor_id?: int, theme_slug?: str }`
 **201:** `PostOut` com post criado
 **422:** `{ "detail": "<motivo em português>" }` — post rejeitado pela IA
@@ -176,14 +186,14 @@ grava ModerationLog (approved=False, post_id=None)
 
 ### `POST /api/v1/community/posts/{id}/votes`
 
-**Headers:** `X-Device-Token: <uuid>`
+**Headers:** `X-Farol-Anonymous-Id: <uuid-v4-local>`
 **Body:** `VoteIn { value: 1 | -1 }`
 **200:** `PostOut` com score atualizado
 Comportamento: upsert — se o device já votou, troca o voto; score é recalculado como `SUM(value)` dos votos.
 
 ### `POST /api/v1/community/posts/{id}/comments`
 
-**Headers:** `X-Device-Token: <uuid>`
+**Headers:** `X-Farol-Anonymous-Id: <uuid-v4-local>`
 **Body:** `CommentIn { content: str }`
 **201:** `CommentOut` — sem moderação prévia
 **404:** post não encontrado
@@ -260,6 +270,6 @@ Comportamento: upsert — se o device já votou, troca o voto; score é recalcul
 | Moderação síncrona vs assíncrona | Síncrona | Feedback imediato; sem canal de notificação para async |
 | Moderação de comentários | Sem moderação prévia | Reduz latência; comentários são mais curtos e contextuais |
 | Score de post | `SUM(votes.value)` em tempo real | Simples; volume acadêmico não exige cache de contagem |
-| Identidade do autor | `device_token` existente | Sem PII, LGPD-compliant, reutiliza infraestrutura |
+| Identidade do autor | `anonymous_id` local | UUID privado; `author_alias` e `is_mine` na resposta pública |
 | Modelo Groq | `llama-3.1-8b-instant` | Baixa latência (~1s), free tier, suficiente para classificação |
 | Rejeição por timeout | HTTP 503 | Falha explícita é preferível a publicar conteúdo não moderado |

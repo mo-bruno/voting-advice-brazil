@@ -32,7 +32,7 @@ jobs:
         working-directory: mobile
 
       - name: Build web release
-        run: flutter build web --release
+        run: flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
         working-directory: mobile
 
       - name: Deploy Firebase Hosting

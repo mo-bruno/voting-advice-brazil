@@ -1,3 +1,12 @@
+> **Status: dormant historical design.** The physical IoT feature is disabled
+> by default as of 2026-09-09. Current behavior is defined by
+> `2026-09-09-disable-iot-and-close-gaps-design.md`; this file is retained as a
+> record of the original implementation.
+>
+> See the [current design](../specs/2026-09-09-disable-iot-and-close-gaps-design.md) and
+> [firmware status](../../../firmware/README.md). Enabling historical flags is
+> unsupported and does not provide a completed alignment engine or production scheduler.
+
 # IoT Gadget Pairing Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -1016,7 +1025,7 @@ from urllib.parse import urlparse
 
 import paho.mqtt.client as mqtt
 
-from app.core.config import settings
+from app.config import settings
 from app.core.use_cases.interfaces import IotMqttPublisher
 
 

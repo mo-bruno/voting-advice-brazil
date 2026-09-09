@@ -5,6 +5,15 @@ from pydantic import ValidationError
 from app.config import Settings
 
 
+def test_iot_is_disabled_and_unused_gemini_setting_is_absent(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("IOT_FEATURE_ENABLED", raising=False)
+    configured = Settings(_env_file=None)
+    assert configured.iot_feature_enabled is False
+    assert not hasattr(configured, "gemini_api_key")
+
+
 def test_settings_defaults(monkeypatch):
     # conftest sets APP_ENV=test for the app lifespan; clear it to verify defaults
     monkeypatch.delenv("APP_ENV", raising=False)

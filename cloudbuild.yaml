@@ -47,7 +47,7 @@ steps:
       - --concurrency=80
       - --timeout=60s
       - --port=8080
-      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod
+      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod,IOT_FEATURE_ENABLED=false
       - --set-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,GROQ_API_KEY=groq-api-key:latest
 
 availableSecrets:
