@@ -139,7 +139,10 @@ def test_nvidia_prompt_defines_abuse_without_banning_harsh_criticism(
     assert "erros de ortografia, abreviações e gírias" in captured_system_prompt
     assert "Críticas duras a ideias, projetos e atos públicos" in captured_system_prompt
     assert "não ataquem pessoas ou grupos" in captured_system_prompt
-    assert 'APROVAR: "Esse PL é péssimo' in captured_system_prompt
+    assert (
+        'APROVAR: "As propostas desse partido são péssimas e seus representantes '
+        'precisam explicar os impactos."' in captured_system_prompt
+    )
     assert 'REJEITAR: "Esses políticos merecem apanhar."' in captured_system_prompt
 
 

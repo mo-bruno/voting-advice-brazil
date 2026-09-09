@@ -30,7 +30,7 @@ Críticas duras a ideias, projetos e atos públicos são permitidas, inclusive c
 sarcasmo ou linguagem coloquial, desde que não ataquem pessoas ou grupos.
 
 Exemplos:
-APROVAR: "Esse PL é péssimo e os deputados precisam explicar seus impactos."
+APROVAR: "As propostas desse partido são péssimas e seus representantes precisam explicar os impactos."
 APROVAR: "O governo foi incompetente nessa decisão."
 REJEITAR: "Esses políticos merecem apanhar."
 REJEITAR: "Esse deputado é um lixo humano."
