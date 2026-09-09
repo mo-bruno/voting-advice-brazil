@@ -4,7 +4,12 @@ Testes da fórmula de scoring estão em tests/unit/test_scoring.py.
 Aqui cobrimos: endpoints HTTP, conversão de entidades e contratos JSON.
 """
 
+from fastapi.testclient import TestClient
+
+from app.config import Settings
 from app.infrastructure.database.models import DeviceModel, QuizResponseModel
+from app.infrastructure.database.session import get_db
+from app.main import create_app
 
 
 def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
@@ -124,7 +129,7 @@ class TestEndpointSubmit:
 
     def test_submit_with_device_id_skips_news_push_when_iot_is_disabled(
         self,
-        client,
+        db_session,
         monkeypatch,
         thesis_ids,
     ):
@@ -133,22 +138,66 @@ class TestEndpointSubmit:
         def fail_if_called(anonymous_id: str) -> None:
             raise AssertionError(f"unexpected hardware push for {anonymous_id}")
 
-        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", False)
+        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", True)
         monkeypatch.setattr(
             quiz_router,
             "_push_news_for_quiz_submission",
             fail_if_called,
         )
 
-        r = client.post(
-            "/api/v1/quiz/submit",
-            json={
-                "device_id": "550e8400-e29b-41d4-a716-446655440006",
-                "answers": _agree5(thesis_ids),
-            },
+        configured_app = create_app(
+            Settings(_env_file=None, app_env="test", iot_feature_enabled=False)
         )
 
+        def override_get_db():
+            yield db_session
+
+        configured_app.dependency_overrides[get_db] = override_get_db
+        with TestClient(configured_app) as client:
+            r = client.post(
+                "/api/v1/quiz/submit",
+                json={
+                    "device_id": "550e8400-e29b-41d4-a716-446655440006",
+                    "answers": _agree5(thesis_ids),
+                },
+            )
+
         assert r.status_code == 200
+
+    def test_factory_enabled_app_pushes_news_when_global_iot_is_disabled(
+        self,
+        db_session,
+        monkeypatch,
+        thesis_ids,
+    ):
+        from app.api.routers import quiz as quiz_router
+
+        device_id = "550e8400-e29b-41d4-a716-446655440007"
+        pushed_for: list[str] = []
+
+        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", False)
+        monkeypatch.setattr(
+            quiz_router,
+            "_push_news_for_quiz_submission",
+            pushed_for.append,
+        )
+
+        configured_app = create_app(
+            Settings(_env_file=None, app_env="test", iot_feature_enabled=True)
+        )
+
+        def override_get_db():
+            yield db_session
+
+        configured_app.dependency_overrides[get_db] = override_get_db
+        with TestClient(configured_app) as client:
+            r = client.post(
+                "/api/v1/quiz/submit",
+                json={"device_id": device_id, "answers": _agree5(thesis_ids)},
+            )
+
+        assert r.status_code == 200
+        assert pushed_for == [device_id]
 
     def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
         self,
