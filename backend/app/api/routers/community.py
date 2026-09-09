@@ -34,8 +34,11 @@ from app.api.schemas.community import (
     VoteIn,
 )
 from app.core.entities.community import Comment, Post
-from app.core.use_cases.create_comment import create_comment
+from app.core.use_cases.comment_rate_limit import CommentRateLimitExceeded
+from app.core.use_cases.community_errors import PostRemovedError
+from app.core.use_cases.create_comment import moderate_and_create_comment
 from app.core.use_cases.get_post import get_post
+from app.core.use_cases.interfaces import ModerationPort, ModerationUnavailable
 from app.core.use_cases.list_posts import list_posts
 from app.core.use_cases.moderate_and_create_post import moderate_and_create_post
 from app.core.use_cases.post_rate_limit import (
@@ -52,10 +55,6 @@ from app.infrastructure.database.community_repositories import (
     SqlPostReportRepository,
     SqlPostRepository,
     SqlPostVoteRepository,
-)
-from app.infrastructure.llm.moderation_client import (
-    ModerationPort,
-    ModerationUnavailable,
 )
 
 router = APIRouter(prefix="/community", tags=["Comunidade"])
@@ -173,7 +172,10 @@ def vote_post_endpoint(
     post_repo: SqlPostRepository = Depends(get_post_repo),
     vote_repo: SqlPostVoteRepository = Depends(get_vote_repo),
 ) -> PostOut:
-    updated = vote_post(post_repo, vote_repo, post_id, x_farol_anonymous_id, body.value)
+    try:
+        updated = vote_post(post_repo, vote_repo, post_id, x_farol_anonymous_id, body.value)
+    except PostRemovedError:
+        raise HTTPException(status_code=410, detail="Este post foi removido.") from None
     if updated is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
     return _post_out(updated, x_farol_anonymous_id)
@@ -190,10 +192,32 @@ def create_comment_endpoint(
     x_farol_anonymous_id: str = Depends(require_anonymous_id),
     post_repo: SqlPostRepository = Depends(get_post_repo),
     comment_repo: SqlCommentRepository = Depends(get_comment_repo),
+    log_repo: SqlModerationLogRepository = Depends(get_moderation_log_repo),
+    moderation_client: ModerationPort = Depends(get_moderation_client),
 ) -> CommentOut:
-    comment = create_comment(post_repo, comment_repo, post_id, x_farol_anonymous_id, body.content)
-    if comment is None:
+    try:
+        result = moderate_and_create_comment(
+            post_repo, comment_repo, log_repo, moderation_client,
+            post_id, x_farol_anonymous_id, body.content,
+        )
+    except CommentRateLimitExceeded as exc:
+        raise HTTPException(
+            status_code=429,
+            detail="Você comentou demais nos últimos minutos. Tente novamente em breve.",
+            headers={"Retry-After": str(exc.retry_after_seconds)},
+        ) from None
+    except PostRemovedError:
+        raise HTTPException(status_code=410, detail="Este post foi removido.") from None
+    except ModerationUnavailable:
+        raise HTTPException(
+            status_code=503,
+            detail="Serviço de moderação temporariamente indisponível.",
+        ) from None
+    if result is None:
         raise HTTPException(status_code=404, detail="Post não encontrado.")
+    comment, decision = result
+    if comment is None:
+        raise HTTPException(status_code=422, detail=decision.reason)
     return _comment_out(comment, x_farol_anonymous_id)
 
 

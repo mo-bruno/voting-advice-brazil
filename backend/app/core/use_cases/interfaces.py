@@ -264,6 +264,9 @@ class CommentRepository(ABC):
     @abstractmethod
     def list_by_post(self, post_id: str) -> list[Comment]: ...
 
+    @abstractmethod
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int: ...
+
 
 class PostVoteRepository(ABC):
     @abstractmethod

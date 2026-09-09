@@ -154,6 +154,17 @@ class SqlCommentRepository(CommentRepository):
         )
         return [_to_comment(r) for r in rows]
 
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int:
+        stmt = (
+            select(func.count())
+            .select_from(CommentModel)
+            .where(
+                CommentModel.anonymous_id == anonymous_id,
+                CommentModel.created_at >= since,
+            )
+        )
+        return int(self._db.execute(stmt).scalar_one())
+
 
 class SqlPostVoteRepository(PostVoteRepository):
     def __init__(self, db: Session) -> None:

@@ -9,8 +9,8 @@ from app.api.deps import (
     get_post_report_repo,
 )
 from app.core.entities.community import ModerationResult, Post, PostReport
-from app.core.use_cases.interfaces import ModerationLogRepository
-from app.infrastructure.llm.moderation_client import (
+from app.core.use_cases.interfaces import (
+    ModerationLogRepository,
     ModerationPort,
     ModerationUnavailable,
 )
