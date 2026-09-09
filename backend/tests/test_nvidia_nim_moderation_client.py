@@ -104,6 +104,45 @@ def test_moderation_uses_bounded_nvidia_nim_request(
     assert result.approved is True
 
 
+def test_nvidia_prompt_defines_abuse_without_banning_harsh_criticism(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    captured_system_prompt = ""
+
+    def capture_post(
+        url: str,
+        *,
+        json: dict[str, object],
+        headers: dict[str, str],
+        timeout: float,
+    ) -> httpx.Response:
+        nonlocal captured_system_prompt
+        messages = json["messages"]
+        assert isinstance(messages, list)
+        captured_system_prompt = messages[0]["content"]
+        return httpx.Response(
+            200,
+            json={"choices": [{"message": {"content": '{"approved": false}'}}]},
+            request=httpx.Request("POST", url),
+        )
+
+    monkeypatch.setattr(httpx, "post", capture_post)
+
+    NvidiaNimModerationClient(api_key="nvapi-test").moderate(
+        "Comentário político agressivo"
+    )
+
+    assert "CIVILIDADE E SEGURANÇA" in captured_system_prompt
+    assert "xingamentos direcionados" in captured_system_prompt
+    assert "humilhação sexual" in captured_system_prompt
+    assert "ameaças ou incentivo à violência" in captured_system_prompt
+    assert "erros de ortografia, abreviações e gírias" in captured_system_prompt
+    assert "Críticas duras a ideias, projetos e atos públicos" in captured_system_prompt
+    assert "não ataquem pessoas ou grupos" in captured_system_prompt
+    assert 'APROVAR: "Esse PL é péssimo' in captured_system_prompt
+    assert 'REJEITAR: "Esses políticos merecem apanhar."' in captured_system_prompt
+
+
 def test_dependency_uses_configured_nvidia_model(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:
