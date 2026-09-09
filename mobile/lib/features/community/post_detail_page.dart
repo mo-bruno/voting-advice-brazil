@@ -10,13 +10,21 @@ import 'utils/community_utils.dart';
 
 class PostDetailPage extends StatefulWidget {
   final String postId;
-  const PostDetailPage({super.key, required this.postId});
+  const PostDetailPage({
+    super.key,
+    required this.postId,
+    this.apiClient,
+  });
+
+  @visibleForTesting
+  final ApiClient? apiClient;
 
   @override
   State<PostDetailPage> createState() => _PostDetailPageState();
 }
 
 class _PostDetailPageState extends State<PostDetailPage> {
+  late final ApiClient _api = widget.apiClient ?? ApiClient();
   PostDetail? _detail;
   bool _loading = true;
   bool _failed = false;
@@ -45,8 +53,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
     }
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      final data =
-          await ApiClient().getPost(widget.postId, anonymousId: anonymousId);
+      final data = await _api.getPost(widget.postId, anonymousId: anonymousId);
       if (mounted) setState(() => _detail = PostDetail.fromJson(data));
     } catch (_) {
       // Sem este catch a excecao escapava e `_loading` ficava true para sempre.
@@ -68,12 +75,12 @@ class _PostDetailPageState extends State<PostDetailPage> {
     final atual = _detail;
     // Mesma trava do feed: sem ela, toques repetidos enquanto a requisicao
     // esta em voo disparam votos concorrentes.
-    if (atual == null || _voting) return;
+    if (atual == null || atual.post.removed || _voting) return;
     setState(() => _voting = true);
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      final data = await ApiClient()
-          .votePost(widget.postId, value, anonymousId: anonymousId);
+      final data =
+          await _api.votePost(widget.postId, value, anonymousId: anonymousId);
       final updated = PostSummary.fromJson(data);
       CommunitySession().updatePost(updated);
       if (mounted) {
@@ -91,12 +98,12 @@ class _PostDetailPageState extends State<PostDetailPage> {
   Future<void> _addComment() async {
     final content = _commentController.text.trim();
     final atual = _detail;
-    if (content.isEmpty || atual == null) return;
+    if (content.isEmpty || atual == null || atual.post.removed) return;
     setState(() => _sendingComment = true);
     try {
       final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      final data = await ApiClient()
-          .createComment(widget.postId, content, anonymousId: anonymousId);
+      final data = await _api.createComment(widget.postId, content,
+          anonymousId: anonymousId);
       final comment = PostComment.fromJson(data);
       _commentController.clear();
       if (mounted) {
@@ -211,12 +218,13 @@ class _PostDetailPageState extends State<PostDetailPage> {
               ],
             ),
           ),
-          _CommentInput(
-            controller: _commentController,
-            sending: _sendingComment,
-            onSend: _addComment,
-            onChanged: () => setState(() {}),
-          ),
+          if (!post.removed)
+            _CommentInput(
+              controller: _commentController,
+              sending: _sendingComment,
+              onSend: _addComment,
+              onChanged: () => setState(() {}),
+            ),
         ],
       ),
     );
@@ -239,16 +247,26 @@ class _PostBody extends StatelessWidget {
         children: [
           _AuthorRow(authorAlias: post.authorAlias, createdAt: post.createdAt),
           const SizedBox(height: 12),
-          // Maior que no card: aqui o post e o assunto, nao um item de lista.
-          Text(
-            post.content,
-            style: const TextStyle(
-              fontSize: 16,
-              height: 1.55,
-              color: AppTheme.onSurface,
+          if (post.removed)
+            Text(
+              post.tombstoneLabel,
+              style: const TextStyle(
+                fontSize: 16,
+                fontStyle: FontStyle.italic,
+                color: AppTheme.onSurfaceVariant,
+              ),
+            )
+          else
+            // Maior que no card: aqui o post e o assunto, nao um item de lista.
+            Text(
+              post.content,
+              style: const TextStyle(
+                fontSize: 16,
+                height: 1.55,
+                color: AppTheme.onSurface,
+              ),
             ),
-          ),
-          if (post.themeSlug != null) ...[
+          if (post.themeSlug != null && !post.removed) ...[
             const SizedBox(height: 10),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
@@ -267,8 +285,10 @@ class _PostBody extends StatelessWidget {
               ),
             ),
           ],
-          const SizedBox(height: 16),
-          _VoteRow(score: post.score, onVote: onVote),
+          if (!post.removed) ...[
+            const SizedBox(height: 16),
+            _VoteRow(score: post.score, onVote: onVote),
+          ],
         ],
       ),
     );
