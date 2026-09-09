@@ -20,7 +20,7 @@ from app.api.routers import (
     quiz,
     themes,
 )
-from app.core.config import Settings, settings
+from app.config import Settings, settings
 
 limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
 

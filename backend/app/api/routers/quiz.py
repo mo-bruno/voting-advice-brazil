@@ -18,7 +18,7 @@ from app.api.schemas.quiz import (
     ThesisMatchOut,
     ThesisOut,
 )
-from app.core.config import settings
+from app.config import settings
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
 from app.core.use_cases.submit_quiz import (
     InsufficientAnswersError,

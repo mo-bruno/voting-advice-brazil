@@ -120,7 +120,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
     from sqlalchemy import select
     from sqlalchemy.orm import Session
 
-    from app.core.config import settings
+    from app.config import settings
     from app.core.use_cases.news_notifier import push_news_for_user
     from app.infrastructure.database.iot_device_repositories import (
         SqlIotDeviceEventRepository,

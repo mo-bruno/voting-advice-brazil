@@ -1,7 +1,7 @@
 from fastapi import Depends
 from sqlalchemy.orm import Session
 
-from app.core.config import settings
+from app.config import settings
 from app.infrastructure.database.community_repositories import (
     SqlCommentRepository,
     SqlModerationLogRepository,

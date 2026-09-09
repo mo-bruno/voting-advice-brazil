@@ -4,7 +4,7 @@ from urllib.parse import urlparse
 
 import paho.mqtt.client as mqtt
 
-from app.core.config import settings
+from app.config import settings
 from app.core.use_cases.interfaces import IotMqttPublisher
 
 

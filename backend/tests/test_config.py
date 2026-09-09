@@ -2,7 +2,7 @@
 import pytest
 from pydantic import ValidationError
 
-from app.core.config import Settings
+from app.config import Settings
 
 
 def test_settings_defaults(monkeypatch):

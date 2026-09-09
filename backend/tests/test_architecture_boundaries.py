@@ -6,6 +6,7 @@ from pathlib import Path
 FORBIDDEN_PREFIXES = (
     "app.infrastructure",
     "fastapi",
+    "pydantic",
     "sqlalchemy",
     "httpx",
     "paho",

@@ -3,7 +3,12 @@ import json
 import httpx
 
 from app.core.entities.community import ModerationResult
-from app.core.use_cases.interfaces import ModerationPort, ModerationUnavailable
+from app.core.use_cases.interfaces import (
+    ModerationPort as ModerationPort,
+)
+from app.core.use_cases.interfaces import (
+    ModerationUnavailable as ModerationUnavailable,
+)
 
 _SYSTEM_PROMPT = """Você é um moderador de conteúdo para uma plataforma de debate político brasileiro.
 Avalie o texto do usuário segundo dois critérios:
