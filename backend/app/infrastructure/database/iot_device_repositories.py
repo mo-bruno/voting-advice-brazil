@@ -1,6 +1,7 @@
 from datetime import datetime
 
 from sqlalchemy import select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.core.entities.iot_device import (
@@ -202,12 +203,37 @@ def _to_event(model: IotDeviceEventModel) -> IotDeviceEvent:
         event_type=model.event_type,
         payload=model.payload,
         published_at=model.published_at,
+        deduplication_key=model.deduplication_key,
     )
 
 
 class SqlIotDeviceEventRepository(IotDeviceEventRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
+
+    def record_once(
+        self,
+        device_token: str,
+        event_type: str,
+        deduplication_key: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent | None:
+        model = IotDeviceEventModel(
+            device_token=device_token,
+            event_type=event_type,
+            deduplication_key=deduplication_key,
+            payload=payload,
+            published_at=now,
+        )
+        self._db.add(model)
+        try:
+            self._db.commit()
+        except IntegrityError:
+            self._db.rollback()
+            return None
+        self._db.refresh(model)
+        return _to_event(model)
 
     def record(
         self,

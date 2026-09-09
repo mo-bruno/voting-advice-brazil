@@ -180,6 +180,16 @@ class IotMqttPublisher(ABC):
 
 class IotDeviceEventRepository(ABC):
     @abstractmethod
+    def record_once(
+        self,
+        device_token: str,
+        event_type: str,
+        deduplication_key: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent | None: ...
+
+    @abstractmethod
     def record(
         self,
         device_token: str,

@@ -364,8 +364,12 @@ class IotDeviceEventModel(Base):
     event_type: Mapped[str] = mapped_column(String(32), nullable=False)
     payload: Mapped[dict[str, object]] = mapped_column(JSON, nullable=False)
     published_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False)
+    deduplication_key: Mapped[str | None] = mapped_column(String(192), nullable=True)
 
     __table_args__ = (
+        UniqueConstraint(
+            "device_token", "event_type", "deduplication_key", name="uq_iot_events_delivery"
+        ),
         Index(
             "ix_iot_device_events_token_type_at",
             "device_token",

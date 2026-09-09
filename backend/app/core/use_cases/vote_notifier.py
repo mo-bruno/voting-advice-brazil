@@ -23,6 +23,7 @@ def _normalize_alignment(alignment: str) -> str:
 
 
 def _payload(
+    source_event_id: str,
     deputy_name: str,
     party: str | None,
     state: str | None,
@@ -37,6 +38,7 @@ def _payload(
     meta = ALIGNMENT_METADATA[normalized]
     return {
         "type": "vote_alert",
+        "source_event_id": source_event_id,
         "deputy_name": deputy_name,
         "party": party or "",
         "state": state or "",
@@ -55,6 +57,7 @@ def run_vote_notifier(
     event_repo: IotDeviceEventRepository,
     publisher: IotMqttPublisher,
     political_actor_id: int,
+    source_event_id: str,
     deputy_name: str,
     party: str | None,
     state: str | None,
@@ -63,6 +66,7 @@ def run_vote_notifier(
     now: datetime,
 ) -> int:
     payload = _payload(
+        source_event_id=source_event_id,
         deputy_name=deputy_name,
         party=party,
         state=state,
@@ -77,12 +81,16 @@ def run_vote_notifier(
         link = link_repo.get_by_anonymous_id(anonymous_id)
         if link is None:
             continue
-        publisher.publish(topic=f"farol/{link.device_token}", payload={k: str(v) for k, v in payload.items()})
-        event_repo.record(
+        # Reserve before publication: broker failures deliberately suppress retries.
+        event = event_repo.record_once(
             device_token=link.device_token,
             event_type="vote_alert",
+            deduplication_key=source_event_id,
             payload=payload,
             now=now,
         )
+        if event is None:
+            continue
+        publisher.publish(topic=f"farol/{link.device_token}", payload={k: str(v) for k, v in payload.items()})
         notified += 1
     return notified
