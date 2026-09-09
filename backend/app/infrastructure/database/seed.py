@@ -7,7 +7,7 @@ from typing import Any
 
 from sqlalchemy.orm import Session
 
-from app.core.config import settings
+from app.config import settings
 from app.infrastructure.database.models import (
     CandidateModel,
     CandidatePositionModel,

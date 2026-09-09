@@ -1,114 +1,90 @@
 # Farol Político
 
-Aplicativo de orientação eleitoral para o Brasil. O usuário responde teses políticas, escolhe pesos e recebe um ranking de candidatos por compatibilidade.
+Aplicativo acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
 
-Projeto acadêmico da Universidade Presbiteriana Mackenzie.
+O produto atual reúne um quiz baseado em propostas de candidatos de 2022, consulta de deputados atuais e evidências oficiais da Câmara, acompanhamento de um político, comunidade anônima e notícias oficiais dos últimos sete dias. O ranking usa respostas e pesos do quiz para comparar propostas; as evidências legislativas são informativas e não compõem esse score. Não há índice de consistência implementado.
 
-## Stack
+O app gera e guarda localmente um UUID v4 (`anonymous_id`). Ao enviar o quiz, transmite esse UUID no campo `device_id`, e as respostas são persistidas no backend por UUID. Na comunidade e no acompanhamento, `X-Farol-Anonymous-Id` funciona como credencial privada de posse; as respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessa identidade.
 
-- Backend: Python 3.12, FastAPI, SQLAlchemy, Alembic, pytest, uv.
-- Mobile/Web: Flutter, Firebase Analytics, HTTP API.
-- Dados: propostas de governo de candidatos de 2022 e teses curadas em JSON.
-- Deploy: Cloud Run para API e Firebase Hosting para o app web.
+## Stack e estrutura
 
-## Estrutura
+- `backend/`: Python 3.12+, FastAPI, SQLAlchemy, Alembic, pytest e uv.
+- `mobile/`: Flutter para web/mobile, HTTP API e Firebase Analytics.
+- `data/`: propostas de 2022, logos e teses curadas em JSON.
+- `scripts/`: utilitários de apoio.
+- `firmware/`: código histórico de hardware IoT, atualmente dormente.
 
-```text
-backend/   API, regra de scoring, banco e testes
-mobile/    App Flutter para web/mobile
-data/      Propostas, logos e teses do quiz
-scripts/   Utilitários de apoio ao projeto
-```
-
-## Como rodar
-
-### Backend
+## Rodar localmente
 
 ```bash
 cd backend
-uv sync
+uv sync --extra dev
 cp .env.example .env
 uv run alembic upgrade head
 uv run python -m app.infrastructure.database.seed
 uv run fastapi dev app/main.py
 ```
 
-API local: `http://localhost:8000`
-Docs: `http://localhost:8000/docs`
+API: [localhost:8000](http://localhost:8000). Contrato interativo: [/docs](http://localhost:8000/docs), [/redoc](http://localhost:8000/redoc) e [/openapi.json](http://localhost:8000/openapi.json).
 
-### App Flutter
+O exemplo de ambiente usa `MODERATION_MODE=disabled` para desenvolvimento: posts e comentários são aprovados sem chamar o provedor. O padrão da aplicação é `enforce`, que exige uma chave Groq válida para publicar. Consulte a [configuração do backend](backend/README.md).
+
+Em outro terminal:
 
 ```bash
 cd mobile
 flutter pub get
-flutter run
+flutter run -d chrome --dart-define=API_BASE_URL=http://localhost:8000/api/v1 --dart-define=IOT_FEATURE_ENABLED=false
 ```
 
-Para trocar a API em build/run:
+`API_BASE_URL` deve incluir `/api/v1`. Em emuladores/aparelhos, ajuste o host para alcançar sua máquina. Para web, inclua a origem/porta do app em `ALLOWED_ORIGINS` no backend.
 
-```bash
-flutter run --dart-define=API_BASE_URL=http://localhost:8000/api/v1
-```
+## API ativa
 
-### Firmware
+Os caminhos abaixo usam o prefixo `/api/v1`, exceto saúde e documentação.
 
-```bash
-# ESP32
-cp firmware/esp32/include/secrets.h.example firmware/esp32/include/secrets.h
-# editar WIFI_SSID e WIFI_PASSWORD
-pio run --project-dir firmware/esp32
+| Família | Métodos e caminhos |
+|---|---|
+| Saúde e contrato | `GET /health`, `GET /docs`, `GET /redoc`, `GET /openapi.json` |
+| Quiz | `GET /quiz/questions`, `POST /quiz/submit` |
+| Candidatos de 2022 | `GET /candidates`, `GET /candidates/{candidate_id}`, `GET /candidates/{candidate_id}/positions`, `GET /candidates/{candidate_id}/justifications` |
+| Temas | `GET /themes` |
+| Deputados atuais | `GET /political-actors`, `GET /political-actors/trending`, `GET /political-actors/{actor_id}`, `GET /political-actors/{actor_id}/evidence` |
+| Acompanhamento pessoal | `GET`, `PUT`, `DELETE /me/followed-actor` |
+| Comunidade | `GET`, `POST /community/posts`; `GET`, `DELETE /community/posts/{post_id}`; `POST /community/posts/{post_id}/votes`, `/comments`, `/reports` |
+| Notícias oficiais | `GET /news/weekly`, `GET /news/image?url=...` |
 
-# Arduino Mega
-pio run --project-dir firmware/mega
-```
+Arquivos públicos em `/data/...` são servidos quando `DATA_DIR` existe. Notícias semanais vêm da Câmara; seu proxy de imagens aceita apenas hosts autorizados da Câmara. Detalhes de identidade, limites, moderação e erros estão no [README do backend](backend/README.md).
 
-O ESP32 gera um `device_token` persistente no primeiro boot, registra sessoes de pareamento no backend e assina `farol/{device_token}` via MQTT. O Mega recebe frames UART do ESP32 e renderiza telas `V|...` e QR de pareamento `Q|...`.
+## IoT dormente e deploy
 
-> **Importante — Mega com shield TFT 16-bits:**  
-> A biblioteca `MCUFRIEND_kbv` precisa ser configurada para o barramento de 16 bits do Mega.  
-> Edite os arquivos na pasta de dependencias do PlatformIO:
->
-> **1.** `firmware/mega/.pio/libdeps/megaatmega2560/MCUFRIEND_kbv/utility/mcufriend_shield.h`  
-> Descomente a linha:
-> ```cpp
-> #define USE_SPECIAL
-> ```
->
-> **2.** `firmware/mega/.pio/libdeps/megaatmega2560/MCUFRIEND_kbv/utility/mcufriend_special.h`  
-> Descomente a linha:
-> ```cpp
-> #define USE_MEGA_16BIT_SHIELD
-> ```
->
-> Apos editar, recompile e envie: `pio run --target upload --project-dir firmware/mega --upload-port <PORTA>`.
+O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. As rotas de pareamento/eventos não são registradas na API desativada; o app não oferece pareamento nem consulta status do dispositivo. O quiz e o acompanhamento continuam disponíveis.
 
-## Testes
+Cloud Build publica a API no Cloud Run com `IOT_FEATURE_ENABLED=false`; o workflow de Firebase Hosting compila o app com `--dart-define=IOT_FEATURE_ENABLED=false`. Nenhum scheduler é iniciado pelo processo da API.
+
+Ativar as duas flags é apenas uma opção de desenvolvimento histórico sem suporte. Isso não fornece um motor completo de alinhamento entre votos e respostas, nem um scheduler de produção. O código retido exige invocação externa do job de execução única e ainda possui limitações de entrega. MQTT e GNews permanecem como integrações históricas do fluxo físico. Consulte [firmware/README.md](firmware/README.md) e o [desenho de desativação](docs/superpowers/specs/2026-09-09-disable-iot-and-close-gaps-design.md).
+
+## Verificação
 
 ```bash
 cd backend
+uv sync --extra dev
+uv lock --check
 uv run pytest
 uv run ruff check .
 uv run mypy app/
+# Teste focado: não aplicar o mínimo de cobertura global a um único arquivo
+uv run pytest tests/test_config.py -q --no-cov
 ```
 
 ```bash
 cd mobile
+flutter pub get
+flutter analyze
 flutter test
+flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
 ```
 
-## API principal
+## Contribuição e licença
 
-- `GET /health`
-- `GET /api/v1/quiz/questions`
-- `POST /api/v1/quiz/submit`
-- `GET /api/v1/candidates`
-- `GET /api/v1/candidates/{id}/justifications`
-- `GET /api/v1/themes`
-
-## Contribuição
-
-Leia [CONTRIBUTING.md](CONTRIBUTING.md). Abra PRs pequenos, com contexto claro e testes quando a mudança afetar comportamento.
-
-## Licença
-
-Licença ainda não definida.
+Leia [CONTRIBUTING.md](CONTRIBUTING.md). Abra PRs com contexto claro e testes proporcionais às mudanças de comportamento. Licença ainda não definida.

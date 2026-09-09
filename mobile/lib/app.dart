@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'core/features/feature_flags.dart';
 import 'core/shell/main_shell.dart';
 import 'core/theme/app_theme.dart';
 import 'features/community/community_feed_page.dart';
@@ -22,7 +23,9 @@ const double kMaxContentWidth = 600;
 /// aplicada a todas as telas (ver `builder`). Mantém a configuração separada do
 /// ponto de entrada (main.dart).
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, this.featureFlags = FeatureFlags.environment});
+
+  final FeatureFlags featureFlags;
 
   @override
   Widget build(BuildContext context) {
@@ -56,11 +59,12 @@ class MyApp extends StatelessWidget {
         // O shell le a aba de abertura dos arguments da rota, o que permite a
         // telas como a de resultados voltarem direto para a aba do quiz.
         '/': (context) => MainShell(
+              iotEnabled: featureFlags.iotEnabled,
               initialTab: MainShell.tabFromArguments(
                 ModalRoute.of(context)?.settings.arguments,
               ),
             ),
-        '/quiz': (context) => const QuizPage(),
+        '/quiz': (context) => QuizPage(iotEnabled: featureFlags.iotEnabled),
         '/weighting': (context) => const WeightingPage(),
         '/party-selection': (context) => const PartySelectionPage(),
         '/results': (context) => const ResultsPage(),
@@ -68,8 +72,10 @@ class MyApp extends StatelessWidget {
         '/political-actors': (context) => const PoliticalActorSearchPage(),
         '/political-actor-profile': (context) =>
             const PoliticalActorProfilePage(),
-        '/iot-device': (context) => const IotDevicePage(),
-        '/iot-pairing': (context) => const IotPairingPage(),
+        if (featureFlags.iotEnabled) ...{
+          '/iot-device': (context) => const IotDevicePage(),
+          '/iot-pairing': (context) => const IotPairingPage(),
+        },
         '/comunidade': (context) => const CommunityFeedPage(),
       },
     );

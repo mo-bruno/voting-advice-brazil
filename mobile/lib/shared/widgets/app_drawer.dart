@@ -12,6 +12,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/device/device_identity_store.dart';
+import '../../core/features/feature_flags.dart';
 import '../../core/shell/main_shell.dart';
 import '../../core/theme/app_theme.dart';
 import '../iot_device_session.dart';
@@ -25,11 +26,18 @@ import 'drawer/followed_actor_tile.dart';
 import 'drawer/quiz_affinity_tile.dart';
 
 class AppDrawer extends StatefulWidget {
-  const AppDrawer({super.key, this.deviceIdentityStore});
+  const AppDrawer({
+    super.key,
+    this.deviceIdentityStore,
+    this.iotEnabled,
+  });
 
   /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
   /// que o resto do app.
   final DeviceIdentityStore? deviceIdentityStore;
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? iotEnabled;
 
   @override
   State<AppDrawer> createState() => _AppDrawerState();
@@ -40,7 +48,8 @@ class _AppDrawerState extends State<AppDrawer> {
   /// redesenha a gaveta. Montada aqui e nao no `build` para nao criar um
   /// Listenable novo a cada frame.
   late final Listenable _sessions = Listenable.merge([
-    IotDeviceSession.instance,
+    if (widget.iotEnabled ?? FeatureFlags.environment.iotEnabled)
+      IotDeviceSession.instance,
     PoliticalActorSession.instance,
     QuizSession.instance,
   ]);
@@ -87,39 +96,46 @@ class _AppDrawerState extends State<AppDrawer> {
 
   @override
   Widget build(BuildContext context) {
+    final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
+
     return Drawer(
       backgroundColor: AppTheme.surface,
       child: ListenableBuilder(
         listenable: _sessions,
         builder: (context, _) {
-          final iot = IotDeviceSession.instance;
           final followed = PoliticalActorSession.instance.followedActor;
           final results = QuizSession.instance.visibleResults;
+          final iot = iotEnabled ? IotDeviceSession.instance : null;
 
           return Column(
             children: [
-              FarolDrawerHeader(
-                state: farolLedStateFor(
-                  device: iot.device,
-                  lastEvent: iot.lastEvent,
-                  now: DateTime.now(),
-                ),
-              ),
+              if (iotEnabled)
+                FarolDrawerHeader(
+                  state: farolLedStateFor(
+                    device: iot!.device,
+                    lastEvent: iot.lastEvent,
+                    now: DateTime.now(),
+                  ),
+                )
+              else
+                const _BrandedDrawerHeader(),
               Expanded(
                 child: ListView(
                   padding: EdgeInsets.zero,
                   children: [
-                    FarolStatusTile(
-                      device: iot.device,
-                      lastEvent: iot.lastEvent,
-                      onOpenDevice: () => _go(
-                        (navigator) => navigator.pushNamed('/iot-device'),
+                    if (iotEnabled) ...[
+                      FarolStatusTile(
+                        device: iot!.device,
+                        lastEvent: iot.lastEvent,
+                        onOpenDevice: () => _go(
+                          (navigator) => navigator.pushNamed('/iot-device'),
+                        ),
+                        onPair: () => _go(
+                          (navigator) => navigator.pushNamed('/iot-pairing'),
+                        ),
                       ),
-                      onPair: () => _go(
-                        (navigator) => navigator.pushNamed('/iot-pairing'),
-                      ),
-                    ),
-                    const _Rule(),
+                      const _Rule(),
+                    ],
                     FollowedActorTile(
                       actor: followed,
                       onOpenProfile: () => _go(
@@ -157,6 +173,47 @@ class _AppDrawerState extends State<AppDrawer> {
   }
 }
 
+class _BrandedDrawerHeader extends StatelessWidget {
+  const _BrandedDrawerHeader();
+
+  @override
+  Widget build(BuildContext context) {
+    return DrawerHeader(
+      margin: EdgeInsets.zero,
+      padding: const EdgeInsets.all(16),
+      decoration: const BoxDecoration(
+        color: AppTheme.background,
+        border: Border(
+          bottom: BorderSide(color: AppTheme.outlineVariant),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const Text(
+            'FAROL\nPOLÍTICO',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w900,
+              color: AppTheme.primary,
+              height: 1,
+              letterSpacing: 1.5,
+            ),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'BRASIL 2026',
+            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                  letterSpacing: 2,
+                ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class _Rule extends StatelessWidget {
   const _Rule();
 
@@ -177,24 +234,29 @@ void _showAbout(BuildContext context) {
   _showNote(
     context,
     title: 'Sobre o Farol Político',
-    body: 'O Farol Político compara suas posições com o que os candidatos '
-        'escreveram em seus planos de governo e, quando eleitos, com os votos '
-        'que registraram na Câmara dos Deputados.\n\n'
-        'Os dados vêm das APIs abertas do TSE e da Câmara. O projeto é '
+    body: 'O quiz compara suas respostas com propostas publicadas por '
+        'candidatos nas eleições de 2022. A área Acompanhar apresenta '
+        'deputados atuais e evidências oficiais da Câmara; esses votos são '
+        'informativos e não alteram o ranking do quiz.\n\n'
+        'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
         'acadêmico e não tem vínculo com nenhum partido ou candidato.',
   );
 }
 
 void _showPrivacy(BuildContext context, String? shortId) {
-  final id = shortId == null ? '' : '\n\nO seu é $shortId.';
+  final id = shortId == null
+      ? ''
+      : '\n\nO trecho do identificador exibido neste aparelho é $shortId.';
   _showNote(
     context,
     title: 'Privacidade',
-    body: 'O app não pede e não guarda nome, e-mail, telefone ou qualquer '
-        'outro dado que identifique você.\n\n'
-        'Seu aparelho recebe um identificador aleatório, gerado nele mesmo, '
-        'usado só para lembrar quem você segue e a qual Farol físico este '
-        'aparelho está ligado. Suas respostas do quiz não saem do aparelho.$id',
+    body: 'O app não solicita nome, e-mail ou telefone. Ele cria um '
+        'identificador aleatório no aparelho e o envia como credencial '
+        'privada para salvar respostas do quiz, lembrar quem você segue e '
+        'participar da comunidade. Publicações e comentários exibem somente '
+        'um apelido público; o identificador completo não aparece para outras '
+        'pessoas.\n\nNão há conta nem recuperação de acesso. Não compartilhe o '
+        'identificador completo.$id',
   );
 }
 

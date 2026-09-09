@@ -1,55 +1,104 @@
 # Farol Político — Backend API
 
-API FastAPI para o app de Voting Advice da Fase 1.
+FastAPI para quiz de propostas de 2022, deputados atuais com evidências oficiais, acompanhamento pessoal, comunidade anônima e notícias semanais da Câmara. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos são exibidos como evidência informativa. Não existe índice de consistência ou motor completo de alinhamento legislativo implementado.
 
 ## Setup local
 
+Execute em `backend/` com Python 3.12+ e uv:
+
 ```bash
-# 1. Instalar deps
-uv sync
-
-# 2. Copiar template de ambiente
+uv sync --extra dev
 cp .env.example .env
-# (editar .env se necessário — defaults funcionam para dev)
-
-# 3. Rodar migrations
 uv run alembic upgrade head
-
-# 4. Popular banco com dados 2022
 uv run python -m app.infrastructure.database.seed
-
-# 5. Rodar servidor
 uv run fastapi dev app/main.py
 ```
 
-API disponível em `http://localhost:8000`. Docs interativas em `/docs`.
+API em [localhost:8000](http://localhost:8000); contrato em [/docs](http://localhost:8000/docs), [/redoc](http://localhost:8000/redoc) e [/openapi.json](http://localhost:8000/openapi.json). Alembic gerencia o schema. O startup da API faz seed idempotente fora do ambiente `test`; não inicia jobs periódicos.
 
-## Comandos úteis
+## Configuração
+
+`app/config.py` carrega variáveis de ambiente e `.env` via Pydantic Settings. `app/core/` permanece livre de frameworks. O arquivo [.env.example](.env.example) é um exemplo de desenvolvimento, com moderação explicitamente desativada; os padrões abaixo são os da classe `Settings`.
+
+| Variável | Padrão | Uso |
+|---|---|---|
+| `APP_NAME` | `Farol Político API` | Título da aplicação |
+| `APP_VERSION` | `0.1.0` | Versão informada pela aplicação |
+| `APP_ENV` | `dev` | `dev`, `test`, `staging` ou `prod` |
+| `DEBUG` | `false` | Configuração disponível; não substitui as opções do servidor |
+| `DATABASE_URL` | `sqlite:///./voting_advice.db` | SQLite local; produção usa `postgresql+psycopg://...` |
+| `DATA_DIR` | `../data` | Seed e arquivos estáticos; `/data` no container |
+| `ALLOWED_ORIGINS` | `https://farol-politico-495210.web.app` | Origens CORS separadas por vírgulas |
+| `MODERATION_MODE` | `enforce` | `enforce` chama Groq; `disabled` aprova sem modelo, para desenvolvimento |
+| `GROQ_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
+| `IOT_FEATURE_ENABLED` | `false` | Mantém rotas e efeitos do hardware dormentes |
+| `MQTT_BROKER_URL` | `mqtts://broker.hivemq.com:8883` | Broker da integração IoT histórica |
+| `GNEWS_API_KEY` | ausente | Notícias temáticas do fluxo IoT histórico; não alimenta `/news/weekly` |
+
+## Identidade e persistência
+
+O Flutter gera um UUID v4 local chamado `anonymous_id`. Esse UUID é uma credencial privada de posse, enviada no header `X-Farol-Anonymous-Id` nas rotas `/me/...` e nas escritas da comunidade. Não há login, recuperação de conta ou garantia de que uma pessoa use uma única identidade. Não exponha o UUID em URLs, aliases ou conteúdo público.
+
+Leituras da comunidade aceitam o mesmo header opcional para calcular `is_mine`. Respostas públicas de posts/comentários contêm `author_alias` (`u/` mais dez caracteres do SHA-256 do UUID) e `is_mine`, e não retornam o UUID do autor. O alias público não serve como credencial. Headers obrigatórios ausentes ou UUIDs inválidos retornam 422. O Flutter exige os campos do contrato atual e não usa um UUID público legado como fallback.
+
+`POST /quiz/submit` mantém o campo opcional `device_id` por compatibilidade de contrato. Quando o app o envia, seu valor é o mesmo UUID v4 local: as respostas são gravadas por UUID e tese. Sem `device_id`, a API calcula o ranking sem gravar respostas. A API não exige esse identificador para calcular o resultado.
+
+## Endpoints ativos
+
+Todos os caminhos da tabela usam `/api/v1`.
+
+| Método | Caminho | Comportamento |
+|---|---|---|
+| GET | `/quiz/questions` | Teses, com filtros de temas e limite |
+| POST | `/quiz/submit` | Ranking de candidatos de 2022 e persistência quando há `device_id` |
+| GET | `/candidates` | Candidatos com filtros e paginação |
+| GET | `/candidates/{candidate_id}` | Perfil de candidato |
+| GET | `/candidates/{candidate_id}/positions` | Posições nas teses |
+| GET | `/candidates/{candidate_id}/justifications` | Posições e justificativas |
+| GET | `/themes` | Temas disponíveis |
+| GET | `/political-actors` | Índice de deputados atuais, busca/filtros/paginação |
+| GET | `/political-actors/trending` | Ranking com mínimo de dois seguidores, sem contagem pública |
+| GET | `/political-actors/{actor_id}` | Perfil de deputado |
+| GET | `/political-actors/{actor_id}/evidence` | Evidências oficiais e estado do cache |
+| GET, PUT, DELETE | `/me/followed-actor` | Consultar, substituir ou remover o político acompanhado pelo UUID privado |
+| GET, POST | `/community/posts` | Feed e publicação; filtros por político/tema e ordenação `score` ou `recent` |
+| GET, DELETE | `/community/posts/{post_id}` | Detalhe com comentários; remoção pelo próprio autor |
+| POST | `/community/posts/{post_id}/votes` | Voto `-1`, `0` ou `1`; zero desfaz o voto |
+| POST | `/community/posts/{post_id}/comments` | Comentário com moderação síncrona |
+| POST | `/community/posts/{post_id}/reports` | Denúncia; retorna 204 inclusive quando repetida |
+| GET | `/news/weekly` | Notícias oficiais dos últimos sete dias, limite de 1 a 20 |
+| GET | `/news/image?url=...` | Proxy de imagem da Câmara com allowlist e sem seguir redirects |
+
+Fora do prefixo: `GET /health`, `/docs`, `/redoc`, `/openapi.json` e arquivos `/data/...` quando `DATA_DIR` existe. A Câmara fornece o índice e as evidências com cache/fallback e fornece também o feed oficial. GNews é uma integração histórica separada, desnecessária para essas consultas ativas.
+
+## Integridade da comunidade
+
+Posts (até 500 caracteres) e comentários (até 300) passam pelo Groq de forma síncrona antes da publicação em modo `enforce`. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
+
+Há limite persistido no banco por `anonymous_id`: cinco posts a cada dez minutos e dez comentários a cada dez minutos. Excesso retorna 429 com `Retry-After: 600`. Posts removidos continuam contando para a cota. O limite geral por IP de 60 requisições/minuto usa memória do processo; ele não é uma cota distribuída entre instâncias.
+
+O autor pode remover seu post; outro UUID recebe 403. O detalhe informa que o post foi removido, e ele não recebe novos votos ou comentários (410); IDs inexistentes retornam 404. A remoção é lógica, sem promessa de apagar o registro do banco. Denúncias são deduplicadas por autor e podem disparar nova moderação. Não há painel de moderação humana ou edição de conteúdo.
+
+## IoT histórico, desativado
+
+`IOT_FEATURE_ENABLED=false` é o padrão e é passado explicitamente pelo deploy Cloud Run em [cloudbuild.yaml](../cloudbuild.yaml). O Flutter também é compilado com `--dart-define=IOT_FEATURE_ENABLED=false` no workflow Firebase. Nessas condições, as rotas `/iot-devices/...` e `/me/iot-device...` não entram no OpenAPI, e submissão de quiz não dispara MQTT/GNews.
+
+As fontes GNews, o publisher MQTT, o firmware e o módulo `app/infrastructure/scheduler.py` foram retidos como código dormente. Esse módulo agora oferece uma única execução protegida pela flag: `uv run python -m app.infrastructure.scheduler`. Ele não agenda próximas execuções e não faz trabalho externo com a flag desativada. Não há scheduler no lifespan da API nem agendamento automático no deploy.
+
+Ativar backend e Flutter é apenas desenvolvimento histórico sem suporte, com vínculo físico e invocação externa do job quando necessária. O job trata abstenção como `abstained`; outros votos permanecem `pending`, sem inferir alinhamento pela resposta “Sim”/“Não”. Reserva eventos no banco antes de publicar para deduplicar; uma falha do broker após a reserva suprime nova tentativa, portanto não garante entrega. Ativar as flags não conclui um motor de alinhamento nem um scheduler de produção. Veja [firmware/README.md](../firmware/README.md).
+
+## Verificação e migrations
 
 ```bash
-# Testes + cobertura
-uv run pytest --cov=app --cov-report=term-missing
-
-# Lint
+uv sync --extra dev
+uv lock --check
+uv run pytest
 uv run ruff check .
-
-# Type check
 uv run mypy app/
-
-# Nova migration (depois de mudar models.py)
-uv run alembic revision --autogenerate -m "descricao"
-
-# Reverter última migration
-uv run alembic downgrade -1
+# Um teste focado não deve exigir a cobertura global de 80%:
+uv run pytest tests/test_config.py -q --no-cov
+uv run ruff check app/config.py tests/test_config.py
+uv run mypy app/config.py
 ```
 
-## Ambientes
-
-| Variável | dev | staging/prod |
-|---|---|---|
-| `APP_ENV` | `dev` | `staging` ou `prod` |
-| `DATABASE_URL` | `sqlite:///./voting_advice.db` | `postgresql+psycopg://...` |
-| `GROQ_API_KEY` | opcional | obrigatório |
-| `MQTT_BROKER_URL` | default HiveMQ | configurável |
-
-Ver `.env.example` para lista completa.
+A suíte completa aplica o mínimo de cobertura global definido no `pyproject.toml`. Para mudanças no schema, gere e revise uma migration com `uv run alembic revision --autogenerate -m "descricao"` e aplique `uv run alembic upgrade head`. O Cloud Build aplica migrations antes de publicar a revisão.

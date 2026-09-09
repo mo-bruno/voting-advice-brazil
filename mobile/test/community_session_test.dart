@@ -4,7 +4,8 @@ import 'package:guia_eleitoral/features/community/models/community_models.dart';
 
 PostSummary _post(String id, int score) => PostSummary(
       id: id,
-      anonymousId: 'a',
+      authorAlias: 'u/abc123def0',
+      isMine: false,
       content: 'x',
       score: score,
       createdAt: DateTime.now(),

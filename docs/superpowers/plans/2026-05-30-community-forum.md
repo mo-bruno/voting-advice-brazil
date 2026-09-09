@@ -1,3 +1,11 @@
+> **Status: historical community implementation plan.** Current behavior is
+> documented in [backend/README.md](../../../backend/README.md) and the
+> [2026-09-09 design](../specs/2026-09-09-disable-iot-and-close-gaps-design.md).
+> Physical IoT is dormant. Private identity uses `anonymous_id` UUID v4 via
+> `X-Farol-Anonymous-Id`; public author fields are `author_alias` and `is_mine`.
+> Posts and comments now have moderation and rate limits. Original implementation
+> examples below do not define the current contract or supported deployment.
+
 # Comunidade Anônima — Fase 3 Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -24,7 +32,7 @@
 - Header de identidade: `X-Farol-Anonymous-Id` → `anonymous_id` (não `device_token`)
 - Migrations Alembic: `alembic/versions/`, última é `0004_iot_events`
 - Testes: pytest com fakes (sem mocks de framework), fixtures em `conftest.py`
-- Settings: `app/core/config.py` com `settings.groq_api_key`
+- Settings: `app/config.py` com `settings.groq_api_key`
 
 ---
 

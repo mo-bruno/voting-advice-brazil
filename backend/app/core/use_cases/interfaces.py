@@ -180,6 +180,16 @@ class IotMqttPublisher(ABC):
 
 class IotDeviceEventRepository(ABC):
     @abstractmethod
+    def record_once(
+        self,
+        device_token: str,
+        event_type: str,
+        deduplication_key: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent | None: ...
+
+    @abstractmethod
     def record(
         self,
         device_token: str,
@@ -200,10 +210,24 @@ class IotDeviceEventRepository(ABC):
 
 from app.core.entities.community import (  # noqa: E402
     Comment,
+    ModerationResult,
     Post,
     PostReport,
     PostVote,
 )
+
+
+class ModerationPort(ABC):
+    @abstractmethod
+    def moderate(
+        self,
+        content: str,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult: ...
+
+
+class ModerationUnavailable(Exception):
+    """Raised when required content moderation cannot produce a decision."""
 
 
 class PostRepository(ABC):
@@ -238,7 +262,17 @@ class CommentRepository(ABC):
     def create(self, comment: Comment) -> Comment: ...
 
     @abstractmethod
+    def create_with_rate_limit(
+        self, comment: Comment, since: datetime, max_comments: int,
+    ) -> Comment | None:
+        """Atomically count and insert; return None if the author quota is full."""
+        ...
+
+    @abstractmethod
     def list_by_post(self, post_id: str) -> list[Comment]: ...
+
+    @abstractmethod
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int: ...
 
 
 class PostVoteRepository(ABC):

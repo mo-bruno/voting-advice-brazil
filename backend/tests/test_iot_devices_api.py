@@ -8,6 +8,7 @@ from app.infrastructure.database.models import (
     IotPairingSessionModel,
 )
 from app.main import app
+from tests.conftest import ANONYMOUS_OTHER as ANON
 
 TOKEN = "550e8400-e29b-41d4-a716-446655440000"
 PAIRING_CODE = "482913"
@@ -59,7 +60,7 @@ def test_create_pairing_session_returns_qr_payload(client) -> None:
 def test_get_iot_device_returns_404_when_unlinked(client) -> None:
     response = client.get(
         "/api/v1/me/iot-device",
-        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        headers={"X-Farol-Anonymous-Id": ANON},
     )
 
     assert response.status_code == 404
@@ -76,12 +77,12 @@ def test_pair_flow_links_device_and_publishes_confirmation(client) -> None:
 
         pair_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
         )
         get_response = client.get(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
         )
     finally:
         app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
@@ -105,7 +106,7 @@ def test_manual_pair_flow_links_device_and_publishes_confirmation(client) -> Non
 
         pair_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={
                 "device_token_prefix": TOKEN[:8],
                 "pairing_code": PAIRING_CODE,
@@ -113,7 +114,7 @@ def test_manual_pair_flow_links_device_and_publishes_confirmation(client) -> Non
         )
         get_response = client.get(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
         )
     finally:
         app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
@@ -134,7 +135,7 @@ def test_manual_pair_flow_rejects_unknown_device_token_prefix(client) -> None:
 
     response = client.put(
         "/api/v1/me/iot-device",
-        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        headers={"X-Farol-Anonymous-Id": ANON},
         json={"device_token_prefix": "deadbeef", "pairing_code": PAIRING_CODE},
     )
 
@@ -154,7 +155,7 @@ def test_manual_pair_flow_rejects_ambiguous_device_token_prefix(client) -> None:
 
     response = client.put(
         "/api/v1/me/iot-device",
-        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        headers={"X-Farol-Anonymous-Id": ANON},
         json={
             "device_token_prefix": AMBIGUOUS_TOKEN_A[:8],
             "pairing_code": PAIRING_CODE,
@@ -180,7 +181,7 @@ def test_pairing_status_reports_unlinked_then_linked(client) -> None:
         )
         pair_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
         )
         after_response = client.get(
@@ -206,12 +207,12 @@ def test_pair_flow_still_succeeds_when_mqtt_publish_fails(client) -> None:
 
         pair_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
         )
         get_response = client.get(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
         )
     finally:
         app.dependency_overrides.pop(get_iot_mqtt_publisher, None)
@@ -232,12 +233,12 @@ def test_consumed_session_is_rejected(client) -> None:
         )
         first_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
         )
         second_response = client.put(
             "/api/v1/me/iot-device",
-            headers={"X-Farol-Anonymous-Id": "anon-1"},
+            headers={"X-Farol-Anonymous-Id": ANON},
             json={"device_token": TOKEN, "pairing_code": PAIRING_CODE},
         )
     finally:
@@ -251,7 +252,7 @@ def test_delete_unlinks_current_app(client, db_session) -> None:
     db_session.add(
         IotDeviceLinkModel(
             device_token=TOKEN,
-            anonymous_id="anon-1",
+            anonymous_id=ANON,
             status="linked",
             created_at=datetime(2026, 5, 22, tzinfo=timezone.utc),
             updated_at=datetime(2026, 5, 22, tzinfo=timezone.utc),
@@ -261,11 +262,11 @@ def test_delete_unlinks_current_app(client, db_session) -> None:
 
     delete_response = client.delete(
         "/api/v1/me/iot-device",
-        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        headers={"X-Farol-Anonymous-Id": ANON},
     )
     get_response = client.get(
         "/api/v1/me/iot-device",
-        headers={"X-Farol-Anonymous-Id": "anon-1"},
+        headers={"X-Farol-Anonymous-Id": ANON},
     )
 
     assert delete_response.status_code == 204

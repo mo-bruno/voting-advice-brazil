@@ -1,5 +1,7 @@
 from datetime import datetime, timedelta, timezone
 
+import pytest
+
 from app.core.entities.iot_device import IotDeviceEvent, IotDeviceLink
 from app.core.use_cases.vote_notifier import run_vote_notifier
 
@@ -24,6 +26,21 @@ class FakeIotDeviceEventRepository:
     def __init__(self) -> None:
         self.recorded: list[dict[str, object]] = []
         self._next_id = 1
+        self.reserved: set[tuple[str, str, str]] = set()
+
+    def record_once(
+        self,
+        device_token: str,
+        event_type: str,
+        deduplication_key: str,
+        payload: dict[str, object],
+        now: datetime,
+    ) -> IotDeviceEvent | None:
+        key = (device_token, event_type, deduplication_key)
+        if key in self.reserved:
+            return None
+        self.reserved.add(key)
+        return self.record(device_token, event_type, payload, now)
 
     def record(
         self,
@@ -59,6 +76,92 @@ class FakeIotMqttPublisher:
         self.published.append({"topic": topic, "payload": payload})
 
 
+@pytest.mark.parametrize("broker_fails", [False, True])
+def test_same_source_vote_is_reserved_before_publish_and_never_repeated(broker_fails):
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    events = FakeIotDeviceEventRepository()
+
+    class Publisher(FakeIotMqttPublisher):
+        def publish(self, topic: str, payload: dict[str, str]) -> None:
+            assert ("tok-1", "vote_alert", "vote:123:456") in events.reserved
+            super().publish(topic, payload)
+            if broker_fails:
+                raise RuntimeError("broker unavailable")
+
+    publisher = Publisher()
+    dependencies = dict(
+        followed_repo=FakeFollowedActorRepository([(10, "anon-1")]),
+        link_repo=FakeIotDeviceLinkRepository({
+            "anon-1": IotDeviceLink("tok-1", "anon-1", "linked", now, now, None),
+        }),
+        event_repo=events,
+        publisher=publisher,
+        political_actor_id=10,
+        deputy_name="Deputy A",
+        party=None,
+        state=None,
+        vote="Sim",
+        alignment="pending",
+        now=now,
+    )
+    expected_count = 0 if broker_fails else 1
+    assert run_vote_notifier(source_event_id="vote:123:456", **dependencies) == expected_count
+    assert run_vote_notifier(source_event_id="vote:123:456", **dependencies) == 0
+    assert len(publisher.published) == 1
+    assert len(events.recorded) == 1
+
+
+@pytest.mark.parametrize("failed_device", ["tok-1", "tok-2", "tok-3"])
+def test_publish_failure_preserves_success_count_and_continues_followers(failed_device, caplog):
+    now = datetime(2026, 1, 1, tzinfo=timezone.utc)
+    events = FakeIotDeviceEventRepository()
+    attempts = []
+
+    class Publisher(FakeIotMqttPublisher):
+        def publish(self, topic: str, payload: dict[str, str]) -> None:
+            token = topic.removeprefix("farol/")
+            assert (token, "vote_alert", "vote:123:456") in events.reserved
+            attempts.append(topic)
+            if token == failed_device:
+                raise RuntimeError(f"MQTT password=broker-secret topic={topic}")
+            super().publish(topic, payload)
+
+    publisher = Publisher()
+    dependencies = dict(
+        followed_repo=FakeFollowedActorRepository([
+            (10, "anon-1"), (10, "anon-2"), (10, "anon-3"),
+        ]),
+        link_repo=FakeIotDeviceLinkRepository({
+            f"anon-{index}": IotDeviceLink(
+                f"tok-{index}", f"anon-{index}", "linked", now, now, None,
+            ) for index in (1, 2, 3)
+        }),
+        event_repo=events,
+        publisher=publisher,
+        political_actor_id=10,
+        source_event_id="vote:123:456",
+        deputy_name="Deputy A",
+        party=None,
+        state=None,
+        vote="Sim",
+        alignment="pending",
+        now=now,
+    )
+
+    assert run_vote_notifier(**dependencies) == 2
+    assert attempts == ["farol/tok-1", "farol/tok-2", "farol/tok-3"]
+    assert len(publisher.published) == 2
+    assert all(item["topic"] != f"farol/{failed_device}" for item in publisher.published)
+    assert len(events.reserved) == 3
+    assert run_vote_notifier(**dependencies) == 0
+    assert len(attempts) == 3
+    assert len(caplog.records) == 1
+    assert caplog.records[0].levelname == "ERROR"
+    assert "broker-secret" not in caplog.text
+    assert "tok-" not in caplog.text
+    assert "anon-" not in caplog.text
+
+
 def test_run_vote_notifier_publishes_and_records():
     now = datetime(2026, 1, 1, tzinfo=timezone.utc)
     followed_repo = FakeFollowedActorRepository([(10, "anon-1"), (20, "anon-2")])
@@ -84,6 +187,7 @@ def test_run_vote_notifier_publishes_and_records():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy A",
+        source_event_id="vote:123:456",
         party="ABC",
         state="SP",
         vote="Sim",
@@ -97,6 +201,7 @@ def test_run_vote_notifier_publishes_and_records():
             "topic": "farol/tok-1",
             "payload": {
                 "type": "vote_alert",
+                "source_event_id": "vote:123:456",
                 "deputy_name": "Deputy A",
                 "party": "ABC",
                 "state": "SP",
@@ -143,6 +248,7 @@ def test_run_vote_notifier_defaults_to_pending_alignment():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy B",
+        source_event_id="vote:123:456",
         party=None,
         state=None,
         vote="Obstrucao",
@@ -182,6 +288,7 @@ def test_run_vote_notifier_converts_timestamp_to_utc():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy C",
+        source_event_id="vote:123:456",
         party="XYZ",
         state="RJ",
         vote="Nao",
@@ -218,6 +325,7 @@ def test_run_vote_notifier_assumes_naive_timestamp_is_utc():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy D",
+        source_event_id="vote:123:456",
         party=None,
         state=None,
         vote="Sim",
@@ -254,6 +362,7 @@ def test_run_vote_notifier_skips_when_actor_not_followed():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy E",
+        source_event_id="vote:123:456",
         party="ABC",
         state="SP",
         vote="Sim",
@@ -280,6 +389,7 @@ def test_run_vote_notifier_skips_when_link_missing():
         publisher=publisher,
         political_actor_id=10,
         deputy_name="Deputy F",
+        source_event_id="vote:123:456",
         party="ABC",
         state="SP",
         vote="Sim",

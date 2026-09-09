@@ -1,7 +1,7 @@
 import logging
 from typing import cast
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 
 from app.api.cache import cache_get, cache_set
 from app.api.deps import (
@@ -18,6 +18,7 @@ from app.api.schemas.quiz import (
     ThesisMatchOut,
     ThesisOut,
 )
+from app.config import settings
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
 from app.core.use_cases.submit_quiz import (
     InsufficientAnswersError,
@@ -80,6 +81,7 @@ def questions(
 )
 def submit(
     body: SubmitQuizIn,
+    request: Request,
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
@@ -104,8 +106,10 @@ def submit(
         ) from err
 
     if body.device_id is not None:
-        quiz_response_repo.upsert_answers(str(body.device_id), answers)
-        _push_news_for_quiz_submission(str(body.device_id))
+        anonymous_id = str(body.device_id)
+        quiz_response_repo.upsert_answers(anonymous_id, answers)
+        if request.app.state.settings.iot_feature_enabled:
+            _push_news_for_quiz_submission(anonymous_id)
 
     return SubmitQuizResponse(
         results=[
@@ -142,7 +146,6 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
 
     from sqlalchemy import select
 
-    from app.core.config import settings
     from app.core.use_cases.news_notifier import push_news_for_user
     from app.infrastructure.database.models import (
         QuizResponseModel,

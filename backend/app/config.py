@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
     app_env: Literal["dev", "test", "staging", "prod"] = "dev"
     debug: bool = False
+    iot_feature_enabled: bool = False
 
     # Database
     database_url: str = "sqlite:///./voting_advice.db"
@@ -20,7 +21,6 @@ class Settings(BaseSettings):
     # External services
     moderation_mode: Literal["enforce", "disabled"] = "enforce"
     groq_api_key: str | None = None
-    gemini_api_key: str | None = None
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"
     gnews_api_key: str | None = None
 

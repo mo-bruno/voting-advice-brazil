@@ -1,9 +1,135 @@
+import 'dart:convert';
+
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/api/api_client.dart';
+import 'package:guia_eleitoral/features/community/models/community_models.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:guia_eleitoral/shared/models/party.dart';
 import 'package:guia_eleitoral/shared/models/thesis.dart';
+import 'package:http/http.dart' as http;
+import 'package:http/testing.dart';
 
 void main() {
+  group('private community identity contract', () {
+    const credential = '7af124cd-912f-45a3-830b-9ec63c8a91a6';
+    final postJson = {
+      'id': 'post-1',
+      'author_alias': 'u/abc123def0',
+      'is_mine': true,
+      'content': 'Texto',
+      'political_actor_id': null,
+      'theme_slug': null,
+      'score': 0,
+      'created_at': '2026-09-09T12:00:00Z',
+      'removed': false,
+      'removed_by': null,
+    };
+    final commentJson = {
+      'id': 'comment-1',
+      'post_id': 'post-1',
+      'author_alias': 'u/def456abc0',
+      'is_mine': false,
+      'content': 'Comentário',
+      'created_at': '2026-09-09T12:01:00Z',
+    };
+
+    test('list and detail send the private header and parse public aliases',
+        () async {
+      final requests = <http.Request>[];
+      final api = ApiClient(
+        baseUrl: 'https://api.test/api/v1',
+        client: MockClient((request) async {
+          requests.add(request);
+          return http.Response(
+              jsonEncode(
+                request.url.path.endsWith('/post-1')
+                    ? {
+                        'post': postJson,
+                        'comments': [commentJson]
+                      }
+                    : {
+                        'posts': [postJson],
+                        'has_next': false
+                      },
+              ),
+              200);
+        }),
+      );
+
+      final list = await api.listPosts(anonymousId: credential);
+      final post = PostSummary.fromJson(
+          (list['posts'] as List).single as Map<String, dynamic>);
+      final detail = PostDetail.fromJson(
+          await api.getPost('post-1', anonymousId: credential));
+
+      expect(post.authorAlias, 'u/abc123def0');
+      expect(post.isMine, isTrue);
+      expect(detail.post.authorAlias, 'u/abc123def0');
+      expect(detail.post.isMine, isTrue);
+      expect(detail.comments.single.authorAlias, 'u/def456abc0');
+      expect(detail.comments.single.isMine, isFalse);
+      expect(requests.map((r) => '${r.method} ${r.url.path}'), [
+        'GET /api/v1/community/posts',
+        'GET /api/v1/community/posts/post-1',
+      ]);
+      for (final request in requests) {
+        expect(request.headers['X-Farol-Anonymous-Id'], credential);
+        expect(request.url.toString(), isNot(contains(credential)));
+        expect(request.url.queryParameters, isNot(contains('anonymous_id')));
+        expect(request.body, isEmpty);
+      }
+    });
+
+    test('protected community actions keep credentials only in the header',
+        () async {
+      final requests = <http.Request>[];
+      final api = ApiClient(
+        baseUrl: 'https://api.test/api/v1',
+        client: MockClient((request) async {
+          requests.add(request);
+          return http.Response(
+              jsonEncode(
+                request.url.path.endsWith('/comments') ? commentJson : postJson,
+              ),
+              200);
+        }),
+      );
+
+      final created = PostSummary.fromJson(
+          await api.createPost(anonymousId: credential, content: 'Texto'));
+      final voted = PostSummary.fromJson(
+          await api.votePost('post-1', 1, anonymousId: credential));
+      final comment = PostComment.fromJson(await api
+          .createComment('post-1', 'Comentário', anonymousId: credential));
+      await api.reportPost('post-1', reason: 'spam', anonymousId: credential);
+      await api.deletePost('post-1', anonymousId: credential);
+
+      expect(created.authorAlias, 'u/abc123def0');
+      expect(voted.isMine, isTrue);
+      expect(comment.authorAlias, 'u/def456abc0');
+      expect(requests.map((r) => '${r.method} ${r.url.path}'), [
+        'POST /api/v1/community/posts',
+        'POST /api/v1/community/posts/post-1/votes',
+        'POST /api/v1/community/posts/post-1/comments',
+        'POST /api/v1/community/posts/post-1/reports',
+        'DELETE /api/v1/community/posts/post-1',
+      ]);
+      for (final request in requests) {
+        expect(request.headers['X-Farol-Anonymous-Id'], credential);
+        expect(request.url.toString(), isNot(contains(credential)));
+        expect(request.body, isNot(contains(credential)));
+        expect(request.body, isNot(contains('anonymous_id')));
+        expect(request.body, isNot(contains('author_alias')));
+        expect(request.body, isNot(contains('is_mine')));
+      }
+      expect(jsonDecode(requests[0].body), {'content': 'Texto'});
+      expect(jsonDecode(requests[1].body), {'value': 1});
+      expect(jsonDecode(requests[2].body), {'content': 'Comentário'});
+      expect(jsonDecode(requests[3].body), {'reason': 'spam'});
+      expect(requests[4].body, isEmpty);
+    });
+  });
+
   group('Thesis.fromJson', () {
     test('uses theme_name as the category when present', () {
       final thesis = Thesis.fromJson({

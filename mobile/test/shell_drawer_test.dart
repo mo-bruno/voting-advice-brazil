@@ -56,7 +56,8 @@ void main() {
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
 
-    expect(find.text('MEU FAROL'), findsOneWidget);
+    expect(find.text('ACOMPANHANDO'), findsOneWidget);
+    expect(find.text('MEU FAROL'), findsNothing);
   });
 
   testWidgets('a gaveta cobre a barra inferior', (tester) async {
@@ -113,7 +114,8 @@ void main() {
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
 
-    expect(find.text('MEU FAROL'), findsOneWidget);
+    expect(find.text('ACOMPANHANDO'), findsOneWidget);
+    expect(find.text('MEU FAROL'), findsNothing);
     expect(tester.getRect(find.byType(Drawer)).height, 844);
   });
 
@@ -131,7 +133,9 @@ void main() {
       },
     ));
 
-    tester.state<NavigatorState>(find.byType(Navigator)).pushNamed('/empilhada');
+    tester
+        .state<NavigatorState>(find.byType(Navigator))
+        .pushNamed('/empilhada');
     await tester.pumpAndSettle();
 
     expect(find.byIcon(Icons.menu), findsNothing);

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../features/feature_flags.dart';
 import '../../features/community/community_feed_page.dart';
 import '../../features/home/home_page.dart';
 import '../../features/political_actors/political_actor_search_page.dart';
@@ -30,10 +31,14 @@ class MainShell extends StatefulWidget {
   const MainShell({
     super.key,
     this.initialTab = MainShellTab.inicio,
+    this.iotEnabled,
     this.pageBuilders,
   });
 
   final MainShellTab initialTab;
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? iotEnabled;
 
   /// Injetável apenas em teste. O shell responde por trocar de aba e por não
   /// recriar o que já foi visitado — não pelo conteúdo das telas, que têm seus
@@ -96,10 +101,11 @@ class _MainShellState extends State<MainShell> {
   @override
   Widget build(BuildContext context) {
     _pageFor(_index);
+    final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
 
     return Scaffold(
       key: _scaffoldKey,
-      drawer: const AppDrawer(),
+      drawer: AppDrawer(iotEnabled: iotEnabled),
       body: ShellDrawerScope(
         openDrawer: _openDrawer,
         child: IndexedStack(

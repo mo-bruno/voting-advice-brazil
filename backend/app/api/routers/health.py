@@ -5,7 +5,7 @@ from sqlalchemy import text
 from sqlalchemy.orm import Session
 
 from app.api.schemas.health import HealthResponse
-from app.core.config import settings
+from app.config import settings
 from app.infrastructure.database.session import get_db
 
 router = APIRouter(tags=["Health"])

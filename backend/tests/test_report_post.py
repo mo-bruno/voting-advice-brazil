@@ -1,15 +1,15 @@
 from datetime import datetime, timezone
 
 from app.core.entities.community import ModerationResult, Post, PostReport
-from app.core.use_cases.interfaces import PostReportRepository
+from app.core.use_cases.interfaces import (
+    ModerationPort,
+    ModerationUnavailable,
+    PostReportRepository,
+)
 from app.core.use_cases.report_post import (
     REPORT_THRESHOLD,
     VALID_REASONS,
     report_post,
-)
-from app.infrastructure.llm.moderation_client import (
-    ModerationPort,
-    ModerationUnavailable,
 )
 
 NOW = datetime(2026, 9, 6, 12, 0, tzinfo=timezone.utc)

@@ -5,6 +5,13 @@ from datetime import datetime
 
 
 @dataclass(frozen=True, slots=True)
+class DeviceNewsArticle:
+    title: str
+    source: str
+    date: str
+
+
+@dataclass(frozen=True, slots=True)
 class NewsArticle:
     """Uma notícia já normalizada, pronta para a API.
 

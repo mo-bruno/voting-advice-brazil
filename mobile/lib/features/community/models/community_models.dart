@@ -1,6 +1,7 @@
 class PostSummary {
   final String id;
-  final String anonymousId;
+  final String authorAlias;
+  final bool isMine;
   final String content;
   final int? politicalActorId;
   final String? themeSlug;
@@ -11,7 +12,8 @@ class PostSummary {
 
   const PostSummary({
     required this.id,
-    required this.anonymousId,
+    required this.authorAlias,
+    required this.isMine,
     required this.content,
     this.politicalActorId,
     this.themeSlug,
@@ -23,7 +25,8 @@ class PostSummary {
 
   factory PostSummary.fromJson(Map<String, dynamic> json) => PostSummary(
         id: json['id'] as String,
-        anonymousId: json['anonymous_id'] as String,
+        authorAlias: json['author_alias'] as String,
+        isMine: json['is_mine'] as bool,
         content: json['content'] as String,
         politicalActorId: json['political_actor_id'] as int?,
         themeSlug: json['theme_slug'] as String?,
@@ -42,14 +45,16 @@ class PostSummary {
 class PostComment {
   final String id;
   final String postId;
-  final String anonymousId;
+  final String authorAlias;
+  final bool isMine;
   final String content;
   final DateTime createdAt;
 
   const PostComment({
     required this.id,
     required this.postId,
-    required this.anonymousId,
+    required this.authorAlias,
+    required this.isMine,
     required this.content,
     required this.createdAt,
   });
@@ -57,7 +62,8 @@ class PostComment {
   factory PostComment.fromJson(Map<String, dynamic> json) => PostComment(
         id: json['id'] as String,
         postId: json['post_id'] as String,
-        anonymousId: json['anonymous_id'] as String,
+        authorAlias: json['author_alias'] as String,
+        isMine: json['is_mine'] as bool,
         content: json['content'] as String,
         createdAt: DateTime.parse(json['created_at'] as String),
       );

@@ -2,6 +2,7 @@ import os
 
 # Isolate test execution before importing Settings/app
 os.environ.setdefault("APP_ENV", "test")
+os.environ["IOT_FEATURE_ENABLED"] = "true"
 
 import pytest
 from fastapi.testclient import TestClient
@@ -19,6 +20,10 @@ from app.infrastructure.database.models import (
 )
 from app.infrastructure.database.session import get_db
 from app.main import app
+
+ANONYMOUS_OWNER = "550e8400-e29b-41d4-a716-446655440000"
+ANONYMOUS_OTHER = "550e8400-e29b-41d4-a716-446655440001"
+ANONYMOUS_THIRD = "550e8400-e29b-41d4-a716-446655440002"
 
 engine = create_engine(
     "sqlite:///:memory:",

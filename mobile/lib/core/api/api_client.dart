@@ -259,6 +259,8 @@ class ApiClient {
     ) as Map<String, dynamic>;
   }
 
+  /// O UUID local identifica o leitor apenas pelo cabeçalho privado.
+  /// A resposta publica author_alias e is_mine, nunca a credencial do autor.
   Future<Map<String, dynamic>> listPosts({
     required String anonymousId,
     int page = 1,
@@ -271,8 +273,7 @@ class ApiClient {
       queryParameters: {
         'page': '$page',
         'page_size': '$pageSize',
-        if (politicalActorId != null)
-          'political_actor_id': '$politicalActorId',
+        if (politicalActorId != null) 'political_actor_id': '$politicalActorId',
         if (themeSlug != null) 'theme_slug': themeSlug,
         // Omitido quando nulo: mantem a URL limpa e o padrao do servidor.
         if (sort != null) 'sort': sort,
@@ -284,6 +285,7 @@ class ApiClient {
     ) as Map<String, dynamic>;
   }
 
+  /// Envia a identidade privada para que is_mine reflita o leitor atual.
   Future<Map<String, dynamic>> getPost(
     String postId, {
     required String anonymousId,
@@ -391,7 +393,6 @@ class ApiClient {
     return '$baseUrl/news/image?url=${Uri.encodeQueryComponent(original)}';
   }
 
-
   Future<void> reportPost(
     String postId, {
     required String reason,
@@ -405,7 +406,8 @@ class ApiClient {
         'Content-Type': 'application/json',
         'X-Farol-Anonymous-Id': anonymousId,
       },
-      body: jsonEncode({'reason': reason, if (detail != null) 'detail': detail}),
+      body:
+          jsonEncode({'reason': reason, if (detail != null) 'detail': detail}),
     );
     if (response.statusCode >= 400) {
       throw ApiException('Erro ${response.statusCode} ao denunciar.');
@@ -422,7 +424,6 @@ class ApiClient {
       throw ApiException('Erro ${response.statusCode} ao remover o post.');
     }
   }
-
 }
 
 /// Resposta de `GET /news/weekly`: o recorte e os artigos.
