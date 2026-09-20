@@ -1,0 +1,160 @@
+{
+  "review_id": "presidential-core-2026-09-20-r1",
+  "reviewed_at": "2026-09-20",
+  "scope": "Revisão das passagens das nove teses ativas. Não constitui nova leitura integral de todos os planos, reavaliação das 111 teses do banco, validação humana ou execução integral da versão 2 do experimento.",
+  "method": "Cada decisão abaixo foi comparada à formulação publicada e às páginas físicas do PDF preservado. Concordância requer a decisão no mesmo escopo; discordância requer rejeição ou alternativa incompatível. Condições substantivas ficam separadas da insuficiência de escopo. Células sem revisão nesta rodada ficam PENDENTE, preservando a análise anterior. Não se imputa discordância ao silêncio.",
+  "default_category": "PENDENTE",
+  "previous_export": {
+    "dataset_version": 2,
+    "default_position": "sem_posicao",
+    "categorical_positions": {
+      "001": {"280002542548": "concordo", "280002551975": "discordo", "280002551544": "discordo", "280002538811": "discordo"},
+      "002": {"280002539826": "concordo", "280002541457": "discordo", "280002551975": "discordo", "280002552487": "discordo", "280002538811": "discordo"},
+      "003": {"280002541457": "concordo", "280002551975": "concordo", "280002552487": "concordo", "280002551544": "discordo"},
+      "011": {"280002540694": "concordo", "280002539826": "discordo"},
+      "017": {"280002551544": "concordo", "280002541457": "discordo", "280002551975": "discordo"},
+      "018": {"280002540694": "concordo", "280002541457": "discordo", "280002551975": "discordo", "280002538811": "discordo"},
+      "026B": {"280002541457": "concordo", "280002539826": "discordo"},
+      "034A": {"280002542548": "concordo", "280002551975": "discordo"},
+      "036": {"280002551975": "concordo", "280002552487": "concordo", "280002538811": "concordo", "280002551932": "discordo"}
+    }
+  },
+  "input_sha256": {
+    "positions": "4f8895c4be4f1266404385d561edfc0b42cde0e51129995aa4001f46e275047c",
+    "source_theses": "8db6c35c8e75822210420b80d761beaabc505e237acdae5f9dba1938c5591643",
+    "documents": "110b592ffbed955f6af074a8878b32d7390bbd9602ddf043fb4e34b65cac704a"
+  },
+  "theses": {
+    "001": {
+      "text": "O governo federal deve manter o arcabouço fiscal previsto na Lei Complementar nº 200/2023.",
+      "version": 2,
+      "decisions": {
+        "280002542548": {"category": "CONCORDA", "reason": "Compromisso expresso de manter o novo arcabouço fiscal, página 49."},
+        "280002540694": {
+          "category": "DISCORDA",
+          "reason": "A página 10 explicita substituir o arcabouço por outro modelo; a exclusão anterior decorria de citação incompleta, não de silêncio.",
+          "evidence": [{"page": 10, "quote": "Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente."}]
+        },
+        "280002551975": {"category": "DISCORDA", "reason": "Fim e revogação expressos do arcabouço nas páginas 2 e 4."},
+        "280002551544": {"category": "DISCORDA", "reason": "A proposta de reformular as regras fiscais atuais da página 71 segue a crítica ao modelo existente nas páginas 70–71 e especifica outras regras de controle da dívida."},
+        "280002538811": {"category": "DISCORDA", "reason": "Fim expresso do Arcabouço Fiscal, página 9."}
+      }
+    },
+    "002": {
+      "text": "Todas as empresas estatais devem ser transferidas ao controle privado.",
+      "version": 2,
+      "decisions": {
+        "280002541457": {"category": "DISCORDA", "reason": "Petrobras 100% estatal e reestatização de empresas estratégicas excluem privatização universal."},
+        "280002551975": {"category": "DISCORDA", "reason": "Reestatização de empresas estratégicas é alternativa incompatível com privatizar todas."},
+        "280002551544": {"category": "NAO_ENCONTRADA", "reason": "A decisão caso a caso não informa se todas as estatais seriam privatizadas. A menção ao programa de desestatização não sustenta posição sobre o quantificador universal.", "conditions": ["Avaliação caso a caso onde a presença do Estado deixou de fazer sentido."], "scope_difference": "Privatização seletiva proposta, sem destino determinado para todas as empresas."},
+        "280002552487": {"category": "DISCORDA", "reason": "Cancelamento de todas as privatizações, com empresas nomeadas, contradiz privatização universal."},
+        "280002539826": {"category": "CONCORDA", "reason": "O plano usa expressamente o quantificador todas, página 15."},
+        "280002538811": {"category": "DISCORDA", "reason": "Reestatização imediata de empresas nomeadas contradiz privatização universal."}
+      }
+    },
+    "003": {
+      "text": "As mudanças introduzidas pela reforma trabalhista de 2017 devem ser revogadas.",
+      "version": 2,
+      "decisions": {
+        "280002541457": {"category": "CONCORDA", "reason": "Revogação expressa da reforma trabalhista, página 8."},
+        "280002551975": {"category": "CONCORDA", "reason": "Revogação expressa da reforma trabalhista nas páginas 5 e 13."},
+        "280002552487": {"category": "CONCORDA", "reason": "Cancelamento da reforma e restauração da legislação de proteção, página 3."},
+        "280002551544": {
+          "category": "DISCORDA",
+          "reason": "A defesa do negociado sobre o legislado é acompanhada de rejeição ao retrocesso das situações pacificadas pela reforma; páginas 44–45.",
+          "evidence": [
+            {"page": 44, "quote": "Por isso defendemos o negociado sobre o legislado"},
+            {"page": 45, "quote": "É mais do mesmo: insegurança jurídica e retrocesso. Situações que se repetem na discussão de jornada – onde o governo deseja ignorar a prevalência do negociado sobre o legislado – ou na discussão de situações já pacificadas pela reforma trabalhista, aprovada há quase dez anos."}
+          ]
+        },
+        "280002538811": {
+          "category": "CONCORDA",
+          "reason": "O título da seção nomeia a reforma trabalhista e o compromisso subsequente pede revogação imediata; preservar ambas as páginas evita depender de contexto não transcrito.",
+          "evidence": [
+            {"page": 12, "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA, A TERCEIRIZAÇÃO IRRESTRITA E O ARCABOUÇO FISCAL"},
+            {"page": 13, "quote": "Imediata a revogação de todas as reformas antipovo, para restaurar os direitos dos trabalhadores e recompor o Orçamento da União e atender as demandas da população.", "verification": "visual_pdf_page; raw extraction repeats each line"}
+          ]
+        }
+      }
+    },
+    "011": {
+      "text": "O Bolsa Família deve ser substituído, para seus beneficiários em idade economicamente ativa, por um programa público de trabalho remunerado.",
+      "version": 3,
+      "supersedes": {"version": 2, "text_sha256": "37e66700e2833c447261f8b87c48ee32186db84deefb099016da63e305e4830d", "text": "O Bolsa Família deve ser substituído por um programa de inserção de seus beneficiários no mercado formal de trabalho.", "reason": "Restaura o instrumento de frentes remuneradas e o público delimitado pela fonte, em vez de confundir trabalho público com qualquer política de inserção profissional."},
+      "decisions": {
+        "280002540694": {
+          "category": "CONCORDA", "reason": "O plano especifica substituição para a população em idade economicamente ativa, remuneração e frentes voltadas a projetos para o bem público nas páginas 6 e 21–22.",
+          "evidence": [
+            {"page": 6, "quote": "a substituição do Bolsa Família por frentes de trabalho remuneradas para a população em idade economicamente ativa."},
+            {"page": 21, "quote": "Frentes Cidadãs: nossa proposta de reforma total do sistema de assistencialismo, substituindo o Bolsa"},
+            {"page": 22, "quote": "Família por um modelo de frentes de trabalho, em que os beneficiários participam de projetos para o bem público, se consolidando como participantes ativos da comunidade."}
+          ]
+        },
+        "280002551544": {"category": "DISCORDA", "reason": "O compromisso de manter os programas sociais existentes e não retirar a ajuda dos atuais beneficiários, página 42, é incompatível com a substituição proposta. A formulação universal do plano abrange o programa existente, sem exigir sua repetição nominal."},
+        "280002552487": {"category": "CONDICIONAL_OU_MISTA", "reason": "A manutenção ampliada do Bolsa Família é expressamente limitada à duração da situação de caos; não se infere posição incondicional sobre sua substituição futura.", "conditions": ["Enquanto durar a situação de caos atual."]},
+        "280002539826": {"category": "DISCORDA", "reason": "O plano conserva o Bolsa Família para adultos sob condicionalidades de trabalho/qualificação e prevê prêmio de saída por renda; a alternativa mantém a transferência em vez de substituí-la por trabalho público."},
+        "280002551547": {"category": "CONDICIONAL_OU_MISTA", "reason": "A continuidade do Bolsa Família na transição para trabalho ou microempresa é expressamente temporária. Não determina o destino do programa após esse prazo.", "conditions": ["Preservação do benefício por determinado tempo ao assinar carteira ou abrir microempresa."]}
+      }
+    },
+    "017": {
+      "text": "O número de escolas cívico-militares deve aumentar.",
+      "version": 2,
+      "decisions": {
+        "280002540694": {
+          "category": "CONCORDA", "reason": "Transformar escolas críticas em cívico-militares aumenta o número dessa modalidade. A tese não exige todas as escolas nem permanência indefinida; o alvo e o prazo ficam registrados sem acrescentar universalidade à pergunta.",
+          "conditions": ["Escolas em situação crítica; medida provisória voltada à violência no entorno."],
+          "evidence": [{"page": 32, "quote": "Transformação das escolas em situação crítica, de acordo com o sistema das escolas civis-militares, buscando exemplo no que dá certo no Brasil e em El Salvador. A militarização das escolas deve ser vista como uma medida provisória, a fim de estancar a violência endêmica, em especial nas regiões com alta criminalidade no entorno."}]
+        },
+        "280002541457": {"category": "DISCORDA", "reason": "Rejeição explícita da militarização das escolas, página 12."},
+        "280002551975": {"category": "DISCORDA", "reason": "Fim expresso das escolas cívico-militares, página 10."},
+        "280002551544": {"category": "CONCORDA", "reason": "Compromisso expresso de ampliar as escolas cívico-militares, página 35."},
+        "280002539826": {
+          "category": "NAO_ENCONTRADA", "reason": "A página 53 inclui a modalidade em uma agenda de parcerias e pluralidade de opções. Não explicita expansão do número de escolas; esse elemento não é inferido apenas de ampliar opções.",
+          "scope_difference": "Ampliação das opções educacionais e parcerias versus aumento do número de escolas da modalidade.",
+          "evidence": [{"page": 53, "quote": "Dar mais liberdade aos pais de escolher o modelo educacional de seus filhos, facilitando a formalização de parcerias com instituições comunitárias, filantrópicas e confessionais, avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling."}]
+        }
+      }
+    },
+    "018": {
+      "text": "A reserva de vagas com base em critérios raciais na educação e no serviço público deve ser encerrada.",
+      "version": 2,
+      "decisions": {
+        "280002540694": {"category": "CONCORDA", "reason": "Abolição de cotas na educação e em geral abrange o subconjunto racial dos dois âmbitos; páginas 31–32."},
+        "280002541457": {"category": "DISCORDA", "reason": "Manutenção e ampliação explícitas das cotas para negros em universidades e serviços públicos."},
+        "280002551975": {"category": "DISCORDA", "reason": "Ampliação explícita das cotas raciais na educação e concursos das forças de segurança."},
+        "280002538811": {"category": "DISCORDA", "reason": "Ampliar vagas públicas reservadas à população negra contradiz encerrá-las nos dois âmbitos; basta a oposição em um âmbito para rejeitar o encerramento conjunto."}
+      }
+    },
+    "026B": {
+      "text": "A gestão de serviços públicos de saúde por empresas em parcerias público-privadas deve ser encerrada.",
+      "version": 2,
+      "decisions": {
+        "280002541457": {"category": "CONCORDA", "reason": "Fim expresso da gestão privada da saúde por PPP, página 11."},
+        "280002551975": {"category": "CONCORDA", "reason": "A proposta torna público todo o sistema de saúde, incluindo hospitais e assistência; essa universalidade é incompatível com conservar prestação gerida por empresas privadas."},
+        "280002539826": {"category": "DISCORDA", "reason": "Ampliação de PPP em todos os serviços públicos, inclusive saúde, opõe-se ao encerramento desse instrumento; a contratação de clínicas é evidência complementar, não substitui a passagem sobre PPP."},
+        "280002538811": {
+          "category": "CONCORDA", "reason": "A determinação de gestão direta e pública de toda a rede sanitária é incompatível com gestão por empresas em PPP; preservar o trecho completo evita confundir propriedade pública com gestão pública.",
+          "evidence": [{"page": 20, "quote": "Fortalecimento e Unificação do SUS 100% Estatal: Fim da entrega da gestão hospitalar a Organizações Sociais (OSs), fundações privadas e cooperativas empresariais. Toda a rede sanitária deve ser de gestão direta e pública. Fim da exploração dos planos de saúde privados.", "verification": "visual_pdf_page; raw extraction repeats each line"}]
+        }
+      }
+    },
+    "034A": {
+      "text": "O Conselho de Segurança da ONU deve ser mantido.",
+      "version": 2,
+      "decisions": {
+        "280002542548": {"category": "CONCORDA", "reason": "Engajar-se na reforma do Conselho pressupõe sua continuidade como órgão. A tese trata de existência, não de manutenção imutável da composição ou do veto."},
+        "280002551975": {"category": "DISCORDA", "reason": "O plano pede expressamente o fim do Conselho de Segurança da ONU, página 16."}
+      }
+    },
+    "036": {
+      "text": "A autonomia institucional do Banco Central estabelecida pela Lei Complementar nº 179/2021 deve ser revogada.",
+      "version": 2,
+      "decisions": {
+        "280002551975": {"category": "CONCORDA", "reason": "Fim e revogação explícitos da autonomia do Banco Central; páginas 4 e 13."},
+        "280002552487": {"category": "CONCORDA", "reason": "Fim expresso da independência do Banco Central, página 6."},
+        "280002551932": {"category": "DISCORDA", "reason": "Respeito explícito à autonomia do Banco Central na coordenação das políticas fiscal e monetária, página 13."},
+        "280002538811": {"category": "CONCORDA", "reason": "Fim expresso da autonomia do Banco Central em relação ao governo, página 18."}
+      }
+    }
+  }
+}

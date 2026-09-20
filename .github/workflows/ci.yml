@@ -22,6 +22,10 @@ jobs:
           filters: |
             backend:
               - 'backend/**'
+              - 'data/**'
+              - 'scripts/build_presidential_2026_data.py'
+              - 'scripts/deploy_presidential_backend.py'
+              - 'cloudbuild.yaml'
               - '.github/workflows/ci.yml'
             mobile:
               - 'mobile/**'
@@ -46,8 +50,11 @@ jobs:
       - name: Install dependencies
         run: uv sync --extra dev
 
+      - name: Install PDF inspection tools
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
       - name: Ruff
-        run: uv run ruff check .
+        run: uv run ruff check . ../scripts/build_presidential_2026_data.py ../scripts/deploy_presidential_backend.py
 
       - name: Mypy
         run: uv run mypy app/

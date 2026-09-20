@@ -15,10 +15,10 @@ class TestListThemes:
             assert "area" in theme
             assert "total_teses_aprovadas" in theme
 
-    def test_only_themes_with_min_3_theses(self, client):
+    def test_only_themes_with_published_theses(self, client):
         r = client.get("/api/v1/themes")
         for theme in r.json():
-            assert theme["total_teses_aprovadas"] >= 3
+            assert theme["total_teses_aprovadas"] >= 1
 
     def test_ordered_by_total_desc(self, client):
         r = client.get("/api/v1/themes")

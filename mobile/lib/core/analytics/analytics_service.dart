@@ -64,6 +64,10 @@ class AnalyticsService {
 
   final AnalyticsSink _sink;
 
+  // Keep public call signatures compatible, but never forward political
+  // answers, priorities, parties, candidates, or affinity to analytics.
+  // Generic usage events do not imply complete anonymization.
+
   Future<void> quizIntroViewed() {
     return _sink.logEvent(name: 'quiz_intro_viewed');
   }
@@ -80,13 +84,7 @@ class AnalyticsService {
     required int thesisId,
     required int thesisIndex,
   }) {
-    return _sink.logEvent(
-      name: 'thesis_viewed',
-      parameters: {
-        'thesis_id': thesisId,
-        'thesis_index': thesisIndex,
-      },
-    );
+    return _sink.logEvent(name: 'thesis_viewed');
   }
 
   Future<void> thesisAnswered({
@@ -97,18 +95,13 @@ class AnalyticsService {
     return _sink.logEvent(
       name: 'thesis_answered',
       parameters: {
-        'thesis_id': thesisId,
-        'stance': stance,
         'time_to_answer_ms': timeToAnswerMs,
       },
     );
   }
 
   Future<void> thesisSkipped({required int thesisId}) {
-    return _sink.logEvent(
-      name: 'thesis_skipped',
-      parameters: {'thesis_id': thesisId},
-    );
+    return _sink.logEvent(name: 'thesis_skipped');
   }
 
   Future<void> quizCompleted({
@@ -131,17 +124,11 @@ class AnalyticsService {
   }
 
   Future<void> weightAdded({required int thesisId}) {
-    return _sink.logEvent(
-      name: 'weight_added',
-      parameters: {'thesis_id': thesisId},
-    );
+    return _sink.logEvent(name: 'weight_added');
   }
 
   Future<void> weightRemoved({required int thesisId}) {
-    return _sink.logEvent(
-      name: 'weight_removed',
-      parameters: {'thesis_id': thesisId},
-    );
+    return _sink.logEvent(name: 'weight_removed');
   }
 
   Future<void> weightingCompleted({required int countWeighted}) {
@@ -159,13 +146,7 @@ class AnalyticsService {
     required String partyAcronym,
     required bool selected,
   }) {
-    return _sink.logEvent(
-      name: 'party_toggled',
-      parameters: {
-        'party_acronym': partyAcronym,
-        'selected': selected ? 1 : 0,
-      },
-    );
+    return _sink.logEvent(name: 'party_toggled');
   }
 
   Future<void> partySelectionCompleted({required int countSelected}) {
@@ -179,13 +160,7 @@ class AnalyticsService {
     required String topCandidateId,
     required double topScorePercent,
   }) {
-    return _sink.logEvent(
-      name: 'results_viewed',
-      parameters: {
-        'top_candidate_id': topCandidateId,
-        'top_score_percent': topScorePercent,
-      },
-    );
+    return _sink.logEvent(name: 'results_viewed');
   }
 
   Future<void> comparisonOpened() {
@@ -196,19 +171,10 @@ class AnalyticsService {
     required String candidateId,
     required int position,
   }) {
-    return _sink.logEvent(
-      name: 'comparison_candidate_added',
-      parameters: {
-        'candidate_id': candidateId,
-        'position': position,
-      },
-    );
+    return _sink.logEvent(name: 'comparison_candidate_added');
   }
 
   Future<void> candidatePositionsViewed({required String candidateId}) {
-    return _sink.logEvent(
-      name: 'candidate_positions_viewed',
-      parameters: {'candidate_id': candidateId},
-    );
+    return _sink.logEvent(name: 'candidate_positions_viewed');
   }
 }

@@ -165,12 +165,14 @@ void main() {
           'ballot_number': 13,
           'running_mate': 'Geraldo Alckmin',
           'spectrum': 'esquerda',
-          'photo_url': null,
+          'photo_url': '/data/fotos/2026/BR/280002542548.jpg',
           'office': 'presidente',
           'state': null,
           'city': null,
           'election_year': 2022,
           'election_round': 1,
+          'official_status': 'AGUARDANDO JULGAMENTO',
+          'source_snapshot': '20/09/2026 08:30:57',
         });
 
         expect(party.id, '13');
@@ -178,12 +180,68 @@ void main() {
         expect(party.abbreviation, 'PT');
         expect(party.logoAsset, 'assets/logos/PT.png');
         expect(party.hasLogoAsset, isTrue);
-        expect(party.description, contains('políticas sociais'));
+        expect(party.photoUrl, '/data/fotos/2026/BR/280002542548.jpg');
+        expect(party.description, contains('plano oficial de governo'));
+        expect(party.officialStatus, 'AGUARDANDO JULGAMENTO');
+        expect(party.sourceSnapshot, '20/09/2026 08:30:57');
       },
     );
   });
 
   group('CandidateResult.fromJson', () {
+    Map<String, dynamic> payload(List<Map<String, dynamic>> matches) => {
+      'candidate_id': 1,
+      'name': 'Candidata',
+      'party_acronym': 'PT',
+      'score_percent': 0,
+      'rank': 0,
+      'matches': matches,
+    };
+
+    Map<String, dynamic> match(int id, String user, String candidate) => {
+      'thesis_id': id,
+      'thesis_text': 'Tese $id',
+      'theme_id': 1,
+      'user_answer': user,
+      'candidate_position': candidate,
+      'match_type': 'skipped',
+    };
+
+    test('legacy payload counts only answered theses with evidence', () {
+      final result = CandidateResult.fromJson(
+        payload([
+          match(1, 'agree', 'concordo'),
+          match(2, 'disagree', 'sem_posicao'),
+          match(3, 'skip', 'concordo'),
+          match(4, 'neutral', 'neutro'),
+        ]),
+      );
+      expect(result.answeredTheses, 3);
+      expect(result.countedTheses, 2);
+      expect(result.hasComparableEvidence, isTrue);
+    });
+
+    test('no evidence does not become a zero affinity label', () {
+      final result = CandidateResult.fromJson(
+        payload([match(1, 'agree', 'sem_posicao')]),
+      );
+      expect(result.hasComparableEvidence, isFalse);
+      expect(result.affinityLabel, 'Sem base comparável');
+      expect(result.coverageLabel, '0 de 1 respostas comparáveis');
+    });
+
+    test('explicit counts take precedence over incomplete legacy matches', () {
+      final result = CandidateResult.fromJson({
+        ...payload([]),
+        'counted_theses': 2,
+        'answered_theses': 9,
+        'score_percent': 100,
+      });
+      expect(result.hasComparableEvidence, isTrue);
+      expect(result.affinityLabel, '100.0%');
+      expect(result.coverageLabel, '2 de 9 respostas comparáveis');
+    });
+
     test(
       'parses backend quiz result payload with numeric ids and party_acronym',
       () {
@@ -192,11 +250,9 @@ void main() {
           'name': 'Luiz Inacio Lula da Silva',
           'party_acronym': 'PT',
           'party_logo_url': '/data/logos/partidos/pt.png',
+          'photo_url': '/data/fotos/2026/BR/280002542548.jpg',
           'score_percent': 87.5,
-          'score_by_theme': {
-            'economia': 92.0,
-            'saude': 83.0,
-          },
+          'score_by_theme': {'economia': 92.0, 'saude': 83.0},
           'rank': 1,
           'matches': [
             {
@@ -214,6 +270,7 @@ void main() {
         expect(result.candidateId, '13');
         expect(result.name, 'Luiz Inacio Lula da Silva');
         expect(result.party, 'PT');
+        expect(result.photoUrl, '/data/fotos/2026/BR/280002542548.jpg');
         expect(result.scorePercent, 87.5);
         expect(result.rank, 1);
         expect(result.matches, hasLength(1));
@@ -235,7 +292,9 @@ void main() {
         'theme_name': 'Saude',
         'position': 'concordo',
         'justification': 'Plano de governo defende fortalecimento do SUS.',
-        'quote': null,
+        'quote': 'Fortalecer o SUS',
+        'source_ref': 'PG_2026_BR_123_01#page=4',
+        'source_url': 'https://example.test/plano.pdf',
       });
 
       expect(justification.thesisId, 7);
@@ -247,6 +306,9 @@ void main() {
       expect(justification.themeName, 'Saude');
       expect(justification.position, 'concordo');
       expect(justification.positionAnswer, ThesisAnswer.agree);
+      expect(justification.quote, 'Fortalecer o SUS');
+      expect(justification.sourceRef, 'PG_2026_BR_123_01#page=4');
+      expect(justification.sourceUrl, 'https://example.test/plano.pdf');
       expect(
         justification.justification,
         'Plano de governo defende fortalecimento do SUS.',

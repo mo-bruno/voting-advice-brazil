@@ -41,11 +41,11 @@ COPY --from=builder --chown=app:app /build/alembic.ini /app/alembic.ini
 COPY --from=builder --chown=app:app /build/alembic /app/alembic
 COPY --chown=app:app data/ /data/
 
-# Lowercase nos logos (Linux é case-sensitive; candidates.json usa lowercase)
+# Mantém os nomes oficiais e cria aliases minúsculos para snapshots antigos.
 RUN cd /data/logos/partidos && \
     for f in *.png; do \
       lower=$(echo "$f" | tr '[:upper:]' '[:lower:]'); \
-      [ "$f" != "$lower" ] && mv "$f" "$lower" || true; \
+      [ "$f" != "$lower" ] && cp "$f" "$lower" || true; \
     done
 
 USER app

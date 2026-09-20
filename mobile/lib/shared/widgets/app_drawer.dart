@@ -26,11 +26,7 @@ import 'drawer/followed_actor_tile.dart';
 import 'drawer/quiz_affinity_tile.dart';
 
 class AppDrawer extends StatefulWidget {
-  const AppDrawer({
-    super.key,
-    this.deviceIdentityStore,
-    this.iotEnabled,
-  });
+  const AppDrawer({super.key, this.deviceIdentityStore, this.iotEnabled});
 
   /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
   /// que o resto do app.
@@ -87,11 +83,10 @@ class _AppDrawerState extends State<AppDrawer> {
   }
 
   void _openTab(MainShellTab tab) {
-    _go((navigator) => navigator.pushNamedAndRemoveUntil(
-          '/',
-          (_) => false,
-          arguments: tab,
-        ));
+    _go(
+      (navigator) =>
+          navigator.pushNamedAndRemoveUntil('/', (_) => false, arguments: tab),
+    );
   }
 
   @override
@@ -148,10 +143,9 @@ class _AppDrawerState extends State<AppDrawer> {
                     ),
                     const _Rule(),
                     QuizAffinityTile(
-                      top: results.isEmpty ? null : results.first,
-                      onOpenResults: () => _go(
-                        (navigator) => navigator.pushNamed('/results'),
-                      ),
+                      hasResults: results.isNotEmpty,
+                      onOpenResults: () =>
+                          _go((navigator) => navigator.pushNamed('/results')),
                       onStartQuiz: () => _openTab(MainShellTab.quiz),
                     ),
                     // Sem regua depois do ultimo bloco: com a gaveta mais alta
@@ -183,9 +177,7 @@ class _BrandedDrawerHeader extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: const BoxDecoration(
         color: AppTheme.background,
-        border: Border(
-          bottom: BorderSide(color: AppTheme.outlineVariant),
-        ),
+        border: Border(bottom: BorderSide(color: AppTheme.outlineVariant)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -204,9 +196,9 @@ class _BrandedDrawerHeader extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             'BRASIL 2026',
-            style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                  letterSpacing: 2,
-                ),
+            style: Theme.of(
+              context,
+            ).textTheme.bodySmall!.copyWith(letterSpacing: 2),
           ),
         ],
       ),
@@ -235,9 +227,9 @@ void _showAbout(BuildContext context) {
     context,
     title: 'Sobre o Farol Político',
     body: 'O quiz compara suas respostas com propostas publicadas por '
-        'candidatos nas eleições de 2022. A área Acompanhar apresenta '
+        'candidatos nas eleições de 2026. A área Acompanhar apresenta '
         'deputados atuais e evidências oficiais da Câmara; esses votos são '
-        'informativos e não alteram o ranking do quiz.\n\n'
+        'informativos e não alteram a comparação do quiz.\n\n'
         'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
         'acadêmico e não tem vínculo com nenhum partido ou candidato.',
   );

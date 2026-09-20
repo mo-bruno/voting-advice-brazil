@@ -167,6 +167,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
             .where(
                 QuizResponseModel.device_id == anon_id,
                 QuizResponseModel.answer.in_(["agree", "disagree"]),
+                ThesisModel.election_year == settings.active_election_year,
             )
             .distinct()
         ).scalars().all()

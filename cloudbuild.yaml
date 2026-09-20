@@ -20,7 +20,7 @@ steps:
       - --all-tags
       - $_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend
 
-  # 3. Aplicar migrations Alembic contra o Neon Postgres
+  # 3. Migração aditiva; a revisão antiga ainda lê somente os dados já existentes.
   - name: '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID'
     entrypoint: 'sh'
     args: ['-c', 'cd /app && alembic upgrade head']
@@ -29,26 +29,35 @@ steps:
       - 'DATA_DIR=/data'
       - 'APP_ENV=prod'
 
-  # 4. Deploy da nova revisão no Cloud Run
+  # 4. Publicar filtros antes de adicionar 2026. Preserva o ano em produção;
+  #    uma revisão legada sem ACTIVE_ELECTION_YEAR equivale a 2022.
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-    entrypoint: gcloud
+    entrypoint: python3
     args:
-      - run
-      - deploy
-      - farol-politico-api
+      - scripts/deploy_presidential_backend.py
+      - bridge
       - --image=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID
       - --region=$_REGION
-      - --platform=managed
-      - --allow-unauthenticated
-      - --memory=512Mi
-      - --cpu=1
-      - --min-instances=0
-      - --max-instances=3
-      - --concurrency=80
-      - --timeout=60s
-      - --port=8080
-      - --set-env-vars=DATA_DIR=/data,APP_ENV=prod,IOT_FEATURE_ENABLED=false,NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b
-      - --set-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,NVIDIA_API_KEY=nvidia-api-key:latest
+
+  # 5. A ponte já recebe 100% do tráfego e exclui eleições diferentes.
+  - name: '$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID'
+    entrypoint: 'sh'
+    args: ['-c', 'cd /app && python -m app.infrastructure.database.seed']
+    secretEnv: ['DATABASE_URL']
+    env:
+      - 'DATA_DIR=/data'
+      - 'APP_ENV=prod'
+      - 'ACTIVE_ELECTION_YEAR=2026'
+      - 'ACTIVE_ELECTION_OFFICE=presidente'
+
+  # 6. Ativar explicitamente 2026 após o sucesso da carga.
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: python3
+    args:
+      - scripts/deploy_presidential_backend.py
+      - activate
+      - --image=$_REGION-docker.pkg.dev/$PROJECT_ID/$_REPO/backend:$BUILD_ID
+      - --region=$_REGION
 
 availableSecrets:
   secretManager:

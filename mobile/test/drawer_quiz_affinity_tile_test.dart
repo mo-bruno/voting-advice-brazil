@@ -17,6 +17,8 @@ void main() {
       party: 'PSB',
       scorePercent: score,
       rank: 1,
+      countedTheses: 7,
+      answeredTheses: 9,
       matches: const [],
     );
   }
@@ -27,52 +29,46 @@ void main() {
     VoidCallback? onOpenResults,
     VoidCallback? onStartQuiz,
   }) async {
-    await tester.pumpWidget(MaterialApp(
-      theme: AppTheme.dark,
-      home: Scaffold(
-        body: SizedBox(
-          width: 304,
-          child: QuizAffinityTile(
-            top: top,
-            onOpenResults: onOpenResults ?? () {},
-            onStartQuiz: onStartQuiz ?? () {},
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        home: Scaffold(
+          body: SizedBox(
+            width: 304,
+            child: QuizAffinityTile(
+              hasResults: top != null,
+              onOpenResults: onOpenResults ?? () {},
+              onStartQuiz: onStartQuiz ?? () {},
+            ),
           ),
         ),
       ),
-    ));
+    );
     await tester.pump();
   }
 
   testWidgets('sempre se identifica, com ou sem resultado', (tester) async {
     await pump(tester);
 
-    expect(find.text('SUA MAIOR AFINIDADE'), findsOneWidget);
+    expect(find.text('COMPARAÇÃO DOS PLANOS'), findsOneWidget);
   });
 
   group('com resultado', () {
-    testWidgets('mostra quem ficou em primeiro e o quanto', (tester) async {
+    testWidgets('oferece resultados sem apresentar uma candidatura vencedora',
+        (tester) async {
       await pump(tester, top: resultado(87.0));
 
-      expect(find.text('Ricardo Sampaio'), findsOneWidget);
-      expect(find.text('87%'), findsOneWidget);
-    });
-
-    testWidgets('arredonda a fracao em vez de despejar decimais',
-        (tester) async {
-      await pump(tester, top: resultado(86.7));
-
-      expect(find.text('87%'), findsOneWidget);
+      expect(find.text('Ricardo Sampaio'), findsNothing);
+      expect(find.text('87%'), findsNothing);
+      expect(find.text('SUA MAIOR AFINIDADE'), findsNothing);
+      expect(find.text('Ver resultados'), findsOneWidget);
     });
 
     testWidgets('tocar abre os resultados completos', (tester) async {
       var abriu = 0;
-      await pump(
-        tester,
-        top: resultado(87.0),
-        onOpenResults: () => abriu++,
-      );
+      await pump(tester, top: resultado(87.0), onOpenResults: () => abriu++);
 
-      await tester.tap(find.text('Ricardo Sampaio'));
+      await tester.tap(find.text('Ver resultados'));
       await tester.pump();
 
       expect(abriu, 1);
@@ -80,6 +76,27 @@ void main() {
   });
 
   group('sem resultado', () {
+    testWidgets('sem evidência não anuncia maior afinidade ou zero por cento', (
+      tester,
+    ) async {
+      await pump(
+        tester,
+        top: const CandidateResult(
+          candidateId: '2',
+          name: 'Sem evidência',
+          party: 'DC',
+          scorePercent: 0,
+          rank: 0,
+          countedTheses: 0,
+          answeredTheses: 9,
+          matches: [],
+        ),
+      );
+      expect(find.text('SUA MAIOR AFINIDADE'), findsNothing);
+      expect(find.text('0%'), findsNothing);
+      expect(find.text('Ver resultados'), findsOneWidget);
+    });
+
     testWidgets('convida a fazer o quiz em vez de sumir', (tester) async {
       await pump(tester);
 

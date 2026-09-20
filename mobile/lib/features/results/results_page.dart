@@ -11,18 +11,22 @@ import '../../shared/quiz_session.dart';
 import '../../shared/widgets/candidate_logo.dart';
 
 class ResultsPage extends StatefulWidget {
-  const ResultsPage({super.key});
+  const ResultsPage({super.key, this.analytics});
+
+  final AnalyticsService? analytics;
 
   @override
   State<ResultsPage> createState() => _ResultsPageState();
 }
 
 class _ResultsPageState extends State<ResultsPage> {
-  final AnalyticsService _analytics = AnalyticsService();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   bool _hasTrackedResultsViewed = false;
 
-  List<CandidateResult> get _results => _session.visibleResults;
+  List<CandidateResult> get _results => [..._session.visibleResults]
+    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
 
   void _track(Future<void> event) {
     unawaited(event.catchError((_) {}));
@@ -84,8 +88,9 @@ class _ResultsPageState extends State<ResultsPage> {
   }
 
   Widget _content(TextTheme textTheme) {
-    final topResult = _results.first;
-    if (!_hasTrackedResultsViewed) {
+    final leaders = _session.topAffinityResults;
+    final topResult = leaders.isEmpty ? null : leaders.first;
+    if (!_hasTrackedResultsViewed && topResult != null) {
       _hasTrackedResultsViewed = true;
       _track(
         _analytics.resultsViewed(
@@ -110,7 +115,16 @@ class _ResultsPageState extends State<ResultsPage> {
               ],
             ),
             const SizedBox(height: 32),
-            _TopResultCard(result: topResult),
+            if (!_results.any((result) => result.hasComparableEvidence))
+              Text(
+                'Não há base documental suficiente para calcular afinidade com os candidatos selecionados.',
+                style: textTheme.titleLarge,
+              ),
+            const SizedBox(height: 16),
+            Text(
+              'A afinidade considera apenas suas respostas com posição documentada no plano. As candidaturas podem ter conjuntos diferentes de teses comparáveis: os percentuais não formam um ranking e não indicam uma recomendação de voto. Ausência de evidência não significa discordância.',
+              style: textTheme.bodySmall,
+            ),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
@@ -132,8 +146,10 @@ class _ResultsPageState extends State<ResultsPage> {
               ),
             ),
             const SizedBox(height: 32),
-            ...List.generate(_results.length - 1, (index) {
-              final result = _results[index + 1];
+            Text('CANDIDATURAS EM ORDEM ALFABÉTICA',
+                style: textTheme.labelMedium),
+            const SizedBox(height: 16),
+            ..._results.map((result) {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 16),
                 child: _CandidateResultRow(result: result),
@@ -148,7 +164,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 border: Border.all(color: AppTheme.outlineVariant),
               ),
               child: Text(
-                'O resultado é calculado pelo backend com base nas suas respostas e nas posições cadastradas para cada candidato.',
+                'Este resultado compara posições documentadas nos planos oficiais. Ele não é uma recomendação de voto.',
                 style: textTheme.bodySmall,
               ),
             ),
@@ -163,51 +179,6 @@ class _ResultsPageState extends State<ResultsPage> {
             const SizedBox(height: 32),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class _TopResultCard extends StatelessWidget {
-  final CandidateResult result;
-
-  const _TopResultCard({required this.result});
-
-  @override
-  Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(24),
-      decoration: BoxDecoration(
-        color: AppTheme.surfaceContainer,
-        border: Border.all(color: AppTheme.outlineVariant),
-      ),
-      child: Column(
-        children: [
-          Text('MAIOR AFINIDADE', style: textTheme.labelMedium),
-          const SizedBox(height: 12),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              CandidateLogo(result: result, size: 48),
-              const SizedBox(width: 16),
-              Text(
-                '${result.scorePercent.toStringAsFixed(1)}%',
-                style: textTheme.displayMedium,
-              ),
-            ],
-          ),
-          const SizedBox(height: 8),
-          Text(
-            result.name,
-            style: textTheme.headlineMedium,
-            textAlign: TextAlign.center,
-          ),
-          const SizedBox(height: 4),
-          Text(result.abbreviation, style: textTheme.titleMedium),
-        ],
       ),
     );
   }
@@ -241,24 +212,28 @@ class _CandidateResultRow extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  Text(
-                    '${result.scorePercent.toStringAsFixed(1)}%',
-                    style: textTheme.titleMedium,
-                  ),
+                  if (result.hasComparableEvidence)
+                    Text(result.affinityLabel, style: textTheme.titleMedium),
                 ],
               ),
               const SizedBox(height: 6),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(2),
-                child: LinearProgressIndicator(
-                  value: result.scorePercent / 100,
-                  minHeight: 4,
-                  backgroundColor: AppTheme.surfaceContainerHighest,
-                  valueColor: const AlwaysStoppedAnimation<Color>(
-                    AppTheme.onSurface,
+              if (!result.hasComparableEvidence)
+                Text(result.affinityLabel, style: textTheme.bodySmall),
+              Text(result.coverageLabel, style: textTheme.bodySmall),
+              if (result.hasComparableEvidence) ...[
+                const SizedBox(height: 6),
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(2),
+                  child: LinearProgressIndicator(
+                    value: result.scorePercent / 100,
+                    minHeight: 4,
+                    backgroundColor: AppTheme.surfaceContainerHighest,
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      AppTheme.onSurface,
+                    ),
                   ),
                 ),
-              ),
+              ],
             ],
           ),
         ),

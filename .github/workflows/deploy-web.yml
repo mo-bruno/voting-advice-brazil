@@ -1,14 +1,10 @@
 name: Deploy Web
 
 on:
-  push:
+  workflow_run:
+    workflows: ['Deploy Backend']
+    types: [completed]
     branches: [main]
-    paths:
-      - 'mobile/**'
-      - 'firebase.json'
-      - '.firebaserc'
-      - '.github/workflows/deploy-web.yml'
-  workflow_dispatch:
 
 concurrency:
   group: deploy-web-${{ github.ref }}
@@ -16,9 +12,12 @@ concurrency:
 
 jobs:
   deploy:
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2

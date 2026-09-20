@@ -1,0 +1,1468 @@
+{
+  "disputa_id": "BR_PRESIDENTE_2026",
+  "versao_conjunto": 1,
+  "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA",
+  "total_teses": 36,
+  "criterios": [
+    "força da evidência oficial",
+    "cobertura documental",
+    "clareza da decisão",
+    "diferenciação documentada",
+    "equilíbrio temático",
+    "ausência de redundância"
+  ],
+  "observacao_anonimizacao": "A geração preliminar A recebeu descrições sem nomes; as passagens B e C trabalharam com identificadores documentais. A anonimização foi parcial.",
+  "teses": [
+    {
+      "tese_id": "BR26-T001",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O governo federal deve manter o atual arcabouço fiscal.",
+      "tema": "Política fiscal",
+      "origem_id": "BR-PRES-SL-B-01",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002542548_053",
+        "BR26-C-SM-002",
+        "BR26-280002551975-028"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002542548",
+        "280002538811",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-012"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T002",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Todas as empresas estatais devem ser privatizadas.",
+      "tema": "Empresas estatais",
+      "origem_id": "BR-PRES-SL-B-02",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-RZ-019",
+        "BR26-C-FB-083",
+        "BR26-C-SM-071",
+        "BR2026_280002541457_061",
+        "BR26-280002551975-024",
+        "BR26-280002552487-021"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002539826",
+        "280002551544",
+        "280002538811",
+        "280002541457",
+        "280002551975",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 6,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.462,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-001",
+        "BR26-CON-C-003",
+        "BR26-CON-C-007"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T003",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A reforma trabalhista deve ser revogada.",
+      "tema": "Direitos trabalhistas",
+      "origem_id": "BR-PRES-SL-B-03",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-010",
+        "BR2026_280002541457_010",
+        "BR26-280002551975-142",
+        "BR26-280002552487-013"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002551975",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-015"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T004",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A escala de trabalho 6×1 deve ser extinta sem redução salarial.",
+      "tema": "Jornada de trabalho",
+      "origem_id": "BR-PRES-SL-B-04",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002542548_077",
+        "BR2026_280002541457_006",
+        "BR26-280002551975-003"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002542548",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-016"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T005",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A jornada semanal legal deve ser reduzida para 30 horas, sem redução salarial.",
+      "tema": "Jornada de trabalho",
+      "origem_id": "BR-PRES-SL-B-05",
+      "tipo_selecao": "ALTERNATIVAS_NUMERICAS_DOCUMENTADAS",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-003",
+        "BR26-280002551975-036",
+        "BR26-280002552487-008",
+        "BR2026_280002541457_007",
+        "BR2026_280002542548_077"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002551975",
+        "280002552487",
+        "280002541457",
+        "280002542548"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 5,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.385,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-016"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T006",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Trabalhadores de plataformas digitais devem ter vínculo empregatício reconhecido.",
+      "tema": "Trabalho em plataformas",
+      "origem_id": "BR-PRES-SL-B-06",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_012",
+        "BR26-280002551975-037",
+        "BR26-C-SM-007"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002551975",
+        "280002538811"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T007",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O salário mínimo deve ser elevado em 100%.",
+      "tema": "Salário mínimo",
+      "origem_id": "BR-PRES-SL-B-07",
+      "tipo_selecao": "META_NUMERICA_DOCUMENTADA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-001",
+        "BR2026_280002541457_008",
+        "BR26-280002552487-005"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T008",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A União deve instituir imposto sobre grandes fortunas.",
+      "tema": "Tributação",
+      "origem_id": "BR-PRES-SL-B-08",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-015",
+        "BR26-280002551975-148",
+        "BR26-280002552487-017",
+        "BR26-C-WG-001"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002551975",
+        "280002552487",
+        "280002548139"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-014"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T009",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O pagamento da dívida pública a grandes investidores deve ser suspenso.",
+      "tema": "Dívida pública",
+      "origem_id": "BR-PRES-SL-B-09",
+      "tipo_selecao": "LACUNA_RELEVANTE",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-013",
+        "BR2026_280002541457_067",
+        "BR26-280002551975-022"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-011"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T010",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "As apostas on-line devem ser proibidas.",
+      "tema": "Apostas",
+      "origem_id": "BR-PRES-SL-B-10",
+      "tipo_selecao": "ALTERNATIVAS_DOCUMENTADAS",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_066",
+        "BR26-280002551975-136",
+        "BR2026_280002542548_054",
+        "BR2026_280002551932_022"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002551975",
+        "280002542548",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-027"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T011",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O Bolsa Família deve ser substituído por um programa de frentes de trabalho.",
+      "tema": "Proteção social",
+      "origem_id": "BR-PRES-SL-B-11",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_025",
+        "BR26-C-PM-001",
+        "BR26-C-RZ-068",
+        "BR26-280002552487-006"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002553884",
+        "280002539826",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-028"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T012",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O transporte público coletivo deve operar com tarifa zero para todos.",
+      "tema": "Mobilidade urbana",
+      "origem_id": "BR-PRES-SL-B-12",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-063",
+        "BR2026_280002541457_029",
+        "BR26-280002551975-070"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T013",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Imóveis urbanos ociosos ou mantidos para especulação devem ser expropriados para moradia popular.",
+      "tema": "Habitação",
+      "origem_id": "BR-PRES-SL-B-13",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "MEDIA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_027",
+        "BR26-280002552487-037",
+        "BR26-280002551975-049"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002552487",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T014",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O aborto deve ser legalizado.",
+      "tema": "Direitos reprodutivos",
+      "origem_id": "BR-PRES-SL-B-14",
+      "tipo_selecao": "LACUNA_RELEVANTE",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_054",
+        "BR26-280002551975-113",
+        "BR26-C-SM-034"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002551975",
+        "280002538811"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [
+          "Mais de uma decisão ou mecanismo na versão preliminar."
+        ],
+        "mudancas_feitas": [
+          "A provisão pela rede pública foi retirada para manter uma só decisão principal; ela permanece nas evidências e ressalvas."
+        ],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T015",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A maioridade penal deve ser reduzida para 16 anos em crimes graves.",
+      "tema": "Sistema penal",
+      "origem_id": "BR-PRES-SL-B-15",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002551932_023",
+        "BR26-C-FB-002",
+        "BR26-C-RZ-005",
+        "BR26-C-SM-036",
+        "BR2026_280002541457_048",
+        "BR26-280002551975-120"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002551932",
+        "280002551544",
+        "280002539826",
+        "280002538811",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 6,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.462,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-022"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T016",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "As polícias devem ser desmilitarizadas.",
+      "tema": "Segurança pública",
+      "origem_id": "BR-PRES-SL-B-16",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-058",
+        "BR2026_280002541457_044",
+        "BR26-280002551975-052"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T017",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Escolas cívico-militares devem ser ampliadas.",
+      "tema": "Educação",
+      "origem_id": "BR-PRES-SL-B-17",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA_CONDICIONAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-FB-046",
+        "BR2026_280002540694_045",
+        "BR2026_280002541457_024"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002551544",
+        "280002540694",
+        "280002541457"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-024"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T018",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O sistema de cotas raciais deve ser abolido.",
+      "tema": "Ações afirmativas",
+      "origem_id": "BR-PRES-SL-B-18",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_043",
+        "BR26-C-SM-037",
+        "BR2026_280002541457_047",
+        "BR26-280002551975-065"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002538811",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T019",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O uso de maconha deve ser legalizado.",
+      "tema": "Política de drogas",
+      "origem_id": "BR-PRES-SL-B-19",
+      "tipo_selecao": "LACUNA_RELEVANTE",
+      "forca_evidencia_editorial": "MEDIA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-280002551975-134",
+        "BR2026_280002541457_041",
+        "BR26-C-SM-059"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002551975",
+        "280002541457",
+        "280002538811"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [
+          "Mais de uma decisão ou mecanismo na versão preliminar."
+        ],
+        "mudancas_feitas": [
+          "A descriminalização de todas as drogas foi separada da legalização da maconha; propostas apenas parciais exigem classificação condicional."
+        ],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T020",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Facções criminosas devem ser enquadradas como organizações terroristas.",
+      "tema": "Crime organizado",
+      "origem_id": "BR-PRES-SL-B-20",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-RZ-001",
+        "BR26-C-FB-001",
+        "BR2026_280002551932_013"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002539826",
+        "280002551544",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-033"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T021",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O uso de câmeras corporais por policiais deve ser ampliado.",
+      "tema": "Segurança pública",
+      "origem_id": "BR-PRES-SL-B-22",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_042",
+        "BR2026_280002542548_030"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002542548"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 2,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.154,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T022",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O reconhecimento facial deve integrar as políticas de segurança pública.",
+      "tema": "Tecnologia e segurança",
+      "origem_id": "BR-PRES-SL-B-23",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_015",
+        "BR26-C-FB-012",
+        "BR26-280002551547-401"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002551544",
+        "280002551547"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T023",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A oferta de educação básica em tempo integral deve ser ampliada.",
+      "tema": "Educação",
+      "origem_id": "BR-PRES-SL-B-25",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002542548_032",
+        "BR2026_280002551932_045"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002542548",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 2,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.154,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T024",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O método fônico deve ser priorizado na alfabetização.",
+      "tema": "Alfabetização",
+      "origem_id": "BR-PRES-SL-B-26",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_040",
+        "BR26-C-FB-043"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002551544"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 2,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.154,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T025",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O SUS deve adotar uma fila nacional digital organizada por risco clínico.",
+      "tema": "Gestão do SUS",
+      "origem_id": "BR-PRES-SL-B-27",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_030",
+        "BR2026_280002540694_031",
+        "BR2026_280002542548_041",
+        "BR2026_280002551932_099",
+        "BR26-C-WG-036",
+        "BR26-280002552484-075"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002542548",
+        "280002551932",
+        "280002548139",
+        "280002552484"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 5,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.385,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T026",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A gestão privada da saúde pública por organizações sociais e PPPs deve ser encerrada.",
+      "tema": "Gestão da saúde",
+      "origem_id": "BR-PRES-SL-B-28",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "MEDIA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-020",
+        "BR2026_280002541457_019",
+        "BR26-C-RZ-066"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002539826"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-005"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T027",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A exploração de petróleo na Margem Equatorial deve ser autorizada.",
+      "tema": "Petróleo e meio ambiente",
+      "origem_id": "BR-PRES-SL-B-29",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-PM-043",
+        "BR2026_280002541457_034",
+        "BR26-280002551975-160"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002553884",
+        "280002541457",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-009"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T028",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O governo federal deve ampliar a reforma agrária com novos assentamentos e desapropriações.",
+      "tema": "Reforma agrária",
+      "origem_id": "BR-PRES-SL-B-30",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA_CONDICIONAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-053",
+        "BR2026_280002541457_036",
+        "BR2026_280002542548_064",
+        "BR26-280002551975-005",
+        "BR2026_280002540694_050"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002542548",
+        "280002551975",
+        "280002540694"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 5,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.385,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-018"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T029",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "Todas as terras indígenas pendentes devem ser demarcadas.",
+      "tema": "Povos indígenas",
+      "origem_id": "BR-PRES-SL-B-31",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-042",
+        "BR2026_280002541457_059",
+        "BR26-280002551975-123",
+        "BR2026_280002542548_010",
+        "BR26-280002552487-033"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002541457",
+        "280002551975",
+        "280002542548",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 5,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.385,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T030",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A exploração de terras raras deve permanecer sob controle estatal.",
+      "tema": "Minerais críticos",
+      "origem_id": "BR-PRES-SL-B-32",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002541457_063",
+        "BR26-280002551975-165",
+        "BR26-280002552487-026",
+        "BR26-C-RZ-032"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002541457",
+        "280002551975",
+        "280002552487",
+        "280002539826"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [
+          "Mais de uma decisão ou mecanismo na versão preliminar."
+        ],
+        "mudancas_feitas": [
+          "Empresa estatal e monopólio público foram condensados no atributo comum verificável: controle estatal."
+        ],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-021"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T031",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A produção nacional de fertilizantes deve ser ampliada para reduzir a dependência externa.",
+      "tema": "Agricultura",
+      "origem_id": "BR-PRES-SL-B-33",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002540694_052",
+        "BR2026_280002542548_067",
+        "BR26-C-FB-042",
+        "BR2026_280002551932_028"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002540694",
+        "280002542548",
+        "280002551544",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 4,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.308,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T032",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O governo federal deve ampliar a regulação de redes sociais e plataformas digitais.",
+      "tema": "Plataformas digitais",
+      "origem_id": "BR-PRES-SL-B-34",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA_CONDICIONAL",
+      "forca_evidencia_editorial": "MEDIA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002542548_003",
+        "BR26-280002551975-018",
+        "BR2026_280002540694_038"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002542548",
+        "280002551975",
+        "280002540694"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-030"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T033",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A reeleição consecutiva para cargos do Poder Executivo deve ser extinta.",
+      "tema": "Sistema político",
+      "origem_id": "BR-PRES-SL-B-35",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-FB-080",
+        "BR26-280002551547-340",
+        "BR2026_280002551932_001"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002551544",
+        "280002551547",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T034",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "O Conselho de Segurança da ONU deve ser reformado, e não extinto.",
+      "tema": "Política externa",
+      "origem_id": "BR-PRES-SL-B-36",
+      "tipo_selecao": "DIVERGENCIA_EXPLICITA",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR2026_280002542548_084",
+        "BR26-280002551975-174"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002542548",
+        "280002551975"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 2,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.154,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T035",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "As eleições legislativas devem adotar o sistema distrital misto.",
+      "tema": "Sistema eleitoral",
+      "origem_id": "BR-PRES-SL-B-37",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-RZ-079",
+        "BR2026_280002551932_003"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002539826",
+        "280002551932"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 2,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.154,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    },
+    {
+      "tese_id": "BR26-T036",
+      "disputa_id": "BR_PRESIDENTE_2026",
+      "versao_tese": 1,
+      "texto_tese": "A autonomia institucional do Banco Central deve ser revogada.",
+      "tema": "Política monetária",
+      "origem_id": "BR-PRES-SL-B-38",
+      "tipo_selecao": "CONSENSO_DOCUMENTADO_PARCIAL",
+      "forca_evidencia_editorial": "ALTA",
+      "claim_ids_evidencia_editorial": [
+        "BR26-C-SM-018",
+        "BR26-280002551975-028",
+        "BR26-280002552487-061"
+      ],
+      "candidatos_com_evidencia_editorial": [
+        "280002538811",
+        "280002551975",
+        "280002552487"
+      ],
+      "cobertura_editorial_pre_classificacao": {
+        "candidatos_com_evidencia": 3,
+        "total_candidatos_na_disputa": 13,
+        "proporcao": 0.231,
+        "criterio": "Conta apenas candidaturas com claim listado; ausência de claim não foi tratada como posição."
+      },
+      "motivo_selecao": "Decisão concreta sustentada nos planos oficiais; selecionada conjuntamente por evidência, clareza, cobertura, diferenciação e equilíbrio temático.",
+      "auditoria_linguistica": {
+        "nomes_partidos_ou_numeros_de_candidatura": false,
+        "slogan_ou_adjetivacao_indutiva": false,
+        "problemas_detectados": [],
+        "mudancas_feitas": [],
+        "duvidas_remanescentes": [
+          "Pendente de revisão humana e teste de compreensão; auditoria por IA não prova neutralidade psicológica."
+        ]
+      },
+      "contrastes_independentes_relacionados": [
+        "BR26-CON-C-012"
+      ],
+      "estado_editorial": "RASCUNHO_AUDITADO_POR_IA_PENDENTE_REVISAO_HUMANA"
+    }
+  ]
+}

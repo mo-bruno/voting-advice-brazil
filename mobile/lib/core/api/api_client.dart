@@ -13,8 +13,10 @@ import '../../shared/models/thesis.dart';
 
 class ApiException implements Exception {
   final String message;
+  final String? code;
+  final int? statusCode;
 
-  const ApiException(this.message);
+  const ApiException(this.message, {this.code, this.statusCode});
 
   @override
   String toString() => message;
@@ -46,6 +48,7 @@ class ApiClient {
     final json = await _getJson(uri) as Map<String, dynamic>;
     return (json['candidates'] as List<dynamic>)
         .cast<Map<String, dynamic>>()
+        .map(_withResolvedPhotoUrl)
         .map(Party.fromCandidateJson)
         .toList();
   }
@@ -67,8 +70,21 @@ class ApiClient {
     final json = await _postJson(uri, body) as Map<String, dynamic>;
     return (json['results'] as List<dynamic>)
         .cast<Map<String, dynamic>>()
+        .map(_withResolvedPhotoUrl)
         .map(CandidateResult.fromJson)
         .toList();
+  }
+
+  Map<String, dynamic> _withResolvedPhotoUrl(Map<String, dynamic> json) {
+    final rawPhotoUrl = json['photo_url'] as String?;
+    if (rawPhotoUrl == null || rawPhotoUrl.isEmpty) return json;
+
+    final photoUri = Uri.parse(rawPhotoUrl);
+    if (photoUri.hasScheme) return json;
+
+    final apiUri = Uri.parse(baseUrl);
+    final origin = apiUri.replace(path: '/', query: null, fragment: null);
+    return {...json, 'photo_url': origin.resolve(rawPhotoUrl).toString()};
   }
 
   Future<List<CandidateJustification>> fetchCandidateJustifications(
@@ -106,9 +122,10 @@ class ApiClient {
     final uri = Uri.parse('$baseUrl/political-actors/trending');
     final json = await _getJson(uri) as Map<String, dynamic>;
     return (json['actors'] as List<dynamic>)
-        .map((item) => TrendingPoliticalActor.fromJson(
-              item as Map<String, dynamic>,
-            ))
+        .map(
+          (item) =>
+              TrendingPoliticalActor.fromJson(item as Map<String, dynamic>),
+        )
         .toList();
   }
 
@@ -154,9 +171,7 @@ class ApiClient {
     );
   }
 
-  Future<IotDevice?> fetchIotDevice({
-    required String anonymousId,
-  }) async {
+  Future<IotDevice?> fetchIotDevice({required String anonymousId}) async {
     final uri = Uri.parse('$baseUrl/me/iot-device');
     final response = await _client.get(
       uri,
@@ -193,9 +208,7 @@ class ApiClient {
     return IotDevice.fromJson(json);
   }
 
-  Future<void> deleteIotDevice({
-    required String anonymousId,
-  }) async {
+  Future<void> deleteIotDevice({required String anonymousId}) async {
     final uri = Uri.parse('$baseUrl/me/iot-device');
     final response = await _client.delete(
       uri,
@@ -221,10 +234,9 @@ class ApiClient {
   Future<IotLastEvent?> fetchLastIotEvent({required String anonymousId}) async {
     final uri = Uri.parse('$baseUrl/me/iot-device/last-event');
     try {
-      final json = await _getJson(
-        uri,
-        headers: {'X-Farol-Anonymous-Id': anonymousId},
-      ) as Map<String, dynamic>;
+      final json =
+          await _getJson(uri, headers: {'X-Farol-Anonymous-Id': anonymousId})
+              as Map<String, dynamic>;
       return IotLastEvent.fromJson(json);
     } on ApiException {
       return null;
@@ -279,10 +291,8 @@ class ApiClient {
         if (sort != null) 'sort': sort,
       },
     );
-    return await _getJson(
-      uri,
-      headers: {'X-Farol-Anonymous-Id': anonymousId},
-    ) as Map<String, dynamic>;
+    return await _getJson(uri, headers: {'X-Farol-Anonymous-Id': anonymousId})
+        as Map<String, dynamic>;
   }
 
   /// Envia a identidade privada para que is_mine reflita o leitor atual.
@@ -291,10 +301,8 @@ class ApiClient {
     required String anonymousId,
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts/$postId');
-    return await _getJson(
-      uri,
-      headers: {'X-Farol-Anonymous-Id': anonymousId},
-    ) as Map<String, dynamic>;
+    return await _getJson(uri, headers: {'X-Farol-Anonymous-Id': anonymousId})
+        as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> votePost(
@@ -363,13 +371,20 @@ class ApiClient {
     if (decoded is Map<String, dynamic>) {
       final detail = decoded['detail'];
       if (detail is Map<String, dynamic> && detail['message'] is String) {
-        throw ApiException(detail['message'] as String);
+        throw ApiException(
+          detail['message'] as String,
+          code: detail['code'] as String?,
+          statusCode: response.statusCode,
+        );
       }
       if (detail is String) {
-        throw ApiException(detail);
+        throw ApiException(detail, statusCode: response.statusCode);
       }
     }
-    throw ApiException('Erro ${response.statusCode} ao conectar com a API.');
+    throw ApiException(
+      'Erro ${response.statusCode} ao conectar com a API.',
+      statusCode: response.statusCode,
+    );
   }
 
   Future<WeeklyNews> fetchWeeklyNews({int limit = 10}) async {
@@ -406,8 +421,10 @@ class ApiClient {
         'Content-Type': 'application/json',
         'X-Farol-Anonymous-Id': anonymousId,
       },
-      body:
-          jsonEncode({'reason': reason, if (detail != null) 'detail': detail}),
+      body: jsonEncode({
+        'reason': reason,
+        if (detail != null) 'detail': detail,
+      }),
     );
     if (response.statusCode >= 400) {
       throw ApiException('Erro ${response.statusCode} ao denunciar.');

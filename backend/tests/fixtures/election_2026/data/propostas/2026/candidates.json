@@ -1,0 +1,45 @@
+[
+  {
+    "id": "2026-a",
+    "name": "CANDIDATA A",
+    "legal_name": "Candidata A da Silva",
+    "party": "PT",
+    "party_name": "Partido dos Trabalhadores",
+    "number": 13,
+    "coalition": "Coligação A",
+    "running_mate": "Vice A",
+    "photo_url": "/data/fotos/2026/BR/2026-a.jpg",
+    "office": "presidente",
+    "election_year": 2026,
+    "election_round": 1
+  },
+  {
+    "id": "2026-b",
+    "name": "CANDIDATO B",
+    "legal_name": "Candidato B de Souza",
+    "party": "PL",
+    "party_name": "Partido Liberal",
+    "number": 22,
+    "coalition": null,
+    "running_mate": "Vice B",
+    "photo_url": "/data/fotos/2026/BR/2026-b.jpg",
+    "office": "presidente",
+    "election_year": 2026,
+    "election_round": 1
+  },
+  {
+    "id": "2026-c",
+    "name": "CANDIDATO C",
+    "legal_name": "Candidato C de Oliveira",
+    "party": "MISSÃO",
+    "party_name": "Partido Missão",
+    "party_number": 14,
+    "number": 14,
+    "coalition": null,
+    "running_mate": "Vice C",
+    "photo_url": "/data/fotos/2026/BR/2026-c.jpg",
+    "office": "presidente",
+    "election_year": 2026,
+    "election_round": 1
+  }
+]

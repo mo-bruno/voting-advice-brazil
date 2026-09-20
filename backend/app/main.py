@@ -28,11 +28,9 @@ PREFIX = "/api/v1"
 def create_app(app_settings: Settings = settings) -> FastAPI:
     @asynccontextmanager
     async def lifespan(_: FastAPI) -> AsyncGenerator[None, None]:
-        # Schema é gerenciado por Alembic via Cloud Build pré-deploy.
-        # Lifespan apenas popula dados estáticos (idempotente: retorna cedo
-        # se PartyModel.count() > 0 dentro de seed()). Em ambiente de teste,
-        # o conftest configura o DB próprio e a seed é dispensável.
-        if app_settings.app_env != "test":
+        # Production data is reconciled once by the deployment job. An older
+        # revision starting later must not restore its bundled election snapshot.
+        if app_settings.app_env == "dev":
             from app.infrastructure.database.seed import seed
             from app.infrastructure.database.session import SessionLocal
 

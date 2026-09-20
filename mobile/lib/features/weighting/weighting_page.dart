@@ -9,14 +9,17 @@ import '../../shared/models/thesis.dart';
 import '../../shared/quiz_session.dart';
 
 class WeightingPage extends StatefulWidget {
-  const WeightingPage({super.key});
+  const WeightingPage({super.key, this.analytics});
+
+  final AnalyticsService? analytics;
 
   @override
   State<WeightingPage> createState() => _WeightingPageState();
 }
 
 class _WeightingPageState extends State<WeightingPage> {
-  final AnalyticsService _analytics = AnalyticsService();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   int? _editingThesisId;
 
@@ -117,6 +120,21 @@ class _WeightingPageState extends State<WeightingPage> {
                     'Marque as perguntas que devem ter peso duplo no cálculo.',
                     style: textTheme.bodyMedium,
                   ),
+                  const SizedBox(height: 12),
+                  Text(
+                    '${_session.totalAnswered} de ${_theses.length} perguntas respondidas. '
+                    'Mínimo: ${QuizSession.minimumAnswers}.',
+                    style: textTheme.bodyMedium,
+                  ),
+                  if (!_session.canSubmit) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      'Use o botão de editar nas perguntas abaixo para responder mais ${QuizSession.minimumAnswers - _session.totalAnswered}. Perguntas puladas não contam para o mínimo.',
+                      style: textTheme.bodyMedium?.copyWith(
+                        color: AppTheme.primary,
+                      ),
+                    ),
+                  ],
                   const SizedBox(height: 24),
                   ListView.separated(
                     shrinkWrap: true,
@@ -147,14 +165,16 @@ class _WeightingPageState extends State<WeightingPage> {
           child: SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () {
-                _track(
-                  _analytics.weightingCompleted(
-                    countWeighted: _session.countWeighted,
-                  ),
-                );
-                Navigator.pushNamed(context, '/party-selection');
-              },
+              onPressed: !_session.canSubmit
+                  ? null
+                  : () {
+                      _track(
+                        _analytics.weightingCompleted(
+                          countWeighted: _session.countWeighted,
+                        ),
+                      );
+                      Navigator.pushNamed(context, '/party-selection');
+                    },
               child: const Text('CONTINUAR PARA SELEÇÃO'),
             ),
           ),
@@ -271,8 +291,9 @@ class _ThemeWeightCard extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(7),
                         decoration: BoxDecoration(
-                          color:
-                              isEditing ? AppTheme.primary : Colors.transparent,
+                          color: isEditing
+                              ? AppTheme.primary
+                              : Colors.transparent,
                           border: Border.all(
                             color: isEditing
                                 ? AppTheme.primary
@@ -329,8 +350,10 @@ class _InlineAnswerEditor extends StatelessWidget {
         children: [
           const Divider(color: AppTheme.outlineVariant, height: 1),
           const SizedBox(height: 12),
-          Text('EDITAR RESPOSTA',
-              style: Theme.of(context).textTheme.labelSmall),
+          Text(
+            'EDITAR RESPOSTA',
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
           const SizedBox(height: 10),
           Wrap(
             spacing: 8,
@@ -392,11 +415,7 @@ class _AnswerEditButton extends StatelessWidget {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        children: [
-          Icon(icon, size: 16),
-          const SizedBox(width: 8),
-          Text(label),
-        ],
+        children: [Icon(icon, size: 16), const SizedBox(width: 8), Text(label)],
       ),
     );
   }

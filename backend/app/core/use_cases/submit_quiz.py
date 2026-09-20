@@ -28,6 +28,7 @@ from app.core.use_cases.interfaces import (
 __all__ = [
     "CandidateResult",
     "InsufficientAnswersError",
+    "InvalidThesisIdsError",
     "QuizAnswer",
     "ThesisMatch",
     "submit_quiz",
@@ -46,6 +47,15 @@ _POSITION_TO_STANCE = {
     "discordo": Stance.DISAGREE,
     "sem_posicao": Stance.NO_OPINION,
 }
+
+
+class InvalidThesisIdsError(ValueError):
+    """Raised when a submission references theses unavailable in the active quiz."""
+
+    def __init__(self, thesis_ids: list[int]) -> None:
+        self.thesis_ids = sorted(set(thesis_ids))
+        joined_ids = ", ".join(str(thesis_id) for thesis_id in self.thesis_ids)
+        super().__init__(f"Teses indisponíveis para o quiz ativo: {joined_ids}.")
 
 
 @dataclass
@@ -73,9 +83,12 @@ class CandidateResult:
     name: str
     party_acronym: str
     party_logo_url: str | None
+    photo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
     rank: int
+    counted_theses: int
+    answered_theses: int
     matches: list[ThesisMatch] = field(default_factory=list)
 
 
@@ -134,7 +147,14 @@ def submit_quiz(
     position_repo: PositionRepository,
     thesis_repo: ThesisRepository,
 ) -> list[CandidateResult]:
-    """Pipeline: valida mínimo → busca dados → score por candidato → rank."""
+    """Pipeline: valida teses e mínimo → calcula scores → monta o ranking."""
+    requested_ids = list(dict.fromkeys(answer.thesis_id for answer in answers))
+    available_theses = thesis_repo.get_by_ids(requested_ids)
+    available_ids = {thesis.id for thesis in available_theses}
+    invalid_ids = [thesis_id for thesis_id in requested_ids if thesis_id not in available_ids]
+    if invalid_ids:
+        raise InvalidThesisIdsError(invalid_ids)
+
     user_answers = [_to_user_answer(a) for a in answers]
     validate_minimum(user_answers)  # lança InsufficientAnswersError se < 5
 
@@ -144,7 +164,7 @@ def submit_quiz(
     positions_map = position_repo.get_by_candidates_and_theses(
         candidate_ids, answered_ids
     )
-    theses = {t.id: t for t in thesis_repo.get_by_ids(answered_ids)}
+    theses = {t.id: t for t in available_theses if t.id in answered_ids}
 
     scored: list[tuple[int, str, ScoreBreakdown]] = []
     intermediate: dict[int, Any] = {}
@@ -180,10 +200,13 @@ def submit_quiz(
         }
         scored.append((candidate.id, candidate.name, breakdown))
 
-    ranked = rank(scored)
+    ranked = rank(item for item in scored if item[2].counted_theses > 0)
+    # A lack of evidence is not a zero-percent disagreement. Keep the numeric
+    # score for older clients, but leave these candidates explicitly unranked.
+    unscored = rank(item for item in scored if item[2].counted_theses == 0)
 
     results: list[CandidateResult] = []
-    for rc in ranked:
+    for rc in [*ranked, *unscored]:
         data = intermediate[rc.candidate_id]
         candidate = data["candidate"]
         results.append(
@@ -192,9 +215,12 @@ def submit_quiz(
                 name=candidate.name,
                 party_acronym=candidate.party_acronym,
                 party_logo_url=candidate.party_logo_url,
+                photo_url=candidate.photo_url,
                 score_percent=rc.score.score_percent,
                 score_by_theme=data["by_theme"],
-                rank=rc.rank,
+                rank=rc.rank if rc.score.counted_theses else 0,
+                counted_theses=rc.score.counted_theses,
+                answered_theses=len(answered_ids),
                 matches=data["matches"],
             )
         )

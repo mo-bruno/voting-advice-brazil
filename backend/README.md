@@ -1,6 +1,6 @@
 # Farol Político — Backend API
 
-FastAPI para quiz de propostas de 2022, deputados atuais com evidências oficiais, acompanhamento pessoal, comunidade anônima e notícias semanais da Câmara. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos são exibidos como evidência informativa. Não existe índice de consistência ou motor completo de alinhamento legislativo implementado.
+FastAPI para quiz de planos presidenciais de 2026, deputados atuais com evidências oficiais, acompanhamento pessoal, comunidade anônima e notícias semanais da Câmara. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos são exibidos como evidência informativa. Não existe índice de consistência ou motor completo de alinhamento legislativo implementado.
 
 ## Setup local
 
@@ -14,7 +14,63 @@ uv run python -m app.infrastructure.database.seed
 uv run fastapi dev app/main.py
 ```
 
-API em [localhost:8000](http://localhost:8000); contrato em [/docs](http://localhost:8000/docs), [/redoc](http://localhost:8000/redoc) e [/openapi.json](http://localhost:8000/openapi.json). Alembic gerencia o schema. O startup da API faz seed idempotente fora do ambiente `test`; não inicia jobs periódicos.
+API em [localhost:8000](http://localhost:8000); contrato em [/docs](http://localhost:8000/docs), [/redoc](http://localhost:8000/redoc) e [/openapi.json](http://localhost:8000/openapi.json). Alembic gerencia o schema. O startup faz seed apenas em desenvolvimento; produção é carregada explicitamente pelo processo de implantação. Não inicia jobs periódicos.
+
+## Edição eleitoral ativa
+
+A API serve, por padrão, apenas `2026` e o cargo `presidente`. Configure o
+recorte em `.env` quando necessário:
+
+```dotenv
+ACTIVE_ELECTION_YEAR=2026
+ACTIVE_ELECTION_OFFICE=presidente
+```
+
+O seed lê `data/propostas/2026/candidates.json` e
+`data/theses/2026/theses.json`, convive com dados anteriores e pode ser
+executado novamente para reconciliar a edição. Candidaturas que saem do
+snapshot tornam-se inativas; seus registros históricos permanecem no banco.
+Teses usam identidade e versão editorial: mudar a formulação exige incrementar
+`version`, criando uma nova tese e preservando as respostas ligadas à anterior.
+Status, posições e evidências da versão atual são sincronizados a cada carga.
+Uma versão antiga não pode substituir uma mais recente. Teses com `status: draft` ficam
+armazenadas, mas não são retornadas pelo quiz. As fotos oficiais do TSE são
+servidas localmente em `/data/fotos/2026/BR/<SQ_CANDIDATO>.jpg`.
+
+Execute `alembic upgrade head` antes de carregar os dados. A migração
+`0009_election_refresh`, após as migrações 0007/0008 de IoT e comunidade, acrescenta os campos de versão, candidatura ativa e
+proveniência. Em produção, o Cloud Build aplica a migração aditiva, publica uma
+revisão intermediária com o ano que já recebe 100% do tráfego, carrega 2026 e
+então publica a revisão final de 2026. A revisão intermediária lê a configuração
+da revisão efetivamente publicada: ausência de `ACTIVE_ELECTION_YEAR` no legado
+significa 2022; implantações seguintes preservam 2026. Assim, o código antigo
+sem filtro eleitoral nunca recebe o banco com as duas edições. O início de uma
+instância não reimporta dados: isso impede que uma
+revisão antiga restaure seu snapshot após uma atualização. Seeds concorrentes
+em PostgreSQL são serializados por um lock transacional.
+
+Essa transição é automática em `cloudbuild.yaml`, por meio de
+`scripts/deploy_presidential_backend.py`. O serviço deve existir e ter uma
+única revisão recebendo 100% do tráfego. Falhas ao ler serviço/revisão,
+configuração eleitoral desconhecida ou tráfego dividido interrompem a execução
+antes do seed. O script publica sem tráfego e só encaminha as requisições após
+a nova revisão ficar pronta. Se a carga de dados falhar, a revisão intermediária
+continua atendendo e a transação é revertida; pode-se executar o build novamente.
+Se a ativação final falhar na primeira transição, a revisão intermediária
+continua servindo 2022 com filtros, mesmo com 2026 já armazenado. Não restaure
+uma imagem anterior aos filtros eleitorais depois de carregar 2026.
+
+O resultado inclui `counted_theses` (base efetivamente comparada) e
+`answered_theses` (respostas não puladas). Sem nenhuma tese comparável, a
+candidatura fica ao fim, com `rank: 0`; `score_percent: 0` é apenas uma sentinela
+de compatibilidade com clientes antigos e não representa discordância.
+O app exibe **Sem base comparável** nesse caso. A rota de justificativas expõe
+também `quote`, `source_ref` e `source_url` para conferir a evidência.
+
+As rotas eleitorais consultam o banco a cada leitura. O antigo cache local de
+uma a seis horas foi retirado desse conjunto pequeno para não reexibir uma
+candidatura removida, pergunta arquivada ou justificativa corrigida após a carga.
+O cache de notícias e os demais serviços não foram alterados.
 
 ## Configuração
 
@@ -51,7 +107,7 @@ Todos os caminhos da tabela usam `/api/v1`.
 | Método | Caminho | Comportamento |
 |---|---|---|
 | GET | `/quiz/questions` | Teses, com filtros de temas e limite |
-| POST | `/quiz/submit` | Ranking de candidatos de 2022 e persistência quando há `device_id` |
+| POST | `/quiz/submit` | Comparação documental presidencial de 2026, cobertura por candidatura e persistência quando há `device_id` |
 | GET | `/candidates` | Candidatos com filtros e paginação |
 | GET | `/candidates/{candidate_id}` | Perfil de candidato |
 | GET | `/candidates/{candidate_id}/positions` | Posições nas teses |

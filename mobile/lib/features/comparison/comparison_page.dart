@@ -3,7 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
+import '../../core/api/api_client.dart';
 import '../../core/layout/app_scaffold.dart';
+import '../../core/link/link_opener.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
 import '../../shared/models/thesis.dart';
@@ -11,22 +13,35 @@ import '../../shared/quiz_session.dart';
 import '../../shared/widgets/candidate_logo.dart';
 
 class ComparisonPage extends StatefulWidget {
-  const ComparisonPage({super.key});
+  const ComparisonPage({
+    super.key,
+    this.session,
+    this.analytics,
+    this.openLink,
+  });
+
+  final QuizSession? session;
+  final AnalyticsService? analytics;
+  final LinkOpener? openLink;
 
   @override
   State<ComparisonPage> createState() => _ComparisonPageState();
 }
 
 class _ComparisonPageState extends State<ComparisonPage> {
-  final AnalyticsService _analytics = AnalyticsService();
-  final QuizSession _session = QuizSession.instance;
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
+  late final QuizSession _session = widget.session ?? QuizSession.instance;
   final Set<String> _selectedCandidateIds = {};
   final Map<String, Map<int, CandidateJustification>> _justifications = {};
   bool _showComparison = false;
   bool _isLoadingJustifications = false;
+  bool _comparisonOutdated = false;
+  int _comparisonRequest = 0;
   int? _expandedThesisId;
 
-  List<CandidateResult> get _results => _session.visibleResults;
+  List<CandidateResult> get _results => [..._session.visibleResults]
+    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
 
   List<CandidateResult> get _selectedResults => _results
       .where((result) => _selectedCandidateIds.contains(result.candidateId))
@@ -45,8 +60,12 @@ class _ComparisonPageState extends State<ComparisonPage> {
   }
 
   void _handleBack() {
-    if (_showComparison) {
-      setState(() => _showComparison = false);
+    if (_showComparison || _comparisonOutdated) {
+      _comparisonRequest++;
+      setState(() {
+        _showComparison = false;
+        _comparisonOutdated = false;
+      });
       return;
     }
     Navigator.pushReplacementNamed(context, '/results');
@@ -84,34 +103,95 @@ class _ComparisonPageState extends State<ComparisonPage> {
 
   Future<void> _startComparison() async {
     _track(_analytics.comparisonOpened());
+    final request = ++_comparisonRequest;
+    final selected = List<CandidateResult>.of(_selectedResults);
     setState(() {
       _showComparison = true;
       _isLoadingJustifications = true;
+      _comparisonOutdated = false;
+      _justifications.clear();
     });
 
     try {
-      for (final result in _selectedResults) {
-        if (_justifications.containsKey(result.candidateId)) continue;
+      final validated = <String, Map<int, CandidateJustification>>{};
+      for (final result in selected) {
         _track(
-          _analytics.candidatePositionsViewed(
-            candidateId: result.candidateId,
-          ),
+          _analytics.candidatePositionsViewed(candidateId: result.candidateId),
         );
-        final data =
-            await _session.api.fetchCandidateJustifications(result.candidateId);
-        _justifications[result.candidateId] = {
-          for (final item in data) item.thesisId: item,
-        };
+        final data = await _session.api.fetchCandidateJustifications(
+          result.candidateId,
+        );
+        if (!mounted || request != _comparisonRequest) return;
+        final byThesis = {for (final item in data) item.thesisId: item};
+        final changed = result.matches.any((match) {
+          final item = byThesis[match.thesisId];
+          return item == null ||
+              item.thesisText != match.thesisText ||
+              item.position != match.candidatePosition;
+        });
+        if (changed) {
+          setState(() => _comparisonOutdated = true);
+          return;
+        }
+        validated[result.candidateId] = byThesis;
+      }
+      if (mounted && request == _comparisonRequest) {
+        setState(() => _justifications.addAll(validated));
       }
     } catch (error) {
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(error.toString())),
-        );
+      if (mounted && request == _comparisonRequest) {
+        if (error is ApiException && error.statusCode == 404) {
+          setState(() => _comparisonOutdated = true);
+        } else {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(error.toString())));
+        }
+      }
+    } finally {
+      if (mounted && request == _comparisonRequest) {
+        setState(() => _isLoadingJustifications = false);
       }
     }
+  }
 
-    if (mounted) setState(() => _isLoadingJustifications = false);
+  Widget _outdatedComparison(TextTheme textTheme) {
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Text(
+            'A comparação precisa ser atualizada.',
+            style: textTheme.headlineSmall,
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'As perguntas, posições ou candidaturas mudaram desde este resultado. Recalcule para consultar evidências compatíveis. Você também pode começar um novo quiz.',
+            style: textTheme.bodyMedium,
+          ),
+          const SizedBox(height: 24),
+          ElevatedButton(
+            onPressed: () =>
+                Navigator.pushReplacementNamed(context, '/party-selection'),
+            child: const Text('RECALCULAR RESULTADO'),
+          ),
+          const SizedBox(height: 12),
+          OutlinedButton(
+            onPressed: () {
+              _session.resetQuiz();
+              _session.markQuizStarted();
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/quiz',
+                (route) => route.isFirst,
+              );
+            },
+            child: const Text('REFAZER QUIZ'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -126,9 +206,11 @@ class _ComparisonPageState extends State<ComparisonPage> {
       ),
       body: _results.isEmpty
           ? _emptyState(textTheme)
-          : _showComparison
-              ? _comparisonView(textTheme)
-              : _selectionView(textTheme),
+          : _comparisonOutdated
+              ? _outdatedComparison(textTheme)
+              : _showComparison
+                  ? _comparisonView(textTheme)
+                  : _selectionView(textTheme),
     );
   }
 
@@ -156,10 +238,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const SizedBox(height: 24),
-                  Text(
-                    'ESCOLHA A\nCOMPARACAO',
-                    style: textTheme.displayMedium,
-                  ),
+                  Text('ESCOLHA A\nCOMPARACAO', style: textTheme.displayMedium),
                   const SizedBox(height: 16),
                   Text(
                     'Selecione os candidatos que você quer comparar com suas respostas.',
@@ -171,8 +250,9 @@ class _ComparisonPageState extends State<ComparisonPage> {
                       padding: const EdgeInsets.only(bottom: 12),
                       child: _CandidateSelectionCard(
                         result: result,
-                        isSelected:
-                            _selectedCandidateIds.contains(result.candidateId),
+                        isSelected: _selectedCandidateIds.contains(
+                          result.candidateId,
+                        ),
                         onTap: () => _toggleCandidate(result.candidateId),
                       ),
                     ),
@@ -212,8 +292,15 @@ class _ComparisonPageState extends State<ComparisonPage> {
             Text('COMPARAÇÃO\nDE RESPOSTAS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
-              'Toque em uma pergunta para ver a justificativa dos candidatos selecionados.',
+              'Toque em uma pergunta para ver a justificativa e a fonte. “?” indica ausência de evidência suficiente no plano; não significa posição neutra nem discordância.',
               style: textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 12),
+            ...selected.map(
+              (result) => Text(
+                '${result.name}: ${result.coverageLabel}.',
+                style: textTheme.bodySmall,
+              ),
             ),
             const SizedBox(height: 24),
             if (_isLoadingJustifications)
@@ -224,10 +311,8 @@ class _ComparisonPageState extends State<ComparisonPage> {
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               itemCount: matches.length,
-              separatorBuilder: (_, __) => const Divider(
-                color: AppTheme.outlineVariant,
-                height: 1,
-              ),
+              separatorBuilder: (_, __) =>
+                  const Divider(color: AppTheme.outlineVariant, height: 1),
               itemBuilder: (context, index) {
                 final match = matches[index];
                 return _ComparisonRow(
@@ -238,6 +323,8 @@ class _ComparisonPageState extends State<ComparisonPage> {
                   selectedResults: selected,
                   isExpanded: _expandedThesisId == match.thesisId,
                   justifications: _justifications,
+                  isLoadingJustifications: _isLoadingJustifications,
+                  openLink: widget.openLink ?? openExternalLink,
                   onTap: () {
                     setState(() {
                       _expandedThesisId = _expandedThesisId == match.thesisId
@@ -293,9 +380,10 @@ class _CandidateSelectionCard extends StatelessWidget {
                   Text(result.name, style: textTheme.titleMedium),
                   const SizedBox(height: 4),
                   Text(
-                    '${result.abbreviation} - ${result.scorePercent.toStringAsFixed(1)}%',
+                    '${result.abbreviation} - ${result.affinityLabel}',
                     style: textTheme.bodySmall,
                   ),
+                  Text(result.coverageLabel, style: textTheme.bodySmall),
                 ],
               ),
             ),
@@ -324,10 +412,7 @@ class _ComparisonHeader extends StatelessWidget {
       color: AppTheme.surfaceContainer,
       child: Row(
         children: [
-          Expanded(
-            flex: 3,
-            child: Text('TESE', style: textTheme.labelSmall),
-          ),
+          Expanded(flex: 3, child: Text('TESE', style: textTheme.labelSmall)),
           SizedBox(
             width: 46,
             child: Text(
@@ -339,10 +424,19 @@ class _ComparisonHeader extends StatelessWidget {
           ...selectedResults.map(
             (result) => SizedBox(
               width: 46,
-              child: Text(
-                result.abbreviation,
-                style: textTheme.labelSmall,
-                textAlign: TextAlign.center,
+              child: Tooltip(
+                message: result.name,
+                child: Column(
+                  children: [
+                    CandidateLogo(result: result, size: 30),
+                    const SizedBox(height: 4),
+                    Text(
+                      result.abbreviation,
+                      style: textTheme.labelSmall,
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -360,6 +454,8 @@ class _ComparisonRow extends StatelessWidget {
   final List<CandidateResult> selectedResults;
   final bool isExpanded;
   final Map<String, Map<int, CandidateJustification>> justifications;
+  final bool isLoadingJustifications;
+  final LinkOpener openLink;
   final VoidCallback onTap;
 
   const _ComparisonRow({
@@ -370,6 +466,8 @@ class _ComparisonRow extends StatelessWidget {
     required this.selectedResults,
     required this.isExpanded,
     required this.justifications,
+    required this.isLoadingJustifications,
+    required this.openLink,
     required this.onTap,
   });
 
@@ -388,35 +486,47 @@ class _ComparisonRow extends StatelessWidget {
     return match.candidateAnswerEnum;
   }
 
-  Widget _buildIndicator(ThesisAnswer answer) {
+  Widget _buildIndicator(ThesisAnswer answer, {bool isUser = false}) {
     IconData icon;
     Color color;
+    String label;
     switch (answer) {
       case ThesisAnswer.agree:
         icon = Icons.check;
         color = AppTheme.secondary;
+        label = 'Concorda';
         break;
       case ThesisAnswer.disagree:
         icon = Icons.close;
         color = AppTheme.error;
+        label = 'Discorda';
         break;
       case ThesisAnswer.neutral:
         icon = Icons.remove;
         color = AppTheme.onSurfaceVariant;
+        label = 'Neutro';
         break;
       default:
-        icon = Icons.remove;
-        color = AppTheme.surfaceContainerHighest;
+        icon = Icons.help_outline;
+        color = AppTheme.onSurfaceVariant;
+        label = isUser ? 'Pergunta pulada' : 'Sem evidência suficiente';
     }
 
-    return Container(
-      width: 28,
-      height: 28,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        border: Border.all(color: color, width: 2),
+    return Tooltip(
+      message: label,
+      child: Semantics(
+        label: label,
+        excludeSemantics: true,
+        child: Container(
+          width: 28,
+          height: 28,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(color: color, width: 2),
+          ),
+          child: Icon(icon, size: 16, color: color),
+        ),
       ),
-      child: Icon(icon, size: 16, color: color),
     );
   }
 
@@ -444,13 +554,16 @@ class _ComparisonRow extends StatelessWidget {
                 ),
                 SizedBox(
                   width: 46,
-                  child: Center(child: _buildIndicator(userAnswer)),
+                  child: Center(
+                    child: _buildIndicator(userAnswer, isUser: true),
+                  ),
                 ),
                 ...selectedResults.map(
                   (result) => SizedBox(
                     width: 46,
                     child: Center(
-                        child: _buildIndicator(_candidateAnswer(result))),
+                      child: _buildIndicator(_candidateAnswer(result)),
+                    ),
                   ),
                 ),
               ],
@@ -462,6 +575,8 @@ class _ComparisonRow extends StatelessWidget {
               thesisId: thesisId,
               selectedResults: selectedResults,
               justifications: justifications,
+              isLoading: isLoadingJustifications,
+              openLink: openLink,
             ),
             crossFadeState: isExpanded
                 ? CrossFadeState.showSecond
@@ -478,11 +593,15 @@ class _JustificationPanel extends StatelessWidget {
   final int thesisId;
   final List<CandidateResult> selectedResults;
   final Map<String, Map<int, CandidateJustification>> justifications;
+  final bool isLoading;
+  final LinkOpener openLink;
 
   const _JustificationPanel({
     required this.thesisId,
     required this.selectedResults,
     required this.justifications,
+    required this.isLoading,
+    required this.openLink,
   });
 
   @override
@@ -504,6 +623,10 @@ class _JustificationPanel extends StatelessWidget {
           const SizedBox(height: 10),
           ...selectedResults.map((result) {
             final item = justifications[result.candidateId]?[thesisId];
+            final sourceUri = Uri.tryParse(item?.sourceUrl ?? '');
+            final canOpenSource = sourceUri != null &&
+                sourceUri.hasAuthority &&
+                const ['http', 'https'].contains(sourceUri.scheme);
             return Padding(
               padding: const EdgeInsets.only(bottom: 12),
               child: Column(
@@ -512,9 +635,46 @@ class _JustificationPanel extends StatelessWidget {
                   Text(result.name, style: textTheme.titleMedium),
                   const SizedBox(height: 4),
                   Text(
-                    item?.justification ?? 'Sem justificativa cadastrada.',
+                    item?.justification ??
+                        (isLoading
+                            ? 'Carregando justificativa…'
+                            : 'Justificativa indisponível. Volte e tente abrir a comparação novamente.'),
                     style: textTheme.bodySmall,
                   ),
+                  if (item?.quote?.isNotEmpty ?? false) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      'Trecho do plano: “${item!.quote}”',
+                      style: textTheme.bodySmall,
+                    ),
+                  ],
+                  if (item?.sourceRef?.isNotEmpty ?? false) ...[
+                    const SizedBox(height: 6),
+                    Text(
+                      'Referência: ${item!.sourceRef}',
+                      style: textTheme.bodySmall,
+                    ),
+                  ],
+                  if (canOpenSource)
+                    TextButton.icon(
+                      icon: const Icon(Icons.open_in_new, size: 16),
+                      label: const Text('ABRIR FONTE OFICIAL'),
+                      onPressed: () async {
+                        var opened = false;
+                        try {
+                          opened = await openLink(sourceUri);
+                        } catch (_) {
+                          opened = false;
+                        }
+                        if (!opened && context.mounted) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Não foi possível abrir a fonte.'),
+                            ),
+                          );
+                        }
+                      },
+                    ),
                 ],
               ),
             );

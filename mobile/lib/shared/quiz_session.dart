@@ -7,23 +7,18 @@ import 'models/party.dart';
 import 'models/thesis.dart';
 
 class QuizSession extends ChangeNotifier {
-  QuizSession._({
-    ApiClient? api,
-    DeviceIdentityStore? deviceIdentityStore,
-  })  : api = api ?? ApiClient(),
-        deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
+  QuizSession._({ApiClient? api, DeviceIdentityStore? deviceIdentityStore})
+    : api = api ?? ApiClient(),
+      deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
 
   @visibleForTesting
   factory QuizSession.testOnly({
     ApiClient? api,
     DeviceIdentityStore? deviceIdentityStore,
-  }) =>
-      QuizSession._(
-        api: api,
-        deviceIdentityStore: deviceIdentityStore,
-      );
+  }) => QuizSession._(api: api, deviceIdentityStore: deviceIdentityStore);
 
   static final QuizSession instance = QuizSession._();
+  static const minimumAnswers = 5;
 
   final ApiClient api;
   final DeviceIdentityStore deviceIdentityStore;
@@ -49,6 +44,8 @@ class QuizSession extends ChangeNotifier {
   int get totalSkipped =>
       theses.where((thesis) => thesis.answer == ThesisAnswer.skipped).length;
 
+  bool get canSubmit => totalAnswered >= minimumAnswers;
+
   int get countWeighted => theses.where((thesis) => thesis.doubleWeight).length;
 
   void markQuizStarted([DateTime? now]) {
@@ -64,6 +61,7 @@ class QuizSession extends ChangeNotifier {
 
   void resetQuiz() {
     theses = [];
+    candidates = [];
     results = [];
     selectedCandidateIds = {};
     quizStartedAt = null;
@@ -92,6 +90,21 @@ class QuizSession extends ChangeNotifier {
     if (selectedCandidateIds.isEmpty) return results;
     return results
         .where((result) => selectedCandidateIds.contains(result.candidateId))
+        .toList();
+  }
+
+  List<CandidateResult> get topAffinityResults {
+    final comparable = visibleResults
+        .where((result) => result.hasComparableEvidence)
+        .toList();
+    if (comparable.isEmpty) return [];
+    final highestScore = comparable.fold<double>(
+      0,
+      (highest, result) =>
+          result.scorePercent > highest ? result.scorePercent : highest,
+    );
+    return comparable
+        .where((result) => result.scorePercent == highestScore)
         .toList();
   }
 }

@@ -3,6 +3,8 @@ import os
 # Isolate test execution before importing Settings/app
 os.environ.setdefault("APP_ENV", "test")
 os.environ["IOT_FEATURE_ENABLED"] = "true"
+os.environ["ACTIVE_ELECTION_YEAR"] = "2022"
+os.environ["ACTIVE_ELECTION_OFFICE"] = "presidente"
 
 import pytest
 from fastapi.testclient import TestClient
@@ -53,12 +55,22 @@ def _populate(db: Session) -> None:
     t6 = ThesisModel(text="Tese 6", theme_id=seguranca.id, status="approved", election_year=2022)
     t7 = ThesisModel(text="Tese 7 rascunho", theme_id=saude.id, status="draft", election_year=2022)
     theses.extend([t6, t7])
-    db.add_all(theses)
+    other_election_theses = [
+        ThesisModel(
+            text=f"Tese de 2026 {suffix}",
+            theme_id=saude.id,
+            status="approved",
+            election_year=2026,
+        )
+        for suffix in ("A", "B", "C")
+    ]
+    db.add_all([*theses, *other_election_theses])
     db.flush()
 
     cand_a = CandidateModel(
         external_id="cand_a", name="Candidato A", party_id=pt.id,
         office="presidente", election_year=2022,
+        photo_url="/data/fotos/2022/BR/cand_a.jpg",
     )
     cand_b = CandidateModel(
         external_id="cand_b", name="Candidato B", party_id=pl.id,
@@ -68,7 +80,11 @@ def _populate(db: Session) -> None:
         external_id="cand_c", name="Candidato C", party_id=mdb.id,
         office="presidente", election_year=2022,
     )
-    db.add_all([cand_a, cand_b, cand_c])
+    cand_2026 = CandidateModel(
+        external_id="cand_2026", name="Candidato de 2026", party_id=pt.id,
+        office="presidente", election_year=2026,
+    )
+    db.add_all([cand_a, cand_b, cand_c, cand_2026])
     db.flush()
 
     positions = [
@@ -86,6 +102,13 @@ def _populate(db: Session) -> None:
         db.add(CandidatePositionModel(
             candidate_id=cid, thesis_id=tid, position=pos,
             justification=f"Justificativa cand {cid} tese {tid}",
+        ))
+    for thesis in other_election_theses:
+        db.add(CandidatePositionModel(
+            candidate_id=cand_2026.id,
+            thesis_id=thesis.id,
+            position="concordo",
+            justification="Posição exclusiva da edição de 2026",
         ))
     db.commit()
 

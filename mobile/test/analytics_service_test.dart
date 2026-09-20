@@ -3,20 +3,17 @@ import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 
 void main() {
   group('AnalyticsService', () {
-    test('logs thesis_viewed with thesis id and index', () async {
+    test('logs thesis_viewed without identifying the thesis', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
       await service.thesisViewed(thesisId: 12, thesisIndex: 3);
 
       expect(sink.events.single.name, 'thesis_viewed');
-      expect(sink.events.single.parameters, {
-        'thesis_id': 12,
-        'thesis_index': 3,
-      });
+      expect(sink.events.single.parameters, isNull);
     });
 
-    test('logs thesis_answered with thesis, stance, and answer time', () async {
+    test('logs thesis_answered with duration but no opinion or thesis', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -29,20 +26,18 @@ void main() {
       expect(sink.events, hasLength(1));
       expect(sink.events.single.name, 'thesis_answered');
       expect(sink.events.single.parameters, {
-        'thesis_id': 12,
-        'stance': 'agree',
         'time_to_answer_ms': 1470,
       });
     });
 
-    test('logs thesis_skipped with only thesis id', () async {
+    test('logs thesis_skipped without identifying the thesis', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
       await service.thesisSkipped(thesisId: 12);
 
       expect(sink.events.single.name, 'thesis_skipped');
-      expect(sink.events.single.parameters, {'thesis_id': 12});
+      expect(sink.events.single.parameters, isNull);
     });
 
     test('logs quiz_completed with approved completion counters', () async {
@@ -63,7 +58,7 @@ void main() {
       });
     });
 
-    test('logs weight changes with thesis id', () async {
+    test('logs weight changes without revealing prioritized theses', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -71,12 +66,12 @@ void main() {
       await service.weightRemoved(thesisId: 13);
 
       expect(sink.events.first.name, 'weight_added');
-      expect(sink.events.first.parameters, {'thesis_id': 12});
+      expect(sink.events.first.parameters, isNull);
       expect(sink.events.last.name, 'weight_removed');
-      expect(sink.events.last.parameters, {'thesis_id': 13});
+      expect(sink.events.last.parameters, isNull);
     });
 
-    test('logs results_viewed with top candidate and score', () async {
+    test('logs results_viewed without candidate or affinity', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -87,10 +82,7 @@ void main() {
 
       expect(sink.events, hasLength(1));
       expect(sink.events.single.name, 'results_viewed');
-      expect(sink.events.single.parameters, {
-        'top_candidate_id': 'candidate-13',
-        'top_score_percent': 82.5,
-      });
+      expect(sink.events.single.parameters, isNull);
     });
 
     test('logs weighting_completed with weight count', () async {
@@ -113,20 +105,17 @@ void main() {
       expect(sink.events.single.parameters, {'count_selected': 7});
     });
 
-    test('logs party_toggled with acronym and numeric selected flag', () async {
+    test('logs party_toggled without identifying party or selection', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
       await service.partyToggled(partyAcronym: 'PT', selected: true);
 
       expect(sink.events.single.name, 'party_toggled');
-      expect(sink.events.single.parameters, {
-        'party_acronym': 'PT',
-        'selected': 1,
-      });
+      expect(sink.events.single.parameters, isNull);
     });
 
-    test('logs comparison events with approved parameter keys', () async {
+    test('logs comparison events without candidate or ranking position', () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -139,10 +128,17 @@ void main() {
       expect(sink.events.first.name, 'comparison_opened');
       expect(sink.events.first.parameters, isNull);
       expect(sink.events.last.name, 'comparison_candidate_added');
-      expect(sink.events.last.parameters, {
-        'candidate_id': 'candidate-13',
-        'position': 2,
-      });
+      expect(sink.events.last.parameters, isNull);
+    });
+
+    test('logs candidate positions view without candidate identity', () async {
+      final sink = FakeAnalyticsSink();
+      final service = AnalyticsService(sink: sink);
+
+      await service.candidatePositionsViewed(candidateId: 'candidate-13');
+
+      expect(sink.events.single.name, 'candidate_positions_viewed');
+      expect(sink.events.single.parameters, isNull);
     });
   });
 }

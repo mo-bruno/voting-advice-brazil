@@ -52,6 +52,8 @@ void main() {
     party: 'PSB',
     scorePercent: 87,
     rank: 1,
+    countedTheses: 7,
+    answeredTheses: 9,
     matches: [],
   );
 
@@ -69,31 +71,32 @@ void main() {
   }
 
   Future<void> pumpResultados(WidgetTester tester) async {
-    await tester.pumpWidget(MaterialApp(
-      theme: AppTheme.dark,
-      routes: {
-        '/': (context) => MainShell(
-              initialTab: MainShell.tabFromArguments(
-                ModalRoute.of(context)?.settings.arguments,
-              ),
-              pageBuilders: [
-                () => const Scaffold(body: Text('tela-inicio')),
-                () => const Scaffold(body: Text('tela-acompanhar')),
-                () => const Scaffold(body: Text('tela-quiz')),
-                () => const Scaffold(body: Text('tela-comunidade')),
-              ],
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        routes: {
+          '/': (context) => MainShell(
+            initialTab: MainShell.tabFromArguments(
+              ModalRoute.of(context)?.settings.arguments,
             ),
-        '/results': (_) => const ResultsPage(),
-      },
-    ));
+            pageBuilders: [
+              () => const Scaffold(body: Text('tela-inicio')),
+              () => const Scaffold(body: Text('tela-acompanhar')),
+              () => const Scaffold(body: Text('tela-quiz')),
+              () => const Scaffold(body: Text('tela-comunidade')),
+            ],
+          ),
+          '/results': (_) => const ResultsPage(),
+        },
+      ),
+    );
     tester.state<NavigatorState>(find.byType(Navigator)).pushNamed('/results');
     await tester.pumpAndSettle();
     tester.takeException();
   }
 
   group('saida da tela de resultados', () {
-    testWidgets('oferece voltar ao inicio, nao refazer o quiz',
-        (tester) async {
+    testWidgets('oferece voltar ao inicio, nao refazer o quiz', (tester) async {
       comQuizRespondido();
       await pumpResultados(tester);
 
@@ -136,13 +139,15 @@ void main() {
 
   group('comecar um quiz novo', () {
     Future<void> pumpIntro(WidgetTester tester, AnalyticsSink sink) async {
-      await tester.pumpWidget(MaterialApp(
-        theme: AppTheme.dark,
-        routes: {
-          '/': (_) => QuizIntroPage(analytics: AnalyticsService(sink: sink)),
-          '/quiz': (_) => const Scaffold(body: Text('tela do quiz')),
-        },
-      ));
+      await tester.pumpWidget(
+        MaterialApp(
+          theme: AppTheme.dark,
+          routes: {
+            '/': (_) => QuizIntroPage(analytics: AnalyticsService(sink: sink)),
+            '/quiz': (_) => const Scaffold(body: Text('tela do quiz')),
+          },
+        ),
+      );
       await tester.pump();
     }
 
@@ -172,8 +177,9 @@ void main() {
       expect(QuizSession.instance.quizStartedAt, isNotNull);
     });
 
-    testWidgets('so conta como refeito quando havia um teste antes',
-        (tester) async {
+    testWidgets('so conta como refeito quando havia um teste antes', (
+      tester,
+    ) async {
       final espia = _SpySink();
       await pumpIntro(tester, espia);
 
@@ -184,8 +190,9 @@ void main() {
       expect(espia.eventos, isNot(contains('quiz_restarted')));
     });
 
-    testWidgets('conta como refeito quando ja havia um resultado',
-        (tester) async {
+    testWidgets('conta como refeito quando ja havia um resultado', (
+      tester,
+    ) async {
       final espia = _SpySink();
       comQuizRespondido();
       await pumpIntro(tester, espia);

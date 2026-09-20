@@ -11,6 +11,7 @@ from sqlalchemy import (
     String,
     Text,
     UniqueConstraint,
+    true,
 )
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
 
@@ -49,11 +50,14 @@ class CandidateModel(Base):
     ballot_number: Mapped[int | None] = mapped_column(Integer, nullable=True)
     running_mate: Mapped[str | None] = mapped_column(String(256), nullable=True)
     photo_url: Mapped[str | None] = mapped_column(String(512), nullable=True)
+    official_status: Mapped[str | None] = mapped_column(String(128), nullable=True)
+    source_snapshot: Mapped[str | None] = mapped_column(String(128), nullable=True)
     office: Mapped[str] = mapped_column(String(32), nullable=False)
     state: Mapped[str | None] = mapped_column(String(2), nullable=True)
     city: Mapped[str | None] = mapped_column(String(128), nullable=True)
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
     election_round: Mapped[int] = mapped_column(Integer, nullable=False, default=1)
+    is_active: Mapped[bool] = mapped_column(Boolean, nullable=False, default=True, server_default=true())
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
 
     party: Mapped["PartyModel"] = relationship(back_populates="candidates")
@@ -92,12 +96,17 @@ class ThesisModel(Base):
     theme_id: Mapped[int] = mapped_column(ForeignKey("themes.id"), nullable=False)
     status: Mapped[str] = mapped_column(String(32), nullable=False, default="approved")
     election_year: Mapped[int] = mapped_column(Integer, nullable=False)
+    editorial_id: Mapped[str | None] = mapped_column(String(64), nullable=True)
+    editorial_version: Mapped[int | None] = mapped_column(Integer, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
 
     theme: Mapped["ThemeModel"] = relationship(back_populates="theses")
     positions: Mapped[list["CandidatePositionModel"]] = relationship(back_populates="thesis")
 
-    __table_args__ = (Index("ix_theses_theme_status_year", "theme_id", "status", "election_year"),)
+    __table_args__ = (
+        Index("ix_theses_theme_status_year", "theme_id", "status", "election_year"),
+        Index("uq_theses_editorial_version", "election_year", "editorial_id", "editorial_version", unique=True),
+    )
 
 
 class CandidatePositionModel(Base):
@@ -110,6 +119,7 @@ class CandidatePositionModel(Base):
     justification: Mapped[str | None] = mapped_column(Text, nullable=True)
     quote: Mapped[str | None] = mapped_column(Text, nullable=True)
     source_ref: Mapped[str | None] = mapped_column(String(256), nullable=True)
+    source_url: Mapped[str | None] = mapped_column(String(1024), nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
 
     candidate: Mapped["CandidateModel"] = relationship(back_populates="positions")
@@ -408,6 +418,7 @@ class PostModel(Base):
 
     __table_args__ = (
         Index("ix_posts_anonymous_id", "anonymous_id"),
+        Index("ix_posts_author_created", "anonymous_id", "created_at"),
         Index("ix_posts_score_created", "score", "created_at"),
         Index("ix_posts_actor_id", "political_actor_id"),
     )

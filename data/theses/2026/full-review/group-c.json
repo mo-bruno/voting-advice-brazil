@@ -1,0 +1,1104 @@
+{
+  "reviewer": "automated_full_document_review",
+  "candidates": {
+    "280002551932": {
+      "name": "Ronaldo Caiado",
+      "document_id": "PG_2026_BR_280002551932_01",
+      "pages_total": 100,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+      "reading_notes": [
+        "Leitura automatizada integral das 100 páginas físicas, incluindo capa, sumário, página 55 quase vazia, propostas, indicadores e implementação. Os trechos eventualmente truncados na primeira consulta foram relidos em lotes menores (páginas 16–17).",
+        "Revisão independente das nove formulações ativas. Em seguida, conferência do histórico: nenhuma divergência categórica; ausências mantidas com justificativas específicas de escopo. A preservação genérica de transferências em 011 não foi convertida em rejeição automática da substituição no recorte etário da tese.",
+        "Responsabilidade fiscal não foi equiparada a manter a LC 200/2023; PPP de infraestrutura não foi equiparada automaticamente a gestão assistencial; governança de estatais não foi tomada como decisão inequívoca sobre transferência de controle.",
+        "Não houve revisão humana nem verificação externa de fatos alegados pelo plano. A análise identifica compromissos documentais."
+      ],
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe estabilização fiscal, estratégia plurianual e crescimento das despesas abaixo do PIB, mas não identifica manutenção, revogação ou substituição do arcabouço da LC 200/2023. Essas diretrizes não resolvem sozinhas a decisão sobre a lei.",
+          "conditions": [],
+          "scope_difference": "Diretrizes de resultado fiscal não equivalem a decisão sobre manter a lei específica.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Adotar estratégia fiscal plurianual",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "200/2023",
+            "teto de gastos",
+            "estratégia fiscal",
+            "regras fiscais",
+            "despesas obrigatórias"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O plano propõe estabilização fiscal, estratégia plurianual e crescimento das despesas abaixo do PIB, mas não identifica manutenção, revogação ou substituição do arcabouço da LC 200/2023. Essas diretrizes não resolvem sozinhas a decisão sobre a lei."
+        },
+        "002": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Há expansão de concessões e PPP e previsão de governança para Petrobras e demais estatais. O documento não decide explicitamente a transferência de controle de todas as empresas nem declara quais conservaria sob controle público. A governança futura sugere continuidade, mas não é uma decisão acionária inequívoca.",
+          "conditions": [],
+          "scope_difference": "Governança e concessões não especificam a propriedade ou o controle acionário de todas as empresas estatais.",
+          "evidence": [
+            {
+              "page": 35,
+              "quote": "Petrobras e demais estatais terão governança, eficiência e investimento, sem uso partidário ou controle artificial de preços.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 47,
+              "quote": "Ampliação das concessões e parcerias público-privadas",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "desestatização",
+            "estatais",
+            "Petrobras",
+            "controle privado",
+            "concessões"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. Há expansão de concessões e PPP e previsão de governança para Petrobras e demais estatais. O documento não decide explicitamente a transferência de controle de todas as empresas nem declara quais conservaria sob controle público. A governança futura sugere continuidade, mas não é uma decisão acionária inequívoca."
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Modernização do mercado de trabalho e redução de informalidade são propostas, mas não se posicionam sobre revogar as mudanças da reforma trabalhista de 2017.",
+          "conditions": [],
+          "scope_difference": "Modernização genérica não decide revogação da reforma de 2017.",
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Modernizar o mercado de trabalho com proteção e oportunidade",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "reforma trabalhista",
+            "13.467",
+            "2017",
+            "CLT",
+            "revogação",
+            "mercado de trabalho"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. Modernização do mercado de trabalho e redução de informalidade são propostas, mas não se posicionam sobre revogar as mudanças da reforma trabalhista de 2017."
+        },
+      "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano preserva programas de transferência de renda e prevê redução gradual quando há ingresso no trabalho formal ou aumento da renda, mas não nomeia Bolsa Família nem assegura expressamente a continuidade do benefício para todo adulto apto ao trabalho. Tampouco propõe sua substituição por trabalho público remunerado. A preservação genérica não basta para resolver o recorte da tese.",
+          "conditions": [],
+          "scope_difference": "Não se especificam Bolsa Família e beneficiários em idade economicamente ativa. A transição por renda é contexto relevante, mas não demonstra inequivocamente concordância ou discordância com a substituição no recorte formulado.",
+          "evidence": [
+            {
+              "page": 61,
+              "quote": "Transferência de renda continuará sendo direito de quem precisa",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 61,
+              "quote": "Preservar os programas de transferência de renda, atualizar cadastros e combater fraude sem constranger beneficiários.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 61,
+              "quote": "Criar regra de transição para quem ingressa no trabalho formal ou amplia renda, reduzindo benefício gradualmente e conectando a qualificação, creche e intermediação.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "transferência de renda",
+            "porta de saída",
+            "trabalho formal",
+            "emancipação",
+            "serviço civil"
+          ],
+          "absence_reason": "Após leitura integral das 100 páginas e buscas complementares, a manifestação encontrada trata de preservar transferências em geral e transição por renda, sem decisão suficiente sobre substituir o Bolsa Família para o conjunto de adultos em idade ativa por trabalho público remunerado."
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo de educação prevê alfabetização, tempo integral, segurança e convivência escolar, mas não propõe aumentar, manter ou extinguir escolas cívico-militares. Medidas militares de segurança pública não foram transportadas para a educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "colégio militar",
+            "escola militar",
+            "militarização",
+            "educação",
+            "segurança escolar"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O capítulo de educação prevê alfabetização, tempo integral, segurança e convivência escolar, mas não propõe aumentar, manter ou extinguir escolas cívico-militares. Medidas militares de segurança pública não foram transportadas para a educação."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo sobre racismo propõe inclusão em concursos e formação, equidade e respeito às decisões judiciais, mas não especifica reserva racial de vagas nem decide seu encerramento ou manutenção na educação e no serviço público.",
+          "conditions": [],
+          "scope_difference": "Inclusão genérica e metas de equidade não identificam necessariamente cotas raciais. Não há base para atribuir apoio ou oposição ao encerramento.",
+          "evidence": [
+            {
+              "page": 68,
+              "quote": "Aprimorar políticas de inclusão em concursos e formação, respeitando decisões judiciais e mérito.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "cotas",
+            "quotas",
+            "raciais",
+            "reserva de vagas",
+            "inclusão em concursos",
+            "população negra"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O capítulo sobre racismo propõe inclusão em concursos e formação, equidade e respeito às decisões judiciais, mas não especifica reserva racial de vagas nem decide seu encerramento ou manutenção na educação e no serviço público."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano amplia concessões e PPP de infraestrutura social, mencionando hospitais, e admite contratação de hospitais privados conforme necessidade. Não especifica se essas PPP transferem gestão assistencial dos serviços públicos. A distinção entre construção/infraestrutura, prestação contratada e gestão do serviço impede uma classificação binária segura.",
+          "conditions": [],
+          "scope_difference": "A evidência descreve PPP de infraestrutura e oferta contratada; a tese exige decisão sobre gestão dos serviços públicos de saúde por empresas em PPP.",
+          "evidence": [
+            {
+              "page": 47,
+              "quote": "Ampliação das concessões e parcerias público-privadas",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 47,
+              "quote": "energia e infraestrutura social, como hospitais, escolas e iluminação pública.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 77,
+              "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parcerias público-privadas",
+            "hospitais",
+            "gestão privada",
+            "gestão hospitalar",
+            "concessões",
+            "contratualização"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O plano amplia concessões e PPP de infraestrutura social, mencionando hospitais, e admite contratação de hospitais privados conforme necessidade. Não especifica se essas PPP transferem gestão assistencial dos serviços públicos. A distinção entre construção/infraestrutura, prestação contratada e gestão do serviço impede uma classificação binária segura."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Há compromisso de participar ativamente da ONU e influenciar regras internacionais, sem decisão sobre o Conselho de Segurança. A participação na organização não determina conservar um órgão específico.",
+          "conditions": [],
+          "scope_difference": "ONU e Conselho de Segurança são objetos diferentes; não houve manifestação específica sobre continuidade do Conselho.",
+          "evidence": [
+            {
+              "page": 74,
+              "quote": "Participar ativamente da ONU, da OMC, do G20 e do BRICS",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "multilateralismo",
+            "reforma",
+            "veto"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. Há compromisso de participar ativamente da ONU e influenciar regras internacionais, sem decisão sobre o Conselho de Segurança. A participação na organização não determina conservar um órgão específico."
+        },
+        "036": {
+          "category": "DISCORDA",
+          "reason": "O plano exige respeito à autonomia do Banco Central ao coordenar política fiscal e monetária. Preservar essa autonomia é incompatível com revogá-la; não há condição substantiva de supressão em outra página.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "Coordenar políticas fiscal e monetária com respeito à autonomia do Banco Central",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "280002541457": {
+      "name": "Hertz Dias",
+      "document_id": "PG_2026_BR_280002541457_01",
+      "pages_total": 33,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+      "reading_notes": [
+        "Leitura automatizada integral das 33 páginas físicas. A capa é página física 1; a numeração impressa do conteúdo é uma unidade menor. A página 6 foi relida sem truncamento após a primeira consulta.",
+        "Revisão das formulações ativas realizada a partir do texto completo, depois comparada às posições anteriores. Não se transformou crítica ao governo que mantém o arcabouço em proposta inequívoca de alterar a LC 200/2023.",
+        "Estatização do sistema financeiro não foi tratada como sinônimo automático de revogação da autonomia institucional do Banco Central. Programa de obras e bolsa a desempregados não implica substituição do Bolsa Família.",
+        "Não houve revisão humana ou verificação independente das estatísticas e alegações factuais do programa."
+      ],
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A página 4 critica o governo Lula por manter o arcabouço, mas não formula decisão inequívoca de revogá-lo ou substituí-lo. A página 28 pede fim da Lei de Responsabilidade Fiscal, que é outro objeto. O conjunto é crítico à política fiscal, sem decisão suficientemente específica sobre manter a LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Crítica contextual e fim da LRF não equivalem automaticamente à revogação do arcabouço. Não foi codificado silêncio como discordância.",
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Mantém o arcabouço fiscal e a agiotagem escandalosa do pagamento da dívida",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 28,
+              "quote": "Fim a Lei de Responsabilidade Fiscal",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "200/2023",
+            "teto de gastos",
+            "Lei de Responsabilidade Fiscal",
+            "revogação",
+            "fiscal"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. A página 4 critica o governo Lula por manter o arcabouço, mas não formula decisão inequívoca de revogá-lo ou substituí-lo. A página 28 pede fim da Lei de Responsabilidade Fiscal, que é outro objeto. O conjunto é crítico à política fiscal, sem decisão suficientemente específica sobre manter a LC 200/2023."
+        },
+        "002": {
+          "category": "DISCORDA",
+          "reason": "A proibição de privatizar empresas estratégicas e a Petrobras 100% estatal são incompatíveis com transferir todas as estatais ao controle privado. Basta uma exceção expressa para rejeitar a universalidade da tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 26,
+              "quote": "Proibição da privatização de empresas estratégicas",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 26,
+              "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "estatais",
+            "Petrobras",
+            "reestatização"
+          ],
+          "absence_reason": null
+        },
+        "003": {
+          "category": "CONCORDA",
+          "reason": "O item programático pede explicitamente revogação da reforma trabalhista, no contexto de reverter retirada de direitos e terceirização. A decisão corresponde à revogação das mudanças de 2017.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Revogação da reforma trabalhista",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "reforma trabalhista",
+            "revogação",
+            "terceirização"
+          ],
+          "absence_reason": null
+        },
+        "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O programa defende bolsa de um salário mínimo para desempregados enquanto não houver pleno emprego e obras públicas para gerar empregos. Menciona o Bolsa Família como insuficiente e rejeita culpabilizar beneficiários, mas não determina substituí-lo por trabalho remunerado para seus beneficiários em idade ativa.",
+          "conditions": [],
+          "scope_difference": "Bolsa aos desempregados e criação de emprego não especificam relação de substituição com o Bolsa Família.",
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Bolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver pleno emprego.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "bolsa",
+            "desempregados",
+            "pleno emprego",
+            "obras públicas",
+            "trabalho remunerado"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O programa defende bolsa de um salário mínimo para desempregados enquanto não houver pleno emprego e obras públicas para gerar empregos. Menciona o Bolsa Família como insuficiente e rejeita culpabilizar beneficiários, mas não determina substituí-lo por trabalho remunerado para seus beneficiários em idade ativa."
+        },
+        "017": {
+          "category": "DISCORDA",
+          "reason": "A rejeição da militarização escolar atinge o modelo que a tese pretende expandir. O contexto da página 12 distingue essa educação militarizada do projeto de formação crítica defendido.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Não à militarização das escolas",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "militarização",
+            "escolas",
+            "cívico-militar"
+          ],
+          "absence_reason": null
+        },
+        "018": {
+          "category": "DISCORDA",
+          "reason": "O plano pede expressamente manutenção e ampliação de cotas para negros tanto nas universidades quanto nos serviços públicos, opostas ao encerramento nos dois âmbitos.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "cotas",
+            "negros",
+            "universidades",
+            "serviços públicos"
+          ],
+          "absence_reason": null
+        },
+        "026B": {
+          "category": "CONCORDA",
+          "reason": "O plano pede fim da gestão privada da saúde e inclui PPP nominalmente, além de OS e fundações. O suporte à tese sobre PPP é direto e não depende de equiparar PPP a OS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "gestão privada",
+            "PPP",
+            "saúde",
+            "OS"
+          ],
+          "absence_reason": null
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A leitura integral encontra referências a organismos e dados internacionais, imperialismo e revolução internacional, mas nenhuma decisão sobre manter, reformar ou extinguir o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "veto",
+            "organismos internacionais",
+            "imperialismo"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. A leitura integral encontra referências a organismos e dados internacionais, imperialismo e revolução internacional, mas nenhuma decisão sobre manter, reformar ou extinguir o Conselho de Segurança da ONU."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe estatização do sistema financeiro e centralização do crédito em um banco único, sem mencionar a autonomia ou independência institucional do Banco Central. Propriedade bancária, controle de capitais e desenho do crédito não determinam por si a revogação da LC 179/2021.",
+          "conditions": [],
+          "scope_difference": "Estatização bancária e autonomia institucional do Banco Central são decisões distintas.",
+          "evidence": [
+            {
+              "page": 28,
+              "quote": "A estatização do sistema financeiro e centralização do crédito em um banco único é essencial para planejar a economia e garantir o controle de capitais.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021",
+            "sistema financeiro",
+            "banco único"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O plano propõe estatização do sistema financeiro e centralização do crédito em um banco único, sem mencionar a autonomia ou independência institucional do Banco Central. Propriedade bancária, controle de capitais e desenho do crédito não determinam por si a revogação da LC 179/2021."
+        }
+      }
+    },
+    "280002551975": {
+      "name": "Edmilson Costa",
+      "document_id": "PG_2026_BR_280002551975_01",
+      "pages_total": 16,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+      "reading_notes": [
+        "Leitura automatizada integral das 16 páginas físicas, incluindo introdução, cinco transformações, 21 pontos e a continuação da proposta internacional na última página.",
+        "As nove decisões foram confrontadas com as formulações ativas. A evidência de saúde inclui estatização total e controle do sistema, além de fim de OS; não se confundiram OS e PPP.",
+        "A proposta de frentes de trabalho para famílias do CadÚnico não foi convertida em substituição do Bolsa Família. Nenhuma divergência substantiva em relação às posições históricas.",
+        "Não houve revisão humana nem checagem externa das alegações factuais."
+      ],
+      "decisions": {
+        "001": {
+          "category": "DISCORDA",
+          "reason": "O plano pede o fim do arcabouço fiscal e sua revogação, incompatíveis com manter o regime da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "o fim do arcabouço fiscal",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 4,
+              "quote": "Agiremos para promover a revogação do Arcabouço Fiscal",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "revogação",
+            "fiscal"
+          ],
+          "absence_reason": null
+        },
+        "002": {
+          "category": "DISCORDA",
+          "reason": "O programa retoma empresas estratégicas para o patrimônio público e exige Petrobras totalmente estatal. Ambas as decisões rejeitam a privatização universal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "As empresas estratégicas privatizadas serão retomadas para o patrimônio público",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 5,
+              "quote": "Defendemos a Petrobras 100% estatal",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "privatizações",
+            "Petrobras",
+            "estatal",
+            "reestatização"
+          ],
+          "absence_reason": null
+        },
+        "003": {
+          "category": "CONCORDA",
+          "reason": "O plano revoga expressamente a contrarreforma trabalhista e propõe, depois, construir outra reforma que amplie direitos. A segunda etapa não condiciona ou retira a revogação da primeira.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Revogaremos as contrarreformas trabalhista, previdenciária",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 13,
+              "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a trabalhista",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "trabalhista",
+            "revogação",
+            "contrarreformas"
+          ],
+          "absence_reason": null
+        },
+        "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano organiza frentes de trabalho para desempregados e famílias do CadÚnico e amplia proteção social, mas não estabelece substituição do Bolsa Família para adultos por trabalho público remunerado.",
+          "conditions": [],
+          "scope_difference": "Priorizar famílias do CadÚnico nas frentes de trabalho não implica retirar ou substituir seu benefício.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Organização das frentes de trabalho urbanas e rurais nos bairros mais pobres",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 9,
+              "quote": "privilegiando os desempregados e setores mais precários da classe trabalhadora, como as famílias inscritas no CadÚnico.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "CadÚnico",
+            "frentes de trabalho",
+            "pleno emprego",
+            "seguro-desemprego",
+            "assistência social"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O plano organiza frentes de trabalho para desempregados e famílias do CadÚnico e amplia proteção social, mas não estabelece substituição do Bolsa Família para adultos por trabalho público remunerado."
+        },
+        "017": {
+          "category": "DISCORDA",
+          "reason": "O plano pede o fim das escolas cívico-militares, decisão diretamente contrária a aumentar seu número.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 10,
+              "quote": "Fim das escolas cívico-militares.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "cívico-militares",
+            "escolas"
+          ],
+          "absence_reason": null
+        },
+        "018": {
+          "category": "DISCORDA",
+          "reason": "O programa amplia cotas raciais nas universidades e estabelece cotas raciais em concursos das forças de segurança. Preservar e ampliar essas reservas é incompatível com encerrá-las na educação e no serviço público.",
+          "conditions": [],
+          "scope_difference": "A evidência dos concursos refere-se às forças de segurança; esse subconjunto basta para rejeitar o encerramento geral, sem atribuir desenho de cotas a todas as carreiras.",
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "a ampliação das cotas (54% para a população negra",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 12,
+              "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "cotas",
+            "população negra",
+            "concursos",
+            "raciais"
+          ],
+          "absence_reason": null
+        },
+        "026B": {
+          "category": "CONCORDA",
+          "reason": "O programa torna público todo o sistema de saúde, estatiza todo o setor privado e cria controle do sistema por conselhos populares. A universalidade da estatização e do controle público inclui a gestão por empresas em PPP, embora a modalidade PPP não seja nomeada. O fim específico de OS é evidência adicional, não uma equivalência entre contratos diferentes.",
+          "conditions": [],
+          "scope_difference": "A proposta abrange todo o sistema, escopo mais amplo que PPP; não detalha transição contratual específica dessas parcerias.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "o governo do poder popular tornará público todo o sistema de saúde",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 10,
+              "quote": "estatização de todo o setor privado de saúde",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 10,
+              "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "saúde",
+            "estatização",
+            "OS",
+            "gestão",
+            "público",
+            "PPP"
+          ],
+          "absence_reason": null
+        },
+        "034A": {
+          "category": "DISCORDA",
+          "reason": "O fim do Conselho de Segurança está explicitamente incluído entre os objetivos internacionais. A frase é continuação de 'Defenderemos o' na página física 15 e contraria manter o órgão.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Defenderemos o",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 16,
+              "quote": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em todos os fóruns internacionais.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "conselho de segurança",
+            "ONU",
+            "fim"
+          ],
+          "absence_reason": null
+        },
+        "036": {
+          "category": "CONCORDA",
+          "reason": "O programa explicita fim da autonomia do Banco Central e reafirma sua revogação, correspondendo à decisão da tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "a retomada do Banco Central (fim da autonomia)",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 13,
+              "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a trabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central.",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "revogação",
+            "179/2021"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "280002538811": {
+      "name": "Samara Martins",
+      "document_id": "PG_2026_BR_280002538811_01",
+      "pages_total": 67,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67
+      ],
+      "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+      "reading_notes": [
+        "Leitura automatizada integral das 67 páginas físicas, incluindo capa, epígrafe, páginas quase vazias e conclusão. O texto de duas colunas foi acompanhado por coluna e confrontado com extração raw.",
+        "A extração raw duplica diversas linhas e separa letras de títulos; por isso foram renderizadas e inspecionadas visualmente as páginas físicas 12, 20 e 32 para confirmar título de revogação, gestão direta da saúde e reservas raciais.",
+        "Não se inferiu posição sobre escola cívico-militar a partir da desmilitarização da polícia. Emprego público não foi tratado como substituição do Bolsa Família. A manutenção/expansão de reserva racial no setor público rejeita o encerramento conjunto, sem inventar manifestação específica sobre cotas educacionais.",
+        "Revisão independente, posteriormente comparada ao histórico, sem divergências substantivas. Não houve revisão humana nem checagem externa das afirmações factuais."
+      ],
+      "decisions": {
+        "001": {
+          "category": "DISCORDA",
+          "reason": "O item pede fim do arcabouço fiscal e o título da página 12 reitera revogação. São decisões contrárias a manter o regime atual.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Fim do Arcabouço Fiscal",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 12,
+              "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA, A TERCEIRIZAÇÃO IRRESTRITA E O ARCABOUÇO FISCAL",
+              "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas."
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "revogar",
+            "fiscal"
+          ],
+          "absence_reason": null
+        },
+        "002": {
+          "category": "DISCORDA",
+          "reason": "O programa propõe reestatização e Petrobras com controle 100% estatal. A escolha explícita de controle público para ao menos essa empresa contradiz privatizar todas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "A UP luta contra as privatizações, pela reestatização das estatais",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            },
+            {
+              "page": 60,
+              "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias)",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "privatizações",
+            "estatais",
+            "Petrobrás",
+            "controle"
+          ],
+          "absence_reason": null
+        },
+        "003": {
+          "category": "CONCORDA",
+          "reason": "O título da seção identifica a reforma trabalhista e determina revogá-la; o compromisso na continuação pede revogação imediata das reformas ali criticadas. O contexto identifica a retirada de direitos do ciclo posterior a 2016.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA, A TERCEIRIZAÇÃO IRRESTRITA E O ARCABOUÇO FISCAL",
+              "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas."
+            },
+            {
+              "page": 13,
+              "quote": "Imediata a revogação de todas as reformas antipovo, para restaurar os direitos dos trabalhadores",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "reformas",
+            "trabalhista",
+            "revogar",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano defende emprego para adultos e frentes emergenciais de emprego público, mas não declara que substituem o Bolsa Família para seus beneficiários em idade ativa. Não há decisão suficiente sobre a relação entre os instrumentos.",
+          "conditions": [],
+          "scope_difference": "Criação de empregos públicos não equivale a substituir a transferência de renda.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "A UP defende a criação de Frentes Emergenciais de Emprego Público.",
+              "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas."
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "transferência de renda",
+            "Frentes Emergenciais",
+            "emprego público",
+            "trabalho obrigatório",
+            "assistência social"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O plano defende emprego para adultos e frentes emergenciais de emprego público, mas não declara que substituem o Bolsa Família para seus beneficiários em idade ativa. Não há decisão suficiente sobre a relação entre os instrumentos."
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Os capítulos de educação e juventude não decidem aumentar, manter ou extinguir escolas cívico-militares. A desmilitarização referida no documento trata de polícia e segurança pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "escola militar",
+            "colégio militar",
+            "militarização",
+            "educação",
+            "desmilitarização"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. Os capítulos de educação e juventude não decidem aumentar, manter ou extinguir escolas cívico-militares. A desmilitarização referida no documento trata de polícia e segurança pública."
+        },
+        "018": {
+          "category": "DISCORDA",
+          "reason": "Ampliar vagas reservadas à população negra no setor público contraria encerrá-las. Como a tese exige encerramento na educação e no serviço público, a oposição expressa em um dos âmbitos já rejeita o encerramento conjunto; não se atribui uma política educacional de cotas que o texto não declara.",
+          "conditions": [],
+          "scope_difference": "O trecho explicita vagas no setor público, sem discriminar cotas na educação. A discordância é com o encerramento conjunto e não preenche artificialmente o âmbito educacional.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Ampliar vagas nos setores públicos reservadas para a população negra.",
+              "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas."
+            }
+          ],
+          "search_terms": [
+            "reservadas",
+            "população negra",
+            "cotas",
+            "setores públicos"
+          ],
+          "absence_reason": null
+        },
+        "026B": {
+          "category": "CONCORDA",
+          "reason": "O compromisso de que toda a rede sanitária tenha gestão direta e pública exclui gestão de serviços públicos por empresas em PPP. A decisão decorre do alcance universal e da gestão direta, não da mera menção a fim de OS.",
+          "conditions": [],
+          "scope_difference": "A proposta universal abrange PPP sem nomear a modalidade; o mecanismo de rescisão dessas parcerias não é detalhado.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "Toda a rede sanitária deve ser de gestão direta e pública.",
+              "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas."
+            }
+          ],
+          "search_terms": [
+            "gestão direta",
+            "gestão pública",
+            "OS",
+            "rede sanitária",
+            "PPP"
+          ],
+          "absence_reason": null
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O documento cita dados de organismos da ONU e defende política externa anti-imperialista, mas não se manifesta sobre continuidade, reforma ou extinção do Conselho de Segurança.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "organismos internacionais",
+            "veto",
+            "solidariedade internacionalista"
+          ],
+          "absence_reason": "Após leitura integral de todas as páginas indicadas em pages_reviewed e busca complementar pelos termos registrados, não foi encontrada decisão suficiente no escopo exato da tese. O documento cita dados de organismos da ONU e defende política externa anti-imperialista, mas não se manifesta sobre continuidade, reforma ou extinção do Conselho de Segurança."
+        },
+        "036": {
+          "category": "CONCORDA",
+          "reason": "O programa determina fim da autonomia do Banco Central em relação ao governo, contrapondo a autonomia institucional à submissão da política monetária ao desenvolvimento social.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "Fim da autonomia do Banco Central em relação ao governo",
+              "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados."
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021"
+          ],
+          "absence_reason": null
+        }
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ Repository guidance for coding agents. Farol Político is a Brazilian voting-adv
 
 ## Current product
 
-The active quiz scores weighted answers against curated 2022 candidate proposals using City Block Distance. The app separately presents current deputies and official Câmara evidence, follows one political actor per local identity, provides an anonymous community, and displays official weekly news. Legislative evidence does not feed the quiz score. There is no implemented consistency index or complete legislative-vote alignment engine.
+The active quiz compares weighted answers against the 2026 presidential plans using City Block Distance. The limited edition has nine active theses and thirteen candidacies, reviewed by AI with documentary citations, not human editorial validation. Only explicit categorical positions affect scores; silence, conditional positions and insufficient evidence do not imply agreement or disagreement. Results are displayed alphabetically with evidence coverage, not as a recommendation or overall ranking. The app separately presents current deputies and official Câmara evidence, follows one political actor per local identity, provides an anonymous community, and displays official weekly news. Legislative evidence does not feed the quiz score. There is no implemented consistency index or complete legislative-vote alignment engine.
 
 Quiz answers submitted by the app are persisted on the backend under its local UUID v4. The API's optional quiz field is still named `device_id`; it carries the app's `anonymous_id`. Omitting it computes results without saving answers.
 
@@ -15,7 +15,7 @@ Quiz answers submitted by the app are persisted on the backend under its local U
 - `backend/app/api/`: HTTP validation, private identity headers, public response projection and dependency wiring.
 - `backend/app/infrastructure/`: database, NVIDIA NIM moderation and official-source adapters, plus retained dormant integrations.
 - `mobile/lib/`: Flutter features and shared API/models. Treat response shapes strictly; do not restore fallback parsing of public private-identity fields.
-- `data/`: checked-in proposals, curated theses and logos used for the 2022 quiz.
+- `data/`: checked-in presidential 2026 proposals, versioned theses, documentary review and official photos; historical 2022 data is preserved.
 
 NVIDIA NIM is a synchronous moderation gate on post/comment creation, with audited decisions. It rejects off-topic content, clearly fabricated or manipulative claims, and attacks against people or groups such as directed insults, sexual humiliation, threats, incitement to violence, harassment and hate speech. Harsh criticism of policies and public acts remains allowed when it does not attack people. The default model is `nvidia/nemotron-3-super-120b-a12b`; `MODERATION_MODE=enforce` is the default, missing credentials or provider failures fail publication with 503, and rejected content returns 422. `disabled` explicitly bypasses the model for local development. No batch generative analysis pipeline is implemented.
 
@@ -59,4 +59,4 @@ flutter test
 flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
 ```
 
-Keep migrations authoritative for schema changes; startup only performs idempotent seed outside tests. Never claim a deploy or full-suite pass from a source review or a focused test run.
+Keep migrations authoritative for schema changes; startup only performs idempotent seed in development. Production seed is an explicit deployment step; see PUBLICACAO_2026.md for migration, traffic and rollback order. Never claim a deploy or full-suite pass from a source review or a focused test run.
