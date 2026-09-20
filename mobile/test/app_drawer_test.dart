@@ -60,17 +60,22 @@ void main() {
     addTearDown(tester.view.resetPhysicalSize);
     addTearDown(tester.view.resetDevicePixelRatio);
 
-    await tester.pumpWidget(MaterialApp(
-      theme: AppTheme.dark,
-      routes: {
-        '/': (_) => const Scaffold(
-              drawer: AppDrawer(iotEnabled: true),
-              body: SizedBox(),
-            ),
-        '/iot-device': (_) => const Scaffold(body: Text('tela do dispositivo')),
-        '/iot-pairing': (_) => const Scaffold(body: Text('tela de pareamento')),
-      },
-    ));
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        routes: {
+          '/': (_) => const Scaffold(
+                drawer: AppDrawer(iotEnabled: true),
+                body: SizedBox(),
+              ),
+          '/iot-device': (_) =>
+              const Scaffold(body: Text('tela do dispositivo')),
+          '/iot-pairing': (_) =>
+              const Scaffold(body: Text('tela de pareamento')),
+          '/results': (_) => const Scaffold(body: Text('comparação aberta')),
+        },
+      ),
+    );
     tester.state<ScaffoldState>(find.byType(Scaffold).first).openDrawer();
     await settleDrawer(tester);
   }
@@ -81,12 +86,13 @@ void main() {
     expect(find.text('FAROL\nPOLÍTICO'), findsOneWidget);
     expect(find.text('MEU FAROL'), findsOneWidget);
     expect(find.text('ACOMPANHANDO'), findsOneWidget);
-    expect(find.text('SUA MAIOR AFINIDADE'), findsOneWidget);
+    expect(find.text('COMPARAÇÃO DOS PLANOS'), findsOneWidget);
     expect(find.text('SOBRE'), findsOneWidget);
   });
 
-  testWidgets('nao repete os destinos que vivem na barra inferior',
-      (tester) async {
+  testWidgets('nao repete os destinos que vivem na barra inferior', (
+    tester,
+  ) async {
     // Duplica-los aqui empilharia uma segunda copia da tela sobre o shell.
     await openDrawer(tester);
 
@@ -105,6 +111,8 @@ void main() {
         party: 'PSB',
         scorePercent: 87,
         rank: 1,
+        countedTheses: 7,
+        answeredTheses: 9,
         matches: [],
       ),
     ];
@@ -112,8 +120,34 @@ void main() {
     await openDrawer(tester);
 
     expect(find.text('Ana Vasconcelos'), findsOneWidget);
-    expect(find.text('Ricardo Sampaio'), findsOneWidget);
-    expect(find.text('87%'), findsOneWidget);
+    expect(find.text('Ricardo Sampaio'), findsNothing);
+    expect(find.text('87%'), findsNothing);
+    expect(find.text('Ver resultados'), findsOneWidget);
+    await tester.ensureVisible(find.text('Ver resultados'));
+    await tester.tap(find.text('Ver resultados'));
+    await settleDrawer(tester);
+    expect(find.text('comparação aberta'), findsOneWidget);
+  });
+
+  testWidgets('empate de afinidade não escolhe vencedor pela ordem da lista',
+      (tester) async {
+    QuizSession.instance.results = List.generate(
+        9,
+        (index) => CandidateResult(
+              candidateId: '${index + 1}',
+              name: 'Candidatura ${index + 1}',
+              party: 'DC',
+              scorePercent: 50,
+              rank: 1,
+              countedTheses: index % 7 + 1,
+              answeredTheses: 9,
+              matches: const [],
+            ));
+    await openDrawer(tester);
+    expect(find.text('EMPATE NA MAIOR AFINIDADE'), findsNothing);
+    expect(find.textContaining('9 candidaturas com 50.0%'), findsNothing);
+    expect(find.text('Ver resultados'), findsOneWidget);
+    expect(find.text('Candidatura 1'), findsNothing);
   });
 
   testWidgets('o rodape identifica o dispositivo anonimo', (tester) async {
@@ -122,8 +156,9 @@ void main() {
     expect(find.textContaining('ID A3F9C21B'), findsOneWidget);
   });
 
-  testWidgets('sem dispositivo, o bloco do Farol leva ao pareamento',
-      (tester) async {
+  testWidgets('sem dispositivo, o bloco do Farol leva ao pareamento', (
+    tester,
+  ) async {
     await openDrawer(tester);
 
     await tester.tap(find.text('PAREAR DISPOSITIVO'));
@@ -132,8 +167,9 @@ void main() {
     expect(find.text('tela de pareamento'), findsOneWidget);
   });
 
-  testWidgets('com dispositivo, o bloco do Farol leva a tela dele',
-      (tester) async {
+  testWidgets('com dispositivo, o bloco do Farol leva a tela dele', (
+    tester,
+  ) async {
     final agora = DateTime.now();
     IotDeviceSession.instance.device = IotDevice(
       deviceToken: 'a3f9c21b0000',
@@ -151,8 +187,9 @@ void main() {
     expect(find.text('tela do dispositivo'), findsOneWidget);
   });
 
-  testWidgets('privacidade explica o identificador sem sair da gaveta',
-      (tester) async {
+  testWidgets('privacidade explica o identificador sem sair da gaveta', (
+    tester,
+  ) async {
     await openDrawer(tester);
 
     await tester.tap(find.text('PRIVACIDADE'));

@@ -68,9 +68,12 @@ class CandidateResultOut(BaseModel):
     name: str
     party_acronym: str
     party_logo_url: str | None
+    photo_url: str | None
     score_percent: float
     score_by_theme: dict[str, float]
-    rank: int
+    rank: int = Field(description="Colocação; 0 quando não há teses comparáveis")
+    counted_theses: int = Field(ge=0, description="Teses efetivamente comparadas com o plano")
+    answered_theses: int = Field(ge=0, description="Respostas do usuário, sem as puladas")
     matches: list[ThesisMatchOut]
 
 

@@ -35,6 +35,8 @@ class CandidatePosition:
     position: str
     justification: str | None
     quote: str | None
+    source_ref: str | None = None
+    source_url: str | None = None
 
 
 @dataclass
@@ -56,4 +58,6 @@ class Candidate:
     election_year: int
     election_round: int
     spectrum: str | None = None
+    official_status: str | None = None
+    source_snapshot: str | None = None
     positions: list[CandidatePosition] = field(default_factory=list)

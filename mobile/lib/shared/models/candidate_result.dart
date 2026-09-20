@@ -30,7 +30,8 @@ class ThesisMatch {
   }
 
   ThesisAnswer get userAnswerEnum => answerFromApi(userAnswer);
-  ThesisAnswer get candidateAnswerEnum => answerFromCandidate(candidatePosition);
+  ThesisAnswer get candidateAnswerEnum =>
+      answerFromCandidate(candidatePosition);
 
   static ThesisAnswer answerFromApi(String value) {
     switch (value) {
@@ -63,26 +64,73 @@ class CandidateResult {
   final String candidateId;
   final String name;
   final String party;
+  final String? photoUrl;
   final double scorePercent;
   final int rank;
   final List<ThesisMatch> matches;
+  final int? _countedTheses;
+  final int? _answeredTheses;
 
   const CandidateResult({
     required this.candidateId,
     required this.name,
     required this.party,
+    this.photoUrl,
     required this.scorePercent,
     required this.rank,
     required this.matches,
-  });
+    int? countedTheses,
+    int? answeredTheses,
+  }) : _countedTheses = countedTheses,
+       _answeredTheses = answeredTheses;
+
+  int get answeredTheses =>
+      _answeredTheses ??
+      matches
+          .where(
+            (match) => const [
+              'agree',
+              'disagree',
+              'neutral',
+            ].contains(match.userAnswer),
+          )
+          .length;
+
+  int get countedTheses =>
+      _countedTheses ??
+      matches
+          .where(
+            (match) =>
+                const [
+                  'agree',
+                  'disagree',
+                  'neutral',
+                ].contains(match.userAnswer) &&
+                const [
+                  'concordo',
+                  'discordo',
+                  'neutro',
+                ].contains(match.candidatePosition),
+          )
+          .length;
+
+  bool get hasComparableEvidence => countedTheses > 0;
+  String get affinityLabel => hasComparableEvidence
+      ? '${scorePercent.toStringAsFixed(1)}%'
+      : 'Sem base comparável';
+  String get coverageLabel =>
+      '$countedTheses de $answeredTheses respostas comparáveis';
 
   factory CandidateResult.fromJson(Map<String, dynamic> json) {
     return CandidateResult(
       candidateId: (json['candidate_id'] as int).toString(),
       name: json['name'] as String,
       party: json['party_acronym'] as String,
+      photoUrl: json['photo_url'] as String?,
       scorePercent: (json['score_percent'] as num).toDouble(),
       rank: json['rank'] as int,
+      countedTheses: json['counted_theses'] as int?,
+      answeredTheses: json['answered_theses'] as int?,
       matches: (json['matches'] as List<dynamic>)
           .cast<Map<String, dynamic>>()
           .map(ThesisMatch.fromJson)
@@ -102,6 +150,9 @@ class CandidateJustification {
   final String themeName;
   final String position;
   final String? justification;
+  final String? quote;
+  final String? sourceRef;
+  final String? sourceUrl;
 
   const CandidateJustification({
     required this.thesisId,
@@ -110,6 +161,9 @@ class CandidateJustification {
     required this.themeName,
     required this.position,
     required this.justification,
+    this.quote,
+    this.sourceRef,
+    this.sourceUrl,
   });
 
   factory CandidateJustification.fromJson(Map<String, dynamic> json) {
@@ -120,6 +174,9 @@ class CandidateJustification {
       themeName: json['theme_name'] as String,
       position: json['position'] as String,
       justification: json['justification'] as String?,
+      quote: json['quote'] as String?,
+      sourceRef: json['source_ref'] as String?,
+      sourceUrl: json['source_url'] as String?,
     );
   }
 

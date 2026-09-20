@@ -121,6 +121,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
     from sqlalchemy.orm import Session
 
     from app.config import settings
+    from app.core.entities.news import DeviceNewsArticle
     from app.core.use_cases.news_notifier import push_news_for_user
     from app.infrastructure.database.iot_device_repositories import (
         SqlIotDeviceEventRepository,
@@ -134,7 +135,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
     from app.infrastructure.database.political_actor_repositories import (
         SqlFollowedActorRepository,
     )
-    from app.infrastructure.sources.gnews import NewsArticle, fetch_news_for_themes
+    from app.infrastructure.sources.gnews import fetch_news_for_themes
 
     assert isinstance(db, Session)
     session = db
@@ -165,7 +166,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
         def _get_themes(_: str) -> list[str]:
             return captured_themes
 
-        def _get_articles(t: list[str]) -> list[NewsArticle]:
+        def _get_articles(t: list[str]) -> list[DeviceNewsArticle]:
             return fetch_news_for_themes(t, api_key=settings.gnews_api_key or "")
 
         push_news_for_user(

@@ -6,6 +6,13 @@ class TestListCandidates:
         assert data["total_count"] == 3
         assert len(data["candidates"]) == 3
 
+    def test_excludes_candidates_from_other_elections(self, client):
+        r = client.get("/api/v1/candidates?page_size=50")
+        assert r.status_code == 200
+        candidates = r.json()["candidates"]
+        assert {candidate["election_year"] for candidate in candidates} == {2022}
+        assert all(candidate["external_id"] != "cand_2026" for candidate in candidates)
+
     def test_has_next_false_when_all_fit(self, client):
         r = client.get("/api/v1/candidates?page_size=50")
         assert r.json()["has_next"] is False
@@ -51,6 +58,10 @@ class TestGetCandidate:
         assert r.status_code == 404
         assert "não encontrado" in r.json()["detail"]
 
+    def test_404_for_candidate_from_inactive_election(self, client, candidate_ids):
+        r = client.get(f"/api/v1/candidates/{candidate_ids['cand_2026']}")
+        assert r.status_code == 404
+
 
 class TestCandidatePositions:
     def test_returns_positions(self, client, candidate_ids):
@@ -80,6 +91,28 @@ class TestCandidatePositions:
 
 
 class TestCandidateJustifications:
+    def test_returns_persisted_evidence_source(self, client, db_session, candidate_ids):
+        from app.api.cache import cache_delete_prefix
+        from app.infrastructure.database.models import CandidatePositionModel
+
+        candidate_id = candidate_ids["cand_a"]
+        position = db_session.query(CandidatePositionModel).filter_by(candidate_id=candidate_id).first()
+        original = position.source_ref, position.source_url
+        position.source_ref = "plan.pdf#page=7"
+        position.source_url = "https://example.test/plan.pdf"
+        db_session.commit()
+        cache_delete_prefix("candidates:")
+        try:
+            response = client.get(f"/api/v1/candidates/{candidate_id}/justifications")
+            assert response.status_code == 200
+            item = next(item for item in response.json()["justifications"] if item["thesis_id"] == position.thesis_id)
+            assert item["source_ref"] == "plan.pdf#page=7"
+            assert item["source_url"] == "https://example.test/plan.pdf"
+        finally:
+            position.source_ref, position.source_url = original
+            db_session.commit()
+            cache_delete_prefix("candidates:")
+
     def test_returns_justifications(self, client, candidate_ids):
         cand_a_id = candidate_ids["cand_a"]
         r = client.get(f"/api/v1/candidates/{cand_a_id}/justifications")

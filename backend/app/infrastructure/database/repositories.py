@@ -4,6 +4,7 @@ from sqlalchemy import func, select
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session, selectinload
 
+from app.config import settings
 from app.core.entities.candidate import Candidate, CandidatePosition, Theme, Thesis
 from app.core.use_cases.interfaces import (
     CandidateRepository,
@@ -23,9 +24,12 @@ from app.infrastructure.database.models import (
 )
 
 
-def _to_thesis(m: ThesisModel, total_candidates: int) -> Thesis:
-    with_position = sum(1 for p in m.positions if p.position != "sem_posicao")
-    coverage = (with_position / total_candidates * 100) if total_candidates else 0.0
+def _to_thesis(m: ThesisModel, active_candidate_ids: set[int]) -> Thesis:
+    with_position = sum(
+        1 for p in m.positions
+        if p.candidate_id in active_candidate_ids and p.position != "sem_posicao"
+    )
+    coverage = (with_position / len(active_candidate_ids) * 100) if active_candidate_ids else 0.0
     return Thesis(
         id=m.id,
         text=m.text,
@@ -51,6 +55,8 @@ def _to_candidate(m: CandidateModel) -> Candidate:
         ballot_number=m.ballot_number,
         running_mate=m.running_mate,
         photo_url=m.photo_url,
+        official_status=m.official_status,
+        source_snapshot=m.source_snapshot,
         office=m.office,
         state=m.state,
         city=m.city,
@@ -70,6 +76,8 @@ def _to_position(m: CandidatePositionModel) -> CandidatePosition:
         position=m.position,
         justification=m.justification,
         quote=m.quote,
+        source_ref=m.source_ref,
+        source_url=m.source_url,
     )
 
 
@@ -77,34 +85,50 @@ class SqlThesisRepository(ThesisRepository):
     def __init__(self, db: Session) -> None:
         self._db = db
 
+    def _active_candidate_ids(self) -> set[int]:
+        return set(self._db.scalars(
+            select(CandidateModel.id).where(
+                CandidateModel.election_year == settings.active_election_year,
+                CandidateModel.office == settings.active_election_office,
+                CandidateModel.is_active.is_(True),
+            )
+        ))
+
     def list_approved(self, themes: list[str] | None = None, limit: int = 30) -> list[Thesis]:
-        total_candidates = self._db.scalar(select(func.count(CandidateModel.id))) or 0
+        active_candidate_ids = self._active_candidate_ids()
         stmt = (
             select(ThesisModel)
             .options(
                 selectinload(ThesisModel.theme),
                 selectinload(ThesisModel.positions),
             )
-            .where(ThesisModel.status == "approved")
+            .where(
+                ThesisModel.status == "approved",
+                ThesisModel.election_year == settings.active_election_year,
+            )
         )
         if themes:
             stmt = stmt.join(ThemeModel).where(ThemeModel.slug.in_(themes))
         stmt = stmt.limit(limit)
         rows = self._db.execute(stmt).scalars().all()
-        return [_to_thesis(r, total_candidates) for r in rows]
+        return [_to_thesis(r, active_candidate_ids) for r in rows]
 
     def get_by_ids(self, ids: list[int]) -> list[Thesis]:
-        total_candidates = self._db.scalar(select(func.count(CandidateModel.id))) or 0
+        active_candidate_ids = self._active_candidate_ids()
         stmt = (
             select(ThesisModel)
             .options(
                 selectinload(ThesisModel.theme),
                 selectinload(ThesisModel.positions),
             )
-            .where(ThesisModel.id.in_(ids))
+            .where(
+                ThesisModel.id.in_(ids),
+                ThesisModel.status == "approved",
+                ThesisModel.election_year == settings.active_election_year,
+            )
         )
         rows = self._db.execute(stmt).scalars().all()
-        return [_to_thesis(r, total_candidates) for r in rows]
+        return [_to_thesis(r, active_candidate_ids) for r in rows]
 
 
 class SqlCandidateRepository(CandidateRepository):
@@ -112,7 +136,17 @@ class SqlCandidateRepository(CandidateRepository):
         self._db = db
 
     def get_by_id(self, candidate_id: int) -> Candidate | None:
-        m = self._db.get(CandidateModel, candidate_id)
+        stmt = (
+            select(CandidateModel)
+            .options(selectinload(CandidateModel.party))
+            .where(
+                CandidateModel.id == candidate_id,
+                CandidateModel.election_year == settings.active_election_year,
+                CandidateModel.office == settings.active_election_office,
+                CandidateModel.is_active.is_(True),
+            )
+        )
+        m = self._db.execute(stmt).scalar_one_or_none()
         return _to_candidate(m) if m else None
 
     def list(
@@ -124,7 +158,15 @@ class SqlCandidateRepository(CandidateRepository):
         page: int = 1,
         page_size: int = 20,
     ) -> tuple[list[Candidate], int]:
-        stmt = select(CandidateModel).options(selectinload(CandidateModel.party))
+        stmt = (
+            select(CandidateModel)
+            .options(selectinload(CandidateModel.party))
+            .where(
+                CandidateModel.election_year == settings.active_election_year,
+                CandidateModel.office == settings.active_election_office,
+                CandidateModel.is_active.is_(True),
+            )
+        )
         if cargo:
             stmt = stmt.where(CandidateModel.office == cargo)
         if estado:
@@ -149,9 +191,14 @@ class SqlPositionRepository(PositionRepository):
             select(CandidatePositionModel)
             .options(selectinload(CandidatePositionModel.thesis).selectinload(ThesisModel.theme))
             .join(ThesisModel)
+            .join(CandidateModel, CandidatePositionModel.candidate_id == CandidateModel.id)
             .where(
                 CandidatePositionModel.candidate_id == candidate_id,
+                CandidateModel.is_active.is_(True),
+                CandidateModel.election_year == settings.active_election_year,
+                CandidateModel.office == settings.active_election_office,
                 ThesisModel.status == "approved",
+                ThesisModel.election_year == settings.active_election_year,
             )
         )
         rows = self._db.execute(stmt).scalars().all()
@@ -165,9 +212,16 @@ class SqlPositionRepository(PositionRepository):
         stmt = (
             select(CandidatePositionModel)
             .options(selectinload(CandidatePositionModel.thesis).selectinload(ThesisModel.theme))
+            .join(ThesisModel)
+            .join(CandidateModel, CandidatePositionModel.candidate_id == CandidateModel.id)
             .where(
                 CandidatePositionModel.candidate_id.in_(candidate_ids),
+                CandidateModel.is_active.is_(True),
+                CandidateModel.election_year == settings.active_election_year,
+                CandidateModel.office == settings.active_election_office,
                 CandidatePositionModel.thesis_id.in_(thesis_ids),
+                ThesisModel.status == "approved",
+                ThesisModel.election_year == settings.active_election_year,
             )
         )
         rows = self._db.execute(stmt).scalars().all()
@@ -184,7 +238,10 @@ class SqlThemeRepository(ThemeRepository):
     def list_with_min_theses(self, min_theses: int = 3) -> list[Theme]:
         count_subq = (
             select(ThesisModel.theme_id, func.count(ThesisModel.id).label("total"))
-            .where(ThesisModel.status == "approved")
+            .where(
+                ThesisModel.status == "approved",
+                ThesisModel.election_year == settings.active_election_year,
+            )
             .group_by(ThesisModel.theme_id)
             .subquery()
         )

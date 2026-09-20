@@ -1,0 +1,1752 @@
+{
+  "review_id": "presidential-full-document-2026-09-20-r1",
+  "documentary_review_status": "complete_automated",
+  "human_reviewed": false,
+  "pages_reviewed_total": 836,
+  "review_inputs": {
+    "positions": {
+      "file": "posicoes.jsonl",
+      "sha256": "4f8895c4be4f1266404385d561edfc0b42cde0e51129995aa4001f46e275047c"
+    },
+    "source_theses": {
+      "file": "teses_selecionadas.json",
+      "sha256": "8db6c35c8e75822210420b80d761beaabc505e237acdae5f9dba1938c5591643"
+    },
+    "documents": {
+      "file": "documentos.jsonl",
+      "sha256": "110b592ffbed955f6af074a8878b32d7390bbd9602ddf043fb4e34b65cac704a"
+    },
+    "review": {
+      "file": "editorial-review-2026-09-20.json",
+      "sha256": "6d850964e5da86ca74b346a78e9b6843729477ca1adffd5716e72d63b3fe184b"
+    },
+    "full_review": [
+      {
+        "file": "group-a.json",
+        "sha256": "34b4f956ff159d233ee2769b95750f5a18ad4ce729fd07a0218cc296f6c8dd56"
+      },
+      {
+        "file": "group-b.json",
+        "sha256": "61c92df1e97aab25bd393c322ff47447482a3f0bbeddc29a5a74e3d07893950c"
+      },
+      {
+        "file": "group-c.json",
+        "sha256": "a650441c68d0f5447e520fc37e1706b020f14ada5eab8a8dfe30fc0b936920bf"
+      },
+      {
+        "file": "group-d.json",
+        "sha256": "1ea2d7f47cb0de101bd70a12e10a90b97e5f56a01ea041f82ca4b02d59841563"
+      }
+    ]
+  },
+  "scope": "Leitura integral automatizada dos 13 programas oficiais e classificação das 117 células das nove teses ativas; as demais teses continuam fora do núcleo revisado.",
+  "active_cells": 117,
+  "categories": {
+    "CONCORDA": 16,
+    "DISCORDA": 21,
+    "NAO_ENCONTRADA": 76,
+    "CONDICIONAL_OU_MISTA": 4
+  },
+  "by_candidate": {
+    "280002542548": {
+      "name": "Lula",
+      "denominator": 9,
+      "categories": {
+        "CONCORDA": 2,
+        "NAO_ENCONTRADA": 6,
+        "DISCORDA": 1
+      }
+    },
+    "280002540694": {
+      "name": "Renan Santos",
+      "denominator": 9,
+      "categories": {
+        "DISCORDA": 1,
+        "NAO_ENCONTRADA": 5,
+        "CONCORDA": 2,
+        "CONDICIONAL_OU_MISTA": 1
+      }
+    },
+    "280002541457": {
+      "name": "Hertz Dias",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 4,
+        "DISCORDA": 3,
+        "CONCORDA": 2
+      }
+    },
+    "280002551975": {
+      "name": "Edmilson Costa",
+      "denominator": 9,
+      "categories": {
+        "DISCORDA": 5,
+        "CONCORDA": 3,
+        "NAO_ENCONTRADA": 1
+      }
+    },
+    "280002551544": {
+      "name": "Flavio Bolsonaro",
+      "denominator": 9,
+      "categories": {
+        "DISCORDA": 3,
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 4
+      }
+    },
+    "280002552484": {
+      "name": "Clariana Barao",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 9
+      }
+    },
+    "280002554479": {
+      "name": "Leonardo Avalanche",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 8,
+        "DISCORDA": 1
+      }
+    },
+    "280002552487": {
+      "name": "Rui Costa Pimenta",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 5,
+        "DISCORDA": 1,
+        "CONCORDA": 2,
+        "CONDICIONAL_OU_MISTA": 1
+      }
+    },
+    "280002539826": {
+      "name": "Zema",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 6,
+        "CONCORDA": 1,
+        "DISCORDA": 2
+      }
+    },
+    "280002548139": {
+      "name": "Veterinário Wilson Grassi",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 9
+      }
+    },
+    "280002551932": {
+      "name": "Ronaldo Caiado",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 8,
+        "DISCORDA": 1
+      }
+    },
+    "280002551547": {
+      "name": "Escritor Augusto Cury",
+      "denominator": 9,
+      "categories": {
+        "NAO_ENCONTRADA": 8,
+        "CONDICIONAL_OU_MISTA": 1
+      }
+    },
+    "280002538811": {
+      "name": "Samara",
+      "denominator": 9,
+      "categories": {
+        "DISCORDA": 3,
+        "CONCORDA": 3,
+        "NAO_ENCONTRADA": 3
+      }
+    }
+  },
+  "by_thesis": {
+    "BR26-T001": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "CONCORDA": 1,
+        "DISCORDA": 4,
+        "NAO_ENCONTRADA": 8
+      }
+    },
+    "BR26-T002": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 4,
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 1
+      }
+    },
+    "BR26-T003": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 8,
+        "CONCORDA": 4,
+        "DISCORDA": 1
+      }
+    },
+    "BR26-T011": {
+      "version": 3,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 7,
+        "CONCORDA": 1,
+        "DISCORDA": 3,
+        "CONDICIONAL_OU_MISTA": 2
+      }
+    },
+    "BR26-T017": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 9,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 2,
+        "CONCORDA": 1
+      }
+    },
+    "BR26-T018": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "DISCORDA": 4,
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 8
+      }
+    },
+    "BR26-T026B": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      }
+    },
+    "BR26-T034A": {
+      "version": 3,
+      "denominator": 13,
+      "categories": {
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 1
+      }
+    },
+    "BR26-T036": {
+      "version": 2,
+      "denominator": 13,
+      "categories": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      }
+    }
+  },
+  "pairs": [
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002540694"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002541457"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551975"
+      ],
+      "categorically_comparable": 3,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551544"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002552484"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002554479"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002552487"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002539826"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002538811"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002541457"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551975"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551544"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002552484"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002554479"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002552487"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002539826"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002538811"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551975"
+      ],
+      "categorically_comparable": 5,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551544"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002552484"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002554479"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002552487"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002539826"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002538811"
+      ],
+      "categorically_comparable": 4,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551544"
+      ],
+      "categorically_comparable": 3,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002552484"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002554479"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002552487"
+      ],
+      "categorically_comparable": 3,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002539826"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551932"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002538811"
+      ],
+      "categorically_comparable": 6,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002552484"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002554479"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002552487"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002539826"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002538811"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002554479"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002552487"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002539826"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002538811"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002552487"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002539826"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002538811"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002539826"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002551932"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002538811"
+      ],
+      "categorically_comparable": 3,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002548139"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002538811"
+      ],
+      "categorically_comparable": 2,
+      "opposed": 2,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002551932"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002538811"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551932",
+        "280002551547"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551932",
+        "280002538811"
+      ],
+      "categorically_comparable": 1,
+      "opposed": 1,
+      "denominator_active_theses": 9
+    },
+    {
+      "candidate_ids": [
+        "280002551547",
+        "280002538811"
+      ],
+      "categorically_comparable": 0,
+      "opposed": 0,
+      "denominator_active_theses": 9
+    }
+  ],
+  "changed_publication_cells": [
+    {
+      "thesis_id": "BR26-T001",
+      "version": 2,
+      "candidate_id": "280002540694",
+      "previous_position": "sem_posicao",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "same_thesis_correction",
+      "reason": "A finalidade de substituir o arcabouço fiscal por outro modelo é expressa na proposta de PEC da Transição. O contexto da página 9 identifica o novo arcabouço vigente, e não uma regra fiscal abstrata.",
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002540694_01",
+          "sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+          "archive_member": "BR/2026BR280002540694_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T003",
+      "version": 2,
+      "candidate_id": "280002538811",
+      "previous_position": "sem_posicao",
+      "position": "concordo",
+      "analytical_position": "CONCORDA",
+      "change_type": "same_thesis_correction",
+      "reason": "O título da seção identifica a reforma trabalhista e determina revogá-la; o compromisso na continuação pede revogação imediata das reformas ali criticadas. O contexto identifica a retirada de direitos do ciclo posterior a 2016.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA, A TERCEIRIZAÇÃO IRRESTRITA E O ARCABOUÇO FISCAL",
+          "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas.",
+          "document_id": "PG_2026_BR_280002538811_01",
+          "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+          "archive_member": "BR/2026BR280002538811_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 13,
+          "quote": "Imediata a revogação de todas as reformas antipovo, para restaurar os direitos dos trabalhadores",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002538811_01",
+          "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+          "archive_member": "BR/2026BR280002538811_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002542548",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "A defesa de manter e ampliar proteção social e o elogio ao Bolsa Família não resolvem especificamente sua substituição para beneficiários em idade economicamente ativa. O estímulo a ocupações socialmente úteis na página 74 também não é vinculado a substituir esse benefício.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita.",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002542548_01",
+          "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+          "archive_member": "BR/2026BR280002542548_01.pdf",
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/280017016005"
+        },
+        {
+          "page": 74,
+          "quote": "Vamos buscar estimular ocupações sociais, criando oportunidades de trabalho em atividades de interesse coletivo",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002542548_01",
+          "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+          "archive_member": "BR/2026BR280002542548_01.pdf",
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/280017016005"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002540694",
+      "previous_position": "concordo",
+      "position": "concordo",
+      "analytical_position": "CONCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "O documento propõe substituir o Bolsa Família por frentes remuneradas precisamente para a população em idade economicamente ativa, coincidindo com o recorte da tese. As páginas 21-22 explicam a prestação de trabalho em projetos de bem público.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "a substituição do Bolsa Família por frentes de trabalho remuneradas para a população em idade economicamente ativa.",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002540694_01",
+          "sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+          "archive_member": "BR/2026BR280002540694_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002541457",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O programa defende bolsa de um salário mínimo para desempregados enquanto não houver pleno emprego e obras públicas para gerar empregos. Menciona o Bolsa Família como insuficiente e rejeita culpabilizar beneficiários, mas não determina substituí-lo por trabalho remunerado para seus beneficiários em idade ativa.",
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Bolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver pleno emprego.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002541457_01",
+          "sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+          "archive_member": "BR/2026BR280002541457_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002551975",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano organiza frentes de trabalho para desempregados e famílias do CadÚnico e amplia proteção social, mas não estabelece substituição do Bolsa Família para adultos por trabalho público remunerado.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Organização das frentes de trabalho urbanas e rurais nos bairros mais pobres",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 9,
+          "quote": "privilegiando os desempregados e setores mais precários da classe trabalhadora, como as famílias inscritas no CadÚnico.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002551544",
+      "previous_position": "sem_posicao",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano promete manter os programas sociais existentes, sem retirar a ajuda dos dependentes atuais, e prevê qualificação e intermediação de emprego para beneficiários, com retorno ao benefício após o seguro-desemprego. Esse desenho preserva o benefício e é incompatível com sua substituição por trabalho público remunerado para adultos.",
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "vamos manter os programas sociais existentes",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002551544_01",
+          "sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+          "archive_member": "BR/2026BR280002551544_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 42,
+          "quote": "Quem depende hoje da ajuda do Estado para pôr comida na mesa não vai ter essa ajuda tirada.",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002551544_01",
+          "sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+          "archive_member": "BR/2026BR280002551544_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 43,
+          "quote": "garantiremos o retorno imediato e sem fila ao benefício após o seguro-desemprego, mantidas as condições de elegibilidade",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002551544_01",
+          "sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+          "archive_member": "BR/2026BR280002551544_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002552484",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "Apoio à autonomia econômica e qualificação não especifica o destino do Bolsa Família nem substituição por emprego público.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002554479",
+      "previous_position": "sem_posicao",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano mantém expressamente o Bolsa Família para quem se qualificar e obtiver renda, inclusive oferecendo contratação remunerada opcional pelo governo sem substituição do benefício.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Isso inclui tanto quem está no Bolsa Família (sem perder o benefício) quanto quem nunca recebeu nenhum auxílio do governo.",
+          "verification": "literal_text_normalized_whitespace",
+          "document_id": "PG_2026_BR_280002554479_01",
+          "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+          "archive_member": "BR/2026BR280002554479_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 7,
+          "quote": "Aqui não: a renda extra vem garantida pelo nosso governo, sem perder o Bolsa Família.",
+          "verification": "literal_text_normalized_whitespace",
+          "document_id": "PG_2026_BR_280002554479_01",
+          "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+          "archive_member": "BR/2026BR280002554479_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 7,
+          "quote": "o brasileiro que decidir seguir trabalhando com internet e comunicação digital vai poder ser efetivamente contratado pelo nosso governo federal — com contrato assinado e remuneração — pra atuar na divulgação oficial de programas e serviços públicos em sua própria cidade e região.",
+          "verification": "literal_text_normalized_whitespace",
+          "document_id": "PG_2026_BR_280002554479_01",
+          "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+          "archive_member": "BR/2026BR280002554479_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002552487",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "CONDICIONAL_OU_MISTA",
+      "change_type": "reformulated_thesis",
+      "reason": "Defende Bolsa Família de pelo menos um salário mínimo, mas restringe expressamente a medida à duração da situação de caos; não se imputa compromisso permanente.",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual",
+          "verification": "literal_text_normalized_whitespace",
+          "document_id": "PG_2026_BR_280002552487_01",
+          "sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+          "archive_member": "BR/2026BR280002552487_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002539826",
+      "previous_position": "discordo",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "A alternativa é conservar o Bolsa Família para adultos aptos que busquem emprego, estudem ou se qualifiquem, concentrando nele as transferências. Isso é incompatível com substituir o benefício para todos os economicamente ativos por trabalho público remunerado.",
+      "evidence": [
+        {
+          "page": 63,
+          "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando",
+          "verification": "literal_text_layout_and_raw_whitespace_normalized",
+          "document_id": "PG_2026_BR_280002539826_01",
+          "sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+          "archive_member": "BR/2026BR280002539826_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 63,
+          "quote": "Concentrar recursos de transferências de renda no Bolsa Família:",
+          "verification": "literal_text_layout_and_raw_whitespace_normalized",
+          "document_id": "PG_2026_BR_280002539826_01",
+          "sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+          "archive_member": "BR/2026BR280002539826_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002548139",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "Não há manifestação sobre substituição ou manutenção do Bolsa Família no escopo da tese nas 58 páginas.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002551932",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano preserva programas de transferência de renda e prevê redução gradual quando há ingresso no trabalho formal ou aumento da renda, mas não nomeia Bolsa Família nem assegura expressamente a continuidade do benefício para todo adulto apto ao trabalho. Tampouco propõe sua substituição por trabalho público remunerado. A preservação genérica não basta para resolver o recorte da tese.",
+      "evidence": [
+        {
+          "page": 61,
+          "quote": "Transferência de renda continuará sendo direito de quem precisa",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551932_01",
+          "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+          "archive_member": "BR/2026BR280002551932_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 61,
+          "quote": "Preservar os programas de transferência de renda, atualizar cadastros e combater fraude sem constranger beneficiários.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551932_01",
+          "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+          "archive_member": "BR/2026BR280002551932_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 61,
+          "quote": "Criar regra de transição para quem ingressa no trabalho formal ou amplia renda, reduzindo benefício gradualmente e conectando a qualificação, creche e intermediação.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551932_01",
+          "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+          "archive_member": "BR/2026BR280002551932_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002551547",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "CONDICIONAL_OU_MISTA",
+      "change_type": "reformulated_thesis",
+      "reason": "Defende conservar o benefício durante a entrada no emprego formal ou na microempresa, mas limita essa continuidade a determinado tempo. Não apresenta programa público de trabalho remunerado nem define a situação posterior ao prazo; não sustenta concordância ou discordância integral e incondicionada.",
+      "evidence": [
+        {
+          "page": 98,
+          "quote": "Toda família beneficiada com",
+          "verification": "literal_text_layout_and_raw_plus_rendered_physical_pdf_page",
+          "document_id": "PG_2026_BR_280002551547_01",
+          "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+          "archive_member": "BR/2026BR280002551547_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 99,
+          "quote": "Bolsa Família não será punida se assinar a carteira ou se abrir uma microempresa, por determinado tempo.",
+          "verification": "literal_text_layout_and_raw_plus_rendered_physical_pdf_page",
+          "document_id": "PG_2026_BR_280002551547_01",
+          "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+          "archive_member": "BR/2026BR280002551547_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "version": 3,
+      "candidate_id": "280002538811",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano defende emprego para adultos e frentes emergenciais de emprego público, mas não declara que substituem o Bolsa Família para seus beneficiários em idade ativa. Não há decisão suficiente sobre a relação entre os instrumentos.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "A UP defende a criação de Frentes Emergenciais de Emprego Público.",
+          "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas.",
+          "document_id": "PG_2026_BR_280002538811_01",
+          "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+          "archive_member": "BR/2026BR280002538811_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T018",
+      "version": 2,
+      "candidate_id": "280002542548",
+      "previous_position": "sem_posicao",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "same_thesis_correction",
+      "reason": "A continuidade expressa de políticas para a população negra alinhadas às cotas no serviço público é incompatível com encerrar a reserva racial na educação e no serviço público. As páginas 19-20 também valorizam a política de cotas na universidade.",
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato.",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002542548_01",
+          "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+          "archive_member": "BR/2026BR280002542548_01.pdf",
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/280017016005"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T026B",
+      "version": 2,
+      "candidate_id": "280002551975",
+      "previous_position": "sem_posicao",
+      "position": "concordo",
+      "analytical_position": "CONCORDA",
+      "change_type": "same_thesis_correction",
+      "reason": "O programa torna público todo o sistema de saúde, estatiza todo o setor privado e cria controle do sistema por conselhos populares. A universalidade da estatização e do controle público inclui a gestão por empresas em PPP, embora a modalidade PPP não seja nomeada. O fim específico de OS é evidência adicional, não uma equivalência entre contratos diferentes.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "o governo do poder popular tornará público todo o sistema de saúde",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 10,
+          "quote": "estatização de todo o setor privado de saúde",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 10,
+          "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T026B",
+      "version": 2,
+      "candidate_id": "280002538811",
+      "previous_position": "sem_posicao",
+      "position": "concordo",
+      "analytical_position": "CONCORDA",
+      "change_type": "same_thesis_correction",
+      "reason": "O compromisso de que toda a rede sanitária tenha gestão direta e pública exclui gestão de serviços públicos por empresas em PPP. A decisão decorre do alcance universal e da gestão direta, não da mera menção a fim de OS.",
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Toda a rede sanitária deve ser de gestão direta e pública.",
+          "verification": "Leitura integral automatizada; trecho conferido na imagem renderizada da página física do PDF e na extração; quebras de linha normalizadas.",
+          "document_id": "PG_2026_BR_280002538811_01",
+          "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+          "archive_member": "BR/2026BR280002538811_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002542548",
+      "previous_position": "concordo",
+      "position": "concordo",
+      "analytical_position": "CONCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "A proposta de reformar o Conselho de Segurança ampliando a participação entre os membros permanentes pressupõe a continuidade do próprio Conselho. Sustenta manter a instituição, com mudança de composição, e não conservar seu desenho atual.",
+      "evidence": [
+        {
+          "page": 81,
+          "quote": "Continuaremos engajados na reforma das Nações Unidas, especialmente do Conselho de Segurança, para torná-lo mais democrático e representativo, com maior participação dos países em desenvolvimento entre os membros permanentes",
+          "verification": "text_lookup_layout_or_raw; contexto verificado por leitura integral automatizada",
+          "document_id": "PG_2026_BR_280002542548_01",
+          "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+          "archive_member": "BR/2026BR280002542548_01.pdf",
+          "url": "https://divulgacandcontas.tse.jus.br/divulga/rest/arquivo/doc/280017016005"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002540694",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O capítulo internacional propõe integração regional, atuação no Sul Global e pragmatismo nos BRICS, mas não decide sobre manter ou extinguir o Conselho de Segurança.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002541457",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "A leitura integral encontra referências a organismos e dados internacionais, imperialismo e revolução internacional, mas nenhuma decisão sobre manter, reformar ou extinguir o Conselho de Segurança da ONU.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002551975",
+      "previous_position": "discordo",
+      "position": "discordo",
+      "analytical_position": "DISCORDA",
+      "change_type": "reformulated_thesis",
+      "reason": "O fim do Conselho de Segurança está explicitamente incluído entre os objetivos internacionais. A frase é continuação de 'Defenderemos o' na página física 15 e contraria manter o órgão.",
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Defenderemos o",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        },
+        {
+          "page": 16,
+          "quote": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em todos os fóruns internacionais.",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551975_01",
+          "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+          "archive_member": "BR/2026BR280002551975_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002551544",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "A política externa propõe pragmatismo, comércio e adesão à OCDE, sem decidir sobre existência ou extinção do Conselho de Segurança. Menção genérica à ONU na proteção de vítimas não determina posição sobre esse Conselho.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002552484",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "A cooperação internacional contra crimes não constitui decisão sobre a continuidade do Conselho de Segurança.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002554479",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "As 48 páginas, incluindo defesa e relações econômicas internacionais, não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002552487",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "A política externa da página 7 e as demais páginas não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002539826",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O programa de política externa decide sobre BRICS, OCDE, Mercosul, mediação e cooperação, mas não sobre o Conselho de Segurança da ONU.",
+      "evidence": []
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002548139",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O plano não decide continuidade ou extinção do Conselho de Segurança da ONU. Declara deliberadamente não apresentar doutrina de política externa.",
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada.",
+          "verification": "literal_text_normalized_whitespace",
+          "document_id": "PG_2026_BR_280002548139_01",
+          "sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+          "archive_member": "BR/2026BR280002548139_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002551932",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "Há compromisso de participar ativamente da ONU e influenciar regras internacionais, sem decisão sobre o Conselho de Segurança. A participação na organização não determina conservar um órgão específico.",
+      "evidence": [
+        {
+          "page": 74,
+          "quote": "Participar ativamente da ONU, da OMC, do G20 e do BRICS",
+          "verification": "Leitura integral automatizada; trecho conferido na extração textual da página física do PDF; apenas espaços e quebras de linha normalizados.",
+          "document_id": "PG_2026_BR_280002551932_01",
+          "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+          "archive_member": "BR/2026BR280002551932_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002551547",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "Defende multilateralismo e participação da ONU em fundo contra a fome, sem posição específica sobre manter, reformar ou extinguir o Conselho de Segurança.",
+      "evidence": [
+        {
+          "page": 158,
+          "quote": "organismos internacionais como a ONU, a FAO, o Programa Mundial de Alimentos, o Banco Mundial e os países do G20.",
+          "verification": "literal_text_layout_and_raw_whitespace_normalized",
+          "document_id": "PG_2026_BR_280002551547_01",
+          "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+          "archive_member": "BR/2026BR280002551547_01.pdf",
+          "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "version": 3,
+      "candidate_id": "280002538811",
+      "previous_position": "sem_posicao",
+      "position": "sem_posicao",
+      "analytical_position": "NAO_ENCONTRADA",
+      "change_type": "reformulated_thesis",
+      "reason": "O documento cita dados de organismos da ONU e defende política externa anti-imperialista, mas não se manifesta sobre continuidade, reforma ou extinção do Conselho de Segurança.",
+      "evidence": []
+    }
+  ],
+  "excluded_theses": [
+    {
+      "id": "BR26-T004",
+      "reason": "Não há discordância explícita no mesmo escopo entre os planos revisados."
+    },
+    {
+      "id": "BR26-T005",
+      "reason": "Metas alternativas de jornada não foram classificadas de forma suficientemente uniforme."
+    },
+    {
+      "id": "BR26-T006",
+      "reason": "O grupo de trabalhadores e as condições para reconhecimento do vínculo ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T007",
+      "reason": "A referência, o prazo e a natureza do aumento de 100% ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T008",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T009",
+      "reason": "Quem seria atingido, quais pagamentos seriam suspensos e a duração da medida ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T010",
+      "reason": "As modalidades de aposta alcançadas pela proibição ainda precisam ser delimitadas."
+    },
+    {
+      "id": "BR26-T012",
+      "reason": "Os serviços de transporte abrangidos ainda precisam ser delimitados e não há oposição explícita."
+    },
+    {
+      "id": "BR26-T013",
+      "reason": "Os critérios de ociosidade, especulação e indenização ainda precisam ser definidos pela fonte."
+    },
+    {
+      "id": "BR26-T014",
+      "reason": "As situações, condições e eventual limite gestacional ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T015",
+      "reason": "A categoria de crimes e o tratamento de propostas com idades diferentes ainda precisam ser harmonizados."
+    },
+    {
+      "id": "BR26-T016",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T019",
+      "reason": "Finalidade, público, cultivo e comercialização ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T020",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T021",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T022",
+      "reason": "Os usos de reconhecimento facial ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T023",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T024",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T025",
+      "reason": "Os atendimentos abrangidos e o caráter nacional ou integrado da fila ainda precisam ser delimitados."
+    },
+    {
+      "id": "BR26-T026A",
+      "reason": "Há apoio explícito ao fim das organizações sociais, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T027",
+      "reason": "A substituição da candidatura que sustentava a concordância eliminou o contraste desta edição; área e etapa também exigem delimitação."
+    },
+    {
+      "id": "BR26-T028",
+      "reason": "Há apoio ou propostas condicionais, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T029",
+      "reason": "O conjunto de demarcações pendentes ainda precisa ser delimitado e não há oposição explícita."
+    },
+    {
+      "id": "BR26-T030",
+      "reason": "A modalidade de controle estatal ainda precisa ser delimitada e não há oposição explícita."
+    },
+    {
+      "id": "BR26-T031",
+      "reason": "Há apoio explícito, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T032",
+      "reason": "O objeto da regulação de plataformas ainda precisa ser delimitado."
+    },
+    {
+      "id": "BR26-T033",
+      "reason": "Há apoio ou propostas condicionais, mas não foi encontrada oposição explícita no mesmo escopo."
+    },
+    {
+      "id": "BR26-T034B",
+      "reason": "A mudança institucional pretendida ainda precisa ser especificada pela fonte."
+    },
+    {
+      "id": "BR26-T035",
+      "reason": "Os cargos e o desenho do sistema misto ainda precisam ser delimitados; não há oposição explícita."
+    }
+  ]
+}

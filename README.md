@@ -8,7 +8,7 @@ Projeto acadêmico da Universidade Presbiteriana Mackenzie.
 
 - Backend: Python 3.12, FastAPI, SQLAlchemy, Alembic, pytest, uv.
 - Mobile/Web: Flutter, Firebase Analytics, HTTP API.
-- Dados: propostas de governo de candidatos de 2022 e teses curadas em JSON.
+- Dados: edição presidencial de 2026 ativa, com propostas, teses e fotos oficiais do TSE versionadas em arquivos locais; o acervo de 2022 permanece preservado.
 - Deploy: Cloud Run para API e Firebase Hosting para o app web.
 
 ## Estrutura
@@ -35,6 +35,58 @@ uv run fastapi dev app/main.py
 
 API local: `http://localhost:8000`
 Docs: `http://localhost:8000/docs`
+
+Por padrão, a API serve somente a eleição presidencial de 2026. O recorte é
+explícito no ambiente:
+
+```dotenv
+ACTIVE_ELECTION_YEAR=2026
+ACTIVE_ELECTION_OFFICE=presidente
+```
+
+O retrato de 20 de setembro de 2026 contém 13 candidaturas inseridas na urna e
+as respectivas fotos oficiais. Das 36 teses editoriais recebidas, os itens 26
+e 34 foram divididos em duas decisões cada: 38 registros são preservados, mas
+somente nove com contraste e evidência suficientes ficam ativos no quiz. Os
+demais permanecem como `draft` e não entram na pontuação. O conjunto continua
+sem certificação ou validação editorial humana. A leitura integral automatizada
+dos 13 planos (836 páginas) revisou as 117 combinações do núcleo: 37 posições
+categóricas, quatro condicionais e 76 sem manifestação suficiente no escopo
+exato. Nenhuma dessas 117 células está pendente. Em 47 dos 78 pares não existe
+nenhuma tese categórica em comum. Consulte os limites e decisões em
+[data/theses/2026/REVIEW.md](data/theses/2026/REVIEW.md) antes de interpretar
+os resultados como uma comparação completa. A interface apresenta candidaturas
+em ordem alfabética, sem destacar vencedor nem recomendar voto.
+
+Cada resultado informa quantas respostas possuem evidência comparável no
+plano. Ausência de evidência não equivale a discordância: candidaturas sem base
+comparável não recebem colocação nem porcentagem na interface. As fontes e os
+trechos dos planos podem ser consultados na comparação de respostas.
+
+Atualizações de dados passam pelos testes do backend e acionam o deploy.
+O carregamento reconcilia candidaturas, posições e evidências; preserva
+respostas históricas e exige nova versão quando uma tese muda de significado.
+Em produção, ele é executado uma vez pelo processo de implantação.
+
+Os quatro pacotes oficiais usados — candidaturas, situação complementar,
+planos e fotos — estão registrados com URL, horário, tamanho e SHA-256 em
+`experimento-eleicoes-2026/fontes/recursos_oficiais.json`.
+
+Para reconstruir os JSONs e retratos a partir dos pacotes preservados:
+
+É necessário Python 3.12 e `pdfinfo` (pacote Poppler). As entradas editoriais
+textuais são versionadas; os ZIPs grandes ficam fora do Git e devem ser os
+mesmos snapshots identificados pelos hashes, pois os URLs do TSE são mutáveis.
+
+```bash
+python scripts/build_presidential_2026_data.py \
+  --candidates-zip experimento-eleicoes-2026/fontes/arquivos/consulta_cand_2026_20260920.zip \
+  --complement-zip experimento-eleicoes-2026/fontes/arquivos/consulta_cand_complementar_2026_20260920.zip \
+  --plans-zip experimento-eleicoes-2026/fontes/arquivos/proposta_governo_2026_BR_20260919.zip \
+  --photos-zip experimento-eleicoes-2026/fontes/arquivos/foto_cand2026_BR_div_20260919.zip \
+  --experiment-dir experimento-eleicoes-2026 \
+  --data-dir data
+```
 
 ### App Flutter
 
@@ -94,6 +146,7 @@ uv run mypy app/
 ```bash
 cd mobile
 flutter test
+flutter analyze
 ```
 
 ## API principal

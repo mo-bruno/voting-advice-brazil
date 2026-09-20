@@ -4,7 +4,10 @@ Testes da fórmula de scoring estão em tests/unit/test_scoring.py.
 Aqui cobrimos: endpoints HTTP, conversão de entidades e contratos JSON.
 """
 
+from unittest.mock import patch
+
 from app.infrastructure.database.models import DeviceModel, QuizResponseModel
+from app.infrastructure.database.repositories import SqlPositionRepository
 
 
 def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
@@ -29,6 +32,14 @@ class TestEndpointQuestions:
         draft_id = thesis_ids["Tese 7 rascunho"]
         assert draft_id not in ids
 
+    def test_excludes_theses_from_other_elections(self, client):
+        r = client.get("/api/v1/quiz/questions?limit=60")
+        assert r.status_code == 200
+        assert all(
+            not thesis["text"].startswith("Tese de 2026")
+            for thesis in r.json()["theses"]
+        )
+
     def test_filter_by_theme(self, client, db_session):
         from app.infrastructure.database.models import ThemeModel
         seguranca = db_session.query(ThemeModel).filter_by(slug="seguranca").one()
@@ -48,6 +59,47 @@ class TestEndpointQuestions:
 
 
 class TestEndpointSubmit:
+    def test_results_report_comparable_and_answered_thesis_counts(self, client, thesis_ids):
+        response = client.post(
+            "/api/v1/quiz/submit",
+            json={"answers": [
+                *_agree5(thesis_ids),
+                {"thesis_id": thesis_ids["Tese 6"], "answer": "skip", "weight": 2},
+            ]},
+        )
+        assert response.status_code == 200
+        results = response.json()["results"]
+        assert {item["answered_theses"] for item in results} == {5}
+        by_name = {item["name"]: item for item in results}
+        assert by_name["Candidato A"]["counted_theses"] == 5
+        assert by_name["Candidato C"]["counted_theses"] == 4
+
+    def test_unscored_candidates_are_unranked_and_follow_real_zero_scores(
+        self, client, thesis_ids, candidate_ids, db_session,
+    ):
+        real_positions = SqlPositionRepository(db_session).get_by_candidates_and_theses(
+            list(candidate_ids.values()),
+            [answer["thesis_id"] for answer in _agree5(thesis_ids)],
+        )
+        # All documented positions disagree, while C has no comparable evidence.
+        real_positions.pop(candidate_ids["cand_c"])
+        for positions in real_positions.values():
+            for position in positions.values():
+                position.position = "discordo"
+        with patch.object(
+            SqlPositionRepository, "get_by_candidates_and_theses",
+            return_value=real_positions,
+        ):
+            response = client.post(
+                "/api/v1/quiz/submit", json={"answers": _agree5(thesis_ids)},
+            )
+        assert response.status_code == 200
+        results = response.json()["results"]
+        assert all(item["score_percent"] == 0 for item in results)
+        assert [item["name"] for item in results] == ["Candidato A", "Candidato B", "Candidato C"]
+        assert [item["rank"] for item in results] == [1, 1, 0]
+        assert [item["counted_theses"] for item in results] == [5, 5, 0]
+
     def test_returns_ranked_results(self, client, thesis_ids):
         r = client.post(
             "/api/v1/quiz/submit",
@@ -56,6 +108,18 @@ class TestEndpointSubmit:
         assert r.status_code == 200
         results = r.json()["results"]
         assert len(results) == 3
+
+    def test_submit_includes_candidate_photo_url(self, client, thesis_ids):
+        response = client.post(
+            "/api/v1/quiz/submit",
+            json={"answers": _agree5(thesis_ids)},
+        )
+
+        assert response.status_code == 200
+        results = response.json()["results"]
+        assert all("photo_url" in item for item in results)
+        candidate_a = next(item for item in results if item["name"] == "Candidato A")
+        assert candidate_a["photo_url"] == "/data/fotos/2022/BR/cand_a.jpg"
 
     def test_submit_with_device_id_persists_answers(self, client, db_session, thesis_ids):
         device_id = "550e8400-e29b-41d4-a716-446655440000"
@@ -401,6 +465,45 @@ class TestEndpointSubmit:
         assert detail["code"] == "insufficient_answers"
         assert detail["provided"] == 4
         assert detail["required"] == 5
+
+    def test_submit_rejects_unavailable_thesis_ids_without_persisting(
+        self,
+        client,
+        db_session,
+        thesis_ids,
+    ):
+        device_id = "550e8400-e29b-41d4-a716-446655440007"
+        unavailable_ids = [
+            thesis_ids["Tese 7 rascunho"],
+            thesis_ids["Tese de 2026 A"],
+            999_999,
+        ]
+        payload = [
+            {
+                "thesis_id": thesis_ids[f"Tese {i}"],
+                "answer": "agree",
+                "weight": 1,
+            }
+            for i in range(1, 5)
+        ] + [
+            {"thesis_id": thesis_id, "answer": "agree", "weight": 1}
+            for thesis_id in unavailable_ids
+        ]
+
+        response = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": payload},
+        )
+
+        assert response.status_code == 422
+        detail = response.json()["detail"]
+        assert detail["code"] == "invalid_thesis_ids"
+        assert detail["thesis_ids"] == sorted(unavailable_ids)
+        assert db_session.get(DeviceModel, device_id) is None
+        assert (
+            db_session.query(QuizResponseModel).filter_by(device_id=device_id).count()
+            == 0
+        )
 
     def test_skip_does_not_count_for_minimum(self, client, thesis_ids):
         t = [thesis_ids[f"Tese {i}"] for i in range(1, 7)]

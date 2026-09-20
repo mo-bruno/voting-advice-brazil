@@ -1,8 +1,5 @@
-from typing import cast
-
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from app.api.cache import cache_get, cache_set
 from app.api.deps import get_candidate_repo, get_position_repo
 from app.api.schemas.candidates import (
     CandidateListResponse,
@@ -24,9 +21,6 @@ from app.infrastructure.database.repositories import (
 
 router = APIRouter(prefix="/candidates", tags=["Candidatos"])
 
-_CANDIDATE_TTL = 3600  # 1 hour
-
-
 def _make_candidate_out(c: object) -> CandidateOut:
     return CandidateOut(
         id=c.id,  # type: ignore[attr-defined]
@@ -46,6 +40,8 @@ def _make_candidate_out(c: object) -> CandidateOut:
         city=c.city,  # type: ignore[attr-defined]
         election_year=c.election_year,  # type: ignore[attr-defined]
         election_round=c.election_round,  # type: ignore[attr-defined]
+        official_status=c.official_status,  # type: ignore[attr-defined]
+        source_snapshot=c.source_snapshot,  # type: ignore[attr-defined]
     )
 
 
@@ -59,11 +55,6 @@ def list_all(
     page_size: int = Query(default=20, ge=1, le=50),
     repo: SqlCandidateRepository = Depends(get_candidate_repo),
 ) -> CandidateListResponse:
-    cache_key = f"candidates:list:{cargo}:{estado}:{partido}:{search}:{page}:{page_size}"
-    cached = cache_get(cache_key)
-    if cached is not None:
-        return cast(CandidateListResponse, cached)
-
     candidates, total = list_candidates(
         repo, cargo=cargo, estado=estado, partido=partido,
         search=search, page=page, page_size=page_size,
@@ -75,7 +66,6 @@ def list_all(
         page_size=page_size,
         has_next=(page * page_size) < total,
     )
-    cache_set(cache_key, response, _CANDIDATE_TTL)
     return response
 
 
@@ -84,17 +74,11 @@ def get_one(
     candidate_id: int,
     repo: SqlCandidateRepository = Depends(get_candidate_repo),
 ) -> CandidateOut:
-    cache_key = f"candidates:one:{candidate_id}"
-    cached = cache_get(cache_key)
-    if cached is not None:
-        return cast(CandidateOut, cached)
-
     candidate = get_candidate(repo, candidate_id)
     if candidate is None:
         raise HTTPException(status_code=404, detail=f"Candidato '{candidate_id}' não encontrado.")
 
     response = _make_candidate_out(candidate)
-    cache_set(cache_key, response, _CANDIDATE_TTL)
     return response
 
 
@@ -107,11 +91,6 @@ def get_positions(
     candidate = get_candidate(candidate_repo, candidate_id)
     if candidate is None:
         raise HTTPException(status_code=404, detail=f"Candidato '{candidate_id}' não encontrado.")
-
-    cache_key = f"candidates:positions:{candidate_id}"
-    cached = cache_get(cache_key)
-    if cached is not None:
-        return cast(PositionsResponse, cached)
 
     positions = get_candidate_positions(position_repo, candidate_id)
     response = PositionsResponse(
@@ -127,7 +106,6 @@ def get_positions(
             for p in positions
         ],
     )
-    cache_set(cache_key, response, _CANDIDATE_TTL)
     return response
 
 
@@ -143,11 +121,6 @@ def get_justifications(
         raise HTTPException(status_code=404, detail=f"Candidato '{candidate_id}' não encontrado.")
 
     group_by_theme = group_by == "theme"
-    cache_key = f"candidates:justifications:{candidate_id}:{group_by_theme}"
-    cached = cache_get(cache_key)
-    if cached is not None:
-        return cast(JustificationsResponse, cached)
-
     result = get_candidate_justifications(position_repo, candidate_id, group_by_theme=group_by_theme)
 
     def _to_out(p: object) -> JustificationOut:
@@ -159,6 +132,8 @@ def get_justifications(
             position=p.position,  # type: ignore[attr-defined]
             justification=p.justification,  # type: ignore[attr-defined]
             quote=p.quote,  # type: ignore[attr-defined]
+            source_ref=p.source_ref,  # type: ignore[attr-defined]
+            source_url=p.source_url,  # type: ignore[attr-defined]
         )
 
     grouped_out = None
@@ -176,5 +151,4 @@ def get_justifications(
         ),
         grouped=grouped_out,
     )
-    cache_set(cache_key, response, _CANDIDATE_TTL)
     return response

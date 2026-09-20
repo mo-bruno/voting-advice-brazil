@@ -64,13 +64,22 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 32),
+                    Text('COMO\nFUNCIONA', style: textTheme.displayMedium),
+                    const SizedBox(height: 16),
+                    Text('PRESIDÊNCIA 2026', style: textTheme.titleMedium),
+                    const SizedBox(height: 8),
                     Text(
-                      'COMO\nFUNCIONA',
-                      style: textTheme.displayMedium,
+                      'Edição documental com 9 teses e leitura integral dos 13 planos oficiais, revisados por IA, sem validação humana. As 29 teses de rascunho ficam fora desta edição. A cobertura varia por candidatura; o resultado não é uma recomendação de voto.',
+                      style: textTheme.bodySmall,
                     ),
                     const SizedBox(height: 16),
                     Text(
                       'Você vai responder a uma série de teses políticas. Para cada uma, escolha se concorda, discorda, fica neutro ou prefere pular.',
+                      style: textTheme.bodyMedium?.copyWith(height: 1.5),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Responda pelo menos ${QuizSession.minimumAnswers} perguntas para calcular o resultado. A comparação considera apenas posições documentadas nos planos oficiais; ausência de evidência não significa discordância.',
                       style: textTheme.bodyMedium?.copyWith(height: 1.5),
                     ),
                     const SizedBox(height: 24),

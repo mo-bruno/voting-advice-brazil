@@ -19,6 +19,8 @@ class CandidateOut(BaseModel):
     city: str | None
     election_year: int
     election_round: int
+    official_status: str | None = None
+    source_snapshot: str | None = None
 
     model_config = {"from_attributes": True}
 
@@ -54,6 +56,8 @@ class JustificationOut(BaseModel):
     position: str
     justification: str | None
     quote: str | None
+    source_ref: str | None
+    source_url: str | None
 
 
 class JustificationSummaryOut(BaseModel):

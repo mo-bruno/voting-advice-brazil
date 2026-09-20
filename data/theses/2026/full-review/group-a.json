@@ -1,0 +1,910 @@
+{
+  "reviewer": "automated_full_document_review",
+  "candidates": {
+    "280002551547": {
+      "name": "Escritor Augusto Cury",
+      "document_id": "PG_2026_BR_280002551547_01",
+      "pages_total": 200,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200
+      ],
+      "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+      "reading_notes": [
+        "Revisão documental automatizada independente das nove formulações ativas, sem alegação de revisão humana.",
+        "Texto integral por página lido em blocos; os trechos truncados das pp.11–12 foram relidos integralmente. Buscas complementares feitas nas extrações layout e raw, sem usar ausência de palavras como único critério.",
+        "Capas/divisórias sem texto conferidas no contato visual preservado: pp.1,35,66,67,80,85,94,104,113,119,125,130,139,145,156,160,165,174,177,181,185,193,200. Diagrama da p.191 e pp.98–99 renderizados e inspecionados.",
+        "A expressão imperfeita da p.98 sobre Bolsa Família consta assim no PDF; nenhuma correção editorial foi introduzida na evidência. Citações com quebras de linha normalizadas, mantendo as palavras.",
+        "Não há divergência com a classificação corrente das células já pontuadas; 011 permanece condicional, sem pontuação binária. Há diferença de escopo entre apoio a bancos públicos/participações da União e decisão universal de controle estatal."
+      ],
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O compromisso com equilíbrio fiscal, déficit próximo de zero e redução da dívida não especifica manutenção nem revogação da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Objetivos fiscais gerais não identificam a regra fiscal instituída em 2023.",
+          "evidence": [
+            {
+              "page": 36,
+              "quote": "Nossa meta será perseguir o déficit próximo de zero, sem aventuras fiscais",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "200/2023",
+            "regra fiscal",
+            "regime fiscal",
+            "teto de gastos",
+            "responsabilidade fiscal"
+          ],
+          "absence_reason": "Leitura integral das 200 páginas, com busca complementar nas extrações layout/raw, não encontrou decisão sobre o arcabouço; o capítulo fiscal nas pp.36–38 formula metas sem escolher esse instrumento."
+        },
+        "002": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prevê renda de participações da União e parcerias com bancos públicos, mas não decide explicitamente transferir ou conservar o controle de todas as estatais.",
+          "conditions": [],
+          "scope_difference": "Participação acionária não equivale necessariamente a controle; citar bancos públicos como parceiros não define uma política universal de propriedade.",
+          "evidence": [
+            {
+              "page": 98,
+              "quote": "Parte dos lucros das empresas em que a União possui participação será direcionada para políticas públicas voltadas ao empreendedorismo.",
+              "verification": "literal_text_layout_and_raw_plus_rendered_physical_pdf_page"
+            },
+            {
+              "page": 107,
+              "quote": "cooperativas de crédito, bancos públicos, fintechs e agentes locais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "privatizar",
+            "estatais",
+            "desestatização",
+            "controle privado",
+            "participação da União",
+            "bancos públicos"
+          ],
+          "absence_reason": "Após as 200 páginas e buscas por privatização, estatais, controle e participação, não há manifestação suficiente no escopo universal da tese. As pp.98 e 107 são evidências próximas, explicitamente insuficientes para pontuação binária."
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A exposição histórica dos direitos trabalhistas e as propostas de emprego e empreendedorismo não tratam da revogação da reforma de 2017.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "trabalhista",
+            "negociado",
+            "sindical"
+          ],
+          "absence_reason": "Nas 200 páginas lidas e nas buscas complementares, referências históricas a direitos nas pp.11–12 e a emprego nas pp.56–57 e 95–103 não contêm decisão sobre as mudanças de 2017."
+        },
+        "011": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Defende conservar o benefício durante a entrada no emprego formal ou na microempresa, mas limita essa continuidade a determinado tempo. Não apresenta programa público de trabalho remunerado nem define a situação posterior ao prazo; não sustenta concordância ou discordância integral e incondicionada.",
+          "conditions": [
+            "A proteção do benefício é temporária: o prazo não é especificado.",
+            "Aplica-se à assinatura da carteira de trabalho ou abertura de microempresa; não há obrigação proposta de trabalho público."
+          ],
+          "scope_difference": "A política descrita é de transição ao emprego/empreendedorismo com conservação temporária do benefício, sem decisão completa sobre a substituição formulada na tese.",
+          "evidence": [
+            {
+              "page": 98,
+              "quote": "Toda família beneficiada com",
+              "verification": "literal_text_layout_and_raw_plus_rendered_physical_pdf_page"
+            },
+            {
+              "page": 99,
+              "quote": "Bolsa Família não será punida se assinar a carteira ou se abrir uma microempresa, por determinado tempo.",
+              "verification": "literal_text_layout_and_raw_plus_rendered_physical_pdf_page"
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "transferência de renda",
+            "trabalho remunerado",
+            "frentes de trabalho",
+            "emprego",
+            "qualificação"
+          ],
+          "absence_reason": null
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Propõe ensino integral, desenvolvimento emocional e proteção policial das escolas, sem decidir sobre a expansão de escolas cívico-militares.",
+          "conditions": [],
+          "scope_difference": "Proteção das escolas por força policial não equivale a mudança para gestão cívico-militar.",
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "cívico",
+            "militar",
+            "modelos educacionais",
+            "gestão escolar"
+          ],
+          "absence_reason": "As 200 páginas foram lidas. Os capítulos educacionais nas pp.43–44 e 68–84 e a proteção escolar na p.189 não mencionam aumento ou rejeição desse modelo; buscas cívico/militar/gestão escolar não trouxeram decisão pertinente."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Defende inclusão, redução das desigualdades e participação feminina, mas não se pronuncia sobre encerrar cotas raciais na educação e no serviço público.",
+          "conditions": [],
+          "scope_difference": "Neuroinclusão e representação de mulheres no STF são políticas diferentes da reserva de vagas por critérios raciais.",
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "racial",
+            "reserva de vagas",
+            "ações afirmativas",
+            "concursos"
+          ],
+          "absence_reason": "Leitura integral de 200 páginas e busca por cotas, reserva, racial/raciais e ações afirmativas não identificaram decisão sobre cotas raciais; as referências a raça nas pp.55 e 89 tratam do custo de crédito."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Há apoio a PPPs de infraestrutura, energia e polos comerciais e a cooperação em saúde, mas não decisão sobre a gestão de serviços públicos de saúde por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": "A passagem citada refere-se ao projeto de polos comerciais rodoviários BEE, não à gestão da saúde. Cooperativas e integração de instituições também não estabelecem esse modelo de gestão.",
+          "evidence": [
+            {
+              "page": 122,
+              "quote": "O programa será desenvolvido por meio de Parcerias Público-Privadas.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parcerias público-privadas",
+            "concessões",
+            "saúde",
+            "gestão",
+            "organizações sociais"
+          ],
+          "absence_reason": "As 200 páginas foram lidas, inclusive as pp.44–45, 135 e 161–173 sobre saúde e as pp.49–50, 122 e 176 sobre PPP. Buscas layout/raw confirmam ausência de manifestação específica sobre encerramento ou continuidade de PPPs na gestão dos serviços de saúde."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Defende multilateralismo e participação da ONU em fundo contra a fome, sem posição específica sobre manter, reformar ou extinguir o Conselho de Segurança.",
+          "conditions": [],
+          "scope_difference": "Apoio à ONU em cooperação alimentar não determina a continuidade de um órgão específico.",
+          "evidence": [
+            {
+              "page": 158,
+              "quote": "organismos internacionais como a ONU, a FAO, o Programa Mundial de Alimentos, o Banco Mundial e os países do G20.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "multilateralismo",
+            "política externa"
+          ],
+          "absence_reason": "Após leitura de todas as 200 páginas, incluindo política externa nas pp.58–60 e 146–159, e busca por Conselho de Segurança/ONU/Nações Unidas, não foi encontrada posição sobre o Conselho."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As referências ao Banco Central tratam de dados e articulação sobre crédito para mulheres; juros e crédito acessível não determinam a autonomia institucional.",
+          "conditions": [],
+          "scope_difference": "Cooperação com o Banco Central e críticas ao custo do crédito não equivalem a revogar ou manter a LC 179/2021.",
+          "evidence": [
+            {
+              "page": 89,
+              "quote": "Em articulação com o Banco Central, instituições financeiras, Sebrae, universidades e entidades especializadas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "179/2021",
+            "autonomia",
+            "independência",
+            "política monetária",
+            "juros"
+          ],
+          "absence_reason": "Leitura integral das 200 páginas e busca por Banco Central, autonomia, independência, política monetária e 179/2021 não encontraram decisão institucional; referências relevantes nas pp.55, 89–90 e 117 versam sobre crédito."
+        }
+      }
+    },
+    "280002539826": {
+      "name": "Zema",
+      "document_id": "PG_2026_BR_280002539826_01",
+      "pages_total": 81,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81
+      ],
+      "sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+      "reading_notes": [
+        "Todas as 81 páginas lidas; pp.30–31 relidas integralmente após truncamento do primeiro bloco. Buscas layout/raw complementaram a leitura.",
+        "Capa p.1 com extração corrompida foi renderizada e inspecionada; contracapa p.81 sem texto foi conferida visualmente no contato preservado.",
+        "Decisões de T002, T011 e T026B confirmadas; para T026B a p.60 fornece evidência mais específica de gestão de unidades em PPP que apenas a diretriz geral da p.15.",
+        "T017 mantém NAO_ENCONTRADA no escopo quantitativo: diverge da classificação histórica CONCORDA preservada como source_position, mas concorda com a classificação editorial corrente, já sem pontuação.",
+        "Revisão automatizada documental, não revisão humana; citações literais com normalização apenas de espaços/quebras de linha."
+      ],
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Propõe choque fiscal, reformas, superávits e estabilização da dívida sem escolher manter ou substituir o arcabouço da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Responsabilidade fiscal e metas de resultado não determinam o instrumento legal.",
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "promovendo reformas e mantendo superávits primários",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "200/2023",
+            "regra fiscal",
+            "regime fiscal",
+            "teto de gastos",
+            "responsabilidade fiscal"
+          ],
+          "absence_reason": "As 81 páginas foram lidas, sobretudo finanças públicas pp.14–16 e desenvolvimento econômico pp.17–22. As buscas complementares não localizaram arcabouço ou manifestação equivalente sobre sua continuidade."
+        },
+        "002": {
+          "category": "CONCORDA",
+          "reason": "A proposta utiliza expressamente o quantificador universal: privatizar todas as empresas estatais. Corresponde à transferência de seu controle ao setor privado.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Privatizar todas as empresas estatais",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "privatizar",
+            "estatais",
+            "desestatização",
+            "controle privado",
+            "participação da União",
+            "bancos públicos"
+          ],
+          "absence_reason": null
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Defende um regime trabalhista alternativo à CLT e liberdade de negociação, mas não explicita o destino das mudanças introduzidas pela reforma de 2017.",
+          "conditions": [],
+          "scope_difference": "Criar regime alternativo não resolve a revogação ou manutenção da reforma dentro da CLT; convergência com princípios da reforma é insuficiente para atribuir decisão sobre todo o conjunto.",
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à CLT, com mais liberdade para negociarem as regras da contratação:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "trabalhista",
+            "negociado",
+            "sindical"
+          ],
+          "absence_reason": "Após leitura integral das 81 páginas e buscas complementares, as pp.23–25 oferecem políticas trabalhistas concretas sem referência à revogação ou preservação da reforma de 2017."
+        },
+        "011": {
+          "category": "DISCORDA",
+          "reason": "A alternativa é conservar o Bolsa Família para adultos aptos que busquem emprego, estudem ou se qualifiquem, concentrando nele as transferências. Isso é incompatível com substituir o benefício para todos os economicamente ativos por trabalho público remunerado.",
+          "conditions": [
+            "Permanência sujeita a busca de emprego, estudo ou qualificação.",
+            "Possível suspensão por recusa injustificada de ofertas formais de trabalho intermediadas pelo poder público.",
+            "Exceção para responsáveis por cuidados de crianças pequenas, idosos e pessoas com deficiência dependentes."
+          ],
+          "scope_difference": "Intermediação de emprego e condições de elegibilidade não são programa público de trabalho remunerado. A discordância refere-se à substituição proposta, não à defesa de benefício sem condições.",
+          "evidence": [
+            {
+              "page": 63,
+              "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 63,
+              "quote": "Concentrar recursos de transferências de renda no Bolsa Família:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "transferência de renda",
+            "trabalho remunerado",
+            "frentes de trabalho",
+            "emprego",
+            "qualificação"
+          ],
+          "absence_reason": null
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Inclui escolas cívico-militares entre as opções educacionais apoiadas, mas ampliar opções e parcerias não explicita aumento de sua quantidade.",
+          "conditions": [],
+          "scope_difference": "A agenda de pluralidade e escolha familiar não quantifica nem promete expandir a rede cívico-militar.",
+          "evidence": [
+            {
+              "page": 53,
+              "quote": "Aumentar as opções de modelos educacionais no país:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 53,
+              "quote": "escolas cívico-militares e regulamentando o homeschooling.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "cívico-militar",
+            "cívico",
+            "militar",
+            "modelos educacionais",
+            "gestão escolar"
+          ],
+          "absence_reason": "Todas as 81 páginas foram lidas, inclusive pp.50–56 sobre educação. A única passagem específica, p.53, é insuficiente para a decisão quantitativa da tese; busca complementar não encontrou promessa de novas escolas ou rejeição da expansão."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As propostas de seleção de servidores e acesso/gestão educacional não decidem sobre o término da reserva racial de vagas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "racial",
+            "reserva de vagas",
+            "ações afirmativas",
+            "concursos"
+          ],
+          "absence_reason": "Após leitura de 81 páginas, incluindo concursos pp.40–41 e educação pp.50–56, e buscas por cotas, critérios raciais, reserva de vagas e ações afirmativas, não foi encontrada manifestação suficiente."
+        },
+        "026B": {
+          "category": "DISCORDA",
+          "reason": "Propõe ampliar PPPs para construir e gerir unidades de saúde. A gestão em PPP é expressa e diretamente contrária ao encerramento desse instrumento.",
+          "conditions": [
+            "Controle rigoroso dos resultados por parte do poder público."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 15,
+              "quote": "Ampliar as parcerias público-privadas em todos os serviços públicos, inclusive saúde e educação:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parcerias público-privadas",
+            "concessões",
+            "saúde",
+            "gestão",
+            "organizações sociais"
+          ],
+          "absence_reason": null
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O programa de política externa decide sobre BRICS, OCDE, Mercosul, mediação e cooperação, mas não sobre o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "multilateralismo",
+            "política externa"
+          ],
+          "absence_reason": "Leitura integral das 81 páginas, incluindo política externa pp.36–38 e defesa pp.77–78, seguida de busca por Conselho de Segurança, ONU, Nações Unidas e multilateralismo, não encontrou decisão específica."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Propõe reduzir juros por ajuste fiscal e concorrência bancária, mas não determina o regime institucional do Banco Central.",
+          "conditions": [],
+          "scope_difference": "Autonomia das agências reguladoras (pp.20 e 28) e medidas sobre crédito não são uma manifestação sobre a LC 179/2021.",
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "Criar condições para a queda da taxa de juros:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "179/2021",
+            "autonomia",
+            "independência",
+            "política monetária",
+            "juros"
+          ],
+          "absence_reason": "Após as 81 páginas e busca complementar por Banco Central, autonomia, independência e política monetária, não há decisão de revogar ou manter a autonomia do BC."
+        }
+      }
+    },
+    "280002552484": {
+      "name": "Clariana Barao",
+      "document_id": "PG_2026_BR_280002552484_01",
+      "pages_total": 15,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+      "reading_notes": [
+        "Todas as 15 páginas lidas integralmente, incluindo capa, continuação dos capítulos e matriz de implementação. Extração clara; nenhuma passagem relevante com problema de leitura exigiu renderização.",
+        "As nove ausências decorrem da leitura integral e da busca complementar em layout/raw por termos e equivalentes, não apenas da ausência de uma palavra-chave.",
+        "O documento é programático e genérico em muitos eixos; seu silêncio não foi interpretado como discordância ou neutralidade explícita.",
+        "Revisão automatizada documental, não revisão humana."
+      ],
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Revisão de gastos, planejamento e transparência fiscal não constituem decisão sobre manter o arcabouço de 2023.",
+          "conditions": [],
+          "scope_difference": "Responsabilidade fiscal genérica não especifica LC 200/2023.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Revisão de gastos e subsídios",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "arcabouço",
+            "200/2023",
+            "regra fiscal",
+            "regime fiscal",
+            "teto de gastos",
+            "responsabilidade fiscal"
+          ],
+          "absence_reason": "Todas as 15 páginas foram lidas; seção fiscal pp.5–6 e buscas complementares não trouxeram manifestação sobre o arcabouço."
+        },
+        "002": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Concessões e PPPs em infraestrutura não determinam transferência de controle de todas as empresas estatais.",
+          "conditions": [],
+          "scope_difference": "Concessão de serviços e infraestrutura não equivale à privatização universal de empresas.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Concessões, PPPs e planejamento de longo prazo",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "privatizar",
+            "estatais",
+            "desestatização",
+            "controle privado",
+            "participação da União",
+            "bancos públicos"
+          ],
+          "absence_reason": "A leitura integral das 15 páginas e busca complementar por privatização, estatais, desestatização e controle não encontraram política de propriedade das estatais."
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As propostas de qualificação, reinserção e empreendedorismo não escolhem revogar ou manter a reforma trabalhista de 2017.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "trabalhista",
+            "negociado",
+            "sindical"
+          ],
+          "absence_reason": "Leitura integral das 15 páginas e buscas reforma trabalhista, 2017, CLT, trabalhista e negociação não encontraram decisão sobre o marco legal trabalhista."
+        },
+        "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Apoio à autonomia econômica e qualificação não especifica o destino do Bolsa Família nem substituição por emprego público.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Bolsa Família",
+            "transferência de renda",
+            "trabalho remunerado",
+            "frentes de trabalho",
+            "emprego",
+            "qualificação"
+          ],
+          "absence_reason": "Após leitura das 15 páginas e busca por Bolsa Família, transferência, trabalho remunerado, emprego e qualificação, não há decisão sobre a substituição proposta."
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As propostas de educação infantil, alfabetização, formação docente, tecnologia e ensino técnico não tratam do número de escolas cívico-militares.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "cívico",
+            "militar",
+            "modelos educacionais",
+            "gestão escolar"
+          ],
+          "absence_reason": "As 15 páginas foram lidas, incluindo o capítulo educacional pp.7–8. Buscas cívico, militar e modelos/gestão escolar não revelaram decisão sobre a modalidade."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não formula posição sobre cotas raciais na educação ou no serviço público.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "racial",
+            "reserva de vagas",
+            "ações afirmativas",
+            "concursos"
+          ],
+          "absence_reason": "Leitura integral das 15 páginas, com atenção à educação pp.7–8 e serviço público p.13, e buscas cotas, racial/raciais, reserva de vagas e ações afirmativas não encontraram manifestação suficiente."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo de saúde trata de atenção primária, prevenção, tecnologias, atividade física e saúde digital, sem posição sobre gestão por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": "A referência a PPP aparece no eixo infraestrutura e logística, não no modelo de gestão dos serviços de saúde.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Concessões, PPPs e planejamento de longo prazo",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parcerias público-privadas",
+            "concessões",
+            "saúde",
+            "gestão",
+            "organizações sociais"
+          ],
+          "absence_reason": "Foram lidas as 15 páginas, incluindo saúde pp.11–12; buscas por saúde, PPP, parceria público-privada, gestão e organizações sociais não trouxeram decisão pertinente."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A cooperação internacional contra crimes não constitui decisão sobre a continuidade do Conselho de Segurança.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas",
+            "multilateralismo",
+            "política externa"
+          ],
+          "absence_reason": "Leitura integral das 15 páginas e busca por Conselho de Segurança, ONU, Nações Unidas e multilateralismo não localizaram posição; a cooperação interestadual e internacional na p.9 refere-se ao enfrentamento do narcotráfico e tráfico de armas."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Crédito responsável e indicadores fiscais não especificam a autonomia do Banco Central.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Banco Central",
+            "179/2021",
+            "autonomia",
+            "independência",
+            "política monetária",
+            "juros"
+          ],
+          "absence_reason": "Após leitura das 15 páginas e buscas por Banco Central, 179/2021, autonomia, independência, juros e política monetária, não foi encontrada decisão sobre o regime institucional do BC."
+        }
+      }
+    }
+  }
+}

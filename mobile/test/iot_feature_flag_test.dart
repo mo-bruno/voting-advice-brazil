@@ -95,7 +95,7 @@ void main() {
     expect(find.textContaining('Farol conectado'), findsNothing);
     expect(find.text('MEU FAROL'), findsNothing);
     expect(find.text('ACOMPANHANDO'), findsOneWidget);
-    expect(find.text('SUA MAIOR AFINIDADE'), findsOneWidget);
+    expect(find.text('COMPARAÇÃO DOS PLANOS'), findsOneWidget);
   });
 
   testWidgets('rotas IoT continuam disponíveis quando habilitadas',

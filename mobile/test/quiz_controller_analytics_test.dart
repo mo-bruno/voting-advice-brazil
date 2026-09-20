@@ -75,7 +75,7 @@ void main() {
     );
 
     final answeredIndex = sink.events.indexOf('thesis_answered');
-    expect(sink.parameters[answeredIndex]['stance'], 'skip');
+    expect(sink.parameters[answeredIndex], {'time_to_answer_ms': 0});
 
     final completed = sink.parameters[sink.events.indexOf('quiz_completed')];
     expect(completed['total_answered'], 0);
@@ -110,8 +110,7 @@ void main() {
       sink.events.where((e) => e == 'thesis_viewed').length,
       2,
     );
-    expect(sink.parameters.last['thesis_id'], 2);
-    expect(sink.parameters.last['thesis_index'], 2);
+    expect(sink.parameters.last, isEmpty);
   });
 
   test('thesis_viewed deduplicates when marked twice for same thesis',

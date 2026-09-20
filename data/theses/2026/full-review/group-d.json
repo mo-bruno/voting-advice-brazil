@@ -1,0 +1,603 @@
+{
+  "reviewer": "automated_full_document_review",
+  "candidates": {
+    "280002548139": {
+      "name": "Wilson Grassi",
+      "document_id": "PG_2026_BR_280002548139_01",
+      "pages_total": 58,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ],
+      "sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+      "reading_notes": "Leitura sequencial integral das páginas 1–58; capa e página 31 sem texto substantivo inspecionadas visualmente. Revisão complementar por termos e sinônimos. Não infere posição de silêncio, financiamento público ou concessão setorial.",
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As 58 páginas foram lidas. O plano discute arrecadação, neutralidade tributária e LRF, sem decidir manutenção ou substituição do arcabouço da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Proposta de imposto único e estimativa fiscal não equivalem a posição sobre o arcabouço.",
+          "evidence": [],
+          "search_terms": [
+            "arcabouço fiscal",
+            "200/2023",
+            "teto de gastos",
+            "regra fiscal"
+          ],
+          "absence_reason": "As 58 páginas foram lidas. O plano discute arrecadação, neutralidade tributária e LRF, sem decidir manutenção ou substituição do arcabouço da LC 200/2023."
+        },
+        "002": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada proposta sobre a transferência do controle de todas as estatais após leitura integral das 58 páginas.",
+          "conditions": [],
+          "scope_difference": "Concessões logísticas e financiamento habitacional não definem a propriedade das empresas estatais.",
+          "evidence": [],
+          "search_terms": [
+            "privatização",
+            "desestatização",
+            "estatais",
+            "controle público",
+            "Petrobras"
+          ],
+          "absence_reason": "Não foi encontrada proposta sobre a transferência do controle de todas as estatais após leitura integral das 58 páginas."
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não há decisão sobre revogar as mudanças da reforma trabalhista de 2017 nas 58 páginas.",
+          "conditions": [],
+          "scope_difference": "Simplificação de declarações, eSocial e formalização não significam revogar a reforma.",
+          "evidence": [],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "legislação trabalhista"
+          ],
+          "absence_reason": "Não há decisão sobre revogar as mudanças da reforma trabalhista de 2017 nas 58 páginas."
+        },
+        "011": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não há manifestação sobre substituição ou manutenção do Bolsa Família no escopo da tese nas 58 páginas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Bolsa Família",
+            "trabalho remunerado",
+            "transferência de renda",
+            "benefício"
+          ],
+          "absence_reason": "Não há manifestação sobre substituição ou manutenção do Bolsa Família no escopo da tese nas 58 páginas."
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A leitura integral, incluindo educação nas páginas 36–37, não encontrou proposta de aumentar, reduzir ou extinguir escolas cívico-militares.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "militarização",
+            "escola militar"
+          ],
+          "absence_reason": "A leitura integral, incluindo educação nas páginas 36–37, não encontrou proposta de aumentar, reduzir ou extinguir escolas cívico-militares."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A leitura integral não encontrou decisão sobre encerramento ou continuidade de reserva de vagas raciais em educação ou serviço público.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "reserva de vagas",
+            "negros"
+          ],
+          "absence_reason": "A leitura integral não encontrou decisão sobre encerramento ou continuidade de reserva de vagas raciais em educação ou serviço público."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A seção de saúde e o restante das 58 páginas não decidem o fim da gestão por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": "Contratualizar mutirões por resultado não explicita o instrumento de PPP nem transferência de gestão.",
+          "evidence": [
+            {
+              "page": 34,
+              "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada.",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão de saúde",
+            "hospital privado"
+          ],
+          "absence_reason": "A seção de saúde e o restante das 58 páginas não decidem o fim da gestão por empresas em PPP."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide continuidade ou extinção do Conselho de Segurança da ONU. Declara deliberadamente não apresentar doutrina de política externa.",
+          "conditions": [],
+          "scope_difference": "Participação caso a caso em foros não decide a existência do Conselho.",
+          "evidence": [
+            {
+              "page": 51,
+              "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada.",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "ONU",
+            "Conselho de Segurança",
+            "Nações Unidas"
+          ],
+          "absence_reason": "O plano não decide continuidade ou extinção do Conselho de Segurança da ONU. Declara deliberadamente não apresentar doutrina de política externa."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As menções ao Banco Central são fontes estatísticas e indicadores; nenhuma das 58 páginas decide revogar ou preservar sua autonomia institucional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021"
+          ],
+          "absence_reason": "As menções ao Banco Central são fontes estatísticas e indicadores; nenhuma das 58 páginas decide revogar ou preservar sua autonomia institucional."
+        }
+      }
+    },
+    "280002552487": {
+      "name": "Rui Costa Pimenta",
+      "document_id": "PG_2026_BR_280002552487_01",
+      "pages_total": 7,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+      "reading_notes": "Leitura sequencial integral das sete páginas e busca complementar. Condição temporal do Bolsa Família preservada; oposição ao teto Temer não convertida em oposição ao arcabouço 2023.",
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A leitura integral das sete páginas encontrou oposição ao teto do governo Temer e à LRF, não decisão sobre o arcabouço da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Teto de gastos anterior e LRF não são o arcabouço de 2023.",
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Fim do teto de gastos e da Lei de Responsabilidade Fiscal",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "arcabouço fiscal",
+            "200/2023",
+            "teto de gastos",
+            "regra fiscal"
+          ],
+          "absence_reason": "A leitura integral das sete páginas encontrou oposição ao teto do governo Temer e à LRF, não decisão sobre o arcabouço da LC 200/2023."
+        },
+        "002": {
+          "category": "DISCORDA",
+          "reason": "A reversão das privatizações e a Petrobras integralmente estatal são incompatíveis com transferir todas as empresas ao controle privado.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)",
+              "verification": "literal_text_normalized_whitespace"
+            },
+            {
+              "page": 3,
+              "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "privatização",
+            "desestatização",
+            "estatais",
+            "controle público",
+            "Petrobras"
+          ],
+          "absence_reason": null
+        },
+        "003": {
+          "category": "CONCORDA",
+          "reason": "O plano pede cancelamento da reforma trabalhista e restauração ampliada das proteções.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "legislação trabalhista"
+          ],
+          "absence_reason": null
+        },
+        "011": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Defende Bolsa Família de pelo menos um salário mínimo, mas restringe expressamente a medida à duração da situação de caos; não se imputa compromisso permanente.",
+          "conditions": [
+            "Enquanto durar a situação de caos atual."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "trabalho remunerado",
+            "transferência de renda",
+            "benefício"
+          ],
+          "absence_reason": null
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Nas sete páginas não foi encontrada decisão sobre a quantidade de escolas cívico-militares.",
+          "conditions": [],
+          "scope_difference": "Controle das escolas pela comunidade e dissolução da Polícia Militar não são decisão explícita sobre escolas cívico-militares.",
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "militarização",
+            "escola militar"
+          ],
+          "absence_reason": "Nas sete páginas não foi encontrada decisão sobre a quantidade de escolas cívico-militares."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre cotas raciais em educação ou serviço público nas sete páginas integralmente lidas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "reserva de vagas",
+            "negros"
+          ],
+          "absence_reason": "Não foi encontrada decisão sobre cotas raciais em educação ou serviço público nas sete páginas integralmente lidas."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A defesa de saúde pública e gratuita e a crítica à privatização não especificam encerrar a gestão empresarial em PPP; a leitura integral não resolve esse escopo.",
+          "conditions": [],
+          "scope_difference": "Saúde pública, universal e gratuita pode coexistir com contratação privada; não foi explicitado o fim de gestão por PPP.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Fim do lucro com a doença: saúde pública e gratuita, sob o controle dos trabalhadores",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão de saúde",
+            "hospital privado"
+          ],
+          "absence_reason": "A defesa de saúde pública e gratuita e a crítica à privatização não especificam encerrar a gestão empresarial em PPP; a leitura integral não resolve esse escopo."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "A política externa da página 7 e as demais páginas não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "ONU",
+            "Conselho de Segurança",
+            "Nações Unidas"
+          ],
+          "absence_reason": "A política externa da página 7 e as demais páginas não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU."
+        },
+        "036": {
+          "category": "CONCORDA",
+          "reason": "O plano exige explicitamente o fim da independência do Banco Central.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Fim da “independência” do Banco Central",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "280002554479": {
+      "name": "Leonardo Avalanche",
+      "document_id": "PG_2026_BR_280002554479_01",
+      "pages_total": 48,
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ],
+      "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+      "reading_notes": "PDF extraído do ZIP oficial de 19/09/2026, não herdado de candidatura substituída. Leitura sequencial integral de 1–48 em blocos e capa inspecionada visualmente; numeração física usada porque o rodapé reinicia por proposta. Busca complementar não substitui leitura.",
+      "decisions": {
+        "001": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As 48 páginas foram lidas. A reforma tributária proposta não define manutenção ou substituição do arcabouço da LC 200/2023.",
+          "conditions": [],
+          "scope_difference": "Redução ou unificação de impostos não determina posição sobre a regra fiscal.",
+          "evidence": [],
+          "search_terms": [
+            "arcabouço fiscal",
+            "200/2023",
+            "teto de gastos",
+            "regra fiscal"
+          ],
+          "absence_reason": "As 48 páginas foram lidas. A reforma tributária proposta não define manutenção ou substituição do arcabouço da LC 200/2023."
+        },
+        "002": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não há decisão sobre transferir o controle de todas as estatais nas 48 páginas.",
+          "conditions": [],
+          "scope_difference": "Investimento público em fábricas, referências a estatais e operação privada de ferrovias não definem transferência universal de controle.",
+          "evidence": [],
+          "search_terms": [
+            "privatização",
+            "desestatização",
+            "estatais",
+            "controle público",
+            "Petrobras"
+          ],
+          "absence_reason": "Não há decisão sobre transferir o controle de todas as estatais nas 48 páginas."
+        },
+        "003": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre a reforma trabalhista de 2017 após leitura integral das 48 páginas.",
+          "conditions": [],
+          "scope_difference": "Proteção a motoristas e primeiro emprego não equivalem a revogar ou manter integralmente as mudanças de 2017.",
+          "evidence": [],
+          "search_terms": [
+            "reforma trabalhista",
+            "2017",
+            "CLT",
+            "legislação trabalhista"
+          ],
+          "absence_reason": "Não foi encontrada decisão sobre a reforma trabalhista de 2017 após leitura integral das 48 páginas."
+        },
+        "011": {
+          "category": "DISCORDA",
+          "reason": "O plano mantém expressamente o Bolsa Família para quem se qualificar e obtiver renda, inclusive oferecendo contratação remunerada opcional pelo governo sem substituição do benefício.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Isso inclui tanto quem está no Bolsa Família (sem perder o benefício) quanto quem nunca recebeu nenhum auxílio do governo.",
+              "verification": "literal_text_normalized_whitespace"
+            },
+            {
+              "page": 7,
+              "quote": "Aqui não: a renda extra vem garantida pelo nosso governo, sem perder o Bolsa Família.",
+              "verification": "literal_text_normalized_whitespace"
+            },
+            {
+              "page": 7,
+              "quote": "o brasileiro que decidir seguir trabalhando com internet e comunicação digital vai poder ser efetivamente contratado pelo nosso governo federal — com contrato assinado e remuneração — pra atuar na divulgação oficial de programas e serviços públicos em sua própria cidade e região.",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "Bolsa Família",
+            "trabalho remunerado",
+            "transferência de renda",
+            "benefício"
+          ],
+          "absence_reason": null
+        },
+        "017": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As propostas educacionais e todas as 48 páginas não apresentam decisão sobre aumentar ou encerrar escolas cívico-militares.",
+          "conditions": [],
+          "scope_difference": "Ensino técnico, empreendedorismo e educação domiciliar não definem o modelo cívico-militar.",
+          "evidence": [],
+          "search_terms": [
+            "cívico-militar",
+            "militarização",
+            "escola militar"
+          ],
+          "absence_reason": "As propostas educacionais e todas as 48 páginas não apresentam decisão sobre aumentar ou encerrar escolas cívico-militares."
+        },
+        "018": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre reserva de vagas raciais na educação ou serviço público após leitura integral das 48 páginas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "cotas",
+            "raciais",
+            "reserva de vagas",
+            "negros"
+          ],
+          "absence_reason": "Não foi encontrada decisão sobre reserva de vagas raciais na educação ou serviço público após leitura integral das 48 páginas."
+        },
+        "026B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prevê parceria com hospitais privados para atender demanda, mas não decide encerrar ou manter gestão por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": "Prestação complementar em hospital privado não equivale a PPP para gestão de serviço público.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde.",
+              "verification": "literal_text_normalized_whitespace"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão de saúde",
+            "hospital privado"
+          ],
+          "absence_reason": "O plano prevê parceria com hospitais privados para atender demanda, mas não decide encerrar ou manter gestão por empresas em PPP."
+        },
+        "034A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "As 48 páginas, incluindo defesa e relações econômicas internacionais, não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "ONU",
+            "Conselho de Segurança",
+            "Nações Unidas"
+          ],
+          "absence_reason": "As 48 páginas, incluindo defesa e relações econômicas internacionais, não apresentam decisão sobre continuidade ou extinção do Conselho de Segurança da ONU."
+        },
+        "036": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre autonomia institucional do Banco Central após leitura integral das 48 páginas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Banco Central",
+            "autonomia",
+            "independência",
+            "179/2021"
+          ],
+          "absence_reason": "Não foi encontrada decisão sobre autonomia institucional do Banco Central após leitura integral das 48 páginas."
+        }
+      }
+    }
+  }
+}

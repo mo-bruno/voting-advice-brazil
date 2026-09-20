@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "election": 2026,
+    "office": "presidente"
+  },
+  "theses": [
+    {
+      "id": "T2026-001",
+      "text": "O imposto sobre grandes fortunas deve ser regulamentado.",
+      "topic": "economia",
+      "status": "approved",
+      "positions": {
+        "2026-a": {
+          "position": "concordo",
+          "justification": "O plano propõe regulamentar o tributo.",
+          "quote": "regulamentar o imposto sobre grandes fortunas",
+          "source_ref": "plano-a.pdf#page=10"
+        },
+        "2026-b": {
+          "position": "discordo",
+          "justification": "O plano rejeita a criação do tributo.",
+          "quote": "não criar imposto sobre grandes fortunas",
+          "source_ref": "plano-b.pdf#page=12"
+        }
+      }
+    }
+  ]
+}

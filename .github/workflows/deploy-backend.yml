@@ -5,6 +5,13 @@ on:
     branches: [main]
     paths:
       - 'backend/**'
+      - 'data/**'
+      - 'mobile/**'
+      - 'firebase.json'
+      - '.firebaserc'
+      - '.github/workflows/deploy-web.yml'
+      - 'scripts/build_presidential_2026_data.py'
+      - 'scripts/deploy_presidential_backend.py'
       - 'cloudbuild.yaml'
       - '.github/workflows/deploy-backend.yml'
   workflow_dispatch:

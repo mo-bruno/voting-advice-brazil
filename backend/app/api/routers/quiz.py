@@ -1,9 +1,7 @@
 import logging
-from typing import cast
 
 from fastapi import APIRouter, Depends, HTTPException, Query
 
-from app.api.cache import cache_get, cache_set
 from app.api.deps import (
     get_candidate_repo,
     get_position_repo,
@@ -22,6 +20,7 @@ from app.config import settings
 from app.core.use_cases.get_quiz_questions import get_quiz_questions
 from app.core.use_cases.submit_quiz import (
     InsufficientAnswersError,
+    InvalidThesisIdsError,
     QuizAnswer,
     submit_quiz,
 )
@@ -33,9 +32,6 @@ from app.infrastructure.database.repositories import (
 )
 
 router = APIRouter(prefix="/quiz", tags=["Quiz"])
-
-_QUESTIONS_TTL = 3600  # 1 hour
-
 
 def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
     latest_by_thesis_id: dict[int, QuizAnswer] = {}
@@ -51,11 +47,6 @@ def questions(
     limit: int = Query(default=30, ge=1, le=60),
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
 ) -> QuestionsResponse:
-    cache_key = f"quiz:questions:{','.join(sorted(themes or []))}:{limit}"
-    cached = cache_get(cache_key)
-    if cached is not None:
-        return cast(QuestionsResponse, cached)
-
     theses = get_quiz_questions(thesis_repo, themes=themes, limit=limit)
     response = QuestionsResponse(
         theses=[
@@ -70,7 +61,6 @@ def questions(
         ],
         total=len(theses),
     )
-    cache_set(cache_key, response, _QUESTIONS_TTL)
     return response
 
 
@@ -93,6 +83,15 @@ def submit(
     answers = _deduplicate_answers(answers)
     try:
         results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
+    except InvalidThesisIdsError as err:
+        raise HTTPException(
+            status_code=422,
+            detail={
+                "code": "invalid_thesis_ids",
+                "message": str(err),
+                "thesis_ids": err.thesis_ids,
+            },
+        ) from err
     except InsufficientAnswersError as err:
         raise HTTPException(
             status_code=422,
@@ -117,9 +116,12 @@ def submit(
                 name=r.name,
                 party_acronym=r.party_acronym,
                 party_logo_url=r.party_logo_url,
+                photo_url=r.photo_url,
                 score_percent=r.score_percent,
                 score_by_theme=r.score_by_theme,
                 rank=r.rank,
+                counted_theses=r.counted_theses,
+                answered_theses=r.answered_theses,
                 matches=[
                     ThesisMatchOut(
                         thesis_id=m.thesis_id,

@@ -3,25 +3,32 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_service.dart';
+import '../../core/api/api_client.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/party.dart';
 import '../../shared/quiz_session.dart';
+import '../../shared/widgets/candidate_logo.dart';
 
 class PartySelectionPage extends StatefulWidget {
-  const PartySelectionPage({super.key});
+  const PartySelectionPage({super.key, this.session, this.analytics});
+
+  final QuizSession? session;
+  final AnalyticsService? analytics;
 
   @override
   State<PartySelectionPage> createState() => _PartySelectionPageState();
 }
 
 class _PartySelectionPageState extends State<PartySelectionPage> {
-  final AnalyticsService _analytics = AnalyticsService();
-  final QuizSession _session = QuizSession.instance;
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
+  late final QuizSession _session = widget.session ?? QuizSession.instance;
   bool _allSelected = false;
   bool _isLoading = true;
   bool _isSubmitting = false;
-  String? _errorMessage;
+  String? _loadErrorMessage;
+  ApiException? _submitError;
   String? _expandedPartyId;
 
   List<Party> get _parties => _session.candidates;
@@ -38,16 +45,20 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
     unawaited(event.catchError((_) {}));
   }
 
-  Future<void> _loadCandidates() async {
+  Future<void> _loadCandidates({bool force = false}) async {
     setState(() {
       _isLoading = true;
-      _errorMessage = null;
+      _loadErrorMessage = null;
     });
     try {
-      await _session.loadCandidates();
+      await _session.loadCandidates(force: force);
+      _selected.retainAll(_parties.map((candidate) => candidate.id));
+      if (!_parties.any((candidate) => candidate.id == _expandedPartyId)) {
+        _expandedPartyId = null;
+      }
       _allSelected = _selected.length == _parties.length && _parties.isNotEmpty;
     } catch (error) {
-      _errorMessage = error.toString();
+      _loadErrorMessage = error.toString();
     } finally {
       if (mounted) setState(() => _isLoading = false);
     }
@@ -85,21 +96,93 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   }
 
   Future<void> _submitAndNavigate() async {
-    _track(
-      _analytics.partySelectionCompleted(countSelected: _selected.length),
-    );
+    if (!_session.canSubmit) {
+      setState(
+        () => _submitError = const ApiException(
+          'Responda pelo menos 5 perguntas para calcular o resultado.',
+          code: 'insufficient_answers',
+        ),
+      );
+      return;
+    }
+    _track(_analytics.partySelectionCompleted(countSelected: _selected.length));
     setState(() {
       _isSubmitting = true;
-      _errorMessage = null;
+      _submitError = null;
     });
     try {
       await _session.submit();
+      if (!mounted) return;
+      final availableIds = _session.results
+          .map((result) => result.candidateId)
+          .toSet();
+      if (_selected.difference(availableIds).isNotEmpty) {
+        _selected.retainAll(availableIds);
+        _session.results = [];
+        _session.candidates = [];
+        _expandedPartyId = null;
+        await _loadCandidates(force: true);
+        if (mounted) {
+          setState(
+            () => _submitError = const ApiException(
+              'A lista de candidaturas foi atualizada. Revise sua seleção para calcular o resultado.',
+              code: 'candidates_updated',
+            ),
+          );
+        }
+        return;
+      }
       if (mounted) Navigator.pushNamed(context, '/results');
     } catch (error) {
-      if (mounted) setState(() => _errorMessage = error.toString());
+      if (mounted) {
+        setState(
+          () => _submitError = error is ApiException
+              ? error
+              : ApiException(error.toString()),
+        );
+      }
     } finally {
       if (mounted) setState(() => _isSubmitting = false);
     }
+  }
+
+  void _restartQuiz() {
+    _session.resetQuiz();
+    _session.markQuizStarted();
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      '/quiz',
+      (route) => route.isFirst,
+    );
+  }
+
+  Widget _submissionError(TextTheme textTheme) {
+    final error = _submitError!;
+    final outdated = error.code == 'invalid_thesis_ids';
+    final insufficient = error.code == 'insufficient_answers';
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            outdated
+                ? 'As perguntas foram atualizadas. Refaça o quiz para comparar as candidaturas da edição atual.'
+                : error.code == 'candidates_updated'
+                ? error.message
+                : 'Não foi possível calcular o resultado. ${error.message}',
+            style: textTheme.bodyMedium,
+          ),
+          if (outdated || insufficient)
+            TextButton(
+              onPressed: outdated
+                  ? _restartQuiz
+                  : () => Navigator.pushReplacementNamed(context, '/weighting'),
+              child: Text(outdated ? 'REFAZER QUIZ' : 'REVISAR RESPOSTAS'),
+            ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -117,14 +200,24 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
           Expanded(child: _buildBody(Theme.of(context).textTheme)),
           Padding(
             padding: const EdgeInsets.all(24),
-            child: SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: _selected.isNotEmpty && !_isSubmitting
-                    ? _submitAndNavigate
-                    : null,
-                child: Text(_isSubmitting ? 'CALCULANDO...' : 'VER RESULTADOS'),
-              ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                if (_submitError != null)
+                  _submissionError(Theme.of(context).textTheme),
+                ElevatedButton(
+                  onPressed:
+                      _selected.isNotEmpty &&
+                          !_isSubmitting &&
+                          _submitError?.code != 'invalid_thesis_ids'
+                      ? _submitAndNavigate
+                      : null,
+                  child: Text(
+                    _isSubmitting ? 'CALCULANDO...' : 'VER RESULTADOS',
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -135,7 +228,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   Widget _buildBody(TextTheme textTheme) {
     if (_isLoading) return const Center(child: CircularProgressIndicator());
 
-    if (_errorMessage != null) {
+    if (_loadErrorMessage != null) {
       return Center(
         child: Padding(
           padding: const EdgeInsets.all(24),
@@ -149,7 +242,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
               ),
               const SizedBox(height: 12),
               Text(
-                _errorMessage!,
+                _loadErrorMessage!,
                 style: textTheme.bodyMedium,
                 textAlign: TextAlign.center,
               ),
@@ -171,10 +264,10 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 24),
-            Text('ESCOLHA OS\nPARTIDOS', style: textTheme.displayMedium),
+            Text('ESCOLHA OS\nCANDIDATOS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
-              'Selecione os partidos que você deseja comparar com suas respostas.',
+              'Selecione os candidatos que você deseja comparar com suas respostas.',
               style: textTheme.bodyMedium,
             ),
             const SizedBox(height: 24),
@@ -266,8 +359,8 @@ class _PartyGrid extends StatelessWidget {
         return GestureDetector(
           onTap: () => onToggle(party.id),
           child: Container(
-            width: 80,
-            height: 80,
+            width: 104,
+            height: 128,
             decoration: BoxDecoration(
               color: isSelected
                   ? AppTheme.surfaceContainerHigh
@@ -279,48 +372,38 @@ class _PartyGrid extends StatelessWidget {
             ),
             child: Padding(
               padding: const EdgeInsets.all(8),
-              child: party.hasLogoAsset
-                  ? Image.asset(
-                      party.logoAsset,
-                      fit: BoxFit.contain,
-                      errorBuilder: (_, __, ___) => _PartyFallbackLogo(
-                        party: party,
-                        isSelected: isSelected,
+              child: Column(
+                children: [
+                  CandidatePortrait(
+                    photoUrl: party.photoUrl,
+                    candidateName: party.name,
+                    abbreviation: party.abbreviation,
+                    logoAsset: party.logoAsset,
+                    hasLogoAsset: party.hasLogoAsset,
+                    size: 72,
+                  ),
+                  const SizedBox(height: 6),
+                  Expanded(
+                    child: Text(
+                      party.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 11,
+                        fontWeight: FontWeight.w700,
+                        color: isSelected
+                            ? AppTheme.primary
+                            : AppTheme.onSurfaceVariant,
                       ),
-                    )
-                  : _PartyFallbackLogo(
-                      party: party,
-                      isSelected: isSelected,
                     ),
+                  ),
+                ],
+              ),
             ),
           ),
         );
       }).toList(),
-    );
-  }
-}
-
-class _PartyFallbackLogo extends StatelessWidget {
-  final Party party;
-  final bool isSelected;
-
-  const _PartyFallbackLogo({
-    required this.party,
-    required this.isSelected,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        party.abbreviation,
-        style: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w800,
-          color: isSelected ? AppTheme.primary : AppTheme.onSurfaceVariant,
-        ),
-        textAlign: TextAlign.center,
-      ),
     );
   }
 }
@@ -345,11 +428,25 @@ class _PartyDetailCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'O QUE ${party.abbreviation} DEFENDE',
+            '${party.name.toUpperCase()} • ${party.abbreviation}',
             style: textTheme.headlineSmall,
           ),
           const SizedBox(height: 12),
           Text(party.description, style: textTheme.bodyMedium),
+          if (party.officialStatus != null) ...[
+            const SizedBox(height: 12),
+            Text(
+              'Situação no TSE: ${party.officialStatus}',
+              style: textTheme.bodySmall,
+            ),
+          ],
+          if (party.sourceSnapshot != null) ...[
+            const SizedBox(height: 4),
+            Text(
+              'Retrato dos dados: ${party.sourceSnapshot}',
+              style: textTheme.bodySmall,
+            ),
+          ],
         ],
       ),
     );
