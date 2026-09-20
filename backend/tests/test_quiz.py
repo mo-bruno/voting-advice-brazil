@@ -6,8 +6,70 @@ Aqui cobrimos: endpoints HTTP, conversão de entidades e contratos JSON.
 
 from unittest.mock import patch
 
+import pytest
+from fastapi.testclient import TestClient
+
+from app.config import Settings
 from app.infrastructure.database.models import DeviceModel, QuizResponseModel
 from app.infrastructure.database.repositories import SqlPositionRepository
+from app.infrastructure.database.session import get_db
+from app.main import create_app
+
+
+@pytest.mark.parametrize("trigger", ["quiz", "scheduler"])
+def test_news_themes_exclude_answers_from_other_elections(
+    trigger, db_session, thesis_ids, monkeypatch,
+):
+    from contextlib import nullcontext
+    from datetime import datetime, timezone
+
+    from app.api.routers import quiz as quiz_router
+    from app.core.use_cases import news_notifier
+    from app.infrastructure import scheduler
+    from app.infrastructure.database import session as session_module
+    from app.infrastructure.database.models import ThemeModel, ThesisModel
+    from app.infrastructure.database.political_actor_repositories import (
+        SqlFollowedActorRepository,
+    )
+
+    anonymous_id = "550e8400-e29b-41d4-a716-446655440099"
+    future_theme = ThemeModel(
+        slug="future-only", name="Future", area="economica", sort_order=99,
+    )
+    db_session.add(future_theme)
+    db_session.flush()
+    future_thesis = ThesisModel(
+        text="Other edition", theme_id=future_theme.id,
+        status="approved", election_year=2026,
+    )
+    db_session.add_all([future_thesis, DeviceModel(id=anonymous_id)])
+    db_session.flush()
+    db_session.add_all([
+        QuizResponseModel(
+            device_id=anonymous_id, thesis_id=thesis_id, answer="agree",
+            weight=1, election_year=year,
+        )
+        for thesis_id, year in [(thesis_ids["Tese 1"], 2022), (future_thesis.id, 2026)]
+    ])
+    db_session.flush()
+    captured = []
+
+    def capture_themes(**kwargs):
+        captured.extend(kwargs["fetch_themes"](anonymous_id))
+
+    monkeypatch.setattr(news_notifier, "push_news_for_user", capture_themes)
+    monkeypatch.setattr(session_module, "SessionLocal", lambda: nullcontext(db_session))
+    monkeypatch.setattr(
+        SqlFollowedActorRepository, "list_all_followed", lambda _: [(1, anonymous_id)],
+    )
+    try:
+        if trigger == "quiz":
+            quiz_router._push_news_for_quiz_submission(anonymous_id)
+        else:
+            scheduler._push_news_for_all_followers(db_session, datetime.now(timezone.utc))
+        assert captured == ["economia"]
+    finally:
+        db_session.rollback()
 
 
 def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
@@ -188,7 +250,7 @@ class TestEndpointSubmit:
 
     def test_submit_with_device_id_skips_news_push_when_iot_is_disabled(
         self,
-        client,
+        db_session,
         monkeypatch,
         thesis_ids,
     ):
@@ -197,22 +259,66 @@ class TestEndpointSubmit:
         def fail_if_called(anonymous_id: str) -> None:
             raise AssertionError(f"unexpected hardware push for {anonymous_id}")
 
-        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", False)
+        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", True)
         monkeypatch.setattr(
             quiz_router,
             "_push_news_for_quiz_submission",
             fail_if_called,
         )
 
-        r = client.post(
-            "/api/v1/quiz/submit",
-            json={
-                "device_id": "550e8400-e29b-41d4-a716-446655440006",
-                "answers": _agree5(thesis_ids),
-            },
+        configured_app = create_app(
+            Settings(_env_file=None, app_env="test", iot_feature_enabled=False)
         )
 
+        def override_get_db():
+            yield db_session
+
+        configured_app.dependency_overrides[get_db] = override_get_db
+        with TestClient(configured_app) as client:
+            r = client.post(
+                "/api/v1/quiz/submit",
+                json={
+                    "device_id": "550e8400-e29b-41d4-a716-446655440006",
+                    "answers": _agree5(thesis_ids),
+                },
+            )
+
         assert r.status_code == 200
+
+    def test_factory_enabled_app_pushes_news_when_global_iot_is_disabled(
+        self,
+        db_session,
+        monkeypatch,
+        thesis_ids,
+    ):
+        from app.api.routers import quiz as quiz_router
+
+        device_id = "550e8400-e29b-41d4-a716-446655440017"
+        pushed_for: list[str] = []
+
+        monkeypatch.setattr(quiz_router.settings, "iot_feature_enabled", False)
+        monkeypatch.setattr(
+            quiz_router,
+            "_push_news_for_quiz_submission",
+            pushed_for.append,
+        )
+
+        configured_app = create_app(
+            Settings(_env_file=None, app_env="test", iot_feature_enabled=True)
+        )
+
+        def override_get_db():
+            yield db_session
+
+        configured_app.dependency_overrides[get_db] = override_get_db
+        with TestClient(configured_app) as client:
+            r = client.post(
+                "/api/v1/quiz/submit",
+                json={"device_id": device_id, "answers": _agree5(thesis_ids)},
+            )
+
+        assert r.status_code == 200
+        assert pushed_for == [device_id]
 
     def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
         self,

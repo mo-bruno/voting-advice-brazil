@@ -20,7 +20,8 @@ class VoteIn(BaseModel):
 
 class PostOut(BaseModel):
     id: str
-    anonymous_id: str
+    author_alias: str
+    is_mine: bool
     content: str
     political_actor_id: int | None
     theme_slug: str | None
@@ -33,7 +34,8 @@ class PostOut(BaseModel):
 class CommentOut(BaseModel):
     id: str
     post_id: str
-    anonymous_id: str
+    author_alias: str
+    is_mine: bool
     content: str
     created_at: datetime
 

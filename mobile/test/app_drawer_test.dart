@@ -51,7 +51,10 @@ void main() {
     await tester.pump(const Duration(milliseconds: 600));
   }
 
-  Future<void> openDrawer(WidgetTester tester) async {
+  Future<void> openDrawer(
+    WidgetTester tester, {
+    bool iotEnabled = true,
+  }) async {
     // Tela de celular de verdade. Na superficie padrao (800x600) o terceiro
     // bloco cai abaixo da dobra e a ListView nem chega a construi-lo — a
     // gaveta rola, e isso e esperado, mas nao e o que estes testes medem.
@@ -64,9 +67,9 @@ void main() {
       MaterialApp(
         theme: AppTheme.dark,
         routes: {
-          '/': (_) => const Scaffold(
-                drawer: AppDrawer(iotEnabled: true),
-                body: SizedBox(),
+          '/': (_) => Scaffold(
+                drawer: AppDrawer(iotEnabled: iotEnabled),
+                body: const SizedBox(),
               ),
           '/iot-device': (_) =>
               const Scaffold(body: Text('tela do dispositivo')),
@@ -196,5 +199,32 @@ void main() {
     await settleDrawer(tester);
 
     expect(find.byType(AlertDialog), findsOneWidget);
+  });
+
+  testWidgets('sobre e privacidade descrevem o produto atual sem hardware',
+      (tester) async {
+    await openDrawer(tester, iotEnabled: false);
+
+    await tester.tap(find.text('SOBRE'));
+    await settleDrawer(tester);
+
+    expect(find.textContaining('propostas publicadas'), findsOneWidget);
+    expect(find.textContaining('não alteram a comparação do quiz'),
+        findsOneWidget);
+    expect(find.textContaining('eleições de 2026'), findsOneWidget);
+    expect(find.textContaining('eleições de 2022'), findsNothing);
+    expect(find.textContaining('com os votos que registraram'), findsNothing);
+
+    await tester.tap(find.text('FECHAR'));
+    await settleDrawer(tester);
+    await tester.tap(find.text('PRIVACIDADE'));
+    await settleDrawer(tester);
+
+    expect(find.textContaining('salvar respostas do quiz'), findsOneWidget);
+    expect(find.textContaining('participar da comunidade'), findsOneWidget);
+    expect(
+        find.textContaining('não aparece para outras pessoas'), findsOneWidget);
+    expect(find.textContaining('Farol físico'), findsNothing);
+    expect(find.textContaining('não saem do aparelho'), findsNothing);
   });
 }

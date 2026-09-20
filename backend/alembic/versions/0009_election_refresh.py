@@ -4,8 +4,8 @@ import sqlalchemy as sa
 
 from alembic import op
 
-revision = "0007_election_refresh"
-down_revision = "0006_community_integrity"
+revision = "0009_election_refresh"
+down_revision = "0008_comment_admission_locks"
 branch_labels = None
 depends_on = None
 

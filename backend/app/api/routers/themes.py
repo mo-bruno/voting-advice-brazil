@@ -11,7 +11,7 @@ router = APIRouter(prefix="/themes", tags=["Temas"])
 def list_all(
     repo: SqlThemeRepository = Depends(get_theme_repo),
 ) -> list[ThemeOut]:
-    themes = list_themes(repo, min_theses=3)
+    themes = list_themes(repo, min_theses=1)
     response = [
         ThemeOut(
             id=t.id,

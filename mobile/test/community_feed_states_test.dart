@@ -13,7 +13,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Map<String, dynamic> _post(String id) => {
       'id': id,
-      'anonymous_id': 'anon-1',
+      'author_alias': 'u/abc123def0',
+      'is_mine': false,
       'content': 'Conteudo do post $id',
       'political_actor_id': null,
       'theme_slug': null,

@@ -11,7 +11,8 @@ PostSummary _post({
 }) =>
     PostSummary(
       id: 'p1',
-      anonymousId: 'a4a91c2f',
+      authorAlias: 'u/abc123def0',
+      isMine: false,
       content: removed ? '' : 'Conteudo do post',
       politicalActorId: null,
       themeSlug: themeSlug,
@@ -31,7 +32,8 @@ void main() {
     expect(find.text('128'), findsOneWidget);
     expect(find.text('Conteudo do post'), findsOneWidget);
     expect(find.text('ECONOMIA'), findsOneWidget);
-    expect(find.textContaining('u/'), findsOneWidget);
+    expect(find.text('u/abc123def0'), findsOneWidget);
+    expect(find.text('AB'), findsOneWidget);
   });
 
   testWidgets('lapide substitui o conteudo e esconde as setas', (tester) async {

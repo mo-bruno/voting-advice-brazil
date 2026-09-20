@@ -56,8 +56,16 @@ class FakeCommentRepository:
         self._store.append(comment)
         return comment
 
+    def create_with_rate_limit(self, comment: Comment, since: datetime, max_comments: int) -> Comment | None:
+        if self.count_by_author_since(comment.anonymous_id, since) >= max_comments:
+            return None
+        return self.create(comment)
+
     def list_by_post(self, post_id: str) -> list[Comment]:
         return [c for c in self._store if c.post_id == post_id]
+
+    def count_by_author_since(self, anonymous_id: str, since: datetime) -> int:
+        return sum(c.anonymous_id == anonymous_id and c.created_at >= since for c in self._store)
 
 
 class FakeVoteRepository:
@@ -153,17 +161,24 @@ def test_get_post_returns_none_if_missing():
 # ── create_comment ──
 
 def test_create_comment_saved():
-    from app.core.use_cases.create_comment import create_comment
+    from app.core.use_cases.create_comment import moderate_and_create_comment
     post_repo = FakePostRepository()
     comment_repo = FakeCommentRepository()
     post_repo.create(_post())
-    comment = create_comment(post_repo, comment_repo, "p1", "anon-2", "boa observação")
+    comment, result = moderate_and_create_comment(
+        post_repo, comment_repo, FakeModerationLogRepository(),
+        FakeModerationClient(approved=True), "p1", "anon-2", "boa observação",
+    )
     assert comment is not None and comment.content == "boa observação"
+    assert result.approved
 
 
 def test_create_comment_returns_none_if_post_missing():
-    from app.core.use_cases.create_comment import create_comment
-    assert create_comment(FakePostRepository(), FakeCommentRepository(), "nope", "anon", "x") is None
+    from app.core.use_cases.create_comment import moderate_and_create_comment
+    assert moderate_and_create_comment(
+        FakePostRepository(), FakeCommentRepository(), FakeModerationLogRepository(),
+        FakeModerationClient(approved=True), "nope", "anon", "x",
+    ) is None
 
 
 # ── vote_post ──

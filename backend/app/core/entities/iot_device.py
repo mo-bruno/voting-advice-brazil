@@ -37,3 +37,4 @@ class IotDeviceEvent:
     event_type: str
     payload: dict[str, object]
     published_at: datetime
+    deduplication_key: str | None = None

@@ -5,13 +5,14 @@ import 'package:guia_eleitoral/features/community/models/community_models.dart';
 import 'package:guia_eleitoral/features/community/widgets/post_card.dart';
 
 PostSummary _post({
-  String anonymousId = 'autor',
+  bool isMine = false,
   bool removed = false,
   String? removedBy,
 }) =>
     PostSummary(
       id: 'p1',
-      anonymousId: anonymousId,
+      authorAlias: 'u/abc123def0',
+      isMine: isMine,
       content: removed ? '' : 'Conteudo visivel',
       politicalActorId: null,
       themeSlug: null,
@@ -29,7 +30,6 @@ void main() {
     await tester.pumpWidget(_wrap(PostCard(
       post: _post(removed: true, removedBy: 'author'),
       onTap: () {},
-      currentAnonymousId: 'outro',
     )));
 
     expect(find.text('Removido pelo autor'), findsOneWidget);
@@ -40,18 +40,15 @@ void main() {
     await tester.pumpWidget(_wrap(PostCard(
       post: _post(removed: true, removedBy: 'moderation'),
       onTap: () {},
-      currentAnonymousId: 'outro',
     )));
 
     expect(find.text('Removido pela moderação'), findsOneWidget);
   });
 
-  testWidgets('apagar so aparece no post do proprio dispositivo',
-      (tester) async {
+  testWidgets('apagar aparece quando isMine e verdadeiro', (tester) async {
     await tester.pumpWidget(_wrap(PostCard(
-      post: _post(anonymousId: 'eu'),
+      post: _post(isMine: true),
       onTap: () {},
-      currentAnonymousId: 'eu',
       onDelete: () {},
       onReport: () {},
     )));
@@ -62,11 +59,11 @@ void main() {
     expect(find.text('Denunciar'), findsOneWidget);
   });
 
-  testWidgets('post de terceiro nao oferece apagar', (tester) async {
+  testWidgets('mesmo alias nao oferece apagar quando isMine e falso',
+      (tester) async {
     await tester.pumpWidget(_wrap(PostCard(
-      post: _post(anonymousId: 'outra-pessoa'),
+      post: _post(isMine: false),
       onTap: () {},
-      currentAnonymousId: 'eu',
       onDelete: () {},
       onReport: () {},
     )));
@@ -81,7 +78,6 @@ void main() {
     await tester.pumpWidget(_wrap(PostCard(
       post: _post(removed: true, removedBy: 'author'),
       onTap: () {},
-      currentAnonymousId: 'eu',
       onDelete: () {},
       onReport: () {},
     )));

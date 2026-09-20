@@ -32,7 +32,7 @@ class ApiClient {
   final http.Client _client;
 
   ApiClient({this.baseUrl = defaultBaseUrl, http.Client? client})
-    : _client = client ?? http.Client();
+      : _client = client ?? http.Client();
 
   Future<List<Thesis>> fetchQuizQuestions({int limit = 30}) async {
     final uri = Uri.parse('$baseUrl/quiz/questions?limit=$limit');
@@ -146,13 +146,11 @@ class ApiClient {
     required String anonymousId,
   }) async {
     final uri = Uri.parse('$baseUrl/me/followed-actor');
-    final json =
-        await _putJson(
-              uri,
-              {'political_actor_id': actorId},
-              headers: {'X-Farol-Anonymous-Id': anonymousId},
-            )
-            as Map<String, dynamic>;
+    final json = await _putJson(
+      uri,
+      {'political_actor_id': actorId},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
     return PoliticalActor.fromJson(
       json['political_actor'] as Map<String, dynamic>,
     );
@@ -202,13 +200,11 @@ class ApiClient {
       'pairing_code': pairingCode,
     };
     final uri = Uri.parse('$baseUrl/me/iot-device');
-    final json =
-        await _putJson(
-              uri,
-              body,
-              headers: {'X-Farol-Anonymous-Id': anonymousId},
-            )
-            as Map<String, dynamic>;
+    final json = await _putJson(
+      uri,
+      body,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
     return IotDevice.fromJson(json);
   }
 
@@ -269,13 +265,14 @@ class ApiClient {
     if (themeSlug != null) body['theme_slug'] = themeSlug;
     final uri = Uri.parse('$baseUrl/community/posts');
     return await _postJson(
-          uri,
-          body,
-          headers: {'X-Farol-Anonymous-Id': anonymousId},
-        )
-        as Map<String, dynamic>;
+      uri,
+      body,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
   }
 
+  /// O UUID local identifica o leitor apenas pelo cabeçalho privado.
+  /// A resposta publica author_alias e is_mine, nunca a credencial do autor.
   Future<Map<String, dynamic>> listPosts({
     required String anonymousId,
     int page = 1,
@@ -298,6 +295,7 @@ class ApiClient {
         as Map<String, dynamic>;
   }
 
+  /// Envia a identidade privada para que is_mine reflita o leitor atual.
   Future<Map<String, dynamic>> getPost(
     String postId, {
     required String anonymousId,
@@ -314,11 +312,10 @@ class ApiClient {
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts/$postId/votes');
     return await _postJson(
-          uri,
-          {'value': value},
-          headers: {'X-Farol-Anonymous-Id': anonymousId},
-        )
-        as Map<String, dynamic>;
+      uri,
+      {'value': value},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
   }
 
   Future<Map<String, dynamic>> createComment(
@@ -328,11 +325,10 @@ class ApiClient {
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts/$postId/comments');
     return await _postJson(
-          uri,
-          {'content': content},
-          headers: {'X-Farol-Anonymous-Id': anonymousId},
-        )
-        as Map<String, dynamic>;
+      uri,
+      {'content': content},
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
   }
 
   Future<dynamic> _getJson(Uri uri, {Map<String, String>? headers}) async {

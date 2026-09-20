@@ -23,6 +23,10 @@ from app.infrastructure.database.models import (
 from app.infrastructure.database.session import get_db
 from app.main import app
 
+ANONYMOUS_OWNER = "550e8400-e29b-41d4-a716-446655440000"
+ANONYMOUS_OTHER = "550e8400-e29b-41d4-a716-446655440001"
+ANONYMOUS_THIRD = "550e8400-e29b-41d4-a716-446655440002"
+
 engine = create_engine(
     "sqlite:///:memory:",
     connect_args={"check_same_thread": False},

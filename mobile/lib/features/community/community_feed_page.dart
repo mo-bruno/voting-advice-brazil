@@ -258,7 +258,6 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                                 final post = feed[index];
                                 return PostCard(
                                   post: post,
-                                  currentAnonymousId: _anonymousId,
                                   onReport: () => _reportPost(post.id),
                                   onDelete: () => _deletePost(post.id),
                                   onTap: () async {

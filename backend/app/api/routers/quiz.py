@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 
 from app.api.deps import (
     get_candidate_repo,
@@ -71,6 +71,7 @@ def questions(
 )
 def submit(
     body: SubmitQuizIn,
+    request: Request,
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
     candidate_repo: SqlCandidateRepository = Depends(get_candidate_repo),
     position_repo: SqlPositionRepository = Depends(get_position_repo),
@@ -106,7 +107,7 @@ def submit(
     if body.device_id is not None:
         anonymous_id = str(body.device_id)
         quiz_response_repo.upsert_answers(anonymous_id, answers)
-        if settings.iot_feature_enabled:
+        if request.app.state.settings.iot_feature_enabled:
             _push_news_for_quiz_submission(anonymous_id)
 
     return SubmitQuizResponse(
@@ -165,6 +166,7 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
                 .where(
                     QuizResponseModel.device_id == anonymous_id,
                     QuizResponseModel.answer.in_(["agree", "disagree"]),
+                    ThesisModel.election_year == settings.active_election_year,
                 )
                 .distinct()
             ).scalars().all()

@@ -22,9 +22,6 @@ from app.api.routers import (
 )
 from app.config import Settings, settings
 
-limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
-
-
 PREFIX = "/api/v1"
 
 
@@ -59,6 +56,8 @@ def create_app(app_settings: Settings = settings) -> FastAPI:
         lifespan=lifespan,
     )
 
+    limiter = Limiter(key_func=get_remote_address, default_limits=["60/minute"])
+    application.state.settings = app_settings
     application.state.limiter = limiter
     application.add_exception_handler(
         RateLimitExceeded,

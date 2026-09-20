@@ -58,6 +58,14 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(tmp_path
                 assert client.get(f"/api/v1/candidates/{legacy_id}").status_code == 404
                 questions = client.get("/api/v1/quiz/questions?limit=60").json()["theses"]
                 assert {question["id"] for question in questions} == approved_ids
+                # The community composer uses this catalogue too: a small
+                # presidential edition must not hide its one-question topics.
+                themes = client.get("/api/v1/themes").json()
+                assert {theme["slug"] for theme in themes} == {
+                    "economia", "trabalho", "politica_social", "educacao",
+                    "direitos_sociais", "saude", "politica_externa",
+                }
+                assert sum(theme["total_teses_aprovadas"] for theme in themes) == 9
                 answers = [{"thesis_id": question["id"], "answer": "agree"} for question in questions]
                 response = client.post("/api/v1/quiz/submit", json={"answers": answers})
                 assert response.status_code == 200

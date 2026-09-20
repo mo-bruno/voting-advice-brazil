@@ -1,3 +1,6 @@
+> **Implementation ruling (2026-09-09):** Settings live in `backend/app/config.py`,
+> outside framework-free core. Configuration references below reflect this ruling.
+
 # Disable IoT and Close Security Gaps Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -476,7 +479,7 @@ git commit -m "fix: enforce integrity rules for community comments"
 **Files:**
 
 - Create: `backend/tests/test_iot_feature_flag.py`
-- Modify: `backend/app/core/config.py`
+- Modify: `backend/app/config.py`
 - Modify: `backend/app/main.py`
 - Modify: `backend/app/api/routers/quiz.py`
 - Modify: `backend/.env.example`
@@ -492,7 +495,7 @@ git commit -m "fix: enforce integrity rules for community comments"
 - [ ] **Step 1: Write failing backend feature-flag tests**
 
 ```python
-from app.core.config import Settings
+from app.config import Settings
 from app.main import create_app
 
 
@@ -575,7 +578,7 @@ Expected: all selected tests pass.
 - [ ] **Step 6: Commit the backend flag**
 
 ```bash
-git add backend/app/core/config.py backend/app/main.py backend/app/api/routers/quiz.py backend/.env.example backend/tests
+git add backend/app/config.py backend/app/main.py backend/app/api/routers/quiz.py backend/.env.example backend/tests
 git commit -m "feat: disable IoT API by default"
 ```
 
@@ -936,7 +939,7 @@ git commit -m "fix: consume public community author aliases"
 - Create: `firmware/README.md`
 - Modify: `backend/pyproject.toml`
 - Modify: `backend/uv.lock`
-- Modify: `backend/app/core/config.py`
+- Modify: `backend/app/config.py`
 - Modify: `backend/.env.example`
 - Modify: `cloudbuild.yaml`
 - Modify: `.github/workflows/deploy-web.yml`
@@ -1023,8 +1026,8 @@ flag, and current environment variables.
 
 `CLAUDE.md` must remove claims that the present quiz scores voting records,
 that a consistency index exists, that quiz responses are not persisted, and
-that a batch Gemini pipeline is implemented. Describe Groq moderation as a
-synchronous post/comment gate and Câmara/GNews as separate integrations.
+that a batch Gemini pipeline is implemented. Describe NVIDIA NIM moderation as
+a synchronous post/comment gate and Câmara/GNews as separate integrations.
 
 - [ ] **Step 5: Mark historical documents and firmware accurately**
 
@@ -1063,7 +1066,7 @@ current documentation.
 cd backend
 uv run pytest tests/test_config.py -q
 cd ..
-git add backend/pyproject.toml backend/uv.lock backend/app/core/config.py backend/.env.example cloudbuild.yaml .github/workflows/deploy-web.yml README.md backend/README.md CLAUDE.md firmware/README.md
+git add backend/pyproject.toml backend/uv.lock backend/app/config.py backend/.env.example cloudbuild.yaml .github/workflows/deploy-web.yml README.md backend/README.md CLAUDE.md firmware/README.md
 git add -f docs/superpowers/specs/2026-05-22-iot-gadget-pairing-design.md docs/superpowers/plans/2026-05-22-iot-gadget-pairing.md docs/superpowers/specs/2026-05-30-community-forum-design.md
 git commit -m "docs: align product guidance with dormant hardware"
 ```
@@ -1114,7 +1117,9 @@ rm -f "$verification_db"
 ```
 
 Expected: upgrade exits 0 and current reports
-`0007_iot_event_deduplication (head)`.
+`0008_comment_admission_locks (head)`. The additional head comes from the
+approved database-serialized comment-admission fix recorded in the execution
+ledger.
 
 - [ ] **Step 4: Run the complete Flutter suite and analysis**
 
@@ -1162,8 +1167,8 @@ no core-to-infrastructure imports; status contains only intentional changes.
 Read:
 
 ```bash
-git diff --stat HEAD~8..HEAD
-git diff HEAD~8..HEAD -- README.md backend/README.md CLAUDE.md backend/app mobile/lib cloudbuild.yaml .github/workflows/deploy-web.yml
+git diff --stat 7c4a1cd..HEAD
+git diff 7c4a1cd..HEAD -- README.md backend/README.md CLAUDE.md backend/app mobile/lib cloudbuild.yaml .github/workflows/deploy-web.yml
 ```
 
 Check every acceptance item in the specification against a passing test or a

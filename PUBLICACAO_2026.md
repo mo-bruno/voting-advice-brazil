@@ -19,6 +19,8 @@ A proteção de `main` exige uma aprovação de outra pessoa. Não usar merge ad
 5. Publicar a interface após sucesso do backend, usando o mesmo commit.
 6. Conferir saúde, somente 13 candidaturas de 2026, nove perguntas, fotos, cobertura e fontes. Não criar mensagens comunitárias de teste em produção.
 
+Republicações manuais devem iniciar o workflow `Deploy Backend` em `main`; a interface não tem disparo manual independente. O workflow web recebe o commit exato do backend concluído com sucesso.
+
 ## Recuperação
 
 O processo registra `SAFE_BRIDGE_REVISION` nos logs depois de publicar a revisão intermediária. Se a carga ou ativação falhar, ela continua apta a servir a eleição anterior com filtros. Após carregar 2026, não restaurar imagem anterior a esses filtros: ela pode misturar eleições.
@@ -30,3 +32,13 @@ Na inspeção anterior à entrega, a produção estava na revisão `farol-politi
 ## Privacidade
 
 Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. O serviço conserva a persistência funcional já existente das respostas, separada dessas métricas.
+
+## Verificação da entrega
+
+- Integração com a `main` publicada em `6635513`, preservando moderação NVIDIA, identidade privada e limites de publicação da comunidade.
+- Backend: 558 testes aprovados, cobertura de 93,66%, Ruff sem problemas e Mypy aprovado em 81 arquivos.
+- Flutter: 233 testes aprovados, análise sem problemas e build web release concluído. Aviso não bloqueante de fonte CupertinoIcons ausente.
+- Banco PostgreSQL 16: migração até `0009_election_refresh`, carga histórica de 2022 seguida de 2026 e repetição idempotente verificadas; nenhum desvio de schema detectado.
+- Revisão independente de engenharia sem bloqueadores P1/P2 pendentes no escopo analisado. Isso não substitui a aprovação de outra pessoa nem transforma a revisão documental automatizada em validação humana.
+
+Essas evidências são locais. O CI da proposta de alteração e a aprovação precisam ser confirmados antes da integração; os checks de produção da etapa 6 continuam obrigatórios após a publicação.

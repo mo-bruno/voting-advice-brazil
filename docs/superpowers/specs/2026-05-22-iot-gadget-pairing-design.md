@@ -1,3 +1,12 @@
+> **Status: dormant historical design.** The physical IoT feature is disabled
+> by default as of 2026-09-09. Current behavior is defined by
+> `2026-09-09-disable-iot-and-close-gaps-design.md`; this file is retained as a
+> record of the original implementation.
+>
+> See the [current design](2026-09-09-disable-iot-and-close-gaps-design.md) and
+> [firmware status](../../../firmware/README.md). Enabling historical flags is
+> unsupported and does not provide a completed alignment engine or production scheduler.
+
 # Desenho: Pareamento do Gadget IoT Farol Politico
 
 Data: 2026-05-22

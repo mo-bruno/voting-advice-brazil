@@ -1,18 +1,24 @@
 from __future__ import annotations
 
 import logging
+import unicodedata
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 
-from apscheduler.schedulers.background import (  # type: ignore[import-untyped]
-    BackgroundScheduler,
-)
-
+from app.config import settings
 from app.infrastructure.database.session import SessionLocal
 from app.infrastructure.mqtt.publisher import PahoIotMqttPublisher
 from app.infrastructure.sources.camara import CamaraClient
 
 _log = logging.getLogger(__name__)
-_scheduler = BackgroundScheduler(timezone="UTC")
+
+
+def _alignment_for_vote(vote: str) -> str:
+    normalized = "".join(
+        char for char in unicodedata.normalize("NFKD", vote.casefold())
+        if not unicodedata.combining(char)
+    )
+    return "abstained" if normalized in {"abstencao", "abstention"} else "pending"
 
 
 def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict[str, object]]:
@@ -29,7 +35,10 @@ def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict[
                 voting_date = datetime.fromisoformat(
                     voting_date_str.replace("Z", "+00:00")
                 )
-                if voting_date < since:
+                if voting_date.tzinfo is None:
+                    # Câmara's offset-free dates and times use Brasília civil time.
+                    voting_date = voting_date.replace(tzinfo=ZoneInfo("America/Sao_Paulo"))
+                if voting_date.astimezone(timezone.utc) < since:
                     continue
             except ValueError:
                 pass
@@ -56,7 +65,7 @@ def _fetch_recent_votes_for_actor(source_id: str, since: datetime) -> list[dict[
     return votes
 
 
-def _run_vote_notifier_job() -> None:
+def _run_vote_notifier_job() -> int:
     from app.core.use_cases.vote_notifier import run_vote_notifier
     from app.infrastructure.database.iot_device_repositories import (
         SqlIotDeviceEventRepository,
@@ -70,6 +79,7 @@ def _run_vote_notifier_job() -> None:
     _log.info("vote_notifier: iniciando")
     now = datetime.now(timezone.utc)
     since = now.replace(hour=0, minute=0, second=0, microsecond=0)
+    notified = 0
     try:
         with SessionLocal() as db:
             followed_repo = SqlFollowedActorRepository(db)
@@ -96,17 +106,18 @@ def _run_vote_notifier_job() -> None:
                     continue
 
                 for vote_data in votes:
-                    run_vote_notifier(
+                    notified += run_vote_notifier(
                         followed_repo=followed_repo,
                         link_repo=link_repo,
                         event_repo=event_repo,
                         publisher=publisher,
                         political_actor_id=actor_id,
+                        source_event_id=f"vote:{vote_data['voting_id']}:{actor.source_id}",
                         deputy_name=actor.display_name,
                         party=actor.party,
                         state=actor.state,
                         vote=str(vote_data.get("vote", "")),
-                        alignment=str(vote_data.get("alignment", "abstained")),
+                        alignment=_alignment_for_vote(str(vote_data.get("vote", ""))),
                         now=now,
                     )
 
@@ -114,13 +125,13 @@ def _run_vote_notifier_job() -> None:
     except Exception:
         _log.exception("vote_notifier: erro inesperado")
     _log.info("vote_notifier: concluido")
+    return notified
 
 
 def _push_news_for_all_followers(db: object, now: datetime) -> None:
     from sqlalchemy import select
     from sqlalchemy.orm import Session
 
-    from app.config import settings
     from app.core.entities.news import DeviceNewsArticle
     from app.core.use_cases.news_notifier import push_news_for_user
     from app.infrastructure.database.iot_device_repositories import (
@@ -156,6 +167,7 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
             .where(
                 QuizResponseModel.device_id == anon_id,
                 QuizResponseModel.answer.in_(["agree", "disagree"]),
+                ThesisModel.election_year == settings.active_election_year,
             )
             .distinct()
         ).scalars().all()
@@ -180,18 +192,15 @@ def _push_news_for_all_followers(db: object, now: datetime) -> None:
         )
 
 
-def start() -> None:
-    _scheduler.add_job(
-        _run_vote_notifier_job,
-        trigger="interval",
-        minutes=30,
-        id="vote_notifier",
-        replace_existing=True,
-    )
-    _scheduler.start()
-    _log.info("scheduler: iniciado (vote_notifier a cada 30 min)")
+def run_once() -> int:
+    if not settings.iot_feature_enabled:
+        return 0
+    return _run_vote_notifier_job()
 
 
-def stop() -> None:
-    if _scheduler.running:
-        _scheduler.shutdown(wait=False)
+def main() -> None:
+    run_once()
+
+
+if __name__ == "__main__":
+    main()
