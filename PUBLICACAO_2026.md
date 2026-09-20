@@ -42,3 +42,11 @@ Não enviar respostas, teses identificáveis, seleção de partidos/candidatos o
 - Revisão independente de engenharia sem bloqueadores P1/P2 pendentes no escopo analisado. Isso não substitui a aprovação de outra pessoa nem transforma a revisão documental automatizada em validação humana.
 
 Essas evidências são locais. O CI da proposta de alteração e a aprovação precisam ser confirmados antes da integração; os checks de produção da etapa 6 continuam obrigatórios após a publicação.
+
+## Falha da primeira publicação e retomada
+
+A execução de 20/09/2026 após integrar o PR #52 parou na preparação da ponte. O Cloud Build `c63ed2aa-e3c9-4b7e-b33f-2672aa00d984` concluiu imagem e migração, mas a checagem do script rejeitou o retorno agregado do serviço: `latestCreatedRevisionName` apontava para `00030-8c9`, enquanto `latestReadyRevisionName` ainda apontava para `00029-8kr`. A consulta da revisão nova confirmou `Ready=True`, `Active=False` e geração reconciliada. Carga e ativação de 2026 não executaram; 100% do tráfego permaneceu na revisão anterior, com 12 candidaturas de 2022 e saúde normal.
+
+A correção consulta a revisão exata retornada pelo deploy, exige nome correspondente, geração reconciliada e uma única condição `Ready=True` antes de transferir tráfego. Ausência, erro de leitura ou prontidão não confirmada interrompem a publicação. Não exige `Active=True` em uma revisão criada sem tráfego. O contrato de reconciliação está na [documentação de revisões do Cloud Run](https://docs.cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions).
+
+Integrar a correção dispara uma nova publicação a partir do commit corrigido. Não basta repetir a execução antiga: ela reutiliza o script com defeito. A migração já aplicada é idempotente; não reverter schema nem alterar permissões IAM para contornar essa falha. O aviso de IAM observado no log não foi a exceção que encerrou a execução, e o acesso público anterior permaneceu funcionando.

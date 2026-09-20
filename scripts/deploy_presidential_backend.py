@@ -46,6 +46,22 @@ def _published_year(region: str) -> str:
     return year
 
 
+def _require_ready_revision(revision_name: str, region: str) -> None:
+    revision = _gcloud_json("run", "revisions", "describe", revision_name, f"--region={region}")
+    metadata = revision.get("metadata", {})
+    status = revision.get("status", {})
+    generation = metadata.get("generation")
+    ready = [item for item in status.get("conditions", []) if item.get("type") == "Ready"]
+    if (
+        metadata.get("name") != revision_name
+        or generation is None
+        or status.get("observedGeneration") != generation
+        or len(ready) != 1
+        or ready[0].get("status") != "True"
+    ):
+        raise ValueError("A nova revisão não ficou pronta; tráfego preservado")
+
+
 def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("mode", choices=["bridge", "activate"])
@@ -63,10 +79,13 @@ def main(argv: list[str] | None = None) -> None:
         f"--update-env-vars=DATA_DIR=/data,APP_ENV=prod,ACTIVE_ELECTION_YEAR={year},ACTIVE_ELECTION_OFFICE=presidente,IOT_FEATURE_ENABLED=false,NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b",
         "--update-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,NVIDIA_API_KEY=nvidia-api-key:latest",
     )
-    status = deployed["status"]
-    ready_revision = status.get("latestReadyRevisionName")
-    if not ready_revision or ready_revision != status.get("latestCreatedRevisionName"):
-        raise ValueError("A nova revisão não ficou pronta; tráfego preservado")
+    # The aggregate service pointer can still identify the old revision after
+    # --no-traffic. Verify the immutable revision returned by this deploy itself;
+    # its Active=False condition is expected until traffic is assigned.
+    ready_revision = deployed.get("status", {}).get("latestCreatedRevisionName")
+    if not isinstance(ready_revision, str) or not ready_revision:
+        raise ValueError("A nova revisão não foi identificada; tráfego preservado")
+    _require_ready_revision(ready_revision, args.region)
     # Pin the revision just created, not whichever revision happens to be LATEST.
     subprocess.run([
         "gcloud", "run", "services", "update-traffic", SERVICE,
