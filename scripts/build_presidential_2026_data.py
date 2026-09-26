@@ -2,8 +2,9 @@
 
 The script deliberately keeps editorial choices explicit.  It refreshes the
 candidate roster and portraits from the latest official snapshot, then exports
-only evidence-backed, contrasting theses as active quiz questions.  The other
-user-supplied theses remain in the payload as drafts for later review.
+only evidence-backed, contrasting theses as active quiz questions. Every
+supplied thesis remains in the payload with a complete documentary
+classification, including formulations rejected from the questionnaire.
 """
 
 from __future__ import annotations
@@ -168,6 +169,11 @@ DRAFT_REASONS = {
     "034B": "A mudança institucional pretendida ainda precisa ser especificada pela fonte.",
     "035": "Os cargos e o desenho do sistema misto ainda precisam ser delimitados; não há oposição explícita.",
 }
+
+FULL_REVIEW_EXTENSION = set(THESIS_TEXTS) - FULL_REVIEW_CORE
+SELECTION_CLASSES = {"nucleus", "complementary", "rejected"}
+EXPANSION_REVIEWER = "automated_expansion_review"
+VALID_TOPICS = set(TOPICS.values())
 
 
 def _sha256(path: Path) -> str:
@@ -446,6 +452,252 @@ def _load_full_review(
     return candidates, inputs
 
 
+def _validate_extension_decision(
+    candidate_id: str,
+    suffix: str,
+    decision: dict[str, Any],
+    document_id: str,
+) -> None:
+    if decision.get("category") not in FULL_REVIEW_CATEGORIES:
+        raise ValueError(f"Categoria pendente ou inválida: {candidate_id}/{suffix}")
+    if not decision.get("reason") or not decision.get("search_terms"):
+        raise ValueError(
+            f"Decisão sem justificativa ou registro de busca: {candidate_id}/{suffix}"
+        )
+    if decision["category"] == "NAO_ENCONTRADA" and not decision.get("absence_reason"):
+        raise ValueError(
+            f"Ausência sem justificativa de leitura integral: {candidate_id}/{suffix}"
+        )
+    evidence = decision.get("evidence")
+    if not isinstance(evidence, list):
+        raise ValueError(
+            f"Revisão integral sem lista explícita de evidência: {candidate_id}/{suffix}"
+        )
+    for item in evidence:
+        if item.get("document_id", document_id) != document_id:
+            raise ValueError(
+                f"Evidência atribuída a outro documento: {candidate_id}/{suffix}"
+            )
+
+
+def _load_extension_review(
+    paths: list[Path],
+    candidate_ids: list[str],
+    full_review: dict[str, dict[str, Any]],
+) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]]]:
+    candidates: dict[str, dict[str, Any]] = {}
+    inputs = []
+    for path in paths:
+        if not path.is_file():
+            raise ValueError(f"Arquivo da matriz completa ausente: {path}")
+        content = json.loads(path.read_text(encoding="utf-8"))
+        if content.get("reviewer") != "automated_complete_matrix_review":
+            raise ValueError(f"Tipo de extensão de revisão inválido: {path}")
+        if not content.get("reviewed_at") or not content.get("method"):
+            raise ValueError(f"Extensão de revisão sem método ou data: {path}")
+        inputs.append({"file": path.name, "sha256": _sha256(path)})
+        for candidate_id, review in content.get("candidates", {}).items():
+            if candidate_id in candidates:
+                raise ValueError(
+                    f"Candidatura duplicada na extensão da revisão: {candidate_id}"
+                )
+            candidates[candidate_id] = review
+    if set(candidates) != set(candidate_ids):
+        raise ValueError(
+            "Candidaturas da extensão de revisão diferem do retrato oficial ativo"
+        )
+    for candidate_id, review in candidates.items():
+        decisions = review.get("decisions", {})
+        if set(decisions) != FULL_REVIEW_EXTENSION:
+            raise ValueError(f"Extensão exige as 29 decisões restantes: {candidate_id}")
+        document_id = full_review[candidate_id]["document_id"]
+        for suffix, decision in decisions.items():
+            _validate_extension_decision(candidate_id, suffix, decision, document_id)
+    return candidates, inputs
+
+
+def _load_selection(path: Path) -> tuple[dict[str, Any], dict[str, str]]:
+    if not path.is_file():
+        raise ValueError(f"Arquivo de seleção editorial ausente: {path}")
+    content = json.loads(path.read_text(encoding="utf-8"))
+    if not all(content.get(key) for key in ("review_id", "reviewed_at", "method")):
+        raise ValueError("Seleção editorial sem identidade, data ou método")
+    theses = content.get("theses", {})
+    if set(theses) != set(THESIS_TEXTS):
+        raise ValueError("Seleção editorial deve decidir as 38 formulações")
+    for suffix, item in theses.items():
+        if item.get("classification") not in SELECTION_CLASSES or not item.get(
+            "reason"
+        ):
+            raise ValueError(f"Seleção editorial inválida: {suffix}")
+    return content, {"file": path.name, "sha256": _sha256(path)}
+
+
+def _load_source_bank_manifest(
+    path: Path,
+) -> tuple[set[str], dict[str, str | int]]:
+    if not path.is_file():
+        raise ValueError(f"Manifesto do banco de teses ausente: {path}")
+    content = json.loads(path.read_text(encoding="utf-8"))
+    entries = content.get("text_sha256_by_bank_id")
+    if (
+        content.get("schema_version") != 1
+        or content.get("dispute_id") != "BR_PRESIDENTE_2026"
+        or not isinstance(entries, dict)
+        or content.get("source_count") != len(entries)
+        or not entries
+        or not isinstance(content.get("source_file"), str)
+        or not re.fullmatch(r"[0-9a-f]{64}", content.get("source_sha256", ""))
+    ):
+        raise ValueError("Manifesto do banco de teses inválido")
+    for bank_id, text_hash in entries.items():
+        if not re.fullmatch(r"BR26-BANCO-[A-Z]+-\d{3}", bank_id) or not re.fullmatch(
+            r"[0-9a-f]{64}", text_hash if isinstance(text_hash, str) else ""
+        ):
+            raise ValueError(f"Entrada inválida no banco de teses: {bank_id}")
+    source_path = path.parent / content["source_file"]
+    if not source_path.is_file() or _sha256(source_path) != content["source_sha256"]:
+        raise ValueError("Arquivo versionado do banco de teses ausente ou alterado")
+    source_entries: dict[str, str] = {}
+    for line_number, line in enumerate(
+        source_path.read_text(encoding="utf-8").splitlines(), 1
+    ):
+        try:
+            source = json.loads(line)
+        except json.JSONDecodeError as error:
+            raise ValueError(
+                f"JSON inválido no banco de teses, linha {line_number}"
+            ) from error
+        bank_id = source.get("banco_id")
+        text = source.get("texto_tese")
+        if (
+            not isinstance(bank_id, str)
+            or not isinstance(text, str)
+            or source.get("disputa_id") != "BR_PRESIDENTE_2026"
+            or bank_id in source_entries
+        ):
+            raise ValueError(f"Registro inválido no banco de teses: linha {line_number}")
+        source_entries[bank_id] = hashlib.sha256(text.encode("utf-8")).hexdigest()
+    if source_entries != entries:
+        raise ValueError("Conteúdo do banco de teses diverge do manifesto")
+    return set(entries), {
+        "file": path.name,
+        "sha256": _sha256(path),
+        "source_count": content["source_count"],
+        "source_sha256": content["source_sha256"],
+    }
+
+
+def _load_expansion_review(
+    paths: list[Path],
+    candidate_ids: list[str],
+    full_review: dict[str, dict[str, Any]],
+    source_bank_ids: set[str],
+) -> tuple[dict[str, dict[str, Any]], list[dict[str, str]], dict[str, str]]:
+    proposals: dict[str, dict[str, Any]] = {}
+    published_ids: set[str] = set()
+    inputs = []
+    reviewed_at: set[str] = set()
+    methods = []
+    base_ids = {f"BR26-T{suffix}" for suffix in THESIS_TEXTS}
+    for path in paths:
+        if not path.is_file():
+            raise ValueError(f"Arquivo da expansão editorial ausente: {path}")
+        content = json.loads(path.read_text(encoding="utf-8"))
+        if content.get("reviewer") != EXPANSION_REVIEWER:
+            raise ValueError(f"Tipo de revisão de expansão inválido: {path}")
+        if not content.get("reviewed_at") or not content.get("method"):
+            raise ValueError(f"Revisão de expansão sem método ou data: {path}")
+        reviewed_at.add(content["reviewed_at"])
+        methods.append(content["method"])
+        inputs.append({"file": path.name, "sha256": _sha256(path)})
+        for proposal_key, proposal in content.get("proposals", {}).items():
+            if proposal_key in proposals:
+                raise ValueError(
+                    f"Proposta duplicada na expansão editorial: {proposal_key}"
+                )
+            published_id = proposal.get("id")
+            if (
+                not isinstance(published_id, str)
+                or not re.fullmatch(r"BR26-T\d{3}", published_id)
+                or published_id in base_ids
+                or published_id in published_ids
+            ):
+                raise ValueError(
+                    f"Identidade inválida ou duplicada na expansão: {proposal_key}"
+                )
+            if (
+                not proposal.get("text")
+                or proposal.get("topic") not in VALID_TOPICS
+                or type(proposal.get("version")) is not int
+                or proposal["version"] < 1
+                or not isinstance(proposal.get("bank_ids"), list)
+                or not proposal["bank_ids"]
+                or not all(
+                    isinstance(bank_id, str) and bank_id in source_bank_ids
+                    for bank_id in proposal["bank_ids"]
+                )
+                or not proposal.get("reason")
+                or proposal.get("recommendation") not in SELECTION_CLASSES
+                or not isinstance(proposal.get("problems"), list)
+            ):
+                raise ValueError(f"Proposta de expansão inválida: {proposal_key}")
+            decisions = proposal.get("decisions", {})
+            if set(decisions) != set(candidate_ids):
+                raise ValueError(
+                    f"Expansão exige decisões das 13 candidaturas: {proposal_key}"
+                )
+            categories: Counter[str] = Counter()
+            for candidate_id, decision in decisions.items():
+                _validate_extension_decision(
+                    candidate_id,
+                    proposal_key,
+                    decision,
+                    full_review[candidate_id]["document_id"],
+                )
+                categories[decision["category"]] += 1
+            categorical_count = categories["CONCORDA"] + categories["DISCORDA"]
+            has_both_poles = bool(categories["CONCORDA"] and categories["DISCORDA"])
+            recommendation = proposal["recommendation"]
+            if recommendation == "nucleus" and not (
+                has_both_poles and categorical_count >= 3
+            ):
+                raise ValueError(
+                    f"Expansão marcada como núcleo sem cobertura suficiente: {proposal_key}"
+                )
+            if recommendation == "complementary" and not (
+                has_both_poles and categorical_count == 2
+            ):
+                raise ValueError(
+                    f"Expansão complementar sem exatamente dois polos: {proposal_key}"
+                )
+            if (
+                recommendation == "rejected"
+                and has_both_poles
+                and not proposal["problems"]
+            ):
+                raise ValueError(
+                    "Expansão rejeitada apesar do contraste precisa registrar o "
+                    f"problema editorial: {proposal_key}"
+                )
+            published_ids.add(published_id)
+            proposals[proposal_key] = proposal
+    if len(reviewed_at) != 1:
+        raise ValueError("Arquivos da expansão editorial usam datas diferentes")
+    if not proposals:
+        raise ValueError("Expansão editorial não contém propostas auditadas")
+    date = next(iter(reviewed_at))
+    return (
+        proposals,
+        inputs,
+        {
+            "reviewed_at": date,
+            "review_id": f"presidential-expanded-document-{date}-r1",
+            "method": " ".join(dict.fromkeys(methods)),
+        },
+    )
+
+
 def _position_payload(
     row: dict[str, Any] | None,
     decision: dict[str, Any] | None,
@@ -517,6 +769,66 @@ def _position_payload(
     }
 
 
+def _normalise_literal_text(value: str) -> str:
+    normalised = unicodedata.normalize("NFKC", value).replace("\u00ad", "")
+    return re.sub(r"\s+", "", normalised.casefold())
+
+
+def _extract_pdf_text_pages(pdf_bytes: bytes, *, layout: bool) -> list[str]:
+    command = ["pdftotext"]
+    if layout:
+        command.append("-layout")
+    command.extend(["-", "-"])
+    result = subprocess.run(command, input=pdf_bytes, capture_output=True, check=False)
+    if result.returncode != 0:
+        error = result.stderr.decode("utf-8", errors="replace").strip()
+        raise ValueError(f"Falha ao extrair texto do plano oficial: {error}")
+    return result.stdout.decode("utf-8", errors="replace").split("\f")
+
+
+def _validate_literal_evidence(
+    payload: dict[str, Any], plans_zip: Path
+) -> None:
+    evidence_by_document: dict[str, list[tuple[str, int, str]]] = {}
+    for thesis in payload["theses"]:
+        for position in thesis["positions"].values():
+            for evidence in position.get("evidence", []):
+                evidence_by_document.setdefault(evidence["document_id"], []).append(
+                    (thesis["id"], evidence["page"], evidence["quote"])
+                )
+
+    documents = payload["metadata"]["analysed_documents"]
+    with ZipFile(plans_zip) as zipped:
+        for document_id, evidence_items in evidence_by_document.items():
+            document = documents.get(document_id)
+            if document is None:
+                raise ValueError(f"Documento da evidência não analisado: {document_id}")
+            try:
+                pdf_bytes = zipped.read(document["archive_member"])
+            except KeyError as error:
+                raise ValueError(
+                    f"PDF da evidência ausente no pacote: {document_id}"
+                ) from error
+            extracted = [
+                _extract_pdf_text_pages(pdf_bytes, layout=layout)
+                for layout in (True, False)
+            ]
+            for thesis_id, page, quote in evidence_items:
+                page_texts = [
+                    pages[page - 1] if 0 < page <= len(pages) else ""
+                    for pages in extracted
+                ]
+                literal = _normalise_literal_text(quote)
+                if not literal or not any(
+                    literal in _normalise_literal_text(page_text)
+                    for page_text in page_texts
+                ):
+                    raise ValueError(
+                        "Citação não localizada na página do PDF oficial: "
+                        f"{thesis_id}/{document_id}/p.{page}"
+                    )
+
+
 def _build_theses(
     candidate_ids: list[str],
     positions_path: Path,
@@ -526,17 +838,29 @@ def _build_theses(
     documents_path: Path,
     plans_zip: Path,
     full_review_paths: list[Path] | None = None,
+    extension_review_paths: list[Path] | None = None,
+    selection_path: Path | None = None,
+    expansion_review_paths: list[Path] | None = None,
+    source_bank_path: Path | None = None,
     require_full_review: bool = False,
 ) -> dict[str, Any]:
-    if require_full_review and not full_review_paths:
-        raise ValueError("A edição publicável exige revisão integral documental")
+    if require_full_review and (
+        not full_review_paths
+        or not extension_review_paths
+        or selection_path is None
+        or not expansion_review_paths
+        or source_bank_path is None
+    ):
+        raise ValueError(
+            "A edição publicável exige revisão integral, seleção e expansão editorial"
+        )
     review = json.loads(review_path.read_text(encoding="utf-8"))
     input_paths = {
         "positions": positions_path,
         "source_theses": source_theses_path,
         "documents": documents_path,
     }
-    editorial_inputs = {}
+    editorial_inputs: dict[str, Any] = {}
     for key, path in input_paths.items():
         digest = _sha256(path)
         if digest != review["input_sha256"][key]:
@@ -547,7 +871,11 @@ def _build_theses(
         "sha256": _sha256(review_path),
     }
     documents = _verify_plan_snapshot(plans_zip, documents_path)
-    full_review = {}
+    full_review: dict[str, dict[str, Any]] = {}
+    complete_review = False
+    selection: dict[str, Any] | None = None
+    expansion_review: dict[str, dict[str, Any]] = {}
+    expansion_meta: dict[str, str] | None = None
     if full_review_paths:
         full_review, full_inputs = _load_full_review(
             full_review_paths, candidate_ids, plans_zip
@@ -575,8 +903,44 @@ def _build_theses(
             for key, value in documents.items()
             if value["candidato_id"] in candidate_ids
         }
+    if extension_review_paths or selection_path is not None:
+        if not full_review or not extension_review_paths or selection_path is None:
+            raise ValueError(
+                "Matriz completa exige núcleo, extensão e seleção editorial"
+            )
+        extension_review, extension_inputs = _load_extension_review(
+            extension_review_paths, candidate_ids, full_review
+        )
+        editorial_inputs["extension_review"] = extension_inputs
+        selection, selection_input = _load_selection(selection_path)
+        editorial_inputs["selection"] = selection_input
+        for candidate_id, candidate_review in full_review.items():
+            candidate_review["decisions"] = {
+                **candidate_review["decisions"],
+                **extension_review[candidate_id]["decisions"],
+            }
+        complete_review = True
+    if expansion_review_paths:
+        if not complete_review:
+            raise ValueError(
+                "Expansão editorial exige a matriz completa das 38 formulações"
+            )
+        if source_bank_path is None:
+            raise ValueError("Expansão editorial exige o manifesto do banco de teses")
+        source_bank_ids, source_bank_input = _load_source_bank_manifest(
+            source_bank_path
+        )
+        editorial_inputs["source_bank"] = source_bank_input
+        expansion_review, expansion_inputs, expansion_meta = _load_expansion_review(
+            expansion_review_paths, candidate_ids, full_review, source_bank_ids
+        )
+        editorial_inputs["expansion_review"] = expansion_inputs
     effective_review_id = (
-        f"presidential-full-document-{review['reviewed_at']}-r1"
+        expansion_meta["review_id"]
+        if expansion_meta
+        else selection["review_id"]
+        if selection
+        else f"presidential-full-document-{review['reviewed_at']}-r1"
         if full_review
         else review["review_id"]
     )
@@ -592,7 +956,19 @@ def _build_theses(
     theses = []
     for suffix, text in THESIS_TEXTS.items():
         reviewed_thesis = review["theses"].get(suffix)
-        approved = reviewed_thesis is not None
+        selection_item = selection["theses"][suffix] if selection else None
+        selection_class = (
+            selection_item["classification"]
+            if selection_item
+            else "nucleus"
+            if reviewed_thesis is not None
+            else "rejected"
+        )
+        approved = (
+            selection_class in {"nucleus", "complementary"}
+            if complete_review
+            else reviewed_thesis is not None
+        )
         if reviewed_thesis and reviewed_thesis["text"] != text:
             raise ValueError(f"Formulação mudou após a revisão: BR26-T{suffix}")
         source_id = SOURCE_THESIS[suffix]
@@ -606,7 +982,7 @@ def _build_theses(
             row = positions.get((source_id, candidate_id))
             decision = (
                 full_review[candidate_id]["decisions"][suffix]
-                if full_review and approved
+                if complete_review or (full_review and approved)
                 else decisions.get(candidate_id)
             )
             if decision and row is None and not full_review:
@@ -616,7 +992,11 @@ def _build_theses(
             thesis_positions[candidate_id] = _position_payload(
                 row, decision, documents, effective_review_id, approved, candidate_id
             )
-            if full_review and approved:
+            if complete_review or (full_review and approved):
+                if decision is None:
+                    raise ValueError(
+                        f"Revisão documental ausente: {suffix}/{candidate_id}"
+                    )
                 thesis_positions[candidate_id]["review"].update(
                     {
                         "status": "full_document_reviewed_automated",
@@ -633,6 +1013,36 @@ def _build_theses(
                 .get(suffix, {})
                 .get(candidate_id, "sem_posicao")
             )
+        if complete_review:
+            if selection_item is None:
+                raise ValueError(f"Seleção editorial ausente: {suffix}")
+            category_counts = Counter(
+                item["analytical_position"] for item in thesis_positions.values()
+            )
+            categorical_count = (
+                category_counts["CONCORDA"] + category_counts["DISCORDA"]
+            )
+            has_both_poles = bool(
+                category_counts["CONCORDA"] and category_counts["DISCORDA"]
+            )
+            valid_selection = {
+                "nucleus": has_both_poles and categorical_count >= 3,
+                "complementary": has_both_poles and categorical_count == 2,
+                "rejected": not has_both_poles,
+            }[selection_class]
+            if not valid_selection:
+                raise ValueError(
+                    "Seleção editorial incompatível com o contraste documental: "
+                    f"{suffix}/{selection_class}"
+                )
+            expected_metrics = {
+                "agree": category_counts["CONCORDA"],
+                "disagree": category_counts["DISCORDA"],
+                "conditional": category_counts["CONDICIONAL_OU_MISTA"],
+                "not_found": category_counts["NAO_ENCONTRADA"],
+            }
+            if selection_item.get("metrics", expected_metrics) != expected_metrics:
+                raise ValueError(f"Métricas da seleção editorial divergentes: {suffix}")
         if approved and not {"concordo", "discordo"}.issubset(
             {item["position"] for item in thesis_positions.values()}
         ):
@@ -656,10 +1066,13 @@ def _build_theses(
                 "text_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
                 "topic": TOPICS[suffix],
                 "status": "approved" if approved else "draft",
+                "selection": selection_class,
                 "source_thesis_id": source_id,
                 "supersedes": supersedes,
                 "editorial_note": (
-                    "Nove formulações com revisão documental integral automatizada de todas as candidaturas ativas; há contraste documentado. Não constitui revisão humana."
+                    selection_item["reason"]
+                    if selection_item
+                    else "Nove formulações com revisão documental integral automatizada de todas as candidaturas ativas; há contraste documentado. Não constitui revisão humana."
                     if approved and full_review
                     else "Há contraste documentado nas passagens revisadas. Aprovação apenas técnica para seleção; validação humana e revisão das células pendentes não concluídas."
                     if approved
@@ -669,22 +1082,87 @@ def _build_theses(
             }
         )
 
-    return {
+    for proposal_key, proposal in expansion_review.items():
+        approved = proposal["recommendation"] in {"nucleus", "complementary"}
+        proposal_positions = {}
+        for candidate_id in candidate_ids:
+            decision = proposal["decisions"][candidate_id]
+            proposal_positions[candidate_id] = _position_payload(
+                None,
+                decision,
+                documents,
+                effective_review_id,
+                approved,
+                candidate_id,
+            )
+            proposal_positions[candidate_id]["review"].update(
+                {
+                    "status": "full_document_reviewed_automated",
+                    "search_terms": decision["search_terms"],
+                    "absence_reason": decision.get("absence_reason"),
+                    "document_id": full_review[candidate_id]["document_id"],
+                    "pages_total": full_review[candidate_id]["pages_total"],
+                    "pages_reviewed": full_review[candidate_id]["pages_reviewed"],
+                    "sha256": full_review[candidate_id]["sha256"],
+                    "expansion_key": proposal_key,
+                    "previous_published_position": "sem_posicao",
+                }
+            )
+        theses.append(
+            {
+                "id": proposal["id"],
+                "version": proposal["version"],
+                "text": proposal["text"],
+                "text_sha256": hashlib.sha256(
+                    proposal["text"].encode("utf-8")
+                ).hexdigest(),
+                "topic": proposal["topic"],
+                "status": "approved" if approved else "draft",
+                "selection": proposal["recommendation"],
+                "source_thesis_id": None,
+                "source_bank_ids": proposal["bank_ids"],
+                "supersedes": None,
+                "introduced_in": effective_review_id,
+                "editorial_note": proposal["reason"],
+                "editorial_problems": proposal["problems"],
+                "positions": proposal_positions,
+            }
+        )
+
+    payload = {
         "metadata": {
             "election": ELECTION_YEAR,
             "office": OFFICE,
             "country": "BR",
-            "version": 4 if full_review else 3,
+            "version": 6
+            if expansion_review
+            else 5
+            if complete_review
+            else 4
+            if full_review
+            else 3,
             "generated_at": datetime.now(timezone.utc).isoformat(),
-            "reviewed_at": review["reviewed_at"],
+            "reviewed_at": expansion_meta["reviewed_at"]
+            if expansion_meta
+            else selection["reviewed_at"]
+            if selection
+            else review["reviewed_at"],
             "review_id": effective_review_id,
             "review_scope": (
-                "Leitura integral automatizada dos 13 programas oficiais e classificação das 117 células das nove teses ativas; as demais teses continuam fora do núcleo revisado."
+                f"Leitura integral automatizada dos 13 programas oficiais; classificação das 494 células das 38 formulações originais e de {len(expansion_review) * len(candidate_ids)} células de {len(expansion_review)} propostas adicionais auditadas."
+                if expansion_review
+                else "Leitura integral automatizada dos 13 programas oficiais e classificação das 494 células das 38 formulações; a seleção editorial separa núcleo, perguntas complementares e itens rejeitados."
+                if complete_review
+                else "Leitura integral automatizada dos 13 programas oficiais e classificação das 117 células das nove teses ativas; as demais teses continuam fora do núcleo revisado."
                 if full_review
                 else review["scope"]
             ),
             "editorial_state": (
-                "revisão documental integral automatizada concluída; sem revisão humana"
+                "matriz documental ampliada e seleção editorial concluída; sem revisão humana"
+                if expansion_review
+                else "matriz documental automatizada completa e seleção editorial concluída; sem revisão humana"
+                if complete_review
+                else "revisão documental integral automatizada concluída; sem revisão humana"
                 if full_review
                 else "rascunho editorial auditado por IA, pendente de revisão humana"
             ),
@@ -693,7 +1171,15 @@ def _build_theses(
             else "partial_automated",
             "human_reviewed": False,
             "methodology": (
-                "Leitura de todas as páginas, busca complementar por termos e equivalentes e verificação visual quando necessária. PDFs e contagens físicas conferidos contra o ZIP oficial; categorias integrais preservadas, condições e diferenças de escopo explícitas. Ausência não é discordância; decisões condicionais não recebem pontuação binária. A análise V1 permanece apenas como histórico."
+                "Leitura de todas as páginas, busca complementar por termos e equivalentes e verificação visual quando necessária. PDFs e contagens físicas conferidos contra o ZIP oficial; categorias integrais preservadas, condições e diferenças de escopo explícitas. Ausência não é discordância; decisões condicionais não recebem pontuação binária. A análise V1 permanece apenas como histórico. "
+                + selection["method"]
+                + " "
+                + expansion_meta["method"]
+                if expansion_meta and selection
+                else "Leitura de todas as páginas, busca complementar por termos e equivalentes e verificação visual quando necessária. PDFs e contagens físicas conferidos contra o ZIP oficial; categorias integrais preservadas, condições e diferenças de escopo explícitas. Ausência não é discordância; decisões condicionais não recebem pontuação binária. A análise V1 permanece apenas como histórico. "
+                + selection["method"]
+                if complete_review and selection
+                else "Leitura de todas as páginas, busca complementar por termos e equivalentes e verificação visual quando necessária. PDFs e contagens físicas conferidos contra o ZIP oficial; categorias integrais preservadas, condições e diferenças de escopo explícitas. Ausência não é discordância; decisões condicionais não recebem pontuação binária. A análise V1 permanece apenas como histórico."
                 if full_review
                 else review["method"]
             ),
@@ -716,7 +1202,17 @@ def _build_theses(
                 for key, item in documents.items()
             },
             "source_theses": 36,
-            "published_theses": len(review["theses"]),
+            "reviewed_formulations": (
+                len(THESIS_TEXTS) + len(expansion_review)
+                if complete_review
+                else len(review["theses"])
+            ),
+            "reviewed_cells": (
+                (len(THESIS_TEXTS) + len(expansion_review)) * len(candidate_ids)
+                if complete_review
+                else len(review["theses"]) * len(candidate_ids)
+            ),
+            "published_theses": sum(item["status"] == "approved" for item in theses),
             "resources": {
                 "candidates": {
                     "url": OFFICIAL_DATA_URL,
@@ -738,6 +1234,9 @@ def _build_theses(
         },
         "theses": theses,
     }
+    if full_review:
+        _validate_literal_evidence(payload, plans_zip)
+    return payload
 
 
 def _read_photos(
@@ -820,6 +1319,15 @@ def _audit_summary(
                 for position in item["positions"].values()
             )
         ),
+        "all_reviewed_cells": sum(len(item["positions"]) for item in payload["theses"]),
+        "all_reviewed_categories": dict(
+            Counter(
+                position["analytical_position"]
+                for item in payload["theses"]
+                for position in item["positions"].values()
+            )
+        ),
+        "selection": dict(Counter(item["selection"] for item in payload["theses"])),
         "by_candidate": {
             candidate["id"]: {
                 "name": candidate["name"],
@@ -855,7 +1363,9 @@ def _audit_summary(
                 "previous_position": position["review"]["previous_published_position"],
                 "position": position["position"],
                 "analytical_position": position["analytical_position"],
-                "change_type": "reformulated_thesis"
+                "change_type": "new_thesis"
+                if item.get("introduced_in")
+                else "reformulated_thesis"
                 if item["supersedes"]
                 else "same_thesis_correction",
                 "reason": position["review"]["reason"],
@@ -867,7 +1377,11 @@ def _audit_summary(
             or position["review"]["previous_published_position"] != position["position"]
         ],
         "excluded_theses": [
-            {"id": item["id"], "reason": item["editorial_note"]}
+            {
+                "id": item["id"],
+                "selection": item["selection"],
+                "reason": item["editorial_note"],
+            }
             for item in payload["theses"]
             if item["status"] != "approved"
         ],
@@ -883,6 +1397,10 @@ def _parse_args() -> argparse.Namespace:
     parser.add_argument("--experiment-dir", type=Path, required=True)
     parser.add_argument("--data-dir", type=Path, required=True)
     parser.add_argument("--full-review-dir", type=Path)
+    parser.add_argument("--extension-review-dir", type=Path)
+    parser.add_argument("--selection-file", type=Path)
+    parser.add_argument("--expansion-review-dir", type=Path)
+    parser.add_argument("--source-bank-manifest", type=Path)
     parser.add_argument(
         "--review-file",
         type=Path,
@@ -924,6 +1442,27 @@ def main() -> None:
             / f"group-{group}.json"
             for group in "abcd"
         ],
+        extension_review_paths=[
+            (args.extension_review_dir or args.review_file.parent / "full-review-v2")
+            / f"group-{group}.json"
+            for group in "abcd"
+        ],
+        selection_path=(
+            args.selection_file
+            or args.review_file.parent / "question-selection-v2.json"
+        ),
+        expansion_review_paths=[
+            (
+                args.expansion_review_dir
+                or args.review_file.parent / "expansion-review-v3"
+            )
+            / f"group-{group}.json"
+            for group in "abc"
+        ],
+        source_bank_path=(
+            args.source_bank_manifest
+            or args.review_file.parent / "source-bank-manifest-v3.json"
+        ),
         require_full_review=True,
     )
     theses["metadata"]["candidate_snapshot"] = sorted(
@@ -952,7 +1491,9 @@ def main() -> None:
     _write_photos(photos, args.data_dir / "fotos" / "2026" / "BR")
     print(
         f"Gerados {len(candidates)} candidatos, {len(theses['theses'])} teses "
-        f"({theses['metadata']['published_theses']} ativas) e {len(candidates)} fotos oficiais."
+        f"({theses['metadata']['published_theses']} ativas, "
+        f"{theses['metadata']['reviewed_cells']} células revisadas) e "
+        f"{len(candidates)} fotos oficiais."
     )
 
 

@@ -6,6 +6,26 @@ import 'package:guia_eleitoral/shared/models/thesis.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
+  test('fetchQuizQuestions requests the full presidential catalogue', () async {
+    final client = _CapturingClient(
+      responseBody: const <String, dynamic>{
+        'theses': <dynamic>[],
+        'total': 0,
+      },
+    );
+    final api = ApiClient(
+      baseUrl: 'https://example.test/api/v1',
+      client: client,
+    );
+
+    await api.fetchQuizQuestions();
+
+    expect(
+      client.lastUri.toString(),
+      'https://example.test/api/v1/quiz/questions?limit=60',
+    );
+  });
+
   test(
     'submitQuiz preserves the error code needed to restart an outdated quiz',
     () async {
@@ -24,11 +44,13 @@ void main() {
       await expectLater(
         api.submitQuiz(const <Thesis>[]),
         throwsA(
-          isA<ApiException>().having((error) => error.statusCode, 'statusCode', 422).having(
-            (error) => error.code,
-            'code',
-            'invalid_thesis_ids',
-          ),
+          isA<ApiException>()
+              .having((error) => error.statusCode, 'statusCode', 422)
+              .having(
+                (error) => error.code,
+                'code',
+                'invalid_thesis_ids',
+              ),
         ),
       );
     },

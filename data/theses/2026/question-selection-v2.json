@@ -1,0 +1,197 @@
+{
+  "review_id": "presidential-complete-document-2026-09-26-r1",
+  "reviewed_at": "2026-09-26",
+  "method": "Seleção derivada da matriz documental completa de 38 formulações por 13 candidaturas. Núcleo: pelo menos uma concordância, uma discordância e três ou mais posições categóricas. Complementar: os dois polos existem, mas apenas duas posições são categóricas. Rejeitada: não há simultaneamente concordância e discordância documentadas. Posições condicionais ou mistas e ausências permanecem transparentes, mas não contam como polo nem como pontuação binária. O número final de perguntas é consequência desses critérios, não uma meta prévia.",
+  "theses": {
+    "001": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e quatro discordâncias.",
+      "metrics": {"agree": 1, "disagree": 4, "conditional": 0, "not_found": 8}
+    },
+    "002": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e quatro discordâncias, além de uma posição condicional.",
+      "metrics": {"agree": 1, "disagree": 4, "conditional": 1, "not_found": 7}
+    },
+    "003": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre quatro concordâncias e uma discordância.",
+      "metrics": {"agree": 4, "disagree": 1, "conditional": 0, "not_found": 8}
+    },
+    "004": {
+      "classification": "rejected",
+      "reason": "Cinco planos concordam, mas nenhum plano registra discordância inequívoca com a formulação exata.",
+      "metrics": {"agree": 5, "disagree": 0, "conditional": 0, "not_found": 8}
+    },
+    "005": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e três discordâncias; duas propostas de alcance diferente permanecem condicionais.",
+      "metrics": {"agree": 1, "disagree": 3, "conditional": 2, "not_found": 7}
+    },
+    "006": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e uma posição condicional, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 1, "not_found": 10}
+    },
+    "007": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e duas posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 2, "not_found": 9}
+    },
+    "008": {
+      "classification": "rejected",
+      "reason": "Quatro planos concordam, mas nenhum apresenta discordância documental inequívoca.",
+      "metrics": {"agree": 4, "disagree": 0, "conditional": 0, "not_found": 9}
+    },
+    "009": {
+      "classification": "rejected",
+      "reason": "Há uma concordância e quatro posições condicionais, sem discordância documental inequívoca.",
+      "metrics": {"agree": 1, "disagree": 0, "conditional": 4, "not_found": 8}
+    },
+    "010": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e duas posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 2, "not_found": 9}
+    },
+    "011": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e três discordâncias; duas propostas de alcance diferente permanecem condicionais.",
+      "metrics": {"agree": 1, "disagree": 3, "conditional": 2, "not_found": 7}
+    },
+    "012": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e três posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 3, "not_found": 8}
+    },
+    "013": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e duas posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 2, "not_found": 9}
+    },
+    "014": {
+      "classification": "rejected",
+      "reason": "Três planos concordam, mas nenhum apresenta discordância documental inequívoca.",
+      "metrics": {"agree": 3, "disagree": 0, "conditional": 0, "not_found": 10}
+    },
+    "015": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e quatro discordâncias, além de uma posição condicional.",
+      "metrics": {"agree": 1, "disagree": 4, "conditional": 1, "not_found": 7}
+    },
+    "016": {
+      "classification": "rejected",
+      "reason": "Há três concordâncias e uma posição condicional, sem discordância documentada.",
+      "metrics": {"agree": 3, "disagree": 0, "conditional": 1, "not_found": 9}
+    },
+    "017": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e duas discordâncias, além de uma posição condicional.",
+      "metrics": {"agree": 1, "disagree": 2, "conditional": 1, "not_found": 9}
+    },
+    "018": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre uma concordância e quatro discordâncias.",
+      "metrics": {"agree": 1, "disagree": 4, "conditional": 0, "not_found": 8}
+    },
+    "019": {
+      "classification": "rejected",
+      "reason": "Há uma concordância e uma posição condicional, sem discordância documentada.",
+      "metrics": {"agree": 1, "disagree": 0, "conditional": 1, "not_found": 11}
+    },
+    "020": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e uma posição condicional, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 1, "not_found": 10}
+    },
+    "021": {
+      "classification": "rejected",
+      "reason": "Duas propostas concordam e as demais não decidem a formulação; não há polo documental contrário.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 0, "not_found": 11}
+    },
+    "022": {
+      "classification": "rejected",
+      "reason": "Há quatro concordâncias e uma posição condicional, sem discordância documentada.",
+      "metrics": {"agree": 4, "disagree": 0, "conditional": 1, "not_found": 8}
+    },
+    "023": {
+      "classification": "rejected",
+      "reason": "Há quatro concordâncias e três posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 4, "disagree": 0, "conditional": 3, "not_found": 6}
+    },
+    "024": {
+      "classification": "rejected",
+      "reason": "Duas propostas concordam e as demais não decidem a formulação; não há polo documental contrário.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 0, "not_found": 11}
+    },
+    "025": {
+      "classification": "rejected",
+      "reason": "Há uma concordância e sete propostas parciais ou condicionais, mas nenhuma discordância documental inequívoca.",
+      "metrics": {"agree": 1, "disagree": 0, "conditional": 7, "not_found": 5}
+    },
+    "026A": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre três concordâncias e uma discordância.",
+      "metrics": {"agree": 3, "disagree": 1, "conditional": 0, "not_found": 9}
+    },
+    "026B": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre três concordâncias e uma discordância.",
+      "metrics": {"agree": 3, "disagree": 1, "conditional": 0, "not_found": 9}
+    },
+    "027": {
+      "classification": "rejected",
+      "reason": "Há duas discordâncias, mas nenhuma concordância documental inequívoca.",
+      "metrics": {"agree": 0, "disagree": 2, "conditional": 0, "not_found": 11}
+    },
+    "028": {
+      "classification": "rejected",
+      "reason": "Há duas concordâncias e quatro posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 4, "not_found": 7}
+    },
+    "029": {
+      "classification": "rejected",
+      "reason": "Há três concordâncias e duas posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 3, "disagree": 0, "conditional": 2, "not_found": 8}
+    },
+    "030": {
+      "classification": "rejected",
+      "reason": "Há quatro concordâncias e três posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 4, "disagree": 0, "conditional": 3, "not_found": 6}
+    },
+    "031": {
+      "classification": "rejected",
+      "reason": "Seis propostas concordam e as demais não decidem a formulação; não há polo documental contrário.",
+      "metrics": {"agree": 6, "disagree": 0, "conditional": 0, "not_found": 7}
+    },
+    "032": {
+      "classification": "rejected",
+      "reason": "Há quatro concordâncias e cinco posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 4, "disagree": 0, "conditional": 5, "not_found": 4}
+    },
+    "033": {
+      "classification": "rejected",
+      "reason": "Há uma concordância e duas posições condicionais, sem discordância documentada.",
+      "metrics": {"agree": 1, "disagree": 0, "conditional": 2, "not_found": 10}
+    },
+    "034A": {
+      "classification": "complementary",
+      "reason": "Existe contraste direto entre uma candidatura que pressupõe a continuidade do Conselho de Segurança e outra que propõe seu fim, mas somente duas posições são categóricas.",
+      "metrics": {"agree": 1, "disagree": 1, "conditional": 0, "not_found": 11}
+    },
+    "034B": {
+      "classification": "complementary",
+      "reason": "Existe contraste direto entre reformar e extinguir o Conselho de Segurança, mas somente duas posições são categóricas.",
+      "metrics": {"agree": 1, "disagree": 1, "conditional": 0, "not_found": 11}
+    },
+    "035": {
+      "classification": "rejected",
+      "reason": "Duas propostas concordam e as demais não decidem a formulação; não há polo documental contrário.",
+      "metrics": {"agree": 2, "disagree": 0, "conditional": 0, "not_found": 11}
+    },
+    "036": {
+      "classification": "nucleus",
+      "reason": "Há contraste documentado entre três concordâncias e uma discordância.",
+      "metrics": {"agree": 3, "disagree": 1, "conditional": 0, "not_found": 9}
+    }
+  }
+}

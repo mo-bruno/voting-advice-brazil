@@ -1,26 +1,44 @@
-# Edição documental presidencial — 20/09/2026
+# Edição documental presidencial — 26/09/2026
 
-O núcleo contém nove teses e 13 candidaturas do retrato oficial do TSE. Foram lidas integralmente as 836 páginas dos 13 planos, inclusive o novo plano de Leonardo Avalanche. A análise foi automatizada por IA; não equivale a aprovação editorial humana, certificação do TSE ou recomendação de voto.
+A edição compara 70 formulações com as 13 candidaturas do retrato oficial do TSE: 38 formulações derivadas das 36 teses recebidas e 32 escolhas adicionais extraídas do banco presidencial. As 910 células foram classificadas após a leitura das 836 páginas dos planos oficiais. O trabalho foi automatizado por IA; não equivale a validação humana, certificação do TSE nem recomendação de voto.
 
-## O que está concluído
+## O que foi concluído
 
-As 117 combinações entre candidatura e tese ativa têm decisão explícita: 16 concordâncias, 21 discordâncias, quatro posições condicionais/mistas e 76 casos sem manifestação suficiente no escopo exato. Não existem células `PENDENTE` no núcleo. `NAO_ENCONTRADA` significa que a leitura integral não sustentou uma classificação — não que a candidatura discorde, seja neutra ou não possua opinião fora do plano.
+Não há células `PENDENTE`. Na matriz completa existem 137 concordâncias, 84 discordâncias, 74 posições condicionais ou mistas e 615 casos sem manifestação suficiente. Há 410 células com citações e, ao todo, 595 trechos ligados à página física e ao SHA-256 do PDF analisado.
 
-Cada decisão registra motivo, termos de busca complementares, condições e diferenças de escopo. Citações estão ligadas a páginas físicas e ao SHA-256 do PDF oficial. As buscas não substituíram a leitura sequencial. Capas, páginas sem texto e trechos com falhas de extração foram inspecionados visualmente quando necessário.
+`NAO_ENCONTRADA` significa que a leitura integral e as buscas complementares não sustentaram uma posição no escopo exato da tese. Não significa discordância, neutralidade ou ausência de opinião fora do plano. `CONDICIONAL_OU_MISTA` também não recebe pontuação binária.
+
+Cada decisão registra motivo, termos de busca, condições e diferenças de escopo. Capas, diagramas, caixas e páginas com falha de extração foram inspecionados visualmente quando necessários. A análise ficou restrita aos planos oficiais; notícias, entrevistas, histórico político e ideologia partidária não foram usados.
+
+## Seleção do questionário
+
+Trinta perguntas têm contraste documental, passaram pela revisão de redundância e entram no quiz:
+
+- núcleo, com os dois polos e ao menos três posições categóricas: `T001`, `T002`, `T003`, `T005`, `T011`, `T015`, `T017`, `T018`, `T026A`, `T026B`, `T036`, `T038`, `T041`, `T042`, `T043`, `T044`, `T056`, `T058`, `T063`, `T064`, `T065`, `T066` e `T067`;
+- complementares, com os dois polos mas apenas duas posições categóricas: `T034A`, `T034B`, `T054`, `T057`, `T061`, `T062` e `T068`.
+
+As outras 40 formulações permanecem acessíveis na matriz, com decisões e evidências, mas ficam como `draft`: faltou um dos polos documentais ou a formulação era redundante, composta ou inadequada ao quiz. O número de perguntas não foi definido previamente; é consequência do critério registrado em `question-selection-v2.json` e nos três arquivos de `expansion-review-v3`.
+
+Nas 30 perguntas ativas existem 46 concordâncias, 70 discordâncias, 20 posições condicionais ou mistas e 254 ausências de manifestação suficiente. Portanto, 116 das 390 células ativas sustentam pontuação categórica.
 
 ## Limites de comparação
 
-Apenas 37 das 117 células sustentam pontuação categórica. Em 47 dos 78 pares de candidaturas não há nenhuma tese com posição categórica de ambos. Por isso a interface mostra percentuais acompanhados da cobertura e candidaturas em ordem alfabética, sem líder ou vencedor. Percentuais de bases diferentes não constituem uma ordem de preferência confiável. Ausências e condicionais ficam fora do cálculo, não recebem neutralidade artificial.
+Entre os 78 pares possíveis de candidaturas, 20 não possuem pergunta ativa com posição categórica de ambos. A quantidade comparável varia de zero a 13 perguntas, com média de 2,53; 34 pares apresentam ao menos uma oposição categórica. Percentuais calculados sobre bases diferentes não formam uma classificação confiável.
 
-As 36 teses recebidas foram preservadas em 38 registros após desdobrar dois itens. Nove integram esta edição; 29 continuam como rascunhos. A leitura completa dos documentos para estas nove perguntas não conclui a análise das demais formulações nem a versão 2 ampliada do experimento. O campo `approved` significa seleção técnica para este recorte, não chancela humana.
+Por isso a interface exibe a cobertura de cada resultado, mantém as candidaturas em ordem alfabética e não anuncia líder ou vencedor. Ausência documental não é convertida em concordância, discordância ou neutralidade artificial.
 
 ## Histórico e rastreabilidade
 
-- `editorial-review-2026-09-20.json`: revisão anterior, restrita a passagens, preservada como histórico e com hashes das entradas originais.
-- `full-review/group-a.json` a `group-d.json`: decisões da leitura integral, por candidatura, com páginas e hashes. Não herdam posição de candidatura substituída.
-- `theses.json`: exportação consumida pela aplicação; preserva categorias, citações, condições e histórico.
-- `review-audit.json`: cobertura por candidato/tese, todos os pares e mudanças.
+- `editorial-review-2026-09-20.json`: revisão anterior de passagens e hashes das entradas preservadas;
+- `full-review/group-a.json` a `group-d.json`: revisão integral das nove formulações inicialmente publicadas;
+- `full-review-v2/group-a.json` a `group-d.json`: decisões das outras 29 formulações originais;
+- `question-selection-v2.json`: regra e motivo da seleção das 38 formulações originais;
+- `source-bank-v3.jsonl` e `source-bank-manifest-v3.json`: conteúdo versionado das 111 teses do banco presidencial, com SHA-256 do arquivo e de cada formulação;
+- `expansion-review-v3/group-a.json` a `group-c.json`: 32 formulações adicionais e 416 decisões;
+- `theses.json`: exportação consumida pela aplicação, com as 910 células;
+- `review-audit.json`: cobertura por candidatura e tese, comparabilidade dos 78 pares, 110 mudanças publicadas e 40 exclusões justificadas;
+- `METODOLOGIA_V2.md`, `COMPARACAO_V1_V2.md` e `COMPARACAO_V2_V3.md`: regra operacional e evolução entre edições.
 
-A tese 11 está na versão 3: trabalho público remunerado para beneficiários em idade economicamente ativa. A tese 34A passa à versão 3: “O Conselho de Segurança da ONU deve continuar existindo.” A redação elimina a ambiguidade entre existência da instituição e conservação de sua composição atual. Texto, versão e hash anteriores ficam em `supersedes`; respostas antigas não são reaproveitadas para redações novas.
+A tese 11 permanece na versão 3, delimitada aos beneficiários em idade economicamente ativa. A tese 34A também está na versão 3: “O Conselho de Segurança da ONU deve continuar existindo.” Texto, versão e hash anteriores ficam em `supersedes`; respostas antigas não são reaproveitadas quando a formulação muda de significado.
 
-O construtor exige os 13 IDs ativos exatos, as nove decisões por candidatura, leitura de todas as páginas físicas e PDFs com hashes correspondentes. Falta de revisão, categoria pendente, ausência sem justificativa ou evidência de outro candidato interrompe a geração. A data de geração é separada da revisão e do retrato cadastral. Os snapshots ZIP são preservados localmente; os URLs oficiais podem mudar e não substituem a verificação de integridade.
+O construtor exige exatamente os 13 IDs ativos, 70 decisões por candidatura, páginas físicas contíguas, PDFs com hashes correspondentes, justificativa de ausência, evidência vinculada ao documento correto e IDs estáveis para cada nova formulação. Ele também confere o conteúdo do banco contra seu manifesto e procura cada um dos 595 trechos literalmente na página física indicada do PDF oficial, usando extrações `layout` e `raw`. Qualquer lacuna ou divergência interrompe a geração.

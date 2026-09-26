@@ -10,17 +10,41 @@ REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
 DATA_ROOT = REPOSITORY_ROOT / "data"
 CANDIDATES_FILE = DATA_ROOT / "propostas" / "2026" / "candidates.json"
 THESES_FILE = DATA_ROOT / "theses" / "2026" / "theses.json"
+SOURCE_BANK_MANIFEST = (
+    DATA_ROOT / "theses" / "2026" / "source-bank-manifest-v3.json"
+)
 VALID_POSITIONS = {"concordo", "discordo", "neutro", "sem_posicao"}
 EXPECTED_APPROVED_THESES = {
     "BR26-T001",
     "BR26-T002",
     "BR26-T003",
+    "BR26-T005",
     "BR26-T011",
+    "BR26-T015",
     "BR26-T017",
     "BR26-T018",
+    "BR26-T026A",
     "BR26-T026B",
     "BR26-T034A",
+    "BR26-T034B",
     "BR26-T036",
+    "BR26-T038",
+    "BR26-T041",
+    "BR26-T042",
+    "BR26-T043",
+    "BR26-T044",
+    "BR26-T054",
+    "BR26-T056",
+    "BR26-T057",
+    "BR26-T058",
+    "BR26-T061",
+    "BR26-T062",
+    "BR26-T063",
+    "BR26-T064",
+    "BR26-T065",
+    "BR26-T066",
+    "BR26-T067",
+    "BR26-T068",
 }
 
 
@@ -104,13 +128,36 @@ def test_editorial_payload_keeps_all_source_theses_and_a_quizable_core():
 
     assert payload["metadata"]["election"] == 2026
     assert payload["metadata"]["office"] == "presidente"
-    assert len(theses) == 38
-    assert sum(thesis["status"] == "approved" for thesis in theses) == 9
-    assert sum(thesis["status"] == "draft" for thesis in theses) == 29
+    assert len(theses) == 70
+    assert payload["metadata"]["reviewed_formulations"] == 70
+    assert payload["metadata"]["reviewed_cells"] == 910
+    assert payload["metadata"]["published_theses"] == 30
+    assert sum(thesis["status"] == "approved" for thesis in theses) == 30
+    assert sum(thesis["status"] == "draft" for thesis in theses) == 40
     assert len({thesis["id"] for thesis in theses}) == len(theses)
     assert {
         thesis["id"] for thesis in theses if thesis["status"] == "approved"
     } == EXPECTED_APPROVED_THESES
+
+
+def test_expansion_is_bound_to_the_versioned_source_bank():
+    payload = _load_json(THESES_FILE)
+    manifest = _load_json(SOURCE_BANK_MANIFEST)
+    entries = manifest["text_sha256_by_bank_id"]
+    expansion = [
+        thesis for thesis in payload["theses"] if thesis.get("source_bank_ids")
+    ]
+
+    assert manifest["source_count"] == len(entries) == 111
+    assert all(
+        set(thesis["source_bank_ids"]) <= set(entries) for thesis in expansion
+    )
+    assert payload["metadata"]["editorial_inputs"]["source_bank"] == {
+        "file": SOURCE_BANK_MANIFEST.name,
+        "sha256": hashlib.sha256(SOURCE_BANK_MANIFEST.read_bytes()).hexdigest(),
+        "source_count": 111,
+        "source_sha256": manifest["source_sha256"],
+    }
 
 
 def test_every_thesis_has_a_valid_position_for_every_candidate():
@@ -122,10 +169,51 @@ def test_every_thesis_has_a_valid_position_for_every_candidate():
         assert {
             position["position"] for position in thesis["positions"].values()
         } <= VALID_POSITIONS
-        if thesis["status"] == "draft":
-            assert {
-                position["position"] for position in thesis["positions"].values()
-            } == {"sem_posicao"}
+        assert all(
+            position["analytical_position"] != "PENDENTE"
+            and position["review"]["status"] == "full_document_reviewed_automated"
+            for position in thesis["positions"].values()
+        )
+
+
+def test_question_selection_is_evidence_driven_and_preserved_in_the_snapshot():
+    payload = _load_json(THESES_FILE)
+    theses = payload["theses"]
+
+    assert {
+        selection: sum(thesis["selection"] == selection for thesis in theses)
+        for selection in {"nucleus", "complementary", "rejected"}
+    } == {"nucleus": 23, "complementary": 7, "rejected": 40}
+    assert {
+        thesis["id"] for thesis in theses if thesis["selection"] == "complementary"
+    } == {
+        "BR26-T034A",
+        "BR26-T034B",
+        "BR26-T054",
+        "BR26-T057",
+        "BR26-T061",
+        "BR26-T062",
+        "BR26-T068",
+    }
+    for thesis in theses:
+        categorical_positions = [
+            position["position"]
+            for position in thesis["positions"].values()
+            if position["position"] in {"concordo", "discordo"}
+        ]
+        categorical = set(categorical_positions)
+        if thesis["selection"] == "nucleus":
+            assert categorical == {"concordo", "discordo"}
+            assert len(categorical_positions) >= 3
+            assert thesis["status"] == "approved"
+        elif thesis["selection"] == "complementary":
+            assert categorical == {"concordo", "discordo"}
+            assert len(categorical_positions) == 2
+            assert thesis["status"] == "approved"
+        else:
+            assert thesis["status"] == "draft"
+            if categorical == {"concordo", "discordo"}:
+                assert thesis.get("editorial_problems")
 
 
 def test_approved_theses_are_atomic_contrasting_and_evidence_backed():
@@ -176,9 +264,8 @@ def test_publication_has_complete_documentary_review_without_claiming_human_revi
     assert len(payload["metadata"]["analysed_documents"]) == 13
     for document in payload["metadata"]["analysed_documents"].values():
         assert document["pages_reviewed"] == list(range(1, document["pages_total"] + 1))
+    assert payload["metadata"]["reviewed_cells"] == 910
     for thesis in payload["theses"]:
-        if thesis["status"] != "approved":
-            continue
         for position in thesis["positions"].values():
             assert position["analytical_position"] != "PENDENTE"
             assert position["review"]["status"] == "full_document_reviewed_automated"
