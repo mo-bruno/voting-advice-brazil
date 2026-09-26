@@ -36,15 +36,18 @@ ACTIVE_ELECTION_OFFICE=presidente
 ```
 
 O retrato de 20 de setembro de 2026 contém 13 candidaturas inseridas na urna e
-as respectivas fotos oficiais. Das 36 teses editoriais recebidas, os itens 26
-e 34 foram divididos em duas decisões cada: 38 registros são preservados, mas
-somente nove com contraste e evidência suficientes ficam ativos no quiz. Os
-demais permanecem como `draft` e não entram na pontuação. O conjunto continua
-sem certificação ou validação editorial humana. A leitura integral automatizada
-dos 13 planos (836 páginas) revisou as 117 combinações do núcleo: 37 posições
-categóricas, quatro condicionais e 76 sem manifestação suficiente no escopo
-exato. Nenhuma dessas 117 células está pendente. Em 47 dos 78 pares não existe
-nenhuma tese categórica em comum. Consulte os limites e decisões em
+as respectivas fotos oficiais. A revisão automatizada dos 13 planos classificou
+as 910 combinações de 70 formulações: as 38 derivadas das 36 teses recebidas e
+32 escolhas adicionais de política pública extraídas do banco presidencial.
+O questionário publica 30 perguntas, sendo 23 no núcleo e sete complementares.
+As outras 40 ficam documentadas como `draft` por falta de ambos os polos,
+redundância com outra pergunta ou inadequação de escopo. O conjunto continua
+sem certificação ou validação editorial humana.
+
+Nas 30 perguntas publicadas há 116 posições categóricas, 20 condicionais ou
+mistas e 254 casos sem manifestação suficiente no escopo exato. Nenhuma das
+910 células está pendente. Em 20 dos 78 pares de candidaturas não existe tese
+publicada com posição categórica de ambos. Consulte os limites e decisões em
 [data/theses/2026/REVIEW.md](data/theses/2026/REVIEW.md) antes de interpretar
 os resultados como uma comparação completa. A interface apresenta candidaturas
 em ordem alfabética, sem destacar vencedor nem recomendar voto.
@@ -65,8 +68,9 @@ planos e fotos — estão registrados com URL, horário, tamanho e SHA-256 em
 
 Para reconstruir os JSONs e retratos a partir dos pacotes preservados:
 
-É necessário Python 3.12 e `pdfinfo` (pacote Poppler). As entradas editoriais
-textuais são versionadas; os ZIPs grandes ficam fora do Git e devem ser os
+É necessário Python 3.12, `pdfinfo` e `pdftotext` (pacote Poppler). As entradas
+editoriais textuais, inclusive o banco de 111 formulações, são versionadas e
+validadas por hash; os ZIPs grandes ficam fora do Git e devem ser os
 mesmos snapshots identificados pelos hashes, pois os URLs do TSE são mutáveis.
 
 ```bash

@@ -20,13 +20,17 @@ BACKEND_DIR = Path(__file__).resolve().parents[1]
 DATA_DIR = BACKEND_DIR.parent / "data"
 
 
-def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(tmp_path, monkeypatch):
+def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
+    tmp_path, monkeypatch
+):
     database_url = f"sqlite:///{tmp_path / 'election.db'}"
     migration = subprocess.run(
         [sys.executable, "-m", "alembic", "upgrade", "head"],
         cwd=BACKEND_DIR,
         env={**os.environ, "DATABASE_URL": database_url},
-        capture_output=True, text=True, check=False,
+        capture_output=True,
+        text=True,
+        check=False,
     )
     assert migration.returncode == 0, migration.stderr
     monkeypatch.setattr(settings, "data_dir", str(DATA_DIR))
@@ -35,58 +39,105 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(tmp_path
     with Session(engine) as db:
         monkeypatch.setattr(settings, "active_election_year", 2022)
         seed(db)
-        legacy_id = db.scalar(select(CandidateModel.id).where(CandidateModel.election_year == 2022))
+        legacy_id = db.scalar(
+            select(CandidateModel.id).where(CandidateModel.election_year == 2022)
+        )
         monkeypatch.setattr(settings, "active_election_year", 2026)
         seed(db)
         seed(db)
-        approved_ids = set(db.scalars(select(ThesisModel.id).where(
-            ThesisModel.election_year == 2026, ThesisModel.status == "approved",
-        )))
-        draft_id = db.scalar(select(ThesisModel.id).where(
-            ThesisModel.election_year == 2026, ThesisModel.status == "draft",
-        ))
+        approved_ids = set(
+            db.scalars(
+                select(ThesisModel.id).where(
+                    ThesisModel.election_year == 2026,
+                    ThesisModel.status == "approved",
+                )
+            )
+        )
+        draft_id = db.scalar(
+            select(ThesisModel.id).where(
+                ThesisModel.election_year == 2026,
+                ThesisModel.status == "draft",
+            )
+        )
         assert db.get(CandidateModel, legacy_id) is not None
 
-        application = create_app(Settings(_env_file=None, app_env="test", data_dir=str(DATA_DIR)))
+        application = create_app(
+            Settings(_env_file=None, app_env="test", data_dir=str(DATA_DIR))
+        )
         application.dependency_overrides[get_db] = lambda: db
         cache_delete_prefix("")
         try:
             with TestClient(application) as client:
-                candidates = client.get("/api/v1/candidates?page_size=50").json()["candidates"]
+                candidates = client.get("/api/v1/candidates?page_size=50").json()[
+                    "candidates"
+                ]
                 assert len(candidates) == 13
-                assert {candidate["election_year"] for candidate in candidates} == {2026}
+                assert {candidate["election_year"] for candidate in candidates} == {
+                    2026
+                }
                 assert client.get(f"/api/v1/candidates/{legacy_id}").status_code == 404
-                questions = client.get("/api/v1/quiz/questions?limit=60").json()["theses"]
+                questions = client.get("/api/v1/quiz/questions?limit=60").json()[
+                    "theses"
+                ]
                 assert {question["id"] for question in questions} == approved_ids
                 # The community composer uses this catalogue too: a small
                 # presidential edition must not hide its one-question topics.
                 themes = client.get("/api/v1/themes").json()
                 assert {theme["slug"] for theme in themes} == {
-                    "economia", "trabalho", "politica_social", "educacao",
-                    "direitos_sociais", "saude", "politica_externa",
+                    "economia",
+                    "trabalho",
+                    "politica_social",
+                    "educacao",
+                    "direitos_sociais",
+                    "seguranca",
+                    "saude",
+                    "politica_externa",
+                    "governanca",
                 }
-                assert sum(theme["total_teses_aprovadas"] for theme in themes) == 9
-                answers = [{"thesis_id": question["id"], "answer": "agree"} for question in questions]
+                assert sum(theme["total_teses_aprovadas"] for theme in themes) == 30
+                answers = [
+                    {"thesis_id": question["id"], "answer": "agree"}
+                    for question in questions
+                ]
                 response = client.post("/api/v1/quiz/submit", json={"answers": answers})
                 assert response.status_code == 200
                 results = response.json()["results"]
                 assert len(results) == len(candidates)
-                assert {result["answered_theses"] for result in results} == {len(questions)}
+                assert {result["answered_theses"] for result in results} == {
+                    len(questions)
+                }
                 for candidate in candidates:
                     photo = client.get(candidate["photo_url"])
                     assert photo.status_code == 200
                     assert photo.headers["content-type"] == "image/jpeg"
                     assert photo.content.startswith(b"\xff\xd8\xff")
-                    items = client.get(f"/api/v1/candidates/{candidate['id']}/justifications").json()["justifications"]
-                    categorical = [item for item in items if item["position"] != "sem_posicao"]
-                    assert all(item["quote"] and item["source_ref"] and item["source_url"] for item in categorical)
-                    result = next(item for item in results if item["candidate_id"] == candidate["id"])
+                    items = client.get(
+                        f"/api/v1/candidates/{candidate['id']}/justifications"
+                    ).json()["justifications"]
+                    categorical = [
+                        item for item in items if item["position"] != "sem_posicao"
+                    ]
+                    assert all(
+                        item["quote"] and item["source_ref"] and item["source_url"]
+                        for item in categorical
+                    )
+                    result = next(
+                        item
+                        for item in results
+                        if item["candidate_id"] == candidate["id"]
+                    )
                     assert result["counted_theses"] == len(categorical)
                     if not categorical:
                         assert result["rank"] == 0
-                invalid = client.post("/api/v1/quiz/submit", json={"answers": [
-                    *answers, {"thesis_id": draft_id, "answer": "skip"},
-                ]})
+                invalid = client.post(
+                    "/api/v1/quiz/submit",
+                    json={
+                        "answers": [
+                            *answers,
+                            {"thesis_id": draft_id, "answer": "skip"},
+                        ]
+                    },
+                )
                 assert invalid.status_code == 422
                 assert invalid.json()["detail"]["code"] == "invalid_thesis_ids"
         finally:

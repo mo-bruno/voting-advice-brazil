@@ -34,7 +34,7 @@ class ApiClient {
   ApiClient({this.baseUrl = defaultBaseUrl, http.Client? client})
       : _client = client ?? http.Client();
 
-  Future<List<Thesis>> fetchQuizQuestions({int limit = 30}) async {
+  Future<List<Thesis>> fetchQuizQuestions({int limit = 60}) async {
     final uri = Uri.parse('$baseUrl/quiz/questions?limit=$limit');
     final json = await _getJson(uri) as Map<String, dynamic>;
     return (json['theses'] as List<dynamic>)

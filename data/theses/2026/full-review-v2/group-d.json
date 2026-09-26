@@ -1,0 +1,1389 @@
+{
+  "reviewer": "automated_complete_matrix_review",
+  "reviewed_at": "2026-09-26",
+  "method": "Reavaliação da formulação V2 exata sobre leitura integral dos planos oficiais; matriz V1 e sua segunda classificação cega usadas apenas como trilha de auditoria para Wilson Grassi e Rui Costa Pimenta. O plano de Leonardo Avalanche foi lido integralmente. Ausência não foi convertida em discordância; aproximações temáticas sem decisão sobre o instrumento permaneceram não encontradas.",
+  "candidates": {
+    "280002548139": {
+      "name": "Veterinário Wilson Grassi",
+      "decisions": {
+        "004": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre a extinção da escala de seis dias de trabalho por um de descanso sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "escala 6x1",
+            "seis dias",
+            "cinco dias",
+            "jornada semanal"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por escala 6x1, seis dias, cinco dias, jornada semanal não encontraram decisão no escopo exato da formulação."
+        },
+        "005": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre o limite legal geral de 30 horas semanais sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "30 horas",
+            "35 horas",
+            "40 horas",
+            "jornada semanal"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por 30 horas, 35 horas, 40 horas, jornada semanal não encontraram decisão no escopo exato da formulação."
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre o reconhecimento do vínculo de emprego entre trabalhadores e empresas de plataformas digitais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "plataformas digitais",
+            "motorista de aplicativo",
+            "vínculo empregatício",
+            "carteira assinada"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por plataformas digitais, motorista de aplicativo, vínculo empregatício, carteira assinada não encontraram decisão no escopo exato da formulação."
+        },
+        "007": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre dobrar o valor do salário mínimo nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "salário mínimo",
+            "100%",
+            "dobrar",
+            "salário vital"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por salário mínimo, 100%, dobrar, salário vital não encontraram decisão no escopo exato da formulação."
+        },
+        "008": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre instituir imposto sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "grandes fortunas",
+            "imposto sobre grandes fortunas",
+            "tributação"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por grandes fortunas, imposto sobre grandes fortunas, tributação não encontraram decisão no escopo exato da formulação."
+        },
+        "009": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre suspender o pagamento da dívida pública a grandes investidores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "grandes investidores",
+            "grandes credores",
+            "suspensão",
+            "cancelamento"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por dívida pública, grandes investidores, grandes credores, suspensão, cancelamento não encontraram decisão no escopo exato da formulação."
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir apostas realizadas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas on-line",
+            "apostas pela internet",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por apostas on-line, apostas pela internet, bets, jogos de azar não encontraram decisão no escopo exato da formulação."
+        },
+        "012": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre operar transporte público coletivo sem tarifa aos passageiros.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tarifa zero",
+            "passe livre",
+            "transporte público"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por tarifa zero, passe livre, transporte público não encontraram decisão no escopo exato da formulação."
+        },
+        "013": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre expropriar imóveis urbanos ociosos ou especulativos para moradia popular.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "imóveis ociosos",
+            "especulação imobiliária",
+            "expropriação",
+            "moradia popular"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por imóveis ociosos, especulação imobiliária, expropriação, moradia popular não encontraram decisão no escopo exato da formulação."
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir o aborto por lei.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez",
+            "legalização"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por aborto, interrupção da gravidez, legalização não encontraram decisão no escopo exato da formulação."
+        },
+        "015": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre fixar em 16 anos a idade mínima de responsabilização adulta por crimes graves.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maioridade penal",
+            "16 anos",
+            "crimes graves",
+            "responsabilidade criminal"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por maioridade penal, 16 anos, crimes graves, responsabilidade criminal não encontraram decisão no escopo exato da formulação."
+        },
+        "016": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre converter a organização e o regime das polícias militares em civis.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "polícia militar",
+            "desmilitarização",
+            "organização civil",
+            "regime civil"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por polícia militar, desmilitarização, organização civil, regime civil não encontraram decisão no escopo exato da formulação."
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir por lei o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "legalização",
+            "consumo"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por maconha, cannabis, legalização, consumo não encontraram decisão no escopo exato da formulação."
+        },
+        "020": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre classificar facções criminosas como organizações terroristas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "facções criminosas",
+            "organizações terroristas",
+            "terrorismo",
+            "crime organizado"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por facções criminosas, organizações terroristas, terrorismo, crime organizado não encontraram decisão no escopo exato da formulação."
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar o uso de câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "câmeras corporais",
+            "câmera policial",
+            "bodycam",
+            "atividade policial"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por câmeras corporais, câmera policial, bodycam, atividade policial não encontraram decisão no escopo exato da formulação."
+        },
+        "022": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre usar reconhecimento facial pelos órgãos de segurança pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reconhecimento facial",
+            "segurança pública",
+            "biometria facial"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por reconhecimento facial, segurança pública, biometria facial não encontraram decisão no escopo exato da formulação."
+        },
+        "023": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar vagas da educação básica em tempo integral.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tempo integral",
+            "educação básica integral",
+            "escola integral"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por tempo integral, educação básica integral, escola integral não encontraram decisão no escopo exato da formulação."
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre priorizar o método fônico na alfabetização.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "método fônico",
+            "alfabetização",
+            "consciência fonêmica"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por método fônico, alfabetização, consciência fonêmica não encontraram decisão no escopo exato da formulação."
+        },
+        "025": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe fila nacional única e pública por procedimento, com prioridade clínica e posição consultável, mas não explicita que a fila seja digital.",
+          "conditions": [
+            "O caráter digital da fila não é afirmado."
+          ],
+          "scope_difference": "A fila é nacional e clínica, porém o meio digital exigido pela formulação não está definido.",
+          "evidence": [
+            {
+              "page": 34,
+              "quote": "Fila nacional única e pública por procedimento, com critério clínico de prioridade e posição consultável pelo próprio paciente.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fila nacional",
+            "fila digital",
+            "risco clínico",
+            "regulação do SUS"
+          ],
+          "absence_reason": null
+        },
+        "026A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre encerrar a gestão de serviços públicos de saúde por organizações sociais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "gestão da saúde",
+            "contratos de gestão"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por organizações sociais, OSs, gestão da saúde, contratos de gestão não encontraram decisão no escopo exato da formulação."
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre autorizar a exploração de petróleo na Margem Equatorial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "exploração de petróleo",
+            "licenciamento ambiental"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por Margem Equatorial, exploração de petróleo, licenciamento ambiental não encontraram decisão no escopo exato da formulação."
+        },
+        "028": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar reforma agrária com novos assentamentos e desapropriações.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma agrária",
+            "novos assentamentos",
+            "desapropriação",
+            "latifúndio"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por reforma agrária, novos assentamentos, desapropriação, latifúndio não encontraram decisão no escopo exato da formulação."
+        },
+        "029": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre demarcar todas as terras indígenas ainda pendentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "terras indígenas",
+            "demarcação",
+            "terras pendentes",
+            "retomadas"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por terras indígenas, demarcação, terras pendentes, retomadas não encontraram decisão no escopo exato da formulação."
+        },
+        "030": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre manter a exploração de terras raras sob controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "terras raras",
+            "controle estatal",
+            "minerais estratégicos",
+            "empresa estatal"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por terras raras, controle estatal, minerais estratégicos, empresa estatal não encontraram decisão no escopo exato da formulação."
+        },
+        "031": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar a produção de fertilizantes no Brasil.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fertilizantes",
+            "produção nacional",
+            "dependência externa",
+            "insumos agrícolas"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por fertilizantes, produção nacional, dependência externa, insumos agrícolas não encontraram decisão no escopo exato da formulação."
+        },
+        "032": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar a regulação de redes sociais e plataformas digitais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "regulação de redes sociais",
+            "plataformas digitais",
+            "algoritmo",
+            "Lei Felca"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por regulação de redes sociais, plataformas digitais, algoritmo, Lei Felca não encontraram decisão no escopo exato da formulação."
+        },
+        "033": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir a reeleição consecutiva no mesmo cargo do Poder Executivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reeleição consecutiva",
+            "Poder Executivo",
+            "mesmo cargo",
+            "mandato"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por reeleição consecutiva, Poder Executivo, mesmo cargo, mandato não encontraram decisão no escopo exato da formulação."
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre reformar o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança da ONU",
+            "reforma da ONU",
+            "reforma do Conselho"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por Conselho de Segurança da ONU, reforma da ONU, reforma do Conselho não encontraram decisão no escopo exato da formulação."
+        },
+        "035": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre adotar sistema distrital misto nas eleições legislativas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "distrital misto",
+            "listas partidárias",
+            "eleições legislativas",
+            "sistema eleitoral"
+          ],
+          "absence_reason": "As 58 páginas foram lidas integralmente e as buscas por distrital misto, listas partidárias, eleições legislativas, sistema eleitoral não encontraram decisão no escopo exato da formulação."
+        }
+      }
+    },
+    "280002552487": {
+      "name": "Rui Costa Pimenta",
+      "decisions": {
+        "004": {
+          "category": "CONCORDA",
+          "reason": "Defende reduzir a jornada sem prejuízo salarial para no máximo cinco dias por semana, o que exclui a escala de seis dias por um.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Para acabar com o desemprego e gerar milhões de novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 2,
+              "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "escala 6x1",
+            "seis dias",
+            "cinco dias",
+            "jornada semanal"
+          ],
+          "absence_reason": null
+        },
+        "005": {
+          "category": "DISCORDA",
+          "reason": "Fixa expressamente o máximo geral em 35 horas semanais, patamar incompatível com o limite exato de 30 horas da formulação.",
+          "conditions": [],
+          "scope_difference": "A proposta reduz a jornada sem perda salarial, mas adota limite semanal de 35, e não 30 horas.",
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "30 horas",
+            "35 horas",
+            "40 horas",
+            "jornada semanal"
+          ],
+          "absence_reason": null
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre o reconhecimento do vínculo de emprego entre trabalhadores e empresas de plataformas digitais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "plataformas digitais",
+            "motorista de aplicativo",
+            "vínculo empregatício",
+            "carteira assinada"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por plataformas digitais, motorista de aplicativo, vínculo empregatício, carteira assinada não encontraram decisão no escopo exato da formulação."
+        },
+        "007": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Defende salário mínimo vital de R$ 7.500, valor determinado por critério próprio e não pela regra de dobrar o salário mínimo vigente.",
+          "conditions": [
+            "O patamar é fixado em R$ 7.500 e deliberado por organizações operárias."
+          ],
+          "scope_difference": "A direção é de forte aumento, mas a regra de cálculo não é dobrar o valor nacional.",
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Salário mínimo vital suficiente para atender às necessidades do trabalhador e de sua família (que hoje não poderia ser menor que R$7.500), deliberado pelas organizações operárias",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "salário mínimo",
+            "100%",
+            "dobrar",
+            "salário vital"
+          ],
+          "absence_reason": null
+        },
+        "008": {
+          "category": "CONCORDA",
+          "reason": "Propõe explicitamente imposto sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Imposto sobre as grandes fortunas para garantir os recursos necessários para as aposentadorias e pensões",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "grandes fortunas",
+            "imposto sobre grandes fortunas",
+            "tributação"
+          ],
+          "absence_reason": null
+        },
+        "009": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe cancelar as dívidas interna e externa com bancos e grandes credores, alcançando o público da formulação por medida definitiva diferente da suspensão.",
+          "conditions": [
+            "A medida é cancelamento, não suspensão."
+          ],
+          "scope_difference": "O instrumento e a duração diferem, embora ambos interrompam pagamentos aos grandes credores.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Cancelamento das dívidas externa e interna com os bancos e grandes credores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "grandes investidores",
+            "grandes credores",
+            "suspensão",
+            "cancelamento"
+          ],
+          "absence_reason": null
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir apostas realizadas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas on-line",
+            "apostas pela internet",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por apostas on-line, apostas pela internet, bets, jogos de azar não encontraram decisão no escopo exato da formulação."
+        },
+        "012": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe passe livre somente para pessoas desempregadas e trabalhadores da economia informal, não para todos os passageiros.",
+          "conditions": [
+            "Benefício restrito a desempregados e trabalhadores informais."
+          ],
+          "scope_difference": "Não estabelece tarifa zero universal.",
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Passe livre nos transportes para desempregados e trabalhadores da economia informal.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "tarifa zero",
+            "passe livre",
+            "transporte público"
+          ],
+          "absence_reason": null
+        },
+        "013": {
+          "category": "CONCORDA",
+          "reason": "Propõe expropriar imóveis vagos de especuladores e construir moradias populares.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Expropriação dos imóveis vagos dos especuladores do mercado imobiliário",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 4,
+              "quote": "Elaboração de um plano nacional de construção de milhões de moradias populares, para garantir habitação digna para a população e gerar milhões de empregos, sob o controle dos trabalhadores.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "imóveis ociosos",
+            "especulação imobiliária",
+            "expropriação",
+            "moradia popular"
+          ],
+          "absence_reason": null
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir o aborto por lei.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez",
+            "legalização"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por aborto, interrupção da gravidez, legalização não encontraram decisão no escopo exato da formulação."
+        },
+        "015": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre fixar em 16 anos a idade mínima de responsabilização adulta por crimes graves.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maioridade penal",
+            "16 anos",
+            "crimes graves",
+            "responsabilidade criminal"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por maioridade penal, 16 anos, crimes graves, responsabilidade criminal não encontraram decisão no escopo exato da formulação."
+        },
+        "016": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe dissolver a polícia militar, eliminando sua organização militar, mas não define sua transformação em instituição de organização e regime civis.",
+          "conditions": [
+            "A proposta é dissolução, não conversão institucional."
+          ],
+          "scope_difference": "A alternativa remove a Polícia Militar, mas não descreve a organização civil solicitada.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Dissolução da polícia militar e de todo o aparato repressivo",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "polícia militar",
+            "desmilitarização",
+            "organização civil",
+            "regime civil"
+          ],
+          "absence_reason": null
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir por lei o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "legalização",
+            "consumo"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por maconha, cannabis, legalização, consumo não encontraram decisão no escopo exato da formulação."
+        },
+        "020": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre classificar facções criminosas como organizações terroristas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "facções criminosas",
+            "organizações terroristas",
+            "terrorismo",
+            "crime organizado"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por facções criminosas, organizações terroristas, terrorismo, crime organizado não encontraram decisão no escopo exato da formulação."
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar o uso de câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "câmeras corporais",
+            "câmera policial",
+            "bodycam",
+            "atividade policial"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por câmeras corporais, câmera policial, bodycam, atividade policial não encontraram decisão no escopo exato da formulação."
+        },
+        "022": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre usar reconhecimento facial pelos órgãos de segurança pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reconhecimento facial",
+            "segurança pública",
+            "biometria facial"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por reconhecimento facial, segurança pública, biometria facial não encontraram decisão no escopo exato da formulação."
+        },
+        "023": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar vagas da educação básica em tempo integral.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tempo integral",
+            "educação básica integral",
+            "escola integral"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por tempo integral, educação básica integral, escola integral não encontraram decisão no escopo exato da formulação."
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre priorizar o método fônico na alfabetização.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "método fônico",
+            "alfabetização",
+            "consciência fonêmica"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por método fônico, alfabetização, consciência fonêmica não encontraram decisão no escopo exato da formulação."
+        },
+        "025": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre adotar fila nacional digital do SUS com prioridade por risco clínico.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fila nacional",
+            "fila digital",
+            "risco clínico",
+            "regulação do SUS"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por fila nacional, fila digital, risco clínico, regulação do SUS não encontraram decisão no escopo exato da formulação."
+        },
+        "026A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre encerrar a gestão de serviços públicos de saúde por organizações sociais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "gestão da saúde",
+            "contratos de gestão"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por organizações sociais, OSs, gestão da saúde, contratos de gestão não encontraram decisão no escopo exato da formulação."
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre autorizar a exploração de petróleo na Margem Equatorial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "exploração de petróleo",
+            "licenciamento ambiental"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por Margem Equatorial, exploração de petróleo, licenciamento ambiental não encontraram decisão no escopo exato da formulação."
+        },
+        "028": {
+          "category": "CONCORDA",
+          "reason": "Propõe assentamento imediato de famílias sem terra e ocupação/expropriação política do latifúndio para ampliar a reforma agrária.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Assentamento imediato dos milhões de sem-terra acampados em todo o País",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 4,
+              "quote": "Ocupar o latifúndio para garantir terra para quem nela more e trabalhe, e a produção de alimentos para toda a classe trabalhadora",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reforma agrária",
+            "novos assentamentos",
+            "desapropriação",
+            "latifúndio"
+          ],
+          "absence_reason": null
+        },
+        "029": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe demarcação e posse para povos indígenas das retomadas, mas não decide literalmente sobre todas as demarcações pendentes.",
+          "conditions": [
+            "Abrange terras de retomadas."
+          ],
+          "scope_difference": "O universo de todas as demarcações pendentes não é definido.",
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Demarcação e posse da terra para todos os índios das retomadas; expulsão dos latifundiários que invadiram as terras dos índios",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "terras indígenas",
+            "demarcação",
+            "terras pendentes",
+            "retomadas"
+          ],
+          "absence_reason": null
+        },
+        "030": {
+          "category": "CONCORDA",
+          "reason": "Propõe criar empresa estatal para controlar a exploração de terras raras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Não à entrega das terras raras: criação de empresa estatal que controle sua exploração, comandada pelos trabalhadores, para garantir o uso dessas riquezas em favor do povo.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "terras raras",
+            "controle estatal",
+            "minerais estratégicos",
+            "empresa estatal"
+          ],
+          "absence_reason": null
+        },
+        "031": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar a produção de fertilizantes no Brasil.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fertilizantes",
+            "produção nacional",
+            "dependência externa",
+            "insumos agrícolas"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por fertilizantes, produção nacional, dependência externa, insumos agrícolas não encontraram decisão no escopo exato da formulação."
+        },
+        "032": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar a regulação de redes sociais e plataformas digitais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "regulação de redes sociais",
+            "plataformas digitais",
+            "algoritmo",
+            "Lei Felca"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por regulação de redes sociais, plataformas digitais, algoritmo, Lei Felca não encontraram decisão no escopo exato da formulação."
+        },
+        "033": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir a reeleição consecutiva no mesmo cargo do Poder Executivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reeleição consecutiva",
+            "Poder Executivo",
+            "mesmo cargo",
+            "mandato"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por reeleição consecutiva, Poder Executivo, mesmo cargo, mandato não encontraram decisão no escopo exato da formulação."
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre reformar o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança da ONU",
+            "reforma da ONU",
+            "reforma do Conselho"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por Conselho de Segurança da ONU, reforma da ONU, reforma do Conselho não encontraram decisão no escopo exato da formulação."
+        },
+        "035": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre adotar sistema distrital misto nas eleições legislativas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "distrital misto",
+            "listas partidárias",
+            "eleições legislativas",
+            "sistema eleitoral"
+          ],
+          "absence_reason": "As 7 páginas foram lidas integralmente e as buscas por distrital misto, listas partidárias, eleições legislativas, sistema eleitoral não encontraram decisão no escopo exato da formulação."
+        }
+      }
+    },
+    "280002554479": {
+      "name": "Leonardo Avalanche",
+      "decisions": {
+        "004": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre a extinção da escala de seis dias de trabalho por um de descanso sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "escala 6x1",
+            "seis dias",
+            "cinco dias",
+            "jornada semanal"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por escala 6x1, seis dias, cinco dias, jornada semanal não encontraram decisão no escopo exato da formulação."
+        },
+        "005": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre o limite legal geral de 30 horas semanais sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "30 horas",
+            "35 horas",
+            "40 horas",
+            "jornada semanal"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por 30 horas, 35 horas, 40 horas, jornada semanal não encontraram decisão no escopo exato da formulação."
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre o reconhecimento do vínculo de emprego entre trabalhadores e empresas de plataformas digitais.",
+          "conditions": [],
+          "scope_difference": "O plano cria proteções específicas e reconhece a ausência de carteira, mas não decide criar vínculo de emprego com a plataforma.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Plano de saúde exclusivo pro motorista de aplicativo: nosso governo vai criar um plano de saúde próprio, exclusivo pra motorista de aplicativo — reconhecendo que essa categoria trabalha exposta a acidente de trânsito, assalto e desgaste físico diário, sem nenhuma cobertura de saúde vinculada ao trabalho, já que não tem carteira assinada.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "plataformas digitais",
+            "motorista de aplicativo",
+            "vínculo empregatício",
+            "carteira assinada"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por plataformas digitais, motorista de aplicativo, vínculo empregatício, carteira assinada não encontraram decisão no escopo exato da formulação."
+        },
+        "007": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre dobrar o valor do salário mínimo nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "salário mínimo",
+            "100%",
+            "dobrar",
+            "salário vital"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por salário mínimo, 100%, dobrar, salário vital não encontraram decisão no escopo exato da formulação."
+        },
+        "008": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre instituir imposto sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "grandes fortunas",
+            "imposto sobre grandes fortunas",
+            "tributação"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por grandes fortunas, imposto sobre grandes fortunas, tributação não encontraram decisão no escopo exato da formulação."
+        },
+        "009": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre suspender o pagamento da dívida pública a grandes investidores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "grandes investidores",
+            "grandes credores",
+            "suspensão",
+            "cancelamento"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por dívida pública, grandes investidores, grandes credores, suspensão, cancelamento não encontraram decisão no escopo exato da formulação."
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir apostas realizadas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas on-line",
+            "apostas pela internet",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por apostas on-line, apostas pela internet, bets, jogos de azar não encontraram decisão no escopo exato da formulação."
+        },
+        "012": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre operar transporte público coletivo sem tarifa aos passageiros.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tarifa zero",
+            "passe livre",
+            "transporte público"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por tarifa zero, passe livre, transporte público não encontraram decisão no escopo exato da formulação."
+        },
+        "013": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre expropriar imóveis urbanos ociosos ou especulativos para moradia popular.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "imóveis ociosos",
+            "especulação imobiliária",
+            "expropriação",
+            "moradia popular"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por imóveis ociosos, especulação imobiliária, expropriação, moradia popular não encontraram decisão no escopo exato da formulação."
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir o aborto por lei.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez",
+            "legalização"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por aborto, interrupção da gravidez, legalização não encontraram decisão no escopo exato da formulação."
+        },
+        "015": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre fixar em 16 anos a idade mínima de responsabilização adulta por crimes graves.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maioridade penal",
+            "16 anos",
+            "crimes graves",
+            "responsabilidade criminal"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por maioridade penal, 16 anos, crimes graves, responsabilidade criminal não encontraram decisão no escopo exato da formulação."
+        },
+        "016": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre converter a organização e o regime das polícias militares em civis.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "polícia militar",
+            "desmilitarização",
+            "organização civil",
+            "regime civil"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por polícia militar, desmilitarização, organização civil, regime civil não encontraram decisão no escopo exato da formulação."
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre permitir por lei o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "legalização",
+            "consumo"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por maconha, cannabis, legalização, consumo não encontraram decisão no escopo exato da formulação."
+        },
+        "020": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre classificar facções criminosas como organizações terroristas.",
+          "conditions": [],
+          "scope_difference": "Integração contra o crime organizado não equivale a classificação jurídica como terrorismo.",
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "Sistema Único Nacional de Segurança, integrando em tempo real todas as bases policiais do país — antecedente criminal, mandado de prisão em aberto, registro de arma, veículo e medida protetiva —, pra que a informação certa esteja disponível na hora certa, em qualquer cidade do Brasil",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "facções criminosas",
+            "organizações terroristas",
+            "terrorismo",
+            "crime organizado"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por facções criminosas, organizações terroristas, terrorismo, crime organizado não encontraram decisão no escopo exato da formulação."
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar o uso de câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": "Câmeras de monitoramento urbano não são câmeras corporais usadas por policiais.",
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "somos a favor de toda tecnologia disponível pra combater o crime — câmera de monitoramento, reconhecimento facial, integração de dado em tempo real.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "câmeras corporais",
+            "câmera policial",
+            "bodycam",
+            "atividade policial"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por câmeras corporais, câmera policial, bodycam, atividade policial não encontraram decisão no escopo exato da formulação."
+        },
+        "022": {
+          "category": "CONCORDA",
+          "reason": "Defende investimento em reconhecimento facial integrado às bases e à atuação policial de segurança pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "somos a favor de toda tecnologia disponível pra combater o crime — câmera de monitoramento, reconhecimento facial, integração de dado em tempo real.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 14,
+              "quote": "Com o Sistema Único Nacional de Segurança funcionando em conjunto com tecnologia de reconhecimento facial, vai ser possível identificar a pessoa mesmo sem documento em mãos, cruzar antecedente na hora",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reconhecimento facial",
+            "segurança pública",
+            "biometria facial"
+          ],
+          "absence_reason": null
+        },
+        "023": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar vagas da educação básica em tempo integral.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tempo integral",
+            "educação básica integral",
+            "escola integral"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por tempo integral, educação básica integral, escola integral não encontraram decisão no escopo exato da formulação."
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre priorizar o método fônico na alfabetização.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "método fônico",
+            "alfabetização",
+            "consciência fonêmica"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por método fônico, alfabetização, consciência fonêmica não encontraram decisão no escopo exato da formulação."
+        },
+        "025": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre adotar fila nacional digital do SUS com prioridade por risco clínico.",
+          "conditions": [],
+          "scope_difference": "Mutirões nacionais e telemedicina para triagem não definem uma fila nacional digital única ordenada por risco clínico.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fila nacional",
+            "fila digital",
+            "risco clínico",
+            "regulação do SUS"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por fila nacional, fila digital, risco clínico, regulação do SUS não encontraram decisão no escopo exato da formulação."
+        },
+        "026A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre encerrar a gestão de serviços públicos de saúde por organizações sociais.",
+          "conditions": [],
+          "scope_difference": "Contratar capacidade hospitalar privada não decide a continuidade ou o encerramento da gestão pública por organizações sociais.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "parceria com hospitais privados ociosos para absorver demanda reprimida",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "gestão da saúde",
+            "contratos de gestão"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por organizações sociais, OSs, gestão da saúde, contratos de gestão não encontraram decisão no escopo exato da formulação."
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre autorizar a exploração de petróleo na Margem Equatorial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "exploração de petróleo",
+            "licenciamento ambiental"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por Margem Equatorial, exploração de petróleo, licenciamento ambiental não encontraram decisão no escopo exato da formulação."
+        },
+        "028": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre ampliar reforma agrária com novos assentamentos e desapropriações.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma agrária",
+            "novos assentamentos",
+            "desapropriação",
+            "latifúndio"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por reforma agrária, novos assentamentos, desapropriação, latifúndio não encontraram decisão no escopo exato da formulação."
+        },
+        "029": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre demarcar todas as terras indígenas ainda pendentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "terras indígenas",
+            "demarcação",
+            "terras pendentes",
+            "retomadas"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por terras indígenas, demarcação, terras pendentes, retomadas não encontraram decisão no escopo exato da formulação."
+        },
+        "030": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre manter a exploração de terras raras sob controle estatal.",
+          "conditions": [],
+          "scope_difference": "Beneficiamento nacional e prioridade estratégica não definem propriedade ou controle estatal da exploração.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "instalação de indústrias de beneficiamento mineral com prioridade estratégica pra nióbio e terras raras",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "terras raras",
+            "controle estatal",
+            "minerais estratégicos",
+            "empresa estatal"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por terras raras, controle estatal, minerais estratégicos, empresa estatal não encontraram decisão no escopo exato da formulação."
+        },
+        "031": {
+          "category": "CONCORDA",
+          "reason": "Propõe investimento pesado em fábricas nacionais de fertilizantes e na exploração de reservas brasileiras para reduzir a dependência externa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 24,
+              "quote": "Na prática: investimento pesado em fábricas nacionais de fertilizantes e insumos agrícolas, aproveitando as reservas minerais brasileiras.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 24,
+              "quote": "nosso governo vai investir pesado pra tirar do papel a exploração de jazidas como a de Autazes e outras reservas minerais brasileiras de potássio, fósforo e nitrogênio, com fábrica nacional de fertilizante de verdade",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fertilizantes",
+            "produção nacional",
+            "dependência externa",
+            "insumos agrícolas"
+          ],
+          "absence_reason": null
+        },
+        "032": {
+          "category": "CONCORDA",
+          "reason": "Propõe novas obrigações, transparência algorítmica, remoção imediata e sanções para redes sociais e plataformas digitais, ampliando sua regulação.",
+          "conditions": [
+            "Parte das medidas é voltada à proteção de crianças e adolescentes."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 39,
+              "quote": "Toda plataforma que operar no Brasil será obrigada a integrar esse sistema.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 43,
+              "quote": "Nosso governo vai exigir transparência obrigatória sobre o funcionamento do algoritmo de recomendação pra usuário até 14 anos: qual critério prioriza um vídeo sobre o outro, e relatório público periódico sobre o tipo de conteúdo mais entregue nessa faixa etária.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "regulação de redes sociais",
+            "plataformas digitais",
+            "algoritmo",
+            "Lei Felca"
+          ],
+          "absence_reason": null
+        },
+        "033": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre proibir a reeleição consecutiva no mesmo cargo do Poder Executivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reeleição consecutiva",
+            "Poder Executivo",
+            "mesmo cargo",
+            "mandato"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por reeleição consecutiva, Poder Executivo, mesmo cargo, mandato não encontraram decisão no escopo exato da formulação."
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre reformar o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança da ONU",
+            "reforma da ONU",
+            "reforma do Conselho"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por Conselho de Segurança da ONU, reforma da ONU, reforma do Conselho não encontraram decisão no escopo exato da formulação."
+        },
+        "035": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide de modo suficientemente específico sobre adotar sistema distrital misto nas eleições legislativas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "distrital misto",
+            "listas partidárias",
+            "eleições legislativas",
+            "sistema eleitoral"
+          ],
+          "absence_reason": "As 48 páginas foram lidas integralmente e as buscas por distrital misto, listas partidárias, eleições legislativas, sistema eleitoral não encontraram decisão no escopo exato da formulação."
+        }
+      }
+    }
+  }
+}

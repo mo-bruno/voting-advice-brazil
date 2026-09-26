@@ -33,6 +33,7 @@ from app.infrastructure.database.repositories import (
 
 router = APIRouter(prefix="/quiz", tags=["Quiz"])
 
+
 def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
     latest_by_thesis_id: dict[int, QuizAnswer] = {}
     for answer in answers:
@@ -41,10 +42,12 @@ def _deduplicate_answers(answers: list[QuizAnswer]) -> list[QuizAnswer]:
     return list(latest_by_thesis_id.values())
 
 
-@router.get("/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz")
+@router.get(
+    "/questions", response_model=QuestionsResponse, summary="Retorna teses para o quiz"
+)
 def questions(
     themes: list[str] | None = Query(default=None, description="Filtrar por tema(s)"),
-    limit: int = Query(default=30, ge=1, le=60),
+    limit: int = Query(default=60, ge=1, le=60),
     thesis_repo: SqlThesisRepository = Depends(get_thesis_repo),
 ) -> QuestionsResponse:
     theses = get_quiz_questions(thesis_repo, themes=themes, limit=limit)
@@ -159,17 +162,23 @@ def _push_news_for_quiz_submission(anonymous_id: str) -> None:
 
     try:
         with SessionLocal() as session:
-            rows = session.execute(
-                select(ThemeModel.slug)
-                .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
-                .join(QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id)
-                .where(
-                    QuizResponseModel.device_id == anonymous_id,
-                    QuizResponseModel.answer.in_(["agree", "disagree"]),
-                    ThesisModel.election_year == settings.active_election_year,
+            rows = (
+                session.execute(
+                    select(ThemeModel.slug)
+                    .join(ThesisModel, ThesisModel.theme_id == ThemeModel.id)
+                    .join(
+                        QuizResponseModel, QuizResponseModel.thesis_id == ThesisModel.id
+                    )
+                    .where(
+                        QuizResponseModel.device_id == anonymous_id,
+                        QuizResponseModel.answer.in_(["agree", "disagree"]),
+                        ThesisModel.election_year == settings.active_election_year,
+                    )
+                    .distinct()
                 )
-                .distinct()
-            ).scalars().all()
+                .scalars()
+                .all()
+            )
             themes = list(rows)
 
             from app.infrastructure.database.iot_device_repositories import (

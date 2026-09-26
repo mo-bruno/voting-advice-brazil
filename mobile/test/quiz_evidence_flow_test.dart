@@ -105,13 +105,16 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('intro explains automated review and the limited edition',
+  testWidgets('intro explains the complete review and evidence-based selection',
       (tester) async {
     await pump(tester, QuizIntroPage(analytics: analytics));
-    expect(find.textContaining('9 teses'), findsOneWidget);
+    expect(find.textContaining('70 formulações'), findsOneWidget);
     expect(find.textContaining('13 planos'), findsOneWidget);
+    expect(find.textContaining('30 teses'), findsOneWidget);
     expect(find.textContaining('por IA, sem validação humana'), findsOneWidget);
-    expect(find.textContaining('29 teses de rascunho'), findsOneWidget);
+    expect(find.textContaining('contraste documentado'), findsOneWidget);
+    expect(find.textContaining('9 teses'), findsNothing);
+    expect(find.textContaining('29 teses de rascunho'), findsNothing);
     expect(find.textContaining('está pendente'), findsNothing);
     expect(
         find.textContaining('não é uma recomendação de voto'), findsOneWidget);

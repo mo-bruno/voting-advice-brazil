@@ -18,7 +18,10 @@ from app.main import create_app
 
 @pytest.mark.parametrize("trigger", ["quiz", "scheduler"])
 def test_news_themes_exclude_answers_from_other_elections(
-    trigger, db_session, thesis_ids, monkeypatch,
+    trigger,
+    db_session,
+    thesis_ids,
+    monkeypatch,
 ):
     from contextlib import nullcontext
     from datetime import datetime, timezone
@@ -34,23 +37,36 @@ def test_news_themes_exclude_answers_from_other_elections(
 
     anonymous_id = "550e8400-e29b-41d4-a716-446655440099"
     future_theme = ThemeModel(
-        slug="future-only", name="Future", area="economica", sort_order=99,
+        slug="future-only",
+        name="Future",
+        area="economica",
+        sort_order=99,
     )
     db_session.add(future_theme)
     db_session.flush()
     future_thesis = ThesisModel(
-        text="Other edition", theme_id=future_theme.id,
-        status="approved", election_year=2026,
+        text="Other edition",
+        theme_id=future_theme.id,
+        status="approved",
+        election_year=2026,
     )
     db_session.add_all([future_thesis, DeviceModel(id=anonymous_id)])
     db_session.flush()
-    db_session.add_all([
-        QuizResponseModel(
-            device_id=anonymous_id, thesis_id=thesis_id, answer="agree",
-            weight=1, election_year=year,
-        )
-        for thesis_id, year in [(thesis_ids["Tese 1"], 2022), (future_thesis.id, 2026)]
-    ])
+    db_session.add_all(
+        [
+            QuizResponseModel(
+                device_id=anonymous_id,
+                thesis_id=thesis_id,
+                answer="agree",
+                weight=1,
+                election_year=year,
+            )
+            for thesis_id, year in [
+                (thesis_ids["Tese 1"], 2022),
+                (future_thesis.id, 2026),
+            ]
+        ]
+    )
     db_session.flush()
     captured = []
 
@@ -60,13 +76,17 @@ def test_news_themes_exclude_answers_from_other_elections(
     monkeypatch.setattr(news_notifier, "push_news_for_user", capture_themes)
     monkeypatch.setattr(session_module, "SessionLocal", lambda: nullcontext(db_session))
     monkeypatch.setattr(
-        SqlFollowedActorRepository, "list_all_followed", lambda _: [(1, anonymous_id)],
+        SqlFollowedActorRepository,
+        "list_all_followed",
+        lambda _: [(1, anonymous_id)],
     )
     try:
         if trigger == "quiz":
             quiz_router._push_news_for_quiz_submission(anonymous_id)
         else:
-            scheduler._push_news_for_all_followers(db_session, datetime.now(timezone.utc))
+            scheduler._push_news_for_all_followers(
+                db_session, datetime.now(timezone.utc)
+            )
         assert captured == ["economia"]
     finally:
         db_session.rollback()
@@ -79,6 +99,15 @@ def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
 
 
 class TestEndpointQuestions:
+    def test_default_limit_exposes_full_presidential_catalogue(self, client):
+        with patch(
+            "app.api.routers.quiz.get_quiz_questions", return_value=[]
+        ) as mocked:
+            r = client.get("/api/v1/quiz/questions")
+
+        assert r.status_code == 200
+        assert mocked.call_args.kwargs["limit"] == 60
+
     def test_returns_theses(self, client):
         r = client.get("/api/v1/quiz/questions")
         assert r.status_code == 200
@@ -104,6 +133,7 @@ class TestEndpointQuestions:
 
     def test_filter_by_theme(self, client, db_session):
         from app.infrastructure.database.models import ThemeModel
+
         seguranca = db_session.query(ThemeModel).filter_by(slug="seguranca").one()
         r = client.get("/api/v1/quiz/questions?themes=seguranca")
         data = r.json()
@@ -121,13 +151,17 @@ class TestEndpointQuestions:
 
 
 class TestEndpointSubmit:
-    def test_results_report_comparable_and_answered_thesis_counts(self, client, thesis_ids):
+    def test_results_report_comparable_and_answered_thesis_counts(
+        self, client, thesis_ids
+    ):
         response = client.post(
             "/api/v1/quiz/submit",
-            json={"answers": [
-                *_agree5(thesis_ids),
-                {"thesis_id": thesis_ids["Tese 6"], "answer": "skip", "weight": 2},
-            ]},
+            json={
+                "answers": [
+                    *_agree5(thesis_ids),
+                    {"thesis_id": thesis_ids["Tese 6"], "answer": "skip", "weight": 2},
+                ]
+            },
         )
         assert response.status_code == 200
         results = response.json()["results"]
@@ -137,7 +171,11 @@ class TestEndpointSubmit:
         assert by_name["Candidato C"]["counted_theses"] == 4
 
     def test_unscored_candidates_are_unranked_and_follow_real_zero_scores(
-        self, client, thesis_ids, candidate_ids, db_session,
+        self,
+        client,
+        thesis_ids,
+        candidate_ids,
+        db_session,
     ):
         real_positions = SqlPositionRepository(db_session).get_by_candidates_and_theses(
             list(candidate_ids.values()),
@@ -149,16 +187,22 @@ class TestEndpointSubmit:
             for position in positions.values():
                 position.position = "discordo"
         with patch.object(
-            SqlPositionRepository, "get_by_candidates_and_theses",
+            SqlPositionRepository,
+            "get_by_candidates_and_theses",
             return_value=real_positions,
         ):
             response = client.post(
-                "/api/v1/quiz/submit", json={"answers": _agree5(thesis_ids)},
+                "/api/v1/quiz/submit",
+                json={"answers": _agree5(thesis_ids)},
             )
         assert response.status_code == 200
         results = response.json()["results"]
         assert all(item["score_percent"] == 0 for item in results)
-        assert [item["name"] for item in results] == ["Candidato A", "Candidato B", "Candidato C"]
+        assert [item["name"] for item in results] == [
+            "Candidato A",
+            "Candidato B",
+            "Candidato C",
+        ]
         assert [item["rank"] for item in results] == [1, 1, 0]
         assert [item["counted_theses"] for item in results] == [5, 5, 0]
 
@@ -183,7 +227,9 @@ class TestEndpointSubmit:
         candidate_a = next(item for item in results if item["name"] == "Candidato A")
         assert candidate_a["photo_url"] == "/data/fotos/2022/BR/cand_a.jpg"
 
-    def test_submit_with_device_id_persists_answers(self, client, db_session, thesis_ids):
+    def test_submit_with_device_id_persists_answers(
+        self, client, db_session, thesis_ids
+    ):
         device_id = "550e8400-e29b-41d4-a716-446655440000"
         payload = _agree5(thesis_ids)
 

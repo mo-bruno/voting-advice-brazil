@@ -1,0 +1,2077 @@
+{
+  "reviewer": "automated_expansion_review",
+  "reviewed_at": "2026-09-26",
+  "method": "Auditoria documental das formulações candidatas para expansão do quiz presidencial de 2026. O banco de 111 teses foi varrido contra as 38 teses atuais; além do recorte inicial, foram selecionadas três escolhas adicionais explicitamente divergentes e não redundantes nos temas de instituições e política externa. Cada formulação foi reduzida a uma única decisão. BR26-BANCO-A-024 e BR26-BANCO-B-039 foram consolidadas em uma só proposta atômica; BR26-BANCO-B-024 foi desmembrada e somente a decisão sobre o Novo Ensino Médio foi auditada. Os 13 planos oficiais atuais foram pesquisados integralmente, com Leonardo Avalanche (PG_2026_BR_280002554479_01, plano oficial do pacote atualizado de 19/09) no lugar de Pablo Marçal. Claims e shortlists foram usados apenas como trilha de busca. Toda posição substantiva foi relida na página oficial e confrontada nas extrações layout e raw; as páginas físicas 12, 13, 58 e 65 do plano de Samara, em duas colunas, foram também renderizadas para confirmar ordem e sentido. Ausência nunca foi tratada como discordância. Categorias: CONCORDA, DISCORDA, CONDICIONAL_OU_MISTA, NEUTRO_EXPLICITO e NAO_ENCONTRADA. Recomendações obedecem à regra: nucleus com ambos os polos e ao menos três posições categóricas; complementary com ambos os polos e exatamente duas; rejected sem ambos os polos ou com formulação inadequada.",
+  "proposals": {
+    "C01": {
+      "id": "BR26-T061",
+      "bank_ids": [
+        "BR26-BANCO-A-023"
+      ],
+      "text": "O financiamento público de partidos e campanhas por meio dos fundos Partidário e Eleitoral deve ser extinto.",
+      "topic": "governanca",
+      "version": 1,
+      "recommendation": "complementary",
+      "reason": "Há dois polos categóricos documentados: Zema propõe extinguir ambos os fundos e Renan Santos propõe mantê-los com repasses vinculados à qualidade gerencial. Os outros onze planos não decidem a extinção dos dois fundos públicos.",
+      "problems": [
+        "A formulação agrega dois fundos, mas a mesma fonte de cada polo decide os dois conjuntamente; separá-los destruiria o contraste efetivamente documentado.",
+        "Extinguir financiamento privado eleitoral não foi tratado como posição sobre os fundos públicos."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe expressamente extinguir os fundos Partidário e Eleitoral e substituí-los por financiamento privado.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 75,
+              "quote": "Extinguir o Fundo Partidário e o Fundo Eleitoral, substituindo-os por um modelo de financiamento privado de campanhas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "DISCORDA",
+          "reason": "O plano mantém os dois fundos e altera o critério de seus repasses, solução incompatível com extingui-los.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "O repasse do Fundo Partidário e do Fundo Eleitoral passará a ser calculado com base na qualidade gerencial dos mandatários.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": null
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe revogar o financiamento privado eleitoral, mas não decide extinguir ou preservar os fundos Partidário e Eleitoral.",
+          "conditions": [],
+          "scope_difference": "Financiamento privado de campanhas e financiamento público pelos dois fundos são instrumentos distintos.",
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Revogaremos a reforma eleitoral de Eduardo Cunha (Lei 13165/2015 e Emenda Constitucional 91/2016), junto com a cláusula de barreira e o financiamento privado eleitoral.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "As buscas localizaram posição contra financiamento privado eleitoral, mas nenhuma decisão sobre a existência dos fundos públicos Partidário e Eleitoral."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Fundo Partidário",
+            "Fundo Eleitoral",
+            "financiamento partidário",
+            "financiamento eleitoral",
+            "financiamento de campanhas"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir o financiamento público por meio dos fundos Partidário e Eleitoral nem preservá-los como política."
+        }
+      }
+    },
+    "C02": {
+      "id": "BR26-T062",
+      "bank_ids": [
+        "BR26-BANCO-A-024",
+        "BR26-BANCO-B-039"
+      ],
+      "text": "Um laboratório nacional de inteligência artificial deve ter capital privado majoritário.",
+      "topic": "economia",
+      "version": 1,
+      "recommendation": "complementary",
+      "reason": "A formulação atômica preserva uma única escolha de controle: Renan Santos sustenta capital privado majoritário, enquanto Hertz Dias exige controle estatal para a inteligência artificial nacional. São os únicos dois polos categóricos; referências de outros planos a uso, regulação ou investimento em IA não decidem a composição de capital do laboratório.",
+      "problems": [
+        "O polo estatal trata da inteligência artificial nacional em geral e não cita o Projeto Abaporu pelo nome; a diferença de escopo é registrada na decisão.",
+        "Criação do laboratório e finalidade tecnológica foram retiradas da escolha, que ficou restrita à composição de controle."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002540694": {
+          "category": "CONCORDA",
+          "reason": "O Projeto Abaporu é definido como laboratório nacional de IA com capital privado majoritário e governança independente.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 43,
+              "quote": "O Projeto Abaporu será um labo- ratório nacional de inteligência artificial com capital privado majoritário, governança independente",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": null
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "O plano determina controle estatal para a inteligência artificial e suas aplicações e propõe uma IA pública nacional, afastando capital privado majoritário como controle.",
+          "conditions": [],
+          "scope_difference": "A fonte estabelece controle estatal para a IA nacional em sentido amplo, sem nomear um laboratório específico.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "deverão ser desenvolvidas sob controle do Estado, com a participação organizada dos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 28,
+              "quote": "Desenvolvimento de uma inteligência artificial pública nacional",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "laboratório nacional",
+            "Projeto Abaporu",
+            "inteligência artificial",
+            "capital privado majoritário",
+            "controle do Estado",
+            "IA pública"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se um laboratório nacional de inteligência artificial deve ter capital privado majoritário ou controle estatal."
+        }
+      }
+    },
+    "C03": {
+      "id": "BR26-T063",
+      "bank_ids": [
+        "BR26-BANCO-A-025"
+      ],
+      "text": "Enquanto perdurarem as condições descritas nos planos como genocídio do povo palestino e regime de apartheid em Israel, o Brasil deve romper relações diplomáticas com Israel.",
+      "topic": "politica_externa",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Há quatro posições categóricas e ambos os polos: Samara Martins e Edmilson Costa defendem o rompimento; Flávio Bolsonaro propõe reverter a aproximação do rompimento e Augusto Cury propõe nova cooperação governamental com Israel. A formulação preserva a condição presente no plano de Samara e limita a decisão às relações diplomáticas.",
+      "problems": [
+        "A condição temporal aparece literalmente apenas no plano de Samara; Edmilson propõe rompimento imediato e incondicionado, que também abrange o período condicionado.",
+        "Cooperação setorial não equivale a alinhamento diplomático geral, mas uma nova cooperação oficial é incompatível com o rompimento enquanto este vigorar."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONCORDA",
+          "reason": "O plano determina romper relações diplomáticas com Israel enquanto perdurarem o genocídio do povo palestino e o regime de apartheid descritos no próprio documento.",
+          "conditions": [
+            "Enquanto perdurarem o genocídio do povo palestino e o regime de apartheid descritos no plano."
+          ],
+          "scope_difference": "A fonte também inclui relações militares e comerciais; a tese retém somente a decisão diplomática.",
+          "evidence": [
+            {
+              "page": 65,
+              "quote": "à Causa Palestina: Rompimento de",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 65,
+              "quote": "relações diplomáticas, militares e",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 65,
+              "quote": "comerciais com o Estado Sionista",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 65,
+              "quote": "de Israel enquanto perdurar o",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 65,
+              "quote": "genocídio do povo palestino e o",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 65,
+              "quote": "regime de Apartheid em Israel;",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002551544": {
+          "category": "DISCORDA",
+          "reason": "O plano afirma que a relação com Israel foi levada ao limite do rompimento e promete reverter esse quadro.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 62,
+              "quote": "Nos últimos anos, as relações com países como Argentina, Estados Unidos e Israel foram levadas ao limite do rompimento. Vamos reverter esse quadro",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe convidar Israel a liderar uma cooperação governamental em irrigação, decisão incompatível com rompimento diplomático enquanto implementada.",
+          "conditions": [],
+          "scope_difference": "A fonte decide cooperação setorial, não apresenta uma defesa geral de todas as relações com Israel.",
+          "evidence": [
+            {
+              "page": 116,
+              "quote": "O Brasil deve convidar Israel para liderar um eixo de irrigação de precisão, fertirrigação, sensores, reuso e preparo de solo.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": null
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002551975": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe rompimento imediato de todas as relações econômicas e diplomáticas com Israel, sem limitar a decisão a uma condição temporal.",
+          "conditions": [],
+          "scope_difference": "O rompimento é incondicionado e também inclui relações econômicas; por isso necessariamente vale durante a condição mais estreita da tese.",
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Rompimento imediato de todas as relações econômicas e diplomáticas com o estado sionista de Israel.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Israel",
+            "israelense",
+            "relações diplomáticas",
+            "rompimento",
+            "genocídio",
+            "apartheid",
+            "sionista"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese."
+        }
+      }
+    },
+    "C04": {
+      "id": "BR26-T064",
+      "bank_ids": [
+        "BR26-BANCO-A-027"
+      ],
+      "text": "Trabalhadores e empregadores devem poder negociar condições de trabalho que prevaleçam sobre regras gerais da legislação trabalhista.",
+      "topic": "trabalho",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Há cinco posições categóricas e ambos os polos: Zema e Flávio Bolsonaro defendem a prevalência do negociado; Samara Martins, Hertz Dias e Rui Costa Pimenta propõem revogar a reforma trabalhista e restaurar a proteção legal. Lula e Edmilson Costa valorizam negociação coletiva, mas não lhe dão prevalência sobre a lei e foram classificados como mistos.",
+      "problems": [
+        "Os dois planos favoráveis explicam o negociado sobre o legislado também como ajuste direto entre trabalhador e empregador; por isso a redação não restringe o instrumento a convenções coletivas.",
+        "Revogar a reforma trabalhista é um polo contrário ao regime ampliado em 2017, mas não detalha cada dispositivo revogado."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "Na seção que manda revogar as reformas trabalhista e previdenciária, o plano propõe revogação imediata das reformas para restaurar direitos legais.",
+          "conditions": [],
+          "scope_difference": "A fonte revoga o pacote legal como um todo e não isola o dispositivo do negociado sobre o legislado.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "TRABALHISTA E PREVIDENCIÁRIA,",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 13,
+              "quote": "Imediata a revogação de todas as",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 13,
+              "quote": "reformas antipovo, para restaurar os",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 13,
+              "quote": "direitos dos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano oferece regime alternativo à CLT no qual trabalhador e empregador negociam regras de contratação com prevalência do negociado sobre o legislado.",
+          "conditions": [
+            "Aplicação dentro de um regime alternativo à CLT e respeito ao limite semanal de 44 horas indicado no plano."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "com prevalência do negociado sobre o legislado.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe expressamente revogar a reforma trabalhista e rejeita flexibilização de direitos.",
+          "conditions": [],
+          "scope_difference": "A fonte revoga o pacote de 2017 sem enumerar separadamente a regra de prevalência.",
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Revogação da reforma trabalhista",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 8,
+              "quote": "sem flexibilização de direitos",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano fortalece a negociação coletiva e cria regras para favorecer o processo negocial, mas não afirma que o resultado possa prevalecer sobre garantias legais gerais.",
+          "conditions": [],
+          "scope_difference": "Fortalecer a negociação coletiva não define sua hierarquia diante da legislação.",
+          "evidence": [
+            {
+              "page": 76,
+              "quote": "Reafirmamos nosso compromisso com o fortalecimento da negociação coletiva",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 76,
+              "quote": "regras que favoreçam o processo negocial.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano defende expressamente o negociado sobre o legislado, explicado como combinação direta das condições de trabalho dentro da lei.",
+          "conditions": [
+            "As condições combinadas devem permanecer dentro da lei, segundo o próprio plano."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 44,
+              "quote": "Por isso defendemos o negociado sobre o legislado",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        },
+        "280002551975": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano revoga a contrarreforma trabalhista, amplia direitos legais e ao mesmo tempo obriga empresas a negociar convenções coletivas; não atribui prevalência dessas convenções sobre a lei.",
+          "conditions": [],
+          "scope_difference": "Negociação obrigatória e proteção legal ampliada coexistem; a hierarquia entre convenção e lei não é decidida.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Revogaremos as contrarreformas trabalhista, previdenciária",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "construiremos uma verdadeira reforma trabalhista que amplie os direitos dos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "criaremos uma legislação para o setor privado, obrigando as empresas a negociarem as convenções coletivas com os sindicatos proletários.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        },
+        "280002552487": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe cancelar a reforma trabalhista e restaurar e ampliar toda a legislação de proteção dos trabalhadores.",
+          "conditions": [],
+          "scope_difference": "A fonte revoga o pacote como um todo e não nomeia isoladamente o negociado sobre o legislado.",
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "negociado sobre o legislado",
+            "negociação coletiva",
+            "convenção coletiva",
+            "acordo coletivo",
+            "reforma trabalhista",
+            "CLT"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não define se condições negociadas por trabalhadores e empregadores podem prevalecer sobre regras gerais da legislação trabalhista."
+        }
+      }
+    },
+    "C05": {
+      "id": "BR26-T065",
+      "bank_ids": [
+        "BR26-BANCO-B-024"
+      ],
+      "text": "O Novo Ensino Médio deve ser revogado.",
+      "topic": "educacao",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "O item original reunia BNCC e Novo Ensino Médio; a revisão reteve só a segunda decisão. Samara Martins e Hertz Dias defendem a revogação, enquanto Lula endossa a nova lei do ensino médio e Augusto Cury atribui função positiva ao Novo Ensino Médio. Há quatro posições categóricas e ambos os polos.",
+      "problems": [
+        "A expressão Novo Ensino Médio pode abranger versões legais sucessivas; a decisão de Lula refere-se à nova lei aprovada para reequilibrar formação geral e profissional.",
+        "A parte sobre BNCC foi excluída para evitar uma pergunta dupla."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe expressamente revogar o Novo Ensino Médio e restaurar uma matriz curricular humanística, científica e crítica.",
+          "conditions": [],
+          "scope_difference": "A fonte agrega também reformas empresariais; a tese retém somente o Novo Ensino Médio.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Revogação do Novo Ensino Médio",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002541457": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe revogar as propostas curriculares que identifica como BNCC e Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": "A fonte inclui a BNCC; a tese avalia somente o Novo Ensino Médio.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Revogação das propostas curriculares elaboradas pelos grandes empresários da educação e fundações privadas (BNCC e Novo Ensino Médio).",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "DISCORDA",
+          "reason": "O plano endossa a nova lei do ensino médio e descreve sua finalidade de reequilibrar formação geral e profissional, em vez de revogá-la.",
+          "conditions": [],
+          "scope_difference": "A fonte se refere à versão legal reequilibrada do ensino médio, não à preservação sem alterações do desenho anterior.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Aprovamos a nova lei do ensino médio, buscando reequilibrar a formação geral básica e a formação profissional",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": null
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002551547": {
+          "category": "DISCORDA",
+          "reason": "O plano dedica uma proposta positiva ao Novo Ensino Médio e lhe atribui formação para aprendizagem contínua, trabalho em equipe e solução de problemas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 76,
+              "quote": "O Novo Ensino Médio deve formar estudantes capazes de aprender continuamente, trabalhar em equipe, resolver problemas complexos, liderar projetos e transformar conhecimento em soluções para a sociedade.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": null
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide revogar nem preservar o Novo Ensino Médio.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Novo Ensino Médio",
+            "nova lei do ensino médio",
+            "revogação",
+            "ensino médio",
+            "itinerários formativos"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide revogar nem preservar o Novo Ensino Médio."
+        }
+      }
+    },
+    "C06": {
+      "id": "BR26-T066",
+      "bank_ids": [
+        "BR26-BANCO-A-063"
+      ],
+      "text": "O Brasil deve sair do BRICS.",
+      "topic": "politica_externa",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Há quatro posições categóricas e ambos os polos: Zema propõe retirar o Brasil do BRICS; Renan Santos propõe estratégia pragmática dentro do BRICS+, Lula quer aprofundar a aproximação e Caiado quer participação ativa.",
+      "problems": [
+        "O plano favorável à saída preserva relações comerciais com os países do bloco; a tese decide somente a condição de membro."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe retirar o Brasil do BRICS diplomaticamente, preservando relações comerciais com os países membros.",
+          "conditions": [
+            "Preservar pragmaticamente as relações comerciais com todos os países do bloco."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Retirar o Brasil do BRICS de forma diplomática",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "DISCORDA",
+          "reason": "O plano formula uma estratégia pragmática no BRICS+ para obter benefícios de mercados, investimentos e cooperação tecnológica, o que pressupõe permanência.",
+          "conditions": [
+            "Atuação pragmática com consciência da crescente influência chinesa descrita no plano."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 46,
+              "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": null
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002542548": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe aprofundar a aproximação geopolítica com o BRICS e fortalecer seus mecanismos financeiros.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 81,
+              "quote": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": null
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002551932": {
+          "category": "DISCORDA",
+          "reason": "O plano determina participação ativa no BRICS, entre outras organizações multilaterais.",
+          "conditions": [
+            "Participação orientada a resultados e à influência sobre decisões, não a protagonismo retórico."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 74,
+              "quote": "Participar ativamente da ONU, da OMC, do G20 e do BRICS",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "BRICS",
+            "BRICS+",
+            "bloco",
+            "Sul Global",
+            "aproximação geopolítica"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide a saída nem a permanência do Brasil no BRICS."
+        }
+      }
+    },
+    "C07": {
+      "id": "BR26-T067",
+      "bank_ids": [
+        "BR26-BANCO-A-069"
+      ],
+      "text": "O investimento estrangeiro na economia brasileira deve ser proibido.",
+      "topic": "economia",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Há oito posições categóricas e ambos os polos: Samara Martins propõe proibição geral; Zema, Renan Santos, Wilson Grassi, Flávio Bolsonaro, Augusto Cury, Ronaldo Caiado e Leonardo Avalanche admitem ou buscam investimento estrangeiro, com condições variadas.",
+      "problems": [
+        "Vários polos contrários à proibição são setoriais ou condicionados a conteúdo local, tecnologia, emprego ou valor agregado; essas condições foram preservadas.",
+        "Críticas a desnacionalização, remessas ou aquisições estrangeiras não foram convertidas em apoio a uma proibição geral."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe literalmente proibir a atuação do capital estrangeiro dentro da economia nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 58,
+              "quote": "Proibição de atuação do capital",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 58,
+              "quote": "estrangeiro dentro da economia",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 58,
+              "quote": "nacional;",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe atrair capital nacional e estrangeiro para setores estratégicos da economia do futuro.",
+          "conditions": [],
+          "scope_difference": "A fonte decide atração setorial, suficiente para rejeitar uma proibição geral.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "atrair capital nacional e estrangeiro para os setores estratégicos da economia do futuro.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "DISCORDA",
+          "reason": "O plano cria incentivos fiscais e regulatórios para atrair investimento direto estrangeiro qualificado no processamento de terras raras.",
+          "conditions": [
+            "Investimento estrangeiro qualificado em zonas econômicas especiais de terras raras."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 39,
+              "quote": "incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política."
+        },
+        "280002548139": {
+          "category": "DISCORDA",
+          "reason": "O plano permite investimento estrangeiro em setor estratégico, condicionado a conteúdo nacional, transferência de tecnologia e emprego.",
+          "conditions": [
+            "Conteúdo nacional, transferência de tecnologia e emprego no Brasil."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 52,
+              "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002551544": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe atrair capital estrangeiro e tecnologia para a mineração e a indústria de transformação.",
+          "conditions": [],
+          "scope_difference": "A fonte decide atração em minerais críticos e transformação, suficiente para rejeitar uma proibição geral.",
+          "evidence": [
+            {
+              "page": 55,
+              "quote": "Vamos trabalhar para atrair o capital estrangeiro e a tecnologia que já existem no mundo",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe atrair capital internacional para infraestrutura e agroindústria no Semiárido.",
+          "conditions": [],
+          "scope_difference": "A fonte decide atração setorial, suficiente para rejeitar uma proibição geral.",
+          "evidence": [
+            {
+              "page": 118,
+              "quote": "Atrair capital internacional para irrigação, reservação, packing houses, centros logísticos, câmaras frias e agroindústria.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002551932": {
+          "category": "DISCORDA",
+          "reason": "O plano rejeita fechar o país ao investimento estrangeiro e condiciona acesso a minerais a valor agregado, tecnologia, qualificação e fornecedores locais.",
+          "conditions": [
+            "Valor agregado, tecnologia, qualificação e fornecedores locais."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 53,
+              "quote": "A política não fechará o país ao investimento estrangeiro, mas negociará acesso a recursos em troca de valor agregado, tecnologia, qualificação e fornecedores locais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide proibir de modo geral o investimento estrangeiro na economia brasileira nem acolhê-lo como política."
+        },
+        "280002554479": {
+          "category": "DISCORDA",
+          "reason": "O plano busca instalar multinacionais no Brasil para trazer capital estrangeiro, tecnologia e emprego direto.",
+          "conditions": [],
+          "scope_difference": "A fonte vincula a atração à instalação produtiva de multinacionais no país.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "trazendo capital estrangeiro, tecnologia e emprego direto pro país.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capital estrangeiro",
+            "investimento estrangeiro",
+            "capital internacional",
+            "investimento internacional",
+            "atrair capital",
+            "fechar o país"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "C08": {
+      "id": "BR26-T068",
+      "bank_ids": [
+        "BR26-BANCO-A-068"
+      ],
+      "text": "O Senado Federal deve ser extinto.",
+      "topic": "governanca",
+      "version": 1,
+      "recommendation": "complementary",
+      "reason": "Há exatamente dois polos categóricos: Edmilson Costa propõe extinguir o Senado e substituí-lo por parlamento unicameral; Zema propõe fortalecer as condições do Senado para fiscalizar o Supremo. Menções procedimentais ao Senado nos demais planos não foram tratadas como defesa institucional.",
+      "problems": [
+        "O polo favorável também cria parlamento unicameral; a formulação retém somente a decisão atômica de extinguir o Senado."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002539826": {
+          "category": "DISCORDA",
+          "reason": "O plano atribui novas competências práticas ao Senado e quer dar à Casa condições reais de fiscalizar o Supremo, pressupondo sua preservação.",
+          "conditions": [],
+          "scope_difference": "A fonte fortalece função de fiscalização do Senado, em vez de declarar genericamente defesa do bicameralismo.",
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "Tornar obrigatória a investigação de ministros do STF quando apoiada pela maioria do Senado ou por iniciativa popular:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002551975": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe expressamente extinguir o Senado e substituí-lo por parlamento unicameral.",
+          "conditions": [],
+          "scope_difference": "A fonte especifica a instituição substituta; a tese pergunta apenas pela extinção.",
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "O Senado será extinto e substituído por um Parlamento Unicameral",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano não decide extinguir nem preservar o Senado Federal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Senado",
+            "senadores",
+            "unicameral",
+            "bicameral",
+            "Parlamento Unicameral",
+            "extinção"
+          ],
+          "absence_reason": "Após buscas integrais pelos termos registrados e releitura dos contextos pertinentes, não foi localizada decisão suficiente: O plano não decide extinguir nem preservar o Senado Federal."
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 ## Escopo e limites
 
-Treze candidaturas e fotos oficiais do retrato de 20/09/2026; nove teses ativas. Revisão integral automatizada dos planos: 836 páginas e 117 decisões, sem células pendentes nesse núcleo. Há 37 posições categóricas, quatro condicionais e 76 casos sem manifestação suficiente. As outras 29 formulações ficam fora do quiz. Sem certificação editorial humana, recomendação de voto ou destaque de vencedor.
+Treze candidaturas e fotos oficiais do retrato de 20/09/2026; 30 teses ativas. A revisão integral automatizada dos planos classificou as 910 combinações de 70 formulações, sem células pendentes. O quiz contém 116 posições categóricas, 20 condicionais ou mistas e 254 casos sem manifestação suficiente. As outras 40 formulações permanecem documentadas, mas ficam fora da pontuação por falta de contraste, redundância ou inadequação de escopo. Sem certificação editorial humana, recomendação de voto ou destaque de vencedor.
 
 O detalhamento editorial e a matriz auditável ficam em `data/theses/2026/REVIEW.md` e `review-audit.json`. As entradas textuais originais necessárias à reconstrução são versionadas; PDFs e ZIPs grandes continuam preservados localmente, com hashes registrados.
 
@@ -17,7 +17,7 @@ A proteção de `main` exige uma aprovação de outra pessoa. Não usar merge ad
 3. Publicar revisão intermediária com filtros e o ano anterior; mover 100% do tráfego para ela antes de adicionar 2026.
 4. Carregar o snapshot 2026 transacionalmente; só depois ativar a edição 2026.
 5. Publicar a interface após sucesso do backend, usando o mesmo commit.
-6. Conferir saúde, somente 13 candidaturas de 2026, nove perguntas, fotos, cobertura e fontes. Não criar mensagens comunitárias de teste em produção.
+6. Conferir saúde, somente 13 candidaturas de 2026, 30 perguntas, fotos, cobertura e fontes. Não criar mensagens comunitárias de teste em produção.
 
 Republicações manuais devem iniciar o workflow `Deploy Backend` em `main`; a interface não tem disparo manual independente. O workflow web recebe o commit exato do backend concluído com sucesso.
 
@@ -35,9 +35,9 @@ Não enviar respostas, teses identificáveis, seleção de partidos/candidatos o
 
 ## Verificação da entrega
 
-- Integração com a `main` publicada em `6635513`, preservando moderação NVIDIA, identidade privada e limites de publicação da comunidade.
-- Backend: 558 testes aprovados, cobertura de 93,66%, Ruff sem problemas e Mypy aprovado em 81 arquivos.
-- Flutter: 233 testes aprovados, análise sem problemas e build web release concluído. Aviso não bloqueante de fonte CupertinoIcons ausente.
+- A expansão preserva a base de implantação segura já integrada à `main`, além da moderação NVIDIA, identidade privada e limites de publicação da comunidade.
+- Backend: 583 testes aprovados, cobertura de 93,66%, Ruff sem problemas nos arquivos alterados e Mypy aprovado em 81 arquivos.
+- Flutter: 234 testes aprovados, análise sem problemas e build web release concluído. Aviso não bloqueante de fonte CupertinoIcons ausente.
 - Banco PostgreSQL 16: migração até `0009_election_refresh`, carga histórica de 2022 seguida de 2026 e repetição idempotente verificadas; nenhum desvio de schema detectado.
 - Revisão independente de engenharia sem bloqueadores P1/P2 pendentes no escopo analisado. Isso não substitui a aprovação de outra pessoa nem transforma a revisão documental automatizada em validação humana.
 

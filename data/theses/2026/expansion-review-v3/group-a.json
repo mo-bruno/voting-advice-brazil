@@ -1,0 +1,3499 @@
+{
+  "reviewer": "automated_expansion_review",
+  "reviewed_at": "2026-09-26",
+  "method": "Revisão documental das formulações derivadas de BR26-BANCO-A-002, A-004, A-005, A-006, A-007, A-011, A-012 e A-013 contra os 13 planos oficiais atuais, com Leonardo Avalanche no lugar de Pablo Marçal. Os itens compostos foram decompostos por instrumento, público e condição; a mesma redação foi aplicada a todas as candidaturas. Busca integral e releitura das páginas pertinentes nas extrações por página layout/raw dos PDFs oficiais, usando claims existentes apenas como pista. Toda posição substantiva tem página e citação literal; ausências registram termos e motivo. Silêncio não foi convertido em discordância. A recomendação nucleus exige os dois polos e ao menos três posições categóricas; complementary exige os dois polos e exatamente duas; duplicação das 38 formulações vigentes, falta de polo ou inadequação de escopo leva a rejected.",
+  "proposals": {
+    "A01": {
+      "id": "BR26-T037",
+      "bank_ids": [
+        "BR26-BANCO-A-002"
+      ],
+      "text": "Durante uma auditoria da dívida pública, os pagamentos de juros e amortizações devem ser suspensos.",
+      "topic": "economia",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Só Edmilson Costa adere categoricamente à formulação exata; as demais aproximações mudam componentes, credores, duração ou instrumento. Além disso, o tema já é medido pela tese 009 sobre suspensão do pagamento da dívida a grandes investidores.",
+      "problems": [
+        "Sobreposição substantiva com BR26-T009.",
+        "A formulação exige simultaneamente auditoria, juros, amortizações e coincidência temporal; quase todos os planos cobrem apenas parte desse conjunto."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano propõe suspender juros e realizar auditoria, mas não inclui amortizações nem limita expressamente a suspensão ao período da auditoria.",
+          "conditions": [],
+          "scope_difference": "Suspensão apenas dos juros, sem a condição temporal e sem as amortizações.",
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "por suspender o pagamento de juros",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 15,
+              "quote": "uma auditoria que ponha fim a",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano quer manter superávits que permitam pagar a dívida. Isso aponta para continuidade do serviço da dívida, mas não decide a hipótese específica de suspensão temporária durante auditoria.",
+          "conditions": [],
+          "scope_difference": "Pagamento geral da dívida, sem decisão sobre auditoria ou suspensão temporária.",
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a relação dívida/PIB, promovendo reformas e mantendo superávits primários que per- mitam o pagamento da dívida.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano combina suspensão do pagamento e auditoria, mas restringe o público aos grandes investidores e não explicita juros, amortizações ou duração coincidente com a auditoria.",
+          "conditions": [],
+          "scope_difference": "Suspensão dirigida a grandes investidores, sem detalhamento dos componentes e da duração.",
+          "evidence": [
+            {
+              "page": 28,
+              "quote": "Suspensão do pagamento da dívida pública aos grandes investidores e auditoria",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "CONCORDA",
+          "reason": "O plano cria comissão para investigar a dívida e suspende expressamente juros e amortizações durante o período da investigação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 4,
+              "quote": "Também será criada uma Comissão Especial para investigar a origem da dívida e, durante o período de investigação, serão suspensos os pagamentos dos juros e amortizações da dívida.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano cancela as dívidas com bancos e grandes credores, medida mais ampla e definitiva que não corresponde ao instrumento temporário condicionado a auditoria.",
+          "conditions": [],
+          "scope_difference": "Cancelamento definitivo e seletivo por credor, não suspensão temporária durante auditoria.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Cancelamento das dívidas externa e interna com os bancos e grandes credores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se juros e amortizações da dívida pública devem ser suspensos durante uma auditoria.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida pública",
+            "juros",
+            "amortizações",
+            "suspensão",
+            "auditoria",
+            "superávit primário"
+          ],
+          "absence_reason": "A leitura integral e as buscas por dívida pública, juros, amortizações, suspensão, auditoria, superávit primário não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A02": {
+      "id": "BR26-T038",
+      "bank_ids": [
+        "BR26-BANCO-A-004"
+      ],
+      "text": "A Petrobras deve permanecer integrada, reunindo produção, refino, transporte e logística, em vez de separar essas operações em empresas diferentes.",
+      "topic": "economia",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Há oposição direta de Zema e adesão documental de Lula e Edmilson Costa; são três posições categóricas, com formulação distinta da pergunta geral sobre privatização de estatais.",
+      "problems": [
+        "Alguns planos defendem propriedade estatal ou integração parcial sem decidir todos os quatro elos; esses casos permanecem condicionais."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano exige integração das refinarias à Petrobras e monopólio público na produção e distribuição de combustíveis, mas não reúne expressamente produção, refino, transporte e logística na mesma empresa.",
+          "conditions": [],
+          "scope_difference": "Integra refinarias e estatiza elos, sem decisão inequívoca sobre os quatro segmentos na mesma estrutura empresarial.",
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias)",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            },
+            {
+              "page": 60,
+              "quote": "Monopólio público em áreas estratégicas como geração de energia, mineração, produção e distribuição de combustíveis, indústria de defesa.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "DISCORDA",
+          "reason": "O plano manda desverticalizar a Petrobras e separar exatamente produção, refino, transporte e logística em empresas diferentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 33,
+              "quote": "Desverticalizar a Petrobras, separando as operações de produção, refino, transporte e logística em diferentes empresas para permitir a entrada de novos concorrentes e ampliar a concorrência em igualdade de condições.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano torna a Petrobras integralmente estatal e direciona excedentes ao refino, mas não decide manter integrados transporte, logística e os demais segmentos.",
+          "conditions": [],
+          "scope_difference": "Propriedade estatal e investimento em refino sem decisão sobre a estrutura integrada completa.",
+          "evidence": [
+            {
+              "page": 26,
+              "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 26,
+              "quote": "Destinação prioritária dos excedentes dessas empresas à criação e expansão de setores de alta complexidade tecnológica, especialmente nos ramos de refino",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "CONCORDA",
+          "reason": "O plano atribui à própria Petrobras continuidade na exploração, retorno à distribuição, expansão do refino e ampliação da Transpetro na logística, preservando na estrutura estatal os quatro elos da formulação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 67,
+              "quote": "Entendemos que a Petrobras continuará ampliando investimentos em exploração onshore e offshore",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 67,
+              "quote": "A Petrobras deverá retornar ao segmento de distribuição de combustíveis, expandindo sua capacidade de refino e ampliando a atuação da Transpetro para logística de GNL.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "CONCORDA",
+          "reason": "O plano define a Petrobras como empresa integrada e inclui exploração, produção, refino, distribuição e logística sob regime estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 14,
+              "quote": "A Petrobrás deve ser uma empresa integrada de energia e 100% estatal",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 14,
+              "quote": "Transição para o regime de monopólio estatal da exploração, produção, refino, petroquímica e distribuição",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 14,
+              "quote": "Criação de empresas estatais de serviços e tecnologias petrolíferas (sondas, exploração, engenharia e construção, logística, estaleiros etc.)",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano nacionaliza o petróleo, torna a Petrobras integralmente estatal e estatiza refinarias, mas não explicita que produção, refino, transporte e logística devam permanecer numa única empresa.",
+          "conditions": [],
+          "scope_difference": "Controle estatal de petróleo e refinarias sem estrutura empresarial integrada completa.",
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 3,
+              "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a Petrobras deve permanecer integrada em produção, refino, transporte e logística.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "integrada",
+            "desverticalizar",
+            "produção",
+            "refino",
+            "transporte",
+            "logística",
+            "distribuição"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, integrada, desverticalizar, produção, refino, transporte, logística, distribuição não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A03": {
+      "id": "BR26-T039",
+      "bank_ids": [
+        "BR26-BANCO-A-004"
+      ],
+      "text": "A Petrobras deve ser integralmente estatal.",
+      "topic": "economia",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Apesar de cinco posições categóricas e dois polos, a formulação é um recorte da tese 002 sobre transferir todas as estatais ao controle privado e reproduz essencialmente os mesmos polos, o que daria peso duplicado ao eixo de propriedade estatal.",
+      "problems": [
+        "Duplicação temática e lógica de BR26-T002.",
+        "Separada da integração operacional, a formulação perde a novidade específica do item do banco."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe controle 100% estatal da Petrobras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias)",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "DISCORDA",
+          "reason": "A regra expressa de privatizar todas as empresas estatais alcança a Petrobras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Privatizar todas as empresas estatais",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONCORDA",
+          "reason": "O plano exige Petrobras 100% estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 26,
+              "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "CONCORDA",
+          "reason": "O plano define a Petrobras como 100% estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 14,
+              "quote": "A Petrobrás deve ser uma empresa integrada de energia e 100% estatal",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe Petrobras 100% estatal e sob controle dos trabalhadores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a Petrobras deve ser integralmente estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Petrobras",
+            "100% estatal",
+            "controle estatal",
+            "privatizar todas",
+            "reestatização",
+            "ações"
+          ],
+          "absence_reason": "A leitura integral e as buscas por Petrobras, 100% estatal, controle estatal, privatizar todas, reestatização, ações não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A04": {
+      "id": "BR26-T040",
+      "bank_ids": [
+        "BR26-BANCO-A-005"
+      ],
+      "text": "Parcerias público-privadas devem ser ampliadas na gestão de serviços de saúde.",
+      "topic": "saude",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "A formulação é o inverso lógico direto da tese 026B, que já pergunta se a gestão de serviços públicos de saúde por empresas em PPP deve ser encerrada.",
+      "problems": [
+        "Duplicação exata, em polaridade invertida, de BR26-T026B.",
+        "Misturar novamente esta formulação ao quiz daria peso duplo ao mesmo instrumento."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "O plano exige que toda a rede sanitária tenha gestão direta e pública, excluindo gestão empresarial em PPP.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "Toda a rede sanitária deve ser de gestão direta e pública.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe ampliar PPPs para construir e gerir unidades de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se PPPs devem ser ampliadas na gestão de serviços de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, gestão da saúde, gerir unidades de saúde, gestão privada, hospital não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "O plano pede expressamente o fim da gestão privada da saúde, incluindo PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano compra exames e cirurgias de hospitais privados, sem definir contrato de PPP para gestão de serviço público.",
+          "conditions": [],
+          "scope_difference": "Prestação complementar contratada não equivale à gestão do serviço em PPP.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura da seção de saúde e as buscas por PPP, gestão e hospitais localizaram compra complementar, mas não gestão empresarial em PPP."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se PPPs devem ser ampliadas na gestão de serviços de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, gestão da saúde, gerir unidades de saúde, gestão privada, hospital não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano contrata serviços privados e menciona parcerias de cuidado, sem transferir a gestão de serviço público de saúde a empresa em PPP.",
+          "conditions": [],
+          "scope_difference": "Compra de capacidade assistencial não equivale à gestão do serviço em PPP.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "vamos contratar serviços e exames na rede privada nos horários ociosos",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "As buscas por PPP, gestão, hospitais e saúde localizaram contratação de exames, mas não decisão sobre gestão empresarial em PPP."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se PPPs devem ser ampliadas na gestão de serviços de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, gestão da saúde, gerir unidades de saúde, gestão privada, hospital não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano amplia PPPs de infraestrutura social, inclusive hospitais, mas não decide transferir ou ampliar a gestão assistencial dos serviços de saúde por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": "Infraestrutura hospitalar não equivale à gestão do serviço.",
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A passagem da página 47 trata de infraestrutura social. Buscas por PPP, gestão hospitalar e saúde não localizaram decisão sobre gestão assistencial em PPP."
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano torna público todo o sistema de saúde e estatiza o setor privado, incompatível com ampliar a gestão por empresas em PPP.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "o governo do poder popular tornará público todo o sistema de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 10,
+              "quote": "estatização de todo o setor privado de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se PPPs devem ser ampliadas na gestão de serviços de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, gestão da saúde, gerir unidades de saúde, gestão privada, hospital não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se PPPs devem ser ampliadas na gestão de serviços de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, gestão da saúde, gerir unidades de saúde, gestão privada, hospital não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano usa hospitais privados ociosos para absorver demanda, sem decidir gestão de serviço público de saúde em PPP.",
+          "conditions": [],
+          "scope_difference": "Prestação complementar em hospital privado não equivale à gestão do serviço público em PPP.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "gestão da saúde",
+            "gerir unidades de saúde",
+            "gestão privada",
+            "hospital"
+          ],
+          "absence_reason": "A parceria assistencial da página 9 não identifica PPP nem transferência da gestão pública."
+        }
+      }
+    },
+    "A05": {
+      "id": "BR26-T041",
+      "bank_ids": [
+        "BR26-BANCO-A-005"
+      ],
+      "text": "Parcerias público-privadas devem ser ampliadas na educação.",
+      "topic": "educacao",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Zema e Caiado apoiam a ampliação, enquanto Hertz Dias, Samara Martins, Edmilson Costa e Rui Costa Pimenta a rejeitam por instrumentos explícitos; são seis posições categóricas com os dois polos.",
+      "problems": [
+        "Caiado limita a aplicação à infraestrutura escolar, diferença registrada na justificativa sem apagar o apoio ao enunciado amplo.",
+        "Parcerias pedagógicas sem contrato de PPP não foram contadas."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "O plano critica a apropriação de recursos educacionais por PPPs e determina romper com essa lógica e suspender verbas públicas ao ensino privado.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "recursos públicos através das PPP,",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 22,
+              "quote": "É preciso romper com essa lógica de mercado na educação.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            },
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe ampliar PPPs em todos os serviços públicos e nomeia expressamente a educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Ampliar as parcerias público-privadas em todos os serviços públicos, inclusive saúde e educação:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "O plano determina o fim das PPPs e das terceirizações nas redes públicas de ensino.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Fim das Parcerias Público-Privadas (PPP), das terceirizações e da aquisição de materiais e serviços dessas empresas pelas redes públicas de ensino",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "CONCORDA",
+          "reason": "O plano prevê ampliação de PPPs em infraestrutura social e inclui escolas entre os setores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 47,
+              "quote": "9. Ampliação das concessões e parcerias público-privadas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 47,
+              "quote": "Manter um calendário permanente e previsível de leilões (dando continuidade ao Programa de Parcerias em Investimentos, o PPI) em rodovias, ferrovias, portos, aeroportos, saneamento, energia e infraestrutura social, como hospitais, escolas e iluminação pública.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano propõe ensino 100% público, das creches à pós-graduação, e estatização do sistema privado.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "DISCORDA",
+          "reason": "O plano reserva verbas públicas ao ensino público e propõe estatizar o ensino pago.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se PPPs devem ser ampliadas na educação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP",
+            "parceria público-privada",
+            "educação",
+            "escolas",
+            "ensino privado",
+            "verba pública"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP, parceria público-privada, educação, escolas, ensino privado, verba pública não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A06": {
+      "id": "BR26-T042",
+      "bank_ids": [
+        "BR26-BANCO-A-006"
+      ],
+      "text": "O SUS deve contratar a capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+      "topic": "saude",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Zema, Flávio Bolsonaro e Leonardo Avalanche apoiam o instrumento; Hertz Dias, Samara Martins e Edmilson Costa adotam rede integralmente estatal ou pública. Há seis posições categóricas e dois polos.",
+      "problems": [
+        "Lula e Caiado apoiam contratação privada e redução de filas sem ligar inequivocamente a contratação à ociosidade privada; ficaram condicionais.",
+        "Contratação de capacidade não foi confundida com transferência da gestão do serviço por PPP."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "O plano exige que toda a rede sanitária seja de gestão direta e pública e propõe SUS 100% estatal, incompatível com preservar rede privada ociosa como capacidade contratada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "Fortalecimento e Unificação do SUS 100% Estatal",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            },
+            {
+              "page": 20,
+              "quote": "Toda a rede sanitária deve ser de gestão direta e pública.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe reduzir filas do SUS contratando consultas, exames e cirurgias de clínicas e hospitais privados e manda aproveitar expressamente a capacidade ociosa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e hospitais privados para realização de consultas, exames e cirurgias, com metas cla- ras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa dessas unidades de saúde privadas.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se o SUS deve contratar capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": "A leitura integral e as buscas por capacidade ociosa, hospitais privados, clínicas privadas, rede privada, reduzir filas, demanda reprimida, SUS não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "A defesa de SUS 100% estatal e o fim da gestão privada, acompanhados de expansão da rede pública, são incompatíveis com usar capacidade permanente de clínicas e hospitais privados.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Defesa do sus público, universal, gratuito e 100% estatal",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 11,
+              "quote": "Expansão da rede pública de hospitais, upas e Unidades Básicas de Saúde (UBS)",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano mantém parceria com hospitais privados para ampliar exames e cirurgias e reduzir filas, mas não vincula a contratação à capacidade ociosa.",
+          "conditions": [
+            "Oferta em troca de créditos financeiros ou dívidas."
+          ],
+          "scope_difference": "Contratação de oferta privada para filas, sem critério de ociosidade.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se o SUS deve contratar capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": "A leitura integral e as buscas por capacidade ociosa, hospitais privados, clínicas privadas, rede privada, reduzir filas, demanda reprimida, SUS não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe contratar serviços e exames da rede privada justamente nos horários ociosos para atender pessoas que esperam.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Para usar bem o que já existe, vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se o SUS deve contratar capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": "A leitura integral e as buscas por capacidade ociosa, hospitais privados, clínicas privadas, rede privada, reduzir filas, demanda reprimida, SUS não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano manda monitorar capacidade ociosa e mobilizar hospitais privados contratados quando necessário para reduzir filas, mas não afirma que a contratação se limita ou se dirige especificamente à capacidade privada ociosa.",
+          "conditions": [
+            "Contratação quando necessária dentro de rede regional."
+          ],
+          "scope_difference": "Gestão de ociosidade em toda a rede e contratação privada quando necessária, sem conectar explicitamente os dois elementos.",
+          "evidence": [
+            {
+              "page": 77,
+              "quote": "Acompanhar filas, capacidade ociosa, cancelamentos, absenteísmo, salas cirúrgicas, equipamentos, leitos e distribuição territorial da demanda.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 77,
+              "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano torna público todo o sistema de saúde e prevê estatização de todo o setor privado, eliminando o pressuposto de clínicas e hospitais privados contratados.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "o governo do poder popular tornará público todo o sistema de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 10,
+              "quote": "estatização de todo o setor privado de saúde",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se o SUS deve contratar capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": "A leitura integral e as buscas por capacidade ociosa, hospitais privados, clínicas privadas, rede privada, reduzir filas, demanda reprimida, SUS não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se o SUS deve contratar capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": "A leitura integral e as buscas por capacidade ociosa, hospitais privados, clínicas privadas, rede privada, reduzir filas, demanda reprimida, SUS não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe parceria com hospitais privados ociosos para absorver demanda reprimida.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "capacidade ociosa",
+            "hospitais privados",
+            "clínicas privadas",
+            "rede privada",
+            "reduzir filas",
+            "demanda reprimida",
+            "SUS"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "A07": {
+      "id": "BR26-T043",
+      "bank_ids": [
+        "BR26-BANCO-A-007"
+      ],
+      "text": "Quando não houver vaga pública em creche, a família deve receber um voucher temporário para uma creche privada credenciada, até surgir a vaga.",
+      "topic": "educacao",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Flávio Bolsonaro apoia o desenho completo; Samara Martins, Edmilson Costa e Rui Costa Pimenta rejeitam financiamento público do ensino privado ou propõem estatizá-lo. São quatro posições categóricas com dois polos.",
+      "problems": [
+        "A tese foi separada da educação escolar porque somente o voucher-creche tem duração temporária e credenciamento expressos no plano favorável.",
+        "A oposição de Hertz Dias não alcança inequivocamente toda creche privada e ficou condicional."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "O plano suspende o envio de verbas públicas ao ensino privado e escolhe ampliar instituições públicas, incompatível com voucher financiado para creche privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            },
+            {
+              "page": 22,
+              "quote": "Destinação de pelo menos 10% do PIB nacional para a educação pública, desde a educação infantil até a pós-graduação.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano usa vouchers em qualificação profissional conectada ao mercado, não em creche por falta de vaga pública.",
+          "conditions": [],
+          "scope_difference": "Voucher para cursos técnicos e trabalhadores, não para creche ou ausência de vaga.",
+          "evidence": [
+            {
+              "page": 24,
+              "quote": "Implementar programas que conectem trabalhadores a cursos técnicos em áreas com vagas reais abertas, usando vouchers e parcerias com o setor privado e o Siste- ma S",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A busca encontrou voucher somente na qualificação profissional; não há voucher-creche nem condição de falta de vaga pública."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano rejeita verba pública aos grandes empresários da educação e propõe ampliar vagas públicas em creches, mas não proíbe inequivocamente voucher temporário para qualquer creche privada credenciada.",
+          "conditions": [],
+          "scope_difference": "Rejeição dirigida a grandes empresas e opção por expansão pública, sem decisão literal sobre voucher temporário a qualquer creche.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Nenhuma verba pública para os grandes empresários da educação!",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 12,
+              "quote": "Ampliação de vagas em creches, escolas e universidades públicas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano concede voucher para rede privada credenciada exatamente onde não houver vaga pública e apenas até a vaga surgir.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Onde não houver vaga na rede pública, a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano estabelece ensino 100% público desde as creches e estatiza o sistema privado, incompatível com voucher para rede privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "DISCORDA",
+          "reason": "O plano reserva verbas públicas ao ensino público e estatiza o ensino pago, incompatível com financiar vaga em creche privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a família deve receber voucher temporário para creche privada quando não houver vaga pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher-creche",
+            "voucher",
+            "creche",
+            "vaga pública",
+            "rede privada credenciada",
+            "verba pública",
+            "ensino privado"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher-creche, voucher, creche, vaga pública, rede privada credenciada, verba pública, ensino privado não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A08": {
+      "id": "BR26-T044",
+      "bank_ids": [
+        "BR26-BANCO-A-007"
+      ],
+      "text": "Quando faltar vaga na rede pública escolar, a família deve receber um voucher para matricular o filho em outra escola.",
+      "topic": "educacao",
+      "version": 1,
+      "recommendation": "nucleus",
+      "reason": "Flávio Bolsonaro apoia o voucher escolar condicionado à falta de vaga; Samara Martins, Edmilson Costa e Rui Costa Pimenta rejeitam o financiamento público do ensino privado ou propõem estatizá-lo. Há quatro posições categóricas.",
+      "problems": [
+        "O plano favorável não fixa duração temporária para o voucher escolar; essa condição foi mantida apenas na tese separada de creche.",
+        "Não se presumiu que todo voucher de qualificação profissional equivale a voucher escolar."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "DISCORDA",
+          "reason": "O plano suspende verbas públicas ao ensino privado, incompatível com voucher público para matricular em escola privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano usa vouchers para cursos técnicos de trabalhadores, não para matrícula escolar por falta de vaga pública.",
+          "conditions": [],
+          "scope_difference": "Voucher de qualificação profissional, não voucher escolar condicionado à falta de vaga.",
+          "evidence": [
+            {
+              "page": 24,
+              "quote": "Implementar programas que conectem trabalhadores a cursos técnicos em áreas com vagas reais abertas, usando vouchers e parcerias com o setor privado e o Siste- ma S",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A busca encontrou voucher apenas em qualificação profissional; não há política de matrícula escolar por ausência de vaga pública."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano rejeita verba pública aos grandes empresários e quer ampliar vagas públicas, mas não decide literalmente voucher para qualquer escola privada quando faltar vaga.",
+          "conditions": [],
+          "scope_difference": "Rejeição a grandes empresas e escolha pela expansão pública, sem alcance inequívoco a toda escola privada.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Nenhuma verba pública para os grandes empresários da educação!",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 12,
+              "quote": "Ampliação de vagas em creches, escolas e universidades públicas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano concede voucher educacional quando faltar vaga pública para matricular a criança em outra escola.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 36,
+              "quote": "onde faltar vaga na rede pública, a família receberá um voucher educacional para matricular o filho em outra escola",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano estabelece ensino 100% público e estatiza o sistema privado, incompatível com voucher para escola privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "DISCORDA",
+          "reason": "O plano reserva verbas públicas ao ensino público e estatiza o ensino pago, incompatível com financiar matrícula privada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": null
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a família deve receber voucher para outra escola quando faltar vaga na rede pública.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "voucher educacional",
+            "voucher",
+            "vaga na rede pública",
+            "outra escola",
+            "ensino privado",
+            "verba pública",
+            "estatização do ensino"
+          ],
+          "absence_reason": "A leitura integral e as buscas por voucher educacional, voucher, vaga na rede pública, outra escola, ensino privado, verba pública, estatização do ensino não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A09": {
+      "id": "BR26-T045",
+      "bank_ids": [
+        "BR26-BANCO-A-011"
+      ],
+      "text": "O porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+      "topic": "seguranca",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Só Zema decide o alcance territorial específico. Controle geral de armas, rastreabilidade e direito genérico à autodefesa não são oposição nem apoio ao porte em toda a propriedade rural.",
+      "problems": [
+        "O item original opunha uma política geral de controle a uma ampliação setorial, com alcances não equivalentes.",
+        "Não há polo categórico contrário no mesmo instrumento e escopo."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Samara Martins não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano garante literalmente porte de armas em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 45,
+              "quote": "Garantir o porte de armas em toda a extensão da propriedade rural",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Hertz Dias não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano mantém política geral de controle de armas e munições, mas isso não decide a exceção ou extensão específica do porte dentro de propriedade rural.",
+          "conditions": [],
+          "scope_difference": "Controle geral pode coexistir com regras específicas de porte rural.",
+          "evidence": [
+            {
+              "page": 28,
+              "quote": "manteremos uma política de controle de armas e munições",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura da política de controle e as buscas por porte e propriedade rural não localizaram decisão sobre a extensão territorial rural."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano controla a cadeia de armas e munições legais, sem decidir porte em toda a propriedade rural.",
+          "conditions": [],
+          "scope_difference": "Rastreabilidade da cadeia legal não define local autorizado de porte.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Controle rigoroso da cadeia de armas e munições legais, com marcação e auditoria de estoque.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "As buscas por porte, propriedade rural e armas encontraram controle de estoque, não autorização ou proibição do porte rural."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Edmilson Costa não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se o porte de arma deve ser permitido em toda a extensão da propriedade rural.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "porte de armas",
+            "propriedade rural",
+            "armas",
+            "munições",
+            "controle de armas",
+            "autodefesa"
+          ],
+          "absence_reason": "A leitura integral e as buscas por porte de armas, propriedade rural, armas, munições, controle de armas, autodefesa não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A10": {
+      "id": "BR26-T046",
+      "bank_ids": [
+        "BR26-BANCO-A-012"
+      ],
+      "text": "A gestão de presídios pode ser realizada por parcerias público-privadas.",
+      "topic": "seguranca",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "O único apoio do banco vinha do plano substituído de Pablo Marçal. Entre os 13 planos atuais, Hertz Dias e Edmilson Costa rejeitam a privatização prisional e nenhum plano apoia gestão por PPP.",
+      "problems": [
+        "Perda do polo favorável após a substituição da candidatura.",
+        "Propostas de ampliar ou reformar presídios não definem o modelo contratual de gestão."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Samara Martins não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Zema não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "DISCORDA",
+          "reason": "O plano determina o fim da privatização dos presídios, incompatível com gestão prisional por PPP.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Revogação da Lei Antidrogas e fim da privatização dos presídios.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "DISCORDA",
+          "reason": "O plano pede expressamente o fim da privatização dos presídios.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Revogação da Lei Antidrogas e fim da privatização dos presídios.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a gestão de presídios pode ser realizada por PPPs.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "PPP prisional",
+            "parceria público-privada",
+            "gestão prisional",
+            "privatização dos presídios",
+            "presídios privados",
+            "terceirização"
+          ],
+          "absence_reason": "A leitura integral e as buscas por PPP prisional, parceria público-privada, gestão prisional, privatização dos presídios, presídios privados, terceirização não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A11": {
+      "id": "BR26-T047",
+      "bank_ids": [
+        "BR26-BANCO-A-013"
+      ],
+      "text": "A política penal deve promover desencarceramento em massa.",
+      "topic": "seguranca",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Hertz Dias é o único apoio categórico. Enfrentar encarceramento em massa ou prisão provisória não equivale automaticamente a desencarcerar em massa, e propostas de presídios de segurança máxima para lideranças não são oposição no mesmo público e alcance.",
+      "problems": [
+        "Falta polo categórico contrário no mesmo instrumento.",
+        "A formulação não define público, tipos de crime, revisão de penas ou mecanismo de soltura."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano propõe enfrentar o encarceramento em massa e o abuso da prisão provisória, mas não assume liberação em massa nem define alcance, público ou mecanismo de desencarceramento.",
+          "conditions": [],
+          "scope_difference": "Enfrentamento e redução de abusos, sem instrumento explícito de desencarceramento em massa.",
+          "evidence": [
+            {
+              "page": 50,
+              "quote": "Enfrentamento do encarceramento em massa e do abuso da prisão provisória.",
+              "verification": "literal_text_layout_raw_fragments_and_rendered_page"
+            }
+          ],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": null
+        },
+        "280002539826": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Zema não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe literalmente desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Desencarceramento em massa",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": null
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Flávio Bolsonaro não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Ronaldo Caiado não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551975": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano adota medidas contra o encarceramento em massa, mas não explicita um programa de desencarceramento em massa.",
+          "conditions": [
+            "Adoção das medidas do IBCCRIM."
+          ],
+          "scope_difference": "Combate ao encarceramento em massa sem compromisso literal com desencarceramento em massa.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Adoção das 16 medidas contra o encarceramento em massa do IBCCRIM.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": null
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se deve haver desencarceramento em massa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desencarceramento em massa",
+            "encarceramento em massa",
+            "prisão provisória",
+            "política penal",
+            "redução da população prisional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por desencarceramento em massa, encarceramento em massa, prisão provisória, política penal, redução da população prisional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A12": {
+      "id": "BR26-T048",
+      "bank_ids": [
+        "BR26-BANCO-A-013"
+      ],
+      "text": "A capacidade de presídios de segurança máxima deve ser ampliada.",
+      "topic": "seguranca",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Zema, Wilson Grassi e Flávio Bolsonaro apoiam a ampliação, mas nenhum plano atual rejeita categoricamente esse instrumento. Propostas de reduzir o encarceramento em massa tratam de públicos e escalas distintos.",
+      "problems": [
+        "Ausência de polo contrário no mesmo público e instrumento.",
+        "Rede ou transferência de lideranças não foi equiparada automaticamente a expansão de capacidade."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Samara Martins não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe construir presídios de segurança máxima em regiões remotas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Construir presídios de segurança máxima, em regiões remotas e isoladas com um regime diferenciado de detenção e estrutura capaz de conter terroristas e isolar os membros das facções.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano transfere lideranças condenadas a superpresídios de segurança máxima, mas não afirma construir ou ampliar a capacidade dessas unidades.",
+          "conditions": [],
+          "scope_difference": "Uso e transferência para superpresídios, sem compromisso de ampliar capacidade.",
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "As lideranças condenadas serão deslocadas a superpresídios de segurança máxima em regiões remotas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": null
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Hertz Dias não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "CONCORDA",
+          "reason": "O plano coloca no centro a expansão do sistema federal de segurança máxima e determina ampliar a capacidade federal de custódia de lideranças.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 21,
+              "quote": "Ampliar a capacidade federal de custódia de lideranças, com padrão construtivo único e regime rigoroso de contato.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": null
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano cria cinco novos presídios de segurança máxima, ampliando diretamente a capacidade.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 14,
+              "quote": "O Brasil terá 5 novos presídios de segurança máxima no modelo adotado por El Salvador.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano cria rede nacional com padrões comuns para presídios federais e estaduais, mas não fixa construção ou aumento de capacidade.",
+          "conditions": [],
+          "scope_difference": "Integração em rede e padronização, sem expansão física ou de vagas expressa.",
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "Criar uma Rede Nacional de Presídios de Segurança Máxima, com padrões comuns para unidades federais e estaduais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Edmilson Costa não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a capacidade de presídios de segurança máxima deve ser ampliada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "presídios de segurança máxima",
+            "segurança máxima",
+            "superpresídios",
+            "capacidade federal",
+            "novos presídios",
+            "rede nacional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por presídios de segurança máxima, segurança máxima, superpresídios, capacidade federal, novos presídios, rede nacional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    },
+    "A13": {
+      "id": "BR26-T049",
+      "bank_ids": [
+        "BR26-BANCO-A-013"
+      ],
+      "text": "A progressão de regime deve ser restringida para crimes graves e para integrantes de organizações criminosas.",
+      "topic": "seguranca",
+      "version": 1,
+      "recommendation": "rejected",
+      "reason": "Zema, Flávio Bolsonaro e Caiado apoiam restrições, mas nenhum plano atual defende categoricamente preservar ou ampliar a progressão para o mesmo público de crimes graves e organizações criminosas.",
+      "problems": [
+        "Ausência de polo contrário no mesmo público e alcance.",
+        "O item original misturava progressão de regime com expansão de infraestrutura prisional; os componentes foram separados."
+      ],
+      "decisions": {
+        "280002538811": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Samara Martins não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002539826": {
+          "category": "CONCORDA",
+          "reason": "O plano impede progressão para facções enquadradas como terroristas e substitui o modelo atual de progressão rápida por prisão efetiva seguida de liberdade condicional monitorada.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "garantir penas mais altas e a impossibilidade de progressão de regime.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 7,
+              "quote": "Substituir o modelo de regimes de pena atual pelo cumprimento de prisão efetivo na cadeia, seguido de liberdade condicional com monitoramento:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": null
+        },
+        "280002540694": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Renan Santos não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002541457": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Hertz Dias não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002542548": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Lula não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002548139": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Veterinário Wilson Grassi não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551544": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe acabar com a progressão de regime para quem comete crimes hediondos.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "vai usar toda a sua força para acabar com a progressão de regime de quem comete crimes hediondos",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": null
+        },
+        "280002551547": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Escritor Augusto Cury não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002551932": {
+          "category": "CONCORDA",
+          "reason": "O plano restringe a progressão para integrantes de organizações criminosas, permitindo-a somente após 90% da pena, e prevê forte restrição legal adicional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 17,
+              "quote": "direito à progressão somente após cumprimento de 90% da pena.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 17,
+              "quote": "forte restrição à saída temporária, ao livramento condicional e à progressão de regime, nos termos da lei.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": null
+        },
+        "280002551975": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Edmilson Costa não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552484": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Clariana Barão não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002552487": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Rui Costa Pimenta não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        },
+        "280002554479": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano de Leonardo Avalanche não decide se a progressão de regime deve ser restringida para crimes graves e integrantes de organizações criminosas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "progressão de regime",
+            "regimes de pena",
+            "90% da pena",
+            "crimes hediondos",
+            "organizações criminosas",
+            "liberdade condicional"
+          ],
+          "absence_reason": "A leitura integral e as buscas por progressão de regime, regimes de pena, 90% da pena, crimes hediondos, organizações criminosas, liberdade condicional não localizaram decisão no instrumento, alcance, público e condições da formulação; referências temáticas genéricas e silêncio não foram tratados como discordância."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,1412 @@
+{
+  "reviewer": "automated_complete_matrix_review",
+  "reviewed_at": "2026-09-26",
+  "method": "Revisão documental das 29 teses pendentes contra a redação vigente em THESIS_TEXTS de scripts/build_presidential_2026_data.py. Busca de termos e equivalentes no corpus integral por página dos três planos oficiais (Cury: 200 páginas; Zema: 81; Clariana: 15), usando a matriz V1 apenas como pista e relendo integralmente as páginas pertinentes. Citações conferidas nas extrações layout e raw com normalização apenas de espaços e quebras de linha; hifens da extração foram preservados. Ausência não foi convertida em discordância; propostas de escopo parcial ou que não resolvem elementos substantivos da formulação V2 foram distinguidas. As nove teses já revisadas no grupo A original não são duplicadas.",
+  "candidates": {
+    "280002551547": {
+      "name": "Escritor Augusto Cury",
+      "decisions": {
+        "004": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre extinguir a escala 6x1 com preservação do salário.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "6x1",
+            "6×1",
+            "seis dias",
+            "escala",
+            "jornada"
+          ],
+          "absence_reason": "As referências a trabalho não formulam a extinção da escala de seis dias com um de descanso, nem a garantia salarial exigida pela tese."
+        },
+        "005": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada proposta de teto legal geral de 30 horas semanais sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "30 horas",
+            "trinta horas",
+            "jornada",
+            "44 horas"
+          ],
+          "absence_reason": "O documento não fixa simultaneamente a duração geral de 30 horas e a manutenção dos salários."
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre reconhecer vínculo de emprego entre trabalhadores de plataformas e suas empresas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "plataformas digitais",
+            "vínculo",
+            "aplicativo",
+            "entregador",
+            "motorista",
+            "Uber",
+            "iFood"
+          ],
+          "absence_reason": "Referências a emprego, informalidade ou tecnologia não especificam o vínculo trabalhista entre esse grupo e as plataformas."
+        },
+        "007": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada proposta de dobrar o salário mínimo nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "salário mínimo",
+            "dobrar"
+          ],
+          "absence_reason": "Não há compromisso de aumento de 100% do valor do salário mínimo; propostas gerais de renda ou emprego não decidem esse valor."
+        },
+        "008": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre instituir imposto federal sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "grandes fortunas",
+            "fortunas",
+            "patrimônio"
+          ],
+          "absence_reason": "As propostas econômicas não instituem nem rejeitam esse tributo específico; posição geral sobre impostos não substitui a decisão."
+        },
+        "009": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe reduzir gradualmente o peso da dívida por crescimento e equilíbrio fiscal, mas não decide sobre suspender pagamentos a grandes investidores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 36,
+              "quote": "Nossa proposta é promover sua redução gradual e sustentável, por meio do crescimento econômico, da responsabilidade fiscal, do equilíbrio das contas públicas e da modernização do Estado.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida",
+            "moratória"
+          ],
+          "absence_reason": "A redução da dívida descrita na página 36 não identifica moratória, pagamentos a suspender ou categorias de credores. Não foi localizada decisão sobre a suspensão seletiva da tese."
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre proibir apostas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "O documento não estabelece proibição ou autorização das apostas online; o silêncio não significa oposição à proibição."
+        },
+        "012": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre gratuidade do transporte público coletivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tarifa",
+            "gratuidade",
+            "transporte público",
+            "transporte coletivo"
+          ],
+          "absence_reason": "Não há proposta de operação do transporte coletivo sem tarifa ao passageiro; infraestrutura ou logística não respondem ao financiamento tarifário."
+        },
+        "013": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano trata de regularização fundiária e proteção contra fraudes e especulação nas comunidades, sem propor expropriação de imóveis urbanos ociosos para moradia popular.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "expropri",
+            "desapropri",
+            "imóveis",
+            "ociosos",
+            "especulação"
+          ],
+          "absence_reason": "Regularizar moradias e proteger moradores contra especulação não decide expropriar imóveis ociosos ou mantidos para especulação; o instrumento exato não foi localizado."
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre permissão legal do aborto.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez"
+          ],
+          "absence_reason": "Propostas de proteção de mulheres, infância ou saúde não especificam a legalidade da interrupção da gravidez."
+        },
+        "015": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre fixar em 16 anos a idade mínima penal adulta em crimes graves.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maioridade",
+            "16 anos",
+            "dezesseis"
+          ],
+          "absence_reason": "As propostas de segurança e justiça não fixam essa idade de responsabilização criminal como adulto."
+        },
+        "016": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O programa FATO integra polícias federais, civis e militares, preservando a autonomia constitucional de cada instituição, mas não decide transformar as polícias militares em organizações de regime civil.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 187,
+              "quote": "Cada instituição manterá sua autonomia constitucional, porém compartilhará informações, inteligência, planejamento e operações conjuntas.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "desmilitar",
+            "polícia militar",
+            "polícias militares",
+            "regime civil"
+          ],
+          "absence_reason": "Integração entre corporações e manutenção de autonomia não especificam a natureza civil ou militar do regime. Não foi localizada proposta de desmilitarização nem rejeição expressa a ela."
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre permitir por lei o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "descriminal",
+            "droga"
+          ],
+          "absence_reason": "Combate ao tráfico e atenção a dependentes não determinam o estatuto legal do consumo da substância."
+        },
+        "020": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano combate facções e menciona terrorismo na cooperação internacional, mas não estabelece equivalência jurídica entre as duas categorias.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "facções",
+            "terroristas",
+            "terrorismo"
+          ],
+          "absence_reason": "O combate financeiro e operacional às facções nas páginas 45–46 e a referência separada a terrorismo não formulam a classificação das facções como organizações terroristas."
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prevê câmeras inteligentes na segurança pública, sem especificar câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 46,
+              "quote": "A segurança pública será fortalecida pelo uso de câmeras inteligentes, reconhecimento de padrões, análise preditiva, drones, monitoramento integrado e inteligência artificial.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "câmeras",
+            "corporais",
+            "bodycam"
+          ],
+          "absence_reason": "As tecnologias descritas nas páginas 46 e 188 não indicam uso de dispositivos no corpo dos agentes. Não foi encontrada proposta de expansão de câmeras corporais."
+        },
+        "022": {
+          "category": "CONCORDA",
+          "reason": "O programa FATO, dedicado à integração das forças de segurança, prevê expressamente reconhecimento facial entre suas tecnologias. A observância da legislação vigente é uma salvaguarda geral, sem retirar o apoio ao uso previsto na tese.",
+          "conditions": [
+            "Uso conforme a legislação vigente."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 188,
+              "quote": "O FATO utilizará tecnologia de última geração. Entre elas:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 188,
+              "quote": "Reconhecimento facial (conforme a legislação vigente);",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reconhecimento facial",
+            "facial"
+          ],
+          "absence_reason": null
+        },
+        "023": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano valoriza educação em tempo integral e descreve o conteúdo de uma escola desse tipo, mas não propõe ampliar vagas ou cobertura do modelo.",
+          "conditions": [],
+          "scope_difference": "Descrição do modelo pedagógico sem decisão de expandir a oferta.",
+          "evidence": [
+            {
+              "page": 74,
+              "quote": "4. ESCOLA DE TEMPO INTEGRAL: CLUBE DE DESENVOLVIMENTO HUMANO",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 75,
+              "quote": "Um ambiente que os alunos desejam frequentar, pois a escola passa a integrar:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "tempo integral",
+            "ensino integral"
+          ],
+          "absence_reason": "A seção intitulada escola de tempo integral, nas páginas 74–75, descreve experiências e currículo; não estabelece aumento da oferta de vagas. Apoio pedagógico ao modelo não foi convertido em apoio à expansão exigida pela tese."
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prioriza alfabetização na idade certa, mas não escolhe o método fônico como prioritário.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 43,
+              "quote": "Investiremos na alfabetização na idade certa, na melhoria da aprendizagem, na valorização dos professores e na redução das desigualdades educacionais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fônico",
+            "fonético",
+            "fonema",
+            "alfabetização"
+          ],
+          "absence_reason": "A proposta educacional da página 43 não hierarquiza métodos de alfabetização, e não foi localizada defesa específica do método fônico."
+        },
+        "025": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano propõe rede pública nacional de telemedicina e triagem digital com classificação de risco e prioridade dos casos graves. Esses componentes se aproximam da tese, mas o compromisso de atendimento nacional é limitado aos casos compatíveis com telemedicina e não institui uma fila nacional digital para o conjunto dos atendimentos do SUS.",
+          "conditions": [
+            "Atendimento nacional digital para casos compatíveis com telemedicina."
+          ],
+          "scope_difference": "Triagem por risco e rede nacional de telemedicina não equivalem a uma fila nacional para todos os atendimentos do SUS.",
+          "evidence": [
+            {
+              "page": 162,
+              "quote": "Antes da consulta, sistemas inteligentes poderão realizar uma triagem clínica inicial, coletando sintomas, identificando fatores de risco e organizando informações que auxiliem o profissional de saúde.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 162,
+              "quote": "Classificação automática de risco;",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 162,
+              "quote": "Priorização dos casos mais graves;",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 162,
+              "quote": "Nosso compromisso é estabelecer uma meta nacional de atendimento digital em até trinta minutos para os casos compatíveis com telemedicina. Para isso será criada uma plataforma nacional integrada, conectando profissionais de todas as regiões do país em uma única rede pública digital.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fila",
+            "risco clínico",
+            "triagem"
+          ],
+          "absence_reason": null
+        },
+        "026A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de encerrar a gestão de serviços públicos de saúde por organizações sociais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "terceiriza"
+          ],
+          "absence_reason": "O documento não decide a continuidade ou o encerramento da modalidade específica de gestão por organizações sociais."
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de autorizar exploração de petróleo na Margem Equatorial brasileira.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "Foz do Amazonas",
+            "petróleo"
+          ],
+          "absence_reason": "Referências gerais a energia, petróleo ou proteção ambiental não decidem autorização na região específica."
+        },
+        "028": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano atribui à reforma agrária papel de segurança alimentar e empreendedorismo rural, mas não decide ampliá-la por novos assentamentos e desapropriação.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 116,
+              "quote": "A reforma agrária precisa deixar de ser vista apenas como agenda fundiária e passar a ser tratada, em parte, como projeto de segurança nacional alimentar e de empreendedorismo rural.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reforma agrária",
+            "assentamentos",
+            "desapropri"
+          ],
+          "absence_reason": "A página 116 propõe transformação produtiva de assentamentos e pequenas propriedades; não determina criação de novos assentamentos nem desapropriação. A referência ao tema não resolve os instrumentos exatos da tese."
+        },
+        "029": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de demarcar todas as terras indígenas pendentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "demarca",
+            "terras indígenas",
+            "indígen"
+          ],
+          "absence_reason": "O documento não assume nem rejeita compromisso com o conjunto integral das demarcações pendentes."
+        },
+        "030": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O projeto PETRA-BR prevê mapeamento, processamento e industrialização de minerais, mas não define controle estatal da exploração de terras raras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 178,
+              "quote": "Integração entre governo, universidades, centros de pesquisa e iniciativa privada.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 179,
+              "quote": "Grandes acordos de exploração e industrialização deverão buscar contrapartidas para o desenvolvimento brasileiro:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "terras raras"
+          ],
+          "absence_reason": "Integração entre governo, pesquisa e iniciativa privada e contrapartidas para acordos de exploração nas páginas 178–179 não atribuem controle da exploração ao Estado nem excluem essa possibilidade."
+        },
+        "031": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de ampliar a produção brasileira de fertilizantes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fertiliz",
+            "adubo",
+            "potássio"
+          ],
+          "absence_reason": "Propostas agrícolas ou produtivas genéricas não estabelecem aumento da produção nacional desse insumo."
+        },
+        "032": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano prevê regulação de conteúdos nocivos e maior transparência e responsabilidade das plataformas, mas dentro de uma agenda de saúde emocional, padrões de beleza e proteção de crianças e adolescentes. Há apoio a uma intervenção regulatória delimitada, sem formulação de ampliação geral do regime de redes e plataformas.",
+          "conditions": [
+            "Intervenção direcionada a conteúdos nocivos e à proteção de crianças e adolescentes.",
+            "Respeito aos parâmetros constitucionais e legais."
+          ],
+          "scope_difference": "A regulação proposta tem finalidade e público específicos, ligados à saúde emocional e à infância.",
+          "evidence": [
+            {
+              "page": 54,
+              "quote": "O Estado atuará com campanhas de conscientização, regulação de conteúdos nocivos e fortalecimento da educação emocional nas escolas.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 91,
+              "quote": "Também estimularemos maior transparência e responsabilidade das plataformas digitais em relação a conteúdos potencialmente prejudiciais a crianças e adolescentes, dentro dos parâmetros constitucionais e legais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "redes sociais",
+            "plataformas digitais",
+            "regulação",
+            "regulament",
+            "moderação"
+          ],
+          "absence_reason": null
+        },
+        "033": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O autor rejeita expressamente a reeleição em passagem cujo sujeito é o Presidente da República. O texto não estende de modo inequívoco a proibição aos demais cargos do Executivo, nem detalha o recorte de mandatos consecutivos da tese.",
+          "conditions": [],
+          "scope_difference": "Rejeição da reeleição em contexto presidencial; governadores, prefeitos e alcance da vedação consecutiva não são explicitados.",
+          "evidence": [
+            {
+              "page": 155,
+              "quote": "Nossa visão é que o Presidente de uma nação não é — ou não deveria ser — o mais poderoso, o mais famoso ou o mais aplaudido, mas o maior empregado da sociedade, contratado pelo voto e remunerado por milhões de contribuintes para servi-los da melhor maneira possível, com prazo determinado para deixar o cargo.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 155,
+              "quote": "Sou contra a reeleição, pois considero que ela seja uma das fontes da corrupção.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "reeleição",
+            "mandato",
+            "consecutiv"
+          ],
+          "absence_reason": null
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano menciona cooperação com a ONU no combate à fome, sem decidir reformar seu Conselho de Segurança.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas"
+          ],
+          "absence_reason": "A governança do fundo contra a fome na página 158 não trata da composição, competências ou reforma institucional do Conselho de Segurança."
+        },
+        "035": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de adotar eleições legislativas com distritos e listas partidárias proporcionais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "distrital",
+            "listas partidárias",
+            "proporcional"
+          ],
+          "absence_reason": "Não há formulação de sistema eleitoral que combine os dois componentes previstos na tese."
+        }
+      }
+    },
+    "280002539826": {
+      "name": "Zema",
+      "decisions": {
+        "004": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano permite negociar a jornada e o número de dias trabalhados em regime alternativo à CLT, sem decidir extinguir a escala 6x1 com preservação salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à CLT, com mais liberdade para negociarem as regras da contratação:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 23,
+              "quote": "44 horas semanais, o número de dias trabalhados por semana; e a livre divisão dos períodos de férias.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "6x1",
+            "6×1",
+            "seis dias",
+            "escala",
+            "jornada"
+          ],
+          "absence_reason": "O texto da página 23 não identifica a escala 6x1 nem estabelece sua manutenção ou extinção sem corte salarial. Negociação de dias, por si só, não determina a decisão exata."
+        },
+        "005": {
+          "category": "DISCORDA",
+          "reason": "O regime trabalhista alternativo preserva expressamente um limite de 44 horas semanais. Autorizar contratações sob esse limite é incompatível com fixar um teto legal geral de 30 horas semanais, mesmo que a alternativa à CLT não alcance automaticamente todos os contratos.",
+          "conditions": [],
+          "scope_difference": "A autorização de até 44 horas é proposta para um regime alternativo à CLT, e basta para contrariar o teto legal geral de 30 horas.",
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à CLT, com mais liberdade para negociarem as regras da contratação:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 23,
+              "quote": "a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limi- te de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão dos períodos de férias.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "30 horas",
+            "trinta horas",
+            "jornada",
+            "44 horas"
+          ],
+          "absence_reason": null
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano menciona trabalhadores de plataformas como diagnóstico e propõe alternativa geral à CLT, mas não decide reconhecer vínculo de emprego com as empresas de plataformas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "plataformas digitais",
+            "vínculo",
+            "aplicativo",
+            "entregador",
+            "motorista",
+            "Uber",
+            "iFood"
+          ],
+          "absence_reason": "A estatística sobre trabalho por plataformas na página 23 não é proposta de vínculo; o regime alternativo não resolve especificamente a relação de emprego entre esse grupo e as empresas."
+        },
+        "007": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano usa um salário mínimo como base de desoneração de contratações, sem propor dobrar seu valor nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "salário mínimo",
+            "dobrar"
+          ],
+          "absence_reason": "A desoneração de encargos da página 24 trata do custo de contratação, não de elevação de 100% do piso salarial."
+        },
+        "008": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre instituir imposto federal sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "grandes fortunas",
+            "fortunas",
+            "patrimônio"
+          ],
+          "absence_reason": "As propostas econômicas não instituem nem rejeitam esse tributo específico; posição geral sobre impostos não substitui a decisão."
+        },
+        "009": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "A proposta de produzir superávits para pagar a dívida aponta para continuidade do serviço da dívida em termos gerais. Ela não individualiza grandes investidores nem decide se uma suspensão seletiva de pagamentos a esse grupo seria admitida; por isso não sustenta discordância plena com o recorte exato da tese.",
+          "conditions": [],
+          "scope_difference": "Pagamento da dívida em geral, sem discriminação de credores ou decisão sobre suspensão dirigida a grandes investidores.",
+          "evidence": [
+            {
+              "page": 18,
+              "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a relação dívida/PIB, promovendo reformas e mantendo superávits primários que per- mitam o pagamento da dívida.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "dívida",
+            "moratória"
+          ],
+          "absence_reason": null
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre proibir apostas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "O documento não estabelece proibição ou autorização das apostas online; o silêncio não significa oposição à proibição."
+        },
+        "012": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prevê expansão da infraestrutura de transporte coletivo de alta capacidade, mas não decide eliminar a cobrança de tarifa.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tarifa",
+            "gratuidade",
+            "transporte público",
+            "transporte coletivo"
+          ],
+          "absence_reason": "A política de mobilidade urbana da página 30 trata de estruturação, cofinanciamento e expansão de metrô, trens e VLT; não estabelece gratuidade aos passageiros."
+        },
+        "013": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe vender imóveis federais sem uso, não decide expropriar imóveis urbanos especulativos para moradia popular.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "expropri",
+            "desapropri",
+            "imóveis",
+            "ociosos",
+            "especulação"
+          ],
+          "absence_reason": "A alienação do patrimônio público ocioso na página 15 tem objeto, titularidade e finalidade diferentes. Não exclui nem estabelece expropriação dos imóveis definidos pela tese."
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre permissão legal do aborto.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez"
+          ],
+          "absence_reason": "Propostas de proteção de mulheres, infância ou saúde não especificam a legalidade da interrupção da gravidez."
+        },
+        "015": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano estabelece 16 anos como regra geral, mas permite responsabilização de pessoas ainda mais jovens justamente nos crimes graves e na reincidência. Assim, não fixa 16 anos como idade mínima para o recorte de crimes graves da tese.",
+          "conditions": [
+            "Imputação abaixo de 16 anos em crimes graves ou reincidência."
+          ],
+          "scope_difference": "A fonte admite idade inferior a 16 anos no próprio grupo de crimes delimitado pela tese.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal de adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação penal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e estupro, ou reincidência.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "maioridade",
+            "16 anos",
+            "dezesseis"
+          ],
+          "absence_reason": null
+        },
+        "016": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre converter a organização e o regime das polícias militares em civis.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desmilitar",
+            "polícia militar",
+            "polícias militares",
+            "regime civil"
+          ],
+          "absence_reason": "Integração ou aperfeiçoamento das forças de segurança não equivale à mudança de natureza institucional e regime das polícias militares."
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre permitir por lei o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "descriminal",
+            "droga"
+          ],
+          "absence_reason": "Combate ao tráfico e atenção a dependentes não determinam o estatuto legal do consumo da substância."
+        },
+        "020": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe explicitamente classificar facções como organizações terroristas no âmbito nacional, com consequências penais e operacionais. Isso abrange a classificação na legislação brasileira prevista pela tese.",
+          "conditions": [],
+          "scope_difference": "A proposta também busca classificação internacional; o componente nacional é explícito.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Classificar, nacional e internacionalmente, as facções criminosas como organizações terroristas:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 5,
+              "quote": "Enquadrar como terroristas os criminosos que usam táticas e armamentos de guerra para dominar territórios, de modo a permitir o uso da Força Nacional, das Forças Armadas, dos órgãos de controle e da colaboração internacional para combatê-los, além de garantir penas mais altas e a impossibilidade de progressão de regime.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "facções",
+            "terroristas",
+            "terrorismo"
+          ],
+          "absence_reason": null
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre ampliar câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "câmeras",
+            "corporais",
+            "bodycam"
+          ],
+          "absence_reason": "Tecnologias de vigilância ou monitoramento sem indicação de uso no corpo do policial não permitem atribuir a proposta da tese."
+        },
+        "022": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre utilização de reconhecimento facial por órgãos de segurança.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reconhecimento facial",
+            "facial"
+          ],
+          "absence_reason": "Tecnologia, integração de dados ou análise de imagens não especificam reconhecimento facial."
+        },
+        "023": {
+          "category": "CONCORDA",
+          "reason": "Na seção de educação básica, o plano propõe ampliar expressamente a oferta de ensino integral, por financiamento ao EMI e parcerias. Trata-se da expansão de oferta exigida pela tese; os critérios de qualidade condicionam as parcerias, sem negar a ampliação.",
+          "conditions": [
+            "Parcerias condicionadas a critérios de qualidade e resultados educacionais."
+          ],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 51,
+              "quote": "Ampliar a oferta de ensino integral por meio de financiamento ao EMI e parcerias com organizações privadas, condicionadas a critérios de qualidade e resultados educacionais.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "tempo integral",
+            "ensino integral"
+          ],
+          "absence_reason": null
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prioriza alfabetização e formação docente baseada em evidências, sem eleger o método fônico.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fônico",
+            "fonético",
+            "fonema",
+            "alfabetização"
+          ],
+          "absence_reason": "As páginas 51–52 tratam de recomposição de aprendizagem, alfabetização na idade certa e ensino estruturado, sem prioridade comparativa para método fônico."
+        },
+        "025": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano propõe integração regionalizada das unidades de saúde e inteligência artificial para gerir filas e encaminhar pacientes conforme suas necessidades. Há componente de gestão digital, mas não uma fila de abrangência nacional nem prioridade explicitamente ordenada por risco clínico.",
+          "conditions": [],
+          "scope_difference": "Rede regionalizada e gestão de filas por IA; abrangência nacional da fila e prioridade por risco clínico não são definidas.",
+          "evidence": [
+            {
+              "page": 59,
+              "quote": "Organizar a rede de saúde de forma regionalizada, integrando unidades de urgência, clínicas especializadas e hospitais de diferentes municípios, com apoio de sistemas de inteligência artificial para otimizar a gestão das filas e direcionar cada paciente ao serviço mais adequado às suas necessidades.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fila",
+            "risco clínico",
+            "triagem"
+          ],
+          "absence_reason": null
+        },
+        "026A": {
+          "category": "DISCORDA",
+          "reason": "Na seção de ampliação e gestão da saúde pública, o plano inclui expressamente expandir hospitais, UPAs e atendimentos por parcerias com OSs. Essa ampliação é incompatível com encerrar a participação das organizações sociais na gestão dos serviços públicos de saúde.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Expandir a rede de hospitais, UPAs e atendimentos com especialistas por meio de concessões, PPPs e parcerias com OSs:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "terceiriza"
+          ],
+          "absence_reason": null
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano defende expansão e concorrência na exploração de petróleo em geral, sem decidir autorização para a Margem Equatorial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "Foz do Amazonas",
+            "petróleo"
+          ],
+          "absence_reason": "Os leilões e a abertura do setor descritos nas páginas 32–33 não individualizam a Margem Equatorial ou a Foz do Amazonas. Apoio nacional ao petróleo não foi convertido em autorização regional."
+        },
+        "028": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de ampliar reforma agrária com novos assentamentos e desapropriação de terras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma agrária",
+            "assentamentos",
+            "desapropri"
+          ],
+          "absence_reason": "O texto não vincula a ampliação da reforma agrária aos dois instrumentos da tese: novos assentamentos e desapropriação."
+        },
+        "029": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe exploração econômica de terras indígenas e proteção das comunidades, mas não decide concluir todas as demarcações pendentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "demarca",
+            "terras indígenas",
+            "indígen"
+          ],
+          "absence_reason": "As páginas 25 e 48 abordam atividades econômicas e proteção contra crimes ambientais, sem compromisso com o conjunto de terras cuja demarcação está pendente."
+        },
+        "030": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "A exploração de terras raras é atribuída expressamente à atuação de empresas privadas. Essa opção contrasta com operação estatal, mas o documento não exclui controle regulatório ou estratégico do Estado; a tese não especifica qual modalidade de controle exige.",
+          "conditions": [],
+          "scope_difference": "Operação privada não resolve, por si só, a existência de controle regulatório ou estratégico estatal.",
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Facilitar a atuação de empresas privadas para a exploração sustentável das riquezas do nosso subsolo, principalmente terras raras e outros minerais de alto valor",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "terras raras"
+          ],
+          "absence_reason": null
+        },
+        "031": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe facilitar a produção nacional de fertilizantes e destravar projetos minerais para remover obstáculos a essa produção. A medida busca ampliar a capacidade produtiva brasileira, em consonância com a tese; o apoio paralelo a importações não elimina esse componente.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [
+            {
+              "page": 43,
+              "quote": "Facilitar a produção nacional e a compra de fertilizantes e defensivos agrícolas de alta qualidade do mundo:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 43,
+              "quote": "Abrir o mercado à concorrência, facilitando importações e reduzindo a dependência externa de insumos, além de destravar projetos minerais nacionais para eliminar burocracias que dificultam a produção nacional.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fertiliz",
+            "adubo",
+            "potássio"
+          ],
+          "absence_reason": null
+        },
+        "032": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "O plano cria uma regra específica para impedir exclusão de perfis e moderação de opiniões pelas plataformas, inclusive por ordem judicial, substituindo esses mecanismos por procedimentos de retratação e indenização. É uma intervenção regulatória delimitada, combinada com rejeição à regulação que controle o conteúdo, sem apoio inequívoco a toda ampliação regulatória abrangida pela tese.",
+          "conditions": [
+            "Regulação voltada a vedar exclusão de perfis e moderação de opiniões.",
+            "Substituição por procedimentos que assegurem retratação e indenização."
+          ],
+          "scope_difference": "A fonte amplia uma restrição específica à moderação, não define um regime geral de regulação das plataformas.",
+          "evidence": [
+            {
+              "page": 74,
+              "quote": "Vedar a exclusão de perfis e a moderação de opiniões pelas plataformas, inclusive por determinação judicial, substituindo esses mecanismos por procedimentos admi- nistrativos e judiciais que garantam direito à retratação e indenização, assegurando que o debate público no Brasil seja resolvido pela livre circulação de ideias e não pelo controle de juízes ou empresas de tecnologia.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "redes sociais",
+            "plataformas digitais",
+            "regulação",
+            "regulament",
+            "moderação"
+          ],
+          "absence_reason": null
+        },
+        "033": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de proibir reeleição consecutiva no mesmo cargo do Executivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reeleição",
+            "mandato",
+            "consecutiv"
+          ],
+          "absence_reason": "O documento não estabelece a vedação para os mandatos do Poder Executivo descrita pela tese."
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre reformar o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas"
+          ],
+          "absence_reason": "Cooperação internacional ou referência à ONU não resolve a alteração institucional do Conselho de Segurança."
+        },
+        "035": {
+          "category": "CONCORDA",
+          "reason": "O plano propõe explicitamente voto distrital misto e dois votos, um para o representante majoritário do distrito e outro para representação no parlamento, em substituição ao modelo proporcional de lista aberta. A adoção desse sistema misto corresponde à combinação de representação distrital e proporcional descrita pela tese.",
+          "conditions": [],
+          "scope_difference": "A fonte não detalha a divisão de cadeiras, o tipo da lista partidária ou mecanismos compensatórios; esses pormenores não são exigidos pela tese.",
+          "evidence": [
+            {
+              "page": 75,
+              "quote": "Adotar o voto distrital misto para aproximar o mandatário do eleitor:",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 75,
+              "quote": "Promover a substituição do atual modelo proporcional de lista aberta por um siste- ma distrital misto com dois votos: um para a eleição majoritária do representante do distrito e outro para representação de ideias no parlamento.",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "distrital",
+            "listas partidárias",
+            "proporcional"
+          ],
+          "absence_reason": null
+        }
+      }
+    },
+    "280002552484": {
+      "name": "Clariana Barao",
+      "decisions": {
+        "004": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre extinguir a escala 6x1 com preservação do salário.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "6x1",
+            "6×1",
+            "seis dias",
+            "escala",
+            "jornada"
+          ],
+          "absence_reason": "As referências a trabalho não formulam a extinção da escala de seis dias com um de descanso, nem a garantia salarial exigida pela tese."
+        },
+        "005": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada proposta de teto legal geral de 30 horas semanais sem redução salarial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "30 horas",
+            "trinta horas",
+            "jornada",
+            "44 horas"
+          ],
+          "absence_reason": "O documento não fixa simultaneamente a duração geral de 30 horas e a manutenção dos salários."
+        },
+        "006": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre reconhecer vínculo de emprego entre trabalhadores de plataformas e suas empresas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "plataformas digitais",
+            "vínculo",
+            "aplicativo",
+            "entregador",
+            "motorista",
+            "Uber",
+            "iFood"
+          ],
+          "absence_reason": "Referências a emprego, informalidade ou tecnologia não especificam o vínculo trabalhista entre esse grupo e as plataformas."
+        },
+        "007": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada proposta de dobrar o salário mínimo nacional.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "salário mínimo",
+            "dobrar"
+          ],
+          "absence_reason": "Não há compromisso de aumento de 100% do valor do salário mínimo; propostas gerais de renda ou emprego não decidem esse valor."
+        },
+        "008": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre instituir imposto federal sobre grandes fortunas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "grandes fortunas",
+            "fortunas",
+            "patrimônio"
+          ],
+          "absence_reason": "As propostas econômicas não instituem nem rejeitam esse tributo específico; posição geral sobre impostos não substitui a decisão."
+        },
+        "009": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano apresenta dívida/PIB como indicador de responsabilidade fiscal, sem decidir suspensão de pagamentos a grandes investidores.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "dívida",
+            "moratória"
+          ],
+          "absence_reason": "O indicador da página 6 não define política de pagamento, suspensão ou tratamento por grupo de credores."
+        },
+        "010": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre proibir apostas pela internet.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "apostas",
+            "bets",
+            "jogos de azar"
+          ],
+          "absence_reason": "O documento não estabelece proibição ou autorização das apostas online; o silêncio não significa oposição à proibição."
+        },
+        "012": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre gratuidade do transporte público coletivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tarifa",
+            "gratuidade",
+            "transporte público",
+            "transporte coletivo"
+          ],
+          "absence_reason": "Não há proposta de operação do transporte coletivo sem tarifa ao passageiro; infraestrutura ou logística não respondem ao financiamento tarifário."
+        },
+        "013": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre expropriar imóveis urbanos ociosos ou especulativos para moradia popular.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "expropri",
+            "desapropri",
+            "imóveis",
+            "ociosos",
+            "especulação"
+          ],
+          "absence_reason": "A tese exige simultaneamente o instrumento de expropriação, os imóveis identificados e a destinação habitacional; esse conjunto não foi localizado."
+        },
+        "014": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre permissão legal do aborto.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "aborto",
+            "interrupção da gravidez"
+          ],
+          "absence_reason": "Propostas de proteção de mulheres, infância ou saúde não especificam a legalidade da interrupção da gravidez."
+        },
+        "015": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre fixar em 16 anos a idade mínima penal adulta em crimes graves.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maioridade",
+            "16 anos",
+            "dezesseis"
+          ],
+          "absence_reason": "As propostas de segurança e justiça não fixam essa idade de responsabilização criminal como adulto."
+        },
+        "016": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre converter a organização e o regime das polícias militares em civis.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "desmilitar",
+            "polícia militar",
+            "polícias militares",
+            "regime civil"
+          ],
+          "absence_reason": "Integração ou aperfeiçoamento das forças de segurança não equivale à mudança de natureza institucional e regime das polícias militares."
+        },
+        "019": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano combate narcotráfico e monitora apreensões de drogas, sem decidir permitir ou proibir legalmente o consumo de maconha.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "maconha",
+            "cannabis",
+            "descriminal",
+            "droga"
+          ],
+          "absence_reason": "A política de combate a rotas e redes criminosas da página 9 não determina a legalidade do consumo de cannabis."
+        },
+        "020": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe sufocamento financeiro das facções, sem classificá-las como organizações terroristas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "facções",
+            "terroristas",
+            "terrorismo"
+          ],
+          "absence_reason": "Inteligência patrimonial, combate à lavagem e recuperação de ativos na página 9 não estabelecem a equiparação jurídica prevista pela tese."
+        },
+        "021": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre ampliar câmeras corporais nas atividades policiais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "câmeras",
+            "corporais",
+            "bodycam"
+          ],
+          "absence_reason": "Tecnologias de vigilância ou monitoramento sem indicação de uso no corpo do policial não permitem atribuir a proposta da tese."
+        },
+        "022": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano prevê sensores, drones e análise de imagens na segurança, mas não especifica reconhecimento facial.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reconhecimento facial",
+            "facial"
+          ],
+          "absence_reason": "As tecnologias de fronteira e segurança urbana da página 9 não identificam sistemas de reconhecimento facial. Análise de imagens não foi tomada como equivalente."
+        },
+        "023": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano aborda educação infantil, alfabetização e expansão da formação técnica, sem decidir ampliar vagas em tempo integral.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "tempo integral",
+            "ensino integral"
+          ],
+          "absence_reason": "As ações educacionais das páginas 7–8 não vinculam a expansão da oferta da educação básica ao regime de tempo integral."
+        },
+        "024": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano propõe alfabetização na idade adequada e formação baseada em evidências, mas não dá prioridade ao método fônico.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fônico",
+            "fonético",
+            "fonema",
+            "alfabetização"
+          ],
+          "absence_reason": "A seção educacional da página 7 não especifica o método de alfabetização nem compara o fônico a alternativas."
+        },
+        "025": {
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "A seção de saúde digital propõe regulação inteligente de filas e IA como apoio clínico e administrativo. Há apoio à gestão digital, mas o texto não estabelece fila nacional nem ordenação dos atendimentos por risco clínico.",
+          "conditions": [
+            "Uso de IA com governança, auditoria e privacidade."
+          ],
+          "scope_difference": "Gestão digital de filas sem definição de abrangência nacional ou de prioridade por risco clínico.",
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "5.5 Saúde digital e acesso",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 12,
+              "quote": "Regulação inteligente de filas",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            },
+            {
+              "page": 12,
+              "quote": "IA como apoio clínico e administrativo com governança, auditoria e privacidade",
+              "verification": "literal_text_layout_and_raw_whitespace_normalized"
+            }
+          ],
+          "search_terms": [
+            "fila",
+            "risco clínico",
+            "triagem"
+          ],
+          "absence_reason": null
+        },
+        "026A": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de encerrar a gestão de serviços públicos de saúde por organizações sociais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "organizações sociais",
+            "OSs",
+            "terceiriza"
+          ],
+          "absence_reason": "O documento não decide a continuidade ou o encerramento da modalidade específica de gestão por organizações sociais."
+        },
+        "027": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de autorizar exploração de petróleo na Margem Equatorial brasileira.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Margem Equatorial",
+            "Foz do Amazonas",
+            "petróleo"
+          ],
+          "absence_reason": "Referências gerais a energia, petróleo ou proteção ambiental não decidem autorização na região específica."
+        },
+        "028": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de ampliar reforma agrária com novos assentamentos e desapropriação de terras.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reforma agrária",
+            "assentamentos",
+            "desapropri"
+          ],
+          "absence_reason": "O texto não vincula a ampliação da reforma agrária aos dois instrumentos da tese: novos assentamentos e desapropriação."
+        },
+        "029": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de demarcar todas as terras indígenas pendentes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "demarca",
+            "terras indígenas",
+            "indígen"
+          ],
+          "absence_reason": "O documento não assume nem rejeita compromisso com o conjunto integral das demarcações pendentes."
+        },
+        "030": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de colocar a exploração de terras raras sob controle estatal.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "terras raras"
+          ],
+          "absence_reason": "Políticas de incentivo ou industrialização mineral não definem quem controla a exploração das terras raras."
+        },
+        "031": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de ampliar a produção brasileira de fertilizantes.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "fertiliz",
+            "adubo",
+            "potássio"
+          ],
+          "absence_reason": "Propostas agrícolas ou produtivas genéricas não estabelecem aumento da produção nacional desse insumo."
+        },
+        "032": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano menciona ambiente digital seguro e educação para riscos, sem decidir ampliar a regulação de redes e plataformas.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "redes sociais",
+            "plataformas digitais",
+            "regulação",
+            "regulament",
+            "moderação"
+          ],
+          "absence_reason": "A proteção de crianças no ambiente digital da página 3 não impõe obrigações às plataformas nem define novas regras de moderação, transparência ou responsabilidade."
+        },
+        "033": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de proibir reeleição consecutiva no mesmo cargo do Executivo.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "reeleição",
+            "mandato",
+            "consecutiv"
+          ],
+          "absence_reason": "O documento não estabelece a vedação para os mandatos do Poder Executivo descrita pela tese."
+        },
+        "034B": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão sobre reformar o Conselho de Segurança da ONU.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "Conselho de Segurança",
+            "ONU",
+            "Nações Unidas"
+          ],
+          "absence_reason": "Cooperação internacional ou referência à ONU não resolve a alteração institucional do Conselho de Segurança."
+        },
+        "035": {
+          "category": "NAO_ENCONTRADA",
+          "reason": "Não foi encontrada decisão de adotar eleições legislativas com distritos e listas partidárias proporcionais.",
+          "conditions": [],
+          "scope_difference": null,
+          "evidence": [],
+          "search_terms": [
+            "distrital",
+            "listas partidárias",
+            "proporcional"
+          ],
+          "absence_reason": "Não há formulação de sistema eleitoral que combine os dois componentes previstos na tese."
+        }
+      }
+    }
+  }
+}
