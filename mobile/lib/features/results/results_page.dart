@@ -26,7 +26,15 @@ class _ResultsPageState extends State<ResultsPage> {
   bool _hasTrackedResultsViewed = false;
 
   List<CandidateResult> get _results => [..._session.visibleResults]
-    ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
+    ..sort((a, b) {
+      if (a.hasComparableEvidence != b.hasComparableEvidence) {
+        return a.hasComparableEvidence ? -1 : 1;
+      }
+      final byScore = b.scorePercent.compareTo(a.scorePercent);
+      return byScore != 0
+          ? byScore
+          : a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    });
 
   void _track(Future<void> event) {
     unawaited(event.catchError((_) {}));
@@ -115,16 +123,22 @@ class _ResultsPageState extends State<ResultsPage> {
               ],
             ),
             const SizedBox(height: 32),
-            if (!_results.any((result) => result.hasComparableEvidence))
+            if (!_results.any((result) => result.hasComparableEvidence)) ...[
               Text(
-                'Não há base documental suficiente para calcular afinidade com os candidatos selecionados.',
+                'Não foi possível calcular a afinidade com as candidaturas selecionadas.',
                 style: textTheme.titleLarge,
               ),
+              const SizedBox(height: 16),
+            ],
+            Text('AFINIDADE COM SUAS RESPOSTAS',
+                style: textTheme.labelMedium),
             const SizedBox(height: 16),
-            Text(
-              'A afinidade considera apenas suas respostas com posição documentada no plano. As candidaturas podem ter conjuntos diferentes de teses comparáveis: os percentuais não formam um ranking e não indicam uma recomendação de voto. Ausência de evidência não significa discordância.',
-              style: textTheme.bodySmall,
-            ),
+            ..._results.map((result) {
+              return Padding(
+                padding: const EdgeInsets.only(bottom: 16),
+                child: _CandidateResultRow(result: result),
+              );
+            }),
             const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
@@ -145,16 +159,6 @@ class _ResultsPageState extends State<ResultsPage> {
                 child: const Text('ACOMPANHAR POLITICOS'),
               ),
             ),
-            const SizedBox(height: 32),
-            Text('CANDIDATURAS EM ORDEM ALFABÉTICA',
-                style: textTheme.labelMedium),
-            const SizedBox(height: 16),
-            ..._results.map((result) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: _CandidateResultRow(result: result),
-              );
-            }),
             const SizedBox(height: 24),
             Container(
               width: double.infinity,
@@ -212,28 +216,17 @@ class _CandidateResultRow extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  if (result.hasComparableEvidence)
-                    Text(result.affinityLabel, style: textTheme.titleMedium),
+                  Text(
+                    result.hasComparableEvidence ? result.affinityLabel : '—',
+                    semanticsLabel: result.hasComparableEvidence
+                        ? null
+                        : 'Afinidade indisponível',
+                    style: textTheme.titleMedium,
+                  ),
                 ],
               ),
               const SizedBox(height: 6),
-              if (!result.hasComparableEvidence)
-                Text(result.affinityLabel, style: textTheme.bodySmall),
-              Text(result.coverageLabel, style: textTheme.bodySmall),
-              if (result.hasComparableEvidence) ...[
-                const SizedBox(height: 6),
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(2),
-                  child: LinearProgressIndicator(
-                    value: result.scorePercent / 100,
-                    minHeight: 4,
-                    backgroundColor: AppTheme.surfaceContainerHighest,
-                    valueColor: const AlwaysStoppedAnimation<Color>(
-                      AppTheme.onSurface,
-                    ),
-                  ),
-                ),
-              ],
+              Text(result.abbreviation, style: textTheme.bodySmall),
             ],
           ),
         ),

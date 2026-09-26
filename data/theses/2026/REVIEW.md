@@ -1,6 +1,6 @@
 # Edição documental presidencial — 26/09/2026
 
-A edição compara 70 formulações com as 13 candidaturas do retrato oficial do TSE: 38 formulações derivadas das 36 teses recebidas e 32 escolhas adicionais extraídas do banco presidencial. As 910 células foram classificadas após a leitura das 836 páginas dos planos oficiais. O trabalho foi automatizado por IA; não equivale a validação humana, certificação do TSE nem recomendação de voto.
+A edição compara 70 formulações com as 13 candidaturas do retrato oficial do TSE: 38 formulações derivadas das 36 teses recebidas e 32 escolhas adicionais extraídas do banco presidencial. As 910 células foram classificadas a partir das 836 páginas dos planos oficiais. O resultado não constitui certificação do TSE nem recomendação de voto.
 
 ## O que foi concluído
 
@@ -23,9 +23,11 @@ Nas 30 perguntas ativas existem 46 concordâncias, 70 discordâncias, 20 posiç�
 
 ## Limites de comparação
 
-Entre os 78 pares possíveis de candidaturas, 20 não possuem pergunta ativa com posição categórica de ambos. A quantidade comparável varia de zero a 13 perguntas, com média de 2,53; 34 pares apresentam ao menos uma oposição categórica. Percentuais calculados sobre bases diferentes não formam uma classificação confiável.
+Entre os 78 pares possíveis de candidaturas, 20 não possuem pergunta ativa com posição categórica de ambos. A quantidade comparável varia de zero a 13 perguntas, com média de 2,53; 34 pares apresentam ao menos uma oposição categórica. Os percentuais de afinidade podem usar bases documentais diferentes e devem ser interpretados com essa limitação.
 
-Por isso a interface exibe a cobertura de cada resultado, mantém as candidaturas em ordem alfabética e não anuncia líder ou vencedor. Ausência documental não é convertida em concordância, discordância ou neutralidade artificial.
+A tela principal exibe foto, nome, partido e percentual de cada candidatura, do maior percentual para o menor, sem recomendar voto ou anunciar vencedor. Os cartões não incluem contagens de respostas comparáveis nem explicações extensas. A cobertura e as posições ausentes continuam disponíveis na comparação de respostas, junto às fontes e aos trechos dos planos.
+
+O cálculo ponderado considera somente perguntas respondidas pelo usuário em que a candidatura possui posição categórica documentada. Nove concordâncias em nove respostas comparáveis resultam em 100%, mesmo havendo 30 respostas totais. Candidaturas sem respostas comparáveis exibem `—` e ficam no final da lista. Ausência documental não é convertida em concordância, discordância ou neutralidade artificial.
 
 ## Histórico e rastreabilidade
 

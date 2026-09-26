@@ -105,13 +105,14 @@ void main() {
     await tester.pumpAndSettle();
   }
 
-  testWidgets('intro explains the complete review and evidence-based selection',
+  testWidgets('intro explains the scope without exposing process details',
       (tester) async {
     await pump(tester, QuizIntroPage(analytics: analytics));
     expect(find.textContaining('70 formulações'), findsOneWidget);
     expect(find.textContaining('13 planos'), findsOneWidget);
     expect(find.textContaining('30 teses'), findsOneWidget);
-    expect(find.textContaining('por IA, sem validação humana'), findsOneWidget);
+    expect(find.textContaining('por IA'), findsNothing);
+    expect(find.textContaining('validação humana'), findsNothing);
     expect(find.textContaining('contraste documentado'), findsOneWidget);
     expect(find.textContaining('9 teses'), findsNothing);
     expect(find.textContaining('29 teses de rascunho'), findsNothing);
@@ -139,12 +140,12 @@ void main() {
     await pump(tester, ResultsPage(analytics: analytics));
     expect(find.text('MAIOR AFINIDADE'), findsNothing);
     expect(find.text('0.0%'), findsNothing);
-    expect(find.text('Sem base comparável'), findsOneWidget);
-    expect(find.text('0 de 9 respostas comparáveis'), findsOneWidget);
+    expect(find.text('—'), findsOneWidget);
+    expect(find.textContaining('respostas comparáveis'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('a real zero affinity keeps its percent and evidence count', (
+  testWidgets('a real zero affinity keeps its percent without coverage text', (
     tester,
   ) async {
     QuizSession.instance.results = const [
@@ -161,7 +162,7 @@ void main() {
     ];
     await pump(tester, ResultsPage(analytics: analytics));
     expect(find.text('0.0%'), findsOneWidget);
-    expect(find.text('2 de 9 respostas comparáveis'), findsOneWidget);
+    expect(find.textContaining('respostas comparáveis'), findsNothing);
     expect(tester.takeException(), isNull);
   });
 
@@ -189,7 +190,7 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('unequal evidence bases show all coverage without a winner', (
+  testWidgets('results show descending percentages and keep comparison details', (
     tester,
   ) async {
     QuizSession.instance.results = const [
@@ -199,14 +200,14 @@ void main() {
         party: 'DC',
         scorePercent: 100,
         rank: 1,
-        countedTheses: 1,
-        answeredTheses: 9,
+        countedTheses: 9,
+        answeredTheses: 30,
         matches: [],
       ),
       CandidateResult(
         candidateId: '2',
         name: 'Ana',
-        party: 'DC',
+        party: 'PT',
         scorePercent: 75,
         rank: 2,
         countedTheses: 8,
@@ -232,19 +233,104 @@ void main() {
     expect(find.text('MAIOR AFINIDADE'), findsNothing);
     expect(find.text('100.0%'), findsOneWidget);
     expect(find.text('75.0%'), findsOneWidget);
-    expect(find.text('Sem base comparável'), findsOneWidget);
-    for (final count in [0, 1, 8]) {
-      expect(find.text('$count de 9 respostas comparáveis'), findsOneWidget);
-    }
+    expect(find.text('—'), findsOneWidget);
+    expect(find.textContaining('respostas comparáveis'), findsNothing);
+    expect(find.textContaining('os percentuais não formam um ranking'),
+        findsNothing);
+    expect(find.text('CANDIDATURAS EM ORDEM ALFABÉTICA'), findsNothing);
+    expect(find.text('PT'), findsOneWidget);
+    expect(tester.getTopLeft(find.text('Zilda')).dy,
+        lessThan(tester.getTopLeft(find.text('Ana')).dy));
     expect(tester.getTopLeft(find.text('Ana')).dy,
         lessThan(tester.getTopLeft(find.text('Maria')).dy));
-    expect(tester.getTopLeft(find.text('Maria')).dy,
-        lessThan(tester.getTopLeft(find.text('Zilda')).dy));
     expect(QuizSession.instance.results.first.candidateId, '1');
     await tester.ensureVisible(find.text('COMPARAR RESPOSTAS'));
     await tester.tap(find.text('COMPARAR RESPOSTAS'));
     await tester.pumpAndSettle();
     expect(find.text('Detalhes da comparação'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets(
+      'results sort selected candidates by score with unscored candidates last', (
+    tester,
+  ) async {
+    QuizSession.instance.results = const [
+      CandidateResult(
+        candidateId: 'hidden',
+        name: 'Candidatura não selecionada',
+        party: 'DC',
+        scorePercent: 100,
+        rank: 1,
+        countedTheses: 9,
+        answeredTheses: 30,
+        matches: [],
+      ),
+      CandidateResult(
+        candidateId: '1',
+        name: 'Aline',
+        party: 'DC',
+        scorePercent: 0,
+        rank: 0,
+        countedTheses: 0,
+        answeredTheses: 30,
+        matches: [],
+      ),
+      CandidateResult(
+        candidateId: '2',
+        name: 'Zélia',
+        party: 'DC',
+        scorePercent: 0,
+        rank: 4,
+        countedTheses: 9,
+        answeredTheses: 30,
+        matches: [],
+      ),
+      CandidateResult(
+        candidateId: '3',
+        name: 'Bruno',
+        party: 'DC',
+        scorePercent: 75,
+        rank: 2,
+        countedTheses: 8,
+        answeredTheses: 30,
+        matches: [],
+      ),
+      CandidateResult(
+        candidateId: '4',
+        name: 'Dária',
+        party: 'DC',
+        scorePercent: 100,
+        rank: 1,
+        countedTheses: 9,
+        answeredTheses: 30,
+        matches: [],
+      ),
+      CandidateResult(
+        candidateId: '5',
+        name: 'Ana',
+        party: 'DC',
+        scorePercent: 75,
+        rank: 2,
+        countedTheses: 4,
+        answeredTheses: 30,
+        matches: [],
+      ),
+    ];
+    QuizSession.instance.selectedCandidateIds = {'1', '2', '3', '4', '5'};
+    final originalResults = List.of(QuizSession.instance.results);
+
+    await pump(tester, ResultsPage(analytics: analytics));
+
+    const expectedOrder = ['Dária', 'Ana', 'Bruno', 'Zélia', 'Aline'];
+    for (var i = 1; i < expectedOrder.length; i++) {
+      expect(tester.getTopLeft(find.text(expectedOrder[i - 1])).dy,
+          lessThan(tester.getTopLeft(find.text(expectedOrder[i])).dy));
+    }
+    expect(find.text('Candidatura não selecionada'), findsNothing);
+    expect(find.text('0.0%'), findsOneWidget);
+    expect(find.text('—'), findsOneWidget);
+    expect(QuizSession.instance.results, orderedEquals(originalResults));
     expect(tester.takeException(), isNull);
   });
 

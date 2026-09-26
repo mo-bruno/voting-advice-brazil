@@ -40,4 +40,6 @@ Para cada candidatura e tese, o relatório separa categorias binárias, condicio
 1. perguntas ativas em que ambas possuem posição categórica;
 2. entre essas, perguntas em que uma concorda e a outra discorda.
 
-O denominador é sempre explícito. A cobertura, e não apenas o percentual de afinidade, deve acompanhar qualquer resultado. Esta metodologia documenta uma revisão automatizada; aprovação editorial humana e teste de compreensão com participantes continuam fora do escopo.
+O percentual do quiz mantém os pesos atribuídos pelo usuário e considera somente perguntas respondidas para as quais a candidatura possui posição categórica documentada. Perguntas sem posição comparável ficam fora do cálculo; nove concordâncias em nove respostas comparáveis resultam em 100%, mesmo que o usuário tenha respondido 30 perguntas.
+
+A tela principal de resultados apresenta foto, nome, partido e percentual em ordem decrescente, sem contagens de respostas comparáveis nem explicações extensas nos cartões. Candidaturas sem respostas comparáveis exibem `—` e aparecem no final. O denominador comparável, a cobertura e as posições ausentes permanecem disponíveis na comparação de respostas, junto às evidências. A ordenação não constitui recomendação de voto.
