@@ -48,13 +48,20 @@ mistas e 254 casos sem manifestação suficiente no escopo exato. Nenhuma das
 910 células está pendente. Em 20 dos 78 pares de candidaturas não existe tese
 publicada com posição categórica de ambos. Consulte os limites e decisões em
 [data/theses/2026/REVIEW.md](data/theses/2026/REVIEW.md) antes de interpretar
-os resultados como uma comparação completa. A interface apresenta candidaturas
-em ordem alfabética, sem destacar vencedor nem recomendar voto.
+os resultados como uma comparação completa. A tela principal mostra foto,
+nome, partido e percentual de cada candidatura, do maior percentual para o
+menor, sem recomendar voto. Candidaturas sem respostas comparáveis exibem `—`
+e aparecem no final da lista.
 
-Cada resultado informa quantas respostas possuem evidência comparável no
-plano. Ausência de evidência não equivale a discordância: candidaturas sem base
-comparável não recebem colocação nem porcentagem na interface. As fontes e os
-trechos dos planos podem ser consultados na comparação de respostas.
+O cálculo mantém os pesos das respostas e considera somente perguntas
+respondidas pelo usuário com posição categórica documentada no plano da
+candidatura. Concordar nas nove respostas comparáveis resulta em 100%, mesmo
+que o usuário tenha respondido 30 perguntas. Ausência de evidência não equivale
+a discordância e não entra no denominador.
+
+Os cartões não exibem contagens de respostas comparáveis nem explicações
+extensas. A cobertura, as posições ausentes, as fontes e os trechos dos planos
+podem ser consultados na comparação de respostas.
 
 Atualizações de dados passam pelos testes do backend e acionam o deploy.
 O carregamento reconcilia candidaturas, posições e evidências; preserva

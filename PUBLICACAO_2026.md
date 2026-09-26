@@ -17,7 +17,7 @@ A proteção de `main` exige uma aprovação de outra pessoa. Não usar merge ad
 3. Publicar revisão intermediária com filtros e o ano anterior; mover 100% do tráfego para ela antes de adicionar 2026.
 4. Carregar o snapshot 2026 transacionalmente; só depois ativar a edição 2026.
 5. Publicar a interface após sucesso do backend, usando o mesmo commit.
-6. Conferir saúde, somente 13 candidaturas de 2026, 30 perguntas, fotos, cobertura e fontes. Não criar mensagens comunitárias de teste em produção.
+6. Conferir saúde, somente 13 candidaturas de 2026 e 30 perguntas. Nos resultados, verificar foto, nome, partido e percentual em ordem decrescente, com `—` e posição final para candidaturas sem respostas comparáveis. Conferir cobertura, posições ausentes e fontes na comparação de respostas. Não criar mensagens comunitárias de teste em produção.
 
 Republicações manuais devem iniciar o workflow `Deploy Backend` em `main`; a interface não tem disparo manual independente. O workflow web recebe o commit exato do backend concluído com sucesso.
 

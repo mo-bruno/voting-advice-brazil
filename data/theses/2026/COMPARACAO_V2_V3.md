@@ -21,7 +21,7 @@ Dezessete perguntas foram acrescentadas: 12 no núcleo e cinco complementares.
 - Economia e serviços públicos: Petrobras integrada, PPPs na educação, capacidade privada ociosa no SUS, voucher-creche, voucher escolar, estabilidade ampla no serviço público e idade mínima da aposentadoria indexada à expectativa de vida.
 - Instituições e relações exteriores: Mercosul multidimensional, escolha de ministros do STF por voto popular, extinção dos fundos Partidário e Eleitoral, capital majoritariamente privado em laboratório nacional de IA, relações diplomáticas com Israel, negociado sobre legislado, revogação do Novo Ensino Médio, saída do BRICS, proibição de investimento estrangeiro e extinção do Senado.
 
-As formulações sobre estabilidade, Mercosul, fundos públicos, capital do laboratório de IA e Senado são complementares: possuem exatamente uma concordância e uma discordância categóricas. A baixa cobertura permanece visível no resultado.
+As formulações sobre estabilidade, Mercosul, fundos públicos, capital do laboratório de IA e Senado são complementares: possuem exatamente uma concordância e uma discordância categóricas. A baixa cobertura permanece visível na comparação de respostas.
 
 ## Rejeições e não duplicação
 
@@ -33,4 +33,4 @@ Essa etapa evita aumentar artificialmente a influência de um mesmo tema no scor
 
 A média de perguntas com posição categórica comum por par de candidaturas passou de 1,09 para 2,53; o máximo passou de oito para 13. Ainda assim, 20 pares não têm base categórica comum e somente 34 dos 78 pares apresentam ao menos uma oposição direta.
 
-A expansão melhora a variedade e a cobertura do piloto, mas não torna todos os planos igualmente detalhados. O denominador comparável continua sendo exibido para cada resultado, e ausência de evidência não vira discordância.
+A expansão melhora a variedade e a cobertura do piloto, mas não torna todos os planos igualmente detalhados. O denominador comparável continua disponível na comparação de respostas, e ausência de evidência não vira discordância. A tela principal mostra foto, nome, partido e percentual em ordem decrescente, sem contagens de respostas comparáveis nos cartões; candidaturas sem respostas comparáveis exibem `—` e ficam no final da lista. Essa ordenação não constitui recomendação de voto.
