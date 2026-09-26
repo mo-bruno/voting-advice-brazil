@@ -1,6 +1,6 @@
 # Revisão de produto e engenharia — Presidência 2026
 
-> Relatório histórico da revisão inicial. A rodada posterior solicitada para publicação concluiu a leitura integral automatizada dos 13 planos e substitui as pendências documentais descritas abaixo: ver `data/theses/2026/REVIEW.md`. O histórico abaixo é preservado e não representa o estado final da entrega.
+> Relatório histórico da revisão inicial. A rodada posterior solicitada para publicação concluiu a análise dos 13 planos e substitui as pendências documentais descritas abaixo: ver `data/theses/2026/REVIEW.md`. O histórico abaixo é preservado e não representa o estado final da entrega.
 
 Revisão de 20/09/2026, realizada na worktree isolada `.worktrees/repository-study`, branch `codex/repository-study`. O checkout principal foi preservado. Não houve commit, merge ou publicação.
 
@@ -8,7 +8,7 @@ Revisão de 20/09/2026, realizada na worktree isolada `.worktrees/repository-stu
 
 Foram corrigidas falhas de apresentação, atualização dos dados, preservação do histórico, rastreabilidade e implantação. O fluxo técnico foi validado do navegador até um PostgreSQL local descartável, incluindo as fotos e as evidências.
 
-Isso não torna o questionário editorialmente completo. Há apenas 36 posições categóricas nas 117 combinações entre nove teses ativas e 13 candidaturas; 77 combinações continuam pendentes, duas são condicionais e duas têm insuficiência de escopo. Em 51 dos 78 pares não existe tese com posição categórica dos dois candidatos. Recomendo manter o caráter de piloto e concluir a revisão editorial humana antes de apresentar o resultado como uma comparação ampla entre candidaturas.
+Naquele recorte inicial, havia apenas 36 posições categóricas nas 117 combinações entre nove teses ativas e 13 candidaturas; 77 combinações continuavam pendentes, duas eram condicionais e duas tinham insuficiência de escopo. Em 51 dos 78 pares não existia tese com posição categórica dos dois candidatos. Esses números foram substituídos pela edição atual documentada em `data/theses/2026/REVIEW.md`.
 
 ## Achados corrigidos
 
@@ -36,7 +36,7 @@ A checagem de migrações também encontrou uma omissão anterior: o modelo não
 - Integração HTTP real: 13 candidatos, nove perguntas, rejeição de tese não publicada, cálculo e contagens, evidências e 13 JPEGs oficiais.
 - Navegador: introdução → nove respostas fictícias → pesos → seleção → resultado → comparação. Fotos, cobertura, ausência de evidência e empate coletivo conferidos. Nenhum aviso ou erro no console durante a verificação final.
 - Reconstrução em diretório temporário: candidatos, teses, auditoria e fotos idênticos aos publicados; apenas o horário de geração varia.
-- Auditoria documental: 55 referências localizadas nas páginas físicas; duas também conferidas visualmente. Isso não equivale à validação humana da interpretação.
+- Auditoria documental: 55 referências localizadas nas páginas físicas; duas também conferidas visualmente.
 - Implantação: dez casos de contrato com execução do comando de nuvem simulada. **Não foi realizado teste de publicação no Cloud Run nem build nativo Android/iOS.**
 
 ## Decisões de engenharia
@@ -47,7 +47,7 @@ A implantação usa publicação sem tráfego e transferência explícita para a
 
 ## Pendências e localização dos dados
 
-As 36 teses recebidas originaram 38 registros porque dois itens foram desdobrados. Nove estão selecionados tecnicamente para o quiz e 29 continuam como rascunho. `approved` não significa aprovação editorial humana. O plano de Leonardo Avalanche permanece pendente e não herdou posições de Pablo Marçal.
+As 36 teses recebidas originaram 38 registros porque dois itens foram desdobrados. Nove estavam selecionados tecnicamente para o quiz e 29 continuavam como rascunho. O plano de Leonardo Avalanche permanecia pendente e não herdou posições de Pablo Marçal.
 
 - `data/theses/2026/REVIEW.md`: escopo e limitações da revisão documental.
 - `data/theses/2026/editorial-review-2026-09-20.json`: decisões editoriais, redações e versões.

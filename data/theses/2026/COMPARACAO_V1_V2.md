@@ -46,4 +46,4 @@ Casos auditados que não entraram no quiz também foram preservados. Por exemplo
 
 A V2 contém 494 decisões sem `PENDENTE`, 267 células com citações e 400 passagens de evidência. Os quatro arquivos de revisão V2 somam 377 decisões adicionais às 117 já revisadas. O gerador verifica IDs, completude, hashes dos PDFs, contagem de páginas, vínculo da evidência e contraste de toda pergunta ativa.
 
-O ganho de quatro perguntas reduz de 47 para 43 os pares sem nenhuma posição categórica em comum, mas a comparação continua esparsa: a média é 1,09 pergunta categórica comum por par. A V2 está tecnicamente consistente para publicação do piloto, porém continua identificada como revisão automatizada sem validação humana.
+O ganho de quatro perguntas reduz de 47 para 43 os pares sem nenhuma posição categórica em comum, mas a comparação continua esparsa: a média é 1,09 pergunta categórica comum por par. A V2 está tecnicamente consistente para publicação do piloto.

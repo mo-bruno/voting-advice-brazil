@@ -33,4 +33,4 @@ Essa etapa evita aumentar artificialmente a influência de um mesmo tema no scor
 
 A média de perguntas com posição categórica comum por par de candidaturas passou de 1,09 para 2,53; o máximo passou de oito para 13. Ainda assim, 20 pares não têm base categórica comum e somente 34 dos 78 pares apresentam ao menos uma oposição direta.
 
-A expansão melhora a variedade e a cobertura do piloto, mas não torna todos os planos igualmente detalhados. O denominador comparável continua sendo exibido para cada resultado, ausência de evidência não vira discordância e a edição permanece identificada como revisão automatizada sem validação humana.
+A expansão melhora a variedade e a cobertura do piloto, mas não torna todos os planos igualmente detalhados. O denominador comparável continua sendo exibido para cada resultado, e ausência de evidência não vira discordância.

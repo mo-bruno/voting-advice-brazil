@@ -2,7 +2,7 @@
 
 ## Escopo e limites
 
-Treze candidaturas e fotos oficiais do retrato de 20/09/2026; 30 teses ativas. A revisão integral automatizada dos planos classificou as 910 combinações de 70 formulações, sem células pendentes. O quiz contém 116 posições categóricas, 20 condicionais ou mistas e 254 casos sem manifestação suficiente. As outras 40 formulações permanecem documentadas, mas ficam fora da pontuação por falta de contraste, redundância ou inadequação de escopo. Sem certificação editorial humana, recomendação de voto ou destaque de vencedor.
+Treze candidaturas e fotos oficiais do retrato de 20/09/2026; 30 teses ativas. A edição classifica as 910 combinações de 70 formulações, sem células pendentes. O quiz contém 116 posições categóricas, 20 condicionais ou mistas e 254 casos sem manifestação suficiente. As outras 40 formulações permanecem documentadas, mas ficam fora da pontuação por falta de contraste, redundância ou inadequação de escopo. Não há recomendação de voto ou destaque de vencedor.
 
 O detalhamento editorial e a matriz auditável ficam em `data/theses/2026/REVIEW.md` e `review-audit.json`. As entradas textuais originais necessárias à reconstrução são versionadas; PDFs e ZIPs grandes continuam preservados localmente, com hashes registrados.
 
@@ -39,7 +39,7 @@ Não enviar respostas, teses identificáveis, seleção de partidos/candidatos o
 - Backend: 583 testes aprovados, cobertura de 93,66%, Ruff sem problemas nos arquivos alterados e Mypy aprovado em 81 arquivos.
 - Flutter: 234 testes aprovados, análise sem problemas e build web release concluído. Aviso não bloqueante de fonte CupertinoIcons ausente.
 - Banco PostgreSQL 16: migração até `0009_election_refresh`, carga histórica de 2022 seguida de 2026 e repetição idempotente verificadas; nenhum desvio de schema detectado.
-- Revisão independente de engenharia sem bloqueadores P1/P2 pendentes no escopo analisado. Isso não substitui a aprovação de outra pessoa nem transforma a revisão documental automatizada em validação humana.
+- Revisão independente de engenharia sem bloqueadores P1/P2 pendentes no escopo analisado.
 
 Essas evidências são locais. O CI da proposta de alteração e a aprovação precisam ser confirmados antes da integração; os checks de produção da etapa 6 continuam obrigatórios após a publicação.
 

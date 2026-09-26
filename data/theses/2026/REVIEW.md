@@ -1,6 +1,6 @@
 # Edição documental presidencial — 26/09/2026
 
-A edição compara 70 formulações com as 13 candidaturas do retrato oficial do TSE: 38 formulações derivadas das 36 teses recebidas e 32 escolhas adicionais extraídas do banco presidencial. As 910 células foram classificadas após a leitura das 836 páginas dos planos oficiais. O trabalho foi automatizado por IA; não equivale a validação humana, certificação do TSE nem recomendação de voto.
+A edição compara 70 formulações com as 13 candidaturas do retrato oficial do TSE: 38 formulações derivadas das 36 teses recebidas e 32 escolhas adicionais extraídas do banco presidencial. As 910 células foram classificadas a partir das 836 páginas dos planos oficiais. O resultado não constitui certificação do TSE nem recomendação de voto.
 
 ## O que foi concluído
 

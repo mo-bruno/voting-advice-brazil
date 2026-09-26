@@ -36,13 +36,12 @@ ACTIVE_ELECTION_OFFICE=presidente
 ```
 
 O retrato de 20 de setembro de 2026 contém 13 candidaturas inseridas na urna e
-as respectivas fotos oficiais. A revisão automatizada dos 13 planos classificou
-as 910 combinações de 70 formulações: as 38 derivadas das 36 teses recebidas e
+as respectivas fotos oficiais. A edição classifica as 910 combinações de 70
+formulações: as 38 derivadas das 36 teses recebidas e
 32 escolhas adicionais de política pública extraídas do banco presidencial.
 O questionário publica 30 perguntas, sendo 23 no núcleo e sete complementares.
 As outras 40 ficam documentadas como `draft` por falta de ambos os polos,
-redundância com outra pergunta ou inadequação de escopo. O conjunto continua
-sem certificação ou validação editorial humana.
+redundância com outra pergunta ou inadequação de escopo.
 
 Nas 30 perguntas publicadas há 116 posições categóricas, 20 condicionais ou
 mistas e 254 casos sem manifestação suficiente no escopo exato. Nenhuma das

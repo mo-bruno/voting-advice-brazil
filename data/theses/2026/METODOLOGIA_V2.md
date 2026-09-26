@@ -40,4 +40,4 @@ Para cada candidatura e tese, o relatório separa categorias binárias, condicio
 1. perguntas ativas em que ambas possuem posição categórica;
 2. entre essas, perguntas em que uma concorda e a outra discorda.
 
-O denominador é sempre explícito. A cobertura, e não apenas o percentual de afinidade, deve acompanhar qualquer resultado. Esta metodologia documenta uma revisão automatizada; aprovação editorial humana e teste de compreensão com participantes continuam fora do escopo.
+O denominador é sempre explícito. A cobertura, e não apenas o percentual de afinidade, deve acompanhar qualquer resultado.

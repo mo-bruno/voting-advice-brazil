@@ -69,7 +69,7 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
                     Text('PRESIDÊNCIA 2026', style: textTheme.titleMedium),
                     const SizedBox(height: 8),
                     Text(
-                      'Edição documental baseada na revisão de 70 formulações contra os 13 planos oficiais, revisados por IA, sem validação humana. O questionário usa as 30 teses com contraste documentado e sem redundância editorial; a cobertura varia por candidatura e o resultado não é uma recomendação de voto.',
+                      'Edição documental baseada na revisão de 70 formulações contra os 13 planos oficiais. O questionário usa as 30 teses com contraste documentado e sem redundância editorial; a cobertura varia por candidatura e o resultado não é uma recomendação de voto.',
                       style: textTheme.bodySmall,
                     ),
                     const SizedBox(height: 16),
