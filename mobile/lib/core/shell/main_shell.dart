@@ -45,7 +45,7 @@ class MainShell extends StatefulWidget {
   /// próprios testes. Montá-las de verdade aqui exigiria Firebase e rede, o que
   /// testaria as dependências delas em vez do comportamento daqui.
   @visibleForTesting
-  final List<Widget Function()>? pageBuilders;
+  final List<Widget Function(VoidCallback onStartQuiz)>? pageBuilders;
 
   /// Lê a aba de abertura dos `arguments` da rota. Argumento ausente ou de
   /// outro tipo cai em `inicio`, sem erro.
@@ -54,8 +54,12 @@ class MainShell extends StatefulWidget {
 
   /// A ligação entre aba e tela. Separada do `build` para poder ser verificada
   /// sem montar nada.
-  static Widget defaultPageFor(MainShellTab tab) => switch (tab) {
-        MainShellTab.inicio => const HomePage(),
+  static Widget defaultPageFor(
+    MainShellTab tab, {
+    required VoidCallback onStartQuiz,
+  }) =>
+      switch (tab) {
+        MainShellTab.inicio => HomePage(onStartQuiz: onStartQuiz),
         MainShellTab.acompanhar => const PoliticalActorSearchPage(),
         MainShellTab.quiz => const QuizIntroPage(),
         MainShellTab.comunidade => const CommunityFeedPage(),
@@ -87,9 +91,14 @@ class _MainShellState extends State<MainShell> {
   Widget _pageFor(int index) {
     final builders = widget.pageBuilders;
     return _pages[index] ??= builders != null
-        ? builders[index]()
-        : MainShell.defaultPageFor(MainShellTab.values[index]);
+        ? builders[index](_openQuiz)
+        : MainShell.defaultPageFor(
+            MainShellTab.values[index],
+            onStartQuiz: _openQuiz,
+          );
   }
+
+  void _openQuiz() => _select(MainShellTab.quiz.index);
 
   void _select(int index) {
     // Tocar na aba já selecionada não faz nada: as telas de detalhe empilham

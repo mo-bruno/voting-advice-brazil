@@ -76,16 +76,16 @@ void main() {
         theme: AppTheme.dark,
         routes: {
           '/': (context) => MainShell(
-            initialTab: MainShell.tabFromArguments(
-              ModalRoute.of(context)?.settings.arguments,
-            ),
-            pageBuilders: [
-              () => const Scaffold(body: Text('tela-inicio')),
-              () => const Scaffold(body: Text('tela-acompanhar')),
-              () => const Scaffold(body: Text('tela-quiz')),
-              () => const Scaffold(body: Text('tela-comunidade')),
-            ],
-          ),
+                initialTab: MainShell.tabFromArguments(
+                  ModalRoute.of(context)?.settings.arguments,
+                ),
+                pageBuilders: [
+                  (_) => const Scaffold(body: Text('tela-inicio')),
+                  (_) => const Scaffold(body: Text('tela-acompanhar')),
+                  (_) => const Scaffold(body: Text('tela-quiz')),
+                  (_) => const Scaffold(body: Text('tela-comunidade')),
+                ],
+              ),
           '/results': (_) => const ResultsPage(),
         },
       ),

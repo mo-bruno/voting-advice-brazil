@@ -31,11 +31,11 @@ class _Stub extends StatelessWidget {
       Scaffold(body: Center(child: Text(label)));
 }
 
-List<Widget Function()> _stubs() => [
-      () => const _Stub('tela-inicio'),
-      () => const _Stub('tela-acompanhar'),
-      () => const _Stub('tela-quiz'),
-      () => const _Stub('tela-comunidade'),
+List<Widget Function(VoidCallback)> _stubs() => [
+      (_) => const _Stub('tela-inicio'),
+      (_) => const _Stub('tela-acompanhar'),
+      (_) => const _Stub('tela-quiz'),
+      (_) => const _Stub('tela-comunidade'),
     ];
 
 void main() {

@@ -40,10 +40,10 @@ void main() {
       home: MainShell(
         initialTab: MainShellTab.quiz,
         pageBuilders: [
-          () => const _Tab('tela-inicio'),
-          () => const _Tab('tela-acompanhar'),
-          () => const _Tab('tela-quiz'),
-          () => const _Tab('tela-comunidade'),
+          (_) => const _Tab('tela-inicio'),
+          (_) => const _Tab('tela-acompanhar'),
+          (_) => const _Tab('tela-quiz'),
+          (_) => const _Tab('tela-comunidade'),
         ],
       ),
     ));
@@ -100,10 +100,10 @@ void main() {
       theme: AppTheme.dark,
       home: MainShell(
         pageBuilders: [
-          () => const HomePage(),
-          () => const _Tab('tela-acompanhar'),
-          () => const _Tab('tela-quiz'),
-          () => const _Tab('tela-comunidade'),
+          (onStartQuiz) => HomePage(onStartQuiz: onStartQuiz),
+          (_) => const _Tab('tela-acompanhar'),
+          (_) => const _Tab('tela-quiz'),
+          (_) => const _Tab('tela-comunidade'),
         ],
       ),
     ));

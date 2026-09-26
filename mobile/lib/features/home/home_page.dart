@@ -13,10 +13,15 @@ import 'widgets/news_states.dart';
 const String _camaraNewsUrl = 'https://www.camara.leg.br/noticias';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, NewsSession? newsSession, LinkOpener? openLink})
-      : _newsSession = newsSession,
+  const HomePage({
+    super.key,
+    required this.onStartQuiz,
+    NewsSession? newsSession,
+    LinkOpener? openLink,
+  })  : _newsSession = newsSession,
         _openLink = openLink;
 
+  final VoidCallback onStartQuiz;
   final NewsSession? _newsSession;
   final LinkOpener? _openLink;
 
@@ -62,6 +67,8 @@ class _HomePageState extends State<HomePage> {
                   builder: (context, _) => Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      _QuizInvitation(onPressed: widget.onStartQuiz),
+                      const SizedBox(height: 40),
                       const _SectionTitle(),
                       const SizedBox(height: 16),
                       const Text(
@@ -125,6 +132,56 @@ class _HomePageState extends State<HomePage> {
         }
         return widgets;
     }
+  }
+}
+
+class _QuizInvitation extends StatelessWidget {
+  const _QuizInvitation({required this.onPressed});
+
+  final VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return SizedBox(
+      width: double.infinity,
+      child: Card(
+        margin: EdgeInsets.zero,
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Icon(
+                Icons.how_to_vote_outlined,
+                size: 30,
+                color: theme.colorScheme.primary,
+              ),
+              const SizedBox(height: 24),
+              Text(
+                'Faça seu quiz agora',
+                style: theme.textTheme.headlineLarge?.copyWith(height: 1.08),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                'Descubra sua afinidade com as propostas para a eleição '
+                'presidencial de 2026.',
+                style: theme.textTheme.bodyMedium?.copyWith(height: 1.5),
+              ),
+              const SizedBox(height: 24),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: onPressed,
+                  child: const Text('Começar o quiz'),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

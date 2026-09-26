@@ -28,11 +28,25 @@ class _StubState extends State<_Stub> {
       Scaffold(body: Center(child: Text(widget.label)));
 }
 
-List<Widget Function()> _stubs() => [
-      () => const _Stub('tela-inicio'),
-      () => const _Stub('tela-acompanhar'),
-      () => const _Stub('tela-quiz'),
-      () => const _Stub('tela-comunidade'),
+List<Widget Function(VoidCallback)> _stubs() => [
+      (_) => const _Stub('tela-inicio'),
+      (_) => const _Stub('tela-acompanhar'),
+      (_) => const _Stub('tela-quiz'),
+      (_) => const _Stub('tela-comunidade'),
+    ];
+
+List<Widget Function(VoidCallback)> _stubsWithQuizInvitation() => [
+      (openQuiz) => Scaffold(
+            body: Center(
+              child: TextButton(
+                onPressed: openQuiz,
+                child: const Text('convite-quiz'),
+              ),
+            ),
+          ),
+      (_) => const _Stub('tela-acompanhar'),
+      (_) => const _Stub('tela-quiz'),
+      (_) => const _Stub('tela-comunidade'),
     ];
 
 Widget _wrap({MainShellTab tab = MainShellTab.inicio}) => MaterialApp(
@@ -72,6 +86,27 @@ void main() {
     await tester.pump();
 
     expect(find.text('tela-comunidade'), findsOneWidget);
+  });
+
+  testWidgets('convite da home troca para a aba Quiz', (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        theme: AppTheme.dark,
+        home: MainShell(pageBuilders: _stubsWithQuizInvitation()),
+      ),
+    );
+
+    await tester.tap(find.text('convite-quiz'));
+    await tester.pump();
+
+    expect(find.text('tela-quiz'), findsOneWidget);
+    expect(find.text('convite-quiz'), findsNothing);
+    expect(
+      tester
+          .widget<BottomNavigationBar>(find.byType(BottomNavigationBar))
+          .currentIndex,
+      MainShellTab.quiz.index,
+    );
   });
 
   testWidgets('aba visitada nao e recriada ao voltar', (tester) async {
@@ -139,13 +174,28 @@ void main() {
 
   group('defaultPageFor', () {
     test('cada aba aponta para a tela certa', () {
-      expect(MainShell.defaultPageFor(MainShellTab.inicio), isA<HomePage>());
-      expect(MainShell.defaultPageFor(MainShellTab.acompanhar),
-          isA<PoliticalActorSearchPage>());
       expect(
-          MainShell.defaultPageFor(MainShellTab.quiz), isA<QuizIntroPage>());
-      expect(MainShell.defaultPageFor(MainShellTab.comunidade),
-          isA<CommunityFeedPage>());
+        MainShell.defaultPageFor(MainShellTab.inicio, onStartQuiz: () {}),
+        isA<HomePage>(),
+      );
+      expect(
+        MainShell.defaultPageFor(
+          MainShellTab.acompanhar,
+          onStartQuiz: () {},
+        ),
+        isA<PoliticalActorSearchPage>(),
+      );
+      expect(
+        MainShell.defaultPageFor(MainShellTab.quiz, onStartQuiz: () {}),
+        isA<QuizIntroPage>(),
+      );
+      expect(
+        MainShell.defaultPageFor(
+          MainShellTab.comunidade,
+          onStartQuiz: () {},
+        ),
+        isA<CommunityFeedPage>(),
+      );
     });
   });
 }

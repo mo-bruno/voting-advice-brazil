@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
+import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:guia_eleitoral/features/home/news_session.dart';
 import 'package:guia_eleitoral/features/home/widgets/news_card.dart';
@@ -82,10 +83,16 @@ ApiClient _api(Object body, {int status = 200}) => ApiClient(
       client: _StubClient(body, status: status),
     );
 
-Widget _app(NewsSession session, {List<Uri>? opened}) {
+Widget _app(
+  NewsSession session, {
+  List<Uri>? opened,
+  VoidCallback? onStartQuiz,
+}) {
   return MaterialApp(
+    theme: AppTheme.dark,
     home: HomePage(
       newsSession: session,
+      onStartQuiz: onStartQuiz ?? () {},
       openLink: (uri) async {
         opened?.add(uri);
         return true;
@@ -95,6 +102,41 @@ Widget _app(NewsSession session, {List<Uri>? opened}) {
 }
 
 void main() {
+  testWidgets('mostra o convite para o quiz antes das noticias',
+      (tester) async {
+    await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
+    await tester.pumpAndSettle();
+
+    final invitation = find.text('Faça seu quiz agora');
+    final news = find.text('NOTÍCIAS DA SEMANA');
+
+    expect(invitation, findsOneWidget);
+    expect(
+      find.text(
+        'Descubra sua afinidade com as propostas para a eleição '
+        'presidencial de 2026.',
+      ),
+      findsOneWidget,
+    );
+    expect(
+        tester.getTopLeft(invitation).dy, lessThan(tester.getTopLeft(news).dy));
+  });
+
+  testWidgets('botao do convite inicia o quiz', (tester) async {
+    var starts = 0;
+    await tester.pumpWidget(
+      _app(
+        NewsSession.testOnly(api: _api(_payload)),
+        onStartQuiz: () => starts++,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    await tester.tap(find.text('Começar o quiz'));
+
+    expect(starts, 1);
+  });
+
   testWidgets('mostra os cards quando ha noticias', (tester) async {
     await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
     await tester.pumpAndSettle();
@@ -158,7 +200,10 @@ void main() {
     );
     await tester.pumpAndSettle();
 
-    await tester.tap(find.byType(NewsCard).first);
+    final firstCard = find.byType(NewsCard).first;
+    await tester.ensureVisible(firstCard);
+    await tester.pumpAndSettle();
+    await tester.tap(firstCard);
     await tester.pumpAndSettle();
 
     expect(opened.single, Uri.parse('https://example.org/a'));
@@ -193,5 +238,4 @@ void main() {
     expect(find.text('MATERIA SEM RESUMO'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
-
 }
