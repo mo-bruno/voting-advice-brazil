@@ -3,12 +3,27 @@ from uuid import UUID
 from pydantic import BaseModel, Field, field_validator
 
 
+class ExplanationSourceOut(BaseModel):
+    title: str
+    url: str
+
+    model_config = {"from_attributes": True}
+
+
+class ThesisExplanationOut(BaseModel):
+    paragraphs: list[str]
+    sources: list[ExplanationSourceOut]
+
+    model_config = {"from_attributes": True}
+
+
 class ThesisOut(BaseModel):
     id: int
     text: str
     theme_id: int
     theme_name: str
     coverage: float = Field(description="% candidatos com posição definida")
+    explanation: ThesisExplanationOut | None = None
 
     model_config = {"from_attributes": True}
 

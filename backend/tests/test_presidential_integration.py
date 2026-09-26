@@ -80,6 +80,11 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
                     "theses"
                 ]
                 assert {question["id"] for question in questions} == approved_ids
+                for question in questions:
+                    explanation = question["explanation"]
+                    assert len(explanation["paragraphs"]) >= 2
+                    assert explanation["sources"]
+                    assert all(source["url"].startswith("https://") for source in explanation["sources"])
                 # The community composer uses this catalogue too: a small
                 # presidential edition must not hide its one-question topics.
                 themes = client.get("/api/v1/themes").json()

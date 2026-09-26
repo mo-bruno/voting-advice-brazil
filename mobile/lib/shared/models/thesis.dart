@@ -1,9 +1,12 @@
+import 'thesis_explanation.dart';
+
 enum ThesisAnswer { agree, neutral, disagree, skipped, unanswered }
 
 class Thesis {
   final int id;
   final String title;
   final String category;
+  final ThesisExplanation? explanation;
   ThesisAnswer answer;
   bool doubleWeight;
 
@@ -11,6 +14,7 @@ class Thesis {
     required this.id,
     required this.title,
     required this.category,
+    this.explanation,
     this.answer = ThesisAnswer.unanswered,
     this.doubleWeight = false,
   });
@@ -20,6 +24,11 @@ class Thesis {
       id: json['id'] as int,
       title: json['text'] as String,
       category: json['theme_name'] as String,
+      explanation: json['explanation'] == null
+          ? null
+          : ThesisExplanation.fromJson(
+              json['explanation'] as Map<String, dynamic>,
+            ),
     );
   }
 

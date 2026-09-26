@@ -1,0 +1,518 @@
+{
+  "election_year": 2026,
+  "updated_at": "2026-09-26",
+  "explanations": [
+    {
+      "thesis_id": "BR26-T001",
+      "thesis_version": 2,
+      "thesis_text": "O governo federal deve manter o arcabouço fiscal previsto na Lei Complementar nº 200/2023.",
+      "paragraphs": [
+        "Arcabouço fiscal é o nome de um conjunto de regras para as contas do governo federal. Ele estabelece limites para o crescimento de parte dos gastos e metas para a diferença entre o dinheiro que o governo arrecada e o que gasta, sem contar os juros da dívida.",
+        "A lei de 2023 substituiu o antigo teto de gastos. O crescimento permitido para as despesas passou a considerar, além da inflação — o aumento médio dos preços —, o crescimento da arrecadação, que é o dinheiro que o governo recebe, principalmente com impostos. O objetivo declarado é manter a capacidade do governo de pagar suas despesas e dívidas ao longo do tempo.",
+        "A pergunta propõe continuar com esse conjunto de regras. Ela trata da forma de limitar e planejar os gastos, sem definir quanto deve ser destinado a cada área, como saúde ou educação."
+      ],
+      "sources": [
+        {
+          "title": "Lei Complementar nº 200/2023 — regras fiscais",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp200.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T002",
+      "thesis_version": 2,
+      "thesis_text": "Todas as empresas estatais devem ser transferidas ao controle privado.",
+      "paragraphs": [
+        "Uma empresa estatal é uma empresa controlada pelo poder público. Algumas pertencem totalmente ao governo; outras têm também sócios privados, mas o governo mantém o controle das decisões.",
+        "Transferir ao controle privado significa que pessoas ou empresas particulares passariam a comandar essas decisões. Essa mudança é conhecida como privatização. Dependendo do processo, o governo pode vender toda a sua participação ou continuar como sócio sem controlar a empresa.",
+        "A palavra “todas” é importante nesta pergunta: a proposta abrange o conjunto das estatais, e não a venda de uma empresa específica. A tese não estabelece os preços, os compradores nem as regras de cada transferência."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 13.303/2016 — empresas estatais",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2016/lei/l13303.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T003",
+      "thesis_version": 2,
+      "thesis_text": "As mudanças introduzidas pela reforma trabalhista de 2017 devem ser revogadas.",
+      "paragraphs": [
+        "A reforma trabalhista de 2017 foi uma lei que mudou diversas regras da CLT, o conjunto de leis que organiza grande parte das relações entre empregados e empregadores no Brasil.",
+        "Entre as mudanças estavam regras sobre divisão das férias, trabalho realizado de forma alternada, com períodos de atividade e de inatividade, e situações em que acordos de trabalho podem prevalecer sobre a regra geral da lei. A reforma foi apresentada com o objetivo de adequar a legislação a novas formas de trabalho.",
+        "Revogar significa retirar a validade de uma regra. Nesta tese, a proposta é desfazer as mudanças introduzidas pela reforma. As regras que passariam a valer e a transição para elas dependeriam do texto aprovado para essa mudança."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 13.467/2017 — reforma trabalhista",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T005",
+      "thesis_version": 2,
+      "thesis_text": "O limite legal geral da jornada de trabalho deve ser de 30 horas semanais, sem redução salarial.",
+      "paragraphs": [
+        "Jornada de trabalho é o tempo que uma pessoa trabalha. O limite geral previsto na Constituição é de 44 horas por semana, embora existam profissões e acordos com jornadas menores.",
+        "A proposta desta pergunta é reduzir esse limite geral para 30 horas semanais, mantendo o salário. Por exemplo, uma pessoa que trabalhasse mais de 30 horas dentro da jornada normal passaria a ter uma jornada menor sem que seu salário fosse reduzido por isso.",
+        "A tese define o total de horas da semana. Ela não determina, por si só, em quantos dias essas horas seriam distribuídas: 30 horas poderiam ser organizadas de maneiras diferentes."
+      ],
+      "sources": [
+        {
+          "title": "Constituição Federal, artigo 7º — jornada de trabalho",
+          "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T011",
+      "thesis_version": 3,
+      "thesis_text": "O Bolsa Família deve ser substituído, para seus beneficiários em idade economicamente ativa, por um programa público de trabalho remunerado.",
+      "paragraphs": [
+        "O Bolsa Família transfere dinheiro a famílias de baixa renda para ajudar nas despesas do dia a dia. O programa tem regras de renda e compromissos ligados à saúde e à educação; o recebimento não funciona como salário pago por um trabalho prestado ao governo.",
+        "Um programa público de trabalho remunerado ofereceria atividades de trabalho com pagamento, organizadas ou financiadas pelo poder público.",
+        "A tese propõe trocar o Bolsa Família por esse tipo de programa para seus beneficiários em idade de trabalhar. Ela se refere a esse grupo específico, sem afirmar que crianças e idosos teriam de trabalhar. Também não detalha quais seriam as atividades, o pagamento ou as regras para quem não pudesse trabalhar."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 14.601/2023 — Bolsa Família",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14601.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T015",
+      "thesis_version": 2,
+      "thesis_text": "A idade mínima para responder criminalmente como adulto deve ser de 16 anos em crimes graves.",
+      "paragraphs": [
+        "Responder criminalmente como adulto significa ser julgado segundo as regras penais aplicadas aos adultos. No Brasil, essa responsabilidade começa aos 18 anos.",
+        "Adolescentes que cometem atos definidos como crimes já podem responder por eles, mas seguem as regras do Estatuto da Criança e do Adolescente. Essas regras preveem medidas como acompanhamento, prestação de serviços à comunidade e, em situações previstas em lei, internação.",
+        "A proposta é que pessoas de 16 e 17 anos passem a responder pelo sistema penal adulto quando o caso for considerado um crime grave. A pergunta não apresenta a lista de crimes que entrariam nessa categoria."
+      ],
+      "sources": [
+        {
+          "title": "Estatuto da Criança e do Adolescente, artigos 103 a 112",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T017",
+      "thesis_version": 2,
+      "thesis_text": "O número de escolas cívico-militares deve aumentar.",
+      "paragraphs": [
+        "Escolas cívico-militares são escolas públicas que adotam uma forma de gestão com participação de profissionais da educação e de militares. As funções de cada grupo variam conforme o programa.",
+        "Nesse modelo, militares podem atuar na organização, na disciplina e em atividades da rotina escolar, enquanto professores e equipes pedagógicas continuam responsáveis pelo ensino. Uma escola cívico-militar não é necessariamente um colégio das Forças Armadas nem uma escola para formar militares.",
+        "A tese propõe aumentar a quantidade de escolas que adotam esse modelo. Ela trata da forma de organizar e administrar a escola, e não apenas de acrescentar uma matéria ao currículo."
+      ],
+      "sources": [
+        {
+          "title": "Secretaria da Educação do Paraná — modelo cívico-militar",
+          "url": "https://www.educacao.pr.gov.br/colegios_civico_militares"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T018",
+      "thesis_version": 2,
+      "thesis_text": "A reserva de vagas com base em critérios raciais na educação e no serviço público deve ser encerrada.",
+      "paragraphs": [
+        "Reserva de vagas, também chamada de cota, separa uma parte das oportunidades de estudo ou de ingresso no serviço público para determinados grupos. Nas cotas raciais, a participação depende de critérios de raça ou etnia previstos nas regras da seleção.",
+        "Essas políticas buscam ampliar o acesso de grupos que enfrentam desigualdades. Na educação, critérios raciais podem estar combinados com outros, como ter estudado em escola pública. A reserva não dispensa a pessoa de participar da seleção e cumprir seus requisitos.",
+        "A tese propõe encerrar o uso do critério racial tanto na educação quanto no serviço público. Ela não afirma, por si só, que toda reserva baseada em outros critérios, como renda ou deficiência, também seria encerrada."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 14.723/2023 — cotas no ensino federal",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14723.htm"
+        },
+        {
+          "title": "Lei nº 15.142/2025 — cotas no serviço público federal",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15142.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T026A",
+      "thesis_version": 2,
+      "thesis_text": "A gestão de serviços públicos de saúde por organizações sociais deve ser encerrada.",
+      "paragraphs": [
+        "Organização social, ou OS, é uma entidade privada sem fins lucrativos que recebe uma qualificação do poder público. “Sem fins lucrativos” significa que os resultados financeiros não são distribuídos como lucro aos seus integrantes.",
+        "Na saúde, uma OS pode assumir a gestão de uma unidade ou de serviços por meio de um contrato com o governo. Esse contrato define atividades, metas e responsabilidades. O serviço continua fazendo parte do atendimento público, mesmo sendo administrado por essa entidade.",
+        "A proposta da pergunta é encerrar essa forma de gestão. Isso é diferente de fechar o serviço de saúde: seria necessário definir quem passaria a administrá-lo e como ocorreria a mudança."
+      ],
+      "sources": [
+        {
+          "title": "Ministério da Saúde — contratos de gestão com organizações sociais",
+          "url": "https://www.gov.br/saude/pt-br/acesso-a-informacao/licitacoes-e-contratos/contratos-de-gestao"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T026B",
+      "thesis_version": 2,
+      "thesis_text": "A gestão de serviços públicos de saúde por empresas em parcerias público-privadas deve ser encerrada.",
+      "paragraphs": [
+        "Parceria público-privada, ou PPP, é um contrato de longo prazo entre o governo e uma empresa. A empresa assume obrigações, que podem envolver obras, equipamentos, manutenção ou serviços, e recebe pagamentos conforme as condições do contrato.",
+        "Na saúde, uma PPP pode abranger a administração de instalações e de serviços de uma unidade pública. O que fica sob responsabilidade da empresa depende do contrato. Isso não significa, por si só, que o paciente do SUS passe a pagar pelo atendimento.",
+        "Esta pergunta propõe encerrar a gestão de serviços públicos de saúde por empresas nesse tipo de parceria. Ela se refere às PPPs, que têm regras diferentes dos contratos com organizações sociais sem fins lucrativos."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 11.079/2004 — parcerias público-privadas",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11079compilado.htm"
+        },
+        {
+          "title": "Lei nº 8.080/1990, artigos 24 a 26 — participação complementar no SUS",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034A",
+      "thesis_version": 3,
+      "thesis_text": "O Conselho de Segurança da ONU deve continuar existindo.",
+      "paragraphs": [
+        "A ONU, Organização das Nações Unidas, reúne países para tratar de assuntos internacionais. O Conselho de Segurança é uma parte da ONU que tem a responsabilidade principal de lidar com ameaças à paz e à segurança entre países.",
+        "O Conselho pode aprovar medidas como sanções, que são restrições impostas a um país ou a determinados responsáveis, e autorizar ações previstas na Carta da ONU. Ele tem 15 integrantes. Cinco têm assento permanente e poder de veto, que permite bloquear certas decisões.",
+        "A tese pergunta se esse órgão deve continuar existindo. Manter sua existência não significa necessariamente concordar com todas as suas decisões ou com as regras atuais de composição e votação."
+      ],
+      "sources": [
+        {
+          "title": "ONU — funções do Conselho de Segurança (em inglês)",
+          "url": "https://main.un.org/securitycouncil/en/content/functions-and-powers"
+        },
+        {
+          "title": "ONU — votação e poder de veto (em inglês)",
+          "url": "https://main.un.org/securitycouncil/en/content/voting-system"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T034B",
+      "thesis_version": 2,
+      "thesis_text": "O Conselho de Segurança da ONU deve ser reformado.",
+      "paragraphs": [
+        "O Conselho de Segurança é o órgão da ONU que trata de ameaças à paz e à segurança internacionais. Seus integrantes tomam decisões sobre conflitos e medidas como sanções.",
+        "Hoje ele tem 15 membros, dos quais cinco ocupam vagas permanentes e podem vetar certas decisões. Vetar significa impedir que uma decisão seja aprovada, mesmo quando outros integrantes a apoiam.",
+        "Reformar o Conselho significa mudar sua estrutura ou suas regras. Isso pode envolver a quantidade de integrantes, a distribuição de vagas ou a forma de decidir. A tese propõe uma reforma, mas não escolhe um modelo específico nem propõe acabar com o órgão."
+      ],
+      "sources": [
+        {
+          "title": "ONU — funções do Conselho de Segurança (em inglês)",
+          "url": "https://main.un.org/securitycouncil/en/content/functions-and-powers"
+        },
+        {
+          "title": "ONU — votação e poder de veto (em inglês)",
+          "url": "https://main.un.org/securitycouncil/en/content/voting-system"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T036",
+      "thesis_version": 2,
+      "thesis_text": "A autonomia institucional do Banco Central estabelecida pela Lei Complementar nº 179/2021 deve ser revogada.",
+      "paragraphs": [
+        "O Banco Central é a instituição pública que atua sobre a moeda e o sistema financeiro. Uma de suas principais tarefas é buscar a estabilidade dos preços, ou seja, controlar a inflação. Entre seus instrumentos está a definição da taxa básica de juros.",
+        "A lei de 2021 estabeleceu autonomia institucional e mandatos fixos para seus dirigentes, que não coincidem integralmente com o mandato do presidente da República. A instituição continua pública, mas tem proteção legal para conduzir suas decisões sem subordinação direta a um ministério.",
+        "Revogar essa autonomia significa retirar as regras estabelecidas por essa lei. A proposta trata da relação entre o Banco Central e o governo; o funcionamento que a substituiria dependeria das novas regras aprovadas."
+      ],
+      "sources": [
+        {
+          "title": "Lei Complementar nº 179/2021 — autonomia do Banco Central",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp179.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T038",
+      "thesis_version": 1,
+      "thesis_text": "A Petrobras deve permanecer integrada, reunindo produção, refino, transporte e logística, em vez de separar essas operações em empresas diferentes.",
+      "paragraphs": [
+        "Uma empresa de petróleo integrada participa de diferentes etapas do caminho do petróleo até o consumidor. A produção retira petróleo e gás; o refino transforma o petróleo em produtos, como combustíveis; o transporte e a logística cuidam de levar e distribuir esses produtos.",
+        "Na Petrobras, essas atividades fazem parte de uma estrutura empresarial que reúne várias etapas. Separá-las significaria organizar essas operações em empresas diferentes, conforme as regras da mudança.",
+        "A tese propõe manter essas etapas reunidas. A pergunta é sobre a organização das atividades da Petrobras. Isso é diferente de perguntar se todas as suas ações devem pertencer ao governo."
+      ],
+      "sources": [
+        {
+          "title": "Petrobras — atividades de produção, refino e transporte",
+          "url": "https://petrobras.com.br/documents/d/f3a44542-113e-11ee-be56-0242ac120002/pe-2024-28-portugues-versao-completa_v24?download=true"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T041",
+      "thesis_version": 1,
+      "thesis_text": "Parcerias público-privadas devem ser ampliadas na educação.",
+      "paragraphs": [
+        "Uma parceria público-privada, ou PPP, é um contrato de longo prazo em que governo e empresa dividem responsabilidades por uma obra ou por serviços. O contrato define o que a empresa fará, como será paga e como o poder público acompanhará a execução.",
+        "Na educação, uma parceria pode envolver, por exemplo, a construção e a manutenção de escolas ou serviços de apoio. A participação da empresa no ensino e na gestão pedagógica depende do modelo adotado; não é igual em toda parceria.",
+        "Ampliar essas parcerias significa usar mais esse tipo de contrato na área educacional. A pergunta não define uma empresa, uma escola ou quais tarefas seriam incluídas em cada contrato."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 11.079/2004 — parcerias público-privadas",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2004/lei/l11079compilado.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T042",
+      "thesis_version": 1,
+      "thesis_text": "O SUS deve contratar a capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+      "paragraphs": [
+        "Capacidade ociosa é uma estrutura disponível que não está sendo totalmente usada. Em uma clínica ou hospital, pode ser um horário livre para exames, uma sala de cirurgia disponível ou um leito que poderia receber um paciente.",
+        "A proposta é que o SUS pague por atendimentos nessa estrutura privada para atender pessoas da fila pública. O paciente seria atendido pelo SUS, com o pagamento feito pelo poder público, e não como uma consulta particular paga por ele.",
+        "A legislação já permite a participação complementar de serviços privados quando a estrutura pública é insuficiente. A tese trata de usar essa capacidade disponível com o objetivo de reduzir as filas; ela não propõe transferir toda a gestão do SUS às empresas."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 8.080/1990, artigos 24 a 26 — participação complementar no SUS",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8080.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T043",
+      "thesis_version": 1,
+      "thesis_text": "Quando não houver vaga pública em creche, a família deve receber um voucher temporário para uma creche privada credenciada, até surgir a vaga.",
+      "paragraphs": [
+        "Voucher é um vale ou auxílio destinado a pagar um serviço específico. Nesta proposta, ele serviria para custear uma vaga em creche privada quando a criança ainda não tivesse conseguido uma vaga pública.",
+        "Uma creche credenciada é uma instituição autorizada a participar do programa, conforme critérios definidos pelo poder público. O recurso teria essa finalidade, em vez de ser um dinheiro de uso livre para qualquer despesa da família.",
+        "A proposta é temporária: o apoio duraria até surgir a vaga pública. Portanto, a pergunta trata de como atender a criança durante a espera. Ela não define o valor do auxílio nem os critérios para selecionar as creches participantes."
+      ],
+      "sources": [
+        {
+          "title": "Lei de Diretrizes e Bases — direito à educação e oferta de vagas",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l9394.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T044",
+      "thesis_version": 1,
+      "thesis_text": "Quando faltar vaga na rede pública escolar, a família deve receber um voucher para matricular o filho em outra escola.",
+      "paragraphs": [
+        "Voucher escolar é um vale ou auxílio usado para pagar uma vaga de estudo em uma instituição participante de um programa. O recurso acompanha o atendimento do aluno, em vez de ser usado apenas para manter uma vaga na rede pública.",
+        "Nesta pergunta, a condição para receber o voucher é faltar uma vaga na rede pública. A família usaria a ajuda para matricular o filho em outra escola, de acordo com as regras que fossem criadas para o programa.",
+        "A tese pergunta se esse mecanismo deve ser oferecido nessa situação. Ela não especifica o valor do vale, quais escolas poderiam participar ou se a ajuda terminaria quando surgisse uma vaga pública."
+      ],
+      "sources": [
+        {
+          "title": "Lei de Diretrizes e Bases — direito à educação e oferta de vagas",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l9394.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T054",
+      "thesis_version": 1,
+      "thesis_text": "O serviço público deve preservar vínculos com estabilidade ampla, em vez de criar vínculos por tempo indeterminado sem essa estabilidade.",
+      "paragraphs": [
+        "Estabilidade é uma proteção legal que limita as situações em que um servidor público pode perder o cargo. A Constituição prevê essa proteção para servidores concursados em cargos efetivos, depois do período e da avaliação exigidos.",
+        "Essa proteção não significa que a pessoa nunca possa ser demitida: existem hipóteses legais de perda do cargo, com procedimentos próprios. Já um vínculo por tempo indeterminado não tem uma data marcada para acabar, mas isso, sozinho, não garante a mesma estabilidade.",
+        "A tese compara essas duas formas de vínculo. Ela propõe preservar uma proteção ampla de estabilidade no serviço público, em vez de criar vínculos sem prazo final que não tenham essa mesma garantia."
+      ],
+      "sources": [
+        {
+          "title": "Constituição Federal, artigo 41 — estabilidade no serviço público",
+          "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T056",
+      "thesis_version": 1,
+      "thesis_text": "A idade mínima para aposentadoria deve ser reajustada automaticamente conforme a expectativa de vida da população.",
+      "paragraphs": [
+        "Idade mínima para aposentadoria é a idade que uma pessoa precisa atingir para pedir o benefício em regras que fazem essa exigência. Dependendo do caso, também é necessário cumprir tempo de contribuição e outros requisitos.",
+        "Expectativa de vida é uma estimativa estatística de quantos anos, em média, as pessoas vivem ou ainda podem viver a partir de certa idade. Ela descreve a população; não prevê quanto tempo uma pessoa específica viverá.",
+        "A proposta é ligar a idade mínima a esse indicador por uma regra automática. Se a expectativa de vida aumentasse, a idade exigida poderia aumentar conforme a fórmula adotada. A tese não define essa fórmula, a frequência dos ajustes ou quais regras de aposentadoria seriam atingidas."
+      ],
+      "sources": [
+        {
+          "title": "Emenda Constitucional nº 103/2019 — regras de aposentadoria",
+          "url": "https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc103.htm"
+        },
+        {
+          "title": "IBGE — tábuas de mortalidade e expectativa de vida",
+          "url": "https://www.ibge.gov.br/estatisticas/sociais/trabalho/9126-tabuas-completas-de-mortalidade.html?edicao=42004"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T057",
+      "thesis_version": 1,
+      "thesis_text": "O Mercosul deve ser consolidado como plataforma econômica, produtiva, política e social, em vez de ser transformado em zona de livre comércio.",
+      "paragraphs": [
+        "O Mercosul é um projeto de integração entre países da América do Sul. Seus objetivos incluem facilitar o comércio, coordenar políticas econômicas e manter ações de cooperação entre os países participantes.",
+        "Uma zona de livre comércio concentra-se em reduzir barreiras às compras e vendas entre seus membros. Uma integração mais ampla também pode envolver regras comerciais comuns, produção em conjunto e acordos políticos e sociais.",
+        "A tese propõe fortalecer o Mercosul nessa forma mais ampla. “Plataforma produtiva” se refere à cooperação na produção de bens e serviços; as dimensões política e social envolvem a coordenação de decisões e iniciativas que vão além do comércio."
+      ],
+      "sources": [
+        {
+          "title": "Mercosul — objetivos e funcionamento",
+          "url": "https://www.mercosur.int/pt-br/sobre-o-mercosul/objetivos-e-funcionamento"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T058",
+      "thesis_version": 1,
+      "thesis_text": "Ministros do Supremo Tribunal Federal devem ser escolhidos pelo voto popular.",
+      "paragraphs": [
+        "O Supremo Tribunal Federal, ou STF, é o tribunal responsável principalmente por proteger a Constituição. Seus integrantes recebem o nome de ministros, mas atuam como juízes do tribunal, e não como ministros que comandam áreas do governo.",
+        "Pelas regras atuais, o presidente da República indica os ministros do STF e o Senado precisa aprovar cada indicação antes da nomeação. A população não vota diretamente para preencher essas vagas.",
+        "A tese propõe que os ministros sejam escolhidos por eleição, com voto popular. Ela muda a forma de escolha, mas não especifica como seriam as candidaturas, as campanhas, a duração dos mandatos ou os requisitos para concorrer."
+      ],
+      "sources": [
+        {
+          "title": "Constituição Federal, artigos 101 e 102 — composição e funções do STF",
+          "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T061",
+      "thesis_version": 1,
+      "thesis_text": "O financiamento público de partidos e campanhas por meio dos fundos Partidário e Eleitoral deve ser extinto.",
+      "paragraphs": [
+        "O Fundo Partidário e o Fundo Eleitoral são formas de destinar recursos públicos à atividade política. Eles têm regras próprias de distribuição e de prestação de contas, que é a obrigação de informar e comprovar como o dinheiro foi usado.",
+        "O Fundo Partidário ajuda a financiar o funcionamento dos partidos e pode custear atividades permitidas pela legislação. O Fundo Eleitoral é voltado ao financiamento das campanhas eleitorais.",
+        "Extinguir esses fundos significa acabar com essas duas fontes de financiamento público. A pergunta não define, por si só, quais outras formas de financiamento seriam permitidas ou adotadas no lugar delas."
+      ],
+      "sources": [
+        {
+          "title": "TSE — diferença entre Fundo Eleitoral e Fundo Partidário",
+          "url": "https://www.tse.jus.br/comunicacao/noticias/2021/Novembro/fundo-eleitoral-x-fundo-partidario-entenda-a-diferenca"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T062",
+      "thesis_version": 1,
+      "thesis_text": "Um laboratório nacional de inteligência artificial deve ter capital privado majoritário.",
+      "paragraphs": [
+        "Um laboratório de inteligência artificial reúne pessoas, computadores e outros recursos para pesquisar e desenvolver sistemas que realizam tarefas como reconhecer padrões em dados, analisar imagens ou gerar textos.",
+        "Capital é o conjunto de recursos que os sócios colocam em uma organização e que representa sua participação nela. Ter capital privado majoritário significa que mais da metade dessa participação pertenceria a pessoas ou empresas privadas, em vez de pertencer ao poder público.",
+        "A tese propõe esse tipo de composição para um laboratório nacional de inteligência artificial. Ela trata de quem participa de sua propriedade; as regras de decisão, o financiamento das pesquisas e o acesso aos resultados precisariam ser definidos."
+      ],
+      "sources": [
+        {
+          "title": "Lei das Sociedades por Ações — capital e participação dos acionistas",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l6404consol.htm"
+        },
+        {
+          "title": "INPE — exemplo de laboratório de pesquisa em inteligência artificial",
+          "url": "https://www.gov.br/inpe/pt-br/area-conhecimento/pesquisa-aplicada-e-desenvolvimento-tecnologico/laboratorios-banco-de-testes-grupos-p-d/laboratorio-de-inteligencia-artificial-para-aplicacoes-aeroespaciais-e-ambientais-2013-liarea"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T063",
+      "thesis_version": 1,
+      "thesis_text": "Enquanto perdurarem as condições descritas nos planos como genocídio do povo palestino e regime de apartheid em Israel, o Brasil deve romper relações diplomáticas com Israel.",
+      "paragraphs": [
+        "Relações diplomáticas são os canais oficiais de comunicação e representação entre governos, geralmente mantidos por embaixadas e diplomatas. Romper essas relações significa encerrar esse relacionamento formal. Isso não equivale, por si só, a declarar guerra ou proibir todo o comércio.",
+        "A tese usa dois termos presentes nos planos citados. Genocídio envolve atos cometidos com a intenção de destruir, total ou parcialmente, um grupo nacional, étnico, racial ou religioso. Apartheid se refere a um regime de opressão e dominação sistemática de um grupo racial sobre outro, mantido intencionalmente.",
+        "Nesta pergunta, essas expressões apresentam a avaliação feita nos planos. A proposta é que o Brasil rompa as relações diplomáticas com Israel enquanto persistirem as condições descritas. A explicação esclarece os termos e a medida proposta, sem apresentar essa avaliação como uma decisão judicial."
+      ],
+      "sources": [
+        {
+          "title": "Estatuto de Roma, artigos 6º e 7º — definições de genocídio e apartheid",
+          "url": "https://www.planalto.gov.br/ccivil_03/decreto/2002/d4388.htm"
+        },
+        {
+          "title": "Convenção de Viena — relações diplomáticas entre países",
+          "url": "https://www.planalto.gov.br/ccivil_03/decreto/antigos/d56435.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T064",
+      "thesis_version": 1,
+      "thesis_text": "Trabalhadores e empregadores devem poder negociar condições de trabalho que prevaleçam sobre regras gerais da legislação trabalhista.",
+      "paragraphs": [
+        "A legislação trabalhista estabelece regras gerais para a relação de emprego. Trabalhadores e empregadores também podem firmar acordos, inclusive por meio dos sindicatos, para definir condições de trabalho.",
+        "Um acordo prevalecer sobre a lei significa que, naquele assunto, passa a valer a condição negociada em vez da regra geral. Por exemplo, isso pode envolver a organização da jornada ou o banco de horas, que permite compensar horas trabalhadas a mais com descanso em outro momento.",
+        "A reforma de 2017 já permite essa prevalência em determinados assuntos e estabelece direitos que não podem ser retirados por negociação. A tese trata do espaço dado aos acordos para definir condições diferentes das regras gerais, sem listar quais direitos ou temas seriam incluídos."
+      ],
+      "sources": [
+        {
+          "title": "Lei nº 13.467/2017 — reforma trabalhista",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13467.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T065",
+      "thesis_version": 1,
+      "thesis_text": "O Novo Ensino Médio deve ser revogado.",
+      "paragraphs": [
+        "Novo Ensino Médio é o nome usado para a reorganização dessa etapa de ensino iniciada pela reforma de 2017. Ela dividiu o currículo entre uma formação geral, comum aos estudantes, e percursos de aprofundamento ou formação técnica, chamados de itinerários formativos.",
+        "A reforma foi apresentada com o objetivo de ampliar o tempo de estudo e permitir percursos diferentes. Em 2024, outra lei alterou esse modelo, incluindo a distribuição das horas de formação geral e dos itinerários. Por isso, a discussão atual envolve um modelo que já passou por mudanças.",
+        "Revogar significa retirar a validade das regras. A tese propõe desfazer esse modelo de organização do ensino médio. Ela não propõe acabar com essa etapa escolar e não detalha o currículo que o substituiria."
+      ],
+      "sources": [
+        {
+          "title": "MEC — organização do ensino médio introduzida em 2017",
+          "url": "https://www.gov.br/mec/pt-br/novo-ensino-medio-descontinuado/informacoes/perguntas-frequentes"
+        },
+        {
+          "title": "Lei nº 14.945/2024 — mudanças posteriores no ensino médio",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14945.htm"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T066",
+      "thesis_version": 1,
+      "thesis_text": "O Brasil deve sair do BRICS.",
+      "paragraphs": [
+        "O BRICS é um grupo de países que se reúne para cooperar em temas econômicos, políticos e sociais. O Brasil participa ao lado de países como China, Índia, Rússia e África do Sul. O grupo foi ampliado ao longo do tempo.",
+        "A cooperação inclui reuniões entre governos e iniciativas em áreas como desenvolvimento, ciência e comércio. O BRICS não é um país único nem um governo que substitua os governos de seus integrantes.",
+        "A tese propõe que o Brasil deixe de participar desse grupo. Sair do BRICS não significa automaticamente romper relações diplomáticas ou deixar de comerciar com cada um de seus membros: essas seriam decisões distintas."
+      ],
+      "sources": [
+        {
+          "title": "Ministério da Justiça — história e cooperação no BRICS",
+          "url": "https://www.gov.br/mj/pt-br/acesso-a-informacao/atuacao-internacional/foros-e-redes/brics-2"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T067",
+      "thesis_version": 1,
+      "thesis_text": "O investimento estrangeiro na economia brasileira deve ser proibido.",
+      "paragraphs": [
+        "Investimento estrangeiro é a aplicação de recursos de pessoas ou organizações de fora do país na economia brasileira. Isso pode acontecer, por exemplo, quando uma empresa estrangeira abre uma fábrica no Brasil, compra participação em uma empresa brasileira ou quando um investidor de fora aplica no mercado financeiro.",
+        "Esse investimento é diferente de simplesmente comprar um produto importado: envolve colocar recursos em atividades ou ativos no país. Existem diferentes modalidades e regras para registrar e realizar essas operações.",
+        "A tese propõe uma proibição geral desses investimentos. Ela não se limita a criar condições para um setor específico e não detalha como seriam tratados os investimentos que já existem."
+      ],
+      "sources": [
+        {
+          "title": "Banco Central — conceitos de investimento estrangeiro",
+          "url": "https://www.bcb.gov.br/htms/firce/conceitos.asp?frame=1"
+        }
+      ]
+    },
+    {
+      "thesis_id": "BR26-T068",
+      "thesis_version": 1,
+      "thesis_text": "O Senado Federal deve ser extinto.",
+      "paragraphs": [
+        "O Congresso Nacional tem duas Casas: a Câmara dos Deputados e o Senado Federal. O Senado representa os estados e o Distrito Federal, com três senadores de cada um, independentemente do tamanho de sua população.",
+        "Além de participar da elaboração e revisão de leis e de fiscalizar o governo, o Senado tem tarefas próprias, como aprovar certas indicações de autoridades. As funções das duas Casas estão previstas na Constituição.",
+        "Extinguir o Senado significa acabar com essa Casa do Congresso. Isso exigiria reorganizar suas atribuições e a representação dos estados. A tese não propõe, por si só, acabar com a Câmara dos Deputados nem explica como cada função seria redistribuída."
+      ],
+      "sources": [
+        {
+          "title": "Senado Federal — composição e atribuições",
+          "url": "https://www12.senado.leg.br/institucional/perguntas-frequentes"
+        }
+      ]
+    }
+  ]
+}
