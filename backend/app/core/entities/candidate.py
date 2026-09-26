@@ -1,5 +1,7 @@
 from dataclasses import dataclass, field
 
+from app.core.entities.thesis_explanation import ThesisExplanation
+
 
 @dataclass
 class Theme:
@@ -23,6 +25,7 @@ class Thesis:
     status: str
     election_year: int
     coverage: float = 0.0
+    explanation: ThesisExplanation | None = None
 
 
 @dataclass

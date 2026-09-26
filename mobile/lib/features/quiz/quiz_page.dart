@@ -8,6 +8,7 @@ import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis.dart';
 import 'quiz_controller.dart';
 import '../../shared/iot_device_session.dart';
+import 'thesis_explanation_panel.dart';
 
 class QuizPage extends StatefulWidget {
   const QuizPage({
@@ -32,19 +33,31 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   late final QuizController controller = widget.controller ?? QuizController();
+  final _questionScroll = ScrollController();
+  int? _visibleThesisId;
 
   @override
   void initState() {
     super.initState();
-    controller.addListener(() {
-      if (mounted) setState(() {});
-    });
+    controller.addListener(_onQuestionChanged);
     controller.loadQuestions();
+  }
+
+  void _onQuestionChanged() {
+    if (!mounted) return;
+    final id = controller.currentThesis?.id;
+    if (_visibleThesisId != id) {
+      _visibleThesisId = id;
+      if (_questionScroll.hasClients) _questionScroll.jumpTo(0);
+    }
+    setState(() {});
   }
 
   @override
   void dispose() {
+    controller.removeListener(_onQuestionChanged);
     controller.dispose();
+    _questionScroll.dispose();
     super.dispose();
   }
 
@@ -91,6 +104,7 @@ class _QuizPageState extends State<QuizPage> {
       title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
+        tooltip: 'Sair do quiz',
         onPressed: () {
           // Desempilha ate o shell em vez de empilhar /quiz-intro: aquela rota
           // monta a QuizIntroPage FORA do shell, sem barra inferior, e como ela
@@ -132,73 +146,70 @@ class _QuizPageState extends State<QuizPage> {
     }
 
     final textTheme = Theme.of(context).textTheme;
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24),
-        child: Column(
-          children: [
-            const SizedBox(height: 24),
-            _ProgressIndicator(
-              current: controller.currentIndex + 1,
-              total: controller.totalTheses,
-            ),
-            const SizedBox(height: 24),
-            SizedBox(
-              height: 40,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: !controller.isFirst
-                    ? TextButton.icon(
-                        onPressed: controller.previous,
-                        icon: const Icon(Icons.arrow_back, size: 18),
-                        label: Text('VOLTAR', style: textTheme.labelMedium),
-                      )
-                    : const SizedBox.shrink(),
-              ),
-            ),
-            const SizedBox(height: 8),
-            _ThesisCard(thesis: thesis),
-            const SizedBox(height: 32),
-            _ChoiceButton(
-              icon: Icons.thumb_up,
-              label: 'CONCORDO',
-              onPressed: () => _handleAnswer(ThesisAnswer.agree),
-            ),
-            const SizedBox(height: 12),
-            _ChoiceButton(
-              icon: Icons.help_outline,
-              label: 'NEUTRO',
-              onPressed: () => _handleAnswer(ThesisAnswer.neutral),
-            ),
-            const SizedBox(height: 12),
-            _ChoiceButton(
-              icon: Icons.thumb_down,
-              label: 'DISCORDO',
-              onPressed: () => _handleAnswer(ThesisAnswer.disagree),
-            ),
-            const SizedBox(height: 24),
-            TextButton(
-              onPressed: () {
-                controller.skip().then((finished) {
-                  if (finished && mounted) _onFinishQuiz();
-                });
-              },
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text('PULAR ESTA QUESTÃO', style: textTheme.labelMedium),
-                  const SizedBox(width: 4),
-                  const Icon(
-                    Icons.chevron_right,
-                    size: 18,
-                    color: AppTheme.onSurfaceVariant,
+    return LayoutBuilder(
+      builder: (context, viewport) => Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              controller: _questionScroll,
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 720),
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        _ProgressIndicator(
+                          current: controller.currentIndex + 1,
+                          total: controller.totalTheses,
+                        ),
+                        if (!controller.isFirst)
+                          Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextButton.icon(
+                              onPressed: controller.previous,
+                              icon: const Icon(Icons.arrow_back, size: 18),
+                              label:
+                                  Text('VOLTAR', style: textTheme.labelMedium),
+                              style: TextButton.styleFrom(
+                                  minimumSize: const Size(48, 48)),
+                            ),
+                          )
+                        else
+                          const SizedBox(height: 24),
+                        _ThesisCard(thesis: thesis),
+                        if (thesis.explanation != null) ...[
+                          const SizedBox(height: 16),
+                          ThesisExplanationPanel(
+                            key: ValueKey(thesis.id),
+                            explanation: thesis.explanation!,
+                          ),
+                        ],
+                      ],
+                    ),
                   ),
-                ],
+                ),
               ),
             ),
-            const SizedBox(height: 24),
-          ],
-        ),
+          ),
+          // A short landscape viewport or very large text can scroll the
+          // answer area itself, without covering the question or clipping it.
+          ConstrainedBox(
+            constraints: BoxConstraints(maxHeight: viewport.maxHeight * 0.5),
+            child: SingleChildScrollView(
+              primary: false,
+              child: _AnswerBar(
+                onAnswer: _handleAnswer,
+                onSkip: () {
+                  controller.skip().then((finished) {
+                    if (finished && mounted) _onFinishQuiz();
+                  });
+                },
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -286,12 +297,12 @@ class _ThesisCard extends StatelessWidget {
 
   const _ThesisCard({required this.thesis});
 
-  TextStyle _textStyle(BuildContext context) {
+  TextStyle _textStyle(BuildContext context, {required bool compact}) {
     final base = Theme.of(context).textTheme.headlineLarge!;
     if (thesis.title.length > 150) {
       return base.copyWith(fontSize: 17, height: 1.25);
     }
-    if (thesis.title.length > 95) {
+    if (thesis.title.length > 95 || compact) {
       return base.copyWith(fontSize: 19, height: 1.25);
     }
     return base.copyWith(fontSize: 24, height: 1.2);
@@ -299,26 +310,30 @@ class _ThesisCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(minHeight: 150),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 20),
-          decoration: BoxDecoration(
-            color: AppTheme.surfaceContainer,
-            border: Border.all(color: AppTheme.outlineVariant),
-          ),
-          child: Center(
-            child: Text(
-              thesis.title,
-              style: _textStyle(context),
-              textAlign: TextAlign.center,
+    return LayoutBuilder(builder: (context, constraints) {
+      final compact = constraints.maxWidth < 312;
+      return SizedBox(
+        width: double.infinity,
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 150),
+          child: Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: compact ? 24 : 32, vertical: 20),
+            decoration: BoxDecoration(
+              color: AppTheme.surfaceContainer,
+              border: Border.all(color: AppTheme.outlineVariant),
+            ),
+            child: Center(
+              child: Text(
+                thesis.title,
+                style: _textStyle(context, compact: compact),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
 
@@ -326,24 +341,138 @@ class _ChoiceButton extends StatelessWidget {
   final IconData icon;
   final String label;
   final VoidCallback onPressed;
+  final bool compact;
 
   const _ChoiceButton({
     required this.icon,
     required this.label,
     required this.onPressed,
+    required this.compact,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: OutlinedButton.icon(
+      child: OutlinedButton(
         onPressed: onPressed,
-        icon: Icon(icon, size: 20),
-        label: Text(label),
         style: OutlinedButton.styleFrom(
-          padding: const EdgeInsets.symmetric(vertical: 18),
+          minimumSize: const Size(48, 48),
+          padding:
+              EdgeInsets.symmetric(horizontal: compact ? 4 : 8, vertical: 12),
           side: const BorderSide(color: AppTheme.outlineVariant),
+        ),
+        child: compact
+            ? Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(icon, size: 20),
+                  const SizedBox(height: 8),
+                  Text(label,
+                      style: Theme.of(context)
+                          .textTheme
+                          .labelMedium
+                          ?.copyWith(color: AppTheme.primary)),
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(icon, size: 20),
+                  const SizedBox(width: 12),
+                  Flexible(child: Text(label)),
+                ],
+              ),
+      ),
+    );
+  }
+}
+
+class _AnswerBar extends StatelessWidget {
+  final ValueChanged<ThesisAnswer> onAnswer;
+  final VoidCallback onSkip;
+
+  const _AnswerBar({required this.onAnswer, required this.onSkip});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return Container(
+      width: double.infinity,
+      decoration: const BoxDecoration(
+        color: AppTheme.background,
+        border: Border(top: BorderSide(color: AppTheme.outlineVariant)),
+      ),
+      child: SafeArea(
+        top: false,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 720),
+            child: LayoutBuilder(
+              builder: (context, available) => Padding(
+                padding: EdgeInsets.fromLTRB(available.maxWidth < 360 ? 16 : 24,
+                    16, available.maxWidth < 360 ? 16 : 24, 8),
+                child: LayoutBuilder(
+                  builder: (context, constraints) {
+                    final label = TextPainter(
+                      text: TextSpan(
+                          text: 'CONCORDO', style: textTheme.labelMedium),
+                      textDirection: Directionality.of(context),
+                      textScaler: MediaQuery.textScalerOf(context),
+                    )..layout();
+                    final compact =
+                        (constraints.maxWidth - 16) / 3 >= label.width + 10;
+                    label.dispose();
+                    final choices = [
+                      _ChoiceButton(
+                          icon: Icons.thumb_up,
+                          label: 'CONCORDO',
+                          compact: compact,
+                          onPressed: () => onAnswer(ThesisAnswer.agree)),
+                      _ChoiceButton(
+                          icon: Icons.help_outline,
+                          label: 'NEUTRO',
+                          compact: compact,
+                          onPressed: () => onAnswer(ThesisAnswer.neutral)),
+                      _ChoiceButton(
+                          icon: Icons.thumb_down,
+                          label: 'DISCORDO',
+                          compact: compact,
+                          onPressed: () => onAnswer(ThesisAnswer.disagree)),
+                    ];
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if (compact)
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(child: choices[0]),
+                              const SizedBox(width: 8),
+                              Expanded(child: choices[1]),
+                              const SizedBox(width: 8),
+                              Expanded(child: choices[2]),
+                            ],
+                          )
+                        else
+                          ...choices.expand(
+                              (choice) => [choice, const SizedBox(height: 8)]),
+                        const SizedBox(height: 8),
+                        TextButton(
+                          onPressed: onSkip,
+                          style: TextButton.styleFrom(
+                              minimumSize: const Size(48, 48)),
+                          child: Text('PULAR ESTA QUESTÃO',
+                              style: textTheme.labelMedium,
+                              textAlign: TextAlign.center),
+                        ),
+                      ],
+                    );
+                  },
+                ),
+              ),
+            ),
+          ),
         ),
       ),
     );

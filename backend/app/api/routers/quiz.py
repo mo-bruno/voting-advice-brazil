@@ -13,6 +13,7 @@ from app.api.schemas.quiz import (
     QuestionsResponse,
     SubmitQuizIn,
     SubmitQuizResponse,
+    ThesisExplanationOut,
     ThesisMatchOut,
     ThesisOut,
 )
@@ -59,6 +60,10 @@ def questions(
                 theme_id=t.theme_id,
                 theme_name=t.theme_name,
                 coverage=t.coverage,
+                explanation=(
+                    ThesisExplanationOut.model_validate(t.explanation)
+                    if t.explanation is not None else None
+                ),
             )
             for t in theses
         ],

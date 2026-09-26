@@ -22,6 +22,7 @@ from app.infrastructure.database.models import (
     ThemeModel,
     ThesisModel,
 )
+from app.infrastructure.thesis_explanations import get_thesis_explanation
 
 
 def _to_thesis(m: ThesisModel, active_candidate_ids: set[int]) -> Thesis:
@@ -39,6 +40,12 @@ def _to_thesis(m: ThesisModel, active_candidate_ids: set[int]) -> Thesis:
         status=m.status,
         election_year=m.election_year,
         coverage=round(coverage, 1),
+        explanation=get_thesis_explanation(
+            election_year=m.election_year,
+            editorial_id=m.editorial_id,
+            editorial_version=m.editorial_version,
+            text=m.text,
+        ),
     )
 
 
