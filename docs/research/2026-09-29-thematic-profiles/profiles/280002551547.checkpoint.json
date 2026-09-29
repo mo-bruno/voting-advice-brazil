@@ -1,0 +1,1692 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551547",
+  "candidate_name": "Escritor Augusto Cury",
+  "agent_id": "/root/plan_cury",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002551547.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "status": "complete",
+  "prior_reading_log_consulted_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ],
+  "revisited_pages": [
+    36,
+    37,
+    38,
+    39,
+    43,
+    44,
+    45,
+    47,
+    48,
+    50,
+    51,
+    52,
+    53,
+    58,
+    59,
+    60,
+    62,
+    63,
+    64,
+    65,
+    75,
+    76,
+    77,
+    78,
+    79,
+    81,
+    82,
+    83,
+    84,
+    87,
+    88,
+    89,
+    90,
+    93,
+    98,
+    99,
+    105,
+    106,
+    107,
+    108,
+    109,
+    111,
+    120,
+    126,
+    131,
+    136,
+    137,
+    147,
+    152,
+    155,
+    157,
+    158,
+    161,
+    162,
+    164,
+    171,
+    172,
+    175,
+    176,
+    179,
+    182,
+    183,
+    184,
+    186,
+    187,
+    188,
+    189,
+    190
+  ],
+  "completed_category_ids": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Reutilizada a leitura anterior de 200 páginas, sem alegar segunda leitura integral.",
+    "Priorizar instrumentos distintos e limites explícitos; ampliar além das 16 perguntas.",
+    "Registrar tensão p.64 versus p.93 sobre escolha de ministros, sem presumir que transição entre regras seja impossível.",
+    "Cada uma das 45 posições tem uma única categoria principal, com referências secundárias sem duplicação.",
+    "Cultura registrada como objetivo genérico dentro de categoria com educação substantiva.",
+    "Oito sementes em temas distintos, sem afirmar contraste já encontrado nos demais planos."
+  ],
+  "pending": [],
+  "reinspection_scope": "Páginas completas ou seções delimitadas retornadas, após consulta ao diário integral anterior.",
+  "category_notes": {
+    "economia_desenvolvimento": [
+      "Déficit próximo de zero com preservação de investimentos estratégicos.",
+      "Transição tributária mantida com avaliação de distorções e meta de carga menor.",
+      "Crédito produtivo progressivo com fundo rotativo, garantias parciais e rede financeira parceira.",
+      "Fomento ao cooperativismo e agroindustrialização.",
+      "Processamento mineral local, viabilidade e contrapartidas tecnológicas em parcerias internacionais."
+    ],
+    "estado_gestao": [
+      "Reforma administrativa e avaliação com direitos preservados.",
+      "Digitalização, metas ministeriais e controle social/IA contra corrupção.",
+      "Semipresidencialismo; STF com mandato, composição e escolha por carreiras; rejeição à reeleição presidencial."
+    ],
+    "infraestrutura_territorio": [
+      "Concessões e PPPs sob fiscalização.",
+      "REURB e urbanização com permanência prioritária e remoções excepcionais.",
+      "Integração logística, duplicação rodoviária e cumprimento do Marco de Saneamento."
+    ],
+    "meio_ambiente_clima": [
+      "Licenciamento por risco com prazos, rigor técnico, fiscalização e responsabilização.",
+      "Créditos de carbono e pagamento por preservação; prevenção tecnológica de incêndios.",
+      "Renda amazônica e renováveis com instrumentos econômicos."
+    ],
+    "ciencia_tecnologia_inovacao": [
+      "Marco legal e política nacional de IA.",
+      "Pesquisa universitária, patentes e participação dos pesquisadores nos resultados.",
+      "Conectividade a escolas, hospitais, áreas rurais e remotas."
+    ],
+    "bem_estar_social": [
+      "Continuidade temporária de Bolsa Família com emprego ou microempresa.",
+      "Telemedicina em plataforma pública nacional com triagem e limites clínicos.",
+      "Atenção primária, saúde mental e prevenção do câncer com comitês e unidades móveis."
+    ],
+    "educacao_cultura_sociedade": [
+      "Currículo socioemocional, financeiro e empreendedor; ensino médio com formação técnica.",
+      "Inclusão na escola regular com AEE complementar e necessidade comprovada.",
+      "Valorização docente por formação e remuneração ligada também à qualificação; cultura é menos detalhada."
+    ],
+    "cidadania_direitos": [
+      "Transparência e fiscalização da igualdade remuneratória.",
+      "Matrizes de crédito feminino baseadas em risco efetivo, não só patrimônio.",
+      "Prioridade feminina nas indicações presidenciais ao STF, com requisitos constitucionais."
+    ],
+    "seguranca_publica": [
+      "Inteligência integrada com autonomias institucionais preservadas; reconhecimento facial condicionado à lei.",
+      "FOCO como apoio municipal, cerca de 5% da força de trabalho, conforme realidade e legislação.",
+      "Mulheres Vivas com monitoramento judicial de agressores e prioridade de risco.",
+      "Sistema prisional com educação, trabalho e ressocialização."
+    ],
+    "soberania_relacoes_internacionais": [
+      "Diplomacia econômica com indicadores e redistribuição gradual de equipes para Ásia e Oriente Médio.",
+      "Cooperação Sul-Sul e multilateralismo sem definição de adesão a blocos específicos.",
+      "Fundo internacional contra fome com contribuições sobre comércio e armamentos."
+    ]
+  },
+  "draft_positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Equilíbrio fiscal e trajetória da dívida",
+      "statement": "Perseguir déficit próximo de zero durante o mandato e reduzir gradualmente a dívida, preservando investimentos estratégicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Controle de gastos improdutivos, eficiência ministerial e crescimento econômico.",
+      "scope": "Contas públicas ao longo do mandato.",
+      "conditions": [
+        "Preserva investimentos estratégicos; não identifica adesão à LC 200/2023 nem calendário anual de resultados."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "Nossa meta será perseguir o déficit próximo de zero, sem aventuras fiscais, preservando investimentos estratégicos e fortalecendo a confiança dos brasileiros e dos investidores nacionais e internacionais."
+        },
+        {
+          "page": 36,
+          "quote": "Nossa proposta é promover sua redução gradual e sustentável, por meio do crescimento econômico, da responsabilidade fiscal, do equilíbrio das contas públicas e da modernização do Estado."
+        }
+      ],
+      "context_pages": [
+        36
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Transição tributária e carga final",
+      "statement": "Conduzir a transição tributária, corrigir distorções relevantes e buscar carga e alíquota de referência menores ao fim da implantação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Avaliação setorial, simplificação e divulgação do custo de tratamentos tributários diferenciados.",
+      "scope": "Cidadãos e setor produtivo; atenção às micro e pequenas empresas.",
+      "conditions": [
+        "Ajustes dependem de identificação de distorções ou prejuízos; regimes específicos podem ser legítimos.",
+        "Não fixa uma alíquota final."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Caso sejam identificadas distorções ou prejuízos relevantes, serão propostos os ajustes necessários, respeitando os princípios constitucionais e a segurança jurídica."
+        },
+        {
+          "page": 38,
+          "quote": "Nosso compromisso não será apenas administrar a transição, mas trabalhar para que ela resulte em carga menor para o cidadão e para o setor produtivo."
+        }
+      ],
+      "context_pages": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Financiamento público do pequeno empreendedor",
+      "statement": "Estruturar uma plataforma nacional de crédito produtivo com fundo rotativo, garantias parciais e possibilidade de crédito progressivo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Banco do Empreendedor operado com instituições financeiras, bancos públicos, cooperativas e fintechs; fundo inicial indicativo de R$ 30–50 bilhões.",
+      "scope": "Pequenos empreendedores; objetivo de financiar ao menos dois milhões em dez anos.",
+      "conditions": [
+        "Crédito progressivo depende de uso produtivo e bom histórico de pagamento.",
+        "Os valores do fundo são estimativos; financiamento pode ser compartilhado com outros entes e instituições.",
+        "Participação de bancos públicos não determina política de controle acionário."
+      ],
+      "evidence": [
+        {
+          "page": 107,
+          "quote": "Será estruturado o Banco do Empreendedor, preferencialmente como plataforma nacional de crédito produtivo operada em parceria com instituições financeiras, cooperativas de crédito, bancos públicos, fintechs e agentes locais."
+        },
+        {
+          "page": 108,
+          "quote": "Uma parcela do fundo poderá funcionar como garantia para multiplicar a capacidade de crédito por meio do sistema financeiro. O governo assumirá apenas parte dos riscos, mantendo incentivos para que as instituições financeiras façam análise responsável das operações."
+        }
+      ],
+      "context_pages": [
+        98,
+        107,
+        108,
+        111
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Expansão do cooperativismo",
+      "statement": "Ampliar o cooperativismo a diferentes atividades econômicas, com crédito, incentivos e uma autoridade nacional de apoio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Linhas especiais, juros reduzidos, incentivos fiscais, assistência técnica, plataforma digital e ANCOOP.",
+      "scope": "Meta apresentada no capítulo específico: dobrar cooperativas e passar de 27 para 54 milhões de cooperados.",
+      "conditions": [
+        "Metas numéricas são as do projeto específico; não são convertidas em tese de afinidade."
+      ],
+      "evidence": [
+        {
+          "page": 131,
+          "quote": "Entretanto, nosso objetivo não é apenas crescer em números. É expandir o cooperativismo para todas as dimensões da vida econômica e social do país."
+        },
+        {
+          "page": 136,
+          "quote": "O Governo oferecerá: • Linhas especiais de crédito; • Juros reduzidos; • Simplificação tributária; • Incentivos fiscais;"
+        },
+        {
+          "page": 137,
+          "quote": "Para coordenar essa transformação, propomos a criação da Autoridade Nacional do Cooperativismo — ANCOOP."
+        }
+      ],
+      "context_pages": [
+        131,
+        136,
+        137
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Agroindustrialização e agregação local de valor",
+      "statement": "Estimular implantação, expansão e modernização de agroindústrias, incluindo usinas de etanol de milho, para processar produção dentro do país.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fomento a agroindústrias de diferentes portes, cooperativas e cadeias de processamento.",
+      "scope": "Meta de dez mil agroindústrias e cem grandes usinas de etanol de milho, distribuídas pelo território.",
+      "conditions": [
+        "Capacidade de processamento referida à implantação plena; não estabelece proibição geral de exportar matérias-primas."
+      ],
+      "evidence": [
+        {
+          "page": 126,
+          "quote": "A proposta é estimular a implantação e expansão de 10 mil pequenas, médias e grandes agroindústrias em todo o território nacional, criando uma nova era de industrialização do interior brasileiro."
+        },
+        {
+          "page": 126,
+          "quote": "Um dos pilares desse projeto será estimular a implantação de 100 grandes usinas de etanol de milho, capazes, em conjunto e quando plenamente implantadas, de processar mais de 100 milhões de toneladas de milho por ano."
+        }
+      ],
+      "context_pages": [
+        126
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Industrialização de minerais estratégicos e capital externo",
+      "statement": "Favorecer processamento mineral no Brasil e atrair empresas nacionais e internacionais, buscando contrapartidas tecnológicas e produtivas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Polos de industrialização, incentivos ao processamento local e parcerias internacionais com transferência de tecnologia.",
+      "scope": "Minerais críticos e cadeias de alta tecnologia.",
+      "conditions": [
+        "Viabilidade econômica, tecnológica e ambiental expressa.",
+        "Busca contrapartidas; não equivale a banimento absoluto da exportação bruta ou de capital estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 179,
+          "quote": "O objetivo será claro: sempre que econômica, tecnológica e ambientalmente viável, agregar valor no Brasil antes de exportar."
+        },
+        {
+          "page": 179,
+          "quote": "Atração de empresas nacionais e internacionais de alta tecnologia."
+        },
+        {
+          "page": 179,
+          "quote": "Grandes acordos de exploração e industrialização deverão buscar contrapartidas para o desenvolvimento brasileiro: • Transferência e desenvolvimento conjunto de tecnologia. • Processamento e produção local."
+        }
+      ],
+      "context_pages": [
+        65,
+        179
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Reforma administrativa e carreiras",
+      "statement": "Simplificar estruturas, eliminar funções sobrepostas e modernizar carreiras com avaliação permanente de desempenho.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma administrativa, estudos sobre redução de ministérios e gestão por resultados.",
+      "scope": "Administração e servidores públicos.",
+      "conditions": [
+        "Preservação de direitos expressa; não define demissão automática ou fim de estabilidade."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Além disso, modernizar carreiras públicas, valorizar os servidores competentes e criar mecanismos permanentes de avaliação de desempenho."
+        },
+        {
+          "page": 37,
+          "quote": "O objetivo será promover maior eficiência na gestão pública e elevar a qualidade dos serviços prestados à população, preservando direitos e valorizando aqueles que contribuem para a construção de um Estado mais eficiente e comprometido com o cidadão."
+        }
+      ],
+      "context_pages": [
+        37
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Serviços digitais e avaliação de políticas",
+      "statement": "Integrar serviços públicos em plataformas digitais e manter avaliação de programas e metas ministeriais públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plataformas integradas, indicadores transparentes, correção ou substituição de programas sem resultados.",
+      "scope": "Serviços públicos, programas e todos os ministérios.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Serviços públicos deverão estar disponíveis em plataformas integradas, reduzindo filas, papelada, deslocamentos e tempo perdido pelo cidadão."
+        },
+        {
+          "page": 38,
+          "quote": "Políticas eficientes serão fortalecidas; aquelas que não produzirem resultados concretos serão corrigidas ou substituídas."
+        },
+        {
+          "page": 39,
+          "quote": "Cada ministério terá metas anuais claras, mensuráveis e públicas."
+        }
+      ],
+      "context_pages": [
+        38,
+        39
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Sistema de governo",
+      "statement": "Substituir o presidencialismo por semipresidencialismo, com administração governamental conduzida por primeiro-ministro apoiado pela maioria parlamentar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Compartilhamento de funções entre presidente como autoridade de Estado e primeiro-ministro.",
+      "scope": "Governo federal.",
+      "conditions": [
+        "Permanência do primeiro-ministro depende da confiança parlamentar; substituição pelos mecanismos constitucionais previstos."
+      ],
+      "evidence": [
+        {
+          "page": 64,
+          "quote": "No modelo semipresidencialista que propomos, o Presidente da República continuará sendo a grande autoridade de Estado, responsável pelas funções estratégicas definidas constitucionalmente, enquanto o Primeiro-Ministro assumirá a condução da administração do governo, apoiado pela maioria parlamentar."
+        }
+      ],
+      "context_pages": [
+        64
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Composição, mandato e seleção do STF",
+      "statement": "Instituir mandato de oito anos e STF de nove integrantes, com escolha pelas respectivas carreiras jurídicas em lugar do presidente.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma institucional com seis vagas da magistratura, duas do Ministério Público e uma da advocacia.",
+      "scope": "STF; idade mínima de cinquenta anos e ausência de filiação partidária nos cinco anos anteriores.",
+      "conditions": [
+        "Mínimo de três mulheres.",
+        "Não apresenta regime de transição; relaciona-se à tensão com P37."
+      ],
+      "evidence": [
+        {
+          "page": 64,
+          "quote": "Propomos estabelecer mandato de oito anos para os ministros do Supremo Tribunal Federal (STF), com critérios mais objetivos de composição e ingresso."
+        },
+        {
+          "page": 64,
+          "quote": "Propomos ainda reduzir a composição do STF para nove ministros: seis oriundos da magistratura, dois do Ministério Público e um da advocacia. Das nove vagas, no mínimo três deverão ser ocupadas por mulheres de ilibado saber jurídico e notável histórico comportamental. E quem escolherá os ministros serão as respectivas classes dos magistrados, Ministério Público e OAB, e não mais o presidente."
+        }
+      ],
+      "context_pages": [
+        64
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Integridade e controle social do gasto",
+      "statement": "Criar rede de fiscalização cidadã e usar dados abertos e IA para identificar irregularidades nos recursos públicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa Sociedade Está de Olho, fortalecimento de órgãos de controle e plataformas abertas.",
+      "scope": "Administração pública, cidadãos, universidades e sociedade civil.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Implantaremos uma ampla rede nacional de controle social denominada Sociedade Está de Olho (SEO), envolvendo cidadãos, universidades, entidades da sociedade civil, órgãos de controle e tecnologias inteligentes para acompanhar a aplicação dos recursos públicos."
+        },
+        {
+          "page": 53,
+          "quote": "Os dados governamentais serão disponibilizados em plataformas digitais abertas, permitindo controle social permanente e fortalecendo a confiança da população nas instituições públicas."
+        }
+      ],
+      "context_pages": [
+        52,
+        53
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Reeleição presidencial",
+      "statement": "Rejeitar a reeleição, apresentada no contexto do mandato presidencial.",
+      "support_level": "explicit_rejection",
+      "instrument": "Alteração institucional não detalhada.",
+      "scope": "A declaração está inserida em reflexão sobre a Presidência da República.",
+      "conditions": [
+        "Não estender automaticamente a regra a todos os cargos eletivos; transição não descrita."
+      ],
+      "evidence": [
+        {
+          "page": 155,
+          "quote": "Sou contra a reeleição, pois considero que ela seja uma das fontes da corrupção."
+        }
+      ],
+      "context_pages": [
+        155
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Concessões e parcerias na infraestrutura",
+      "statement": "Ampliar concessões e PPPs para financiar obras e serviços de infraestrutura.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratos com capital nacional e internacional, segurança jurídica e fiscalização.",
+      "scope": "Infraestrutura nacional.",
+      "conditions": [
+        "A proposta setorial não decide privatização de todas as empresas estatais."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Por isso, ampliaremos as concessões e as parcerias público-privadas, sempre com regras claras, segurança jurídica e rigorosa fiscalização."
+        }
+      ],
+      "context_pages": [
+        50
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Regularização fundiária e permanência territorial",
+      "statement": "Acelerar regularização de moradias e urbanização com participação comunitária, priorizando permanência no território.",
+      "support_level": "explicit_proposal",
+      "instrument": "REURB, cadastro territorial, supervisão humana e jurídica, conselhos comunitários e infraestrutura.",
+      "scope": "Até cinco milhões de moradias em dez anos; prioridade a baixa renda e viabilidade jurídica e urbanística.",
+      "conditions": [
+        "Risco grave pode exigir outra solução habitacional.",
+        "Moradia regularizada não será automaticamente exigida como garantia do pequeno empréstimo."
+      ],
+      "evidence": [
+        {
+          "page": 105,
+          "quote": "O objetivo será acelerar a regularização das moradias utilizando a legislação da REURB, simplificando procedimentos e estabelecendo uma grande cooperação entre União, Estados, municípios, cartórios, universidades, conselhos profissionais e comunidades."
+        },
+        {
+          "page": 109,
+          "quote": "Sempre que tecnicamente possível, será priorizada a urbanização da própria comunidade. Remoções deverão ser excepcionais, especialmente nos casos de risco comprovado ou impossibilidade técnica, respeitando direitos, devido processo e soluções habitacionais adequadas."
+        }
+      ],
+      "context_pages": [
+        105,
+        106,
+        109
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Integração logística e rodovias",
+      "statement": "Integrar modalidades de transporte e ampliar armazenagem, além de duplicar as principais rodovias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa nacional de logística; incentivos fiscais e parcerias para armazéns; duplicação rodoviária.",
+      "scope": "Transportes de cargas e conexão regional; principais rodovias sem lista individual.",
+      "conditions": [
+        "Não estabelece repartição modal de investimento nem cronograma de obras."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Implantaremos um grande programa nacional de integração logística para reduzir o custo do transporte de cargas, aumentar a competitividade do agronegócio, da indústria e do comércio e conectar de forma eficiente todas as regiões do país."
+        },
+        {
+          "page": 120,
+          "quote": "Propomos duplicação das principais rodovias."
+        }
+      ],
+      "context_pages": [
+        50,
+        120
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Regime de saneamento",
+      "statement": "Priorizar o cumprimento do Marco Legal do Saneamento Básico.",
+      "support_level": "explicit_proposal",
+      "instrument": "Implementação do marco vigente para ampliar água tratada e tratamento de esgoto.",
+      "scope": "População sem acesso adequado a saneamento.",
+      "conditions": [
+        "Não detalha nesta proposta a modalidade de operador de cada serviço."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Fazer cumprir o Marco Legal do Saneamento Básico como prioridade nacional por representar uma das políticas públicas de maior impacto sobre a saúde, a qualidade de vida, a preservação ambiental e a redução dos gastos públicos com doenças evitáveis."
+        }
+      ],
+      "context_pages": [
+        50
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Licenciamento por risco e prazos",
+      "statement": "Fixar prazos legais e integrar digitalmente licenças, concentrando análise técnica nos maiores impactos e simplificando os menores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Classificação por risco, procedimento federativo integrado e fiscalização reforçada.",
+      "scope": "Licenciamento ambiental, sanitário e de outorga de água no capítulo agrícola.",
+      "conditions": [
+        "A frase atravessa páginas e as citações permanecem separadas.",
+        "Preserva rigor técnico, fiscalização e responsabilização integral; não prevê aprovação automática por silêncio."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Estabeleceremos prazos máximos legais para o licenciamento ambiental, sanitário e de outorga de água, com procedimento digital integrado entre União, Estados e Municípios e classificação por nível de risco, concentrando a análise técnica detalhada nos empreendimentos de"
+        },
+        {
+          "page": 48,
+          "quote": "maior impacto e simplificando os de impacto reduzido. Agilidade não significa ausência de critério: os parâmetros técnicos permanecerão rigorosos, a fiscalização será fortalecida e a responsabilização por danos ambientais será integral."
+        }
+      ],
+      "context_pages": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Remuneração pela conservação e carbono",
+      "statement": "Regular o mercado de carbono e remunerar produtores que preservam floresta e vegetação nativa.",
+      "support_level": "explicit_proposal",
+      "instrument": "Créditos de carbono, Pagamento por Serviços Ambientais e projetos de reflorestamento e baixa emissão.",
+      "scope": "Produtores rurais e projetos de conservação.",
+      "conditions": [
+        "Não fixa preços, critérios de adicionalidade ou volumes de créditos."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Regulamentaremos esse setor com segurança jurídica, incentivando projetos de preservação ambiental, reflorestamento, agricultura regenerativa e tecnologias de baixa emissão de carbono."
+        },
+        {
+          "page": 51,
+          "quote": "Instituiremos mecanismos claros de Pagamento por Serviços Ambientais (PSA), garantindo que o produtor rural que preserva a floresta e a vegetação nativa em sua"
+        },
+        {
+          "page": 52,
+          "quote": "propriedade seja financeiramente remunerado por esse serviço essencial prestado à sociedade e ao planeta."
+        }
+      ],
+      "context_pages": [
+        51,
+        52,
+        183
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Prevenção e resposta a incêndios florestais",
+      "statement": "Criar monitoramento e resposta integrados contra incêndios com dados, IA, drones e brigadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistema nacional de detecção precoce, comando federal-estadual e logística de resposta.",
+      "scope": "Regiões de risco ambiental.",
+      "conditions": [
+        "Agentes supressores sujeitos a protocolos ambientais rigorosos."
+      ],
+      "evidence": [
+        {
+          "page": 182,
+          "quote": "Satélites + IA para identificar focos de calor em estágio inicial"
+        },
+        {
+          "page": 182,
+          "quote": "Uso de agentes supressores (químicos e biológicos) de baixa toxicidade, com protocolos ambientais rigorosos"
+        }
+      ],
+      "context_pages": [
+        182
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Desenvolvimento amazônico como proteção florestal",
+      "statement": "Apoiar atividades sustentáveis, infraestrutura e crédito local para reduzir pressão social sobre a floresta.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa Amazônia Viva, microempresas de bioeconomia e crédito orientado.",
+      "scope": "Ribeirinhos, cidades amazônicas, pequenos empreendedores e cooperativas.",
+      "conditions": [
+        "Relaciona proteção social e renda à preservação; não especifica regras de demarcação territorial."
+      ],
+      "evidence": [
+        {
+          "page": 183,
+          "quote": "Portanto, proteger a floresta exige proteger as pessoas."
+        },
+        {
+          "page": 184,
+          "quote": "Linha de crédito acessível para pequenos empreendedores, cooperativas, negócios sustentáveis e microcrédito com orientação técnica."
+        }
+      ],
+      "context_pages": [
+        183,
+        184
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transição energética limpa",
+      "statement": "Expandir renováveis, armazenamento e hidrogênio verde, com produção industrial e participação de capital global.",
+      "support_level": "explicit_proposal",
+      "instrument": "Incentivos, PPPs, polos de hidrogênio, energia solar, eólica, biomassa e fontes oceânicas.",
+      "scope": "Meta declarada de 90% da matriz energética limpa até 2040.",
+      "conditions": [
+        "O documento não define a metodologia da expressão matriz energética limpa nem calendário de retirada dos combustíveis fósseis."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Ampliaremos investimentos em energia solar, eólica, biomassa, pequenas centrais hidrelétricas e outras fontes renováveis, transformando o país em referência internacional em sustentabilidade e segurança energética."
+        },
+        {
+          "page": 176,
+          "quote": "Meta: 90% da matriz energética limpa até 2040."
+        }
+      ],
+      "context_pages": [
+        51,
+        175,
+        176
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Política e regulação da inteligência artificial",
+      "statement": "Tratar IA como infraestrutura estratégica de Estado, com política nacional e marco legal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desenvolvimento, regulação e aplicação da IA; aumento de investimento em CT&I.",
+      "scope": "Serviços públicos, educação, saúde, segurança e gestão.",
+      "conditions": [
+        "Não especifica modelo de supervisão, classificação de risco ou responsabilização de sistemas."
+      ],
+      "evidence": [
+        {
+          "page": 58,
+          "quote": "A inteligência artificial será tratada como infraestrutura estratégica de Estado. Criaremos uma política nacional para desenvolvimento, regulação e aplicação da IA em serviços públicos, educação, saúde, segurança e gestão governamental, garantindo soberania tecnológica e competitividade global."
+        },
+        {
+          "page": 58,
+          "quote": "Para isso, estabeleceremos um Marco Legal seguro para a IA, que garanta inovação com ética e segurança jurídica."
+        }
+      ],
+      "context_pages": [
+        58
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Pesquisa universitária e transferência de tecnologia",
+      "statement": "Fortalecer CAPES e CNPq, aproximar pesquisa do setor produtivo e permitir participação dos pesquisadores nos resultados econômicos das inovações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Incubadoras, laboratórios, startups, patentes e transferência de tecnologia.",
+      "scope": "Universidades, centros de pesquisa e pesquisadores.",
+      "conditions": [
+        "Não define percentuais de repartição nem dispensa regras sobre propriedade intelectual pública."
+      ],
+      "evidence": [
+        {
+          "page": 78,
+          "quote": "Nosso objetivo é estimular o registro de patentes, fortalecer a cultura da propriedade intelectual e ampliar a transferência de tecnologia para o setor produtivo, transformando conhecimento em inovação de impacto."
+        },
+        {
+          "page": 79,
+          "quote": "Defendemos mecanismos que valorizem a produção intelectual dos pesquisadores e estimulem sua participação nos resultados econômicos das inovações desenvolvidas, aproximando universidades, centros de pesquisa e iniciativa privada."
+        }
+      ],
+      "context_pages": [
+        58,
+        78,
+        79
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Conectividade e inclusão digital",
+      "statement": "Levar internet de alta velocidade a equipamentos públicos e territórios rurais ou remotos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Universalização de infraestrutura digital e programas de inclusão e capacitação tecnológica.",
+      "scope": "Escolas, hospitais, comunidades rurais e regiões remotas.",
+      "conditions": [
+        "Não informa metas territoriais anuais, tecnologia de acesso ou regime tarifário."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Levaremos internet de alta velocidade às escolas, hospitais, comunidades rurais e regiões remotas, reduzindo a exclusão digital e ampliando o acesso ao conhecimento, aos serviços públicos, ao empreendedorismo e à economia digital."
+        }
+      ],
+      "context_pages": [
+        50,
+        58
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transição do benefício de renda ao trabalho",
+      "statement": "Manter temporariamente o Bolsa Família quando a família ingressar no emprego formal ou abrir microempresa, com incentivos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Continuidade transitória do benefício e condições de crédito mais favoráveis.",
+      "scope": "Famílias beneficiárias que formalizem trabalho ou negócio.",
+      "conditions": [
+        "Duração e situação posterior não definidas.",
+        "Não decide substituir o benefício por trabalho público remunerado."
+      ],
+      "evidence": [
+        {
+          "page": 98,
+          "quote": "Toda família beneficiada com"
+        },
+        {
+          "page": 99,
+          "quote": "Bolsa Família não será punida se assinar a carteira ou se abrir uma microempresa, por determinado tempo. Ao contrário, serão premiados, com incentivos e juros mais baixos."
+        }
+      ],
+      "context_pages": [
+        98,
+        99
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Plataforma pública nacional de telemedicina",
+      "statement": "Organizar rede pública nacional de consultas digitais, com triagem apoiada por IA e meta de atendimento em trinta minutos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plataforma integrada entre regiões, médicos especializados e encaminhamento presencial.",
+      "scope": "Casos compatíveis com telemedicina; prioridade a grupos vulneráveis e regiões distantes.",
+      "conditions": [
+        "IA auxilia, não substitui médicos.",
+        "Exames físicos e procedimentos exigem encaminhamento presencial.",
+        "Não define contratação de rede privada nem gestão de todas as unidades públicas."
+      ],
+      "evidence": [
+        {
+          "page": 162,
+          "quote": "Nosso compromisso é estabelecer uma meta nacional de atendimento digital em até trinta minutos para os casos compatíveis com telemedicina. Para isso será criada uma plataforma nacional integrada, conectando profissionais de todas as regiões do país em uma única rede pública digital."
+        },
+        {
+          "page": 164,
+          "quote": "A medicina digital não substituirá o atendimento presencial, mas reorganizará o sistema de saúde."
+        }
+      ],
+      "context_pages": [
+        161,
+        162,
+        164
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Atenção primária como eixo do SUS",
+      "statement": "Manter atenção básica como principal eixo do SUS e ampliar equipes multiprofissionais e acompanhamento de famílias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prevenção, acompanhamento familiar e expansão de equipes.",
+      "scope": "Rede de atenção primária.",
+      "conditions": [
+        "Não quantifica a expansão das equipes ou o financiamento."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "A atenção básica continuará sendo o principal eixo do Sistema Único de Saúde. Investiremos na prevenção de doenças, no acompanhamento das famílias e na ampliação das equipes multiprofissionais, reduzindo internações evitáveis e melhorando a qualidade de vida da população."
+        }
+      ],
+      "context_pages": [
+        44
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Saúde mental e prevenção entre jovens",
+      "statement": "Criar política nacional de saúde mental com prevenção, acolhimento, formação de profissionais e redes de apoio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Educação emocional, identificação precoce e capacitação de educação e saúde.",
+      "scope": "Escolas, empresas, universidades, segurança, saúde e comunidades; destaque a crianças, adolescentes e jovens.",
+      "conditions": [
+        "Não especifica composição ou financiamento de toda a rede especializada."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Implantaremos uma ampla política nacional de saúde mental envolvendo escolas, empresas, universidades, forças de segurança, unidades de"
+        },
+        {
+          "page": 45,
+          "quote": "saúde e comunidades, promovendo prevenção, acolhimento e tratamento humanizado."
+        },
+        {
+          "page": 45,
+          "quote": "Desenvolveremos programas de educação emocional, identificação precoce de fatores de risco, capacitação de profissionais da educação e da saúde e fortalecimento das redes de apoio às famílias, especialmente entre crianças, adolescentes e jovens."
+        }
+      ],
+      "context_pages": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Prevenção e diagnóstico precoce do câncer",
+      "statement": "Expandir rede preventiva inspirada no Hospital de Amor, com unidades móveis, educação contínua e comitês municipais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Projeto Sociedade Está Abraçando e integração preventiva de instituições públicas, privadas e sociedade civil.",
+      "scope": "População nacional, com adaptação regional.",
+      "conditions": [
+        "Modelo adaptado às realidades regionais.",
+        "Integração preventiva não determina delegação de gestão ou compra de atendimento pelo SUS."
+      ],
+      "evidence": [
+        {
+          "page": 171,
+          "quote": "A experiência do Hospital de Amor servirá como referência para a construção da maior rede nacional de prevenção do câncer já implementada no Brasil."
+        },
+        {
+          "page": 172,
+          "quote": "Cada município contará com um Comitê Sociedade Está Abraçando (SEA), reunindo representantes de diferentes áreas para fortalecer a prevenção e a promoção da saúde."
+        }
+      ],
+      "context_pages": [
+        171,
+        172
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Currículo socioemocional, financeiro e empreendedor",
+      "statement": "Acrescentar gestão emocional, educação financeira e empreendedorismo ao currículo, associados a atividades culturais e de convivência na escola integral.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança curricular e escola como espaço de desenvolvimento humano.",
+      "scope": "Educação escolar desde os primeiros anos.",
+      "conditions": [
+        "Conteúdos são adicionais às disciplinas tradicionais; não define carga horária."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "Essa transformação também alcança o currículo escolar. Ao lado das disciplinas tradicionais, a proposta incorpora três pilares essenciais para a formação das novas gerações: Gestão da Emoção, para desenvolver o equilíbrio psicológico, a autonomia e a capacidade de enfrentar desafios; Educação Financeira, preparando crianças e jovens para decisões responsáveis ao longo da vida; e Empreendedorismo, estimulando a criatividade, a inovação e a geração de oportunidades desde os primeiros anos da formação escolar."
+        }
+      ],
+      "context_pages": [
+        75
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Integração do ensino médio à formação técnica",
+      "statement": "Combinar formação acadêmica, humana e profissional no ensino médio, aproximando escolas, empresas e instituições técnicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ensino técnico integrado, projetos práticos e articulação com universidades e centros de inovação.",
+      "scope": "Estudantes do ensino médio.",
+      "conditions": [
+        "Mantém formação acadêmica e disciplinas tradicionais; não define itinerários ou cargas horárias."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Ampliaremos significativamente a oferta de ensino técnico integrado ao ensino médio, aproximando escolas e empresas, formando jovens com competências práticas e aumentando sua empregabilidade."
+        },
+        {
+          "page": 76,
+          "quote": "Nosso compromisso é construir um Ensino Médio que integre formação acadêmica de qualidade com desenvolvimento humano e preparação profissional."
+        }
+      ],
+      "context_pages": [
+        43,
+        76,
+        77
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Inclusão de estudantes neurodivergentes na escola regular",
+      "statement": "Manter escola regular como centro da convivência, com adaptações e atendimento especializado complementar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Planos de inclusão escolares, apoio especializado, formação docente e rede entre escola, família e saúde.",
+      "scope": "Autismo, TDAH, dislexia, transtornos de aprendizagem e altas habilidades; expansão progressiva à rede pública básica.",
+      "conditions": [
+        "Necessidade comprovada para apoio especializado.",
+        "Professores identificam sinais e encaminham; não substituem profissionais de saúde."
+      ],
+      "evidence": [
+        {
+          "page": 82,
+          "quote": "A escola regular continuará sendo o espaço central de convivência. O Atendimento Educacional Especializado será complementar, e os estudantes que comprovadamente necessitarem deverão ter acesso ao apoio especializado previsto na legislação."
+        },
+        {
+          "page": 84,
+          "quote": "O programa deverá alcançar progressivamente todas as redes públicas de educação básica, estabelecer formação continuada de professores, criar protocolos de inclusão em cada escola e desenvolver indicadores objetivos de redução de evasão, bullying e exclusão, além de acompanhar aprendizagem, participação e bem-estar dos estudantes."
+        }
+      ],
+      "context_pages": [
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Formação e remuneração docente",
+      "statement": "Investir em formação continuada e condições de trabalho, associando também remuneração à qualificação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Aperfeiçoamento profissional e critérios remuneratórios ligados à formação.",
+      "scope": "Professores.",
+      "conditions": [
+        "Não fixa piso, reajuste, desenho de carreira ou vínculo salarial exclusivo com desempenho."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Investiremos em formação continuada, melhoria das condições de trabalho, remuneração baseada também em qualificação e incentivo permanente ao aperfeiçoamento profissional."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Cultura, economia criativa e patrimônio",
+      "statement": "Incentivar produção cultural e economia criativa e proteger patrimônio histórico.",
+      "support_level": "general_goal",
+      "instrument": "Instrumentos específicos de fomento não detalhados.",
+      "scope": "Produção artística, audiovisual, musical, literária e digital; patrimônio histórico.",
+      "conditions": [
+        "Objetivos genéricos; não define financiamento, editais ou alterações em leis de incentivo."
+      ],
+      "evidence": [
+        {
+          "page": 62,
+          "quote": "A cultura será tratada como ativo estratégico do país, com incentivo à produção artística, audiovisual, musical, literária e digital, fortalecendo a identidade nacional."
+        },
+        {
+          "page": 63,
+          "quote": "O patrimônio histórico e cultural será protegido e restaurado, garantindo a preservação da memória nacional e o fortalecimento da identidade brasileira."
+        }
+      ],
+      "context_pages": [
+        62,
+        63
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Igualdade remuneratória entre mulheres e homens",
+      "statement": "Fortalecer transparência salarial e fiscalização da legislação de igualdade remuneratória.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fiscalização, divulgação salarial e cumprimento legal.",
+      "scope": "Trabalho de igual valor, com critérios de equivalência previstos em lei.",
+      "conditions": [
+        "Equivalência de função, responsabilidade, produtividade e demais critérios legais.",
+        "Não decide revogação da reforma trabalhista de 2017."
+      ],
+      "evidence": [
+        {
+          "page": 89,
+          "quote": "Fortaleceremos os mecanismos de transparência salarial, fiscalização e cumprimento da legislação que determina igualdade remuneratória para trabalho de igual valor."
+        }
+      ],
+      "context_pages": [
+        89
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Desigualdade de gênero na concessão de crédito",
+      "statement": "Rever matrizes de risco e ampliar transparência para que crédito feminino reflita risco efetivo e histórico de pagamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Articulação com Banco Central e instituições financeiras, estudos e revisão de critérios.",
+      "scope": "Mulheres e negócios por elas liderados.",
+      "conditions": [
+        "Não elimina avaliação de risco; questiona reprodução de desigualdades por dependência excessiva de garantias patrimoniais."
+      ],
+      "evidence": [
+        {
+          "page": 89,
+          "quote": "Em articulação com o Banco Central, instituições financeiras, Sebrae, universidades e entidades especializadas, promoveremos estudos e mecanismos de transparência capazes de identificar possíveis distorções nos modelos de concessão de crédito."
+        },
+        {
+          "page": 90,
+          "quote": "Incentivaremos o aperfeiçoamento das matrizes de risco para que sejam cada vez mais fundamentadas no risco efetivo do tomador, considerando adequadamente fatores como histórico de pagamento, adimplência, capacidade financeira e comportamento de crédito."
+        }
+      ],
+      "context_pages": [
+        89,
+        90
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Representação feminina no STF",
+      "statement": "Priorizar mulheres qualificadas nas indicações presidenciais a vagas do STF.",
+      "support_level": "explicit_proposal",
+      "instrument": "Seleção para vagas que surgirem dentro das competências constitucionais da Presidência.",
+      "scope": "Mulheres que preencham os requisitos constitucionais.",
+      "conditions": [
+        "Relaciona-se à reforma do STF em P10, que retira a escolha do presidente; transição não explicitada.",
+        "Não permite inferir decisão sobre cotas raciais."
+      ],
+      "evidence": [
+        {
+          "page": 93,
+          "quote": "No âmbito das competências constitucionais da Presidência da República, assumimos o compromisso de priorizar mulheres altamente qualificadas nas indicações para vagas que venham a surgir no Supremo Tribunal Federal, sempre observados os requisitos constitucionais para o exercício do cargo."
+        }
+      ],
+      "context_pages": [
+        64,
+        93
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Inteligência policial integrada e vigilância tecnológica",
+      "statement": "Organizar sistema nacional de inteligência operacional, com intercâmbio de dados e tecnologias como reconhecimento facial.",
+      "support_level": "explicit_proposal",
+      "instrument": "FATO, centros integrados, IA, câmeras, drones e análise preditiva.",
+      "scope": "Polícias federal, estaduais e força municipal de apoio.",
+      "conditions": [
+        "Competências e autonomia constitucional das instituições preservadas.",
+        "Reconhecimento facial condicionado à legislação vigente."
+      ],
+      "evidence": [
+        {
+          "page": 186,
+          "quote": "Este projeto parte do princípio de que a segurança pública deve deixar de atuar de forma fragmentada e passar a funcionar como um sistema único de inteligência operacional, respeitando as competências constitucionais de cada instituição."
+        },
+        {
+          "page": 188,
+          "quote": "Reconhecimento facial (conforme a legislação vigente);"
+        }
+      ],
+      "context_pages": [
+        186,
+        187,
+        188,
+        189,
+        190
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Força municipal de apoio à segurança",
+      "statement": "Permitir criação de força municipal de combate e prevenção como apoio operacional permanente.",
+      "support_level": "explicit_proposal",
+      "instrument": "FOCO com aproximadamente 5% da força de trabalho municipal e formação específica.",
+      "scope": "Municípios brasileiros, conforme realidade de cada cidade.",
+      "conditions": [
+        "Respeita legislação e realidade municipal; não substitui polícias estaduais ou federais."
+      ],
+      "evidence": [
+        {
+          "page": 187,
+          "quote": "Força de Combate Municipal. Cada município brasileiro poderá criar sua FOCO. Sua composição corresponderá a aproximadamente 5% da força de trabalho do serviço público municipal, respeitando a realidade de cada cidade e a legislação vigente."
+        },
+        {
+          "page": 187,
+          "quote": "Não substituirá as polícias estaduais ou federais, mas atuará como força permanente de apoio operacional."
+        }
+      ],
+      "context_pages": [
+        187
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Proteção de mulheres em risco",
+      "statement": "Organizar proteção preventiva e resposta prioritária à violência doméstica, integrando polícia, Justiça e serviços de apoio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mulheres Vivas, botões com geolocalização, monitoramento de agressores e centrais integradas.",
+      "scope": "Mulheres ameaçadas, com prioridade às classificadas como alto risco.",
+      "conditions": [
+        "Monitoramento de agressores depende de determinação judicial; compartilhamento respeita legislação e proteção de dados."
+      ],
+      "evidence": [
+        {
+          "page": 88,
+          "quote": "Ampliaremos o uso de botões de alerta com geolocalização, aplicativos de emergência, monitoramento eletrônico de agressores nos casos determinados judicialmente, centrais integradas e protocolos de resposta prioritária para mulheres ameaçadas."
+        }
+      ],
+      "context_pages": [
+        87,
+        88
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Reforma prisional e ressocialização",
+      "statement": "Reformar sistema penitenciário com educação, trabalho e reintegração social, enfrentando superlotação e facções.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programas de ressocialização e modernização processual para maior celeridade.",
+      "scope": "Sistema prisional e Justiça penal.",
+      "conditions": [
+        "Não define mudanças de penas, maioridade penal ou gestão privada de prisídios."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "O sistema penitenciário será reformado com foco em educação, trabalho e ressocialização efetiva, combatendo a superlotação e a ação das facções dentro dos presídios."
+        }
+      ],
+      "context_pages": [
+        47
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Diplomacia econômica orientada por resultados",
+      "statement": "Transformar embaixadas em unidades de promoção comercial, investimento e apoio a exportadores, com indicadores públicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Embaixada 4.0, núcleos de comércio e investimentos e metas anuais; fortalecimento político do ministro das Relações Exteriores.",
+      "scope": "Postos prioritários da rede diplomática.",
+      "conditions": [
+        "O plano não afirma abandono de funções diplomáticas tradicionais."
+      ],
+      "evidence": [
+        {
+          "page": 59,
+          "quote": "Implantaremos o modelo Embaixada 4.0, com metas anuais de abertura de mercados, atração de investimentos e apoio a exportadores, medidas por indicadores objetivos e divulgadas publicamente, na mesma lógica de gestão por resultados aplicada a todo o Estado."
+        }
+      ],
+      "context_pages": [
+        59,
+        65,
+        152
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Redistribuição geográfica da rede diplomática",
+      "statement": "Transferir parte de quadros dos EUA e Europa para ampliar presença em Índia, China, Ásia emergente e Oriente Médio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão gradual de lotações e critérios técnicos de comércio, investimento, inovação e potencial de mercado.",
+      "scope": "Cerca de 20% do efetivo dos EUA e 10% do europeu.",
+      "conditions": [
+        "Reorganização gradual; texto preserva parceiros históricos.",
+        "Não implica rompimento diplomático com países ou saída de blocos."
+      ],
+      "evidence": [
+        {
+          "page": 147,
+          "quote": "deslocar cerca de 20% do efetivo hoje lotado nos Estados Unidos para reforçar a presença estratégica na Índia e em outros mercados asiáticos emergentes;"
+        },
+        {
+          "page": 147,
+          "quote": "deslocar cerca de 10% do efetivo hoje concentrado na Europa para fortalecer a atuação na China, no Oriente Médio e em outros grandes mercados de alto potencial;"
+        }
+      ],
+      "context_pages": [
+        147
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Financiamento multilateral do combate à fome",
+      "statement": "Defender fundo internacional contra a fome financiado por contribuições do comércio global e da indústria de armamentos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contribuições propostas de 0,5% do comércio e 2% da indústria de armamentos; governança internacional.",
+      "scope": "Aplicação global: 80% assistência alimentar, 10% agricultura sustentável e 10% banco de microcrédito.",
+      "conditions": [
+        "Proposta de cooperação internacional, não tributo unilateral já definido para o Brasil.",
+        "Não detalha base jurídica, incidência ou mecanismo de adesão dos países."
+      ],
+      "evidence": [
+        {
+          "page": 157,
+          "quote": "Destinar 0,5% do comércio global e 2% da indústria mundial de armamentos para a criação de um Fundo Internacional de Erradicação da Fome."
+        },
+        {
+          "page": 158,
+          "quote": "Esse fundo deverá ser administrado com transparência e responsabilidade, reunindo organismos internacionais como a ONU, a FAO, o Programa Mundial de Alimentos, o Banco Mundial e os países do G20."
+        }
+      ],
+      "context_pages": [
+        157,
+        158
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Multilateralismo e diversificação de parceiros",
+      "statement": "Ampliar acordos comerciais e cooperação Sul-Sul, defendendo multilateralismo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Acordos com diferentes blocos e parcerias setoriais com países em desenvolvimento.",
+      "scope": "Comércio, tecnologia, energia, educação e infraestrutura.",
+      "conditions": [
+        "Não decide BRICS, acordo Mercosul–União Europeia ou rompimento diplomático condicionado com Israel."
+      ],
+      "evidence": [
+        {
+          "page": 59,
+          "quote": "Expandiremos acordos comerciais estratégicos com diferentes blocos econômicos, diversificando mercados e reduzindo dependências externas."
+        },
+        {
+          "page": 60,
+          "quote": "Fortaleceremos a cooperação com países em desenvolvimento, promovendo parcerias em tecnologia, energia, educação e infraestrutura, além de defender o multilateralismo como base da ordem internacional."
+        }
+      ],
+      "context_pages": [
+        59,
+        60
+      ]
+    }
+  ],
+  "position_count": 45,
+  "seed_count": 8,
+  "tensions": [
+    {
+      "description": "P10 (p. 64) transfere a escolha de ministros do STF do presidente às respectivas carreiras jurídicas. P37 (p. 93) promete prioridade a mulheres nas indicações presidenciais dentro das competências constitucionais. As duas formulações pressupõem regimes de escolha diferentes e o documento não explicita sua sequência.",
+      "position_ids": [
+        "P10",
+        "P37"
+      ],
+      "interpretation_limit": "Uma transição anterior à reforma pode permitir coexistência temporal, mas não é expressamente desenhada. Não resolver a tensão presumindo abandono de uma proposta nem afirmar impossibilidade inevitável de conciliá-las."
+    }
+  ],
+  "verification": {
+    "validator": "validate.py --candidate 280002551547",
+    "result": {
+      "schema_version": 1,
+      "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+      "candidate_count": 1,
+      "pending": 0,
+      "invalid_submissions": 0,
+      "complete_and_valid": true,
+      "profiles": [
+        {
+          "candidate_id": "280002551547",
+          "name": "Escritor Augusto Cury",
+          "status": "submitted",
+          "valid": true,
+          "errors": [],
+          "same_original_agent": true,
+          "category_count": 10,
+          "category_presence": {
+            "substantive": 10
+          },
+          "positions": 45,
+          "support_levels": {
+            "explicit_proposal": 43,
+            "explicit_rejection": 1,
+            "general_goal": 1
+          },
+          "thesis_seeds": 8,
+          "revisited_pages": 68,
+          "quote_matches": {
+            "layout": 82
+          },
+          "profile_sha256": "fb3d398f458e78fbf1059309b8ec6c9bd4be5f2b73e48030a7b7c8d347bab6a7"
+        }
+      ],
+      "caveat": "Checks provenance, structure and literal evidence. Does not prove semantic interpretation, ideology or questionnaire validity."
+    },
+    "execution_note": "Execução integral do validador; gravação do relatório auxiliar interceptada e preservada neste checkpoint, sem criar arquivo adicional."
+  }
+}

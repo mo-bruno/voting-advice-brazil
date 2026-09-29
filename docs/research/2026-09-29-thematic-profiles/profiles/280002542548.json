@@ -1,0 +1,1968 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002542548",
+  "candidate_name": "Lula",
+  "agent_id": "/root/plan_lula",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002542548.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    36,
+    37,
+    40,
+    41,
+    43,
+    45,
+    46,
+    49,
+    51,
+    52,
+    53,
+    54,
+    55,
+    58,
+    59,
+    60,
+    61,
+    64,
+    65,
+    67,
+    68,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O plano combina manutenção do arcabouço fiscal e incentivos industriais direcionados com expansão de serviços, infraestrutura e proteção social. Prevê coexistência de obras públicas e concessões e de SUS universal com oferta privada complementar contratada. Na transição energética, amplia renováveis e instrumentos climáticos enquanto também projeta expansão da cadeia de petróleo e gás. Propõe capacidades digitais nacionais, redução da jornada, integração sul-americana e fortalecimento industrial da defesa. Essas são escolhas do documento, com condições registradas; não constituem rótulo ideológico nem inferência sobre controle acionário de toda estatal.",
+    "position_ids": [
+      "P01",
+      "P02",
+      "P13",
+      "P15",
+      "P17",
+      "P18",
+      "P22",
+      "P25",
+      "P27",
+      "P28",
+      "P39",
+      "P49",
+      "P52"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "presence": "substantive",
+      "summary": "O plano combina manutenção do arcabouço fiscal com incentivos industriais condicionados, agregação de valor mineral e crédito diferenciado para pequenos negócios e agricultura familiar.",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05"
+      ],
+      "gaps": [
+        {
+          "topic": "Autonomia monetária e trajetória fiscal detalhada",
+          "reason": "A estratégia de juros e arcabouço é explícita, mas não decide a autonomia institucional do Banco Central nem fornece uma trajetória consolidada de custos e receitas para o conjunto de novas medidas.",
+          "context_pages": [
+            49
+          ]
+        },
+        {
+          "topic": "Critérios de incentivos e capital estrangeiro",
+          "reason": "Não define percentuais de conteúdo local, condições numéricas de crédito ou uma regra geral sobre entrada de capital estrangeiro; a referência a aderência internacional de títulos não identifica inequivocamente a nacionalidade do investidor.",
+          "context_pages": [
+            51,
+            52,
+            58,
+            59,
+            61
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "presence": "substantive",
+      "summary": "Prioriza participação no planejamento e orçamento, serviços públicos digitais personalizados, compartilhamento administrativo e transparência apoiada em dados.",
+      "position_ids": [
+        "P06",
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "gaps": [
+        {
+          "topic": "Controle acionário e privatização geral",
+          "reason": "O documento atribui funções futuras a empresas e bancos públicos e prevê patrocínios de estatais, sem enunciar regra abrangente sobre preservação do controle acionário ou transferência de todas as estatais. Concessão de infraestrutura também não decide esse controle.",
+          "context_pages": [
+            43,
+            53,
+            54,
+            58,
+            67
+          ]
+        },
+        {
+          "topic": "Poder decisório da participação e emendas parlamentares",
+          "reason": "Há defesa da participação e crítica ao sistema de emendas, mas não uma fórmula alternativa completa para emendas nem definição do caráter vinculante das consultas populares.",
+          "context_pages": [
+            15,
+            16,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "presence": "substantive",
+      "summary": "Propõe habitação com foco nas famílias de menor renda, saneamento periférico, mobilidade coletiva, obras públicas e concessões, reforma agrária e ampliação da cadeia de petróleo e gás da Petrobras.",
+      "position_ids": [
+        "P10",
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15"
+      ],
+      "gaps": [
+        {
+          "topic": "Financiamento, operação e cronograma",
+          "reason": "As diretrizes de expansão não trazem custo futuro consolidado, matriz completa de responsabilidades, fórmula tarifária ou modelo de operação para cada serviço, especialmente saneamento e habitação.",
+          "context_pages": [
+            45,
+            46,
+            53,
+            54
+          ]
+        },
+        {
+          "topic": "Terra e cadeia petrolífera",
+          "reason": "Não fixa meta de assentamentos, novos critérios de desapropriação ou desenho acionário futuro da Petrobras; a ampliação de exploração e refino não é uma regra geral de propriedade estatal.",
+          "context_pages": [
+            60,
+            67
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "presence": "substantive",
+      "summary": "Prevê desmatamento líquido zero, regulamentação do mercado de carbono, transição energética progressiva, adaptação permanente e instrumentos de proteção animal.",
+      "position_ids": [
+        "P16",
+        "P17",
+        "P18",
+        "P19",
+        "P20"
+      ],
+      "gaps": [
+        {
+          "topic": "Transição dos fósseis e desenho do mercado de carbono",
+          "reason": "Não apresenta calendário de encerramento de petróleo e gás nem limites, preços ou distribuição setorial de permissões do SBCE. A meta florestal é líquida e não equivale a proibir toda supressão de vegetação.",
+          "context_pages": [
+            51,
+            64,
+            67,
+            70,
+            71
+          ]
+        },
+        {
+          "topic": "Execução da adaptação e proteção animal",
+          "reason": "Faltam repartição detalhada dos aportes de adaptação e especificação das novas penas citadas no combate aos maus-tratos.",
+          "context_pages": [
+            71,
+            72,
+            73
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "presence": "substantive",
+      "summary": "Defende financiamento científico e retenção de pesquisadores, capacidade computacional nacional, exigências para datacenters e transparência algorítmica.",
+      "position_ids": [
+        "P21",
+        "P22",
+        "P23",
+        "P24"
+      ],
+      "gaps": [
+        {
+          "topic": "Regras e metas tecnológicas",
+          "reason": "Não fixa metas de orçamento científico, capacidade computacional, percentuais de contrapartida dos datacenters, sujeitos obrigados à transparência algorítmica ou regime de sanções. Não promete divulgação irrestrita de todo código-fonte.",
+          "context_pages": [
+            51,
+            54,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "presence": "substantive",
+      "summary": "Combina oferta complementar privada ao SUS, Farmácia Popular gratuito, ampliação da assistência, serviços de cuidado, previdência adaptada a trajetórias descontínuas e compras alimentares da agricultura familiar.",
+      "position_ids": [
+        "P25",
+        "P26",
+        "P27",
+        "P28",
+        "P29",
+        "P30"
+      ],
+      "gaps": [
+        {
+          "topic": "Benefícios de renda e contribuições previdenciárias",
+          "reason": "A proteção de renda é valorizada, mas não há nova tabela de benefícios, alíquotas contributivas ou decisão específica de substituir Bolsa Família por trabalho para beneficiários economicamente ativos.",
+          "context_pages": [
+            18,
+            19,
+            25,
+            58,
+            74,
+            77
+          ]
+        },
+        {
+          "topic": "Gestão de unidades públicas e ampliação da oferta",
+          "reason": "A oferta privada de exames e cirurgias não define quem administra todas as unidades públicas. O texto não estabelece um modelo exclusivo de gestão do SUS nem custo e cobertura final de cada serviço de cuidado.",
+          "context_pages": [
+            22,
+            25,
+            26,
+            36,
+            37,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "presence": "substantive",
+      "summary": "Propõe ampliar educação infantil e integral, manter Pé-de-Meia e piso docente, interiorizar redes públicas e continuar fomento à cultura e ao esporte de alto rendimento.",
+      "position_ids": [
+        "P31",
+        "P32",
+        "P33",
+        "P34",
+        "P35",
+        "P36"
+      ],
+      "gaps": [
+        {
+          "topic": "Modelo de gestão escolar e financiamento detalhado",
+          "reason": "As propostas de expansão não decidem escolas cívico-militares, custeio de vagas em creches privadas, novos valores do Pé-de-Meia ou fórmula futura de reajuste do piso docente.",
+          "context_pages": [
+            31,
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Regras do fomento cultural e esportivo",
+          "reason": "Não apresenta nova fórmula completa de seleção, limite futuro de incentivo cultural ou critérios adicionais de distribuição do Bolsa Atleta.",
+          "context_pages": [
+            40,
+            41,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "presence": "substantive",
+      "summary": "Prevê continuidade das cotas raciais, reconhecimento territorial tradicional, redução da jornada, proteção no trabalho por plataformas, planos obrigatórios de igualdade remuneratória e regulação democrática das redes.",
+      "position_ids": [
+        "P37",
+        "P38",
+        "P39",
+        "P40",
+        "P41",
+        "P42"
+      ],
+      "gaps": [
+        {
+          "topic": "Desenho jurídico das medidas",
+          "reason": "Não especifica novos percentuais de cotas, uma tese jurídica sobre marco temporal, calendário de transição da jornada ou enquadramento empregatício uniforme dos trabalhadores de plataformas. A revisão trabalhista seletiva não decide revogação integral da reforma de 2017.",
+          "context_pages": [
+            19,
+            20,
+            74,
+            75,
+            76
+          ]
+        },
+        {
+          "topic": "Regulação do debate digital",
+          "reason": "Não detalha critério jurídico de desinformação, autoridade de remoção, sanções ou garantias procedimentais para recursos. A defesa da liberdade de expressão permanece expressa.",
+          "context_pages": [
+            16
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "presence": "substantive",
+      "summary": "Combina investigação financeira e integração federativa, controle de armas, coordenação prisional, ministério condicionado à PEC, estímulo a câmeras corporais e rede de proteção contra violência às mulheres.",
+      "position_ids": [
+        "P43",
+        "P44",
+        "P45",
+        "P46",
+        "P47",
+        "P48"
+      ],
+      "gaps": [
+        {
+          "topic": "Implementação federativa e garantias operacionais",
+          "reason": "A criação ministerial depende da PEC. Os estímulos a câmeras não são obrigação universal, e o plano não define todos os protocolos de uso, armazenamento e acesso às imagens.",
+          "context_pages": [
+            27,
+            28,
+            30
+          ]
+        },
+        {
+          "topic": "Limites penais e acesso a armas",
+          "reason": "Não fixa idade penal adulta, proibição universal da posse civil ou nova tabela de penas; essas decisões não devem ser deduzidas de prevenção, controle de armas ou combate ao crime organizado.",
+          "context_pages": [
+            27,
+            28,
+            29,
+            30
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "presence": "substantive",
+      "summary": "Propõe integração sul-americana, fortalecimento dos BRICS e reforma multilateral, diversificação de acordos comerciais e capacidade industrial e tecnológica de defesa.",
+      "position_ids": [
+        "P49",
+        "P50",
+        "P51",
+        "P52"
+      ],
+      "gaps": [
+        {
+          "topic": "Compromissos diplomáticos e materiais específicos",
+          "reason": "Não detalha implementação de cada cláusula comercial, regras completas do mercado regional de energia ou percentual de orçamento de defesa. Princípios universais não decidem todas as relações bilaterais e sanções possíveis.",
+          "context_pages": [
+            78,
+            79,
+            80,
+            81,
+            82,
+            83
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Regra fiscal e estratégia de juros",
+      "statement": "Manter o novo arcabouço fiscal como parte da estratégia para reduzir juros com inflação controlada.",
+      "support_level": "explicit_proposal",
+      "instrument": "Arcabouço fiscal, controle do crescimento do gasto primário e melhoria da qualidade do gasto.",
+      "scope": "Política macroeconômica federal no próximo mandato.",
+      "conditions": [
+        "O texto condiciona a redução sustentada dos juros a inflação controlada e política fiscal responsável; não decide autonomia institucional do Banco Central."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Para isso, manteremos o novo arcabouço fiscal, que controlou o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário."
+        }
+      ],
+      "context_pages": [
+        49
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Incentivos industriais condicionados à produção nacional",
+      "statement": "Usar financiamento direcionado e benefícios condicionados a conteúdo local e valor agregado nacional para apoiar a indústria.",
+      "support_level": "explicit_proposal",
+      "instrument": "Crédito público e privado, compras públicas, concessões, regulações e margens de preferência.",
+      "scope": "Empresas e cadeias industriais brasileiras.",
+      "conditions": [
+        "Benefícios vinculados a conteúdo local e agregação de valor; não há percentual universal de nacionalização."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Utilizaremos financiamento direcionado, com soluções inovadoras de parceria entre crédito público e privado, compras públicas, concessões, regulações e benefícios condicionados a conteúdo local, valor agregado nacional, margens de preferência com estímulos para empresas brasileiras."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Beneficiamento de minerais críticos",
+      "statement": "Organizar cadeias de minerais críticos e terras raras para beneficiar e agregar valor no país, evitando simples exportação de matérias-primas estratégicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Política específica com mapeamento, beneficiamento e estratégia regional.",
+      "scope": "Minerais críticos e terras raras e sua inserção nas cadeias globais.",
+      "conditions": [
+        "Evitar exportação primária não é proibição expressa de exportar todo mineral bruto."
+      ],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Desenvolveremos uma política específica para minerais críticos e terras raras, capaz de organizar suas cadeias produtivas, diferenciar seus usos tecnológicos e evitar a simples exportação de matérias-primas estratégicas."
+        }
+      ],
+      "context_pages": [
+        52
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Crédito e participação para pequenos negócios",
+      "statement": "Ampliar fundos garantidores e investimentos em pequenas e médias empresas por fundos estruturados por bancos públicos com gestores privados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundos garantidores, fundos de participação e crédito para digitalização pelo Brasil Mais Produtivo.",
+      "scope": "MPMEs; fundos de participação priorizam setores dinâmicos e portadores de futuro.",
+      "conditions": [
+        "Os fundos seguem as diretrizes da política industrial.",
+        "Função atribuída a bancos públicos não define por si a manutenção de seu controle acionário."
+      ],
+      "evidence": [
+        {
+          "page": 58,
+          "quote": "Também ampliaremos investimentos para apoiar o crescimento de pequenas e médias empresas em setores dinâmicos e portadores de futuro, por meio de fundos de participação estruturados pelos bancos públicos, em parceria com gestores privados e em conformidade com as diretrizes da política industrial."
+        }
+      ],
+      "context_pages": [
+        58
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Crédito rural diferenciado",
+      "statement": "Expandir o crédito da agricultura familiar com prioridade para alimentos da cesta básica e manter linhas diferenciadas por atividade e público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plano Safra da Agricultura Familiar e linhas específicas de crédito para agroecologia, produção orgânica, jovens, mulheres e cooperativas.",
+      "scope": "Agricultura familiar; também há expansão do Plano Safra para o agronegócio na p.61.",
+      "conditions": [
+        "Juros compatíveis com o perfil do agricultor e o produto, sem taxa numérica uniforme.",
+        "A prioridade à agricultura familiar coexiste com crédito e títulos para o agronegócio."
+      ],
+      "evidence": [
+        {
+          "page": 59,
+          "quote": "Vamos continuar expandindo o Plano Safra da Agricultura Familiar, com juros compatíveis com o perfil do agricultor e tipo de produto, com prioridade para produção de alimentos da cesta básica."
+        },
+        {
+          "page": 59,
+          "quote": "Manteremos linhas de crédito diferenciadas para jovens agricultores, promovendo a sucessão familiar e reduzindo o êxodo rural; para mulheres agricultoras, e para cooperativas e associações."
+        }
+      ],
+      "context_pages": [
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Participação no planejamento e no orçamento",
+      "statement": "Ampliar a participação social na elaboração do PPA e no ciclo orçamentário federal e continuar conferências de políticas públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Conferências, mecanismos participativos do PPA e controle social.",
+      "scope": "Programas federais e PPA 2028–2031.",
+      "conditions": [
+        "Não define poder vinculante das consultas nem substituição das competências representativas."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Vamos aprofundar a participação. o controle social nas políticas públicas e continuaremos realizando conferências para implantar e aprimorar políticas e programas sob responsabilidade federal."
+        },
+        {
+          "page": 15,
+          "quote": "Queremos que o PPA 2028- 2031 seja ainda mais participativo e que o ciclo orçamentário federal brasileiro também seja objeto de participação social."
+        }
+      ],
+      "context_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Serviços públicos digitais personalizados",
+      "statement": "Universalizar serviços públicos digitais de qualidade e construir infraestrutura pública digital que permita personalização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Infraestruturas públicas digitais, integração de dados e melhoria de plataformas como Gov.br.",
+      "scope": "Serviços públicos; cooperação com estados e municípios na p.18.",
+      "conditions": [
+        "Não declara exclusão do atendimento presencial ou obrigatoriedade de uso digital."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "Vamos continuar investindo na universalização dos serviços públicos digitais de qualidade, e na construção de infraestruturas públicas digitais que deem suporte à personalização dos serviços."
+        }
+      ],
+      "context_pages": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Compartilhamento de serviços administrativos",
+      "statement": "Aprimorar a centralização e o compartilhamento de serviços de suporte entre órgãos federais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Compartilhamento de gestão de pessoas, orçamento e contratações.",
+      "scope": "Ministérios e órgãos do Executivo federal.",
+      "conditions": [
+        "Não equivale a centralizar a prestação de todos os serviços públicos nem a reduzir automaticamente o quadro de servidores."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "Aprimoraremos o modelo de centralização e compartilhamento de serviços de suporte (gestão de pessoas, orçamento, contratações etc.) entre ministérios e órgãos do Executivo federal, que tanto contribui para racionalizar o uso dos recursos e conferir mais qualidade ao gasto público."
+        }
+      ],
+      "context_pages": [
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Integridade e transparência da administração",
+      "statement": "Aprofundar o plano de integridade e combate à corrupção e modernizar o Portal da Transparência com dados abertos e IA.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plano de Integridade e Combate à Corrupção, Portal da Transparência e instâncias de consulta e ouvidoria.",
+      "scope": "Administração pública federal.",
+      "conditions": [
+        "Respeito expresso à independência institucional; não há alteração específica das competências penais."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "O Plano de Integridade e Combate à Corrupção 2025–2027 representa um avanço institucional que será aprofundado, fortalecendo a prevenção, a investigação e a responsabilização de corruptos e corruptores, inclusive os do andar de cima, com pleno respeito à independência das instituições."
+        },
+        {
+          "page": 18,
+          "quote": "O Portal da Transparência receberá investimentos para evoluir para uma plataforma inteligente baseada em dados abertos e inteligência artificial."
+        }
+      ],
+      "context_pages": [
+        18
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Habitação subsidiada e uso de imóveis existentes",
+      "statement": "Manter e ampliar o Minha Casa Minha Vida, preservando foco nas famílias de menor renda e usando compra assistida de imóveis prontos em situações excepcionais.",
+      "support_level": "explicit_proposal",
+      "instrument": "MCMV, Compra Assistida, áreas da União e Fundo Imobiliário da União.",
+      "scope": "Faixas de renda atendidas pelo programa, com prioridade às mais baixas; próximo mandato.",
+      "conditions": [
+        "A compra de imóveis prontos tem caráter excepcional; não é substituição integral da construção de moradias."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "O MCMV será mantido e ampliado no próximo mandato, para todas as faixas de renda e preservando seu foco nas famílias de mais baixa renda. Serão mobilizados novos instrumentos para ampliar o acesso à moradia, como o Compra Assistida, que, em situações excepcionais, permite a aquisição de imóveis já prontos."
+        }
+      ],
+      "context_pages": [
+        17,
+        18,
+        45
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Prioridade territorial do saneamento",
+      "statement": "Apoiar estados e municípios na universalização de água tratada e esgotamento sanitário, priorizando periferias historicamente negligenciadas.",
+      "support_level": "general_goal",
+      "instrument": "Apoio federal aos entes; o contexto relata investimentos e retomada de obras do Novo PAC.",
+      "scope": "Estados e municípios, especialmente periferias.",
+      "conditions": [
+        "Não detalha modelo de operação pública ou privada, tarifas ou divisão futura dos aportes."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Continuaremos, no próximo mandato, a perseguir o objetivo de apoiar estados e municípios a universalizar acesso à água tratada e ao esgotamento sanitário, buscando priorizar periferias historicamente negligenciadas."
+        }
+      ],
+      "context_pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Mobilidade coletiva e eletrificação",
+      "statement": "Apoiar transporte coletivo de alta capacidade e eletrificação progressiva das frotas, articulando os investimentos à indústria nacional de equipamentos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investimentos federais em transporte coletivo, modernização e renovação de frotas.",
+      "scope": "Cidades e regiões metropolitanas; transporte coletivo.",
+      "conditions": [
+        "Eletrificação progressiva, sem proibição imediata de toda frota a combustão."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Nosso compromisso é continuar apoiando investimentos em transporte coletivo de alta capacidade e na modernização e eletrificação progressiva das frotas do transporte coletivo. Manteremos a diretriz de apoiar investimentos que gerem demanda para a indústria nacional de equipamentos de transporte, integrando política urbana e política industrial."
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Concessões de infraestrutura logística",
+      "statement": "Continuar obras públicas e concessões do PAC, mantendo concessões rodoviárias e ampliando concessões ferroviárias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Leilões de projetos novos, repactuação de contratos e concessões.",
+      "scope": "Logística rodoviária e ferroviária; contexto também prevê arrendamentos e concessões de serviços portuários.",
+      "conditions": [
+        "Obras públicas e concessões coexistem; o texto não prescreve privatização de toda infraestrutura."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "A nova edição do Novo PAC manterá a articulação dos investimentos públicos e privados em infraestrutura logística, dando sequência a obras públicas e concessões. Manteremos o ritmo nas concessões rodoviárias e intensificaremos as de ferrovias em duas frentes: leilão de novos projetos e repactuação dos contratos existentes."
+        }
+      ],
+      "context_pages": [
+        52,
+        53,
+        54
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Reforma agrária e acesso à terra",
+      "statement": "Avançar na reforma agrária com assentamento de famílias acampadas, estruturação de assentamentos e ampliação do crédito fundiário.",
+      "support_level": "explicit_proposal",
+      "instrument": "Assentamentos, infraestrutura de assentamentos, crédito fundiário e regularização.",
+      "scope": "Famílias acampadas e assentadas; regularização rural com destaque para a região Norte.",
+      "conditions": [
+        "Não especifica meta quantitativa de famílias, critérios de desapropriação ou nova alteração do regime constitucional de propriedade."
+      ],
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Continuaremos a avançar na política de reforma agrária, assentando as famílias acampadas, estruturando os assentamentos e ampliando o acesso ao crédito fundiário."
+        }
+      ],
+      "context_pages": [
+        60
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Cadeia de petróleo e gás da Petrobras",
+      "statement": "Ampliar exploração e refino da Petrobras e fazê-la retornar à distribuição de combustíveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investimentos em exploração onshore e offshore, campos maduros, refino, distribuição e logística de GNL pela Transpetro.",
+      "scope": "Petrobras e Transpetro; reservas nacionais e cadeia de abastecimento.",
+      "conditions": [
+        "O parágrafo exige cuidados socioambientais ainda maiores para novas reservas; conferir transição energética no mesmo contexto.",
+        "A integração de atividades e o retorno à distribuição não determinam uma regra geral de controle acionário das estatais."
+      ],
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "Entendemos que a Petrobras continuará ampliando investimentos em exploração onshore e offshore, para recuperar participação no controle de reservas nacionais, e deverá expandir investimentos em revitalização de campos maduros."
+        },
+        {
+          "page": 67,
+          "quote": "A Petrobras deverá retornar ao segmento de distribuição de combustíveis, expandindo sua capacidade de refino e ampliando a atuação da Transpetro para logística de GNL."
+        },
+        {
+          "page": 67,
+          "quote": "As novas reservas serão exploradas com cuidados socioambientais ainda maiores e visão estratégica."
+        }
+      ],
+      "context_pages": [
+        67
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [],
+      "policy_dimension": "Desmatamento e proteção florestal",
+      "statement": "Perseguir desmatamento líquido zero até 2030 mediante planos de controle, manejo do fogo e efetividade das leis florestais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Planos de prevenção e controle do desmatamento, Plano Nacional de Manejo Integrado do Fogo, Código Florestal e Lei da Mata Atlântica.",
+      "scope": "Território nacional, meta até 2030.",
+      "conditions": [
+        "A meta é desmatamento líquido zero; não deve ser reescrita como proibição de toda supressão de vegetação."
+      ],
+      "evidence": [
+        {
+          "page": 70,
+          "quote": "No próximo mandato, continuaremos trabalhando para alcançar o desmatamento líquido zero até 2030, meta que reafirmamos. Para isto, todas as instâncias do governo persistirão atuando de forma integrada na implementação dos planos de controle e prevenção do desmatamento e na implementação plena do Plano Nacional de Manejo Integrado do Fogo."
+        }
+      ],
+      "context_pages": [
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Mercado regulado de emissões",
+      "statement": "Regulamentar o Sistema Brasileiro de Comércio de Emissões articulado à política industrial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulamentação do SBCE, mercado regulado de carbono.",
+      "scope": "Economia nacional e agentes a serem alcançados pela regulamentação.",
+      "conditions": [
+        "O plano não especifica os limites setoriais, preços de carbono ou distribuição das permissões."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Avançaremos em uma regulamentação do Sistema Brasileiro de Comércio de Emissões (SBCE), aprovado neste mandato, articulada com objetivos da Nova Indústria Brasil."
+        }
+      ],
+      "context_pages": [
+        51,
+        70,
+        71
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transição gradual para fontes de menor emissão",
+      "statement": "Aumentar renováveis e armazenamento e acelerar a substituição progressiva de combustíveis fósseis por biocombustíveis e combustíveis de baixo carbono.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investimentos em renováveis, armazenamento, flexibilidade elétrica e combustíveis de menor intensidade de carbono.",
+      "scope": "Matriz energética nacional; transição simultânea à segurança energética.",
+      "conditions": [
+        "Substituição progressiva, sem data para encerrar petróleo e gás.",
+        "O documento também pretende expandir exploração e refino pela Petrobras, registrados separadamente em P15."
+      ],
+      "evidence": [
+        {
+          "page": 64,
+          "quote": "Daremos sequência à estratégia de incrementar a participação de fontes renováveis, ampliar os investimentos em armazenamento e flexibilidade do sistema elétrico, e acelerar a substituição progressiva de combustíveis fósseis por biocombustíveis e combustíveis de baixa intensidade de carbono, incluindo derivados de hidrogênio."
+        },
+        {
+          "page": 71,
+          "quote": "Continuaremos acompanhando e participando do debate internacional sobre a construção de um mapa do caminho global para longe dos combustíveis fósseis, preservando soberania e segurança energéticas, responsabilidade ambiental e social e previsibilidade regulatória."
+        }
+      ],
+      "context_pages": [
+        64,
+        65,
+        67,
+        68,
+        71
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Adaptação climática no planejamento",
+      "statement": "Institucionalizar a adaptação climática como eixo permanente do planejamento e fortalecer planos estaduais e municipais para calor extremo e outros eventos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plano Nacional de Adaptação, planos subnacionais e protocolos de proteção à população atingida.",
+      "scope": "Governo federal, estados, municípios e populações afetadas ou deslocadas por desastres.",
+      "conditions": [
+        "Não fixa a repartição do financiamento e das obrigações entre os entes."
+      ],
+      "evidence": [
+        {
+          "page": 72,
+          "quote": "Continuaremos a ampliar o investimento em políticas de prevenção e redução de riscos de desastres. Institucionalizaremos a adaptação climática como eixo"
+        },
+        {
+          "page": 73,
+          "quote": "permanente do planejamento público, assegurando continuidade e fortalecimento do Plano Nacional de Adaptação à Mudança do Clima e estimulando a criação de planos estaduais e municipais de enfrentamento ao calor extremo e fortalecimento da capacidade de prevenção e resposta a eventos climáticos extremos."
+        }
+      ],
+      "context_pages": [
+        72,
+        73
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [],
+      "policy_dimension": "Proteção de animais domésticos",
+      "statement": "Ampliar o ProPatinhas e suas caravanas de castração e manter o cadastro nacional de cães e gatos.",
+      "support_level": "explicit_proposal",
+      "instrument": "ProPatinhas, castração e SinPatinhas.",
+      "scope": "Cães e gatos; proteção animal e participação federativa.",
+      "conditions": [
+        "O capítulo também prevê combate a maus-tratos, mas não especifica novo quantum penal futuro."
+      ],
+      "evidence": [
+        {
+          "page": 71,
+          "quote": "Vamos ampliar o ProPatinhas, fortalecendo as caravanas de castração, e dar continuidade ao SinPatinhas, cadastro nacional de cães e gatos."
+        }
+      ],
+      "context_pages": [
+        71,
+        72
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Financiamento científico e retenção de pesquisadores",
+      "statement": "Continuar o uso estratégico do FNDCT e a ação de permanência e retorno de cientistas brasileiros.",
+      "support_level": "explicit_proposal",
+      "instrument": "FNDCT e Programa Conhecimento Brasil.",
+      "scope": "Pesquisa e desenvolvimento tecnológico; cientistas brasileiros no país ou no exterior.",
+      "conditions": [
+        "O fim do contingenciamento é descrito como realização atual; o trecho não institui nova fórmula permanente de aporte nem imunidade jurídica a cortes."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Daremos sequência a esta ação, para que cientistas brasileiros possam permanecer ou retornar ao Brasil, contribuindo para o desenvolvimento tecnológico e inovação no País."
+        },
+        {
+          "page": 51,
+          "quote": "Asseguraremos ainda a continuidade do uso estratégico do FNDCT, que sustentou o maior ciclo de investimentos de sua história e deixou de ter seus recursos contingenciados."
+        }
+      ],
+      "context_pages": [
+        51
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Capacidade computacional e IA desenvolvidas no país",
+      "statement": "Desenvolver infraestrutura computacional sob instituições nacionais e modelos de linguagem apoiados em uma plataforma nacional de dados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Supercomputadores nacionais, modelos de linguagem e plataforma de dados para treinamento e avaliação.",
+      "scope": "Instituições nacionais e aplicações voltadas aos problemas brasileiros, em português e outras línguas.",
+      "conditions": [
+        "A infraestrutura envolve sinergias entre empresas públicas e privadas, universidades e pesquisa; não pressupõe monopólio estatal ou bloqueio de IA estrangeira."
+      ],
+      "evidence": [
+        {
+          "page": 54,
+          "quote": "Vamos avançar numa infraestrutura computacional soberana, com supercomputadores desenvolvidos e operados por instituições nacionais."
+        },
+        {
+          "page": 55,
+          "quote": "Vamos desenvolver e sustentar modelos de linguagem em português e outras línguas, voltados aos problemas do País, apoiados numa plataforma nacional de dados para treinamento e avaliação."
+        }
+      ],
+      "context_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Contrapartidas e salvaguardas para datacenters",
+      "statement": "Exigir salvaguardas socioambientais e contrapartidas de conteúdo local e capacidade computacional para o mercado interno na expansão de datacenters.",
+      "support_level": "explicit_proposal",
+      "instrument": "Exigências regulatórias de eficiência, avaliação de impactos e contrapartidas.",
+      "scope": "Datacenters e infraestruturas de IA instalados no Brasil.",
+      "conditions": [
+        "Inclui eficiência energética, utilização progressiva de fontes 100% renováveis e impactos elétricos, hídricos e sobre populações locais.",
+        "Não define porcentagens de capacidade reservada nem calendário de cumprimento."
+      ],
+      "evidence": [
+        {
+          "page": 54,
+          "quote": "Vamos assegurar que a expansão de data centers e infraestruturas de inteligência artificial seja acompanhada de salvaguardas socioambientais obrigatórias,"
+        },
+        {
+          "page": 55,
+          "quote": "Além disso, a instalação dos datacenters em solo brasileiro deve prever contrapartidas de conteúdo local e capacidade computacional para o mercado interno."
+        }
+      ],
+      "context_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Transparência de algoritmos e conteúdo sintético",
+      "statement": "Consolidar transparência algorítmica e rastreabilidade de conteúdo sintético.",
+      "support_level": "explicit_proposal",
+      "instrument": "Centro Nacional de Transparência Algorítmica.",
+      "scope": "Ambiente digital e decisões automatizadas.",
+      "conditions": [
+        "Não especifica obrigação universal de divulgar código-fonte, os sujeitos obrigados ou o regime de sanções."
+      ],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Vamos consolidar a transparência algorítmica e a rastreabilidade de conteúdo sintético, ancoradas no Centro Nacional de Transparência Algorítmica – porque democracia não convive com decisão automatizada que ninguém pode examinar."
+        }
+      ],
+      "context_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Oferta complementar privada no SUS",
+      "statement": "Continuar parcerias com hospitais privados para oferecer exames e cirurgias ao SUS e reduzir filas da atenção especializada.",
+      "support_level": "explicit_proposal",
+      "instrument": "Créditos financeiros ou de dívidas aos hospitais parceiros, no Agora Tem Especialistas.",
+      "scope": "Exames e cirurgias para pacientes do SUS; oferta complementar à expansão pública.",
+      "conditions": [
+        "Não implica transferir a gestão das unidades públicas ou substituir o SUS universal.",
+        "O mesmo contexto prevê mutirões, terceiro turno, unidades móveis e investimentos na rede pública."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+        }
+      ],
+      "context_pages": [
+        37,
+        40
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Gratuidade e ampliação do Farmácia Popular",
+      "statement": "Manter o Farmácia Popular inteiramente gratuito e incluir exames de diagnóstico e monitoramento de condições crônicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Medicamentos, fraldas e exames; parcerias com farmácias privadas e alternativas onde não houver estabelecimentos conveniáveis.",
+      "scope": "Usuários do programa; expansão dos pontos de retirada em periferias.",
+      "conditions": [
+        "A gratuidade se refere ao programa e ao seu elenco, que será revisto; não afirma cobertura de todo medicamento existente."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "O programa será mantido, 100% gratuito, assegurando contínua revisão dos medicamentos ofertados e a continuidade da distribuição de fraldas geriátricas."
+        },
+        {
+          "page": 36,
+          "quote": "Uma inovação do programa será incluir exames laboratoriais, de diagnóstico e de monitoramento de condições crônicas de saúde, que afetam parcela significativa da população, tais como hipertensão arterial e diabetes."
+        }
+      ],
+      "context_pages": [
+        36
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Ampliação da assistência e da proteção social",
+      "statement": "Manter e ampliar proteção social e fortalecer o SUAS com mais recursos e expansão da rede de atendimento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proteção Social Básica e Especial, recursos de atendimento e modernização da rede do SUAS.",
+      "scope": "Pessoas e famílias que necessitam de proteção social, incluindo comunidades tradicionais e atingidos por desastres.",
+      "conditions": [
+        "O Bolsa Família é elogiado e apresentado como política de garantia de renda; o texto não especifica valor futuro ou substituição por trabalho para beneficiários em idade ativa."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Por isso, devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita."
+        },
+        {
+          "page": 25,
+          "quote": "No próximo mandato, avançaremos ainda mais no fortalecimento da Proteção Social Básica e da Proteção Social Especial de média e alta complexidade, seja com mais recursos para atendimento às populações, seja por meio da expansão e modernização da rede de atendimento."
+        }
+      ],
+      "context_pages": [
+        18,
+        19,
+        25,
+        58
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Serviços públicos e comunitários de cuidado",
+      "statement": "Ampliar a política de cuidados com acolhimento infantil, infraestrutura comunitária e capacitação de cuidadores, além de apoio à rede de cuidado de idosos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cuidotecas, lavanderias públicas, cozinhas solidárias, restaurantes populares, formação de cuidadores e apoio municipal a Centros-Dia.",
+      "scope": "Crianças de 3 a 12 anos, mulheres responsáveis pelo cuidado, pessoas idosas e trabalhadores do cuidado.",
+      "conditions": [
+        "O cuidado é concebido como responsabilidade do Estado com corresponsabilização social e entre homens e mulheres; não é substituição obrigatória do cuidado familiar."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Apoiaremos as Cuidotecas, espaços de acolhida de crianças de 3 a 12 anos, que liberam o tempo das mulheres responsáveis pelo cuidado das crianças. Fomentaremos a construção de infraestruturas que ampliam os cuidados indiretos e comunitários, como as lavanderias públicas, as cozinhas solidárias e os restaurantes populares."
+        },
+        {
+          "page": 22,
+          "quote": "Vamos ampliar o apoio aos municípios para expandir e qualificar a rede de atendimento dos Centros-Dia e outros equipamentos para promoção do envelhecimento saudável e ativo, como academias públicas, praças, espaços de leitura, entre outros."
+        }
+      ],
+      "context_pages": [
+        22,
+        25,
+        26
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Cobertura previdenciária em trajetórias descontínuas",
+      "statement": "Buscar financiamento previdenciário diversificado e mecanismos contributivos mais flexíveis para trajetórias de trabalho descontínuas e múltiplas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reestruturação das fontes de custeio e mecanismos contributivos flexíveis.",
+      "scope": "Trabalhadores com trajetórias ocupacionais descontínuas ou múltiplas; proteção ao longo da vida laboral.",
+      "conditions": [
+        "Não define novas alíquotas, idades mínimas ou revogação integral da reforma previdenciária."
+      ],
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "Vamos continuar, em diálogo com a sociedade, a aprimorar a política de acesso e buscar reestruturar a base de financiamento da Previdência, buscando a diversidade das fontes de custeio. Queremos construir mecanismos contributivos mais flexíveis, capazes de acompanhar trajetórias ocupacionais descontínuas e múltiplas, permitindo que a pessoa que trabalha mantenha sua proteção ao longo de toda a vida laboral."
+        }
+      ],
+      "context_pages": [
+        77
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Compras de alimentos da agricultura familiar",
+      "statement": "Manter ampliação das compras públicas de alimentos da agricultura familiar e apoiar critérios de qualidade e origem na alimentação escolar.",
+      "support_level": "explicit_proposal",
+      "instrument": "PAA, alimentação escolar e apoio federativo, inclusive por Contrata+Brasil.",
+      "scope": "Equipamentos públicos, famílias vulneráveis e estudantes; fornecedores da agricultura familiar e sociobiodiversidade.",
+      "conditions": [
+        "45% refere-se à origem na agricultura familiar e 80% à composição alimentar; são critérios distintos, não percentuais somáveis."
+      ],
+      "evidence": [
+        {
+          "page": 59,
+          "quote": "Já ampliamos para 45% o percentual da alimentação escolar a ser comprada da agricultura familiar. E elevamos para 80% a parcela da alimentação escolar composta por alimentos in natura ou minimamente processados. No próximo mandato, continuaremos apoiando estados e municípios para cumprirem estes percentuais, inclusive por meio de soluções tecnológicas, como a plataforma Contrata+Brasil."
+        },
+        {
+          "page": 59,
+          "quote": "A ampliação do PAA será mantida, priorizando a compra de alimentos frescos e"
+        },
+        {
+          "page": 60,
+          "quote": "diversificados da agricultura familiar e da sociobiodiversidade para equipamentos públicos e famílias vulneráveis."
+        }
+      ],
+      "context_pages": [
+        58,
+        59,
+        60
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Expansão da educação infantil e do tempo integral",
+      "statement": "Ampliar apoio federal à construção de creches e dar prioridade à expansão do ensino em tempo integral.",
+      "support_level": "explicit_proposal",
+      "instrument": "Novo PAC, apoio a estados e municípios e financiamento da educação integral no Fundeb.",
+      "scope": "Educação infantil e educação básica; metas do PNE.",
+      "conditions": [
+        "A frase sobre fomento está no parágrafo de creches; não decide vouchers, financiamento de vagas privadas ou escolas cívico-militares."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "O Novo PAC apoiou a construção de 3.562 creches e escolas de educação infantil em 2.360 municípios. Na segunda edição do Novo PAC, ampliaremos ainda mais o fomento a estados e municípios para juntos alcançarmos a metas do PNE."
+        },
+        {
+          "page": 31,
+          "quote": "O fomento à expansão da educação em tempo integral terá absoluta prioridade no novo mandato."
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Incentivo à permanência no ensino médio",
+      "statement": "Continuar e fortalecer o Pé-de-Meia para enfrentar evasão associada à falta de renda.",
+      "support_level": "explicit_proposal",
+      "instrument": "Pé-de-Meia como política de permanência escolar.",
+      "scope": "Jovens do ensino médio em situação de pobreza ou vulnerabilidade social.",
+      "conditions": [
+        "O plano não apresenta novas regras de valor, elegibilidade ou condicionalidade do programa."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Vamos dar continuidade e fortalecer o Pé-de-Meia. Nenhum jovem em situação de pobreza ou vulnerabilidade social no Brasil deve deixar a escola por falta de renda."
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Interiorização do ensino técnico e superior público",
+      "statement": "Continuar a expansão dos institutos federais e promover novo ciclo de expansão e interiorização do ensino superior público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rede de IFs, novos campi e conclusão de instituições em implantação.",
+      "scope": "Vazios educacionais, periferias e municípios com baixa oferta técnica; redução de assimetrias regionais.",
+      "conditions": [
+        "A expansão pública não é apresentada como proibição da oferta privada."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "No novo mandato, continuaremos a expansão da nossa rede de institutos federais, priorizando a interiorização, os vazios educacionais, as periferias urbanas e os municípios com baixa oferta de cursos técnicos."
+        },
+        {
+          "page": 33,
+          "quote": "Haverá também novo ciclo expansão e interiorização da educação superior pública para superar os vazios educacionais e as assimetrias regionais."
+        }
+      ],
+      "context_pages": [
+        33
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Piso e formação docente",
+      "statement": "Manter o Piso Nacional do Magistério e incentivos à formação e fixação de docentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Piso, Pé-de-Meia Licenciatura e Bolsa Mais Professores.",
+      "scope": "Professores e estudantes de licenciatura; regiões e áreas do conhecimento com necessidade de docentes.",
+      "conditions": [
+        "Não fixa valor futuro do piso nem nova fórmula de reajuste."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "O Piso Nacional do Magistério será mantido e daremos continuidade às medidas de apoio à formação docente, de elevação da atratividade das licenciaturas, por meio do Pé-de-Meia Licenciatura, e de fixação de docentes em regiões do país e áreas do conhecimento, por meio do Bolsa Mais Professores."
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Fomento cultural e desconcentração territorial",
+      "statement": "Continuar e aperfeiçoar o fomento pelas leis Aldir Blanc e Rouanet e ampliar apoio a iniciativas culturais comunitárias e periféricas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Leis de fomento cultural, Cultura Viva, Pontos de Cultura e participação da sociedade civil.",
+      "scope": "Todas as artes, diversidade regional e territórios periféricos.",
+      "conditions": [
+        "Não define novo teto de renúncia fiscal ou regra completa de seleção de projetos."
+      ],
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Os principais instrumentos de fomento – Lei Aldir Blanc e Lei Rouanet – serão aperfeiçoados e implementados de forma"
+        },
+        {
+          "page": 41,
+          "quote": "transparente e democrática, para apoiar todas as artes."
+        },
+        {
+          "page": 41,
+          "quote": "Vamos fortalecer ainda mais as iniciativas culturais comunitárias e ampliar o fomento ao desenvolvimento da infraestrutura cultural em territórios periféricos, inclusive apoiando a formação de arranjos regionais voltados à articulação de redes locais e ao fortalecimento de ecossistemas criativos nos territórios."
+        }
+      ],
+      "context_pages": [
+        40,
+        41
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Financiamento do esporte de alto rendimento",
+      "statement": "Ampliar o Bolsa Atleta e manter patrocínios das empresas estatais para o próximo ciclo olímpico e paralímpico.",
+      "support_level": "explicit_proposal",
+      "instrument": "Bolsa Atleta e patrocínios.",
+      "scope": "Atletas de alto rendimento, inclusive olímpicos e paralímpicos.",
+      "conditions": [
+        "O programa referido é o Bolsa Atleta; o compromisso com patrocínios não resolve controle acionário de todas as empresas patrocinadoras."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Vamos continuar ampliando e fortalecendo o programa, além de manter o patrocínio das empresas estatais para assegurar que no próximo ciclo olímpico e paralímpico avancemos ainda mais na conquista de bons resultados e medalhas."
+        },
+        {
+          "page": 43,
+          "quote": "O esporte de alto rendimento continuará sendo apoiado no próximo mandato de Lula."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Cotas raciais no serviço público",
+      "statement": "Dar continuidade à participação da população negra no funcionalismo, alinhada à política de cotas do serviço público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Políticas de cotas e fomento à participação negra na gestão governamental.",
+      "scope": "Funcionalismo público, especialmente postos superiores de gestão.",
+      "conditions": [
+        "Não especifica novo percentual de reserva ou o regime para cada carreira."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato."
+        }
+      ],
+      "context_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Direitos territoriais indígenas e quilombolas",
+      "statement": "Continuar o reconhecimento de territórios quilombolas e proteger territórios indígenas com demarcação e desintrusão quando necessárias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Titulação quilombola, demarcação e desintrusão de terras indígenas.",
+      "scope": "Povos indígenas e comunidades quilombolas.",
+      "conditions": [
+        "O primeiro trecho refere-se à titulação quilombola; o segundo, aos povos indígenas.",
+        "Não define nova tese jurídica sobre marco temporal nem critérios constitucionais de reconhecimento."
+      ],
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Vamos dar continuidade a este processo de reconhecimento do direito ao território, buscando acelerar os procedimentos e garantir que sejam acompanhados de políticas de desenvolvimento territorial."
+        },
+        {
+          "page": 20,
+          "quote": "Persistiremos, garantindo proteção a seus territórios, com ações para demarcação e desintrusão de terras sempre que necessárias."
+        }
+      ],
+      "context_pages": [
+        20,
+        60
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Redução da jornada sem perda salarial",
+      "statement": "Defender o fim da escala 6x1 e a redução da jornada para 40 horas, sem redução salarial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Atuação junto ao Senado para aprovação da mudança legislativa.",
+      "scope": "Jornada de trabalho; texto aprovado na Câmara conforme descrito pelo próprio plano.",
+      "conditions": [
+        "Preserva ausência de redução salarial e remissão aos termos aprovados pela Câmara; não detalha exceções setoriais ou transição."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados."
+        }
+      ],
+      "context_pages": [
+        74,
+        75
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Proteção no trabalho mediado por plataformas",
+      "statement": "Construir regras de proteção laboral e previdenciária para trabalhadores digitais e de plataformas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulação da relação de trabalho, remuneração, condições laborais, transparência algorítmica e cobertura previdenciária.",
+      "scope": "Trabalhadores da economia digital e de plataformas.",
+      "conditions": [
+        "Não determina vínculo empregatício obrigatório para todo trabalhador de aplicativo nem uma alíquota contributiva.",
+        "A p.77 complementa a cobertura de aposentadoria, incapacidade, acidentes e maternidade; P29 trata do desenho contributivo geral."
+      ],
+      "evidence": [
+        {
+          "page": 74,
+          "quote": "Queremos consolidar um sistema de proteção aos trabalhadores na economia"
+        },
+        {
+          "page": 75,
+          "quote": "digital e de plataformas, que normatize de forma adequada a atividade empresarial e estabeleça as regras para definir a relação de trabalho, a remuneração, condições de trabalho, proteções e direitos laborais e previdenciários, transparência algorítmica."
+        }
+      ],
+      "context_pages": [
+        74,
+        75,
+        76,
+        77
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Planos obrigatórios para desigualdade remuneratória",
+      "statement": "Tornar obrigatória a execução de planos de ação nas empresas em que forem identificadas desigualdades, com metas de redução das disparidades salariais e maior presença de mulheres.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei de Igualdade Salarial e planos empresariais com metas progressivas.",
+      "scope": "Empresas com desigualdades identificadas; mulheres, especialmente negras, e pessoas com deficiência.",
+      "conditions": [
+        "Obrigatoriedade direcionada a empresas com desigualdades identificadas; não define proporção uniforme de contratação."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "A execução dos Planos de Ação nas empresas com desigualdades identificadas será tornada obrigatória, com metas progressivas de redução das disparidades salariais e ampliação da presença de mulheres, especialmente negras e pessoas com deficiência."
+        }
+      ],
+      "context_pages": [
+        21,
+        23,
+        75
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Regulação de redes sociais e liberdade de expressão",
+      "statement": "Avançar na regulação de redes e plataformas contra desinformação e campanhas de ódio, reafirmando liberdade de expressão e pluralismo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulação democrática de redes sociais e plataformas digitais.",
+      "scope": "Ambiente digital e debate público.",
+      "conditions": [
+        "O texto não detalha critério jurídico de desinformação, autoridade decisória, sanções ou recurso contra remoções."
+      ],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "É parte da reafirmação da democracia avançar ainda mais na regulação democrática das redes sociais e das plataformas digitais, de modo a impedir que elas difundam desinformação, acolham campanhas de ódio e outras formas de comunicação nocivas para a democracia. Nenhuma democracia sobrevive sem uma opinião pública plural e sem a garantia plena da liberdade de expressão."
+        }
+      ],
+      "context_pages": [
+        16
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Combate financeiro e integrado ao crime organizado",
+      "statement": "Manter a asfixia financeira do crime organizado e ampliar estruturas de inteligência e forças integradas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ações articuladas, investigação financeira, SINESP, Infoseg e FICCOs.",
+      "scope": "Organizações criminosas e milícias, em cooperação federativa.",
+      "conditions": [
+        "Os números são relato de execução anterior, não meta adicional futura.",
+        "O capítulo combina repressão qualificada com presença estatal nos territórios e prevenção."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Manteremos a estratégia de asfixia financeira do crime organizado por meio de ações articuladas, que já permitiu, desde 2023, causar R$ 35,8 bilhões de prejuízos às organizações criminosas."
+        },
+        {
+          "page": 28,
+          "quote": "Consolidaremos o Sistema de Inteligência de Segurança Pública e Justiça Criminal, modernizaremos o SINESP e a Infoseg e ampliaremos as Forças Integradas de Combate ao Crime Organizado (FICCOs)."
+        }
+      ],
+      "context_pages": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [],
+      "policy_dimension": "Controle de armas e munições",
+      "statement": "Manter política de controle de armas, aprimorar rastreabilidade e reforçar fiscalização sobre segurança privada e registros de CACs.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rastreabilidade de armas e munições, fiscalização da Polícia Federal e do Exército.",
+      "scope": "Armas, munições, empresas de segurança, defesa pessoal e caçadores, atiradores e colecionadores.",
+      "conditions": [
+        "A revogação dos decretos de flexibilização anteriores é avaliada positivamente; não se propõe proibição universal de toda posse civil."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Por isso, manteremos uma política de controle de armas e munições, fundamental para reduzir a violência e fortalecer uma política democrática de segurança pública. Aprimoraremos os mecanismos de rastreabilidade de armas e munições e reforçaremos a capacidade de fiscalização da Polícia Federal e do Exército sobre empresas de segurança privada, defesa pessoal e registros de caçadores, atiradores e colecionadores."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Coordenação e isolamento no sistema prisional",
+      "statement": "Cumprir o Plano Pena Justa, instituir pacto de execução penal e ampliar capacidade federal de isolamento de lideranças criminosas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Pacto Nacional de Execução Penal, padrões nacionais e protocolo de classificação e transferência de presos.",
+      "scope": "Sistema penitenciário federal e cooperação com estados e Justiça.",
+      "conditions": [
+        "Isolamento e transferência orientados a lideranças e presos de alta periculosidade, com critérios objetivos; não é endurecimento indiscriminado para toda pessoa presa."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Cumpriremos as metas do Plano Pena Justa e instituiremos o Pacto Nacional de Execução Penal para o Enfrentamento ao Crime Organizado, fortalecendo a governança do sistema prisional e a cooperação entre União, estados e sistema de justiça."
+        },
+        {
+          "page": 28,
+          "quote": "Fortaleceremos o sistema penitenciário federal, ampliando sua capacidade operacional e de isolamento de lideranças criminosas, e implantaremos um protocolo nacional de classificação e transferência de presos de alta periculosidade, baseado em critérios objetivos e evidências."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Ministério federal de Segurança Pública",
+      "statement": "Criar o Ministério da Segurança Pública após a aprovação da PEC proposta pelo Executivo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Novo ministério articulado ao SUSP e aos entes federados.",
+      "scope": "Coordenação nacional de segurança com estados e municípios.",
+      "conditions": [
+        "Condição expressa: aprovação da PEC da Segurança Pública; não anuncia federalização de todas as polícias."
+      ],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Uma vez aprovada a PEC da Segurança Pública proposta pelo Executivo, criaremos o Ministério da Segurança Pública para coordenar, em articulação com estados e municípios, a execução das políticas nacionais de segurança pública no âmbito do Sistema Único de Segurança Pública (SUSP)."
+        }
+      ],
+      "context_pages": [
+        27,
+        30
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Câmeras corporais e controle da atividade policial",
+      "statement": "Ampliar incentivos ao uso de câmeras corporais com padrões nacionais para tratamento das imagens e fortalecer controles policiais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa de estímulos e padrões de utilização, gestão e preservação das imagens.",
+      "scope": "Profissionais e instituições de segurança pública, em articulação federativa.",
+      "conditions": [
+        "Incentivo à adoção não equivale a obrigação universal imediata para todo policial ou operação."
+      ],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Ampliaremos o programa de estímulos para uso de câmeras corporais, com padrões nacionais para utilização, gestão e preservação das imagens. Estimularemos o fortalecimento dos mecanismos de controle interno e externo da atividade policial."
+        }
+      ],
+      "context_pages": [
+        30
+      ]
+    },
+    {
+      "id": "P48",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Rede de proteção contra violência às mulheres",
+      "statement": "Continuar o Pacto de Enfrentamento ao Feminicídio, expandindo equipamentos de proteção e monitoramento de agressores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Casas e centros de referência da mulher, Salas Lilás, kits estaduais de monitoramento e capacitação das forças de segurança.",
+      "scope": "Mulheres vítimas de violência e atendimento em cooperação com estados.",
+      "conditions": [
+        "Os números correspondem a equipamentos cuja conclusão é prometida, não cobertura em todos os municípios."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Vamos dar sequência ao Pacto, ampliando a rede de proteção às mulheres – concluiremos as 30 Casas da Mulher Brasileira e os 15 Centros de Referência da Mulher Brasileira. Ampliaremos as Salas Lilás e vamos adquirir e distribuir aos Estados kits para aprimorar o monitoramento de agressores."
+        }
+      ],
+      "context_pages": [
+        21
+      ]
+    },
+    {
+      "id": "P49",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Integração sul-americana",
+      "statement": "Aprofundar o Mercosul e promover um mercado comum sul-americano de energia com interconexões e coordenação regulatória.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mercosul, integração regional e mercado energético comum.",
+      "scope": "América do Sul; conexões regionais de infraestrutura e energia.",
+      "conditions": [
+        "A integração regional não é apresentada como exclusividade diplomática ou ruptura com outras regiões."
+      ],
+      "evidence": [
+        {
+          "page": 80,
+          "quote": "Seguiremos aprofundando o Mercosul e os espaços de integração regional, especialmente nas áreas de infraestrutura, defesa, segurança pública, energia e saúde."
+        },
+        {
+          "page": 80,
+          "quote": "Promoveremos um mercado comum sul-americano de energia, com interconexões e coordenação regulatória."
+        }
+      ],
+      "context_pages": [
+        80
+      ]
+    },
+    {
+      "id": "P50",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "BRICS e reforma das instituições multilaterais",
+      "statement": "Aprofundar aproximação com BRICS e Sul Global e fortalecer seus mecanismos financeiros dentro de uma agenda de reforma multilateral.",
+      "support_level": "explicit_proposal",
+      "instrument": "Aproximação diplomática, fortalecimento do NDB e reforma de instituições multilaterais.",
+      "scope": "BRICS, Sul Global, G20 e arquitetura financeira internacional.",
+      "conditions": [
+        "Coexistem aproximação com BRICS, reforma de FMI/Banco Mundial e participação no G20; não se infere substituição exclusiva de um bloco por outro."
+      ],
+      "evidence": [
+        {
+          "page": 81,
+          "quote": "Defenderemos a reforma da arquitetura financeira internacional, com a democratização do FMI, do Banco Mundial e dos bancos multilaterais e o fortalecimento do CAF, do Novo Banco de Desenvolvimento (NDB) e dos mecanismos financeiros dos BRICS."
+        },
+        {
+          "page": 81,
+          "quote": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20, espaços fundamentais para a afirmação dos interesses da maioria da humanidade."
+        }
+      ],
+      "context_pages": [
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "id": "P51",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Diversificação de parceiros e acordos comerciais",
+      "statement": "Manter política externa universalista e investir em novos acordos comerciais e mercados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cooperação, negociação e acordos baseados em normas internacionais e multilateralismo.",
+      "scope": "Todas as regiões do mundo; exportações brasileiras de bens e serviços.",
+      "conditions": [
+        "A conclusão dos acordos Mercosul–União Europeia, EFTA e Singapura é celebrada na p.79; não há compromisso detalhado sobre cada cláusula ou versão futura.",
+        "Comércio e cooperação não definem por si uma regra sobre investimento estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 80,
+          "quote": "Manteremos uma política externa universalista e ampliaremos os esforços de cooperação e negociação com todas as regiões do mundo, diversificando nossas parcerias estratégicas. Investiremos em novos acordos comerciais e na abertura de novos mercados para nossos bens e serviços, de modo a continuar enfrentando agressões comerciais e a defender os interesses do país com base nas normas internacionais e no multilateralismo."
+        }
+      ],
+      "context_pages": [
+        79,
+        80,
+        81,
+        83
+      ]
+    },
+    {
+      "id": "P52",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Base industrial e tecnológica de defesa",
+      "statement": "Fortalecer a indústria e a tecnologia nacionais de defesa para ampliar autonomia e capacidade de dissuasão.",
+      "support_level": "explicit_proposal",
+      "instrument": "Base Industrial e Tecnológica de Defesa, investimentos e equipamentos militares.",
+      "scope": "Defesa do território e dos recursos nacionais diante de ameaças externas.",
+      "conditions": [
+        "A defesa combina persuasão diplomática e dissuasão; não fixa percentual orçamentário ou lista futura exaustiva de armamentos.",
+        "O uso da competência nuclear é reservado a fins exclusivamente pacíficos na p.68."
+      ],
+      "evidence": [
+        {
+          "page": 78,
+          "quote": "Por isso, fortaleceremos a Base Industrial e Tecnológica de Defesa, de modo a assegurar maior autonomia nacional nesse campo e estimular inovações com impactos positivos sobre o conjunto da economia."
+        }
+      ],
+      "context_pages": [
+        68,
+        78,
+        79
+      ]
+    }
+  ],
+  "tensions": [
+    {
+      "description": "A ampliação da exploração e do refino da Petrobras (P15) coexiste com a substituição progressiva dos combustíveis fósseis e a participação em um caminho global de afastamento deles (P18). Há uma questão de compatibilização de investimentos, produção e redução de emissões que o documento não quantifica em um cronograma único.",
+      "position_ids": [
+        "P15",
+        "P18"
+      ],
+      "interpretation_limit": "Não se afirma contradição inevitável: expansão de reservas e refino pode integrar uma transição gradual, e o plano invoca cuidados socioambientais, baixo carbono, segurança energética e previsibilidade. Também não se presume resolvida a trajetória de emissões pela mera declaração desses objetivos."
+    }
+  ],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O governo federal deve oferecer incentivos industriais condicionados a conteúdo nacional.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P02"
+      ],
+      "necessary_conditions": [
+        "O plano admite benefícios com essa condição; não exige que todo incentivo público esteja submetido a um percentual único."
+      ],
+      "contrast_to_investigate": "Investigar propostas de incentivos sem exigência de conteúdo local ou de redução desse tipo de condicionamento.",
+      "why_useful": "Identifica uma escolha de política industrial e uso do apoio público, sem reduzi-la a crescimento econômico genérico.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A expansão ferroviária deve poder ser realizada por concessões à iniciativa privada.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P13"
+      ],
+      "necessary_conditions": [
+        "Autorização e ampliação de concessões coexistem com obras públicas; não implica concessão de toda a rede ou privatização de todas as estatais."
+      ],
+      "contrast_to_investigate": "Investigar preferência por execução exclusivamente pública, concessões restritas ou ampliação das concessões.",
+      "why_useful": "Separa o instrumento concreto de infraestrutura de uma tese universal sobre privatizações.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "meio_ambiente_clima",
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P17"
+      ],
+      "necessary_conditions": [
+        "O plano propõe regulamentar o SBCE já aprovado, articulado à política industrial; não especifica um preço único."
+      ],
+      "contrast_to_investigate": "Investigar propostas de rejeição do mercado de carbono, sistema exclusivamente voluntário ou regulação por outros instrumentos.",
+      "why_useful": "Permite comparar um instrumento ambiental com custos e incentivos definidos, em vez de apoio genérico ao clima.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "A instalação de datacenters no Brasil deve exigir contrapartidas de capacidade computacional para o mercado interno.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P23"
+      ],
+      "necessary_conditions": [
+        "O documento prevê a contrapartida sem fixar porcentagem, prazo ou reserva exclusiva da capacidade."
+      ],
+      "contrast_to_investigate": "Investigar incentivo à instalação sem essa contrapartida, exigência apenas ambiental ou restrição a segmentos específicos.",
+      "why_useful": "Amplia o questionário para a relação entre infraestrutura digital, investimento e acesso doméstico à capacidade tecnológica.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "bem_estar_social",
+      "statement": "Recursos públicos devem financiar serviços comunitários de cuidado infantil.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P28"
+      ],
+      "necessary_conditions": [
+        "O plano apoia Cuidotecas para crianças de 3 a 12 anos; a comparação deve distinguir esse serviço de creche escolar e preservar o recorte de cuidado.",
+        "Não pressupõe que todas as unidades sejam geridas diretamente pelo Estado ou que o cuidado familiar seja substituído."
+      ],
+      "contrast_to_investigate": "Investigar financiamento de serviços coletivos, transferência direta às famílias ou modelos que concentrem a provisão no âmbito familiar/privado.",
+      "why_useful": "Traz a organização e o financiamento do cuidado para além da discussão sobre benefícios de renda.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "O piso salarial nacional do magistério deve ser mantido.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P34"
+      ],
+      "necessary_conditions": [
+        "O plano apoia a manutenção do piso, sem fornecer novo valor ou fórmula futura de reajuste."
+      ],
+      "contrast_to_investigate": "Investigar manutenção do piso nacional, revisão de seu caráter obrigatório ou definição exclusivamente local da remuneração.",
+      "why_useful": "Representa uma decisão de financiamento e regulação educacional com alcance nacional, sem reunir várias reformas escolares.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "cidadania_direitos",
+      "statement": "A jornada de trabalho deve ser reduzida para 40 horas semanais, sem redução salarial.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P39"
+      ],
+      "necessary_conditions": [
+        "Preservar a condição de não reduzir salários.",
+        "O plano associa a medida ao fim da escala 6x1 e aos termos aprovados na Câmara; exceções e transição exigem comparação cuidadosa."
+      ],
+      "contrast_to_investigate": "Investigar manutenção da jornada vigente, redução dependente de negociação ou outros limites de jornada com condições distintas.",
+      "why_useful": "Separa uma decisão trabalhista concreta da pergunta ampla sobre revogar toda uma reforma.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "statement": "O governo federal deve incentivar o uso de câmeras corporais pelas polícias.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P47"
+      ],
+      "necessary_conditions": [
+        "Apoio a estímulos com padrões nacionais de uso, gestão e preservação das imagens; não converter em obrigação universal imediata."
+      ],
+      "contrast_to_investigate": "Investigar rejeição dos incentivos, adoção restrita, autonomia integral dos entes ou obrigatoriedade nacional.",
+      "why_useful": "Permite comparar um instrumento específico de controle da atividade policial sem confundi-lo com avaliação geral sobre segurança.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "Perfil documental produzido a partir da leitura integral anterior das 84 páginas e da reinspeção contextual de 53 páginas nesta rodada; não se afirma ter realizado uma segunda leitura integral.",
+    "As 52 posições sintetizam os principais núcleos selecionados nas dez categorias; não são um inventário de toda ação mencionada no plano. Referências secundárias não criam posições duplicadas.",
+    "Relatos de realizações, cifras e legislação são afirmações do PDF oficial e não foram verificados por fontes externas nesta etapa. O perfil não atesta execução ou viabilidade financeira das propostas.",
+    "As oito sementes são hipóteses para comparação futura. Não foram testadas contra outros planos e não estão prontas para uso como questionário validado."
+  ]
+}

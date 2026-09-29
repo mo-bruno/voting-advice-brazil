@@ -1,0 +1,2130 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002548139",
+  "candidate_name": "Veterinário Wilson Grassi",
+  "agent_id": "/root/plan_grassi",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002548139.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    4,
+    7,
+    8,
+    9,
+    10,
+    13,
+    14,
+    15,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    30,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    58
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O programa organiza sua atuação em torno da substituição de tributos sobre produção e folha por cobrança financeira, de execução estatal com prazos e responsabilização, de prevenção sanitária integrada à saúde animal e de repressão patrimonial/penitenciária a facções. A leitura ampliada também recupera desenho próprio de acesso à moradia, carreira pública de pesquisador, bolsas esportivas sem federação, mineração indígena condicionada e piso constitucional de defesa. Há escolhas operacionais nas dez categorias; isso não implica cobertura completa de cada tema nem rótulo ideológico. Metas gerais de formalização, redução do déficit habitacional e melhora de resultados não são tratadas, isoladamente, como escolhas suficientes para teses.",
+    "position_ids": [
+      "P01",
+      "P07",
+      "P12",
+      "P19",
+      "P23",
+      "P26",
+      "P29",
+      "P34",
+      "P38",
+      "P39",
+      "P44"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "presence": "substantive",
+      "summary": "A escolha econômica central é trocar tributação federal sobre produção e folha por cobrança financeira automática, com isenção de IRPF indexada e barreiras à migração para dinheiro vivo. O plano também escolhe rastreabilidade subsidiada, apoio à agricultura familiar e contrapartidas ao capital externo.",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06"
+      ],
+      "gaps": [
+        {
+          "topic": "Previdência do empregado e parâmetros do IUF",
+          "reason": "A contribuição descontada do empregado é expressamente deixada ao estudo de impacto; alíquotas finais, limites de dinheiro vivo e parâmetros de compensação não estão fechados.",
+          "context_pages": [
+            8,
+            10,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "topic": "Outras decisões econômicas",
+          "reason": "A leitura integral anterior e os contextos fiscais não estabelecem posição sobre LC 200/2023, autonomia do Banco Central ou revogação da reforma trabalhista; formalização é efeito esperado, não resultado demonstrado.",
+          "context_pages": [
+            4,
+            7,
+            8,
+            10,
+            19,
+            20
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "presence": "substantive",
+      "summary": "A gestão é organizada por prazos, consequências para atraso injustificado, revisão regulatória, transparência e critérios publicados para nomeações. Essas são regras administrativas concretas, distintas de apenas prometer eficiência. Também prevê interoperabilidade dos cadastros federais pelo CPF, com auditoria por órgão e proteção de dados.",
+      "position_ids": [
+        "P07",
+        "P08",
+        "P09",
+        "P10",
+        "P25"
+      ],
+      "gaps": [
+        {
+          "topic": "Organização e propriedade estatal",
+          "reason": "Não há desenho completo de ministérios ou decisão sobre privatização geral. Funções estatais e fontes de indicadores não revelam manutenção ou alienação acionária.",
+          "context_pages": [
+            19,
+            20,
+            44,
+            45,
+            53,
+            58
+          ]
+        },
+        {
+          "topic": "Detalhamento administrativo",
+          "reason": "Prazos de baixo risco, critérios de revisão de normas e índices de responsabilização dependem de regulamentação; há referências diferentes ao início do painel, compatíveis com entrega antecipada mas sem cronograma consolidado.",
+          "context_pages": [
+            18,
+            19,
+            20,
+            45,
+            58
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "presence": "substantive",
+      "summary": "O plano combina prioridade ferroviária com autorização privada, financiamento habitacional baseado em aluguel, ocupação de áreas já infraestruturadas, regularização de moradias e execução das metas de saneamento. Na energia, escolhe redução de encargos e regras previsíveis.",
+      "position_ids": [
+        "P11",
+        "P12",
+        "P13",
+        "P14",
+        "P15",
+        "P16"
+      ],
+      "gaps": [
+        {
+          "topic": "Financiamento habitacional e tarifas",
+          "reason": "Tetos de renda e imóvel, valor do subsídio e número de operações ficam abertos; encargos de energia a reduzir e fontes substitutivas não são identificados.",
+          "context_pages": [
+            41,
+            42,
+            43,
+            47
+          ]
+        },
+        {
+          "topic": "Mobilidade e organização dos prestadores",
+          "reason": "Não há programa comparável detalhado de transporte urbano coletivo nem decisão geral de propriedade dos operadores. A autorização de ferrovia própria não implica privatização de estatais.",
+          "context_pages": [
+            41,
+            42,
+            46,
+            47,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "presence": "substantive",
+      "summary": "A agenda ambiental usa rastreabilidade e responsabilização contra desmatamento ilegal, impõe cobrança por prazo no licenciamento e admite mineração indígena sob condições expressas. Proteção animal recebe arquitetura institucional, cadastro progressivo e preparação para desastres.",
+      "position_ids": [
+        "P17",
+        "P18",
+        "P19",
+        "P20",
+        "P21",
+        "P22"
+      ],
+      "gaps": [
+        {
+          "topic": "Mitigação climática",
+          "reason": "O eixo ambiental não fixa trajetória quantitativa de emissões, orçamento de carbono ou saída programada de combustíveis fósseis; adaptação é tratada principalmente pela defesa civil.",
+          "context_pages": [
+            46,
+            47,
+            48
+          ]
+        },
+        {
+          "topic": "Mineração e identificação animal",
+          "reason": "Não há solução jurídica já consumada para garimpo indígena, prazo de universalização do cadastro doméstico ou todos os parâmetros financeiros de fiscalização. São propostas condicionadas, não autorizações presentes.",
+          "context_pages": [
+            27,
+            28,
+            30,
+            47,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "presence": "substantive",
+      "summary": "O núcleo científico é uma carreira federal de pesquisador com seleção e implantação gradual, combinada a fomento plurianual. A execução administrativa da interoperabilidade por CPF está em Estado e Gestão Pública (P25).",
+      "position_ids": [
+        "P23",
+        "P24"
+      ],
+      "gaps": [
+        {
+          "topic": "Desenho e financiamento da carreira",
+          "reason": "Quantidade de cargos, remunerações, duração da permanência e regra financeira plurianual não são definidas; depende de regulamentação, orçamento e espaço fiscal.",
+          "context_pages": [
+            36,
+            37
+          ]
+        },
+        {
+          "topic": "Outras frentes de tecnologia",
+          "reason": "Não há política própria detalhada de inteligência artificial, semicondutores, patentes ou universalização de banda larga; uso de dados e ciência veterinária não preenche essas lacunas.",
+          "context_pages": [
+            36,
+            37,
+            44,
+            45,
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "presence": "substantive",
+      "summary": "Saúde Única dá instrumento à prevenção: vigilância de zoonoses, veterinários municipais e castração financiada por entrega. O SUS humano recebe atenção primária com carreira, fila nacional transparente e mutirões por resultado, além de compras para produção nacional de insumos.",
+      "position_ids": [
+        "P26",
+        "P27",
+        "P28",
+        "P29",
+        "P30"
+      ],
+      "gaps": [
+        {
+          "topic": "Natureza dos prestadores e gestão das unidades",
+          "reason": "Contratualização de mutirões não identifica rede privada, compra de capacidade privada nem delegação da gestão de unidade pública. Não há decisão documental sobre esses modelos.",
+          "context_pages": [
+            26,
+            27,
+            34,
+            35
+          ]
+        },
+        {
+          "topic": "Assistência e renda",
+          "reason": "Não há programa detalhado sobre Bolsa Família, renda mínima ou previdência geral. A proteção do atleta é específica; a contribuição previdenciária do empregado é deixada em aberto.",
+          "context_pages": [
+            10,
+            19,
+            20,
+            26,
+            27,
+            34,
+            35,
+            39
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "presence": "substantive",
+      "summary": "Educação é tratada por condicionalidades de resultado, formação técnica vinculada ao emprego e padrões de educação física. O esporte tem desenho específico: bolsa diretamente acessível ao atleta e benefício dimensionado ao custo real, com paridade para paratletas.",
+      "position_ids": [
+        "P31",
+        "P32",
+        "P33",
+        "P34",
+        "P35"
+      ],
+      "gaps": [
+        {
+          "topic": "Cultura e outros modelos educacionais",
+          "reason": "Não há agenda própria detalhada de artes, patrimônio ou política cultural; as seções de ensino não decidem escolas cívico-militares ou financiamento de vagas privadas em creches.",
+          "context_pages": [
+            36,
+            37,
+            38,
+            39,
+            40
+          ]
+        },
+        {
+          "topic": "Condicionalidades e orçamento",
+          "reason": "O plano não resolve como garantir apoio a redes que pioram enquanto condiciona apoio ao resultado, nem fixa custo das bolsas ou reposição de receitas disputadas com segurança.",
+          "context_pages": [
+            36,
+            39,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "presence": "substantive",
+      "summary": "Há posições explícitas sobre privacidade e limites do poder coercitivo: aplicar LGPD, auditar consultas e não importar suspensão de garantias do modelo salvadorenho. Consentimento indígena e paridade de atletas são condições de posições principais em outras categorias, sem duplicação.",
+      "position_ids": [
+        "P36",
+        "P37"
+      ],
+      "gaps": [
+        {
+          "topic": "Igualdade e direitos trabalhistas",
+          "reason": "O documento não oferece agenda específica desenvolvida sobre discriminação racial, igualdade de gênero, cotas raciais ou reforma dos direitos trabalhistas. Critérios técnicos e desoneração não decidem essas questões.",
+          "context_pages": [
+            7,
+            19,
+            20,
+            36,
+            37,
+            44,
+            53
+          ]
+        },
+        {
+          "topic": "Operacionalização de garantias",
+          "reason": "O texto não detalha mecanismo independente de monitoramento da custódia nem resolve toda a aplicação das salvaguardas ao emprego militar permanente nas fronteiras.",
+          "context_pages": [
+            24,
+            25,
+            44,
+            50,
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "presence": "substantive",
+      "summary": "Segurança concentra-se em isolar lideranças, investigar patrimônio, controlar a cadeia legal de armas e fazer cumprir integração de dados. Acrescenta cadastro de maus-tratos como alerta de violência doméstica e plebiscito delimitado sobre arquitetura penitenciária.",
+      "position_ids": [
+        "P38",
+        "P39",
+        "P40",
+        "P41",
+        "P42",
+        "P43"
+      ],
+      "gaps": [
+        {
+          "topic": "Alcance penal e armas",
+          "reason": "Não decide maioridade penal, novo regime geral de penas, política ampla de drogas ou permissão geral de porte civil. Endurecimento de custódia e fiscalização de estoque são objetos mais estreitos.",
+          "context_pages": [
+            21,
+            22,
+            23,
+            24,
+            25
+          ]
+        },
+        {
+          "topic": "Execução e prevenção",
+          "reason": "Não fixa custo/capacidade da expansão prisional, limites de uso preditivo do cadastro de infratores ou formato completo dos programas territoriais de juventude; o caderno técnico é compromisso futuro.",
+          "context_pages": [
+            21,
+            23,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "presence": "substantive",
+      "summary": "Defesa tem piso constitucional de gasto, modernização vinculada, soldos concentrados na base, presença fronteiriça e projetos plurianuais protegidos. A política externa adota reciprocidade comercial e deliberação multilateral caso a caso, sem doutrina fechada.",
+      "position_ids": [
+        "P44",
+        "P45",
+        "P46",
+        "P47",
+        "P48",
+        "P49"
+      ],
+      "gaps": [
+        {
+          "topic": "Blocos, acordos e conflitos específicos",
+          "reason": "Não há escolha sobre Mercosul–União Europeia, saída do BRICS ou relações com Israel; critérios gerais de conveniência nacional não determinam esses resultados.",
+          "context_pages": [
+            51,
+            52
+          ]
+        },
+        {
+          "topic": "Parâmetros de defesa e negociação",
+          "reason": "Percentuais de reajuste por graduação, metas de conteúdo nacional e gatilhos de reciprocidade ficam abertos. O orçamento consolidado para o piso e projetos protegidos não é apresentado.",
+          "context_pages": [
+            49,
+            50,
+            51,
+            52
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Substituição de tributos sobre produção e folha por tributação financeira",
+      "statement": "Substituir tributos federais sobre folha, faturamento e produção pelo Imposto Único Federal, cobrado no débito e no crédito bancários, extinguindo definitivamente a contribuição patronal sobre a folha.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC, lei complementar e arrecadação automática no sistema bancário.",
+      "scope": "Tributação federal; PEC no primeiro semestre e transição durante o mandato. IR, FGTS/PIS, tributos de comércio exterior, taxas e tributos subnacionais são preservados nos termos enumerados pelo plano.",
+      "conditions": [
+        "Parâmetro público de 2% em cada ponta; alíquota definitiva depende de estudo prévio e neutralidade declarada de arrecadação.",
+        "Transição com coexistência dos tributos e compensação federativa para evitar perdas locais.",
+        "Devolução na exportação, compensação de cadeias longas e suspensão automática da transição após frustração de receita por dois exercícios, segundo limites legais.",
+        "A contribuição patronal não retorna mesmo se faltar receita; a contribuição descontada do empregado permanece expressamente em aberto."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Substituir o conjunto de tributos federais que hoje incide sobre folha, faturamento e produção por um único tributo, cobrado automaticamente sobre a movimentação financeira, incidindo em cada lançamento a débito e a crédito em conta."
+        },
+        {
+          "page": 14,
+          "quote": "A emenda separará as duas coisas: a extinção da contribuição patronal sobre a folha é definitiva e não retorna, ainda que a arrecadação do IUF fique abaixo do projetado."
+        }
+      ],
+      "context_pages": [
+        8,
+        10,
+        13,
+        14,
+        15,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Isenção e indexação do Imposto de Renda da Pessoa Física",
+      "statement": "Fixar a isenção do IRPF em cinco salários mínimos, deslocando as faixas da tabela e mantendo progressividade acima do novo limite.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alteração tributária associada à reforma do IUF; limite vinculado ao salário mínimo.",
+      "scope": "Pessoas físicas; ganhos acima do limite continuam tributados apenas na parcela excedente.",
+      "conditions": [
+        "Permanecem as quatro alíquotas e as larguras das faixas, deslocadas para o novo ponto inicial.",
+        "O plano reconhece que o ganho real do mínimo faz crescer a renúncia acima da inflação."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "O Democrata fixa o limite de isenção do IRPF em cinco salários mínimos."
+        },
+        {
+          "page": 9,
+          "quote": "Adotamos o deslocamento da tabela. As quatro alíquotas atuais permanecem, com as mesmas larguras de faixa, e passam a valer a partir de R$ 8.105,00."
+        },
+        {
+          "page": 10,
+          "quote": "O salário mínimo tem ganho real programado por lei, o que significa que a faixa isenta cresce acima da inflação e a renúncia cresce junto."
+        }
+      ],
+      "context_pages": [
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Restrição ao dinheiro em espécie para sustentar a base tributária",
+      "statement": "Restringir circulação de dinheiro em espécie para evitar migração de transações bancárias para o papel após a adoção do IUF.",
+      "support_level": "explicit_proposal",
+      "instrument": "Dispositivos na emenda tributária: saque com alíquota majorada, limite de pagamento em espécie, retirada de cédulas de maior valor e rastreamento de grandes saques.",
+      "scope": "Saques e pagamentos em espécie; valores e cronogramas ainda a detalhar no Congresso.",
+      "conditions": [
+        "Integra o desenho da reforma, não uma proibição completa de dinheiro físico.",
+        "Tetos, limiares de rastreamento e prazos não são fixados no documento."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "O conjunto de medidas que impede a migração do dinheiro eletrônico para o papel — alíquota majorada sobre saque, teto para pagamento em espécie, retirada de cédulas de maior valor e rastreabilidade de saques elevados — integra o texto da emenda a ser apresentada ao Congresso Nacional, onde será detalhado com os respectivos limites e prazos."
+        }
+      ],
+      "context_pages": [
+        14,
+        15
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Antecipação subsidiada da rastreabilidade agropecuária",
+      "statement": "Antecipar voluntariamente a identificação de bovinos e búfalos nos corredores exportadores sujeitos a exigências internacionais, com subsídio federal e integração dos sistemas sanitários.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cofinanciamento de brinco e leitura, atos sanitários e cronograma pactuado com produtores.",
+      "scope": "Corredores de exportação; apoio a pequenos e médios produtores, com prioridade para agricultura familiar de cria.",
+      "conditions": [
+        "A antecipação é voluntária e apoiada; não se descreve antecipação compulsória universal do rebanho.",
+        "Integração das bases estaduais com a federal e uso do dado também contra comercialização de origem ilegal."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Antecipação voluntária e apoiada nos corredores de exportação sujeitos a exigência internacional, com a União bancando parte do custo de brinco e de leitura para quem antecipar, em vez de esperar 2032 e explicar depois por que o embarque foi barrado."
+        },
+        {
+          "page": 33,
+          "quote": "Apoio de custo ao pequeno e ao médio produtor, com prioridade para a agricultura familiar de cria, que é onde a identificação começa e onde o custo pesa mais."
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Apoio produtivo à agricultura familiar",
+      "statement": "Oferecer crédito simplificado e assistência técnica pública com cobertura regional à agricultura familiar, utilizando compras de alimentação escolar com prioridade à produção local.",
+      "support_level": "explicit_proposal",
+      "instrument": "Simplificação documental do crédito, assistência pública com metas regionais e compras governamentais.",
+      "scope": "Agricultura familiar e fornecedores locais da alimentação escolar.",
+      "conditions": [
+        "Pagamento em prazo curto nas compras públicas.",
+        "O documento não define montantes de crédito, juros ou percentuais de preferência."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Crédito simplificado para agricultura familiar, com redução drástica de exigência documental."
+        },
+        {
+          "page": 33,
+          "quote": "Assistência técnica pública com meta de cobertura por região, e não por edital."
+        },
+        {
+          "page": 33,
+          "quote": "Compras públicas de alimentação escolar com prioridade efetiva à produção local e pagamento em prazo curto."
+        }
+      ],
+      "context_pages": [
+        33
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Contrapartidas ao investimento estrangeiro estratégico",
+      "statement": "Admitir investimento estrangeiro em setor estratégico mediante conteúdo nacional, transferência de tecnologia e geração de emprego no Brasil.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contrapartidas em negociações de investimento; veículo jurídico específico não detalhado.",
+      "scope": "Setores estratégicos, sem enumeração fechada no documento.",
+      "conditions": [
+        "Não equivale a proibir investimento estrangeiro em geral nem a admiti-lo sem condições.",
+        "Conteúdo nacional, transferência tecnológica e emprego são requisitos expressos."
+      ],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Resposta administrativa por prazo e responsabilização",
+      "statement": "Adotar deferimento tácito em procedimentos de baixo risco quando ultrapassado o prazo legal, com responsável identificado e apuração automática de atrasos injustificados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei ordinária, sistema público de prazos, avaliação funcional e procedimentos disciplinares.",
+      "scope": "Administração federal; pedidos de regularização e procedimentos de baixo risco.",
+      "conditions": [
+        "Atraso reiterado sem justificativa pode caracterizar desídia; dirigentes respondem por índices acima de limite regulamentar.",
+        "Sobrecarga ou falha estrutural de sistema não são atribuídas automaticamente à culpa do servidor.",
+        "Não estender o deferimento tácito, sem texto, a qualquer licença ambiental."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "Prazo legal de resposta com deferimento tácito nos procedimentos de baixo risco."
+        },
+        {
+          "page": 19,
+          "quote": "Descumprimento de prazo gera apuração automática, sem necessidade de reclamação do interessado. O sistema abre o procedimento sozinho."
+        },
+        {
+          "page": 20,
+          "quote": "Servidor com carga desproporcional ou sem sistema que funcione não é culpado por falha estrutural, e o mesmo indicador que aponta o desleixo aponta a falta de gente."
+        }
+      ],
+      "context_pages": [
+        19,
+        20,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Revisão obrigatória e caducidade de normas regulatórias",
+      "statement": "Submeter o estoque regulatório a revisão periódica obrigatória, com revogação por prazo das normas que não passarem na revisão.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão regulatória e regra de revogação por decurso de prazo; detalhamento jurídico não individualizado.",
+      "scope": "Estoque regulatório referido no eixo de Estado digital e desburocratização.",
+      "conditions": [
+        "Periodicidade, órgãos revisores e critérios materiais não são especificados.",
+        "Não identifica normas trabalhistas ou políticas específicas a revogar."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "Revisão periódica obrigatória do estoque regulatório, com revogação por decurso de prazo da norma que não passar na revisão."
+        }
+      ],
+      "context_pages": [
+        45
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Transparência e prestação de contas por metas",
+      "statement": "Publicar orçamento, contratos e metas em dados abertos, acompanhar responsáveis em painel e revisar o plano publicamente todos os anos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Painel público, transparência ativa e revisão anual documentada.",
+      "scope": "Administração federal e execução do plano durante o mandato.",
+      "conditions": [
+        "Publicação em tempo real quando possível.",
+        "Mudanças e metas abandonadas devem ter justificativa pública.",
+        "O plano apresenta prazos diferentes para o primeiro painel: seis meses no eixo digital e primeiro trimestre no fechamento."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "Publicação em formato aberto, e em tempo real quando possível, da execução orçamentária, dos contratos e das metas deste plano."
+        },
+        {
+          "page": 58,
+          "quote": "Revisar o plano publicamente todo ano, registrando o que foi cumprido, o que foi alterado e por quê. Meta abandonada em silêncio é meta que nunca existiu."
+        }
+      ],
+      "context_pages": [
+        45,
+        53,
+        58
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Critérios públicos para composição ministerial",
+      "statement": "Compor o ministério por critério técnico e compromisso programático verificável, publicando currículos e vinculações dos indicados no ato de nomeação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prática de nomeação e publicação de informação funcional.",
+      "scope": "Ministros e, no compromisso final, todo indicado para cargo de direção federal.",
+      "conditions": [
+        "Não estabelece veto a todos os indicados partidários ou um concurso para ministros.",
+        "Não define uma métrica objetiva para o requisito técnico."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "Composição ministerial por critério técnico e compromisso programático verificável, com currículo e vinculações de cada indicado publicados no ato da nomeação."
+        },
+        {
+          "page": 58,
+          "quote": "Publicar currículo e vinculações de todo indicado a cargo de direção na administração federal, no ato da nomeação."
+        }
+      ],
+      "context_pages": [
+        53,
+        58
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Expansão ferroviária com autorização privada",
+      "statement": "Priorizar corredores ferroviários de carga e utilizar plenamente autorizações para construção e operação de ferrovias próprias por empresas privadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa Brasil nos Trilhos, regime de autorização, licenciamento, desapropriação de faixa e concessões fiscalizadas.",
+      "scope": "Logística de cargas, com integração ferrovia–porto, hidrovia e cabotagem.",
+      "conditions": [
+        "Prioridade segundo custo logístico por tonelada e marcos públicos por trecho.",
+        "Caminhões permanecem na coleta, entrega e trajetos curtos.",
+        "Autorizar ferrovia própria privada não implica transferir o controle de toda estatal."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Uso pleno do regime de autorização ferroviária, que permite ao setor privado construir e operar ferrovia própria, com o Estado fazendo o que só ele faz: licenciar rápido, desapropriar faixa e garantir estabilidade regulatória."
+        },
+        {
+          "page": 46,
+          "quote": "Critério de priorização por custo logístico por tonelada transportada, publicado por corredor, em vez de escolha por peso político."
+        }
+      ],
+      "context_pages": [
+        46,
+        48
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Histórico de aluguel como acesso ao financiamento habitacional",
+      "statement": "Reconhecer aluguel pago como prova de capacidade de pagamento e assegurar financiamento com parcela inicial equivalente, permitindo ao beneficiário escolher imóvel novo ou usado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alteração do SFH/FGTS, cadastro voluntário de locação, validação bancária, análise automatizada, recursos FGTS/SBPE e garantia pública parcial.",
+      "scope": "Inquilinos enquadrados em tetos regulamentares de renda e valor do imóvel; escolha em qualquer município.",
+      "conditions": [
+        "Comprovação de histórico; negativa motivada e recorrível.",
+        "Subsídio explícito e orçado; garantia parcial para quem não tem entrada.",
+        "Tetos, volume de financiamentos e valor dos subsídios não são quantificados."
+      ],
+      "evidence": [
+        {
+          "page": 41,
+          "quote": "O centro da proposta: quem paga aluguel e comprova capacidade de pagamento por esse próprio histórico tem acesso automático a financiamento habitacional de parcela equivalente ao aluguel que já paga."
+        },
+        {
+          "page": 41,
+          "quote": "Direito ao financiamento com parcela inicial equivalente ao valor do aluguel comprovado, dentro do teto de renda e de valor de imóvel definidos em regulamento."
+        },
+        {
+          "page": 42,
+          "quote": "Garantia pública parcial para o financiamento de quem tem histórico de aluguel e não tem entrada, reduzindo o prêmio de risco cobrado pelo banco."
+        }
+      ],
+      "context_pages": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Prioridade para ocupação urbana com infraestrutura existente",
+      "statement": "Priorizar requalificação e ocupação de áreas urbanas já dotadas de infraestrutura em relação à construção de conjuntos em periferias distantes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Priorização territorial da política habitacional e incentivo ao aproveitamento de imóveis vazios.",
+      "scope": "Áreas urbanas consolidadas; imóveis retomados, estoque parado e imóveis da União sem destinação.",
+      "conditions": [
+        "O plano não proíbe todo novo conjunto periférico.",
+        "Não define regra de localização, perímetro ou volume do incentivo tributário."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "Prioridade para requalificação e ocupação de área urbana com infraestrutura já instalada, em vez de novo conjunto na periferia da periferia, que sai barato na planilha e caro na vida das pessoas."
+        },
+        {
+          "page": 42,
+          "quote": "Uso do imóvel vazio: incentivo tributário à colocação no mercado de unidade retomada e de estoque parado, inclusive imóvel da União sem destinação, que hoje custa manutenção e não abriga ninguém."
+        }
+      ],
+      "context_pages": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Cobrança de universalização do saneamento",
+      "statement": "Executar e fiscalizar a meta de universalização já fixada pelo marco legal do saneamento de 2020, com dados por prestador.",
+      "support_level": "explicit_proposal",
+      "instrument": "Acompanhamento de indicadores e transparência sobre previsão de descumprimento.",
+      "scope": "Prestadores de saneamento; coleta e tratamento de esgoto como indicadores do plano.",
+      "conditions": [
+        "Não há nova data universal proposta nem posição específica sobre propriedade dos prestadores."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Saneamento: cobrança da meta de universalização já fixada pelo marco legal de 2020, acompanhada indicador a indicador e por prestador, com transparência sobre quem vai descumprir antes de o prazo vencer."
+        }
+      ],
+      "context_pages": [
+        46,
+        48
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Encargos e previsibilidade da energia",
+      "statement": "Reduzir encargos setoriais embutidos na tarifa de energia e dar transparência a seus componentes, mantendo leilões com regras estáveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulação setorial, revisão de encargos e desenho de leilões.",
+      "scope": "Consumidores de energia e investidores; sem valores de redução definidos.",
+      "conditions": [
+        "Não especifica quais encargos seriam eliminados ou como despesas hoje financiadas por eles seriam compensadas.",
+        "A matriz renovável existente é apresentada como fator de atração de indústrias eletrointensivas."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Reduzir os encargos setoriais embutidos na tarifa, com transparência sobre o que cada consumidor paga e por quê."
+        },
+        {
+          "page": 47,
+          "quote": "Previsibilidade regulatória e leilões com regra estável."
+        }
+      ],
+      "context_pages": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Regularização de moradias em áreas consolidadas",
+      "statement": "Promover titulação em massa com procedimento simplificado e executar assistência técnica pública gratuita para reforma e ampliação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Simplificação fundiária e execução da assistência prevista na Lei 11.888/2008.",
+      "scope": "Moradias já estabelecidas em áreas consolidadas.",
+      "conditions": [
+        "Não especifica metas quantitativas, universo territorial ou orçamento da assistência."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "Titulação em massa em áreas consolidadas, com procedimento simplificado."
+        },
+        {
+          "page": 42,
+          "quote": "Assistência técnica pública gratuita para reforma e ampliação, assegurada pela Lei nº 11.888/2008 e nunca executada em escala."
+        }
+      ],
+      "context_pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Rastreabilidade e patrimônio no combate ao desmatamento",
+      "statement": "Combater o desmatamento ilegal por inteligência, rastreabilidade da cadeia produtiva e responsabilização patrimonial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Instrumentos de investigação e responsabilização patrimonial associados aos do combate financeiro ao crime organizado.",
+      "scope": "Desmatamento ilegal e suas cadeias econômicas.",
+      "conditions": [
+        "Não equivale a veto expresso a todo desmatamento legal ou a uma meta geral de desmatamento zero."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Combater o desmatamento ilegal com inteligência, rastreabilidade da cadeia produtiva e responsabilização patrimonial, com o mesmo instrumental do Pilar 2 do Eixo 3."
+        }
+      ],
+      "context_pages": [
+        21,
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Prazos e responsabilidade no licenciamento ambiental",
+      "statement": "Estabelecer prazos de licenciamento ambiental com análise técnica de qualidade, responsável identificado e apuração automática de descumprimento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Painel público por processo; efeitos funcionais e contratuais sobre atrasos, segundo a regra de ônus administrativa.",
+      "scope": "Licenciamento e marcos de obras; dirigentes e concessionárias conforme sua responsabilidade.",
+      "conditions": [
+        "A proposta preserva análise técnica; não declara dispensa geral de licenciamento.",
+        "O texto não estabelece aprovação automática de qualquer licença ambiental ao vencer o prazo.",
+        "Não fixa duração uniforme dos prazos nem supõe culpa por carência estrutural."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Licenciamento ambiental com prazo definido e análise técnica de qualidade."
+        },
+        {
+          "page": 47,
+          "quote": "Responsável nomeado para cada processo de licenciamento e para cada marco de obra, com prazo correndo em painel público e apuração automática ao ser descumprido, na mesma regra de ônus adotada no Eixo 2."
+        }
+      ],
+      "context_pages": [
+        19,
+        20,
+        45,
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Aproveitamento mineral em terras indígenas mediante condições",
+      "statement": "Enviar lei que permita aproveitamento mineral em terras indígenas com consentimento comunitário, participação econômica direta e licenciamento ambiental pleno.",
+      "support_level": "explicit_proposal",
+      "instrument": "Projeto de regulamentação do art. 231, §3º, consulta conforme Convenção 169 e autorização congressual caso a caso.",
+      "scope": "Terras indígenas e comunidades afetadas; projeto no primeiro ano.",
+      "conditions": [
+        "Consentimento obtido por consulta prévia e informada; não apenas comunicação posterior.",
+        "Resultados pagos diretamente, sob governança definida pela comunidade.",
+        "Proibição de mercúrio, garantia financeira prévia de recuperação e responsabilidade solidária do comprador do minério.",
+        "O plano reconhece que regularizar garimpo exige enfrentar restrições adicionais e provável judicialização; não há autorização imediata e irrestrita."
+      ],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "O compromisso que assumo é o de enviar ao Congresso o projeto que regulamenta o art. 231, §3º, com três condições inegociáveis no texto: consentimento da comunidade afetada apurado por consulta na forma da Convenção nº 169; participação econômica dos indígenas nos resultados, paga diretamente e com governança definida pela própria comunidade, e não por intermediário; e licenciamento ambiental pleno, com proibição de mercúrio, garantia financeira prévia para recuperação de área degradada e responsabilidade solidária de quem compra o minério."
+        }
+      ],
+      "context_pages": [
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Capacidade estatal de proteção animal",
+      "statement": "Fortalecer a proteção animal por sistema nacional com fundo próprio e fiscalização federal capaz de lavrar e cobrar sanções por maus-tratos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Apoio a projeto de sistema nacional, orçamento próprio, pessoal, equipamento, integração policial/veterinária e cobrança em dívida ativa.",
+      "scope": "Política federal de proteção e direitos animais; fiscalização no primeiro ano e expansão da rede durante o mandato.",
+      "conditions": [
+        "O sistema é apresentado como projeto em tramitação, não como lei já aprovada.",
+        "A execução inclui indução por cofinanciamento de delegacias e núcleos especializados, sem atribuir à União administração de todas as polícias."
+      ],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Apoiar a aprovação e o aperfeiçoamento do projeto em tramitação que cria um sistema nacional de proteção animal, com cadastro nacional de animais, cadastro nacional de infratores e fundo próprio."
+        },
+        {
+          "page": 30,
+          "quote": "Consolidar e ampliar a estrutura federal de proteção e direitos animais, com orçamento próprio e transparente."
+        }
+      ],
+      "context_pages": [
+        30
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Obrigatoriedade progressiva de identificação de animais domésticos",
+      "statement": "Tornar progressivamente obrigatório o cadastro de animais domésticos, começando pelos atendidos com recursos públicos e pelos comercializados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ampliação da obrigatoriedade do SinPatinhas e integração cadastral com vigilância e registros de infração.",
+      "scope": "Cadastro inicialmente descrito para cães e gatos; plano aponta lacuna específica de equídeos urbanos.",
+      "conditions": [
+        "Não promete criar do zero cadastro que o próprio texto reconhece como existente.",
+        "A abrangência final, prazo universal e sanções de descumprimento não são definidos."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Defendemos a obrigatoriedade progressiva, começando pelo animal atendido com dinheiro público e pelo animal comercializado."
+        }
+      ],
+      "context_pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Adaptação e resgate animal em desastres",
+      "statement": "Implementar proteção animal nos planos de contingência de defesa civil, com equipes, profissionais e centros de triagem preparados antes dos desastres.",
+      "support_level": "explicit_proposal",
+      "instrument": "Execução da política Amar e da Lei 15.355/2026, treinamento, credenciamento e financiamento prévio.",
+      "scope": "Animais atingidos por emergências e desastres; articulação federativa e implementação no primeiro ano.",
+      "conditions": [
+        "Adaptação climática aparece com foco em defesa civil; não há orçamento específico ou programa nacional de mitigação de emissões detalhado."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Adaptação climática com foco em defesa civil, incluindo a proteção de animais em desastres prevista na Lei nº 15.355/2026."
+        },
+        {
+          "page": 30,
+          "quote": "Implementar significa treinar equipe de resgate, credenciar profissional habilitado, prever centro de triagem e pagar por tudo isso antes do desastre."
+        }
+      ],
+      "context_pages": [
+        28,
+        30,
+        47
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Carreira pública de pesquisador em lugar de vínculo apenas por bolsa",
+      "statement": "Criar carreira federal para pesquisadores que cumpram requisitos, com vínculo público e remuneração compatível com carreiras equivalentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC da Pesquisa, regulamentação de critérios e processo seletivo público de currículo e produção.",
+      "scope": "Pesquisadores vinculados a universidades e instituições de pesquisa; primeira etapa até o segundo ano.",
+      "conditions": [
+        "Ingresso não se limita à prova escrita; exige titulação, produção, orientação e avaliação periódica por pares.",
+        "Implantação gradual, começando por áreas de maior evasão; depende de espaço fiscal e estimativa de impacto.",
+        "Formação financiada publicamente implica permanência por prazo definido, com regras de desligamento.",
+        "Não há efetivação automática, imediata ou universal de todos os bolsistas."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "O governo enviará ao Congresso a Proposta de Emenda à Constituição da Pesquisa, com um objetivo simples de enunciar: pesquisador que cumprir os requisitos deixa de ser bolsista e passa a ser servidor público, com carreira, com vínculo e com salário compatível com a qualificação que ele tem."
+        },
+        {
+          "page": 37,
+          "quote": "Carreira federal de pesquisador, com ingresso por processo seletivo público de base curricular e de produção, e não apenas por prova escrita, porque produção científica não se mede em múltipla escolha."
+        },
+        {
+          "page": 37,
+          "quote": "Criar carreira é despesa obrigatória e continuada, e depende de espaço fiscal e de estimativa de impacto na forma da Lei de Responsabilidade Fiscal."
+        }
+      ],
+      "context_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Previsibilidade plurianual do financiamento científico",
+      "statement": "Adotar financiamento estável e plurianual da pesquisa, incluindo ciência básica e fomento dirigido à sanidade animal, zoonoses e imunizantes veterinários.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regra plurianual, orçamento de fomento e programas de pesquisa.",
+      "scope": "Todas as áreas científicas, com prioridades temáticas também declaradas em saúde animal.",
+      "conditions": [
+        "A defesa de todas as áreas convive no texto com fomento dirigido a temas; não se afirma exclusividade de uma agenda.",
+        "Não há percentual de gasto, regra operacional de blindagem ou cronograma financeiro."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Financiamento estável e previsível à pesquisa, com regra plurianual. Ciência não se planeja em ciclo de contingenciamento."
+        },
+        {
+          "page": 37,
+          "quote": "Fomento dirigido à pesquisa em sanidade animal, zoonoses e desenvolvimento de imunizantes veterinários."
+        }
+      ],
+      "context_pages": [
+        37
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Interoperabilidade das bases públicas pelo CPF",
+      "statement": "Executar a interoperabilidade de cadastros federais pelo CPF, com auditoria pública por órgão, responsáveis e cronograma de regularização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Implementação da Lei 14.534/2023, sistemas interoperáveis, auditoria e responsabilização administrativa.",
+      "scope": "Bases federais; auditoria no primeiro ano e cronograma de vinte e quatro meses no eixo digital.",
+      "conditions": [
+        "O plano apresenta essa interoperabilidade como obrigação legal já existente e atrasada.",
+        "A integração não autoriza acesso irrestrito: consulta pessoal auditável e proteção de dados aparecem como salvaguardas próprias."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Auditoria e publicação, no primeiro ano, do grau de cumprimento da Lei nº 14.534/2023 órgão por órgão, com prazo de regularização e responsável nomeado. Hoje ninguém sabe dizer quantas bases federais já interoperam pelo CPF, o que por si só responde à pergunta."
+        }
+      ],
+      "context_pages": [
+        44,
+        45
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Integração de saúde humana e veterinária na vigilância",
+      "statement": "Financiar vigilância permanente de zoonoses e induzir presença de veterinários nas equipes municipais de vigilância, integrando diagnóstico animal e epidemiologia humana.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa nacional, cofinanciamento federal, critérios populacionais, campanhas vacinais e rede laboratorial integrada.",
+      "scope": "Municípios, com prioridade a áreas de maior incidência; atendimento veterinário público para famílias de baixa renda.",
+      "conditions": [
+        "Metas municipais de cobertura; programas estruturados no primeiro ano.",
+        "O atendimento veterinário é tratado como política de saúde, não como substituição do atendimento humano."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Programa nacional permanente de vigilância de zoonoses, com financiamento federal pactuado e meta de cobertura por município, começando pelas áreas de maior incidência histórica."
+        },
+        {
+          "page": 27,
+          "quote": "Indução federal à presença de médico veterinário nas equipes municipais de vigilância em saúde, com cofinanciamento e critério populacional."
+        },
+        {
+          "page": 27,
+          "quote": "Atendimento veterinário público para famílias de baixa renda, tratado como política de saúde."
+        }
+      ],
+      "context_pages": [
+        26,
+        27,
+        28
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Financiamento permanente de castração por entrega verificada",
+      "statement": "Financiar castração de forma federal permanente, vinculando repasses a metas realizadas e verificadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cofinanciamento sanitário e pagamento por meta de castração.",
+      "scope": "Manejo populacional ético de animais, no contexto de cães e gatos e do ProPatinhas.",
+      "conditions": [
+        "Critério por entrega verificada, não somente por estrutura instalada.",
+        "Não define valor unitário, meta nacional quantitativa ou modelo de prestador."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Propomos financiamento federal permanente por meta verificada de castração, e não por estrutura instalada."
+        }
+      ],
+      "context_pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Prioridade à atenção primária e carreira para fixação territorial",
+      "statement": "Expandir saúde da família com cofinanciamento federal estável e levar profissionais a regiões de difícil fixação por carreira, em lugar de contratos precários renovados em crises.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa federal pactuado, metas municipais e estrutura de carreira; prontuário integrado entre níveis de atenção.",
+      "scope": "Atenção primária municipal e regiões de difícil fixação de pessoal.",
+      "conditions": [
+        "A União financia e induz; não assume administração de toda rede municipal.",
+        "Não informa desenho salarial, valores de repasse ou quantitativos de equipe."
+      ],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Expandir a cobertura de equipes de saúde da família com meta por município e cofinanciamento federal estável, previsível e fora da barganha política."
+        },
+        {
+          "page": 34,
+          "quote": "Levar profissional para região de difícil fixação com carreira, e não com contrato precário renovado a cada crise."
+        }
+      ],
+      "context_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Fila transparente e contratação por resultado para procedimentos",
+      "statement": "Criar fila nacional pública por procedimento com prioridade clínica, combinada a mutirões diagnósticos e cirúrgicos permanentes contratualizados por resultado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistema nacional de fila, posição consultável pelo paciente, auditoria de tempos e contratualização da entrega.",
+      "scope": "Procedimentos eletivos e diagnósticos; fila pública no primeiro ano.",
+      "conditions": [
+        "O texto não identifica natureza pública ou privada do prestador contratado.",
+        "Pagamento por resultado não decide delegação de gestão de unidades públicas.",
+        "Transparência da posição na fila não significa exposição pública de dados clínicos identificados."
+      ],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Fila nacional única e pública por procedimento, com critério clínico de prioridade e posição consultável pelo próprio paciente."
+        },
+        {
+          "page": 34,
+          "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada."
+        }
+      ],
+      "context_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Compras públicas para produção nacional de insumos de saúde",
+      "statement": "Usar compras públicas para sustentar produção nacional de medicamentos e imunizantes estratégicos, inclusive veterinários.",
+      "support_level": "explicit_proposal",
+      "instrument": "Política de compras orientada à base industrial de saúde.",
+      "scope": "Medicamentos e imunizantes estratégicos de uso humano e veterinário.",
+      "conditions": [
+        "O plano também prevê revisão da dispensação gratuita por evidência e internações evitadas.",
+        "Não define preferência percentual, produtor estatal exclusivo ou lista dos produtos estratégicos."
+      ],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Fortalecer a produção nacional de medicamentos e imunizantes estratégicos, inclusive de uso veterinário, com política de compras que sustente a base industrial."
+        }
+      ],
+      "context_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Apoio federal à alfabetização condicionado a resultados",
+      "statement": "Dar continuidade à política federal de alfabetização com apoio técnico e financeiro condicionado a resultados de avaliação externa e divulgação por escola.",
+      "support_level": "explicit_proposal",
+      "instrument": "Indução federativa, condicionalidades e avaliação externa.",
+      "scope": "Redes de alfabetização; União atua como financiadora, avaliadora e formadora.",
+      "conditions": [
+        "Não se limita à adesão formal do ente ao programa.",
+        "O plano afirma que redes com piora precisam de apoio, mas não define como isso se combina com as condições de repasse."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "O que acrescentamos é condicionalidade: apoio técnico e financeiro vinculado a resultado aferido em avaliação externa, e não apenas a adesão formal do ente."
+        },
+        {
+          "page": 36,
+          "quote": "Transparência total do dado por escola. Rede que melhora precisa ser reconhecida e rede que piora precisa ser socorrida, e nenhuma das duas coisas acontece com dado escondido."
+        }
+      ],
+      "context_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Formação técnica vinculada à demanda de contratação",
+      "statement": "Orientar abertura e continuidade de cursos profissionais pela demanda produtiva e por inserção no emprego, integrando a rede técnica, o ensino médio e o Sistema S.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão da rede federal, convênios e editais de qualificação financiados pela União.",
+      "scope": "Oferta regional de formação técnica e qualificação; acompanhamento de egressos empregados em doze meses.",
+      "conditions": [
+        "Curso que não coloca pessoas no trabalho não é reconduzido no ano seguinte, segundo a regra do plano.",
+        "A integração pretende evitar programas federais duplicados, sem prometer vaga de emprego garantida a todo egresso."
+      ],
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Programa de qualificação profissional financiado pela União e executado com o sistema S e com a rede federal de ensino técnico, sob uma regra que hoje falta: a oferta de curso sai da demanda declarada de contratação na região, e não do catálogo pronto da instituição. Curso que não coloca ninguém para trabalhar não é reconduzido no ano seguinte."
+        },
+        {
+          "page": 36,
+          "quote": "Ampliar a rede federal de educação profissional, com abertura de curso orientada pela demanda produtiva da região."
+        }
+      ],
+      "context_pages": [
+        20,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Padrões federais para educação física escolar",
+      "statement": "Fixar padrões mínimos de carga horária, espaço e material para educação física, com professor de formação específica e cofinanciamento condicionado ao cumprimento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Convênios federativos, padrões nacionais e verificação de cumprimento.",
+      "scope": "Educação básica, inclusive anos iniciais, nas redes apoiadas pela União.",
+      "conditions": [
+        "Inclui avaliação de aptidão com publicação de dados agregados e calendário de jogos escolares.",
+        "Não define valores de repasse ou o número de horas do padrão mínimo."
+      ],
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Padrão nacional mínimo de carga horária, espaço e material para educação física, com cofinanciamento federal condicionado ao cumprimento verificado."
+        },
+        {
+          "page": 38,
+          "quote": "Professor de educação física com formação específica em todas as etapas, inclusive nos anos iniciais, onde hoje a lacuna é maior."
+        }
+      ],
+      "context_pages": [
+        38,
+        40
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Acesso individual à bolsa esportiva sem intermediação federativa",
+      "statement": "Permitir inscrição individual de atletas e paratletas em plataforma federal, sem indicação ou anuência de federação, e estabelecer contrato e pagamento direto com a União.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alteração da Lei 10.891/2004 e legislação desportiva; plataforma federal e contrato individual.",
+      "scope": "Atletas e paratletas elegíveis; plataforma no primeiro ano.",
+      "conditions": [
+        "Resultado oficial verificável substitui carimbo de entidade.",
+        "Renovação depende de metas objetivas de competição, desempenho e treinamento; há recurso administrativo e lista pública de benefícios."
+      ],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "Inscrição individual e direta do atleta e do paratleta na plataforma federal, sem exigência de indicação, anuência ou intermediação de federação ou confederação."
+        },
+        {
+          "page": 39,
+          "quote": "Contrato direto entre o atleta e a União, com pagamento em conta do próprio atleta e sem repasse por terceiro."
+        }
+      ],
+      "context_pages": [
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Bolsas esportivas dimensionadas ao custo da modalidade",
+      "statement": "Revisar benefícios esportivos conforme custo real de treino e competição, com custos adicionais de acessibilidade para paratletas e proteção previdenciária e securitária do bolsista de alto rendimento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estudo técnico por modalidade, nova estrutura de valores, componentes adicionais e alteração da legislação do esporte.",
+      "scope": "Atletas e paratletas; prioridade orçamentária às modalidades não olímpicas de rendimento e às sem patrocínio privado; nova estrutura no segundo ano.",
+      "conditions": [
+        "Paridade de tratamento admite custos adicionais de acessibilidade.",
+        "O plano reconhece disputa por receitas de apostas com segurança e remete a solução ao orçamento do primeiro ano.",
+        "Valores finais não são fixados."
+      ],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "Revisão da estrutura de valores por categoria, tomando como referência o custo real de treinamento e de calendário competitivo da modalidade, apurado em estudo técnico publicado antes da fixação."
+        },
+        {
+          "page": 39,
+          "quote": "Paridade de tratamento entre atleta e paratleta, com reconhecimento do custo adicional de acessibilidade, equipamento adaptado e acompanhamento especializado."
+        },
+        {
+          "page": 39,
+          "quote": "Cobertura previdenciária e seguro de acidente para o atleta bolsista de alto rendimento, que hoje se machuca em serviço do país e fica sem nada."
+        }
+      ],
+      "context_pages": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Proteção contra uso indevido de dados pessoais pelo Estado",
+      "statement": "Aplicar a LGPD na administração federal com encarregados por órgão, relatórios públicos de impacto e reforço da autoridade de proteção de dados, auditando consultas pessoais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Execução da Lei 13.709/2018, registro de consultas, responsabilização e reforço de pessoal/orçamento da autoridade.",
+      "scope": "Tratamento federal de dados pessoais, inclusive nas bases interoperáveis.",
+      "conditions": [
+        "Integração de dados não é autorização irrestrita de vigilância.",
+        "Não detalha composição do reforço orçamentário ou novos direitos digitais além da execução legal indicada."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Registro auditável de toda consulta a dado pessoal feita por agente público, com responsabilização por consulta indevida."
+        },
+        {
+          "page": 44,
+          "quote": "Cumprimento efetivo da Lei nº 13.709/2018 dentro da administração federal, com encarregado designado em cada órgão e relatórios de impacto publicados."
+        },
+        {
+          "page": 44,
+          "quote": "Reforço orçamentário e de pessoal para a autoridade nacional de proteção de dados."
+        }
+      ],
+      "context_pages": [
+        23,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Preservação de garantias individuais na política de segurança",
+      "statement": "Rejeitar importar o regime de exceção salvadorenho e submeter prisões e transferências a decisão judicial fundamentada; não levar suspensão de garantias individuais a plebiscito.",
+      "support_level": "explicit_rejection",
+      "instrument": "Salvaguardas constitucionais e convencionais, controle judicial e responsabilização penal e disciplinar no emprego de tropas.",
+      "scope": "Política penitenciária e uso das Forças Armadas em segurança pública.",
+      "conditions": [
+        "O plebiscito pretendido limita-se ao modelo penitenciário, não autoriza tortura, tratamento degradante ou suspensão geral de garantias.",
+        "No emprego militar, o texto exige missão legal, regras publicadas e ausência de emprego por prazo indeterminado; a relação com fronteiras permanentes merece esclarecimento."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "Não pode ir a suspensão de garantias individuais."
+        },
+        {
+          "page": 24,
+          "quote": "Não interessa o regime de exceção que acompanhou aquela política."
+        },
+        {
+          "page": 24,
+          "quote": "Prisão continua dependendo de decisão judicial fundamentada, e transferência para regime de segurança máxima continua sendo ato judicial motivado e sujeito a revisão."
+        },
+        {
+          "page": 51,
+          "quote": "Responsabilidade penal e disciplinar preservada integralmente. Nenhum emprego por prazo indeterminado. Nenhuma missão de segurança pública sem base legal expressa."
+        }
+      ],
+      "context_pages": [
+        24,
+        25,
+        50,
+        51
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Isolamento federal de lideranças criminosas",
+      "statement": "Expandir e endurecer custódia federal de segurança máxima para lideranças e presos de alta periculosidade, com bloqueio de comunicação, rodízio e pessoal de carreira.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão penitenciária federal, bloqueio de telefonia, regime disciplinar diferenciado e concurso/carreira penal.",
+      "scope": "Lideranças e presos de alta periculosidade durante o mandato.",
+      "conditions": [
+        "Não destinar essas unidades a presos comuns nem usá-las como solução genérica de superlotação estadual.",
+        "Regime disciplinar com controle judicial e revisão periódica."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima, destinado exclusivamente a lideranças e presos de alta periculosidade. Não é destino de preso comum, nem válvula de escape para superlotação estadual."
+        },
+        {
+          "page": 21,
+          "quote": "Regime disciplinar diferenciado aplicado com controle judicial e revisão periódica."
+        }
+      ],
+      "context_pages": [
+        21,
+        25
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Prioridade à investigação e perda patrimonial do crime organizado",
+      "statement": "Deslocar recursos e pessoal para inteligência financeira e investigação patrimonial, integrando órgãos e usando sequestro, alienação antecipada e destinação de ativos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Integração UIF/Receita/PF/MP, instrumentos patrimoniais existentes e cooperação internacional para ativos e criptoativos.",
+      "scope": "Financiamento de facções e estruturas empresariais de ocultação de patrimônio.",
+      "conditions": [
+        "Os instrumentos são apresentados como existentes, a usar com prioridade; não se define nova pena de confisco automático sem procedimento."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Prioridade de orçamento e de pessoal para investigação patrimonial: laranja, empresa de fachada, posto de combustível, transportadora, clínica, casa de apostas."
+        },
+        {
+          "page": 21,
+          "quote": "Uso agressivo dos instrumentos já existentes de sequestro, alienação antecipada e destinação de bens, inclusive para reaparelhar as próprias forças de segurança."
+        }
+      ],
+      "context_pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Rastreabilidade e auditoria da cadeia legal de armas",
+      "statement": "Controlar rigorosamente armas e munições legais mediante marcação e auditoria de estoque.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marcação e inspeção de estoques na cadeia de armas e munições.",
+      "scope": "Armas e munições legalmente produzidas/comercializadas, como prevenção de desvio ao crime.",
+      "conditions": [
+        "Não formula proibição geral de posse ou porte civil nem uma política de liberação de armas."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "Controle rigoroso da cadeia de armas e munições legais, com marcação e auditoria de estoque."
+        }
+      ],
+      "context_pages": [
+        22
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Repasse condicionado a dados de segurança e integração do Sinesp",
+      "statement": "Aplicar suspensão de recursos federais discricionários a estados que não alimentem corretamente o Sinesp, padronizar ocorrências e integrar dados policiais a bases não policiais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Execução da Lei 13.675/2018, apoio e regulamentação da PEC 18/2025, padrão nacional, auditoria anual e lei de integração.",
+      "scope": "Estados e órgãos participantes; regulamentação e condicionalidade no primeiro ano e ponte com bases não policiais em dezoito meses.",
+      "conditions": [
+        "A suspensão é publicada, com padrão e prazo conhecidos e apoio técnico para adequação.",
+        "Consultas cruzadas exigem base legal, registro auditável e responsabilização por uso indevido.",
+        "A proposta de PEC é apoio a tramitação, não pressupõe promulgação."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "Aplicar de verdade a condicionalidade que já está na lei: estado que não alimentar o Sinesp no padrão e no prazo perde acesso a recurso federal discricionário, com a suspensão publicada e não negociada por telefone."
+        },
+        {
+          "page": 23,
+          "quote": "Padrão nacional único e obrigatório de registro de ocorrência, com prazo de adequação e apoio técnico federal para quem tiver dificuldade de implantar."
+        }
+      ],
+      "context_pages": [
+        22,
+        23,
+        25
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Cadastro de maus-tratos como alerta de violência doméstica",
+      "statement": "Criar cadastro nacional de infratores por maus-tratos integrado à segurança, usando-o como alerta na avaliação de risco de violência doméstica.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei federal, cadastro interoperável e protocolo entre proteção animal, conselhos tutelares e delegacias especializadas.",
+      "scope": "Infratores por maus-tratos; cadastro até o fim do primeiro ano.",
+      "conditions": [
+        "O plano apresenta a associação entre maus-tratos e outras violências como evidência não consensual e usa o cadastro como alerta, não como prova automática de outro crime."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Cadastro nacional de infratores por maus-tratos a animais no ar até o fim do primeiro ano de mandato, integrado às bases de segurança pública e usado como fator de alerta na avaliação de risco de violência doméstica."
+        }
+      ],
+      "context_pages": [
+        23,
+        25
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Plebiscito sobre modelo penitenciário de segurança máxima",
+      "statement": "Articular plebiscito sobre adoção de modelo de confinamento de segurança máxima inspirado em El Salvador para lideranças de facção e presos de altíssima periculosidade, acatando seu resultado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Projeto de decreto legislativo articulado no Congresso e caderno técnico prévio sobre custo, arquitetura, regime e compatibilidade jurídica.",
+      "scope": "Consulta sobre arquitetura e disciplina de custódia, fora de eleição geral; articulação no primeiro ano.",
+      "conditions": [
+        "A convocação é congressional, não ato unilateral da Presidência.",
+        "Não inclui estado de exceção ou suspensão de garantias; não implica aprovação prévia da adoção final.",
+        "Se a resposta popular for negativa, o compromisso é não implantar o mesmo resultado por outra via."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Levamos a pergunta ao eleitor por plebiscito e governamos conforme a resposta. Se o país disser não, não haverá tentativa de conseguir o mesmo resultado por via oblíqua. Se disser sim, o governo executa com mandato explícito, e ninguém poderá alegar surpresa depois."
+        },
+        {
+          "page": 25,
+          "quote": "Publicar antes da consulta um caderno técnico com custo estimado de construção e operação, projeto arquitetônico de referência, regime jurídico proposto e parecer sobre compatibilidade constitucional e convencional."
+        }
+      ],
+      "context_pages": [
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Piso constitucional e vinculação de recursos de defesa",
+      "statement": "Apoiar piso constitucional de gasto em defesa equivalente a 2% do PIB, destinando ao menos 35% do total à modernização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Apoio à PEC 55/2023 e trajetória gradual de orçamento.",
+      "scope": "Defesa nacional; alcançar o piso ao final do mandato.",
+      "conditions": [
+        "Elevação escalonada, sem salto único.",
+        "O plano reconhece risco de perda de flexibilidade fiscal e competição com saúde e educação, mas não apresenta equacionamento financeiro completo."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Apoiamos a aprovação da Proposta de Emenda à Constituição nº 55, de 2023, que destina no mínimo 2% do PIB à defesa e vincula ao menos 35% desse valor à modernização."
+        },
+        {
+          "page": 49,
+          "quote": "A elevação será gradual, distribuída ao longo do mandato, e não em salto único."
+        }
+      ],
+      "context_pages": [
+        49,
+        52
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Recomposição militar concentrada nas menores graduações",
+      "statement": "Estabelecer soldo mínimo igual ou superior ao salário mínimo e aplicar percentuais maiores de recomposição a soldados, cabos e sargentos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei de reestruturação do soldo, revisão do escalonamento vertical e estudo público de remuneração.",
+      "scope": "Base da hierarquia militar; projeto no primeiro ano.",
+      "conditions": [
+        "A proposta rejeita distribuir toda recomposição por percentual linear igual entre graduações.",
+        "Comparação deve considerar soldo e remuneração total; percentuais finais não são fixados."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Piso do soldo não inferior ao salário mínimo nacional."
+        },
+        {
+          "page": 50,
+          "quote": "Recomposição escalonada com percentual maior para soldado, cabo e sargento, que é onde está o maior contingente e a maior rotatividade."
+        }
+      ],
+      "context_pages": [
+        49,
+        50,
+        52
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Presença militar permanente nas fronteiras",
+      "statement": "Instalar bases permanentes em trechos críticos e empregar Forças Armadas na faixa de fronteira com poder de polícia contra armas, drogas e contrabando.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei Complementar 97/1999, monitoramento de fronteiras, patrulhamento fluvial/aéreo e cooperação com vizinhos.",
+      "scope": "Fronteiras terrestres, Amazônia e Amazônia Azul; bases em dois anos.",
+      "conditions": [
+        "Apoio militar às polícias não substitui policiamento ostensivo urbano.",
+        "GLO deve ter missão, prazo e área definidos por decreto e relatório ao Congresso.",
+        "O texto combina permanência fronteiriça com salvaguarda geral contra emprego por prazo indeterminado, sem delimitar inteiramente a relação entre os regimes."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Bases permanentes nos trechos críticos, com efetivo fixo, em lugar de operações de algumas semanas por ano."
+        },
+        {
+          "page": 50,
+          "quote": "Emprego permanente das Forças Armadas na faixa de fronteira, com o poder de polícia da Lei Complementar nº 97/1999, dirigido ao tráfico de armas, drogas e ao contrabando."
+        },
+        {
+          "page": 51,
+          "quote": "Garantia da Lei e da Ordem empregada com missão, prazo e área delimitados em decreto, com relatório de execução enviado ao Congresso ao fim de cada emprego."
+        }
+      ],
+      "context_pages": [
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Proteção plurianual de projetos e indústria de defesa",
+      "statement": "Proteger contratos plurianuais de projetos estratégicos contra contingenciamento e exigir conteúdo nacional na Base Industrial de Defesa, com meta de exportação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratos plurianuais protegidos, compras de defesa e exigências industriais.",
+      "scope": "Projetos estratégicos de defesa, como aeronaves, navios e blindados; manutenção e prontidão são prioridades declaradas.",
+      "conditions": [
+        "Não define percentuais de conteúdo nacional, valor protegido ou mecanismo fiscal da blindagem."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Contratos plurianuais de projeto estratégico protegidos de contingenciamento, para que caça, submarino, fragata e blindado deixem de ser interrompidos e reiniciados a cada troca de governo, o que encarece tudo e não entrega nada."
+        },
+        {
+          "page": 51,
+          "quote": "Base Industrial de Defesa com exigência de conteúdo nacional e meta de exportação, porque defesa que gera indústria se paga em parte e gera emprego qualificado."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "id": "P48",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reciprocidade e acesso a mercados nas negociações externas",
+      "statement": "Condicionar assinatura de acordo comercial à abertura de mercado para produtos brasileiros e responder a barreiras externas com reciprocidade pelos instrumentos internacionais disponíveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Negociação comercial, diplomacia sanitária técnica e instrumentos de reciprocidade do direito internacional.",
+      "scope": "Negociações comerciais e sanitárias e barreiras impostas a produtos brasileiros.",
+      "conditions": [
+        "Não decide qualquer acordo específico, inclusive Mercosul–União Europeia.",
+        "Não detalha gatilhos de retaliação ou fórmula de equivalência de acesso."
+      ],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Acordo comercial que não abre mercado para produto brasileiro não é assinado. Acesso se troca por acesso."
+        },
+        {
+          "page": 52,
+          "quote": "Barreira sanitária ou tarifária imposta ao nosso produto é respondida com reciprocidade, pelos instrumentos que o direito internacional já oferece, e não com nota de repúdio."
+        }
+      ],
+      "context_pages": [
+        33,
+        51,
+        52
+      ]
+    },
+    {
+      "id": "P49",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Posicionamento multilateral sem alinhamento automático",
+      "statement": "Definir posições em foros multilaterais caso a caso, por conveniência nacional declarada, sem alinhamento automático.",
+      "support_level": "explicit_proposal",
+      "instrument": "Processo decisório diplomático; o plano deixa a formulação de doutrina externa para o Itamaraty e o quadro da posse.",
+      "scope": "Participação brasileira em foros e negociações multilaterais.",
+      "conditions": [
+        "Não determina saída ou adesão a bloco específico, nem rompimento de relações com país determinado.",
+        "Conveniência nacional é critério declarado, sem matriz formal para ponderar interesses."
+      ],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Posição brasileira em foro multilateral definida caso a caso, por conveniência nacional declarada, e não por alinhamento automático."
+        },
+        {
+          "page": 51,
+          "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ]
+    }
+  ],
+  "tensions": [
+    {
+      "description": "O IUF é apresentado com neutralidade de arrecadação e sem retorno da contribuição patronal, enquanto a isenção de IRPF vinculada ao mínimo cresce em termos reais. O plano reconhece a renúncia crescente e prevê calibragem e revisão, mas não fecha uma trajetória plurianual de compensação.",
+      "position_ids": [
+        "P01",
+        "P02"
+      ],
+      "interpretation_limit": "É uma dependência financeira a verificar, não demonstração de inviabilidade ou contradição: o próprio plano prevê ajustar parâmetros e outras fontes."
+    },
+    {
+      "description": "A ampliação dos benefícios esportivos disputa receitas de apostas que a PEC de segurança apoiada pelo plano redireciona a fundos de segurança. A página 40 reconhece o problema e remete a conta à negociação orçamentária do primeiro ano.",
+      "position_ids": [
+        "P35",
+        "P41"
+      ],
+      "interpretation_limit": "O documento não apresenta a fonte substitutiva; isso não permite concluir que um dos compromissos será abandonado."
+    },
+    {
+      "description": "Piso constitucional de defesa e proteção de projetos competem por espaço fiscal com carreira científica e expansão da atenção primária. O plano reconhece o risco sobre saúde e educação na página 49 e condiciona a carreira de pesquisador ao espaço fiscal, sem orçamento consolidado por medida.",
+      "position_ids": [
+        "P44",
+        "P47",
+        "P23",
+        "P28"
+      ],
+      "interpretation_limit": "Cronogramas graduais podem permitir coexistência. Registra-se a restrição de recursos e a ausência de equacionamento completo, sem imputar corte decidido de serviços."
+    },
+    {
+      "description": "A página 50 propõe emprego permanente das Forças Armadas nas fronteiras, enquanto a salvaguarda da página 51 afirma que não haverá emprego por prazo indeterminado. A seção distingue poderes de fronteira e GLO, mas não delimita completamente o alcance da frase geral.",
+      "position_ids": [
+        "P46",
+        "P37"
+      ],
+      "interpretation_limit": "Pode haver distinção compatível entre presença territorial permanente e missões temporárias de GLO; o perfil preserva ambas as formulações e não resolve a ambiguidade por conta própria."
+    }
+  ],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "Tributos federais sobre folha, faturamento e produção devem ser substituídos por um imposto sobre movimentação financeira.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P01"
+      ],
+      "necessary_conditions": [
+        "Comparar substituição de tributos, não acréscimo de um imposto ao sistema existente.",
+        "Preservar transição, neutralidade declarada, compensação federativa e salvaguardas de exportação/cadeias longas; não presumir extinção de IR, FGTS ou tributos subnacionais."
+      ],
+      "contrast_to_investigate": "Pesquisar manutenção de bases existentes, tributação sobre valor agregado ou outro financiamento da desoneração da folha, sem atribuir alternativa a candidatura não examinada.",
+      "why_useful": "Recupera a decisão central de arquitetura tributária do programa, ausente do conjunto anterior.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "estado_gestao",
+      "statement": "Pedidos administrativos de baixo risco devem ser aprovados automaticamente quando o governo descumprir o prazo legal de resposta.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P07"
+      ],
+      "necessary_conditions": [
+        "Limitar a baixo risco e prazos legalmente definidos.",
+        "O plano combina deferimento com responsabilização por atraso injustificado; não estender o enunciado automaticamente a toda licença ambiental."
+      ],
+      "contrast_to_investigate": "Pesquisar exigência de aprovação expressa, efeitos distintos do silêncio administrativo e exceções de risco.",
+      "why_useful": "Distingue modelos de relação entre cidadão e administração por um instrumento verificável.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "infraestrutura_territorio",
+      "statement": "O histórico de pagamento de aluguel deve servir como comprovação de capacidade de pagamento para obter financiamento habitacional.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P12"
+      ],
+      "necessary_conditions": [
+        "Histórico deve ser comprovado; elegibilidade obedece a tetos de renda e valor do imóvel.",
+        "A política do plano é mais ampla, com parcela inicial equivalente, escolha do imóvel e garantia parcial; esta semente pergunta somente o critério de capacidade de pagamento."
+      ],
+      "contrast_to_investigate": "Pesquisar outros critérios de acesso ao crédito habitacional e soluções de moradia que não usem histórico locatício.",
+      "why_useful": "Amplia o tema habitacional por uma escolha concreta, sem depender de quantidade arbitrária de unidades.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "meio_ambiente_clima",
+      "statement": "A exploração mineral em terras indígenas deve ser permitida com consentimento comunitário, participação indígena nos resultados e licenciamento ambiental pleno.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P19"
+      ],
+      "necessary_conditions": [
+        "Preservar autorização do Congresso caso a caso e consulta prévia, livre e informada.",
+        "No plano, licenciamento inclui veto ao mercúrio, garantia de recuperação e responsabilidade solidária do comprador.",
+        "Não transformar a semente em autorização imediata para garimpo nem em simples oitiva sem consentimento."
+      ],
+      "contrast_to_investigate": "Pesquisar proibição, autorização condicionada e diferentes exigências de consentimento e proteção, sem presumir equivalência entre elas.",
+      "why_useful": "Abre comparação de uso de recursos, direitos territoriais e condições ambientais em uma decisão de autorização.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "O governo federal deve criar uma carreira pública de pesquisador.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P23"
+      ],
+      "necessary_conditions": [
+        "Ingresso por seleção pública de currículo e produção, com requisitos objetivos e avaliação por pares.",
+        "Implantação gradual e condicionada a espaço fiscal; não é efetivação automática de todos os bolsistas.",
+        "O plano vincula formação financiada a prazo de permanência com regras de desligamento."
+      ],
+      "contrast_to_investigate": "Pesquisar reforço de bolsas, contratos temporários ou outras carreiras de pesquisa, distinguindo aumento de fomento de criação de vínculo público.",
+      "why_useful": "Traz política científica própria, em vez de restringir educação e ciência a metas gerais.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "bem_estar_social",
+      "statement": "O governo federal deve cofinanciar a presença de médicos veterinários nas equipes municipais de vigilância em saúde.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P26"
+      ],
+      "necessary_conditions": [
+        "Preservar natureza de vigilância e prevenção de zoonoses, com critério populacional.",
+        "Não confundir essa composição de equipe com universalização de todo atendimento clínico veterinário ou substituição do cuidado humano."
+      ],
+      "contrast_to_investigate": "Pesquisar outras formas de integrar vigilância animal e humana e se os planos escolhem ou não esse arranjo de equipes.",
+      "why_useful": "Recupera um desenho de Saúde Única material para o programa e distinto de políticas hospitalares.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "Atletas devem poder solicitar bolsa esportiva federal diretamente, sem indicação ou anuência de federação.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P34"
+      ],
+      "necessary_conditions": [
+        "Elegibilidade depende de resultados oficiais verificáveis e metas objetivas de manutenção.",
+        "Inclui paratletas; não significa bolsa universal sem comprovação esportiva."
+      ],
+      "contrast_to_investigate": "Pesquisar modelos com intermediação de entidades, certificação obrigatória ou inscrição individual, verificando o papel efetivo de cada organização.",
+      "why_useful": "Permite comparar desenho do acesso ao esporte financiado publicamente, além de discutir apenas valor do benefício.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "soberania_relacoes_internacionais",
+      "statement": "A Constituição deve estabelecer um piso de gasto em defesa vinculado ao PIB.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P44"
+      ],
+      "necessary_conditions": [
+        "O plano apoia 2% do PIB com ao menos 35% para modernização.",
+        "A elevação é gradual durante o mandato; comparar existência da vinculação, não somente um número isolado."
+      ],
+      "contrast_to_investigate": "Pesquisar orçamento flexível, piso legal não constitucional e diferentes vinculações entre defesa e modernização.",
+      "why_useful": "Inclui uma escolha de prioridade fiscal e defesa não representada pelas antigas perguntas diplomáticas.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "O perfil reutiliza a leitura integral anterior de 58 páginas e registra apenas as 43 páginas efetivamente revisitadas nesta etapa; não declara uma segunda leitura integral.",
+    "Dados históricos, estimativas fiscais e relações causais expostos pelo plano são tratados como alegações do documento, sem validação externa de sua exatidão ou viabilidade.",
+    "O perfil sintetiza escolhas principais, sem inventário de cada ação acessória; lacunas documentais não significam neutralidade ou oposição. As oito sementes ainda exigem comparação documental entre planos."
+  ]
+}

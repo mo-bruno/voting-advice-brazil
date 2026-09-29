@@ -4,6 +4,8 @@ Atualizado: 2026-09-29T18:16:20.193655+00:00. **13/13 entregas; 13 conferidas; 8
 
 **Auditoria concluída.** [Relatório final](FINAL_REPORT.md) · [16 perguntas auditadas](QUESTIONS_AUDITED.md) · [Matriz consolidada](CONSOLIDATION.json). Cinco correções adotadas; 81 posições categóricas, 1 condicional e 126 ausências. Nenhuma mudança de produção.
 
+**Nova etapa:** [perfis nas dez categorias, com os mesmos agentes](../2026-09-29-thematic-profiles/ORCHESTRATION.md). A auditoria abaixo permanece encerrada.
+
 Este documento é o ponto de retomada desta conversa. Estado estruturado: [STATE.json](STATE.json). Fontes atuais: [source-manifest.json](source-manifest.json). Textos congelados: [questions.json](questions.json). Protocolo: [PROTOCOL.md](PROTOCOL.md).
 
 Escopo: **16 perguntas × 13 documentos oficiais**, um agente exclusivo por plano, modelo solicitado `gpt-6-astra`, esforço `ultra`, no máximo três revisores simultâneos. Leitura integral com diário por página; buscas lexicais apenas complementares.

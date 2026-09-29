@@ -1,0 +1,1735 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551975",
+  "candidate_name": "Edmilson Costa",
+  "agent_id": "/root/plan_edmilson",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002551975.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "status": "complete",
+  "revisited_pages": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "completed_categories": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Reutilizado diário integral anterior de 16 páginas; a nova rodada registra somente reinspeção contextual.",
+    "Reforma agrária terá categoria principal Infraestrutura e Território; desenho da Constituinte e Judiciário, Estado; recall eleitoral, Cidadania.",
+    "Distinguir controle estatal financeiro, dívida, regime fiscal e tributação em posições próprias.",
+    "Reforma agrária apresenta critérios de desapropriação na p.6 e enunciado mais amplo de expropriação do agronegócio na p.9; preservar diferença de alcance sem equipará-los.",
+    "Tarifa zero universal pode coexistir com menção a passe-livre de grupos; não rotular como contradição automática.",
+    "Segurança alimentar inclui restaurantes, compras do produtor e estoques Conab, sem substituir necessariamente benefícios de renda.",
+    "Há material substantivo nas dez categorias; não é necessário preencher categorias por inferência ideológica.",
+    "Cotas universitárias ficam em Educação; cotas nas forças de segurança serão identificadas separadamente como igualdade no acesso ao serviço público.",
+    "Educação traz alternativa numérica não resolvida de 70 ou 80% de cotas para estudantes de escolas públicas; registrar a ambiguidade.",
+    "Reinspecionadas páginas 3–16, a partir do diário anterior; não se declara uma segunda leitura integral.",
+    "Perfil preservará possíveis tensões de alcance da reforma agrária, alternativas de percentual de cotas e ritmo da transição do petróleo.",
+    "Referências secundárias não criam posições adicionais nem duplicam contagem.",
+    "P01 reagrupada em Estado e Gestão Pública conforme a convenção editorial para propriedade bancária; Economia e Bem-Estar mantidas como referências secundárias. IDs, conteúdo, evidências e sementes preservados."
+  ],
+  "pending": [],
+  "draft_positions": [
+    {
+      "id": "P01",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Propriedade do sistema financeiro",
+      "statement": "O plano propõe nacionalizar e estatizar o sistema monetário e financeiro e criar um Banco dos Trabalhadores para gerir fundos de previdência e seguridade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização do sistema e criação de banco público dedicado.",
+      "scope": "Sistema monetário e financeiro; fundos previdenciários e de seguridade dos trabalhadores.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "A segunda grande transformação a ser realizada pelo governo do Poder Popular será a nacionalização, o controle público e a estatização do sistema monetário e financeiro. Criaremos ainda o Banco dos Trabalhadores, que será responsável pela gestão dos fundos previdenciários e de seguridade social dos trabalhadores e das trabalhadoras."
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Auditoria e pagamentos da dívida pública",
+      "statement": "O plano propõe reestruturar a dívida pública em títulos de longo prazo e suspender juros e amortizações durante a investigação de sua origem.",
+      "support_level": "explicit_proposal",
+      "instrument": "Comissão Especial de investigação, suspensão temporária dos pagamentos e substituição dos títulos.",
+      "scope": "Dívida pública; o ponto 16 especifica dívida interna.",
+      "conditions": [
+        "A suspensão acompanha o período de investigação, não é apresentada como cancelamento definitivo."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "A dívida pública será reestruturada e seu passivo será substituído por títulos de longo prazo. Também será criada uma Comissão Especial para investigar a origem da dívida e, durante o período de investigação, serão suspensos os pagamentos dos juros e amortizações da dívida."
+        },
+        {
+          "page": 13,
+          "quote": "Reestruturação da dívida interna a partir da criação de uma Comissão Especial para analisar todo o processo de constituição da dívida, bem como suspensão do pagamento dos juros pelo período em estiver sendo realizada a investigação."
+        }
+      ],
+      "context_pages": [
+        4,
+        13
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Regime fiscal e garantia de recursos sociais",
+      "statement": "O plano propõe revogar o Arcabouço Fiscal e a Lei de Responsabilidade Fiscal e criar uma Lei de Responsabilidade Social que assegure recursos a serviços, programas e investimentos públicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação de regras fiscais e instituição de lei de financiamento social.",
+      "scope": "Educação, saúde, saneamento, programas sociais e investimentos públicos.",
+      "conditions": [
+        "Não informa a regra quantitativa ou mecanismo de vinculação da nova lei."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a trabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central."
+        },
+        {
+          "page": 13,
+          "quote": "Criação da Lei de Responsabilidade Social, que assegure recursos para educação, saúde, saneamento, programas sociais e investimentos públicos. Revogação da Lei de Responsabilidade Fiscal."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Autonomia e direção do Banco Central",
+      "statement": "O plano propõe encerrar a autonomia do Banco Central e recompor sua diretoria e o Conselho Monetário Nacional com participação de trabalhadores e entidades econômicas e sindicais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação da autonomia; alteração da composição institucional.",
+      "scope": "Banco Central e Conselho Monetário Nacional.",
+      "conditions": [
+        "A lista de representações é expressa; não há regra completa de mandato ou votação."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "a retomada do Banco Central (fim da autonomia)"
+        },
+        {
+          "page": 5,
+          "quote": "Faremos uma reestruturação tanto no Conselho Monetário Nacional quanto na diretoria do Banco Central. Ampliaremos o CNM com representações das centrais sindicais, Contraf, BNDES, Cofecon e Dieese. A diretoria do Banco Central será composta por representantes dos trabalhadores do Bacen junto com pessoas indicadas pelas centrais sindicais, pelas entidades dos bancários, Cofecon e pelo Dieese."
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Progressividade tributária",
+      "statement": "O plano propõe reduzir tributos sobre consumo, cobrar progressivamente conforme a renda e instituir imposto sobre lucros, dividendos, grandes fortunas, transações financeiras e heranças.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma tributária e isenção de imposto de renda até um salário-mínimo do Dieese.",
+      "scope": "Contribuintes segundo renda e bases patrimoniais ou financeiras nomeadas.",
+      "conditions": [
+        "O piso de isenção é referenciado ao Dieese, não a um valor nominal fixo; alíquotas não são definidas."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Reforma tributária: redução da tributação sobre o consumo, com cobrança progressiva de impostos, de acordo com o rendimento de cada contribuinte, além da criação de um imposto especial sobre lucros e dividendos, grandes fortunas, transações financeiras e heranças."
+        },
+        {
+          "page": 4,
+          "quote": "e realizará uma reforma tributária com impostos progressivos, com isenção do imposto de renda para quem ganha até 1 salário-mínimo do Dieese."
+        }
+      ],
+      "context_pages": [
+        4,
+        14
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Controle cambial e comercial",
+      "statement": "O plano propõe retomar o controle governamental do câmbio e do comércio exterior.",
+      "support_level": "explicit_proposal",
+      "instrument": "Controle público do câmbio e do comércio exterior.",
+      "scope": "Relações cambiais e comércio externo da economia brasileira.",
+      "conditions": [
+        "Não detalha regime cambial, licenciamento comercial ou proibição geral de capital estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "O governo popular retomará o controle do câmbio e do comércio exterior"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reestatização de empresas estratégicas",
+      "statement": "O plano propõe retomar empresas estratégicas privatizadas e investigar o processo de privatizações, com responsabilização por medidas ilícitas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reestatização e comissão da verdade das privatizações.",
+      "scope": "Empresas qualificadas como estratégicas e processos de privatização.",
+      "conditions": [
+        "A punição é vinculada a medidas ilícitas; o trecho não enumera todas as empresas estratégicas."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "As empresas estratégicas privatizadas serão retomadas para o patrimônio público, será investigado todo o processo de privatizações, com a punição dos responsáveis por adoção de medidas ilícitas, através da criação de uma comissão da verdade das privatizações."
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Assembleia Constituinte e organização parlamentar",
+      "statement": "O plano propõe convocar uma Constituinte em dois anos e substituir o Senado por Parlamento Unicameral, com metade da representação eleita por organizações sociais e populares e metade por voto universal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Constituinte de Novo Tipo e substituição do desenho bicameral.",
+      "scope": "Instituições políticas nacionais; convocação da Constituinte em até dois anos.",
+      "conditions": [
+        "A composição é descrita em duas páginas; os trechos permanecem separados.",
+        "Não há detalhamento de seleção e credenciamento das organizações."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "O governo do Poder Popular convocará, no prazo de dois anos, uma Assembleia Constituinte de Novo Tipo, cuja representação deverá refletir a maioria social do país: metade de seus membros será eleita pelas organizações sociais e populares através de grandes Encontros da Classe"
+        },
+        {
+          "page": 4,
+          "quote": "Trabalhadora (ENCLATs) e a outra metade pelo voto universal. O Senado será extinto e substituído por um Parlamento Unicameral, com os mesmos critérios da Constituinte."
+        }
+      ],
+      "context_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Participação no orçamento e controle do Estado",
+      "statement": "O plano propõe orçamento popular totalmente deliberativo e conselhos populares eleitos nos locais de trabalho, moradia e estudo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Deliberação popular do orçamento e conselhos permanentes.",
+      "scope": "Aplicação de recursos governamentais e espaços de participação popular.",
+      "conditions": [
+        "Não especifica conciliação entre decisões locais, setoriais e orçamento nacional."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Instituiremos o Orçamento Popular 100% deliberativo, ou seja, os trabalhadores decidirão onde o governo aplicará os recursos."
+        },
+        {
+          "page": 4,
+          "quote": "Visando aprofundar as liberdades democráticas e implantar mecanismos de democracia direta, serão instituídos os Conselhos Populares, eleitos nos locais de trabalho, moradia e estudo, como instrumentos permanentes de participação popular."
+        }
+      ],
+      "context_pages": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Mandatos e controle do Judiciário",
+      "statement": "O plano propõe mandatos de dez anos, elegíveis e revogáveis por controle popular, para juízes de tribunais regionais e superiores, dentro de reforma que inclui o Ministério Público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma institucional e mandatos fixos sob controle social.",
+      "scope": "Tribunais regionais e superiores; reforma estrutural também alcança o Ministério Público.",
+      "conditions": [
+        "Não especifica o procedimento de elegibilidade, escolha ou revogação; não se atribui eleição direta de magistrados."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Para reverter essa situação propomos uma reforma estrutural profunda de todo o judiciário brasileiro (incluindo necessariamente o Ministério Público), tanto do ponto de vista da legislação, quanto do controle social e transparência sobre a atividade da justiça e, especialmente, que os juízes nomeados para os tribunais regionais e superiores tenham mandato fixo sob controle social: mandatos de 10 anos elegíveis e revogáveis pelo Poder Popular em sua respectiva jurisdição. Fim de todas as verbas e penduricalhos que ultrapassarem o teto constitucional."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Reposição de pessoal no serviço público",
+      "statement": "O plano propõe concursos para vagas existentes e expansão de serviços essenciais, com convocação imediata das pessoas aprovadas em concursos anteriores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Realização de concursos e convocação de aprovados.",
+      "scope": "Pessoal dos serviços públicos essenciais e vagas existentes.",
+      "conditions": [
+        "Não define quantitativos, prazos de validade dos certames ou custos."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Serão convocados concursos públicos para provimento das vagas hoje existentes e expansão dos serviços essenciais, e convocaremos imediatamente todas as pessoas aprovadas em concursos anteriores."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Propriedade, integração e governo da Petrobras",
+      "statement": "O plano propõe Petrobras integrada e totalmente estatal, recuperar ativos privatizados e instituir controle com representação do governo, dos trabalhadores e dos petroleiros.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reestatização, recomposição do conselho em três terços, retomada de ativos e transição para monopólio estatal de exploração a distribuição.",
+      "scope": "Petrobras e cadeia de exploração, produção, refino, petroquímica e distribuição.",
+      "conditions": [
+        "O plano também encerra a política de exportação de óleo cru e amplia refinarias; não define cronograma da transição monopolista.",
+        "Integração produtiva é expressa, além da propriedade estatal."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "A Petrobrás deve ser uma empresa integrada de energia e 100% estatal, sobre o controle democrático dos/as trabalhadores/as, com planejamento estratégico debatido amplamente com a população e a categoria petroleira, através de Congressos e Fóruns Nacionais periódicos, plebiscitos, referendos e conselhos populares. Reestruturação completa do Conselho Administrativo da empresa, cuja composição será de ⅓ do governo federal, ⅓ de representantes da população brasileira através das entidades de trabalhadores e ⅓ de representantes da categoria petroleira através das suas entidades. Retomada da BR distribuidora e de todos os ativos da Petrobrás privatizados pelos governos neoliberais. Transição para o regime de monopólio estatal da exploração, produção, refino, petroquímica e distribuição"
+        },
+        {
+          "page": 14,
+          "quote": "Fim da política de exportação de óleo cru, que visa beneficiar os acionistas e o grande capital internacional, submetendo a empresa a uma lógica de subordinação e exploração. Investimento e ampliação da capacidade de produção das refinarias. Contra a ociosidade das plantas, pela conclusão de obras inacabadas e pela retomada de novos projetos nessa área."
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Redistribuição agrária e propriedade da terra",
+      "statement": "O plano propõe desapropriação sem indenização dos latifúndios improdutivos, áreas de trabalho escravo e fazendas que descumpram função social; também enuncia expropriação do agronegócio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desapropriação, formas coletivas e estatais de propriedade e lotes urbanos sem direito de revenda.",
+      "scope": "Campo e periferias urbanas; apoio à produção agroecológica e a cooperativas.",
+      "conditions": [
+        "A p. 6 estabelece critérios de desapropriação sem indenização; a p. 9 emprega alcance mais amplo sem esclarecer sua relação com aqueles critérios."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "No campo, realizaremos a reforma agrária popular, e todos os latifúndios improdutivos, áreas de trabalho escravo ou as fazendas que não cumpram sua função social serão desapropriados sem indenização. Nossa proposta de reforma agrária também será para as periferias das cidades, com transferência de títulos da terra em pequenos lotes sem direito de revenda, fomento à organização de cooperativas com apoio de políticas públicas para a produção agroecológica, armazenamento e escoamento de gêneros para alimentação; implementação de políticas públicas de compras para fornecimento às redes escolares, hospitalares, restaurantes populares e outras redes semelhantes."
+        },
+        {
+          "page": 9,
+          "quote": "A reforma agrária popular tem perspectiva anticapitalista, respeitando os povos originários e quilombolas e buscando configurar uma nova relação campo-cidade, com ênfase nas formas coletiva e estatal de propriedade."
+        },
+        {
+          "page": 9,
+          "quote": "Expropriação do agronegócio, não apenas para garantir comida na mesa do povo trabalhador brasileiro, mas também como necessidade humanitária,"
+        }
+      ],
+      "context_pages": [
+        6,
+        9
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Habitação e uso de imóveis ociosos",
+      "statement": "O plano propõe reformar imóveis ociosos para moradia popular e utilizar imediatamente imóveis e terrenos da União, complementando-os com programa de habitação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma e destinação social de imóveis existentes, terras públicas e construção de habitações.",
+      "scope": "Famílias sem teto ou vivendo de aluguel; objetivo de eliminar o déficit habitacional.",
+      "conditions": [
+        "Não especifica regime jurídico de aquisição dos imóveis privados ociosos ou calendário da construção."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Nas cidades, imóveis ociosos serão reformados e destinados à moradia popular, para ocupação imediata das famílias sem teto e vivendo de aluguel, processo que se complementará com a realização de um amplo programa de habitações populares até acabar com o déficit habitacional existente no Brasil."
+        },
+        {
+          "page": 10,
+          "quote": "Moradia digna para toda a população, partindo da utilização imediata dos imóveis e terrenos da União para ajudar a suprir essa demanda."
+        }
+      ],
+      "context_pages": [
+        6,
+        10
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Propriedade e gratuidade dos transportes",
+      "statement": "O plano propõe estatizar os transportes em grande escala e encampar o transporte urbano de passageiros, com ampliação ferroviária e hidroviária e tarifa zero para toda a população.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reestatização de portos, aeroportos, ferrovias e rodovias; encampação municipal e renovação das redes e frotas.",
+      "scope": "Transporte nacional de cargas e passageiros; transporte urbano com tarifa zero.",
+      "conditions": [
+        "A referência a passe-livre de grupos na p. 7 não revoga a tarifa zero universal; pode coexistir no desenho ou na transição.",
+        "O modelo de financiamento não é quantificado."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Estatização completa do sistema de transportes em grande escala, sob o controle de Conselhos Populares: serão reestatizados portos, aeroportos, ferrovias e rodovias. Modernização e ampliação da malha ferroviária e hidroviária nacional, reduzindo o custo do transporte das mercadorias e racionalizando os fluxos comerciais no interior do país. Estímulo à encampação pública pelos municípios de todo o transporte de passageiros nas cidades, centralizando e renovando a estrutura de transporte, com a modernização e ampliação da frota de ônibus, a produção de veículos leves sobre trilhos, ampliação dos metrôs, trens e barcas, especialmente nas grandes metrópoles, de forma a garantir a tarifa zero para toda a população."
+        },
+        {
+          "page": 7,
+          "quote": "No transporte será implantada a tarifa zero com transporte 100% público em todo território nacional,"
+        }
+      ],
+      "context_pages": [
+        7,
+        11
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Controle público do saneamento e da energia",
+      "statement": "O plano propõe revogar o marco do saneamento, federalizar empresas de água e esgoto, reestatizar a Eletrobras e implantar monopólio estatal de gás, energia e saneamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação legal, federalização e monopólio público dos serviços.",
+      "scope": "Saneamento básico, tratamento de esgoto, gás e energia para toda a população.",
+      "conditions": [
+        "Não apresenta cronograma de universalização nem divisão detalhada de competências federativas."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Política de saneamento básico, tratamento de esgoto e energia para todos (com a reestatização da Eletrobras), visando acabar com o problema dos milhões de moradias sem banheiro, sem acesso a tratamento de esgoto e sem acesso à energia. Revogação do marco legal do saneamento básico (que facilitou as privatizações), federalizando empresas de tratamento de água e esgoto e implantando o monopólio estatal nos setores de gás, energia e saneamento."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Adaptação imediata a extremos climáticos",
+      "statement": "O plano propõe alertas de tempestades e calor, oferta obrigatória de água potável e refrigeração no transporte e em redes de saúde e ensino.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alertas, obrigações de provisão e fiscalização das condições ambientais de trabalho.",
+      "scope": "Cidades, transporte público, redes públicas e privadas de saúde e educação, indústria e comércio.",
+      "conditions": [
+        "As medidas são apresentadas como emergenciais; não há um orçamento ou cronograma local."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Dadas a gravidade e a intensidade dos efeitos da degradação ambiental em geral e das mudanças climáticas faz-se necessária a adoção de ações emergenciais voltadas à preservação ambiental, como a emissão de alertas de tempestades e temperaturas elevadas; a obrigatoriedade da oferta de água potável em toda a cidade e de refrigeração no transporte público, nas redes públicas e privadas de saúde e educação; a verificação da adequação das condições ambientais de trabalho na indústria e no comércio à legislação brasileira e a realização de intervenções imediatas quando necessário."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Tributação ambiental",
+      "statement": "O plano propõe taxar emissões de gases poluentes e danos ambientais, incluindo contaminação de solo e água.",
+      "support_level": "explicit_proposal",
+      "instrument": "Taxação de emissões e outros danos ambientais.",
+      "scope": "Emissões e danos à natureza; bases e alíquotas não definidas.",
+      "conditions": [
+        "O texto não distingue imposto sobre carbono de outros tributos por poluente ou dano."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Será operada implantação de taxação sobre emissões de gases poluentes e sobre e outros danos ambientais, como a contaminação dos solos e das águas."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Conservação e recomposição de ecossistemas",
+      "statement": "O plano propõe ampliar reservas e áreas protegidas, revisar o Código Florestal, restaurar matas ciliares, nascentes e rios e reforçar fiscalização ambiental.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão territorial da proteção, restauração, revisão legal e órgãos de controle.",
+      "scope": "Biomas brasileiros, florestas, recursos hídricos, manguezais e restingas.",
+      "conditions": [
+        "Não fixa novo percentual de proteção, prazo de restauração ou conteúdo completo da revisão legal."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Serão expandidas as reservas florestais e as áreas de proteção ambiental atuais, com a revisão do Código Florestal, ampliação das matas ciliares e da cobertura florestal, proteção e recuperação de nascentes, de rios, lagos e fontes, manguezais, restingas e outros sistemas naturais. Será operada implantação de taxação sobre emissões de gases poluentes e sobre e outros danos ambientais, como a contaminação dos solos e das águas. Serão reativados e reforçados os órgãos de fiscalização e controle ambiental."
+        },
+        {
+          "page": 11,
+          "quote": "Combate rigoroso ao desmatamento em todos os ecossistemas, à mineração ilegal, com uma profunda revisão nos processos de produção mineral em curso."
+        }
+      ],
+      "context_pages": [
+        8,
+        11
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Transição energética e ritmo de exploração do petróleo",
+      "statement": "O plano propõe reduzir o ritmo de exploração e usar renda petrolífera em pesquisa e substituição por energia limpa; prefere outras áreas e o Pré-Sal à exploração da Margem Equatorial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundo financiado pela renda do petróleo, pesquisa e investimento em fontes alternativas.",
+      "scope": "Petróleo e geração de energia limpa; exploração fora da Margem Equatorial.",
+      "conditions": [
+        "A p. 14 mantém pesquisa e exploração em outras áreas e ampliação do refino; não há calendário de declínio da produção ou abandono integral do petróleo."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Defendemos a Petrobras 100% estatal, com a redução do ritmo da exploração do petróleo e a criação de um fundo, a partir da renda do petróleo, para financiar a pesquisa e a substituição do petróleo com vistas à geração de energia limpa."
+        },
+        {
+          "page": 14,
+          "quote": "No lugar da exploração da Margem Equatorial, defendemos pesquisas e buscas em outras áreas e uma melhor exploração do Pré-Sal, reduzindo os lucros e a extração desenfreada, que visam apenas beneficiar o grande capital, drenando nossas reservas e encarecendo produtos e serviços."
+        },
+        {
+          "page": 11,
+          "quote": "Investimentos em energias alternativas (solar, eólica, biomassa, de maré) e biocombustíveis, aumentando a diversificação, soberania e segurança energética e diminuindo os impactos ambientais, através de destinação de percentual do lucro da produção para este fim."
+        }
+      ],
+      "context_pages": [
+        5,
+        11,
+        14
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Resíduos e descartáveis plásticos",
+      "statement": "O plano propõe encerrar lixões descobertos, ampliar reciclagem, reuso e remanufatura e restringir progressivamente produção e consumo de plásticos descartáveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Política de resíduos, programas de reaproveitamento e restrições crescentes a descartáveis.",
+      "scope": "Resíduos sólidos e produtos plásticos descartáveis.",
+      "conditions": [
+        "A intensidade, os produtos alcançados e o calendário das restrições não são detalhados."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Promoveremos o fim dos “lixões” descobertos, a redução da escala da atividade pecuária e da geração de energia pela queima de combustíveis fósseis, com estímulo a programas de reciclagem de materiais, de reuso e de remanufatura de produtos. Serão adotadas restrições crescentes à produção e ao consumo de produtos descartáveis de plástico."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Escala da pecuária e pressão ambiental",
+      "statement": "O plano propõe reduzir a escala da atividade pecuária no conjunto de medidas ambientais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução da escala produtiva da pecuária; mecanismo específico não detalhado.",
+      "scope": "Atividade pecuária brasileira.",
+      "conditions": [
+        "Não especifica meta, prazo, compensação ou critério territorial para a redução."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Promoveremos o fim dos “lixões” descobertos, a redução da escala da atividade pecuária e da geração de energia pela queima de combustíveis fósseis, com estímulo a programas de reciclagem de materiais,"
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Financiamento público da pesquisa",
+      "statement": "O plano propõe aumentar orçamento de pesquisa em universidades, instituições públicas e estatais e expandir bolsas de mestrado e doutorado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Dotação orçamentária, bolsas e apoio à pesquisa.",
+      "scope": "Pesquisa orientada prioritariamente a demandas sociais, ambientais, urbanas, sanitárias e de formação.",
+      "conditions": [
+        "Não fixa percentual de gasto em ciência nem regras de avaliação dos projetos."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Aumento da dotação orçamentária para a promoção do desenvolvimento científico e tecnológico realizado a partir das universidades, instituições públicas e empresas estatais. Expansão dos programas de bolsas de mestrado e doutorado e de apoio à pesquisa, para o atendimento prioritário das demandas da classe trabalhadora, como meio ambiente, desenvolvimento urbano, tecnologias de saúde e produção de medicamentos, estudos sociais, artes, formação de professores/as e outros."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Capacidade nacional em semicondutores e plataformas",
+      "statement": "O plano propõe investimento no CEITEC e criação de Big Techs públicas nacionais articuladas ao monopólio estatal de terras raras e minerais críticos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investimento industrial e empresas públicas; conselho do CEITEC com maioria de trabalhadores.",
+      "scope": "Semicondutores, plataformas tecnológicas e insumos minerais estratégicos.",
+      "conditions": [
+        "Não define metas de produção de chips, produtos das plataformas ou tecnologias específicas."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Investimentos robustos no CEITEC (Centro Nacional de Tecnologia Eletrônica Avançada), única fábrica de chips semicondutores da América Latina. O Conselho Administrativo do CEITEC terá representação majoritária dos trabalhadores em geral e dos trabalhadores da empresa. Política de reindustrialização e criação de Big Techs públicas e nacionais, articulada com o monopólio estatal e soberano das terras raras e minerais críticos."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "infraestrutura_territorio",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Propriedade e regulação das redes digitais",
+      "statement": "O plano propõe forte regulação de Big Techs e redes sociais e monopólio estatal das telecomunicações, telefonia e internet, com incentivo a cooperativas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulação de plataformas, monopólio público das redes e estímulo cooperativo.",
+      "scope": "Infraestrutura e plataformas de comunicação digital.",
+      "conditions": [
+        "O texto não esclarece a divisão de funções entre monopólio estatal e cooperativas ou regras específicas de dados e inteligência artificial."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Defendemos a forte regulação das Big Techs e redes sociais imperialistas e o monopólio estatal das telecomunicações, da telefonia e da internet, com incentivo à criação de cooperativas dos trabalhadores."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Pesquisa e produção de tecnologias de saúde",
+      "statement": "O plano propõe ampliar financiamento público do complexo econômico-industrial da saúde e expandir Fiocruz e Butantã para outros estados.",
+      "support_level": "explicit_proposal",
+      "instrument": "BNDES e demais instrumentos de financiamento, produção pública e expansão institucional.",
+      "scope": "Medicamentos, vacinas, insumos e equipamentos de saúde; ciência e tecnologia públicas.",
+      "conditions": [
+        "Não especifica estados beneficiados, tecnologias prioritárias ou montantes do complexo."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Usaremos o BNDES e demais ferramentas públicas de financiamento para ampliação dos investimentos no Complexo Econômico-Industrial da Saúde (CEIS), vetor importante para a criação de empregos qualificados, para a produção de medicamentos, insumos, material médico-hospitalar e equipamentos, contribuindo para o desenvolvimento de ciência e tecnologia públicas e soberanas."
+        },
+        {
+          "page": 10,
+          "quote": "expansão da Fiocruz e do Instituto Butantã para outros estados, com ampliação dos investimentos públicos;"
+        }
+      ],
+      "context_pages": [
+        6,
+        10
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Propriedade e controle do sistema de saúde",
+      "statement": "O plano propõe um sistema inteiramente público, revogação de todos os contratos de OSs e estatização do setor privado, com conselhos populares e atenção primária como base.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização, revogação contratual, conselhos de controle e ampliação do financiamento público.",
+      "scope": "Todo o sistema de saúde, da atenção primária aos níveis complexos; meta de investimento de 10% do PIB.",
+      "conditions": [
+        "A estatização e o fim da delegação a OSs são escolhas distintas mas convergentes no mesmo modelo de sistema; não se equipara contratação de atendimentos a gestão de unidades.",
+        "Não há cronograma de incorporação do setor privado."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Expansão do sistema público de saúde, com a reversão das privatizações e revogação dos contratos de todas as OSs no setor, bem como estatização de todo o setor privado de saúde. Proibição das comunidades terapêuticas e fortalecimento do SUS na perspectiva da luta antimanicomial; expansão da Fiocruz e do Instituto Butantã para outros estados, com ampliação dos investimentos públicos; investimento de 10% do PIB na saúde pública. Ampliação dos investimentos no Complexo Econômico-Industrial da Saúde (CEIS), para garantir um SUS totalmente público, gratuito e de qualidade. Integração do SUS a partir da atenção primária à saúde, evoluindo até os níveis de maior complexidade. Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Modelo de atendimento em saúde mental",
+      "statement": "O plano propõe proibir comunidades terapêuticas e fortalecer o SUS segundo a orientação antimanicomial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proibição de comunidades terapêuticas e fortalecimento da rede pública de saúde mental.",
+      "scope": "Atendimento em saúde mental e comunidades terapêuticas.",
+      "conditions": [
+        "O texto não discrimina modalidades, transição dos atendimentos ou novas vagas na rede."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Proibição das comunidades terapêuticas e fortalecimento do SUS na perspectiva da luta antimanicomial;"
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Segurança alimentar e acesso aos alimentos",
+      "statement": "O plano propõe rede de restaurantes e mercados populares, compras diretas do produtor e ampliação de estoques reguladores pela Conab.",
+      "support_level": "explicit_proposal",
+      "instrument": "Equipamentos públicos de alimentação, compras e estoques reguladores.",
+      "scope": "Municípios, começando pelas áreas mais pobres, em parceria com agricultura familiar e movimentos populares.",
+      "conditions": [
+        "Prioridade inicial nas áreas mais pobres; escala e preços dos equipamentos não são fixados."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Criação de uma rede de restaurantes e mercados populares nos municípios, começando pelas áreas mais pobres do país, como forma de reduzir emergencialmente a fome e o preço dos alimentos, devendo o governo suprir essas instituições mediante a aquisição de grãos, verduras e legumes diretamente do produtor. Fortalecimento e ampliação dos estoques reguladores através da Conab (Companhia Nacional de Abastecimento) e em parceria com os movimentos populares e a agricultura familiar."
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Universalização da previdência pública",
+      "statement": "O plano propõe revogar a contrarreforma previdenciária e expandir a previdência pública a aposentadorias, pensões e benefícios para todos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação da reforma e universalização do sistema público.",
+      "scope": "População em geral, incluindo cobertura de aposentadorias e pensões.",
+      "conditions": [
+        "Não define idade, contribuição, benefício mínimo ou transição atuarial."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Revogaremos as contrarreformas trabalhista, previdenciária"
+        },
+        {
+          "page": 14,
+          "quote": "Expansão da previdência pública para a universalidade, com a garantia da cobertura de aposentadorias, pensões e benefícios para todos e todas."
+        }
+      ],
+      "context_pages": [
+        5,
+        14
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Cuidado domiciliar e tecnologias assistivas",
+      "statement": "O plano propõe profissionais de apoio diário no domicílio de idosos e pessoas com deficiência com alta dependência e fornecimento gratuito de tecnologia assistiva.",
+      "support_level": "explicit_proposal",
+      "instrument": "Política pública de cuidado domiciliar e provisão gratuita de equipamentos.",
+      "scope": "Cuidado para pessoas com alta dependência; equipamentos para todas as pessoas com deficiência.",
+      "conditions": [
+        "O critério de alta dependência limita o cuidado domiciliar, não a provisão de equipamento para todas as pessoas com deficiência."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Construção de uma política pública do cuidado, com a garantia de profissionais de apoio para acompanhamento diário, no próprio domicílio, de idosos e pessoas com deficiência com alto nível de dependência. Fornecimento, de forma gratuita, de equipamentos de tecnologia assistiva para todas as pessoas com deficiência."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Frentes públicas de trabalho",
+      "statement": "O plano propõe frentes de trabalho urbanas e rurais nos bairros mais pobres para zeladoria, saneamento, habitação e reformas de escolas e hospitais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Organização de frentes de trabalho para serviços e obras.",
+      "scope": "Prioridade para desempregados, trabalhadores em condições precárias e famílias inscritas no CadÚnico.",
+      "conditions": [
+        "Não define remuneração, regime jurídico ou substituição do Bolsa Família."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Organização das frentes de trabalho urbanas e rurais nos bairros mais pobres, associadas a funções de zeladoria, obras de saneamento, habitação, de reforma de escolas e hospitais, privilegiando os desempregados e setores mais precários da classe trabalhadora, como as famílias inscritas no CadÚnico."
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Assistência e proteção diante da vulnerabilidade",
+      "statement": "O plano propõe ampliar serviços de assistência, abrigos, seguro-desemprego e auxílios emergenciais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão de serviços, acolhimento e benefícios de proteção social.",
+      "scope": "Infância, pessoas em situação de rua, mulheres vítimas de violência, idosos e pessoas em vulnerabilidade.",
+      "conditions": [
+        "Não especifica valores, duração ou elegibilidade adicional para auxílios e seguro-desemprego."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Ampliação dos serviços de assistência para a infância, com o fortalecimento e a expansão dos conselhos tutelares, creches e orfanatos, o incentivo à adoção e o combate à exploração do trabalho infantil. Maior atenção aos adolescentes e adultos, com o fortalecimento e a expansão dos Caps e dos abrigos para pessoas em condição de rua, para mulheres vítimas de violência, além de abrigos e de serviço de acompanhamento para idosos e idosas. Será reforçado e ampliado o seguro-desemprego e garantido o provimento de auxílios emergenciais e outras formas de cobertura para situações de vulnerabilidade."
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Propriedade e gratuidade do ensino",
+      "statement": "O plano propõe ensino inteiramente público e gratuito das creches à pós-graduação, mediante estatização do sistema privado e expansão de institutos federais e escolas técnicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização e expansão das redes públicas de formação.",
+      "scope": "Todas as etapas; interiorização da educação técnica e federal.",
+      "conditions": [
+        "Não define cronograma de absorção de instituições privadas ou planejamento de novas vagas."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino. Os Institutos Federais e as Escolas Técnicas serão ampliados para o interior do Brasil,"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Acesso à universidade e cotas",
+      "statement": "O plano propõe acabar com o vestibular nas universidades federais e ampliar cotas raciais, de escola pública e para a população trans.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança na seleção universitária e ampliação das reservas de vagas.",
+      "scope": "Universidades federais: 54% para população negra; o texto menciona 70 ou 80% para estudantes de escolas públicas e universalização de cotas trans.",
+      "conditions": [
+        "O documento não escolhe entre 70% e 80% nem esclarece a sobreposição das reservas ou o critério substituto do vestibular."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Promoveremos o fim do vestibular nas universidades federais e a ampliação das cotas (54% para a população negra, refletindo o censo do IBGE e estabelecendo 70 ou 80% de cota para estudantes das escolas públicas). Universalização das cotas para a população trans."
+        },
+        {
+          "page": 12,
+          "quote": "Universalização das cotas universitárias para a população Trans."
+        }
+      ],
+      "context_pages": [
+        7,
+        12
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Piso salarial na carreira docente",
+      "statement": "O plano propõe implementar o Piso Salarial Profissional Nacional como vencimento básico do primeiro nível da carreira, produzindo reflexos nos demais níveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Aplicação do piso à base da carreira e preservação dos planos de carreira.",
+      "scope": "Professores e professoras da educação básica.",
+      "conditions": [
+        "A reivindicação trata de vencimento básico e progressão, não apenas de remuneração total."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "É preciso implantar em definitivo o Piso Salarial Profissional Nacional como vencimento básico do primeiro nível da carreira, produzindo reflexos em toda a estrutura remuneratória da categoria, preservando assim os planos de carreira, valorizando a formação, reconhecendo o tempo de serviço e impedindo o achatamento salarial."
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Escolas cívico-militares",
+      "statement": "O plano rejeita a continuidade de escolas cívico-militares e propõe seu fim.",
+      "support_level": "explicit_rejection",
+      "instrument": "Encerramento do modelo cívico-militar.",
+      "scope": "Escolas que adotam esse modelo.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Fim das escolas cívico-militares."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Infraestrutura e acesso à cultura",
+      "statement": "O plano propõe criar espaços culturais nos bairros, dar acesso a jovens artistas e expandir centros culturais, teatros e bibliotecas nas periferias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Equipamentos públicos e espaços de criação e apresentação cultural.",
+      "scope": "Bairros populares, periferias, artistas e juventude.",
+      "conditions": [
+        "A continuidade entre pp. 10 e 11 é citada em trechos separados; financiamento e governança dos equipamentos não são detalhados."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Incentivar os jovens artistas a criar e expor sua criatividade cultural tanto nos bairros populares quanto nos locais tradicionais da cultura. Estímulo à criação de novos espaços"
+        },
+        {
+          "page": 11,
+          "quote": "culturais nos bairros e territórios, como forma de garantir o amplo acesso da população às artes e o surgimento de novos talentos culturais nas regiões populares."
+        },
+        {
+          "page": 12,
+          "quote": "Massificação de centros culturais, teatros, bibliotecas e outros equipamentos culturais nos bairros periféricos."
+        }
+      ],
+      "context_pages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Propriedade dos meios de comunicação",
+      "statement": "O plano propõe transformar monopólios privados de comunicação em cooperativas de trabalhadores e fortalecer a EBC sob conselho de trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Transformação da propriedade e lei contra oligopólio e propriedade cruzada, com revisão das concessões.",
+      "scope": "Meios de comunicação, rádio e teledifusão; organizações sociais poderão constituir veículos próprios.",
+      "conditions": [
+        "A posição trata da organização dos meios e da vida social; o monopólio das redes digitais é uma decisão separada em P25."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "O governo popular realizará a democratização dos meios de comunicação, com a transformação dos monopólios privados de comunicações em cooperativas dos trabalhadores e o fortalecimento da Empresa Brasileira de Comunicação (EBC), sob a direção de um Conselho de Trabalhadores."
+        },
+        {
+          "page": 13,
+          "quote": "O governo do Poder Popular deve realizar a democratização radical dos meios de comunicação, com uma nova Lei Geral das Comunicações, baseada no fim do oligopólio privado e da propriedade cruzada atualmente existentes nos meios de comunicação e na internet. É necessária a revisão das concessões de rádio e teledifusão, assegurando ampla liberdade para que organizações sociais dos trabalhadores e do povo construam seus veículos próprios."
+        }
+      ],
+      "context_pages": [
+        4,
+        13
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Limite da jornada e escala semanal",
+      "statement": "O plano propõe reduzir a jornada a 30 horas semanais sem redução salarial e terminar a escala 6x1.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução legal da jornada e mudança da escala de trabalho.",
+      "scope": "Trabalhadores em geral; preservação salarial.",
+      "conditions": [
+        "O plano não detalha calendário por setor ou exceções."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Garantiremos o direito ao trabalho para todos, com redução da jornada de trabalho para 30 horas sem redução de salário e o fim da escala 6x1."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Proteção trabalhista nas plataformas",
+      "statement": "O plano propõe registro em carteira, piso salarial e direitos trabalhistas para trabalhadores de aplicativos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Formalização do vínculo, piso e garantia de direitos.",
+      "scope": "Trabalhadores e trabalhadoras de plataformas de aplicativos.",
+      "conditions": [
+        "Não define valor do piso ou desenho contratual para diferentes aplicativos."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Garantiremos também o registro em carteira e piso salarial para os trabalhadores e as trabalhadoras de plataformas de aplicativos, garantindo todos os direitos e pondo fim as jornadas exaustivas."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Estabilidade no emprego",
+      "statement": "O plano propõe estabilidade no trabalho, inicialmente após cinco anos de vínculo, como proteção contra demissão sem justa causa.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantia legal de estabilidade referida à Convenção 158 da OIT.",
+      "scope": "Todos os trabalhadores após cinco anos de vínculo no primeiro momento.",
+      "conditions": [
+        "A expressão num primeiro momento indica etapa inicial; não é detalhado o regime posterior ou suas exceções."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Resgataremos o direito à estabilidade no trabalho, em consonância com a convenção 158 da OIT, que combate a demissão sem justa causa. Num primeiro momento, após 5 anos de vínculo, todos os trabalhadores terão direito à estabilidade."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Licenças parentais",
+      "statement": "O plano propõe licença-maternidade e licença-paternidade de um ano e estabilidade para responsáveis legais por recém-nascidos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ampliação das licenças e garantia de estabilidade.",
+      "scope": "Mães, pais e responsáveis legais por recém-nascidos.",
+      "conditions": [
+        "Não especifica custeio, duração da estabilidade ou tratamento de cada modalidade de vínculo."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Ampliação da licença-maternidade e paternidade para um ano. Direito à estabilidade para as pessoas responsáveis legais dos recém-nascidos."
+        }
+      ],
+      "context_pages": [
+        11
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Direito ao aborto",
+      "statement": "O plano propõe legalizar o aborto com garantia de atendimento na rede pública de saúde.",
+      "support_level": "explicit_proposal",
+      "instrument": "Legalização e garantia de atendimento público.",
+      "scope": "Pessoas que necessitam do procedimento, sem outras condições descritas no trecho.",
+      "conditions": [
+        "Não informa limites gestacionais, hipóteses ou protocolo; não se acrescentam condições ausentes."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Legalização do aborto, com garantia de atendimento na rede pública de saúde,"
+        }
+      ],
+      "context_pages": [
+        11
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Revogação popular de mandatos eletivos",
+      "statement": "O plano propõe permitir que a população revogue mandatos por referendo mediante coleta de assinaturas de pelo menos 1% do eleitorado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Referendo revogatório iniciado por assinaturas.",
+      "scope": "Executivo após um ano de mandato; Legislativo após seis meses.",
+      "conditions": [
+        "Não fixa quórum de comparecimento ou aprovação do referendo."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Para garantir que os representantes eleitos cumpram os programas e reivindicações de quem os elegeu, os mandatos poderão ser revogados pela população através de referendos, garantindo-se assim uma representação de acordo com os interesses populares. Nos cargos executivos (presidência, governos estaduais e prefeituras) poderão ser revogados após o primeiro ano de mandato e nos cargos legislativos (senadores, deputados e vereadores) após 6 meses de mandato, sendo realizados após a coleta de assinaturas de pelo menos 1% do eleitorado."
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Direitos territoriais indígenas e quilombolas",
+      "statement": "O plano propõe titular imediatamente territórios quilombolas, demarcar e proteger todos os territórios indígenas e terminar o Marco Temporal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Titulação, demarcação, proteção territorial e fim do Marco Temporal.",
+      "scope": "Povos indígenas e quilombolas; gestão indígena por conselhos populares.",
+      "conditions": [
+        "Não detalha procedimento administrativo, indenização ou cronograma de cada território."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Titulação imediata dos territórios quilombolas."
+        },
+        {
+          "page": 12,
+          "quote": "Demarcação e proteção integral de todos os territórios indígenas, que serão geridos por conselhos populares dos povos originários. Fim do Marco Temporal."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Cotas raciais no acesso às forças de segurança",
+      "statement": "O plano propõe cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reserva de vagas por critério racial nos concursos.",
+      "scope": "Concursos federais e estaduais das forças de segurança.",
+      "conditions": [
+        "O trecho não define percentual nem alcance para outros cargos ou municípios."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P48",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Memória, responsabilização e reparação por violência estatal",
+      "statement": "O plano propõe julgar e punir responsáveis por tortura e assassinatos da ditadura e de períodos posteriores, abrir arquivos e reparar pessoas e organizações perseguidas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Responsabilização, abertura de arquivos, reconhecimento estatal e reparação.",
+      "scope": "Violências da ditadura de 1964–1985 até o presente, seus agentes e vítimas.",
+      "conditions": [
+        "Não apresenta rito processual, definição de reparação ou alteração específica de leis."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Julgamento e punição dos responsáveis pelas torturas, assassinatos e outras violências cometidas pelos aparatos de repressão e seus agentes contra o povo brasileiro, desde a ditadura empresarial militar de 1964-1985 até os dias de hoje."
+        },
+        {
+          "page": 15,
+          "quote": "Reconhecimento do Estado aos crimes cometidos pela ditadura, com a justiça e a reparação a todos os partidos (dentre os quais o PCB), organizações políticas e sociais, lutadoras e lutadores que sofreram com a perseguição política e as violências cometidas pelos agentes da repressão."
+        },
+        {
+          "page": 15,
+          "quote": "com a abertura total dos arquivos dos órgãos de repressão, preservando a documentação existente e ampliando do acesso ao conhecimento sobre os períodos da escravidão, das ditaduras e sobre o genocídio da população negra e dos povos indígenas ainda em curso."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P49",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Valor do salário mínimo",
+      "statement": "O plano propõe elevar gradualmente o salário mínimo ao piso calculado pelo Dieese em quatro anos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Política de recomposição gradual do poder de compra.",
+      "scope": "Salário mínimo nacional; horizonte de quatro anos.",
+      "conditions": [
+        "A referência é variável, calculada pelo Dieese; não se substitui por valor monetário não presente no plano."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "O governo popular se compromete a recuperar gradualmente o poder de compra dos salários, especialmente do salário- mínimo, de forma a que num prazo de quatro anos alcance o piso do salário-mínimo do Dieese."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P50",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reforma da legislação trabalhista",
+      "statement": "O plano propõe revogar a contrarreforma trabalhista e elaborar, por encontros da classe trabalhadora, nova reforma que amplie direitos e fortaleça entidades sindicais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação e elaboração de legislação por meio dos ENCLATs.",
+      "scope": "Direitos de trabalhadores e relações sindicais.",
+      "conditions": [
+        "A política previdenciária tem registro próprio em P30; estabilidade, jornada e plataformas são decisões específicas em P40–P42."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Revogaremos as contrarreformas trabalhista, previdenciária"
+        },
+        {
+          "page": 5,
+          "quote": "Através de amplos Encontros Nacionais da Classe Trabalhadora (ENCLATs) construiremos uma verdadeira reforma trabalhista que amplie os direitos dos trabalhadores e reforce as entidades sindicais e operárias."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P51",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Organização civil das polícias",
+      "statement": "O plano propõe desmilitarizar e unificar as polícias, instituir ciclo completo e desvincular as forças de segurança do Exército.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reorganização policial sob marco civil, nova formação e controle social.",
+      "scope": "Forças de segurança pública.",
+      "conditions": [
+        "Não explicita desenho federativo ou atribuições de cada polícia na unificação."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "completa desmilitarização da segurança pública, com unificação das polícias e instituição do ciclo completo junto com a desvinculação das forças de segurança do exército, sob bases curriculares e formativas completamente reestruturadas numa lógica democrática."
+        },
+        {
+          "page": 12,
+          "quote": "A segurança pública será desmilitarizada e reorganizada sob o marco civil, com controle social substituindo uma política e um ministério de segurança pública para uma política de segurança dos direitos, com base na criminologia crítica e no acúmulo político e programático dos movimentos negros e populares."
+        }
+      ],
+      "context_pages": [
+        6,
+        12
+      ]
+    },
+    {
+      "id": "P52",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Política de drogas",
+      "statement": "O plano propõe revogar a Lei Antidrogas, descriminalizar o uso de drogas e legalizar a maconha no curto prazo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação legal, descriminalização do uso e legalização da maconha.",
+      "scope": "Uso de drogas; legalização no curto prazo é especificada apenas para maconha.",
+      "conditions": [
+        "Descriminalização de uso e legalização de mercado são instrumentos diferentes; não se estende a legalização imediata a todas as drogas."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Revogação da Lei Antidrogas"
+        },
+        {
+          "page": 12,
+          "quote": "Descriminalização do uso de drogas, com legalização da maconha a curto prazo."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P53",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Maioridade penal",
+      "statement": "O plano rejeita reduzir a maioridade penal e propõe ampliar medidas socioeducativas.",
+      "support_level": "explicit_rejection",
+      "instrument": "Preservação da maioridade e ampliação de resposta socioeducativa.",
+      "scope": "Adolescentes em conflito com a lei.",
+      "conditions": [
+        "Não há exceção para crimes graves nem detalhamento do financiamento socioeducativo."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Contra a redução da maioridade penal e ampliação das medidas socioeducativas."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P54",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Sistema prisional e encarceramento",
+      "statement": "O plano propõe terminar a privatização dos presídios e adotar medidas contra o encarceramento em massa.",
+      "support_level": "explicit_proposal",
+      "instrument": "Retirada de gestão prisional privada e adoção das 16 medidas do IBCCRIM citadas no plano.",
+      "scope": "Presídios e política penal.",
+      "conditions": [
+        "As 16 medidas são referidas, mas não reproduzidas; nenhum conteúdo externo foi usado para preencher a lista."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "fim da privatização dos presídios."
+        },
+        {
+          "page": 12,
+          "quote": "Adoção das 16 medidas contra o encarceramento em massa do IBCCRIM."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P55",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Apostas digitais",
+      "statement": "O plano propõe proibir BETs e expropriar seus ativos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proibição e expropriação de ativos.",
+      "scope": "Plataformas de apostas identificadas no plano como BETs.",
+      "conditions": [
+        "Não especifica transição, indenização ou delimitação regulatória de modalidades de apostas."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Proibição das BETs com a expropriação dos seus ativos."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P56",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Integração latino-americana e cooperação internacional",
+      "statement": "O plano propõe fortalecer ALBA e UNASUL e espaços comuns de integração econômica, social, cultural e de comunicação na América Latina.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fortalecimento de organismos e espaços de integração; parcerias comerciais estratégicas.",
+      "scope": "América Latina e parceiros internacionais, priorizando desenvolvimento industrial e tecnológico e retenção de riquezas no país.",
+      "conditions": [
+        "Não decide expressamente saída do BRICS ou o acordo Mercosul–União Europeia."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "com a promoção de esforços no sentido da criação de espaços comuns de integração voltados a estreitar os vínculos econômicos, sociais, culturais e de comunicação entre os povos da América Latina, a partir do fortalecimento de iniciativas como a ALBA e UNASUL."
+        },
+        {
+          "page": 8,
+          "quote": "Propomos a realização de parcerias comerciais estratégicas priorizando o desenvolvimento industrial e tecnológico, assim como a retenção das riquezas e lucros em nosso país."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P57",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Relações com Israel e reconhecimento diplomático",
+      "statement": "O plano propõe rompimento imediato de todas as relações econômicas e diplomáticas com Israel e relações diplomáticas plenas com a Autoridade Nacional Palestina.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ruptura e estabelecimento de relações diplomáticas.",
+      "scope": "Israel e Autoridade Nacional Palestina; o trecho de reconhecimento também cita a Frente Polisário.",
+      "conditions": [
+        "A ruptura é imediata, sem condição expressa de término ou restabelecimento posterior."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "o estabelecimento de relações diplomáticas plenas com Estados de fato: Autoridade Nacional Palestina, Frente Polisário, etc;"
+        },
+        {
+          "page": 15,
+          "quote": "Rompimento imediato de todas as relações econômicas e diplomáticas com o estado sionista de Israel."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P58",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Acordos militares e base de Alcântara",
+      "statement": "O plano propõe terminar todos os acordos militares com os Estados Unidos e retomar a base de Alcântara.",
+      "support_level": "explicit_proposal",
+      "instrument": "Encerramento de acordos e retomada de controle da base.",
+      "scope": "Relações militares Brasil–Estados Unidos e base de Alcântara.",
+      "conditions": [
+        "Não detalha negociação, transição contratual ou uso alternativo da base."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Retomada da base de Alcântara"
+        },
+        {
+          "page": 15,
+          "quote": "Fim de todos os acordos militares com os EUA."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P59",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Propriedade da indústria de defesa",
+      "statement": "O plano propõe estatizar toda a indústria bélica brasileira, começando por Avibrás e Taurus.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização de empresas e ativos bélicos.",
+      "scope": "Indústria bélica nacional; início por duas empresas explicitamente citadas.",
+      "conditions": [
+        "Não apresenta custo, indenização ou cronograma da estatização."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Estatização de toda indústria bélica brasileira, começando pela Avibrás e pela Taurus, pois trata-se de ativos estratégicos."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P60",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Serviço militar obrigatório",
+      "statement": "O plano propõe acabar com o serviço militar obrigatório.",
+      "support_level": "explicit_proposal",
+      "instrument": "Supressão da obrigatoriedade do serviço militar.",
+      "scope": "Recrutamento militar brasileiro.",
+      "conditions": [
+        "O sistema de recrutamento substituto não é detalhado."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Fim do serviço militar obrigatório."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P61",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Organizações de segurança internacional",
+      "statement": "O plano propõe defender nos fóruns internacionais o fim da OTAN e do Conselho de Segurança da ONU.",
+      "support_level": "explicit_proposal",
+      "instrument": "Atuação diplomática em fóruns internacionais pela extinção dessas instituições.",
+      "scope": "OTAN e Conselho de Segurança das Nações Unidas.",
+      "conditions": [
+        "O texto não descreve instituições substitutas ou reforma alternativa do veto."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "a defesa do fim da OTAN em todos os fóruns internacionais;"
+        },
+        {
+          "page": 16,
+          "quote": "fim da OTAN, do conselho de segurança da ONU e demais instituições imperialistas em todos os fóruns internacionais."
+        }
+      ],
+      "context_pages": [
+        15,
+        16
+      ]
+    }
+  ],
+  "editorial_exceptions": [
+    "Bem-Estar Social reúne sete decisões de saúde, alimentação, previdência, assistência, cuidado e trabalho assistencial; o reagrupamento não funde instrumentos independentes.",
+    "Cidadania e Direitos reúne onze decisões porque a taxonomia concentra direitos trabalhistas anteriormente discutidos na economia, direitos políticos e garantias civis. A exceção à orientação de até seis preserva decisões distintas e contagem única.",
+    "Estado e Gestão Pública reúne sete posições após o reagrupamento de P01, sobre propriedade do sistema monetário e financeiro e criação do Banco dos Trabalhadores. Economia e Desenvolvimento e Bem-Estar Social permanecem referências secundárias; nenhuma escolha foi excluída ou duplicada."
+  ],
+  "visual_checks": [
+    {
+      "page": 7,
+      "reason": "Confirmar alternativa numérica de cotas e leitura do parágrafo.",
+      "finding": "A imagem confirma 70 ou 80% para estudantes de escola pública, ao lado de 54% para população negra; não é falha da extração."
+    }
+  ],
+  "position_count": 61,
+  "thesis_seed_count": 8,
+  "category_position_counts": {
+    "Economia e Desenvolvimento": 5,
+    "Estado e Gestão Pública": 7,
+    "Infraestrutura e Território": 4,
+    "Meio Ambiente e Clima": 6,
+    "Ciência, Tecnologia e Inovação": 4,
+    "Bem-Estar Social": 7,
+    "Educação, Cultura e Sociedade": 6,
+    "Cidadania e Direitos": 11,
+    "Segurança Pública": 5,
+    "Soberania e Relações Internacionais": 6
+  },
+  "validation": {
+    "command": "python docs/research/2026-09-29-thematic-profiles/validate.py --candidate 280002551975",
+    "exit_code": 0,
+    "complete_and_valid": true,
+    "result": {
+      "candidate_id": "280002551975",
+      "name": "Edmilson Costa",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 61,
+      "support_levels": {
+        "explicit_proposal": 59,
+        "explicit_rejection": 2
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 14,
+      "quote_matches": {
+        "layout": 92
+      },
+      "profile_sha256": "ab25816c0b73f72de5bdbb834ec683ed089e206756791002cc60aa397b2e2194",
+      "markdown_sha256": "bd5a4293aca7838a41b9cc610bbe73064d2ea6522a60831275289401d0691f2b"
+    }
+  }
+}
