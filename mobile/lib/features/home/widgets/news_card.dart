@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_theme.dart';
+import '../../../core/layout/responsive_layout.dart';
 import '../../../shared/models/news_article.dart';
 
 class NewsCard extends StatelessWidget {
@@ -11,6 +12,7 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final desktop = ResponsiveLayout.isDesktop(context);
     return InkWell(
       onTap: onTap,
       child: Padding(
@@ -19,7 +21,7 @@ class NewsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _Thumb(article: article),
-            const SizedBox(width: 14),
+            SizedBox(width: desktop ? 24 : 14),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -28,10 +30,10 @@ class NewsCard extends StatelessWidget {
                   const SizedBox(height: 8),
                   Text(
                     article.title.toUpperCase(),
-                    maxLines: 2,
+                    maxLines: desktop ? 3 : 2,
                     overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 14,
+                    style: TextStyle(
+                      fontSize: desktop ? 20 : 14,
                       fontWeight: FontWeight.w800,
                       height: 1.28,
                       color: AppTheme.primary,
@@ -43,10 +45,10 @@ class NewsCard extends StatelessWidget {
                     const SizedBox(height: 8),
                     Text(
                       article.summary,
-                      maxLines: 2,
+                      maxLines: desktop ? 3 : 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style: TextStyle(
+                        fontSize: desktop ? 16 : 12,
                         fontWeight: FontWeight.w400,
                         height: 1.45,
                         color: AppTheme.onSurfaceVariant,
@@ -73,9 +75,10 @@ class _Thumb extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageUrl = article.imageUrl;
+    final desktop = ResponsiveLayout.isDesktop(context);
     return Container(
-      width: 88,
-      height: 88,
+      width: desktop ? 200 : 88,
+      height: desktop ? 176 : 88,
       decoration: BoxDecoration(
         color: AppTheme.surfaceContainer,
         border: Border.all(color: AppTheme.outlineVariant),
@@ -103,7 +106,7 @@ class _ThumbFallback extends StatelessWidget {
     return Center(
       child: Text(
         initial,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.w900,
           color: AppTheme.surfaceContainerHighest,
@@ -127,7 +130,7 @@ class _ThemeChip extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: const TextStyle(
+        style: TextStyle(
           fontSize: 10,
           fontWeight: FontWeight.w600,
           letterSpacing: 0.8,

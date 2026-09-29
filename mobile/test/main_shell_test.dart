@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
@@ -55,6 +57,56 @@ Widget _wrap({MainShellTab tab = MainShellTab.inicio}) => MaterialApp(
     );
 
 void main() {
+  testWidgets('desktop has one brand and menu, compact restores tab bar',
+      (tester) async {
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(1440, 900);
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.dark,
+      home: MainShell(pageBuilders: [
+        for (var i = 0; i < 4; i++)
+          (_) => const AppScaffold(
+              title: 'FAROL POLÍTICO', body: Text('conteudo')),
+      ]),
+    ));
+    expect(find.text('FAROL POLÍTICO'), findsOneWidget);
+    expect(find.byIcon(Icons.menu), findsOneWidget);
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+    expect(
+        tester.state<ScaffoldState>(find.byType(Scaffold).first).isDrawerOpen,
+        isTrue);
+    tester.state<ScaffoldState>(find.byType(Scaffold).first).closeDrawer();
+    await tester.pumpAndSettle();
+    tester.view.physicalSize = const Size(600, 900);
+    await tester.pumpAndSettle();
+    expect(find.text('FAROL POLÍTICO'), findsOneWidget);
+    expect(find.byIcon(Icons.menu), findsOneWidget);
+    expect(find.byType(BottomNavigationBar), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  }, variant: TargetPlatformVariant.only(TargetPlatform.windows));
+
+  testWidgets('desktop navigation switches tabs from the header',
+      (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.windows;
+    addTearDown(() {
+      debugDefaultTargetPlatformOverride = null;
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(1440, 900);
+    await tester.pumpWidget(_wrap());
+    expect(find.byType(BottomNavigationBar), findsNothing);
+    await tester.tap(find.text('Quiz'));
+    await tester.pumpAndSettle();
+    expect(find.text('tela-quiz'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
   testWidgets('mostra as quatro abas', (tester) async {
     await tester.pumpWidget(_wrap());
 

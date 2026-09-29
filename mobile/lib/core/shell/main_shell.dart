@@ -7,6 +7,8 @@ import '../../features/political_actors/political_actor_search_page.dart';
 import '../../features/quiz/quiz_intro_page.dart';
 import '../../shared/widgets/app_drawer.dart';
 import 'shell_drawer_scope.dart';
+import '../layout/responsive_layout.dart';
+import '../theme/app_theme.dart';
 
 /// As abas da barra inferior. É a interface pública do shell: quem quiser abrir
 /// o app numa aba específica passa um valor deste enum como `arguments` da
@@ -110,44 +112,130 @@ class _MainShellState extends State<MainShell> {
   @override
   Widget build(BuildContext context) {
     _pageFor(_index);
+    final desktop = ResponsiveLayout.isDesktop(context);
     final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
 
     return Scaffold(
       key: _scaffoldKey,
       drawer: AppDrawer(iotEnabled: iotEnabled),
+      appBar: desktop
+          ? PreferredSize(
+              preferredSize: const Size.fromHeight(72),
+              child: Container(
+                decoration: const BoxDecoration(
+                  border: Border(
+                      bottom: BorderSide(color: AppTheme.outlineVariant)),
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Center(
+                  child: ConstrainedBox(
+                    constraints: const BoxConstraints(
+                        maxWidth: ResponsiveLayout.desktopContentWidth),
+                    child: Row(
+                      children: [
+                        IconButton(
+                          tooltip: 'Abrir menu',
+                          icon: const Icon(Icons.menu),
+                          onPressed: _openDrawer,
+                        ),
+                        const SizedBox(width: 12),
+                        const Text('FAROL POLÍTICO',
+                            style: TextStyle(
+                              fontSize: 28,
+                              fontWeight: FontWeight.w900,
+                              color: AppTheme.primary,
+                            )),
+                        const Spacer(),
+                        for (final (index, label) in [
+                          'Início',
+                          'Acompanhar',
+                          'Quiz',
+                          'Comunidade'
+                        ].indexed)
+                          Padding(
+                            padding: const EdgeInsets.only(left: 24),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      bottom: BorderSide(
+                                color: _index == index
+                                    ? AppTheme.primary
+                                    : Colors.transparent,
+                                width: 3,
+                              ))),
+                              child: Semantics(
+                                selected: _index == index,
+                                child: TextButton(
+                                  onPressed: () => _select(index),
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 22),
+                                    child: Text(label,
+                                        style: const TextStyle(fontSize: 16)),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            )
+          : null,
       body: ShellDrawerScope(
         openDrawer: _openDrawer,
         child: IndexedStack(
           index: _index,
           children: [
             for (var i = 0; i < MainShellTab.values.length; i++)
-              _pages[i] ?? const SizedBox.shrink(),
+              LayoutBuilder(
+                builder: (context, constraints) {
+                  final wideTab = desktop && i != MainShellTab.inicio.index;
+                  return Align(
+                    alignment: Alignment.topCenter,
+                    child: SizedBox(
+                      width: wideTab
+                          ? (constraints.maxWidth * 0.8).clamp(600.0, 960.0)
+                          : constraints.maxWidth,
+                      height: constraints.maxHeight,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: wideTab ? 32 : 0),
+                        child: _pages[i] ?? const SizedBox.shrink(),
+                      ),
+                    ),
+                  );
+                },
+              ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _index,
-        onTap: _select,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            label: 'Início',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_search_rounded),
-            // "Acompanhar Político" nao cabe: 4 abas em 390px dao ~97px cada.
-            label: 'Acompanhar',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.how_to_vote_rounded),
-            label: 'Quiz',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.forum_rounded),
-            label: 'Comunidade',
-          ),
-        ],
-      ),
+      bottomNavigationBar: desktop
+          ? null
+          : BottomNavigationBar(
+              currentIndex: _index,
+              onTap: _select,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home_rounded),
+                  label: 'Início',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person_search_rounded),
+                  // "Acompanhar Político" nao cabe: 4 abas em 390px dao ~97px cada.
+                  label: 'Acompanhar',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.how_to_vote_rounded),
+                  label: 'Quiz',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.forum_rounded),
+                  label: 'Comunidade',
+                ),
+              ],
+            ),
     );
   }
 }

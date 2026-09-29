@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'core/features/feature_flags.dart';
+import 'core/layout/responsive_layout.dart';
 import 'core/shell/main_shell.dart';
 import 'core/theme/app_theme.dart';
 import 'features/community/community_feed_page.dart';
@@ -38,19 +39,25 @@ class MyApp extends StatelessWidget {
       // responsivo. Centralizar isso aqui evita repetir a mesma lógica em cada
       // página (princípio DRY) e garante consistência visual em todo o app.
       builder: (context, child) {
-        return SafeArea(
-          child: LayoutBuilder(
-            builder: (context, constraints) {
-              final maxWidth = constraints.maxWidth > kMaxContentWidth
-                  ? kMaxContentWidth
-                  : constraints.maxWidth;
-              return Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: maxWidth),
-                  child: child ?? const SizedBox.shrink(),
-                ),
-              );
-            },
+        return ColoredBox(
+          color: AppTheme.background,
+          child: SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                if (ResponsiveLayout.isDesktop(context)) {
+                  return child ?? const SizedBox.shrink();
+                }
+                final maxWidth = constraints.maxWidth > kMaxContentWidth
+                    ? kMaxContentWidth
+                    : constraints.maxWidth;
+                return Center(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(maxWidth: maxWidth),
+                    child: child ?? const SizedBox.shrink(),
+                  ),
+                );
+              },
+            ),
           ),
         );
       },
