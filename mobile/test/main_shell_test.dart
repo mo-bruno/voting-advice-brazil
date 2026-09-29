@@ -7,6 +7,7 @@ import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/community/community_feed_page.dart';
 import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:guia_eleitoral/features/political_actors/political_actor_search_page.dart';
+import 'package:guia_eleitoral/features/political_actors/politician_follow_validation_page.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_intro_page.dart';
 
 /// Telas de mentira, uma por aba.
@@ -225,7 +226,7 @@ void main() {
   });
 
   group('defaultPageFor', () {
-    test('cada aba aponta para a tela certa', () {
+    test('acompanhar aponta para a validação por padrão', () {
       expect(
         MainShell.defaultPageFor(MainShellTab.inicio, onStartQuiz: () {}),
         isA<HomePage>(),
@@ -235,7 +236,7 @@ void main() {
           MainShellTab.acompanhar,
           onStartQuiz: () {},
         ),
-        isA<PoliticalActorSearchPage>(),
+        isA<PoliticianFollowValidationPage>(),
       );
       expect(
         MainShell.defaultPageFor(MainShellTab.quiz, onStartQuiz: () {}),
@@ -247,6 +248,17 @@ void main() {
           onStartQuiz: () {},
         ),
         isA<CommunityFeedPage>(),
+      );
+    });
+
+    test('acompanhar aponta para a busca quando a flag está habilitada', () {
+      expect(
+        MainShell.defaultPageFor(
+          MainShellTab.acompanhar,
+          onStartQuiz: () {},
+          politicianFollowEnabled: true,
+        ),
+        isA<PoliticalActorSearchPage>(),
       );
     });
   });

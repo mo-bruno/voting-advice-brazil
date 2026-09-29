@@ -2,28 +2,64 @@ import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
-class DeviceIdentityStore {
-  @visibleForTesting
-  static const String deviceIdKey = 'farol_politico_device_id';
+class _LocalUuidStore {
+  const _LocalUuidStore({
+    required this.key,
+    required this.prefsFactory,
+    required this.uuid,
+  });
 
-  final Future<SharedPreferences> Function() _prefsFactory;
-  final Uuid _uuid;
+  final String key;
+  final Future<SharedPreferences> Function() prefsFactory;
+  final Uuid uuid;
 
-  DeviceIdentityStore({
-    Future<SharedPreferences> Function()? prefsFactory,
-    Uuid? uuid,
-  })  : _prefsFactory = prefsFactory ?? SharedPreferences.getInstance,
-        _uuid = uuid ?? const Uuid();
-
-  Future<String> getOrCreateDeviceId() async {
-    final prefs = await _prefsFactory();
-    final existing = prefs.getString(deviceIdKey);
+  Future<String> getOrCreate() async {
+    final prefs = await prefsFactory();
+    final existing = prefs.getString(key);
     if (existing != null && existing.isNotEmpty) {
       return existing;
     }
 
-    final created = _uuid.v4();
-    await prefs.setString(deviceIdKey, created);
+    final created = uuid.v4();
+    await prefs.setString(key, created);
     return created;
   }
+}
+
+class DeviceIdentityStore {
+  @visibleForTesting
+  static const String deviceIdKey = 'farol_politico_device_id';
+
+  final _LocalUuidStore _store;
+
+  DeviceIdentityStore({
+    Future<SharedPreferences> Function()? prefsFactory,
+    Uuid? uuid,
+  }) : _store = _LocalUuidStore(
+          key: deviceIdKey,
+          prefsFactory: prefsFactory ?? SharedPreferences.getInstance,
+          uuid: uuid ?? const Uuid(),
+        );
+
+  Future<String> getOrCreateDeviceId() => _store.getOrCreate();
+}
+
+/// Identity scoped to demand validation so an interest cannot be joined to
+/// quiz or community activity through the app's general-purpose UUID.
+class PoliticianFollowInterestIdentityStore {
+  @visibleForTesting
+  static const String interestIdKey = 'farol_politico_follow_interest_id';
+
+  final _LocalUuidStore _store;
+
+  PoliticianFollowInterestIdentityStore({
+    Future<SharedPreferences> Function()? prefsFactory,
+    Uuid? uuid,
+  }) : _store = _LocalUuidStore(
+          key: interestIdKey,
+          prefsFactory: prefsFactory ?? SharedPreferences.getInstance,
+          uuid: uuid ?? const Uuid(),
+        );
+
+  Future<String> getOrCreateInterestId() => _store.getOrCreate();
 }

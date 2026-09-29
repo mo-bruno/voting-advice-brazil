@@ -26,7 +26,12 @@ import 'drawer/followed_actor_tile.dart';
 import 'drawer/quiz_affinity_tile.dart';
 
 class AppDrawer extends StatefulWidget {
-  const AppDrawer({super.key, this.deviceIdentityStore, this.iotEnabled});
+  const AppDrawer({
+    super.key,
+    this.deviceIdentityStore,
+    this.iotEnabled,
+    this.politicianFollowEnabled,
+  });
 
   /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
   /// que o resto do app.
@@ -34,6 +39,9 @@ class AppDrawer extends StatefulWidget {
 
   /// Quando ausente, usa a flag de compilação da aplicação.
   final bool? iotEnabled;
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? politicianFollowEnabled;
 
   @override
   State<AppDrawer> createState() => _AppDrawerState();
@@ -46,7 +54,9 @@ class _AppDrawerState extends State<AppDrawer> {
   late final Listenable _sessions = Listenable.merge([
     if (widget.iotEnabled ?? FeatureFlags.environment.iotEnabled)
       IotDeviceSession.instance,
-    PoliticalActorSession.instance,
+    if (widget.politicianFollowEnabled ??
+        FeatureFlags.environment.politicianFollowEnabled)
+      PoliticalActorSession.instance,
     QuizSession.instance,
   ]);
 
@@ -92,13 +102,17 @@ class _AppDrawerState extends State<AppDrawer> {
   @override
   Widget build(BuildContext context) {
     final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
+    final politicianFollowEnabled = widget.politicianFollowEnabled ??
+        FeatureFlags.environment.politicianFollowEnabled;
 
     return Drawer(
       backgroundColor: AppTheme.surface,
       child: ListenableBuilder(
         listenable: _sessions,
         builder: (context, _) {
-          final followed = PoliticalActorSession.instance.followedActor;
+          final followed = politicianFollowEnabled
+              ? PoliticalActorSession.instance.followedActor
+              : null;
           final results = QuizSession.instance.visibleResults;
           final iot = iotEnabled ? IotDeviceSession.instance : null;
 
@@ -133,6 +147,7 @@ class _AppDrawerState extends State<AppDrawer> {
                     ],
                     FollowedActorTile(
                       actor: followed,
+                      featureEnabled: politicianFollowEnabled,
                       onOpenProfile: () => _go(
                         (navigator) => navigator.pushNamed(
                           '/political-actor-profile',
@@ -156,8 +171,15 @@ class _AppDrawerState extends State<AppDrawer> {
               ),
               DrawerFooter(
                 shortId: _shortId,
-                onAbout: () => _showAbout(context),
-                onPrivacy: () => _showPrivacy(context, _shortId),
+                onAbout: () => _showAbout(
+                  context,
+                  politicianFollowEnabled: politicianFollowEnabled,
+                ),
+                onPrivacy: () => _showPrivacy(
+                  context,
+                  _shortId,
+                  politicianFollowEnabled: politicianFollowEnabled,
+                ),
               ),
             ],
           );
@@ -222,32 +244,52 @@ class _Rule extends StatelessWidget {
 /// Sobre e Privacidade sao dois paragrafos cada. Como dialogo eles nao
 /// precisam de rota, de tela e de botao de voltar — e a gaveta continua aberta
 /// atras, que e de onde a pessoa veio.
-void _showAbout(BuildContext context) {
+void _showAbout(
+  BuildContext context, {
+  required bool politicianFollowEnabled,
+}) {
+  final followDescription = politicianFollowEnabled
+      ? 'A área Acompanhar apresenta deputados atuais e evidências oficiais '
+          'da Câmara; esses votos são informativos e não alteram a comparação '
+          'do quiz.'
+      : 'A área Acompanhar ainda está em validação. Ela poderá reunir '
+          'informações de fontes oficiais sobre a atuação de políticos; o '
+          'registro anônimo de interesse ajuda a decidir se ela deve ser '
+          'lançada.';
   _showNote(
     context,
     title: 'Sobre o Farol Político',
     body: 'O quiz compara suas respostas com propostas publicadas por '
-        'candidatos nas eleições de 2026. A área Acompanhar apresenta '
-        'deputados atuais e evidências oficiais da Câmara; esses votos são '
-        'informativos e não alteram a comparação do quiz.\n\n'
+        'candidatos nas eleições de 2026. $followDescription\n\n'
         'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
         'acadêmico e não tem vínculo com nenhum partido ou candidato.',
   );
 }
 
-void _showPrivacy(BuildContext context, String? shortId) {
+void _showPrivacy(
+  BuildContext context,
+  String? shortId, {
+  required bool politicianFollowEnabled,
+}) {
   final id = shortId == null
       ? ''
       : '\n\nO trecho do identificador exibido neste aparelho é $shortId.';
+  final identityUses = politicianFollowEnabled
+      ? 'salvar respostas do quiz, lembrar quem você segue e participar da '
+          'comunidade.'
+      : 'salvar respostas do quiz e participar da comunidade. A validação da '
+          'área Acompanhar usa outro identificador aleatório, exclusivo desse '
+          'registro de interesse.';
   _showNote(
     context,
     title: 'Privacidade',
     body: 'O app não solicita nome, e-mail ou telefone. Ele cria um '
         'identificador aleatório no aparelho e o envia como credencial '
-        'privada para salvar respostas do quiz, lembrar quem você segue e '
-        'participar da comunidade. Publicações e comentários exibem somente '
+        'privada para $identityUses Publicações e comentários exibem somente '
         'um apelido público; o identificador completo não aparece para outras '
-        'pessoas.\n\nNão há conta nem recuperação de acesso. Não compartilhe o '
+        'pessoas. Eventos genéricos de uso são enviados ao Firebase Analytics '
+        'sem esse identificador, sem respostas políticas e sem o nome de '
+        'políticos ou partidos.\n\nNão há conta nem recuperação de acesso. Não compartilhe o '
         'identificador completo.$id',
   );
 }

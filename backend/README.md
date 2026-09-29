@@ -1,6 +1,6 @@
 # Farol Político — Backend API
 
-FastAPI para quiz de planos presidenciais de 2026, deputados atuais com evidências oficiais, acompanhamento pessoal, comunidade anônima e notícias semanais da Câmara. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos são exibidos como evidência informativa. Não existe índice de consistência ou motor completo de alinhamento legislativo implementado.
+FastAPI para quiz de planos presidenciais de 2026, validação anônima da demanda por acompanhamento político, comunidade anônima e notícias semanais da Câmara. A busca, as evidências e o acompanhamento pessoal permanecem implementados, mas o follow público fica retido por feature flag. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos não compõem esse score.
 
 ## Setup local
 
@@ -89,6 +89,7 @@ O cache de notícias e os demais serviços não foram alterados.
 | `NVIDIA_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
 | `NVIDIA_MODERATION_MODEL` | `nvidia/nemotron-3-super-120b-a12b` | Modelo hospedado usado pelo gate de moderação |
 | `IOT_FEATURE_ENABLED` | `false` | Mantém rotas e efeitos do hardware dormentes |
+| `POLITICIAN_FOLLOW_ENABLED` | `false` | Retém o acompanhamento real e mantém disponível somente a validação anônima |
 | `MQTT_BROKER_URL` | `mqtts://broker.hivemq.com:8883` | Broker da integração IoT histórica |
 | `GNEWS_API_KEY` | ausente | Notícias temáticas do fluxo IoT histórico; não alimenta `/news/weekly` |
 
@@ -117,7 +118,8 @@ Todos os caminhos da tabela usam `/api/v1`.
 | GET | `/political-actors/trending` | Ranking com mínimo de dois seguidores, sem contagem pública |
 | GET | `/political-actors/{actor_id}` | Perfil de deputado |
 | GET | `/political-actors/{actor_id}/evidence` | Evidências oficiais e estado do cache |
-| GET, PUT, DELETE | `/me/followed-actor` | Consultar, substituir ou remover o político acompanhado pelo UUID privado |
+| GET, PUT, DELETE | `/me/politician-follow-interest` | Consultar, registrar idempotentemente ou retirar interesse; persiste apenas o hash contextualizado do UUID exclusivo do experimento |
+| GET, PUT, DELETE | `/me/followed-actor` | Acompanhamento retido; responde 404 quando `POLITICIAN_FOLLOW_ENABLED=false` |
 | GET, POST | `/community/posts` | Feed e publicação; filtros por político/tema e ordenação `score` ou `recent` |
 | GET, DELETE | `/community/posts/{post_id}` | Detalhe com comentários; remoção pelo próprio autor |
 | POST | `/community/posts/{post_id}/votes` | Voto `-1`, `0` ou `1`; zero desfaz o voto |
@@ -138,7 +140,7 @@ O autor pode remover seu post; outro UUID recebe 403. O detalhe informa que o po
 
 ## IoT histórico, desativado
 
-`IOT_FEATURE_ENABLED=false` é o padrão e é passado explicitamente pelo deploy Cloud Run em [cloudbuild.yaml](../cloudbuild.yaml). O Flutter também é compilado com `--dart-define=IOT_FEATURE_ENABLED=false` no workflow Firebase. Nessas condições, as rotas `/iot-devices/...` e `/me/iot-device...` não entram no OpenAPI, e submissão de quiz não dispara MQTT/GNews.
+`IOT_FEATURE_ENABLED=false` e `POLITICIAN_FOLLOW_ENABLED=false` são os padrões e são passados explicitamente pelo deploy Cloud Run iniciado em [cloudbuild.yaml](../cloudbuild.yaml). O Flutter também é compilado com ambas desativadas no workflow Firebase. Nessas condições, as rotas `/iot-devices/...` e `/me/iot-device...` não entram no OpenAPI, a submissão de quiz não dispara MQTT/GNews e o follow legado responde 404 sem apagar dados existentes.
 
 As fontes GNews, o publisher MQTT, o firmware e o módulo `app/infrastructure/scheduler.py` foram retidos como código dormente. Esse módulo agora oferece uma única execução protegida pela flag: `uv run python -m app.infrastructure.scheduler`. Ele não agenda próximas execuções e não faz trabalho externo com a flag desativada. Não há scheduler no lifespan da API nem agendamento automático no deploy.
 

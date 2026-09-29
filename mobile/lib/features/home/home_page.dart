@@ -17,12 +17,17 @@ class HomePage extends StatefulWidget {
   const HomePage({
     super.key,
     required this.onStartQuiz,
+    this.politicianFollowEnabled = false,
+    PoliticalActorSession? politicalActorSession,
     NewsSession? newsSession,
     LinkOpener? openLink,
-  })  : _newsSession = newsSession,
+  })  : _politicalActorSession = politicalActorSession,
+        _newsSession = newsSession,
         _openLink = openLink;
 
   final VoidCallback onStartQuiz;
+  final bool politicianFollowEnabled;
+  final PoliticalActorSession? _politicalActorSession;
   final NewsSession? _newsSession;
   final LinkOpener? _openLink;
 
@@ -31,14 +36,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _politicalActorSession = PoliticalActorSession.instance;
+  late final PoliticalActorSession _politicalActorSession =
+      widget._politicalActorSession ?? PoliticalActorSession.instance;
   late final NewsSession _news = widget._newsSession ?? NewsSession.instance;
   late final LinkOpener _openLink = widget._openLink ?? openExternalLink;
 
   @override
   void initState() {
     super.initState();
-    unawaited(_politicalActorSession.loadFollowedActor());
+    if (widget.politicianFollowEnabled) {
+      unawaited(_politicalActorSession.loadFollowedActor());
+    }
     unawaited(_news.load());
   }
 

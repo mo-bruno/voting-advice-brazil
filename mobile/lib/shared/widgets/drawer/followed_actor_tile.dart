@@ -15,32 +15,61 @@ class FollowedActorTile extends StatelessWidget {
     required this.actor,
     required this.onOpenProfile,
     required this.onChoose,
+    this.featureEnabled = true,
   });
 
   final PoliticalActor? actor;
   final VoidCallback onOpenProfile;
   final VoidCallback onChoose;
+  final bool featureEnabled;
 
   @override
   Widget build(BuildContext context) {
     final followed = actor;
 
     return InkWell(
-      onTap: followed == null ? null : onOpenProfile,
+      onTap: !featureEnabled || followed == null ? null : onOpenProfile,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(16, 16, 16, 14),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const DrawerSectionLabel('ACOMPANHANDO'),
+            DrawerSectionLabel(
+              featureEnabled ? 'ACOMPANHANDO' : 'ACOMPANHAR POLÍTICOS',
+            ),
             const SizedBox(height: 12),
-            if (followed == null)
+            if (!featureEnabled)
+              _Validation(onChoose: onChoose)
+            else if (followed == null)
               _Empty(onChoose: onChoose)
             else
               _Followed(actor: followed),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _Validation extends StatelessWidget {
+  const _Validation({required this.onChoose});
+
+  final VoidCallback onChoose;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('EM VALIDAÇÃO', style: Theme.of(context).textTheme.titleMedium),
+        const SizedBox(height: 4),
+        Text(
+          'Ajude a decidir se esta área deve ser lançada.',
+          style: Theme.of(context).textTheme.bodySmall,
+        ),
+        const SizedBox(height: 6),
+        DrawerInlineAction(label: 'Conhecer a validação', onTap: onChoose),
+      ],
     );
   }
 }
