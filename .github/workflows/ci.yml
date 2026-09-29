@@ -88,5 +88,8 @@ jobs:
       - name: Test
         run: flutter test
 
+      - name: Test web analytics pipeline
+        run: flutter test --platform chrome test/analytics_default_pipeline_web_test.dart
+
       - name: Build web (smoke test)
         run: flutter build web --release
