@@ -2,11 +2,11 @@
 
 **Data:** 2026-09-29
 
-**Status:** desenho conversacional aprovado; aguardando revisão desta especificação
+**Status:** aprovado para planejamento e implementação
 
 **Projeto:** Farol Político
 
-**Base auditada:** `origin/main` em `95c22e12dfc428ca1660a113ba8c46423934d2c9`
+**Base auditada:** `origin/main` em `d31078e6e4975b0b0c61f1fe0e4d263cc55a451b`
 
 ## Objetivo
 
@@ -42,6 +42,19 @@ cria fluxos, permissões ou textos específicos de lojas iOS/Android.
 - O PR #59 permite que a própria pessoa gere e compartilhe uma imagem e uma
   legenda com candidato e afinidade. Essa divulgação é voluntária e precisa
   ser descrita separadamente; ela não autoriza envio desses valores ao GA4.
+- O PR #60 criou uma experiência desktop própria. Banner, rota e controles de
+  privacidade precisam funcionar tanto na navegação desktop quanto na barra
+  inferior móvel, sem cobrir ações do produto.
+- O PR #62 criou uma validação de demanda para a área Acompanhar. Ela usa um
+  UUID local exclusivo, diferente da identidade do quiz/comunidade, e o
+  backend persiste apenas o hash SHA-256 contextualizado e `created_at`. O
+  registro não contém político, partido ou opinião, mas continua pseudônimo:
+  o navegador que conserva o UUID consegue consultar e retirar o interesse.
+- O PR #62 também acrescentou os eventos genéricos `follow_waitlist_viewed`,
+  `follow_waitlist_prompt_viewed`, `follow_waitlist_cta_clicked`,
+  `follow_waitlist_registered` e `follow_waitlist_failed`, todos sem
+  parâmetros. Eles pertencem ao mesmo gate de consentimento dos demais
+  eventos.
 
 ## Decisões de escopo
 
@@ -81,6 +94,12 @@ O build Web receberá duas variáveis públicas obrigatórias:
 - `PRIVACY_CONTROLLER_NAME`: nome civil completo ou razão social do
   controlador;
 - `PRIVACY_CONTACT_EMAIL`: caixa funcional monitorada para privacidade.
+
+O contato público aprovado é `privacidade@fpolitico.com.br`. A caixa é
+encaminhada por um operador de e-mail para um destino privado, que nunca será
+publicado no código, no site, em logs ou em relatórios. O aviso pode identificar
+o operador de encaminhamento como fornecedor, mas só exibirá o endereço
+funcional público.
 
 O workflow deve falhar antes do build quando qualquer valor estiver ausente,
 vazio ou contiver valor de exemplo. Esses dados são públicos por natureza e
@@ -194,6 +213,8 @@ Uma rota pública e permanente de privacidade conterá:
 - processamento transitório das respostas do quiz e ausência de gravação no
   modo público sem IoT;
 - UUID funcional de follow e comunidade;
+- UUID separado da validação de demanda da área Acompanhar, o hash
+  contextualizado persistido, a data do registro e o mecanismo de retirada;
 - conteúdo de posts/comentários e moderação via NVIDIA NIM;
 - compartilhamento voluntário do resultado pelo próprio usuário;
 - localização aproximada, dispositivo, URL/referrer e logs técnicos;
@@ -210,6 +231,11 @@ rejeitar ou revogar com a mesma facilidade.
 O texto atual que afirma que o identificador salva respostas do quiz será
 substituído. A página não prometerá anonimato total, ausência de tratamento de
 IP ou ausência geral de dados sensíveis.
+
+Os textos da validação de demanda não usarão “registro anônimo” ou “validação
+anônima”. A formulação será “registro sem nome, separado das outras
+atividades”, deixando claro que o navegador guarda uma credencial aleatória
+para consultar ou retirar o interesse.
 
 ### Transparência específica do quiz
 
@@ -256,6 +282,11 @@ sink nunca receberá:
 - conteúdo de post, comentário, busca ou compartilhamento;
 - UUID funcional do Farol Político.
 
+Os cinco eventos `follow_waitlist_*` permanecem permitidos porque descrevem
+somente etapas genéricas da validação e não carregam parâmetros. Eles também
+são descartados em `pending` ou `denied` e nunca recebem o UUID exclusivo da
+pesquisa nem seu hash.
+
 São permitidos apenas:
 
 - nomes de evento genéricos;
@@ -297,7 +328,12 @@ sem apresentar identificadores pseudônimos como anônimos.
 
 - respostas históricas do quiz e linhas da tabela funcional `devices` serão
   removidas no corte descrito abaixo;
-- dados de follow e comunidade não fazem parte dessa exclusão;
+- `politician_follow_interests`, follow, comunidade e dados IoT não fazem parte
+  da exclusão histórica do quiz;
+- o interesse na validação da área Acompanhar será retido até a pessoa retirar
+  o registro, até o encerramento da validação ou por no máximo 180 dias após o
+  registro, o que ocorrer primeiro; a limpeza será uma operação explícita e
+  verificável, sem scheduler novo nesta entrega;
 - logs padrão do Cloud Run permanecem sujeitos à retenção configurada no
   Cloud Logging; o aviso usará o prazo efetivamente verificado na implantação,
   atualmente 30 dias para `_Default`;
@@ -345,7 +381,8 @@ transação verificada:
 1. excluir linhas de `quiz_responses`;
 2. excluir linhas de `devices` que só serviam à persistência do quiz;
 3. confirmar contagem zero nas duas tabelas;
-4. confirmar que follow, posts, comentários, votos e relatórios não mudaram.
+4. confirmar que `politician_follow_interests`, follow, dispositivos/eventos
+   IoT, posts, comentários, votos, denúncias, locks e moderação não mudaram.
 
 Credenciais e UUIDs individuais nunca serão impressos no relatório. A
 possibilidade de recuperação dependerá dos backups e da retenção real do Neon
@@ -393,10 +430,16 @@ porque isso reativaria a persistência silenciosa para clientes antigos.
   futuros;
 - hidratação restaura cada escolha sem emissão prematura;
 - todos os testes de minimização dos payloads continuam passando;
+- os cinco eventos `follow_waitlist_*` passam pelo mesmo gate e continuam sem
+  parâmetros;
 - o Web mantém um único pipeline, sem `gtag('event')` paralelo;
 - banner tem aceitar/rejeitar equivalentes, não bloqueia o quiz e abre o aviso;
 - preferências permanentes alteram e persistem o estado;
 - política renderiza controlador e contato fornecidos pelo build;
+- a página de privacidade e o banner permanecem utilizáveis em larguras móvel
+  e desktop;
+- a validação de interesse é descrita como pseudônima/sem nome, nunca como
+  anônima, e informa finalidade, retirada e retenção máxima de 180 dias;
 - quiz com IoT falso omite UUID;
 - backend com IoT falso e UUID legado devolve 200 sem criar ou atualizar
   `devices`/`quiz_responses` nem fazer push;
