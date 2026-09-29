@@ -2,6 +2,8 @@
 
 Esta proposta continua o estudo de 29/09/2026. Registra a orientação aprovada pelo responsável pelo produto e os resultados de uma segunda investigação; não altera a edição publicada.
 
+**Atualização documental:** a [revisão posterior de todas as 30 perguntas contra os 13 planos](reformulation/README.md) encontrou oito mudanças de redação recomendadas, correções de categorias e um recorte provisório de 16 itens. As listas de 18–20 abaixo são hipóteses anteriores, não uma seleção fechada. A nova análise também mostra que a base mínima operacional, sozinha, não comprova distinção suficiente entre todos os pares do ranking.
+
 ## Direção confirmada pelo usuário
 
 - Preservar um ranking final de afinidade e seu compartilhamento.

@@ -1,0 +1,3561 @@
+{
+  "schema_version": 1,
+  "group": "services-rights",
+  "method": {
+    "status": "Revisão documental assistida; recomendações não implementadas. Nenhum arquivo do produto foi alterado.",
+    "corpus_manifest": "/tmp/farol-plan-review-20260929/manifest.json",
+    "archive_file": "proposta_governo_2026_BR_20260919.zip",
+    "archive_sha256": "444bcd8f266cd244ea0e11e92db8b3e3f194103e1e2c2b57a92ca7cb447be188",
+    "candidate_count": 13,
+    "corpus_pages_searched": 836,
+    "search_scope": "Buscas em layout/raw dos treze planos, revisão das células vigentes e leitura contextual das páginas listadas. Não é alegação de nova leitura humana integral das 836 páginas.",
+    "visual_pages": [
+      {
+        "candidate_id": "280002538811",
+        "page": 20
+      },
+      {
+        "candidate_id": "280002538811",
+        "page": 22
+      },
+      {
+        "candidate_id": "280002538811",
+        "page": 32
+      }
+    ],
+    "text_normalization": "Somente espaços e quebras de linha na validação literal. Frases visualmente contínuas afetadas pelas colunas ou duplicação do raw são citadas por fragmentos contínuos separados, sem costurar frases dentro de uma quote.",
+    "selection_hints": [
+      "data/theses/2026/theses.json (70 formulações; T040 examinado como item correlato)",
+      "data/theses/2026/source-bank-v3.jsonl (banco de 111 itens pesquisado; A-005, A-006, A-007, A-008, A-009, A-037, A-046, A-048, B-017, B-018, B-024 e B-028 usados somente como pistas de redação)"
+    ],
+    "inspected_pages": {
+      "280002542548": [
+        19,
+        20,
+        31,
+        32,
+        33,
+        34,
+        36,
+        37,
+        38
+      ],
+      "280002540694": [
+        15,
+        25,
+        26,
+        30,
+        31,
+        32,
+        49
+      ],
+      "280002541457": [
+        10,
+        11,
+        12,
+        21
+      ],
+      "280002551975": [
+        6,
+        7,
+        10,
+        12
+      ],
+      "280002552487": [
+        5
+      ],
+      "280002551544": [
+        20,
+        21,
+        34,
+        35,
+        36,
+        37,
+        38
+      ],
+      "280002552484": [
+        3,
+        5,
+        7,
+        8,
+        11,
+        12
+      ],
+      "280002554479": [
+        9,
+        10,
+        15,
+        16,
+        17,
+        34
+      ],
+      "280002539826": [
+        15,
+        24,
+        50,
+        51,
+        52,
+        53,
+        57,
+        59,
+        60,
+        61,
+        76
+      ],
+      "280002548139": [
+        34,
+        35,
+        36,
+        37
+      ],
+      "280002551932": [
+        32,
+        33,
+        44,
+        47,
+        58,
+        59,
+        61,
+        62,
+        65,
+        67,
+        68,
+        76,
+        77
+      ],
+      "280002538811": [
+        19,
+        20,
+        21,
+        22,
+        23,
+        32,
+        34,
+        49,
+        59
+      ],
+      "280002551547": [
+        43,
+        44,
+        49,
+        50,
+        56,
+        64,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        99,
+        122,
+        135,
+        161,
+        162,
+        163,
+        164,
+        189
+      ]
+    }
+  },
+  "theses": [
+    {
+      "id": "BR26-T017",
+      "baseline_text": "O número de escolas cívico-militares deve aumentar.",
+      "action": "reformulate",
+      "summary": "Uma pergunta sobre admissibilidade recupera dois posicionamentos explícitos que a formulação quantitativa não representa. A condição temporária de Renan permanece na justificativa e não vira apoio a crescimento geral.",
+      "search_terms": [
+        "cívico-militar",
+        "civis-militares",
+        "militarização",
+        "militarização das escolas",
+        "modelos educacionais",
+        "escolas em situação crítica"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas de educação propõem expansão, tempo integral, conectividade e valorização profissional; não localizei adoção nem rejeição de escolas cívico-militares.",
+          "evidence": [],
+          "inspected_pages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Adoção apenas em escolas em situação crítica, como medida provisória contra violência endêmica e em áreas de alta criminalidade. Isso não sustenta expansão geral sem esses limites.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Transformação das escolas em situação crítica, de acordo com o sistema das escolas civis-militares"
+            },
+            {
+              "page": 32,
+              "quote": "A militarização das escolas deve ser vista como uma medida provisória, a fim de estancar a violência endêmica, em especial nas regiões com alta criminalidade no entorno."
+            }
+          ],
+          "inspected_pages": [
+            15,
+            30,
+            31,
+            32,
+            49
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Rejeição expressa da militarização das escolas, no bloco educacional, incompatível com aumentar esse modelo.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Não à militarização das escolas"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Propõe explicitamente o fim das escolas cívico-militares; a direção é contrária ao aumento.",
+          "evidence": [
+            {
+              "page": 10,
+              "quote": "Fim das escolas cívico-militares."
+            }
+          ],
+          "inspected_pages": [
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Compromisso explícito de ampliar Escolas Cívico-Militares; coincide com o aumento do número.",
+          "evidence": [
+            {
+              "page": 35,
+              "quote": "Vamos ampliar as Escolas Cívico-Militares"
+            }
+          ],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional trata de alfabetização, ensino integral e aprendizagem; não decide a presença militar na escola.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As propostas educacionais examinadas tratam de carreira técnica, aprendizagem prática e inclusão de crianças autistas; não decidem militarização escolar.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. Eleição da direção e oposição à ditadura nas escolas não nomeiam o modelo cívico-militar nem bastam para inferir sua extinção.",
+          "evidence": [],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A p53 inclui escolas cívico-militares entre opções e parcerias educacionais, mas não afirma aumento do seu número. Mantida a ausência para o objeto quantitativo original, não para a existência do modelo.",
+          "evidence": [
+            {
+              "page": 53,
+              "quote": "Aumentar as opções de modelos educacionais no país:"
+            },
+            {
+              "page": 53,
+              "quote": "escolas cívico-militares e regulamentando o homeschooling."
+            }
+          ],
+          "inspected_pages": [
+            15,
+            24,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas educacionais examinadas não propõem nem rejeitam o modelo cívico-militar; disciplina, proteção ou qualidade não são equivalentes à militarização da gestão.",
+          "evidence": [],
+          "inspected_pages": [
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A p33 trata de prevenção da violência e mediação na escola; não estabelece gestão cívico-militar. Nenhuma defesa da segurança escolar foi convertida em apoio ao modelo.",
+          "evidence": [],
+          "inspected_pages": [
+            32,
+            33,
+            47
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional e a p189, sobre proteção escolar, não propõem gestão militar. Patrulhamento e botão de emergência têm objeto diferente.",
+          "evidence": [],
+          "inspected_pages": [
+            49,
+            50,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            135,
+            189
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A política educacional nas p21–23 não decide escolas cívico-militares. As referências à militarização policial nas p49 e seguintes não foram transpostas para a escola.",
+          "evidence": [],
+          "inspected_pages": [
+            21,
+            22,
+            23,
+            34,
+            49,
+            59
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "admissão do modelo",
+          "text": "A rede pública de ensino deve admitir escolas cívico-militares.",
+          "recommendation": "recommend",
+          "reason": "Troca expansão numérica por admissibilidade do modelo. Recupera Renan e Zema sem atribuir a eles expansão irrestrita: aceitar uso provisório em contextos específicos basta para admitir o modelo. Preserva as três posições categóricas anteriores. Ganho de 3 para 5 categóricas, com ambos os polos; não é equivalência semântica e exige nova versão.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas de educação propõem expansão, tempo integral, conectividade e valorização profissional; não localizei adoção nem rejeição de escolas cívico-militares.",
+              "evidence": [],
+              "inspected_pages": [
+                31,
+                32,
+                33,
+                34
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "CONCORDA",
+              "reason": "Propõe transformação de escolas críticas pelo modelo, embora provisória. Isso sustenta sua admissibilidade em condições delimitadas, sem afirmar que toda escola deva adotá-lo ou que a expansão deva ser permanente.",
+              "evidence": [
+                {
+                  "page": 32,
+                  "quote": "Transformação das escolas em situação crítica, de acordo com o sistema das escolas civis-militares"
+                },
+                {
+                  "page": 32,
+                  "quote": "A militarização das escolas deve ser vista como uma medida provisória, a fim de estancar a violência endêmica, em especial nas regiões com alta criminalidade no entorno."
+                }
+              ],
+              "inspected_pages": [
+                15,
+                30,
+                31,
+                32,
+                49
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "DISCORDA",
+              "reason": "A rejeição da militarização escolar sustenta não admitir o modelo.",
+              "evidence": [
+                {
+                  "page": 12,
+                  "quote": "Não à militarização das escolas"
+                }
+              ],
+              "inspected_pages": [
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "DISCORDA",
+              "reason": "O fim expresso das escolas cívico-militares é incompatível com sua admissibilidade.",
+              "evidence": [
+                {
+                  "page": 10,
+                  "quote": "Fim das escolas cívico-militares."
+                }
+              ],
+              "inspected_pages": [
+                7,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "CONCORDA",
+              "reason": "A ampliação explícita requer admissibilidade do modelo e por isso sustenta a alternativa.",
+              "evidence": [
+                {
+                  "page": 35,
+                  "quote": "Vamos ampliar as Escolas Cívico-Militares"
+                }
+              ],
+              "inspected_pages": [
+                20,
+                21,
+                34,
+                35,
+                36
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional trata de alfabetização, ensino integral e aprendizagem; não decide a presença militar na escola.",
+              "evidence": [],
+              "inspected_pages": [
+                3,
+                7,
+                8
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As propostas educacionais examinadas tratam de carreira técnica, aprendizagem prática e inclusão de crianças autistas; não decidem militarização escolar.",
+              "evidence": [],
+              "inspected_pages": [
+                15,
+                16,
+                17,
+                34
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. Eleição da direção e oposição à ditadura nas escolas não nomeiam o modelo cívico-militar nem bastam para inferir sua extinção.",
+              "evidence": [],
+              "inspected_pages": [
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "CONCORDA",
+              "reason": "Inclui expressamente escolas cívico-militares na agenda de opções educacionais. Sustenta admitir o modelo, sem comprometer-se a aumentar seu número.",
+              "evidence": [
+                {
+                  "page": 53,
+                  "quote": "Aumentar as opções de modelos educacionais no país:"
+                },
+                {
+                  "page": 53,
+                  "quote": "Dar mais liberdade aos pais de escolher o modelo educacional de seus filhos, fa- cilitando a formalização de parcerias com instituições comunitárias, filantrópicas e confessionais, avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling."
+                }
+              ],
+              "inspected_pages": [
+                15,
+                24,
+                50,
+                51,
+                52,
+                53
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas educacionais examinadas não propõem nem rejeitam o modelo cívico-militar; disciplina, proteção ou qualidade não são equivalentes à militarização da gestão.",
+              "evidence": [],
+              "inspected_pages": [
+                35,
+                36,
+                37
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A p33 trata de prevenção da violência e mediação na escola; não estabelece gestão cívico-militar. Nenhuma defesa da segurança escolar foi convertida em apoio ao modelo.",
+              "evidence": [],
+              "inspected_pages": [
+                32,
+                33,
+                47
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional e a p189, sobre proteção escolar, não propõem gestão militar. Patrulhamento e botão de emergência têm objeto diferente.",
+              "evidence": [],
+              "inspected_pages": [
+                49,
+                50,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                135,
+                189
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A política educacional nas p21–23 não decide escolas cívico-militares. As referências à militarização policial nas p49 e seguintes não foram transpostas para a escola.",
+              "evidence": [],
+              "inspected_pages": [
+                21,
+                22,
+                23,
+                34,
+                49,
+                59
+              ]
+            }
+          ],
+          "counts": {
+            "NAO_ENCONTRADA": 8,
+            "CONCORDA": 3,
+            "DISCORDA": 2
+          },
+          "categorical_gains": [
+            "280002540694",
+            "280002539826"
+          ],
+          "categorical_losses": []
+        }
+      ],
+      "limitations": [
+        "A concordância proposta significa admitir alguma adoção do modelo; não significa militarizar toda a rede, retirar condições locais ou perpetuar intervenção provisória. Essa leitura precisa constar da explicação pública.",
+        "Os mesmos votos antigos sobre aumento não podem ser reutilizados para admissibilidade. A semelhança com BR26-BANCO-A-008 foi usada como pista, e as treze posições foram verificadas para a redação nova."
+      ],
+      "visual_checks": [],
+      "review_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 2,
+        "CONCORDA": 1
+      }
+    },
+    {
+      "id": "BR26-T018",
+      "baseline_text": "A reserva de vagas com base em critérios raciais na educação e no serviço público deve ser encerrada.",
+      "action": "reformulate",
+      "summary": "Recomenda-se uma pergunta só sobre cotas raciais no serviço público. A cobertura não aumenta, mas a pergunta deixa de exigir uma única resposta para educação e concursos.",
+      "search_terms": [
+        "cotas",
+        "cotas raciais",
+        "reserva de vagas",
+        "vagas reservadas",
+        "população negra",
+        "concursos públicos",
+        "funcionalismo público",
+        "mérito"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Continuidade expressa das políticas para a população negra alinhadas às cotas no serviço público, além da abordagem universitária nas p19–20. É incompatível com encerrá-las nos dois âmbitos.",
+          "evidence": [
+            {
+              "page": 19,
+              "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato."
+            }
+          ],
+          "inspected_pages": [
+            19,
+            20
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O capítulo de educação critica cotas e o item final manda abolir o sistema na educação e em geral; esse alcance explícito sustenta a direção de encerramento, sem inferência partidária.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Abolir o sistema de cotas na educação brasileira e em geral."
+            }
+          ],
+          "inspected_pages": [
+            30,
+            31,
+            32
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Manda manter e ampliar cotas para negros nas universidades e nos serviços públicos, cobrindo os dois objetos da tese.",
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos"
+            }
+          ],
+          "inspected_pages": [
+            21
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Defende ampliação das cotas universitárias na p7 e cotas raciais em concursos das forças de segurança na p12. Esses compromissos são incompatíveis com a abolição conjunta; não significam adoção de cada modalidade de cota em todo órgão.",
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "a ampliação das cotas (54% para a população negra"
+            },
+            {
+              "page": 12,
+              "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança."
+            }
+          ],
+          "inspected_pages": [
+            7,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico.",
+          "evidence": [],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico.",
+          "evidence": [],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico. As referências a cotas parlamentares (p76) não são reserva racial de vagas.",
+          "evidence": [],
+          "inspected_pages": [
+            50,
+            51,
+            52,
+            53,
+            76
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico.",
+          "evidence": [],
+          "inspected_pages": [
+            34,
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Na seção de igualdade racial, a p68 prevê inclusão em concursos e formação, respeitando decisões judiciais e mérito; não menciona reserva racial de vagas. Inclusão genérica não determina manter nem abolir cotas.",
+          "evidence": [
+            {
+              "page": 68,
+              "quote": "Aprimorar políticas de inclusão em concursos e formação, respeitando decisões judiciais e mérito."
+            }
+          ],
+          "inspected_pages": [
+            65,
+            67,
+            68
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no texto integral por cotas, reserva de vagas e critérios raciais não localizaram decisão sobre encerramento de cotas raciais na educação ou no serviço público. Os contextos indicados não suprem esse instrumento específico. A reserva para mulheres no STF e o tratamento da desigualdade racial não equivalem a cotas raciais em educação ou concursos.",
+          "evidence": [],
+          "inspected_pages": [
+            56,
+            64,
+            99
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A ampliação expressa de vagas públicas reservadas à população negra contradiz o encerramento geral no serviço público. Não foi presumida posição universitária ausente só para completar o enunciado.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Ampliar vagas nos setores públicos reservadas para a população negra."
+            }
+          ],
+          "inspected_pages": [
+            32
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "somente serviço público",
+          "text": "As cotas raciais no serviço público devem ser encerradas.",
+          "recommendation": "recommend",
+          "reason": "Remove a combinação educação + serviço público. Mantém 5 posições categóricas e ambos os polos, sem ganho numérico. Reduz ambiguidade de resposta para usuários que distinguem os dois âmbitos. Samara sustenta o objeto público explicitamente; a oposição de Edmilson ao encerramento decorre de cotas nos concursos de segurança, não de extrapolação para todos os cargos.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "DISCORDA",
+              "reason": "Compromisso explícito de continuidade da participação da população negra no funcionalismo alinhada às cotas do serviço público.",
+              "evidence": [
+                {
+                  "page": 19,
+                  "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato."
+                }
+              ],
+              "inspected_pages": [
+                19,
+                20
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "CONCORDA",
+              "reason": "A expressão final de abolir cotas na educação e em geral alcança o serviço público; não há, no contexto, exceção de manutenção racial em concursos.",
+              "evidence": [
+                {
+                  "page": 32,
+                  "quote": "Abolir o sistema de cotas na educação brasileira e em geral."
+                }
+              ],
+              "inspected_pages": [
+                30,
+                31,
+                32
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "DISCORDA",
+              "reason": "Defende manter e ampliar cotas para negros nos serviços públicos.",
+              "evidence": [
+                {
+                  "page": 21,
+                  "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos"
+                }
+              ],
+              "inspected_pages": [
+                21
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "DISCORDA",
+              "reason": "Propõe implementar cotas raciais nos concursos das forças de segurança. Isso rejeita encerrá-las no serviço público; não se atribui apoio universal a todo desenho de cota.",
+              "evidence": [
+                {
+                  "page": 12,
+                  "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança."
+                }
+              ],
+              "inspected_pages": [
+                7,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                20,
+                21,
+                34,
+                35,
+                36
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                3,
+                7,
+                8
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                15,
+                16,
+                17,
+                34
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                50,
+                51,
+                52,
+                53,
+                76
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                34,
+                35,
+                36,
+                37
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "NAO_ENCONTRADA",
+              "reason": "A proposta de inclusão em concursos não fixa reserva racial de vagas; preservada ausência, sem convertê-la em neutralidade ou oposição.",
+              "evidence": [
+                {
+                  "page": 68,
+                  "quote": "Aprimorar políticas de inclusão em concursos e formação, respeitando decisões judiciais e mérito."
+                }
+              ],
+              "inspected_pages": [
+                65,
+                67,
+                68
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+              "evidence": [],
+              "inspected_pages": [
+                56,
+                64,
+                99
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "DISCORDA",
+              "reason": "Propõe ampliar vagas dos setores públicos reservadas à população negra, incompatível com seu encerramento.",
+              "evidence": [
+                {
+                  "page": 32,
+                  "quote": "Ampliar vagas nos setores públicos reservadas para a população negra."
+                }
+              ],
+              "inspected_pages": [
+                32
+              ]
+            }
+          ],
+          "counts": {
+            "DISCORDA": 4,
+            "CONCORDA": 1,
+            "NAO_ENCONTRADA": 8
+          },
+          "categorical_gains": [],
+          "categorical_losses": []
+        }
+      ],
+      "limitations": [
+        "A discordância com encerramento não informa percentual, desenho, prazo ou extensão a cada carreira.",
+        "O texto de Renan usa a abrangência “em geral”; a classificação não deve ser apresentada como citação de uma regra específica de concurso que ele não detalhou."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 32,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "DISCORDA": 4,
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 8
+      }
+    },
+    {
+      "id": "BR26-T026A",
+      "baseline_text": "A gestão de serviços públicos de saúde por organizações sociais deve ser encerrada.",
+      "action": "replace",
+      "summary": "A melhor simplificação preserva a decisão gestão direta versus delegação, e permite evitar duas perguntas quase duplicadas sobre OS e PPP. Não aumenta cobertura, mas melhora a legibilidade e mantém a compra complementar de atendimento em pergunta separada.",
+      "search_terms": [
+        "organizações sociais",
+        "OSs",
+        "OSS",
+        "gestão privada",
+        "gestão hospitalar",
+        "gestão direta",
+        "revogação dos contratos",
+        "SUS 100% estatal"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A parceria com hospitais privados para exames e cirurgias (p37) é compra de oferta para o SUS, não transferência da gestão de unidades públicas a OS ou PPP.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+            }
+          ],
+          "inspected_pages": [
+            34,
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: As páginas de saúde enfatizam organização, formação e tecnologia; integração de informação com hospitais privados não decide quem gere serviços públicos de saúde.",
+          "evidence": [],
+          "inspected_pages": [
+            25,
+            26
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O bloco de saúde determina fim da gestão privada e nomeia OS, fundações e PPP. Evidência direta para encerrar a modalidade perguntada.",
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Reversão das privatizações, revogação de todas as OS e estatização de todo o setor privado de saúde (p10), junto a controle público do sistema (p6). A posição abrange encerrar a gestão privada perguntada.",
+          "evidence": [
+            {
+              "page": 10,
+              "quote": "Expansão do sistema público de saúde, com a reversão das privatizações e revogação dos contratos de todas as OSs no setor, bem como estatização de todo o setor privado de saúde."
+            }
+          ],
+          "inspected_pages": [
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A p21 prevê uma rede de cuidado a idosos e pessoas com deficiência com parceiros e OS; não identifica gestão de unidades do SUS. Na p37, a contratação de exames privados tem objeto distinto de gerir unidades públicas.",
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Também estruturaremos uma Rede Nacional de Cuidado, ampliando o apoio a idosos e pessoas com deficiência, com centros-dia e atendimento domiciliar em parcerias público privado com estados, municípios e organizações sociais."
+            }
+          ],
+          "inspected_pages": [
+            21,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: PPPs na p5 aparecem na agenda de infraestrutura; saúde nas p11–12 prioriza organização e acesso. Não há decisão identificável sobre gestão assistencial por OS ou por empresas em PPP.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A parceria com hospitais privados ociosos (p9) é contratação de capacidade para filas, não delegação da gestão da rede pública.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "parceria com hospitais privados ociosos para absorver demanda reprimida"
+            }
+          ],
+          "inspected_pages": [
+            9,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: Defende saúde pública gratuita e critica lucro com a doença, mas as medidas da p5 não determinam encerrar contratos de gestão com OS ou PPP. Não se inferiu proibição contratual só dessa direção geral.",
+          "evidence": [],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Além do título de expansão por OS e PPP, o corpo da p60 manda ampliar PPPs para construir e gerir unidades de saúde. Isso contradiz encerrar essa gestão.",
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Expandir a rede de hospitais, UPAs e atendimentos com especialistas por meio de concessões, PPPs e parcerias com OSs:"
+            }
+          ],
+          "inspected_pages": [
+            15,
+            57,
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: Contratos de gestão e metas nos contextos examinados não identificam OS nem empresa privada responsável pela operação. Gestão por resultados não implica gestão privada.",
+          "evidence": [],
+          "inspected_pages": [
+            34,
+            35
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A p47 prevê PPPs de infraestrutura hospitalar e a p77 prevê hospitais privados contratados quando necessário. Construção de infraestrutura e contratação de atendimento não demonstram delegação da gestão assistencial pública.",
+          "evidence": [
+            {
+              "page": 77,
+              "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+            }
+          ],
+          "inspected_pages": [
+            44,
+            47,
+            58,
+            59,
+            61,
+            62,
+            76,
+            77
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: O fortalecimento de cooperativas de saúde (p135) e a plataforma de atenção pública (p161–164) não determinam delegação nem encerramento de gestão pública por OS ou PPP.",
+          "evidence": [],
+          "inspected_pages": [
+            43,
+            44,
+            135,
+            161,
+            162,
+            163,
+            164
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "No bloco visualmente conferido da p20, propõe fim da entrega da gestão hospitalar a OS/fundações/cooperativas e gestão direta e pública de toda a rede sanitária. Não se confundiu texto de coluna vizinha com essa proposição.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "SUS 100% Estatal: Fim da entrega da"
+            },
+            {
+              "page": 20,
+              "quote": "gestão hospitalar a Organizações"
+            },
+            {
+              "page": 20,
+              "quote": "Sociais (OSs), fundações privadas"
+            },
+            {
+              "page": 20,
+              "quote": "a rede sanitária deve ser de gestão"
+            },
+            {
+              "page": 20,
+              "quote": "direta e pública. Fim da exploração"
+            }
+          ],
+          "inspected_pages": [
+            19,
+            20
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "gestão diretamente pública",
+          "text": "A gestão de todas as unidades públicas de saúde deve ficar com o poder público, sem delegação a organizações privadas.",
+          "recommendation": "recommend",
+          "reason": "Substitui a pergunta sobre um tipo jurídico de gestor por uma decisão sobre gestão direta, cobrindo o núcleo comum de T026A/T026B. Mantém as mesmas 4 posições categóricas, 3 favoráveis à gestão direta e 1 contrária, sem preencher ausências por opiniões sobre compra de exames. Não é sinônimo jurídico de extinguir OS: exige nova versão e nova resposta dos usuários.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A parceria com hospitais privados para exames e cirurgias (p37) é compra de oferta para o SUS, não transferência da gestão de unidades públicas a OS ou PPP.",
+              "evidence": [
+                {
+                  "page": 37,
+                  "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+                }
+              ],
+              "inspected_pages": [
+                34,
+                36,
+                37,
+                38
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. As páginas de saúde enfatizam organização, formação e tecnologia; integração de informação com hospitais privados não decide quem gere serviços públicos de saúde.",
+              "evidence": [],
+              "inspected_pages": [
+                25,
+                26
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "CONCORDA",
+              "reason": "O texto exige que a gestão seja realizada por trabalhadores do serviço público e põe fim à gestão privada da saúde, incluindo OS, fundações e PPP.",
+              "evidence": [
+                {
+                  "page": 11,
+                  "quote": "A gestão deve ser realizada pelos trabalhadores do serviço público sob controle dos trabalhadores usuários, nos bairros e comunidades"
+                },
+                {
+                  "page": 11,
+                  "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+                }
+              ],
+              "inspected_pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "CONCORDA",
+              "reason": "Propõe tornar público todo o sistema de saúde e estatizar todo o setor privado, com conselhos para controle em todos os níveis; isso sustenta direção pública integral, sem transferir operação a empresas.",
+              "evidence": [
+                {
+                  "page": 6,
+                  "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+                },
+                {
+                  "page": 10,
+                  "quote": "estatização de todo o setor privado de saúde"
+                },
+                {
+                  "page": 10,
+                  "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis."
+                }
+              ],
+              "inspected_pages": [
+                6,
+                7,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A p21 prevê uma rede de cuidado a idosos e pessoas com deficiência com parceiros e OS; não identifica gestão de unidades do SUS. Na p37, a contratação de exames privados tem objeto distinto de gerir unidades públicas.",
+              "evidence": [
+                {
+                  "page": 21,
+                  "quote": "Também estruturaremos uma Rede Nacional de Cuidado, ampliando o apoio a idosos e pessoas com deficiência, com centros-dia e atendimento domiciliar em parcerias público privado com estados, municípios e organizações sociais."
+                }
+              ],
+              "inspected_pages": [
+                21,
+                37,
+                38
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. PPPs na p5 aparecem na agenda de infraestrutura; saúde nas p11–12 prioriza organização e acesso. Não há decisão identificável sobre gestão assistencial por OS ou por empresas em PPP.",
+              "evidence": [],
+              "inspected_pages": [
+                5,
+                11,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A parceria com hospitais privados ociosos (p9) é contratação de capacidade para filas, não delegação da gestão da rede pública.",
+              "evidence": [
+                {
+                  "page": 9,
+                  "quote": "parceria com hospitais privados ociosos para absorver demanda reprimida"
+                }
+              ],
+              "inspected_pages": [
+                9,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. Defende saúde pública gratuita e critica lucro com a doença, mas as medidas da p5 não determinam encerrar contratos de gestão com OS ou PPP. Não se inferiu proibição contratual só dessa direção geral.",
+              "evidence": [],
+              "inspected_pages": [
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "DISCORDA",
+              "reason": "Manda construir e gerir unidades de saúde mediante PPP, incompatível com gestão diretamente pública de todas as unidades.",
+              "evidence": [
+                {
+                  "page": 60,
+                  "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de saúde, garantindo maior eficiência operacional, melhor experiência para o paciente e controle rigoroso de resultados por parte do poder público."
+                }
+              ],
+              "inspected_pages": [
+                15,
+                57,
+                59,
+                60,
+                61
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. Contratos de gestão e metas nos contextos examinados não identificam OS nem empresa privada responsável pela operação. Gestão por resultados não implica gestão privada.",
+              "evidence": [],
+              "inspected_pages": [
+                34,
+                35
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A p47 prevê PPPs de infraestrutura hospitalar e a p77 prevê hospitais privados contratados quando necessário. Construção de infraestrutura e contratação de atendimento não demonstram delegação da gestão assistencial pública.",
+              "evidence": [
+                {
+                  "page": 77,
+                  "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+                }
+              ],
+              "inspected_pages": [
+                44,
+                47,
+                58,
+                59,
+                61,
+                62,
+                76,
+                77
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. O fortalecimento de cooperativas de saúde (p135) e a plataforma de atenção pública (p161–164) não determinam delegação nem encerramento de gestão pública por OS ou PPP.",
+              "evidence": [],
+              "inspected_pages": [
+                43,
+                44,
+                135,
+                161,
+                162,
+                163,
+                164
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "CONCORDA",
+              "reason": "O bloco da p20 exige que toda a rede sanitária seja de gestão direta e pública e encerra a entrega da gestão a entidades privadas.",
+              "evidence": [
+                {
+                  "page": 20,
+                  "quote": "SUS 100% Estatal: Fim da entrega da"
+                },
+                {
+                  "page": 20,
+                  "quote": "gestão hospitalar a Organizações"
+                },
+                {
+                  "page": 20,
+                  "quote": "Sociais (OSs), fundações privadas"
+                },
+                {
+                  "page": 20,
+                  "quote": "a rede sanitária deve ser de gestão"
+                },
+                {
+                  "page": 20,
+                  "quote": "direta e pública. Fim da exploração"
+                }
+              ],
+              "inspected_pages": [
+                19,
+                20
+              ]
+            }
+          ],
+          "counts": {
+            "NAO_ENCONTRADA": 9,
+            "CONCORDA": 3,
+            "DISCORDA": 1
+          },
+          "categorical_gains": [],
+          "categorical_losses": []
+        }
+      ],
+      "limitations": [
+        "Gestão diretamente pública não se confunde com impedir todo contrato de fornecimento, obra, insumo ou atendimento privado. A explicação deve manter esse limite.",
+        "A formulação substitui um tipo de entidade por um regime de gestão; nenhuma equivalência jurídica entre OS e PPP foi presumida.",
+        "Quatro posições categóricas continuam sendo uma cobertura pequena; a redação não cria informação nos nove planos sem decisão sobre gestão assistencial.",
+        "Na integração da revisão, todas foi explicitado na alternativa para que não se confunda existência de gestão direta em parte da rede com exclusão de delegação de outras unidades. As treze posições já tinham sido justificadas por esse alcance universal.",
+        "Gestão pública aqui contrapõe-se à delegação a entidades privadas. Não significa impor a categoria jurídica administração direta nem excluir autarquias e fundações públicas. O texto final explicita essa distinção após revisão independente."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 20,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      }
+    },
+    {
+      "id": "BR26-T026B",
+      "baseline_text": "A gestão de serviços públicos de saúde por empresas em parcerias público-privadas deve ser encerrada.",
+      "action": "remove_from_shortlist",
+      "summary": "Retirar do questionário curto se a substituição proposta para T026A for adotada: as treze classificações têm o mesmo perfil e o núcleo de gestão direta já estará representado. Preservar o item histórico; OS e PPP não são instrumentos equivalentes.",
+      "search_terms": [
+        "PPP",
+        "PPPs",
+        "parcerias público-privadas",
+        "gestão privada",
+        "construir e gerir",
+        "infraestrutura social",
+        "gestão direta"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A parceria com hospitais privados para exames e cirurgias (p37) é compra de oferta para o SUS, não transferência da gestão de unidades públicas a OS ou PPP.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+            }
+          ],
+          "inspected_pages": [
+            34,
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: As páginas de saúde enfatizam organização, formação e tecnologia; integração de informação com hospitais privados não decide quem gere serviços públicos de saúde.",
+          "evidence": [],
+          "inspected_pages": [
+            25,
+            26
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O bloco de saúde determina fim da gestão privada e nomeia OS, fundações e PPP. Evidência direta para encerrar a modalidade perguntada.",
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Reversão das privatizações, revogação de todas as OS e estatização de todo o setor privado de saúde (p10), junto a controle público do sistema (p6). A posição abrange encerrar a gestão privada perguntada.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+            },
+            {
+              "page": 10,
+              "quote": "estatização de todo o setor privado de saúde"
+            },
+            {
+              "page": 10,
+              "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis."
+            }
+          ],
+          "inspected_pages": [
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A p21 prevê uma rede de cuidado a idosos e pessoas com deficiência com parceiros e OS; não identifica gestão de unidades do SUS. Na p37, a contratação de exames privados tem objeto distinto de gerir unidades públicas.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "vamos contratar serviços e exames na rede privada nos horários ociosos"
+            },
+            {
+              "page": 21,
+              "quote": "com centros-dia e atendimento domiciliar em parcerias público privado com estados, municípios e organizações sociais."
+            }
+          ],
+          "inspected_pages": [
+            21,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: PPPs na p5 aparecem na agenda de infraestrutura; saúde nas p11–12 prioriza organização e acesso. Não há decisão identificável sobre gestão assistencial por OS ou por empresas em PPP.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Concessões, PPPs e planejamento de longo prazo"
+            }
+          ],
+          "inspected_pages": [
+            5,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A parceria com hospitais privados ociosos (p9) é contratação de capacidade para filas, não delegação da gestão da rede pública.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde."
+            }
+          ],
+          "inspected_pages": [
+            9,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: Defende saúde pública gratuita e critica lucro com a doença, mas as medidas da p5 não determinam encerrar contratos de gestão com OS ou PPP. Não se inferiu proibição contratual só dessa direção geral.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Fim do lucro com a doença: saúde pública e gratuita, sob o controle dos trabalhadores"
+            }
+          ],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Além do título de expansão por OS e PPP, o corpo da p60 manda ampliar PPPs para construir e gerir unidades de saúde. Isso contradiz encerrar essa gestão.",
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de saúde"
+            },
+            {
+              "page": 15,
+              "quote": "Ampliar as parcerias público-privadas em todos os serviços públicos, inclusive saúde e educação:"
+            }
+          ],
+          "inspected_pages": [
+            15,
+            57,
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: Contratos de gestão e metas nos contextos examinados não identificam OS nem empresa privada responsável pela operação. Gestão por resultados não implica gestão privada.",
+          "evidence": [
+            {
+              "page": 34,
+              "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada."
+            }
+          ],
+          "inspected_pages": [
+            34,
+            35
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: A p47 prevê PPPs de infraestrutura hospitalar e a p77 prevê hospitais privados contratados quando necessário. Construção de infraestrutura e contratação de atendimento não demonstram delegação da gestão assistencial pública.",
+          "evidence": [
+            {
+              "page": 47,
+              "quote": "Ampliação das concessões e parcerias público-privadas"
+            },
+            {
+              "page": 47,
+              "quote": "energia e infraestrutura social, como hospitais, escolas e iluminação pública."
+            },
+            {
+              "page": 77,
+              "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+            }
+          ],
+          "inspected_pages": [
+            44,
+            47,
+            58,
+            59,
+            61,
+            62,
+            76,
+            77
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas no corpus integral e leitura contextual: O fortalecimento de cooperativas de saúde (p135) e a plataforma de atenção pública (p161–164) não determinam delegação nem encerramento de gestão pública por OS ou PPP.",
+          "evidence": [
+            {
+              "page": 122,
+              "quote": "O programa será desenvolvido por meio de Parcerias Público-Privadas."
+            }
+          ],
+          "inspected_pages": [
+            43,
+            44,
+            122,
+            135,
+            161,
+            162,
+            163,
+            164
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "No bloco visualmente conferido da p20, propõe fim da entrega da gestão hospitalar a OS/fundações/cooperativas e gestão direta e pública de toda a rede sanitária. Não se confundiu texto de coluna vizinha com essa proposição.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "e cooperativas empresariais. Toda"
+            },
+            {
+              "page": 20,
+              "quote": "a rede sanitária deve ser de gestão"
+            },
+            {
+              "page": 20,
+              "quote": "direta e pública. Fim da exploração"
+            }
+          ],
+          "inspected_pages": [
+            19,
+            20
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "Não se recuperou Caiado com PPP hospitalar de infraestrutura porque construir não equivale a gerir assistência. Não se recuperou Lula, Flávio ou Avalanche com compra complementar pelo mesmo motivo.",
+        "A retirada é uma recomendação de seleção editorial, não exclusão de evidências nem correção retroativa das respostas. Se houver interesse político específico nos regimes contratuais, ambos podem permanecer no banco aprofundado."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 20,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      }
+    },
+    {
+      "id": "BR26-T041",
+      "baseline_text": "Parcerias público-privadas devem ser ampliadas na educação.",
+      "action": "remove_from_shortlist",
+      "summary": "O original permite recuperar Flávio pela capacitação profissional em PPP (p20), mas mistura esse objeto com infraestrutura escolar e gestão do ensino. A revisão reduz Edmilson e Rui a condicionais por não decidir PPP exclusivamente de infraestrutura. Recomenda-se retirar da shortlist até escolher um objeto único, em vez de usar a redação ampla para maximizar cobertura.",
+      "search_terms": [
+        "PPP",
+        "PPPs",
+        "parcerias público-privadas",
+        "concessões",
+        "infraestrutura social",
+        "escolas conveniadas",
+        "Escola Brasil por Elas",
+        "estatização do ensino",
+        "ensino 100% público"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: Obras públicas, Novo PAC e expansão do ensino não decidem ampliação de PPPs educacionais.",
+          "evidence": [],
+          "inspected_pages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: Reformas curriculares e cursos ligados ao trabalho não especificam PPP educacional; menções de PPP em infraestrutura fora da educação não foram transferidas de setor.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            30,
+            31,
+            32,
+            49
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Determina fim das PPPs, terceirizações e compras das empresas no contexto das redes públicas de ensino; rejeição explícita do instrumento educacional.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Fim das Parcerias Público-Privadas (PPP), das terceirizações e da aquisição de materiais e serviços dessas empresas pelas redes públicas de ensino"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "A estatização do ensino privado e o ensino 100% público rejeitam provisão privada do ensino. Contudo, a tese não distingue essa gestão de PPP apenas de infraestrutura, modalidade sustentada em outro plano; a p7 não decide expressamente essa segunda possibilidade. Rebaixamento conservador por escopo, não mudança ideológica.",
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino."
+            }
+          ],
+          "inspected_pages": [
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "CONCORDA",
+          "reason": "Passagem adicional na p20: o novo programa gratuito Escola Brasil por Elas será integrado a PPPs para capacitação profissional. O enunciado vigente não se limita a escolas nem à educação básica; sob esse escopo amplo, a expansão de formação por PPP sustenta concordância. Não é evidência de privatização da gestão escolar.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "A Escola Brasil por Elas será o maior programa gratuito de capacitação feminina da América Latina, integrado aos cursos do Sistema S e a parcerias público-privadas."
+            }
+          ],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: As parcerias com o setor produtivo no capítulo de educação não definem contrato de PPP; o uso dessa sigla na infraestrutura geral não basta.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: Os projetos de qualificação e inclusão examinados não prescrevem PPP educacional.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Verbas só para ensino público, estatização do ensino pago e direção escolhida pela comunidade contradizem privatizar a prestação do ensino. Não decidem expressamente um contrato apenas de infraestrutura escolar pública; a tese ampla mistura os objetos. Rebaixamento conservador.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago"
+            }
+          ],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Manda ampliar PPPs em todos os serviços públicos e cita educação expressamente; não se restringiu a inferência da defesa genérica da iniciativa privada.",
+          "evidence": [
+            {
+              "page": 15,
+              "quote": "Ampliar as parcerias público-privadas em todos os serviços públicos, inclusive saúde e educação:"
+            }
+          ],
+          "inspected_pages": [
+            15,
+            24,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: As páginas sobre educação e formação não identificam expansão nem encerramento de PPPs.",
+          "evidence": [],
+          "inspected_pages": [
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Propõe ampliação de concessões e PPPs e inclui escolas entre a infraestrutura social. Sustenta a tese ampla, mas não prova apoio a delegar ensino ou gestão pedagógica.",
+          "evidence": [
+            {
+              "page": 47,
+              "quote": "9. Ampliação das concessões e parcerias público-privadas"
+            },
+            {
+              "page": 47,
+              "quote": "Manter um calendário permanente e previsível de leilões (dando continuidade ao Programa de Parcerias em Investimentos, o PPI) em rodovias, ferrovias, portos, aeroportos, saneamento, energia e infraestrutura social, como hospitais, escolas e iluminação pública."
+            }
+          ],
+          "inspected_pages": [
+            32,
+            33,
+            47
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e contexto: A p50 aborda PPPs de infraestrutura em geral; a p135 incentiva cooperativas educacionais e escolas comunitárias. Nenhuma combina explicitamente PPP com educação ou transferência de gestão escolar.",
+          "evidence": [],
+          "inspected_pages": [
+            49,
+            50,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            135,
+            189
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Critica expressamente PPPs na educação como apropriação de recursos e gestão privada das escolas; determina suspensão de verbas ao ensino privado. O contexto foi conferido na imagem para separar as colunas.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "recursos públicos através das PPP,"
+            },
+            {
+              "page": 22,
+              "quote": "É preciso romper com essa lógica de mercado na educação."
+            },
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado"
+            }
+          ],
+          "inspected_pages": [
+            21,
+            22,
+            23,
+            34,
+            49,
+            59
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "A concordância de Caiado é sobre infraestrutura; a de Flávio é sobre capacitação profissional. Não devem ser exibidas como a mesma proposta de gestão escolar.",
+        "Não foi mantida uma alternativa neste relatório: recortar para gestão ou para infraestrutura exigiria perder suportes que respondem ao outro objeto. O ganho bruto de um nome não resolve a validade do item.",
+        "CONDICIONAL_OU_MISTA, aqui, registra alcance parcial da evidência; não é meia concordância nem permissão comprovada de PPP de infraestrutura."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 22,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "NAO_ENCONTRADA": 6,
+        "DISCORDA": 2,
+        "CONDICIONAL_OU_MISTA": 2,
+        "CONCORDA": 3
+      }
+    },
+    {
+      "id": "BR26-T042",
+      "baseline_text": "O SUS deve contratar a capacidade ociosa de clínicas e hospitais privados para reduzir filas.",
+      "action": "reformulate",
+      "summary": "A contratação complementar para filas é a reformulação com ganho mais claro deste grupo: retira um qualificador não compartilhado por todos os planos favoráveis sem transformar a pergunta em uma meta genérica. Cobertura categórica passa de 6 para 8.",
+      "search_terms": [
+        "capacidade ociosa",
+        "horários ociosos",
+        "hospitais privados",
+        "clínicas privadas",
+        "contratar serviços",
+        "oferta de exames e cirurgias",
+        "privados contratados",
+        "reduzir filas",
+        "SUS 100% estatal"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Determina manter parceria com hospitais privados, trocando exames e cirurgias para o SUS por créditos financeiros ou dívidas; não condiciona essa oferta à capacidade ociosa. Há apoio ao instrumento mais amplo, mas falta o qualificador do original.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+            }
+          ],
+          "inspected_pages": [
+            34,
+            36,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas integrais e leitura dos contextos: Tecnologia e integração do histórico assistencial com hospitais não estabelecem compra de capacidade privada para filas.",
+          "evidence": [],
+          "inspected_pages": [
+            25,
+            26
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "O programa sustenta SUS 100% estatal e fim da gestão privada da saúde. A discordância com contratação de oferta privada decorre dessa definição integral do sistema, não de mero apoio genérico ao SUS público.",
+          "evidence": [
+            {
+              "page": 11,
+              "quote": "Defesa do sus público, universal, gratuito e 100% estatal"
+            },
+            {
+              "page": 11,
+              "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Propõe estatizar todo o setor privado de saúde e tornar público o sistema inteiro. Esse desenho é incompatível com usar estabelecimentos mantidos privados como prestadores contratados.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+            },
+            {
+              "page": 10,
+              "quote": "estatização de todo o setor privado de saúde"
+            }
+          ],
+          "inspected_pages": [
+            6,
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Contratação explícita de serviços e exames privados em horários ociosos para reduzir espera; coincide com o instrumento do original.",
+          "evidence": [
+            {
+              "page": 37,
+              "quote": "Para usar bem o que já existe, vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame"
+            }
+          ],
+          "inspected_pages": [
+            21,
+            37,
+            38
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas integrais e leitura dos contextos: Organização das filas, telemedicina e regulação não determinam contratar clínicas ou hospitais privados.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Mutirões e parceria com hospitais privados ociosos são propostos para absorver a demanda reprimida. A p9 sustenta o objeto do original diretamente.",
+          "evidence": [
+            {
+              "page": 9,
+              "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde."
+            }
+          ],
+          "inspected_pages": [
+            9,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas integrais e leitura dos contextos: Saúde pública e gratuita, críticas ao lucro e proposta de construir hospitais não decidem contratação complementar de atendimento. Não se inferiu rejeição de cada contrato privado.",
+          "evidence": [],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "A p60 associa SUS, clínicas e hospitais privados, consultas/exames/cirurgias e capacidade ociosa para reduzir filas; apoio direto.",
+          "evidence": [
+            {
+              "page": 60,
+              "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e hospitais privados para realização de consultas, exames e cirurgias, com metas cla- ras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa dessas unidades de saúde privadas."
+            }
+          ],
+          "inspected_pages": [
+            15,
+            57,
+            59,
+            60,
+            61
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas integrais e leitura dos contextos: Metas e contratos de gestão citados não identificam prestador privado nem compra de sua capacidade ociosa.",
+          "evidence": [],
+          "inspected_pages": [
+            34,
+            35
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "No mesmo plano de redução de espera, acompanha vagas ociosas e mobiliza hospitais privados contratados quando necessário. Não diz que a compra privada se limita à capacidade ociosa nem vincula expressamente os dois pontos; mantida condição no original.",
+          "evidence": [
+            {
+              "page": 77,
+              "quote": "Acompanhar filas, capacidade ociosa, cancelamentos, absenteísmo, salas cirúrgicas, equipamentos, leitos e distribuição territorial da demanda."
+            },
+            {
+              "page": 77,
+              "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+            }
+          ],
+          "inspected_pages": [
+            44,
+            47,
+            58,
+            59,
+            61,
+            62,
+            76,
+            77
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Buscas integrais e leitura dos contextos: Cooperativas de saúde (p135), organização digital, triagem e a plataforma pública das p161–164 não especificam compra de atendimento privado pelo SUS.",
+          "evidence": [],
+          "inspected_pages": [
+            43,
+            44,
+            135,
+            161,
+            162,
+            163,
+            164
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "O compromisso de toda a rede sanitária com gestão direta pública, junto ao SUS 100% estatal, contradiz comprar atendimento de rede mantida privada. O trecho visual confirma o alcance de toda a rede; não se concluiu só da defesa genérica de universalidade.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "Fortalecimento e Unificação do SUS 100% Estatal"
+            },
+            {
+              "page": 20,
+              "quote": "e cooperativas empresariais. Toda"
+            },
+            {
+              "page": 20,
+              "quote": "a rede sanitária deve ser de gestão"
+            },
+            {
+              "page": 20,
+              "quote": "direta e pública. Fim da exploração"
+            }
+          ],
+          "inspected_pages": [
+            19,
+            20
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "contratação complementar",
+          "text": "O SUS deve poder contratar atendimentos da rede privada para reduzir filas.",
+          "recommendation": "recommend",
+          "reason": "Remove a exigência de a capacidade contratada estar ociosa, preservando financiamento público de atendimento privado como decisão concreta. Lula e Caiado passam de condicionais a concordantes, pois propõem esse recurso, inclusive quando necessário e por arranjos financeiros distintos. Mantém os seis categóricos anteriores: 8 ao todo, 5 concordam e 3 discordam. Não implica transferir gestão de unidade pública nem contratar toda a assistência.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "CONCORDA",
+              "reason": "A continuidade da parceria com hospitais privados para oferecer exames e cirurgias ao SUS, por créditos ou dívidas, sustenta a possibilidade de contratar essa oferta. A alternativa não exige ociosidade nem uma forma exclusiva de pagamento.",
+              "evidence": [
+                {
+                  "page": 37,
+                  "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+                }
+              ],
+              "inspected_pages": [
+                34,
+                36,
+                37,
+                38
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Buscas integrais e leitura dos contextos: Tecnologia e integração do histórico assistencial com hospitais não estabelecem compra de capacidade privada para filas.",
+              "evidence": [],
+              "inspected_pages": [
+                25,
+                26
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "DISCORDA",
+              "reason": "O programa sustenta SUS 100% estatal e fim da gestão privada da saúde. A discordância com contratação de oferta privada decorre dessa definição integral do sistema, não de mero apoio genérico ao SUS público.",
+              "evidence": [
+                {
+                  "page": 11,
+                  "quote": "Defesa do sus público, universal, gratuito e 100% estatal"
+                },
+                {
+                  "page": 11,
+                  "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+                }
+              ],
+              "inspected_pages": [
+                10,
+                11
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "DISCORDA",
+              "reason": "Propõe estatizar todo o setor privado de saúde e tornar público o sistema inteiro. Esse desenho é incompatível com usar estabelecimentos mantidos privados como prestadores contratados.",
+              "evidence": [
+                {
+                  "page": 6,
+                  "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+                },
+                {
+                  "page": 10,
+                  "quote": "estatização de todo o setor privado de saúde"
+                }
+              ],
+              "inspected_pages": [
+                6,
+                7,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "CONCORDA",
+              "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+              "evidence": [
+                {
+                  "page": 37,
+                  "quote": "Para usar bem o que já existe, vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame"
+                }
+              ],
+              "inspected_pages": [
+                21,
+                37,
+                38
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Buscas integrais e leitura dos contextos: Organização das filas, telemedicina e regulação não determinam contratar clínicas ou hospitais privados.",
+              "evidence": [],
+              "inspected_pages": [
+                5,
+                11,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "CONCORDA",
+              "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+              "evidence": [
+                {
+                  "page": 9,
+                  "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde."
+                }
+              ],
+              "inspected_pages": [
+                9,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Buscas integrais e leitura dos contextos: Saúde pública e gratuita, críticas ao lucro e proposta de construir hospitais não decidem contratação complementar de atendimento. Não se inferiu rejeição de cada contrato privado.",
+              "evidence": [],
+              "inspected_pages": [
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "CONCORDA",
+              "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+              "evidence": [
+                {
+                  "page": 60,
+                  "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e hospitais privados para realização de consultas, exames e cirurgias, com metas cla- ras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa dessas unidades de saúde privadas."
+                }
+              ],
+              "inspected_pages": [
+                15,
+                57,
+                59,
+                60,
+                61
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Buscas integrais e leitura dos contextos: Metas e contratos de gestão citados não identificam prestador privado nem compra de sua capacidade ociosa.",
+              "evidence": [],
+              "inspected_pages": [
+                34,
+                35
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "CONCORDA",
+              "reason": "O plano de redução de espera admite explicitamente hospitais privados contratados quando necessário. A possibilidade condicional cabe em “deve poder”, sem imputar terceirização irrestrita.",
+              "evidence": [
+                {
+                  "page": 77,
+                  "quote": "Oferta regional integrada e contratualização inteligente."
+                },
+                {
+                  "page": 77,
+                  "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+                }
+              ],
+              "inspected_pages": [
+                44,
+                47,
+                58,
+                59,
+                61,
+                62,
+                76,
+                77
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Buscas integrais e leitura dos contextos: Cooperativas de saúde (p135), organização digital, triagem e a plataforma pública das p161–164 não especificam compra de atendimento privado pelo SUS.",
+              "evidence": [],
+              "inspected_pages": [
+                43,
+                44,
+                135,
+                161,
+                162,
+                163,
+                164
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "DISCORDA",
+              "reason": "O compromisso de toda a rede sanitária com gestão direta pública, junto ao SUS 100% estatal, contradiz comprar atendimento de rede mantida privada. O trecho visual confirma o alcance de toda a rede; não se concluiu só da defesa genérica de universalidade.",
+              "evidence": [
+                {
+                  "page": 20,
+                  "quote": "Fortalecimento e Unificação do SUS 100% Estatal"
+                },
+                {
+                  "page": 20,
+                  "quote": "e cooperativas empresariais. Toda"
+                },
+                {
+                  "page": 20,
+                  "quote": "a rede sanitária deve ser de gestão"
+                },
+                {
+                  "page": 20,
+                  "quote": "direta e pública. Fim da exploração"
+                }
+              ],
+              "inspected_pages": [
+                19,
+                20
+              ]
+            }
+          ],
+          "counts": {
+            "CONCORDA": 5,
+            "NAO_ENCONTRADA": 5,
+            "DISCORDA": 3
+          },
+          "categorical_gains": [
+            "280002542548",
+            "280002551932"
+          ],
+          "categorical_losses": []
+        }
+      ],
+      "limitations": [
+        "A alternativa é mais ampla: não reaproveitar respostas antigas sobre ociosidade.",
+        "As posições contrárias de Hertz, Edmilson e Samara decorrem do projeto de sistema integralmente estatal/público. Não se afirma que detalharam proibição imediata de cada compra transitória, pois os planos não especificam cronograma de transição.",
+        "A explicação deve distinguir comprar atendimento de transferir a gestão de um hospital público. A classificação de apoio não informa preço, contratualização, prazo ou critérios de necessidade."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 20,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "CONDICIONAL_OU_MISTA": 2,
+        "NAO_ENCONTRADA": 5,
+        "DISCORDA": 3,
+        "CONCORDA": 3
+      }
+    },
+    {
+      "id": "BR26-T043",
+      "baseline_text": "Quando não houver vaga pública em creche, a família deve receber um voucher temporário para uma creche privada credenciada, até surgir a vaga.",
+      "action": "reformulate",
+      "summary": "A alternativa de financiamento de vagas privadas recupera a proposta de parcerias em creches de Zema, mas deixa de perguntar especificamente por vouchers e temporariedade. A direção redistributiva do financiamento é preservada; a troca de instrumento deve ficar explícita.",
+      "search_terms": [
+        "voucher",
+        "voucher-creche",
+        "creche",
+        "pré-escola",
+        "vagas",
+        "conveniamento",
+        "parcerias com entidades privadas",
+        "verbas públicas",
+        "estatização do ensino"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Expansão pública de creches/escolas e obras do Novo PAC não decide vouchers nem compra de vagas privadas.",
+          "evidence": [],
+          "inspected_pages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. As p15 e p49 preveem manter ou instalar escolas e creches em programas territoriais; não informam voucher nem financiamento de matrícula privada.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            30,
+            31,
+            32,
+            49
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Proíbe verbas aos grandes empresários da educação e propõe expansão pública, mas não decide auxílio temporário em toda instituição privada, incluindo entidades pequenas ou comunitárias. Mantida classificação condicional, sem inferir rejeição universal de vouchers.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+            },
+            {
+              "page": 12,
+              "quote": "Ampliação de vagas em creches, escolas e universidades públicas"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A estatização do ensino privado e o ensino 100% público, explicitamente desde creches, são incompatíveis com financiar matrícula em rede mantida privada.",
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino."
+            }
+          ],
+          "inspected_pages": [
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O plano prevê expressamente o voucher e a condição de falta de vaga pública. A p21 nomeia creche privada credenciada e duração até surgir vaga pública.",
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Onde não houver vaga na rede pública, a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir"
+            }
+          ],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A p3 propõe creches e apoio a famílias vulneráveis; o capítulo educacional não especifica voucher ou vaga privada paga pelo governo.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A rede de cuidado e creche especializada para crianças autistas na p34 não determina voucher nem matrícula privada financiada.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A regra explícita de verbas públicas somente para ensino público e estatização do ensino pago rejeita financiar matrícula em escola privada.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago"
+            }
+          ],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A p24 usa vouchers para qualificação de trabalhadores, outro público. A p50 prevê parcerias com entidades privadas para ampliar creches, mas não fixa benefício entregue à família, condição de falta de vaga, credenciamento e temporariedade. Não foi convertido apoio à parceria em apoio ao voucher descrito.",
+          "evidence": [
+            {
+              "page": 24,
+              "quote": "Implementar programas que conectem trabalhadores a cursos técnicos em áreas com vagas reais abertas, usando vouchers e parcerias com o setor privado e o Siste- ma S"
+            }
+          ],
+          "inspected_pages": [
+            15,
+            24,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Não localizada proposta de voucher ou subsídio de matrícula privada nos capítulos examinados; metas educacionais não esclarecem o instrumento.",
+          "evidence": [],
+          "inspected_pages": [
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A p32 prevê ampliar creches combinando construção, conveniamento regulado e apoio a municípios; não identifica voucher entregue à família. Tampouco explicita que o convênio é com creche privada.",
+          "evidence": [],
+          "inspected_pages": [
+            32,
+            33,
+            47
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Incentiva escolas comunitárias e cooperativas educacionais na p135, mas não afirma voucher ou uso de recursos públicos para custear vagas privadas.",
+          "evidence": [],
+          "inspected_pages": [
+            49,
+            50,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            135,
+            189
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A suspensão explícita de verbas públicas para ensino privado contradiz custear matrícula privada; o contexto inclui a educação infantil. Não se usou só a preferência por ampliar vagas públicas.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado"
+            },
+            {
+              "page": 22,
+              "quote": "Destinação de pelo menos 10% do PIB"
+            },
+            {
+              "page": 22,
+              "quote": "nacional para a educação pública, desde"
+            },
+            {
+              "page": 22,
+              "quote": "a educação infantil até a pós-graduação."
+            }
+          ],
+          "inspected_pages": [
+            21,
+            22,
+            23,
+            34,
+            49,
+            59
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "financiamento de vagas privadas",
+          "text": "Recursos públicos devem poder financiar vagas em creches privadas.",
+          "recommendation": "recommend",
+          "reason": "Troca o voucher temporário entregue à família pela possibilidade de financiar vagas privadas, sem fixar o repasse por família ou por instituição. Recupera Zema pela proposta de ampliar creches em parceria com entidades privadas. Preserva as quatro categóricas anteriores; 5 categóricas, 2 concordantes e 3 discordantes. A escolha financiamento público de oferta privada continua concreta; expansão genérica de creches não é suficiente.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Expansão pública de creches/escolas e obras do Novo PAC não decide vouchers nem compra de vagas privadas.",
+              "evidence": [],
+              "inspected_pages": [
+                31,
+                32,
+                33,
+                34
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. As p15 e p49 preveem manter ou instalar escolas e creches em programas territoriais; não informam voucher nem financiamento de matrícula privada.",
+              "evidence": [],
+              "inspected_pages": [
+                15,
+                30,
+                31,
+                32,
+                49
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "CONDICIONAL_OU_MISTA",
+              "reason": "A restrição explícita dirige-se aos grandes empresários; não resolve financiar vaga de creche privada pequena ou comunitária. Mantida condição, sem ampliar automaticamente o alcance da proibição.",
+              "evidence": [
+                {
+                  "page": 12,
+                  "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+                },
+                {
+                  "page": 12,
+                  "quote": "Ampliação de vagas em creches, escolas e universidades públicas"
+                }
+              ],
+              "inspected_pages": [
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "DISCORDA",
+              "reason": "O ensino inteiramente público desde a creche e a estatização do privado são incompatíveis com financiar vagas em creche que permaneça privada.",
+              "evidence": [
+                {
+                  "page": 7,
+                  "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino."
+                }
+              ],
+              "inspected_pages": [
+                7,
+                10
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "CONCORDA",
+              "reason": "O voucher-creche expressamente proposto financia acesso à rede privada credenciada. Sustenta a possibilidade de financiamento, preservadas no plano a falta de vaga pública e a duração temporária.",
+              "evidence": [
+                {
+                  "page": 21,
+                  "quote": "Onde não houver vaga na rede pública, a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir"
+                }
+              ],
+              "inspected_pages": [
+                20,
+                21,
+                34,
+                35,
+                36
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. A p3 propõe creches e apoio a famílias vulneráveis; o capítulo educacional não especifica voucher ou vaga privada paga pelo governo.",
+              "evidence": [],
+              "inspected_pages": [
+                3,
+                7,
+                8
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. A rede de cuidado e creche especializada para crianças autistas na p34 não determina voucher nem matrícula privada financiada.",
+              "evidence": [],
+              "inspected_pages": [
+                15,
+                16,
+                17,
+                34
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "DISCORDA",
+              "reason": "Reserva expressamente verbas públicas ao ensino público; isso exclui financiar vagas em creches privadas.",
+              "evidence": [
+                {
+                  "page": 5,
+                  "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+                },
+                {
+                  "page": 5,
+                  "quote": "Estatização do ensino pago"
+                }
+              ],
+              "inspected_pages": [
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "CONCORDA",
+              "reason": "Na p50, a ação governamental prioriza parceria com entidades privadas e comunitárias, com ou sem fins lucrativos, para ampliar vagas em creches e pré-escolas, com transparência no uso dos recursos. Isso sustenta financiar essa oferta; não foi atribuído voucher familiar nem limite até surgir vaga pública.",
+              "evidence": [
+                {
+                  "page": 50,
+                  "quote": "Ampliar a oferta de vagas em creches e pré-escolas com foco em qualidade e acesso, priorizando parcerias com o setor privado:"
+                },
+                {
+                  "page": 50,
+                  "quote": "por meio do fortalecimento das redes públicas e de parcerias com entidades privadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qua- lidade, a transparência no uso dos recursos e metas claras de atendimento, apren- dizagem e desenvolvimento."
+                }
+              ],
+              "inspected_pages": [
+                15,
+                24,
+                50,
+                51,
+                52,
+                53
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Não localizada proposta de voucher ou subsídio de matrícula privada nos capítulos examinados; metas educacionais não esclarecem o instrumento.",
+              "evidence": [],
+              "inspected_pages": [
+                35,
+                36,
+                37
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Conveniar a expansão de creches não identifica por si só a natureza privada da instituição. Mantida ausência quanto ao financiamento de creches privadas, sem inferir parceiro não nomeado.",
+              "evidence": [],
+              "inspected_pages": [
+                32,
+                33,
+                47
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Incentiva escolas comunitárias e cooperativas educacionais na p135, mas não afirma voucher ou uso de recursos públicos para custear vagas privadas.",
+              "evidence": [],
+              "inspected_pages": [
+                49,
+                50,
+                68,
+                69,
+                70,
+                71,
+                72,
+                73,
+                74,
+                75,
+                76,
+                77,
+                78,
+                135,
+                189
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "DISCORDA",
+              "reason": "A suspensão de recursos públicos para ensino privado cobre educação infantil no contexto da página; contrapõe-se ao instrumento.",
+              "evidence": [
+                {
+                  "page": 22,
+                  "quote": "Suspensão do envio de verbas públicas para o ensino privado"
+                },
+                {
+                  "page": 22,
+                  "quote": "Destinação de pelo menos 10% do PIB"
+                },
+                {
+                  "page": 22,
+                  "quote": "nacional para a educação pública, desde"
+                },
+                {
+                  "page": 22,
+                  "quote": "a educação infantil até a pós-graduação."
+                }
+              ],
+              "inspected_pages": [
+                21,
+                22,
+                23,
+                34,
+                49,
+                59
+              ]
+            }
+          ],
+          "counts": {
+            "NAO_ENCONTRADA": 7,
+            "CONDICIONAL_OU_MISTA": 1,
+            "DISCORDA": 3,
+            "CONCORDA": 2
+          },
+          "categorical_gains": [
+            "280002539826"
+          ],
+          "categorical_losses": []
+        }
+      ],
+      "limitations": [
+        "A concordância é sobre permitir financiamento em alguma modalidade; não implica financiar qualquer creche, abandonar expansão pública ou tornar o repasse permanente.",
+        "A proposta de Zema é parceria governamental para oferta e transparência de recursos; não detalha forma, preço ou beneficiário do repasse. A classificação não deve ser anunciada como compromisso explícito com voucher.",
+        "A ausência de Caiado permanece: conveniamento regulado não explicita se o parceiro é uma creche privada.",
+        "Não reaproveitar respostas históricas, porque usuários podem apoiar convênios com entidades e rejeitar vouchers, ou distinguir permanência e transitoriedade."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 22,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "NAO_ENCONTRADA": 8,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 3,
+        "CONCORDA": 1
+      }
+    },
+    {
+      "id": "BR26-T044",
+      "baseline_text": "Quando faltar vaga na rede pública escolar, a família deve receber um voucher para matricular o filho em outra escola.",
+      "action": "remove_from_shortlist",
+      "summary": "Recomenda-se retirar da shortlist quando a pergunta sobre financiamento de creches for escolhida. O perfil categórico original repete T043 (um apoio, três rejeições e a mesma condição), e a falta de delimitação de “outra escola” amplia a ambiguidade. A revisão não encontrou uma redação de voucher escolar que recuperasse outro apoio explícito sem trocar de instrumento.",
+      "search_terms": [
+        "voucher",
+        "voucher educacional",
+        "vaga pública",
+        "outra escola",
+        "escolas conveniadas",
+        "verbas públicas",
+        "ensino privado"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Expansão pública de creches/escolas e obras do Novo PAC não decide vouchers nem compra de vagas privadas.",
+          "evidence": [],
+          "inspected_pages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. As p15 e p49 preveem manter ou instalar escolas e creches em programas territoriais; não informam voucher nem financiamento de matrícula privada.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            30,
+            31,
+            32,
+            49
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Proíbe verbas aos grandes empresários da educação e propõe expansão pública, mas não decide auxílio temporário em toda instituição privada, incluindo entidades pequenas ou comunitárias. Mantida classificação condicional, sem inferir rejeição universal de vouchers.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+            },
+            {
+              "page": 12,
+              "quote": "Ampliação de vagas em creches, escolas e universidades públicas"
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A estatização do ensino privado e o ensino 100% público, explicitamente desde creches, são incompatíveis com financiar matrícula em rede mantida privada.",
+          "evidence": [
+            {
+              "page": 7,
+              "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino."
+            }
+          ],
+          "inspected_pages": [
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O plano prevê expressamente o voucher e a condição de falta de vaga pública. A p36 nomeia voucher educacional e outra escola.",
+          "evidence": [
+            {
+              "page": 36,
+              "quote": "onde faltar vaga na rede pública, a família receberá um voucher educacional para matricular o filho em outra escola"
+            }
+          ],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A p3 propõe creches e apoio a famílias vulneráveis; o capítulo educacional não especifica voucher ou vaga privada paga pelo governo.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A rede de cuidado e creche especializada para crianças autistas na p34 não determina voucher nem matrícula privada financiada.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A regra explícita de verbas públicas somente para ensino público e estatização do ensino pago rejeita financiar matrícula em escola privada.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+            },
+            {
+              "page": 5,
+              "quote": "Estatização do ensino pago"
+            }
+          ],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A p24 usa voucher para cursos técnicos de trabalhadores, outro público. A p53 propõe escolas conveniadas e escolha familiar, sem voucher por falta de vaga.",
+          "evidence": [
+            {
+              "page": 24,
+              "quote": "Implementar programas que conectem trabalhadores a cursos técnicos em áreas com vagas reais abertas, usando vouchers e parcerias com o setor privado e o Siste- ma S"
+            }
+          ],
+          "inspected_pages": [
+            15,
+            24,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Não localizada proposta de voucher ou subsídio de matrícula privada nos capítulos examinados; metas educacionais não esclarecem o instrumento.",
+          "evidence": [],
+          "inspected_pages": [
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. A p32 prevê ampliar creches combinando construção, conveniamento regulado e apoio a municípios; não identifica voucher entregue à família. Tampouco explicita que o convênio é com creche privada.",
+          "evidence": [],
+          "inspected_pages": [
+            32,
+            33,
+            47
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral por voucher, creche, conveniamento e financiamento de vagas, com leitura contextual. Incentiva escolas comunitárias e cooperativas educacionais na p135, mas não afirma voucher ou uso de recursos públicos para custear vagas privadas.",
+          "evidence": [],
+          "inspected_pages": [
+            49,
+            50,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            135,
+            189
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "A suspensão explícita de verbas públicas para ensino privado contradiz custear matrícula privada; o contexto inclui a educação infantil. Não se usou só a preferência por ampliar vagas públicas.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Suspensão do envio de verbas públicas para o ensino privado"
+            }
+          ],
+          "inspected_pages": [
+            21,
+            22,
+            23,
+            34,
+            49,
+            59
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "Educação infantil e escolar geral não são equivalentes: a retirada é decisão de redundância do questionário curto, não uma fusão de posições ou descarte do item histórico.",
+        "O voucher de Zema é para qualificação de trabalhadores; escolas conveniadas não provam voucher por falta de vaga.",
+        "O enunciado não nomeia rede privada, embora esse seja o sentido do instrumento no contexto da fonte; respostas antigas não devem ser reinterpretadas como apoio a qualquer pagamento direto a escola privada."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 22,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "NAO_ENCONTRADA": 8,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 3,
+        "CONCORDA": 1
+      }
+    },
+    {
+      "id": "BR26-T065",
+      "baseline_text": "O Novo Ensino Médio deve ser revogado.",
+      "action": "remove_from_shortlist",
+      "summary": "As duas antigas discordâncias não são suficientemente específicas: Lula apresenta uma lei aprovada e Cury denomina seu próprio projeto “Novo Ensino Médio”. Reclassificadas como condicionais, restam duas concordâncias e nenhuma discordância categórica. Recomenda-se retirar da shortlist até definir qual reforma e qual decisão substantiva se pergunta.",
+      "search_terms": [
+        "Novo Ensino Médio",
+        "nova lei do ensino médio",
+        "revogação",
+        "reformas",
+        "itinerários",
+        "formação geral básica",
+        "BNCC"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "A p32 apresenta como realização a aprovação de uma nova lei para reequilibrar formação geral e profissional. O compromisso futuro expresso no parágrafo é continuar o Pé-de-Meia. O balanço favorável é evidência relacionada, mas não é decisão inequívoca contra revogar um objeto denominado apenas “Novo Ensino Médio”; reclassificado como condicional por tempo e identificação do objeto.",
+          "evidence": [
+            {
+              "page": 32,
+              "quote": "Aprovamos a nova lei do ensino médio, buscando reequilibrar a formação geral básica e a formação profissional"
+            }
+          ],
+          "inspected_pages": [
+            31,
+            32,
+            33,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: A reforma e a priorização da educação básica não identificam revogação nem conservação do Novo Ensino Médio.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            30,
+            31,
+            32,
+            49
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O programa nomeia Novo Ensino Médio e pede revogação de suas propostas curriculares. Apoio explícito ao objeto textual, sem necessidade de inferir de críticas genéricas.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Revogação das propostas curriculares elaboradas pelos grandes empresários da educação e fundações privadas (BNCC e Novo Ensino Médio)."
+            }
+          ],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: O programa de educação pública, cotas e valorização docente não decide a revogação desse desenho curricular.",
+          "evidence": [],
+          "inspected_pages": [
+            7,
+            10
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: Ampliação de formação técnica e bolsa/formação para emprego não fixa revogar ou manter a reforma identificada pelo nome.",
+          "evidence": [],
+          "inspected_pages": [
+            20,
+            21,
+            34,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: As propostas de aprendizagem, ensino integral e vínculo com formação profissional não decidem a revogação.",
+          "evidence": [],
+          "inspected_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: As propostas de preparação profissional e inclusão não equivalem a uma decisão sobre o modelo legal/curricular nomeado na tese.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            16,
+            17,
+            34
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: A p5 manda revogar reformas do “regime golpista”, mas não identifica qual reforma do ensino médio, seu texto ou versão. Sem essa ligação não se atribuiu apoio categórico à revogação perguntada.",
+          "evidence": [],
+          "inspected_pages": [
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: A agenda de educação básica e técnica das p50–53 não manda revogar nem preservar o desenho sob o nome Novo Ensino Médio.",
+          "evidence": [],
+          "inspected_pages": [
+            15,
+            24,
+            50,
+            51,
+            52,
+            53
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: As páginas educacionais examinadas não decidem a revogação da reforma.",
+          "evidence": [],
+          "inspected_pages": [
+            35,
+            36,
+            37
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Busca integral e leitura contextual: Implementação de currículo e itinerários na p33 não identifica a versão da reforma nem determina preservar o conjunto do modelo. Não se converteu menção a itinerários em oposição à revogação.",
+          "evidence": [],
+          "inspected_pages": [
+            32,
+            33,
+            47
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Nas p75–77, “Novo Ensino Médio” é o título do modelo que o próprio programa quer construir, com empreendedorismo, formação emocional e técnica. Não identifica texto legal vigente cuja revogação rejeite. Defender esse novo projeto não prova conservar a reforma visada pela pergunta; reclassificado como condicional por escopo.",
+          "evidence": [
+            {
+              "page": 76,
+              "quote": "O Novo Ensino Médio deve formar estudantes capazes de aprender continuamente, trabalhar em equipe, resolver problemas complexos, liderar projetos e transformar conhecimento em soluções para a sociedade."
+            },
+            {
+              "page": 76,
+              "quote": "Nosso compromisso é construir um Ensino Médio que integre formação acadêmica de qualidade com desenvolvimento humano e preparação profissional."
+            },
+            {
+              "page": 77,
+              "quote": "O Novo Ensino Médio não será apenas uma mudança curricular. Será uma mudança de mentalidade."
+            }
+          ],
+          "inspected_pages": [
+            49,
+            50,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            135,
+            189
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "O bloco educacional da p22 tem proposta expressa de revogar o Novo Ensino Médio. A imagem foi conferida para separar o item de propostas da coluna vizinha.",
+          "evidence": [
+            {
+              "page": 22,
+              "quote": "Revogação do Novo Ensino Médio"
+            }
+          ],
+          "inspected_pages": [
+            21,
+            22,
+            23,
+            34,
+            49,
+            59
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "Não é evidência de que Lula ou Cury apoiem revogação; a revisão apenas retira a certeza de que a rejeitam.",
+        "A pergunta mistura rótulo político, versão normativa e desenho curricular. Escolher componentes como itinerários ou carga horária seria substituição substantiva a pesquisar, não paráfrase pronta baseada nesses trechos.",
+        "Não foi mantida uma alternativa sem capacidade de classificar o mesmo objeto para treze candidaturas. Não foi verificada aqui a cronologia legislativa externa: a conclusão é restrita ao que os planos identificam."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 22,
+          "reason": "PDF renderizado e imagem inspecionada; a extração layout intercala colunas e a raw repete linhas. Conferidos ordem, escopo e continuidade do trecho no bloco relevante."
+        }
+      ],
+      "review_counts": {
+        "CONDICIONAL_OU_MISTA": 2,
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 2
+      }
+    }
+  ]
+}

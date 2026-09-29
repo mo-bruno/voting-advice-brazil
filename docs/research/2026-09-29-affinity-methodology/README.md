@@ -9,6 +9,8 @@ Este é um estudo e uma recomendação de produto; não é uma metodologia nova 
 
 Continuação após a orientação do usuário: [proposta de ranking beta compartilhável, sem percentual em destaque](PROPOSTA_BETA.md). Essa proposta preserva o ranking como requisito e analisa a exclusão transparente de candidaturas com cobertura insuficiente.
 
+Nova etapa concluída: [revisão das 30 perguntas contra os 13 planos e de 12 alternativas](reformulation/README.md), com 546 registros e um rascunho provisório de 16 itens. Essa etapa reexamina fontes e classificações; as contagens deste relatório inicial continuam descrevendo a edição publicada, sem incorporar as correções propostas na revisão posterior.
+
 ## Objetivo e escopo
 
 O pedido é permitir que a pessoa se reconheça nas questões e compare suas respostas com os planos oficiais entregues ao TSE, sem transformar uma única concordância em uma promessa de alinhamento global. Redução de perguntas e mudanças matemáticas são meios possíveis, não metas previamente fixadas.
