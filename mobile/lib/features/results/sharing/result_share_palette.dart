@@ -128,4 +128,13 @@ enum ResultSharePalette {
   final Color beam;
   final Color edge;
   final Color circle;
+
+  /// A marca permanece neutra, inclusive nas paletas coloridas.
+  Color get mark =>
+      background.computeLuminance() > .4 ? Colors.black : Colors.white;
+
+  // A luz continua branca nos fundos claros; escurecê-los diminuiria o
+  // contraste dos textos. Somente o símbolo usa a versão inversa.
+  Color get beamOverlay => Colors.white.withValues(alpha: .075);
+  Color get beamEdgeOverlay => Colors.white.withValues(alpha: .035);
 }

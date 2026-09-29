@@ -11,6 +11,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../../core/branding/farol_mark.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/features/feature_flags.dart';
 import '../../core/shell/main_shell.dart';
@@ -194,17 +195,28 @@ class _BrandedDrawerHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DrawerHeader(
-      margin: EdgeInsets.zero,
-      padding: const EdgeInsets.all(16),
+    return Container(
+      width: double.infinity,
+      constraints: BoxConstraints(
+        minHeight: 160 + MediaQuery.paddingOf(context).top,
+      ),
+      padding: EdgeInsets.fromLTRB(
+        16,
+        16 + MediaQuery.paddingOf(context).top,
+        16,
+        16,
+      ),
       decoration: const BoxDecoration(
         color: AppTheme.background,
         border: Border(bottom: BorderSide(color: AppTheme.outlineVariant)),
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          const FarolMark(size: 32),
+          const SizedBox(height: 10),
           const Text(
             'FAROL\nPOLÍTICO',
             style: TextStyle(
@@ -259,6 +271,7 @@ void _showAbout(
   _showNote(
     context,
     title: 'Sobre o Farol Político',
+    showBrand: true,
     body: 'O quiz compara suas respostas com propostas publicadas por '
         'candidatos nas eleições de 2026. $followDescription\n\n'
         'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
@@ -298,12 +311,14 @@ void _showNote(
   BuildContext context, {
   required String title,
   required String body,
+  bool showBrand = false,
 }) {
   showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
       backgroundColor: AppTheme.surfaceContainer,
       shape: const RoundedRectangleBorder(),
+      icon: showBrand ? const Center(child: FarolMark(size: 40)) : null,
       title: Text(title, style: Theme.of(context).textTheme.headlineSmall),
       content: Text(body, style: Theme.of(context).textTheme.bodyMedium),
       actions: [

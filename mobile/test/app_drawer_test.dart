@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
@@ -15,6 +18,20 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// mostra o que o app ja carregou. Estes testes cobrem a montagem e a fiacao —
 /// os estados de cada bloco tem arquivo proprio.
 void main() {
+  setUpAll(() async {
+    for (final font in {
+      'Inter_regular': 'Regular',
+      'Inter_600': 'SemiBold',
+      'Inter_800': 'ExtraBold',
+    }.entries) {
+      final bytes = await File('test/fixtures/fonts/Inter-${font.value}.ttf')
+          .readAsBytes();
+      await (FontLoader(font.key)
+            ..addFont(Future.value(ByteData.sublistView(bytes))))
+          .load();
+    }
+  });
+
   setUp(() {
     GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({
@@ -55,6 +72,7 @@ void main() {
     WidgetTester tester, {
     bool iotEnabled = true,
     bool politicianFollowEnabled = true,
+    double textScale = 1,
   }) async {
     // Tela de celular de verdade. Na superficie padrao (800x600) o terceiro
     // bloco cai abaixo da dobra e a ListView nem chega a construi-lo — a
@@ -67,6 +85,11 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         theme: AppTheme.dark,
+        builder: (context, child) => MediaQuery(
+          data: MediaQuery.of(context)
+              .copyWith(textScaler: TextScaler.linear(textScale)),
+          child: child!,
+        ),
         routes: {
           '/': (_) => Scaffold(
                 drawer: AppDrawer(
@@ -95,6 +118,19 @@ void main() {
     expect(find.text('ACOMPANHANDO'), findsOneWidget);
     expect(find.text('COMPARAÇÃO DOS PLANOS'), findsOneWidget);
     expect(find.text('SOBRE'), findsOneWidget);
+  });
+
+  testWidgets('marca da gaveta cabe com texto ampliado', (tester) async {
+    await openDrawer(tester, iotEnabled: false, textScale: 1.3);
+    expect(find.text('FAROL\nPOLÍTICO'), findsOneWidget);
+    expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('marca da gaveta histórica também acompanha o texto ampliado',
+      (tester) async {
+    await openDrawer(tester, iotEnabled: true, textScale: 1.5);
+    expect(find.text('FAROL\nPOLÍTICO'), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 
   testWidgets('nao repete os destinos que vivem na barra inferior', (

@@ -1,23 +1,25 @@
 {
-    "name": "guia_eleitoral",
-    "short_name": "guia_eleitoral",
+    "name": "Farol Político",
+    "short_name": "Farol Político",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#131313",
+    "theme_color": "#131313",
+    "description": "Descubra sua afinidade com as propostas para a Presidência de 2026.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "icons/Icon-512.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any"
         },
         {
             "src": "icons/Icon-maskable-192.png",

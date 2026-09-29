@@ -13,6 +13,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../branding/farol_wordmark.dart';
 import '../shell/shell_drawer_scope.dart';
 import 'responsive_layout.dart';
 
@@ -78,6 +79,9 @@ class AppScaffold extends StatelessWidget {
       fontWeight: FontWeight.w900,
       letterSpacing: 1.5,
     );
+    final titleWidget = title == 'FAROL POLÍTICO' || title == 'FAROL POLITICO'
+        ? FarolWordmark(label: title)
+        : Text(title, style: titleStyle);
 
     return Scaffold(
       // Sem `drawer`: a gaveta e uma so e vive no Scaffold do MainShell, para
@@ -87,12 +91,12 @@ class AppScaffold extends StatelessWidget {
           : AppBar(
               automaticallyImplyLeading: false,
               title: subtitle == null
-                  ? Text(title, style: titleStyle)
+                  ? titleWidget
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Text(title, style: titleStyle),
+                        titleWidget,
                         Text(subtitle!,
                             style: Theme.of(context).textTheme.bodySmall),
                       ],

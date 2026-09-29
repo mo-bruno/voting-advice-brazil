@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/branding/farol_wordmark.dart';
 import '../../core/link/link_opener.dart';
 import '../../core/layout/responsive_layout.dart';
 import '../../core/theme/app_theme.dart';
@@ -242,16 +243,7 @@ class _TopBar extends StatelessWidget {
             onPressed: ShellDrawerScope.maybeOf(context),
           ),
           const Expanded(
-            child: Text(
-              'FAROL POLÍTICO',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w900,
-                letterSpacing: 1.5,
-                color: AppTheme.primary,
-              ),
-            ),
+            child: Center(child: FarolWordmark(fontSize: 16)),
           ),
           const SizedBox(width: 48),
         ],
