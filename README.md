@@ -103,6 +103,27 @@ flutter run -d chrome --dart-define=API_BASE_URL=http://localhost:8000/api/v1 --
 
 `API_BASE_URL` deve incluir `/api/v1`. Em emuladores/aparelhos, ajuste o host para alcançar sua máquina. Para web, inclua a origem/porta do app em `ALLOWED_ORIGINS` no backend.
 
+## Compartilhamento do quiz
+
+Na tela de resultados, **Compartilhar resultado** abre uma prévia com dois tipos de imagem: **maior alinhamento**, destacando uma candidatura, ou **ranking**, com os **top 5 ou top 10** alinhamentos. O ranking respeita as candidaturas selecionadas no quiz e mostra apenas quem tem base comparável, em ordem de afinidade e, nos empates, por nome. Se houver menos candidaturas disponíveis, a imagem mostra a quantidade real.
+
+A imagem inclui percentuais, nomes, partidos, a identificação do quiz presidencial de **2026** e o endereço do site, sem respostas individuais nem identidade local. Ao abrir o compartilhamento, uma das **12 paletas prontas** e um dos **4 padrões geométricos** são sorteados de forma independente, sem relação com o resultado. Cada nova abertura sorteia um padrão diferente do anterior na sessão. O padrão não possui controle de troca e permanece durante essa abertura, inclusive ao trocar o conteúdo, o formato ou a cor. Basta tocar em outra paleta para trocar as cores antes de compartilhar.
+
+- **Stories:** PNG de 1080 × 1920; **Post:** PNG de 1080 × 1350. As fontes do cartão acompanham o app para a exportação não depender de downloads de fontes.
+- **Compartilhar imagem:** abre o menu do dispositivo com o PNG. Na web, quando o menu não estiver disponível, inicia o download. **Baixar imagem** também fica disponível no navegador.
+- **Instagram:** oferece instruções para levar a imagem aos Stories/feed. O link clicável nos Stories é adicionado pela pessoa no adesivo “Link”; a imagem não contém um hyperlink ativo.
+- **X / Twitter e WhatsApp:** abrem texto e link de acordo com o tipo selecionado. O WhatsApp inclui a lista do ranking; o X usa um resumo curto com a quantidade de alinhamentos. Esses atalhos não anexam o PNG; para enviá-lo, use o menu de compartilhamento ou anexe o arquivo baixado.
+
+O endereço público é `https://fpolitico.com.br`. A variável de repositório **PUBLIC_APP_URL** no GitHub Actions deve usar esse mesmo valor; para compilar localmente:
+
+```bash
+flutter build web --release \
+  --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://fpolitico.com.br
+```
+
+O valor é público e deve ser uma URL HTTPS. Parâmetros e fragmentos são removidos do endereço compartilhado. Consulte [mobile/.env.example](mobile/.env.example). O compartilhamento depende dos apps disponíveis no dispositivo; abrir o menu não confirma que algo foi publicado.
+
 ## API ativa
 
 Os caminhos abaixo usam o prefixo `/api/v1`, exceto saúde e documentação.

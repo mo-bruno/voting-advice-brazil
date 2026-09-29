@@ -9,6 +9,8 @@ import '../../core/theme/app_theme.dart';
 import '../../shared/models/candidate_result.dart';
 import '../../shared/quiz_session.dart';
 import '../../shared/widgets/candidate_logo.dart';
+import 'sharing/result_share_data.dart';
+import 'sharing/result_share_page.dart';
 
 class ResultsPage extends StatefulWidget {
   const ResultsPage({super.key, this.analytics});
@@ -25,16 +27,16 @@ class _ResultsPageState extends State<ResultsPage> {
   final QuizSession _session = QuizSession.instance;
   bool _hasTrackedResultsViewed = false;
 
-  List<CandidateResult> get _results => [..._session.visibleResults]
-    ..sort((a, b) {
-      if (a.hasComparableEvidence != b.hasComparableEvidence) {
-        return a.hasComparableEvidence ? -1 : 1;
-      }
-      final byScore = b.scorePercent.compareTo(a.scorePercent);
-      return byScore != 0
-          ? byScore
-          : a.name.toLowerCase().compareTo(b.name.toLowerCase());
-    });
+  List<CandidateResult> get _results =>
+      [..._session.visibleResults]..sort((a, b) {
+          if (a.hasComparableEvidence != b.hasComparableEvidence) {
+            return a.hasComparableEvidence ? -1 : 1;
+          }
+          final byScore = b.scorePercent.compareTo(a.scorePercent);
+          return byScore != 0
+              ? byScore
+              : a.name.toLowerCase().compareTo(b.name.toLowerCase());
+        });
 
   void _track(Future<void> event) {
     unawaited(event.catchError((_) {}));
@@ -96,6 +98,8 @@ class _ResultsPageState extends State<ResultsPage> {
   }
 
   Widget _content(TextTheme textTheme) {
+    final shareableResults =
+        _results.where((result) => result.hasComparableEvidence).toList();
     final leaders = _session.topAffinityResults;
     final topResult = leaders.isEmpty ? null : leaders.first;
     if (!_hasTrackedResultsViewed && topResult != null) {
@@ -130,8 +134,7 @@ class _ResultsPageState extends State<ResultsPage> {
               ),
               const SizedBox(height: 16),
             ],
-            Text('AFINIDADE COM SUAS RESPOSTAS',
-                style: textTheme.labelMedium),
+            Text('AFINIDADE COM SUAS RESPOSTAS', style: textTheme.labelMedium),
             const SizedBox(height: 16),
             ..._results.map((result) {
               return Padding(
@@ -140,6 +143,24 @@ class _ResultsPageState extends State<ResultsPage> {
               );
             }),
             const SizedBox(height: 16),
+            if (shareableResults.isNotEmpty) ...[
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute<void>(
+                      builder: (_) => ResultSharePage(
+                        data: ResultShareData(results: shareableResults),
+                      ),
+                    ),
+                  ),
+                  icon: const Icon(Icons.ios_share_rounded, size: 20),
+                  label: const Text('Compartilhar resultado'),
+                ),
+              ),
+              const SizedBox(height: 16),
+            ],
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
