@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../branding/farol_wordmark.dart';
 import '../features/feature_flags.dart';
 import '../../features/community/community_feed_page.dart';
 import '../../features/home/home_page.dart';
@@ -157,12 +158,9 @@ class _MainShellState extends State<MainShell> {
                           onPressed: _openDrawer,
                         ),
                         const SizedBox(width: 12),
-                        const Text('FAROL POLÍTICO',
-                            style: TextStyle(
-                              fontSize: 28,
-                              fontWeight: FontWeight.w900,
-                              color: AppTheme.primary,
-                            )),
+                        const Flexible(
+                          child: FarolWordmark(fontSize: 28, markSize: 36),
+                        ),
                         const Spacer(),
                         for (final (index, label) in [
                           'Início',

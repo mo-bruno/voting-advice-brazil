@@ -1,10 +1,13 @@
 import 'dart:math';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_palette.dart';
 
 void _expectReadable(ResultSharePalette palette) {
-  for (final surface in [palette.background, palette.beam, palette.edge]) {
+  final beam = Color.alphaBlend(palette.beamOverlay, palette.background);
+  final edge = Color.alphaBlend(palette.beamEdgeOverlay, beam);
+  for (final surface in [palette.background, beam, edge]) {
     for (final textColor in [palette.foreground, palette.accent]) {
       final textLuminance = textColor.computeLuminance();
       final surfaceLuminance = surface.computeLuminance();

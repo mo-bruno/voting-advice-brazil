@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Guia Eleitoral',
+      title: 'Farol Político',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
       // O `builder` intercepta a construção de TODAS as telas e aplica uma

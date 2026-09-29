@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:guia_eleitoral/core/branding/farol_wordmark.dart';
 import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
@@ -73,6 +74,7 @@ void main() {
       ]),
     ));
     expect(find.text('FAROL POLÍTICO'), findsOneWidget);
+    expect(find.byType(FarolWordmark), findsOneWidget);
     expect(find.byIcon(Icons.menu), findsOneWidget);
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
@@ -84,6 +86,7 @@ void main() {
     tester.view.physicalSize = const Size(600, 900);
     await tester.pumpAndSettle();
     expect(find.text('FAROL POLÍTICO'), findsOneWidget);
+    expect(find.byType(FarolWordmark), findsOneWidget);
     expect(find.byIcon(Icons.menu), findsOneWidget);
     expect(find.byType(BottomNavigationBar), findsOneWidget);
     expect(tester.takeException(), isNull);
