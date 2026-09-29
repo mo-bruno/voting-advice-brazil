@@ -1,0 +1,1023 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002548139",
+  "candidate_name": "Veterinário Wilson Grassi",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 58,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa identifica Partido Democrata, plano Brasil em Primeiro Lugar 2027–2030 e candidatura Wilson Grassi/Suêd Haidar.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Sumário distribui diagnóstico, método, 14 eixos e governança do plano.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Carta ao eleitor apresenta o candidato veterinário, compromissos verificáveis e rejeição à polarização.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Metodologia exige instrumentos legais, fontes e indicadores; omite orçamento individual e promete estimativas pela LRF.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Diagnóstico aponta complexidade tributária, custo da contratação formal, comando prisional e bases estatais isoladas.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Diagnóstico completa fragmentação de dados públicos e crítica à polarização como obstáculo à governabilidade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 7,
+      "summary": "Método D35 reúne desburocratização, desoneração, digitalização, democratização e crescimento sem expansão do gasto.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Reforma tributária substitui tributos federais sobre folha e produção por imposto sobre movimentação financeira e enumera tributos preservados.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "IRPF teria isenção até cinco salários mínimos e deslocamento de faixas progressivas com exemplos de economia familiar.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 10,
+      "summary": "Detalha IRPJ, indexação da isenção, indefinição da contribuição previdenciária do empregado e alíquota do IUF baseada em impacto e neutralidade.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Apresenta volumes de pagamentos, PIB, arrecadação e estimativas de sonegação para justificar base do IUF.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Expõe estimativas de sonegação e tabela do custo da isenção de IRPF, com início da conta consolidada do IUF.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 13,
+      "summary": "Consolida arrecadação necessária do IUF, efeitos esperados e salvaguarda de devolução para exportações.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 14,
+      "summary": "Prevê compensação para cadeias longas, desoneração definitiva da folha, revisão automática, restrição a dinheiro em espécie e transição.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Completa transição federativa e responde críticas de cumulatividade, dinheiro vivo e regressividade; fixa prazo para PEC.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 16,
+      "summary": "Apresenta comparativo de IRPF por renda e explica efeitos da isenção de cinco salários mínimos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Resume efeitos em emprego, habitação, filas de saúde, escola, esporte e segurança, respeitando prazo de transição.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 18,
+      "summary": "Fecha reforma tributária com fontes, quadro de instrumentos, indicadores e prazo de transição no mandato.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 19,
+      "summary": "Trabalho: desoneração da folha, envio único de declarações, prazos públicos e responsabilização por atrasos administrativos.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 20,
+      "summary": "Trabalho: revisão do MEI, integração de registro empresarial, compras públicas e qualificação orientada à contratação regional.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 21,
+      "summary": "Segurança: expansão de presídios federais para lideranças, bloqueio de comunicação, revisão judicial e inteligência financeira.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Segurança: fronteiras e armas, execução do Sinesp/Susp e apoio à PEC 18/2025, com sanções por falta de dados.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 23,
+      "summary": "Segurança: dados integrados, prevenção de violência ligada a maus-tratos e proposta de plebiscito sobre presídios inspirados em El Salvador.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 24,
+      "summary": "Delimita plebiscito penitenciário à arquitetura e custódia, preserva garantias e decisões judiciais e rejeita importar regime de exceção.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 25,
+      "summary": "Contrapõe denúncias de violações em El Salvador e define procedimento informado do plebiscito, instrumentos e indicadores de segurança.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 26,
+      "summary": "Saúde Única fundamenta prevenção de zoonoses, vacinação animal e rede de laboratórios integrada à vigilância humana.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Propõe veterinários e atendimento público a famílias de baixa renda, financiamento de castração e integração/ampliação do SinPatinhas.",
+      "relevant_question_ids": [
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 28,
+      "summary": "Completa cobertura animal e apresenta planos de contingência, insumos e protocolo de emergência zoossanitária.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 29,
+      "summary": "Proteção animal apresenta legislação existente e identifica fiscalização e capacidade operacional como gargalos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Propõe sistema de proteção animal, fiscalização efetiva, delegacias especializadas, resgate em desastres e estrutura federal financiada.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 31,
+      "summary": "Página contém apenas cabeçalho e numeração; ausência de conteúdo substantivo confirmada visualmente.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 32,
+      "summary": "Agropecuária: defesa sanitária, fiscais e antecipação voluntária de rastreabilidade para exigências do mercado europeu.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 33,
+      "summary": "Agropecuária: rastreabilidade interoperável, bem-estar, diplomacia sanitária, crédito e assistência para pequenos produtores.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 34,
+      "summary": "Saúde: atenção primária, carreira, prontuário integrado, fila nacional, mutirões contratualizados por resultado e produção de medicamentos.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 35,
+      "summary": "Quadro de execução da saúde prevê cofinanciamento, orçamento e contratualização por resultado, com indicadores de cobertura e filas.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 36,
+      "summary": "Educação: alfabetização aferida externamente, rede técnica e PEC para transformar pesquisadores qualificados em servidores.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 37,
+      "summary": "PEC da Pesquisa detalha ingresso, requisitos, vínculo público, permanência e implantação dependente de espaço fiscal; financiamento científico estável.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 38,
+      "summary": "Esporte: educação física escolar com padrões e avaliação, e diagnóstico de intermediação por federações no Bolsa Atleta.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Esporte: inscrição individual, contrato direto com União, bolsas por custo real, paridade para paratletas, centros e transição de carreira.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 40,
+      "summary": "Esporte: pondera financiamento diante de mudanças nas receitas de apostas e apresenta instrumentos, indicadores e prazos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 41,
+      "summary": "Habitação: financiamento a partir do histórico de aluguel, livre escolha do imóvel e recursos FGTS/SBPE para juros e subsídios.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 42,
+      "summary": "Habitação: automatização, garantia pública parcial, imóveis vazios, regularização fundiária e medição anual do déficit sem meta financeira inventada.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 43,
+      "summary": "Quadro habitacional vincula financiamento e portabilidade a legislação do SFH/FGTS, cadastro, orçamento e indicadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 44,
+      "summary": "Estado digital exige interoperabilidade por CPF, responsabilização de gestores, auditoria de consultas e proteção de dados.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 45,
+      "summary": "Estado digital prevê eliminar documentos duplicados, deferimento tácito, revisão regulatória e transparência contratual/orçamentária.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 46,
+      "summary": "Infraestrutura prioriza ferrovias, autorização ao setor privado, portos, hidrovias, fiscalização de concessões e metas de saneamento.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 47,
+      "summary": "Energia: previsibilidade, renováveis e tarifas; ambiente: desmatamento, prazos de licenciamento e debate sobre mineração indígena.",
+      "relevant_question_ids": [
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 48,
+      "summary": "Mineração indígena condicionada a consentimento, participação econômica e proteção ambiental; quadro de execução de infraestrutura.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 49,
+      "summary": "Defesa: apoia PEC de piso de 2% do PIB com 35% para modernização e aumento gradual; propõe recompor soldos na base.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 50,
+      "summary": "Defesa: piso do soldo, retenção de praças, presença militar permanente na fronteira e instrumentos legais contra tráfico.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 51,
+      "summary": "Defesa delimita GLO e apoio às polícias, prioriza projetos estratégicos e declara ausência deliberada de doutrina externa.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 52,
+      "summary": "Política externa exige reciprocidade, contrapartidas para investimento estrangeiro estratégico e decisões multilaterais caso a caso.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 53,
+      "summary": "Pacto institucional prevê agenda legislativa priorizada, nomeações técnicas, orçamento rastreável, respeito judicial e cooperação federativa.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 54,
+      "summary": "Tabela dos primeiros cem dias relaciona prazos, entregas e instrumentos para dados, tributos, saúde, proteção animal e esporte.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T015",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 55,
+      "summary": "Tabela dos cem dias completa habitação, PEC da Pesquisa, mineração indígena, fronteira e recomposição do soldo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 56,
+      "summary": "Painel de indicadores cobre tributos, trabalho, segurança, saúde humana/animal, agropecuária, educação e Estado digital.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 57,
+      "summary": "Painel completa esporte, habitação, pesquisa, ferrovias e defesa; Caixa e Banco Central são fontes de indicador habitacional.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 58,
+      "summary": "Transparência exige painel, revisão anual do plano, agenda completa, estimativas de impacto conforme LRF e currículos de dirigentes.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extrações layout e raw sem texto útil.",
+      "finding": "Imagem confirma capa com título, mandato e candidatos; nenhum compromisso substantivo omitido."
+    },
+    {
+      "page": 12,
+      "reason": "Tabela com colunas e valores exige conferência da associação entre linhas e colunas.",
+      "finding": "Conferência visual da página 12 confirma ordem do texto e alinhamento dos valores tributários sem compromisso adicional omitido."
+    },
+    {
+      "page": 13,
+      "reason": "Tabela com colunas e valores exige conferência da associação entre linhas e colunas.",
+      "finding": "Conferência visual da página 13 confirma ordem do texto e alinhamento dos valores tributários sem compromisso adicional omitido."
+    },
+    {
+      "page": 16,
+      "reason": "Tabela com colunas e valores exige conferência da associação entre linhas e colunas.",
+      "finding": "Conferência visual da página 16 confirma ordem do texto e alinhamento dos valores tributários sem compromisso adicional omitido."
+    },
+    {
+      "page": 31,
+      "reason": "Extração muito curta, com apenas cabeçalho e numeração.",
+      "finding": "Imagem confirma corpo da página vazio; nenhuma seção ou imagem substantiva foi perdida."
+    },
+    {
+      "page": 54,
+      "reason": "Tabela final de múltiplas colunas exige conferir relações entre prazos, entregas, indicadores e fontes.",
+      "finding": "Renderização confirma as associações de cada linha na extração, sem novo posicionamento substantivo para as 16 perguntas."
+    },
+    {
+      "page": 55,
+      "reason": "Tabela final de múltiplas colunas exige conferir relações entre prazos, entregas, indicadores e fontes.",
+      "finding": "Renderização confirma as associações de cada linha na extração, sem novo posicionamento substantivo para as 16 perguntas."
+    },
+    {
+      "page": 56,
+      "reason": "Tabela final de múltiplas colunas exige conferir relações entre prazos, entregas, indicadores e fontes.",
+      "finding": "Renderização confirma as associações de cada linha na extração, sem novo posicionamento substantivo para as 16 perguntas."
+    },
+    {
+      "page": 57,
+      "reason": "Tabela final de múltiplas colunas exige conferir relações entre prazos, entregas, indicadores e fontes.",
+      "finding": "Renderização confirma as associações de cada linha na extração, sem novo posicionamento substantivo para as 16 perguntas."
+    },
+    {
+      "page": 34,
+      "reason": "Conferência focal da redação sobre filas e contratualização que poderia afetar T026A/T042.",
+      "finding": "Mutirão é contratualizado por resultado; a página não identifica prestador privado nem delegação de gestão de unidade pública."
+    },
+    {
+      "page": 52,
+      "reason": "Conferência focal da única posição substantiva e das condições de política externa.",
+      "finding": "Investimento estrangeiro estratégico é admitido com conteúdo nacional, transferência tecnológica e emprego; foros multilaterais são avaliados caso a caso."
+    }
+  ],
+  "positions": [
+    {
+      "question_id": "BR26-T001",
+      "question_text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 1 propõe substituir tributos com neutralidade de arrecadação e salvaguardas; as páginas 4, 37 e 58 exigem estimativas na forma da Lei de Responsabilidade Fiscal. A vinculação de recursos à defesa é debatida na página 49. Nada disso decide manter ou revogar a LC 200/2023: arrecadação, LRF e compromisso setorial são objetos distintos do regime fiscal perguntado. A ocorrência de arcabouço na página 44 trata de governo digital.",
+      "evidence": [],
+      "context_pages": [
+        4,
+        7,
+        10,
+        13,
+        14,
+        37,
+        44,
+        49,
+        58
+      ],
+      "complementary_search_terms": [
+        "arcabouço fiscal",
+        "arcabouço",
+        "200/2023",
+        "regime fiscal",
+        "fiscal",
+        "teto",
+        "responsabilidade fiscal",
+        "101/2000"
+      ],
+      "scope_conditions": [
+        "Cumprir a LRF ou apresentar impacto orçamentário não equivale a manter a LC 200/2023."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T002",
+      "question_text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Não há proposta de privatização nem decisão sobre transferir todas as empresas estatais ao controle privado. A página 46 permite construção e operação de ferrovia própria pelo setor privado e fiscaliza concessões; isso não determina alienação acionária das estatais. Caixa aparece como fonte de indicador habitacional na página 57, sem compromisso sobre manutenção de controle público. Os Eixos 10 e 12 e a regra de investimentos da página 52 não resolvem o quantificador todas.",
+      "evidence": [],
+      "context_pages": [
+        41,
+        42,
+        43,
+        46,
+        47,
+        48,
+        52,
+        57
+      ],
+      "complementary_search_terms": [
+        "privatização",
+        "privat",
+        "desestatização",
+        "desestat",
+        "estatais",
+        "estatal",
+        "empresa pública",
+        "banco público",
+        "Caixa",
+        "concessão",
+        "privado"
+      ],
+      "scope_conditions": [
+        "Autorização ferroviária e concessão não são equivalentes a transferência do controle acionário.",
+        "Fonte estatística ou função atribuída a banco não demonstra preservação do controle público."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T003",
+      "question_text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 2 e as salvaguardas tributárias defendem desoneração da folha, simplificação das declarações, formalização, revisão do MEI e qualificação regional. Não tratam da reforma trabalhista de 2017 nem de revogar suas mudanças. A revisão genérica do estoque regulatório na página 45 tampouco determina qual seria o destino das normas trabalhistas de 2017.",
+      "evidence": [],
+      "context_pages": [
+        5,
+        8,
+        14,
+        17,
+        19,
+        20,
+        45
+      ],
+      "complementary_search_terms": [
+        "reforma trabalhista",
+        "2017",
+        "13.467",
+        "trabalhista",
+        "revogação",
+        "revoga",
+        "CLT",
+        "folha",
+        "carteira"
+      ],
+      "scope_conditions": [
+        "Desoneração tributária da contratação não decide a vigência da reforma trabalhista."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T011",
+      "question_text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O plano não menciona Bolsa Família, CadÚnico ou substituição de transferência de renda por trabalho público remunerado. O Eixo 2 propõe formalização e qualificação voltada à demanda de contratação; os demais benefícios discutidos são pesquisa, esporte e financiamento habitacional. Nenhum desses instrumentos decide o destino dos beneficiários do Bolsa Família em idade economicamente ativa.",
+      "evidence": [],
+      "context_pages": [
+        19,
+        20,
+        36,
+        37,
+        38,
+        39,
+        41,
+        42,
+        43
+      ],
+      "complementary_search_terms": [
+        "Bolsa Família",
+        "CadÚnico",
+        "transferência de renda",
+        "frente de trabalho",
+        "trabalho remunerado",
+        "beneficiário",
+        "qualificação"
+      ],
+      "scope_conditions": [
+        "Qualificação para emprego não equivale à substituição do benefício por programa público de trabalho.",
+        "Bolsa de pesquisa, Bolsa Atleta e financiamento habitacional não são Bolsa Família."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T015",
+      "question_text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Os Eixos 3 e 13 propõem repressão a facções, controle judicial da custódia, prevenção territorial para juventude, plebiscito penitenciário e uso delimitado das Forças Armadas. A discussão de crimes graves na página 23 se refere à associação com maus-tratos a animais. Não há decisão sobre responsabilização de adolescentes de 16 e 17 anos como adultos, nem delimitação desse público por gravidade do crime.",
+      "evidence": [],
+      "context_pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        49,
+        50,
+        51
+      ],
+      "complementary_search_terms": [
+        "adolescente",
+        "adolesc",
+        "maioridade",
+        "16 anos",
+        "17 anos",
+        "juventude",
+        "crimes graves",
+        "penal"
+      ],
+      "scope_conditions": [
+        "Endurecer regime penitenciário de lideranças não determina reduzir a idade de responsabilização como adulto."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T017",
+      "question_text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 8 trata de alfabetização, ensino técnico, carreira de pesquisador e financiamento científico; o Eixo 9 acrescenta educação física escolar. Não admite nem rejeita escolas cívico-militares. As propostas militares dos Eixos 3 e 13 se referem a defesa e segurança, sem atuação no modelo de gestão escolar.",
+      "evidence": [],
+      "context_pages": [
+        17,
+        36,
+        37,
+        38,
+        40,
+        49,
+        50,
+        51
+      ],
+      "complementary_search_terms": [
+        "cívico-militar",
+        "cívico",
+        "militar",
+        "escola",
+        "ensino"
+      ],
+      "scope_conditions": [
+        "Educação física e disciplina de custódia não são evidências sobre escolas cívico-militares."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T018",
+      "question_text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O plano prevê concursos para pessoal penal e serviço veterinário, além de processo seletivo público baseado em currículo e produção para carreira de pesquisador. Não trata de cotas raciais no serviço público nem determina sua extinção ou manutenção. O princípio genérico de regras iguais no Método D35 e os requisitos objetivos de ingresso não estabelecem uma regra universal explícita contra reservas raciais de vagas.",
+      "evidence": [],
+      "context_pages": [
+        7,
+        21,
+        27,
+        32,
+        33,
+        36,
+        37,
+        53
+      ],
+      "complementary_search_terms": [
+        "cota",
+        "cotas raciais",
+        "racial",
+        "raciais",
+        "raça",
+        "negro",
+        "concurso",
+        "serviço público",
+        "processo seletivo"
+      ],
+      "scope_conditions": [
+        "Concurso, produção científica e critérios objetivos podem coexistir com cotas; não se infere sua abolição."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T026A",
+      "question_text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Os Eixos 4 e 7 priorizam vigilância, atenção primária, carreira e financiamento público. A página 34 prevê mutirão contratualizado por resultado e a 35 repete esse instrumento, sem especificar quem opera as unidades ou definir exclusividade do poder público na gestão. Não há delegação identificada a entidade privada nem compromisso de vedá-la em todas as unidades. Contratualização de procedimentos e gestão de estabelecimento são decisões diferentes.",
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada."
+        }
+      ],
+      "context_pages": [
+        26,
+        27,
+        28,
+        34,
+        35
+      ],
+      "complementary_search_terms": [
+        "gestão",
+        "organizações sociais",
+        "organização social",
+        "delegação",
+        "terceirização",
+        "privado",
+        "contratualização",
+        "unidade pública"
+      ],
+      "scope_conditions": [
+        "Gestão pública inclui autarquias e fundações públicas; o silêncio não depende de exigir administração direta.",
+        "Contratualização por resultado não identifica, sozinha, prestador privado ou delegação de gestão."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T036",
+      "question_text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Banco Central aparece como fonte das estatísticas de pagamentos e do Pix, nas páginas 11 e 12, e como fonte de indicador habitacional, na página 57. O Eixo 1 utiliza essas informações para sua proposta tributária, sem decidir a autonomia institucional da instituição. Não há proposta de revogação da LC 179/2021, de preservação dessa lei ou de alterar o regime de mandatos.",
+      "evidence": [],
+      "context_pages": [
+        10,
+        11,
+        12,
+        57
+      ],
+      "complementary_search_terms": [
+        "Banco Central",
+        "179/2021",
+        "autonomia",
+        "independência",
+        "política monetária",
+        "monetária"
+      ],
+      "scope_conditions": [
+        "Usar estatísticas do Banco Central não constitui posição sobre sua autonomia."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T038",
+      "question_text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 12 trata de previsibilidade regulatória, matriz renovável, atração industrial e encargos da tarifa de energia. O pré-sal é mencionado na justificativa da defesa nacional, na página 49. O documento não nomeia Petrobras nem decide a integração entre produção e refino; tampouco condições genéricas ao investimento estratégico resolvem essa organização empresarial.",
+      "evidence": [],
+      "context_pages": [
+        46,
+        47,
+        48,
+        49,
+        51,
+        52
+      ],
+      "complementary_search_terms": [
+        "Petrobras",
+        "petróleo",
+        "refino",
+        "refinaria",
+        "pré-sal",
+        "energia"
+      ],
+      "scope_conditions": [
+        "Energia renovável, segurança do pré-sal e conteúdo nacional não decidem integração de produção e refino da Petrobras."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T042",
+      "question_text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 7 propõe fila nacional e mutirão diagnóstico/cirúrgico permanente, contratualizado por resultado. Nem a passagem nem o quadro da página 35 identificam atendimento da rede privada, compra de capacidade privada ou oposição a esse instrumento. A leitura integral e as buscas complementares não localizaram essa especificação em outro capítulo. A finalidade de reduzir filas está documentada, mas a natureza privada da rede contratada permanece sem decisão.",
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada."
+        }
+      ],
+      "context_pages": [
+        17,
+        26,
+        27,
+        34,
+        35,
+        44,
+        54
+      ],
+      "complementary_search_terms": [
+        "SUS",
+        "rede privada",
+        "privado",
+        "mutirão",
+        "contratualização",
+        "fila",
+        "capacidade ociosa"
+      ],
+      "scope_conditions": [
+        "Contratualizar resultado não demonstra necessariamente compra de atendimento privado.",
+        "Fila pública informa critério de acesso e transparência, não a natureza jurídica do prestador."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T043",
+      "question_text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 8 aborda alfabetização, formação técnica, ensino superior e pesquisa; o Eixo 9 aborda educação física. Não há proposta de creches, voucher, subsídio de matrícula privada ou financiamento público de vagas em creches privadas. O cofinanciamento educacional descrito não identifica essa etapa nem esse instrumento.",
+      "evidence": [],
+      "context_pages": [
+        36,
+        37,
+        38,
+        40
+      ],
+      "complementary_search_terms": [
+        "creche",
+        "infantil",
+        "voucher",
+        "matrícula",
+        "privado",
+        "educação"
+      ],
+      "scope_conditions": [
+        "Cofinanciamento público da educação sem indicação de creche e prestador privado não basta para classificar."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T057",
+      "question_text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O Eixo 6 propõe rastreabilidade para exigências do regulamento europeu e diplomacia sanitária de acesso a mercados; as páginas 51 e 52 deliberadamente evitam doutrina externa e condicionam acordos comerciais à abertura de mercados. Não mencionam Mercosul ou o acordo com a União Europeia e não avaliam se esse acordo satisfaz o critério geral. Assim, o critério negociador não estabelece apoio, oposição ou posição condicional específica sobre o acordo perguntado.",
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Acordo comercial que não abre mercado para produto brasileiro não é assinado. Acesso se troca por acesso."
+        }
+      ],
+      "context_pages": [
+        32,
+        33,
+        51,
+        52
+      ],
+      "complementary_search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "europeu",
+        "acordo comercial",
+        "comércio exterior",
+        "reciprocidade"
+      ],
+      "scope_conditions": [
+        "Cumprir regulamento europeu de rastreabilidade não significa apoiar acordo Mercosul–União Europeia.",
+        "Critério para acordos em geral não decide acordo específico não analisado."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T063",
+      "question_text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Na seção 13.6, o plano declara não trazer doutrina de política externa e adota conveniência nacional em cada negociação. Não menciona Israel, povo palestino, genocídio ou apartheid, nem determina rompimento ou manutenção de relações diplomáticas nas condições da pergunta. A opção por deixar decisões externas para avaliação futura não é neutralidade explícita sobre esse objeto específico.",
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada."
+        }
+      ],
+      "context_pages": [
+        33,
+        51,
+        52
+      ],
+      "complementary_search_terms": [
+        "Israel",
+        "palestino",
+        "palestin",
+        "genocídio",
+        "apartheid",
+        "diplomacia",
+        "relações diplomáticas"
+      ],
+      "scope_conditions": [
+        "O silêncio sobre o conflito não é oposição à ruptura nem neutralidade explícita."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T066",
+      "question_text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O plano rejeita alinhamento automático e prevê definir posição em foro multilateral caso a caso, por conveniência nacional. Não cita BRICS nem decide sair do bloco ou permanecer nele. A rejeição a fidelidade automática a blocos não obriga retirada de uma organização específica e tampouco define posição neutra explícita sobre sair dela.",
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Posição brasileira em foro multilateral definida caso a caso, por conveniência nacional declarada, e não por alinhamento automático."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ],
+      "complementary_search_terms": [
+        "BRICS",
+        "bloco",
+        "multilateral",
+        "alinhamento"
+      ],
+      "scope_conditions": [
+        "Atuação multilateral caso a caso pode coexistir com permanência no BRICS; não é compromisso de saída."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T067",
+      "question_text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "A seção 13.6 admite investimento estrangeiro em setor estratégico, exigindo conteúdo nacional, transferência tecnológica e emprego no Brasil. Aceitar esse investimento condicionado é logicamente incompatível com a proibição geral proposta pela pergunta. A classificação é discordância da proibição, sem converter as contrapartidas em apoio irrestrito ao capital estrangeiro.",
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil."
+        }
+      ],
+      "context_pages": [
+        51,
+        52
+      ],
+      "complementary_search_terms": [
+        "investimento estrangeiro",
+        "capital estrangeiro",
+        "estrangeiro",
+        "transferência de tecnologia",
+        "conteúdo nacional"
+      ],
+      "scope_conditions": [
+        "Condições expressas para setores estratégicos: conteúdo nacional, transferência de tecnologia e emprego no Brasil.",
+        "A pergunta proíbe investimento estrangeiro em geral; aceitar ao menos essa modalidade refuta a proibição geral."
+      ],
+      "reformulation_suggestion": null
+    }
+  ],
+  "candidate_summary": "Leitura integral das 58 páginas confirma as 16 categorias anteriores: 15 NAO_ENCONTRADA e DISCORDA em BR26-T067. O plano admite investimento estrangeiro estratégico com contrapartidas (p. 52), mas não decide os outros 15 objetos congelados. A fundamentação das ausências foi refeita a partir da leitura integral: contratualização de mutirões não identifica rede privada nem delegação de gestão, e referências anteriores a direitos da pessoa idosa nas páginas 36/41 e a contratos de gestão nas páginas 34/35 não correspondem ao conteúdo do PDF. Não há sugestão de reformulação das perguntas.",
+  "limitations": []
+}

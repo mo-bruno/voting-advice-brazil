@@ -1,0 +1,695 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551975",
+  "candidate_name": "Edmilson Costa",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 16,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Apresentação de Edmilson Costa e Cleusa Santos, trajetórias políticas e avaliação da conjuntura eleitoral; defesa de poder popular e transformação socialista.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Objetivos da candidatura: solidariedade internacional, estatização de setores estratégicos, jornada de 30 horas, revogação de contrarreformas, fim do arcabouço fiscal e saúde, transporte e educação 100% públicos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 3,
+      "summary": "Diagnóstico crítico da concentração econômica e da democracia parlamentar; apresenta cinco transformações e inicia proposta de orçamento popular deliberativo e Constituinte de Novo Tipo.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Continua reforma política com conselhos, revogação de mandatos, comunicação pública e Judiciário; na economia propõe estatização financeira, retomada de empresas estratégicas, revogação do arcabouço fiscal e fim da autonomia do Banco Central.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Propõe composição social do Banco Central, Petrobras 100% estatal voltada à transição energética e reindustrialização, revogação das contrarreformas trabalhista e previdenciária, salários, redução de jornada e direitos sindicais.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Reformas agrária e urbana, desmilitarização policial e combate às opressões; propõe tornar público todo o sistema de saúde, fortalecer o complexo industrial, atenção primária, medicamentos e controle por Conselhos Populares.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Estatização integral do ensino das creches à pós-graduação, cotas nas universidades, valorização docente, política cultural popular, transporte público gratuito e início do diagnóstico ambiental.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Políticas ambientais emergenciais e estruturais, preservação, reciclagem e fiscalização; relações internacionais enfatizam integração, autodeterminação, ALBA e UNASUL e parcerias comerciais com retenção das riquezas no país.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Inicia plataforma de 21 pontos: conselhos populares, combate à fome, estoques e restaurantes, frentes de trabalho priorizando desempregados e famílias do CadÚnico, reforma agrária e expropriação do agronegócio.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Habitação, saneamento e energia estatais; saúde 100% pública com revogação de todos os contratos de OSs e estatização privada; educação estatizada, fim das escolas cívico-militares, ciência e tecnologia públicas.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Estatização e expansão dos transportes, proteção ambiental e povos tradicionais; combate às opressões, licenças parentais, legalização do aborto, universalização das creches e políticas para população trans e travesti.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Combate ao racismo, ampliação de cotas universitárias, oposição à redução da maioridade penal, direitos indígenas e de pessoas com deficiência; na segurança defende cotas raciais em todos os concursos federais e estaduais das forças de segurança.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Conclui segurança pública, reforma do Judiciário e socialização das comunicações; reitera revogação das reformas trabalhista e previdenciária, arcabouço e autonomia do Banco Central, fim das privatizações e reestatização.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Tributação, trabalho, previdência e assistência; Petrobras expressamente integrada, 100% estatal, com retomada de ativos, monopólio de exploração a distribuição e ampliação da capacidade de refino.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Conclui direitos dos petroleiros; reforma militar, estatização bélica, memória e reparação, relações internacionais e rompimento imediato de todas as relações econômicas e diplomáticas com Israel.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T063",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 16,
+      "summary": "Conclui seção internacional com defesa do fim da OTAN, do Conselho de Segurança da ONU e de instituições imperialistas; assinatura do PCB e número 21.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T066"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 10,
+      "reason": "Confirmar separação das seções de saúde e educação e o alcance das frases sobre todas as OSs e estatização.",
+      "finding": "Página em coluna única; revogação de contratos de todas as OSs e estatização de todo o setor privado são compromissos de saúde; fim das escolas cívico-militares consta na seção de educação."
+    },
+    {
+      "page": 12,
+      "reason": "Distinguir cotas universitárias de cotas em concursos e conferir oposição à redução da maioridade penal.",
+      "finding": "Página em coluna única; cotas raciais em concursos federais e estaduais das forças de segurança estão na seção 13, distintas das cotas universitárias; oposição à redução da maioridade penal é explícita na seção 11."
+    },
+    {
+      "page": 14,
+      "reason": "Confirmar unidade do bloco Petrobras e ordem de leitura de composição do conselho em frações.",
+      "finding": "Página em coluna única; seção Petrobras articula empresa integrada, retomada dos ativos e exploração, produção e refino; frações de um terço referem-se ao conselho, sem alterar as propostas de integração."
+    },
+    {
+      "page": 16,
+      "reason": "Extração de apenas 165 caracteres exigiu verificar se havia conteúdo omitido.",
+      "finding": "Imagem confirma somente continuação da frase internacional, identificação do PCB, número 21 e marca CamScanner; o restante é espaço em branco."
+    }
+  ],
+  "positions": [
+    {
+      "question_id": "BR26-T001",
+      "question_text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O programa determina a revogação do Arcabouço Fiscal nas seções econômica geral e de plataforma. A decisão é incompatível com manter esse regime; não se trata apenas de criticar seus efeitos.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Agiremos para promover a revogação do Arcabouço Fiscal"
+        },
+        {
+          "page": 13,
+          "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a\ntrabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central."
+        }
+      ],
+      "context_pages": [
+        2,
+        3,
+        4,
+        13
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "O plano identifica o regime por seu nome, sem repetir o número LC 200/2023."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T002",
+      "question_text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "A retomada de empresas estratégicas para o patrimônio público e a Petrobras 100% estatal rejeitam a transferência de todas as estatais ao controle privado. Basta a retenção pública inequívoca de uma estatal para contradizer o quantificador todas.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "As empresas estratégicas privatizadas serão retomadas para o patrimônio público"
+        },
+        {
+          "page": 5,
+          "quote": "Defendemos a Petrobras 100% estatal"
+        }
+      ],
+      "context_pages": [
+        2,
+        4,
+        5,
+        10,
+        11,
+        13,
+        14,
+        15
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A conclusão nega a privatização universal; não depende de inferir posição sobre cada empresa não nomeada."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T003",
+      "question_text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "A revogação da contrarreforma trabalhista é compromisso futuro expresso, reiterado na política econômica e associado à reconstrução de direitos trabalhistas e sindicais. O plano decide revogá-la, não apenas revisar dispositivos pontuais.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Revogaremos as contrarreformas trabalhista,\nprevidenciária e criaremos a Lei de Responsabilidade Social, com o objetivo de garantir\nrecursos para atender as demandas populares."
+        },
+        {
+          "page": 13,
+          "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a\ntrabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central."
+        }
+      ],
+      "context_pages": [
+        2,
+        5,
+        13
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "O documento não repete o ano de 2017 ou número da lei; identifica a reforma trabalhista vigente como contrarreforma a revogar."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T011",
+      "question_text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 2, Combate à fome e política de pleno emprego, propõe frentes de trabalho e prioriza desempregados e famílias do CadÚnico; o ponto 17, Direitos Sociais e Trabalhistas, Previdência e Assistência Social, amplia proteção e auxílios. Nenhum desses compromissos estabelece substituição do Bolsa Família para beneficiários economicamente ativos, nem torna o trabalho condição de recebimento. Criação de trabalho e transferência de renda podem coexistir.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Organização das\nfrentes de trabalho urbanas e rurais nos bairros mais pobres, associadas a funções de\nzeladoria, obras de saneamento, habitação, de reforma de escolas e hospitais,\nprivilegiando os desempregados e setores mais precários da classe trabalhadora, como\nas famílias inscritas no CadÚnico."
+        },
+        {
+          "page": 14,
+          "quote": "Será reforçado e ampliado o seguro-desemprego e garantido o\nprovimento de auxílios emergenciais e outras formas de cobertura para situações de\nvulnerabilidade."
+        }
+      ],
+      "context_pages": [
+        5,
+        9,
+        14
+      ],
+      "complementary_search_terms": [
+        "Bolsa Família",
+        "CadÚnico",
+        "frentes de trabalho",
+        "renda",
+        "assistência",
+        "auxílios",
+        "beneficiários",
+        "substitui"
+      ],
+      "scope_conditions": [
+        "CadÚnico não equivale a Bolsa Família.",
+        "A ausência refere-se à substituição e ao público definido na pergunta, não à inexistência de políticas de emprego ou assistência."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T015",
+      "question_text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O programa se declara contra a redução da maioridade penal e a favor da ampliação de medidas socioeducativas. Essa oposição sem exceção expressa abrange a redução para 16 e 17 anos em crimes graves proposta na pergunta.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Contra a redução da maioridade penal e ampliação das medidas socioeducativas."
+        }
+      ],
+      "context_pages": [
+        6,
+        12,
+        13
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Inferência de uma oposição geral à redução para o caso particular de adolescentes de 16 e 17 anos; não há ressalva para crimes graves."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T017",
+      "question_text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "A seção de educação determina expressamente o fim das escolas cívico-militares, decisão incompatível com admitir esse modelo na rede pública.",
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Fim das escolas cívico-militares."
+        }
+      ],
+      "context_pages": [
+        7,
+        10
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A classificação se baseia no modelo escolar explicitamente nomeado, não na proposta distinta de desmilitarização policial."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T018",
+      "question_text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O programa prevê cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança. Como esses concursos pertencem ao serviço público, a manutenção ou implantação dessas cotas contradiz seu encerramento no serviço público. A classificação não depende das propostas de cotas universitárias.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Implementação da política de cotas raciais\nem todos os concursos públicos federais e estaduais das forças de segurança."
+        }
+      ],
+      "context_pages": [
+        7,
+        12
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A evidência refere-se às forças de segurança federais e estaduais; não demonstra apoio a todo desenho de cotas em todos os cargos.",
+        "Uma política de cotas em parte do serviço público basta para contrariar o encerramento geral."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T026A",
+      "question_text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "A saúde deve tornar-se inteiramente pública e o plano determina revogar os contratos de todas as OSs, estatizar todo o setor privado de saúde e submeter todos os níveis a Conselhos Populares. O alcance universal e a retirada explícita das organizações sociais sustentam gestão pública de todas as unidades, sem delegação privada.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Na saúde o governo do poder popular tornará público todo o sistema de\nsaúde, integrado com assistência"
+        },
+        {
+          "page": 10,
+          "quote": "Expansão do sistema público de saúde, com a reversão das privatizações e revogação\ndos contratos de todas as OSs no setor, bem como estatização de todo o setor privado de\nsaúde."
+        },
+        {
+          "page": 10,
+          "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores,\npara o controle do sistema de saúde em todos os níveis."
+        }
+      ],
+      "context_pages": [
+        2,
+        6,
+        7,
+        10
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Gestão pública não é equiparada exclusivamente à administração direta; o texto prevê controle por Conselhos Populares.",
+        "A revogação de contratos de OSs decide a delegação da gestão; a compra de atendimentos privados é analisada separadamente em T042."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T036",
+      "question_text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O programa propõe fim da autonomia do Banco Central e reitera sua revogação expressa na política econômica; detalha ainda reestruturação da diretoria. A decisão corresponde a revogar a autonomia institucional, não apenas alterar juros ou a meta monetária.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "a retomada do Banco Central (fim da\nautonomia)"
+        },
+        {
+          "page": 13,
+          "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a\ntrabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central."
+        }
+      ],
+      "context_pages": [
+        4,
+        5,
+        13
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "O documento identifica a autonomia por seu objeto, sem repetir o número LC 179/2021."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T038",
+      "question_text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "A seção específica exige Petrobras como empresa integrada de energia, retomada de todos os ativos privatizados e integração do conjunto que inclui exploração, produção, refino, petroquímica e distribuição, além da ampliação das refinarias. O compromisso de integração consta expressamente; não é deduzido apenas da estatização.",
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "A Petrobrás deve ser uma empresa integrada de energia e 100% estatal"
+        },
+        {
+          "page": 14,
+          "quote": "Retomada da BR distribuidora e de todos os ativos da Petrobrás privatizados pelos\ngovernos neoliberais. Transição para o regime de monopólio estatal da exploração,\nprodução, refino, petroquímica e distribuição"
+        },
+        {
+          "page": 14,
+          "quote": "Investimento e ampliação da capacidade de produção das refinarias."
+        }
+      ],
+      "context_pages": [
+        5,
+        14,
+        15
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A tese avaliada é a manutenção da integração de produção e refino; o plano acrescenta monopólio estatal e outras atividades.",
+        "Não se infere identidade jurídica única de todas as subsidiárias ou prestadoras de serviços."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T042",
+      "question_text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O compromisso de tornar público todo o sistema de saúde e estatizar todo o setor privado define uma organização final sem rede privada a ser contratada pelo SUS. É uma oposição por incompatibilidade do desenho universal proposto com atendimentos que permaneçam privados, não uma dedução a partir da revogação de contratos de gestão de OSs.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Na saúde o governo do poder popular tornará público todo o sistema de\nsaúde, integrado com assistência"
+        },
+        {
+          "page": 10,
+          "quote": "Expansão do sistema público de saúde, com a reversão das privatizações e revogação\ndos contratos de todas as OSs no setor, bem como estatização de todo o setor privado de\nsaúde."
+        }
+      ],
+      "context_pages": [
+        2,
+        6,
+        7,
+        10
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A inferência se refere ao modelo universal de saúde proposto, que estatiza também hospitais e serviços ambulatoriais.",
+        "O plano não apresenta uma regra transitória específica para compras de atendimentos enquanto a estatização não se completa, nem uma exceção para reduzir filas."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T043",
+      "question_text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O plano determina ensino 100% público e gratuito das creches à pós-graduação, acompanhado da estatização do sistema privado de ensino. Essa regra universal inclui as creches e é incompatível com financiamento de vagas em unidades que permaneçam privadas.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós-\ngraduação, com a estatização do sistema privado de ensino."
+        },
+        {
+          "page": 10,
+          "quote": "Educação 100% pública e gratuita, com a estatização do sistema privado de ensino."
+        }
+      ],
+      "context_pages": [
+        7,
+        10,
+        11,
+        14
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Inferência da regra universal explicitamente iniciada nas creches para o financiamento de vagas privadas.",
+        "Não se confunde financiamento de uma creche privada com financiamento de unidade incorporada ao sistema público; o plano não detalha transição."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T057",
+      "question_text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "As seções Nas relações internacionais e Solidariedade internacional e combate ao imperialismo defendem cooperação, integração latino-americana, ALBA e UNASUL; a política econômica prevê controle do comércio exterior. Nenhuma passagem decide o apoio ou a rejeição ao acordo comercial Mercosul–União Europeia. A defesa genérica de integração ou o anti-imperialismo não resolvem o acordo específico.",
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Propomos a\nrealização de parcerias comerciais estratégicas priorizando o desenvolvimento industrial\ne tecnológico, assim como a retenção das riquezas e lucros em nosso país."
+        }
+      ],
+      "context_pages": [
+        4,
+        8,
+        15,
+        16
+      ],
+      "complementary_search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "europe",
+        "acordo comercial",
+        "comércio exterior",
+        "parcerias comerciais",
+        "integração"
+      ],
+      "scope_conditions": [
+        "Mercosul, União Europeia e acordo comercial não aparecem no texto integral.",
+        "Parcerias comerciais estratégicas podem assumir formatos distintos do acordo perguntado."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T063",
+      "question_text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O programa determina rompimento imediato de todas as relações econômicas e diplomáticas com Israel. Esse compromisso mais amplo inclui a ruptura diplomática durante as condições descritas na pergunta, sem exigir que o plano repita seus fundamentos ou limite temporal.",
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Rompimento imediato de todas as\nrelações econômicas e diplomáticas com o estado sionista de Israel."
+        }
+      ],
+      "context_pages": [
+        2,
+        8,
+        15,
+        16
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "O plano não condiciona a ruptura ao término do genocídio ou do apartheid e não promete restabelecimento posterior; não lhe são atribuídos esses termos como citação.",
+        "Apoio à ruptura imediata e sem ressalva abrange o recorte temporal proposto."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T066",
+      "question_text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "A seção Nas relações internacionais propõe fortalecer processos de integração e cita ALBA e UNASUL; o ponto 21 nomeia outras instituições e relações diplomáticas. O BRICS não aparece, e não há decisão de saída ou permanência. O apoio geral à integração não fornece definição documental suficiente sobre esse agrupamento específico.",
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "com a promoção de esforços no sentido da criação de\nespaços comuns de integração voltados a estreitar os vínculos econômicos, sociais,\nculturais e de comunicação entre os povos da América Latina, a partir do fortalecimento\nde iniciativas como a ALBA e UNASUL."
+        }
+      ],
+      "context_pages": [
+        8,
+        15,
+        16
+      ],
+      "complementary_search_terms": [
+        "BRICS",
+        "bloco",
+        "integração",
+        "ALBA",
+        "UNASUL",
+        "ordem internacional"
+      ],
+      "scope_conditions": [
+        "A expressão geral sobre fortalecer processos de integração não permite identificar, por si, adesão a cada agrupamento existente.",
+        "Ausência não significa apoio à saída nem oposição a ela."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T067",
+      "question_text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "As seções econômicas e de defesa propõem estatização financeira e de setores estratégicos, retomada de empresas e controle do comércio exterior; o ponto Petrobras prevê retirada de ações de bolsas estrangeiras. A política internacional admite parcerias comerciais estratégicas. Nada disso estabelece uma proibição geral de investimento estrangeiro em toda a economia, nem uma autorização geral: os instrumentos setoriais e o comércio não decidem o quantificador da pergunta.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "As empresas estratégicas privatizadas serão retomadas para o patrimônio público"
+        },
+        {
+          "page": 14,
+          "quote": "retirada das ações da Petrobrás das bolsas\nde valores estrangeiras, visando o resgate da soberania energética do Brasil"
+        },
+        {
+          "page": 8,
+          "quote": "Propomos a\nrealização de parcerias comerciais estratégicas priorizando o desenvolvimento industrial\ne tecnológico, assim como a retenção das riquezas e lucros em nosso país."
+        }
+      ],
+      "context_pages": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        13,
+        14,
+        15
+      ],
+      "complementary_search_terms": [
+        "investimento estrangeiro",
+        "investimentos estrangeiros",
+        "capital estrangeiro",
+        "capital internacional",
+        "estrangeir",
+        "multinacion",
+        "comércio exterior",
+        "estatização",
+        "proib",
+        "bolsas de valores",
+        "parcerias comerciais"
+      ],
+      "scope_conditions": [
+        "Estatização e saída da Petrobras de bolsas estrangeiras têm escopos definidos, que não se universalizam para toda a economia.",
+        "Comércio ou parcerias entre países não equivalem necessariamente a investimento estrangeiro."
+      ],
+      "reformulation_suggestion": null
+    }
+  ],
+  "candidate_summary": "Leitura integral das 16 páginas confirma as 16 classificações anteriores: cinco CONCORDA, sete DISCORDA e quatro NAO_ENCONTRADA. Evidências explícitas resolvem gestão pública sem OSs (p. 10), Petrobras integrada com produção e refino (p. 14), cotas em concursos das forças de segurança e rejeição à redução da maioridade penal (p. 12). O plano não decide a substituição do Bolsa Família, o acordo Mercosul–UE, a saída do BRICS ou a proibição geral do investimento estrangeiro.",
+  "limitations": []
+}

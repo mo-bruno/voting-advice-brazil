@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002551975",
+      "name": "Edmilson Costa",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 16,
+      "pages_logged": 16,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 7,
+        "CONCORDA": 5,
+        "NAO_ENCONTRADA": 4
+      },
+      "quote_matches": {
+        "layout": 29
+      },
+      "visual_check_count": 4,
+      "review_sha256": "97e397608c9647dd17402a3a69bc34115ad28f7428ad502c297ab8e3653e020f"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

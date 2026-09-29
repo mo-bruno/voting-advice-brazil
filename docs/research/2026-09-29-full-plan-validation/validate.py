@@ -4,7 +4,7 @@
 This verifies artifacts and declared reading coverage, not human approval or the
 truth of a political interpretation. Run without --candidate for the whole set.
 """
-import argparse,collections,hashlib,json
+import argparse,collections,hashlib,json,subprocess,tempfile,zipfile
 from pathlib import Path
 P=Path(__file__).resolve().parent
 CATEGORIES={'CONCORDA','DISCORDA','CONDICIONAL_OU_MISTA','NEUTRO_EXPLICITO','NAO_ENCONTRADA'}
@@ -14,10 +14,26 @@ def digest(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def norm(t):return ' '.join(t.split())
 def variants(t):
  lines=t.splitlines();return [norm(t),norm('\n'.join(x for i,x in enumerate(lines) if not i or x!=lines[i-1]))]
+def extract_archive(archive,directory,candidates):
+ # ZIP metadata can change; the frozen hashes of each actual PDF are decisive.
+ with zipfile.ZipFile(archive) as z:
+  for c in candidates:
+   data=z.read(c['member'])
+   if hashlib.sha256(data).hexdigest()!=c['sha256']:raise ValueError('Changed PDF snapshot: '+c['id'])
+   folder=directory/c['id'];folder.mkdir();pdf=folder/'plan.pdf';pdf.write_bytes(data)
+   for mode in ['layout','raw']:
+    target=folder/(mode+'.txt');subprocess.run(['pdftotext','-'+mode,str(pdf),str(target)],check=True,capture_output=True)
+    pages=target.read_text().split('\f')
+    if not pages[-1].strip():pages.pop()
+    if len(pages)!=c['pages']:raise ValueError('Unexpected page count: '+c['id'])
+    (folder/(mode+'-pages.json')).write_text(json.dumps(pages,ensure_ascii=False))
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--candidate');ap.add_argument('--allow-pending',action='store_true');args=ap.parse_args()
- manifest=read(P/'source-manifest.json');questions=read(P/'questions.json');qs={q['id']:q for q in questions['questions']};question_sha=digest(P/'questions.json');state=read(P/'STATE.json');agents={c['id']:c['agent_id'] for c in state['candidates']};cs=manifest['candidates'];results=[]
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--candidate');ap.add_argument('--allow-pending',action='store_true');source=ap.add_mutually_exclusive_group();source.add_argument('--archive',type=Path);source.add_argument('--corpus',type=Path);args=ap.parse_args()
+ manifest=read(P/'source-manifest.json');questions=read(P/'questions.json');qs={q['id']:q for q in questions['questions']};question_sha=digest(P/'questions.json');state=read(P/'STATE.json');agents={c['id']:c['agent_id'] for c in state['candidates']};cs=[c for c in manifest['candidates'] if c['id'] in agents];results=[]
  if args.candidate:cs=[c for c in cs if c['id']==args.candidate];assert cs,'Unknown candidate'
+ temp=tempfile.TemporaryDirectory(prefix='farol-full-validation-') if args.archive else None
+ corpus=Path(temp.name) if temp else args.corpus
+ if args.archive:extract_archive(args.archive,corpus,cs)
  for c in cs:
   cid=c['id'];file=P/'reviews'/(cid+'.json');errors=[];matches=collections.Counter()
   if not file.exists():
@@ -33,7 +49,7 @@ def main():
   ledger=r.get('reading_log',[]);check(sorted(x.get('page',0) for x in ledger)==expected,'reading_log must cover every page exactly once')
   for entry in ledger:
    check(bool(entry.get('summary','').strip()),f"Empty page summary: {entry.get('page')}");check(set(entry.get('relevant_question_ids',[]))<=set(qs),f"Unexpected question in ledger page{entry.get('page')}")
-  folder=Path(c['corpus_directory']);check(digest(folder/'plan.pdf')==c['sha256'],'PDF bytes mismatch')
+  folder=corpus/cid if corpus else Path(c['corpus_directory']);check(digest(folder/'plan.pdf')==c['sha256'],'PDF bytes mismatch')
   pages={mode:read(folder/(mode+'-pages.json')) for mode in ['layout','raw']};check(all(len(x)==c['pages'] for x in pages.values()),'Extraction page count')
   prior={x['question_id']:x.get('category') for x in read(P/'inputs'/(cid+'.json'))['prior_positions']}
   rows=r.get('positions',[]);check(len(rows)==len(qs) and {x.get('question_id') for x in rows}==set(qs),'Exactly16 frozen questions required')
@@ -62,5 +78,6 @@ def main():
  print(json.dumps({'plans':len(results),'pending':pending,'invalid_submissions':invalid,'valid_submissions':sum(x['valid'] for x in results)},ensure_ascii=False))
  for x in results:
   for error in x['errors']:print(error)
+ if temp:temp.cleanup()
  raise SystemExit(1 if invalid or (pending and not args.allow_pending) else 0)
 if __name__=='__main__':main()

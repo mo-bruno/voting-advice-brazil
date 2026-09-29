@@ -1,5 +1,7 @@
 # Revisão das perguntas contra os 13 planos oficiais
 
+> Atualização posterior: a [auditoria integral por plano](../../2026-09-29-full-plan-validation/FINAL_REPORT.md) releu os 13 PDFs completos e consolidou cinco correções de categoria. As [16 perguntas auditadas](../../2026-09-29-full-plan-validation/QUESTIONS_AUDITED.md) e a matriz dessa rodada são a referência atual. Este documento preserva o estágio anterior como histórico.
+
 **Conclusão:** há reformulações que recuperam posições documentadas e outras que apenas criariam aparência de cobertura. A recomendação deste estudo é priorizar **16 itens — oito mantidos e oito com redação nova —**, mantendo os demais no acervo de pesquisa. Este é um recorte editorial provisório, não um questionário cientificamente validado nem uma alteração já publicada. As 23 perguntas do núcleo anterior nunca foram tratadas como seleção fechada nesta revisão.
 
 A tarefa foi confrontar as **30 perguntas publicadas com os 13 planos** do snapshot preservado de 19/09/2026, incluindo as posições ausentes, condicionais e categóricas. Foram avaliadas **12 alternativas**, cada uma aplicada aos mesmos 13 documentos: **390 células originais + 156 alternativas = 546 registros**. A edição existente permanece intacta.

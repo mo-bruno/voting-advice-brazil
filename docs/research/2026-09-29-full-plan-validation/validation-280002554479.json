@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002554479",
+      "name": "Leonardo Avalanche",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 48,
+      "pages_logged": 48,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 13,
+        "DISCORDA": 2,
+        "CONCORDA": 1
+      },
+      "quote_matches": {
+        "layout": 18
+      },
+      "visual_check_count": 9,
+      "review_sha256": "7e7521a7160390776d21df9902b89b9158a2760660b5b51c32363ed42bdf4fc4"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

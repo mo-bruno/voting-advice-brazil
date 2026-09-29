@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002541457",
+      "name": "Hertz Dias",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 33,
+      "pages_logged": 33,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 14,
+        "divergent": 2
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 7,
+        "CONCORDA": 2
+      },
+      "quote_matches": {
+        "layout": 30
+      },
+      "visual_check_count": 10,
+      "review_sha256": "a90a032df1dce8f3b9ba2055ceb456f79322a2d045691baaf0a45a6c0584ca82"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

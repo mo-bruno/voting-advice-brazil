@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552487",
+  "candidate_name": "Rui Costa Pimenta",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 7,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Apresentação do programa de luta do PCO: eleições como tribuna, organização e mobilização revolucionária, governo operário e comunismo; nenhuma decisão específica das 16 perguntas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Pontos 1 e 2: reposição e escala móvel dos salários, salário mínimo vital de ao menos R$7.500, Bolsa Família de pelo menos um salário mínimo durante o caos atual, anulação de dívidas, jornada de 35 horas, proibição de demissões, salário-desemprego e proteção a desempregados.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 3,
+      "summary": "Pontos 3 e 4: cancelar reforma trabalhista e restaurar/ampliar CLT, revogar reformas, proteção previdenciária; cancelar privatizações, Petrobras 100% estatal sob controle dos trabalhadores e nacionalizar reservas minerais e refinarias.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Pontos 5 a 7: serviços públicos, estabilidade, concursos e oposição a terceirizações; fim do teto de gastos e da LRF; reforma agrária, terras indígenas, autodefesa no campo, expropriação de imóveis e construção pública de moradias.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Pontos 8 a 10: ensino público, verbas públicas somente para ensino público, gestão escolar eleita e estatização do ensino pago; saúde pública gratuita sob controle dos trabalhadores, investimento em hospitais/formação/Mais Médicos; dissolução da polícia militar e autodefesa.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Continuação do ponto 10: estatização de meios de comunicação, liberdade de expressão e Internet gratuita; ponto 11: banco estatal único, fim da independência do Banco Central, juros e dívidas; ponto 12: direitos políticos/sindicais e fim do STF com eleição de juízes.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Pontos 13 a 15: soberania na Amazônia, oposição à ingerência dos EUA/OEA e apoio a Cuba/Nicarágua/Venezuela; financiamento da cultura popular; mobilização e governo dos trabalhadores, defesa de povos como Palestina, Irã e Rússia; encerramento PCO, agosto de 2026.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Conferência da capa/apresentação e da ordem de leitura.",
+      "finding": "Página com texto em uma coluna; logotipo e ornamentos sem conteúdo programático omitido pela extração."
+    },
+    {
+      "page": 2,
+      "reason": "Conferência de títulos numerados e listas de propostas.",
+      "finding": "Uma coluna, listas legíveis; a condição temporal pertence expressamente à proposta de Bolsa Família."
+    },
+    {
+      "page": 3,
+      "reason": "Conferir sequência entre reforma trabalhista e bloco de privatizações, com listas.",
+      "finding": "Uma coluna e dois blocos separados; a estatização das refinarias é uma proposta distinta, sem integração expressa com a Petrobras."
+    },
+    {
+      "page": 4,
+      "reason": "Conferir título quebrado em duas linhas e agrupamento das propostas de serviços públicos.",
+      "finding": "Uma coluna; itens sobre terceirização estão no ponto 5 e o título do ponto 6 continua em segunda linha, sem conteúdo perdido."
+    },
+    {
+      "page": 5,
+      "reason": "Conferir separação entre educação, saúde e repressão, com títulos quebrados.",
+      "finding": "Três blocos em coluna única; regra de exclusividade das verbas é expressa para ensino, não repetida no bloco de saúde."
+    },
+    {
+      "page": 6,
+      "reason": "Conferir continuação de lista da página anterior e títulos de bancos/Judiciário.",
+      "finding": "Primeira lista continua o ponto 10; ponto 11 contém item autônomo pelo fim da independência do Banco Central."
+    },
+    {
+      "page": 7,
+      "reason": "Conferir conclusão, assinatura e blocos de relações internacionais/cultura.",
+      "finding": "Uma coluna com três blocos e assinatura final; não há anexos nem texto suplementar omitido."
+    }
+  ],
+  "positions": [
+    {
+      "question_id": "BR26-T001",
+      "question_text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 5 pede o fim do teto de gastos, da Lei de Responsabilidade Fiscal e do congelamento do governo Temer; o ponto 9 rejeita limites de gastos para salvar vidas. Não há decisão identificável sobre manter ou revogar o arcabouço da LC 200/2023. Os instrumentos nomeados e a prioridade da saúde não devem ser convertidos automaticamente em posição sobre essa lei.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Fim do teto de gastos e da Lei de Responsabilidade Fiscal"
+        },
+        {
+          "page": 4,
+          "quote": "Abaixo o congelamento de gastos públicos decretado no governo Temer"
+        },
+        {
+          "page": 5,
+          "quote": "Mais verbas para a saúde pública. Não pode haver limite nos gastos para salvar a vida do povo"
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ],
+      "complementary_search_terms": [
+        "arcabouço",
+        "200/2023",
+        "fiscal",
+        "teto",
+        "gastos",
+        "responsabilidade"
+      ],
+      "scope_conditions": [
+        "O silêncio é sobre o instrumento jurídico perguntado; a oposição a outros limites fiscais está documentada."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T002",
+      "question_text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O ponto 4 exige cancelar privatizações e preservar a Petrobras como empresa 100% estatal. Uma estatal mantida sob controle público já contradiz a transferência de todas as estatais ao controle privado; o texto também propõe reversão generalizada das privatizações.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        3
+      ],
+      "complementary_search_terms": [
+        "privatiza",
+        "estatal",
+        "estatais"
+      ],
+      "scope_conditions": [
+        "A discordância incide no quantificador todas. O controle dos trabalhadores é apresentado dentro da propriedade estatal."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T003",
+      "question_text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O ponto 3, intitulado revogação das reformas do golpe de 2016, exige cancelar a reforma trabalhista, restabelecer toda a CLT e ampliar a legislação de proteção. O objeto e o contexto identificam a reforma trabalhista de 2017, embora o ano não seja repetido no item. É um compromisso de revogação, não apenas crítica ou proposta de ajustes.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Não bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a cabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com direitos iguais para todos os trabalhadores."
+        },
+        {
+          "page": 3,
+          "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        2,
+        3
+      ],
+      "complementary_search_terms": [
+        "reforma",
+        "trabalhista",
+        "CLT",
+        "2017"
+      ],
+      "scope_conditions": [
+        "O texto propõe revogação e ampliação de proteção, sem delimitar apenas artigos específicos."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T011",
+      "question_text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "divergent",
+      "reason": "O ponto 1 propõe Bolsa Família de pelo menos um salário mínimo enquanto durar a situação de caos; o ponto 2 propõe redução da jornada e salário-desemprego. Nenhum ponto decide substituir o Bolsa Família por trabalho público remunerado para o recorte de beneficiários economicamente ativos. A defesa de um piso para o programa não explicita sua elegibilidade nesse cenário de substituição parcial. A condição temporal limita o benefício proposto, não a decisão perguntada de substituí-lo; portanto, ela não sustenta a categoria anterior CONDICIONAL_OU_MISTA.",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual"
+        },
+        {
+          "page": 2,
+          "quote": "Salário-desemprego igual ao último salário recebido para todos os trabalhadores demitidos"
+        }
+      ],
+      "context_pages": [
+        2
+      ],
+      "complementary_search_terms": [
+        "Bolsa Família",
+        "auxílio",
+        "trabalho remunerado",
+        "beneficiários",
+        "idade economicamente ativa",
+        "desemprego",
+        "frentes"
+      ],
+      "scope_conditions": [
+        "Não há proposta de programa público de trabalho como substituto nem rejeição expressa dessa substituição para o grupo delimitado.",
+        "A restrição enquanto durar a situação de caos atual aplica-se à proposta de auxílio/Bolsa Família, não a uma condição para trocar benefícios por trabalho."
+      ],
+      "reformulation_suggestion": {
+        "text": "O Bolsa Família deve pagar pelo menos um salário mínimo.",
+        "reason": "Troca a decisão de substituição por uma decisão sobre o valor do benefício, efetivamente abordada no plano. Nessa nova pergunta, a condição temporal do plano passaria a qualificar a própria decisão sobre o piso; a redação original não pode receber essa categoria por transposição. A sugestão precisa ser testada nos demais planos.",
+        "meaning_changed": true,
+        "supporting_pages": [
+          2
+        ],
+        "requires_cross_plan_revalidation": true
+      }
+    },
+    {
+      "question_id": "BR26-T015",
+      "question_text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Os pontos 10 e 12 tratam da repressão policial, de autodefesa, de liberdades políticas e do Judiciário. Não fixam idade penal, regime de responsabilização de adolescentes ou tratamento de crimes graves. A referência a jovens atingidos pela violência policial não decide julgá-los como adultos aos 16 e 17 anos.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Dissolução da polícia militar e de todo o aparato repressivo"
+        }
+      ],
+      "context_pages": [
+        5,
+        6
+      ],
+      "complementary_search_terms": [
+        "16",
+        "17",
+        "maioridade",
+        "adolescente",
+        "penal",
+        "criminal",
+        "jovens"
+      ],
+      "scope_conditions": [
+        "A proposta de dissolução policial não fornece, por si, uma regra de imputabilidade penal."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T017",
+      "question_text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 8 defende controle da comunidade escolar e eleição dos diretores e dos postos de direção. Não decide a admissão de escolas cívico-militares. A organização democrática da gestão não descreve todos os elementos desse modelo, e a dissolução da polícia militar aparece em outro bloco, relativo à repressão. Não se infere uma regra específica de admissão ou vedação escolar dessas propostas.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Escolas e Universidades sob o controle da comunidade escolar: eleição dos diretores e de todos os postos de direção nas escolas; governo tripartite (estudantes, professores e funcionários) nas Universidades"
+        }
+      ],
+      "context_pages": [
+        5
+      ],
+      "complementary_search_terms": [
+        "cívico",
+        "militar",
+        "escola",
+        "gestão",
+        "comunidade escolar"
+      ],
+      "scope_conditions": [
+        "Eleição da gestão e admissão de um modelo de escola são decisões distintas; o texto não explicita incompatibilidade entre elas."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T018",
+      "question_text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 5 trata de estabilidade e concursos públicos, enquanto o ponto 10 denuncia violência contra o povo negro, jovens e trabalhadores. O plano não trata de cotas raciais no serviço público nem decide sua manutenção ou encerramento. Concursos e combate à violência racial não permitem preencher essa escolha.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Pela realização de concursos públicos periódicos para repor o quadro de servidores."
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ],
+      "complementary_search_terms": [
+        "cota",
+        "racial",
+        "raciais",
+        "negro",
+        "concurso",
+        "servidor"
+      ],
+      "scope_conditions": [
+        "A ausência é específica da reserva racial de vagas no serviço público."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T026A",
+      "question_text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 9 defende saúde pública e gratuita sob controle dos trabalhadores e critica a privatização da saúde. O ponto 5 é contrário às terceirizações no contexto de direitos dos servidores e propõe estabilidade dos contratados precariamente. Esses trechos não estabelecem que a gestão de todas as unidades públicas de saúde fique com entidades públicas nem uma vedação geral de delegação da gestão a organizações privadas. A leitura considera também autarquias e fundações públicas; a lacuna não decorre de exigir administração direta.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Contra as terceirizações; estabilidade imediata para todos os servidores contratados precariamente, com isonomia de direitos e salários"
+        },
+        {
+          "page": 5,
+          "quote": "Fim do lucro com a doença: saúde pública e gratuita, sob o controle dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ],
+      "complementary_search_terms": [
+        "saúde",
+        "gestão",
+        "organizaç",
+        "privad",
+        "terceiriza",
+        "públic",
+        "PPP"
+      ],
+      "scope_conditions": [
+        "O bloco de servidores liga terceirização à precariedade dos vínculos de trabalho; não explicita o regime de delegação da gestão de unidades.",
+        "Saúde pública/gratuita e controle dos trabalhadores não identificam, sozinhos, a pessoa jurídica responsável pela gestão de cada unidade."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T036",
+      "question_text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O ponto 11 exige expressamente o fim da independência do Banco Central. No contexto da organização futura do sistema financeiro, isso corresponde a rejeitar a autonomia institucional cuja revogação a pergunta propõe; o compromisso não se limita à redução dos juros.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores"
+        },
+        {
+          "page": 6,
+          "quote": "Fim da “independência” do Banco Central"
+        }
+      ],
+      "context_pages": [
+        6
+      ],
+      "complementary_search_terms": [
+        "Banco Central",
+        "independência",
+        "autonomia",
+        "179/2021"
+      ],
+      "scope_conditions": [
+        "A LC 179/2021 não é citada pelo número; o fim expresso da independência identifica o objeto institucional da pergunta."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T038",
+      "question_text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "divergent",
+      "reason": "O ponto 4 exige Petrobras 100% estatal e a nacionalização/estatização das reservas minerais e refinarias entregues ao capital internacional. Não define se produção e refino devem permanecer integrados na Petrobras: refinarias estatais separadas também seriam compatíveis com esses itens. Não há condição expressa sobre integração nem apoio e rejeição parciais à mesma decisão. A categoria anterior CONDICIONAL_OU_MISTA atribuía posição a uma arquitetura empresarial que o plano não decide.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais"
+        }
+      ],
+      "context_pages": [
+        3
+      ],
+      "complementary_search_terms": [
+        "Petrobrás",
+        "refin",
+        "produ",
+        "integra",
+        "petróleo"
+      ],
+      "scope_conditions": [
+        "Propriedade estatal de empresas/ativos não implica integração empresarial entre produção e refino."
+      ],
+      "reformulation_suggestion": {
+        "text": "A Petrobras deve ser 100% estatal.",
+        "reason": "Pergunta sobre a propriedade da empresa, que o plano decide expressamente, em vez de inferir da estatização uma integração entre atividades não especificada. Altera o eixo da comparação e exige revalidação de todos os planos.",
+        "meaning_changed": true,
+        "supporting_pages": [
+          3
+        ],
+        "requires_cross_plan_revalidation": true
+      }
+    },
+    {
+      "question_id": "BR26-T042",
+      "question_text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 9 critica privatização e lucro na saúde e propõe mais verbas, hospitais e postos, Mais Médicos e formação de profissionais. Não decide se o SUS pode contratar atendimentos privados para reduzir filas. A oposição à precarização por terceirização no ponto 5 também não especifica a compra complementar de atendimentos. Construir capacidade pública ou rejeitar lucro não equivale a proibir toda contratação, inclusive de entidades privadas sem fins lucrativos.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "A destruição sistemática do SUS e o avanço da privatização da saúde aumentam o sofrimento e as mortes, enquanto geram gigantescos lucros dos mercadores dos planos de saúde, hospitais e empresas."
+        },
+        {
+          "page": 5,
+          "quote": "Plano de emergência para construção de hospitais e postos de saúde em todo o País"
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ],
+      "complementary_search_terms": [
+        "SUS",
+        "fila",
+        "atendimento",
+        "contrat",
+        "hospital",
+        "privad"
+      ],
+      "scope_conditions": [
+        "A contratação complementar de atendimentos é distinta da delegação da gestão de unidades e do aumento da capacidade pública."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T043",
+      "question_text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O ponto 8 reserva expressamente as verbas públicas somente ao ensino público. Trata-se de uma regra universal de destinação de recursos na educação, que exclui financiar vagas de educação infantil em creches privadas. A inferência aplica essa regra ao caso particular da pergunta; não se apoia apenas em preferência por expandir a rede pública ou em crítica genérica ao setor privado.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+        },
+        {
+          "page": 5,
+          "quote": "Estatização do ensino pago"
+        }
+      ],
+      "context_pages": [
+        5
+      ],
+      "complementary_search_terms": [
+        "creche",
+        "vaga",
+        "ensino público",
+        "verbas públicas",
+        "ensino pago"
+      ],
+      "scope_conditions": [
+        "O plano não cita creches nominalmente; a conclusão decorre da exclusividade expressa das verbas para ensino público.",
+        "O alcance não depende de a creche privada ter ou não fins lucrativos."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T057",
+      "question_text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Os pontos 13 e 15 abordam soberania na Amazônia, ingerência estrangeira, América Latina e defesa de povos contra o imperialismo. Não mencionam Mercosul, União Europeia ou o acordo comercial entre ambos. O sentido político dessas propostas não decide apoiar ou rejeitar esse instrumento comercial.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Não à internacionalização da Amazônia e a toda a política de ingerência do imperialismo na região"
+        }
+      ],
+      "context_pages": [
+        7
+      ],
+      "complementary_search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo",
+        "comércio",
+        "comercial",
+        "imperialismo"
+      ],
+      "scope_conditions": [
+        "Soberania e oposição à ingerência não substituem uma decisão sobre o acordo específico."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T063",
+      "question_text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 15 defende povos em luta contra o imperialismo e cita a Palestina. Não menciona Israel nem rompimento ou manutenção de relações diplomáticas, genocídio ou apartheid. O apoio ao povo palestino não determina o instrumento diplomático e a condição de duração descritos na pergunta.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Defender os povos que se levantam em todo o mundo contra o imperialismo, de armas nas mãos e pelos meios que sejam necessários, como a Palestina, o Irã e a Rússia"
+        }
+      ],
+      "context_pages": [
+        7
+      ],
+      "complementary_search_terms": [
+        "Israel",
+        "Palestina",
+        "diplom",
+        "relações",
+        "genocídio",
+        "apartheid",
+        "romp"
+      ],
+      "scope_conditions": [
+        "A generalidade pelos meios que sejam necessários não especifica que o rompimento diplomático seja necessário ou adotado pelo Brasil."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T066",
+      "question_text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 15 inclui a Rússia entre povos a defender, e o ponto 13 trata da soberania nacional e da América Latina. O plano não menciona o BRICS nem decide a participação brasileira nele. Apoio a um país membro não implica posição sobre sair ou permanecer no bloco.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Defender os povos que se levantam em todo o mundo contra o imperialismo, de armas nas mãos e pelos meios que sejam necessários, como a Palestina, o Irã e a Rússia"
+        }
+      ],
+      "context_pages": [
+        7
+      ],
+      "complementary_search_terms": [
+        "BRICS",
+        "Rússia",
+        "China",
+        "bloco"
+      ],
+      "scope_conditions": [
+        "A ausência de proposta de saída não é classificada como defesa da permanência."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T067",
+      "question_text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O ponto 4 propõe reestatizar empresas entregues ao capital estrangeiro, recuperar reservas minerais/refinarias e criar empresa estatal para terras raras; o ponto 13 combate ingerência estrangeira na Amazônia. Isso delimita propriedade de ativos e controle de setores, mas não estabelece proibição geral de investimento estrangeiro na economia brasileira. Não se inferem regras para investimentos novos ou demais atividades.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "É preciso cancelar a venda do patrimônio do povo brasileiro e reestatizar todas as empresas entregues ao capital estrangeiro por verdadeiros lesa-pátria."
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais"
+        }
+      ],
+      "context_pages": [
+        3,
+        7
+      ],
+      "complementary_search_terms": [
+        "investimento",
+        "estrangeiro",
+        "capital",
+        "nacionaliza",
+        "imperialismo"
+      ],
+      "scope_conditions": [
+        "Nacionalização dos ativos mencionados e proibição geral de entrada de capital estrangeiro são decisões distintas."
+      ],
+      "reformulation_suggestion": null
+    }
+  ],
+  "candidate_summary": "Revisão integral das 7 páginas, com inspeção visual individual. Das 16 posições, 14 confirmadas e 2 divergentes: T011 e T038 passam de CONDICIONAL_OU_MISTA para NAO_ENCONTRADA porque suas condições ou propostas não decidem o objeto exato das perguntas. O resultado é 2 CONCORDA (T003, T036), 2 DISCORDA (T002, T043) e 12 NAO_ENCONTRADA. O plano decide revogação da reforma trabalhista, fim da independência do Banco Central, rejeição à privatização de todas as estatais e exclusividade de verbas públicas para ensino público. As ausências registram insuficiência documental específica, não posições negativas.",
+  "limitations": []
+}

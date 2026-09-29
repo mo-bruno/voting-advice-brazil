@@ -1,0 +1,338 @@
+{
+  "candidate_id": "280002541457",
+  "status": "complete",
+  "full_read_completed": true,
+  "document_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "pages_total": 33,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33
+  ],
+  "current_position": {
+    "last_completed_page": 33,
+    "next_page": null,
+    "phase": "complete"
+  },
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa ilustrada apresenta o lema Com os trabalhadores contra o sistema e Por um Brasil soberano e socialista.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Introdução diagnostica desigualdade, baixos salários, precariedade do SUS, violência policial e insuficiência do Bolsa Família.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 3,
+      "summary": "Diagnóstico atribui desindustrialização, privatizações, precarização dos serviços e repressão à subordinação ao capital internacional.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Defende enfrentar imperialismo e critica alianças econômicas do PT e extrema direita; menciona manutenção do arcabouço fiscal.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Critica o acordo Mercosul–União Europeia e o investimento estrangeiro centrado em aquisições; defende retomada de setores estratégicos.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T067",
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Propõe expropriar Petrobras, Vale, siderurgia e derivados do petróleo; controlar capitais e bancos e desenvolver IA sob controle estatal.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Defende planejamento econômico voltado ao consumo interno, pleno emprego e ruptura das estruturas de exploração.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 8,
+      "summary": "Propõe reduzir jornada, elevar salário mínimo, bolsa para desempregados, obras públicas e revogar reformas trabalhista, previdenciária e terceirizações.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Apresenta direitos trabalhistas para aplicativos, fiscalização dos algoritmos e criação de plataformas públicas nacionais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 10,
+      "summary": "Detalha governança e proteção social nas plataformas públicas; associa deterioração dos serviços a privatizações, PPPs e subfinanciamento.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Defende impedir privatização da gestão dos serviços, SUS 100% estatal, fim de OS, fundações e PPPs e expansão da rede própria de saúde.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Educação: rejeita recursos a grandes empresários, PPPs, terceirizações e militarização; amplia vagas públicas e introduz diagnóstico habitacional.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Moradia: obras públicas, urbanização e expropriação de imóveis ociosos; transporte: critica concessões e subsídio ao lucro privado.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Propõe transporte estatal, tarifa zero e reversão de concessões; defende previdência pública e revogação da reforma previdenciária.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Diagnostica crise climática e danos do agronegócio; propõe demarcação de terras, reparações e oposição ao petróleo na Margem Equatorial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 16,
+      "summary": "Detalha prevenção de desastres, proteção ambiental, soberania alimentar e reforma agrária com desapropriações.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Propõe infraestrutura nos assentamentos, crédito e tecnologia pública a pequenos produtores, cooperativas e direitos aos assalariados rurais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 18,
+      "summary": "Detalha direitos rurais e expropriação do agronegócio; introduz diagnóstico da segurança pública e da violência estatal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 19,
+      "summary": "Defende investigação patrimonial do crime, descriminalização das drogas, câmeras, fim da Justiça Militar e desmilitarização policial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 20,
+      "summary": "Propõe polícia civil unificada, organização sindical policial, combate a milícias e autodefesa popular; introduz combate às opressões.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 21,
+      "summary": "Programa antirracista defende ampliar cotas nas universidades e serviços públicos e rejeita redução da maioridade penal.",
+      "relevant_question_ids": [
+        "BR26-T018",
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Conclui reparações raciais e aborda desigualdade e violência contra mulheres, com proteção estatal, punição de agressores e organização coletiva.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 23,
+      "summary": "Defende direitos das trabalhadoras, proteção social universal, creches e escolas públicas para todas as crianças, serviços de cuidado e direitos reprodutivos.",
+      "relevant_question_ids": [
+        "BR26-T043",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 24,
+      "summary": "Liga enfrentamento da opressão das mulheres à transformação social e apresenta direitos e proteção para pessoas LGBTQIAPN+.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Apresenta saúde e cotas para pessoas LGBTQIAPN+, demarcação e reparação indígena, direitos de imigrantes e introdução à deficiência.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 26,
+      "summary": "Propõe inclusão das pessoas com deficiência e reestatização de setores estratégicos, Petrobras 100% estatal e investimentos em refino e tecnologia.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Prevê limites a dividendos, fundos públicos produtivos, bancos públicos estatais, tributação de lucros e fortunas e combate à dívida empresarial.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 28,
+      "summary": "Propõe suspender dívida, acabar com a Lei de Responsabilidade Fiscal, estatizar sistema financeiro e desenvolver infraestrutura digital nacional.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T036",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 29,
+      "summary": "Conclui propostas digitais e afirma necessidade de mobilização para implementar o programa; introduz governo socialista e defesa da Petrobras estatal.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 30,
+      "summary": "Defende educação totalmente pública e descreve a mobilização dos trabalhadores como estratégia prioritária de transformação.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 31,
+      "summary": "Avalia trajetória do PT e manifestações de 2013 e propõe assembleias, comitês e conselhos populares independentes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 32,
+      "summary": "Apresenta conselhos como coordenação das lutas e defende Estado operário revolucionário fundado em democracia operária e popular.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 33,
+      "summary": "Conclui defendendo representantes eleitos e revogáveis, controle popular direto da economia e autodefesa dos trabalhadores.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extração incompleta da tipografia da capa.",
+      "finding": "Capa ilustrada confirma o título e não contém propostas adicionais."
+    },
+    {
+      "page": 2,
+      "reason": "Conferir diagramação e ordem de leitura da extração inicial.",
+      "finding": "Texto em uma única coluna, sem conteúdo omitido ou interferência da diagramação."
+    },
+    {
+      "page": 3,
+      "reason": "Conferir diagramação e ordem de leitura da extração inicial.",
+      "finding": "Texto em uma única coluna, sem conteúdo omitido ou interferência da diagramação."
+    },
+    {
+      "page": 4,
+      "reason": "Conferir diagramação e ordem de leitura da extração inicial.",
+      "finding": "Texto em uma única coluna, sem conteúdo omitido ou interferência da diagramação."
+    },
+    {
+      "page": 11,
+      "reason": "Conferir se SUS 100% estatal e fim da gestão privada são itens próprios ou resultado de mistura da extração.",
+      "finding": "Itens separados em coluna única; a regra de SUS 100% estatal é textual e não contém ressalva de contratação complementar."
+    },
+    {
+      "page": 12,
+      "reason": "Confirmar alcance das proibições e o vínculo de serviços adquiridos com as empresas mencionadas.",
+      "finding": "A proibição de verba se refere aos grandes empresários; o item seguinte cita PPPs, terceirizações e serviços dessas empresas, sem quadro ou nota com exceção."
+    },
+    {
+      "page": 21,
+      "reason": "Conferir a literalidade e autonomia dos itens sobre cotas e maioridade penal.",
+      "finding": "A página apresenta manutenção e ampliação de cotas nos serviços públicos e oposição à redução da maioridade penal como itens independentes, sem ressalvas."
+    },
+    {
+      "page": 26,
+      "reason": "Distinguir propriedade estatal da Petrobras de destinação dos excedentes ao refino.",
+      "finding": "Petrobras estatal e investimentos em refino aparecem em itens distintos; nenhum item define integração de produção e refino na Petrobras."
+    },
+    {
+      "page": 28,
+      "reason": "Verificar objeto exato da proposta fiscal e da centralização financeira.",
+      "finding": "O item fiscal nomeia Lei de Responsabilidade Fiscal; o financeiro propõe estatização e banco único sem mencionar Banco Central ou sua autonomia."
+    },
+    {
+      "page": 30,
+      "reason": "Confirmar a formulação mais ampla sobre educação e sua conexão com as fundações empresariais.",
+      "finding": "O parágrafo diz educação totalmente pública, sem fundações empresariais definindo a política educacional; não há qualificação tipográfica que restrinja totalmente a um tipo de empresa."
+    }
+  ],
+  "unresolved_questions": [],
+  "updated_at": "2026-09-29T18:02:29.132709+00:00",
+  "reading_completed_at": "2026-09-29T17:58:10.405074+00:00",
+  "complementary_search_completed": true,
+  "positions_completed": 16,
+  "comparisons": {
+    "confirmed": 14,
+    "divergent": 2
+  },
+  "validation": {
+    "command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002541457",
+    "exit_code": 0,
+    "valid": true,
+    "errors": []
+  }
+}

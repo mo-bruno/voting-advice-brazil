@@ -1,0 +1,2014 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551547",
+  "candidate_name": "Escritor Augusto Cury",
+  "document_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 200,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172,
+    173,
+    174,
+    175,
+    176,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    183,
+    184,
+    185,
+    186,
+    187,
+    188,
+    189,
+    190,
+    191,
+    192,
+    193,
+    194,
+    195,
+    196,
+    197,
+    198,
+    199,
+    200
+  ],
+  "current_page": 200,
+  "next_page": null,
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa visual: O Brasil dos nossos sonhos, projeto de Estado para o Brasil, Dr. Augusto Cury, Avante, Brasil 2026.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Sumário dos capítulos introdutórios, 18 projetos e biografia final.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Cultura da paz: polarização, saúde emocional, feminicídio, professores e jovens sem estudo ou emprego.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Defesa de justiça social, liberdade econômica, responsabilidade fiscal e SUS, sem definir instrumentos legislativos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Encerramento do convite à reflexão e à cultura da paz.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 6,
+      "summary": "Introdução sobre polarização, pertencimento e fanatismo ideológico.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 7,
+      "summary": "Limites das ideologias, valorização do diálogo e efeitos das redes sociais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 8,
+      "summary": "Ferramenta DCD e referências filosóficas para superação da polarização.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 9,
+      "summary": "Defende liberdade econômica, mérito, responsabilidade individual e equilíbrio fiscal sem arcabouço específico.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Estabilidade institucional, contratos, famílias e crítica à meritocracia que ignora desigualdades iniciais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 11,
+      "summary": "Economia humanizada, responsabilidade fiscal e proteção dos vulneráveis; início da história dos direitos trabalhistas.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Diagnóstico da desigualdade e defesa histórica da educação pública.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 13,
+      "summary": "Proteção social, crítica à hipertrofia estatal e ao patrulhamento ideológico.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 14,
+      "summary": "Programas sociais com renda, capacitação, dignidade e autonomia, sem substituir benefício por trabalho público.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Processos psicológicos, algoritmos e polarização digital.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 16,
+      "summary": "Idolatria política, conformismo social e necessidade de formar cidadãos críticos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Gestão da emoção nas políticas públicas e síntese entre compaixão e sustentabilidade econômica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 18,
+      "summary": "Estado eficiente, proteção social, investimento e responsabilidade fiscal em termos gerais.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 19,
+      "summary": "Defende propostas sustentáveis e convivência democrática, com três critérios de avaliação de políticas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 20,
+      "summary": "Diagnóstico de influência econômica dos algoritmos e educação para redes sociais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 21,
+      "summary": "Hiperestimulação mental, manipulação política e erosão institucional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 22,
+      "summary": "Cancelamento, saúde mental juvenil e necessidade de políticas de orientação digital.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 23,
+      "summary": "Higiene mental democrática e educação para pensamento crítico e gestão emocional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 24,
+      "summary": "Tolerância, criatividade, resiliência e apoio público às famílias na educação emocional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Educação emocional e mercado como instrumento subordinado à dignidade humana.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 26,
+      "summary": "Estado eficiente, capitalismo humanizado, combate à corrupção e proteção aos vulneráveis.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 27,
+      "summary": "Equilíbrio entre Estado e mercado; abertura do capítulo sobre pacificação nacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 28,
+      "summary": "Combate à corrupção, simplificação tributária, empreendedorismo e proteção social.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 29,
+      "summary": "Formação emocional de líderes e professores, prevenção da ansiedade e diálogo comunitário.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Síntese de liberdade econômica, proteção social, responsabilidade fiscal e maturidade democrática.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 31,
+      "summary": "Gestão da emoção como elemento estratégico da democracia e da juventude.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 32,
+      "summary": "Humanização da tecnologia e educação para cooperação, autocontrole e diversidade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 33,
+      "summary": "Conclusão humanista da introdução, corresponsabilidade e relato familiar do candidato.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 34,
+      "summary": "Motivação da candidatura e síntese de responsabilidade fiscal, proteção social e paz.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 35,
+      "summary": "Divisória ilustrada das principais teses para construir o Brasil dos nossos sonhos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 36,
+      "summary": "Metas de déficit próximo de zero, controle de gastos e redução sustentável da dívida; nenhuma referência à LC 200.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 37,
+      "summary": "Reforma administrativa, segurança jurídica, ajustes à reforma tributária e revisão do pacto federativo.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 38,
+      "summary": "Carga tributária menor, governo digital e avaliação permanente de políticas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 39,
+      "summary": "Metas ministeriais, inteligência artificial anticorrupção, escolas e Banco do Empreendedor.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 40,
+      "summary": "Crédito, regularização fundiária, simplificação empresarial e implantação de indústrias.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 41,
+      "summary": "Indústria tecnológica, saúde, minerais estratégicos e corredores de exportação.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 42,
+      "summary": "ZPEs, crédito e garantias de exportação com atração de indústrias e segurança ao investimento.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 43,
+      "summary": "Concorrência com bancos internacionais e prioridades de educação básica, técnica e valorização docente.",
+      "relevant_question_ids": [
+        "BR26-T067",
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 44,
+      "summary": "Fortalecimento da atenção primária e gestão do SUS; telemedicina para filas e saúde mental.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 45,
+      "summary": "Prevenção do suicídio, integração policial, Ministério da Segurança e combate a facções.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 46,
+      "summary": "Tecnologia policial, FATO, cooperação internacional e atuação militar nas fronteiras.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 47,
+      "summary": "Valorização policial, ressocialização e expansão sustentável da produção agrícola.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 48,
+      "summary": "Licenciamento com critérios técnicos, inovação agrícola e apoio ao pequeno produtor.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 49,
+      "summary": "Cooperativismo, turismo rural, acordos comerciais gerais e seguro rural.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 50,
+      "summary": "Ampliação das concessões e PPPs para atrair investimentos nacionais e internacionais em infraestrutura.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 51,
+      "summary": "Energia renovável, hidrogênio verde com investimentos internacionais, bioeconomia e carbono.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 52,
+      "summary": "Desenvolvimento ambiental, fiscalização cidadã, inteligência artificial e órgãos anticorrupção.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 53,
+      "summary": "Transparência pública e Mulheres Vivas com proteção integrada e resposta a emergências.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 54,
+      "summary": "Autonomia e igualdade econômica feminina, saúde integral e prevenção de danos da cultura digital.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 55,
+      "summary": "Educação para respeito e correção da desigualdade no crédito feminino; Banco Central citado por estudo.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 56,
+      "summary": "Critérios objetivos de crédito, indicação de mulheres ao STF e currículo conectado ao trabalho.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 57,
+      "summary": "Primeiro emprego privado incentivado, empreendedorismo jovem e saúde mental.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 58,
+      "summary": "Política de inteligência artificial, ciência, soberania digital e introdução diplomática.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 59,
+      "summary": "Diplomacia pragmática, Embaixada 4.0, acordos com diferentes blocos e atração de investimento.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 60,
+      "summary": "Cooperação Sul-Sul e multilateralismo; semipresidencialismo, sistema político e STF.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 61,
+      "summary": "Gestão digital e desenvolvimento regional, preservando regimes de Manaus e Áreas de Livre Comércio.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 62,
+      "summary": "Produção no semiárido, políticas regionais, inclusão produtiva e cultura.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 63,
+      "summary": "Patrimônio, cultura de paz, visão de futuro e introdução das três grandes reformas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 64,
+      "summary": "Semipresidencialismo e STF com nove ministros, mandatos de oito anos e mínimo de três mulheres.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 65,
+      "summary": "Diplomacia econômica para atrair empresas, tecnologia e industrialização brasileira.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 66,
+      "summary": "Divisória visual dos principais projetos do Brasil dos nossos sonhos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 67,
+      "summary": "Capa visual do Projeto 1: educação, valores, oportunidades e formação de pensadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 68,
+      "summary": "Educação integral como prioridade nacional e valorização da função docente.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 69,
+      "summary": "Revolução educacional com atenção à saúde emocional e à autonomia intelectual.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 70,
+      "summary": "Diagnóstico de aprendizagem, PISA e efeitos cognitivos dos estímulos digitais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 71,
+      "summary": "Dependência emocional, concentração e capacidade de expressão dos estudantes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 72,
+      "summary": "Escola como espaço de prevenção de sofrimento e integração de conhecimento, saúde emocional e cidadania.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 73,
+      "summary": "Crise da educação e proposta de superar transmissão passiva por autonomia e interação humana.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 74,
+      "summary": "Professor como provocador de perguntas, participação e pensamento; escola de tempo integral.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 75,
+      "summary": "Escola como clube de desenvolvimento humano com emoção, finanças e empreendedorismo.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 76,
+      "summary": "Ensino médio com formação técnica, humana, acadêmica e tecnológica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 77,
+      "summary": "Integração com empresas, ensino técnico e universidades; empreendedorismo e cooperativismo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 78,
+      "summary": "Universidades com pesquisa, CAPES/CNPq, startups, patentes e transferência tecnológica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 79,
+      "summary": "Produção universitária de riqueza e incentivos aos resultados econômicos de pesquisadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 80,
+      "summary": "Capa visual do Projeto 2, Brasil Neuroinclusivo, com lema Nenhuma mente fica para trás.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 81,
+      "summary": "Política de neurodiversidade, mapa nacional e metodologia pedagógica inclusiva.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 82,
+      "summary": "Escola regular como centro da inclusão, atendimento especializado complementar e formação docente.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 83,
+      "summary": "Rede neuroinclusiva entre escola, família e saúde; implementação de apoio e prevenção.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 84,
+      "summary": "Mapa de neurodiversidade e universalização progressiva da política nas redes públicas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 85,
+      "summary": "Capa visual Mulheres Vivas: proteção, igualdade, autonomia, saúde emocional e apoio.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 86,
+      "summary": "Diagnóstico de feminicídio, desigualdade salarial e desigualdade de crédito.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 87,
+      "summary": "Mulheres Vivas integra segurança, Justiça, assistência e saúde para prevenção de violência.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 88,
+      "summary": "Tecnologia de emergência e prioridade de qualificação, emprego e crédito para vítimas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 89,
+      "summary": "Igualdade remuneratória, presença feminina e articulação com Banco Central sobre crédito.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 90,
+      "summary": "Crédito com risco efetivo e saúde integral da mulher conforme legislação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 91,
+      "summary": "Campanhas sobre autoestima e medidas educativas sobre padrões digitais de beleza.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 92,
+      "summary": "Educação emocional, prevenção da violência e mulheres em posições de liderança.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 93,
+      "summary": "Prioridade a mulheres no STF e síntese do pacto nacional de proteção feminina.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 94,
+      "summary": "Capa visual da Secretaria de Empreendedorismo e Economia Distribuída; meta de dez milhões de microempresas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 95,
+      "summary": "Diagnóstico de desemprego estrutural pela automação e preparação empreendedora.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 96,
+      "summary": "Economia distribuída como complemento às grandes corporações e fonte de autonomia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 97,
+      "summary": "Microempresas, democratização da IA e criação de Ministério e clubes empreendedores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 98,
+      "summary": "Banco do Empreendedor, lucros de empresas com participação da União e valorização do Bolsa Família.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 99,
+      "summary": "Bolsa Família mantido por determinado tempo após carteira assinada ou microempresa; lista de profissões.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 100,
+      "summary": "Lista de profissões em educação, economia digital, serviços locais e estética.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 101,
+      "summary": "Continuação da lista: estética, tecnologia acessível, economia criativa e agro.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 102,
+      "summary": "Continuação da lista: sustentabilidade, serviços empresariais e novas demandas sociais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 103,
+      "summary": "Síntese da preparação empreendedora para automação e inteligência artificial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 104,
+      "summary": "Capa visual Comunidades Empreendedoras com capacitação, crédito, inovação e autonomia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 105,
+      "summary": "Regularização fundiária, escola e banco empreendedores e urbanização de comunidades.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 106,
+      "summary": "Meta de cinco milhões de moradias; proteção contra perda da casa no crédito e escolas em estruturas existentes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 107,
+      "summary": "Escola do Empreendedor com parceiros privados e Banco como plataforma operada com bancos públicos, cooperativas e fintechs.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 108,
+      "summary": "Crédito progressivo e fundo rotativo de R$30–50 bilhões; introdução à urbanização.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 109,
+      "summary": "Infraestrutura comunitária, participação dos moradores e remoções excepcionais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 110,
+      "summary": "Proteção contra especulação, transparência e estimativas de custos do programa comunitário.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 111,
+      "summary": "Financiamento compartilhado, inclusive bancos públicos e multilaterais; experiências de Peru, Medellín e Tailândia.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 112,
+      "summary": "Experiência brasileira de urbanização somada ao empreendedorismo em massa.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 113,
+      "summary": "Capa visual Brasil Oásis: água, agricultura familiar, energia limpa, inclusão e segurança alimentar.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 114,
+      "summary": "Diagnóstico do semiárido e agricultura familiar; Israel como referência em tecnologia hídrica.",
+      "relevant_question_ids": [
+        "BR26-T063"
+      ]
+    },
+    {
+      "page": 115,
+      "summary": "Quatro eixos para agricultura e agroindústria, com capital nacional e internacional.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 116,
+      "summary": "Cooperação tecnológica com Israel e China e coinvestimento com fundos soberanos do Golfo.",
+      "relevant_question_ids": [
+        "BR26-T063",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 117,
+      "summary": "Crédito rural, agroindústrias, diplomacia comercial e metas de produção e exportação.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 118,
+      "summary": "Meta explícita de atração de capital internacional para irrigação, logística e agroindústria.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 119,
+      "summary": "Capa visual BEE: empreendedorismo nas estradas e corredores de prosperidade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 120,
+      "summary": "Duplicação rodoviária e polos econômicos como preparação para automação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 121,
+      "summary": "Estrutura física dos polos rodoviários e tipos de produtos comercializados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 122,
+      "summary": "PPPs: governo define áreas e regula; iniciativa privada constrói e opera polos; formalização simples.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 123,
+      "summary": "Benefícios fiscais, impacto dos polos rodoviários e autonomia econômica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 124,
+      "summary": "Conclusão do BEE como modelo de inclusão produtiva para outros países.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 125,
+      "summary": "Capa visual Agroindústria Brasil: dez mil agroindústrias e agregação de valor.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 126,
+      "summary": "Dez mil agroindústrias e cem usinas de etanol de milho.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 127,
+      "summary": "Integração milho, etanol, energia, DDGS e proteína animal, com polos regionais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 128,
+      "summary": "Agroindustrialização nordestina e MATOPIBA, tecnologia e agregação de valor.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 129,
+      "summary": "Eficiência agroindustrial para melhorar renda do produtor e acesso a alimentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 130,
+      "summary": "Capa visual Brasil Cooperativismo, prosperidade compartilhada e sustentabilidade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 131,
+      "summary": "Meta de dobrar cooperativas e cooperados, como resposta inclusiva à automação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 132,
+      "summary": "Expansão das cooperativas e do acesso a crédito, saúde, educação e mercados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 133,
+      "summary": "Redes cooperativas agroindustriais, energéticas, de proteína, indústria e tecnologia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 134,
+      "summary": "Expansão territorial de cooperativas de crédito e seguros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 135,
+      "summary": "Cooperativas de saúde, medicamentos, consumo, educação e habitação, sem contratação pelo SUS ou vagas de creche especificadas.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 136,
+      "summary": "Cooperativas de microempresas e compras, apoiadas por crédito e incentivos públicos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 137,
+      "summary": "Educação cooperativista, plataforma digital, compras públicas e criação da ANCOOP.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 138,
+      "summary": "Governança e dimensão social da prosperidade cooperativa.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 139,
+      "summary": "Capa visual Brasil Exportador com presença global e parcerias sustentáveis.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 140,
+      "summary": "Projeto exportador para industrialização, investimento e cadeias globais de produção.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 141,
+      "summary": "Cinco zonas francas setoriais, incluindo integração ao Mercosul no Rio Grande do Sul.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 142,
+      "summary": "Regulação e incentivos à exportação tecnológica, com universidades e setor privado.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 143,
+      "summary": "Atração de investimentos internacionais e coordenação da política exportadora pela ZONE.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 144,
+      "summary": "Conclusão favorável a uma economia aberta e inovadora.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 145,
+      "summary": "Capa visual Embaixadas Empreendedoras: mercados, empresas, parcerias e investimentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 146,
+      "summary": "Diagnóstico de baixa abertura comercial e embaixadas como plataformas de promoção econômica.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 147,
+      "summary": "Redistribuição parcial de diplomatas dos EUA e Europa para Ásia e Oriente Médio.",
+      "relevant_question_ids": [
+        "BR26-T063",
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 148,
+      "summary": "Formação diplomática para investimentos e feiras internacionais de produtos brasileiros.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 149,
+      "summary": "Inteligência comercial, influenciadores estrangeiros e semanas promocionais de turismo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 150,
+      "summary": "Segurança turística, comunicação institucional e metas de comércio internacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 151,
+      "summary": "Exportação de projetos sociais e fundo internacional contra fome financiado por comércio e armamentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 152,
+      "summary": "Indicadores diplomáticos e mulheres brasileiras no exterior como promotoras de produtos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 153,
+      "summary": "Formação e rede voluntária de mulheres embaixadoras econômicas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 154,
+      "summary": "Apoio empresarial às brasileiras no exterior e síntese de diplomacia para desenvolvimento.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 155,
+      "summary": "Oposição à reeleição e defesa do presidente como servidor temporário da sociedade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 156,
+      "summary": "Capa visual do plano mundial contra a fome, cooperação e agricultura sustentável.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 157,
+      "summary": "Fundo global contra fome financiado por percentuais do comércio mundial e armamentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 158,
+      "summary": "Distribuição alimentar, agricultura e microcrédito em fundo com governança multilateral.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 159,
+      "summary": "Auditoria, metas e cooperação humanitária no combate mundial à fome.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 160,
+      "summary": "Capa visual Tele Saúde Brasil para reduzir pressão sobre o SUS.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 161,
+      "summary": "Plataforma pública nacional de medicina digital e prioridades de atendimento.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 162,
+      "summary": "IA para triagem, meta digital em trinta minutos e rede pública integrada de médicos.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 163,
+      "summary": "Gestão emocional e pontos públicos de acesso digital em unidades, escolas e comunidades.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 164,
+      "summary": "Telemedicina complementa atendimento presencial e fortalece sistema público, sem definir compra de serviços privados.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 165,
+      "summary": "Capa visual de prevenção e detecção precoce do câncer, programa SEA.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 166,
+      "summary": "Programa SEA combina educação, emoção, tecnologia, sociedade e comitês regionais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 167,
+      "summary": "Modelos de rastreamento de mama, próstata, colo do útero e câncer colorretal; Hospital de Amor como referência.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 168,
+      "summary": "Rastreamento, prevenção e diagnóstico remoto de câncer de pele e causas de crescimento da doença.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 169,
+      "summary": "Fatores de risco evitáveis e comparação dos custos da prevenção e do tratamento tardio.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 170,
+      "summary": "Hospital de Amor como referência de atendimento gratuito, rede de prevenção e integração digital.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 171,
+      "summary": "Modelo do Hospital de Amor inspira rede preventiva adaptada regionalmente e educação contínua.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 172,
+      "summary": "Comitês SEA integram instituições públicas, privadas e sociedade civil em prevenção, sem definir compra de serviços ou gestão de unidades.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 173,
+      "summary": "Síntese do SEA sobre prevenção e responsabilidade compartilhada.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 174,
+      "summary": "Capa visual Energias Renováveis do Brasil, PENER-BR.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 175,
+      "summary": "Mapeamento energético, hidrogênio verde e atração de fundos soberanos e multinacionais.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 176,
+      "summary": "PPPs e incentivos à energia limpa, com matriz, cadeia industrial e integração agrícola.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 177,
+      "summary": "Capa visual PETRA-BR, minerais estratégicos e riqueza nacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 178,
+      "summary": "Mapeamento mineral, demanda tecnológica e processamento nacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 179,
+      "summary": "Atração de empresas nacionais e internacionais, transferência de tecnologia e refino de minerais críticos.",
+      "relevant_question_ids": [
+        "BR26-T067",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 180,
+      "summary": "Síntese do PETRA-BR, industrialização dos recursos naturais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 181,
+      "summary": "Capa visual Floresta Viva, preservação para sustentabilidade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 182,
+      "summary": "Prevenção de incêndios com IA, satélites, drones, brigadas e ciência climática.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 183,
+      "summary": "Educação ambiental, créditos auditados, fiscalização e geração de renda amazônica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 184,
+      "summary": "Crédito amazônico, infraestrutura limpa e renda para preservar florestas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 185,
+      "summary": "Capa visual Alerta Total, segurança 4.0: integração, inteligência, prevenção e resultados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 186,
+      "summary": "FATO propõe integração nacional de forças policiais com competências constitucionais respeitadas.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 187,
+      "summary": "FOCO municipal como força de apoio e sistema integrado de inteligência.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 188,
+      "summary": "Tecnologia policial, reconhecimento facial dentro da lei, capacitação e valorização de profissionais.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 189,
+      "summary": "Prevenção criminal e proteção escolar com botão, monitoramento e patrulhamento, sem modelo escolar cívico-militar.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 190,
+      "summary": "Combate financeiro ao crime, fronteiras inteligentes e centros municipais de segurança.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 191,
+      "summary": "Indicadores de segurança e diagrama visual: Centro Nacional integra polícias, FOCO, IA, drones e resposta em tempo real.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 192,
+      "summary": "Resultados do FATO: prevenção, cooperação, valorização e respeito ao Estado Democrático de Direito.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 193,
+      "summary": "Capa visual biográfica de Augusto Cury com retrato e identificação da candidatura.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 194,
+      "summary": "Biografia, publicações, formação, obras e programas socioemocionais do candidato.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 195,
+      "summary": "Projetos biográficos Touchpeace, proteção pediátrica e emocional de crianças e Escola de Pensadores.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 196,
+      "summary": "Método SOFT, Academia de Gestão da Emoção e programa familiar AMEM-SE.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 197,
+      "summary": "Programas de prevenção do suicídio, saúde na estrada e saúde emocional empresarial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 198,
+      "summary": "Academia antiestresse, entidades internacionais e lista de honrarias de 2003–2011.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 199,
+      "summary": "Conclusão de honrarias: empreendedorismo social e Fundação Dr. Jesus.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 200,
+      "summary": "Página final visual anuncia Outros programas de relevância para o nosso governo, projeto de Michel Temer e Carta das mulheres para a política; seus conteúdos não seguem neste PDF.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extração contém apenas número de página.",
+      "finding": "Capa ilustrada e título lidos visualmente; nenhuma proposta substantiva."
+    },
+    {
+      "page": 35,
+      "reason": "Extração contém apenas número.",
+      "finding": "Divisória ilustrada; título e subtítulo das principais teses, sem propostas adicionais."
+    },
+    {
+      "page": 66,
+      "reason": "Extração contém apenas número.",
+      "finding": "Divisória dos principais projetos; sem proposta substantiva."
+    },
+    {
+      "page": 67,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa de educação com imagens escolares e lemas sobre pensar, valores, qualidade e oportunidades; sem proposta cívico-militar ou financiamento de creches."
+    },
+    {
+      "page": 80,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa ilustrada Brasil Neuroinclusivo com lema Nenhuma mente fica para trás; sem novas regras materiais."
+    },
+    {
+      "page": 85,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Mulheres Vivas; lemas e eixos de proteção, igualdade, autonomia econômica, saúde emocional e rede de apoio."
+    },
+    {
+      "page": 94,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa da Secretaria de Empreendedorismo e Economia Distribuída, com meta de dez milhões de microempresas."
+    },
+    {
+      "page": 98,
+      "reason": "Verificar redação e continuidade entre páginas no trecho decisivo sobre Bolsa Família.",
+      "finding": "A imagem confirma a redação imperfeita do parágrafo original sobre Bolsa Família e a oração interrompida pela virada de página; nenhum termo foi corrigido na citação."
+    },
+    {
+      "page": 99,
+      "reason": "Verificar redação e continuidade entre páginas no trecho decisivo sobre Bolsa Família.",
+      "finding": "Continuação legível: manutenção por determinado tempo após carteira assinada ou microempresa e incentivos de crédito; não menciona trabalho público remunerado."
+    },
+    {
+      "page": 104,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa de Comunidades Empreendedoras com eixos de capacitação, crédito, apoio, inovação e autonomia."
+    },
+    {
+      "page": 113,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa de Brasil Oásis com eixos de água, agricultura familiar, energia limpa, inclusão e segurança alimentar."
+    },
+    {
+      "page": 119,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa BEE com título e lema sobre estradas como corredores de prosperidade."
+    },
+    {
+      "page": 125,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Agroindústria Brasil com dez mil agroindústrias e integração do grão à proteína."
+    },
+    {
+      "page": 130,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Brasil Cooperativismo com lemas de pessoas no centro, cooperação e prosperidade compartilhada."
+    },
+    {
+      "page": 139,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Brasil Exportador com lemas sobre presença global, parcerias, crescimento e sustentabilidade."
+    },
+    {
+      "page": 145,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa das Embaixadas Empreendedoras com promoção comercial, parcerias e investimentos."
+    },
+    {
+      "page": 156,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa de erradicação mundial da fome com alimentação, agricultura sustentável e cooperação global."
+    },
+    {
+      "page": 160,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Tele Saúde Brasil: telemedicina para desafogar SUS; não acrescenta regime de contratação."
+    },
+    {
+      "page": 165,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa SEA: prevenção e detecção precoce do câncer; diagnóstico precoce salva vidas."
+    },
+    {
+      "page": 174,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa PENER-BR com energia limpa e futuro sustentável."
+    },
+    {
+      "page": 177,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa PETRA-BR de terras raras e minerais estratégicos; não é Petrobras."
+    },
+    {
+      "page": 181,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Floresta Viva com lema de preservação."
+    },
+    {
+      "page": 185,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa Alerta Total de segurança 4.0, sem menção a maioridade penal."
+    },
+    {
+      "page": 191,
+      "reason": "A extração termina em SÍNTESE sem captar o diagrama.",
+      "finding": "Diagrama lido: Centro Nacional de Inteligência integra PF, PM, Civil e FOCO; plataforma única com IA, drones, satélites, câmeras e big data, reconhecimento permitido em lei e resposta coordenada."
+    },
+    {
+      "page": 193,
+      "reason": "Extração contém apenas número.",
+      "finding": "Capa com retrato de Augusto Cury, identificação da candidatura e formação; nenhuma nova proposta."
+    },
+    {
+      "page": 200,
+      "reason": "Extração contém apenas número.",
+      "finding": "Página final anuncia Outros programas de relevância para o nosso governo, projeto de Michel Temer e Carta das mulheres para a política. O arquivo de 200 páginas termina aqui, sem apresentar tais conteúdos."
+    }
+  ],
+  "unresolved_questions": [],
+  "reading_method": "Extração layout sem cortes; páginas sem texto útil verificadas visualmente.",
+  "limitations": [
+    "A página física 200 anuncia programas adicionais, mas o PDF oficial termina nela; não há conteúdo desses anexos para classificar. Todas as 200 páginas fornecidas foram lidas."
+  ],
+  "complementary_searches": {
+    "method": "Pesquisa complementar após leitura integral em layout e raw, com normalização somente para busca de acentos, caixa e espaços. SUS e raça foram exigidos como palavras inteiras; demais buscas aceitam ocorrências e radicais.",
+    "results": {
+      "BR26-T001": {
+        "arcabouço": [],
+        "200/2023": [],
+        "regime fiscal": [],
+        "déficit": [
+          36
+        ],
+        "responsabilidade fiscal": [
+          4,
+          9,
+          11,
+          18,
+          30,
+          34,
+          36
+        ]
+      },
+      "BR26-T002": {
+        "estatal": [
+          27
+        ],
+        "estatais": [],
+        "privat": [],
+        "desestat": [],
+        "controle privado": [],
+        "União possui participação": [
+          98
+        ],
+        "bancos públicos": [
+          107,
+          111
+        ]
+      },
+      "BR26-T003": {
+        "2017": [],
+        "trabalhista": [
+          11
+        ],
+        "CLT": [],
+        "revoga": [],
+        "trabalho": [
+          3,
+          26,
+          43,
+          47,
+          54,
+          56,
+          57,
+          75,
+          76,
+          86,
+          89,
+          95,
+          96,
+          105,
+          106,
+          114,
+          116,
+          120,
+          121,
+          132,
+          138,
+          147,
+          187
+        ],
+        "emprego": [
+          9,
+          10,
+          18,
+          19,
+          25,
+          26,
+          28,
+          37,
+          39,
+          40,
+          41,
+          42,
+          43,
+          52,
+          57,
+          61,
+          62,
+          65,
+          72,
+          77,
+          78,
+          95,
+          97,
+          103,
+          106,
+          120,
+          123,
+          126,
+          131,
+          133,
+          140,
+          142,
+          143,
+          150,
+          178,
+          179,
+          180
+        ]
+      },
+      "BR26-T011": {
+        "Bolsa Família": [
+          98,
+          99
+        ],
+        "trabalho remunerado": [],
+        "emprego público": [],
+        "programa público de trabalho": [],
+        "carteira": [
+          99
+        ],
+        "microempresa": [
+          39,
+          95,
+          99,
+          107,
+          135,
+          136,
+          183
+        ]
+      },
+      "BR26-T015": {
+        "maioridade": [],
+        "imput": [],
+        "16 anos": [],
+        "17 anos": [],
+        "crimes graves": [],
+        "adolescentes": [
+          9,
+          45,
+          54,
+          69,
+          71,
+          72,
+          73,
+          81,
+          91,
+          195
+        ],
+        "penitenciário": [
+          47
+        ]
+      },
+      "BR26-T017": {
+        "cívico": [],
+        "militar": [
+          23,
+          45,
+          46,
+          47,
+          157,
+          186
+        ],
+        "militares": [
+          45,
+          47,
+          157
+        ],
+        "gestão escolar": [],
+        "proteção das escolas": [
+          189
+        ]
+      },
+      "BR26-T018": {
+        "cota": [],
+        "racial": [],
+        "raciais": [],
+        "raça": [
+          55,
+          89
+        ],
+        "concurso": [],
+        "serviço público": [
+          187
+        ],
+        "meritocracia": [
+          4,
+          9,
+          10
+        ]
+      },
+      "BR26-T026A": {
+        "organizações sociais": [],
+        "organizações privadas": [],
+        "gestão": [
+          9,
+          11,
+          14,
+          23,
+          24,
+          27,
+          29,
+          31,
+          37,
+          39,
+          43,
+          44,
+          49,
+          52,
+          58,
+          59,
+          62,
+          65,
+          70,
+          75,
+          76,
+          81,
+          82,
+          83,
+          96,
+          98,
+          102,
+          107,
+          114,
+          116,
+          122,
+          123,
+          128,
+          134,
+          137,
+          138,
+          159,
+          163,
+          166,
+          170,
+          171,
+          180,
+          194,
+          195,
+          196,
+          197,
+          198
+        ],
+        "delegação": [],
+        "hospital": [
+          150,
+          167,
+          170,
+          171
+        ],
+        "SUS": [
+          2,
+          4,
+          44,
+          161,
+          164
+        ],
+        "cooperativas de saúde": [
+          135
+        ]
+      },
+      "BR26-T036": {
+        "Banco Central": [
+          55,
+          89
+        ],
+        "179/2021": [],
+        "autonomia": [
+          9,
+          14,
+          15,
+          17,
+          27,
+          41,
+          54,
+          56,
+          69,
+          72,
+          73,
+          75,
+          86,
+          87,
+          88,
+          89,
+          90,
+          95,
+          96,
+          105,
+          123,
+          157,
+          158,
+          187
+        ],
+        "independência": [
+          54,
+          60,
+          64
+        ],
+        "Selic": [
+          117
+        ]
+      },
+      "BR26-T038": {
+        "Petrobras": [],
+        "Petrobrás": [],
+        "Transpetro": [],
+        "refino": [
+          179
+        ],
+        "refinaria": [],
+        "petróleo": [
+          41,
+          141
+        ]
+      },
+      "BR26-T042": {
+        "rede privada": [],
+        "contratar": [
+          57,
+          89
+        ],
+        "contratação": [],
+        "atendimentos": [
+          162,
+          171
+        ],
+        "filas": [
+          38,
+          44,
+          161,
+          162,
+          164
+        ],
+        "telemedicina": [
+          44,
+          161,
+          162,
+          163,
+          164
+        ],
+        "SUS": [
+          2,
+          4,
+          44,
+          161,
+          164
+        ]
+      },
+      "BR26-T043": {
+        "creche": [],
+        "voucher": [],
+        "vagas": [
+          56,
+          64,
+          93
+        ],
+        "escolas comunitárias": [
+          135
+        ],
+        "cooperativas educacionais": [
+          135
+        ]
+      },
+      "BR26-T057": {
+        "Mercosul": [
+          141
+        ],
+        "União Europeia": [],
+        "Europa": [
+          141,
+          147,
+          175
+        ],
+        "acordo comercial": [],
+        "acordos comerciais": [
+          49,
+          59
+        ]
+      },
+      "BR26-T063": {
+        "Israel": [
+          114,
+          115,
+          116
+        ],
+        "Palestina": [],
+        "palestino": [],
+        "Gaza": [],
+        "apartheid": [],
+        "genocídio": [],
+        "romper": [
+          12,
+          33,
+          72,
+          88,
+          140,
+          171
+        ],
+        "relações diplomáticas": []
+      },
+      "BR26-T066": {
+        "BRICS": [],
+        "Sul-Sul": [
+          60
+        ],
+        "multilateralismo": [
+          60
+        ]
+      },
+      "BR26-T067": {
+        "capital internacional": [
+          118
+        ],
+        "investimentos internacionais": [
+          51,
+          143
+        ],
+        "investimento estrangeiro": [],
+        "fundos soberanos": [
+          116,
+          175
+        ],
+        "multinacionais": [
+          175
+        ]
+      }
+    }
+  },
+  "positions_reviewed": [
+    "BR26-T001",
+    "BR26-T002",
+    "BR26-T003",
+    "BR26-T011",
+    "BR26-T015",
+    "BR26-T017",
+    "BR26-T018",
+    "BR26-T026A",
+    "BR26-T036",
+    "BR26-T038",
+    "BR26-T042",
+    "BR26-T043",
+    "BR26-T057",
+    "BR26-T063",
+    "BR26-T066",
+    "BR26-T067"
+  ],
+  "classification_summary": {
+    "confirmed": 15,
+    "divergent": 1,
+    "no_prior": 0,
+    "categories": {
+      "NAO_ENCONTRADA": 15,
+      "DISCORDA": 1
+    }
+  },
+  "verification": {
+    "validator": "validate.py --candidate 280002551547",
+    "result": {
+      "schema_version": 1,
+      "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+      "plan_count": 1,
+      "pending": 0,
+      "invalid_submissions": 0,
+      "complete_and_valid": true,
+      "reviews": [
+        {
+          "candidate_id": "280002551547",
+          "name": "Escritor Augusto Cury",
+          "status": "submitted",
+          "valid": true,
+          "errors": [],
+          "pages": 200,
+          "pages_logged": 200,
+          "questions": 16,
+          "comparisons": {
+            "confirmed": 15,
+            "divergent": 1
+          },
+          "categories": {
+            "NAO_ENCONTRADA": 15,
+            "DISCORDA": 1
+          },
+          "quote_matches": {
+            "layout": 23
+          },
+          "visual_check_count": 26,
+          "review_sha256": "11610826791ac3875eb8ad01e5b4c9e06efe164bdfad9d0f0fc8aa4b3e89d467"
+        }
+      ],
+      "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+    },
+    "execution_note": "Validador executado integralmente em memória; somente a gravação de validation-280002551547.json foi interceptada, preservando os três caminhos autorizados."
+  }
+}

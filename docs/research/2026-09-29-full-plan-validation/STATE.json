@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
-  "phase": "source_verified_and_dispatching",
+  "phase": "complete",
   "question_count": 16,
-  "plan_count": 14,
-  "total_pages": 864,
+  "plan_count": 13,
+  "total_pages": 836,
   "model": "gpt-6-astra",
   "reasoning_effort": "ultra",
   "max_parallel_reviewers": 3,
@@ -29,11 +29,11 @@
         12
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002538811",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_samara",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 67,
       "current_official_status": {
         "SQ_CANDIDATO": "280002538811",
         "DT_GERACAO": "29/09/2026",
@@ -43,7 +43,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:44:41.563309+00:00",
+      "review_file": "reviews/280002538811.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002539826",
@@ -64,11 +68,11 @@
         12
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002539826",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_zema",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 81,
       "current_official_status": {
         "SQ_CANDIDATO": "280002539826",
         "DT_GERACAO": "29/09/2026",
@@ -78,7 +82,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:36:03.238127+00:00",
+      "review_file": "reviews/280002539826.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002540694",
@@ -99,11 +107,11 @@
         12
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002540694",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_renan",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 51,
       "current_official_status": {
         "SQ_CANDIDATO": "280002540694",
         "DT_GERACAO": "29/09/2026",
@@ -113,7 +121,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:48:59.391309+00:00",
+      "review_file": "reviews/280002540694.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002541457",
@@ -134,11 +146,11 @@
         14
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002541457",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_hertz",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 33,
       "current_official_status": {
         "SQ_CANDIDATO": "280002541457",
         "DT_GERACAO": "29/09/2026",
@@ -148,7 +160,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:55:07.007539+00:00",
+      "review_file": "reviews/280002541457.json",
+      "position_count": 16,
+      "divergent_count": 2
     },
     {
       "id": "280002542548",
@@ -169,7 +185,7 @@
         14
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002542548",
-      "status": "reading",
+      "status": "validated",
       "agent_id": "/root/plan_lula",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
@@ -184,7 +200,10 @@
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
       },
-      "started_at": "2026-09-29T17:25:01.349631+00:00"
+      "started_at": "2026-09-29T17:25:01.349631+00:00",
+      "review_file": "reviews/280002542548.json",
+      "position_count": 16,
+      "divergent_count": 1
     },
     {
       "id": "280002548139",
@@ -205,11 +224,11 @@
         14
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002548139",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_grassi",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 58,
       "current_official_status": {
         "SQ_CANDIDATO": "280002548139",
         "DT_GERACAO": "29/09/2026",
@@ -219,7 +238,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:45:36.143101+00:00",
+      "review_file": "reviews/280002548139.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002551544",
@@ -240,11 +263,11 @@
         16
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551544",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_flavio",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 76,
       "current_official_status": {
         "SQ_CANDIDATO": "280002551544",
         "DT_GERACAO": "29/09/2026",
@@ -254,7 +277,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T17:36:41.660758+00:00",
+      "review_file": "reviews/280002551544.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002551547",
@@ -275,11 +302,11 @@
         16
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551547",
-      "status": "reading",
+      "status": "validated",
       "agent_id": "/root/plan_cury",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 156,
+      "pages_read": 200,
       "current_official_status": {
         "SQ_CANDIDATO": "280002551547",
         "DT_GERACAO": "29/09/2026",
@@ -290,7 +317,10 @@
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
       },
-      "started_at": "2026-09-29T17:25:01.197018+00:00"
+      "started_at": "2026-09-29T17:25:01.197018+00:00",
+      "review_file": "reviews/280002551547.json",
+      "position_count": 16,
+      "divergent_count": 1
     },
     {
       "id": "280002551932",
@@ -311,7 +341,7 @@
         16
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551932",
-      "status": "reading",
+      "status": "validated",
       "agent_id": "/root/plan_caiado",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
@@ -326,7 +356,10 @@
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
       },
-      "started_at": "2026-09-29T17:25:01.285925+00:00"
+      "started_at": "2026-09-29T17:25:01.285925+00:00",
+      "review_file": "reviews/280002551932.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002551975",
@@ -347,11 +380,11 @@
         16
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551975",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_edmilson",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 16,
       "current_official_status": {
         "SQ_CANDIDATO": "280002551975",
         "DT_GERACAO": "29/09/2026",
@@ -361,7 +394,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T18:02:05.572171+00:00",
+      "review_file": "reviews/280002551975.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002552484",
@@ -382,11 +419,11 @@
         16
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552484",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_clariana",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 15,
       "current_official_status": {
         "SQ_CANDIDATO": "280002552484",
         "DT_GERACAO": "29/09/2026",
@@ -396,7 +433,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
+      },
+      "started_at": "2026-09-29T18:03:35.551923+00:00",
+      "review_file": "reviews/280002552484.json",
+      "position_count": 16,
+      "divergent_count": 0
     },
     {
       "id": "280002552487",
@@ -417,11 +458,11 @@
         18
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552487",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_rui",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 7,
       "current_official_status": {
         "SQ_CANDIDATO": "280002552487",
         "DT_GERACAO": "29/09/2026",
@@ -431,42 +472,11 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "DEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "DEFERIDO"
-      }
-    },
-    {
-      "id": "280002553884",
-      "name": "PABLO MARÇAL",
-      "party": "PRTB",
-      "pages": 28,
-      "member": "BR/2026BR280002553884_01.pdf",
-      "sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d",
-      "same_as_prior_snapshot": false,
-      "in_prior_product_roster": false,
-      "official_roster_status": "#NE",
-      "source_last_modified": [
-        2026,
-        9,
-        29,
-        6,
-        46,
-        18
-      ],
-      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002553884",
-      "status": "queued",
-      "agent_id": null,
-      "requested_model": "gpt-6-astra",
-      "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
-      "current_official_status": {
-        "SQ_CANDIDATO": "280002553884",
-        "DT_GERACAO": "29/09/2026",
-        "HH_GERACAO": "12:31:16",
-        "ST_CANDIDATO_INSERIDO_URNA": "NÃO",
-        "ST_SUBSTITUIDO": "S",
-        "SQ_SUBSTITUIDO": "-1",
-        "DS_SITUACAO_JULGAMENTO": "INDEFERIDO",
-        "DS_SITUACAO_CANDIDATO_TOT": "#NULO"
-      }
+      },
+      "started_at": "2026-09-29T18:03:35.651887+00:00",
+      "review_file": "reviews/280002552487.json",
+      "position_count": 16,
+      "divergent_count": 2
     },
     {
       "id": "280002554479",
@@ -487,11 +497,11 @@
         18
       ],
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002554479",
-      "status": "queued",
-      "agent_id": null,
+      "status": "validated",
+      "agent_id": "/root/plan_leonardo",
       "requested_model": "gpt-6-astra",
       "requested_reasoning_effort": "ultra",
-      "pages_read": 0,
+      "pages_read": 48,
       "current_official_status": {
         "SQ_CANDIDATO": "280002554479",
         "DT_GERACAO": "29/09/2026",
@@ -501,7 +511,11 @@
         "SQ_SUBSTITUIDO": "280002553884",
         "DS_SITUACAO_JULGAMENTO": "PENDENTE DE JULGAMENTO",
         "DS_SITUACAO_CANDIDATO_TOT": "PENDENTE DE JULGAMENTO"
-      }
+      },
+      "started_at": "2026-09-29T17:55:06.921880+00:00",
+      "review_file": "reviews/280002554479.json",
+      "position_count": 16,
+      "divergent_count": 0
     }
   ],
   "decisions": [
@@ -520,16 +534,97 @@
     {
       "id": "D004",
       "decision": "Main remota atualizada e integrada ao worktree (d31078e), sem conflito; os 16 textos foram congelados no rascunho f1e6db0. A atualização da main não modificou os PDFs nem as perguntas de origem."
+    },
+    {
+      "id": "D005",
+      "decision": "Conferência entre planos deve aplicar o mesmo critério para quantificadores universais. A divergência em T002 de Lula será confrontada com as funções futuras dos bancos públicos e estatais no parecer de Caiado antes do fechamento, sem usar identidade partidária ou opinião externa."
+    },
+    {
+      "id": "D006",
+      "decision": "Extensão do plano não mede cobertura do questionário. Cury teve 200 páginas lidas e 1 posição categórica no recorte de 16; isso limita sua comparabilidade nesta edição, sem avaliar a quantidade ou qualidade geral de suas propostas. A alternativa de T011 sugerida pelo revisor muda a decisão e permanece exploratória até eventual nova rodada com todos os mesmos responsáveis."
+    },
+    {
+      "id": "D007",
+      "decision": "T002: função futura de banco/empresa pública não basta para inferir preservação de controle acionário. O plano de Zema traz privatização universal expressa (p.15) e ampliação de instrumentos dos bancos públicos (p.27). Este contraexemplo exige distinguir atividades, transição temporal e decisão societária nos demais planos; Lula permanece NAO_ENCONTRADA apesar da inferência proposta pelo revisor."
+    },
+    {
+      "id": "D008",
+      "decision": "Instrução posterior do usuário exclui Pablo Marçal de qualquer análise. Substitui o escopo adicional de D001/D003: são 13 planos, 836 páginas e 208 cruzamentos, com 13 agentes exclusivos. O PDF adicional só permanece identificado no inventário do ZIP original, sem revisão."
+    },
+    {
+      "id": "D009",
+      "decision": "Auditoria encerrada: 13 planos/836 páginas/208 células, 13 responsáveis exclusivos em Astra Ultra; 202 confirmações e 6 divergências dos revisores. Adotadas cinco mudanças; inferência de Lula/T002 não adotada após conferência uniforme. Matriz final: 81 categóricas, 1 condicional e 126 ausências."
+    },
+    {
+      "id": "D010",
+      "decision": "As 16 redações permanecem congeladas. Quatro sugestões dos revisores representam três outras decisões; não foram transplantadas para a matriz nem consideradas validadas nos demais planos. Relatório final recomenda melhorar equilíbrio/comparabilidade antes de fechar a edição e preservar ranking beta com base mínima e sem promessa percentual de afinidade geral."
     }
   ],
-  "divergences": [],
+  "divergences": [
+    {
+      "candidate_id": "280002542548",
+      "question_id": "BR26-T002",
+      "prior_category": "NAO_ENCONTRADA",
+      "reviewer_category": "DISCORDA",
+      "resolution": "Resolvida: mantém ausência; funções futuras de bancos públicos não fixam controle acionário. Contraexemplo Zema pp.15/27; parecer independente divergente preservado",
+      "final_category": "NAO_ENCONTRADA"
+    },
+    {
+      "candidate_id": "280002551932",
+      "question_id": "BR26-T002",
+      "prior_category": "NAO_ENCONTRADA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "resolution": "Resolvida: mesmo revisor reconsiderou e manteve NAO_ENCONTRADA; funções não determinam controle acionário",
+      "final_category": "NAO_ENCONTRADA"
+    },
+    {
+      "candidate_id": "280002551547",
+      "question_id": "BR26-T011",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "resolution": "Resolvida: aceita NAO_ENCONTRADA; continuidade temporária com emprego/microempresa é outra decisão. Nova redação sugerida fica fora da matriz validada"
+    },
+    {
+      "candidate_id": "280002541457",
+      "question_id": "BR26-T038",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "resolution": "Resolvida: Aceita a revisão. A p.26 determina propriedade estatal da Petrobras e investimentos de empresas expropriadas em refino e outros setores; não determina integração entre produção e refino na Petrobras. A condição anterior pertencia à propriedade, não à decisão organizacional desta pergunta. Nova pergunta sobre capital 100% estatal é exploratória e não substitui o texto congelado."
+    },
+    {
+      "candidate_id": "280002541457",
+      "question_id": "BR26-T043",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "DISCORDA",
+      "final_category": "DISCORDA",
+      "resolution": "Resolvida: Aceita a revisão. A leitura integral acrescenta a p.30, que defende educação totalmente pública. Com creches públicas para todas as crianças e sistema único de educação (pp.12/23), essa regra universal alcança a educação infantil e se opõe ao financiamento de vagas privadas no modelo proposto. A inferência é de alcance universal, não depende de equiparar toda creche privada a grande empresário. Não se atribui prazo ou regime transitório que o documento não define."
+    },
+    {
+      "candidate_id": "280002552487",
+      "question_id": "BR26-T011",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "resolution": "Resolvida: Aceita a revisão: o piso do Bolsa Família durante a situação descrita como caos não decide sua substituição, para beneficiários economicamente ativos, por trabalho público. A condição temporal pertence ao valor/benefício proposto, não a uma condição sobre o mecanismo perguntado. Não se extrapola a proposta para regras de elegibilidade não definidas."
+    },
+    {
+      "candidate_id": "280002552487",
+      "question_id": "BR26-T038",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "resolution": "Resolvida: Aceita a revisão: Petrobras 100% estatal e estatização das refinarias são compatíveis tanto com atividades integradas quanto com empresas estatais separadas. Sem decisão organizacional, não há apoio condicionado à integração; aplica-se o mesmo critério usado no plano de Hertz."
+    }
+  ],
   "complementary_source": {
     "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand_complementar/consulta_cand_complementar_2026.zip",
     "archive_sha256": "99c601737e3626d8ed6ddb90b8cd6c92ab153bbf35284614cd9497f0dd7bb1ec",
     "generated_at": "29/09/2026 12:31:16",
     "public_fields_file": "sources/official-complementary-status.json"
   },
-  "updated_at": "2026-09-29T17:31:58.709714+00:00",
+  "updated_at": "2026-09-29T18:16:20.193655+00:00",
   "dispatch_order": [
     "280002551547",
     "280002551932",
@@ -541,9 +636,32 @@
     "280002540694",
     "280002554479",
     "280002541457",
-    "280002553884",
     "280002551975",
     "280002552484",
     "280002552487"
-  ]
+  ],
+  "excluded_by_user": [
+    {
+      "candidate_id": "280002553884",
+      "name": "Pablo Marçal",
+      "reason": "Usuário determinou não realizar trabalho sobre este plano; nenhum agente havia sido designado e nenhuma leitura foi iniciada."
+    }
+  ],
+  "result": {
+    "reviewers": 13,
+    "pages_read": 836,
+    "questions": 16,
+    "cells": 208,
+    "confirmed_by_reviewers": 202,
+    "divergent_by_reviewers": 6,
+    "final_category_changes": 5,
+    "categorical_positions": 81,
+    "conditional_positions": 1,
+    "not_found_positions": 126,
+    "literal_quote_occurrences": 292,
+    "visual_check_records": 150,
+    "final_report": "FINAL_REPORT.md",
+    "audited_questions": "QUESTIONS_AUDITED.md",
+    "production_changed": false
+  }
 }

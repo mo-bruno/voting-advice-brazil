@@ -438,7 +438,7 @@
       "pages": 28,
       "member": "BR/2026BR280002553884_01.pdf",
       "sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d",
-      "same_as_prior_snapshot": false,
+      "same_as_prior_snapshot": true,
       "in_prior_product_roster": false,
       "official_roster_status": "#NE",
       "source_last_modified": [
@@ -464,7 +464,8 @@
         "SQ_SUBSTITUIDO": "-1",
         "DS_SITUACAO_JULGAMENTO": "INDEFERIDO",
         "DS_SITUACAO_CANDIDATO_TOT": "#NULO"
-      }
+      },
+      "prior_snapshot_note": "PDF idêntico ao membro correspondente do ZIP preservado de 19/09; ausente apenas do corpus anterior de 13 candidaturas do produto."
     },
     {
       "id": "280002554479",

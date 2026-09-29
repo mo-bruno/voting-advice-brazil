@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002552484",
+      "name": "Clariana Barao",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 15,
+      "pages_logged": 15,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 16
+      },
+      "quote_matches": {
+        "layout": 28
+      },
+      "visual_check_count": 1,
+      "review_sha256": "96ecbbfd1d8852122d0025c9583fc76cb49b92a901e30974fcb0b667e1cf28e5"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

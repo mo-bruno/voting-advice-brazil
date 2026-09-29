@@ -1,5 +1,7 @@
 # Rascunho editorial: 16 perguntas comparáveis
 
+> Atualização posterior: a [auditoria integral por plano](../../2026-09-29-full-plan-validation/FINAL_REPORT.md) releu os 13 PDFs completos e consolidou cinco correções de categoria. As [16 perguntas auditadas](../../2026-09-29-full-plan-validation/QUESTIONS_AUDITED.md) e a matriz dessa rodada são a referência atual. Este documento preserva o estágio anterior como histórico.
+
 Proposta derivada da revisão de 30 × 13 células. Não é a edição publicada nem uma bateria validada. A ordem abaixo segue os IDs para facilitar a auditoria; não é recomendação da ordem de aplicação. O ID identifica a origem, e qualquer nova redação precisa de versão nova. As oito perguntas alteradas não podem herdar respostas antigas.
 
 As contagens são de planos com posição documentada, nunca de afinidade. Condicionais, mistos e ausência ficam fora dos polos. As condições continuam nas justificativas dos JSONs. Veja [a análise completa](README.md) para os limites de cobertura e de distinção entre candidaturas.

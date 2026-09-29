@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": "data/theses/2026/theses.json",
+  "source_sha256": "25447e55aa8e4baffc6d29a10fabedb4995d816008bab751571552016008a5a3",
+  "themes": {
+    "BR26-T001": "economia",
+    "BR26-T002": "economia",
+    "BR26-T003": "trabalho",
+    "BR26-T011": "politica_social",
+    "BR26-T015": "seguranca",
+    "BR26-T017": "educacao",
+    "BR26-T018": "direitos_sociais",
+    "BR26-T026A": "saude",
+    "BR26-T036": "economia",
+    "BR26-T038": "economia",
+    "BR26-T042": "saude",
+    "BR26-T043": "educacao",
+    "BR26-T057": "politica_externa",
+    "BR26-T063": "politica_externa",
+    "BR26-T066": "politica_externa",
+    "BR26-T067": "economia"
+  },
+  "note": "Taxonomia herdada da edição anterior, mantida para comparar a cobertura. Não altera o texto congelado nem valida equilíbrio temático."
+}

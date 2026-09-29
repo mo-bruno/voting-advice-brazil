@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "decisions": [
+    {
+      "candidate_id": "280002551547",
+      "question_id": "BR26-T011",
+      "status": "resolved",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "Aceita a revisão: as pp.98–99 definem continuidade temporária do benefício no emprego formal ou empreendedorismo, sem resolver a substituição por programa público de trabalho para a classe etária da pergunta. Condição de outra política não deve ser codificada como posição mista nesta redação. A sugestão de outra pergunta permanece exploratória e não altera a matriz congelada.",
+      "evidence": [
+        {
+          "page": 98,
+          "quote": "Toda família beneficiada com"
+        },
+        {
+          "page": 99,
+          "quote": "Bolsa Família não será punida se assinar a carteira ou se abrir uma microempresa, por determinado tempo. Ao contrário, serão premiados, com incentivos e juros mais baixos."
+        }
+      ],
+      "orchestrator_checked_pages": [
+        98,
+        99
+      ]
+    },
+    {
+      "candidate_id": "280002542548",
+      "question_id": "BR26-T002",
+      "status": "resolved",
+      "prior_category": "NAO_ENCONTRADA",
+      "reviewer_category": "DISCORDA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "O orquestrador não adota a inferência de discordância. As pp.43,54,58 projetam atividades de empresas e bancos públicos, mas não fixam preservação de controle acionário ou rejeição da transferência de todas as estatais. O corpus traz contraexemplo direto: Zema privatiza todas explicitamente na p.15 e simultaneamente amplia instrumentos de bancos públicos na p.27. Portanto, função futura não é evidência suficiente de exceção acionária; pode coexistir com transição ou indefinição de calendário. Aplica-se a regra conservadora igualmente a Lula, Caiado e Cury. Não se atribui apoio à privatização: mantém-se ausência de decisão inequívoca no documento sobre esta redação universal.",
+      "evidence": [
+        {
+          "page": 54,
+          "quote": "Mobilizaremos investimentos, inovação, compras governamentais e sinergias entre empresas públicas e privadas, universidades e centros de pesquisa, fortalecendo a capacidade nacional nas cadeias digitais."
+        },
+        {
+          "page": 58,
+          "quote": "Também ampliaremos investimentos para apoiar o crescimento de pequenas e médias empresas em setores dinâmicos e portadores de futuro, por meio de fundos de participação estruturados pelos bancos públicos, em parceria com gestores privados e em conformidade com as diretrizes da política industrial."
+        },
+        {
+          "page": 43,
+          "quote": "Vamos continuar ampliando e fortalecendo o programa, além de manter o patrocínio das empresas estatais para assegurar que no próximo ciclo olímpico e paralímpico avancemos ainda mais na conquista de bons resultados e medalhas."
+        }
+      ],
+      "orchestrator_checked_pages": [
+        43,
+        54,
+        58
+      ],
+      "cross_plan_checks": [
+        {
+          "candidate_id": "280002539826",
+          "pages": [
+            15,
+            27
+          ],
+          "finding": "Privatização universal explícita coexiste com funções futuras dos bancos públicos; isso refuta a suficiência da inferência, sem resolver cronograma ou coerência interna do plano."
+        }
+      ]
+    },
+    {
+      "candidate_id": "280002551932",
+      "question_id": "BR26-T002",
+      "status": "resolved",
+      "prior_category": "NAO_ENCONTRADA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "Mantida ausência após retorno ao mesmo revisor e aplicação uniforme do critério societário. Funções futuras dos bancos públicos e governança de estatais sugerem continuidade, mas não fixam preservação de controle nem excluem eventual transição. Tampouco se atribui privatização ao plano. A hipótese intermediária de DISCORDA foi retirada pelo revisor e permanece registrada no checkpoint.",
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Definir visão nacional de longo prazo, metas de produtividade e investimento, prioridades territoriais e missões transversais, com revisão a cada quatro anos e alinhamento do PPA, orçamento, bancos públicos e agências reguladoras."
+        },
+        {
+          "page": 14,
+          "quote": "direcionar bancos públicos a projetos com adicionalidade, retorno social e avaliação de resultado."
+        },
+        {
+          "page": 38,
+          "quote": "Atrair também a indústria que a própria transição consome, de equipamentos de transmissão e transformadores a baterias, eletrolisadores e eletrônica de potência, usando os bancos públicos e os recursos obrigatórios de pesquisa do setor com metas tecnológicas e prazo definido, e não como proteção permanente."
+        },
+        {
+          "page": 35,
+          "quote": "Petrobras e demais estatais terão governança, eficiência e investimento, sem uso partidário ou controle artificial de preços."
+        }
+      ],
+      "orchestrator_checked_pages": [
+        14,
+        35,
+        38,
+        64
+      ]
+    },
+    {
+      "candidate_id": "280002541457",
+      "question_id": "BR26-T038",
+      "status": "resolved",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "Aceita a revisão. A p.26 determina propriedade estatal da Petrobras e investimentos de empresas expropriadas em refino e outros setores; não determina integração entre produção e refino na Petrobras. A condição anterior pertencia à propriedade, não à decisão organizacional desta pergunta. Nova pergunta sobre capital 100% estatal é exploratória e não substitui o texto congelado.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "É necessário expropriar, ainda, setores estratégicos antes estatais, como a siderurgia e o de derivados do petróleo."
+        },
+        {
+          "page": 26,
+          "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!"
+        },
+        {
+          "page": 26,
+          "quote": "Destinação prioritária dos excedentes dessas empresas à criação e expansão de setores de alta complexidade tecnológica, especialmente nos ramos de refino e de separação de alta pureza de terras raras e minerais críticos, máquinas e equipamentos associadas à estrutura produtiva nacional, infraestrutura digital, química fina e defesa."
+        }
+      ],
+      "orchestrator_checked_pages": [
+        26
+      ]
+    },
+    {
+      "candidate_id": "280002541457",
+      "question_id": "BR26-T043",
+      "status": "resolved",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "DISCORDA",
+      "final_category": "DISCORDA",
+      "reason": "Aceita a revisão. A leitura integral acrescenta a p.30, que defende educação totalmente pública. Com creches públicas para todas as crianças e sistema único de educação (pp.12/23), essa regra universal alcança a educação infantil e se opõe ao financiamento de vagas privadas no modelo proposto. A inferência é de alcance universal, não depende de equiparar toda creche privada a grande empresário. Não se atribui prazo ou regime transitório que o documento não define.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+        },
+        {
+          "page": 12,
+          "quote": "Por um sistema único de educação para todas as crianças e adolescentes. Abaixo o abismo entre educação de ricos e pobres!"
+        },
+        {
+          "page": 23,
+          "quote": "Creches e escolas públicas, gratuitas e em tempo integral para todas as crianças, como condição para a independência das mulheres"
+        },
+        {
+          "page": 30,
+          "quote": "Defender uma educação totalmente pública, sem fundações empresariais definindo a política educacional, significa enfrentar o poder econômico dentro do próprio Estado."
+        }
+      ],
+      "orchestrator_checked_pages": [
+        30
+      ]
+    },
+    {
+      "candidate_id": "280002552487",
+      "question_id": "BR26-T011",
+      "status": "resolved",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "Aceita a revisão: o piso do Bolsa Família durante a situação descrita como caos não decide sua substituição, para beneficiários economicamente ativos, por trabalho público. A condição temporal pertence ao valor/benefício proposto, não a uma condição sobre o mecanismo perguntado. Não se extrapola a proposta para regras de elegibilidade não definidas.",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual"
+        },
+        {
+          "page": 2,
+          "quote": "Salário-desemprego igual ao último salário recebido para todos os trabalhadores demitidos"
+        }
+      ],
+      "orchestrator_checked_pages": [
+        2
+      ]
+    },
+    {
+      "candidate_id": "280002552487",
+      "question_id": "BR26-T038",
+      "status": "resolved",
+      "prior_category": "CONDICIONAL_OU_MISTA",
+      "reviewer_category": "NAO_ENCONTRADA",
+      "final_category": "NAO_ENCONTRADA",
+      "reason": "Aceita a revisão: Petrobras 100% estatal e estatização das refinarias são compatíveis tanto com atividades integradas quanto com empresas estatais separadas. Sem decisão organizacional, não há apoio condicionado à integração; aplica-se o mesmo critério usado no plano de Hertz.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais"
+        }
+      ],
+      "orchestrator_checked_pages": [
+        3
+      ]
+    }
+  ]
+}

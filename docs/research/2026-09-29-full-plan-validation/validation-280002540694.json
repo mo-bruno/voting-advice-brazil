@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002540694",
+      "name": "Renan Santos",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 51,
+      "pages_logged": 51,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 3,
+        "NAO_ENCONTRADA": 10,
+        "CONCORDA": 3
+      },
+      "quote_matches": {
+        "layout": 16
+      },
+      "visual_check_count": 22,
+      "review_sha256": "d754c5d9d9f11742ebbf9e2167621e30a5f07961fb47024baa5db48c008c362c"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}
