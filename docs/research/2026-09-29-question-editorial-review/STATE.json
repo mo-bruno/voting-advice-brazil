@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "phase": "awaiting_user_review_block_01",
+  "source_inventory": "../2026-09-29-thematic-profiles/DOCUMENT_INDEX.json",
+  "source_inventory_sha256": "ce1915d67400c9664d9d6e3c31a57830ebcdc8c513a46893d729dd26ce665bb6",
+  "source_commit": "5af83ac",
+  "remote_main": "32d96c0",
+  "updated_at": "2026-09-29T20:16:48.837608+00:00",
+  "approval_gate": {
+    "required": true,
+    "status": "pending_user_review",
+    "approved_question_versions": [],
+    "candidate_validation_dispatched": false,
+    "explanation_included_in_version": true
+  },
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "ranking_changes": false,
+  "production_changes": false,
+  "excluded_candidate_ids": [
+    "280002553884"
+  ],
+  "editorial_tasks": [
+    {
+      "agent_id": "/root/plan_cury",
+      "role": "editorial_mapping_only",
+      "output": "maps/economy-state-territory.json",
+      "status": "mapped",
+      "mapped_positions": 202,
+      "family_count": 36,
+      "sha256": "74419b86b709bb4caf2b75fb086b8dbe34b0c2e8cc31e853270a17bd359c1feb"
+    },
+    {
+      "agent_id": "/root/plan_grassi",
+      "role": "editorial_mapping_only",
+      "output": "maps/environment-science-welfare.json",
+      "status": "mapped",
+      "mapped_positions": 169,
+      "family_count": 34,
+      "sha256": "d6d30817ee8a1bb1750b28241e7ab0128833c349c103556be7174c96cde63bb9"
+    },
+    {
+      "agent_id": "/root/plan_lula",
+      "role": "editorial_mapping_only",
+      "output": "maps/education-rights-security-sovereignty.json",
+      "status": "mapped",
+      "mapped_positions": 265,
+      "family_count": 48,
+      "sha256": "d668dd939fd675b4adb9c5ce745c12bb8d79294d84efb348544af18374b82d00"
+    }
+  ],
+  "first_block": {
+    "id": "B01",
+    "topic": "Economia e Desenvolvimento",
+    "target_items": 4,
+    "status": "pending_user_review",
+    "file": "BLOCK_01.json"
+  },
+  "remaining": [
+    "Receber decisões do usuário sobre as quatro versões do bloco B01.",
+    "Ajustes de significado exigem nova validação do usuário.",
+    "Preparar outros blocos e, somente após aprovação das versões, conferir as perguntas com os treze responsáveis originais."
+  ],
+  "metrics": {
+    "mapped_positions": 636,
+    "decision_families": 118,
+    "categories": 10,
+    "questions_presented": 4,
+    "questions_approved": 0,
+    "candidate_answers_created": 0
+  }
+}

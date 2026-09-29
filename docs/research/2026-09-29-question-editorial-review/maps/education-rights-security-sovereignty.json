@@ -1,0 +1,2541 @@
+{
+  "author_agent": "/root/plan_lula",
+  "role": "editorial_mapping_only",
+  "categories": [
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "families": [
+    {
+      "id": "D01",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Provisão, propriedade e financiamento da educação",
+      "common_object": "Arranjos públicos, privados e comunitários de oferta educacional.",
+      "distinct_decisions": [
+        {
+          "id": "D01.01",
+          "decision": "Destinação de recursos públicos e estatização do ensino privado",
+          "position_keys": [
+            "280002538811:P31",
+            "280002541457:P36",
+            "280002551975:P34",
+            "280002552487:P26",
+            "280002552487:P27"
+          ]
+        },
+        {
+          "id": "D01.02",
+          "decision": "Oferta conveniada e parceria com instituições privadas ou comunitárias",
+          "position_keys": [
+            "280002539826:P35",
+            "280002539826:P37",
+            "280002551932:P28"
+          ]
+        },
+        {
+          "id": "D01.03",
+          "decision": "Financiamento de vaga por voucher em situações de falta de oferta pública",
+          "position_keys": [
+            "280002551544:P35"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P31",
+        "280002541457:P36",
+        "280002551975:P34",
+        "280002552487:P26",
+        "280002552487:P27",
+        "280002539826:P35",
+        "280002539826:P37",
+        "280002551932:P28",
+        "280002551544:P35"
+      ],
+      "comparison_limits": [
+        "Estatizar estabelecimentos, interromper transferências e universalizar a oferta são subdecisões distintas; não decorrem automaticamente uma da outra.",
+        "Convênio, parceria e voucher não são instrumentos equivalentes; o inventário distingue creche, outros níveis de ensino, finalidade lucrativa e condições de falta de vaga.",
+        "Em 280002551544:P35, a condição até surgir vaga pública aparece para creche; não deve ser automaticamente estendida ao voucher educacional geral."
+      ]
+    },
+    {
+      "id": "D02",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Expansão territorial da rede e atendimento infantil ou integral",
+      "common_object": "Capacidade, localização e tempo de atendimento das instituições de ensino.",
+      "distinct_decisions": [
+        {
+          "id": "D02.01",
+          "decision": "Creches e educação infantil, com desenhos diferentes de provisão",
+          "position_keys": [
+            "280002539826:P35",
+            "280002541457:P39",
+            "280002542548:P31",
+            "280002551932:P28",
+            "280002551975:P34"
+          ]
+        },
+        {
+          "id": "D02.02",
+          "decision": "Jornada escolar integral e universalização do atendimento",
+          "position_keys": [
+            "280002541457:P39",
+            "280002542548:P31",
+            "280002551975:P34"
+          ]
+        },
+        {
+          "id": "D02.03",
+          "decision": "Expansão e interiorização da rede pública técnica e superior",
+          "position_keys": [
+            "280002542548:P33",
+            "280002551975:P34"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P35",
+        "280002541457:P39",
+        "280002542548:P31",
+        "280002551932:P28",
+        "280002551975:P34",
+        "280002542548:P33"
+      ],
+      "comparison_limits": [
+        "Não confundir expansão física, universalização, interiorização e tempo integral.",
+        "A presença de educação infantil não implica compromisso com jornada integral; esta família não acrescenta esse atributo aos registros sem ele.",
+        "A oferta conveniada permanece vinculada a D01; o vínculo adicional representa capacidade de atendimento, sem contar novamente o registro como nova posição."
+      ]
+    },
+    {
+      "id": "D03",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Currículo, alfabetização, avaliação e alocação por resultados",
+      "common_object": "Conteúdo da formação e formas de acompanhar ou incentivar aprendizagem.",
+      "distinct_decisions": [
+        {
+          "id": "D03.01",
+          "decision": "Método de alfabetização e referências para o ensino",
+          "position_keys": [
+            "280002540694:P30",
+            "280002551544:P32",
+            "280002552484:P19"
+          ]
+        },
+        {
+          "id": "D03.02",
+          "decision": "Revogação ou alteração de marcos curriculares",
+          "position_keys": [
+            "280002538811:P33",
+            "280002541457:P37"
+          ]
+        },
+        {
+          "id": "D03.03",
+          "decision": "Conteúdos financeiros, emocionais, tecnológicos, linguísticos e de cidadania",
+          "position_keys": [
+            "280002551547:P30",
+            "280002552484:P21",
+            "280002554479:P23"
+          ]
+        },
+        {
+          "id": "D03.04",
+          "decision": "Acompanhamento individual de aptidões e talentos",
+          "position_keys": [
+            "280002554479:P24"
+          ]
+        },
+        {
+          "id": "D03.05",
+          "decision": "Avaliação e metas ligadas a recursos ou continuidade de cursos",
+          "position_keys": [
+            "280002540694:P31",
+            "280002548139:P31",
+            "280002548139:P32",
+            "280002551544:P33",
+            "280002551932:P32"
+          ]
+        },
+        {
+          "id": "D03.06",
+          "decision": "Avaliação frequente para recuperação da aprendizagem",
+          "position_keys": [
+            "280002552484:P19"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002540694:P30",
+        "280002551544:P32",
+        "280002552484:P19",
+        "280002538811:P33",
+        "280002541457:P37",
+        "280002551547:P30",
+        "280002552484:P21",
+        "280002554479:P23",
+        "280002554479:P24",
+        "280002540694:P31",
+        "280002548139:P31",
+        "280002548139:P32",
+        "280002551544:P33",
+        "280002551932:P32"
+      ],
+      "comparison_limits": [
+        "Priorizar método fônico não equivale a proibir outros métodos.",
+        "Avaliar, divulgar resultados, condicionar verbas e encerrar ou manter cursos são decisões diferentes.",
+        "Os registros preservam condições relativas a redes vulneráveis, apoio a redes com pior desempenho e limites de rankings; não se infere desenho distributivo uniforme.",
+        "Currículo de inteligência artificial e acompanhamento de talentos não definem por si salvaguardas de dados."
+      ]
+    },
+    {
+      "id": "D04",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Modelos escolares, disciplina e educação domiciliar",
+      "common_object": "Forma de organização do ambiente de ensino e alternativas à escolarização convencional.",
+      "distinct_decisions": [
+        {
+          "id": "D04.01",
+          "decision": "Oferta, expansão ou rejeição de escolas cívico-militares ou militarizadas",
+          "position_keys": [
+            "280002539826:P37",
+            "280002540694:P31",
+            "280002541457:P38",
+            "280002551544:P34",
+            "280002551975:P37"
+          ]
+        },
+        {
+          "id": "D04.02",
+          "decision": "Código de disciplina e sanções escolares",
+          "position_keys": [
+            "280002540694:P31"
+          ]
+        },
+        {
+          "id": "D04.03",
+          "decision": "Permissão e acompanhamento da educação domiciliar",
+          "position_keys": [
+            "280002539826:P37",
+            "280002554479:P26"
+          ]
+        },
+        {
+          "id": "D04.04",
+          "decision": "Rejeição de controles político-ideológicos escolares nomeados no inventário",
+          "position_keys": [
+            "280002541457:P38"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P37",
+        "280002540694:P31",
+        "280002541457:P38",
+        "280002551544:P34",
+        "280002551975:P37",
+        "280002554479:P26"
+      ],
+      "comparison_limits": [
+        "Uma opção entre modalidades, a expansão de uma modalidade e sua adoção temporária em locais críticos têm alcances distintos.",
+        "Em 280002540694:P31, a implantação cívico-militar é temporária e focalizada; não deve virar proposta de militarizar todas as escolas.",
+        "Homeschooling com avaliação periódica ou obrigatória não deve ser fundido com educação domiciliar sem supervisão.",
+        "Disciplina escolar não implica gestão militar."
+      ]
+    },
+    {
+      "id": "D05",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Governança e autonomia das instituições de ensino",
+      "common_object": "Quem decide a direção e as prioridades de escolas e universidades.",
+      "distinct_decisions": [
+        {
+          "id": "D05.01",
+          "decision": "Critérios de seleção de reitores e composição de instâncias externas",
+          "position_keys": [
+            "280002539826:P38"
+          ]
+        },
+        {
+          "id": "D05.02",
+          "decision": "Substituição da autonomia universitária por alinhamento estratégico",
+          "position_keys": [
+            "280002540694:P32"
+          ]
+        },
+        {
+          "id": "D05.03",
+          "decision": "Eleição de diretores e controle comunitário ou tripartite",
+          "position_keys": [
+            "280002552487:P28"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P38",
+        "280002540694:P32",
+        "280002552487:P28"
+      ],
+      "comparison_limits": [
+        "Seleção técnica, eleição comunitária e controle externo não são respostas intercambiáveis a uma única noção de qualidade.",
+        "O universo institucional varia entre escolas e universidades; não transportar a regra de uma rede para todas.",
+        "A orientação a áreas estratégicas em 280002540694:P32 também aparece em D08, sem presumir que qualquer formação técnica elimina autonomia."
+      ]
+    },
+    {
+      "id": "D06",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Formação, remuneração e carreira docente",
+      "common_object": "Regras de preparação, valorização e progressão profissional de professores.",
+      "distinct_decisions": [
+        {
+          "id": "D06.01",
+          "decision": "Progressão, mérito, contexto de atuação e qualificação",
+          "position_keys": [
+            "280002539826:P36",
+            "280002551547:P33"
+          ]
+        },
+        {
+          "id": "D06.02",
+          "decision": "Piso salarial e sua aplicação na carreira",
+          "position_keys": [
+            "280002542548:P34",
+            "280002551975:P36"
+          ]
+        },
+        {
+          "id": "D06.03",
+          "decision": "Formação inicial, prática supervisionada e controle de qualidade",
+          "position_keys": [
+            "280002542548:P34",
+            "280002551932:P29"
+          ]
+        },
+        {
+          "id": "D06.04",
+          "decision": "Formação continuada e redução de carga burocrática",
+          "position_keys": [
+            "280002552484:P20"
+          ]
+        },
+        {
+          "id": "D06.05",
+          "decision": "Fixação e incentivos à docência",
+          "position_keys": [
+            "280002542548:P34"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P36",
+        "280002551547:P33",
+        "280002542548:P34",
+        "280002551975:P36",
+        "280002551932:P29",
+        "280002552484:P20"
+      ],
+      "comparison_limits": [
+        "Piso, salário por mérito, formação e redução de burocracia são instrumentos separados.",
+        "280002551932:P29 restringe formações de baixa qualidade; não se deve deduzir proibição de toda licenciatura a distância.",
+        "Em 280002551547:P33, qualificação integra a valorização; o registro não estabelece remuneração baseada exclusivamente em desempenho.",
+        "O modo de aplicação do piso na carreira descrito em 280002551975:P36 é mais específico que a mera defesa de um piso."
+      ]
+    },
+    {
+      "id": "D07",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Ingresso, permanência e financiamento estudantil",
+      "common_object": "Barreiras de acesso e condições materiais para continuidade dos estudos.",
+      "distinct_decisions": [
+        {
+          "id": "D07.01",
+          "decision": "Extinção de vestibulares ou processos seletivos de ingresso",
+          "position_keys": [
+            "280002538811:P32",
+            "280002551975:P35",
+            "280002552487:P29"
+          ]
+        },
+        {
+          "id": "D07.02",
+          "decision": "Reservas de vagas no ingresso educacional",
+          "position_keys": [
+            "280002551975:P35"
+          ]
+        },
+        {
+          "id": "D07.03",
+          "decision": "Transferência de renda para permanência no ensino médio",
+          "position_keys": [
+            "280002542548:P32"
+          ]
+        },
+        {
+          "id": "D07.04",
+          "decision": "Crédito estudantil com pagamento condicionado a emprego e renda",
+          "position_keys": [
+            "280002551544:P36"
+          ]
+        },
+        {
+          "id": "D07.05",
+          "decision": "Anistia de dívidas estudantis associada à reforma do financiamento",
+          "position_keys": [
+            "280002538811:P31"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P32",
+        "280002551975:P35",
+        "280002552487:P29",
+        "280002542548:P32",
+        "280002551544:P36",
+        "280002538811:P31"
+      ],
+      "comparison_limits": [
+        "Abolir seleção, criar cotas, pagar benefício de permanência e alterar dívida estudantil são subobjetos independentes.",
+        "280002551975:P35 reúne percentuais de cotas cuja sobreposição não é resolvida no perfil; não somar percentuais ou definir hierarquia de aplicação.",
+        "O financiamento condicionado à renda em 280002551544:P36 não equivale a ensino superior gratuito ou perdão integral de dívida."
+      ]
+    },
+    {
+      "id": "D08",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Educação técnica, transição ao trabalho e formação continuada",
+      "common_object": "Oferta e direcionamento da qualificação profissional e tecnológica.",
+      "distinct_decisions": [
+        {
+          "id": "D08.01",
+          "decision": "Expansão de institutos e da oferta pública técnica",
+          "position_keys": [
+            "280002542548:P33",
+            "280002551975:P34"
+          ]
+        },
+        {
+          "id": "D08.02",
+          "decision": "Integração entre ensino médio, empresas e demanda regional",
+          "position_keys": [
+            "280002548139:P32",
+            "280002551547:P31",
+            "280002552484:P22",
+            "280002554479:P23"
+          ]
+        },
+        {
+          "id": "D08.03",
+          "decision": "Direcionamento universitário para áreas estratégicas e STEM",
+          "position_keys": [
+            "280002540694:P32"
+          ]
+        },
+        {
+          "id": "D08.04",
+          "decision": "Estudo de crédito para formação continuada inspirado em modelo estrangeiro",
+          "position_keys": [
+            "280002554479:P28"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002542548:P33",
+        "280002551975:P34",
+        "280002548139:P32",
+        "280002551547:P31",
+        "280002552484:P22",
+        "280002554479:P23",
+        "280002540694:P32",
+        "280002554479:P28"
+      ],
+      "comparison_limits": [
+        "Expandir oferta, ajustar currículo à demanda e condicionar a manutenção do curso à empregabilidade são escolhas diferentes.",
+        "280002548139:P32 especifica emprego em até 12 meses como critério; não atribuir esse prazo aos demais registros.",
+        "280002554479:P28 é proposta de estudo; idade do modelo estrangeiro não é critério já fixado para o Brasil.",
+        "Parceria de ensino com empresa não estabelece por si privatização da instituição."
+      ]
+    },
+    {
+      "id": "D09",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Inclusão e apoio especializado no ambiente educacional",
+      "common_object": "Adaptações e recursos de suporte a estudantes com necessidades específicas.",
+      "distinct_decisions": [
+        {
+          "id": "D09.01",
+          "decision": "Inclusão de estudantes neurodivergentes na escola regular com complementação especializada",
+          "position_keys": [
+            "280002551547:P32"
+          ]
+        },
+        {
+          "id": "D09.02",
+          "decision": "Assistência escolar permanente e certificada para estudantes autistas",
+          "position_keys": [
+            "280002554479:P25"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002551547:P32",
+        "280002554479:P25"
+      ],
+      "comparison_limits": [
+        "Complementação especializada não é proposta automática de segregação escolar.",
+        "O assistente escolar de 280002554479:P25 e a arquitetura inclusiva de 280002551547:P32 têm objetos e abrangências diferentes.",
+        "Preservar a avaliação de necessidades individuais e as lacunas sobre dimensionamento mínimo do apoio."
+      ]
+    },
+    {
+      "id": "D10",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Fomento, acesso, avaliação e gestão cultural",
+      "common_object": "Instrumentos para financiar, distribuir e administrar atividade e patrimônio cultural.",
+      "distinct_decisions": [
+        {
+          "id": "D10.01",
+          "decision": "Financiamento direto, fundos, incentivos e crédito cultural",
+          "position_keys": [
+            "280002538811:P35",
+            "280002542548:P35",
+            "280002551932:P30",
+            "280002552487:P30"
+          ]
+        },
+        {
+          "id": "D10.02",
+          "decision": "Desconcentração territorial e acesso de novos ou pequenos agentes",
+          "position_keys": [
+            "280002539826:P39",
+            "280002540694:P33",
+            "280002542548:P35",
+            "280002551544:P37",
+            "280002551975:P38"
+          ]
+        },
+        {
+          "id": "D10.03",
+          "decision": "Critérios de seleção e avaliação dos incentivos",
+          "position_keys": [
+            "280002540694:P33",
+            "280002540694:P35"
+          ]
+        },
+        {
+          "id": "D10.04",
+          "decision": "Gestão de museus por organizações sociais e parcerias",
+          "position_keys": [
+            "280002540694:P34"
+          ]
+        },
+        {
+          "id": "D10.05",
+          "decision": "Patrimônio e economia criativa em formulação geral",
+          "position_keys": [
+            "280002551547:P34"
+          ]
+        },
+        {
+          "id": "D10.06",
+          "decision": "Não criminalização de manifestações periféricas",
+          "position_keys": [
+            "280002541457:P40"
+          ]
+        },
+        {
+          "id": "D10.07",
+          "decision": "Controle popular sobre patrocínio de festas e atividades culturais",
+          "position_keys": [
+            "280002552487:P30"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P35",
+        "280002542548:P35",
+        "280002551932:P30",
+        "280002552487:P30",
+        "280002539826:P39",
+        "280002540694:P33",
+        "280002551544:P37",
+        "280002551975:P38",
+        "280002540694:P35",
+        "280002540694:P34",
+        "280002551547:P34",
+        "280002541457:P40"
+      ],
+      "comparison_limits": [
+        "Limitar incentivo a agentes de maior faturamento não significa extinguir todo fomento cultural.",
+        "Viabilidade comercial como critério adicional não equivale a exclusividade desse critério.",
+        "280002540694:P34 trata de parcerias na gestão de museus; não autoriza generalizar a todos os equipamentos culturais.",
+        "O enunciado geral de 280002551547:P34 não especifica mecanismo financeiro; não convertê-lo em escolha entre fundos, renúncia ou crédito.",
+        "Não criminalização cultural e política de patrocínio exigem objetos distintos de comparação."
+      ]
+    },
+    {
+      "id": "D11",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Propriedade e controle de empresas culturais e de comunicação",
+      "common_object": "Mudança da titularidade ou do comando de produtores culturais e veículos de mídia.",
+      "distinct_decisions": [
+        {
+          "id": "D11.01",
+          "decision": "Nacionalização de grandes produtoras de música e cinema",
+          "position_keys": [
+            "280002538811:P34"
+          ]
+        },
+        {
+          "id": "D11.02",
+          "decision": "Transferência de meios de comunicação para cooperativas de trabalhadores",
+          "position_keys": [
+            "280002551975:P39"
+          ]
+        },
+        {
+          "id": "D11.03",
+          "decision": "Controle da comunicação pública, propriedade cruzada e revisão de concessões",
+          "position_keys": [
+            "280002551975:P39"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P34",
+        "280002551975:P39"
+      ],
+      "comparison_limits": [
+        "Produtoras culturais, mídia privada e empresa pública de comunicação são universos distintos.",
+        "Nacionalização, cooperativização, vedação de propriedade cruzada e revisão de concessões não constituem uma única medida.",
+        "A família não desloca registros cuja categoria principal é cidadania; os vínculos permanecem no recorte original."
+      ]
+    },
+    {
+      "id": "D12",
+      "category_id": "educacao_cultura_sociedade",
+      "title": "Esporte, atividade física e governança do financiamento",
+      "common_object": "Acesso à prática esportiva e regras de recursos para atletas e organizações.",
+      "distinct_decisions": [
+        {
+          "id": "D12.01",
+          "decision": "Condições de governança, transparência e resultados para organizações esportivas",
+          "position_keys": [
+            "280002538811:P36",
+            "280002539826:P40"
+          ]
+        },
+        {
+          "id": "D12.02",
+          "decision": "Condições de proteção de crianças no financiamento esportivo",
+          "position_keys": [
+            "280002551932:P31"
+          ]
+        },
+        {
+          "id": "D12.03",
+          "decision": "Bolsa, patrocínio e acesso direto do atleta ao financiamento",
+          "position_keys": [
+            "280002542548:P36",
+            "280002548139:P34"
+          ]
+        },
+        {
+          "id": "D12.04",
+          "decision": "Valor e prioridades dos benefícios por modalidade e proteção previdenciária",
+          "position_keys": [
+            "280002548139:P35"
+          ]
+        },
+        {
+          "id": "D12.05",
+          "decision": "Educação física e cofinanciamento condicionado a estrutura ou acompanhamento",
+          "position_keys": [
+            "280002548139:P33"
+          ]
+        },
+        {
+          "id": "D12.06",
+          "decision": "Uso comunitário de espaços e atividade física ligada à saúde",
+          "position_keys": [
+            "280002552484:P23"
+          ]
+        },
+        {
+          "id": "D12.07",
+          "decision": "Controle de clubes por torcedores e trabalhadores e tratamento de torcidas",
+          "position_keys": [
+            "280002552487:P31"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P36",
+        "280002539826:P40",
+        "280002551932:P31",
+        "280002542548:P36",
+        "280002548139:P34",
+        "280002548139:P35",
+        "280002548139:P33",
+        "280002552484:P23",
+        "280002552487:P31"
+      ],
+      "comparison_limits": [
+        "Financiamento direto ao atleta, recursos a confederações e propriedade de clubes são subobjetos distintos.",
+        "Patrocínio de empresa estatal em 280002542548:P36 não estabelece regra de controle acionário dessa empresa.",
+        "Condicionar repasses a integridade ou governança não equivale a proibir todo financiamento público.",
+        "280002548139:P35 contém prioridades e proteção previdenciária específicas; não presumir que todos os benefícios seriam uniformes."
+      ]
+    },
+    {
+      "id": "C01",
+      "category_id": "cidadania_direitos",
+      "title": "Jornada de trabalho e regras de remuneração",
+      "common_object": "Duração do trabalho, escalas e mecanismos de elevação de salários.",
+      "distinct_decisions": [
+        {
+          "id": "C01.01",
+          "decision": "Fim da escala 6 por 1 e redução da duração semanal",
+          "position_keys": [
+            "280002538811:P37",
+            "280002541457:P41",
+            "280002542548:P39",
+            "280002551975:P40",
+            "280002552487:P33"
+          ]
+        },
+        {
+          "id": "C01.02",
+          "decision": "Redução vinculada a ganhos futuros de produtividade e inteligência artificial",
+          "position_keys": [
+            "280002541457:P41"
+          ]
+        },
+        {
+          "id": "C01.03",
+          "decision": "Elevação do salário mínimo e referência ao cálculo do DIEESE",
+          "position_keys": [
+            "280002538811:P38",
+            "280002541457:P50",
+            "280002551975:P49"
+          ]
+        },
+        {
+          "id": "C01.04",
+          "decision": "Indexação automática de salários ao custo de vida",
+          "position_keys": [
+            "280002552487:P32"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P37",
+        "280002541457:P41",
+        "280002542548:P39",
+        "280002551975:P40",
+        "280002552487:P33",
+        "280002538811:P38",
+        "280002541457:P50",
+        "280002551975:P49",
+        "280002552487:P32"
+      ],
+      "comparison_limits": [
+        "Fim da escala 6 por 1 e número de horas semanais são decisões separadas; os registros incluem 30, 35, 36 e 40 horas em escopos distintos.",
+        "280002538811:P37 registra tensão entre 30 e 36 horas na mesma página, sem sequência temporal definida; não resolver editorialmente.",
+        "280002552487:P33 distingue regra geral de 35 horas e professores com 30 horas; preservar a diferença de público.",
+        "Duplicação imediata, trajetória gradual e horizonte de quatro anos não podem ser fundidos em uma promessa salarial única.",
+        "Indexação de todos os salários não é sinônimo de valorização do salário mínimo."
+      ]
+    },
+    {
+      "id": "C02",
+      "category_id": "cidadania_direitos",
+      "title": "Contratação, reforma trabalhista, terceirização e estabilidade",
+      "common_object": "Regras da relação de emprego e de sua interrupção.",
+      "distinct_decisions": [
+        {
+          "id": "C02.01",
+          "decision": "Alternativa contratual à CLT e prevalência da negociação",
+          "position_keys": [
+            "280002539826:P41",
+            "280002551544:P38"
+          ]
+        },
+        {
+          "id": "C02.02",
+          "decision": "Flexibilização trabalhista em formulação geral",
+          "position_keys": [
+            "280002540694:P37"
+          ]
+        },
+        {
+          "id": "C02.03",
+          "decision": "Revogação da reforma trabalhista e reorganização de direitos",
+          "position_keys": [
+            "280002541457:P42",
+            "280002551975:P50",
+            "280002552487:P34"
+          ]
+        },
+        {
+          "id": "C02.04",
+          "decision": "Fim da terceirização e equiparação de direitos",
+          "position_keys": [
+            "280002541457:P42",
+            "280002552487:P34"
+          ]
+        },
+        {
+          "id": "C02.05",
+          "decision": "Estabilidade após período de vínculo e proteção contra dispensas",
+          "position_keys": [
+            "280002551975:P42",
+            "280002552487:P35"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P41",
+        "280002551544:P38",
+        "280002540694:P37",
+        "280002541457:P42",
+        "280002551975:P50",
+        "280002552487:P34",
+        "280002551975:P42",
+        "280002552487:P35"
+      ],
+      "comparison_limits": [
+        "Negociado sobre legislado, contrato alternativo e revogação da reforma têm objetos distintos.",
+        "280002539826:P41 preserva limite semanal de 44 horas ao admitir negociação de jornada diária maior; não converter isso em ausência de limite.",
+        "280002551544:P38 condiciona a negociação à lei; não estender a renúncia a quaisquer direitos.",
+        "Estabilidade após cinco anos e proibição de demissões com ocupação de empresas têm alcances diferentes.",
+        "Formulação geral sobre flexibilidade não determina quais dispositivos legais seriam alterados."
+      ]
+    },
+    {
+      "id": "C03",
+      "category_id": "cidadania_direitos",
+      "title": "Trabalho em plataformas e encargos das operadoras",
+      "common_object": "Proteção de trabalhadores de aplicativos e regras econômicas da intermediação.",
+      "distinct_decisions": [
+        {
+          "id": "C03.01",
+          "decision": "Remuneração mínima, previdência e representação sem vínculo universal explicitado",
+          "position_keys": [
+            "280002538811:P39",
+            "280002542548:P40"
+          ]
+        },
+        {
+          "id": "C03.02",
+          "decision": "Reconhecimento de vínculo de emprego ou registro formal",
+          "position_keys": [
+            "280002541457:P43",
+            "280002551975:P41"
+          ]
+        },
+        {
+          "id": "C03.03",
+          "decision": "Limite negociado de comissão, restrição operacional e alternativa pública",
+          "position_keys": [
+            "280002554479:P29"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P39",
+        "280002542548:P40",
+        "280002541457:P43",
+        "280002551975:P41",
+        "280002554479:P29"
+      ],
+      "comparison_limits": [
+        "Proteção social em aplicativo não implica, por si, enquadramento integral de todos os trabalhadores na CLT.",
+        "Regular comissão cobrada pela operadora não é o mesmo objeto que vínculo empregatício.",
+        "280002554479:P29 condiciona a alternativa pública e a restrição de operação ao impasse da negociação; preservar a sequência.",
+        "A referência a contribuição voluntária no contexto de 280002541457:P43 não anula automaticamente a proposta de direitos de emprego descrita no registro."
+      ]
+    },
+    {
+      "id": "C04",
+      "category_id": "cidadania_direitos",
+      "title": "Organização sindical e direito de greve",
+      "common_object": "Forma de representação coletiva e relação entre sindicatos e Estado.",
+      "distinct_decisions": [
+        {
+          "id": "C04.01",
+          "decision": "Fim de monopólio sindical e de contribuições ou filiação compulsórias",
+          "position_keys": [
+            "280002539826:P42"
+          ]
+        },
+        {
+          "id": "C04.02",
+          "decision": "Greve irrestrita e ausência de intervenção estatal nos sindicatos",
+          "position_keys": [
+            "280002552487:P39"
+          ]
+        },
+        {
+          "id": "C04.03",
+          "decision": "Construção de novas regras trabalhistas por instâncias de trabalhadores",
+          "position_keys": [
+            "280002551975:P50"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P42",
+        "280002552487:P39",
+        "280002551975:P50"
+      ],
+      "comparison_limits": [
+        "Liberdade de filiação, regime de custeio, exclusividade sindical e amplitude do direito de greve são decisões diferentes.",
+        "Uma instância de elaboração de direitos não define automaticamente pluralidade sindical ou regra de financiamento."
+      ]
+    },
+    {
+      "id": "C05",
+      "category_id": "cidadania_direitos",
+      "title": "Cotas, representação e critérios de acesso a instituições",
+      "common_object": "Reservas de vagas, nomeações e acompanhamento de desigualdades em espaços institucionais.",
+      "distinct_decisions": [
+        {
+          "id": "C05.01",
+          "decision": "Cotas raciais, para pessoas com deficiência ou trans, em universos diferentes",
+          "position_keys": [
+            "280002538811:P41",
+            "280002541457:P44",
+            "280002542548:P37",
+            "280002551975:P47"
+          ]
+        },
+        {
+          "id": "C05.02",
+          "decision": "Extinção de cotas educacionais e bolsas por mérito",
+          "position_keys": [
+            "280002540694:P36"
+          ]
+        },
+        {
+          "id": "C05.03",
+          "decision": "Preferência por mulheres qualificadas em nomeações ao STF",
+          "position_keys": [
+            "280002551547:P37"
+          ]
+        },
+        {
+          "id": "C05.04",
+          "decision": "Mensuração de desigualdades e planos corretivos sem cota definida",
+          "position_keys": [
+            "280002551932:P35"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P41",
+        "280002541457:P44",
+        "280002542548:P37",
+        "280002551975:P47",
+        "280002540694:P36",
+        "280002551547:P37",
+        "280002551932:P35"
+      ],
+      "comparison_limits": [
+        "Cotas no ensino, concursos, polícias e empregos de pessoas com deficiência não são o mesmo universo.",
+        "Preferência na nomeação de ministros não equivale a reserva de vagas por concurso.",
+        "280002551932:P35 propõe mensuração e correção; não se deve inferir cota.",
+        "280002551547:P37 preserva a tensão de desenho de nomeação registrada no inventário; o mapa não a resolve nem consulta registros fora do recorte.",
+        "As cotas de ingresso em 280002551975:P35 permanecem em D07 porque sua categoria principal é educação."
+      ]
+    },
+    {
+      "id": "C06",
+      "category_id": "cidadania_direitos",
+      "title": "Igualdade, acessibilidade e critérios de tratamento por gênero",
+      "common_object": "Medidas de igualdade material, proteção contra discriminação e regras específicas por sexo ou condição.",
+      "distinct_decisions": [
+        {
+          "id": "C06.01",
+          "decision": "Igualdade salarial e planos empresariais contra disparidades",
+          "position_keys": [
+            "280002542548:P41",
+            "280002551547:P35",
+            "280002551932:P36"
+          ]
+        },
+        {
+          "id": "C06.02",
+          "decision": "Acesso de mulheres a crédito, qualificação, cuidado e autonomia econômica",
+          "position_keys": [
+            "280002551547:P36",
+            "280002552484:P24"
+          ]
+        },
+        {
+          "id": "C06.03",
+          "decision": "Acessibilidade, Libras e adaptações para pessoas autistas",
+          "position_keys": [
+            "280002541457:P49"
+          ]
+        },
+        {
+          "id": "C06.04",
+          "decision": "Critérios de elegibilidade em competições esportivas femininas",
+          "position_keys": [
+            "280002551544:P43",
+            "280002554479:P27"
+          ]
+        },
+        {
+          "id": "C06.05",
+          "decision": "Órgão independente para investigação de assédio",
+          "position_keys": [
+            "280002554479:P31"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002542548:P41",
+        "280002551547:P35",
+        "280002551932:P36",
+        "280002551547:P36",
+        "280002552484:P24",
+        "280002541457:P49",
+        "280002551544:P43",
+        "280002554479:P27",
+        "280002554479:P31"
+      ],
+      "comparison_limits": [
+        "Elegibilidade esportiva, igualdade remuneratória e acessibilidade são subobjetos distintos; a família não sugere uma pergunta conjunta.",
+        "280002551544:P43 utiliza sexo de nascimento e 280002554479:P27 propõe teste genético com horizonte de 2027; não tratar critérios como idênticos nem validar premissas médicas externas.",
+        "Revisão de matrizes de risco de crédito preserva avaliação de risco; não implica crédito sem critérios.",
+        "280002554479:P31 se dirige a assédio em empresas de todos os gêneros, não apenas violência contra mulheres.",
+        "Planos de correção, fiscalização legal e comprovação de discriminação têm condições diferentes."
+      ]
+    },
+    {
+      "id": "C07",
+      "category_id": "cidadania_direitos",
+      "title": "Aborto, parentalidade e proteção ligada ao cuidado",
+      "common_object": "Decisões sobre interrupção de gravidez e licenças ou estabilidade parental.",
+      "distinct_decisions": [
+        {
+          "id": "C07.01",
+          "decision": "Descriminalização ou legalização do aborto com oferta pública",
+          "position_keys": [
+            "280002538811:P40",
+            "280002541457:P45",
+            "280002551975:P44"
+          ]
+        },
+        {
+          "id": "C07.02",
+          "decision": "Licença parental, maternidade ou paternidade de um ano",
+          "position_keys": [
+            "280002541457:P46",
+            "280002551975:P43"
+          ]
+        },
+        {
+          "id": "C07.03",
+          "decision": "Estabilidade associada à condição de responsável legal",
+          "position_keys": [
+            "280002551975:P43"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P40",
+        "280002541457:P45",
+        "280002551975:P44",
+        "280002541457:P46",
+        "280002551975:P43"
+      ],
+      "comparison_limits": [
+        "Aborto e licença parental não medem a mesma decisão.",
+        "Os registros de aborto não estabelecem limite gestacional: não criar prazo nem presumir autorização irrestrita em qualquer circunstância.",
+        "Licença compartilhada e licenças de maternidade e paternidade não devem ser automaticamente equiparadas no modo de divisão.",
+        "A extensão a responsáveis legais em 280002551975:P43 deve permanecer explícita."
+      ]
+    },
+    {
+      "id": "C08",
+      "category_id": "cidadania_direitos",
+      "title": "Territórios tradicionais, reconhecimento e uso econômico",
+      "common_object": "Reconhecimento de direitos territoriais e decisões econômicas de povos indígenas e comunidades quilombolas.",
+      "distinct_decisions": [
+        {
+          "id": "C08.01",
+          "decision": "Demarcação, titulação e reconhecimento territorial",
+          "position_keys": [
+            "280002538811:P42",
+            "280002541457:P19",
+            "280002542548:P38",
+            "280002551975:P46"
+          ]
+        },
+        {
+          "id": "C08.02",
+          "decision": "Rejeição do marco temporal",
+          "position_keys": [
+            "280002538811:P42",
+            "280002551975:P46"
+          ]
+        },
+        {
+          "id": "C08.03",
+          "decision": "Autonomia econômica das comunidades e compensação por restrições",
+          "position_keys": [
+            "280002539826:P43",
+            "280002551544:P42"
+          ]
+        },
+        {
+          "id": "C08.04",
+          "decision": "Posse por retomadas e retirada de invasores",
+          "position_keys": [
+            "280002552487:P14"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P42",
+        "280002541457:P19",
+        "280002542548:P38",
+        "280002551975:P46",
+        "280002539826:P43",
+        "280002551544:P42",
+        "280002552487:P14"
+      ],
+      "comparison_limits": [
+        "Demarcação, reconhecimento quilombola, titulação e rejeição do marco temporal não são equivalentes.",
+        "280002542548:P38 mantém condições e formulação próprias sobre demarcação; não acrescentar posição sobre marco temporal.",
+        "Autonomia para atividade econômica própria não é autorização geral a terceiros para exploração dos territórios.",
+        "Compensação por restrições e retirada de invasores são instrumentos independentes."
+      ]
+    },
+    {
+      "id": "C09",
+      "category_id": "cidadania_direitos",
+      "title": "Expressão, mídia, privacidade e proteção digital",
+      "common_object": "Regras sobre circulação de informação, dados pessoais e exposição de crianças a ambientes digitais.",
+      "distinct_decisions": [
+        {
+          "id": "C09.01",
+          "decision": "Proibições ou limites à censura e exclusão por opinião",
+          "position_keys": [
+            "280002539826:P44",
+            "280002551544:P39",
+            "280002552487:P36"
+          ]
+        },
+        {
+          "id": "C09.02",
+          "decision": "Código da imprensa, garantias e responsabilização",
+          "position_keys": [
+            "280002540694:P38"
+          ]
+        },
+        {
+          "id": "C09.03",
+          "decision": "Regulação de redes contra desinformação e discurso de ódio",
+          "position_keys": [
+            "280002542548:P42"
+          ]
+        },
+        {
+          "id": "C09.04",
+          "decision": "Controle de concessões de grandes veículos",
+          "position_keys": [
+            "280002552487:P37"
+          ]
+        },
+        {
+          "id": "C09.05",
+          "decision": "Aplicação da LGPD, auditorias e autoridade de proteção de dados",
+          "position_keys": [
+            "280002548139:P36"
+          ]
+        },
+        {
+          "id": "C09.06",
+          "decision": "Transparência algorítmica e relatórios sobre conteúdo para menores",
+          "position_keys": [
+            "280002554479:P33"
+          ]
+        },
+        {
+          "id": "C09.07",
+          "decision": "Estudo de idade mínima para redes sociais",
+          "position_keys": [
+            "280002554479:P34"
+          ]
+        },
+        {
+          "id": "C09.08",
+          "decision": "Prevenção de abuso infantil e proteção em ambientes digitais ou escolares",
+          "position_keys": [
+            "280002552484:P25"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P44",
+        "280002551544:P39",
+        "280002552487:P36",
+        "280002540694:P38",
+        "280002542548:P42",
+        "280002552487:P37",
+        "280002548139:P36",
+        "280002554479:P33",
+        "280002554479:P34",
+        "280002552484:P25"
+      ],
+      "comparison_limits": [
+        "Limitar moderação por opinião, sancionar desinformação, revisar concessões e proteger dados são decisões distintas.",
+        "280002539826:P44 delimita o tratamento de opinião; não generalizar automaticamente a qualquer conteúdo ilícito.",
+        "A formulação de expressão irrestrita em 280002552487:P36 e o cancelamento de concessões em 280002552487:P37 permanecem lado a lado como tensão documental, sem solução editorial.",
+        "280002554479:P33 menciona conteúdo dirigido a menores de 14 anos; 280002554479:P34 estuda modelo estrangeiro de 16 anos, sem fixar automaticamente a idade brasileira.",
+        "Referências a censura e crimes são alegações dos registros; o mapa não as converte em constatações externas."
+      ]
+    },
+    {
+      "id": "C10",
+      "category_id": "cidadania_direitos",
+      "title": "Representação política, financiamento eleitoral e mandatos",
+      "common_object": "Desenho de eleições, partidos e permanência de representantes em cargos.",
+      "distinct_decisions": [
+        {
+          "id": "C10.01",
+          "decision": "Financiamento público de partidos e campanhas e doações privadas",
+          "position_keys": [
+            "280002539826:P45",
+            "280002540694:P09"
+          ]
+        },
+        {
+          "id": "C10.02",
+          "decision": "Sistemas distritais ou mistos de eleição legislativa",
+          "position_keys": [
+            "280002539826:P46",
+            "280002551932:P34"
+          ]
+        },
+        {
+          "id": "C10.03",
+          "decision": "Fim da reeleição consecutiva em universos distintos",
+          "position_keys": [
+            "280002551544:P41",
+            "280002551547:P12",
+            "280002551932:P33"
+          ]
+        },
+        {
+          "id": "C10.04",
+          "decision": "Revogabilidade de mandatos e regras de recall",
+          "position_keys": [
+            "280002541457:P47",
+            "280002551975:P45"
+          ]
+        },
+        {
+          "id": "C10.05",
+          "decision": "Organização partidária, cláusulas de barreira e elegibilidade",
+          "position_keys": [
+            "280002552487:P38"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P45",
+        "280002540694:P09",
+        "280002539826:P46",
+        "280002551932:P34",
+        "280002551544:P41",
+        "280002551547:P12",
+        "280002551932:P33",
+        "280002541457:P47",
+        "280002551975:P45",
+        "280002552487:P38"
+      ],
+      "comparison_limits": [
+        "Financiamento de campanha e regra de conversão de votos em cadeiras são subdecisões separadas.",
+        "Fim da reeleição presidencial não equivale a proibição de reeleição em todos os cargos; 280002551932:P33 distingue reeleição consecutiva de impedimento vitalício.",
+        "280002551975:P45 informa gatilhos e prazos para recall; não atribuí-los à revogabilidade descrita em 280002541457:P47.",
+        "280002540694:P09 vincula recursos partidários ao desempenho de prefeitos; não representa mera extinção dos fundos.",
+        "Regras partidárias e revisão de elegibilidade não determinam sistema de votação."
+      ]
+    },
+    {
+      "id": "C11",
+      "category_id": "cidadania_direitos",
+      "title": "Garantias, responsabilização estatal e funcionamento da Justiça",
+      "common_object": "Limites ao poder punitivo, reparação por violência estatal e acesso à resposta judicial.",
+      "distinct_decisions": [
+        {
+          "id": "C11.01",
+          "decision": "Garantias judiciais em prisão, transferência e regimes excepcionais",
+          "position_keys": [
+            "280002548139:P37"
+          ]
+        },
+        {
+          "id": "C11.02",
+          "decision": "Justiça, arquivos e reparação por violência de Estado",
+          "position_keys": [
+            "280002551975:P48"
+          ]
+        },
+        {
+          "id": "C11.03",
+          "decision": "Mutirões e meta de tempo médio de processos",
+          "position_keys": [
+            "280002554479:P32"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002548139:P37",
+        "280002551975:P48",
+        "280002554479:P32"
+      ],
+      "comparison_limits": [
+        "Garantias processuais, reparação histórica e velocidade de tramitação não são uma única posição sobre Justiça.",
+        "280002548139:P37 rejeita suspensão de garantias; preservar a tensão documentada sobre missões de fronteira, sem deduzir autorização para exceção geral.",
+        "280002554479:P32 formula meta média, não prazo máximo vinculante para todo processo.",
+        "A janela histórica e as vítimas abrangidas por 280002551975:P48 precisam ser preservadas."
+      ]
+    },
+    {
+      "id": "C12",
+      "category_id": "cidadania_direitos",
+      "title": "Nacionalidade e regularização migratória",
+      "common_object": "Acesso de imigrantes à documentação e ao pertencimento jurídico nacional.",
+      "distinct_decisions": [
+        {
+          "id": "C12.01",
+          "decision": "Concessão de nacionalidade e regularização de grupos de imigrantes nomeados",
+          "position_keys": [
+            "280002541457:P48"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002541457:P48"
+      ],
+      "comparison_limits": [
+        "Os grupos nomeados no registro não devem ser convertidos em política indistinta para todos os fluxos migratórios.",
+        "Regularização documental, nacionalidade e dispensa de visto são decisões separadas; dispensa de visto de turismo aparece em R09."
+      ]
+    },
+    {
+      "id": "S01",
+      "category_id": "seguranca_publica",
+      "title": "Organização e competências das forças de segurança",
+      "common_object": "Estrutura institucional, repartição federativa e formas de comando ou atuação policial.",
+      "distinct_decisions": [
+        {
+          "id": "S01.01",
+          "decision": "Desmilitarização e unificação de polícias em estrutura civil",
+          "position_keys": [
+            "280002538811:P43",
+            "280002541457:P11",
+            "280002551975:P51"
+          ]
+        },
+        {
+          "id": "S01.02",
+          "decision": "Substituição estratégica de instituições ou dissolução de aparatos repressivos, em horizontes próprios",
+          "position_keys": [
+            "280002541457:P11",
+            "280002552487:P40"
+          ]
+        },
+        {
+          "id": "S01.03",
+          "decision": "Criação de ministério de segurança condicionada a mudança constitucional",
+          "position_keys": [
+            "280002542548:P46"
+          ]
+        },
+        {
+          "id": "S01.04",
+          "decision": "Força municipal de apoio e articulação nacional de inteligência",
+          "position_keys": [
+            "280002551547:P38",
+            "280002551547:P39"
+          ]
+        },
+        {
+          "id": "S01.05",
+          "decision": "Competência estadual para criar crimes ou elevar penas",
+          "position_keys": [
+            "280002539826:P50"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P43",
+        "280002541457:P11",
+        "280002551975:P51",
+        "280002552487:P40",
+        "280002542548:P46",
+        "280002551547:P38",
+        "280002551547:P39",
+        "280002539826:P50"
+      ],
+      "comparison_limits": [
+        "Desmilitarização, unificação civil e dissolução policial não são equivalentes.",
+        "280002541457:P11 separa medida imediata de transformação futura do Estado; não fundir os horizontes.",
+        "A proposta municipal 280002551547:P39 não substitui automaticamente as polícias existentes.",
+        "Criar ministério e ampliar competência penal estadual são reformas de objetos diferentes."
+      ]
+    },
+    {
+      "id": "S02",
+      "category_id": "seguranca_publica",
+      "title": "Enquadramento de facções e uso de força territorial",
+      "common_object": "Instrumentos legais e operacionais dirigidos a organizações armadas e domínio territorial.",
+      "distinct_decisions": [
+        {
+          "id": "S02.01",
+          "decision": "Enquadramento terrorista ou narcoterrorista de organizações",
+          "position_keys": [
+            "280002539826:P47",
+            "280002551544:P44",
+            "280002551932:P37"
+          ]
+        },
+        {
+          "id": "S02.02",
+          "decision": "Regimes jurídicos de exceção e federalização em hipóteses delimitadas",
+          "position_keys": [
+            "280002540694:P39"
+          ]
+        },
+        {
+          "id": "S02.03",
+          "decision": "Participação militar e formas de emprego da força",
+          "position_keys": [
+            "280002539826:P47",
+            "280002540694:P39",
+            "280002551544:P44",
+            "280002551932:P37"
+          ]
+        },
+        {
+          "id": "S02.04",
+          "decision": "Foco em grandes redes do tráfico e cooperação contra organizações",
+          "position_keys": [
+            "280002552484:P27"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P47",
+        "280002551544:P44",
+        "280002551932:P37",
+        "280002540694:P39",
+        "280002552484:P27"
+      ],
+      "comparison_limits": [
+        "Tipificação, competência, uso militar e regras de letalidade são subdecisões distintas.",
+        "280002551932:P37 delimita organizações por domínio territorial e armamento e propõe atuação militar sem GLO; não estender a qualquer associação criminosa.",
+        "280002551544:P44 contém formulação sobre abater portadores de fuzil, sem protocolo plenamente descrito; não completar regras de uso da força.",
+        "280002540694:P39 combina garantias declaradas e instrumentos excepcionais; o mapa não valida sua legalidade nem apaga essa tensão.",
+        "Foco em grandes redes não implica imunidade para infrações menores."
+      ]
+    },
+    {
+      "id": "S03",
+      "category_id": "seguranca_publica",
+      "title": "Investigação patrimonial e recuperação de ativos",
+      "common_object": "Rastreamento de recursos e retirada do patrimônio ligado a organizações criminosas.",
+      "distinct_decisions": [
+        {
+          "id": "S03.01",
+          "decision": "Inteligência financeira e cooperação investigativa",
+          "position_keys": [
+            "280002541457:P51",
+            "280002542548:P43",
+            "280002548139:P39",
+            "280002552484:P28"
+          ]
+        },
+        {
+          "id": "S03.02",
+          "decision": "Presunção de ilicitude e inversão de ônus da prova patrimonial",
+          "position_keys": [
+            "280002540694:P40",
+            "280002551932:P39"
+          ]
+        },
+        {
+          "id": "S03.03",
+          "decision": "Congelamento, confisco e alienação de ativos em desenhos próprios",
+          "position_keys": [
+            "280002551544:P44",
+            "280002551932:P39"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002541457:P51",
+        "280002542548:P43",
+        "280002548139:P39",
+        "280002552484:P28",
+        "280002540694:P40",
+        "280002551932:P39",
+        "280002551544:P44"
+      ],
+      "comparison_limits": [
+        "Investigação financeira não equivale a inversão de ônus da prova.",
+        "280002548139:P39 e 280002552484:P28 preservam procedimento ou garantias; não agrupá-los como confisco automático.",
+        "280002551932:P39 delimita incompatibilidade patrimonial relevante e ação independente, enquanto procedimentos de alienação não estão totalmente especificados.",
+        "O universo de organizações e pessoas atingidas precisa permanecer explícito."
+      ]
+    },
+    {
+      "id": "S04",
+      "category_id": "seguranca_publica",
+      "title": "Idade de responsabilização penal",
+      "common_object": "Manutenção ou alteração da idade para aplicação do regime penal adulto.",
+      "distinct_decisions": [
+        {
+          "id": "S04.01",
+          "decision": "Manutenção da idade com rejeição da redução",
+          "position_keys": [
+            "280002538811:P45",
+            "280002541457:P54",
+            "280002551975:P53"
+          ]
+        },
+        {
+          "id": "S04.02",
+          "decision": "Redução geral para 16 anos com hipóteses adicionais",
+          "position_keys": [
+            "280002539826:P48",
+            "280002551544:P45"
+          ]
+        },
+        {
+          "id": "S04.03",
+          "decision": "Redução a 16 anos restrita a crimes enumerados",
+          "position_keys": [
+            "280002551932:P40"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P45",
+        "280002541457:P54",
+        "280002551975:P53",
+        "280002539826:P48",
+        "280002551544:P45",
+        "280002551932:P40"
+      ],
+      "comparison_limits": [
+        "Redução geral e redução somente para crimes listados têm alcances distintos.",
+        "280002539826:P48 deixa sem idade mínima precisa a exceção abaixo de 16; 280002551544:P45 menciona hipótese acima de 14. Não uniformizar.",
+        "Rejeição da redução não equivale a inexistência de resposta socioeducativa."
+      ]
+    },
+    {
+      "id": "S05",
+      "category_id": "seguranca_publica",
+      "title": "Modelos prisionais, segregação e reintegração",
+      "common_object": "Organização dos estabelecimentos e tratamento de pessoas presas.",
+      "distinct_decisions": [
+        {
+          "id": "S05.01",
+          "decision": "Prisões de segurança máxima, separação de lideranças e bloqueio de comunicações",
+          "position_keys": [
+            "280002540694:P41",
+            "280002542548:P45",
+            "280002548139:P38",
+            "280002551544:P49",
+            "280002551932:P38",
+            "280002552484:P30",
+            "280002554479:P38"
+          ]
+        },
+        {
+          "id": "S05.02",
+          "decision": "Capacidade prisional e combate à superlotação",
+          "position_keys": [
+            "280002551544:P49",
+            "280002551547:P41"
+          ]
+        },
+        {
+          "id": "S05.03",
+          "decision": "Educação, trabalho, reeducação e reinserção",
+          "position_keys": [
+            "280002538811:P46",
+            "280002551547:P41",
+            "280002552484:P30"
+          ]
+        },
+        {
+          "id": "S05.04",
+          "decision": "Fim da gestão privada e redução do encarceramento em massa",
+          "position_keys": [
+            "280002541457:P55",
+            "280002551975:P54"
+          ]
+        },
+        {
+          "id": "S05.05",
+          "decision": "Consulta plebiscitária sobre modelo prisional para lideranças ou alto risco",
+          "position_keys": [
+            "280002548139:P43"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002540694:P41",
+        "280002542548:P45",
+        "280002548139:P38",
+        "280002551544:P49",
+        "280002551932:P38",
+        "280002552484:P30",
+        "280002554479:P38",
+        "280002551547:P41",
+        "280002538811:P46",
+        "280002541457:P55",
+        "280002551975:P54",
+        "280002548139:P43"
+      ],
+      "comparison_limits": [
+        "Separar lideranças, criar vagas, reinserir e retirar gestão privada são objetos independentes.",
+        "280002551932:P38 oscila entre integrantes e lideranças no alcance do regime e contém tensão entre monitoramento de conversas e salvaguardas; não resolver essas lacunas.",
+        "280002548139:P38 inclui revisão judicial periódica e público de alta periculosidade; não converter em regra para presos comuns.",
+        "280002548139:P43 propõe consulta, sem adesão prévia ao resultado nem suspensão geral de garantias.",
+        "Impedir ordens criminosas não implica proibir toda comunicação familiar ou com advogado.",
+        "As medidas externas mencionadas por 280002551975:P54 não são incorporadas ao mapa por referência."
+      ]
+    },
+    {
+      "id": "S06",
+      "category_id": "seguranca_publica",
+      "title": "Penas, cautelares e impedimentos a benefícios ou anistia",
+      "common_object": "Regras de privação de liberdade e de redução, progressão ou extinção de sanções.",
+      "distinct_decisions": [
+        {
+          "id": "S06.01",
+          "decision": "Prisão preventiva ligada a repetição de prisões",
+          "position_keys": [
+            "280002539826:P49"
+          ]
+        },
+        {
+          "id": "S06.02",
+          "decision": "Progressão, cumprimento integral e aumento de penas em universos específicos",
+          "position_keys": [
+            "280002539826:P47",
+            "280002551544:P49",
+            "280002551932:P38",
+            "280002554479:P37"
+          ]
+        },
+        {
+          "id": "S06.03",
+          "decision": "Impedimento de anistia para golpes e responsabilização em horizontes históricos",
+          "position_keys": [
+            "280002538811:P47"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P49",
+        "280002539826:P47",
+        "280002551544:P49",
+        "280002551932:P38",
+        "280002554479:P37",
+        "280002538811:P47"
+      ],
+      "comparison_limits": [
+        "280002539826:P49 fala em terceira prisão, não terceira condenação; não substituir o gatilho.",
+        "Aumento genérico de penas, patamar de 90% e vedação de progressão têm mecanismos diferentes.",
+        "A rejeição de anistia para golpes não informa regime de progressão de crimes comuns.",
+        "Penas de violência contra mulheres e crimes sexuais têm vínculos específicos em S09 e S12; não generalizar seus alcances."
+      ]
+    },
+    {
+      "id": "S07",
+      "category_id": "seguranca_publica",
+      "title": "Armas de fogo e organização de autodefesa",
+      "common_object": "Acesso, controle, rastreabilidade e formas comunitárias de proteção.",
+      "distinct_decisions": [
+        {
+          "id": "S07.01",
+          "decision": "Controle, auditoria e rastreabilidade de armas e estoques legais",
+          "position_keys": [
+            "280002542548:P44",
+            "280002548139:P40"
+          ]
+        },
+        {
+          "id": "S07.02",
+          "decision": "Porte em toda a propriedade rural",
+          "position_keys": [
+            "280002539826:P51"
+          ]
+        },
+        {
+          "id": "S07.03",
+          "decision": "Organização de autodefesa comunitária, trabalhadora ou territorial",
+          "position_keys": [
+            "280002541457:P56",
+            "280002552487:P41"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002542548:P44",
+        "280002548139:P40",
+        "280002539826:P51",
+        "280002541457:P56",
+        "280002552487:P41"
+      ],
+      "comparison_limits": [
+        "Rastrear armas não equivale a proibir toda posse ou todo porte.",
+        "280002539826:P51 delimita a propriedade rural; não inferir porte em qualquer lugar.",
+        "280002541457:P56 propõe autodefesa sem estabelecer automaticamente direito a armamento; 280002552487:P41 explicita armamento em âmbitos rural e indígena.",
+        "Comitês de autodefesa e regras individuais de porte não devem ser fundidos."
+      ]
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "title": "Câmeras, identificação e integração de dados de segurança",
+      "common_object": "Tecnologias de registro, vigilância e compartilhamento de informações.",
+      "distinct_decisions": [
+        {
+          "id": "S08.01",
+          "decision": "Câmeras corporais obrigatórias ou incentivadas",
+          "position_keys": [
+            "280002541457:P53",
+            "280002542548:P47"
+          ]
+        },
+        {
+          "id": "S08.02",
+          "decision": "Reconhecimento facial, inteligência artificial e previsão de risco",
+          "position_keys": [
+            "280002540694:P42",
+            "280002551544:P48",
+            "280002551547:P38",
+            "280002552484:P29",
+            "280002554479:P36"
+          ]
+        },
+        {
+          "id": "S08.03",
+          "decision": "Sensores, radares e drones em fronteiras",
+          "position_keys": [
+            "280002552484:P26"
+          ]
+        },
+        {
+          "id": "S08.04",
+          "decision": "Integração de bases, acesso a dados e condicionalidade de repasses",
+          "position_keys": [
+            "280002542548:P43",
+            "280002548139:P41",
+            "280002554479:P36"
+          ]
+        },
+        {
+          "id": "S08.05",
+          "decision": "Registro de maus-tratos a animais e alerta de risco doméstico",
+          "position_keys": [
+            "280002548139:P42"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002541457:P53",
+        "280002542548:P47",
+        "280002540694:P42",
+        "280002551544:P48",
+        "280002551547:P38",
+        "280002552484:P29",
+        "280002554479:P36",
+        "280002552484:P26",
+        "280002542548:P43",
+        "280002548139:P41",
+        "280002548139:P42"
+      ],
+      "comparison_limits": [
+        "Câmera corporal registra atuação de agentes; reconhecimento facial em espaço público identifica pessoas. Não são o mesmo instrumento.",
+        "280002541457:P53 prevê uso contínuo e custódia civil; 280002542548:P47 propõe incentivo, sem obrigatoriedade universal.",
+        "Cadastro, interoperabilidade, acesso a bases não policiais e financiamento condicionado a dados precisam ser separados.",
+        "280002548139:P42 reconhece limites de evidência da relação entre maus-tratos e risco doméstico; alerta não constitui prova de outro crime.",
+        "Ausência de salvaguardas descritas em alguns registros não autoriza inventá-las nem afirmar sua inexistência fora do documento."
+      ]
+    },
+    {
+      "id": "S09",
+      "category_id": "seguranca_publica",
+      "title": "Violência contra mulheres e redes de proteção doméstica",
+      "common_object": "Prevenção, assistência, monitoramento e sanções em situações de violência doméstica ou de gênero.",
+      "distinct_decisions": [
+        {
+          "id": "S09.01",
+          "decision": "Atendimento especializado, pactos, patrulhas e serviços de proteção",
+          "position_keys": [
+            "280002539826:P52",
+            "280002542548:P48",
+            "280002554479:P39"
+          ]
+        },
+        {
+          "id": "S09.02",
+          "decision": "Monitoramento de risco, botão de pânico e medidas eletrônicas",
+          "position_keys": [
+            "280002551544:P47",
+            "280002551547:P40"
+          ]
+        },
+        {
+          "id": "S09.03",
+          "decision": "Progressão restrita e perda patrimonial em crimes graves contra mulheres",
+          "position_keys": [
+            "280002551932:P41"
+          ]
+        },
+        {
+          "id": "S09.04",
+          "decision": "Cumprimento de pena por agressores de mulheres",
+          "position_keys": [
+            "280002551544:P49"
+          ]
+        },
+        {
+          "id": "S09.05",
+          "decision": "Reabilitação de agressores e alcance a pessoas idosas",
+          "position_keys": [
+            "280002554479:P39"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P52",
+        "280002542548:P48",
+        "280002554479:P39",
+        "280002551544:P47",
+        "280002551547:P40",
+        "280002551932:P41",
+        "280002551544:P49"
+      ],
+      "comparison_limits": [
+        "Serviço de proteção, monitoramento cautelar e pena após condenação exigem decisões separadas.",
+        "280002551544:P47 varia entre todos os agressores com medida protetiva e situações de alto risco; manter a tensão de alcance.",
+        "280002551932:P41 se refere a crimes graves e preserva devido processo; não transformar denúncia em gatilho automático de confisco.",
+        "280002554479:P39 inclui pessoas idosas e reabilitação de agressores; não reduzir todo o alcance à punição."
+      ]
+    },
+    {
+      "id": "S10",
+      "category_id": "seguranca_publica",
+      "title": "Drogas: saúde, descriminalização e regime legal",
+      "common_object": "Tratamento do uso e da circulação de substâncias hoje reguladas pela política de drogas.",
+      "distinct_decisions": [
+        {
+          "id": "S10.01",
+          "decision": "Mudança de prioridade da guerra às drogas para saúde e prevenção",
+          "position_keys": [
+            "280002538811:P44"
+          ]
+        },
+        {
+          "id": "S10.02",
+          "decision": "Descriminalização e revogação da legislação antidrogas",
+          "position_keys": [
+            "280002541457:P52",
+            "280002551975:P52"
+          ]
+        },
+        {
+          "id": "S10.03",
+          "decision": "Legalização da maconha em horizonte próximo",
+          "position_keys": [
+            "280002551975:P52"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P44",
+        "280002541457:P52",
+        "280002551975:P52"
+      ],
+      "comparison_limits": [
+        "Abordagem de saúde não implica legalização de mercados.",
+        "280002551975:P52 distingue descriminalização do uso de todas as drogas e legalização da maconha; não atribuir legalização comercial de todas as substâncias.",
+        "280002541457:P52 não fornece desenho completo do mercado; o mapa não o completa."
+      ]
+    },
+    {
+      "id": "S11",
+      "category_id": "seguranca_publica",
+      "title": "Apostas e sua publicidade",
+      "common_object": "Limites sobre atividade econômica de apostas e comunicação comercial.",
+      "distinct_decisions": [
+        {
+          "id": "S11.01",
+          "decision": "Proibição de publicidade de apostas em canais abrangidos",
+          "position_keys": [
+            "280002551932:P42"
+          ]
+        },
+        {
+          "id": "S11.02",
+          "decision": "Proibição da atividade e expropriação de operadoras",
+          "position_keys": [
+            "280002551975:P55"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002551932:P42",
+        "280002551975:P55"
+      ],
+      "comparison_limits": [
+        "Restringir publicidade não equivale a proibir a atividade.",
+        "Proibição e expropriação são instrumentos diferentes, mesmo quando constam do mesmo registro."
+      ]
+    },
+    {
+      "id": "S12",
+      "category_id": "seguranca_publica",
+      "title": "Crimes sexuais, exploração infantil e medidas específicas",
+      "common_object": "Sanções e intervenções dirigidas a violência sexual e conteúdo de abuso infantil.",
+      "distinct_decisions": [
+        {
+          "id": "S12.01",
+          "decision": "Castração química de condenados por abuso sexual",
+          "position_keys": [
+            "280002551544:P46"
+          ]
+        },
+        {
+          "id": "S12.02",
+          "decision": "Detecção e bloqueio de imagens de abuso sexual infantil",
+          "position_keys": [
+            "280002554479:P40"
+          ]
+        },
+        {
+          "id": "S12.03",
+          "decision": "Elevação da pena mínima para produção ou comercialização de abuso infantil",
+          "position_keys": [
+            "280002554479:P41"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002551544:P46",
+        "280002554479:P40",
+        "280002554479:P41"
+      ],
+      "comparison_limits": [
+        "Tratamento farmacológico, bloqueio de conteúdo e pena privativa de liberdade não podem ser reunidos em uma única decisão.",
+        "280002551544:P46 não detalha consentimento, duração e supervisão da castração química; não completar.",
+        "280002554479:P40 contém tensão entre possibilidade de reativação e formulação de impedimento de retorno, além de bloqueio imediato sem audiência prévia; preservar essas condições.",
+        "280002554479:P41 especifica pelo menos duplicar mínimos para crimes e agentes descritos, não duplicar todas as penas."
+      ]
+    },
+    {
+      "id": "R01",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Controle estatal do comércio e dos fluxos financeiros externos",
+      "common_object": "Organização do comércio exterior e autorização de saídas financeiras.",
+      "distinct_decisions": [
+        {
+          "id": "R01.01",
+          "decision": "Organismo estatal de comércio exterior",
+          "position_keys": [
+            "280002538811:P48"
+          ]
+        },
+        {
+          "id": "R01.02",
+          "decision": "Autorização estatal de transferências ao exterior e tratamento de remessas de lucros",
+          "position_keys": [
+            "280002538811:P49"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P48",
+        "280002538811:P49"
+      ],
+      "comparison_limits": [
+        "Organizar comércio por empresa ou órgão estatal não é o mesmo que controlar toda saída financeira.",
+        "280002538811:P49 reúne autorização de transferências e formulação de proibição de remessas de lucros; não converter todos os fluxos em proibição absoluta."
+      ]
+    },
+    {
+      "id": "R02",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Integração regional, Mercosul e coordenação monetária",
+      "common_object": "Formato e instrumentos de integração entre países próximos ou espaços regionais.",
+      "distinct_decisions": [
+        {
+          "id": "R02.01",
+          "decision": "Transformação do Mercosul de união aduaneira em área de livre comércio",
+          "position_keys": [
+            "280002539826:P54"
+          ]
+        },
+        {
+          "id": "R02.02",
+          "decision": "Aprofundamento do Mercosul e integração energética sul-americana",
+          "position_keys": [
+            "280002542548:P49"
+          ]
+        },
+        {
+          "id": "R02.03",
+          "decision": "Integração sul-americana e lusófona como orientação estratégica",
+          "position_keys": [
+            "280002540694:P43"
+          ]
+        },
+        {
+          "id": "R02.04",
+          "decision": "Cesta monetária regional, compensação e swaps",
+          "position_keys": [
+            "280002540694:P44"
+          ]
+        },
+        {
+          "id": "R02.05",
+          "decision": "ALBA e Unasul como espaços de integração",
+          "position_keys": [
+            "280002551975:P56"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P54",
+        "280002542548:P49",
+        "280002540694:P43",
+        "280002540694:P44",
+        "280002551975:P56"
+      ],
+      "comparison_limits": [
+        "Mudar o formato aduaneiro não significa sair do Mercosul.",
+        "Integração energética, monetária e diplomática são subobjetos distintos.",
+        "280002540694:P44 não elimina o real nem define automaticamente moeda única.",
+        "A presença de integração regional não permite inferir posição sobre BRICS ou o acordo Mercosul–União Europeia."
+      ]
+    },
+    {
+      "id": "R03",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Acordos comerciais e reciprocidade de acesso a mercados",
+      "common_object": "Celebração, avaliação e condições de tratados de comércio.",
+      "distinct_decisions": [
+        {
+          "id": "R03.01",
+          "decision": "Crítica ao acordo Mercosul–União Europeia",
+          "position_keys": [
+            "280002538811:P50",
+            "280002541457:P58"
+          ]
+        },
+        {
+          "id": "R03.02",
+          "decision": "Valorização, consolidação ou expansão de acordos incluindo Mercosul–União Europeia",
+          "position_keys": [
+            "280002542548:P51",
+            "280002551932:P44"
+          ]
+        },
+        {
+          "id": "R03.03",
+          "decision": "Reciprocidade de acesso como condição para acordos",
+          "position_keys": [
+            "280002548139:P48"
+          ]
+        },
+        {
+          "id": "R03.04",
+          "decision": "Diversificação de parceiros comerciais e acordos",
+          "position_keys": [
+            "280002551544:P50",
+            "280002551547:P45"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P50",
+        "280002541457:P58",
+        "280002542548:P51",
+        "280002551932:P44",
+        "280002548139:P48",
+        "280002551544:P50",
+        "280002551547:P45"
+      ],
+      "comparison_limits": [
+        "Crítica ao acordo não equivale automaticamente a denúncia jurídica já desenhada.",
+        "Celebrar a conclusão de um acordo não estabelece adesão explícita a cada cláusula.",
+        "Diversificar comércio com países europeus não define posição sobre um acordo específico.",
+        "280002548139:P48 fixa critério de reciprocidade, sem decisão explícita sobre o acordo Mercosul–União Europeia."
+      ]
+    },
+    {
+      "id": "R04",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Participação nos BRICS e vínculos institucionais associados",
+      "common_object": "Permanência, saída ou atuação em articulações dos BRICS.",
+      "distinct_decisions": [
+        {
+          "id": "R04.01",
+          "decision": "Saída diplomática dos BRICS preservando relações comerciais",
+          "position_keys": [
+            "280002539826:P53"
+          ]
+        },
+        {
+          "id": "R04.02",
+          "decision": "Participação pragmática com autonomia perante a China",
+          "position_keys": [
+            "280002540694:P45"
+          ]
+        },
+        {
+          "id": "R04.03",
+          "decision": "Fortalecimento dos BRICS e de seu banco de desenvolvimento",
+          "position_keys": [
+            "280002542548:P50"
+          ]
+        },
+        {
+          "id": "R04.04",
+          "decision": "Atuação simultânea nos BRICS e aproximação à OCDE",
+          "position_keys": [
+            "280002551932:P45"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P53",
+        "280002540694:P45",
+        "280002542548:P50",
+        "280002551932:P45"
+      ],
+      "comparison_limits": [
+        "Saída do bloco não equivale a rompimento comercial com seus membros.",
+        "Fortalecer BRICS, aderir à OCDE e reformar instituições financeiras não são necessariamente escolhas mutuamente exclusivas.",
+        "Não atribuir decisão sobre BRICS a registros gerais de autonomia ou diversificação diplomática."
+      ]
+    },
+    {
+      "id": "R05",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Instituições multilaterais e financiamento global",
+      "common_object": "Adesão, reforma, substituição ou uso de estruturas internacionais de governança.",
+      "distinct_decisions": [
+        {
+          "id": "R05.01",
+          "decision": "Ingresso ou aproximação à OCDE e reformas associadas",
+          "position_keys": [
+            "280002539826:P55",
+            "280002551544:P51",
+            "280002551932:P45"
+          ]
+        },
+        {
+          "id": "R05.02",
+          "decision": "Reforma do FMI e do Banco Mundial",
+          "position_keys": [
+            "280002542548:P50"
+          ]
+        },
+        {
+          "id": "R05.03",
+          "decision": "Extinção de instâncias internacionais de segurança nomeadas",
+          "position_keys": [
+            "280002551975:P61"
+          ]
+        },
+        {
+          "id": "R05.04",
+          "decision": "Fundo multilateral contra a fome financiado por fluxos globais",
+          "position_keys": [
+            "280002551547:P44"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P55",
+        "280002551544:P51",
+        "280002551932:P45",
+        "280002542548:P50",
+        "280002551975:P61",
+        "280002551547:P44"
+      ],
+      "comparison_limits": [
+        "Ingresso na OCDE, reforma financeira, extinção de instituições e criação de fundo global são subdecisões independentes.",
+        "Em 280002551544:P51, a associação entre IOF e adesão à OCDE é a formulação do documento; o mapa não verifica nem endossa esse requisito externo.",
+        "280002551547:P44 depende de articulação multilateral, não estabelece unilateralmente imposto brasileiro sobre todos os fluxos mundiais.",
+        "280002551975:P61 propõe extinção de OTAN e Conselho de Segurança; não reescrever como simples reforma de veto."
+      ]
+    },
+    {
+      "id": "R06",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Autonomia diplomática, relações bilaterais e não intervenção",
+      "common_object": "Orientações e escolhas sobre alinhamentos, soberania e relação com outros países ou povos.",
+      "distinct_decisions": [
+        {
+          "id": "R06.01",
+          "decision": "Ruptura de relações ou tratados caracterizados como dependentes ou submissos",
+          "position_keys": [
+            "280002538811:P50"
+          ]
+        },
+        {
+          "id": "R06.02",
+          "decision": "Autonomia e recusa de alinhamento automático",
+          "position_keys": [
+            "280002540694:P43",
+            "280002541457:P57",
+            "280002548139:P49",
+            "280002551932:P43",
+            "280002554479:P43"
+          ]
+        },
+        {
+          "id": "R06.03",
+          "decision": "Relações prioritárias, diversificação e dependências críticas",
+          "position_keys": [
+            "280002551544:P50",
+            "280002551547:P45"
+          ]
+        },
+        {
+          "id": "R06.04",
+          "decision": "Rejeição de internacionalização da Amazônia e interferência estrangeira regional",
+          "position_keys": [
+            "280002552487:P42",
+            "280002552487:P43"
+          ]
+        },
+        {
+          "id": "R06.05",
+          "decision": "Solidariedade a lutas de povos e países nomeados",
+          "position_keys": [
+            "280002552487:P44"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P50",
+        "280002540694:P43",
+        "280002541457:P57",
+        "280002548139:P49",
+        "280002551932:P43",
+        "280002554479:P43",
+        "280002551544:P50",
+        "280002551547:P45",
+        "280002552487:P42",
+        "280002552487:P43",
+        "280002552487:P44"
+      ],
+      "comparison_limits": [
+        "Autonomia genérica não decide adesão ou saída de cada bloco.",
+        "Recusa de alinhamento automático não equivale a neutralidade obrigatória em toda controvérsia.",
+        "Solidariedade a lutas não implica envio de armas, tropas ou rompimento diplomático.",
+        "Amazônia, relações comerciais e intervenção em países latino-americanos são objetos diferentes; não criar um juízo genérico de patriotismo.",
+        "As caracterizações de submissão, imperialismo e interferência pertencem aos registros e não são conclusões factuais desta etapa."
+      ]
+    },
+    {
+      "id": "R07",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Relações com Israel e reconhecimento internacional",
+      "common_object": "Vínculos diplomáticos, militares e econômicos com Israel e reconhecimento de entidades políticas.",
+      "distinct_decisions": [
+        {
+          "id": "R07.01",
+          "decision": "Rompimento com Israel condicionado ao quadro descrito no documento",
+          "position_keys": [
+            "280002538811:P51"
+          ]
+        },
+        {
+          "id": "R07.02",
+          "decision": "Rompimento imediato e reconhecimento de Palestina ou Polisário",
+          "position_keys": [
+            "280002551975:P57"
+          ]
+        },
+        {
+          "id": "R07.03",
+          "decision": "Restabelecimento de relações com Israel entre parceiros nomeados",
+          "position_keys": [
+            "280002551544:P50"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002538811:P51",
+        "280002551975:P57",
+        "280002551544:P50"
+      ],
+      "comparison_limits": [
+        "280002538811:P51 contém condição para a ruptura; 280002551975:P57 não oferece a mesma condição de término.",
+        "Relação diplomática, comércio, cooperação militar e reconhecimento de outros povos são subdecisões diferentes.",
+        "O mapa preserva atribuição ao documento de termos sobre o conflito, sem produzir avaliação externa."
+      ]
+    },
+    {
+      "id": "R08",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Organização e avaliação da rede diplomática",
+      "common_object": "Alocação de pessoal e prioridades operacionais das representações no exterior.",
+      "distinct_decisions": [
+        {
+          "id": "R08.01",
+          "decision": "Embaixadas com metas comerciais e avaliação de resultados",
+          "position_keys": [
+            "280002551547:P42"
+          ]
+        },
+        {
+          "id": "R08.02",
+          "decision": "Redistribuição de diplomatas para Ásia e Oriente Médio",
+          "position_keys": [
+            "280002551547:P43"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002551547:P42",
+        "280002551547:P43"
+      ],
+      "comparison_limits": [
+        "Meta comercial não elimina automaticamente as funções tradicionais da diplomacia.",
+        "280002551547:P43 especifica proporções e transição preservando relações anteriores; não transformar realocação parcial em fechamento geral de postos."
+      ]
+    },
+    {
+      "id": "R09",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Vistos e atração de imigração qualificada",
+      "common_object": "Regras de entrada para turismo e seleção ou atração de trabalhadores estrangeiros.",
+      "distinct_decisions": [
+        {
+          "id": "R09.01",
+          "decision": "Dispensa de visto de turismo para países considerados seguros",
+          "position_keys": [
+            "280002539826:P56"
+          ]
+        },
+        {
+          "id": "R09.02",
+          "decision": "Atração de imigração qualificada",
+          "position_keys": [
+            "280002539826:P56"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P56"
+      ],
+      "comparison_limits": [
+        "Dispensa de visto de turismo e imigração laboral são regimes diferentes.",
+        "280002539826:P56 não propõe dispensa universal de vistos e não lista critérios completos para a definição de país seguro.",
+        "Esta família não substitui a regularização e nacionalidade de grupos já presentes tratada em C12."
+      ]
+    },
+    {
+      "id": "R10",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Orçamento, indústria e capacidade tecnológica de defesa",
+      "common_object": "Recursos e meios industriais ou tecnológicos para a defesa nacional.",
+      "distinct_decisions": [
+        {
+          "id": "R10.01",
+          "decision": "Ampliação de orçamento de defesa com meta numérica ou formulação geral",
+          "position_keys": [
+            "280002548139:P44",
+            "280002554479:P42"
+          ]
+        },
+        {
+          "id": "R10.02",
+          "decision": "Programação plurianual, proteção orçamentária e conteúdo nacional",
+          "position_keys": [
+            "280002548139:P47",
+            "280002551932:P46"
+          ]
+        },
+        {
+          "id": "R10.03",
+          "decision": "Modernização, indústria nacional e tecnologias estratégicas",
+          "position_keys": [
+            "280002542548:P52",
+            "280002551544:P52",
+            "280002551932:P46",
+            "280002554479:P42"
+          ]
+        },
+        {
+          "id": "R10.04",
+          "decision": "Domínio do ciclo nuclear e condições de uso",
+          "position_keys": [
+            "280002540694:P47",
+            "280002542548:P52"
+          ]
+        },
+        {
+          "id": "R10.05",
+          "decision": "Estatização da indústria nacional de armamentos",
+          "position_keys": [
+            "280002551975:P59"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002548139:P44",
+        "280002554479:P42",
+        "280002548139:P47",
+        "280002551932:P46",
+        "280002542548:P52",
+        "280002551544:P52",
+        "280002540694:P47",
+        "280002551975:P59"
+      ],
+      "comparison_limits": [
+        "Meta de 2% do PIB ao fim do mandato e crescimento real sem percentual não são o mesmo compromisso.",
+        "280002548139:P44 reserva parcela para modernização e reconhece escolhas fiscais; preservar etapa e condição.",
+        "Compra ou conteúdo nacional não equivale a estatizar fabricantes.",
+        "280002540694:P47 não declara construção de arma nuclear; 280002542548:P52 explicita finalidade pacífica.",
+        "280002551975:P59 dá alcance geral à estatização da indústria nacional, com empresas iniciais nomeadas; não limitar a essas primeiras empresas."
+      ]
+    },
+    {
+      "id": "R11",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Organização, pessoal e missões de defesa e inteligência",
+      "common_object": "Estrutura de comando, serviço militar, remuneração e atuação institucional de defesa.",
+      "distinct_decisions": [
+        {
+          "id": "R11.01",
+          "decision": "Doutrina conjunta e Estado-Maior das Forças Armadas",
+          "position_keys": [
+            "280002539826:P57"
+          ]
+        },
+        {
+          "id": "R11.02",
+          "decision": "Prerrogativas operacionais da inteligência",
+          "position_keys": [
+            "280002539826:P58"
+          ]
+        },
+        {
+          "id": "R11.03",
+          "decision": "Remuneração mínima de base e progressão de soldos",
+          "position_keys": [
+            "280002548139:P45"
+          ]
+        },
+        {
+          "id": "R11.04",
+          "decision": "Bases e poder de polícia em fronteiras e limites de missões",
+          "position_keys": [
+            "280002548139:P46"
+          ]
+        },
+        {
+          "id": "R11.05",
+          "decision": "Forças Armadas profissionais sob poder civil e atuação subsidiária",
+          "position_keys": [
+            "280002551932:P46"
+          ]
+        },
+        {
+          "id": "R11.06",
+          "decision": "Fim do serviço militar obrigatório",
+          "position_keys": [
+            "280002551975:P60"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002539826:P57",
+        "280002539826:P58",
+        "280002548139:P45",
+        "280002548139:P46",
+        "280002551932:P46",
+        "280002551975:P60"
+      ],
+      "comparison_limits": [
+        "Comando conjunto, recrutamento, remuneração, inteligência e competência policial precisam de formulações distintas.",
+        "280002548139:P45 distingue soldo de remuneração total e ganhos maiores para faixas inferiores.",
+        "280002548139:P46 diferencia fronteiras e missões urbanas e conserva tensão entre presença permanente e limitação temporal; não apagar a distinção.",
+        "280002539826:P58 condiciona prerrogativas à função, mas não detalha todos os controles; o mapa não os inventa.",
+        "280002551975:P60 não estabelece automaticamente serviço civil alternativo."
+      ]
+    },
+    {
+      "id": "R12",
+      "category_id": "soberania_relacoes_internacionais",
+      "title": "Acordos militares externos e cooperação transnacional de segurança",
+      "common_object": "Vínculos militares internacionais, bases e mecanismos conjuntos contra o crime.",
+      "distinct_decisions": [
+        {
+          "id": "R12.01",
+          "decision": "Pacto interamericano de enfrentamento ao crime organizado",
+          "position_keys": [
+            "280002540694:P46"
+          ]
+        },
+        {
+          "id": "R12.02",
+          "decision": "Fim de todos os acordos militares com os Estados Unidos e retomada de Alcântara",
+          "position_keys": [
+            "280002551975:P58"
+          ]
+        },
+        {
+          "id": "R12.03",
+          "decision": "Extinção de OTAN e Conselho de Segurança",
+          "position_keys": [
+            "280002551975:P61"
+          ]
+        }
+      ],
+      "position_keys": [
+        "280002540694:P46",
+        "280002551975:P58",
+        "280002551975:P61"
+      ],
+      "comparison_limits": [
+        "Cooperação policial, mecanismo militar internacional e jurisdição criminal transnacional não são intercambiáveis.",
+        "280002540694:P46 não define plenamente competência e desenho das instâncias propostas; não completar com modelos conhecidos de fora do corpus.",
+        "280002551975:P58 delimita acordos militares com os Estados Unidos; não extrapolar para ruptura de todo comércio ou diplomacia.",
+        "280002551975:P61 também aparece em R05 por seu objeto institucional; é o mesmo registro, sem dupla contagem."
+      ]
+    }
+  ],
+  "unmapped": [],
+  "limitations": [
+    "Mapa editorial do inventário DOCUMENT_INDEX.json, restrito à categoria principal dos registros. Não houve nova leitura integral de planos, consulta a fontes externas ou reclassificação de candidaturas.",
+    "As famílias organizam material e não afirmam apoio, rejeição, neutralidade ou cobertura de qualquer pergunta. Nenhuma versão de pergunta foi encaminhada para classificação nesta tarefa.",
+    "Há 265 registros únicos: 72 de educação, cultura e sociedade; 76 de cidadania e direitos; 68 de segurança pública; 49 de soberania e relações internacionais. A soma dos vínculos pode ser maior porque registros compostos aparecem em mais de uma família ou subdecisão; contagens devem usar position_key único.",
+    "Cada subdecisão remete aos position_keys originais; instrumento, alcance, condições e evidências completos permanecem no DOCUMENT_INDEX.json e nos perfis. Os limites das famílias explicitam diferenças materiais sem reproduzir todas as variantes. Um vínculo recorta parte do objeto de registros compostos, sem alterar sua categoria principal.",
+    "As subdecisões de uma família não devem ser fundidas automaticamente em uma pergunta. Presença temática, frequência de registros e número de candidaturas não medem concordância nem cobertura de redação.",
+    "Condições, lacunas, propostas de estudo e horizontes futuros permanecem distintos de compromisso operacional imediato. Tensões internas não foram resolvidas editorialmente.",
+    "Uma categoria principal é mantida por registro. Assuntos próximos presentes em outras categorias não foram importados, e ausência no recorte não significa silêncio do plano nem neutralidade.",
+    "Quantificadores e objetos exigem cautela especial: todas versus algumas instituições; totalidade de integrantes versus lideranças; incentivo versus obrigação; emprego formal versus proteção social; atividade econômica própria versus exploração por terceiros; crítica versus denúncia de tratado."
+  ]
+}

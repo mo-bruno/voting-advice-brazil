@@ -1,6 +1,6 @@
 # Documento central — perfis nas dez categorias
 
-Atualizado: 2026-09-29T19:33:58.674370+00:00. **13/13 perfis entregues; 13 conferidos.**
+Atualizado: 2026-09-29T20:10:55.618723+00:00. **13/13 perfis entregues; 13 conferidos.**
 
 Continuação da [auditoria integral](../2026-09-29-full-plan-validation/FINAL_REPORT.md). Os mesmos 13 agentes reutilizam contexto e diários das 836 páginas já lidas; esta rodada faz síntese temática e novas conferências contextuais. Não se declara outra leitura integral. Pablo permanece excluído.
 
@@ -56,3 +56,5 @@ Referências: [estado persistente](STATE.json), [taxonomia do usuário](taxonomy
 Os treze perfis foram entregues pelos responsáveis originais e conferidos. A síntese está no [relatório final](FINAL_REPORT.md); a navegação por candidatura e tema, no [mapa de categorias](CATEGORY_MAP.md).
 
 A [agenda de teses](AGENDA_TESES.md) e o [método da próxima matriz](THESIS_DESIGN.md) registram o trabalho posterior. As hipóteses ainda não formam um questionário validado. Não há pendência na entrega dos perfis; a etapa seguinte tem seus próprios critérios de conclusão.
+
+A continuação está no [documento central da revisão editorial](../2026-09-29-question-editorial-review/ORCHESTRATION.md). O usuário validará cada redação e explicação antes de seu envio aos treze revisores.

@@ -1,0 +1,14 @@
+{
+  "valid": true,
+  "mapped_positions": 636,
+  "decision_families": 118,
+  "categories": 10,
+  "questions_presented": 4,
+  "questions_approved": 0,
+  "candidate_answers_created": 0,
+  "source_inventory_sha256": "ce1915d67400c9664d9d6e3c31a57830ebcdc8c513a46893d729dd26ce665bb6",
+  "block_sha256": "2fc3813422e84b94716c4b6bfe44ea84b84fca64c79de725de885bbf761da663",
+  "same_prior_agents_used_for_mapping": true,
+  "candidate_validation_dispatched": false,
+  "note": "Checks IDs, complete inventory mapping, source pages and the pending approval state. Does not establish semantic equivalence or validity of a ranking."
+}

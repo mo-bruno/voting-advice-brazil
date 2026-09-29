@@ -33,6 +33,8 @@ Também não se deve selecionar duas perguntas que repetem o mesmo contraste só
 
 ## Próxima matriz
 
-Cada redação escolhida deve ser congelada e enviada aos mesmos treze revisores, que retornarão ao PDF. Só depois será possível medir cobertura individual, perguntas comuns entre pares, oposição nos itens compartilhados e equilíbrio temático. As dezoito linhas acima são uma agenda inicial, sem respostas herdadas da auditoria anterior.
+Cada redação escolhida e sua explicação devem passar pela aprovação do usuário. Só as versões aprovadas serão congeladas e enviadas aos mesmos treze revisores, que retornarão ao PDF. Só depois será possível medir cobertura individual, perguntas comuns entre pares, oposição nos itens compartilhados e equilíbrio temático. As dezoito linhas acima são uma agenda inicial, sem respostas herdadas da auditoria anterior.
+
+A etapa de mapa comum, revisão política e linguística e aprovação humana está no [novo documento central](../2026-09-29-question-editorial-review/ORCHESTRATION.md).
 
 O procedimento e as consequências para o ranking beta estão em [THESIS_DESIGN.md](THESIS_DESIGN.md).

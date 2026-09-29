@@ -10,7 +10,7 @@
   "same_agents_required": true,
   "candidate_count": 13,
   "category_count": 10,
-  "updated_at": "2026-09-29T19:33:58.674370+00:00",
+  "updated_at": "2026-09-29T20:10:55.618723+00:00",
   "candidates": [
     {
       "id": "280002538811",
@@ -337,7 +337,7 @@
     "initial_question_hypotheses": 18,
     "tensions": 20
   },
-  "next_phase": "Confrontar redações novas e idênticas nos treze planos antes de selecionar questionário e critérios de ranking.",
+  "next_phase": "Organizar mapa comum, revisar redações e explicações e obter aprovação do usuário antes de confrontá-las com os treze planos.",
   "initial_remote_main": "d31078e",
   "main_sync_commit": "fe718ee"
 }

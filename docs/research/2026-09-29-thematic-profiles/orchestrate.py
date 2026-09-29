@@ -75,7 +75,8 @@ def main():
     if state.get('phase') == 'profiles_complete':
         lines += ['', '## Entrega desta etapa', '',
                   'Os treze perfis foram entregues pelos responsáveis originais e conferidos. A síntese está no [relatório final](FINAL_REPORT.md); a navegação por candidatura e tema, no [mapa de categorias](CATEGORY_MAP.md).', '',
-                  'A [agenda de teses](AGENDA_TESES.md) e o [método da próxima matriz](THESIS_DESIGN.md) registram o trabalho posterior. As hipóteses ainda não formam um questionário validado. Não há pendência na entrega dos perfis; a etapa seguinte tem seus próprios critérios de conclusão.']
+                  'A [agenda de teses](AGENDA_TESES.md) e o [método da próxima matriz](THESIS_DESIGN.md) registram o trabalho posterior. As hipóteses ainda não formam um questionário validado. Não há pendência na entrega dos perfis; a etapa seguinte tem seus próprios critérios de conclusão.', '',
+                  'A continuação está no [documento central da revisão editorial](../2026-09-29-question-editorial-review/ORCHESTRATION.md). O usuário validará cada redação e explicação antes de seu envio aos treze revisores.']
     (P / 'ORCHESTRATION.md').write_text('\n'.join(lines) + '\n')
     print(json.dumps({'submitted': submitted, 'validated': validated,
                       'working': [c['name'] for c in state['candidates'] if c['status'] == 'working']}, ensure_ascii=False))

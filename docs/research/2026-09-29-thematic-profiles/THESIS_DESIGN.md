@@ -12,7 +12,7 @@ Ampliar o questionário significa representar mais decisões relevantes das dez 
 
 1. Reunir escolhas equivalentes dos perfis e localizar os trechos dos PDFs. Preservar o inventário original e identificar cada posição por candidatura e ID.
 2. Escrever uma hipótese atômica em linguagem acessível. Separar “pode”, “deve”, “deve sempre”, “incentivar” e “tornar obrigatório”. Uma mudança nesses termos pode alterar a classificação.
-3. Enviar a mesma redação congelada aos mesmos responsáveis dos treze planos. Cada um verifica apoio, rejeição, condição relevante ou ausência, inclusive quando o tema não foi selecionado em seu perfil.
+3. Submeter a redação e sua explicação à aprovação do usuário, após revisão política e linguística. Somente as versões aprovadas serão enviadas aos mesmos responsáveis dos treze planos. Cada um verificará apoio, rejeição, condição relevante ou ausência, inclusive quando o tema não foi selecionado em seu perfil. Alterações de significado retornam ao usuário e depois aos treze revisores.
 4. Construir uma nova matriz com páginas e razões. Não copiar a resposta de uma pergunta antiga ou de uma semente que tenha redação diferente. Objetivo geral não decide instrumento; silêncio não é discordância.
 5. Medir a cobertura por pergunta, candidatura, categoria e par de candidaturas. Identificar também quantos pares têm oposição documentada nas perguntas comuns. Boa cobertura temática não garante capacidade de distinguir programas.
 6. Selecionar o conjunto, evitando duplicações de uma mesma escolha, concentração temática e favorecimento de planos mais longos. Testar redação e compreensão com pessoas antes de tratar o instrumento como validado.
