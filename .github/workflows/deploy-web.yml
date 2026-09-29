@@ -31,7 +31,9 @@ jobs:
         working-directory: mobile
 
       - name: Build web release
-        run: flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
+        env:
+          PUBLIC_APP_URL: ${{ vars.PUBLIC_APP_URL || 'https://fpolitico.com.br' }}
+        run: flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false --dart-define=PUBLIC_APP_URL="$PUBLIC_APP_URL"
         working-directory: mobile
 
       - name: Deploy Firebase Hosting
