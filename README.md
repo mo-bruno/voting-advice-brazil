@@ -2,9 +2,9 @@
 
 Aplicativo acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
 
-O produto atual reúne uma comparação de planos presidenciais de 2026, consulta de deputados atuais e evidências oficiais da Câmara, acompanhamento de um político, comunidade anônima e notícias oficiais dos últimos sete dias. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas são informativas e não compõem esse score. Não há índice de consistência implementado.
+O produto atual reúne uma comparação de planos presidenciais de 2026, comunidade anônima e notícias oficiais dos últimos sete dias. A área de acompanhamento de políticos está em validação: o público pode registrar interesse anonimamente, enquanto a busca, o perfil e o acompanhamento já implementados permanecem retidos atrás de feature flag. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas não compõem esse score. Não há índice de consistência implementado.
 
-O app gera e guarda localmente um UUID v4 (`anonymous_id`). Ao enviar o quiz, transmite esse UUID no campo `device_id`, e as respostas são persistidas no backend por UUID. Na comunidade e no acompanhamento, `X-Farol-Anonymous-Id` funciona como credencial privada de posse; as respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessa identidade.
+O app gera e guarda localmente um UUID v4 (`anonymous_id`). Ao enviar o quiz, transmite esse UUID no campo `device_id`, e as respostas são persistidas no backend por UUID. Na comunidade e nas rotas `/me`, `X-Farol-Anonymous-Id` funciona como credencial privada de posse. A validação usa outro UUID aleatório, exclusivo do experimento, e o backend armazena somente seu hash SHA-256 contextualizado. As respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessas identidades.
 
 ## Stack e estrutura
 
@@ -98,7 +98,10 @@ Em outro terminal:
 ```bash
 cd mobile
 flutter pub get
-flutter run -d chrome --dart-define=API_BASE_URL=http://localhost:8000/api/v1 --dart-define=IOT_FEATURE_ENABLED=false
+flutter run -d chrome \
+  --dart-define=API_BASE_URL=http://localhost:8000/api/v1 \
+  --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false
 ```
 
 `API_BASE_URL` deve incluir `/api/v1`. Em emuladores/aparelhos, ajuste o host para alcançar sua máquina. Para web, inclua a origem/porta do app em `ALLOWED_ORIGINS` no backend.
@@ -119,6 +122,7 @@ O endereço público é `https://fpolitico.com.br`. A variável de repositório 
 ```bash
 flutter build web --release \
   --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
   --dart-define=PUBLIC_APP_URL=https://fpolitico.com.br
 ```
 
@@ -135,17 +139,24 @@ Os caminhos abaixo usam o prefixo `/api/v1`, exceto saúde e documentação.
 | Presidência 2026 | `GET /candidates`, `GET /candidates/{candidate_id}`, `GET /candidates/{candidate_id}/positions`, `GET /candidates/{candidate_id}/justifications` |
 | Temas | `GET /themes` |
 | Deputados atuais | `GET /political-actors`, `GET /political-actors/trending`, `GET /political-actors/{actor_id}`, `GET /political-actors/{actor_id}/evidence` |
-| Acompanhamento pessoal | `GET`, `PUT`, `DELETE /me/followed-actor` |
+| Validação do acompanhamento | `GET`, `PUT`, `DELETE /me/politician-follow-interest` |
+| Acompanhamento retido | `GET`, `PUT`, `DELETE /me/followed-actor` quando `POLITICIAN_FOLLOW_ENABLED=true` |
 | Comunidade | `GET`, `POST /community/posts`; `GET`, `DELETE /community/posts/{post_id}`; `POST /community/posts/{post_id}/votes`, `/comments`, `/reports` |
 | Notícias oficiais | `GET /news/weekly`, `GET /news/image?url=...` |
 
 Arquivos públicos em `/data/...` são servidos quando `DATA_DIR` existe. Notícias semanais vêm da Câmara; seu proxy de imagens aceita apenas hosts autorizados da Câmara. Detalhes de identidade, limites, moderação e erros estão no [README do backend](backend/README.md).
 
-## IoT dormente e deploy
+## Medição da validação
 
-O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. As rotas de pareamento/eventos não são registradas na API desativada; o app não oferece pareamento nem consulta status do dispositivo. O quiz e o acompanhamento continuam disponíveis.
+O funil usa somente eventos genéricos do Firebase Analytics, sem UUID, nome de político, partido, resposta ou texto livre: `follow_waitlist_viewed`, `follow_waitlist_prompt_viewed`, `follow_waitlist_cta_clicked`, `follow_waitlist_registered` e `follow_waitlist_failed`. `viewed` mede a exposição geral; a conversão principal é a proporção de usuários únicos que acionam `registered` após `prompt_viewed`, quando o CTA realmente ficou elegível. Cliques e falhas ajudam a diagnosticar atrito.
 
-Cloud Build publica a API no Cloud Run com `IOT_FEATURE_ENABLED=false`; o workflow de Firebase Hosting compila o app com `--dart-define=IOT_FEATURE_ENABLED=false`. Nenhum scheduler é iniciado pelo processo da API.
+A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusivo do experimento e reversível pelo próprio aparelho, é a fonte de verdade para a demanda atual. O evento de sucesso só é emitido quando a API informa que criou um registro novo; chamadas idempotentes não geram conversões adicionais. Como não há conta ou contato, essa métrica representa instalações que manifestaram interesse, não uma contagem garantida de pessoas únicas; o limite global da API reduz abuso básico, mas não substitui proteção distribuída contra tráfego coordenado.
+
+## Features retidas e deploy
+
+O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. O acompanhamento real também fica desativado por padrão com `POLITICIAN_FOLLOW_ENABLED=false`; o app mostra a validação anônima e o backend rejeita operações antigas de follow, sem apagar código ou dados existentes.
+
+Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow de Firebase Hosting compila o app com os mesmos valores. Nenhum scheduler é iniciado pelo processo da API.
 
 A publicação automática da interface aguarda o sucesso do backend e usa o mesmo commit. Mudanças apenas na interface também acionam essa sequência para manter um único fluxo de release. A aprovação exigida por `main` não é contornada; consulte [PUBLICACAO_2026.md](PUBLICACAO_2026.md) para ordem, verificações e recuperação.
 
@@ -169,7 +180,9 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
+flutter build web --release \
+  --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false
 ```
 
 ## Contribuição e licença

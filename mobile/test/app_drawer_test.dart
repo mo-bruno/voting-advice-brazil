@@ -54,6 +54,7 @@ void main() {
   Future<void> openDrawer(
     WidgetTester tester, {
     bool iotEnabled = true,
+    bool politicianFollowEnabled = true,
   }) async {
     // Tela de celular de verdade. Na superficie padrao (800x600) o terceiro
     // bloco cai abaixo da dobra e a ListView nem chega a construi-lo — a
@@ -68,7 +69,10 @@ void main() {
         theme: AppTheme.dark,
         routes: {
           '/': (_) => Scaffold(
-                drawer: AppDrawer(iotEnabled: iotEnabled),
+                drawer: AppDrawer(
+                  iotEnabled: iotEnabled,
+                  politicianFollowEnabled: politicianFollowEnabled,
+                ),
                 body: const SizedBox(),
               ),
           '/iot-device': (_) =>
@@ -130,6 +134,17 @@ void main() {
     await tester.tap(find.text('Ver resultados'));
     await settleDrawer(tester);
     expect(find.text('comparação aberta'), findsOneWidget);
+  });
+
+  testWidgets('esconde o acompanhamento existente durante a validação',
+      (tester) async {
+    PoliticalActorSession.instance.followedActor = actor;
+
+    await openDrawer(tester, politicianFollowEnabled: false);
+
+    expect(find.text('Ana Vasconcelos'), findsNothing);
+    expect(find.text('EM VALIDAÇÃO'), findsOneWidget);
+    expect(find.text('Conhecer a validação'), findsOneWidget);
   });
 
   testWidgets('empate de afinidade não escolhe vencedor pela ordem da lista',
@@ -224,7 +239,33 @@ void main() {
     expect(find.textContaining('participar da comunidade'), findsOneWidget);
     expect(
         find.textContaining('não aparece para outras pessoas'), findsOneWidget);
+    expect(find.textContaining('Firebase Analytics'), findsOneWidget);
+    expect(find.textContaining('sem respostas políticas'), findsOneWidget);
     expect(find.textContaining('Farol físico'), findsNothing);
     expect(find.textContaining('não saem do aparelho'), findsNothing);
+  });
+
+  testWidgets('sobre e privacidade descrevem a validação quando desabilitada',
+      (tester) async {
+    await openDrawer(
+      tester,
+      iotEnabled: false,
+      politicianFollowEnabled: false,
+    );
+
+    await tester.tap(find.text('SOBRE'));
+    await settleDrawer(tester);
+
+    expect(find.textContaining('ainda está em validação'), findsOneWidget);
+    expect(find.textContaining('apresenta deputados atuais'), findsNothing);
+
+    await tester.tap(find.text('FECHAR'));
+    await settleDrawer(tester);
+    await tester.tap(find.text('PRIVACIDADE'));
+    await settleDrawer(tester);
+
+    expect(
+        find.textContaining('outro identificador aleatório'), findsOneWidget);
+    expect(find.textContaining('lembrar quem você segue'), findsNothing);
   });
 }

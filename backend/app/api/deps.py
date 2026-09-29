@@ -18,6 +18,7 @@ from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
     SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
+    SqlPoliticianFollowInterestRepository,
 )
 from app.infrastructure.database.repositories import (
     SqlCandidateRepository,
@@ -78,6 +79,12 @@ def get_followed_actor_repo(
     db: Session = Depends(get_db),
 ) -> SqlFollowedActorRepository:
     return SqlFollowedActorRepository(db)
+
+
+def get_politician_follow_interest_repo(
+    db: Session = Depends(get_db),
+) -> SqlPoliticianFollowInterestRepository:
+    return SqlPoliticianFollowInterestRepository(db)
 
 
 def get_iot_device_link_repo(

@@ -4,11 +4,14 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
+import 'package:guia_eleitoral/core/device/device_identity_store.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:guia_eleitoral/features/home/news_session.dart';
 import 'package:guia_eleitoral/features/home/widgets/news_card.dart';
 import 'package:guia_eleitoral/features/home/widgets/news_states.dart';
+import 'package:guia_eleitoral/shared/models/political_actor.dart';
+import 'package:guia_eleitoral/shared/political_actor_session.dart';
 import 'package:http/http.dart' as http;
 
 const _payload = {
@@ -87,11 +90,15 @@ Widget _app(
   NewsSession session, {
   List<Uri>? opened,
   VoidCallback? onStartQuiz,
+  bool politicianFollowEnabled = false,
+  PoliticalActorSession? politicalActorSession,
 }) {
   return MaterialApp(
     theme: AppTheme.dark,
     home: HomePage(
       newsSession: session,
+      politicianFollowEnabled: politicianFollowEnabled,
+      politicalActorSession: politicalActorSession,
       onStartQuiz: onStartQuiz ?? () {},
       openLink: (uri) async {
         opened?.add(uri);
@@ -102,6 +109,26 @@ Widget _app(
 }
 
 void main() {
+  testWidgets('não consulta acompanhamento quando a flag está desativada',
+      (tester) async {
+    final api = _FollowProbeApi();
+    final actorSession = PoliticalActorSession.testOnly(
+      api: api,
+      deviceIdentityStore: _FixedIdentityStore(),
+    );
+
+    await tester.pumpWidget(
+      _app(
+        NewsSession.testOnly(api: _api(_payload)),
+        politicianFollowEnabled: false,
+        politicalActorSession: actorSession,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    expect(api.fetchFollowedCalls, 0);
+  });
+
   testWidgets('mostra o convite para o quiz antes das noticias',
       (tester) async {
     await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
@@ -238,4 +265,24 @@ void main() {
     expect(find.text('MATERIA SEM RESUMO'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
+}
+
+class _FollowProbeApi extends ApiClient {
+  _FollowProbeApi() : super(baseUrl: 'https://api.test/api/v1');
+
+  int fetchFollowedCalls = 0;
+
+  @override
+  Future<PoliticalActor?> fetchFollowedPoliticalActor({
+    required String anonymousId,
+  }) async {
+    fetchFollowedCalls++;
+    return null;
+  }
+}
+
+class _FixedIdentityStore extends DeviceIdentityStore {
+  @override
+  Future<String> getOrCreateDeviceId() async =>
+      '550e8400-e29b-41d4-a716-446655440000';
 }

@@ -5,23 +5,27 @@ from datetime import datetime
 from typing import Any, cast
 
 from sqlalchemy import func, or_, select
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
 from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
     PoliticalActor,
+    PoliticianFollowInterest,
     TrendingActor,
 )
 from app.core.use_cases.interfaces import (
     FollowedActorRepository,
     OfficialEvidenceRepository,
     PoliticalActorRepository,
+    PoliticianFollowInterestRepository,
 )
 from app.infrastructure.database.models import (
     FollowedActorModel,
     OfficialEvidenceModel,
     PoliticalActorModel,
+    PoliticianFollowInterestModel,
 )
 
 
@@ -255,3 +259,52 @@ class SqlFollowedActorRepository(FollowedActorRepository):
         )
         rows = self._db.execute(stmt).all()
         return [(int(row[0]), str(row[1])) for row in rows]
+
+
+class SqlPoliticianFollowInterestRepository(PoliticianFollowInterestRepository):
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    @staticmethod
+    def _to_entity(
+        model: PoliticianFollowInterestModel,
+    ) -> PoliticianFollowInterest:
+        return PoliticianFollowInterest(
+            subject_hash=model.subject_hash,
+            created_at=model.created_at,
+        )
+
+    def get(self, subject_hash: str) -> PoliticianFollowInterest | None:
+        model = self._db.get(PoliticianFollowInterestModel, subject_hash)
+        return self._to_entity(model) if model else None
+
+    def register(
+        self,
+        subject_hash: str,
+    ) -> tuple[PoliticianFollowInterest, bool]:
+        existing = self._db.get(PoliticianFollowInterestModel, subject_hash)
+        if existing is not None:
+            return self._to_entity(existing), False
+        model = PoliticianFollowInterestModel(subject_hash=subject_hash)
+        self._db.add(model)
+        try:
+            self._db.commit()
+        except IntegrityError:
+            # Two first-time requests can pass the read above concurrently.
+            # The primary key elects one winner; the loser is still a valid,
+            # idempotent registration rather than a 500 response.
+            self._db.rollback()
+            existing = self._db.get(PoliticianFollowInterestModel, subject_hash)
+            if existing is None:
+                raise
+            return self._to_entity(existing), False
+        self._db.refresh(model)
+        return self._to_entity(model), True
+
+    def delete(self, subject_hash: str) -> bool:
+        model = self._db.get(PoliticianFollowInterestModel, subject_hash)
+        if model is None:
+            return False
+        self._db.delete(model)
+        self._db.commit()
+        return True

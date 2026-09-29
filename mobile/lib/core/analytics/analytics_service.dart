@@ -143,4 +143,24 @@ class AnalyticsService {
   Future<void> candidatePositionsViewed({required String candidateId}) {
     return _sink.logEvent(name: 'candidate_positions_viewed');
   }
+
+  Future<void> followWaitlistViewed() {
+    return _sink.logEvent(name: 'follow_waitlist_viewed');
+  }
+
+  Future<void> followWaitlistPromptViewed() {
+    return _sink.logEvent(name: 'follow_waitlist_prompt_viewed');
+  }
+
+  Future<void> followWaitlistCtaClicked() {
+    return _sink.logEvent(name: 'follow_waitlist_cta_clicked');
+  }
+
+  Future<void> followWaitlistRegistered() {
+    return _sink.logEvent(name: 'follow_waitlist_registered');
+  }
+
+  Future<void> followWaitlistFailed() {
+    return _sink.logEvent(name: 'follow_waitlist_failed');
+  }
 }
