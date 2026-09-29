@@ -61,3 +61,11 @@ class FollowActorRequest(BaseModel):
 class FollowedActorResponse(BaseModel):
     political_actor: PoliticalActorOut
     updated_at: datetime
+
+
+class PoliticianFollowInterestStatus(BaseModel):
+    registered: bool
+
+
+class PoliticianFollowInterestRegistration(PoliticianFollowInterestStatus):
+    newly_registered: bool

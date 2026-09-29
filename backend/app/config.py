@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     app_env: Literal["dev", "test", "staging", "prod"] = "dev"
     debug: bool = False
     iot_feature_enabled: bool = False
+    politician_follow_enabled: bool = False
     active_election_year: int = 2026
     active_election_office: str = "presidente"
 

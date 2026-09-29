@@ -14,6 +14,16 @@ def test_iot_is_disabled_and_unused_gemini_setting_is_absent(
     assert not hasattr(configured, "gemini_api_key")
 
 
+def test_politician_follow_is_disabled_by_default(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.delenv("POLITICIAN_FOLLOW_ENABLED", raising=False)
+
+    configured = Settings(_env_file=None)
+
+    assert configured.politician_follow_enabled is False
+
+
 def test_settings_defaults(monkeypatch):
     # conftest sets APP_ENV=test for the app lifespan; clear it to verify defaults
     monkeypatch.delenv("APP_ENV", raising=False)
@@ -23,6 +33,7 @@ def test_settings_defaults(monkeypatch):
     monkeypatch.delenv("MQTT_BROKER_URL", raising=False)
     monkeypatch.delenv("ALLOWED_ORIGINS", raising=False)
     monkeypatch.delenv("IOT_FEATURE_ENABLED", raising=False)
+    monkeypatch.delenv("POLITICIAN_FOLLOW_ENABLED", raising=False)
     s = Settings(_env_file=None)
     assert s.app_env == "dev"
     assert s.database_url.startswith("sqlite:///")
@@ -31,6 +42,7 @@ def test_settings_defaults(monkeypatch):
     assert s.nvidia_api_key is None
     assert s.nvidia_moderation_model == "nvidia/nemotron-3-super-120b-a12b"
     assert s.iot_feature_enabled is False
+    assert s.politician_follow_enabled is False
 
 
 def test_settings_reads_env(monkeypatch):
@@ -39,6 +51,7 @@ def test_settings_reads_env(monkeypatch):
     monkeypatch.setenv("NVIDIA_API_KEY", "nvapi-test")
     monkeypatch.setenv("NVIDIA_MODERATION_MODEL", "nvidia/test-model")
     monkeypatch.setenv("IOT_FEATURE_ENABLED", "true")
+    monkeypatch.setenv("POLITICIAN_FOLLOW_ENABLED", "true")
     monkeypatch.setenv(
         "ALLOWED_ORIGINS",
         "https://farol-politico-495210.web.app, http://localhost:3000",
@@ -49,6 +62,7 @@ def test_settings_reads_env(monkeypatch):
     assert s.nvidia_api_key == "nvapi-test"
     assert s.nvidia_moderation_model == "nvidia/test-model"
     assert s.iot_feature_enabled is True
+    assert s.politician_follow_enabled is True
     assert s.allowed_origins_list == [
         "https://farol-politico-495210.web.app",
         "http://localhost:3000",

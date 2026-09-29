@@ -3,6 +3,7 @@ import os
 # Isolate test execution before importing Settings/app
 os.environ.setdefault("APP_ENV", "test")
 os.environ["IOT_FEATURE_ENABLED"] = "true"
+os.environ["POLITICIAN_FOLLOW_ENABLED"] = "true"
 os.environ["ACTIVE_ELECTION_YEAR"] = "2022"
 os.environ["ACTIVE_ELECTION_OFFICE"] = "presidente"
 
