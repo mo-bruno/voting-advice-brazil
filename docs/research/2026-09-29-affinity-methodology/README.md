@@ -7,6 +7,8 @@ Branch isolada: `codex/affinity-methodology`.
 
 Este é um estudo e uma recomendação de produto; não é uma metodologia nova já aprovada ou implantada. Código de produção, questionário, classificações dos planos e serviços publicados não foram alterados.
 
+Continuação após a orientação do usuário: [proposta de ranking beta compartilhável, sem percentual em destaque](PROPOSTA_BETA.md). Essa proposta preserva o ranking como requisito e analisa a exclusão transparente de candidaturas com cobertura insuficiente.
+
 ## Objetivo e escopo
 
 O pedido é permitir que a pessoa se reconheça nas questões e compare suas respostas com os planos oficiais entregues ao TSE, sem transformar uma única concordância em uma promessa de alinhamento global. Redução de perguntas e mudanças matemáticas são meios possíveis, não metas previamente fixadas.
