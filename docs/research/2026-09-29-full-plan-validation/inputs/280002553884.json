@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002553884",
+    "name": "PABLO MARÇAL",
+    "party": "PRTB",
+    "pages": 28,
+    "member": "BR/2026BR280002553884_01.pdf",
+    "sha256": "0159b1f854deec5ec1fe9d28784807353bd61c249680ddaa143b9891b034f33d",
+    "same_as_prior_snapshot": false,
+    "in_prior_product_roster": false,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      18
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002553884",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001"
+    },
+    {
+      "question_id": "BR26-T002"
+    },
+    {
+      "question_id": "BR26-T003"
+    },
+    {
+      "question_id": "BR26-T011"
+    },
+    {
+      "question_id": "BR26-T015"
+    },
+    {
+      "question_id": "BR26-T017"
+    },
+    {
+      "question_id": "BR26-T018"
+    },
+    {
+      "question_id": "BR26-T026A"
+    },
+    {
+      "question_id": "BR26-T036"
+    },
+    {
+      "question_id": "BR26-T038"
+    },
+    {
+      "question_id": "BR26-T042"
+    },
+    {
+      "question_id": "BR26-T043"
+    },
+    {
+      "question_id": "BR26-T057"
+    },
+    {
+      "question_id": "BR26-T063"
+    },
+    {
+      "question_id": "BR26-T066"
+    },
+    {
+      "question_id": "BR26-T067"
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

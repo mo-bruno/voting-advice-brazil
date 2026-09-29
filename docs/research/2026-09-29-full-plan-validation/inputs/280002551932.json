@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002551932",
+    "name": "Ronaldo Caiado",
+    "party": "PSD",
+    "pages": 100,
+    "member": "BR/2026BR280002551932_01.pdf",
+    "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      16
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551932",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano propõe estabilização fiscal, estratégia plurianual e crescimento das despesas abaixo do PIB, mas não identifica manutenção, revogação ou substituição do arcabouço da LC 200/2023. Essas diretrizes não resolvem sozinhas a decisão sobre a lei.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Adotar estratégia fiscal plurianual"
+        }
+      ],
+      "inspected_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Há expansão de concessões e PPP e previsão de governança para Petrobras e demais estatais. O documento não decide explicitamente a transferência de controle de todas as empresas nem declara quais conservaria sob controle público. A governança futura sugere continuidade, mas não é uma decisão acionária inequívoca.",
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "Petrobras e demais estatais terão governança, eficiência e investimento, sem uso partidário ou controle artificial de preços."
+        },
+        {
+          "page": 47,
+          "quote": "Ampliação das concessões e parcerias público-privadas"
+        }
+      ],
+      "inspected_pages": [
+        35,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Modernização do mercado com proteção, formação e redução de custos não especifica revogação, teto semanal ou precedência da negociação.",
+      "evidence": [],
+      "inspected_pages": [
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "DISCORDA",
+      "reason": "O plano afirma que transferência de renda continuará direito de quem precisa e manda preservar os programas, com benefício reduzido gradualmente quando houver emprego formal ou aumento da renda. O público inclui quem pode trabalhar, pois o próprio texto cria sua transição e qualificação. Esse desenho conserva transferência ao beneficiário adulto enquanto elegível, em vez de substituí-la por trabalho público remunerado. Aplicou-se a mesma regra de incompatibilidade usada para Flavio: não exigir a marca Bolsa Família quando a preservação abrange os programas de transferência. A oposição é ao desenho substitutivo, não ao emprego público em si.",
+      "evidence": [
+        {
+          "page": 61,
+          "quote": "Transferência de renda continuará sendo direito de quem precisa"
+        },
+        {
+          "page": 61,
+          "quote": "Preservar os programas de transferência de renda, atualizar cadastros e combater fraude sem constranger beneficiários."
+        },
+        {
+          "page": 61,
+          "quote": "Criar regra de transição para quem ingressa no trabalho formal ou amplia renda, reduzindo benefício gradualmente e conectando a qualificação, creche e intermediação."
+        }
+      ],
+      "inspected_pages": [
+        61
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "CONCORDA",
+      "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano delimita a proposta por uma lista de crimes; preservá-la na explicação.",
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Trabalhar fortemente pela aprovação da PEC da redução da maioridade penal para 16 (dezesseis) anos, com redirecionamento para: autores de crimes de homicídio, tentativa de homicídio, tortura, lesão corporal seguida de morte, estupro de vulnerável, roubo cometido com violência ou grave ameaça à pessoa (assalto) e todos os crimes tipificados na Lei de Combate ao Terrorismo Doméstico, submetendo-os integralmente ao regime penal aplicável aos maiores de idade. Realizar as adequações necessárias do Código Penal, Código de Processo Penal, Lei de Execução Penal e Estatuto da Criança e do Adolescente."
+        }
+      ],
+      "inspected_pages": [
+        20
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. A p33 trata de prevenção da violência e mediação na escola; não estabelece gestão cívico-militar. Nenhuma defesa da segurança escolar foi convertida em apoio ao modelo.",
+      "evidence": [],
+      "inspected_pages": [
+        32,
+        33,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A proposta de inclusão em concursos não fixa reserva racial de vagas; preservada ausência, sem convertê-la em neutralidade ou oposição.",
+      "evidence": [
+        {
+          "page": 68,
+          "quote": "Aprimorar políticas de inclusão em concursos e formação, respeitando decisões judiciais e mérito."
+        }
+      ],
+      "inspected_pages": [
+        65,
+        67,
+        68
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A p47 prevê PPPs de infraestrutura hospitalar e a p77 prevê hospitais privados contratados quando necessário. Construção de infraestrutura e contratação de atendimento não demonstram delegação da gestão assistencial pública.",
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+        }
+      ],
+      "inspected_pages": [
+        44,
+        47,
+        58,
+        59,
+        61,
+        62,
+        76,
+        77
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "DISCORDA",
+      "reason": "O plano exige respeito à autonomia do Banco Central ao coordenar política fiscal e monetária. Preservar essa autonomia é incompatível com revogá-la; não há condição substantiva de supressão em outra página.",
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Coordenar políticas fiscal e monetária com respeito à autonomia do Banco Central"
+        }
+      ],
+      "inspected_pages": [
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A página 35 promete governança, eficiência e investimento para Petrobras e outras estatais. Não decide se as operações devem ser reunidas na Petrobras ou separadas; modernização de energia não define integração empresarial.",
+      "evidence": [],
+      "inspected_pages": [
+        35
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "CONCORDA",
+      "reason": "O plano de redução de espera admite explicitamente hospitais privados contratados quando necessário. A possibilidade condicional cabe em “deve poder”, sem imputar terceirização irrestrita.",
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "Oferta regional integrada e contratualização inteligente."
+        },
+        {
+          "page": 77,
+          "quote": "mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário"
+        }
+      ],
+      "inspected_pages": [
+        44,
+        47,
+        58,
+        59,
+        61,
+        62,
+        76,
+        77
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Conveniar a expansão de creches não identifica por si só a natureza privada da instituição. Mantida ausência quanto ao financiamento de creches privadas, sem inferir parceiro não nomeado.",
+      "evidence": [],
+      "inspected_pages": [
+        32,
+        33,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "CONCORDA",
+      "reason": "Propõe expressamente consolidar o acordo Mercosul–União Europeia. A coordenação com políticas industriais não retira o compromisso de apoio.",
+      "evidence": [
+        {
+          "page": 73,
+          "quote": "Consolidar o acordo entre o Mercosul e a União Europeia, aprofundar a integração econômica regional e negociar novos acordos que ampliem o acesso das empresas e dos produtos brasileiros aos mercados mais dinâmicos do mundo."
+        }
+      ],
+      "inspected_pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "DISCORDA",
+      "reason": "O plano determina participação ativa no BRICS, entre outras organizações multilaterais.",
+      "evidence": [
+        {
+          "page": 74,
+          "quote": "Participar ativamente da ONU, da OMC, do G20 e do BRICS e retomar, com pragmatismo, o processo de aproximação com a OCDE."
+        }
+      ],
+      "inspected_pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano rejeita fechar o país ao investimento estrangeiro e condiciona acesso a minerais a valor agregado, tecnologia, qualificação e fornecedores locais.",
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "A política não fechará o país ao investimento estrangeiro, mas negociará acesso a recursos em troca de valor agregado, tecnologia, qualificação e fornecedores locais."
+        }
+      ],
+      "inspected_pages": [
+        14,
+        15,
+        47,
+        53
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002552487",
+    "name": "Rui Costa Pimenta",
+    "party": "PCO",
+    "pages": 7,
+    "member": "BR/2026BR280002552487_01.pdf",
+    "sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      18
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552487",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A página 4 pede fim do teto de gastos e da Lei de Responsabilidade Fiscal. São instrumentos distintos do arcabouço de 2023; as buscas nos textos completos não localizaram a decisão sobre a LC 200/2023.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Fim do teto de gastos e da Lei de Responsabilidade Fiscal"
+        }
+      ],
+      "inspected_pages": [
+        4
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "DISCORDA",
+      "reason": "A reversão das privatizações e a Petrobras integralmente estatal são incompatíveis com transferir todas as empresas ao controle privado.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        }
+      ],
+      "inspected_pages": [
+        3
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "CONCORDA",
+      "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Não bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a cabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com direitos iguais para todos os trabalhadores."
+        },
+        {
+          "page": 3,
+          "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+        }
+      ],
+      "inspected_pages": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "Defende Bolsa Família de pelo menos um salário mínimo, mas restringe expressamente a medida à duração da situação de caos; não se imputa compromisso permanente.",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual"
+        }
+      ],
+      "inspected_pages": [
+        2
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Dissolução do aparato repressivo e defesa de liberdades não especificam idade mínima penal.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. Eleição da direção e oposição à ditadura nas escolas não nomeiam o modelo cívico-militar nem bastam para inferir sua extinção.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. Defende saúde pública gratuita e critica lucro com a doença, mas as medidas da p5 não determinam encerrar contratos de gestão com OS ou PPP. Não se inferiu proibição contratual só dessa direção geral.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "CONCORDA",
+      "reason": "O plano exige explicitamente o fim da independência do Banco Central.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim da “independência” do Banco Central"
+        }
+      ],
+      "inspected_pages": [
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "Petrobras 100% estatal e estatização de refinarias não dizem se estas devem integrar a Petrobras ou existir como estatais separadas. A redução do escopo não autoriza converter propriedade estatal em integração empresarial.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais"
+        }
+      ],
+      "inspected_pages": [
+        3
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas integrais e leitura dos contextos: Saúde pública e gratuita, críticas ao lucro e proposta de construir hospitais não decidem contratação complementar de atendimento. Não se inferiu rejeição de cada contrato privado.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "DISCORDA",
+      "reason": "Reserva expressamente verbas públicas ao ensino público; isso exclui financiar vagas em creches privadas.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+        },
+        {
+          "page": 5,
+          "quote": "Estatização do ensino pago"
+        }
+      ],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Defesa da soberania e oposição ao imperialismo não bastam para classificar um acordo não decidido no plano.",
+      "evidence": [],
+      "inspected_pages": [
+        7
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        7
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        7
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A página 3 propõe reestatizar empresas entregues ao capital estrangeiro e recuperar reservas/refinarias. Não proíbe todo novo investimento estrangeiro nos demais setores; nacionalizações específicas não equivalem a proibição geral.",
+      "evidence": [],
+      "inspected_pages": [
+        3
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002539826",
+    "name": "Zema",
+    "party": "NOVO",
+    "pages": 81,
+    "member": "BR/2026BR280002539826_01.pdf",
+    "sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      12
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002539826",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Propõe choque fiscal, reformas, superávits e estabilização da dívida sem escolher manter ou substituir o arcabouço da LC 200/2023.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "promovendo reformas e mantendo superávits primários"
+        }
+      ],
+      "inspected_pages": [
+        14,
+        18
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "CONCORDA",
+      "reason": "A proposta utiliza expressamente o quantificador universal: privatizar todas as empresas estatais. Corresponde à transferência de seu controle ao setor privado.",
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Privatizar todas as empresas estatais"
+        }
+      ],
+      "inspected_pages": [
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O regime alternativo à CLT não determina revogação integral das mudanças de 2017.",
+      "evidence": [],
+      "inspected_pages": [
+        23,
+        24
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "DISCORDA",
+      "reason": "A alternativa é conservar o Bolsa Família para adultos aptos que busquem emprego, estudem ou se qualifiquem, concentrando nele as transferências. Isso é incompatível com substituir o benefício para todos os economicamente ativos por trabalho público remunerado.",
+      "evidence": [
+        {
+          "page": 63,
+          "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família apenas enquanto estiverem buscando emprego, estudando ou se qualificando"
+        },
+        {
+          "page": 63,
+          "quote": "Concentrar recursos de transferências de renda no Bolsa Família:"
+        }
+      ],
+      "inspected_pages": [
+        63
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "CONCORDA",
+      "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano também alcança idades menores, questão que esta formulação não decide.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal de adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação penal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e estupro, ou reincidência."
+        }
+      ],
+      "inspected_pages": [
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "CONCORDA",
+      "reason": "Inclui expressamente escolas cívico-militares na agenda de opções educacionais. Sustenta admitir o modelo, sem comprometer-se a aumentar seu número.",
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "Aumentar as opções de modelos educacionais no país:"
+        },
+        {
+          "page": 53,
+          "quote": "Dar mais liberdade aos pais de escolher o modelo educacional de seus filhos, fa- cilitando a formalização de parcerias com instituições comunitárias, filantrópicas e confessionais, avançando em uma agenda de parcerias com escolas conveniadas na educação, escolas cívico-militares e regulamentando o homeschooling."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        24,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        50,
+        51,
+        52,
+        53,
+        76
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "DISCORDA",
+      "reason": "Manda construir e gerir unidades de saúde mediante PPP, incompatível com gestão diretamente pública de todas as unidades.",
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de saúde, garantindo maior eficiência operacional, melhor experiência para o paciente e controle rigoroso de resultados por parte do poder público."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        57,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Propõe reduzir juros por ajuste fiscal e concorrência bancária, mas não determina o regime institucional do Banco Central.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Criar condições para a queda da taxa de juros:"
+        }
+      ],
+      "inspected_pages": [
+        18
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "DISCORDA",
+      "reason": "A página 33 propõe desverticalizar a Petrobras, separando explicitamente produção e refino entre as operações. É oposição direta à integração dos dois elos.",
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Desverticalizar a Petrobras, separando as operações de produção, refino, transporte e logística em diferentes empresas para permitir a entrada de novos concorrentes e ampliar a concorrência em igualdade de condições."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        33
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "CONCORDA",
+      "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e hospitais privados para realização de consultas, exames e cirurgias, com metas cla- ras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa dessas unidades de saúde privadas."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        57,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "CONCORDA",
+      "reason": "Na p50, a ação governamental prioriza parceria com entidades privadas e comunitárias, com ou sem fins lucrativos, para ampliar vagas em creches e pré-escolas, com transparência no uso dos recursos. Isso sustenta financiar essa oferta; não foi atribuído voucher familiar nem limite até surgir vaga pública.",
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Ampliar a oferta de vagas em creches e pré-escolas com foco em qualidade e acesso, priorizando parcerias com o setor privado:"
+        },
+        {
+          "page": 50,
+          "quote": "por meio do fortalecimento das redes públicas e de parcerias com entidades privadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qua- lidade, a transparência no uso dos recursos e metas claras de atendimento, apren- dizagem e desenvolvimento."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        24,
+        50,
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Transformar o Mercosul em zona de livre comércio e buscar novos acordos não é apoio explícito ao acordo Mercosul–UE. A menção à União Europeia na educação não é comercial.",
+      "evidence": [],
+      "inspected_pages": [
+        36,
+        37,
+        38,
+        54
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        36,
+        37,
+        38,
+        54
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "CONCORDA",
+      "reason": "O plano propõe retirar o Brasil do BRICS diplomaticamente, preservando relações comerciais com os países membros.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Retirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as relações comerciais com todos os países do bloco e recusando qualquer direciona- mento que comprometa valores constitucionais e democráticos do Brasil."
+        }
+      ],
+      "inspected_pages": [
+        36,
+        37,
+        38,
+        54
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano propõe atrair capital nacional e estrangeiro para setores estratégicos da economia do futuro.",
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "atrair capital nacional e estrangeiro para os setores estratégicos da economia do futuro."
+        }
+      ],
+      "inspected_pages": [
+        21,
+        22
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

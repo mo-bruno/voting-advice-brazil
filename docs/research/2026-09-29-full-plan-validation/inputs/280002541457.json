@@ -1,0 +1,284 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002541457",
+    "name": "Hertz Dias",
+    "party": "PSTU",
+    "pages": 33,
+    "member": "BR/2026BR280002541457_01.pdf",
+    "sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      14
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002541457",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A página 4 critica o governo Lula por manter o arcabouço, mas não formula decisão inequívoca de revogá-lo ou substituí-lo. A página 28 pede fim da Lei de Responsabilidade Fiscal, que é outro objeto. O conjunto é crítico à política fiscal, sem decisão suficientemente específica sobre manter a LC 200/2023.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Mantém o arcabouço fiscal e a agiotagem escandalosa do pagamento da dívida"
+        },
+        {
+          "page": 28,
+          "quote": "Fim a Lei de Responsabilidade Fiscal"
+        }
+      ],
+      "inspected_pages": [
+        4,
+        28
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "DISCORDA",
+      "reason": "A proibição de privatizar empresas estratégicas e a Petrobras 100% estatal são incompatíveis com transferir todas as estatais ao controle privado. Basta uma exceção expressa para rejeitar a universalidade da tese.",
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Proibição da privatização de empresas estratégicas"
+        },
+        {
+          "page": 26,
+          "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!"
+        }
+      ],
+      "inspected_pages": [
+        6,
+        26
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "CONCORDA",
+      "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Revogação da reforma trabalhista"
+        }
+      ],
+      "inspected_pages": [
+        8,
+        21,
+        29
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O programa defende bolsa de um salário mínimo para desempregados enquanto não houver pleno emprego e obras públicas para gerar empregos. Menciona o Bolsa Família como insuficiente e rejeita culpabilizar beneficiários, mas não determina substituí-lo por trabalho remunerado para seus beneficiários em idade ativa.",
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Bolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver pleno emprego."
+        }
+      ],
+      "inspected_pages": [
+        8
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "DISCORDA",
+      "reason": "Rejeita a redução da maioridade penal.",
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Contra a redução da maioridade penal"
+        }
+      ],
+      "inspected_pages": [
+        21
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "DISCORDA",
+      "reason": "A rejeição da militarização escolar sustenta não admitir o modelo.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Não à militarização das escolas"
+        }
+      ],
+      "inspected_pages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "DISCORDA",
+      "reason": "Defende manter e ampliar cotas para negros nos serviços públicos.",
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos"
+        }
+      ],
+      "inspected_pages": [
+        21
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "CONCORDA",
+      "reason": "O texto exige que a gestão seja realizada por trabalhadores do serviço público e põe fim à gestão privada da saúde, incluindo OS, fundações e PPP.",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "A gestão deve ser realizada pelos trabalhadores do serviço público sob controle dos trabalhadores usuários, nos bairros e comunidades"
+        },
+        {
+          "page": 11,
+          "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+        }
+      ],
+      "inspected_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano propõe estatização do sistema financeiro e centralização do crédito em um banco único, sem mencionar a autonomia ou independência institucional do Banco Central. Propriedade bancária, controle de capitais e desenho do crédito não determinam por si a revogação da LC 179/2021.",
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "A estatização do sistema financeiro e centralização do crédito em um banco único é essencial para planejar a economia e garantir o controle de capitais."
+        }
+      ],
+      "inspected_pages": [
+        6,
+        28
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "Petrobras 100% estatal e destinação dos excedentes de várias empresas para expansão do refino não garantem que a Petrobras reúna produção e refino. A proximidade temática persiste, mas o elo organizacional continua indefinido.",
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!"
+        },
+        {
+          "page": 26,
+          "quote": "Destinação prioritária dos excedentes dessas empresas à criação e expansão de setores de alta complexidade tecnológica, especialmente nos ramos de refino"
+        }
+      ],
+      "inspected_pages": [
+        6,
+        26
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "DISCORDA",
+      "reason": "O programa sustenta SUS 100% estatal e fim da gestão privada da saúde. A discordância com contratação de oferta privada decorre dessa definição integral do sistema, não de mero apoio genérico ao SUS público.",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Defesa do sus público, universal, gratuito e 100% estatal"
+        },
+        {
+          "page": 11,
+          "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+        }
+      ],
+      "inspected_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "A restrição explícita dirige-se aos grandes empresários; não resolve financiar vaga de creche privada pequena ou comunitária. Mantida condição, sem ampliar automaticamente o alcance da proibição.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+        },
+        {
+          "page": 12,
+          "quote": "Ampliação de vagas em creches, escolas e universidades públicas"
+        }
+      ],
+      "inspected_pages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "DISCORDA",
+      "reason": "O acordo é citado como exemplo concreto de negociação que abre mão da soberania diante do imperialismo europeu, em contexto de defesa de ruptura com essa dominação. A posição é contrária ao apoio político ao acordo, não uma promessa de denunciá-lo.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Enquanto o bolsonarismo promete entregar o Brasil aos EUA, o governo Lula negocia com Trump, como na questão das terras raras, mas mantém um leque de possibilidades para negociar nossas riquezas com outras potências, abrindo mão da soberania. Como o decadente imperialismo europeu, como vimos recentemente com o acordo Mercosul e União Europeia, em que o país acessa o mercado europeu com produtos primários, e se abre aos automóveis e demais produtos de alto valor agregado de países como Alemanha e França."
+        },
+        {
+          "page": 5,
+          "quote": "Não é possível falar em um país soberano sem problematizar uma ruptura com o imperialismo, isto é, com os países dominantes na atual divisão internacional do trabalho."
+        }
+      ],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        5
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A página 5 critica desnacionalização/investimento e empresas estrangeiras; as páginas 6 e 26 propõem expropriação de setores estratégicos e a 27 trata de fluxos/remessas. Nenhuma dessas decisões implica proibir todo investimento estrangeiro em toda a economia. Crítica ao capital externo não foi convertida automaticamente em proibição geral.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        6,
+        26,
+        27
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}
