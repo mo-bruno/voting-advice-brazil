@@ -1,17 +1,39 @@
 {
   "schema_version": 1,
-  "phase": "awaiting_user_review_block_01",
+  "phase": "block_01_candidate_validation_paused",
   "source_inventory": "../2026-09-29-thematic-profiles/DOCUMENT_INDEX.json",
   "source_inventory_sha256": "ce1915d67400c9664d9d6e3c31a57830ebcdc8c513a46893d729dd26ce665bb6",
   "source_commit": "5af83ac",
   "remote_main": "32d96c0",
-  "updated_at": "2026-09-29T20:16:48.837608+00:00",
+  "updated_at": "2026-09-29T22:52:03.067136+00:00",
   "approval_gate": {
     "required": true,
-    "status": "pending_user_review",
-    "approved_question_versions": [],
-    "candidate_validation_dispatched": false,
-    "explanation_included_in_version": true
+    "status": "approved",
+    "approved_question_versions": [
+      {
+        "id": "B01-Q01",
+        "version": 1,
+        "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+      },
+      {
+        "id": "B01-Q02",
+        "version": 1,
+        "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+      },
+      {
+        "id": "B01-Q03",
+        "version": 1,
+        "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+      },
+      {
+        "id": "B01-Q04",
+        "version": 1,
+        "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+      }
+    ],
+    "candidate_validation_dispatched": true,
+    "explanation_included_in_version": true,
+    "approval_record": "../2026-09-29-approved-block-01-validation/APPROVAL.json"
   },
   "response_buttons": [
     "Concordo",
@@ -57,20 +79,20 @@
     "id": "B01",
     "topic": "Economia e Desenvolvimento",
     "target_items": 4,
-    "status": "pending_user_review",
+    "status": "approved_validation_paused",
     "file": "BLOCK_01.json"
   },
   "remaining": [
-    "Receber decisões do usuário sobre as quatro versões do bloco B01.",
-    "Ajustes de significado exigem nova validação do usuário.",
-    "Preparar outros blocos e, somente após aprovação das versões, conferir as perguntas com os treze responsáveis originais."
+    "Receber a decisão do usuário sobre as 18 novas versões da bateria completa.",
+    "Retomar a validação somente com a bateria completa aprovada.",
+    "Consolidar evidências e divergências; alterações de significado voltam ao usuário."
   ],
   "metrics": {
     "mapped_positions": 636,
     "decision_families": 118,
     "categories": 10,
     "questions_presented": 4,
-    "questions_approved": 0,
-    "candidate_answers_created": 0
+    "questions_approved": 4,
+    "candidate_answers_created": 24
   }
 }

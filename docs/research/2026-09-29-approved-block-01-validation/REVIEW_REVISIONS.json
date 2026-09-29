@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "purpose": "Mudanças de interpretação durante revisão conjunta, antes da aceitação final; versões iniciais preservadas quando já escritas. Nenhuma pergunta alterada.",
+  "entries": [
+    {
+      "candidate_id": "280002551932",
+      "question_id": "B01-Q03",
+      "initial_classification": "CONCORDA",
+      "revised_classification": "NAO_ENCONTRADA",
+      "initial_review": "reviews/revisions/280002551932.initial.json",
+      "reason": "Acesso a recursos pode ocorrer por fornecimento/compra; o agente confirmou que não localizou ligação adicional entre participação estrangeira e etapa extrativa.",
+      "resolution": "revision_by_original_agent_after_orchestrator_challenge"
+    },
+    {
+      "candidate_id": "280002551547",
+      "question_id": "B01-Q02",
+      "initial_classification": "CONCORDA",
+      "revised_classification": "NAO_ENCONTRADA",
+      "initial_review": "reviews/revisions/280002551547.initial.json",
+      "reason": "Políticas creditícias setoriais não eliminam instrumentos regulatórios ou garantias sem oferta de linhas; linhas explícitas encontradas têm recortes transversais.",
+      "resolution": "revision_by_original_agent_after_orchestrator_challenge"
+    }
+  ]
+}

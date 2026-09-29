@@ -1,6 +1,6 @@
-# Bloco 1 para sua validação — Economia e Desenvolvimento
+# Bloco 1 aprovado — Economia e Desenvolvimento
 
-**Quatro afirmações em revisão. Nenhuma aprovada ou enviada à rodada dos treze planos.**
+**Quatro afirmações v1 aprovadas. A validação documental iniciada foi pausada enquanto a [bateria completa](../2026-09-29-full-thesis-battery/BATTERY.md) passa pela revisão humana.**
 
 Botões previstos: **Concordo · Discordo · Neutro · Pular**. A aprovação abrange a afirmação e sua explicação. As notas de origem e limites são material editorial, não texto de resposta do eleitor.
 
@@ -27,7 +27,7 @@ Você pode aprovar, editar, pedir alternativa ou excluir cada item. Aprovar este
 
 **Limites a preservar:**
 
-- Grandes fortunas não tem limiar único nos registros; Hertz explicita patrimônio a partir de R$ 1 bilhão. A aprovação desta redação será apenas da escolha geral. Se o limiar for decisivo para o usuário ou para um plano, o item deve ser refinado ou permanecer condicional.
+- Grandes fortunas não tem limiar único nos registros; Hertz explicita patrimônio a partir de R$ 1 bilhão. A aprovação desta redação abrange apenas a escolha geral. Se o limiar for decisivo para o usuário ou para um plano, o item deve ser refinado ou permanecer condicional.
 - Criar esse imposto não equivale a tributar heranças, dividendos, toda renda alta ou todo patrimônio.
 - A existência de outras propostas tributárias em um plano não prova rejeição a este imposto.
 
@@ -44,7 +44,7 @@ A finalidade declarada nesse trecho não é atribuída aos demais planos. A prop
 - Removida a progressividade da hipótese anterior para perguntar uma decisão por vez: criar o tributo.
 - Excluídas justificativas como fazer os ricos pagarem sua parte ou punir quem produz.
 
-**Sua decisão:** pendente.
+**Sua decisão:** aprovada, versão 1.
 
 ## B01-Q02 · versão 1
 
@@ -88,7 +88,7 @@ Justificativas opostas ou distintas não geram automaticamente respostas opostas
 - Substituída a expressão setores escolhidos politicamente por setores considerados prioritários, sem repetir a justificativa favorável ou crítica de um plano.
 - A explicação não promete crescimento, emprego ou barateamento do crédito.
 
-**Sua decisão:** pendente.
+**Sua decisão:** aprovada, versão 1.
 
 ## B01-Q03 · versão 1
 
@@ -130,7 +130,7 @@ A afirmação compara admissão da participação na extração; finalidades de 
 - Delimitada extração, evitando confundir esse objeto com processamento industrial ou compra do produto mineral.
 - Retiradas expressões como entregar riquezas ou atrair desenvolvimento, que antecipariam juízo de valor.
 
-**Sua decisão:** pendente.
+**Sua decisão:** aprovada, versão 1.
 
 ## B01-Q04 · versão 1
 
@@ -170,7 +170,7 @@ Os trechos selecionados descrevem os instrumentos e suas condições. A ausênci
 - Retiradas justificativas sobre liberar recursos ou combater rentistas, que poderiam orientar a resposta.
 - A auditoria foi colocada como cenário da pergunta, para concentrar a resposta na suspensão dos pagamentos durante esse período.
 
-**Sua decisão:** pendente.
+**Sua decisão:** aprovada, versão 1.
 
 ## Assuntos reservados para outro recorte
 

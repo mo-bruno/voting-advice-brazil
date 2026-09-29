@@ -1,15 +1,15 @@
 # Protocolo editorial e aprovação humana
 
-Esta etapa executa os passos 2–4 do fluxo combinado e prepara o passo 5: validação do usuário. O inventário anterior está concluído e permanece preservado. Não houve aprovação de perguntas novas nem autorização para iniciar sua classificação pelos treze responsáveis dos planos.
+Este protocolo orientou os passos 2–5. O usuário aprovou B01 v1 e iniciou a [rodada documental](../2026-09-29-approved-block-01-validation/ORCHESTRATION.md), depois pausada para que a [bateria completa](../2026-09-29-full-thesis-battery/BATTERY.md) seja aprovada de uma só vez.
 
-## Limite desta rodada
+## Limite da preparação editorial
 
 - Reaproveitar os 636 registros dos perfis como índice de evidências, sem repetir a leitura integral.
 - Organizar famílias de decisões e suas diferenças. Coocorrência temática não significa concordância, discordância ou cobertura da mesma pergunta.
 - Distinguir problema, justificativa declarada, instrumento, alcance e condições. Não inferir intenção pessoal, princípio moral ou ideologia a partir da proposta.
 - A revisão editorial pode organizar registros de vários perfis; isso não é a rodada de classificação documental por candidato.
 - Preparar um primeiro bloco pequeno, com redação, explicação, objeto medido, origem, motivo de seleção e limites.
-- Parar antes da rodada dos treze agentes. Cada item começa como `pending_user_review`.
+- Cada item começa como `pending_user_review`. A distribuição aos treze agentes exige aprovação registrada; B01 v1 já cumpriu essa condição.
 
 ## Formato do produto
 

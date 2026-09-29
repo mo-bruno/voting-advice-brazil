@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "block_id": "B01",
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "items": [
+    {
+      "id": "B01-Q01",
+      "version": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "explanation": "A cobrança seria sobre patrimônios de valor muito elevado. Esta afirmação não define o valor mínimo para cobrança nem a alíquota.",
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+    },
+    {
+      "id": "B01-Q02",
+      "version": 1,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "explanation": "Linhas de crédito são programas de empréstimo. Aqui, os setores atendidos seriam escolhidos pela política industrial do governo.",
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+    },
+    {
+      "id": "B01-Q03",
+      "version": 1,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "explanation": "A pergunta trata da extração de minerais considerados estratégicos para a indústria e a tecnologia. A participação estrangeira poderia ter condições e limites.",
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+    },
+    {
+      "id": "B01-Q04",
+      "version": 1,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "explanation": "Auditoria é uma investigação das contas e dos contratos da dívida. A afirmação trata de interromper os pagamentos durante a investigação, sem decidir pelo cancelamento definitivo da dívida.",
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+    }
+  ]
+}

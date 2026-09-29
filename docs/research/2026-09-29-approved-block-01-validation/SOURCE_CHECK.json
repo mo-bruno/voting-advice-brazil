@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "official_download": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+  "prior_manifest": "../2026-09-29-full-plan-validation/source-manifest.json",
+  "archive_sha256": "73f0ae3b70ddab983d4afbed7ff2c0cc5aa051e599036465a9be1526936effb0",
+  "metadata_rechecked_at_server_date": "2026-09-29T22:33:57Z",
+  "http_status": 200,
+  "last_modified": "Tue, 29 Sep 2026 06:48:45 GMT",
+  "etag": "\"116dd1d-65c9992f39f85\"",
+  "content_length": 18275613,
+  "metadata_matches_prior_download": true,
+  "limitation": "Rechecagem HEAD dos metadados; a igualdade binária dos PDFs é verificada localmente contra o snapshot baixado e preservado em 29/09. Não é uma nova leitura integral nem novo download nesta rodada.",
+  "git_remote_main": "32d96c0",
+  "remote_commits_missing_from_worktree": 0
+}

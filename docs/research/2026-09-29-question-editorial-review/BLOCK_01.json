@@ -2,8 +2,8 @@
   "schema_version": 1,
   "block_id": "B01",
   "title": "Economia e Desenvolvimento",
-  "status": "pending_user_review",
-  "candidate_validation_dispatched": false,
+  "status": "approved",
+  "candidate_validation_dispatched": true,
   "response_buttons": [
     "Concordo",
     "Discordo",
@@ -29,9 +29,14 @@
       ],
       "review_risk": "medium",
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "candidate_answers": null,
-      "user_decision": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
       "sources": [
         {
           "position_key": "280002538811:P03",
@@ -103,9 +108,14 @@
       ],
       "review_risk": "medium",
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "candidate_answers": null,
-      "user_decision": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
       "sources": [
         {
           "position_key": "280002542548:P02",
@@ -189,9 +199,14 @@
       ],
       "review_risk": "medium",
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "candidate_answers": null,
-      "user_decision": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
       "sources": [
         {
           "position_key": "280002551932:P04",
@@ -271,9 +286,14 @@
       ],
       "review_risk": "medium",
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "candidate_answers": null,
-      "user_decision": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
       "sources": [
         {
           "position_key": "280002551975:P02",
@@ -333,5 +353,6 @@
       "topic": "Imposto único",
       "reason": "Os desenhos registrados variam em base, alíquota, tributos substituídos e transição. Perguntar apenas por imposto único criaria equivalência artificial."
     }
-  ]
+  ],
+  "approval_record": "../2026-09-29-approved-block-01-validation/APPROVAL.json"
 }

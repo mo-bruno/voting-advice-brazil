@@ -1,0 +1,919 @@
+{
+  "schema_version": 1,
+  "review_type": "coverage_and_measurement_editorial_only",
+  "generated_for": "full_thesis_battery",
+  "source_scope": {
+    "position_records": 636,
+    "decision_families": 118,
+    "categories": 10,
+    "fixed_anchor_ids": [
+      "B01-Q01",
+      "B01-Q02",
+      "B01-Q03",
+      "B01-Q04"
+    ],
+    "sources_used": [
+      "ORCHESTRATION.md",
+      "STATE.json",
+      "../2026-09-29-question-editorial-review/DECISION_MAP.json",
+      "../2026-09-29-question-editorial-review/DECISION_MAP.md",
+      "../2026-09-29-question-editorial-review/PROTOCOL.md",
+      "../2026-09-29-question-editorial-review/BLOCK_01.json",
+      "../2026-09-29-question-editorial-review/maps/economy-state-territory.json",
+      "../2026-09-29-question-editorial-review/maps/education-rights-security-sovereignty.json",
+      "../2026-09-29-question-editorial-review/maps/environment-science-welfare.json",
+      "../2026-09-29-thematic-profiles/AGENDA_TESES.md",
+      "../2026-09-29-thematic-profiles/THESIS_DESIGN.md"
+    ],
+    "published_battery_used": false,
+    "published_battery_note": "A bateria atualmente publicada, suas redações, posições e métricas foram excluídas desta análise. A seleção deriva somente dos 636 registros, das 118 famílias, das quatro âncoras B01 e dos critérios editoriais.",
+    "candidate_classification_performed": false,
+    "candidate_positions_inferred": false
+  },
+  "recommendation": {
+    "final_size": 26,
+    "fixed_anchors": 4,
+    "new_items": 22,
+    "rationale": "Vinte e seis itens preservam as quatro âncoras, cobrem as dez categorias e deixam espaço para decisões documentáveis de alto contraste sem repetir o mesmo instrumento em excesso. Aumentar para 30 agora exigiria adicionar vários itens estreitos com alcance provavelmente baixo ou reforçar dimensões já representadas.",
+    "selected_family_count": 27,
+    "indexed_position_keys_union": 220,
+    "indexed_candidate_ids_union": 13,
+    "index_warning": "Os 220 vínculos e os 13 prefixos de candidatura indicam apenas onde procurar material. Não são respostas, cobertura validada, polos, afinidade nem denominador de ranking."
+  },
+  "criteria": [
+    "Isolar uma decisão pública, sem fundir diagnóstico, justificativa e instrumento quando mudam o sentido.",
+    "Preferir formulações cujo objeto central aparece em mais de um registro ou cuja família contém desenhos incompatíveis do mesmo objeto.",
+    "Usar a quantidade de position_keys e de prefixos de candidatura apenas como índice de alcance documental potencial.",
+    "Evitar que uma candidatura com plano mais longo produza mais peso por ter mais registros na mesma família.",
+    "Evitar pares de perguntas que repitam propriedade pública/privada, alcance universal/focalizado ou o mesmo requisito com palavras diferentes.",
+    "Aceitar poucos itens de provável alcance baixo quando a decisão é substantiva e não tem substituto mais amplo sem perda de atomicidade.",
+    "Distribuir decisões pelas dez categorias sem cota rígida e sem compensar artificialmente as quatro âncoras econômicas.",
+    "Exigir explicação curta para termos jurídicos, institucionais ou técnicos que possam alterar a resposta do eleitor."
+  ],
+  "reach_estimation_method": {
+    "label": "hipótese editorial, não validação",
+    "family_position_keys": "Quantidade de position_keys únicos nas famílias ligadas ao item.",
+    "family_candidate_ids": "Quantidade de prefixos de candidatura únicos nos position_keys das famílias ligadas ao item.",
+    "bands": {
+      "high": "A família reúne material de sete ou mais prefixos e a redação acompanha um contraste central da família.",
+      "medium": "A família reúne material de quatro a seis prefixos, ou reúne mais material mas a redação seleciona uma subdecisão.",
+      "low": "A decisão exata parece restrita a poucos registros, mesmo quando a família temática é maior."
+    },
+    "prohibition": "Nenhuma faixa permite atribuir Concordo, Discordo, Neutro ou Pular sem confronto posterior da redação aprovada com cada plano."
+  },
+  "category_distribution": [
+    {
+      "category_id": "economia_desenvolvimento",
+      "items": 5,
+      "note": "Quatro itens são âncoras fixas; somente uma nova tese macroeconômica é acrescentada."
+    },
+    {
+      "category_id": "estado_gestao",
+      "items": 2
+    },
+    {
+      "category_id": "infraestrutura_territorio",
+      "items": 2
+    },
+    {
+      "category_id": "meio_ambiente_clima",
+      "items": 2
+    },
+    {
+      "category_id": "ciencia_tecnologia_inovacao",
+      "items": 2
+    },
+    {
+      "category_id": "bem_estar_social",
+      "items": 3
+    },
+    {
+      "category_id": "educacao_cultura_sociedade",
+      "items": 2
+    },
+    {
+      "category_id": "cidadania_direitos",
+      "items": 3
+    },
+    {
+      "category_id": "seguranca_publica",
+      "items": 3
+    },
+    {
+      "category_id": "soberania_relacoes_internacionais",
+      "items": 2
+    }
+  ],
+  "proposed_battery": [
+    {
+      "id": "B01-Q01",
+      "status": "fixed_anchor_v1",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "decision_object": "Existência de um imposto sobre grandes fortunas.",
+      "family_ids": ["E03"],
+      "reach_hypothesis": {
+        "family_position_keys": 12,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "A família tributária é ampla, mas a subdecisão sobre grandes fortunas aparece em recorte menor.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "O limiar de grande fortuna não é uniforme.",
+        "Patrimônio, renda, herança e dividendos não são bases equivalentes."
+      ],
+      "terms_to_explain": ["grandes fortunas", "imposto específico"]
+    },
+    {
+      "id": "B01-Q02",
+      "status": "fixed_anchor_v1",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "decision_object": "Crédito dirigido a setores industriais escolhidos pela política pública.",
+      "family_ids": ["E06", "E07"],
+      "reach_hypothesis": {
+        "family_position_keys": 20,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "Há bastante material sobre crédito e política industrial, mas garantia, subsídio, participação acionária e crédito direcionado precisam permanecer separados.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Prioridade setorial não define subsídio, taxa, fonte do dinheiro ou empresa beneficiada.",
+        "Contrapartidas de conteúdo nacional e prazo podem mudar a resposta."
+      ],
+      "terms_to_explain": ["linha de crédito específica", "setor industrial prioritário"]
+    },
+    {
+      "id": "B01-Q03",
+      "status": "fixed_anchor_v1",
+      "category_id": "economia_desenvolvimento",
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "decision_object": "Admissão de participação empresarial estrangeira na extração de minerais estratégicos.",
+      "family_ids": ["E05", "E07"],
+      "reach_hypothesis": {
+        "family_position_keys": 19,
+        "family_candidate_ids": 12,
+        "band": "medium",
+        "basis": "As famílias têm grande alcance indexado, mas atração de capital para processamento não resolve automaticamente a permissão para extração.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Exploração pode ser entendida como extração ou como participação mais ampla na cadeia.",
+        "Permissão condicionada não equivale a abertura irrestrita.",
+        "Minerais estratégicos não têm lista definida na pergunta."
+      ],
+      "terms_to_explain": ["exploração", "minerais estratégicos", "participação estrangeira"]
+    },
+    {
+      "id": "B01-Q04",
+      "status": "fixed_anchor_v1",
+      "category_id": "economia_desenvolvimento",
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "decision_object": "Interrupção dos pagamentos da dívida durante uma auditoria.",
+      "family_ids": ["E02"],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "A família é pequena, mas os quatro vínculos tratam diretamente de suspensão, auditoria, reestruturação ou cancelamento.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Suspensão anterior à auditoria e suspensão durante a investigação não têm a mesma sequência.",
+        "Suspender temporariamente, reestruturar e cancelar definitivamente são decisões diferentes.",
+        "O universo de credores varia entre os registros."
+      ],
+      "terms_to_explain": ["auditoria da dívida", "suspender pagamentos"]
+    },
+    {
+      "id": "CR-Q05",
+      "status": "proposed",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O governo federal deve manter uma regra fiscal que limite o crescimento das despesas públicas.",
+      "explanation": "Regra fiscal é uma norma que impõe limites ou metas às contas públicas. A afirmação pergunta se deve existir um limite para o crescimento das despesas, sem escolher a fórmula de uma lei específica.",
+      "decision_object": "Existência de limite normativo ao crescimento da despesa federal.",
+      "family_ids": ["E01"],
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 10,
+        "band": "high",
+        "basis": "E01 reúne manutenção, substituição e revogação de regras, além de metas e limites de gasto.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "A formulação geral perde diferenças entre limite de gasto, meta de resultado e limite de dívida.",
+        "Manter alguma regra não significa manter uma lei nominal nem aceitar desvinculação de pisos."
+      ],
+      "terms_to_explain": ["regra fiscal", "crescimento das despesas públicas"]
+    },
+    {
+      "id": "CR-Q06",
+      "status": "proposed",
+      "category_id": "estado_gestao",
+      "statement": "Empresas estatais que atuam em setores estratégicos devem permanecer sob controle do Estado.",
+      "explanation": "A afirmação trata de quem controla empresas consideradas estratégicas. Ela não exige monopólio estatal nem define quais empresas entram nessa classificação.",
+      "decision_object": "Controle estatal de empresas em setores estratégicos.",
+      "family_ids": ["G01"],
+      "reach_hypothesis": {
+        "family_position_keys": 7,
+        "family_candidate_ids": 6,
+        "band": "medium",
+        "basis": "G01 contém privatização ampla, desestatização caso a caso, reestatização e controle integral de empresas nomeadas.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Setor estratégico é um conceito aberto.",
+        "Permanecer sob controle estatal não resolve reestatização de empresa já privatizada.",
+        "Controle acionário, monopólio e integração produtiva são decisões distintas."
+      ],
+      "terms_to_explain": ["setor estratégico", "controle do Estado"]
+    },
+    {
+      "id": "CR-Q07",
+      "status": "proposed",
+      "category_id": "estado_gestao",
+      "statement": "Um servidor público estável deve poder ser desligado após avaliações repetidas de baixo desempenho.",
+      "explanation": "A afirmação admite desligamento por desempenho insuficiente depois de mais de uma avaliação. Ela não trata de demissão sem processo, de cargos temporários nem de remuneração por mérito.",
+      "decision_object": "Possibilidade de desligamento de servidor estável por baixo desempenho reiterado.",
+      "family_ids": ["G07"],
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "A família tem amplo material sobre estabilidade e avaliação, mas poucos registros especificam a consequência de desligamento.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Avaliar desempenho não implica desligar.",
+        "Recuperação profissional, recurso e critérios objetivos podem ser condições decisivas.",
+        "Vínculos futuros e servidores atuais não devem ser confundidos."
+      ],
+      "terms_to_explain": ["servidor estável", "avaliações repetidas", "baixo desempenho"]
+    },
+    {
+      "id": "CR-Q08",
+      "status": "proposed",
+      "category_id": "infraestrutura_territorio",
+      "statement": "O transporte coletivo urbano deve ser gratuito para todos os passageiros.",
+      "explanation": "A afirmação trata da tarifa cobrada do passageiro. Ela não decide se o serviço será operado por empresa pública ou privada nem qual fonte pagará a operação.",
+      "decision_object": "Gratuidade universal da tarifa do transporte coletivo urbano.",
+      "family_ids": ["T05"],
+      "reach_hypothesis": {
+        "family_position_keys": 5,
+        "family_candidate_ids": 5,
+        "band": "medium",
+        "basis": "T05 contrapõe gratuidade universal, gratuidade focalizada e financiamento sem tarifa zero.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Gratuidade universal e passe livre para grupos específicos têm alcances diferentes.",
+        "Implantação gradual pode ser condição decisiva.",
+        "Financiamento do sistema deve ser explicado sem induzir uma resposta."
+      ],
+      "terms_to_explain": ["gratuito para todos", "transporte coletivo urbano"]
+    },
+    {
+      "id": "CR-Q09",
+      "status": "proposed",
+      "category_id": "infraestrutura_territorio",
+      "statement": "Os serviços de água e esgoto devem poder ser concedidos a empresas privadas.",
+      "explanation": "Concessão é um contrato em que uma empresa presta o serviço por prazo e regras definidos pelo poder público. A afirmação permite esse modelo, sem exigir que todo serviço seja concedido.",
+      "decision_object": "Admissão de concessões privadas na prestação de água e esgoto.",
+      "family_ids": ["T09"],
+      "reach_hypothesis": {
+        "family_position_keys": 10,
+        "family_candidate_ids": 9,
+        "band": "high",
+        "basis": "T09 reúne concessões, parcerias, regionalização, prestação pública e proposta de monopólio estatal.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Universalizar saneamento não define a natureza do operador.",
+        "Concessão, PPP, regionalização e privatização do ativo não são sinônimos.",
+        "A pergunta deve ficar restrita a água e esgoto."
+      ],
+      "terms_to_explain": ["concessão", "prestação do serviço"]
+    },
+    {
+      "id": "CR-Q10",
+      "status": "proposed",
+      "category_id": "meio_ambiente_clima",
+      "statement": "Uma licença ambiental deve ser concedida quando o órgão responsável não decidir no prazo e o projeto tiver cumprido as exigências legais.",
+      "explanation": "A afirmação propõe aprovação pelo silêncio do órgão depois do prazo, desde que o projeto tenha cumprido as exigências legais. Ela não elimina a obrigação de apresentar estudos ou cumprir condições ambientais.",
+      "decision_object": "Concessão tácita de licença ambiental após prazo e cumprimento das exigências.",
+      "family_ids": ["A01"],
+      "reach_hypothesis": {
+        "family_position_keys": 6,
+        "family_candidate_ids": 6,
+        "band": "low",
+        "basis": "A01 tem seis vínculos sobre rito e prazo, mas aprovação tácita é uma subdecisão bem mais estreita do que prioridade ou simplificação por risco.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Prazo público, responsabilização por atraso e licença automática não são equivalentes.",
+        "Cumprimento de exigências não substitui a decisão técnica quando a lei exigir manifestação expressa.",
+        "Não deve herdar material de deferimento tácito administrativo de baixo risco em G09."
+      ],
+      "terms_to_explain": ["licença ambiental", "concessão pelo silêncio", "exigências legais"]
+    },
+    {
+      "id": "CR-Q11",
+      "status": "proposed",
+      "category_id": "meio_ambiente_clima",
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "explanation": "Nesse sistema, regras públicas limitam ou precificam emissões e permitem negociar créditos. A afirmação não trata apenas do mercado voluntário nem define todos os setores abrangidos.",
+      "decision_object": "Existência de mercado de carbono regulado pelo poder público.",
+      "family_ids": ["A03"],
+      "reach_hypothesis": {
+        "family_position_keys": 8,
+        "family_candidate_ids": 6,
+        "band": "medium",
+        "basis": "A03 reúne mercado regulado, mercado voluntário, tributação de emissões e pagamento por conservação.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Mercado regulado, créditos voluntários, tributo ambiental e pagamento por serviços ambientais são instrumentos diferentes.",
+        "Apoio ao instrumento pode depender de mensuração, integridade e repartição de receitas."
+      ],
+      "terms_to_explain": ["mercado regulado de carbono", "crédito de carbono"]
+    },
+    {
+      "id": "CR-Q12",
+      "status": "proposed",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Sistemas de inteligência artificial de alto risco devem cumprir regras preventivas, mesmo antes de haver dano comprovado.",
+      "explanation": "A afirmação permite exigências anteriores ao dano para usos considerados de alto risco. Ela não exige autorização prévia para qualquer sistema de inteligência artificial.",
+      "decision_object": "Regulação preventiva de sistemas de IA de alto risco.",
+      "family_ids": ["I07"],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "I07 contém desenhos baseados em risco, dano comprovado, transparência e marco geral.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Alto risco exige definição compreensível.",
+        "Transparência algorítmica não resolve sozinha o momento da intervenção.",
+        "A formulação não deve ser usada para atribuir posição sobre reconhecimento facial."
+      ],
+      "terms_to_explain": ["inteligência artificial de alto risco", "regra preventiva", "dano comprovado"]
+    },
+    {
+      "id": "CR-Q13",
+      "status": "proposed",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Os recursos federais aprovados para ciência devem ser protegidos de bloqueios orçamentários.",
+      "explanation": "A afirmação impede que recursos já aprovados para ciência deixem de ser executados por bloqueio do governo. Ela não fixa um valor nem decide quais pesquisas receberão dinheiro.",
+      "decision_object": "Proteção da execução do financiamento científico contra bloqueios orçamentários.",
+      "family_ids": ["I01"],
+      "reach_hypothesis": {
+        "family_position_keys": 7,
+        "family_candidate_ids": 7,
+        "band": "low",
+        "basis": "I01 tem sete vínculos de financiamento, mas a proteção contra contingenciamento aparece como subdecisão específica.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Aumentar recursos ou prever financiamento por vários anos não implica protegê-los de bloqueio.",
+        "Financiamento não decide carreira de pesquisador."
+      ],
+      "terms_to_explain": ["bloqueio orçamentário", "execução dos recursos"]
+    },
+    {
+      "id": "CR-Q14",
+      "status": "proposed",
+      "category_id": "bem_estar_social",
+      "statement": "O SUS deve contratar clínicas e hospitais privados quando a rede pública não tiver capacidade para atender a fila.",
+      "explanation": "A afirmação permite comprar atendimentos privados quando faltar capacidade pública. Ela não transfere a gestão de unidades públicas nem exige contratação permanente.",
+      "decision_object": "Contratação complementar de capacidade assistencial privada pelo SUS.",
+      "family_ids": ["B02"],
+      "reach_hypothesis": {
+        "family_position_keys": 9,
+        "family_candidate_ids": 7,
+        "band": "high",
+        "basis": "B02 contém compra de capacidade privada, contratação por resultado, reajuste de tabela e alternativas de expansão pública.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Compra de procedimentos e gestão privada de unidade pública são objetos diferentes.",
+        "Ociosidade, necessidade, prazo e tipo de atendimento podem ser condições decisivas.",
+        "Contratação por resultado não identifica necessariamente a natureza do prestador."
+      ],
+      "terms_to_explain": ["capacidade da rede pública", "contratação complementar"]
+    },
+    {
+      "id": "CR-Q15",
+      "status": "proposed",
+      "category_id": "bem_estar_social",
+      "statement": "Quem consegue emprego formal deve poder manter parte do benefício de renda por um período de transição.",
+      "explanation": "A afirmação permite reduzir o benefício gradualmente depois da entrada no emprego formal, em vez de encerrá-lo de uma vez. Ela não fixa valor nem duração.",
+      "decision_object": "Manutenção parcial e temporária de benefício de renda após emprego formal.",
+      "family_ids": ["B07"],
+      "reach_hypothesis": {
+        "family_position_keys": 12,
+        "family_candidate_ids": 10,
+        "band": "high",
+        "basis": "B07 reúne transição após emprego, condicionalidade laboral, substituição por trabalho público e regras de retorno ao benefício.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Manutenção integral, manutenção parcial, retorno automático e substituição por trabalho público são decisões diferentes.",
+        "O benefício e a duração podem mudar a resposta.",
+        "Emprego formal não deve ser confundido com renda de programa específico."
+      ],
+      "terms_to_explain": ["benefício de renda", "período de transição", "emprego formal"]
+    },
+    {
+      "id": "CR-Q16",
+      "status": "proposed",
+      "category_id": "bem_estar_social",
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "explanation": "Cuidado domiciliar é o atendimento realizado na residência por profissionais ou equipes de apoio. A afirmação não substitui automaticamente centros-dia, acolhimento ou apoio financeiro à família.",
+      "decision_object": "Oferta pública de cuidado domiciliar para pessoas com alta dependência.",
+      "family_ids": ["B09"],
+      "reach_hypothesis": {
+        "family_position_keys": 8,
+        "family_candidate_ids": 8,
+        "band": "medium",
+        "basis": "B09 tem amplo material sobre redes de cuidado, mas atendimento domiciliar intensivo é uma modalidade específica.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Serviço domiciliar, renda do cuidador, tecnologia assistiva e acolhimento institucional não são equivalentes.",
+        "Alto grau de dependência precisa de definição operacional.",
+        "Oferta pública não esclarece se a execução será direta ou contratada."
+      ],
+      "terms_to_explain": ["cuidado domiciliar", "alto grau de dependência"]
+    },
+    {
+      "id": "CR-Q17",
+      "status": "proposed",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "explanation": "A afirmação vincula uma parte do financiamento ao resultado educacional medido. Ela não determina retirar todo o recurso de redes vulneráveis nem escolhe um único exame.",
+      "decision_object": "Condicionamento parcial de recursos educacionais a metas de aprendizagem.",
+      "family_ids": ["D03"],
+      "reach_hypothesis": {
+        "family_position_keys": 14,
+        "family_candidate_ids": 9,
+        "band": "high",
+        "basis": "D03 reúne avaliação, metas, incentivos e alocação de recursos, além de salvaguardas para redes vulneráveis.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Avaliar aprendizagem não implica condicionar recursos.",
+        "Metas, bônus, manutenção de cursos e apoio a redes com pior desempenho são instrumentos diferentes.",
+        "A proporção condicionada e a proteção de redes vulneráveis podem ser decisivas."
+      ],
+      "terms_to_explain": ["metas de aprendizagem", "parte dos recursos federais"]
+    },
+    {
+      "id": "CR-Q18",
+      "status": "proposed",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "A educação domiciliar deve ser permitida com fiscalização pública e avaliação periódica da aprendizagem.",
+      "explanation": "A afirmação permite que a família ensine em casa, desde que o poder público acompanhe e avalie a aprendizagem. Ela não torna essa modalidade obrigatória.",
+      "decision_object": "Permissão de educação domiciliar sujeita a fiscalização e avaliação periódica.",
+      "family_ids": ["D04"],
+      "reach_hypothesis": {
+        "family_position_keys": 6,
+        "family_candidate_ids": 6,
+        "band": "low",
+        "basis": "D04 contém seis vínculos sobre modelos escolares, mas somente parte deles trata de educação domiciliar.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Permissão sem supervisão e permissão com avaliação periódica não são equivalentes.",
+        "Expansão da escola pública não demonstra oposição à modalidade domiciliar.",
+        "Fiscalização e avaliação são duas condições que devem ser validadas juntas."
+      ],
+      "terms_to_explain": ["educação domiciliar", "fiscalização pública", "avaliação periódica"]
+    },
+    {
+      "id": "CR-Q19",
+      "status": "proposed",
+      "category_id": "cidadania_direitos",
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "explanation": "A afirmação pergunta pela direção da mudança na jornada legal, sem fixar se o novo limite será de 40, 36, 35 ou 30 horas.",
+      "decision_object": "Redução da jornada semanal legal sem redução de salário.",
+      "family_ids": ["C01"],
+      "reach_hypothesis": {
+        "family_position_keys": 9,
+        "family_candidate_ids": 5,
+        "band": "medium",
+        "basis": "C01 concentra propostas de redução de jornada e fim da escala 6 por 1, com diferentes números e transições.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Fim da escala 6 por 1 e limite semanal de horas são decisões separáveis.",
+        "A redação ampla aumenta alcance, mas perde a diferença entre limites numéricos.",
+        "Redução condicionada a produtividade pode exigir classificação condicional."
+      ],
+      "terms_to_explain": ["jornada semanal", "sem redução salarial"]
+    },
+    {
+      "id": "CR-Q20",
+      "status": "proposed",
+      "category_id": "cidadania_direitos",
+      "statement": "Acordos coletivos entre sindicatos de trabalhadores e empregadores devem poder prevalecer sobre regras gerais da legislação trabalhista.",
+      "explanation": "A afirmação permite que uma negociação coletiva substitua regras gerais da lei em determinados temas. Ela não autoriza descumprir qualquer direito nem trata de acordo individual isolado.",
+      "decision_object": "Prevalência de negociação coletiva sobre regras trabalhistas gerais.",
+      "family_ids": ["C02"],
+      "reach_hypothesis": {
+        "family_position_keys": 8,
+        "family_candidate_ids": 6,
+        "band": "medium",
+        "basis": "C02 reúne prevalência da negociação, contratos alternativos, revogação de reformas, terceirização e estabilidade.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Negociação coletiva, contrato alternativo e flexibilidade genérica não são o mesmo instrumento.",
+        "Os direitos que podem ser negociados precisam permanecer limitados pela redação e pela explicação.",
+        "Revogar uma reforma ampla não responde automaticamente a toda hipótese de negociação."
+      ],
+      "terms_to_explain": ["prevalecer", "negociação coletiva", "regras gerais da legislação"]
+    },
+    {
+      "id": "CR-Q21",
+      "status": "proposed",
+      "category_id": "cidadania_direitos",
+      "statement": "O aborto deve ser descriminalizado.",
+      "explanation": "A afirmação trata de retirar a punição criminal da interrupção da gravidez. Ela não define prazo gestacional, forma de atendimento ou regras clínicas.",
+      "decision_object": "Descriminalização do aborto.",
+      "family_ids": ["C07"],
+      "reach_hypothesis": {
+        "family_position_keys": 5,
+        "family_candidate_ids": 3,
+        "band": "low",
+        "basis": "C07 reúne poucos registros e também contém licenças parentais, que não aumentam o alcance desta decisão.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Descriminalização, legalização e oferta pelo sistema público são decisões separáveis.",
+        "A ausência de prazo gestacional nos registros não autoriza interpretar alcance irrestrito.",
+        "O item deve permanecer mesmo com alcance baixo somente se o usuário valorizar o contraste substantivo."
+      ],
+      "terms_to_explain": ["descriminalização"]
+    },
+    {
+      "id": "CR-Q22",
+      "status": "proposed",
+      "category_id": "seguranca_publica",
+      "statement": "A idade mínima para responder criminalmente como adulto deve ser reduzida para 16 anos em crimes graves.",
+      "explanation": "A afirmação aplica o regime penal de adultos a partir dos 16 anos nos crimes considerados graves. Ela não elimina medidas socioeducativas para os demais casos.",
+      "decision_object": "Redução da idade de responsabilização penal adulta para 16 anos em crimes graves.",
+      "family_ids": ["S04"],
+      "reach_hypothesis": {
+        "family_position_keys": 6,
+        "family_candidate_ids": 6,
+        "band": "high",
+        "basis": "Todos os vínculos de S04 tratam diretamente de manter ou reduzir a idade penal, com alcance geral ou restrito.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Redução geral e redução apenas para crimes enumerados têm alcances diferentes.",
+        "Crime grave precisa de definição ou exemplos neutros.",
+        "Hipóteses abaixo de 16 anos em alguns registros não cabem nesta redação."
+      ],
+      "terms_to_explain": ["responder criminalmente como adulto", "crime grave"]
+    },
+    {
+      "id": "CR-Q23",
+      "status": "proposed",
+      "category_id": "seguranca_publica",
+      "statement": "O poder público deve poder usar reconhecimento facial em espaços públicos para localizar pessoas foragidas.",
+      "explanation": "A afirmação permite comparar imagens de câmeras com bases de pessoas procuradas pela Justiça. Ela não autoriza qualquer uso, finalidade ou armazenamento dos dados.",
+      "decision_object": "Uso de reconhecimento facial em espaços públicos para localizar foragidos.",
+      "family_ids": ["S08"],
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 8,
+        "band": "medium",
+        "basis": "S08 tem amplo material de vigilância e dados, mas câmera corporal, integração de bases e reconhecimento facial não são o mesmo instrumento.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Uso geral de reconhecimento facial não resolve a finalidade específica de localizar foragidos.",
+        "Salvaguardas, auditoria, retenção e revisão humana podem ser condições decisivas.",
+        "A pergunta não deve herdar resposta da regulação geral de IA em CR-Q12."
+      ],
+      "terms_to_explain": ["reconhecimento facial", "pessoa foragida", "espaço público"]
+    },
+    {
+      "id": "CR-Q24",
+      "status": "proposed",
+      "category_id": "seguranca_publica",
+      "statement": "Lideranças de facções criminosas devem cumprir pena separadas dos demais presos em unidades de segurança máxima.",
+      "explanation": "A afirmação trata de separar lideranças de organizações criminosas em unidades de segurança máxima. Ela não proíbe toda comunicação com familiares ou advogados.",
+      "decision_object": "Segregação de lideranças de facções em unidades de segurança máxima.",
+      "family_ids": ["S05"],
+      "reach_hypothesis": {
+        "family_position_keys": 12,
+        "family_candidate_ids": 11,
+        "band": "high",
+        "basis": "S05 é uma das famílias de maior alcance e contém segurança máxima, segregação, reintegração, capacidade e gestão prisional.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Lideranças, integrantes e presos de alta periculosidade não são universos idênticos.",
+        "Segregação não implica automaticamente monitorar ou proibir toda comunicação.",
+        "Construir vagas, reinserir e retirar gestão privada são decisões separadas."
+      ],
+      "terms_to_explain": ["liderança de facção", "unidade de segurança máxima"]
+    },
+    {
+      "id": "CR-Q25",
+      "status": "proposed",
+      "category_id": "soberania_relacoes_internacionais",
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "explanation": "A afirmação trata da permanência do Brasil no grupo. Ela não exige apoiar toda decisão do bloco nem impede relações com outros países e organizações.",
+      "decision_object": "Permanência do Brasil no BRICS.",
+      "family_ids": ["R04"],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "R04 contém saída, permanência pragmática, fortalecimento e atuação simultânea com aproximação a outras instituições.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Permanecer não significa fortalecer o bloco.",
+        "Sair do grupo não significa romper comércio com seus membros.",
+        "Aproximação com outras instituições não é oposição automática à permanência."
+      ],
+      "terms_to_explain": ["BRICS"]
+    },
+    {
+      "id": "CR-Q26",
+      "status": "proposed",
+      "category_id": "soberania_relacoes_internacionais",
+      "statement": "O Brasil deve apoiar a entrada em vigor do acordo comercial entre Mercosul e União Europeia.",
+      "explanation": "A afirmação trata do apoio político à implementação do acordo comercial. Ela não pressupõe concordância com toda cláusula futura nem define o procedimento de ratificação.",
+      "decision_object": "Apoio à entrada em vigor do acordo Mercosul-União Europeia.",
+      "family_ids": ["R03"],
+      "reach_hypothesis": {
+        "family_position_keys": 7,
+        "family_candidate_ids": 7,
+        "band": "high",
+        "basis": "R03 reúne crítica ao acordo, valorização de sua conclusão, reciprocidade e diversificação comercial.",
+        "label": "hipótese editorial"
+      },
+      "measurement_risks": [
+        "Diversificar comércio com países europeus não decide o acordo específico.",
+        "Criticar cláusulas não equivale automaticamente a rejeitar qualquer versão revisada.",
+        "Reciprocidade pode ser condição decisiva."
+      ],
+      "terms_to_explain": ["entrada em vigor", "acordo Mercosul-União Europeia"]
+    }
+  ],
+  "family_to_thesis_matrix": [
+    {"family_id": "E01", "thesis_ids": ["CR-Q05"], "relationship": "primary"},
+    {"family_id": "E02", "thesis_ids": ["B01-Q04"], "relationship": "primary"},
+    {"family_id": "E03", "thesis_ids": ["B01-Q01"], "relationship": "primary"},
+    {"family_id": "E05", "thesis_ids": ["B01-Q03"], "relationship": "primary"},
+    {"family_id": "E06", "thesis_ids": ["B01-Q02"], "relationship": "primary"},
+    {"family_id": "E07", "thesis_ids": ["B01-Q02", "B01-Q03"], "relationship": "secondary", "warning": "A mesma família indexa subdecisões diferentes; não somar peso nem presumir duas respostas."},
+    {"family_id": "G01", "thesis_ids": ["CR-Q06"], "relationship": "primary"},
+    {"family_id": "G07", "thesis_ids": ["CR-Q07"], "relationship": "primary"},
+    {"family_id": "T05", "thesis_ids": ["CR-Q08"], "relationship": "primary"},
+    {"family_id": "T09", "thesis_ids": ["CR-Q09"], "relationship": "primary"},
+    {"family_id": "A01", "thesis_ids": ["CR-Q10"], "relationship": "primary"},
+    {"family_id": "A03", "thesis_ids": ["CR-Q11"], "relationship": "primary"},
+    {"family_id": "I01", "thesis_ids": ["CR-Q13"], "relationship": "primary"},
+    {"family_id": "I07", "thesis_ids": ["CR-Q12"], "relationship": "primary"},
+    {"family_id": "B02", "thesis_ids": ["CR-Q14"], "relationship": "primary"},
+    {"family_id": "B07", "thesis_ids": ["CR-Q15"], "relationship": "primary"},
+    {"family_id": "B09", "thesis_ids": ["CR-Q16"], "relationship": "primary"},
+    {"family_id": "D03", "thesis_ids": ["CR-Q17"], "relationship": "primary"},
+    {"family_id": "D04", "thesis_ids": ["CR-Q18"], "relationship": "primary"},
+    {"family_id": "C01", "thesis_ids": ["CR-Q19"], "relationship": "primary"},
+    {"family_id": "C02", "thesis_ids": ["CR-Q20"], "relationship": "primary"},
+    {"family_id": "C07", "thesis_ids": ["CR-Q21"], "relationship": "primary"},
+    {"family_id": "S04", "thesis_ids": ["CR-Q22"], "relationship": "primary"},
+    {"family_id": "S05", "thesis_ids": ["CR-Q24"], "relationship": "primary"},
+    {"family_id": "S08", "thesis_ids": ["CR-Q23"], "relationship": "primary"},
+    {"family_id": "R03", "thesis_ids": ["CR-Q26"], "relationship": "primary"},
+    {"family_id": "R04", "thesis_ids": ["CR-Q25"], "relationship": "primary"}
+  ],
+  "redundancy_and_near_duplicates": [
+    {
+      "items": ["B01-Q02", "E06/E07 conteúdo nacional"],
+      "assessment": "Não adicionar uma segunda tese sobre incentivos condicionados a conteúdo nacional na bateria base. Crédito dirigido e contrapartida industrial são distinguíveis, mas usariam quase o mesmo núcleo documental nesta edição."
+    },
+    {
+      "items": ["B01-Q03", "E05 proibição geral de capital estrangeiro"],
+      "assessment": "A tese geral sobre capital estrangeiro ampliaria demais o recorte e repetiria boa parte do contraste já capturado pela âncora mineral."
+    },
+    {
+      "items": ["CR-Q06", "CR-Q09", "CR-Q14"],
+      "assessment": "Os três itens medem papéis público/privado, mas em objetos distintos: controle acionário, concessão de saneamento e compra complementar de atendimento. Devem permanecer separados e não receber peso temático adicional por correlação."
+    },
+    {
+      "items": ["CR-Q10", "G09 deferimento tácito administrativo"],
+      "assessment": "São quase duplicados na forma, mas o risco e o regime jurídico diferem. Selecionar apenas o licenciamento ambiental evita repetir o efeito do silêncio em dois domínios."
+    },
+    {
+      "items": ["CR-Q12", "CR-Q23"],
+      "assessment": "Regulação geral de IA de alto risco não responde automaticamente ao uso policial de reconhecimento facial. A dependência deve ser testada, mas não é equivalência."
+    },
+    {
+      "items": ["CR-Q19", "fim da escala 6 por 1"],
+      "assessment": "Não incluir os dois na bateria base. Redução da jornada e desenho da escala são separáveis, porém altamente correlacionados no material indexado."
+    },
+    {
+      "items": ["CR-Q17", "G10 avaliação de programas"],
+      "assessment": "Condicionar financiamento educacional a aprendizagem é mais específico que avaliar políticas públicas em geral. Uma tese genérica de avaliação acrescentaria pouco contraste mensurável."
+    }
+  ],
+  "likely_low_coverage": [
+    {
+      "id": "CR-Q10",
+      "reason": "A família tem seis prefixos, mas aprovação tácita é subdecisão estreita; prioridade ou simplificação não respondem ao efeito do silêncio."
+    },
+    {
+      "id": "CR-Q13",
+      "reason": "Financiamento científico é amplo, porém plurianualidade e proteção contra bloqueio aparecem em poucos desenhos específicos."
+    },
+    {
+      "id": "CR-Q18",
+      "reason": "Somente parte de D04 trata de educação domiciliar; os demais vínculos são modelos escolares e disciplina."
+    },
+    {
+      "id": "CR-Q21",
+      "reason": "C07 tem somente três prefixos e também contém licenças parentais. É mantida por contraste substantivo, com baixo alcance explícito."
+    },
+    {
+      "id": "CR-Q25",
+      "reason": "R04 tem quatro prefixos. A decisão é limpa e contrastável, mas provavelmente não terá ampla cobertura documental."
+    },
+    {
+      "id": "B01-Q04",
+      "reason": "A âncora tem quatro vínculos e diferenças de sequência, credores e duração. Deve permanecer fixa, com cautela na classificação."
+    }
+  ],
+  "dependencies": [
+    {
+      "items": ["B01-Q02", "B01-Q03"],
+      "dependency": "Política industrial e mineração compartilham E07; a resposta a crédito dirigido não determina abertura ao capital estrangeiro."
+    },
+    {
+      "items": ["CR-Q06", "CR-Q09", "CR-Q14"],
+      "dependency": "Uma preferência geral por provisão pública ou privada pode correlacionar respostas, mas os instrumentos e setores não são substitutos."
+    },
+    {
+      "items": ["CR-Q10", "CR-Q09"],
+      "dependency": "Concessões de saneamento podem exigir licenciamento, mas permitir operador privado não implica aceitar licença tácita."
+    },
+    {
+      "items": ["CR-Q12", "CR-Q23"],
+      "dependency": "Reconhecimento facial pode ser classificado como IA de alto risco; validar se a redação geral cria sobreposição excessiva."
+    },
+    {
+      "items": ["CR-Q17", "CR-Q07"],
+      "dependency": "Ambos usam avaliação com consequência, mas um condiciona recursos de redes de ensino e o outro trata do vínculo individual de servidor."
+    },
+    {
+      "items": ["CR-Q19", "CR-Q20"],
+      "dependency": "Se a lei reduzir a jornada, a possibilidade de negociação coletiva pode alterar sua aplicação; as perguntas medem regra substantiva e regra de prevalência."
+    }
+  ],
+  "terms_requiring_explanation": [
+    "regra fiscal",
+    "grandes fortunas",
+    "linha de crédito direcionada",
+    "minerais estratégicos",
+    "auditoria da dívida",
+    "setor estratégico",
+    "estabilidade do servidor",
+    "tarifa zero",
+    "concessão",
+    "licença ambiental por silêncio",
+    "mercado regulado de carbono",
+    "IA de alto risco",
+    "bloqueio ou contingenciamento orçamentário",
+    "capacidade assistencial privada",
+    "alto grau de dependência",
+    "metas de aprendizagem",
+    "educação domiciliar",
+    "prevalência da negociação coletiva",
+    "descriminalização",
+    "regime penal adulto",
+    "reconhecimento facial",
+    "unidade de segurança máxima",
+    "BRICS",
+    "entrada em vigor do acordo Mercosul-União Europeia"
+  ],
+  "missing_dimensions_after_selection": [
+    {
+      "dimension": "Habitação, regularização urbana e reforma agrária",
+      "families": ["T06", "T07", "T08"],
+      "reason": "Há muitos instrumentos não equivalentes e nenhuma formulação única com alcance alto sem misturar construção, crédito, permanência, titulação e desapropriação."
+    },
+    {
+      "dimension": "Adaptação climática, petróleo e biodiversidade",
+      "families": ["A04", "A06", "A07"],
+      "reason": "A bateria ambiental escolhida prioriza regra de licenciamento e instrumento econômico. Transição fóssil e adaptação ficam como lacuna relevante."
+    },
+    {
+      "dimension": "Previdência",
+      "families": ["B08"],
+      "reason": "Idade, tempo, cobertura, financiamento e indexação não puderam ser reunidos sem uma pergunta composta."
+    },
+    {
+      "dimension": "Saúde mental e política de drogas",
+      "families": ["B06", "S10"],
+      "reason": "As famílias têm poucos vínculos e objetos distintos entre cuidado, descriminalização e legalização."
+    },
+    {
+      "dimension": "Cotas raciais, territórios tradicionais e igualdade de gênero",
+      "families": ["C05", "C06", "C08"],
+      "reason": "Os universos de aplicação variam muito; uma redação ampla produziria falsa equivalência."
+    },
+    {
+      "dimension": "Cultura, esporte e comunicação",
+      "families": ["D10", "D11", "D12", "C09"],
+      "reason": "As famílias são extensas, mas fragmentadas entre financiamento, propriedade, liberdade de expressão, privacidade e proteção infantil."
+    },
+    {
+      "dimension": "Desenho do Judiciário e representação política",
+      "families": ["G03", "G05", "G06", "C10"],
+      "reason": "As reformas são muito específicas e de alcance documental moderado ou baixo; nenhuma entrou no conjunto de 26."
+    },
+    {
+      "dimension": "Defesa nacional e relações bilaterais",
+      "families": ["R07", "R10", "R11", "R12"],
+      "reason": "A seleção internacional prioriza bloco e acordo comercial; defesa, Israel e acordos militares permanecem fora."
+    }
+  ],
+  "items_to_exclude": [
+    {
+      "proposal": "O governo deve oferecer incentivos industriais condicionados a conteúdo nacional.",
+      "family_ids": ["E06", "E07"],
+      "reason": "É distinguível, mas muito próxima de B01-Q02 e reutiliza o mesmo núcleo de política industrial."
+    },
+    {
+      "proposal": "O investimento estrangeiro deve ser proibido na economia brasileira.",
+      "family_ids": ["E05"],
+      "reason": "Amplia o recorte setorial e repete o eixo de abertura ao capital estrangeiro já presente em B01-Q03."
+    },
+    {
+      "proposal": "Pedidos administrativos de baixo risco devem ser aprovados quando o órgão não responder no prazo.",
+      "family_ids": ["G09"],
+      "reason": "Quase duplica CR-Q10 pelo efeito do silêncio; manter apenas um domínio evita peso repetido."
+    },
+    {
+      "proposal": "O transporte coletivo deve ser operado somente por empresas públicas.",
+      "family_ids": ["T04"],
+      "reason": "Baixo alcance e risco de correlação com tarifa zero; propriedade do operador não é necessária para medir cobrança ao passageiro."
+    },
+    {
+      "proposal": "A urbanização de assentamentos deve priorizar a permanência dos moradores no território.",
+      "family_ids": ["T07"],
+      "reason": "É uma boa reserva, mas exceções por risco, viabilidade e reassentamento exigem validação cuidadosa e competem por espaço com saneamento."
+    },
+    {
+      "proposal": "Dados governamentais sensíveis não devem ser hospedados em nuvens estrangeiras.",
+      "family_ids": ["I08"],
+      "reason": "Hospedagem, nacionalidade do operador e jurisdição não estão resolvidas; alcance indexado provavelmente baixo."
+    },
+    {
+      "proposal": "O governo federal deve criar uma carreira pública de pesquisador.",
+      "family_ids": ["I02"],
+      "reason": "Decisão muito específica e família com apenas três prefixos; CR-Q13 representa financiamento científico com alcance potencial maior."
+    },
+    {
+      "proposal": "A gestão de unidades públicas de saúde por organizações privadas deve ser permitida.",
+      "family_ids": ["B01"],
+      "reason": "Evitar dupla medição do papel privado na saúde; CR-Q14 já testa compra de atendimento e sua explicação separa gestão."
+    },
+    {
+      "proposal": "Na falta de vaga pública, o governo deve pagar matrícula em instituição privada.",
+      "family_ids": ["D01"],
+      "reason": "Acrescentaria outro item de provisão público/privada e teria forte dependência de nível de ensino, temporariedade e finalidade lucrativa."
+    },
+    {
+      "proposal": "A reserva de vagas por critérios raciais deve ser mantida.",
+      "family_ids": ["C05"],
+      "reason": "A família mistura ensino, concursos, polícias e outros universos; selecionar um deles reduziria muito o alcance indexado e a formulação ampla criaria equivalência indevida."
+    },
+    {
+      "proposal": "O marco temporal deve ser rejeitado na demarcação de terras indígenas.",
+      "family_ids": ["C08"],
+      "reason": "Contraste substantivo, mas a subdecisão aparece em recorte menor que a família; fica como primeira reserva para substituir item de baixa cobertura."
+    },
+    {
+      "proposal": "O uso de drogas deve deixar de ser tratado como crime.",
+      "family_ids": ["S10"],
+      "reason": "A família tem três prefixos e distingue abordagem de saúde, descriminalização e legalização; alcance provavelmente baixo."
+    },
+    {
+      "proposal": "O Brasil deve buscar adesão à OCDE.",
+      "family_ids": ["R05"],
+      "reason": "Aproximação e adesão não são equivalentes. CR-Q25 e CR-Q26 oferecem decisões internacionais mais claras sem aumentar a concentração da categoria."
+    }
+  ],
+  "final_warning": "A seleção é uma proposta editorial de cobertura. A bateria só poderá ser considerada documentariamente comparável depois que as versões aprovadas forem enviadas, de uma vez, aos treze revisores e cada redação for confrontada com os planos."
+}

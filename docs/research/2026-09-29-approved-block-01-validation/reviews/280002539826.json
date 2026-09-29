@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002539826",
+  "candidate_name": "Zema",
+  "agent_id": "/root/plan_zema",
+  "model_requested": "gpt-5.6-sol",
+  "reasoning_effort_requested": "xhigh",
+  "document_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002539826.json",
+  "method": "Continuação por agente substituto após interrupção, sob a identidade documental /root/plan_zema exigida pelo protocolo. O contexto integral foi restaurado dos artefatos preservados: revisão integral anterior de 81 páginas e seu checkpoint, perfil temático e seu checkpoint. Foram consultados o diário completo e o perfil; realizada busca integral em layout-pages.json (páginas 1–81) com sinônimos/radicais e normalização de espaços, acentos, maiúsculas e hifens de quebra apenas para busca; e relidas integralmente em contexto 17 páginas nesta rodada. Citações mantidas literalmente. Não se declara nova leitura integral e não foram consultados outros planos ou fontes externas.",
+  "revisited_pages": [
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    26,
+    27,
+    32,
+    33,
+    34,
+    35,
+    43,
+    55
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A pergunta é sobre instituir imposto específico incidente sobre patrimônios muito elevados. A busca integral, o diário e a releitura de Finanças Públicas/Desenvolvimento Econômico não localizaram decisão sobre esse instrumento. O plano propõe reduzir a carga tributária e reformar a tributação empresarial, mas uma carga total menor pode coexistir com mudança de composição e criação de um tributo patrimonial. Por isso essas prioridades não constituem rejeição ao imposto sobre grandes fortunas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de\ngastos necessários para atingi-las, invertendo a lógica atual em que o gasto define\no imposto.",
+          "role": "context",
+          "interpretation": "Define redução da carga agregada, sem decidir a existência de imposto específico sobre grandes patrimônios."
+        },
+        {
+          "page": 19,
+          "quote": "Reformar a tributação das empresas, em especial os impostos diretos como o IRPJ,\npartindo do princípio de que é o Estado, e não o contribuinte, que deve calcular o\nimposto, com a Receita apurando o valor automaticamente a partir da nota fiscal\neletrônica e eliminando anexos, faixas e obrigações acessórias, para que o empreen-\ndedor troque tempo e dinheiro gastos com burocracia por investimento, crescimento\ne geração de empregos.",
+          "role": "context",
+          "interpretation": "O instrumento trata de tributos empresariais e apuração pela Receita; não corresponde ao imposto patrimonial perguntado."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "riqueza",
+        "patrimônio",
+        "imposto",
+        "tribut",
+        "renda",
+        "herança",
+        "dividendo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "Não aparecem grandes fortunas/fortuna, herança ou dividendo na busca normalizada. As referências a patrimônio dizem respeito a ativos públicos, patrimônio financeiro, mineral ou cultural e não instituem nem recusam o imposto. Ausência de limiar/alíquota não é o problema: falta decisão sobre o tributo.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A pergunta é a oferta governamental de linhas de empréstimo escolhidas por prioridade industrial, sem exigir subsídio. O texto mais próximo manda reduzir gradualmente programas de crédito direcionado, incluindo linhas subsidiadas do BNDES para setores escolhidos politicamente (p.18). Redução não determina extinção de toda linha setorial, e o trecho não fixa o regime remanescente nem discrimina crédito industrial prioritário sem subsídio. Ao mesmo tempo, garantias de infraestrutura (p.27) e transparência de empréstimos do FNDCT (p.55) não instituem linhas de empréstimo escolhidas por política industrial. Assim não há apoio ou rejeição suficiente ao objeto exato. Não classifico a incompletude como posição mista.",
+      "conditions": [
+        "A gradualidade e a inclusão expressa de linhas subsidiadas delimitam a proposta de redução.",
+        "A pergunta não exige banco estatal, subsídio ou recursos exclusivamente públicos; nenhum desses requisitos foi acrescentado."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Ampliar a concorrência entre bancos, reduzindo o direcionamento\npolítico do crédito a setores e programas específicos:",
+          "role": "context",
+          "interpretation": "O título identifica o sentido de reduzir direcionamento, sem enunciar proibição de toda linha industrial."
+        },
+        {
+          "page": 18,
+          "quote": "Reduzir gradualmente os programas de crédito direcionado, incluindo linhas subsi-\ndiadas do BNDES, para setores escolhidos politicamente, visando ampliar a concor-\nrência entre bancos e baratear o crédito no Brasil.",
+          "role": "context",
+          "interpretation": "A medida é reduzir gradualmente programas; não declara que nenhuma linha voltada a setor industrial deva ser oferecida."
+        },
+        {
+          "page": 27,
+          "quote": "Ampliar os instrumentos de garantia, seguros e compartilhamento de riscos,  forta-\nlecendo o cardápio dos bancos públicos na oferta de garantias e contas vinculadas,\nde forma a reduzir o custo de capital, ampliar a bancabilidade dos projetos e atrair\nmais investidores nacionais e internacionais.",
+          "role": "context",
+          "interpretation": "Garantias, seguros e contas vinculadas são instrumentos de infraestrutura; não equivalem automaticamente a programas de empréstimos para setores industriais priorizados."
+        },
+        {
+          "page": 55,
+          "quote": "Publicar em formato aberto quem recebeu recursos de apoio público à inovação, com\nnome do beneficiário, valor e resultado alcançado, como os da Lei do Bem, os editais\ne a subvenção econômica da Finep, os empréstimos do FNDCT, os repasses a orga-\nnizações sociais e as chamadas do CNPq, permitindo que a sociedade cobre entrega\nde quem recebe dinheiro do contribuinte.",
+          "role": "context",
+          "interpretation": "Menciona empréstimos do FNDCT como objeto de transparência, sem especificar oferta e seleção setorial industrial."
+        }
+      ],
+      "search_terms": [
+        "crédito",
+        "direcionado",
+        "BNDES",
+        "empréstimo",
+        "financiamento",
+        "indústria",
+        "industrial",
+        "priorit",
+        "subsidi",
+        "setores",
+        "FNDCT",
+        "Finep",
+        "garantia"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "A crítica/redução do crédito direcionado oferece sinal relacionado, mas não resolve a existência de linhas específicas na formulação aprovada. Privatizar bancos também não determina sua atuação futura. Financiamento de pesquisa, venture capital, fundos de garantia e incentivos a indústrias não foram convertidos em empréstimos setoriais sem evidência do instrumento.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "A implicação resulta de afirmações positivas articuladas no mesmo programa, não apenas de abertura genérica ao capital externo. A página 17 apresenta minerais críticos/terras raras, nióbio e lítio como oportunidades para a onda mundial de investimentos. A página 21 manda facilitar empresas privadas na exploração sustentável dessas riquezas e explicita que o objeto inclui extração bruta, além de processamento; na mesma página, propõe facilitar a entrada de investimentos estrangeiros. A página 22 manda atrair capital nacional e estrangeiro para os setores estratégicos da economia do futuro. Lidos conjuntamente, esses comandos incluem participação estrangeira na atividade extrativa estratégica apresentada entre as oportunidades de investimento, sob legalidade e sustentabilidade. O documento não contém uma frase única que diga literalmente empresas estrangeiras na extração de minerais; por isso a força é clear_implication, não explicit.",
+      "conditions": [
+        "Exploração sustentável das riquezas do subsolo.",
+        "Pesquisa/lavra com autorização da ANM, decisão técnica e investimento dentro da lei (p.35).",
+        "A classificação admite participação estrangeira, sem atribuir controle irrestrito dos recursos, dispensa de autorização ou aprovação incondicional de qualquer projeto.",
+        "Extração integra expressamente a medida: processamento é consequência/adensamento da cadeia, não o único objeto."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "Desatar esse nó nunca foi tão urgente. O mundo vive uma das maiores ondas de\ninvestimento da nossa geração. Só em inteligência artificial, as maiores empresas\ndo planeta devem investir cerca de US$750 bilhões em 2026 na construção de data\ncenters e infraestrutura digital, e a corrida por energia limpa, minerais críticos e no-\nvas tecnologias movimenta trilhões mundo afora. A boa notícia é que aquilo que esse\ndinheiro procura, o Brasil tem de sobra.",
+          "role": "support",
+          "interpretation": "Apresenta a onda mundial de investimentos em energia, minerais críticos e tecnologia como oportunidade que o Brasil deve atrair."
+        },
+        {
+          "page": 17,
+          "quote": "Temos 88% da nossa matriz elétrica vinda de fontes renováveis. Temos a segunda\nmaior reserva de terras raras do mundo, além de liderança em nióbio e reservas re-\nlevantes de lítio. Somos um país neutro e confiável em meio à disputa entre Estados\nUnidos e China. Temos um mercado de 200 milhões de consumidores conectados,\nque adotou o Pix mais rapidamente do que quase qualquer país adotou qualquer\ninovação. No entanto, sem as condições certas, esse capital irá para outro lugar.",
+          "role": "support",
+          "interpretation": "Conecta reservas de terras raras, nióbio e lítio à atração desse capital, que pode ir para outro lugar."
+        },
+        {
+          "page": 21,
+          "quote": "Facilitar a extração e o processamento dos recursos do subsolo,\ncomo terras raras:",
+          "role": "support",
+          "interpretation": "O título delimita explicitamente extração e processamento, evitando reduzir o alcance à indústria posterior."
+        },
+        {
+          "page": 21,
+          "quote": "Facilitar a atuação de empresas privadas para a exploração sustentável das riquezas\ndo nosso subsolo, principalmente terras raras e outros minerais de alto valor, o que\npor consequência promoverá a cadeia produtiva para além da extração bruta,  trans-\nformando esse patrimônio mineral em geração de riqueza e empregos qualificados.",
+          "role": "support",
+          "interpretation": "Admite atividade empresarial privada nas terras raras e minerais de alto valor, mencionando expressamente extração bruta."
+        },
+        {
+          "page": 21,
+          "quote": "Facilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras e\nfazendo road shows junto com parceiros privados para apresentar as diversas opor-\ntunidades em nosso território e nossas vantagens competitivas, como a sua localiza-\nção privilegiada para o lançamento de satélites e foguetes.",
+          "role": "support",
+          "interpretation": "Estabelece a atração de investimento estrangeiro para oportunidades no território; compõe o nexo com a atividade extrativa descrita no mesmo conjunto."
+        },
+        {
+          "page": 22,
+          "quote": "Aperfeiçoar os mecanismos do mercado de capitais brasileiro, como regras de ven-\nture capital, estruturação de fundos, garantias de investimento e segurança jurídica\npara vesting e equity, a fim de atrair capital nacional e estrangeiro para os setores\nestratégicos da economia do futuro.",
+          "role": "support",
+          "interpretation": "Inclui expressamente capital nacional e estrangeiro nos setores estratégicos da economia do futuro."
+        },
+        {
+          "page": 35,
+          "quote": "Reduzir o tempo de análise dos pedidos de pesquisa e lavra na Agência Nacional de\nMineração, com prazos definidos, processo digital e decisão técnica, para que quem\ninveste dentro da lei não perca anos parado numa fila enquanto o investimento vai\npara outro país, garantindo conservação sem travar o desenvolvimento.",
+          "role": "condition",
+          "interpretation": "Preserva autorização, decisão técnica, legalidade e conservação na exploração mineral."
+        }
+      ],
+      "search_terms": [
+        "estrangeir",
+        "internacion",
+        "minera",
+        "minério",
+        "minerais",
+        "terras raras",
+        "estratégic",
+        "extração",
+        "extrativ",
+        "exploração",
+        "subsolo",
+        "lítio",
+        "nióbio",
+        "capital"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "A nacionalidade das empresas não é repetida no parágrafo isolado de extração; a conclusão depende da articulação entre oportunidade mineral, extração empresarial e atração expressa de capital nacional/estrangeiro para os setores estratégicos. Não usei apenas ausência de proibição como prova. As páginas 32 e 35 reforçam investimento em mineração legal, sem estabelecer exclusividade nacional; a página 43 destrava projetos minerais nacionais para insumos, sem determinar nacionalidade dos acionistas. Não há indicação de parcela acionária, países admitidos ou modelo contratual.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A formulação pergunta interrupção geral dos pagamentos durante investigação das contas/contratos da dívida. O plano aborda dívida/PIB, juros e superávits, mas não formula auditoria da dívida nem disciplina pagamentos na hipótese de uma auditoria. Manter superávits que permitam pagar a dívida é uma política ordinária compatível, por si só, com diferentes respostas a uma investigação eventual. Sem compromisso sobre esse intervalo, disciplina fiscal não sustenta discordância; renegociação de dívidas de famílias tampouco é dívida pública.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que per-\nmitam o pagamento da dívida.",
+          "role": "context",
+          "interpretation": "Propõe superávits para estabilizar dívida/PIB e permitir pagamentos, sem decidir suspensão no período de uma auditoria."
+        },
+        {
+          "page": 18,
+          "quote": "Facilitar a portabilidade do crédito com o uso do Open Finance, para que o cliente\npossa comparar propostas com mais facilidade e levar sua dívida para bancos com\njuros menores.",
+          "role": "context",
+          "interpretation": "A referência a refinanciamento/renegociação está no âmbito de clientes/famílias; não é auditoria ou moratória da dívida pública."
+        }
+      ],
+      "search_terms": [
+        "auditoria",
+        "auditar",
+        "dívida pública",
+        "dívida",
+        "suspens",
+        "suspender",
+        "pagamento",
+        "moratória",
+        "renegoci",
+        "juros",
+        "superávit",
+        "cancelamento"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "Não localizados auditoria, auditar ou moratória; as ocorrências de suspensão referem-se ao Bolsa Família (p.63) e a redes sociais (p.73), como já registrado no diário integral. Nenhum trecho determina sequência auditoria–pagamentos, interrupção geral, suspensão por tipo de credor ou cancelamento definitivo da dívida pública.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

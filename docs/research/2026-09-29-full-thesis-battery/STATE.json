@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "phase": "awaiting_user_review_full_battery",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "xhigh",
+  "target_range": [20, 30],
+  "selection_rule": "quality_over_category_quota",
+  "source_positions": 636,
+  "source_decision_families": 118,
+  "source_map": "../2026-09-29-question-editorial-review/DECISION_MAP.json",
+  "published_theses_in_scope": false,
+  "approved_anchor_questions": [
+    "B01-Q01",
+    "B01-Q02",
+    "B01-Q03",
+    "B01-Q04"
+  ],
+  "battery": {
+    "file": "BATTERY.json",
+    "item_count": 22,
+    "approved_anchor_count": 4,
+    "pending_user_review_count": 18,
+    "reserve_count": 4,
+    "sha256": "68449e4a57a1b6239401078159c1042c25a259735840715cc329180ce32fee2b"
+  },
+  "candidate_validation": {
+    "status": "paused_by_user",
+    "pilot_reviews_completed": 6,
+    "pilot_answers_completed": 24,
+    "pilot_is_final_validation": false,
+    "resume_condition": "full_battery_approved_by_user"
+  },
+  "excluded_candidate_ids": ["280002553884"],
+  "response_buttons": ["Concordo", "Discordo", "Neutro", "Pular"],
+  "production_changes": false,
+  "ranking_changes": false,
+  "tasks": [
+    {
+      "id": "whole_battery_draft",
+      "output": "drafts/whole-battery.json",
+      "status": "complete"
+    },
+    {
+      "id": "semantic_mediation_review",
+      "output": "drafts/semantic-review.md",
+      "status": "complete"
+    },
+    {
+      "id": "coverage_measurement_review",
+      "output": "drafts/coverage-review.json",
+      "status": "complete"
+    },
+    {
+      "id": "adversarial_editorial_review",
+      "output": "drafts/red-team.json",
+      "status": "complete"
+    },
+    {
+      "id": "orchestrator_consolidation",
+      "output": "BATTERY.json",
+      "status": "complete"
+    },
+    {
+      "id": "human_review",
+      "output": null,
+      "status": "pending"
+    }
+  ]
+}

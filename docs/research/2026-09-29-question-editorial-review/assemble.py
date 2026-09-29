@@ -29,6 +29,8 @@ def item_digest(item, buttons):
 
 def main():
     state = read(ROOT / 'STATE.json')
+    if state['approval_gate']['status'] != 'pending_user_review':
+        raise SystemExit('Historical pre-approval assembler: approved wording/state must not be regenerated. Use ../2026-09-29-approved-block-01-validation/validate.py.')
     inventory_path = ROOT / state['source_inventory']
     assert checksum(inventory_path) == state['source_inventory_sha256'], 'Inventory changed'
     inventory = read(inventory_path)

@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002538811",
+  "candidate_name": "Samara",
+  "agent_id": "/root/plan_samara",
+  "model_requested": "gpt-5.6-sol",
+  "reasoning_effort_requested": "xhigh",
+  "document_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002538811.json",
+  "method": "Esta validação foi continuada por agente substituto após a interrupção do agente original. Restaurei integralmente o contexto documental preservado na revisão de leitura completa, no perfil temático e nos checkpoints correspondentes, incluindo o diário sequencial das 67 páginas, as posições, condições, limites e verificações visuais anteriores. Usei essa leitura integral anterior como base, pesquisei as extrações layout e raw do documento completo com os termos e sinônimos declarados e reli o contexto relevante nas páginas listadas em revisited_pages; também conferi visualmente as páginas físicas 14, 16, 17, 56, 58, 59 e 60 do PDF oficial. Esta rodada não alega uma nova leitura integral. Não consultei outros planos, notícias ou fontes externas para atribuir respostas.",
+  "revisited_pages": [
+    7,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    44,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano determina expressamente a instituição de um imposto progressivo sobre grandes fortunas. A mesma frase também inclui lucros, dividendos e heranças, mas essa enumeração não substitui nem dilui o instrumento específico perguntado. Como a redação aprovada deixa limiar e alíquota em aberto, a ausência desses parâmetros não impede a concordância.",
+      "conditions": [
+        "O imposto é qualificado como progressivo.",
+        "O plano não define limiar patrimonial, alíquota, base de cálculo, isenções ou cronograma.",
+        "Grandes fortunas aparecem ao lado de lucros, dividendos e heranças; a classificação se apoia na menção autônoma e literal ao imposto sobre grandes fortunas, sem tratar os demais tributos como equivalentes."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "instituição do imposto progressivo sobre grandes fortunas, lucros, dividendos e heranças dos bilionários.",
+          "role": "support",
+          "interpretation": "Declara diretamente a criação do imposto específico sobre grandes fortunas, com progressividade."
+        }
+      ],
+      "search_terms": [
+        "imposto sobre grandes fortunas",
+        "grandes fortunas",
+        "tributação das fortunas",
+        "imposto progressivo",
+        "patrimônio",
+        "milionários",
+        "bilionários",
+        "lucros",
+        "dividendos",
+        "heranças",
+        "reforma tributária"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "A busca integral encontrou outras propostas tributárias, como desoneração de renda do trabalho e de bens essenciais, mas nenhuma rejeição ao imposto sobre grandes fortunas. Não há definição do que conta como grande fortuna nem desenho operacional; essas lacunas são de implementação e não alteram o apoio explícito ao objeto.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano propõe uma política industrial ativa e dirigida a setores estratégicos cujo primeiro instrumento são ações de financiamento para integrar polos industriais a cadeias de maior valor agregado (p. 56). Em outro capítulo, determina a fusão do sistema bancário sob controle estatal (p. 18). No conjunto, financiamento bancário mobilizado por uma política governamental que escolhe setores estratégicos implica oferta pública de empréstimos direcionados a esses setores. A conclusão não depende de juros subsidiados, banco já estatal no arranjo vigente ou seleção de firmas individuais.",
+      "conditions": [
+        "O direcionamento recai sobre setores estratégicos e cadeias produtivas de maior valor agregado.",
+        "O financiamento integra um pacote com pesquisa, desenvolvimento e transferência de tecnologia.",
+        "O sistema bancário seria fundido sob controle do Estado e gestão dos trabalhadores.",
+        "O plano não nomeia linhas, bancos operadores, taxas, prazos, garantias, beneficiários nem contraprestações específicas."
+      ],
+      "evidence": [
+        {
+          "page": 56,
+          "quote": "Política IndustrialAtiva e Direcionada aSetoresEstratégicos:açõesconjuntas e articuladas de financiamento, estímulo à realização de pesquisa e desenvolvimento e transferência de tecnologia para a integração de atividadesepolosindustriaisàscadeias produtivas de maior valor agregado;",
+          "role": "support",
+          "interpretation": "Vincula o instrumento de financiamento à seleção governamental de setores estratégicos dentro da política industrial."
+        },
+        {
+          "page": 18,
+          "quote": "Nacionalização dos Bancos e Estatização do Sistema Financeiro: Fusão do sistema bancário sob controle do Estado e gestão dos trabalhadores.",
+          "role": "context",
+          "interpretation": "Define o arranjo público que executaria financiamento bancário; em combinação com a p. 56, sustenta a implicação de oferta governamental de empréstimos."
+        }
+      ],
+      "search_terms": [
+        "crédito",
+        "linhas de crédito",
+        "empréstimo",
+        "empréstimos",
+        "financiamento",
+        "financiar",
+        "BNDES",
+        "bancos",
+        "sistema bancário",
+        "política industrial",
+        "indústria",
+        "industrial",
+        "setores estratégicos",
+        "prioridade",
+        "direcionada",
+        "fomento",
+        "subsidiados"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "A expressão literal linhas de crédito específicas não aparece, e financiamento pode abranger instrumentos além de empréstimos quando lido isoladamente. A ponte decisiva é o vínculo, na mesma proposta, entre financiamento e política industrial dirigida a setores estratégicos, combinado com o sistema bancário sob controle estatal. O crédito camponês da p. 44 é setorial, mas não é crédito industrial e não foi usado para preencher o objeto. O diagnóstico de empréstimos subsidiados a grandes empresas na p. 56 descreve a situação criticada e tampouco foi tratado como a proposta futura.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "DISCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano proíbe de forma geral a atuação do capital estrangeiro na economia nacional (p. 58). A extração de minerais estratégicos é um subconjunto dessa economia e, adicionalmente, o programa estabelece monopólio público na mineração (p. 60). Portanto, empresas estrangeiras não poderiam participar dessa extração no desenho proposto. A conclusão decorre de uma proibição geral aplicada ao objeto específico e é reforçada por uma regra setorial, sem depender apenas da defesa abstrata de soberania.",
+      "conditions": [
+        "A vedação ao capital estrangeiro é geral e não apresenta exceção para joint ventures, participações minoritárias ou contratos condicionados.",
+        "A mineração aparece entre as áreas estratégicas submetidas a monopólio público.",
+        "O plano não detalha transição, indenização, tratamento de contratos existentes ou forma societária das futuras operações públicas."
+      ],
+      "evidence": [
+        {
+          "page": 58,
+          "quote": "Proibição de atuação do capital estrangeiro dentro da economia nacional;",
+          "role": "opposition",
+          "interpretation": "A proibição geral alcança a participação de empresas estrangeiras na extração mineral, inclusive sob condições ou limites."
+        },
+        {
+          "page": 60,
+          "quote": "Monopólio público em áreas estratégicas como geração de energia, mineração, produção e distribuição de combustíveis, indústria de defesa.",
+          "role": "opposition",
+          "interpretation": "A regra setorial reserva a mineração ao monopólio público e reforça a exclusão de empresas estrangeiras da extração."
+        }
+      ],
+      "search_terms": [
+        "minério",
+        "minerais",
+        "mineração",
+        "nióbio",
+        "terras raras",
+        "extração",
+        "exploração",
+        "matérias primas",
+        "recursos naturais",
+        "capital estrangeiro",
+        "empresas estrangeiras",
+        "investimento estrangeiro",
+        "nacionalização",
+        "estatização",
+        "monopólio público",
+        "setores estratégicos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "A p. 63 prevê uma transição da extração de matérias-primas compatível com conservação ambiental e participação pública em decisões sobre riquezas minerais, mas não abre participação estrangeira. A p. 59 descreve empresas estrangeiras disputando nióbio e terras raras como problema associado à ausência de estatais estratégicas. Controle público dos recursos, sozinho, não bastaria para excluir participação externa; aqui a conclusão se apoia na proibição geral da p. 58 e no monopólio público da mineração na p. 60.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano ordena suspensão imediata do pagamento de juros e amortização, seguida por processo público de auditoria (p. 14), e volta a reunir suspensão e auditoria como medidas promovidas em conjunto (p. 15). A suspensão começa antes da auditoria; como o documento não prevê retomada dos pagamentos quando a investigação se inicia, a sequência implica que os pagamentos permanecem suspensos durante a auditoria. O alcance é a dívida pública e inclui juros e amortização, não apenas grandes investidores.",
+      "conditions": [
+        "A suspensão começa imediatamente e a auditoria vem em seguida; não é uma auditoria prévia que condiciona o início da suspensão.",
+        "O objeto inclui pagamento de juros e amortização da dívida pública.",
+        "O plano não define duração, categorias de credores, tratamento de pequenos poupadores, critérios da auditoria ou regra de retomada dos pagamentos."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "SUSPENSÃO IMEDIATA DO PAGAMENTO DE JUROS E AMORTIZAÇÃO DA DÍVIDA PÚBLICA, SEGUIDO DE PROCESSO PÚBLICO DE AUDITORIA",
+          "role": "support",
+          "interpretation": "Fixa a sequência: a interrupção dos pagamentos começa antes e é seguida pela auditoria."
+        },
+        {
+          "page": 15,
+          "quote": "começando por suspender o pagamento de juros da dívida pública e promovendo uma auditoria que ponha fim a essa farra com o dinheiro público.",
+          "role": "support",
+          "interpretation": "Reúne suspensão e auditoria no mesmo curso de ação e não indica retomada ao iniciar a investigação."
+        }
+      ],
+      "search_terms": [
+        "dívida pública",
+        "dívida interna",
+        "dívida externa",
+        "auditoria",
+        "auditoria cidadã",
+        "suspensão",
+        "suspender",
+        "interrupção",
+        "pagamento",
+        "juros",
+        "amortização",
+        "serviço da dívida",
+        "títulos da dívida"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não usa a palavra durante nem declara expressamente a data de retomada. A concordância é, por isso, uma implicação clara da sequência suspensão imediata seguida de auditoria, e não uma citação literal da redação aprovada. A p. 15 limita uma passagem a juros, mas o título completo da p. 14 inclui juros e amortização e alcança a dívida pública em geral. Cancelamento de dívida externa na p. 57 é proposta distinta e não foi usado como substituto para a suspensão durante auditoria.",
+      "reformulation_suggestion": null
+    }
+  ]
+}
