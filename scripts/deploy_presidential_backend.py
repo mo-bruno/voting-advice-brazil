@@ -76,7 +76,7 @@ def main(argv: list[str] | None = None) -> None:
         "--allow-unauthenticated", "--memory=512Mi", "--cpu=1",
         "--min-instances=0", "--max-instances=3", "--concurrency=80",
         "--timeout=60s", "--port=8080", "--no-traffic",
-        f"--update-env-vars=DATA_DIR=/data,APP_ENV=prod,ACTIVE_ELECTION_YEAR={year},ACTIVE_ELECTION_OFFICE=presidente,IOT_FEATURE_ENABLED=false,NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b",
+        f"--update-env-vars=DATA_DIR=/data,APP_ENV=prod,ACTIVE_ELECTION_YEAR={year},ACTIVE_ELECTION_OFFICE=presidente,IOT_FEATURE_ENABLED=false,POLITICIAN_FOLLOW_ENABLED=false,NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b",
         "--update-secrets=DATABASE_URL=database-url:latest,GNEWS_API_KEY=gnews-api-key:latest,NVIDIA_API_KEY=nvidia-api-key:latest",
     )
     # The aggregate service pointer can still identify the old revision after

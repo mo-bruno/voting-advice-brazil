@@ -82,7 +82,7 @@ def test_ready_no_traffic_revision_is_promoted_despite_stale_service_pointer(mon
     assert "--to-revisions=api-new=100" in calls[-1]
 
 
-def test_rollout_keeps_current_moderation_and_disabled_iot(monkeypatch):
+def test_rollout_keeps_current_moderation_and_disabled_features(monkeypatch):
     calls, execute = _run_rollout(monkeypatch, "activate")
     execute()
     deploy = calls[0]
@@ -91,6 +91,7 @@ def test_rollout_keeps_current_moderation_and_disabled_iot(monkeypatch):
     assert "GROQ_API_KEY" not in secrets
     env = next(arg for arg in deploy if arg.startswith("--update-env-vars="))
     assert "IOT_FEATURE_ENABLED=false" in env
+    assert "POLITICIAN_FOLLOW_ENABLED=false" in env
     assert "NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b" in env
 
 

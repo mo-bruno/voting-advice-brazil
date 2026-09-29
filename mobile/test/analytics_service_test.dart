@@ -13,7 +13,8 @@ void main() {
       expect(sink.events.single.parameters, isNull);
     });
 
-    test('logs thesis_answered with duration but no opinion or thesis', () async {
+    test('logs thesis_answered with duration but no opinion or thesis',
+        () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -115,7 +116,8 @@ void main() {
       expect(sink.events.single.parameters, isNull);
     });
 
-    test('logs comparison events without candidate or ranking position', () async {
+    test('logs comparison events without candidate or ranking position',
+        () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);
 
@@ -139,6 +141,33 @@ void main() {
 
       expect(sink.events.single.name, 'candidate_positions_viewed');
       expect(sink.events.single.parameters, isNull);
+    });
+
+    test('logs the anonymous follow validation funnel without parameters',
+        () async {
+      final sink = FakeAnalyticsSink();
+      final service = AnalyticsService(sink: sink);
+
+      await service.followWaitlistViewed();
+      await service.followWaitlistPromptViewed();
+      await service.followWaitlistCtaClicked();
+      await service.followWaitlistRegistered();
+      await service.followWaitlistFailed();
+
+      expect(
+        sink.events.map((event) => event.name),
+        [
+          'follow_waitlist_viewed',
+          'follow_waitlist_prompt_viewed',
+          'follow_waitlist_cta_clicked',
+          'follow_waitlist_registered',
+          'follow_waitlist_failed',
+        ],
+      );
+      expect(
+        sink.events.every((event) => event.parameters == null),
+        isTrue,
+      );
     });
   });
 }

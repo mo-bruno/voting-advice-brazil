@@ -27,7 +27,7 @@ O processo registra `SAFE_BRIDGE_REVISION` nos logs depois de publicar a revisã
 
 Para recuperação, transferir 100% do tráfego para a revisão intermediária registrada, na região `us-east4` e projeto `farol-politico-495210`. Não executar downgrade destrutivo de banco. Se apenas a interface falhar, restaurar a versão anterior do Firebase Hosting; o backend preserva contratos existentes.
 
-Na inspeção anterior à entrega, a produção estava na revisão `farol-politico-api-00029-8kr`; esta não é um destino seguro de recuperação após carregar 2026. Moderação NVIDIA e `IOT_FEATURE_ENABLED=false` devem ser preservados.
+Na inspeção anterior à entrega, a produção estava na revisão `farol-politico-api-00029-8kr`; esta não é um destino seguro de recuperação após carregar 2026. Moderação NVIDIA, `IOT_FEATURE_ENABLED=false` e `POLITICIAN_FOLLOW_ENABLED=false` devem ser preservados.
 
 ## Privacidade
 

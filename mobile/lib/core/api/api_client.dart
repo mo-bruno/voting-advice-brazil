@@ -171,6 +171,40 @@ class ApiClient {
     );
   }
 
+  Future<bool> fetchPoliticianFollowInterest({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/politician-follow-interest');
+    final json = await _getJson(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ) as Map<String, dynamic>;
+    return json['registered'] as bool;
+  }
+
+  Future<bool> registerPoliticianFollowInterest({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/politician-follow-interest');
+    final response = await _client.put(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    final json = _decode(response) as Map<String, dynamic>;
+    return json['newly_registered'] as bool;
+  }
+
+  Future<void> deletePoliticianFollowInterest({
+    required String anonymousId,
+  }) async {
+    final uri = Uri.parse('$baseUrl/me/politician-follow-interest');
+    final response = await _client.delete(
+      uri,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    );
+    _decode(response);
+  }
+
   Future<IotDevice?> fetchIotDevice({required String anonymousId}) async {
     final uri = Uri.parse('$baseUrl/me/iot-device');
     final response = await _client.get(

@@ -68,6 +68,7 @@ void main() {
 
   test('a configuração de ambiente desativa IoT por padrão', () {
     expect(FeatureFlags.environment.iotEnabled, isFalse);
+    expect(FeatureFlags.environment.politicianFollowEnabled, isFalse);
   });
 
   testWidgets('rotas IoT somem quando a funcionalidade está desativada',
@@ -79,6 +80,7 @@ void main() {
 
     expect(app.routes!.containsKey('/iot-device'), isFalse);
     expect(app.routes!.containsKey('/iot-pairing'), isFalse);
+    expect(app.routes!.containsKey('/political-actor-profile'), isFalse);
   });
 
   testWidgets('gaveta esconde todos os controles de dispositivo físico',
@@ -86,7 +88,10 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         theme: AppTheme.dark,
-        home: const AppDrawer(iotEnabled: false),
+        home: const AppDrawer(
+          iotEnabled: false,
+          politicianFollowEnabled: true,
+        ),
       ),
     );
     await tester.pump();
@@ -107,6 +112,21 @@ void main() {
 
     expect(app.routes!.containsKey('/iot-device'), isTrue);
     expect(app.routes!.containsKey('/iot-pairing'), isTrue);
+  });
+
+  testWidgets('perfil político volta às rotas quando a flag é habilitada',
+      (tester) async {
+    await tester.pumpWidget(
+      const MyApp(
+        featureFlags: FeatureFlags(
+          iotEnabled: false,
+          politicianFollowEnabled: true,
+        ),
+      ),
+    );
+    final app = tester.widget<MaterialApp>(find.byType(MaterialApp));
+
+    expect(app.routes!.containsKey('/political-actor-profile'), isTrue);
   });
 
   testWidgets('responder não envia pulso IoT quando desativado',
