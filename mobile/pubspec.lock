@@ -106,7 +106,7 @@ packages:
     source: hosted
     version: "12.3.0"
   firebase_analytics_platform_interface:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: firebase_analytics_platform_interface
       sha256: ac2a17484daf380b2247b9874e675ff9e4ac611d839a10b91b7445f764756760
@@ -130,7 +130,7 @@ packages:
     source: hosted
     version: "4.7.0"
   firebase_core_platform_interface:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: firebase_core_platform_interface
       sha256: "0ecda14c1bfc9ed8cac303dd0f8d04a320811b479362a9a4efb14fd331a473ce"

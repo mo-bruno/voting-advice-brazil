@@ -1,7 +1,5 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 
-import 'gtag_bridge_stub.dart' if (dart.library.html) 'gtag_bridge_web.dart';
-
 abstract class AnalyticsSink {
   Future<void> logEvent({
     required String name,
@@ -21,46 +19,14 @@ class FirebaseAnalyticsSink implements AnalyticsSink {
   Future<void> logEvent({
     required String name,
     Map<String, Object>? parameters,
-  }) {
-    return _instance.logEvent(name: name, parameters: parameters);
-  }
-}
-
-class GtagAnalyticsSink implements AnalyticsSink {
-  const GtagAnalyticsSink();
-
-  @override
-  Future<void> logEvent({
-    required String name,
-    Map<String, Object>? parameters,
   }) async {
-    logGtagEvent(name: name, parameters: parameters);
-  }
-}
-
-class CompositeAnalyticsSink implements AnalyticsSink {
-  const CompositeAnalyticsSink(this._sinks);
-
-  final List<AnalyticsSink> _sinks;
-
-  @override
-  Future<void> logEvent({
-    required String name,
-    Map<String, Object>? parameters,
-  }) async {
-    for (final sink in _sinks) {
-      await sink.logEvent(name: name, parameters: parameters);
-    }
+    await _instance.logEvent(name: name, parameters: parameters);
   }
 }
 
 class AnalyticsService {
   AnalyticsService({AnalyticsSink? sink})
-      : _sink = sink ??
-            const CompositeAnalyticsSink([
-              FirebaseAnalyticsSink(),
-              GtagAnalyticsSink(),
-            ]);
+      : _sink = sink ?? const FirebaseAnalyticsSink();
 
   final AnalyticsSink _sink;
 
