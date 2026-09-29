@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../core/link/link_opener.dart';
+import '../../core/layout/responsive_layout.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/political_actor_session.dart';
 import '../../core/shell/shell_drawer_scope.dart';
@@ -52,44 +53,67 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final desktop = ResponsiveLayout.isDesktop(context);
     return Scaffold(
       // Sem `drawer`: a gaveta e uma so e vive no Scaffold do MainShell.
       backgroundColor: AppTheme.background,
       body: SafeArea(
         child: Column(
           children: [
-            const _TopBar(),
+            if (!desktop) const _TopBar(),
             Expanded(
               child: SingleChildScrollView(
-                padding: const EdgeInsets.fromLTRB(24, 28, 24, 32),
+                padding: EdgeInsets.fromLTRB(24, desktop ? 48 : 28, 24, 32),
                 child: AnimatedBuilder(
                   animation: _news,
-                  builder: (context, _) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      _QuizInvitation(onPressed: widget.onStartQuiz),
-                      const SizedBox(height: 40),
-                      const _SectionTitle(),
-                      const SizedBox(height: 16),
-                      const Text(
-                        'Fique por dentro dos principais acontecimentos '
-                        'políticos dos últimos dias.',
-                        style: TextStyle(
-                          fontSize: 12,
-                          height: 1.55,
-                          color: AppTheme.onSurfaceVariant,
+                  builder: (context, _) {
+                    final news = Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        if (!desktop) ...[
+                          _QuizInvitation(onPressed: widget.onStartQuiz),
+                          const SizedBox(height: 40),
+                        ],
+                        const _SectionTitle(),
+                        const SizedBox(height: 16),
+                        Text(
+                          'Fique por dentro dos principais acontecimentos '
+                          'políticos dos últimos dias.',
+                          style: TextStyle(
+                            fontSize: desktop ? 16 : 12,
+                            height: 1.55,
+                            color: AppTheme.onSurfaceVariant,
+                          ),
+                        ),
+                        if (_news.periodLabel.isNotEmpty) ...[
+                          const SizedBox(height: 20),
+                          _PeriodLabel(label: _news.periodLabel),
+                        ],
+                        const SizedBox(height: 24),
+                        ..._buildBody(),
+                        const SizedBox(height: 24),
+                        _SeeAllButton(onPressed: () => _open(_camaraNewsUrl)),
+                      ],
+                    );
+                    if (!desktop) return news;
+                    return Center(
+                      child: ConstrainedBox(
+                        constraints: const BoxConstraints(
+                            maxWidth: ResponsiveLayout.desktopContentWidth),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(flex: 64, child: news),
+                            const SizedBox(width: 32),
+                            Expanded(
+                                flex: 36,
+                                child: _QuizInvitation(
+                                    onPressed: widget.onStartQuiz)),
+                          ],
                         ),
                       ),
-                      if (_news.periodLabel.isNotEmpty) ...[
-                        const SizedBox(height: 20),
-                        _PeriodLabel(label: _news.periodLabel),
-                      ],
-                      const SizedBox(height: 24),
-                      ..._buildBody(),
-                      const SizedBox(height: 24),
-                      _SeeAllButton(onPressed: () => _open(_camaraNewsUrl)),
-                    ],
-                  ),
+                    );
+                  },
                 ),
               ),
             ),
@@ -143,31 +167,34 @@ class _QuizInvitation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final desktop = ResponsiveLayout.isDesktop(context);
 
     return SizedBox(
       width: double.infinity,
       child: Card(
         margin: EdgeInsets.zero,
         child: Padding(
-          padding: const EdgeInsets.all(24),
+          padding: EdgeInsets.all(desktop ? 28 : 24),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Icon(
                 Icons.how_to_vote_outlined,
-                size: 30,
+                size: desktop ? 40 : 30,
                 color: theme.colorScheme.primary,
               ),
               const SizedBox(height: 24),
               Text(
                 'Faça seu quiz agora',
-                style: theme.textTheme.headlineLarge?.copyWith(height: 1.08),
+                style: theme.textTheme.headlineLarge
+                    ?.copyWith(height: 1.08, fontSize: desktop ? 30 : 24),
               ),
               const SizedBox(height: 12),
               Text(
                 'Descubra sua afinidade com as propostas para a eleição '
                 'presidencial de 2026.',
-                style: theme.textTheme.bodyMedium?.copyWith(height: 1.5),
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(height: 1.5, fontSize: desktop ? 18 : 14),
               ),
               const SizedBox(height: 24),
               SizedBox(
@@ -230,13 +257,14 @@ class _SectionTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final desktop = ResponsiveLayout.isDesktop(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
+        Text(
           'NOTÍCIAS DA SEMANA',
           style: TextStyle(
-            fontSize: 28,
+            fontSize: desktop ? 40 : 28,
             fontWeight: FontWeight.w900,
             height: 1.05,
             letterSpacing: -0.3,
@@ -257,6 +285,7 @@ class _PeriodLabel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final desktop = ResponsiveLayout.isDesktop(context);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
       decoration: BoxDecoration(
@@ -273,8 +302,8 @@ class _PeriodLabel extends StatelessWidget {
           Expanded(
             child: Text(
               label,
-              style: const TextStyle(
-                fontSize: 12,
+              style: TextStyle(
+                fontSize: desktop ? 16 : 12,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 1,
                 color: AppTheme.onSurface,
@@ -301,7 +330,12 @@ class _SeeAllButton extends StatelessWidget {
         child: const Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('VER TODAS AS NOTÍCIAS'),
+            Flexible(
+              child: Text(
+                'VER TODAS AS NOTÍCIAS',
+                textAlign: TextAlign.center,
+              ),
+            ),
             SizedBox(width: 12),
             Icon(Icons.arrow_forward, size: 18),
           ],

@@ -14,6 +14,7 @@
 import 'package:flutter/material.dart';
 
 import '../shell/shell_drawer_scope.dart';
+import 'responsive_layout.dart';
 
 class AppScaffold extends StatelessWidget {
   final String title;
@@ -65,6 +66,13 @@ class AppScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final desktopTab = ResponsiveLayout.isDesktop(context) &&
+        ShellDrawerScope.maybeOf(context) != null;
+    final hideBrandBar = desktopTab &&
+        (title == 'FAROL POLÍTICO' || title == 'FAROL POLITICO') &&
+        subtitle == null &&
+        leading == null &&
+        (actions?.isEmpty ?? true);
     const titleStyle = TextStyle(
       fontSize: 14,
       fontWeight: FontWeight.w900,
@@ -74,22 +82,26 @@ class AppScaffold extends StatelessWidget {
     return Scaffold(
       // Sem `drawer`: a gaveta e uma so e vive no Scaffold do MainShell, para
       // cobrir a tela inteira e nao pertencer a nenhuma aba.
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: subtitle == null
-            ? Text(title, style: titleStyle)
-            : Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(title, style: titleStyle),
-                  Text(subtitle!, style: Theme.of(context).textTheme.bodySmall),
-                ],
-              ),
-        leading: leading ?? _defaultLeading(context),
-        actions: actions,
-        centerTitle: false,
-      ),
+      appBar: hideBrandBar
+          ? null
+          : AppBar(
+              automaticallyImplyLeading: false,
+              title: subtitle == null
+                  ? Text(title, style: titleStyle)
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(title, style: titleStyle),
+                        Text(subtitle!,
+                            style: Theme.of(context).textTheme.bodySmall),
+                      ],
+                    ),
+              leading:
+                  leading ?? (desktopTab ? null : _defaultLeading(context)),
+              actions: actions,
+              centerTitle: false,
+            ),
       floatingActionButton: floatingActionButton,
       body: body,
     );

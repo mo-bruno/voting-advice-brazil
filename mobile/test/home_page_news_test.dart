@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
@@ -102,6 +103,70 @@ Widget _app(
 }
 
 void main() {
+  testWidgets('news button fits a narrow phone and remains tappable',
+      (tester) async {
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(320, 740);
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    final opened = <Uri>[];
+    await tester.pumpWidget(_app(
+      NewsSession.testOnly(api: _api(_payload)),
+      opened: opened,
+    ));
+    await tester.pumpAndSettle();
+    final button = find.text('VER TODAS AS NOTÍCIAS');
+    await tester.ensureVisible(button);
+    await tester.pumpAndSettle();
+    expect(tester.takeException(), isNull);
+    await tester.tap(button);
+    await tester.pumpAndSettle();
+    expect(opened.single.toString(), 'https://www.camara.leg.br/noticias');
+  });
+
+  testWidgets('desktop places quiz alongside news and resizes to compact',
+      (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.windows;
+    addTearDown(() {
+      debugDefaultTargetPlatformOverride = null;
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(1440, 1000);
+    await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
+    await tester.pumpAndSettle();
+    final invitation = find.text('Faça seu quiz agora');
+    final news = find.text('NOTÍCIAS DA SEMANA');
+    expect(tester.getTopLeft(invitation).dx,
+        greaterThan(tester.getTopRight(news).dx));
+    expect(tester.takeException(), isNull);
+
+    tester.view.physicalSize = const Size(600, 1000);
+    await tester.pumpAndSettle();
+    expect(
+        tester.getTopLeft(invitation).dy, lessThan(tester.getTopLeft(news).dy));
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
+  testWidgets('wide Android tablet keeps quiz above news', (tester) async {
+    debugDefaultTargetPlatformOverride = TargetPlatform.android;
+    addTearDown(() {
+      debugDefaultTargetPlatformOverride = null;
+      tester.view.resetPhysicalSize();
+      tester.view.resetDevicePixelRatio();
+    });
+    tester.view.devicePixelRatio = 1;
+    tester.view.physicalSize = const Size(1366, 1024);
+    await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
+    await tester.pumpAndSettle();
+    expect(tester.getTopLeft(find.text('Faça seu quiz agora')).dy,
+        lessThan(tester.getTopLeft(find.text('NOTÍCIAS DA SEMANA')).dy));
+    expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
+  });
+
   testWidgets('mostra o convite para o quiz antes das noticias',
       (tester) async {
     await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
@@ -237,5 +302,6 @@ void main() {
     expect(find.byType(NewsCard), findsOneWidget);
     expect(find.text('MATERIA SEM RESUMO'), findsOneWidget);
     expect(tester.takeException(), isNull);
+    debugDefaultTargetPlatformOverride = null;
   });
 }
