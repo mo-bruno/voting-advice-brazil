@@ -1,9 +1,12 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../core/branding/farol_mark.dart';
+import '../../../core/branding/feixe_geometry.dart';
 import 'result_share_data.dart';
 import 'result_share_palette.dart';
-import 'result_share_pattern.dart';
 
 /// A mesma composição é usada na prévia e no PNG. O tamanho lógico fixo
 /// permite exportar em 1080 px, independentemente da largura do celular.
@@ -13,13 +16,15 @@ class ResultShareCard extends StatelessWidget {
     required this.data,
     required this.format,
     this.palette = ResultSharePalette.blue,
-    this.pattern = ResultSharePattern.beams,
+    this.beamAngle = 38,
   });
 
   final ResultShareData data;
   final ResultShareFormat format;
   final ResultSharePalette palette;
-  final ResultSharePattern pattern;
+
+  /// Graus abaixo da horizontal. Sorteado pela página, nunca durante o paint.
+  final double beamAngle;
 
   static Future<void>? _fontLoading;
 
@@ -50,6 +55,10 @@ class ResultShareCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final story = format == ResultShareFormat.story;
     final compactRanking = data.isRanking && !story;
+    final top = story ? 48.0 : (compactRanking ? 20.0 : 24.0);
+    final markSize = compactRanking ? 22.0 : 24.0;
+    final beamOrigin =
+        Offset(28, top) + feixeBeamOrigin * (markSize / feixeViewBox);
     return MediaQuery.withNoTextScaling(
       child: SizedBox(
         width: 360,
@@ -58,7 +67,7 @@ class ResultShareCard extends StatelessWidget {
           child: ColoredBox(
             color: palette.background,
             child: CustomPaint(
-              painter: _SharePatternPainter(palette, pattern),
+              painter: _SharePatternPainter(palette, beamAngle, beamOrigin),
               child: Padding(
                 // Margens maiores nos Stories deixam espaço para a interface
                 // da rede social, sem cortar a marca nem o endereço.
@@ -72,9 +81,7 @@ class ResultShareCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Icon(Icons.wb_twilight_rounded,
-                            size: compactRanking ? 22 : 24,
-                            color: palette.accent),
+                        FarolMark(size: markSize, color: palette.mark),
                         const SizedBox(width: 8),
                         Expanded(
                           child: FittedBox(
@@ -210,121 +217,42 @@ class ResultShareCard extends StatelessWidget {
 
 /// A composição escolhida permanece igual na prévia e na imagem exportada.
 class _SharePatternPainter extends CustomPainter {
-  const _SharePatternPainter(this.palette, this.pattern);
+  const _SharePatternPainter(this.palette, this.angle, this.origin);
 
   final ResultSharePalette palette;
-  final ResultSharePattern pattern;
+  final double angle;
+  final Offset origin;
 
   @override
   void paint(Canvas canvas, Size size) {
-    switch (pattern) {
-      case ResultSharePattern.beams:
-        _paintBeams(canvas, size);
-      case ResultSharePattern.orbits:
-        _paintOrbits(canvas, size);
-      case ResultSharePattern.diagonals:
-        _paintDiagonals(canvas, size);
-      case ResultSharePattern.steps:
-        _paintSteps(canvas, size);
-    }
-  }
-
-  Paint get _outline => Paint()
-    ..color = palette.circle
-    ..style = PaintingStyle.stroke
-    ..strokeWidth = 1.5;
-
-  // O feixe nasce no rodapé e se abre em direção ao alto, como um farol.
-  void _paintBeams(Canvas canvas, Size size) {
-    final beam = Path()
-      ..moveTo(size.width * .73, size.height * 1.08)
-      ..lineTo(size.width * .42, -size.height * .1)
-      ..lineTo(size.width * 1.45, -size.height * .1)
-      ..close();
-    canvas.drawPath(beam, Paint()..color = palette.beam);
-    final edge = Path()
-      ..moveTo(size.width * .73, size.height * 1.08)
-      ..lineTo(size.width * .96, 0)
-      ..lineTo(size.width * 1.45, 0)
-      ..close();
-    canvas.drawPath(edge, Paint()..color = palette.edge);
-    canvas.drawCircle(
-      Offset(size.width * .99, size.height * .29),
-      size.width * .156,
-      _outline,
+    final length = size.longestSide * 2;
+    canvas.save();
+    canvas.clipRect(Offset.zero & size);
+    canvas.translate(origin.dx, origin.dy);
+    canvas.rotate(angle * pi / 180);
+    canvas.drawPath(
+      Path()
+        ..moveTo(0, -1)
+        ..lineTo(length, -length * 210 / 950)
+        ..lineTo(length, length * 210 / 950)
+        ..lineTo(0, 1)
+        ..close(),
+      Paint()..color = palette.beamOverlay,
     );
-  }
-
-  void _paintOrbits(Canvas canvas, Size size) {
-    canvas.drawCircle(
-      Offset(size.width * 1.12, size.height * .27),
-      size.width * .7,
-      Paint()..color = palette.beam,
+    canvas.drawPath(
+      Path()
+        ..moveTo(0, -1)
+        ..lineTo(length, -length * 210 / 950)
+        ..lineTo(length, -length * 52 / 950)
+        ..close(),
+      Paint()..color = palette.beamEdgeOverlay,
     );
-    canvas.drawCircle(
-      Offset(size.width * 1.1, size.height * .86),
-      size.width * .8,
-      Paint()..color = palette.edge,
-    );
-    final center = Offset(size.width * 1.03, size.height * .2);
-    for (final radius in [.22, .36]) {
-      canvas.drawCircle(center, size.width * radius, _outline);
-    }
-  }
-
-  void _paintDiagonals(Canvas canvas, Size size) {
-    final beam = Path()
-      ..moveTo(size.width * .82, -size.height * .08)
-      ..lineTo(size.width * 1.32, -size.height * .08)
-      ..lineTo(size.width * .26, size.height * 1.08)
-      ..lineTo(-size.width * .24, size.height * 1.08)
-      ..close();
-    canvas.drawPath(beam, Paint()..color = palette.beam);
-    final edge = Path()
-      ..moveTo(size.width * 1.42, -size.height * .08)
-      ..lineTo(size.width * 1.66, -size.height * .08)
-      ..lineTo(size.width * .6, size.height * 1.08)
-      ..lineTo(size.width * .36, size.height * 1.08)
-      ..close();
-    canvas.drawPath(edge, Paint()..color = palette.edge);
-    canvas.drawLine(
-      Offset(size.width * 1.08, size.height * .27),
-      Offset(size.width * .34, size.height * 1.08),
-      _outline,
-    );
-  }
-
-  void _paintSteps(Canvas canvas, Size size) {
-    final steps = Path()
-      ..moveTo(size.width * .76, 0)
-      ..lineTo(size.width, 0)
-      ..lineTo(size.width, size.height)
-      ..lineTo(size.width * .12, size.height)
-      ..lineTo(size.width * .12, size.height * .9)
-      ..lineTo(size.width * .32, size.height * .9)
-      ..lineTo(size.width * .32, size.height * .69)
-      ..lineTo(size.width * .52, size.height * .69)
-      ..lineTo(size.width * .52, size.height * .47)
-      ..lineTo(size.width * .76, size.height * .47)
-      ..close();
-    canvas.drawPath(steps, Paint()..color = palette.beam);
-    final edge = Path()
-      ..moveTo(size.width, size.height * .55)
-      ..lineTo(size.width, size.height)
-      ..lineTo(size.width * .56, size.height)
-      ..lineTo(size.width * .56, size.height * .78)
-      ..lineTo(size.width * .8, size.height * .78)
-      ..lineTo(size.width * .8, size.height * .55)
-      ..close();
-    canvas.drawPath(edge, Paint()..color = palette.edge);
-    canvas.drawRect(
-      Rect.fromLTWH(size.width * .86, size.height * .19, size.width * .23,
-          size.width * .23),
-      _outline,
-    );
+    canvas.restore();
   }
 
   @override
   bool shouldRepaint(_SharePatternPainter oldDelegate) =>
-      oldDelegate.palette != palette || oldDelegate.pattern != pattern;
+      oldDelegate.palette != palette ||
+      oldDelegate.angle != angle ||
+      oldDelegate.origin != origin;
 }

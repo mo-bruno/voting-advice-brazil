@@ -6,6 +6,7 @@
 
 import 'package:flutter/material.dart';
 
+import '../../../core/branding/farol_mark.dart';
 import '../../../core/theme/app_theme.dart';
 import 'farol_led_state.dart';
 
@@ -19,7 +20,7 @@ class FarolDrawerHeader extends StatelessWidget {
     final alpha = state.haloAlpha;
 
     return Container(
-      height: 150,
+      constraints: const BoxConstraints(minHeight: 182),
       width: double.infinity,
       decoration: const BoxDecoration(
         color: AppTheme.background,
@@ -28,10 +29,10 @@ class FarolDrawerHeader extends StatelessWidget {
         ),
       ),
       child: Stack(
-        fit: StackFit.expand,
         children: [
           if (alpha > 0)
-            Container(
+            Positioned.fill(
+                child: Container(
               key: const Key('farol-drawer-halo'),
               decoration: BoxDecoration(
                 gradient: RadialGradient(
@@ -45,13 +46,16 @@ class FarolDrawerHeader extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            )),
           Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                const FarolMark(size: 32),
+                const SizedBox(height: 10),
                 const Text(
                   'FAROL\nPOLÍTICO',
                   style: TextStyle(

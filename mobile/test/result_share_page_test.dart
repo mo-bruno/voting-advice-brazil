@@ -6,6 +6,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_card.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_data.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_page.dart';
+import 'package:guia_eleitoral/features/results/sharing/result_share_palette.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_service.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:share_plus/share_plus.dart';
@@ -96,6 +97,30 @@ void main() {
     }
   }
 
+  Future<int> whiteLogoPixels(Uint8List png) async {
+    final codec = await ui.instantiateImageCodec(png);
+    final frame = await codec.getNextFrame();
+    try {
+      final bytes = (await frame.image.toByteData())!;
+      var count = 0;
+      // Marca de 24 px no canto (28, 48), exportada em escala 3x.
+      for (var y = 144; y < 216; y++) {
+        for (var x = 84; x < 156; x++) {
+          final offset = (y * frame.image.width + x) * 4;
+          if (bytes.getUint8(offset) == 255 &&
+              bytes.getUint8(offset + 1) == 255 &&
+              bytes.getUint8(offset + 2) == 255) {
+            count++;
+          }
+        }
+      }
+      return count;
+    } finally {
+      frame.image.dispose();
+      codec.dispose();
+    }
+  }
+
   Future<void> waitForImage(WidgetTester tester) async {
     // A rasterização/PNG usa a engine, fora do relógio virtual do widget test.
     for (var attempt = 0; attempt < 40; attempt++) {
@@ -168,6 +193,63 @@ void main() {
       expect(find.byTooltip(color), findsOneWidget);
     }
     expect(find.text('Edição 2026'), findsOneWidget);
+  });
+
+  testWidgets('exporta a marca branca sem herdar o acento da paleta',
+      (tester) async {
+    final device = _ShareDevice();
+    await pumpPage(tester, device);
+    await tester.ensureVisible(find.byTooltip('Azul'));
+    await tester.tap(find.byTooltip('Azul'));
+    await tester.pump();
+    await waitForImage(tester);
+    await tap(tester, 'Baixar imagem');
+    expect(await tester.runAsync(() => whiteLogoPixels(device.downloaded!)),
+        greaterThan(100));
+  });
+
+  testWidgets('a composição não muda ao personalizar e voltar às mesmas opções',
+      (tester) async {
+    final device = _ShareDevice();
+    await pumpPage(tester, device);
+    final initialPalette =
+        tester.widget<ResultShareCard>(find.byType(ResultShareCard)).palette;
+    await tap(tester, 'Baixar imagem');
+    final original = device.downloaded!;
+    final otherPalette = initialPalette == ResultSharePalette.green
+        ? ResultSharePalette.blue
+        : ResultSharePalette.green;
+    await tester.ensureVisible(find.byTooltip(otherPalette.label));
+    await tester.tap(find.byTooltip(otherPalette.label));
+    await tester.pump();
+    await waitForImage(tester);
+    await tap(tester, 'Post · 4:5');
+    await waitForImage(tester);
+    await tap(tester, 'Stories · 9:16');
+    await waitForImage(tester);
+    await tester.ensureVisible(find.byTooltip(initialPalette.label));
+    await tester.tap(find.byTooltip(initialPalette.label));
+    await tester.pump();
+    await waitForImage(tester);
+    await tap(tester, 'Baixar imagem');
+    expect(device.downloaded, orderedEquals(original));
+    await tap(tester, 'Compartilhar imagem');
+    expect(device.shared, orderedEquals(original));
+  });
+
+  testWidgets('um novo compartilhamento recebe outra direção dentro do card',
+      (tester) async {
+    final device = _ShareDevice();
+    await pumpPage(tester, device);
+    final first =
+        tester.widget<ResultShareCard>(find.byType(ResultShareCard)).beamAngle;
+    expect(first, inInclusiveRange(10, 70));
+    await tester.pumpWidget(const SizedBox());
+    await pumpPage(tester, device);
+    final next =
+        tester.widget<ResultShareCard>(find.byType(ResultShareCard)).beamAngle;
+    expect(next, inInclusiveRange(10, 70));
+    expect((next - first).abs(), greaterThanOrEqualTo(8));
   });
 
   testWidgets('exporta top 5 e top 10 e leva a seleção para a legenda',

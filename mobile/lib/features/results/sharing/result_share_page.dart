@@ -12,7 +12,6 @@ import 'result_share_card.dart';
 import 'result_share_controls.dart';
 import 'result_share_data.dart';
 import 'result_share_palette.dart';
-import 'result_share_pattern.dart';
 import 'result_share_service.dart';
 
 class ResultSharePage extends StatefulWidget {
@@ -26,15 +25,18 @@ class ResultSharePage extends StatefulWidget {
 }
 
 class _ResultSharePageState extends State<ResultSharePage> {
-  static ResultSharePattern? _lastPattern;
+  static int? _lastBeamAngle;
 
-  static ResultSharePattern _drawPattern() {
-    final options = ResultSharePattern.values
-        .where((pattern) => pattern != _lastPattern)
+  static double _drawBeamAngle() {
+    // Uma composição por abertura. Distância mínima evita duas imagens
+    // praticamente iguais em compartilhamentos consecutivos.
+    final options = List.generate(61, (index) => index + 10)
+        .where((angle) =>
+            _lastBeamAngle == null || (angle - _lastBeamAngle!).abs() >= 8)
         .toList();
-    final pattern = options[Random().nextInt(options.length)];
-    _lastPattern = pattern;
-    return pattern;
+    final angle = options[Random().nextInt(options.length)];
+    _lastBeamAngle = angle;
+    return angle.toDouble();
   }
 
   final _cardKey = GlobalKey();
@@ -42,7 +44,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
   late ResultShareData _data = widget.data;
   ResultSharePalette _palette = ResultSharePalette
       .values[Random().nextInt(ResultSharePalette.values.length)];
-  final ResultSharePattern _pattern = _drawPattern();
+  final double _beamAngle = _drawBeamAngle();
   ResultShareVariant _rankingVariant = ResultShareVariant.topFive;
   ResultShareFormat _format = ResultShareFormat.story;
   Uint8List? _png;
@@ -301,7 +303,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
                                   data: _data,
                                   format: _format,
                                   palette: _palette,
-                                  pattern: _pattern,
+                                  beamAngle: _beamAngle,
                                 ),
                               ),
                       ),
