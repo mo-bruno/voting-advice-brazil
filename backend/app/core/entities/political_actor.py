@@ -41,6 +41,12 @@ class FollowedActor:
 
 
 @dataclass(frozen=True)
+class PoliticianFollowInterest:
+    subject_hash: str
+    created_at: datetime
+
+
+@dataclass(frozen=True)
 class TrendingActor:
     actor: PoliticalActor
     rank: int

@@ -56,7 +56,7 @@ void main() {
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
 
-    expect(find.text('ACOMPANHANDO'), findsOneWidget);
+    expect(find.text('ACOMPANHAR POLÍTICOS'), findsOneWidget);
     expect(find.text('MEU FAROL'), findsNothing);
   });
 
@@ -114,7 +114,7 @@ void main() {
     await tester.tap(find.byIcon(Icons.menu));
     await tester.pumpAndSettle();
 
-    expect(find.text('ACOMPANHANDO'), findsOneWidget);
+    expect(find.text('ACOMPANHAR POLÍTICOS'), findsOneWidget);
     expect(find.text('MEU FAROL'), findsNothing);
     expect(tester.getRect(find.byType(Drawer)).height, 844);
   });

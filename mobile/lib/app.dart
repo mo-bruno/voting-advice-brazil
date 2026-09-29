@@ -8,6 +8,7 @@ import 'features/comparison/comparison_page.dart';
 import 'features/party_selection/party_selection_page.dart';
 import 'features/political_actors/political_actor_profile_page.dart';
 import 'features/political_actors/political_actor_search_page.dart';
+import 'features/political_actors/politician_follow_validation_page.dart';
 import 'features/quiz/quiz_page.dart';
 import 'features/results/results_page.dart';
 import 'features/iot/iot_device_page.dart';
@@ -67,6 +68,7 @@ class MyApp extends StatelessWidget {
         // telas como a de resultados voltarem direto para a aba do quiz.
         '/': (context) => MainShell(
               iotEnabled: featureFlags.iotEnabled,
+              politicianFollowEnabled: featureFlags.politicianFollowEnabled,
               initialTab: MainShell.tabFromArguments(
                 ModalRoute.of(context)?.settings.arguments,
               ),
@@ -76,9 +78,12 @@ class MyApp extends StatelessWidget {
         '/party-selection': (context) => const PartySelectionPage(),
         '/results': (context) => const ResultsPage(),
         '/comparison': (context) => const ComparisonPage(),
-        '/political-actors': (context) => const PoliticalActorSearchPage(),
-        '/political-actor-profile': (context) =>
-            const PoliticalActorProfilePage(),
+        '/political-actors': (context) => featureFlags.politicianFollowEnabled
+            ? const PoliticalActorSearchPage()
+            : const PoliticianFollowValidationPage(),
+        if (featureFlags.politicianFollowEnabled)
+          '/political-actor-profile': (context) =>
+              const PoliticalActorProfilePage(),
         if (featureFlags.iotEnabled) ...{
           '/iot-device': (context) => const IotDevicePage(),
           '/iot-pairing': (context) => const IotPairingPage(),

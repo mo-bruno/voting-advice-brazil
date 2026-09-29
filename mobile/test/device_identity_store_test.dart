@@ -31,4 +31,18 @@ void main() {
       expect(deviceId, existingDeviceId);
     });
   });
+
+  test('follow validation keeps a separate stable local identity', () async {
+    SharedPreferences.setMockInitialValues({});
+    final deviceStore = DeviceIdentityStore();
+    final interestStore = PoliticianFollowInterestIdentityStore();
+
+    final deviceId = await deviceStore.getOrCreateDeviceId();
+    final firstInterestId = await interestStore.getOrCreateInterestId();
+    final secondInterestId = await interestStore.getOrCreateInterestId();
+
+    expect(firstInterestId, matches(uuidV4Pattern));
+    expect(secondInterestId, firstInterestId);
+    expect(firstInterestId, isNot(deviceId));
+  });
 }

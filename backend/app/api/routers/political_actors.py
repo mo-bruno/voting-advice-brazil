@@ -8,7 +8,9 @@ from app.api.deps import (
     get_followed_actor_repo,
     get_official_evidence_repo,
     get_political_actor_repo,
+    get_politician_follow_interest_repo,
 )
+from app.api.features import require_politician_follow_enabled
 from app.api.identity import require_anonymous_id
 from app.api.schemas.political_actors import (
     EvidenceResponse,
@@ -17,6 +19,8 @@ from app.api.schemas.political_actors import (
     OfficialEvidenceOut,
     PoliticalActorListResponse,
     PoliticalActorOut,
+    PoliticianFollowInterestRegistration,
+    PoliticianFollowInterestStatus,
     TrendingActorOut,
     TrendingActorResponse,
 )
@@ -38,10 +42,16 @@ from app.core.use_cases.list_political_actors import list_political_actors
 from app.core.use_cases.list_trending_political_actors import (
     list_trending_political_actors,
 )
+from app.core.use_cases.politician_follow_interest import (
+    delete_politician_follow_interest,
+    has_politician_follow_interest,
+    register_politician_follow_interest,
+)
 from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
     SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
+    SqlPoliticianFollowInterestRepository,
 )
 from app.infrastructure.sources.camara import (
     CamaraDeputyIndexSource,
@@ -165,6 +175,7 @@ def set_followed(
     x_farol_anonymous_id: str = Depends(require_anonymous_id),
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
+    _: None = Depends(require_politician_follow_enabled),
 ) -> FollowedActorResponse:
     followed = follow_political_actor(
         follow_repo,
@@ -188,6 +199,7 @@ def get_followed(
     x_farol_anonymous_id: str = Depends(require_anonymous_id),
     actor_repo: SqlPoliticalActorRepository = Depends(get_political_actor_repo),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
+    _: None = Depends(require_politician_follow_enabled),
 ) -> FollowedActorResponse:
     followed = get_followed_political_actor(follow_repo, x_farol_anonymous_id)
     if followed is None:
@@ -206,7 +218,56 @@ def delete_followed(
     response: Response,
     x_farol_anonymous_id: str = Depends(require_anonymous_id),
     follow_repo: SqlFollowedActorRepository = Depends(get_followed_actor_repo),
+    _: None = Depends(require_politician_follow_enabled),
 ) -> Response:
     delete_followed_political_actor(follow_repo, x_farol_anonymous_id)
+    response.status_code = 204
+    return response
+
+
+@me_router.put(
+    "/politician-follow-interest",
+    response_model=PoliticianFollowInterestRegistration,
+)
+def register_interest(
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
+    repo: SqlPoliticianFollowInterestRepository = Depends(
+        get_politician_follow_interest_repo
+    ),
+) -> PoliticianFollowInterestRegistration:
+    _, newly_registered = register_politician_follow_interest(
+        repo,
+        x_farol_anonymous_id,
+    )
+    return PoliticianFollowInterestRegistration(
+        registered=True,
+        newly_registered=newly_registered,
+    )
+
+
+@me_router.get(
+    "/politician-follow-interest",
+    response_model=PoliticianFollowInterestStatus,
+)
+def get_interest(
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
+    repo: SqlPoliticianFollowInterestRepository = Depends(
+        get_politician_follow_interest_repo
+    ),
+) -> PoliticianFollowInterestStatus:
+    return PoliticianFollowInterestStatus(
+        registered=has_politician_follow_interest(repo, x_farol_anonymous_id),
+    )
+
+
+@me_router.delete("/politician-follow-interest", status_code=204)
+def delete_interest(
+    response: Response,
+    x_farol_anonymous_id: str = Depends(require_anonymous_id),
+    repo: SqlPoliticianFollowInterestRepository = Depends(
+        get_politician_follow_interest_repo
+    ),
+) -> Response:
+    delete_politician_follow_interest(repo, x_farol_anonymous_id)
     response.status_code = 204
     return response

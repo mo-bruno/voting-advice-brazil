@@ -11,6 +11,7 @@ from app.core.entities.political_actor import (
     FollowedActor,
     OfficialEvidence,
     PoliticalActor,
+    PoliticianFollowInterest,
     TrendingActor,
 )
 
@@ -114,6 +115,20 @@ class FollowedActorRepository(ABC):
 
     @abstractmethod
     def list_all_followed(self) -> list[tuple[int, str]]: ...
+
+
+class PoliticianFollowInterestRepository(ABC):
+    @abstractmethod
+    def get(self, subject_hash: str) -> PoliticianFollowInterest | None: ...
+
+    @abstractmethod
+    def register(
+        self,
+        subject_hash: str,
+    ) -> tuple[PoliticianFollowInterest, bool]: ...
+
+    @abstractmethod
+    def delete(self, subject_hash: str) -> bool: ...
 
 
 class IotDeviceLinkRepository(ABC):

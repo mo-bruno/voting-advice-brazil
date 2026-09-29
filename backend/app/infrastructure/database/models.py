@@ -288,6 +288,15 @@ class FollowedActorModel(Base):
     __table_args__ = (Index("ix_followed_actors_actor", "political_actor_id"),)
 
 
+class PoliticianFollowInterestModel(Base):
+    __tablename__ = "politician_follow_interests"
+
+    subject_hash: Mapped[str] = mapped_column(String(64), primary_key=True)
+    created_at: Mapped[datetime] = mapped_column(
+        DateTime(timezone=True), nullable=False, default=_utcnow
+    )
+
+
 class IotDeviceLinkModel(Base):
     __tablename__ = "iot_device_links"
 

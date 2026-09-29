@@ -4,6 +4,7 @@ import '../features/feature_flags.dart';
 import '../../features/community/community_feed_page.dart';
 import '../../features/home/home_page.dart';
 import '../../features/political_actors/political_actor_search_page.dart';
+import '../../features/political_actors/politician_follow_validation_page.dart';
 import '../../features/quiz/quiz_intro_page.dart';
 import '../../shared/widgets/app_drawer.dart';
 import 'shell_drawer_scope.dart';
@@ -34,6 +35,7 @@ class MainShell extends StatefulWidget {
     super.key,
     this.initialTab = MainShellTab.inicio,
     this.iotEnabled,
+    this.politicianFollowEnabled,
     this.pageBuilders,
   });
 
@@ -41,6 +43,9 @@ class MainShell extends StatefulWidget {
 
   /// Quando ausente, usa a flag de compilação da aplicação.
   final bool? iotEnabled;
+
+  /// Quando ausente, usa a flag de compilação da aplicação.
+  final bool? politicianFollowEnabled;
 
   /// Injetável apenas em teste. O shell responde por trocar de aba e por não
   /// recriar o que já foi visitado — não pelo conteúdo das telas, que têm seus
@@ -59,10 +64,16 @@ class MainShell extends StatefulWidget {
   static Widget defaultPageFor(
     MainShellTab tab, {
     required VoidCallback onStartQuiz,
+    bool politicianFollowEnabled = false,
   }) =>
       switch (tab) {
-        MainShellTab.inicio => HomePage(onStartQuiz: onStartQuiz),
-        MainShellTab.acompanhar => const PoliticalActorSearchPage(),
+        MainShellTab.inicio => HomePage(
+            onStartQuiz: onStartQuiz,
+            politicianFollowEnabled: politicianFollowEnabled,
+          ),
+        MainShellTab.acompanhar => politicianFollowEnabled
+            ? const PoliticalActorSearchPage()
+            : const PoliticianFollowValidationPage(),
         MainShellTab.quiz => const QuizIntroPage(),
         MainShellTab.comunidade => const CommunityFeedPage(),
       };
@@ -97,6 +108,8 @@ class _MainShellState extends State<MainShell> {
         : MainShell.defaultPageFor(
             MainShellTab.values[index],
             onStartQuiz: _openQuiz,
+            politicianFollowEnabled: widget.politicianFollowEnabled ??
+                FeatureFlags.environment.politicianFollowEnabled,
           );
   }
 
@@ -114,10 +127,15 @@ class _MainShellState extends State<MainShell> {
     _pageFor(_index);
     final desktop = ResponsiveLayout.isDesktop(context);
     final iotEnabled = widget.iotEnabled ?? FeatureFlags.environment.iotEnabled;
+    final politicianFollowEnabled = widget.politicianFollowEnabled ??
+        FeatureFlags.environment.politicianFollowEnabled;
 
     return Scaffold(
       key: _scaffoldKey,
-      drawer: AppDrawer(iotEnabled: iotEnabled),
+      drawer: AppDrawer(
+        iotEnabled: iotEnabled,
+        politicianFollowEnabled: politicianFollowEnabled,
+      ),
       appBar: desktop
           ? PreferredSize(
               preferredSize: const Size.fromHeight(72),

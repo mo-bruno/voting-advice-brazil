@@ -6,7 +6,7 @@ Repository guidance for coding agents. Farol Político is a Brazilian voting-adv
 
 The active quiz compares weighted answers against the 2026 presidential plans using City Block Distance. The current edition has 30 active theses and thirteen candidacies, with documentary citations. Only explicit categorical positions affect scores; silence, conditional positions and insufficient evidence do not imply agreement or disagreement. The calculation uses only questions answered by the user for which the candidacy has a documented categorical position, retaining the user's weights. Agreement on all nine comparable answers yields 100%, even if the user answered 30 questions.
 
-The main results screen displays each candidate's photo, name, party and percentage, ordered from highest to lowest percentage. Candidates without comparable answers display `—` and appear last. Cards omit coverage counts and lengthy explanations; evidence coverage, missing positions, sources and excerpts remain available in the answer comparison screen. The results do not recommend a vote. The app separately presents current deputies and official Câmara evidence, follows one political actor per local identity, provides an anonymous community, and displays official weekly news. Legislative evidence does not feed the quiz score. There is no implemented consistency index or complete legislative-vote alignment engine.
+The main results screen displays each candidate's photo, name, party and percentage, ordered from highest to lowest percentage. Candidates without comparable answers display `—` and appear last. Cards omit coverage counts and lengthy explanations; evidence coverage, missing positions, sources and excerpts remain available in the answer comparison screen. The results do not recommend a vote. The public political-following entry points currently show an anonymous demand-validation page. Search, profiles, evidence and one-actor follow code are retained behind `POLITICIAN_FOLLOW_ENABLED=false`; existing data is preserved. The app also provides an anonymous community and official weekly news. Legislative evidence does not feed the quiz score.
 
 Quiz answers submitted by the app are persisted on the backend under its local UUID v4. The API's optional quiz field is still named `device_id`; it carries the app's `anonymous_id`. Omitting it computes results without saving answers.
 
@@ -39,7 +39,7 @@ Hardware `device_token` belongs only to this dormant pairing/MQTT boundary (`far
 
 ## API coverage and verification
 
-Active families are `/health`, `/api/v1/quiz`, `/api/v1/candidates`, `/api/v1/themes`, `/api/v1/political-actors`, `/api/v1/me/followed-actor`, `/api/v1/community/posts` (including votes, comments, reports and author deletion), and `/api/v1/news` (weekly feed and image proxy). `/docs`, `/redoc`, `/openapi.json` expose the contract; `/data/...` serves public assets when configured. Full methods and paths are in [backend/README.md](backend/README.md).
+Active families are `/health`, `/api/v1/quiz`, `/api/v1/candidates`, `/api/v1/themes`, `/api/v1/political-actors`, `/api/v1/me/politician-follow-interest`, `/api/v1/community/posts` (including votes, comments, reports and author deletion), and `/api/v1/news` (weekly feed and image proxy). `/api/v1/me/followed-actor` is retained but guarded by `POLITICIAN_FOLLOW_ENABLED`. `/docs`, `/redoc`, `/openapi.json` expose the contract; `/data/...` serves public assets when configured.
 
 ```bash
 cd backend
@@ -58,7 +58,7 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false
+flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false --dart-define=POLITICIAN_FOLLOW_ENABLED=false
 ```
 
 Keep migrations authoritative for schema changes; startup only performs idempotent seed in development. Production seed is an explicit deployment step; see PUBLICACAO_2026.md for migration, traffic and rollback order. Never claim a deploy or full-suite pass from a source review or a focused test run.

@@ -1,30 +1,65 @@
 from datetime import datetime, timedelta, timezone
 
 import pytest
+from sqlalchemy.exc import IntegrityError
 
 from app.infrastructure.database.models import (
     FollowedActorModel,
     OfficialEvidenceModel,
     PoliticalActorModel,
+    PoliticianFollowInterestModel,
 )
 from app.infrastructure.database.political_actor_repositories import (
     SqlFollowedActorRepository,
     SqlOfficialEvidenceRepository,
     SqlPoliticalActorRepository,
+    SqlPoliticianFollowInterestRepository,
 )
 
 
 @pytest.fixture(autouse=True)
 def clean_political_actor_tables(db_session):
+    db_session.query(PoliticianFollowInterestModel).delete()
     db_session.query(FollowedActorModel).delete()
     db_session.query(OfficialEvidenceModel).delete()
     db_session.query(PoliticalActorModel).delete()
     db_session.commit()
     yield
+    db_session.query(PoliticianFollowInterestModel).delete()
     db_session.query(FollowedActorModel).delete()
     db_session.query(OfficialEvidenceModel).delete()
     db_session.query(PoliticalActorModel).delete()
     db_session.commit()
+
+
+def test_interest_registration_recovers_from_a_concurrent_insert(
+    db_session,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    subject_hash = "a" * 64
+    repo = SqlPoliticianFollowInterestRepository(db_session)
+    original_commit = db_session.commit
+    original_rollback = db_session.rollback
+    calls: list[str] = []
+
+    def racing_commit() -> None:
+        calls.append("commit")
+        raise IntegrityError("insert interest", {}, Exception("unique race"))
+
+    def insert_concurrent_winner() -> None:
+        calls.append("rollback")
+        original_rollback()
+        db_session.add(PoliticianFollowInterestModel(subject_hash=subject_hash))
+        original_commit()
+
+    monkeypatch.setattr(db_session, "commit", racing_commit)
+    monkeypatch.setattr(db_session, "rollback", insert_concurrent_winner)
+
+    interest, newly_registered = repo.register(subject_hash)
+
+    assert calls == ["commit", "rollback"]
+    assert interest.subject_hash == subject_hash
+    assert newly_registered is False
 
 
 def _actor(
