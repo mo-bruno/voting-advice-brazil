@@ -80,7 +80,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
-    expect(find.text('RETIRAR INTERESSE'), findsOneWidget);
+    expect(find.text('RETIRAR INTERESSE'), findsNothing);
     expect(sink.names, [
       'follow_waitlist_viewed',
       'follow_waitlist_prompt_viewed',
