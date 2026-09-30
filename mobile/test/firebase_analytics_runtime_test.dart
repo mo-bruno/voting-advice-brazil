@@ -102,6 +102,29 @@ void main() {
     expect(client.collection.last, isFalse);
   });
 
+  test('latest regrant wins over an older blocked grant and denial', () async {
+    final client = _Client();
+    final runtime = FirebaseAnalyticsRuntime(
+      operationallyEnabled: true,
+      isSupportedPlatform: () => true,
+      initializeClient: () async => client,
+      setWebConsent: ({required granted}) => true,
+    );
+    await runtime.updateConsent(granted: true);
+    await runtime.initializeForGrantedConsent();
+    client.blockedGrant = Completer<void>();
+
+    final grantA = runtime.updateConsent(granted: true);
+    await Future<void>.delayed(Duration.zero);
+    final deny = runtime.updateConsent(granted: false);
+    final grantB = runtime.updateConsent(granted: true);
+    client.blockedGrant!.complete();
+    await Future.wait([grantA, deny, grantB]);
+
+    expect(client.consent.last, isTrue);
+    expect(client.collection.last, isTrue);
+  });
+
   test('missing bridge prevents construction and a later event retries',
       () async {
     final client = _Client();

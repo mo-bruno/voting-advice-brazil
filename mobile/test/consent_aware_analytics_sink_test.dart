@@ -22,6 +22,9 @@ class _Runtime implements AnalyticsRuntime {
   int initializationCalls = 0;
   Completer<void>? blockedInitialization;
   bool failInitialization = false;
+  bool failFirstLog = false;
+  Completer<void>? blockedFirstLog;
+  final attemptedNames = <String>[];
 
   @override
   Future<void> initializeForGrantedConsent() async {
@@ -32,6 +35,13 @@ class _Runtime implements AnalyticsRuntime {
 
   @override
   Future<void> logEvent(SanitizedAnalyticsEvent event) async {
+    attemptedNames.add(event.name);
+    if (blockedFirstLog != null && attemptedNames.length == 1) {
+      await blockedFirstLog!.future;
+    }
+    if (failFirstLog && attemptedNames.length == 1) {
+      throw StateError('first log failed');
+    }
     events.add(event);
   }
 
@@ -126,6 +136,106 @@ void main() {
     await pending;
     expect(runtime.events, isEmpty);
     expect(runtime.consent.last, isFalse);
+  });
+
+  test('grant A event cannot cross deny and grant B', () async {
+    final runtime = _Runtime()..blockedInitialization = Completer<void>();
+    final controller = await _controller(runtime);
+    await controller.grant();
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+    );
+
+    final fromGrantA = sink.logEvent(name: 'quiz_started');
+    await Future<void>.delayed(Duration.zero);
+    await controller.deny();
+    await controller.grant();
+    runtime.blockedInitialization!.complete();
+    await fromGrantA;
+    await sink.logEvent(name: 'quiz_restarted');
+
+    expect(runtime.events.map((event) => event.name), ['quiz_restarted']);
+    expect(runtime.consent, [true, false, true]);
+  });
+
+  test('events queued before deny are dropped after regrant', () async {
+    final runtime = _Runtime()..blockedInitialization = Completer<void>();
+    final controller = await _controller(runtime);
+    await controller.grant();
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+    );
+
+    final queued = <Future<void>>[
+      sink.logEvent(name: 'quiz_started'),
+      sink.logEvent(name: 'quiz_restarted'),
+      sink.logEvent(name: 'quiz_intro_viewed'),
+    ];
+    await Future<void>.delayed(Duration.zero);
+    await controller.deny();
+    await controller.grant();
+    runtime.blockedInitialization!.complete();
+    await Future.wait(queued);
+    await sink.logEvent(name: 'weighting_started');
+
+    expect(runtime.events.map((event) => event.name), ['weighting_started']);
+  });
+
+  test('events are delivered in FIFO order', () async {
+    final runtime = _Runtime()..blockedFirstLog = Completer<void>();
+    final controller = await _controller(runtime);
+    await controller.grant();
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+    );
+
+    final pending = <Future<void>>[
+      sink.logEvent(name: 'quiz_started'),
+      sink.logEvent(name: 'quiz_restarted'),
+      sink.logEvent(name: 'quiz_intro_viewed'),
+    ];
+    await Future<void>.delayed(Duration.zero);
+
+    expect(runtime.attemptedNames, ['quiz_started']);
+    runtime.blockedFirstLog!.complete();
+    await Future.wait(pending);
+    expect(runtime.events.map((event) => event.name), [
+      'quiz_started',
+      'quiz_restarted',
+      'quiz_intro_viewed',
+    ]);
+  });
+
+  test('one failed event does not poison the FIFO tail', () async {
+    final errors = <Object>[];
+    final runtime = _Runtime()..failFirstLog = true;
+    final controller = await _controller(runtime);
+    await controller.grant();
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+      onError: errors.add,
+    );
+
+    await Future.wait([
+      sink.logEvent(name: 'quiz_started'),
+      sink.logEvent(name: 'quiz_completed', parameters: {
+        'total_answered': 10,
+        'total_skipped': 2,
+        'duration_ms': 20,
+      }),
+    ]);
+
+    expect(runtime.attemptedNames, ['quiz_started', 'quiz_completed']);
+    expect(runtime.events.map((event) => event.name), ['quiz_completed']);
+    expect(errors, hasLength(1));
   });
 
   test('initialization failure is contained without replay', () async {

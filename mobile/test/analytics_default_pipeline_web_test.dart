@@ -1,6 +1,7 @@
 @TestOn('browser')
 library;
 
+import 'dart:async';
 import 'dart:js_interop';
 import 'dart:js_interop_unsafe';
 
@@ -48,10 +49,14 @@ void main() {
       () => globalContext.delete('farolSetAnalyticsConsent'.toJS),
     );
 
+    final initializationStarted = Completer<void>();
+    final releaseInitialization = Completer<void>();
     final runtime = FirebaseAnalyticsRuntime(
       operationallyEnabled: true,
       isSupportedPlatform: () => true,
       initializeClient: () async {
+        initializationStarted.complete();
+        await releaseInitialization.future;
         final app = await Firebase.initializeApp();
         return FirebaseAnalyticsSdkClient(
           FirebaseAnalytics.instanceFor(app: app),
@@ -80,22 +85,31 @@ void main() {
 
     expect(await controller.grant(), isTrue);
     expect(Firebase.apps, isEmpty);
-    await service.quizStarted();
-    expect(firebaseCalls, ['quiz_started']);
+    final fromGrantA = service.quizStarted();
+    await initializationStarted.future;
+
+    expect(await controller.deny(), isTrue);
+    expect(await controller.grant(), isTrue);
+    releaseInitialization.complete();
+    await fromGrantA;
+    expect(firebaseCalls, isEmpty);
+
+    await service.quizRestarted();
+    expect(firebaseCalls, ['quiz_restarted']);
     expect(bridgeCalls, contains(true));
     expect(consentCalls.last, isTrue);
     expect(collectionCalls.last, isTrue);
 
     expect(await controller.deny(), isTrue);
     await service.quizStarted();
-    expect(firebaseCalls, ['quiz_started']);
+    expect(firebaseCalls, ['quiz_restarted']);
     expect(bridgeCalls.last, isFalse);
     expect(consentCalls.last, isFalse);
     expect(collectionCalls.last, isFalse);
 
     expect(await controller.grant(), isTrue);
     await service.quizStarted();
-    expect(firebaseCalls, ['quiz_started', 'quiz_started']);
+    expect(firebaseCalls, ['quiz_restarted', 'quiz_started']);
   });
 }
 

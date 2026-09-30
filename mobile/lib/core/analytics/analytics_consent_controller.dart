@@ -56,19 +56,25 @@ class AnalyticsConsentController extends ChangeNotifier {
   AnalyticsConsent get state => _state;
   bool get isGranted => _state == AnalyticsConsent.granted;
   bool get denialPersistenceFailed => _denialPersistenceFailed;
+  int get revision => _revision;
 
   Future<void> hydrate() async {
+    final revision = ++_revision;
     try {
       final stored = await _store.read();
+      if (revision != _revision) return;
       if (stored == 'granted') {
-        if (await _applyEffect(true)) {
+        final applied = await _applyEffect(true);
+        if (applied && revision == _revision) {
           _setState(AnalyticsConsent.granted);
         }
       } else if (stored == 'denied') {
         _setState(AnalyticsConsent.denied);
         await _applyEffect(false);
       }
-      _setDenialPersistenceFailed(false);
+      if (revision == _revision) {
+        _setDenialPersistenceFailed(false);
+      }
     } catch (error) {
       _report(error);
     }
