@@ -1,6 +1,6 @@
 # Farol Político
 
-Aplicativo acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
+Site acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
 
 O produto atual reúne uma comparação de planos presidenciais de 2026, comunidade sob aliases pseudônimos e notícias oficiais dos últimos sete dias. A área de acompanhamento de políticos está em validação: o público pode registrar interesse sem fornecer nome ou contato, enquanto a busca, o perfil e o acompanhamento já implementados permanecem retidos atrás de feature flag. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas não compõem esse score. Não há índice de consistência implementado.
 
@@ -119,13 +119,16 @@ A imagem inclui percentuais, nomes, partidos, a identificação do quiz presiden
 - **Instagram:** oferece instruções para levar a imagem aos Stories/feed. O link clicável nos Stories é adicionado pela pessoa no adesivo “Link”; a imagem não contém um hyperlink ativo.
 - **X / Twitter e WhatsApp:** abrem texto e link de acordo com o tipo selecionado. O WhatsApp inclui a lista do ranking; o X usa um resumo curto com a quantidade de alinhamentos. Esses atalhos não anexam o PNG; para enviá-lo, use o menu de compartilhamento ou anexe o arquivo baixado.
 
-O endereço público é `https://fpolitico.com.br`. A variável de repositório **PUBLIC_APP_URL** no GitHub Actions deve usar esse mesmo valor; para compilar localmente:
+O endereço público é `https://fpolitico.com.br`. O deploy exige as variáveis de repositório `PUBLIC_APP_URL`, `ANALYTICS_ENABLED`, `PRIVACY_CONTROLLER_NAME` e `PRIVACY_CONTACT_EMAIL`. O controlador deve ser uma identidade civil/jurídica real, não a marca nem um exemplo. Para um build local de desenvolvimento, sem valores de produção:
 
 ```bash
-flutter build web --release \
+flutter build web --release --no-web-resources-cdn \
   --dart-define=IOT_FEATURE_ENABLED=false \
   --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
-  --dart-define=PUBLIC_APP_URL=https://fpolitico.com.br
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 O valor é público e deve ser uma URL HTTPS. Parâmetros e fragmentos são removidos do endereço compartilhado. Consulte [mobile/.env.example](mobile/.env.example). O compartilhamento depende dos apps disponíveis no dispositivo; abrir o menu não confirma que algo foi publicado.
@@ -158,7 +161,7 @@ A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusiv
 
 O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. O acompanhamento real também fica desativado por padrão com `POLITICIAN_FOLLOW_ENABLED=false`; o site mostra o registro de interesse sem nome ou contato e o backend rejeita operações antigas de follow, sem apagar código ou dados existentes.
 
-Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow de Firebase Hosting compila o app com os mesmos valores. Nenhum scheduler é iniciado pelo processo da API.
+Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow de Firebase Hosting compila o site com os mesmos valores. O build Web de produção exige a identidade pública real e a chave operacional `ANALYTICS_ENABLED` explicitamente `true` ou `false`. Mesmo com `true`, eventos só são enviados após o opt-in; `false` pausa toda a coleta. Nenhum scheduler é iniciado pelo processo da API.
 
 A publicação automática da interface aguarda o sucesso do backend e usa o mesmo commit. Mudanças apenas na interface também acionam essa sequência para manter um único fluxo de release. A aprovação exigida por `main` não é contornada; consulte [PUBLICACAO_2026.md](PUBLICACAO_2026.md) para ordem, verificações e recuperação.
 
@@ -182,9 +185,13 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release \
+flutter build web --release --no-web-resources-cdn \
   --dart-define=IOT_FEATURE_ENABLED=false \
-  --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 ## Contribuição e licença

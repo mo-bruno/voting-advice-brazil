@@ -60,7 +60,13 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+flutter build web --release --no-web-resources-cdn \
+  --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 Keep migrations authoritative for schema changes; startup only performs idempotent seed in development. Production seed is an explicit deployment step; see PUBLICACAO_2026.md for migration, traffic and rollback order. Never claim a deploy or full-suite pass from a source review or a focused test run.

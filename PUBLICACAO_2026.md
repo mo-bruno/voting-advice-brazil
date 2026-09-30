@@ -33,6 +33,15 @@ Na inspeção anterior à entrega, a produção estava na revisão `farol-politi
 
 Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. Com IoT desligado, o backend usa as respostas do quiz apenas para calcular o ranking e não as persiste, mesmo se um cliente antigo enviar `device_id`. A persistência histórica permanece disponível somente com IoT habilitado. O UUID funcional da comunidade e do acompanhamento continua separado do UUID exclusivo da validação de interesse.
 
+Antes do próximo deploy, confirmar e registrar fora do repositório:
+
+- `PRIVACY_CONTROLLER_NAME` é o nome civil/jurídico público real e aparece em `/#/privacidade`; `PRIVACY_CONTACT_EMAIL=privacidade@fpolitico.com.br` recebe uma mensagem de teste.
+- Registrar a decisão sobre o contato responsável: se a dispensa aplicável para agente de pequeno porte estiver fundamentada, publicar controlador e canal. Se houver encarregado formalmente designado, parar o release até ampliar deliberadamente `PrivacyConfig`, textos e testes com identidade/contato aprovados.
+- Confirmar diretamente no ImprovMX o logging efetivo em `Minimum` e retenção de 7 dias, sem expor o destino privado do alias. Responder sem revelar esse destino requer envio autenticado configurado e testado; o recebimento isolado não comprova essa capacidade.
+- Validar que o backend com a barreira de persistência está ativo antes do Web. Não fazer rollback para revisão anterior a essa barreira.
+- Definir `ANALYTICS_ENABLED=true` somente para coleta normal após o cutover; `false` é pausa operacional segura, sem dispensar o consentimento individual quando reativado.
+- Configurar e conferir GA4/BigQuery e seus prazos antes de declarar a política publicada como efetiva. Não executar expurgos históricos sem inventário, backup verificável e confirmação explícita.
+
 ## Verificação da entrega
 
 - A expansão preserva a base de implantação segura já integrada à `main`, além da moderação NVIDIA, identidade privada e limites de publicação da comunidade.
