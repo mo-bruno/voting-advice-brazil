@@ -143,3 +143,52 @@ Para uma revisão apenas dos banners, não é necessário regenerar favicon,
 - comportamento de exportação e ângulo preservado;
 - testes direcionados, suíte completa, análise e build web aprovados;
 - documentação e PNGs desta pasta atualizados no mesmo PR.
+
+## Verificação da continuação — 30/09/2026
+
+Base: `69f802e`, branch `codex/feixe-share-card-handoff`.
+
+### Resultado do gate
+
+A revisão lado a lado dos seis PNGs regenerados não identificou divergência
+de composição em relação às referências versionadas. A direção aprovada
+“mesmos cards, nova marca” está implementada; não foi necessária alteração
+de código de produção nem criação de teste de regressão adicional.
+
+Foram conferidos Post azul (14°), Top 5 verde em Story (38°), Story preto
+(64°), Top 10 branco em Post e os limites de 10° e 70°. Conteúdo, cores,
+símbolo monocromático, origem do feixe e disposição dos rankings permanecem
+visualmente consistentes. Os arquivos mantêm 1080 × 1350 para Post e
+1080 × 1920 para Story.
+
+Os PNGs regenerados não são idênticos byte a byte. Esta execução utiliza
+Windows, Flutter 3.47.5 e Dart 3.13.4; o plano registra Flutter 3.41.6.
+A causa exata da diferença binária não foi isolada. A comparação visual
+não substitui uma comparação de pixels no mesmo ambiente. As referências
+versionadas foram preservadas para evitar substituí-las por diferenças
+de renderização sem uma mudança visual aprovada.
+
+### Validação
+
+- Renderização das seis referências e testes de compartilhamento/paletas:
+  14 testes aprovados.
+- Suíte completa: 307 testes aprovados.
+- `flutter analyze`: sem problemas encontrados.
+- Build web release: aprovado com `IOT_ENABLED=false`,
+  `POLITICIAN_FOLLOW_ENABLED=false` e
+  `PUBLIC_APP_URL=https://fpolitico.com.br`. O build emitiu um aviso de
+  referência à fonte CupertinoIcons ausente; isso não impediu a compilação.
+- `git diff --check`: sem erros.
+
+A validação utilizou as alterações locais preexistentes em
+`mobile/analysis_options.yaml` e `mobile/pubspec.lock`, preservadas durante
+esta execução. Portanto, os resultados descrevem esse ambiente de trabalho,
+não um checkout limpo com o SDK original.
+
+### Continuação
+
+As tarefas de correção do plano não se aplicam sem uma divergência
+demonstrada. Um redesign mais amplo requer primeiro uma nova prancha com
+Post, Story, Top 5 e Top 10, incluindo paleta clara, e aprovação explícita
+da direção visual antes da implementação Flutter. A decisão anterior em
+`NOTAS.md` permanece vigente.
