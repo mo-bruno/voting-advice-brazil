@@ -2,10 +2,10 @@
   "schema_version": 1,
   "approved_questions": 20,
   "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
-  "completed_reviews": 3,
-  "valid_reviews": 3,
-  "answers": 60,
-  "quote_occurrences": 73,
+  "completed_reviews": 6,
+  "valid_reviews": 6,
+  "answers": 120,
+  "quote_occurrences": 129,
   "valid": false,
   "results": [
     {
@@ -20,13 +20,31 @@
     },
     {
       "candidate_id": "280002540694",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 15,
+      "counts": {
+        "NAO_ENCONTRADA": 17,
+        "CONCORDA": 3
+      },
+      "review_sha256": "1efcc21562ce73ea7b26765084c934f398d49406626e8e5216cea14b8bd76282",
+      "markdown_sha256": "97a81999e2b42182a11aafa12f9c3d5486a4c2df9bd81d8327f29ba6adfc36c2"
     },
     {
       "candidate_id": "280002541457",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 22,
+      "counts": {
+        "CONCORDA": 4,
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 4,
+        "CONDICIONAL_OU_MISTA": 1
+      },
+      "review_sha256": "2965e0121d9a4d328df24525185988ab31456dcfa6a3048d80c87ba56efeed11",
+      "markdown_sha256": "0a114036370836644d8bfca1b7c179e086b97d904b61749234c175b280379cc8"
     },
     {
       "candidate_id": "280002542548",
@@ -77,7 +95,7 @@
         "NAO_ENCONTRADA": 20
       },
       "review_sha256": "4182d424f6bb9d5c473a06424035240d6f9ffbdf53840dc223619b83b97ec11b",
-      "markdown_sha256": "98f85de1533cccbc8fdf3eaeb5c8c65080a9eb19ffa9df73b150c09f587ab678"
+      "markdown_sha256": "f3764a82023af44735d7375892b06d850712ba4dd6a21ce67514e15e6a10223a"
     },
     {
       "candidate_id": "280002552487",
@@ -95,8 +113,16 @@
     },
     {
       "candidate_id": "280002554479",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 19,
+      "counts": {
+        "NAO_ENCONTRADA": 17,
+        "CONCORDA": 3
+      },
+      "review_sha256": "89c1d03c7a5f55e0670d41aaf6848fb44de3f5fc13b046e1198801d5612cddc7",
+      "markdown_sha256": "e14387a97be207d9f99c413586dac965d8f0b901b9e207bf21ed77201afcc252"
     }
   ]
 }
