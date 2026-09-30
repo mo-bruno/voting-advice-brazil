@@ -12,10 +12,12 @@ import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:share_plus/share_plus.dart';
 
 class _ShareDevice extends ResultShareService {
-  _ShareDevice({this.failSharing = false});
+  _ShareDevice({this.failSharing = false, this.downloadSupported = true});
 
   final bool failSharing;
+  final bool downloadSupported;
   Uint8List? shared;
+  String? sharedText;
   Uint8List? downloaded;
   int downloads = 0;
   String? copied;
@@ -23,16 +25,18 @@ class _ShareDevice extends ResultShareService {
   ResultShareData? networkData;
 
   @override
-  bool get canDownload => true;
+  bool get canDownload => downloadSupported;
 
   @override
   Future<ShareResult> shareImage(
     Uint8List bytes,
     ResultShareFormat format,
-    Rect origin,
-  ) async {
+    Rect origin, {
+    String? text,
+  }) async {
     if (failSharing) throw UnsupportedError('Sem menu nativo neste navegador');
     shared = bytes;
+    sharedText = text;
     return const ShareResult('', ShareResultStatus.dismissed);
   }
 
@@ -143,7 +147,7 @@ void main() {
     expect(find.text('Compartilhar imagem'), findsOneWidget);
   }
 
-  Future<void> pumpPage(WidgetTester tester, _ShareDevice device,
+  Future<void> pumpPage(WidgetTester tester, ResultShareService device,
       {ResultShareData? shareData}) async {
     await tester.runAsync(ResultShareCard.loadFonts);
     await tester.pumpWidget(MaterialApp(
@@ -281,7 +285,7 @@ void main() {
     await pumpPage(tester, device, shareData: rankingData);
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade'), findsOneWidget);
     expect(find.text('Pessoa 5'), findsOneWidget);
     expect(find.text('Pessoa 6'), findsNothing);
     await tap(tester, 'Baixar imagem');
@@ -290,7 +294,7 @@ void main() {
 
     await tap(tester, 'Top 10');
     await waitForImage(tester);
-    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade'), findsOneWidget);
     expect(find.text('Pessoa 10'), findsOneWidget);
     expect(find.text('Pessoa 11'), findsNothing);
     await tap(tester, 'Post · 4:5');
@@ -299,8 +303,8 @@ void main() {
     expectPng(device.downloaded, 1080, 1350);
     expect(device.downloaded, isNot(topFiveImage));
     await tap(tester, 'WhatsApp');
-    expect(device.networkData!.caption, contains('10º. Pessoa 10'));
-    expect(device.networkData!.caption, isNot(contains('Pessoa 11')));
+    expect(device.sharedText, contains('10º. Pessoa 10'));
+    expect(device.sharedText, isNot(contains('Pessoa 11')));
 
     await tap(tester, 'Maior alinhamento');
     await waitForImage(tester);
@@ -308,7 +312,7 @@ void main() {
     expect(find.text('Pessoa 2'), findsNothing);
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -320,7 +324,7 @@ void main() {
             ResultShareData(results: rankingData.results.take(3).toList()));
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade'), findsOneWidget);
     expect(find.text('Pessoa 4'), findsNothing);
     expect(
         tester
@@ -374,14 +378,69 @@ void main() {
         findsOneWidget);
   });
 
-  testWidgets('atalhos usam a rede escolhida e permitem copiar o domínio',
+  testWidgets('WhatsApp envia o PNG e a legenda do ranking selecionado ao menu',
+      (tester) async {
+    ShareParams? sent;
+    final service = ResultShareService(share: (params) async {
+      sent = params;
+      return const ShareResult('', ShareResultStatus.dismissed);
+    });
+    await pumpPage(tester, service, shareData: rankingData);
+    await tap(tester, 'Ranking');
+    await tap(tester, 'Post · 4:5');
+    await waitForImage(tester);
+    await tap(tester, 'WhatsApp');
+
+    expect(sent, isNotNull);
+    expectPng(await sent!.files!.single.readAsBytes(), 1080, 1350);
+    expect(sent!.files!.single.mimeType, 'image/png');
+    expect(sent!.fileNameOverrides, ['meu-resultado-farol-post.png']);
+    expect(sent!.text, contains('5º. Pessoa 5 (PSD)'));
+    expect(sent!.text, isNot(contains('Pessoa 6')));
+    expect(sent!.text, contains('20 de 30 respostas comparáveis'));
+    expect(sent!.text, endsWith('https://fpolitico.com.br'));
+    expect(sent!.sharePositionOrigin!.isEmpty, isFalse);
+    expect(sent!.downloadFallbackEnabled, isFalse);
+    expect(find.byType(SnackBar), findsNothing,
+        reason: 'cancelar o menu não anuncia publicação nem aciona alternativa');
+  });
+
+  testWidgets('WhatsApp sem suporte baixa a imagem e abre a mensagem correspondente',
+      (tester) async {
+    final device = _ShareDevice(failSharing: true);
+    await pumpPage(tester, device, shareData: rankingData);
+    await tap(tester, 'WhatsApp');
+    expectPng(device.downloaded, 1080, 1920);
+    expect(device.networks, isEmpty,
+        reason: 'abrir a mensagem exige um novo toque para evitar popup bloqueado');
+    expect(find.text('Abrir WhatsApp'), findsOneWidget);
+
+    await tap(tester, 'Ranking');
+    await waitForImage(tester);
+    await tap(tester, 'Abrir WhatsApp');
+    expect(device.networks, [ResultShareNetwork.whatsapp]);
+    expect(device.networkData, same(rankingData),
+        reason: 'a mensagem deve corresponder ao PNG já baixado');
+  });
+
+  testWidgets('WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
+      (tester) async {
+    final device = _ShareDevice(failSharing: true, downloadSupported: false);
+    await pumpPage(tester, device);
+    await tap(tester, 'WhatsApp');
+    expect(device.downloads, 0);
+    expect(find.textContaining('Não foi possível enviar imagem e texto juntos.'),
+        findsOneWidget);
+    await tap(tester, 'Abrir WhatsApp');
+    expect(device.networks, [ResultShareNetwork.whatsapp]);
+  });
+
+  testWidgets('atalho do X e ajuda do Instagram preservam o link',
       (tester) async {
     final device = _ShareDevice();
     await pumpPage(tester, device);
     await tap(tester, 'X / Twitter');
-    await tap(tester, 'WhatsApp');
-    expect(device.networks,
-        [ResultShareNetwork.twitter, ResultShareNetwork.whatsapp]);
+    expect(device.networks, [ResultShareNetwork.twitter]);
     await tap(tester, 'Copiar link');
     expect(device.copied, 'https://exemplo.com.br');
     await tap(tester, 'Instagram');

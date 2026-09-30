@@ -56,8 +56,8 @@ class ResultShareData {
       List.unmodifiable(results.take(variant.limit));
   bool get isRanking => variant != ResultShareVariant.leader;
   String get rankingTitle => displayResults.length == 1
-      ? 'Meu alinhamento · Beta'
-      : 'Meu ranking de afinidade · Beta';
+      ? 'Meu alinhamento'
+      : 'Meu ranking de afinidade';
   String get editionLabel => 'Edição 2026';
   String get basisLabel => 'Quiz presidencial de 2026 · Beta.';
 

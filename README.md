@@ -115,7 +115,8 @@ A imagem inclui percentuais, nomes, partidos, a identificação do quiz presiden
 - **Stories:** PNG de 1080 × 1920; **Post:** PNG de 1080 × 1350. As fontes do cartão acompanham o app para a exportação não depender de downloads de fontes.
 - **Compartilhar imagem:** abre o menu do dispositivo com o PNG. Na web, quando o menu não estiver disponível, inicia o download. **Baixar imagem** também fica disponível no navegador.
 - **Instagram:** oferece instruções para levar a imagem aos Stories/feed. O link clicável nos Stories é adicionado pela pessoa no adesivo “Link”; a imagem não contém um hyperlink ativo.
-- **X / Twitter e WhatsApp:** abrem texto e link de acordo com o tipo selecionado. O WhatsApp inclui a lista do ranking; o X usa um resumo curto com a quantidade de alinhamentos. Esses atalhos não anexam o PNG; para enviá-lo, use o menu de compartilhamento ou anexe o arquivo baixado.
+- **WhatsApp:** abre o menu do dispositivo com o PNG, a legenda do resultado selecionado e o link. Escolha o WhatsApp no menu. Se o navegador não conseguir compartilhar esse conteúdo, inicia o download e oferece **Abrir WhatsApp** com a mensagem correspondente à imagem; anexe o arquivo baixado. A aceitação de imagem e texto juntos depende do aplicativo e do dispositivo.
+- **X / Twitter:** abre texto e link de acordo com o tipo selecionado, com um resumo curto da quantidade de alinhamentos. Para enviar o PNG, use o menu de compartilhamento ou anexe o arquivo baixado.
 
 O endereço público é `https://fpolitico.com.br`. A variável de repositório **PUBLIC_APP_URL** no GitHub Actions deve usar esse mesmo valor; para compilar localmente:
 

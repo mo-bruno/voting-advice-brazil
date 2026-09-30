@@ -22,14 +22,16 @@ class ResultShareService {
   Future<ShareResult> shareImage(
     Uint8List bytes,
     ResultShareFormat format,
-    Rect origin,
-  ) =>
+    Rect origin, {
+    String? text,
+  }) =>
       _share(ShareParams(
         files: [_file(bytes, format)],
+        text: text,
         fileNameOverrides: [format.fileName],
         sharePositionOrigin: origin,
-        // Imagem sem legenda: o Instagram e outros destinos podem rejeitar
-        // arquivo + texto. O link é oferecido separadamente na tela.
+        // A legenda é opcional: o botão geral envia só a imagem para manter
+        // compatibilidade com destinos que rejeitam arquivo + texto.
         downloadFallbackEnabled: false,
       ));
 

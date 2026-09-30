@@ -82,7 +82,7 @@ void main() {
     );
     expect(data.results, [_result, trueZero]);
     expect(data.displayResults, [_result, trueZero]);
-    expect(data.rankingTitle, 'Meu ranking de afinidade · Beta');
+    expect(data.rankingTitle, 'Meu ranking de afinidade');
     expect(data.caption, isNot(contains(unavailable.name)));
     expect(data.caption, contains('2º. Candidatura 2 (PSD)'));
     expect(data.caption, contains('10 de 30 respostas comparáveis'));
@@ -103,7 +103,7 @@ void main() {
     final five = data.withVariant(ResultShareVariant.topFive);
     expect(five.displayResults, hasLength(5));
     expect(five.displayResults.last.candidateId, '5');
-    expect(five.rankingTitle, 'Meu ranking de afinidade · Beta');
+    expect(five.rankingTitle, 'Meu ranking de afinidade');
     expect(five.isRanking, isTrue);
     expect(five.results, data.results);
     expect(five.siteUrl, 'https://exemplo.com.br/quiz/');
@@ -115,12 +115,12 @@ void main() {
     final onlyOne =
         ResultShareData(results: [_result], variant: ResultShareVariant.topTen);
     expect(onlyOne.displayResults, [_result]);
-    expect(onlyOne.rankingTitle, 'Meu alinhamento · Beta');
+    expect(onlyOne.rankingTitle, 'Meu alinhamento');
     final three = ResultShareData(
       results: data.results.take(3).toList(),
       variant: ResultShareVariant.topFive,
     );
-    expect(three.rankingTitle, 'Meu ranking de afinidade · Beta');
+    expect(three.rankingTitle, 'Meu ranking de afinidade');
     expect(three.displayResults, hasLength(3));
   });
 
