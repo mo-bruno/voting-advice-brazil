@@ -15,6 +15,24 @@
       {"source": "/main.dart.js", "headers": [{"key": "Cache-Control", "value": "no-cache, max-age=0, must-revalidate"}]},
       {"source": "/version.json", "headers": [{"key": "Cache-Control", "value": "no-cache, max-age=0, must-revalidate"}]},
       {
+        "source": "/",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/@(index.html|flutter_bootstrap.js|flutter_service_worker.js|main.dart.js)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        ]
+      },
+      {
+        "source": "/@(quiz|weighting|party-selection|results|comparison|political-actors|political-actor-profile|comunidade|iot-device|iot-pairing)",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache, no-store, must-revalidate" }
+        ]
+      },
+      {
         "source": "/robots.txt",
         "headers": [
           { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
