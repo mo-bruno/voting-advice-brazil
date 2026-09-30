@@ -113,8 +113,11 @@ def test_iot_deduplication_upgrade_preserves_existing_event(tmp_path: Path) -> N
         """)).one()
         assert tuple(row) == ("old-device", "vote_alert", '{"vote":"Sim"}', None)
         assert connection.scalar(text("SELECT version_num FROM alembic_version")) == (
-            "0010_politician_follow_interest"
+            "0011_candidate_position_analysis"
         )
+        assert "analytical_position" in {
+            column["name"] for column in inspect(engine).get_columns("candidate_positions")
+        }
     engine.dispose()
 
 
@@ -146,8 +149,11 @@ def test_comment_admission_upgrade_preserves_comments(tmp_path: Path) -> None:
         )
         assert connection.scalar(text("SELECT COUNT(*) FROM comment_admission_locks")) == 0
         assert connection.scalar(text("SELECT version_num FROM alembic_version")) == (
-            "0010_politician_follow_interest"
+            "0011_candidate_position_analysis"
         )
+        assert "analytical_position" in {
+            column["name"] for column in inspect(engine).get_columns("candidate_positions")
+        }
     downgraded = _alembic(["downgrade", "0007_iot_event_deduplication"], db_url)
     assert downgraded.returncode == 0, downgraded.stderr
     assert set(inspect(engine).get_table_names()) == tables_before

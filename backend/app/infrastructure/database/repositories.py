@@ -81,6 +81,7 @@ def _to_position(m: CandidatePositionModel) -> CandidatePosition:
         theme_slug=m.thesis.theme.slug if (m.thesis and m.thesis.theme) else "",
         theme_name=m.thesis.theme.name if (m.thesis and m.thesis.theme) else "",
         position=m.position,
+        analytical_position=m.analytical_position,
         justification=m.justification,
         quote=m.quote,
         source_ref=m.source_ref,

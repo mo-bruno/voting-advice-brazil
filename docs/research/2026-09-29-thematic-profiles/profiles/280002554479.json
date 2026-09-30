@@ -1,0 +1,1842 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002554479",
+  "candidate_name": "Leonardo Avalanche",
+  "agent_id": "/root/plan_leonardo",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002554479.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    22,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O plano articula forte redução e unificação tributária com investimento público em indústria, ciência, crédito e serviços; admite capital e operação privados em atividades específicas e prioriza produção nacional. Escolhas recuperadas incluem redes especializadas de cuidado, ensino técnico e homeschooling fiscalizado, regulação de plataformas, biometria policial, saneamento com apoio federal e modernização militar. As dez categorias contêm ao menos uma decisão substantiva, mas a densidade é desigual: meio ambiente tem uma medida própria de fiscalização, e a dimensão externa se concentra em defesa. Isso descreve o documento, sem atribuir rótulo ideológico.",
+    "position_ids": [
+      "P01",
+      "P03",
+      "P05",
+      "P09",
+      "P10",
+      "P13",
+      "P14",
+      "P15",
+      "P17",
+      "P21",
+      "P23",
+      "P26",
+      "P29",
+      "P30",
+      "P36",
+      "P42"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "presence": "substantive",
+      "summary": "O plano combina imposto único, taxa fixa de IPVA, política industrial com capital público, fertilizantes nacionais, crédito rural após regularização e incentivos automobilísticos com prioridade nacional. Também prevê subsídio salarial temporário ao primeiro emprego formal de jovens (P30).",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P30"
+      ],
+      "gaps": [
+        {
+          "topic": "Desenho fiscal e financiamento",
+          "reason": "Não detalha base e repartição do tributo único, compatibilidade entre regras tributárias propostas, orçamento consolidado dos programas ou posição sobre o arcabouço fiscal.",
+          "context_pages": [
+            4,
+            5,
+            6,
+            18,
+            22,
+            25,
+            30,
+            31
+          ]
+        },
+        {
+          "topic": "Política monetária e execução industrial",
+          "reason": "Crédito rural mais barato não determina posição sobre autonomia do Banco Central; investimento industrial público não define participação de controle nas empresas.",
+          "context_pages": [
+            22,
+            24,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "presence": "substantive",
+      "summary": "Há decisões sobre redistribuição da publicidade federal e investigação de influência indevida no sistema de Justiça. Estruturas específicas de saúde, fiscalização trabalhista e saneamento permanecem nas respectivas categorias.",
+      "position_ids": [
+        "P07",
+        "P08"
+      ],
+      "gaps": [
+        {
+          "topic": "Modelo geral de administração e empresas estatais",
+          "reason": "Não propõe reforma administrativa abrangente, política geral de carreiras ou decisão sobre privatização universal e preservação de controle estatal. Contratos de comunicação e capital industrial não resolvem essas questões.",
+          "context_pages": [
+            7,
+            8,
+            22,
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Governança dos novos contratos",
+          "reason": "Faltam critérios de seleção, controle editorial, contratação e prestação de contas dos prestadores locais de publicidade oficial.",
+          "context_pages": [
+            7,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "presence": "substantive",
+      "summary": "As escolhas são expandir ferrovia privada e alternativas à carga rodoviária, executar saneamento com apoio técnico federal, reassentar famílias com proteção na transição, recuperar energia dos resíduos e reservar vagões para mulheres.",
+      "position_ids": [
+        "P09",
+        "P10",
+        "P11",
+        "P12",
+        "P35"
+      ],
+      "gaps": [
+        {
+          "topic": "Financiamento e regulação dos serviços",
+          "reason": "Não define orçamento e cronograma das obras, regime das operadoras de saneamento, instrumentos de contratação de resíduos ou desenho federativo da obrigação de vagões.",
+          "context_pages": [
+            26,
+            27,
+            37,
+            45,
+            46
+          ]
+        },
+        {
+          "topic": "Política fundiária ampla",
+          "reason": "Reassentamento de ocupações de risco não configura programa de reforma agrária; o plano trata o agro por produção e crédito, sem decisão sobre distribuição de terras rurais.",
+          "context_pages": [
+            24,
+            25,
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "presence": "substantive",
+      "summary": "A decisão própria mais definida é vigilância ambiental da Amazônia por drones. Elétricos e resíduos têm implicações ambientais, mas suas posições principais estão nas categorias econômica e de infraestrutura.",
+      "position_ids": [
+        "P13"
+      ],
+      "gaps": [
+        {
+          "topic": "Estratégia climática e instrumentos ambientais",
+          "reason": "Não apresenta meta quantificada de emissões, mercado de carbono, plano de adaptação climática ou roteiro detalhado de conservação além das medidas selecionadas.",
+          "context_pages": [
+            24,
+            28,
+            29,
+            30,
+            31,
+            45,
+            46
+          ]
+        },
+        {
+          "topic": "Licenciamento e execução",
+          "reason": "Não detalha como executar a fiscalização após alertas, nem salvaguardas ambientais para mineração de fertilizantes e instalações de tratamento de resíduos.",
+          "context_pages": [
+            24,
+            28,
+            46
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "presence": "substantive",
+      "summary": "O plano prioriza empresas brasileiras no polo tecnológico, recompõe a pesquisa pública e vincula inclusão digital com dispositivo e internet à conclusão de qualificação.",
+      "position_ids": [
+        "P14",
+        "P15",
+        "P16"
+      ],
+      "gaps": [
+        {
+          "topic": "Financiamento e governança tecnológica",
+          "reason": "Não quantifica recomposição de Capes/CNPq, bolsas e carreiras, nem apresenta custo e contratação dos dispositivos ou forma jurídica do polo tecnológico.",
+          "context_pages": [
+            7,
+            8,
+            19,
+            20
+          ]
+        },
+        {
+          "topic": "Regulação transversal de IA e dados",
+          "reason": "IA aparece em educação, saúde e segurança; não há desenho geral de governança, auditoria algorítmica ou proteção de dados para esses usos.",
+          "context_pages": [
+            9,
+            13,
+            15,
+            16,
+            19,
+            20,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "presence": "substantive",
+      "summary": "O documento combina atendimento privado para filas do SUS, abastecimento e atualização de medicamentos, atenção por ciclo de vida, manutenção do Bolsa Família com renda do programa digital e redes de cuidado para famílias atípicas e jovens.",
+      "position_ids": [
+        "P17",
+        "P18",
+        "P19",
+        "P20",
+        "P21",
+        "P22"
+      ],
+      "gaps": [
+        {
+          "topic": "Gestão e integração das redes",
+          "reason": "Não decide gestão exclusivamente pública das unidades nem regime administrativo das novas redes, e não detalha integração, cobertura, pessoal e custeio de Abraço Azul e Respira.",
+          "context_pages": [
+            9,
+            10,
+            34,
+            35,
+            43
+          ]
+        },
+        {
+          "topic": "Benefícios e previdência",
+          "reason": "A preservação do Bolsa Família é descrita no programa de qualificação; não explicita regra geral de renda e permanência. O BPC será estudado, sem novo valor, e não existe reforma previdenciária delimitada.",
+          "context_pages": [
+            7,
+            8,
+            34,
+            35
+          ]
+        },
+        {
+          "topic": "Protocolos clínicos",
+          "reason": "Versões modernas e terapias mencionadas expressam preferência do plano; faltam critérios clínicos e econômicos de incorporação e definição das equipes.",
+          "context_pages": [
+            9,
+            10,
+            37,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "presence": "substantive",
+      "summary": "O ensino público se orienta a competências práticas, técnicas e socioemocionais. O plano define apoio escolar qualificado a autistas, apoia homeschooling monitorado e estuda crédito de formação continuada.",
+      "position_ids": [
+        "P23",
+        "P24",
+        "P25",
+        "P26",
+        "P28"
+      ],
+      "gaps": [
+        {
+          "topic": "Implementação educacional",
+          "reason": "Não define carga curricular, número de profissionais de apoio, instrumentos da fiscalização domiciliar, orçamento da qualificação ou proteção de dados do acompanhamento estudantil.",
+          "context_pages": [
+            15,
+            16,
+            34,
+            43,
+            44
+          ]
+        },
+        {
+          "topic": "Cultura, artes e abrangência esportiva",
+          "reason": "Não há política estruturada de financiamento cultural, patrimônio ou artes; o esporte tem uma decisão de elegibilidade, sem programa amplo de acesso e formação.",
+          "context_pages": [
+            8,
+            15,
+            16,
+            37,
+            42,
+            43,
+            44
+          ]
+        },
+        {
+          "topic": "Critérios ainda em estudo",
+          "reason": "Idade e desenho de crédito de qualificação da referência estrangeira não devem ser convertidos em regra brasileira definitiva.",
+          "context_pages": [
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "presence": "substantive",
+      "summary": "As escolhas selecionadas regulam plataformas de transporte, criam fiscalização externa de assédio, aceleram processos e regulam transparência e acesso etário nas redes sociais. O critério de acesso à categoria feminina esportiva aparece em P27, para comparação com regras sobre o mesmo grupo nos demais perfis.",
+      "position_ids": [
+        "P27",
+        "P29",
+        "P31",
+        "P32",
+        "P33",
+        "P34"
+      ],
+      "gaps": [
+        {
+          "topic": "Direitos trabalhistas gerais",
+          "reason": "Não estabelece posição sobre revogação da reforma trabalhista ou vínculo geral dos motoristas; taxa de plataforma e subsídio salarial são políticas específicas.",
+          "context_pages": [
+            11,
+            12,
+            38,
+            42,
+            43
+          ]
+        },
+        {
+          "topic": "Salvaguardas e desenho institucional",
+          "reason": "Não define integração do órgão contra assédio com estruturas existentes, auditoria de algoritmos, garantia de contestação de decisões ou idade final da adaptação do modelo estrangeiro de redes sociais.",
+          "context_pages": [
+            38,
+            41,
+            43
+          ]
+        },
+        {
+          "topic": "Igualdade racial no serviço público",
+          "reason": "Não apresenta decisão sobre cotas raciais; políticas de talento, proteção da mulher e deficiência não permitem preenchê-la por inferência.",
+          "context_pages": [
+            13,
+            16,
+            34,
+            37,
+            38,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "presence": "substantive",
+      "summary": "O plano privilegia bases policiais integradas e reconhecimento facial, endurecimento penal, isolamento de lideranças, proteção contra violência doméstica e repressão digital à exploração sexual infantil.",
+      "position_ids": [
+        "P36",
+        "P37",
+        "P38",
+        "P39",
+        "P40",
+        "P41"
+      ],
+      "gaps": [
+        {
+          "topic": "Escopo penal não fixado",
+          "reason": "O endurecimento genérico não fixa novas penas para todos os crimes, redução de idade penal ou política de armas civis. O isolamento não distingue modalidades de comunicação protegida.",
+          "context_pages": [
+            13,
+            14,
+            39,
+            40
+          ]
+        },
+        {
+          "topic": "Controle da vigilância e bloqueio",
+          "reason": "Não detalha controle de erro biométrico, autoridade de bloqueio, critérios de identificação confiável, rito recursal ou compatibilidade entre reativação de plataforma e vedação de retorno.",
+          "context_pages": [
+            13,
+            14,
+            39,
+            40,
+            41
+          ]
+        },
+        {
+          "topic": "Execução da proteção social associada",
+          "reason": "A rede de acolhimento e reeducação não recebe metas de cobertura, orçamento ou regras operacionais completas.",
+          "context_pages": [
+            36,
+            37
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "presence": "substantive",
+      "summary": "A escolha concreta é aumentar e modernizar a defesa com produção nacional; a autonomia para negociar com qualquer potência aparece como objetivo associado à dissuasão.",
+      "position_ids": [
+        "P42",
+        "P43"
+      ],
+      "gaps": [
+        {
+          "topic": "Diplomacia, blocos e acordos",
+          "reason": "Não define participação no BRICS, acordo Mercosul–União Europeia, alianças ou ruptura/manutenção de relações com Israel nas condições das perguntas anteriores. Exemplos internacionais setoriais não são compromissos diplomáticos.",
+          "context_pages": [
+            6,
+            17,
+            19,
+            24,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Orçamento e planejamento militar",
+          "reason": "Não estabelece percentual de gasto, calendário de aquisições, lista de prioridades ou condição institucional para parceria tecnológica de defesa.",
+          "context_pages": [
+            28,
+            29
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Unificação da tributação",
+      "statement": "Substituir a cobrança separada dos tributos por um imposto único de 3,5%, incluindo encargos sobre folha e renda.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alíquota única, cobrança na fonte e substituição dos tributos enumerados.",
+      "scope": "Trabalhadores e empresas de todos os portes; tributos federais, estaduais e municipais listados no texto.",
+      "conditions": [
+        "Base de incidência, repartição federativa e transição não são detalhadas.",
+        "A p. 4 inclui IPVA na lista; confrontar com P02, sem resolver a tensão."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Nossa proposta é reduzir toda essa avalanche de impostos que pesa sobre o brasileiro pra uma alíquota única de 3,5%. Nada de ICMS, ISS, PIS, Cofins, IPI, INSS, Imposto de Renda separados — um imposto só, pra tudo."
+        },
+        {
+          "page": 4,
+          "quote": "Os tributos que hoje compõem essa avalanche: ICMS, ISS, IPI, PIS, Cofins, IOF, IRPJ, CSLL, IRPF, INSS (patronal e do trabalhador), IPVA, ITBI, ITCMD e Imposto de Importação, entre outras taxas setoriais."
+        }
+      ],
+      "context_pages": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Tributação de veículos",
+      "statement": "Trocar o IPVA proporcional ao valor do veículo por taxa fixa de R$ 50 mensais, com isenção nacional para caminhoneiros.",
+      "support_level": "explicit_proposal",
+      "instrument": "Taxa fixa e isenção por atividade.",
+      "scope": "Abrangência nacional; exceção para caminhoneiros.",
+      "conditions": [
+        "A categoria isenta é descrita como quem usa caminhão como instrumento de trabalho.",
+        "O plano não compatibiliza expressamente essa cobrança com o imposto único."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Na prática: substituição do IPVA proporcional ao valor do veículo por uma taxa fixa e acessível de R$ 50 mensais para todos."
+        },
+        {
+          "page": 18,
+          "quote": "Nosso governo vai nacionalizar essa isenção: isenção total de IPVA para caminhoneiros em todo o Brasil"
+        }
+      ],
+      "context_pages": [
+        18
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Investimento público direto na indústria",
+      "statement": "Financiar e desonerar a transformação de matérias-primas no país, incluindo capital público direto em fábricas estratégicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desoneração, crédito industrial e investimento público na construção de fábricas.",
+      "scope": "Indústria nacional; prioridade de beneficiamento para nióbio e terras raras.",
+      "conditions": [
+        "Capital público não determina participação de controle nem forma de empresa estatal."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "incentivo à instalação de indústrias de beneficiamento mineral com prioridade estratégica pra nióbio e terras raras, crédito facilitado pra indústria nacional crescer, e investimento direto do próprio governo em indústria estratégica, com capital público entrando de verdade na construção de fábrica, não só concedendo desconto de imposto."
+        }
+      ],
+      "context_pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Produção nacional de fertilizantes",
+      "statement": "Investir em fábricas de fertilizantes e exploração de jazidas nacionais para reduzir dependência de importações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investimento em exploração mineral e capacidade industrial de fertilizantes.",
+      "scope": "Reservas nacionais de potássio, fósforo e nitrogênio; Autazes é exemplo explicitamente nomeado.",
+      "conditions": [
+        "O capítulo não explicita procedimentos de licenciamento nem salvaguardas territoriais para as jazidas."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "nosso governo vai investir pesado pra tirar do papel a exploração de jazidas como a de Autazes e outras reservas minerais brasileiras de potássio, fósforo e nitrogênio, com fábrica nacional de fertilizante de verdade"
+        }
+      ],
+      "context_pages": [
+        24
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Acesso a crédito rural após regularização da dívida",
+      "statement": "Garantir crédito novo automaticamente ao produtor que quita ou renegocia a dívida antiga, com linhas por porte.",
+      "support_level": "explicit_proposal",
+      "instrument": "Crédito Raiz vincula regularização da dívida e acesso a nova linha.",
+      "scope": "Pequenos, médios e grandes produtores; carência e juros reduzidos para pequenos, prazo maior para médios e investimento para grandes.",
+      "conditions": [
+        "Orçamento dependerá de estudo técnico; o texto promete adequação à necessidade identificada.",
+        "A nova linha não dependeria somente do critério isolado do banco."
+      ],
+      "evidence": [
+        {
+          "page": 25,
+          "quote": "primeiro, conexão automática entre regularizar a dívida e ter acesso a crédito novo — quem quita ou renegocia a dívida antiga passa a ter direito garantido à nova linha, sem depender só do critério do banco. Segundo, linhas específicas por porte, com regra própria pro pequeno, médio e grande produtor"
+        }
+      ],
+      "context_pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "meio_ambiente_clima",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Indústria automobilística e investimento estrangeiro",
+      "statement": "Incentivar produção nacional de veículos e autopeças, priorizando empresas brasileiras de elétricos sem excluir novas fábricas de montadoras estrangeiras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desoneração de produtores e consumidores, incentivo a fábricas e infraestrutura de recarga.",
+      "scope": "Cadeia automobilística brasileira, veículos elétricos e híbridos; acolhimento de fabricantes estrangeiros.",
+      "conditions": [
+        "O investimento principal deve favorecer empresa brasileira e tecnologia nacional.",
+        "Atração de capital estrangeiro não equivale a abertura irrestrita de todos os setores."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "Nosso governo vai dar incentivo pra que montadoras que já produzem carro elétrico lá fora abram ainda mais fábrica no Brasil — gerando mais emprego e mais nacionalização de peça —, mas o investimento principal do governo vai ser em empresa brasileira"
+        },
+        {
+          "page": 30,
+          "quote": "Nosso governo vai criar uma lei que vale igual em todo o país, com redução significativa de imposto federal sobre carro elétrico e híbrido"
+        }
+      ],
+      "context_pages": [
+        6,
+        19,
+        30,
+        31
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Distribuição do orçamento de publicidade oficial",
+      "statement": "Redirecionar parte da publicidade federal de grandes emissoras e agências para contratos remunerados com cidadãos qualificados em comunicação digital.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratos locais de divulgação oficial financiados pela redistribuição da verba existente.",
+      "scope": "Participantes que concluam qualificação e escolham trabalhar com comunicação; atuação municipal e regional.",
+      "conditions": [
+        "O contrato é uma possibilidade, não emprego automático para todos os participantes.",
+        "O plano não explicita procedimento de seleção e contratação."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "depois de fazer o curso de qualificação e receber o iPhone com internet, o brasileiro que decidir seguir trabalhando com internet e comunicação digital vai poder ser efetivamente contratado pelo nosso governo federal — com contrato assinado e remuneração — pra atuar na divulgação oficial de programas e serviços públicos em sua própria cidade e região."
+        },
+        {
+          "page": 8,
+          "quote": "Em vez de sustentar contratos milionários com emissoras e agências, esse dinheiro vai financiar a contratação dos próprios brasileiros que se qualificaram no nosso curso de empreendedorismo digital"
+        }
+      ],
+      "context_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Integridade no sistema de Justiça",
+      "statement": "Ampliar fiscalização e investigação de influência indevida e punir manipulação de resultados processuais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fiscalização, investigação e punição de interferências no sistema de Justiça.",
+      "scope": "Processos em que desigualdade de recursos ou influência indevida comprometa a decisão pelo mérito.",
+      "conditions": [
+        "Não define órgão executor, rito ou mudanças institucionais de competência."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Nosso governo vai investir em fiscalização e investigação rigorosa de qualquer influência indevida dentro do sistema de Justiça, com punição severa pra quem for flagrado manipulando resultado de processo"
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reequilíbrio logístico e operação privada ferroviária",
+      "statement": "Priorizar ferrovia e hidrovia no transporte de longa distância e acelerar a expansão de malha ferroviária operada por privados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Aplicação do marco ferroviário existente e investimentos em rede logística.",
+      "scope": "Carga pesada de longa distância; rodovia concentrada nas distâncias curta e média.",
+      "conditions": [
+        "Não determina transferência universal de empresas ou exclusividade de operação privada."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Na prática: plano nacional de investimento em rodovia, hidrovia e, principalmente, ferrovia, com o objetivo de reduzir a dependência do modal rodoviário para transporte de carga pesada em longa distância"
+        },
+        {
+          "page": 26,
+          "quote": "Nosso governo vai acelerar a implementação dessa legislação já existente, com meta de ampliação da malha ferroviária operada pelo setor privado."
+        }
+      ],
+      "context_pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Capacidade de execução do saneamento",
+      "statement": "Priorizar universalização do saneamento por obras e por equipes federais de apoio técnico às prefeituras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estudo de dimensionamento, mutirão de obras, elaboração e credenciamento de projetos e fiscalização de contratos.",
+      "scope": "Água tratada, esgoto e drenagem em todo o país; apoio às prefeituras que necessitem.",
+      "conditions": [
+        "Investimento será dimensionado por estudo técnico; não fixa cronograma nacional.",
+        "Não escolhe modelo de propriedade ou concessão das prestadoras."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "nosso governo vai fazer de saneamento básico e coleta de lixo prioridade nacional de investimento, com estudo técnico real pra dimensionar quanto o Brasil precisa pra universalizar água tratada, coleta de esgoto e drenagem"
+        },
+        {
+          "page": 45,
+          "quote": "vamos disponibilizar uma equipe própria, contratada e preparada especificamente pra apoiar toda prefeitura que precisar, elaborando e credenciando projeto de saneamento"
+        }
+      ],
+      "context_pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Ocupações irregulares e reassentamento",
+      "statement": "Reassentar famílias de ocupações irregulares em moradia digna e legalizada, garantindo apoio e saneamento temporário durante a transição.",
+      "support_level": "explicit_proposal",
+      "instrument": "Análise individual, prazo de reassentamento, auxílio estatal e solução provisória de água e esgoto.",
+      "scope": "Famílias em áreas irregulares, com risco ambiental ou pessoal.",
+      "conditions": [
+        "Não remover sem alternativa de moradia.",
+        "A infraestrutura provisória não é apresentada como regularização definitiva da ocupação."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Cada caso vai ser analisado individualmente, com prazo definido pra reassentamento em moradia digna e legalizada, com auxílio do Estado durante a transição — nunca remoção sem alternativa, mas também nunca abandono indefinido numa área de risco."
+        },
+        {
+          "page": 46,
+          "quote": "nosso governo vai buscar solução temporária que garanta água e esgoto mesmo antes da resolução final"
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Coleta seletiva e aproveitamento energético de resíduos",
+      "statement": "Expandir nacionalmente coleta seletiva e aproveitamento energético do lixo, com infraestrutura de separação e educação ambiental.",
+      "support_level": "explicit_proposal",
+      "instrument": "Coleta separada, tratamento com recuperação energética, estudo técnico e educação de hábitos de descarte.",
+      "scope": "Começa por regiões praticamente sem coleta; inclui qualificação e melhores condições para catadores e coletores.",
+      "conditions": [
+        "Modelos estrangeiros de incineração são referências; o plano não fixa tecnologia, padrão de emissão ou regra de contratação."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Nosso governo vai levar esse modelo de coleta seletiva e aproveitamento energético do lixo pra escala nacional, começando pelas regiões onde hoje praticamente não existe coleta nenhuma."
+        },
+        {
+          "page": 46,
+          "quote": "infraestrutura de coleta com lixeira separada em toda cidade brasileira, e educação ambiental contínua desde a infância"
+        }
+      ],
+      "context_pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "soberania_relacoes_internacionais",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Fiscalização ambiental com vigilância remota",
+      "statement": "Instalar rede de drones para monitorar em tempo real infrações ambientais na Amazônia.",
+      "support_level": "explicit_proposal",
+      "instrument": "Drones de vigilância e monitoramento de atividades ilegais.",
+      "scope": "Amazônia inteira; desmatamento ilegal, garimpo clandestino, contaminação de rios e exploração estrangeira irregular.",
+      "conditions": [
+        "O alvo é atividade ilegal ou irregular, não toda exploração ou todo investimento estrangeiro.",
+        "Não detalha orçamento, autoridade de fiscalização ou procedimentos após os alertas."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Vamos instalar rede de drones de vigilância cobrindo a Amazônia inteira, monitorando em tempo real desmatamento ilegal, garimpo clandestino, contaminação de rio e qualquer exploração estrangeira irregular da nossa água, da nossa madeira e da nossa biodiversidade."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Protagonismo nacional no polo tecnológico",
+      "statement": "Criar polo tecnológico de alcance mundial com incentivo fiscal prioritário a empresas brasileiras e abertura a capital estrangeiro.",
+      "support_level": "explicit_proposal",
+      "instrument": "Incentivos a empresas de tecnologia e parcerias internacionais.",
+      "scope": "Empresa, capital e tecnologia brasileiros têm protagonismo; investidores estrangeiros são aceitos.",
+      "conditions": [
+        "O texto não define localização única nem regime tributário específico do polo."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "O centro dessa proposta é o incentivo fiscal pesado pra empresa brasileira de tecnologia nascer, crescer e virar referência mundial daqui — empresa nossa, capital nosso, tecnologia nossa, levando o nome do Brasil pro mundo. Empresa estrangeira que quiser investir e trazer capital pra cá também é bem-vinda, mas o protagonismo é da empresa brasileira."
+        }
+      ],
+      "context_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Financiamento da pesquisa pública",
+      "statement": "Recompor Capes e CNPq e equipar universidades federais e centros de pesquisa, com bolsas valorizadas e carreira científica estruturada.",
+      "support_level": "explicit_proposal",
+      "instrument": "Recomposição orçamentária, laboratórios, bolsas e carreira.",
+      "scope": "Universidades federais e centros de pesquisa do país.",
+      "conditions": [
+        "Não especifica valores de recomposição, índice das bolsas ou desenho da carreira."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "retomada forte do investimento em pesquisa científica através da recomposição do orçamento de Capes e CNPq."
+        },
+        {
+          "page": 20,
+          "quote": "é um compromisso de trazer tecnologia de ponta pra dentro de toda universidade federal e centro de pesquisa do Brasil, com laboratório equipado, bolsa de pesquisa com valor real e carreira científica estruturada"
+        }
+      ],
+      "context_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Acesso a dispositivo e internet condicionado à qualificação",
+      "statement": "Fornecer iPhone de última geração e um ano de internet gratuita a quem concluir curso governamental de empreendedorismo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Entrega de dispositivo e conectividade, vinculada a trilhas de capacitação digital.",
+      "scope": "Todo brasileiro que conclua o curso, incluindo beneficiários do Bolsa Família e não beneficiários.",
+      "conditions": [
+        "A marca é expressamente especificada pelo plano; não inferir modelo de compra ou fornecedor contratado.",
+        "Não é entrega incondicional: exige conclusão da qualificação."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "todo brasileiro que concluir um curso de empreendedorismo oferecido pelo nosso governo recebe um iPhone de última geração com um ano de internet gratuita"
+        },
+        {
+          "page": 8,
+          "quote": "o programa de capacitação será estruturado em trilhas formativas progressivas, adaptadas ao nível de conhecimento digital de cada cidadão."
+        }
+      ],
+      "context_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Capacidade privada para filas do SUS",
+      "statement": "Usar hospitais privados ociosos para absorver demanda reprimida, junto a mutirões e triagem por telemedicina.",
+      "support_level": "explicit_proposal",
+      "instrument": "Parcerias de atendimento, mutirões, telemedicina e gestão por resultado.",
+      "scope": "Fila do SUS; capacidade privada ociosa.",
+      "conditions": [
+        "Não determina delegação da gestão de unidade pública a organização privada.",
+        "O plano atribui o financiamento da saúde à redução de corrupção e desperdício, sem demonstrativo de custos."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde."
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Assistência farmacêutica e abastecimento",
+      "statement": "Monitorar estoques de medicamentos com inteligência artificial e modernizar as fórmulas disponíveis no SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistema nacional de alerta de estoque em tempo real e atualização da oferta de medicamentos.",
+      "scope": "Hospitais, postos e UBS de todo o país; inclui versões injetáveis.",
+      "conditions": [
+        "Não informa critérios de incorporação, avaliação tecnológica ou financiamento por medicamento.",
+        "A preferência por versões modernas é proposta do plano, sem avaliação clínica nesta revisão."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "vamos instalar um sistema de inteligência artificial que monitora em tempo real o estoque de medicamentos em hospitais, postos de saúde e UBS de todo o país, avisando com antecedência quando um remédio está acabando"
+        },
+        {
+          "page": 9,
+          "quote": "vamos modernizar os medicamentos disponíveis no SUS, trocando fórmulas antigas e ultrapassadas por versões mais modernas, incluindo injetáveis"
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Linhas de cuidado por ciclo de vida",
+      "statement": "Ampliar atenção especializada às mulheres e aos idosos, com acompanhamento do climatério à pós-menopausa e mais geriatras no SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programas de acompanhamento, prevenção, suporte psicológico e formação e contratação de especialistas.",
+      "scope": "Mulheres desde a juventude, com atenção ao climatério e menopausa; idosos com prioridade de atendimento e cuidado crônico.",
+      "conditions": [
+        "Géis e cremes hormonais de absorção transdérmica aparecem como acesso a estudar, não oferta definitiva já especificada.",
+        "O plano não fornece protocolos ou número de equipes."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "vamos criar um programa nacional de acompanhamento para a mulher desde o climatério até depois da menopausa — com suporte psicológico contínuo e acesso aos melhores medicamentos, incluindo injetáveis modernos."
+        },
+        {
+          "page": 10,
+          "quote": "Nosso governo vai investir na formação e contratação de mais geriatras pro SUS, garantir prioridade de verdade — não só no papel — pro idoso nas filas de cirurgia e consulta, e ampliar o acesso a acompanhamento contínuo de doenças crônicas como diabetes e hipertensão"
+        }
+      ],
+      "context_pages": [
+        9,
+        10,
+        37
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Acúmulo de renda do trabalho com Bolsa Família",
+      "statement": "Preservar o Bolsa Família de participantes que obtenham renda com o programa de qualificação digital, inclusive no trabalho remunerado pelo governo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Manutenção do benefício junto à renda extra do programa.",
+      "scope": "Beneficiários participantes da qualificação; a contratação pública é opcional.",
+      "conditions": [
+        "Não significa substituição do Bolsa Família por trabalho.",
+        "Não detalha teto de renda, duração ou integração com regras de elegibilidade fora desse programa."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Isso inclui tanto quem está no Bolsa Família (sem perder o benefício) quanto quem nunca recebeu nenhum auxílio do governo."
+        },
+        {
+          "page": 7,
+          "quote": "Aqui não: a renda extra vem garantida pelo nosso governo, sem perder o Bolsa Família."
+        }
+      ],
+      "context_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Rede de cuidado para famílias atípicas",
+      "statement": "Criar a rede Abraço Azul de apoio jurídico, psicológico e cuidado especializado, permitindo às mães trabalhar, estudar ou descansar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rede territorial de apoio e espaços de cuidado, conectados a creches e escolas especializadas.",
+      "scope": "Principais cidades; crianças atípicas e suas mães, com compromisso de apoio também na vida adulta.",
+      "conditions": [
+        "O BPC aparece como benefício existente cujo valor será estudado; não há promessa de novo valor definido.",
+        "Não define natureza pública ou privada da gestão das unidades."
+      ],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Nosso governo vai criar o Abraço Azul, uma rede nacional presente nas principais cidades do país, oferecendo: apoio jurídico gratuito pra mãe que precisa garantir direito do filho; apoio psicológico gratuito pra mãe, não só pra criança; e espaço de cuidado qualificado — uma espécie de creche especializada em criança atípica — pra que a mãe consiga, finalmente, sair de casa, trabalhar ou simplesmente descansar, sabendo que o filho está em boas mãos."
+        },
+        {
+          "page": 35,
+          "quote": "Nosso governo se compromete a manter estrutura de apoio também na vida adulta dessa pessoa"
+        }
+      ],
+      "context_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Acesso direto à saúde mental de jovens",
+      "statement": "Criar o Respira, rede de centros de saúde mental para a juventude com acesso sem encaminhamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Centros físicos com psicólogo, psiquiatra e orientador no mesmo local.",
+      "scope": "Juventude em todo o país; modelo australiano é a referência.",
+      "conditions": [
+        "A faixa 12–25 anos descreve a referência australiana, sem delimitação inequívoca da elegibilidade brasileira.",
+        "Não define volume de centros, profissionais ou relação administrativa com o SUS."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Nosso governo vai criar o Respira, com a mesma lógica: centro físico espalhado pelo Brasil inteiro, pensado e desenhado especificamente pra atrair o jovem — espaço moderno, acolhedor, sem cara de hospital —, onde ele chega sem encaminhamento, sem fila de burocracia, e é atendido na hora por equipe completa: psicólogo, psiquiatra, orientador, tudo no mesmo lugar."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Formação prática e tecnológica na escola pública",
+      "statement": "Integrar educação financeira, empreendedorismo, inteligência artificial e ensino técnico à formação pública, com reforço do ensino de inglês.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma curricular, ensino técnico, personalização por IA e qualificação de professores de inglês.",
+      "scope": "Educação financeira e tecnologia desde o fundamental; formação técnica a partir dos 14–15 anos.",
+      "conditions": [
+        "O uso de IA em celular para idiomas é previsto com monitoramento.",
+        "Não especifica carga horária ou financiamento por rede."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Na prática: uso de inteligência artificial para personalizar o ensino no ritmo de cada aluno, currículo com foco em educação financeira, tecnologia e empreendedorismo desde o ensino fundamental — dentro da escola pública."
+        },
+        {
+          "page": 15,
+          "quote": "educação financeira desde cedo, e ensino técnico profissionalizante em toda escola pública a partir dos 14-15 anos"
+        },
+        {
+          "page": 16,
+          "quote": "contratação de professores de inglês qualificados e, pros que já estão na rede, apoio pra especialização em métodos modernos de ensino"
+        }
+      ],
+      "context_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Acompanhamento de habilidades e educação emocional",
+      "statement": "Acompanhar individualmente talentos desde a creche e desenvolver competências socioemocionais ao longo da formação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ficha longitudinal de habilidades e orientação educacional voltada também a emoções e autoconhecimento.",
+      "scope": "Trajetória da creche à formação posterior.",
+      "conditions": [
+        "Não apresenta modelo de avaliação, governança ou proteção dos dados pessoais da ficha."
+      ],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "vamos usar tecnologia para construir, desde a creche e o ensino primário, um acompanhamento individual que identifica em que cada aluno se destaca — suas habilidades, seus talentos, o que desperta nele interesse de verdade."
+        },
+        {
+          "page": 16,
+          "quote": "É formar a criança pro mundo — ensinar ela a lidar com as próprias emoções, desenvolver a personalidade, a perseverança e a capacidade de se compreender"
+        }
+      ],
+      "context_pages": [
+        16
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Qualificação do apoio escolar à criança autista",
+      "statement": "Exigir profissional certificado, contratado de forma efetiva, para apoio à criança autista na escola.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança legal sobre formação, contratação e quantitativo mínimo por escola.",
+      "scope": "Crianças autistas em escolas; a redação não restringe a obrigação à rede pública.",
+      "conditions": [
+        "O número mínimo de profissionais e a certificação exigida não são definidos.",
+        "Não confundir apoio especializado em escola regular com regra de matrícula exclusivamente segregada."
+      ],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "toda criança autista em escola vai ter direito a profissional com formação certificada, contratado de forma efetiva — não avulso, não terceirizado de passagem —, com número mínimo obrigatório desse profissional por escola."
+        }
+      ],
+      "context_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Permissão de educação domiciliar",
+      "statement": "Apoiar regulamentação do homeschooling com fiscalização rigorosa e avaliações periódicas obrigatórias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Legislação federal permissiva com monitoramento educacional.",
+      "scope": "Famílias que optem por educação domiciliar.",
+      "conditions": [
+        "A exigência de formação superior ou técnica de responsável é descrita em projeto existente; o compromisso próprio inequívoco é fiscalização e avaliação."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Nosso governo vai apoiar a regulamentação do homeschooling no país, com fiscalização rigorosa e avaliação periódica obrigatória"
+        }
+      ],
+      "context_pages": [
+        43,
+        44
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Critério de participação na categoria feminina esportiva",
+      "statement": "Adotar no Brasil, desde 2027, teste genético como critério de participação na categoria feminina esportiva.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança nacional de critério de elegibilidade esportiva.",
+      "scope": "Categoria feminina em competições; o texto invoca segurança física e equidade biológica.",
+      "conditions": [
+        "O perfil registra a proposta, sem confirmar a alegação do documento sobre decisão do COI.",
+        "Não define modalidades, procedimento de teste, dados sensíveis ou exceções."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "a categoria feminina em competição esportiva vai usar teste genético como critério de participação. Nosso governo vai adiantar essa mudança pro Brasil inteiro já a partir de 2027, um ano antes do próprio COI."
+        }
+      ],
+      "context_pages": [
+        37
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Crédito de formação continuada",
+      "statement": "Estudar crédito nacional de qualificação contínua inspirado no SkillsFuture de Singapura.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estudo e adaptação de crédito público para cursos ao longo da vida.",
+      "scope": "Jovens ao entrar na vida adulta e trabalhadores após a formação inicial.",
+      "conditions": [
+        "Idade mínima de 25 anos, reforços e ausência de validade descrevem o modelo estrangeiro, não regras brasileiras já fixadas.",
+        "É compromisso de estudar um modelo, sem orçamento ou elegibilidade final."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Nosso governo vai estudar um modelo equivalente pro Brasil, garantindo que o jovem brasileiro, ao entrar na vida adulta, continue tendo acesso a qualificação contínua, mesmo depois de formado"
+        }
+      ],
+      "context_pages": [
+        44
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Regulação econômica das plataformas de transporte",
+      "statement": "Negociar taxa de 3,5% para motoristas e, se as empresas resistirem, restringir sua operação e oferecer aplicativo governamental alternativo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Negociação, restrição de operação com transição e concorrente operado pelo governo.",
+      "scope": "Motoristas de aplicativo e plataformas de transporte.",
+      "conditions": [
+        "Restrição e aplicativo alternativo aparecem condicionados à não adequação das empresas.",
+        "Não define vínculo geral de emprego ou revisão da CLT.",
+        "O valor comparativo de quase 60% agrega taxa, carro e combustível no próprio texto; não foi tratado como taxa isolada comprovada."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "nosso governo vai negociar diretamente com Uber e demais plataformas a redução da taxa cobrada sobre o motorista para 3,5%"
+        },
+        {
+          "page": 11,
+          "quote": "Caso as empresas não se adequem, o governo federal vai restringir a operação dessas plataformas no país, de forma responsável e com período de transição organizado"
+        },
+        {
+          "page": 12,
+          "quote": "um aplicativo de transporte próprio, com taxa fixa de 3,5%"
+        }
+      ],
+      "context_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Subsídio temporário ao primeiro emprego formal",
+      "statement": "Subsidiar parte do salário por seis meses no primeiro contrato formal de jovens, exigindo vínculo de um ano.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa Meu Primeiro Emprego, criado por lei e operado por aplicativo.",
+      "scope": "Jovens de 18 a 29 anos, primeiro vínculo formal, remuneração até R$ 5.000; admite trabalho informal anterior e estudo simultâneo.",
+      "conditions": [
+        "Salário integral e carteira assinada desde o primeiro dia.",
+        "Fração subsidiada, orçamento e porte das empresas serão definidos em estudo."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "jovem de 18 a 29 anos, contratado com carteira assinada e salário integral desde o primeiro dia, em cargo com remuneração de até R$ 5.000. Nos primeiros seis meses, o governo entra com parte do custo salarial, e o jovem tem a garantia de que a empresa vai manter a carteira assinada dele por um ano completo"
+        },
+        {
+          "page": 43,
+          "quote": "O tamanho do orçamento e o critério de porte de empresa elegível serão definidos por estudo técnico detalhado."
+        }
+      ],
+      "context_pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Fiscalização externa de assédio no trabalho",
+      "statement": "Criar órgão externo e independente para investigar diretamente empresas em casos de assédio, de qualquer porte.",
+      "support_level": "explicit_proposal",
+      "instrument": "Órgão fiscalizador inspirado na EEOC, com apuração e responsabilização empresarial.",
+      "scope": "Trabalhadores de qualquer gênero e empresas de qualquer tamanho.",
+      "conditions": [
+        "Exige rigor técnico e denúncia comprovada, protegendo contra acusações sem fundamento.",
+        "Não define estrutura ou articulação com órgãos existentes."
+      ],
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Nosso governo vai criar um órgão de fiscalização externa e independente, nos moldes do modelo americano, com poder de investigar a empresa diretamente — não só de exigir canal de denúncia interno —, ampliando a obrigação pra empresa de qualquer tamanho"
+        }
+      ],
+      "context_pages": [
+        38
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Redução do tempo de acesso à Justiça",
+      "statement": "Realizar mutirão nacional e estabelecer meta de redução do tempo de julgamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mutirão processual e meta de duração média.",
+      "scope": "Estoque de processos pendentes no país.",
+      "conditions": [
+        "Apesar de criticar ausência de prazo máximo, o compromisso expresso é meta de tempo médio; não fixa limite vinculante para todo processo."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Nosso governo vai promover mutirão nacional pra reduzir o estoque de processos parados e estabelecer meta clara de redução do tempo médio de julgamento"
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Transparência de recomendação digital para crianças",
+      "statement": "Exigir divulgação dos critérios de recomendação e relatórios periódicos sobre conteúdos entregues a usuários de até 14 anos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Obrigação de transparência e relatório público para plataformas.",
+      "scope": "Algoritmos de recomendação usados por crianças até 14 anos.",
+      "conditions": [
+        "A medida é apresentada como transparência, sem proibição geral de uso nessa passagem.",
+        "Não detalha auditoria, tratamento de dados ou sanções."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Nosso governo vai exigir transparência obrigatória sobre o funcionamento do algoritmo de recomendação pra usuário até 14 anos: qual critério prioriza um vídeo sobre o outro, e relatório público periódico sobre o tipo de conteúdo mais entregue nessa faixa etária."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Idade mínima para redes sociais",
+      "statement": "Estudar e adaptar ao Brasil o modelo australiano de idade mínima para redes sociais, com verificação de idade e fiscalização de sexualização de menores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estudo de restrição etária e mecanismo de verificação.",
+      "scope": "Crianças e adolescentes em redes sociais; referência estrangeira de 16 anos.",
+      "conditions": [
+        "Não fixa de maneira inequívoca a idade final da versão brasileira.",
+        "É distinto da obrigação de transparência para usuários até 14 anos."
+      ],
+      "evidence": [
+        {
+          "page": 41,
+          "quote": "A Austrália acabou de aprovar, em dezembro de 2025, idade mínima de 16 anos pra ter conta em rede social — a primeira lei desse tipo no mundo. Nosso governo vai estudar e adaptar esse modelo pro Brasil, com fiscalização real sobre conteúdo que sexualize menor de idade em rede social, seja em perfil de adulto ou do próprio adolescente, e mecanismo de verificação de idade"
+        }
+      ],
+      "context_pages": [
+        41
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Vagões reservados a mulheres",
+      "statement": "Instituir lei nacional que obrigue vagões exclusivos para mulheres em metrôs e trens urbanos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Obrigação nacional de reserva de vagões.",
+      "scope": "Todos os sistemas de metrô e trem urbano do país.",
+      "conditions": [
+        "Quantidade conforme a demanda de passageiros de cada cidade.",
+        "Não estende expressamente a medida a ônibus ou outros modais."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Nosso governo vai criar lei nacional obrigando vagão exclusivo pra mulher em todo sistema de metrô e trem urbano do país, com a quantidade de vagões definida conforme a demanda de passageiros de cada cidade"
+        }
+      ],
+      "context_pages": [
+        37
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Integração de bases policiais e reconhecimento facial",
+      "statement": "Construir sistema nacional integrado de informações policiais e usar reconhecimento facial com alertas rápidos para agentes em campo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Interoperabilidade em tempo real, câmeras e identificação biométrica.",
+      "scope": "Bases policiais nacionais, antecedentes, mandados, armas, veículos e medidas protetivas; inclui identificação sem documento.",
+      "conditions": [
+        "Não especifica regras de retenção de dados, controle de erro ou autorização para uso biométrico.",
+        "O capítulo também defende mais concursos e remuneração policial, sem quantitativos."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "somos a favor de toda tecnologia disponível pra combater o crime — câmera de monitoramento, reconhecimento facial, integração de dado em tempo real."
+        },
+        {
+          "page": 13,
+          "quote": "vamos construir um Sistema Único Nacional de Segurança, integrando em tempo real todas as bases policiais do país — antecedente criminal, mandado de prisão em aberto, registro de arma, veículo e medida protetiva"
+        }
+      ],
+      "context_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [],
+      "policy_dimension": "Endurecimento penal para violência e crime organizado",
+      "statement": "Endurecer penas de crimes violentos e organizados e restringir mecanismos que libertem pessoas consideradas perigosas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança de legislação penal e atuação estatal.",
+      "scope": "Crimes violentos, organizados e contexto de reincidência.",
+      "conditions": [
+        "Não fixa novas penas ou regra específica de execução penal.",
+        "Não estabelece responsabilização penal adulta aos 16 e 17 anos."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Vamos endurecer as penas para crimes violentos e organizados, fechar as brechas jurídicas que soltam criminoso perigoso de volta pra rua"
+        }
+      ],
+      "context_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Comunicação externa de presos de alta periculosidade",
+      "statement": "Isolar presos de alta periculosidade para impedir comando de crimes de dentro dos presídios.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fechamento de canais de comunicação utilizados para transmitir ordens ao exterior.",
+      "scope": "Presos de alta periculosidade e lideranças de facção em segurança máxima.",
+      "conditions": [
+        "Não especifica tratamento de comunicação com familiares, defensores ou órgãos de controle; não inferir vedação particular a essas categorias."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Nosso plano de governo tem como base isolar de verdade o preso de alta periculosidade do mundo lá fora, fechando qualquer canal que sirva pra passar ordem de dentro pra fora da cadeia."
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Proteção contra violência doméstica e reincidência",
+      "statement": "Expandir nacionalmente a rede de proteção contra violência doméstica, com fiscalização de medidas protetivas, acolhimento e tratamento de agressores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Resposta policial, casas de acolhimento com suporte e escala nacional de reeducação.",
+      "scope": "Mulheres também no interior; a rede de acolhimento se estende a idosos em risco.",
+      "conditions": [
+        "Acolhimento inclui orientação jurídica, suporte psicológico e recolocação laboral.",
+        "Não define cobertura quantitativa, orçamento ou rito de encaminhamento ao tratamento."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "fiscalização real de medida protetiva, resposta rápida da polícia em caso de descumprimento, e presença da rede de proteção à mulher também no interior do país, não só nas capitais."
+        },
+        {
+          "page": 36,
+          "quote": "Nosso governo vai expandir a rede de casas de acolhimento pra todo o país, com estrutura completa — não só teto temporário, mas orientação jurídica, suporte psicológico contínuo e recolocação real no mercado de trabalho"
+        },
+        {
+          "page": 36,
+          "quote": "Nosso governo vai dar escala nacional a esse tipo de tratamento, porque reduzir reincidência do agressor também é proteger a próxima vítima."
+        },
+        {
+          "page": 37,
+          "quote": "A mesma rede de acolhimento que nosso governo vai expandir pra mulher vítima de violência também vai acolher idoso em situação de risco"
+        }
+      ],
+      "context_pages": [
+        36,
+        37
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Detecção e bloqueio de exploração sexual infantil online",
+      "statement": "Obrigar plataformas a integrar detecção de imagens de abuso e bloquear imediatamente sites, perfis ou canais após identificação confiável, sem defesa prévia.",
+      "support_level": "explicit_proposal",
+      "instrument": "Banco nacional de imagens confirmadas, detecção automática, bloqueio e multas vinculadas ao apoio às vítimas.",
+      "scope": "Plataformas que operem no Brasil e material de abuso ou exploração sexual infantil.",
+      "conditions": [
+        "O texto exige identificação confiável e permite pedido de reativação após comprovação de remoção e segurança.",
+        "Na mesma página, afirma que nenhum site que explore sexualmente criança voltará a operar; a delimitação entre hipóteses não é explicada.",
+        "Não define quem determina o bloqueio, padrão probatório, rito de recurso ou cálculo final da multa."
+      ],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "cada imagem ou vídeo de abuso já identificado e confirmado passa a compor um banco de dados nacional."
+        },
+        {
+          "page": 39,
+          "quote": "Toda plataforma que operar no Brasil será obrigada a integrar esse sistema."
+        },
+        {
+          "page": 40,
+          "quote": "assim que houver identificação confiável desse tipo de material, o site, perfil ou canal sai do ar imediatamente, sem prazo de defesa prévio. Depois da queda, cabe ao site provar que removeu completamente o conteúdo e que criou segurança rígida o suficiente pra impedir nova circulação, pra só então pedir reativação"
+        },
+        {
+          "page": 40,
+          "quote": "nenhum site que explore sexualmente criança brasileira vai voltar a operar no país."
+        }
+      ],
+      "context_pages": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [],
+      "policy_dimension": "Penas mínimas para exploração sexual infantil",
+      "statement": "Buscar ao menos duplicação da pena mínima para quem estrutura, comanda ou vende material de exploração sexual infantil.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança legislativa de penas mínimas e responsabilização de familiares envolvidos.",
+      "scope": "Organizadores, comandantes e vendedores de material ou acesso envolvendo crianças; inclui adultos da família que filmem, fotografem ou vendam.",
+      "conditions": [
+        "Não informa redação legal, tratamento individualizado de todos os tipos penais ou rito disciplinar para magistrados."
+      ],
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Nosso governo vai lutar por legislação que no mínimo dobre a pena mínima hoje em vigor, tanto pra quem estrutura ou comanda rede de exploração sexual infantil quanto pra quem vende acesso ou material envolvendo criança"
+        },
+        {
+          "page": 40,
+          "quote": "Essa responsabilização se estende, com a mesma severidade, a qualquer adulto que filme, fotografe ou venda conteúdo envolvendo a própria criança — pai, mãe, avô ou qualquer familiar."
+        }
+      ],
+      "context_pages": [
+        39,
+        40
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Modernização e financiamento da defesa",
+      "statement": "Aumentar em termos reais o orçamento de defesa e modernizar equipamentos das três Forças com produção nacional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Maior orçamento, substituição de equipamentos e frota, capacidade de vigilância e investimento industrial de defesa.",
+      "scope": "Três Forças, fronteiras e Amazônia Azul.",
+      "conditions": [
+        "O texto fala em produção própria, não somente compra externa; não proíbe importações.",
+        "Não fixa percentual do PIB, lista de aquisições ou cronograma."
+      ],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "aumento real e substancial do orçamento de defesa, com equipamento moderno pras três Forças — substituição de armamento e frota defasados, ampliação de capacidade de vigilância de fronteira e da Amazônia Azul, e modernização tecnológica"
+        },
+        {
+          "page": 29,
+          "quote": "indústria nacional de defesa — modernizar Forças Armadas com produção própria (não só compra no exterior)"
+        }
+      ],
+      "context_pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Autonomia de negociação internacional",
+      "statement": "Buscar capacidade de negociar em condição de igualdade com qualquer potência por meio de dissuasão e defesa própria.",
+      "support_level": "general_goal",
+      "instrument": "Objetivo associado à capacidade militar; não propõe instrumento diplomático específico.",
+      "scope": "Relações com potências estrangeiras e proteção do patrimônio estratégico nacional.",
+      "conditions": [
+        "Não define alianças, acordos comerciais ou participação em blocos.",
+        "Não permite inferir posições sobre BRICS, Mercosul–União Europeia ou relações diplomáticas com Israel."
+      ],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "um país que investe na própria capacidade de defesa é um país que negocia de igual pra igual com qualquer potência"
+        },
+        {
+          "page": 29,
+          "quote": "capacidade de defesa não é sobre atacar ninguém, é sobre dissuasão"
+        }
+      ],
+      "context_pages": [
+        28,
+        29
+      ]
+    }
+  ],
+  "tensions": [
+    {
+      "description": "O imposto único é apresentado como substituto da multiplicidade de tributos, com IPVA expressamente listado na p. 4, enquanto a p. 18 prevê taxa mensal fixa de IPVA e isenção para caminhoneiros. A relação entre a unificação e essa cobrança específica não é explicada.",
+      "position_ids": [
+        "P01",
+        "P02"
+      ],
+      "interpretation_limit": "Registrar ambiguidade de compatibilização, sem concluir inviabilidade ou contradição insolúvel: podem existir etapas ou distinções de base que o documento não explicitou."
+    },
+    {
+      "description": "Na p. 40, o texto admite pedido de reativação após remoção de conteúdo e reforço da segurança, mas também afirma que nenhum site que explore sexualmente criança brasileira voltará a operar. Ambas as formulações constam da mesma política.",
+      "position_ids": [
+        "P40"
+      ],
+      "interpretation_limit": "Pode haver diferença entre hospedagem corrigível e exploração ativa, porém o plano não delimita esses casos. Não converter uma leitura possível em regra geral de banimento definitivo ou retorno garantido."
+    }
+  ],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O governo federal deve investir capital público diretamente na instalação de fábricas de setores estratégicos.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P03"
+      ],
+      "necessary_conditions": [
+        "Prioridade industrial e transformação de matérias-primas no país.",
+        "Investimento direto não equivale necessariamente a controle estatal."
+      ],
+      "contrast_to_investigate": "Investimento direto de capital público em contraste com apoio apenas por crédito, tributação ou investimento exclusivamente privado.",
+      "why_useful": "Expõe o instrumento da política industrial sem reduzir o debate à privatização universal.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A expansão da malha ferroviária deve incluir linhas construídas e operadas por empresas privadas.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P09"
+      ],
+      "necessary_conditions": [
+        "Permissão e expansão não significam operação privada exclusiva de toda a rede.",
+        "O plano toma a legislação ferroviária existente como instrumento."
+      ],
+      "contrast_to_investigate": "Admissão de operadores privados, exclusividade pública ou restrições específicas à sua participação.",
+      "why_useful": "Amplia o questionário para logística e para um modelo concreto de operação.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A política de resíduos urbanos deve incluir aproveitamento energético do lixo.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P12"
+      ],
+      "necessary_conditions": [
+        "O plano associa recuperação energética à coleta seletiva e cita incineração como referência.",
+        "Não presumir abandono de reciclagem, tecnologia exclusiva ou dispensa de controle ambiental."
+      ],
+      "contrast_to_investigate": "Inclusão ou rejeição de tratamento com recuperação energética e suas condições em relação à reciclagem.",
+      "why_useful": "Distingue alternativas técnicas de saneamento e resíduos, em vez de medir somente apoio à limpeza urbana.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Os incentivos públicos à inovação devem dar prioridade a empresas brasileiras.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P14"
+      ],
+      "necessary_conditions": [
+        "Prioridade a capital e tecnologia nacionais; investidores estrangeiros continuam admitidos.",
+        "Não transformar preferência em proibição de capital externo."
+      ],
+      "contrast_to_investigate": "Prioridade por nacionalidade do capital em contraste com tratamento uniforme ou critérios independentes da origem.",
+      "why_useful": "Permite comparar desenho de inovação e desenvolvimento tecnológico para além de aumentar recursos genericamente.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "bem_estar_social",
+      "statement": "O poder público deve oferecer centros de cuidado especializado para apoiar famílias de pessoas autistas.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P21"
+      ],
+      "necessary_conditions": [
+        "Serviço de cuidado e apoio às famílias, com referência às principais cidades.",
+        "Não exigir internação, segregação escolar ou substituição de benefício monetário."
+      ],
+      "contrast_to_investigate": "Apoio por rede pública de serviços de cuidado, por transferências, por contratação de serviços ou combinação dessas alternativas.",
+      "why_useful": "Traz o trabalho de cuidado e apoio familiar para o questionário por meio de um instrumento concreto.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "A educação domiciliar deve ser permitida sob fiscalização pública e avaliação periódica obrigatória.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P26"
+      ],
+      "necessary_conditions": [
+        "Regulamentação federal e monitoramento obrigatório.",
+        "Não importar automaticamente requisitos do projeto legislativo que o plano apenas descreve."
+      ],
+      "contrast_to_investigate": "Permissão condicionada, rejeição ou outras exigências expressas para a educação domiciliar.",
+      "why_useful": "Apresenta escolha educacional distinta de escolas cívico-militares, preservando condições relevantes.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "cidadania_direitos",
+      "statement": "Deve haver um órgão externo e independente para fiscalizar assédio no trabalho em empresas de qualquer porte.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P31"
+      ],
+      "necessary_conditions": [
+        "Investigações alcançam a empresa, com rigor técnico e comprovação.",
+        "Não presumir ausência de órgãos atuais nem atribuir regras jurídicas não explicitadas."
+      ],
+      "contrast_to_investigate": "Criação de órgão próprio, reforço de estruturas existentes ou preferência por mecanismos internos das empresas.",
+      "why_useful": "Abre comparação sobre desenho institucional da proteção trabalhista, além da reforma de 2017.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "statement": "As polícias devem poder usar reconhecimento facial para identificar suspeitos em espaços públicos.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P36"
+      ],
+      "necessary_conditions": [
+        "O plano vincula o uso a câmeras, bases integradas e resposta policial.",
+        "Ausência de salvaguardas detalhadas não significa rejeição expressa de todo controle."
+      ],
+      "contrast_to_investigate": "Permissão, proibição ou uso condicionado a controles específicos de vigilância biométrica.",
+      "why_useful": "Explora escolha entre instrumentos de segurança e proteção de direitos, diferente de apenas aumentar penas.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "O perfil seleciona escolhas principais a partir da leitura integral anterior e de reinspeção contextual; não é uma segunda leitura integral nem inventário de cada medida auxiliar.",
+    "Estatísticas, avaliações de eficácia, alegações sobre legislação vigente e atribuições a países ou organismos internacionais são afirmações do plano, sem verificação externa nesta tarefa.",
+    "As oito sementes dependem de validação documental nos demais planos; não são teses já prontas para o produto."
+  ]
+}

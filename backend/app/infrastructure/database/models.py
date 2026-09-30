@@ -116,6 +116,7 @@ class CandidatePositionModel(Base):
     candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.id"), nullable=False)
     thesis_id: Mapped[int] = mapped_column(ForeignKey("theses.id"), nullable=False)
     position: Mapped[str] = mapped_column(String(32), nullable=False)
+    analytical_position: Mapped[str | None] = mapped_column(String(32), nullable=True)
     justification: Mapped[str | None] = mapped_column(Text, nullable=True)
     quote: Mapped[str | None] = mapped_column(Text, nullable=True)
     source_ref: Mapped[str | None] = mapped_column(String(256), nullable=True)

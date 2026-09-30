@@ -1,0 +1,2195 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002541457",
+  "candidate_name": "Hertz Dias",
+  "agent_id": "/root/plan_hertz",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002541457.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    32,
+    33
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O documento vincula emprego, serviços públicos e soberania à transferência de setores estratégicos ao patrimônio público e à reorganização do poder estatal pelos trabalhadores. Entre as escolhas operacionais estão transporte sem tarifa e estatal, reforma agrária ampla, SUS estatal, currículo elaborado por profissionais da educação, IA e plataformas públicas, mudanças de jornada e de proteção social e combate ao crime por investigação financeira. O próprio texto chama seu projeto de Estado operário revolucionário; o perfil registra essa autodefinição sem lhe acrescentar rótulos externos. Metas gerais, como a ruptura da dependência internacional, ficam separadas de instrumentos efetivamente definidos.",
+    "position_ids": [
+      "P08",
+      "P09",
+      "P05",
+      "P14",
+      "P15",
+      "P18",
+      "P30",
+      "P32",
+      "P37",
+      "P24",
+      "P26",
+      "P41",
+      "P45",
+      "P51",
+      "P57"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "presence": "substantive",
+      "summary": "O financiamento combina suspensão da dívida, fim da LRF, tributação progressiva e retenção de excedentes. O programa apoia pequenos produtores, retira créditos e subsídios do grande agronegócio e propõe proibir as bets. A organização estatal do sistema financeiro é registrada em Estado e Gestão Pública.",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04",
+        "P06",
+        "P07",
+        "P22"
+      ],
+      "gaps": [
+        {
+          "topic": "Regras monetárias e execução fiscal",
+          "reason": "Não define trajetória orçamentária, alíquotas, desenho da auditoria nem decisão específica sobre autonomia do Banco Central e manutenção do arcabouço fiscal.",
+          "context_pages": [
+            4,
+            6,
+            7,
+            27,
+            28
+          ]
+        },
+        {
+          "topic": "Investimento estrangeiro",
+          "reason": "Críticas à dependência, controles de capitais e expropriações setoriais não decidem uma proibição de todo investimento estrangeiro.",
+          "context_pages": [
+            5,
+            6,
+            26,
+            27
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "presence": "substantive",
+      "summary": "O desenho estatal proposto combina expropriações estratégicas e controle dos trabalhadores, estatização financeira com banco único, incorporação de servidores terceirizados, extinção da Justiça Militar e punição patrimonial da corrupção. A transformação do próprio Estado é uma escolha expressamente formulada pelo documento.",
+      "position_ids": [
+        "P05",
+        "P08",
+        "P09",
+        "P10",
+        "P12",
+        "P13"
+      ],
+      "gaps": [
+        {
+          "topic": "Transição institucional",
+          "reason": "Não apresenta roteiro constitucional, repartição de competências, estatuto do banco único, forma de incorporação dos terceirizados ou cronograma de expropriação.",
+          "context_pages": [
+            8,
+            19,
+            26,
+            28,
+            29,
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Petrobras",
+          "reason": "O capital integralmente estatal não define a integração entre produção e refino.",
+          "context_pages": [
+            6,
+            26,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "presence": "substantive",
+      "summary": "Propõe transporte gratuito e estatal, produção pública de moradia e saneamento e uso de expropriações para transformar a ocupação urbana e rural. A reforma agrária permanece nesta categoria; os direitos territoriais indígenas e quilombolas são registrados em Cidadania e Direitos.",
+      "position_ids": [
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18"
+      ],
+      "gaps": [
+        {
+          "topic": "Execução territorial e logística",
+          "reason": "Não quantifica orçamento, cronograma ou capacidade de obras e transporte; a integração das plataformas com os Correios é mencionada, mas não há desenho logístico nacional detalhado.",
+          "context_pages": [
+            8,
+            10,
+            13,
+            14,
+            16,
+            17
+          ]
+        },
+        {
+          "topic": "Instrumentos fundiários",
+          "reason": "Não detalha todos os ritos, critérios de porte e indenizações; não se deve reduzir reforma agrária a desapropriação de improdutivos.",
+          "context_pages": [
+            13,
+            16,
+            18
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "presence": "substantive",
+      "summary": "O plano rejeita petróleo na Margem Equatorial e combina objetivos de agroecologia e recuperação ambiental com instrumentos de prevenção e resposta comunitária a desastres. A retirada de crédito e subsídios do grande agronegócio é registrada em Economia e Desenvolvimento.",
+      "position_ids": [
+        "P20",
+        "P21",
+        "P23"
+      ],
+      "gaps": [
+        {
+          "topic": "Metas e transição ambiental",
+          "reason": "Não fixa trajetória de emissões, calendário para eliminar agrotóxicos, metas de restauração ou matriz energética substitutiva. A rejeição à Margem Equatorial tem alcance territorial definido.",
+          "context_pages": [
+            15,
+            16,
+            17,
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "presence": "substantive",
+      "summary": "O programa articula IA e plataformas públicas, governança de trabalhadores, restrições à hospedagem externa de dados sensíveis, software livre, remuneração de conteúdos usados por IA e fundos de inovação alimentados por excedentes de empresas expropriadas.",
+      "position_ids": [
+        "P24",
+        "P25",
+        "P26",
+        "P27",
+        "P28",
+        "P29"
+      ],
+      "gaps": [
+        {
+          "topic": "Execução tecnológica",
+          "reason": "Não define arquitetura da IA, capacidade computacional, direitos de acesso, auditorias técnicas, cálculo de remuneração ou cronograma. O uso público obrigatório de IA não constitui adesão compulsória de consumidores privados.",
+          "context_pages": [
+            6,
+            9,
+            10,
+            26,
+            27,
+            28,
+            29
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "presence": "substantive",
+      "summary": "Defende provisão estatal de saúde, rede psicossocial sem repasses a comunidades terapêuticas, renda a desempregados, ampliação da previdência, serviços públicos de cuidado e acolhimento de mulheres em situação de violência.",
+      "position_ids": [
+        "P30",
+        "P31",
+        "P32",
+        "P33",
+        "P34",
+        "P35"
+      ],
+      "gaps": [
+        {
+          "topic": "Cobertura, elegibilidade e custos",
+          "reason": "Não apresenta orçamento setorial, critérios completos de elegibilidade da bolsa, parâmetros da nova aposentadoria ou tamanho das redes de cuidado.",
+          "context_pages": [
+            8,
+            11,
+            14,
+            22,
+            23,
+            25
+          ]
+        },
+        {
+          "topic": "Contratação e gestão na saúde",
+          "reason": "O perfil preserva a diferença entre comprar atendimento e delegar gestão; a expressão SUS 100% estatal é mais ampla, mas o plano não descreve contratos específicos para redução de filas.",
+          "context_pages": [
+            2,
+            10,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "presence": "substantive",
+      "summary": "Propõe rede educacional totalmente pública, substituição da BNCC e do Novo Ensino Médio por currículo elaborado por trabalhadores da educação, recusa da militarização, tempo integral universal e não criminalização de manifestações culturais periféricas.",
+      "position_ids": [
+        "P36",
+        "P37",
+        "P38",
+        "P39",
+        "P40"
+      ],
+      "gaps": [
+        {
+          "topic": "Implementação educacional",
+          "reason": "Não especifica novo currículo, metas financeiras, avaliação, dimensionamento de docentes ou cronograma de universalização.",
+          "context_pages": [
+            11,
+            12,
+            23,
+            30
+          ]
+        },
+        {
+          "topic": "Cultura e esporte",
+          "reason": "Há defesa contra criminalização de culturas periféricas, mas não um desenho detalhado de fomento cultural, artes ou esporte.",
+          "context_pages": [
+            12,
+            21,
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "presence": "substantive",
+      "summary": "Reúne direitos territoriais indígenas e quilombolas e escolhas sobre jornada, remuneração, revogação de reformas, vínculo dos aplicativos, ações afirmativas, autonomia reprodutiva, licença parental, mandatos revogáveis, regularização migratória e acessibilidade. Os alcances são mantidos por grupo e instrumento.",
+      "position_ids": [
+        "P19",
+        "P41",
+        "P42",
+        "P43",
+        "P44",
+        "P45",
+        "P46",
+        "P47",
+        "P48",
+        "P49",
+        "P50"
+      ],
+      "gaps": [
+        {
+          "topic": "Operação das garantias",
+          "reason": "Não define percentuais de cotas, novas regras laborais completas, limite gestacional, rateio da licença ou procedimentos de nacionalidade.",
+          "context_pages": [
+            8,
+            9,
+            10,
+            21,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "topic": "Regras eleitorais atuais",
+          "reason": "Defende eleição e revogação nos organismos propostos e na chefia policial, mas não detalha sistema eleitoral nacional, reeleição presidencial ou mecanismo geral de recall para o regime vigente.",
+          "context_pages": [
+            20,
+            30,
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Regimes do trabalho em plataformas",
+          "reason": "Não esclarece a combinação de vínculo empregatício reivindicado nas plataformas atuais e adesão voluntária às contribuições sociais nas plataformas públicas alternativas.",
+          "context_pages": [
+            9,
+            10
+          ]
+        },
+        {
+          "topic": "Direitos territoriais indígenas e quilombolas",
+          "reason": "Não apresenta inventário das áreas, rito completo de demarcação e titulação ou procedimento para resolver conflitos de títulos.",
+          "context_pages": [
+            15,
+            25
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "presence": "substantive",
+      "summary": "O plano propõe desmilitarização e unificação civil das polícias, investigação financeira contra o crime, descriminalização das drogas, câmeras contínuas sob custódia civil, recusa da redução da maioridade penal e da privatização prisional e estímulo à autodefesa coletiva. A extinção da Justiça Militar permanece em Estado e Gestão Pública; eleição e revogabilidade dos dirigentes estão em Cidadania e Direitos.",
+      "position_ids": [
+        "P11",
+        "P51",
+        "P52",
+        "P53",
+        "P54",
+        "P55",
+        "P56"
+      ],
+      "gaps": [
+        {
+          "topic": "Ritos penais e implementação",
+          "reason": "Não detalha critérios de desencarceramento, competências investigativas, regulamentação das drogas ou protocolos da autodefesa.",
+          "context_pages": [
+            18,
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "topic": "Armas e proteção de dados",
+          "reason": "Não permite inferir regra geral de porte de armas a partir da autodefesa, nem livre acesso a todas as imagens das câmeras.",
+          "context_pages": [
+            19,
+            20,
+            33
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "presence": "substantive",
+      "summary": "A soberania aparece como objetivo de ruptura da dependência econômica, sem tratar a China como substituta desejável de outras potências. O acordo Mercosul–União Europeia é objeto de avaliação contrária; instrumentos concretos de controle produtivo e digital estão nas categorias principais correspondentes.",
+      "position_ids": [
+        "P57",
+        "P58"
+      ],
+      "gaps": [
+        {
+          "topic": "Agenda diplomática e de defesa",
+          "reason": "Não decide participação no BRICS, relações com Israel ou medidas detalhadas de diplomacia, alianças militares, organização externa de defesa e implementação da ruptura anunciada.",
+          "context_pages": [
+            4,
+            5,
+            26,
+            30,
+            32,
+            33
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Pagamento da dívida pública",
+      "statement": "Propõe suspender pagamentos da dívida pública aos grandes investidores e realizar auditoria.",
+      "support_level": "explicit_proposal",
+      "instrument": "Suspensão de pagamentos e auditoria.",
+      "scope": "Dívida detida pelos grandes investidores; não define todos os credores.",
+      "conditions": [
+        "Não há prazo, critérios de enquadramento de grandes investidores ou procedimento da auditoria."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Suspensão do pagamento da dívida pública aos grandes investidores e auditoria"
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Regra fiscal",
+      "statement": "Propõe acabar com a Lei de Responsabilidade Fiscal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Extinção da LRF, sem regra substitutiva apresentada.",
+      "scope": "Regra fiscal nomeada na seção de financiamento do programa.",
+      "conditions": [
+        "Não equivale a decisão documental sobre a LC 200/2023; o arcabouço é criticado na p. 4."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Fim a Lei de Responsabilidade Fiscal"
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Incidência e progressividade tributária",
+      "statement": "Propõe tributar progressivamente lucros e fortunas bilionárias, ampliar a taxação de remessas ao exterior, encerrar benefícios às grandes empresas e isentar de IR rendas até dez salários mínimos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Impostos progressivos, tributação de remessas, eliminação de benefícios e atualização da tabela do IR.",
+      "scope": "Fortunas a partir de R$ 1 bilhão, grandes empresas e rendas pessoais nos limites expressos.",
+      "conditions": [
+        "Alíquotas e transição não definidas; tributar remessas não equivale a proibir todo investimento estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Tributação fortemente progressiva sobre lucros empresariais e taxação ampliada sobre remessas de capital ao exterior, impedindo a evasão do excedente produzido pelos trabalhadores brasileiros."
+        },
+        {
+          "page": 27,
+          "quote": "Imposto progressivo sobre as verdadeiras grandes fortunas, o topo da pirâmide, os que possuem de R$ 1 bilhão para cima."
+        },
+        {
+          "page": 27,
+          "quote": "Fim dos benefícios fiscais e tributários às grandes empresas"
+        },
+        {
+          "page": 27,
+          "quote": "Isenção de ir até dez salários mínimos, atualizando a tabela à 1996, a partir de quando deixou de ser corrigida pela inflação, fazendo cada vez mais pobres pagarem ir. A partir daí, alíquotas progressivas."
+        }
+      ],
+      "context_pages": [
+        27
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Destino dos excedentes das empresas privadas",
+      "statement": "Propõe limitar a 25% a distribuição de dividendos das grandes empresas privadas remanescentes e impor reinvestimento do excedente produtivo no país.",
+      "support_level": "explicit_proposal",
+      "instrument": "Teto de distribuição de dividendos e reinvestimento obrigatório.",
+      "scope": "Grandes empresas privadas remanescentes após as expropriações propostas.",
+      "conditions": [
+        "A base contábil do percentual não é detalhada; não se presume proibição de toda empresa privada."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Limitação em 25% da distribuição de dividendos das grandes empresas privadas remanescentes, com reinvestimento obrigatório do excedente produtivo no território nacional."
+        }
+      ],
+      "context_pages": [
+        27
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Organização do crédito e planejamento",
+      "statement": "Propõe estatizar o sistema financeiro e centralizar o crédito em um banco único para planejar a economia e controlar capitais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização financeira e banco único de crédito.",
+      "scope": "Sistema financeiro nacional, orientado ao planejamento da produção e do consumo interno.",
+      "conditions": [
+        "Não define autonomia institucional do Banco Central, estatuto do banco único nem cronograma."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "A estatização do sistema financeiro e centralização do crédito em um banco único é essencial para planejar a economia e garantir o controle de capitais."
+        },
+        {
+          "page": 7,
+          "quote": "Ao mesmo tempo, é necessário que a produção esteja voltada prioritariamente para o mercado interno, de modo que a produção crescente se vincule ao consumo também crescente dos trabalhadores, sem que um obstaculize o desenvolvimento do outro."
+        }
+      ],
+      "context_pages": [
+        7,
+        28
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Apoio produtivo ao pequeno agricultor",
+      "statement": "Propõe crédito público sem intermediação privada para o pequeno produtor, combinado a subsídios, e proteção do abastecimento interno por preços mínimos, estoques reguladores e compras públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Crédito direcionado, juros baixos, seguro, benefícios tributários e instrumentos públicos de comercialização.",
+      "scope": "Pequenos produtores e mercado interno de alimentos; o diagnóstico também abrange produtores médios.",
+      "conditions": [
+        "Não fixa valores de crédito, taxas ou critérios de porte."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "Crédito público direcionado, sem intermediação privada, com juros baixos, combinado com subsídios ao pequeno produtor, incluindo isenção de impostos, seguro agrícola e políticas que evitem endividamento."
+        },
+        {
+          "page": 17,
+          "quote": "Regulação e proteção do mercado interno, com preços mínimos, estoques reguladores e compras públicas (merenda escolar, hospitais e programas sociais), reduzindo a dependência em relação às grandes empresas."
+        }
+      ],
+      "context_pages": [
+        17
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Regulação das empresas de apostas",
+      "statement": "Propõe proibir as bets e expropriar seu capital e o de seus proprietários para financiar tratamento de ludopatia; inclui proibir transações bancárias com essas empresas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proibição, expropriação e destinação a fundo de saúde.",
+      "scope": "Empresas de apostas referidas como bets e seus proprietários.",
+      "conditions": [
+        "Não detalha situação de contratos vigentes ou alcance sobre outras modalidades de jogo."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Proibição das Bets, expropriação de seu capital e de seus proprietários e sua reversão a um fundo público de saúde para o tratamento de ludopatia"
+        },
+        {
+          "page": 28,
+          "quote": "proibição aos bancos de realizarem transações financeiras a essas empresas."
+        }
+      ],
+      "context_pages": [
+        27,
+        28
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Propriedade dos setores estratégicos",
+      "statement": "Propõe expropriar grandes empresas estratégicas, reverter privatizações e proibir novas privatizações nesses setores; exige Petrobras 100% estatal e criação de estatal de terras raras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expropriação, incorporação de ativos ao patrimônio público, reestatização e criação de empresa.",
+      "scope": "Mineração, petróleo, energia, siderurgia, celulose e grandes comercializadoras do agronegócio; empresas consideradas estratégicas.",
+      "conditions": [
+        "Propriedade estatal da Petrobras não determina integração de produção e refino.",
+        "A regra não abrange automaticamente toda propriedade privada; o documento prevê empresas privadas remanescentes."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Expropriação imediata (em grande parte dos casos, reversão de privatização) das grandes empresas privadas dos setores de mineração, petróleo, energia, siderurgia, celulose e das grandes comercializadoras e centralizadoras do agronegócio, incorporando seus ativos ao patrimônio público nacional."
+        },
+        {
+          "page": 26,
+          "quote": "Proibição da privatização de empresas estratégicas e reversão das privatizações realizadas nos setores considerados essenciais à soberania econômica, militar e social."
+        },
+        {
+          "page": 26,
+          "quote": "Petrobras 100% estatal e sob controle dos trabalhadores já!"
+        },
+        {
+          "page": 26,
+          "quote": "As terras raras são nossas! Pela criação de uma empresa estatal de terras raras sob controle dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Organização do poder estatal",
+      "statement": "O próprio texto defende substituir o Estado existente por um Estado que denomina operário revolucionário, apoiado na participação direta dos trabalhadores e em organismos democráticos de base.",
+      "support_level": "explicit_proposal",
+      "instrument": "Construção de outro Estado e de organismos de autogoverno dos trabalhadores.",
+      "scope": "Projeto de transformação estrutural do poder político; não é descrito como simples reforma administrativa.",
+      "conditions": [
+        "As denominações são autodefinições citadas do plano, não rótulos atribuídos pelo perfil.",
+        "Competências, garantias constitucionais e processo de transição não são detalhados."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Defendemos um Estado operário revolucionário, uma ditadura revolucionária do proletariado contra a burguesia, os monopólios e o imperialismo, sobretudo fundada na mais ampla democracia operária e popular."
+        },
+        {
+          "page": 33,
+          "quote": "Não queremos substituir a classe por uma burocracia. Queremos que a própria classe trabalhadora e seus aliados governem diretamente a sociedade, organizem a economia, controlem as riquezas do país e decidam os rumos políticos da nova sociedade."
+        }
+      ],
+      "context_pages": [
+        29,
+        30,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Vínculos de trabalho na administração",
+      "statement": "Propõe incorporar terceirizados ao quadro efetivo do serviço público e realizar concurso para novas contratações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Incorporação dos trabalhadores existentes e concurso público para novas admissões.",
+      "scope": "Trabalhadores terceirizados do serviço público e futuras contratações.",
+      "conditions": [
+        "Não informa procedimento jurídico da incorporação nem define equivalência com admissão por concurso dos atuais trabalhadores."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Incorporação dos trabalhadores terceirizados no quadro efetivo do serviço público e realização de concurso público para novas contratações."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Desenho institucional das polícias",
+      "statement": "Propõe desmilitarizar a PM e demais forças e unificar as polícias numa instituição civil; diferencia essas mudanças imediatas de um objetivo estratégico de substituição das instituições atuais em outra sociedade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desmilitarização e unificação institucional civil, com horizonte posterior de substituição.",
+      "scope": "Polícias e guardas municipais no processo de desmilitarização; instituição policial civil unificada.",
+      "conditions": [
+        "A eleição e revogabilidade de dirigentes são registradas como decisão distinta em P47.",
+        "O horizonte estratégico não apaga a defesa de mudanças imediatas."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Desmilitarização da Polícia Militar e reversão da dinâmica de militarização das demais polÍcias e guardas municipais."
+        },
+        {
+          "page": 20,
+          "quote": "Unificação das polícias em uma única instituição de caráter civil, com eleição de comandantes e delegados pela população e mandatos revogáveis"
+        },
+        {
+          "page": 19,
+          "quote": "Por isso, o objetivo estratégico da classe trabalhadora deve ser sua dissolução e a construção de um sistema de segurança pública baseado na auto-organização da população trabalhadora ou sob seu estrito controle em outra sociedade."
+        }
+      ],
+      "context_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Existência de ramo judicial militar",
+      "statement": "Propõe acabar com a Justiça Militar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Extinção de ramo institucional de justiça.",
+      "scope": "Justiça Militar, sem distinção expressa entre esferas ou definição de destino das competências.",
+      "conditions": [
+        "Não especifica composição dos órgãos sucessores nem regras processuais de transição."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Fim da Justiça Militar"
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Responsabilização por corrupção",
+      "statement": "Propõe investigar e punir corruptos e corruptores e confiscar os bens obtidos por corrupção.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investigação, punição e confisco patrimonial.",
+      "scope": "Agentes de corrupção dos dois lados da transação e bens de origem corrupta.",
+      "conditions": [
+        "Não detalha autoridade responsável, rito ou padrão probatório."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Investigação e punição de corruptos e corruptores, com confisco dos bens obtidos por meio da corrupção."
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [],
+      "policy_dimension": "Cobrança de passagem",
+      "statement": "Propõe tarifa zero no transporte público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eliminação de tarifa ao usuário.",
+      "scope": "Transporte público; a seção a combina com operação estatal.",
+      "conditions": [
+        "O instrumento tarifário é separado da propriedade e dos subsídios, registrados em P15.",
+        "Não há fórmula de custeio local ou calendário."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Tarifa zero no transporte público"
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Modelo de provisão do transporte",
+      "statement": "Propõe estatizar o transporte urbano, reverter concessões privadas e encerrar subsídios a empresas privadas de transporte.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização, reversão de concessões e fim dos subsídios privados.",
+      "scope": "Sistemas urbanos; também rejeita privatizações de metrôs, estradas e ferrovias.",
+      "conditions": [
+        "Tarifa zero não é apresentada como subsídio a concessionárias privadas."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Transporte público estatal, sob controle público e dos trabalhadores"
+        },
+        {
+          "page": 14,
+          "quote": "Estatização dos sistemas de transporte urbano e reversão das concessões privadas"
+        },
+        {
+          "page": 14,
+          "quote": "Contra a privatização de metrôs, estradas e ferrovias"
+        },
+        {
+          "page": 14,
+          "quote": "Fim dos subsídios públicos às empresas privadas de transporte"
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Provisão de habitação e infraestrutura urbana",
+      "statement": "Propõe construir moradias populares e infraestrutura por empresa pública de obras, urbanizar periferias e universalizar o saneamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Empresa pública de obras e expansão da infraestrutura urbana.",
+      "scope": "Moradias populares, periferias e comunidades; saneamento de alcance universal.",
+      "conditions": [
+        "Não quantifica unidades, custos ou prazos; o instrumento definido para obras é público."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Construção massiva de moradias populares e infraestrutura por empresa pública de obras"
+        },
+        {
+          "page": 13,
+          "quote": "Urbanização das periferias e comunidades populares"
+        },
+        {
+          "page": 13,
+          "quote": "Universalização do saneamento básico"
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [],
+      "policy_dimension": "Função territorial dos imóveis urbanos",
+      "statement": "Propõe expropriar imóveis urbanos abandonados, ociosos ou destinados exclusivamente à especulação imobiliária.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expropriação de imóveis delimitados pelo uso.",
+      "scope": "Imóveis urbanos nas três situações especificadas.",
+      "conditions": [
+        "Não detalha critérios de reconhecimento da ociosidade, indenização ou rito."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Expropriação dos imóveis urbanos abandonados, ociosos ou destinados exclusivamente à especulação imobiliária."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Reforma agrária e controle da terra",
+      "statement": "Propõe transferir o controle das terras aos trabalhadores rurais, desapropriar áreas de especulação fundiária e expropriar grandes propriedades do agronegócio sem indenização aos grandes grupos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma agrária, desapropriação e expropriação sob controle de trabalhadores rurais.",
+      "scope": "Inclui latifúndios improdutivos, áreas griladas, monoculturas de exportação, terras subutilizadas e sob controle financeiro.",
+      "conditions": [
+        "Não restringe a proposta apenas a terras improdutivas; não define limiar de grande propriedade.",
+        "A ausência de indenização é expressamente dirigida aos grandes grupos."
+      ],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "Terra a quem nela trabalha! Por reforma agrária e por uma revolução na estrutura do campo brasileiro! Transferir o controle das terras para os trabalhadores rurais, transformando estruturalmente as relações de propriedade, poder e produção no campo, pondo fim à exploração que enriquece bilionários."
+        },
+        {
+          "page": 16,
+          "quote": "Desapropriação das áreas utilizadas para especulação fundiária – incluindo terras públicas devolutas, latifúndios improdutivos, áreas griladas, terras concentradas em monoculturas voltadas à exportação, propriedades subutilizadas e áreas sob controle do capital financeiro."
+        },
+        {
+          "page": 18,
+          "quote": "Expropriação das grandes propriedades rurais e das empresas do agronegócio, retirando o controle da produção do grande capital e das multinacionais, sem indenização aos grandes grupos e sob controle dos trabalhadores rurais."
+        }
+      ],
+      "context_pages": [
+        16,
+        18
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Terras indígenas e quilombolas",
+      "statement": "Propõe demarcação imediata das terras indígenas e titulação de territórios quilombolas, com proteção das comunidades.",
+      "support_level": "explicit_proposal",
+      "instrument": "Demarcação, regulamentação e titulação territorial.",
+      "scope": "Todas as terras indígenas e territórios quilombolas referidos no programa.",
+      "conditions": [
+        "Não apresenta inventário de áreas ou procedimento para resolver conflitos de títulos."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Reparação e demarcação imediata das terras indígenas, titulação dos territórios quilombolas e proteção das comunidades tradicionais"
+        },
+        {
+          "page": 25,
+          "quote": "Demarcação e regulamentação já de todas terras indígenas é uma medida democrática mínima."
+        }
+      ],
+      "context_pages": [
+        15,
+        25
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Exploração de petróleo na Margem Equatorial",
+      "statement": "Rejeita a exploração de petróleo na Margem Equatorial.",
+      "support_level": "explicit_rejection",
+      "instrument": "Impedimento da exploração no território especificado.",
+      "scope": "Margem Equatorial; não formula proibição de toda produção petrolífera brasileira.",
+      "conditions": [
+        "A posição territorial não se confunde com fim da Petrobras ou de todos os investimentos em petróleo."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Não à exploração do petróleo da Margem Equatorial!"
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transformação ambiental da agricultura",
+      "statement": "Defende eliminar o uso de agrotóxicos e promover agroecologia e recuperação das áreas degradadas.",
+      "support_level": "general_goal",
+      "instrument": "Objetivo de mudança do modelo agrícola; não detalha sequência normativa para eliminar agrotóxicos.",
+      "scope": "Produção agrícola e áreas degradadas pelo agronegócio.",
+      "conditions": [
+        "Não especifica lista de produtos, prazo de transição ou metas quantitativas de recuperação.",
+        "Demarcação territorial fica registrada uma única vez em P19."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "É preciso enfrentar o agronegócio e os governos capitalistas e defender medidas visando o fim do uso de agrotóxicos, a recuperação de áreas degradadas, a promoção da agroecologia e a aceleração da demarcação de terras indígenas e territórios quilombolas:"
+        },
+        {
+          "page": 15,
+          "quote": "Recuperação das áreas desmatadas e dos biomas devastados pelo agronegócio."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "meio_ambiente_clima",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Financiamento público ao grande agronegócio",
+      "statement": "Propõe encerrar créditos públicos e subsídios estatais ao grande agronegócio, redirecionando recursos à produção de alimentos voltada à soberania alimentar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Retirada do financiamento subsidiado e redirecionamento de recursos.",
+      "scope": "Grande agronegócio e monopólios nacionais e internacionais; não atinge o apoio proposto aos pequenos produtores.",
+      "conditions": [
+        "O texto não define limiar econômico de grande agronegócio."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Fim dos créditos públicos e dos subsídios estatais ao grande agronegócio"
+        },
+        {
+          "page": 18,
+          "quote": "Fim dos subsídios públicos bilionários ao grande agronegócio e aos monopólios, nacionais e internacionais, com redirecionamento desses recursos para a produção de alimentos voltada à soberania alimentar."
+        }
+      ],
+      "context_pages": [
+        15,
+        18
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Adaptação a eventos climáticos",
+      "statement": "Propõe planos de prevenção a enchentes e deslizamentos e protocolos de emergência com alertas, evacuação e participação comunitária.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prevenção territorial e defesa civil participativa.",
+      "scope": "Áreas de risco e moradias precárias expostas aos efeitos do aquecimento global.",
+      "conditions": [
+        "Não apresenta mapa de áreas, orçamento nem divisão operacional de responsabilidades."
+      ],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "Planos de prevenção contra os efeitos do aquecimento global, tais como: prevenção contra enchentes; prevenção contra deslizamentos de áreas de risco, que atingem as moradias mais precárias."
+        },
+        {
+          "page": 16,
+          "quote": "Planos de emergência e defesa civil: alertas e evacuação, com participação comunitária"
+        }
+      ],
+      "context_pages": [
+        16
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Provisão nacional de inteligência artificial",
+      "statement": "Propõe desenvolver IA pública nacional, financiada por excedentes de empresas estratégicas expropriadas, com uso obrigatório na gestão e empresas públicas e oferta subsidiada opcional a usuários externos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desenvolvimento estatal e obrigação de adoção no setor público.",
+      "scope": "Gestão pública e empresas públicas; plataformas de trabalho e consumidores como usuários opcionais.",
+      "conditions": [
+        "Obrigatoriedade não se estende aos consumidores em geral.",
+        "Não define fornecedor, arquitetura, capacidade computacional, prazo ou critérios de segurança."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Desenvolvimento de uma inteligência artificial pública nacional, financiada por excedentes de empresas estratégicas expropriadas, com uso obrigatório na gestão e em empresas públicas e como opção subsidiada às diversas modalidades de trabalho por plataformas e aos consumidores em geral."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Localização e jurisdição de dados públicos",
+      "statement": "Propõe proibir hospedagem de dados governamentais sensíveis em nuvens estrangeiras e vedar contratos que submetam dados nacionais a legislações externas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proibições de hospedagem e cláusulas contratuais sujeitas à legislação externa.",
+      "scope": "Dados governamentais sensíveis e contratos sobre dados nacionais.",
+      "conditions": [
+        "Não se amplia a primeira proibição para qualquer dado privado; sensibilidade e critérios de nuvem estrangeira não são definidos."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Proibição da hospedagem de dados governamentais sensíveis em nuvens estrangeiras e vedação de contratos que submetam dados nacionais a legislações externas."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Plataformas digitais de serviços e comércio",
+      "statement": "Propõe plataformas públicas nacionais de transporte, entrega, comércio eletrônico, microtarefas e trabalho freelancer, governadas por conselhos de trabalhadores usuários e com algoritmos auditáveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Criação de plataformas públicas financiadas por recursos de empresas expropriadas e governança por conselhos.",
+      "scope": "Trabalhadores e pequenos empreendimentos usuários dos serviços especificados.",
+      "conditions": [
+        "O texto apresenta as plataformas públicas como alternativa; não determina aqui extinção de todas as plataformas privadas.",
+        "A proteção social voluntária descrita para as novas modalidades precisa ser lida junto com a reivindicação de vínculo nas plataformas existentes em P43."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Criação de plataformas públicas nacionais de transporte, entrega, comércio eletrônico, microtarefas e trabalho freelancer, financiadas com recursos das empresas estratégicas expropriadas."
+        },
+        {
+          "page": 10,
+          "quote": "Gestão dessas plataformas por conselhos de trabalhadores usuários, responsáveis por deliberar sobre as regras de remuneração, funcionamento e destino dos excedentes gerados pela plataforma."
+        },
+        {
+          "page": 10,
+          "quote": "Transparência integral dos algoritmos de distribuição de tarefas, avaliação e remuneração, com auditoria permanente pelos conselhos de trabalhadores."
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Remuneração de dados e conteúdo para IA estatal",
+      "statement": "Propõe remuneração continuada a trabalhadores e produtores cujo conteúdo ou dados sejam usados no treinamento de IA estatal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Remuneração continuada pelo uso de conteúdo e dados.",
+      "scope": "Sistemas de IA estatais e seus fornecedores de conhecimento.",
+      "conditions": [
+        "Não define base de cálculo, representação dos titulares ou identificação de contribuições."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Garantia de remuneração continuada aos trabalhadores e produtores de conhecimento cujos conteúdos e dados sejam utilizados no treinamento de sistemas de inteligência artificial estatais."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Modelo de software e bens digitais",
+      "statement": "Propõe prioridade nacional ao desenvolvimento e uso de software livre e bens públicos digitais em parceria com universidades e institutos públicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prioridade pública de desenvolvimento e adoção com cooperação científica.",
+      "scope": "Software livre e bens digitais públicos; não equivale a banir todos os produtos proprietários.",
+      "conditions": [
+        "Não determina licenças, cronograma de migração nem critérios de exceção."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Prioridade nacional ao desenvolvimento e uso de softwares livres e bens públicos digitais, em parceria com universidades públicas e institutos de pesquisa"
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Financiamento de industrialização e inovação",
+      "statement": "Propõe fundos públicos alimentados pelos excedentes de empresas expropriadas, associados a universidades e institutos de pesquisa, para industrialização, inovação e infraestrutura; prioriza setores tecnológicos de maior complexidade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundos públicos produtivos e destinação dos excedentes a setores estratégicos.",
+      "scope": "Inclui refino, minerais críticos, máquinas, infraestrutura digital, química fina e defesa.",
+      "conditions": [
+        "A menção a refino não define integração dentro da Petrobras.",
+        "A aquisição estratégica de tecnologias maduras é admitida; autonomia tecnológica não significa isolamento de toda tecnologia externa.",
+        "Os fundos citados são financiados por excedentes; isso não torna contraditórias outras propostas tributárias que financiem outros destinos."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Criação de fundos públicos de investimento produtivo, abastecidos pelos excedentes das empresas expropriadas, e não por impostos, voltados à industrialização, inovação tecnológica e expansão da infraestrutura nacional organicamente associados a todas as universidades e institutos públicos de pesquisa e desenvolvimento."
+        },
+        {
+          "page": 26,
+          "quote": "Destinação prioritária dos excedentes dessas empresas à criação e expansão de setores de alta complexidade tecnológica, especialmente nos ramos de refino e de separação de alta pureza de terras raras e minerais críticos, máquinas e equipamentos associadas à estrutura produtiva nacional, infraestrutura digital, química fina e defesa."
+        },
+        {
+          "page": 6,
+          "quote": "Tecnologias que concentram décadas de conhecimento acumulado, como os semicondutores, poderão ser adquiridas estrategicamente;"
+        }
+      ],
+      "context_pages": [
+        6,
+        26,
+        27
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Modelo e oferta do sistema de saúde",
+      "statement": "Propõe SUS público, universal e 100% estatal, fim da gestão privada e expansão da rede própria com prioridade à atenção básica; inclui atenção especializada para pessoas LGBTQIAPN+ pelo SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Oferta estatal, fim de OS e PPPs na gestão, expansão de hospitais e UBS e prestação de serviços especializados.",
+      "scope": "SUS e serviços de saúde previstos no programa, inclusive terapia hormonal e cirurgia de redesignação com acompanhamento.",
+      "conditions": [
+        "Proibição de delegação de gestão e eventual compra de atendimento são objetos distintos; não se usa a primeira sozinha para deduzir a segunda.",
+        "Não define número de equipes, prazos de atendimento ou critérios clínicos específicos."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Defesa do sus público, universal, gratuito e 100% estatal"
+        },
+        {
+          "page": 11,
+          "quote": "Fim da privatização e da gestão privada da saúde (OS, Fundações e PPP)"
+        },
+        {
+          "page": 11,
+          "quote": "Ampliação do investimento público em saúde, com prioridade para a atenção básica"
+        },
+        {
+          "page": 11,
+          "quote": "Expansão da rede pública de hospitais, upas e Unidades Básicas de Saúde (UBS)"
+        },
+        {
+          "page": 25,
+          "quote": "Investimento na saúde especializada para pessoas LGBTQIAPN+. Direito à terapia hormonal e à cirurgia de redesignação pelo sus, com acompanhamento adequado."
+        }
+      ],
+      "context_pages": [
+        11,
+        25
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Modelo de cuidado em saúde mental",
+      "statement": "Propõe ampliar CAPS, residências terapêuticas e centros de convivência, sem investimento público em comunidades terapêuticas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ampliação da rede psicossocial e veto ao financiamento de comunidades terapêuticas.",
+      "scope": "Saúde mental e cuidado psicossocial financiado pelo poder público.",
+      "conditions": [
+        "Não fixa metas territoriais, valores nem regras de transição entre serviços."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Cuidado com a saúde mental: ampliação do investimento público nos Centros de Atenção Psicossocial (Caps), no Serviço de Residências Terapêuticas e Centros de Convivência. Nenhum investimento público em Comunidades Terapêuticas!"
+        }
+      ],
+      "context_pages": [
+        11
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Transferência de renda a desempregados",
+      "statement": "Propõe bolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver pleno emprego.",
+      "support_level": "explicit_proposal",
+      "instrument": "Bolsa pública vinculada ao salário mínimo.",
+      "scope": "Trabalhadores desempregados; manutenção da política enquanto não houver pleno emprego.",
+      "conditions": [
+        "Não informa teste de renda, duração individual ou relação com outros benefícios.",
+        "Não decide substituir o Bolsa Família por trabalho remunerado."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Bolsa equivalente a um salário mínimo para trabalhadores desempregados enquanto não houver pleno emprego."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Previdência e acesso à aposentadoria",
+      "statement": "Propõe revogar a reforma previdenciária, reduzir a idade mínima, manter previdência pública universal e incluir informais e precarizados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação de reforma, redução de idade e ampliação de cobertura previdenciária pública.",
+      "scope": "Trabalhadores formais, informais e precarizados.",
+      "conditions": [
+        "Não fixa nova idade, regra contributiva ou regime de transição."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Revogação da reforma da Previdência"
+        },
+        {
+          "page": 14,
+          "quote": "Defesa da previdência pública, solidária e universal"
+        },
+        {
+          "page": 14,
+          "quote": "Redução da idade mínima para aposentadoria"
+        },
+        {
+          "page": 14,
+          "quote": "Inclusão de trabalhadores informais e precarizados na proteção previdenciária"
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Socialização do trabalho de cuidado",
+      "statement": "Propõe restaurantes populares e lavanderias públicas em todos os bairros e expansão de serviços públicos de cuidado de idosos e pessoas com necessidades especiais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Serviços públicos de alimentação, lavanderia e cuidado.",
+      "scope": "Todos os bairros e grupos que demandam cuidado; redução da sobrecarga atribuída às mulheres.",
+      "conditions": [
+        "Não detalha gratuidades, financiamento, dimensionamento ou forma de acesso.",
+        "Creches e escolas integrais têm posição principal única em P39."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Restaurantes populares e lavanderias públicas em todos os bairros"
+        },
+        {
+          "page": 23,
+          "quote": "Ampliação dos serviços públicos de cuidado (idosos, pessoas com necessidades especiais) retirando das mulheres essa sobrecarga."
+        }
+      ],
+      "context_pages": [
+        23
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Rede de proteção a mulheres em situação de violência",
+      "statement": "Propõe delegacias especializadas abertas 24 horas, casas-abrigo e rede de atendimento conforme a demanda, financiadas pelo Estado e com controle das trabalhadoras e da população.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rede pública de acolhimento e proteção contínua.",
+      "scope": "Mulheres em situação de violência; atendimento dimensionado pela demanda.",
+      "conditions": [
+        "Não indica quantidade de unidades, critérios de acolhimento ou divisão de competências."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "Proteção real para as mulheres: delegacias especializadas abertas 24 horas, casas-abrigo e rede de atendimento conforme a demanda, com recursos garantidos pelo Estado e sob controle das trabalhadoras e da população."
+        }
+      ],
+      "context_pages": [
+        22
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Financiamento e organização da educação",
+      "statement": "Defende educação totalmente pública e sistema único, rejeitando recursos aos grandes empresários, PPPs, terceirizações e aquisição de materiais e serviços dessas empresas pelas redes públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rede pública e exclusão das modalidades privadas especificadas no financiamento e provisão.",
+      "scope": "Educação de crianças e adolescentes e redes públicas de ensino.",
+      "conditions": [
+        "A proibição de verba da p. 12 nomeia grandes empresários; a formulação da p. 30 é mais abrangente.",
+        "Não apresenta modelo de transição das instituições atuais nem regras específicas para entidades comunitárias."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Nenhuma verba pública para os grandes empresários da educação!"
+        },
+        {
+          "page": 12,
+          "quote": "Fim das Parcerias Público-Privadas (PPP), das terceirizações e da aquisição de materiais e serviços dessas empresas pelas redes públicas de ensino"
+        },
+        {
+          "page": 12,
+          "quote": "Por um sistema único de educação para todas as crianças e adolescentes. Abaixo o abismo entre educação de ricos e pobres!"
+        },
+        {
+          "page": 30,
+          "quote": "Defender uma educação totalmente pública, sem fundações empresariais definindo a política educacional, significa enfrentar o poder econômico dentro do próprio Estado."
+        }
+      ],
+      "context_pages": [
+        12,
+        30
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Elaboração do currículo escolar",
+      "statement": "Propõe revogar BNCC e Novo Ensino Médio e substituí-los por propostas curriculares elaboradas pelos trabalhadores da educação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação curricular e formulação pelos profissionais da educação.",
+      "scope": "Currículos associados à BNCC e ao Novo Ensino Médio.",
+      "conditions": [
+        "Não detalha o novo currículo nem a instância representativa responsável por elaborá-lo."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Revogação das propostas curriculares elaboradas pelos grandes empresários da educação e fundações privadas (BNCC e Novo Ensino Médio). Por propostas curriculares elaboradas pelos trabalhadores da educação."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Militarização e controle ideológico escolar",
+      "statement": "Rejeita a militarização das escolas e projetos de controle ideológico identificados pelo plano, como Escola Sem Partido.",
+      "support_level": "explicit_rejection",
+      "instrument": "Recusa dos modelos especificados.",
+      "scope": "Escolas, sem exceção textual de modalidade cívico-militar.",
+      "conditions": [
+        "Não acrescenta critério externo sobre o que seria controle ideológico."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Não à militarização das escolas e a projetos de controle ideológico, como Escola Sem Partido!"
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Oferta integral de creches e escolas",
+      "statement": "Propõe creches e escolas públicas gratuitas em tempo integral para todas as crianças.",
+      "support_level": "explicit_proposal",
+      "instrument": "Universalização da oferta pública em tempo integral.",
+      "scope": "Todas as crianças, ligada à independência das mulheres.",
+      "conditions": [
+        "Não define prazo, custos ou plano de expansão territorial."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Creches e escolas públicas, gratuitas e em tempo integral para todas as crianças, como condição para a independência das mulheres"
+        }
+      ],
+      "context_pages": [
+        23
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Tratamento das culturas periféricas",
+      "statement": "Rejeita criminalizar culturas periféricas, nomeando funk e batalhas de rima.",
+      "support_level": "explicit_rejection",
+      "instrument": "Recusa de tratamento criminal das expressões culturais citadas.",
+      "scope": "Culturas periféricas e suas manifestações.",
+      "conditions": [
+        "Não detalha política de financiamento cultural, equipamentos ou exceções relativas a condutas específicas."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Contra a criminalização das culturas periféricas: funk e batalhas de rima não são casos de polícia."
+        }
+      ],
+      "context_pages": [
+        21
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Jornada e escala de trabalho",
+      "statement": "Propõe acabar com a escala 6×1, reduzir a jornada a 36 horas sem perda salarial ou de direitos e avançar a reduções ligadas ao pleno emprego e aos ganhos tecnológicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução legal da jornada e escala móvel de horas; redução automática proporcional a ganhos de produtividade da IA.",
+      "scope": "Trabalhadores em geral; a seção antirracista especifica escala 4×3 para 36 horas semanais.",
+      "conditions": [
+        "Não define limite diário, fórmula de apuração da produtividade ou calendário; não se inventa conflito entre 36 horas e escala 4×3."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Fim da escala 6×1 sem redução de salários e direitos, sem pejotização e sem demissões"
+        },
+        {
+          "page": 8,
+          "quote": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego). Trabalhar menos para que todos trabalhem!"
+        },
+        {
+          "page": 21,
+          "quote": "Fim da escala 6×1! Pela redução da jornada para 36 horas semanais, escala 4×3, sem redução de salário."
+        },
+        {
+          "page": 29,
+          "quote": "Redução automática da jornada de trabalho, sem redução salarial, na proporção dos ganhos de produtividade oriundos do uso de ferramentas de inteligência artificial e correlatas."
+        }
+      ],
+      "context_pages": [
+        8,
+        21,
+        29
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reforma trabalhista e terceirização",
+      "statement": "Propõe revogar a reforma trabalhista e a lei das terceirizações, acabar com a terceirização e assegurar salário igual para trabalho igual.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação legislativa e eliminação da terceirização.",
+      "scope": "Relações de trabalho e direitos de todos os trabalhadores; incorporação administrativa dos terceirizados públicos está em P10.",
+      "conditions": [
+        "Não detalha a legislação substitutiva ou cronograma da eliminação."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Revogação da reforma trabalhista"
+        },
+        {
+          "page": 8,
+          "quote": "Revogação da lei das terceirizações. Fim da terceirização, salário igual para trabalho igual e direitos para todos os trabalhadores."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Vínculo e proteção social no trabalho por aplicativos",
+      "statement": "Defende reconhecimento de vínculo empregatício e direitos trabalhistas dos trabalhadores de aplicativos, com fiscalização pública das condições de trabalho.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reconhecimento de emprego, direitos e fiscalização.",
+      "scope": "Trabalhadores das plataformas atuais; o capítulo seguinte trata de plataformas públicas alternativas.",
+      "conditions": [
+        "A p. 10 propõe contribuições com adesão voluntária nas modalidades das plataformas públicas; não explica a articulação jurídica com o vínculo reivindicado na p. 9.",
+        "Essa diferença de contexto não foi convertida em revogação de direitos ou contradição automática."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Reconhecimento do vínculo empregatício"
+        },
+        {
+          "page": 9,
+          "quote": "Garantia de todos os direitos: previdência, férias, 13º, descanso remunerado, seguro contra acidentes, licença-maternidade e proteção social efetiva"
+        },
+        {
+          "page": 9,
+          "quote": "Fiscalização pública das condições de trabalho nas plataformas digitais. Contra as punições arbitrárias!"
+        },
+        {
+          "page": 10,
+          "quote": "Instituição de alternativas de contribuições públicas para previdência, férias remuneradas, descanso semanal e fundo de garantia para essas modalidades de trabalho, com adesão voluntária e proteção social progressiva aos trabalhadores de plataforma."
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Ações afirmativas de ingresso",
+      "statement": "Propõe manter e ampliar cotas para negros em universidades e serviços públicos e criar cotas trans em universidades e concursos públicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reservas de vagas por ação afirmativa.",
+      "scope": "Negros e pessoas trans nos âmbitos especificados.",
+      "conditions": [
+        "Não fixa percentuais, procedimentos de elegibilidade ou duração."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos"
+        },
+        {
+          "page": 25,
+          "quote": "Cotas trans nas universidades e concursos públicos, rumo ao pleno emprego!"
+        }
+      ],
+      "context_pages": [
+        21,
+        25
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Autonomia reprodutiva e aborto",
+      "statement": "Defende aborto legal, seguro e gratuito pelo SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Permissão legal e oferta pública gratuita.",
+      "scope": "Pessoas que necessitam do atendimento; o capítulo é formulado como direitos das mulheres.",
+      "conditions": [
+        "Não define limites gestacionais ou hipóteses jurídicas; não se amplia a frase para autorização sem limite temporal."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Aborto legal, seguro e gratuito pelo sus, contra qualquer interferência de igrejas e setores reacionários"
+        }
+      ],
+      "context_pages": [
+        23
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Licença parental",
+      "statement": "Propõe licença parental de um ano compartilhada entre responsáveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Licença compartilhada com duração definida.",
+      "scope": "Responsáveis pela criança, sem detalhamento dos vínculos de trabalho abrangidos.",
+      "conditions": [
+        "Não informa divisão do período, custeio ou requisitos de elegibilidade."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Licença parental de um ano, compartilhada entre responsáveis."
+        }
+      ],
+      "context_pages": [
+        23
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Escolha e revogação de representantes",
+      "statement": "Propõe representantes eleitos e revogáveis nos organismos de poder dos trabalhadores e eleição popular com mandatos revogáveis de comandantes e delegados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eleição e revogabilidade de mandato.",
+      "scope": "Organismos democráticos de base do Estado proposto e direção das instituições policiais reorganizadas.",
+      "conditions": [
+        "Não especifica duração, procedimento de revogação ou regras de reeleição; não se transfere automaticamente o modelo ao mandato presidencial atual.",
+        "O desenho da polícia civil unificada é registrado em P11; aqui a decisão é de representação e controle do mandato."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Defendemos um poder baseado em organismos democráticos construídos pela própria classe trabalhadora e seus aliados em luta, com representantes eleitos e revogáveis, sob controle permanente da base."
+        },
+        {
+          "page": 20,
+          "quote": "Unificação das polícias em uma única instituição de caráter civil, com eleição de comandantes e delegados pela população e mandatos revogáveis"
+        }
+      ],
+      "context_pages": [
+        20,
+        33
+      ]
+    },
+    {
+      "id": "P48",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Nacionalidade e regularização de imigrantes",
+      "statement": "Defende direito imediato à nacionalidade e legalização dos documentos dos grupos de imigrantes nomeados no plano.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reconhecimento de nacionalidade e regularização documental.",
+      "scope": "Haitianos, bolivianos, venezuelanos, cubanos, angolanos e todos os africanos, conforme a formulação.",
+      "conditions": [
+        "O texto aproxima nacionalidade e legalização documental sem distinguir seus procedimentos; não se supõe que sejam a mesma categoria jurídica.",
+        "Não extrapola a lista para determinar regras de todos os fluxos migratórios."
+      ],
+      "evidence": [
+        {
+          "page": 25,
+          "quote": "Direito imediato à nacionalidade: legalização dos papéis de haitianos, bolivianos, venezuelanos, cubanos, angolanos e todos os africanos"
+        }
+      ],
+      "context_pages": [
+        25
+      ]
+    },
+    {
+      "id": "P49",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Acessibilidade e adaptação à deficiência",
+      "statement": "Propõe intérpretes de Libras, acessibilidade física e espaços com redução de ruído para autistas com sensibilidade auditiva.",
+      "support_level": "explicit_proposal",
+      "instrument": "Adaptações físicas, sensoriais e de comunicação.",
+      "scope": "Universidades e meios de comunicação; serviços públicos, bancos, supermercados; escolas destacadas para adaptação sensorial.",
+      "conditions": [
+        "Não detalha padrões técnicos, fiscalização, prazos ou cobertura financeira."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Garantia de intérprete de libras nas universidades e meios de comunicação"
+        },
+        {
+          "page": 26,
+          "quote": "Acessibilidade: rampas e elevadores para cadeirantes nos serviços públicos, bancos, supermercados"
+        },
+        {
+          "page": 26,
+          "quote": "Espaços que abafem ruídos para autistas com sensibilidade auditiva, em especial nas escolas."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P50",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Piso salarial nacional",
+      "statement": "Propõe aumento de 100% do salário mínimo, com horizonte de alcançar o salário mínimo necessário calculado pelo Dieese.",
+      "support_level": "explicit_proposal",
+      "instrument": "Elevação do piso e referência de longo prazo ao cálculo do Dieese.",
+      "scope": "Salário mínimo nacional.",
+      "conditions": [
+        "Não informa cronograma ou regra posterior de reajuste; não se introduz valor monetário externo."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Aumento de 100% no salário mínimo, rumo ao salário mínimo necessário, calculado pelo Dieese."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P51",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Estratégia de combate ao crime organizado",
+      "statement": "Propõe investigação, inteligência e desarticulação patrimonial e financeira das organizações criminosas e de suas conexões com agentes públicos e empresas, em lugar das operações militares criticadas pelo documento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investigação financeira, confisco de bens e responsabilização de agentes envolvidos.",
+      "scope": "Crime organizado, máfias, milícias, facções e conexões estatais e empresariais.",
+      "conditions": [
+        "Não define procedimentos investigativos ou autoriza inferência de supressão de garantias processuais."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Combater o crime organizado, as máfias, as milícias, as facções e demais organizações criminosas por meio da investigação, inteligência e desarticulação de seus negócios, atingindo seu patrimônio, suas fontes de financiamento e suas relações com agentes públicos, políticos, empresários e, em especial, com o sistema financeiro, em vez de realizar operações militares que vitimam principalmente a população trabalhadora."
+        },
+        {
+          "page": 19,
+          "quote": "Confisco dos bens obtidos por atividades criminosas, punição dos agentes públicos envolvidos com organizações criminosas e dissolução dos grupos e estruturas milicianizadas existentes no aparelho de Estado."
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P52",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Política de drogas",
+      "statement": "Propõe descriminalizar as drogas e revogar a Lei Antidrogas, associando a mudança a prevenção, tratamento e redução de danos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Descriminalização e revogação legislativa com políticas públicas de saúde.",
+      "scope": "Drogas e narcotráfico nos termos gerais do texto.",
+      "conditions": [
+        "Não distingue substâncias, quantidades, consumo, cultivo e comércio; não se descreve um mercado legal regulado que o plano não definiu."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Descriminalização das drogas e revogação da Lei Antidrogas, para efetivamente combater e acabar com o narcotráfico, junto com políticas públicas de prevenção, tratamento e redução de danos."
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P53",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Registro da atividade policial",
+      "statement": "Propõe câmeras corporais para todos os agentes de segurança, com gravação contínua e armazenamento sob controle civil.",
+      "support_level": "explicit_proposal",
+      "instrument": "Obrigatoriedade de câmeras, gravação ininterrupta e custódia civil.",
+      "scope": "Todos os agentes de segurança pública; acesso às gravações quando houver processo legal.",
+      "conditions": [
+        "Não afirma acesso público irrestrito nem fixa prazo de guarda."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Implantação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta e armazenamento das imagens sob controle de órgãos civis, garantindo acesso às gravações quando houver processo legal."
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P54",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Maioridade penal",
+      "statement": "Rejeita reduzir a maioridade penal.",
+      "support_level": "explicit_rejection",
+      "instrument": "Manutenção da barreira etária frente à proposta de redução.",
+      "scope": "Adolescentes abrangidos pela maioridade penal; não contém exceção textual por gravidade de crime.",
+      "conditions": [
+        "A negativa é geral; não detalha reforma do atendimento socioeducativo."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Contra a redução da maioridade penal"
+        }
+      ],
+      "context_pages": [
+        21
+      ]
+    },
+    {
+      "id": "P55",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Modelo prisional e encarceramento",
+      "statement": "Propõe fim da privatização de presídios e desencarceramento em massa.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reversão da privatização prisional; objetivo de reduzir a população encarcerada.",
+      "scope": "Sistema prisional, sem grupos de crimes ou condenados especificados para soltura.",
+      "conditions": [
+        "Não define mecanismo de revisão das prisões ou critérios de elegibilidade; não se atribui libertação de todo preso.",
+        "A decisão específica sobre drogas é registrada uma vez em P52."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Revogação da Lei Antidrogas e fim da privatização dos presídios."
+        },
+        {
+          "page": 21,
+          "quote": "Desencarceramento em massa"
+        }
+      ],
+      "context_pages": [
+        21
+      ]
+    },
+    {
+      "id": "P56",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Autodefesa coletiva",
+      "statement": "Propõe estimular a auto-organização da população trabalhadora para segurança diante do crime e da violência estatal, combinada, sempre que possível, com adesão da base policial às reivindicações dos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Organização comunitária de autodefesa.",
+      "scope": "População trabalhadora e base das instituições policiais e armadas.",
+      "conditions": [
+        "Não detalha organização, controle, responsabilidade ou regras de armas; autodefesa não foi equiparada à autorização geral de porte."
+      ],
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Desde já, é preciso estimular a população a se auto-organizar para garantir sua própria segurança, seja diante do crime organizado e da criminalidade em geral, seja diante da violência do Estado por suas polícias."
+        },
+        {
+          "page": 20,
+          "quote": "A organização da autodefesa dos trabalhadores deve, sempre que possível, combinar-se com o chamado aos policiais e aos demais integrantes da base das instituições armadas do Estado para que se unam aos trabalhadores e defendam suas reivindicações."
+        }
+      ],
+      "context_pages": [
+        20
+      ]
+    },
+    {
+      "id": "P57",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Autonomia externa e alianças econômicas",
+      "statement": "Defende ruptura com a dependência que o próprio texto chama de imperialismo e afirma que trocar a dependência de EUA e Europa pela China não oferece alternativa de soberania.",
+      "support_level": "general_goal",
+      "instrument": "Objetivo de autonomia externa ligado a controle nacional das riquezas; sem mecanismo diplomático geral especificado.",
+      "scope": "Relações econômicas com potências dominantes e destino nacional da riqueza.",
+      "conditions": [
+        "O termo imperialismo é atribuído ao texto; não autoriza classificar a candidatura por ideologia inferida.",
+        "Não determina ruptura diplomática com todos esses países nem saída de agrupamentos internacionais."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Não é possível falar em um país soberano sem problematizar uma ruptura com o imperialismo, isto é, com os países dominantes na atual divisão internacional do trabalho."
+        },
+        {
+          "page": 5,
+          "quote": "Tampouco a China é uma alternativa."
+        },
+        {
+          "page": 5,
+          "quote": "Defender a soberania do Brasil, neste marco, significa garantir que as riquezas produzidas no país permaneçam sob controle nacional e sejam direcionadas às necessidades da população."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P58",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Acordo Mercosul–União Europeia",
+      "statement": "O plano avalia negativamente o acordo Mercosul–União Europeia como exemplo de negociação que abre mão da soberania e perpetua exportações primárias.",
+      "support_level": "clear_implication",
+      "instrument": "Rejeição política inferida da avaliação expressa do acordo; não apresenta ato jurídico específico.",
+      "scope": "Acordo comercial citado, sem cláusulas ou etapas de ratificação detalhadas.",
+      "conditions": [
+        "A avaliação sustenta recusa de apoio ao acordo, mas não permite atribuir denúncia, suspensão ou estratégia específica de renegociação."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Enquanto o bolsonarismo promete entregar o Brasil aos EUA, o governo Lula negocia com Trump, como na questão das terras raras, mas mantém um leque de possibilidades para negociar nossas riquezas com outras potências, abrindo mão da soberania. Como o decadente imperialismo europeu, como vimos recentemente com o acordo Mercosul e União Europeia, em que o país acessa o mercado europeu com produtos primários, e se abre aos automóveis e demais produtos de alto valor agregado de países como Alemanha e França."
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    }
+  ],
+  "tensions": [],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "As empresas de apostas on-line devem ser proibidas.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P07"
+      ],
+      "necessary_conditions": [
+        "A formulação toma bets no sentido de empresas de apostas on-line; o plano não detalha outras modalidades de jogo.",
+        "A tese trata apenas da proibição, sem incluir expropriação ou destino dos recursos."
+      ],
+      "contrast_to_investigate": "Comparar proibição com autorização sujeita a tributação, licenciamento ou restrições; não se atribui posição a outro documento.",
+      "why_useful": "Introduz a escolha entre vedar e regular um mercado com efeitos econômicos e sociais, fora das 16 teses anteriores.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "infraestrutura_territorio",
+      "statement": "O transporte público deve ser gratuito para os usuários.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P14"
+      ],
+      "necessary_conditions": [
+        "A resposta do plano ocorre num modelo de operação estatal, registrado separadamente em P15.",
+        "A tese não decide quem opera nem como se financia o serviço."
+      ],
+      "contrast_to_investigate": "Investigar cobrança de tarifa, gratuidade universal ou gratuidades delimitadas.",
+      "why_useful": "Recupera mobilidade e uma escolha de financiamento do acesso, separada da propriedade das empresas.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "meio_ambiente_clima",
+      "statement": "A exploração de petróleo na Margem Equatorial deve ser impedida.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P20"
+      ],
+      "necessary_conditions": [
+        "Alcance territorial exclusivo da Margem Equatorial; não é proibição de toda exploração de petróleo."
+      ],
+      "contrast_to_investigate": "Investigar autorização, proibição ou autorização condicionada a licenciamento e estudos.",
+      "why_useful": "Acrescenta conflito material de política ambiental e energética ausente do recorte anterior.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Dados governamentais sensíveis não devem ser hospedados em nuvens estrangeiras.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P25"
+      ],
+      "necessary_conditions": [
+        "Restringe-se a dados governamentais sensíveis.",
+        "A comparação precisa explicitar o que cada plano entende por nuvem estrangeira; não inclui toda circulação internacional de dados."
+      ],
+      "contrast_to_investigate": "Investigar vedação territorial, permissão com salvaguardas ou critérios de risco por tipo de dado.",
+      "why_useful": "Transforma soberania digital em uma escolha operacional sobre infraestrutura e dados.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "bem_estar_social",
+      "statement": "Trabalhadores desempregados devem receber uma transferência pública de renda enquanto não houver pleno emprego.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P32"
+      ],
+      "necessary_conditions": [
+        "O plano fixa um salário mínimo; a semente isola a existência do benefício.",
+        "Não afirma substituição do Bolsa Família nem benefício universal para toda pessoa fora do mercado de trabalho."
+      ],
+      "contrast_to_investigate": "Investigar ausência, existência e condições de benefício para desempregados, distinguindo seguro contributivo e assistência de renda.",
+      "why_useful": "Recupera assistência a desempregados sem confundir valor de benefício com troca por trabalho obrigatório.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "A Base Nacional Comum Curricular deve ser revogada.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P37"
+      ],
+      "necessary_conditions": [
+        "O plano também propõe revogar o Novo Ensino Médio; a semente isola apenas a BNCC.",
+        "O currículo alternativo é elaborado pelos trabalhadores da educação, mas sua autoria não integra esta frase."
+      ],
+      "contrast_to_investigate": "Investigar preservação, revisão parcial ou revogação da BNCC.",
+      "why_useful": "Amplia educação para uma escolha curricular concreta além de militarização e financiamento.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "cidadania_direitos",
+      "statement": "A lei deve permitir a interrupção voluntária da gravidez.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P45"
+      ],
+      "necessary_conditions": [
+        "O plano defende aborto legal e gratuito pelo SUS, mas não fixa limite gestacional.",
+        "A comparação deve preservar limites e condições de outros planos; não interpretar esta frase como autorização irrestrita em qualquer estágio."
+      ],
+      "contrast_to_investigate": "Investigar permissão, proibição ou permissão limitada por hipóteses e prazo, sem presumir a legislação ou posição de outro plano.",
+      "why_useful": "Acrescenta autonomia reprodutiva como dimensão distinta das questões econômicas e de organização estatal.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "statement": "O consumo pessoal de drogas deve ser descriminalizado.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P52"
+      ],
+      "necessary_conditions": [
+        "O texto usa a formulação mais ampla descriminalização das drogas; a semente limita-se ao consumo pessoal.",
+        "Não presume legalização comercial, regra de quantidade ou equiparação de todas as substâncias."
+      ],
+      "contrast_to_investigate": "Investigar criminalização, descriminalização do uso ou modelos condicionados por substância e quantidade.",
+      "why_useful": "Distingue escolha penal de policiamento e de gestão prisional, recuperando tema fora das 16 teses anteriores.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "Perfil de escolhas principais, não inventário de cada reivindicação do plano; baseado na leitura integral anterior e na reinspeção contextual de 27 páginas, sem alegação de segunda leitura integral.",
+    "Exceção editorial de contagem: Economia reúne sete posições, Cidadania onze e Segurança sete após o reagrupamento temático. Banco estatal único está em Estado; desmilitarização e unificação policial, em Segurança; direitos territoriais indígenas e quilombolas, em Cidadania; crédito e subsídios agrícolas, em Economia. Cada decisão mantém uma única categoria principal e evidências; a contagem não representa pontuação ou peso.",
+    "O documento não apresenta cronogramas e procedimentos para várias transformações. Falta de detalhe não foi convertida em neutralidade ou rejeição. Autodefinições políticas foram atribuídas ao texto.",
+    "Nenhuma semente foi validada nos demais planos; as formulações não alteram as 16 perguntas antigas nem estabelecem afinidade eleitoral."
+  ]
+}

@@ -7,6 +7,7 @@ class ThesisMatch {
   final int themeId;
   final String userAnswer;
   final String candidatePosition;
+  final String? candidateAnalysis;
   final String matchType;
 
   const ThesisMatch({
@@ -15,6 +16,7 @@ class ThesisMatch {
     required this.themeId,
     required this.userAnswer,
     required this.candidatePosition,
+    this.candidateAnalysis,
     required this.matchType,
   });
 
@@ -25,6 +27,7 @@ class ThesisMatch {
       themeId: json['theme_id'] as int,
       userAnswer: json['user_answer'] as String,
       candidatePosition: json['candidate_position'] as String,
+      candidateAnalysis: json['candidate_analysis'] as String?,
       matchType: json['match_type'] as String,
     );
   }
@@ -70,6 +73,11 @@ class CandidateResult {
   final List<ThesisMatch> matches;
   final int? _countedTheses;
   final int? _answeredTheses;
+  final int? _comparableCategories;
+  final int? _documentedTheses;
+  final int? _documentedCategories;
+  final String? _rankingStatus;
+  final bool? _rankingEligible;
 
   const CandidateResult({
     required this.candidateId,
@@ -81,8 +89,18 @@ class CandidateResult {
     required this.matches,
     int? countedTheses,
     int? answeredTheses,
-  }) : _countedTheses = countedTheses,
-       _answeredTheses = answeredTheses;
+    int? comparableCategories,
+    int? documentedTheses,
+    int? documentedCategories,
+    String? rankingStatus,
+    bool? rankingEligible,
+  })  : _countedTheses = countedTheses,
+        _answeredTheses = answeredTheses,
+        _comparableCategories = comparableCategories,
+        _documentedTheses = documentedTheses,
+        _documentedCategories = documentedCategories,
+        _rankingStatus = rankingStatus,
+        _rankingEligible = rankingEligible;
 
   int get answeredTheses =>
       _answeredTheses ??
@@ -114,12 +132,58 @@ class CandidateResult {
           )
           .length;
 
+  int get comparableCategories =>
+      _comparableCategories ??
+      matches
+          .where(
+            (match) =>
+                const [
+                  'agree',
+                  'disagree',
+                  'neutral',
+                ].contains(match.userAnswer) &&
+                const [
+                  'concordo',
+                  'discordo',
+                  'neutro',
+                ].contains(match.candidatePosition),
+          )
+          .map((match) => match.themeId)
+          .toSet()
+          .length;
+
+  int get documentedTheses => _documentedTheses ?? countedTheses;
+  int get documentedCategories => _documentedCategories ?? comparableCategories;
+  bool get rankingEligible => _rankingEligible ?? false;
+  String get rankingStatus =>
+      _rankingStatus ??
+      (rankingEligible
+          ? 'eligible'
+          : countedTheses == 0
+              ? 'insufficient_documented_coverage'
+              : 'insufficient_answer_coverage');
   bool get hasComparableEvidence => countedTheses > 0;
-  String get affinityLabel => hasComparableEvidence
-      ? '${scorePercent.toStringAsFixed(1)}%'
-      : 'Sem base comparável';
+  String get affinityLabel =>
+      rankingEligible ? '$rankº lugar' : 'Fora do ranking desta edição';
   String get coverageLabel =>
-      '$countedTheses de $answeredTheses respostas comparáveis';
+      '$countedTheses de $answeredTheses respostas comparáveis · '
+      '$comparableCategories '
+      '${comparableCategories == 1 ? 'categoria' : 'categorias'}';
+  String get rankingExplanation {
+    if (rankingStatus == 'insufficient_documented_coverage') {
+      return 'O plano oferece posições comparáveis em $documentedTheses teses e '
+          '$documentedCategories '
+          '${documentedCategories == 1 ? 'categoria' : 'categorias'}. '
+          'Esta edição exige pelo menos 5 teses e 4 categorias.';
+    }
+    if (rankingStatus == 'insufficient_answer_coverage') {
+      return 'Nas suas respostas, foi possível comparar $countedTheses teses '
+          'em $comparableCategories '
+          '${comparableCategories == 1 ? 'categoria' : 'categorias'}. '
+          'O ranking exige pelo menos 5 teses e 4 categorias.';
+    }
+    return 'Base: $coverageLabel.';
+  }
 
   factory CandidateResult.fromJson(Map<String, dynamic> json) {
     return CandidateResult(
@@ -131,6 +195,11 @@ class CandidateResult {
       rank: json['rank'] as int,
       countedTheses: json['counted_theses'] as int?,
       answeredTheses: json['answered_theses'] as int?,
+      comparableCategories: json['comparable_categories'] as int?,
+      documentedTheses: json['documented_theses'] as int?,
+      documentedCategories: json['documented_categories'] as int?,
+      rankingStatus: json['ranking_status'] as String?,
+      rankingEligible: json['ranking_eligible'] as bool?,
       matches: (json['matches'] as List<dynamic>)
           .cast<Map<String, dynamic>>()
           .map(ThesisMatch.fromJson)
@@ -149,6 +218,7 @@ class CandidateJustification {
   final String theme;
   final String themeName;
   final String position;
+  final String? analyticalPosition;
   final String? justification;
   final String? quote;
   final String? sourceRef;
@@ -160,6 +230,7 @@ class CandidateJustification {
     required this.theme,
     required this.themeName,
     required this.position,
+    this.analyticalPosition,
     required this.justification,
     this.quote,
     this.sourceRef,
@@ -173,6 +244,7 @@ class CandidateJustification {
       theme: json['theme'] as String,
       themeName: json['theme_name'] as String,
       position: json['position'] as String,
+      analyticalPosition: json['analytical_position'] as String?,
       justification: json['justification'] as String?,
       quote: json['quote'] as String?,
       sourceRef: json['source_ref'] as String?,

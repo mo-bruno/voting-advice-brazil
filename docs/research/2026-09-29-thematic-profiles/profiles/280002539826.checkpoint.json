@@ -1,0 +1,2139 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002539826",
+  "agent_id": "/root/plan_zema",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002539826.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "prior_reading_log_consulted": true,
+  "status": "complete",
+  "categories_completed": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "revisited_pages": [
+    5,
+    6,
+    7,
+    10,
+    12,
+    14,
+    15,
+    16,
+    18,
+    19,
+    21,
+    23,
+    24,
+    25,
+    27,
+    30,
+    31,
+    33,
+    37,
+    38,
+    40,
+    41,
+    44,
+    45,
+    48,
+    49,
+    50,
+    52,
+    53,
+    55,
+    56,
+    58,
+    60,
+    63,
+    64,
+    65,
+    67,
+    69,
+    74,
+    75,
+    77,
+    78
+  ],
+  "decisions": [
+    "Usar a leitura integral anterior de 81 páginas, sem declarar segunda leitura integral.",
+    "Extrair escolhas distribuídas nas dez categorias; cada posição recebe categoria principal exclusiva.",
+    "Preservar privatização universal p.15 e funções de bancos públicos p.27 como tensão sem cronograma de resolução.",
+    "Conferidos P01–P18: fiscalidade, privatização/bancos, servidores, infraestrutura e energia; não resolver tensão p.15/p.27.",
+    "Conferidos P19–P34: ambiente, CTI, previdência, Bolsa Família, modalidades distintas de saúde e internação involuntária; exceções preservadas.",
+    "58 conjuntos de evidências conferidos; recorte cobre todas as categorias com cinco ou seis escolhas distintas, sem repetir posições entre categorias."
+  ],
+  "pending": [],
+  "reinspection_evidence": {
+    "P01": [
+      {
+        "page": 16,
+        "quote": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de\ngastos necessários para atingi-las, invertendo a lógica atual em que o gasto define\no imposto."
+      },
+      {
+        "page": 18,
+        "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que per-\nmitam o pagamento da dívida."
+      }
+    ],
+    "P02": [
+      {
+        "page": 19,
+        "quote": "Reformar a tributação das empresas, em especial os impostos diretos como o IRPJ,\npartindo do princípio de que é o Estado, e não o contribuinte, que deve calcular o\nimposto, com a Receita apurando o valor automaticamente a partir da nota fiscal\neletrônica e eliminando anexos, faixas e obrigações acessórias, para que o empreen-\ndedor troque tempo e dinheiro gastos com burocracia por investimento, crescimento\ne geração de empregos."
+      }
+    ],
+    "P03": [
+      {
+        "page": 18,
+        "quote": "Reduzir gradualmente os programas de crédito direcionado, incluindo linhas subsi-\ndiadas do BNDES, para setores escolhidos politicamente, visando ampliar a concor-\nrência entre bancos e baratear o crédito no Brasil."
+      }
+    ],
+    "P04": [
+      {
+        "page": 21,
+        "quote": "Facilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras e\nfazendo road shows junto com parceiros privados para apresentar as diversas opor-\ntunidades em nosso território e nossas vantagens competitivas, como a sua localiza-\nção privilegiada para o lançamento de satélites e foguetes."
+      }
+    ],
+    "P05": [
+      {
+        "page": 44,
+        "quote": "Reduzir entraves ao desenvolvimento do setor de seguros rurais, com um fundo pri-\nvado de aportes públicos e privados que cubram perdas por eventos climáticos, pra-\ngas e oscilações de mercado, garantindo sustentabilidade financeira e efetiva prote-\nção da renda agrícola."
+      }
+    ],
+    "P06": [
+      {
+        "page": 33,
+        "quote": "Manter um calendário regular e previsível de leilões de áreas de exploração e pro-\ndução, com análise ambiental prévia para áreas estratégicas, dando segurança aos\ninvestidores e ampliando as exportações para países que ainda dependem de com-\nbustíveis fósseis e têm dificuldade de se eletrificar."
+      }
+    ],
+    "P07": [
+      {
+        "page": 15,
+        "quote": "Privatizar todas as empresas estatais para que o governo possa se concentrar na-\nquilo que de fato lhe cabe, como segurança pública e educação, reduzindo o espaço\npara escândalos de corrupção e garantindo maior eficiência no uso dos recursos\npúblicos e mais competição na economia brasileira."
+      }
+    ],
+    "P08": [
+      {
+        "page": 27,
+        "quote": "Ampliar os instrumentos de garantia, seguros e compartilhamento de riscos,  forta-\nlecendo o cardápio dos bancos públicos na oferta de garantias e contas vinculadas,\nde forma a reduzir o custo de capital, ampliar a bancabilidade dos projetos e atrair\nmais investidores nacionais e internacionais."
+      }
+    ],
+    "P09": [
+      {
+        "page": 40,
+        "quote": "Unificar e simplificar os modelos de avaliação, com instrumentos como a avaliação\n360 graus e a curva forçada de desempenho, para medir a entrega de forma justa,\ngarantindo que quem entrega avance na carreira, ganhe bônus e mais autonomia de\natuação, enquanto quem não evolui possa ser recuperado com Planos de Desenvol-\nvimento Individuais ou até ser desligado."
+      }
+    ],
+    "P10": [
+      {
+        "page": 41,
+        "quote": "Flexibilizar a composição da força de trabalho do setor público, reformulando os\nmodelos de contratação existentes e instituindo novos vínculos adaptados a diferen-\ntes necessidades, como contratos por tempo determinado para projetos específicos,\nvínculos por tempo indeterminado sem estabilidade ampla e   definição clara dos\ncargos típicos de estado."
+      }
+    ],
+    "P11": [
+      {
+        "page": 12,
+        "quote": "Acabar com as decisões monocráticas e estabelecer prazo limite para pedido de\nvistas, evitando que um único ministro decida sozinho sobre temas de relevância\nnacional ou impeça o andamento de decisões na Corte por convicções pessoais."
+      }
+    ],
+    "P12": [
+      {
+        "page": 10,
+        "quote": "Tornar a transparência a regra na gestão pública, avançando com a digitalização do\ngoverno e a divulgação dos dados em formato aberto, acabando com a possibilidade\nde sigilos de 100 anos e ampliando as informações divulgadas sobre as despesas\npúblicas, incluindo  notas fiscais, uso de imóveis e repasses a organizações da so-\nciedade civil conveniadas."
+      },
+      {
+        "page": 10,
+        "quote": "Permitir a realização de solicitações de informação em anonimato e deixar explícito\nque a proteção de dados pessoais ou fundamentações genéricas, como “segurança\npessoal”, não podem ser utilizadas para restringir o acesso a informações de inte-\nresse público, como dados sobre agentes públicos, contratos, convênios e o uso de\nrecursos públicos."
+      }
+    ],
+    "P13": [
+      {
+        "page": 19,
+        "quote": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com\nviabilidade econômica e, onde o mercado não chega sozinho, garantir a presença do\nEstado via PPPs, unindo investimento público com execução privada eficiente."
+      }
+    ],
+    "P14": [
+      {
+        "page": 30,
+        "quote": "Integrar o planejamento da mobilidade urbana ao Ministério da Infraestrutura, ar-\nticulando-o com os demais modais e com a logística nacional, e instituir uma polí-\ntica nacional de implantação e expansão dos sistemas estruturantes de transporte\ncoletivo de alta capacidade, com o Governo Federal  apoiando a  estruturação dos\nprojetos, a  coordenação federativa e o cofinanciamento dos investimentos em par-\nceria com estados e municípios, de modo a acelerar a expansão de redes de metrô,\ntrens urbanos, VLTs e outros sistemas de transporte de massa nas principais regiões\nmetropolitanas do país."
+      }
+    ],
+    "P15": [
+      {
+        "page": 31,
+        "quote": "Fortalecer a regionalização da prestação dos serviços, ampliar a estruturação de\nprojetos de concessão e PPPs e promover soluções que ampliem a escala, a efici-\nência operacional e a capacidade de investimento dos prestadores, em articulação\nentre a União, estados e municípios, para cumprir as metas do Novo Marco do Sa-\nneamento."
+      }
+    ],
+    "P16": [
+      {
+        "page": 33,
+        "quote": "Desverticalizar a Petrobras, separando as operações de produção, refino, transporte\ne logística em diferentes empresas para permitir a entrada de novos concorrentes e\nampliar a concorrência em igualdade de condições."
+      }
+    ],
+    "P17": [
+      {
+        "page": 33,
+        "quote": "Retirar da conta de luz a grande quantidade de encargos e subsídios que hoje são\npagos por todo consumidor, mas privilegiam setores escolhidos pelo governo."
+      }
+    ],
+    "P18": [
+      {
+        "page": 65,
+        "quote": "Apoiar municípios na revisão de seus Planos Diretores, removendo restrições de zo-\nneamento que impedem o adensamento urbano em áreas centrais já estruturadas,\nreduzindo o custo das moradias e aproximando  as famílias de empregos e serviços\npúblicos."
+      }
+    ],
+    "P19": [
+      {
+        "page": 27,
+        "quote": "Fazer valer, na prática, a nova Lei Geral do Licenciamento Ambiental, garantindo o\ncumprimento dos novos prazos e regras pelos órgãos ambientais federais, estaduais\ne municipais, para que os projetos de infraestrutura deixem de travar por inseguran-\nça e demora na obtenção das licenças."
+      },
+      {
+        "page": 27,
+        "quote": "Estabelecer uma via rápida para obras estratégicas, com prazos e ritos mais céleres\ne prioridade junto a todos os órgãos licenciadores e intervenientes do processo, as-\nsegurando previsibilidade e um rito simplificado de aprovações nas diversas instân-\ncias e com o aval também dos órgãos de controle."
+      }
+    ],
+    "P20": [
+      {
+        "page": 48,
+        "quote": "Combater com rigor a grilagem e o desmatamento ilegal, integrando forças de se-\ngurança, órgãos ambientais e o sistema de justiça, com monitoramento por satélite,  \npunição efetiva dos infratores e proteção às comunidades indígenas."
+      }
+    ],
+    "P21": [
+      {
+        "page": 48,
+        "quote": "Estabelecer um ambiente de negócios seguro e desburocratizado para a comercia-\nlização voluntária de créditos de carbono com o mercado internacional, garantindo\nque o patrimônio ambiental seja um ativo lucrativo para produtores e comunidades,\nsem criar novos tributos ou custos para os brasileiros."
+      }
+    ],
+    "P22": [
+      {
+        "page": 49,
+        "quote": "Atrair investimento privado em infraestrutura de contenção e sistemas de monitora-\nmento climático, prevenção e resposta rápida a desastres, integrando ciência, tec-\nnologia e gestão territorial para reduzir riscos ambientais no campo e nas cidades."
+      }
+    ],
+    "P23": [
+      {
+        "page": 48,
+        "quote": "Estruturar destinos de turismo sustentável, aproveitando a biodiversidade e os bio-\nmas brasileiros, concedendo parques nacionais, qualificando mão de obra local e\ngarantindo infraestrutura e marco regulatório que preservem o patrimônio natural."
+      }
+    ],
+    "P24": [
+      {
+        "page": 21,
+        "quote": "Atrair investimentos para as cadeias de IA, evitando uma regulação precoce e ampla\nda inteligência artificial, garantindo segurança jurídica para o setor e regulando pon-\ntualmente apenas onde surgirem danos concretos comprovados."
+      }
+    ],
+    "P25": [
+      {
+        "page": 55,
+        "quote": "Concentrar recursos de pesquisa, ciência e tecnologia nas instituições com histórico\ncomprovado de produção científica relevante, criando um modelo de financiamento\nbaseado em desempenho que premie resultados e atraia talentos."
+      }
+    ],
+    "P26": [
+      {
+        "page": 55,
+        "quote": "Reformular os critérios de concessão de bolsas, como as da Capes e do CNPq, para\npriorizar pesquisas com impacto científico mensurável ou que resolvam um proble-\nma real do mercado, utilizando também bolsas dentro de empresas privadas."
+      }
+    ],
+    "P27": [
+      {
+        "page": 56,
+        "quote": "Criar um ambiente regulatório que facilite a instalação de centros de pesquisa e\ndesenvolvimento, com apoio do setor produtivo dentro das universidades públicas,\naproximando a produção científica das demandas reais do mercado e gerando o\nfinanciamento privado complementar às instituições."
+      }
+    ],
+    "P28": [
+      {
+        "page": 31,
+        "quote": "Estruturar a abertura de novas faixas de espectro para o 5G, atraindo novos concor-\nrentes para baixar preços e melhorar o serviço ao consumidor, e usar parcerias com\no setor privado e incentivos econômicos para levar conectividade de qualidade ao\ninterior, ao campo e às regiões isoladas do país, conectando também escolas, postos\nde saúde e demais serviços públicos que hoje ficam à margem da rede."
+      }
+    ],
+    "P29": [
+      {
+        "page": 14,
+        "quote": "Fazer uma Reforma da Previdência envolvendo estados e municípios, bem como a\nprevidência rural e militar, criando também um mecanismo de reajuste automático\nda idade mínima para aposentadoria com base na expectativa de vida da população\ne na sustentabilidade do sistema previdenciário no longo prazo, para que as futuras\ngerações tenham segurança de que serão protegidas na velhice."
+      }
+    ],
+    "P30": [
+      {
+        "page": 63,
+        "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família\napenas enquanto estiverem buscando emprego, estudando ou se qualificando pro-\nfissionalmente, com possibilidade de suspensão do benefício para quem, sem justifi-\ncativa, recusar ofertas formais de trabalho intermediadas pelo poder público, exceto\nos brasileiros responsáveis pelos cuidados de crianças pequenas, idosos e pessoas\ncom deficiência em situação de dependência."
+      },
+      {
+        "page": 63,
+        "quote": "Unificar os programas federais que atendem os mesmos públicos no Bolsa Família,\naprimorando a focalização do gasto nas famílias que mais precisam e reduzindo\nfraudes e custos administrativos desnecessários."
+      }
+    ],
+    "P31": [
+      {
+        "page": 60,
+        "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e\nhospitais privados para realização de consultas, exames e cirurgias, com metas cla-\nras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa\ndessas unidades de saúde privadas."
+      }
+    ],
+    "P32": [
+      {
+        "page": 60,
+        "quote": "Expandir a rede de hospitais, UPAs e atendimentos com\nespecialistas por meio de concessões, PPPs e parcerias com OSs:"
+      },
+      {
+        "page": 60,
+        "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de\nsaúde, garantindo maior eficiência operacional, melhor experiência para o paciente\ne controle rigoroso de resultados por parte do poder público."
+      }
+    ],
+    "P33": [
+      {
+        "page": 58,
+        "quote": "Construir um registro nacional de saúde unificado e sob controle do cidadão por\nmeio do prontuário eletrônico, centralizando o histórico clínico do paciente, garan-\ntindo a continuidade do cuidado em qualquer unidade de  atendimento e garantindo\na privacidade dos dados, com o Governo Federal liderando essa infraestrutura."
+      },
+      {
+        "page": 58,
+        "quote": "Fazer com que os sistemas de saúde públicos e privados se comuniquem e alimen-\ntem o registro nacional, permitindo que médicos e unidades acessem o histórico\ncompleto do paciente independentemente de onde ele tenha sido atendido, median-\nte autorização do cidadão."
+      }
+    ],
+    "P34": [
+      {
+        "page": 64,
+        "quote": "Apoiar estados e municípios a fazer a internação involuntária de\ndependentes de drogas e álcool que vivem nas ruas:"
+      },
+      {
+        "page": 64,
+        "quote": "Estruturar um programa nacional que permita identificar, com avaliação médica e\ndiálogo com as famílias, os casos em que a dependência química impede a resso-\ncialização, garantindo a internação involuntária nos termos da legislação e o acom-\npanhamento em comunidades terapêuticas credenciadas e fiscalizadas pelo poder\npúblico."
+      }
+    ],
+    "P35": [
+      {
+        "page": 50,
+        "quote": "Ampliar a oferta de vagas em creches e pré-escolas com foco em\nqualidade e acesso, priorizando parcerias com o setor privado:"
+      },
+      {
+        "page": 50,
+        "quote": "Aumentar o acesso à educação infantil, especialmente para famílias mais vulnerá-\nveis, por meio do fortalecimento das redes públicas e de parcerias com entidades\nprivadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qua-\nlidade, a transparência no uso dos recursos e metas claras de atendimento, apren-\ndizagem e desenvolvimento."
+      }
+    ],
+    "P36": [
+      {
+        "page": 52,
+        "quote": "Avançar na adoção de modelos mais modernos de valorização docente, para que a\nprogressão na carreira dependa do desenvolvimento profissional, do desempenho\npedagógico e da atuação em contextos vulneráveis, e não do tempo de serviço."
+      }
+    ],
+    "P37": [
+      {
+        "page": 53,
+        "quote": "Dar mais liberdade aos pais de escolher o modelo educacional de seus filhos,  fa-\ncilitando a formalização de parcerias com instituições comunitárias, filantrópicas e\nconfessionais, avançando em uma agenda de parcerias com escolas conveniadas na\neducação, escolas cívico-militares e regulamentando o homeschooling."
+      },
+      {
+        "page": 53,
+        "quote": "Assegurar que todos os modelos educacionais adotem critérios claros de avaliação\nperiódica da aprendizagem e mecanismos de proteção ao desenvolvimento educa-\ncional e social das crianças e adolescentes."
+      }
+    ],
+    "P38": [
+      {
+        "page": 55,
+        "quote": "Substituir o atual modelo de eleição interna de reitores por um processo de escolha\ntécnico e transparente, com participação de conselhos externos e critérios objetivos\nde capacidade de gestão, despolitizando as universidades e profissionalizando sua\ngestão."
+      }
+    ],
+    "P39": [
+      {
+        "page": 69,
+        "quote": "Concentrar os mecanismos de financiamento à cultura na produção cultural regional\ne nos artistas locais, com critérios objetivos de elegibilidade e limites de captação\npara grandes artistas e produtores já consolidados."
+      }
+    ],
+    "P40": [
+      {
+        "page": 67,
+        "quote": "Fortalecer os critérios de condicionalidade dos repasses públicos às confederações\ne federações esportivas, tornando as exigências de governança, transparência e im-\npacto social mais rigorosas e diretamente vinculadas à obtenção de resultados es-\nportivos e sociais mensuráveis."
+      }
+    ],
+    "P41": [
+      {
+        "page": 23,
+        "quote": "Permitir que trabalhador e empregador ajustem o modelo de contratação às suas\npreferências e à realidade de cada atividade, com prevalência do negociado sobre\no legislado. Nesse marco trabalhista alternativo, as partes poderão definir consen-\nsualmente regras como o percentual e o valor da remuneração variável atrelada ao\ndesempenho; a periodicidade do pagamento dos salários (diária, semanal ou quin-\nzenal), a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limi-\nte de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão\ndos períodos de férias."
+      }
+    ],
+    "P42": [
+      {
+        "page": 24,
+        "quote": "Encerrar o monopólio sindical, assegurando ao profissional o direito de não se filiar\nou contribuir para sindicatos, e limitar o poder regulatório e disciplinar dos conselhos\nprofissionais, com mais transparência, redução de custos e foco exclusivo em ativi-\ndades que envolvam risco real ao cidadão, devolvendo ao trabalhador a liberdade\nde associação e o dinheiro hoje retido por estruturas que pouco entregam em troca."
+      }
+    ],
+    "P43": [
+      {
+        "page": 25,
+        "quote": "Garantir às comunidades indígenas o pleno direito de exploração econômica de suas\nterras, permitindo e regulamentando o exercício de atividades como agricultura, pe-\ncuária, extrativismo e turismo."
+      }
+    ],
+    "P44": [
+      {
+        "page": 74,
+        "quote": "Vedar a exclusão de perfis e a moderação de opiniões pelas plataformas, inclusive\npor determinação judicial, substituindo esses mecanismos por procedimentos admi-\nnistrativos e judiciais que garantam direito à retratação e indenização, assegurando\nque o debate público no Brasil seja resolvido pela livre circulação de ideias e não\npelo controle de juízes ou empresas de tecnologia."
+      }
+    ],
+    "P45": [
+      {
+        "page": 75,
+        "quote": "Extinguir o Fundo Partidário e o Fundo Eleitoral, substituindo-os por um modelo de\nfinanciamento privado de campanhas, com doações permitidas por pessoas físicas\ne jurídicas, havendo critérios rígidos de transparência, rastreabilidade e limites que\npreservem a justa competição entre os candidatos."
+      }
+    ],
+    "P46": [
+      {
+        "page": 75,
+        "quote": "Promover a substituição do atual modelo proporcional de lista aberta por um siste-\nma distrital misto com dois votos: um para a eleição majoritária do representante do\ndistrito e outro para representação de ideias no parlamento."
+      }
+    ],
+    "P47": [
+      {
+        "page": 5,
+        "quote": "Enquadrar como terroristas os criminosos que usam táticas e armamentos de guerra\npara dominar territórios, de modo a permitir o uso da Força Nacional, das Forças\nArmadas, dos órgãos de controle e da colaboração internacional para combatê-los,\nalém de garantir penas mais altas e a impossibilidade de progressão de regime."
+      },
+      {
+        "page": 5,
+        "quote": "Retomar os territórios dominados pelas facções com operações que envolvam cola-\nboração entre as Forças Armadas, as polícias estaduais e a Polícia Federal, garantin-\ndo a paz aos brasileiros que vivem nessas regiões."
+      }
+    ],
+    "P48": [
+      {
+        "page": 6,
+        "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal\nde adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação\npenal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e\nestupro, ou reincidência."
+      }
+    ],
+    "P49": [
+      {
+        "page": 6,
+        "quote": "Prever em lei que bandidos presos em flagrante pela terceira vez tenham a prisão\nconvertida em preventiva, vedando o relaxamento durante a audiência de custódia,\netapa em que o preso é apresentado à Justiça."
+      }
+    ],
+    "P50": [
+      {
+        "page": 7,
+        "quote": "Conceder autonomia para que cada estado endureça o combate ao crime, com a\npossibilidade de instituir novos crimes e agravar penas e regimes de cumprimento\nde pena em relação ao previsto na legislação federal."
+      }
+    ],
+    "P51": [
+      {
+        "page": 45,
+        "quote": "Consolidar e ampliar o direito do produtor rural de portar arma em toda a extensão\nde sua propriedade, avançando para além da posse estendida já prevista em lei, com\nsegurança jurídica para o exercício da legítima defesa e proteção efetiva do Estado\ncontra invasões."
+      }
+    ],
+    "P52": [
+      {
+        "page": 7,
+        "quote": "Ampliar a rede de delegacias da mulher com atuação 24 horas e equipes preferen-\ncialmente femininas capacitadas em violência de gênero, e apoiar os estados na\nconstrução de sistemas integrados entre Saúde, Segurança Pública e delegacias."
+      },
+      {
+        "page": 7,
+        "quote": "Expandir nas redes de segurança pública e saúde de estados e municípios as Pa-\ntrulhas Maria da Penha, que monitoram o cumprimento de medidas protetivas para\nreduzir a reincidência, e as Salas Lilás, com espaços de acolhimento às vítimas em\nunidades policiais."
+      }
+    ],
+    "P53": [
+      {
+        "page": 37,
+        "quote": "Retirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as\nrelações comerciais com todos os países do bloco e recusando qualquer direciona-\nmento que comprometa valores constitucionais e democráticos do Brasil."
+      }
+    ],
+    "P54": [
+      {
+        "page": 38,
+        "quote": "Flexibilizar a estrutura atual do Mercosul, hoje uma união aduaneira que impede os\npaíses membros de negociarem sozinhos, transformando-o em zona de livre comér-\ncio, para que o Brasil assine acordos comerciais e de investimentos com países e\nblocos que ampliem seu acesso a novos mercados, tecnologia e inovação."
+      }
+    ],
+    "P55": [
+      {
+        "page": 37,
+        "quote": "Retomar o processo de adesão do Brasil à OCDE,  promovendo as reformas institu-\ncionais e econômicas necessárias para aderir ao bloco e tornando o país mais com-\npetitivo, ampliando o grau de investimento e abrindo novos mercados às empresas\nbrasileiras."
+      }
+    ],
+    "P56": [
+      {
+        "page": 37,
+        "quote": "Isentar de visto os turistas de países seguros e abrir caminhos legais à imigração de\ntalentos e profissionais qualificados, reafirmando a tradição brasileira de ser um país\naberto ao mundo."
+      }
+    ],
+    "P57": [
+      {
+        "page": 77,
+        "quote": "Promover uma real integração entre Marinha, Exército e Aeronáutica por meio do\nEstado-Maior Conjunto, estabelecendo doutrinas efetivas de operações conjuntas,\nobjetivos estratégicos e metas alinhadas às capacidades que o Brasil precisa desen-\nvolver."
+      }
+    ],
+    "P58": [
+      {
+        "page": 78,
+        "quote": "Garantir segurança jurídica para que agentes da Abin possam portar armas quando\na natureza de suas funções exigir, assegurando também o direito a identidades de\ncobertura para agentes da Abin em operações de inteligência."
+      }
+    ]
+  },
+  "pending_reinspection_ids": [],
+  "evidence_checked_ids": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34",
+    "P35",
+    "P36",
+    "P37",
+    "P38",
+    "P39",
+    "P40",
+    "P41",
+    "P42",
+    "P43",
+    "P44",
+    "P45",
+    "P46",
+    "P47",
+    "P48",
+    "P49",
+    "P50",
+    "P51",
+    "P52",
+    "P53",
+    "P54",
+    "P55",
+    "P56",
+    "P57",
+    "P58"
+  ],
+  "positions_draft": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Âncora do ajuste fiscal",
+      "statement": "O plano propõe metas progressivas de redução tributária que imponham cortes de gastos, acompanhadas de superávits primários para estabilizar dívida/PIB e criar condições de redução dos juros.",
+      "support_level": "explicit_proposal",
+      "instrument": "Metas de carga tributária, corte de despesas e superávits primários.",
+      "scope": "Finanças federais e relação dívida/PIB.",
+      "conditions": [
+        "Redução tributária progressiva.",
+        "Não identifica metas anuais ou escolha de manter/substituir a LC 200/2023."
+      ],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "Fixar metas progressivas de redução da carga tributária que imponham os cortes de\ngastos necessários para atingi-las, invertendo a lógica atual em que o gasto define\no imposto."
+        },
+        {
+          "page": 18,
+          "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que per-\nmitam o pagamento da dívida."
+        }
+      ],
+      "context_pages": [
+        14,
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Responsabilidade pelo cálculo dos tributos empresariais",
+      "statement": "O plano propõe que a Receita calcule automaticamente os impostos empresariais a partir da nota fiscal eletrônica.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma do IRPJ e tributos diretos, cálculo estatal e eliminação de anexos, faixas e obrigações acessórias.",
+      "scope": "Tributação de empresas.",
+      "conditions": [
+        "Não apresenta regras de transição nem algoritmo/base final de apuração."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Reformar a tributação das empresas, em especial os impostos diretos como o IRPJ,\npartindo do princípio de que é o Estado, e não o contribuinte, que deve calcular o\nimposto, com a Receita apurando o valor automaticamente a partir da nota fiscal\neletrônica e eliminando anexos, faixas e obrigações acessórias, para que o empreen-\ndedor troque tempo e dinheiro gastos com burocracia por investimento, crescimento\ne geração de empregos."
+        }
+      ],
+      "context_pages": [
+        19
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Crédito direcionado",
+      "statement": "O plano propõe reduzir gradualmente programas de crédito direcionado a setores escolhidos politicamente, incluindo linhas subsidiadas do BNDES.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução gradual de programas subsidiados para ampliar concorrência bancária.",
+      "scope": "Crédito direcionado e financiamento empresarial.",
+      "conditions": [
+        "Gradualidade expressa; não determina encerramento imediato de todo crédito do BNDES."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Reduzir gradualmente os programas de crédito direcionado, incluindo linhas subsi-\ndiadas do BNDES, para setores escolhidos politicamente, visando ampliar a concor-\nrência entre bancos e baratear o crédito no Brasil."
+        }
+      ],
+      "context_pages": [
+        18,
+        27
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Acesso ao capital estrangeiro",
+      "statement": "O plano propõe facilitar a entrada de investimentos estrangeiros, removendo barreiras e apresentando oportunidades com parceiros privados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Remoção de barreiras e promoção internacional de investimentos por road shows.",
+      "scope": "Economia brasileira; inclui oportunidades aeroespaciais e tecnológicas.",
+      "conditions": [
+        "As oportunidades setoriais exemplificam a abertura; não constituem lista exclusiva."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Facilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras e\nfazendo road shows junto com parceiros privados para apresentar as diversas opor-\ntunidades em nosso território e nossas vantagens competitivas, como a sua localiza-\nção privilegiada para o lançamento de satélites e foguetes."
+        }
+      ],
+      "context_pages": [
+        17,
+        20,
+        21,
+        22,
+        26,
+        43,
+        48
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Proteção da renda agrícola por seguro",
+      "statement": "O plano propõe desenvolver o seguro rural com fundo privado financiado por aportes públicos e privados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundo e redução de entraves ao mercado de seguros rurais.",
+      "scope": "Perdas agrícolas por clima, pragas e oscilações de mercado.",
+      "conditions": [
+        "Sustentabilidade financeira e proteção efetiva da renda.",
+        "Não quantifica aportes, franquias ou repartição de perdas."
+      ],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Reduzir entraves ao desenvolvimento do setor de seguros rurais, com um fundo pri-\nvado de aportes públicos e privados que cubram perdas por eventos climáticos, pra-\ngas e oscilações de mercado, garantindo sustentabilidade financeira e efetiva prote-\nção da renda agrícola."
+        }
+      ],
+      "context_pages": [
+        43,
+        44,
+        45
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "meio_ambiente_clima",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Expansão da exploração e exportação de petróleo e gás",
+      "statement": "O plano propõe manter calendário regular de leilões de exploração e produção e ampliar exportações a países dependentes de combustíveis fósseis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Leilões previsíveis de áreas petrolíferas e análise ambiental prévia.",
+      "scope": "Exploração/produção de petróleo e gás; mercados externos com dificuldade de eletrificação.",
+      "conditions": [
+        "Análise ambiental prévia para áreas estratégicas.",
+        "A ampliação não traz prazo de encerramento dos combustíveis fósseis."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Manter um calendário regular e previsível de leilões de áreas de exploração e pro-\ndução, com análise ambiental prévia para áreas estratégicas, dando segurança aos\ninvestidores e ampliando as exportações para países que ainda dependem de com-\nbustíveis fósseis e têm dificuldade de se eletrificar."
+        }
+      ],
+      "context_pages": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Controle das empresas estatais",
+      "statement": "O plano propõe privatizar todas as empresas estatais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Transferência ao controle privado por privatização.",
+      "scope": "Todas as empresas estatais, sem exceção expressa no enunciado.",
+      "conditions": [
+        "Não define cronograma, sequência ou modalidades de transferência.",
+        "Preservar a tensão com funções atribuídas a bancos públicos em P08 e a redução gradual do BNDES em P03."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Privatizar todas as empresas estatais para que o governo possa se concentrar na-\nquilo que de fato lhe cabe, como segurança pública e educação, reduzindo o espaço\npara escândalos de corrupção e garantindo maior eficiência no uso dos recursos\npúblicos e mais competição na economia brasileira."
+        }
+      ],
+      "context_pages": [
+        15,
+        18,
+        27
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Funções de bancos públicos em projetos",
+      "statement": "O plano propõe fortalecer instrumentos de bancos públicos para garantias e contas vinculadas de projetos de infraestrutura.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantias, seguros e compartilhamento de riscos para ampliar bancabilidade.",
+      "scope": "Financiamento de infraestrutura e atração de investidores nacionais/internacionais.",
+      "conditions": [
+        "O trecho denomina os bancos públicos, mas não explicita conservação de controle acionário.",
+        "Não informa a compatibilização temporal com a privatização universal de P07."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Ampliar os instrumentos de garantia, seguros e compartilhamento de riscos,  forta-\nlecendo o cardápio dos bancos públicos na oferta de garantias e contas vinculadas,\nde forma a reduzir o custo de capital, ampliar a bancabilidade dos projetos e atrair\nmais investidores nacionais e internacionais."
+        }
+      ],
+      "context_pages": [
+        26,
+        27
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Consequências da avaliação de servidores",
+      "statement": "O plano propõe avaliação de desempenho com progressão, bônus e autonomia para quem entrega e recuperação ou desligamento de quem não evolui.",
+      "support_level": "explicit_proposal",
+      "instrument": "Avaliação 360 graus, curva forçada de desempenho e Planos de Desenvolvimento Individuais.",
+      "scope": "Gestão de desempenho do setor público.",
+      "conditions": [
+        "Recuperação profissional aparece como possibilidade antes ou em alternativa ao desligamento.",
+        "O texto não define recursos, limiares ou sequência obrigatória do procedimento."
+      ],
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Unificar e simplificar os modelos de avaliação, com instrumentos como a avaliação\n360 graus e a curva forçada de desempenho, para medir a entrega de forma justa,\ngarantindo que quem entrega avance na carreira, ganhe bônus e mais autonomia de\natuação, enquanto quem não evolui possa ser recuperado com Planos de Desenvol-\nvimento Individuais ou até ser desligado."
+        }
+      ],
+      "context_pages": [
+        39,
+        40,
+        41
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Vínculos de trabalho no setor público",
+      "statement": "O plano propõe criar vínculos públicos flexíveis, incluindo contratos temporários para projetos e vínculos indeterminados sem estabilidade ampla.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reformulação dos modelos de contratação e definição dos cargos típicos de Estado.",
+      "scope": "Composição da força de trabalho pública.",
+      "conditions": [
+        "Não afirma retirar estabilidade de todos os cargos.",
+        "Não especifica transição para servidores atuais ou lista dos cargos típicos."
+      ],
+      "evidence": [
+        {
+          "page": 41,
+          "quote": "Flexibilizar a composição da força de trabalho do setor público, reformulando os\nmodelos de contratação existentes e instituindo novos vínculos adaptados a diferen-\ntes necessidades, como contratos por tempo determinado para projetos específicos,\nvínculos por tempo indeterminado sem estabilidade ampla e   definição clara dos\ncargos típicos de estado."
+        }
+      ],
+      "context_pages": [
+        40,
+        41,
+        42
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Decisões individuais no STF",
+      "statement": "O plano propõe acabar com decisões monocráticas e limitar temporalmente pedidos de vista na Corte.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma do processo decisório e prazo máximo para vistas.",
+      "scope": "STF, no capítulo de reforma do Judiciário.",
+      "conditions": [
+        "Não informa prazo exato nem tratamento de medidas urgentes."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Acabar com as decisões monocráticas e estabelecer prazo limite para pedido de\nvistas, evitando que um único ministro decida sozinho sobre temas de relevância\nnacional ou impeça o andamento de decisões na Corte por convicções pessoais."
+        }
+      ],
+      "context_pages": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Transparência e acesso à informação pública",
+      "statement": "O plano propõe dados governamentais abertos, fim da possibilidade de sigilos de 100 anos e pedidos de informação anônimos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Transparência ativa e reforma das regras de sigilo e solicitações.",
+      "scope": "Gastos, contratos, convênios, informações sobre agentes e uso de recursos públicos.",
+      "conditions": [
+        "O impedimento de invocar dados pessoais é formulado para informações de interesse público.",
+        "Não equivale a abolir toda proteção da vida privada."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Tornar a transparência a regra na gestão pública, avançando com a digitalização do\ngoverno e a divulgação dos dados em formato aberto, acabando com a possibilidade\nde sigilos de 100 anos e ampliando as informações divulgadas sobre as despesas\npúblicas, incluindo  notas fiscais, uso de imóveis e repasses a organizações da so-\nciedade civil conveniadas."
+        },
+        {
+          "page": 10,
+          "quote": "Permitir a realização de solicitações de informação em anonimato e deixar explícito\nque a proteção de dados pessoais ou fundamentações genéricas, como “segurança\npessoal”, não podem ser utilizadas para restringir o acesso a informações de inte-\nresse público, como dados sobre agentes públicos, contratos, convênios e o uso de\nrecursos públicos."
+        }
+      ],
+      "context_pages": [
+        8,
+        9,
+        10,
+        41
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Execução de infraestrutura por concessões e PPPs",
+      "statement": "O plano propõe conceder a privados ativos economicamente viáveis e utilizar PPPs onde o investimento privado sozinho não chega.",
+      "support_level": "explicit_proposal",
+      "instrument": "Concessão de construção, operação e manutenção; investimento público com execução privada nas PPPs.",
+      "scope": "Ativos de infraestrutura.",
+      "conditions": [
+        "Viabilidade econômica distingue concessões e necessidade de participação financeira estatal.",
+        "Não exclui investimento público."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com\nviabilidade econômica e, onde o mercado não chega sozinho, garantir a presença do\nEstado via PPPs, unindo investimento público com execução privada eficiente."
+        }
+      ],
+      "context_pages": [
+        19,
+        26,
+        27,
+        28,
+        30
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [],
+      "policy_dimension": "Papel federal no transporte coletivo de alta capacidade",
+      "statement": "O plano propõe política nacional para expandir metrôs, trens, VLTs e outros sistemas de massa com cofinanciamento federal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Planejamento no Ministério da Infraestrutura, estruturação de projetos e coordenação federativa.",
+      "scope": "Principais regiões metropolitanas, com estados e municípios.",
+      "conditions": [
+        "Cofinanciamento compartilhado, sem percentuais ou carteira final detalhada."
+      ],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Integrar o planejamento da mobilidade urbana ao Ministério da Infraestrutura, ar-\nticulando-o com os demais modais e com a logística nacional, e instituir uma polí-\ntica nacional de implantação e expansão dos sistemas estruturantes de transporte\ncoletivo de alta capacidade, com o Governo Federal  apoiando a  estruturação dos\nprojetos, a  coordenação federativa e o cofinanciamento dos investimentos em par-\nceria com estados e municípios, de modo a acelerar a expansão de redes de metrô,\ntrens urbanos, VLTs e outros sistemas de transporte de massa nas principais regiões\nmetropolitanas do país."
+        }
+      ],
+      "context_pages": [
+        29,
+        30
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Organização e investimento em saneamento",
+      "statement": "O plano propõe regionalizar a prestação e ampliar concessões e PPPs para cumprir as metas do Novo Marco do Saneamento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regionalização, estruturação de projetos e ganho de escala dos prestadores.",
+      "scope": "Serviços de saneamento, articulando União, estados e municípios.",
+      "conditions": [
+        "O horizonte remete às metas do marco, sem novo calendário local de obras."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "Fortalecer a regionalização da prestação dos serviços, ampliar a estruturação de\nprojetos de concessão e PPPs e promover soluções que ampliem a escala, a efici-\nência operacional e a capacidade de investimento dos prestadores, em articulação\nentre a União, estados e municípios, para cumprir as metas do Novo Marco do Sa-\nneamento."
+        }
+      ],
+      "context_pages": [
+        29,
+        31,
+        48
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Integração produtiva da Petrobras",
+      "statement": "O plano propõe separar produção, refino, transporte e logística da Petrobras em empresas diferentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desverticalização para entrada de concorrentes em igualdade de condições.",
+      "scope": "Cadeia de petróleo e logística.",
+      "conditions": [
+        "Separação produtiva é decisão distinta da transferência de controle de P07.",
+        "Não define formato societário final de cada unidade."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Desverticalizar a Petrobras, separando as operações de produção, refino, transporte\ne logística em diferentes empresas para permitir a entrada de novos concorrentes e\nampliar a concorrência em igualdade de condições."
+        }
+      ],
+      "context_pages": [
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Encargos e subsídios na tarifa elétrica",
+      "statement": "O plano propõe retirar da conta de luz encargos e subsídios que favorecem setores escolhidos pelo governo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão e retirada de encargos/subsídios setoriais embutidos na tarifa.",
+      "scope": "Consumidores de energia elétrica e setores beneficiados pelos encargos.",
+      "conditions": [
+        "Não identifica quais encargos seriam removidos nem calcula efeito tarifário.",
+        "Não se atribui eliminação literal de todo tributo ou encargo elétrico."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Retirar da conta de luz a grande quantidade de encargos e subsídios que hoje são\npagos por todo consumidor, mas privilegiam setores escolhidos pelo governo."
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Adensamento urbano e regras de zoneamento",
+      "statement": "O plano propõe apoiar a remoção de restrições de zoneamento que impedem adensamento em áreas centrais já estruturadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão municipal dos Planos Diretores, com apoio federal.",
+      "scope": "Moradia em áreas com empregos e serviços públicos próximos.",
+      "conditions": [
+        "Recorte em áreas centrais já estruturadas, sem abolir todo zoneamento."
+      ],
+      "evidence": [
+        {
+          "page": 65,
+          "quote": "Apoiar municípios na revisão de seus Planos Diretores, removendo restrições de zo-\nneamento que impedem o adensamento urbano em áreas centrais já estruturadas,\nreduzindo o custo das moradias e aproximando  as famílias de empregos e serviços\npúblicos."
+        }
+      ],
+      "context_pages": [
+        49,
+        65
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Rito do licenciamento de obras estratégicas",
+      "statement": "O plano propõe aplicar os novos prazos da Lei Geral de Licenciamento e criar via prioritária e simplificada para obras estratégicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regime de Projetos de Interesse Nacional com prazos e ritos mais céleres.",
+      "scope": "Órgãos licenciadores e intervenientes federais, estaduais e municipais.",
+      "conditions": [
+        "O procedimento prioritário inclui aval dos órgãos de controle.",
+        "Não equivale a dispensar toda avaliação ambiental."
+      ],
+      "evidence": [
+        {
+          "page": 27,
+          "quote": "Fazer valer, na prática, a nova Lei Geral do Licenciamento Ambiental, garantindo o\ncumprimento dos novos prazos e regras pelos órgãos ambientais federais, estaduais\ne municipais, para que os projetos de infraestrutura deixem de travar por inseguran-\nça e demora na obtenção das licenças."
+        },
+        {
+          "page": 27,
+          "quote": "Estabelecer uma via rápida para obras estratégicas, com prazos e ritos mais céleres\ne prioridade junto a todos os órgãos licenciadores e intervenientes do processo, as-\nsegurando previsibilidade e um rito simplificado de aprovações nas diversas instân-\ncias e com o aval também dos órgãos de controle."
+        }
+      ],
+      "context_pages": [
+        27,
+        44,
+        47
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "cidadania_direitos",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Fiscalização de desmatamento e grilagem",
+      "statement": "O plano propõe integrar segurança, fiscalização ambiental e Justiça para reprimir grilagem e desmatamento ilegal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Monitoramento por satélite, integração institucional e punição dos infratores.",
+      "scope": "Atividades ilegais e proteção das comunidades indígenas.",
+      "conditions": [
+        "O recorte explícito é a ilegalidade; não é proibição de qualquer uso produtivo."
+      ],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "Combater com rigor a grilagem e o desmatamento ilegal, integrando forças de se-\ngurança, órgãos ambientais e o sistema de justiça, com monitoramento por satélite,  \npunição efetiva dos infratores e proteção às comunidades indígenas."
+        }
+      ],
+      "context_pages": [
+        46,
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Mercado internacional de carbono",
+      "statement": "O plano propõe facilitar a comercialização voluntária de créditos de carbono com o mercado internacional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ambiente de negócios seguro e desburocratizado.",
+      "scope": "Produtores e comunidades que obtenham renda do patrimônio ambiental.",
+      "conditions": [
+        "Sem criar novos tributos ou custos para brasileiros.",
+        "Não especifica governança de integridade, adicionalidade ou repartição de receitas."
+      ],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "Estabelecer um ambiente de negócios seguro e desburocratizado para a comercia-\nlização voluntária de créditos de carbono com o mercado internacional, garantindo\nque o patrimônio ambiental seja um ativo lucrativo para produtores e comunidades,\nsem criar novos tributos ou custos para os brasileiros."
+        }
+      ],
+      "context_pages": [
+        34,
+        47,
+        48
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Financiamento da adaptação a desastres",
+      "statement": "O plano propõe atrair investimento privado em contenção, monitoramento climático, prevenção e resposta a desastres.",
+      "support_level": "explicit_proposal",
+      "instrument": "Infraestrutura preventiva e sistemas que integrem ciência, tecnologia e gestão territorial.",
+      "scope": "Riscos ambientais urbanos e rurais.",
+      "conditions": [
+        "Não informa metas por bacia/município ou estrutura de financiamento e retorno privado."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Atrair investimento privado em infraestrutura de contenção e sistemas de monitora-\nmento climático, prevenção e resposta rápida a desastres, integrando ciência, tec-\nnologia e gestão territorial para reduzir riscos ambientais no campo e nas cidades."
+        }
+      ],
+      "context_pages": [
+        47,
+        48,
+        49
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Gestão de parques e turismo de natureza",
+      "statement": "O plano propõe conceder parques nacionais para desenvolver turismo sustentável.",
+      "support_level": "explicit_proposal",
+      "instrument": "Concessões, qualificação local, infraestrutura e regulação de preservação.",
+      "scope": "Parques nacionais e destinos ligados à biodiversidade brasileira.",
+      "conditions": [
+        "Preservação do patrimônio natural é condição expressa.",
+        "Concessão de gestão não é descrita como venda das áreas protegidas."
+      ],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "Estruturar destinos de turismo sustentável, aproveitando a biodiversidade e os bio-\nmas brasileiros, concedendo parques nacionais, qualificando mão de obra local e\ngarantindo infraestrutura e marco regulatório que preservem o patrimônio natural."
+        }
+      ],
+      "context_pages": [
+        48,
+        71
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Momento e alcance da regulação da IA",
+      "statement": "O plano rejeita regulação precoce e ampla da inteligência artificial e propõe intervenção pontual apenas onde surjam danos concretos comprovados.",
+      "support_level": "explicit_rejection",
+      "instrument": "Regulação pontual orientada por dano comprovado.",
+      "scope": "Cadeias e aplicações de inteligência artificial.",
+      "conditions": [
+        "A existência de dano concreto comprovado é o gatilho enunciado.",
+        "Não especifica autoridade responsável, provas ou remédios."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Atrair investimentos para as cadeias de IA, evitando uma regulação precoce e ampla\nda inteligência artificial, garantindo segurança jurídica para o setor e regulando pon-\ntualmente apenas onde surgirem danos concretos comprovados."
+        }
+      ],
+      "context_pages": [
+        21
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Distribuição do financiamento científico",
+      "statement": "O plano propõe concentrar recursos de pesquisa em instituições com histórico comprovado de produção científica relevante.",
+      "support_level": "explicit_proposal",
+      "instrument": "Financiamento por desempenho e premiação de resultados.",
+      "scope": "Instituições de pesquisa, ciência e tecnologia.",
+      "conditions": [
+        "Critério de histórico comprovado; não se define divisão de recursos ou tratamento de instituições emergentes."
+      ],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Concentrar recursos de pesquisa, ciência e tecnologia nas instituições com histórico\ncomprovado de produção científica relevante, criando um modelo de financiamento\nbaseado em desempenho que premie resultados e atraia talentos."
+        }
+      ],
+      "context_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Critérios para bolsas de pesquisa",
+      "statement": "O plano propõe priorizar bolsas para pesquisas de impacto científico mensurável ou voltadas a problemas reais do mercado, incluindo bolsas em empresas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reformulação de critérios de Capes/CNPq.",
+      "scope": "Bolsas de mestrado e doutorado e pesquisas vinculadas.",
+      "conditions": [
+        "Impacto científico ou solução de problema de mercado são alternativas no texto, não requisitos simultâneos."
+      ],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Reformular os critérios de concessão de bolsas, como as da Capes e do CNPq, para\npriorizar pesquisas com impacto científico mensurável ou que resolvam um proble-\nma real do mercado, utilizando também bolsas dentro de empresas privadas."
+        }
+      ],
+      "context_pages": [
+        55
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Pesquisa empresarial em universidades públicas",
+      "statement": "O plano propõe facilitar centros de pesquisa e desenvolvimento apoiados pelo setor produtivo dentro das universidades públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regras facilitadoras e financiamento privado complementar.",
+      "scope": "Universidades públicas e empresas parceiras.",
+      "conditions": [
+        "Complementaridade financeira é expressa; não significa extinção do financiamento público."
+      ],
+      "evidence": [
+        {
+          "page": 56,
+          "quote": "Criar um ambiente regulatório que facilite a instalação de centros de pesquisa e\ndesenvolvimento, com apoio do setor produtivo dentro das universidades públicas,\naproximando a produção científica das demandas reais do mercado e gerando o\nfinanciamento privado complementar às instituições."
+        }
+      ],
+      "context_pages": [
+        55,
+        56
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "educacao_cultura_sociedade",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Expansão da conectividade digital",
+      "statement": "O plano propõe novas faixas de espectro 5G e parcerias privadas com incentivos para conectar regiões desassistidas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Abertura de espectro a concorrentes, incentivos econômicos e parcerias.",
+      "scope": "Interior, campo, regiões isoladas, escolas, postos de saúde e serviços públicos.",
+      "conditions": [
+        "Não define cronograma, cobertura mínima ou contrapartidas por território."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "Estruturar a abertura de novas faixas de espectro para o 5G, atraindo novos concor-\nrentes para baixar preços e melhorar o serviço ao consumidor, e usar parcerias com\no setor privado e incentivos econômicos para levar conectividade de qualidade ao\ninterior, ao campo e às regiões isoladas do país, conectando também escolas, postos\nde saúde e demais serviços públicos que hoje ficam à margem da rede."
+        }
+      ],
+      "context_pages": [
+        31
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Ajuste da idade de aposentadoria",
+      "statement": "O plano propõe reforma previdenciária com reajuste automático da idade mínima vinculado à expectativa de vida e à sustentabilidade do sistema.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mecanismo automático de reajuste da idade mínima.",
+      "scope": "Reforma envolvendo estados, municípios e previdências rural e militar.",
+      "conditions": [
+        "Expectativa de vida e sustentabilidade de longo prazo aparecem conjuntamente.",
+        "Não especifica fórmula, idade resultante ou transição por coorte."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Fazer uma Reforma da Previdência envolvendo estados e municípios, bem como a\nprevidência rural e militar, criando também um mecanismo de reajuste automático\nda idade mínima para aposentadoria com base na expectativa de vida da população\ne na sustentabilidade do sistema previdenciário no longo prazo, para que as futuras\ngerações tenham segurança de que serão protegidas na velhice."
+        }
+      ],
+      "context_pages": [
+        14
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Permanência laboralmente condicionada no Bolsa Família",
+      "statement": "O plano propõe manter adultos saudáveis e aptos no Bolsa Família enquanto buscam emprego, estudam ou se qualificam, com possibilidade de suspensão por recusa injustificada de trabalho formal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Condicionalidades de busca de emprego/educação e intermediação pública de ofertas; concentração de transferências de mesmo público no Bolsa Família.",
+      "scope": "Beneficiários adultos saudáveis e aptos ao trabalho.",
+      "conditions": [
+        "Busca de emprego, estudo ou qualificação são alternativas.",
+        "Suspensão é possibilidade por recusa sem justificativa de oferta formal intermediada pelo poder público.",
+        "Exceção para cuidadores de crianças pequenas, idosos e pessoas com deficiência dependentes.",
+        "Não propõe substituir universalmente o benefício por emprego público remunerado."
+      ],
+      "evidence": [
+        {
+          "page": 63,
+          "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família\napenas enquanto estiverem buscando emprego, estudando ou se qualificando pro-\nfissionalmente, com possibilidade de suspensão do benefício para quem, sem justifi-\ncativa, recusar ofertas formais de trabalho intermediadas pelo poder público, exceto\nos brasileiros responsáveis pelos cuidados de crianças pequenas, idosos e pessoas\ncom deficiência em situação de dependência."
+        },
+        {
+          "page": 63,
+          "quote": "Unificar os programas federais que atendem os mesmos públicos no Bolsa Família,\naprimorando a focalização do gasto nas famílias que mais precisam e reduzindo\nfraudes e custos administrativos desnecessários."
+        }
+      ],
+      "context_pages": [
+        15,
+        62,
+        63,
+        64
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Compra de atendimento privado pelo SUS",
+      "statement": "O plano propõe parcerias com clínicas e hospitais privados para consultas, exames e cirurgias que reduzam filas do SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratação/parceria de atendimento utilizando capacidade privada ociosa.",
+      "scope": "Pacientes do SUS em filas.",
+      "conditions": [
+        "Metas de atendimento e qualidade.",
+        "Compra de serviço é distinta da gestão das unidades em P32."
+      ],
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e\nhospitais privados para realização de consultas, exames e cirurgias, com metas cla-\nras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa\ndessas unidades de saúde privadas."
+        }
+      ],
+      "context_pages": [
+        57,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Gestão de unidades públicas de saúde",
+      "statement": "O plano propõe expandir hospitais, UPAs e especialidades por concessões, PPPs e OSs, incluindo construir e gerir unidades mediante PPPs.",
+      "support_level": "explicit_proposal",
+      "instrument": "Delegação de construção e gestão com controle público dos resultados.",
+      "scope": "Rede de unidades e serviços de saúde.",
+      "conditions": [
+        "Controle rigoroso dos resultados pelo poder público.",
+        "Não afirma delegar todas as unidades; não se confunde com P31."
+      ],
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Expandir a rede de hospitais, UPAs e atendimentos com\nespecialistas por meio de concessões, PPPs e parcerias com OSs:"
+        },
+        {
+          "page": 60,
+          "quote": "Ampliar o uso de parcerias público-privadas para construir e gerir as unidades de\nsaúde, garantindo maior eficiência operacional, melhor experiência para o paciente\ne controle rigoroso de resultados por parte do poder público."
+        }
+      ],
+      "context_pages": [
+        15,
+        57,
+        60
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Controle e interoperabilidade do prontuário",
+      "statement": "O plano propõe registro nacional de saúde unificado sob controle do cidadão, interoperável entre sistemas públicos e privados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prontuário eletrônico e infraestrutura federal compartilhada.",
+      "scope": "Histórico clínico dos pacientes e unidades públicas/privadas.",
+      "conditions": [
+        "Privacidade dos dados e autorização do cidadão para acesso.",
+        "Não descreve acesso irrestrito a dados pessoais."
+      ],
+      "evidence": [
+        {
+          "page": 58,
+          "quote": "Construir um registro nacional de saúde unificado e sob controle do cidadão por\nmeio do prontuário eletrônico, centralizando o histórico clínico do paciente, garan-\ntindo a continuidade do cuidado em qualquer unidade de  atendimento e garantindo\na privacidade dos dados, com o Governo Federal liderando essa infraestrutura."
+        },
+        {
+          "page": 58,
+          "quote": "Fazer com que os sistemas de saúde públicos e privados se comuniquem e alimen-\ntem o registro nacional, permitindo que médicos e unidades acessem o histórico\ncompleto do paciente independentemente de onde ele tenha sido atendido, median-\nte autorização do cidadão."
+        }
+      ],
+      "context_pages": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Internação involuntária por dependência química na população de rua",
+      "statement": "O plano propõe apoiar internação involuntária de dependentes de drogas/álcool que vivem nas ruas quando a dependência impede ressocialização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa nacional de apoio a estados/municípios e comunidades terapêuticas credenciadas.",
+      "scope": "Pessoas em situação de rua com dependência química nos casos descritos.",
+      "conditions": [
+        "Avaliação médica e diálogo com familiares.",
+        "Nos termos da legislação; acompanhamento em entidades credenciadas e fiscalizadas.",
+        "Não se atribui internação indiscriminada de toda pessoa em situação de rua."
+      ],
+      "evidence": [
+        {
+          "page": 64,
+          "quote": "Apoiar estados e municípios a fazer a internação involuntária de\ndependentes de drogas e álcool que vivem nas ruas:"
+        },
+        {
+          "page": 64,
+          "quote": "Estruturar um programa nacional que permita identificar, com avaliação médica e\ndiálogo com as famílias, os casos em que a dependência química impede a resso-\ncialização, garantindo a internação involuntária nos termos da legislação e o acom-\npanhamento em comunidades terapêuticas credenciadas e fiscalizadas pelo poder\npúblico."
+        }
+      ],
+      "context_pages": [
+        62,
+        64
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Oferta de educação infantil por parcerias",
+      "statement": "O plano propõe ampliar creches e pré-escolas priorizando parcerias privadas/comunitárias e fortalecendo simultaneamente a rede pública.",
+      "support_level": "explicit_proposal",
+      "instrument": "Parcerias com entidades com e sem fins lucrativos para expansão de vagas.",
+      "scope": "Educação infantil, especialmente famílias vulneráveis.",
+      "conditions": [
+        "Qualidade, transparência dos recursos e metas de atendimento, aprendizagem e desenvolvimento.",
+        "Não especifica voucher nem duração até existir vaga estatal."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Ampliar a oferta de vagas em creches e pré-escolas com foco em\nqualidade e acesso, priorizando parcerias com o setor privado:"
+        },
+        {
+          "page": 50,
+          "quote": "Aumentar o acesso à educação infantil, especialmente para famílias mais vulnerá-\nveis, por meio do fortalecimento das redes públicas e de parcerias com entidades\nprivadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qua-\nlidade, a transparência no uso dos recursos e metas claras de atendimento, apren-\ndizagem e desenvolvimento."
+        }
+      ],
+      "context_pages": [
+        15,
+        50,
+        51
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Progressão na carreira docente",
+      "statement": "O plano propõe progressão docente baseada em desenvolvimento profissional, desempenho pedagógico e atuação em contextos vulneráveis, em lugar do tempo de serviço.",
+      "support_level": "explicit_proposal",
+      "instrument": "Diretrizes nacionais para carreiras docentes orientadas por desempenho.",
+      "scope": "Professores da educação básica.",
+      "conditions": [
+        "Atuação em contextos vulneráveis é critério expresso, além de desempenho.",
+        "Não define indicadores, pesos ou transição das carreiras existentes."
+      ],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Avançar na adoção de modelos mais modernos de valorização docente, para que a\nprogressão na carreira dependa do desenvolvimento profissional, do desempenho\npedagógico e da atuação em contextos vulneráveis, e não do tempo de serviço."
+        }
+      ],
+      "context_pages": [
+        52
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Pluralidade de modelos educacionais",
+      "statement": "O plano propõe ampliar a escolha familiar com escolas conveniadas, cívico-militares e regulamentação do ensino domiciliar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Parcerias educacionais e regulamentação do homeschooling.",
+      "scope": "Famílias, crianças e adolescentes em modelos educacionais diversos.",
+      "conditions": [
+        "Parcerias comunitárias, filantrópicas e confessionais.",
+        "Todos os modelos devem ter avaliação periódica da aprendizagem e proteção ao desenvolvimento educacional/social.",
+        "Não prescreve um único modelo obrigatório para toda a rede."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "Dar mais liberdade aos pais de escolher o modelo educacional de seus filhos,  fa-\ncilitando a formalização de parcerias com instituições comunitárias, filantrópicas e\nconfessionais, avançando em uma agenda de parcerias com escolas conveniadas na\neducação, escolas cívico-militares e regulamentando o homeschooling."
+        },
+        {
+          "page": 53,
+          "quote": "Assegurar que todos os modelos educacionais adotem critérios claros de avaliação\nperiódica da aprendizagem e mecanismos de proteção ao desenvolvimento educa-\ncional e social das crianças e adolescentes."
+        }
+      ],
+      "context_pages": [
+        53
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Escolha de reitores",
+      "statement": "O plano propõe substituir eleições internas de reitores por seleção técnica e transparente com conselhos externos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Critérios objetivos de capacidade de gestão e participação externa na seleção.",
+      "scope": "Universidades e institutos federais, no contexto do capítulo.",
+      "conditions": [
+        "Não especifica composição dos conselhos ou autoridade final de nomeação."
+      ],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Substituir o atual modelo de eleição interna de reitores por um processo de escolha\ntécnico e transparente, com participação de conselhos externos e critérios objetivos\nde capacidade de gestão, despolitizando as universidades e profissionalizando sua\ngestão."
+        }
+      ],
+      "context_pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Destinação dos recursos culturais",
+      "statement": "O plano propõe concentrar financiamento cultural em produções regionais e artistas locais, limitando a captação por grandes agentes consolidados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Critérios objetivos de elegibilidade e tetos de captação.",
+      "scope": "Mecanismos de financiamento cultural; produtores regionais/locais e consolidados.",
+      "conditions": [
+        "Não fixa teto financeiro ou extingue expressamente um mecanismo inteiro nesse trecho."
+      ],
+      "evidence": [
+        {
+          "page": 69,
+          "quote": "Concentrar os mecanismos de financiamento à cultura na produção cultural regional\ne nos artistas locais, com critérios objetivos de elegibilidade e limites de captação\npara grandes artistas e produtores já consolidados."
+        }
+      ],
+      "context_pages": [
+        69,
+        70
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Condicionalidades do financiamento esportivo",
+      "statement": "O plano propõe vincular repasses a confederações e federações esportivas a governança, transparência e resultados esportivos/sociais mensuráveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Condicionalidade reforçada dos repasses públicos.",
+      "scope": "Confederações e federações esportivas.",
+      "conditions": [
+        "Exigência simultânea de gestão e impacto, sem métricas ou sanções detalhadas."
+      ],
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "Fortalecer os critérios de condicionalidade dos repasses públicos às confederações\ne federações esportivas, tornando as exigências de governança, transparência e im-\npacto social mais rigorosas e diretamente vinculadas à obtenção de resultados es-\nportivos e sociais mensuráveis."
+        }
+      ],
+      "context_pages": [
+        67,
+        68
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Regime trabalhista alternativo",
+      "statement": "O plano propõe regime alternativo à CLT com prevalência do negociado sobre o legislado para ajustar remuneração, jornada e férias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco contratual alternativo pactuado entre trabalhador e empregador.",
+      "scope": "Relações de trabalho abrangidas pelo novo regime.",
+      "conditions": [
+        "Acordo consensual entre as partes.",
+        "Jornada diária pode superar oito horas, preservado limite de 44 horas semanais.",
+        "Não define revogação integral da reforma de 2017."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Permitir que trabalhador e empregador ajustem o modelo de contratação às suas\npreferências e à realidade de cada atividade, com prevalência do negociado sobre\no legislado. Nesse marco trabalhista alternativo, as partes poderão definir consen-\nsualmente regras como o percentual e o valor da remuneração variável atrelada ao\ndesempenho; a periodicidade do pagamento dos salários (diária, semanal ou quin-\nzenal), a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limi-\nte de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão\ndos períodos de férias."
+        }
+      ],
+      "context_pages": [
+        23,
+        24,
+        25
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Liberdade de filiação e contribuição sindical",
+      "statement": "O plano propõe encerrar o monopólio sindical e assegurar o direito de não se filiar nem contribuir para sindicatos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma da organização sindical e proteção da escolha individual.",
+      "scope": "Trabalhadores e representação sindical.",
+      "conditions": [
+        "A proposta não detalha organização da negociação coletiva após o fim do monopólio."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "Encerrar o monopólio sindical, assegurando ao profissional o direito de não se filiar\nou contribuir para sindicatos, e limitar o poder regulatório e disciplinar dos conselhos\nprofissionais, com mais transparência, redução de custos e foco exclusivo em ativi-\ndades que envolvam risco real ao cidadão, devolvendo ao trabalhador a liberdade\nde associação e o dinheiro hoje retido por estruturas que pouco entregam em troca."
+        }
+      ],
+      "context_pages": [
+        24
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Atividade econômica das comunidades indígenas",
+      "statement": "O plano propõe assegurar às comunidades indígenas exploração econômica de suas terras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Permitir e regulamentar agricultura, pecuária, extrativismo e turismo.",
+      "scope": "Comunidades indígenas e suas terras.",
+      "conditions": [
+        "O sujeito do direito são as comunidades; não há autorização expressa geral a terceiros no trecho.",
+        "Não especifica consultas, modalidades contratuais ou salvaguardas ambientais."
+      ],
+      "evidence": [
+        {
+          "page": 25,
+          "quote": "Garantir às comunidades indígenas o pleno direito de exploração econômica de suas\nterras, permitindo e regulamentando o exercício de atividades como agricultura, pe-\ncuária, extrativismo e turismo."
+        }
+      ],
+      "context_pages": [
+        25
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Moderação de opiniões e exclusão de perfis",
+      "statement": "O plano propõe proibir exclusão de perfis e moderação de opiniões pelas plataformas, inclusive por ordem judicial, substituindo-as por retratação e indenização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Procedimentos administrativos/judiciais de reparação em lugar desses mecanismos de remoção.",
+      "scope": "Redes sociais, plataformas, usuários e determinações judiciais.",
+      "conditions": [
+        "O texto fala em opiniões; não define fronteira com outras categorias de conteúdo ilícito.",
+        "Não detalha exceções ou tratamento de riscos urgentes."
+      ],
+      "evidence": [
+        {
+          "page": 74,
+          "quote": "Vedar a exclusão de perfis e a moderação de opiniões pelas plataformas, inclusive\npor determinação judicial, substituindo esses mecanismos por procedimentos admi-\nnistrativos e judiciais que garantam direito à retratação e indenização, assegurando\nque o debate público no Brasil seja resolvido pela livre circulação de ideias e não\npelo controle de juízes ou empresas de tecnologia."
+        }
+      ],
+      "context_pages": [
+        73,
+        74
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Financiamento partidário e eleitoral",
+      "statement": "O plano propõe extinguir fundos Partidário e Eleitoral e adotar financiamento privado com doações de pessoas físicas e jurídicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Doações privadas reguladas em substituição aos fundos.",
+      "scope": "Partidos, campanhas, doadores individuais e empresas.",
+      "conditions": [
+        "Transparência, rastreabilidade e limites para preservar competição.",
+        "Não informa valores-limite nem desenho da fiscalização."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "Extinguir o Fundo Partidário e o Fundo Eleitoral, substituindo-os por um modelo de\nfinanciamento privado de campanhas, com doações permitidas por pessoas físicas\ne jurídicas, havendo critérios rígidos de transparência, rastreabilidade e limites que\npreservem a justa competição entre os candidatos."
+        }
+      ],
+      "context_pages": [
+        73,
+        75
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Sistema de representação parlamentar",
+      "statement": "O plano propõe substituir o voto proporcional de lista aberta por voto distrital misto.",
+      "support_level": "explicit_proposal",
+      "instrument": "Dois votos: representante distrital majoritário e representação de ideias no parlamento.",
+      "scope": "Eleições parlamentares no recorte da proposta.",
+      "conditions": [
+        "Não define proporção entre cadeiras distritais e de lista ou desenho dos distritos."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "Promover a substituição do atual modelo proporcional de lista aberta por um siste-\nma distrital misto com dois votos: um para a eleição majoritária do representante do\ndistrito e outro para representação de ideias no parlamento."
+        }
+      ],
+      "context_pages": [
+        75
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Enquadramento e repressão de facções",
+      "statement": "O plano propõe tratar como terroristas os criminosos que dominam territórios com táticas/armamentos de guerra e integrar forças para recuperar essas áreas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Enquadramento antiterrorista, Força Nacional, Forças Armadas, polícias e cooperação internacional.",
+      "scope": "Facções e territórios dominados.",
+      "conditions": [
+        "O texto associa o enquadramento a penas maiores e impossibilidade de progressão de regime.",
+        "O uso militar é integrado às polícias, não descrito como sua substituição universal."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Enquadrar como terroristas os criminosos que usam táticas e armamentos de guerra\npara dominar territórios, de modo a permitir o uso da Força Nacional, das Forças\nArmadas, dos órgãos de controle e da colaboração internacional para combatê-los,\nalém de garantir penas mais altas e a impossibilidade de progressão de regime."
+        },
+        {
+          "page": 5,
+          "quote": "Retomar os territórios dominados pelas facções com operações que envolvam cola-\nboração entre as Forças Armadas, as polícias estaduais e a Polícia Federal, garantin-\ndo a paz aos brasileiros que vivem nessas regiões."
+        }
+      ],
+      "context_pages": [
+        5,
+        6,
+        38
+      ]
+    },
+    {
+      "id": "P48",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Idade da responsabilidade penal",
+      "statement": "O plano propõe reduzir a maioridade penal a 16 anos, com excepcional imputação a pessoas mais jovens em crimes graves ou reincidência.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança da maioridade penal e exceções para idades inferiores.",
+      "scope": "Adolescentes de 16–17 anos e hipóteses excepcionais abaixo de 16.",
+      "conditions": [
+        "Aos 16, a proposta não se restringe a crimes graves.",
+        "Para mais jovens cita homicídio, estupro ou reincidência; não estabelece idade mínima inferior."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal\nde adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação\npenal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e\nestupro, ou reincidência."
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P49",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Prisão preventiva após flagrantes repetidos",
+      "statement": "O plano propõe converter em preventiva a prisão de quem for capturado em flagrante pela terceira vez, vedando relaxamento na audiência de custódia.",
+      "support_level": "explicit_proposal",
+      "instrument": "Previsão legal de conversão obrigatória após terceiro flagrante.",
+      "scope": "Pessoas presas em flagrante pela terceira vez.",
+      "conditions": [
+        "O gatilho enunciado é repetição de prisões, não três condenações definitivas.",
+        "Não detalha contagem, tratamento de prisões anuladas ou critérios de gravidade."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Prever em lei que bandidos presos em flagrante pela terceira vez tenham a prisão\nconvertida em preventiva, vedando o relaxamento durante a audiência de custódia,\netapa em que o preso é apresentado à Justiça."
+        }
+      ],
+      "context_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "id": "P50",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Competência penal dos estados",
+      "statement": "O plano propõe permitir que estados criem crimes e agravem penas e regimes de cumprimento em relação às regras federais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Ampliação da autonomia legislativa penal estadual.",
+      "scope": "Estados e legislação criminal adicional.",
+      "conditions": [
+        "O sentido explicitado é endurecer além do patamar federal.",
+        "Não define solução para conflitos de competência."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Conceder autonomia para que cada estado endureça o combate ao crime, com a\npossibilidade de instituir novos crimes e agravar penas e regimes de cumprimento\nde pena em relação ao previsto na legislação federal."
+        }
+      ],
+      "context_pages": [
+        7,
+        75
+      ]
+    },
+    {
+      "id": "P51",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Porte de armas na propriedade rural",
+      "statement": "O plano propõe ampliar o porte de arma do produtor rural em toda a extensão de sua propriedade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantia de porte além da posse estendida referida no plano.",
+      "scope": "Produtor rural e extensão da propriedade.",
+      "conditions": [
+        "Relaciona a medida à legítima defesa e proteção contra invasões.",
+        "Não sustenta porte irrestrito em qualquer local por qualquer pessoa."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "Consolidar e ampliar o direito do produtor rural de portar arma em toda a extensão\nde sua propriedade, avançando para além da posse estendida já prevista em lei, com\nsegurança jurídica para o exercício da legítima defesa e proteção efetiva do Estado\ncontra invasões."
+        }
+      ],
+      "context_pages": [
+        45
+      ]
+    },
+    {
+      "id": "P52",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Proteção da mulher antes e depois da denúncia",
+      "statement": "O plano propõe delegacias da mulher 24 horas e expansão de Patrulhas Maria da Penha e Salas Lilás.",
+      "support_level": "explicit_proposal",
+      "instrument": "Atendimento especializado, integração saúde/segurança e monitoramento de medidas protetivas.",
+      "scope": "Mulheres vítimas de violência e redes estaduais/municipais.",
+      "conditions": [
+        "Equipes preferencialmente femininas e capacitadas em violência de gênero.",
+        "Patrulhas monitoram o cumprimento de medidas para reduzir reincidência."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Ampliar a rede de delegacias da mulher com atuação 24 horas e equipes preferen-\ncialmente femininas capacitadas em violência de gênero, e apoiar os estados na\nconstrução de sistemas integrados entre Saúde, Segurança Pública e delegacias."
+        },
+        {
+          "page": 7,
+          "quote": "Expandir nas redes de segurança pública e saúde de estados e municípios as Pa-\ntrulhas Maria da Penha, que monitoram o cumprimento de medidas protetivas para\nreduzir a reincidência, e as Salas Lilás, com espaços de acolhimento às vítimas em\nunidades policiais."
+        }
+      ],
+      "context_pages": [
+        7,
+        66
+      ]
+    },
+    {
+      "id": "P53",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Participação no BRICS",
+      "statement": "O plano propõe retirar o Brasil do BRICS de forma diplomática.",
+      "support_level": "explicit_proposal",
+      "instrument": "Saída institucional do bloco.",
+      "scope": "Brasil e países membros.",
+      "conditions": [
+        "Preservação pragmática das relações comerciais com todos os membros.",
+        "Recusa de direcionamentos contrários a valores constitucionais e democráticos."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Retirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as\nrelações comerciais com todos os países do bloco e recusando qualquer direciona-\nmento que comprometa valores constitucionais e democráticos do Brasil."
+        }
+      ],
+      "context_pages": [
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "id": "P54",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Formato de integração do Mercosul",
+      "statement": "O plano propõe transformar o Mercosul de união aduaneira em zona de livre comércio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Flexibilização da estrutura do bloco para negociação de acordos pelos países.",
+      "scope": "Mercosul e acordos comerciais/de investimento do Brasil.",
+      "conditions": [
+        "Não é proposta explícita de saída brasileira do Mercosul.",
+        "Não decide apoio ao acordo específico Mercosul–União Europeia."
+      ],
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Flexibilizar a estrutura atual do Mercosul, hoje uma união aduaneira que impede os\npaíses membros de negociarem sozinhos, transformando-o em zona de livre comér-\ncio, para que o Brasil assine acordos comerciais e de investimentos com países e\nblocos que ampliem seu acesso a novos mercados, tecnologia e inovação."
+        }
+      ],
+      "context_pages": [
+        36,
+        38
+      ]
+    },
+    {
+      "id": "P55",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Adesão à OCDE",
+      "statement": "O plano propõe retomar a adesão do Brasil à OCDE com reformas institucionais e econômicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Processo de adesão e adequação institucional.",
+      "scope": "Brasil e OCDE.",
+      "conditions": [
+        "Não enumera neste compromisso todas as reformas exigidas."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Retomar o processo de adesão do Brasil à OCDE,  promovendo as reformas institu-\ncionais e econômicas necessárias para aderir ao bloco e tornando o país mais com-\npetitivo, ampliando o grau de investimento e abrindo novos mercados às empresas\nbrasileiras."
+        }
+      ],
+      "context_pages": [
+        20,
+        36,
+        37
+      ]
+    },
+    {
+      "id": "P56",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Vistos e imigração qualificada",
+      "statement": "O plano propõe isentar turistas de países seguros e abrir caminhos legais para imigração de talentos e profissionais qualificados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Isenção de vistos turísticos e vias legais de imigração profissional.",
+      "scope": "Turistas de países considerados seguros e profissionais qualificados.",
+      "conditions": [
+        "Não define quais países são seguros ou critérios completos de qualificação.",
+        "Não se atribui isenção universal para todos os países e motivos de viagem."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Isentar de visto os turistas de países seguros e abrir caminhos legais à imigração de\ntalentos e profissionais qualificados, reafirmando a tradição brasileira de ser um país\naberto ao mundo."
+        }
+      ],
+      "context_pages": [
+        37,
+        56
+      ]
+    },
+    {
+      "id": "P57",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Integração operacional das Forças Armadas",
+      "statement": "O plano propõe integrar Marinha, Exército e Aeronáutica por meio do Estado-Maior Conjunto.",
+      "support_level": "explicit_proposal",
+      "instrument": "Doutrinas de operações conjuntas, objetivos e metas comuns.",
+      "scope": "Defesa nacional e capacidades das três Forças.",
+      "conditions": [
+        "Não apresenta calendário de aquisição, efetivos ou meta percentual de orçamento."
+      ],
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "Promover uma real integração entre Marinha, Exército e Aeronáutica por meio do\nEstado-Maior Conjunto, estabelecendo doutrinas efetivas de operações conjuntas,\nobjetivos estratégicos e metas alinhadas às capacidades que o Brasil precisa desen-\nvolver."
+        }
+      ],
+      "context_pages": [
+        77,
+        78
+      ]
+    },
+    {
+      "id": "P58",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Instrumentos operacionais da inteligência",
+      "statement": "O plano propõe assegurar a agentes da Abin porte de armas quando a função exigir e identidades de cobertura em operações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantias jurídicas para porte funcional e identidade operacional.",
+      "scope": "Agentes da Abin e operações de inteligência.",
+      "conditions": [
+        "Porte condicionado à natureza das funções.",
+        "Identidades de cobertura vinculadas a operações de inteligência; controles específicos não detalhados."
+      ],
+      "evidence": [
+        {
+          "page": 78,
+          "quote": "Garantir segurança jurídica para que agentes da Abin possam portar armas quando\na natureza de suas funções exigir, assegurando também o direito a identidades de\ncobertura para agentes da Abin em operações de inteligência."
+        }
+      ],
+      "context_pages": [
+        78
+      ]
+    }
+  ],
+  "position_count": 58,
+  "thesis_seed_count": 8,
+  "tension_count": 1,
+  "category_presence": {
+    "economia_desenvolvimento": "substantive",
+    "estado_gestao": "substantive",
+    "infraestrutura_territorio": "substantive",
+    "meio_ambiente_clima": "substantive",
+    "ciencia_tecnologia_inovacao": "substantive",
+    "bem_estar_social": "substantive",
+    "educacao_cultura_sociedade": "substantive",
+    "cidadania_direitos": "substantive",
+    "seguranca_publica": "substantive",
+    "soberania_relacoes_internacionais": "substantive"
+  },
+  "validation": {
+    "command": "python docs/research/2026-09-29-thematic-profiles/validate.py --candidate 280002539826",
+    "valid": true,
+    "same_original_agent": true,
+    "quote_matches": {
+      "layout": 69
+    },
+    "profile_sha256": "549810646b5670dbb3ef16b03dd91e6795cb323ebb0c964536fe06cdc1ad91d2"
+  }
+}

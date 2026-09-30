@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002548139",
+      "name": "Veterinário Wilson Grassi",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 58,
+      "pages_logged": 58,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 15,
+        "DISCORDA": 1
+      },
+      "quote_matches": {
+        "layout": 6
+      },
+      "visual_check_count": 11,
+      "review_sha256": "2dbdec6b5598de092622a8141abfaf15744b63a85bc90408ce84301f7d5325cc"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

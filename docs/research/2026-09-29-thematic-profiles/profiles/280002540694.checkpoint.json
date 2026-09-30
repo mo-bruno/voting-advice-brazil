@@ -1,0 +1,1496 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002540694",
+  "candidate_name": "Renan Santos",
+  "agent_id": "/root/plan_renan",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002540694.json",
+  "status": "complete",
+  "revisited_pages": [
+    5,
+    6,
+    9,
+    10,
+    12,
+    13,
+    15,
+    18,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    28,
+    29,
+    31,
+    32,
+    35,
+    36,
+    39,
+    40,
+    41,
+    42,
+    43,
+    45,
+    46,
+    49
+  ],
+  "completed_categories": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Reutilizada leitura integral anterior de 51 páginas e diário; esta rodada fará somente reinspeção contextual.",
+    "Seleção cobre escolhas operacionais de todos os capítulos e não fica restrita às 16 perguntas antigas.",
+    "Não incorporar livro ampliado ou fontes externas.",
+    "Economia: separar substituição do arcabouço/desvinculação de pisos da regra de correção dos benefícios, que fica em Bem-Estar Social.",
+    "Estado: registrar fusão municipal, tutela gerencial, vínculo de fundos partidários ao desempenho e dissolução de administrações capturadas; não inferir privatização a partir de BNDES.",
+    "Saúde: distinguir fila por risco, sistema digital/prontuário, regionalização e financiamento municipal por desempenho.",
+    "Infraestrutura: preservar condição de ajuste prévio para aumento de investimento e não converter integração público-privada em privatização universal.",
+    "Previdência/assistência: separar correção de benefícios pela inflação da substituição de Bolsa Família por Frentes Cidadãs.",
+    "Educação: escolhas de alfabetização, disciplina/financiamento, militarização limitada, autonomia universitária e recursos STEM serão sintetizadas sem repetir cotas, alocadas em Direitos.",
+    "Cultura: registrar critérios concretos da Rouanet e viabilidade comercial do audiovisual; liberdade de expressão e Código de Imprensa ficam em Direitos.",
+    "Meio ambiente: há conteúdo operacional de licenciamento; não inferir política climática completa da matriz elétrica limpa.",
+    "CTI: separar financiamento/incentivos de empresas tecnológicas, datacenters, laboratório Abaporu de capital privado majoritário e base agropecuária de dados.",
+    "Agro: suspensão de novos assentamentos é condicionada à produtividade dos existentes, não extinção expressa definitiva da reforma agrária.",
+    "Exploração mineral em terras indígenas é proposta de marco legal controlado; não acrescentar salvaguardas de consulta ou consentimento que o resumo não explicita.",
+    "Segurança: diferenciar regime penal antifacção, confisco, isolamento prisional e vigilância; não interpretar o lema como proposta de executar presos, pois o texto o nega.",
+    "Soberania: separar permanência pragmática no BRICS de cooperação monetária sul-americana e domínio do ciclo nuclear; não equiparar reprocessamento a compromisso explícito de fabricar armas.",
+    "Habitação: preservar distinção entre demolição de construção desabitada e remoção de moradia consolidada sujeita a ordem judicial.",
+    "Reagrupamento editorial solicitado pelo root: P05 em Infraestrutura e Território; P09 e S01 em Cidadania e Direitos. Conteúdo e evidências dessas posições preservados."
+  ],
+  "pending": [],
+  "draft_positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Regra fiscal e revisão de gastos tributários",
+      "statement": "Substituir o arcabouço fiscal por novo modelo mediante PEC de transição, incluindo revisão de renúncias fiscais e das regras de finanças públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC de Transição baseada na PEC do Equilíbrio Fiscal e nova lei complementar de finanças públicas.",
+      "scope": "Mudança a iniciar ainda na transição para o governo de 2027.",
+      "conditions": [
+        "O resumo não define a fórmula final do novo limite fiscal."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "a revisão do abono salarial e a redução de renúncias fiscais (gastos tributários)"
+        },
+        {
+          "page": 10,
+          "quote": "a racionalização do superávit financeiro, a reforma do funcionalismo público com fim dos supersalários, mudanças nas emen- das parlamentares, redução das isenções fiscais e uma nova lei complementar das finanças públicas. Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente."
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Vinculação dos pisos constitucionais de serviços",
+      "statement": "Desvincular os pisos de saúde e educação da receita como parte do ajuste fiscal.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC de Transição/PEC do Equilíbrio Fiscal.",
+      "scope": "Pisos de financiamento de saúde e educação.",
+      "conditions": [
+        "A desvinculação não equivale a extinguir toda despesa nem estabelece no resumo uma regra substitutiva dos pisos."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "a desvinculação dos pisos de saúde e educação da receita"
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Regimes econômicos territoriais especiais",
+      "statement": "Criar Zonas Econômicas Especiais com tratamento tributário próprio, atendimento administrativo integrado e infraestrutura dedicada, iniciando por polos nordestinos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Suspensão de direitos aduaneiros, regime de IBS/CBS, agências one-stop shop, PPPs e consórcios públicos interestaduais.",
+      "scope": "Suape; Pecém–Araripe; Aratu–Camaçari, com expansão e zonas temáticas.",
+      "conditions": [
+        "Regime delimitado a zonas específicas; prazo de licenças é a meta do plano, não atestado sobre direito vigente."
+      ],
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "estímulos fiscais por meio de suspensão de direitos aduaneiros e de regime específico de IBS/CBS para a zona (LC 214/2025);"
+        },
+        {
+          "page": 35,
+          "quote": "redução radical da burocracia mediante agências administrativas ágeis (one-stop shops) com aprovação de licenças em até 15 dias;"
+        },
+        {
+          "page": 36,
+          "quote": "A governança desses polos opera por meio de Parcerias Público-Privadas (Lei 11.079/2004) e, quando cruzar fronteiras estaduais, de Consórcios Públicos (Lei 11.107/2005), com previsão de expansão para outros estados."
+        }
+      ],
+      "context_pages": [
+        35,
+        36,
+        39
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Financiamento da verticalização industrial",
+      "statement": "Financiar cadeias produtivas de maior valor agregado com coordenação do BNDES, associação de capital público e privado e atração de investimento estrangeiro qualificado; no agro, condicionar crédito a exportações e premiar processamento no Plano Safra.",
+      "support_level": "explicit_proposal",
+      "instrument": "Consórcio BNDES, garantias, PPPs quando houver infraestrutura, fundos estrangeiros e crédito condicionado.",
+      "scope": "Terras raras e agroindústria; programa mineral de uma década.",
+      "conditions": [
+        "Aportes minerais crescem conforme espaço fiscal; o papel do BNDES não estabelece compromisso sobre seu controle acionário."
+      ],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "Estabelecimento de consórcio de financiamento liderado pelo BNDES, reunindo entes públicos e in- vestidores privados, com o banco como gestor de investimentos, mitigador de risco e intermediador de parcerias internacionais, com recurso a Parcerias Público-Privadas quando envolver infraestrutura."
+        },
+        {
+          "page": 39,
+          "quote": "Estabelecimento de zonas econômicas especiais (ZEEs) dedicadas ao processamento e manufatura de componentes de terras raras, com incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado."
+        },
+        {
+          "page": 42,
+          "quote": "A política de Zonas Econômicas Especiais, as linhas de crédito do BNDES condicionadas a metas de exportação e a busca de acordos comerciais bilaterais serão nossos principais instrumentos. Em paralelo, o Plano Safra será reorganizado para premiar produtores que invistam em processamento e verticalização."
+        }
+      ],
+      "context_pages": [
+        36,
+        39,
+        40,
+        42
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Condições para novos assentamentos rurais",
+      "statement": "Suspender a criação de novos assentamentos enquanto os existentes não alcançarem produtividade comparável à exigida dos demais imóveis rurais, e priorizar experiência agrária na seleção.",
+      "support_level": "explicit_proposal",
+      "instrument": "Auditoria e produtivização dos assentamentos; alteração do Decreto 11.637/2023.",
+      "scope": "Áreas já destinadas à reforma agrária e seleção de futuros assentados.",
+      "conditions": [
+        "A suspensão tem condição de produtividade; o trecho não determina extinção definitiva da reforma agrária."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "O governo da Missão não criará um único novo assentamento enquanto os já existentes não atingirem níveis de produtividade compatíveis com os exigidos dos demais imóveis rurais brasileiros. Em paralelo, reformularemos o Decreto 11.637/2023 para que os critérios de seleção priorizem o tempo de exercício de atividades agrárias, e não o tempo de acampamento próximo a invasões."
+        }
+      ],
+      "context_pages": [
+        42
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Produção nacional de fertilizantes",
+      "statement": "Ampliar a produção nacional de fertilizantes para reduzir dependência de fornecedores externos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Execução e ampliação do Plano Nacional de Fertilizantes e política de minerais críticos, com licenciamento acelerado.",
+      "scope": "Fosfato, potássio e nitrogênio; horizonte de 2035 para eliminar dependência de fertilizantes russos, bielorrussos ou marroquinos.",
+      "conditions": [
+        "Exploração em terras indígenas é registrada separadamente na categoria ambiental.",
+        "A meta textual nomeia fornecedores específicos; não foi convertida em proibição de toda importação."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "Vamos executar e ampliar o Plano Nacional de Fertilizantes (Decreto 10.991/2022); sancionar e regulamentar o Projeto de Lei 2.780/2024, aprovado pela Câmara em 2026, que cria a Política Nacional de Minerais Críticos e Estratégicos e o licenciamento acelerado para a exploração de fosfato, potássio e nitrogênio em território nacional;"
+        },
+        {
+          "page": 42,
+          "quote": "nenhuma colheita brasileira a partir de 2035 deve depender de fertilizante russo, bielorrusso ou marroquino."
+        }
+      ],
+      "context_pages": [
+        42
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Consolidação de municípios",
+      "statement": "Fundir municípios considerados inviáveis em unidades administrativas maiores, preservando as antigas sedes como distritos ou subprefeituras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco Legal da Consolidação Municipal, revisão do FPM e critérios fiscais, geográficos, econômicos e urbanos.",
+      "scope": "Municípios vizinhos da mesma unidade da federação; referência metodológica de redução de até 70%.",
+      "conditions": [
+        "Preservar identidades locais, serviços e recursos totais durante transição do FPM.",
+        "O mecanismo de consentimento local não é detalhado no resumo."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "a Grande Consolidação Municipal, programa federal de fusão de municípios inviáveis em unidades administrati- vas com escala suficiente para entregar serviços públicos de qualidade."
+        },
+        {
+          "page": 15,
+          "quote": "A consolidação não será imposição de Brasília sobre o território. Cada novo município consolidado preservará as identidades culturais e históricas das comunidades que o compõem: as antigas sedes munic- ipais manterão status de distrito ou subprefeitura, com autonomia para questões culturais, eventos cívicos e zeladoria, preservando seus nomes e suas tradições."
+        },
+        {
+          "page": 15,
+          "quote": "Nesse sentido, o Governo Federal acompanhará a consolidação com transição cuidadosa nos repasses do FPM, assegurando que a união de municípios não resulte em perda imediata de recursos totais para o novo amálgama, mas sim em ganho de eficiência na aplicação desses recursos."
+        }
+      ],
+      "context_pages": [
+        15
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Fiscalização e tutela federal por desempenho municipal",
+      "statement": "Criar comissários federais e metas de gestão, com tutela de municípios críticos, dupla assinatura de gastos e sanções de elegibilidade ou cassação aos gestores reincidentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Comissariado Federal de Gestão Pública e Lei de Responsabilidade Gerencial.",
+      "scope": "Fiscalização em tempo real de recursos federais e indicadores setoriais, integridade e eficiência fiscal nos municípios.",
+      "conditions": [
+        "Tutela para desempenho crítico e sanções vinculadas a falhas reiteradas em metas de longo prazo.",
+        "Independência do BC é inspiração para o novo órgão, sem decisão sobre a lei do próprio Banco Central."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Criação do Comissariado Federal de Gestão Pública: Uma autarquia especial vinculada ao Ministério da Fazenda, com autonomia técnica e mandatos fixos, inspirada na inde- pendência do Banco Central. O Comissariado alocará Comissários Municipais diretamente no território para prestar assessoria técnica e exercer fiscalização pari passu (em tempo real) sobre a aplicação de recursos federais."
+        },
+        {
+          "page": 18,
+          "quote": "Municípios com desempenho crítico entrarão em Tutela Gerencial, exigindo dupla assinatu- ra (Prefeito e Comissário) para gastos. Gestores que falharem reiteradamente nas metas de longo prazo estarão sujeitos à Inelegibilidade Superveniente e ao processo de Cassação por Improbidade Gerencial perante os Tribunais de Justiça."
+        }
+      ],
+      "context_pages": [
+        18
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Financiamento de partidos associado à gestão",
+      "statement": "Calcular o repasse dos fundos Partidário e Eleitoral conforme a qualidade gerencial dos mandatários, com retenção para partidos de prefeitos cassados ou mal avaliados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança legal nos critérios de repasse dos fundos.",
+      "scope": "Partidos com gestores municipais e respectivos indicadores.",
+      "conditions": [
+        "O plano não fornece a fórmula de cálculo nem todos os critérios dos indicadores vermelhos."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "O repasse do Fundo Partidário e do Fundo Eleitoral passará a ser calculado com base na qualidade gerencial dos mandatários. Partidos que se- lecionarem e mantiverem gestores competentes serão premiados; legendas que sustentarem prefeitos cassados ou com indicadores “vermelhos” sofrerão retenção de recursos."
+        }
+      ],
+      "context_pages": [
+        18
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Substituição de administrações capturadas por organizações criminosas",
+      "statement": "Permitir ao STJ dissolver administrações capturadas pelo crime organizado ou milícias e substituí-las temporariamente por comissão federal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cláusula Antimáfia na Lei de Responsabilidade Gerencial.",
+      "scope": "Municípios capturados; gestão extraordinária por até 24 meses.",
+      "conditions": [
+        "A medida extingue o mandato eletivo e depende de decisão do STJ, segundo a proposta."
+      ],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Cláusula Antimáfia: Inspirada na legislação italiana, a lei permitirá ao STJ decretar a dissolução ime- diata de administrações capturadas pelo crime organizado ou milícias. Nesses casos, o mandato eletivo é extinto e o município passa a ser gerido por uma comissão extraordinária federal por até 24 meses, quebrando o nexo entre o poder político local e as facções criminosas."
+        }
+      ],
+      "context_pages": [
+        18
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Remuneração e reforma do funcionalismo",
+      "statement": "Incluir reforma do funcionalismo com fim dos supersalários na PEC de transição.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alteração constitucional associada ao ajuste fiscal.",
+      "scope": "Funcionalismo público; implementação anunciada desde a transição.",
+      "conditions": [
+        "O resumo não define teto operacional, rubricas atingidas, estabilidade ou regras de carreira."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "a reforma do funcionalismo público com fim dos supersalários"
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Financiamento de infraestrutura",
+      "statement": "Aumentar o investimento estatal em infraestrutura depois das reformas administrativa e fiscal, mobilizando também capital privado por concessões, PPPs e autorizações ferroviárias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa Missão Rondon, ajuste fiscal prévio e instrumentos de parceria privada.",
+      "scope": "Infraestrutura nacional; meta geral de elevar investimento de 2% para pelo menos 4% do PIB.",
+      "conditions": [
+        "Aumento de gasto estatal condicionado a reformas prévias; não é promessa de desembolso imediato independente do ajuste."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "aumento do investimento estatal em infraestrutura, condicionado à reforma administrativa e fiscal prévia;"
+        },
+        {
+          "page": 24,
+          "quote": "mobilização do capital privado por concessões, PPPs e o novo regime de autorização ferroviária;"
+        },
+        {
+          "page": 6,
+          "quote": "com a meta de elevar os investimentos em infraestrutura dos atuais 2% do PIB para, pelo menos, 4%."
+        }
+      ],
+      "context_pages": [
+        6,
+        24
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Prioridade logística ferroviária e integração regional",
+      "statement": "Expandir a malha ferroviária e executar corredores identificados, junto à expansão portuária do Norte e Nordeste e à conectividade aérea do Norte.",
+      "support_level": "explicit_proposal",
+      "instrument": "Obras priorizadas da Missão Rondon: Alcântara–Açailândia, FIOL, Ferrogrão, Transoceânica, portos e aeroportos regionais.",
+      "scope": "Meta ferroviária mínima de 40 mil km; prioridade regional explícita.",
+      "conditions": [
+        "O início imediato da Ferrogrão é uma proposta do plano; não comprova licenciamento ou viabilidade atuais."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "Ferrovias: meta mínima de 40 mil km de malha; conclusão antecipada da Ferrovia Alcântara-Açailân- dia, conclusão da Ferrovia de Integração Oeste-Leste (FIOL), início imediato das obras da Ferrogrão e viabilização da Ferrovia Transoceânica."
+        },
+        {
+          "page": 24,
+          "quote": "Portos: aumento da capacidade no Norte e Nordeste, conclusão da expansão do Porto de Alcântara, expansão do Porto de Ilhéus, aceleração do Porto de Itaqui, e modernização da frota naval."
+        },
+        {
+          "page": 24,
+          "quote": "Aeroportos: priorizar a conectividade do Norte, com expansão da infraestrutura aeroportuária region- al."
+        }
+      ],
+      "context_pages": [
+        24
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transmissão elétrica e aproveitamento de geração",
+      "statement": "Criar marco regulatório da transmissão de energia para reduzir o corte de geração no Nordeste.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco regulatório e desbloqueio de gargalos de transmissão.",
+      "scope": "Rede elétrica, especialmente a geração nordestina sujeita a curtailment.",
+      "conditions": [
+        "O resumo não detalha leilões, traçados ou financiamento da transmissão."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "Energia: marco regulatório da transmissão de energia, com desbloqueio do gargalo que hoje impõe curtailment massivo ao Nordeste"
+        }
+      ],
+      "context_pages": [
+        24
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [],
+      "policy_dimension": "Retomada de energia nuclear civil",
+      "statement": "Retomar as obras de Angra 3.",
+      "support_level": "explicit_proposal",
+      "instrument": "Priorização da obra no programa de infraestrutura energética.",
+      "scope": "Usina Angra 3.",
+      "conditions": [
+        "Não há cronograma físico-financeiro da usina no resumo; domínio nuclear para defesa é posição distinta."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "retomada decisiva das obras de Angra 3"
+        }
+      ],
+      "context_pages": [
+        24
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "seguranca_publica",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Formalização e reconstrução de assentamentos urbanos",
+      "statement": "Transformar favelas em bairros formais em dez anos, com títulos individuais financiados, serviços públicos e mistura social, ampliando a regularização fundiária e a fiscalização de ocupações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco Nacional da Desfavelização; ampliação da REURB, títulos hipotecários de 50 anos, cadastro nacional e monitoramento por satélite.",
+      "scope": "Favelas brasileiras; programas posteriores à retomada territorial de áreas dominadas pelo crime.",
+      "conditions": [
+        "Parcelas anunciadas de R$ 200 a R$ 500 e juros subsidiados.",
+        "Demolição administrativa em 48 horas é delimitada a construções não habitadas em área pública ou de risco; moradia consolidada exige ordem judicial.",
+        "Demolir toda construção ilegal é objetivo condicionado a nova ordem constitucional; não é apresentado como poder imediato.",
+        "A lei penal proposta se dirige aos organizadores da ocupação ilegal, incluindo loteadores, grileiros e milícias."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Nossa proposta é a desfavelização integral do Brasil em dez anos, transformando as 12.348 fave- las em bairros formais, com títulos de propriedade, regras urbanísticas, presença do Estado e mistura de classes sociais."
+        },
+        {
+          "page": 49,
+          "quote": "Título de desfavelização, instrumento jurídico novo na forma de mortgage de 50 anos com juros sub- sidiados (parcelas de R$ 200 a R$ 500 mensais), securitizável para antecipar receita ao programa;"
+        },
+        {
+          "page": 49,
+          "quote": "Tipificação penal do “crime de favelização”, dirigida a quem organiza a ocupação ilegal (loteadores, grileiros, milícias), com demolição administrativa em 48 horas das construções não habitadas, em área pública ou de risco, e remoção de moradia consolidada só por ordem judicial; o objetivo final, a demolição de toda construção ilegal, depende de nova ordem constitucional;"
+        },
+        {
+          "page": 49,
+          "quote": "Quatro princípios atravessam todos os projetos, independentemente do tipo: título de propriedade individual para cada morador; código de postura urbana com sanção em caso de descumprimento; inserção de classe média via venda de parte das unidades a preço de mercado, garantindo mistura social efetiva; e instalação obrigatória de serviços públicos (posto policial, escola modelo, clínica de saúde e creches) em cada bairro desfavelizado."
+        }
+      ],
+      "context_pages": [
+        49
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Localização e uso dos recursos habitacionais",
+      "statement": "Redirecionar recursos do Minha Casa Minha Vida da construção periférica para aquisição de imóveis em áreas já estruturadas e financiamento da desfavelização.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma do Minha Casa Minha Vida.",
+      "scope": "Investimentos habitacionais federais e áreas urbanas com infraestrutura existente.",
+      "conditions": [
+        "Prioridade territorial e de aplicação dos recursos; não é proibição explícita de toda nova construção."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Reforma do Minha Casa Minha Vida, redirecionando recursos historicamente destinados à construção periférica para a aquisição de imóveis em áreas já estruturadas e para o financiamento da desfavel- ização propriamente dita."
+        }
+      ],
+      "context_pages": [
+        49
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Procedimento de licenciamento de projetos estratégicos",
+      "statement": "Aplicar plenamente a Lei Geral do Licenciamento Ambiental e utilizar a Licença Ambiental Especial para acelerar projetos estratégicos, integrando estudos ambientais à fase inicial dos projetos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Licença Ambiental Especial com equipe técnica dedicada; integração de EVTEA e EIA na pré-viabilidade; simplificação do licenciamento mineral.",
+      "scope": "Projetos estratégicos de infraestrutura e exploração mineral.",
+      "conditions": [
+        "A proposta acelera e reorganiza a análise; não autoriza inferir eliminação de toda avaliação ambiental."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "licenciamento ambiental: implementação plena da Lei Geral do Licenciamento Ambiental (Lei nº 15.190/2025, oriunda do PL 2159/2021), com uso ostensivo da Licença Ambiental Especial (LAE) — cuja principal inovação frente ao rito ordinário é a equipe técnica permanentemente dedicada à análise — para acelerar projetos estratégicos;"
+        },
+        {
+          "page": 24,
+          "quote": "governança de projetos: integração formal de EVTEA e EIA desde a fase de pré-viabilidade, evitando o descompasso que hoje causa atrasos, aditivos e abandonos."
+        },
+        {
+          "page": 39,
+          "quote": "Racionalização e simplificação dos processos de licenciamento ambiental para a exploração dos minéri- os, com base na nova Lei Geral do Licenciamento Ambiental"
+        }
+      ],
+      "context_pages": [
+        24,
+        39
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Exploração mineral em terras indígenas",
+      "statement": "Construir marco legal para exploração mineral controlada em terras indígenas, vinculada à produção nacional de fertilizantes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Aprovação de marco no Congresso.",
+      "scope": "Reservas estratégicas de fosfato e potássio em terras indígenas.",
+      "conditions": [
+        "O texto qualifica a exploração como controlada, mas não detalha consulta, consentimento, repartição de benefícios ou salvaguardas territoriais."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "construir, no Congresso, o marco da exploração miner- al controlada em terras indígenas, que abrigam reservas estratégicas de fosfato e potássio."
+        }
+      ],
+      "context_pages": [
+        42
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Incentivos fiscais e capital para empresas tecnológicas",
+      "statement": "Reduzir impostos de empresas de tecnologia, facilitar stock options e ampliar o investimento em venture capital por fundos brasileiros.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eixo I do Marco Brasileiro da Inteligência Artificial.",
+      "scope": "Empresas brasileiras de tecnologia/IA e financiamento de inovação.",
+      "conditions": [
+        "O resumo não fornece alíquotas, condições de elegibilidade ou custos fiscais."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Suas medidas visam a reduzir impostos sobre empresas de tecnologia, facilitar a distribuição de stock options e maximizar o inves- timento em venture capital por fundos brasileiros."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Infraestrutura computacional e regime especial para IA",
+      "statement": "Incentivar a instalação de datacenters e criar zonas econômicas com regime próprio para a cadeia de IA, visando exportar inferência computacional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Incentivos e marco regulatório para datacenters; Zonas Econômicas de Alta Inteligência.",
+      "scope": "Brasil, com destaque ao Nordeste; infraestrutura computacional e cadeia da IA.",
+      "conditions": [
+        "O resumo não detalha contrapartidas de água, energia, emissões, proteção de dados ou exigências de fornecedores."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "O Eixo III ataca o problema da dependência computacional do exterior. Favorece políticas de incentivo para a instalação de datacenters e o arcabouço regulatório que permita o Brasil tornar-se o maior exportador de inferência computacional do hemisfério ocidental, transformando o Nordeste, em especial, na “Arábia Saudita do Brasil”."
+        },
+        {
+          "page": 43,
+          "quote": "As Zonas Econômicas de Alta Inteligência (ZEAIs) serão a aplicação das ZEEs à inteligência artificial, um subtipo ao lado das ZEEs de defesa e de terras raras dos capítulos 10 e 11, com regime regulatório, tributário e energético próprio da cadeia da IA."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Propriedade e governança de laboratório nacional de IA",
+      "statement": "Criar um laboratório nacional de inteligência artificial com capital privado majoritário e governança independente.",
+      "support_level": "explicit_proposal",
+      "instrument": "Projeto Abaporu.",
+      "scope": "Pesquisa de IA voltada às vantagens competitivas brasileiras.",
+      "conditions": [
+        "O texto não define composição acionária completa, financiamento público ou regras de propriedade intelectual."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "O Projeto Abaporu será um labo- ratório nacional de inteligência artificial com capital privado majoritário, governança independente e man- dato concentrado na exploração das vantagens competitivas únicas do nosso país."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Integração de dados e IA agropecuária",
+      "statement": "Unificar tecnicamente dados agropecuários nacionais para viabilizar drones agrícolas e robótica com IA proprietária brasileira.",
+      "support_level": "explicit_proposal",
+      "instrument": "Base Agro-Bio Nacional.",
+      "scope": "Dados agropecuários e aplicações tecnológicas no campo.",
+      "conditions": [
+        "Não são especificados acesso, consentimento, titularidade dos dados e desenho da propriedade intelectual."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Pela Base Agro-Bio Nacion- al, visamos à unificação técnica do maior acervo de dados agropecuários do planeta, viabilizando também a criação de drones agrícolas e robótica movidos por IA proprietária brasileira."
+        }
+      ],
+      "context_pages": [
+        43
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Regra de reajuste de benefícios",
+      "statement": "Desvincular benefícios previdenciários e assistenciais do salário mínimo e corrigi-los apenas pela inflação.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC de Transição baseada na PEC do Equilíbrio Fiscal.",
+      "scope": "Benefícios previdenciários e assistenciais mencionados no ajuste.",
+      "conditions": [
+        "O resumo não especifica exceções, piso substitutivo, transição individual nem regras de elegibilidade."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "a chamada “PEC do Equilíbrio Fiscal”, que promove a desindexação de benefícios previdenciários e assisten- ciais do salário mínimo (corrigindo-os apenas pela inflação)"
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Substituição de transferência de renda por trabalho público",
+      "statement": "Substituir o Bolsa Família por Frentes Cidadãs de trabalho remunerado para a população em idade economicamente ativa, com participação em projetos de bem público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programa de frentes de trabalho comunitário e inserção no mercado formal.",
+      "scope": "Beneficiários em idade economicamente ativa.",
+      "conditions": [
+        "A substituição não é confundida com manutenção do benefício durante emprego.",
+        "Remuneração, jornada, direitos laborais e tratamento de incapacidade ou trabalho de cuidado não são definidos no resumo."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "a substituição do Bolsa Família por frentes de trabalho remunera- das para a população em idade economicamente ativa."
+        },
+        {
+          "page": 22,
+          "quote": "Família por um modelo de frentes de trabalho, em que os beneficiários participam de projetos para o bem público, se consolidando como participantes ativos da comunidade."
+        }
+      ],
+      "context_pages": [
+        6,
+        21,
+        22
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Critério de prioridade nas filas do SUS",
+      "statement": "Substituir a simples ordem cronológica de atendimento por uma fila dinâmica baseada em risco clínico e social.",
+      "support_level": "explicit_proposal",
+      "instrument": "Escala Nacional de Estratificação de Risco (ENER).",
+      "scope": "Pacientes em espera no SUS.",
+      "conditions": [
+        "Combina gravidade, progressão, impacto funcional, vulnerabilidade social e espera acumulada; não elimina toda consideração do tempo de espera."
+      ],
+      "evidence": [
+        {
+          "page": 25,
+          "quote": "A ideia central de nossa proposta é criar a ENER, um sistema de fila viva, que não fique engessado na ordem cronológica, mas atenda critérios objetivos de prioridade relativos ao estado do paciente. Com isso, devemos estabelecer uma fila a partir do grau de risco, não mais da simples prioridade cronológica, funda- da nos seguintes critérios: (i) gravidade clínica atual; (ii) risco de progressão em curto e médio prazo; (iii) impacto funcional (a ameaça de perda da capacidade laboral e autonomia do paciente); (iv) vulnerabilidade social associada; (v) tempo acumulado de espera."
+        }
+      ],
+      "context_pages": [
+        25
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Integração digital do cuidado e histórico clínico",
+      "statement": "Implantar sistema de saúde digital com telemedicina, IA, vigilância epidemiológica e prontuário interoperável, incluindo integração de dados genômicos.",
+      "support_level": "explicit_proposal",
+      "instrument": "PRONTO e integração ao Programa Genomas Brasil; piloto inspirado no DoctorSV antes da expansão nacional.",
+      "scope": "Atenção primária, especialidades, hospitais públicos e privados, laboratórios e farmácias.",
+      "conditions": [
+        "Integração de informações não decide compra de atendimentos nem delegação de gestão de unidades públicas.",
+        "Não há detalhamento de consentimento, proteção genômica, critérios de IA ou acesso a dados."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Inicialmente, será adotado um piloto que poderá funcionar em algumas cidades cobertas pelo SUS e depois será implementado em âmbito nacional."
+        },
+        {
+          "page": 26,
+          "quote": "Criação de um sistema digital de saúde, que combine telemedicina, diagnósticos por IA, monitora- mento clínico e histórico permanente, inspirado no DoctorSV, de El Salvador."
+        },
+        {
+          "page": 26,
+          "quote": "Criação do PRONTO (Prontuário Eletrônico Nacional Interoperável) que irá conectar a atenção primária, os serviços especializados, os hospitais públicos e privados, laboratórios e farmácias, servin- do de repositório para todas as informações do paciente acessíveis a qualquer tempo. Integração do PRONTO ao sistema digital de saúde."
+        },
+        {
+          "page": 26,
+          "quote": "a integração do Programa Geno- mas Brasil ao Prontuário Eletrônico do SUS"
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Regionalização dos serviços especializados",
+      "statement": "Concentrar demandas complexas em centros regionais de referência e evitar uso desses centros para demandas primárias.",
+      "support_level": "explicit_proposal",
+      "instrument": "Modelo Hub-and-Spoke, articulado à atenção primária.",
+      "scope": "Coordenação entre municípios e centros regionais.",
+      "conditions": [
+        "O resumo não fixa mapa regional, critérios de deslocamento nem distribuição de pessoal."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Adoção do modelo Hub-and-Spoke com o objetivo de dirimir a descoordenação na atuação dos mu- nicípios, concentrando demandas mais complexas nos centros regionais de referência, impedindo que sejam utilizados para demandas difusas e primárias."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Transferências condicionadas a desempenho na saúde",
+      "statement": "Criar fundo de modernização do acesso com repasses municipais condicionados ao desempenho.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundo Nacional de Modernização do Acesso (FNMA).",
+      "scope": "Municípios participantes da política de acesso à saúde.",
+      "conditions": [
+        "Indicadores, fórmula distributiva e salvaguardas para municípios de menor capacidade não são definidos."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Criação do FNMA (Fundo Nacional de Modernização do Acesso) com repasses aos municípios condi- cionados ao desempenho."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Modelo de alfabetização e aprendizagem básica",
+      "statement": "Adotar nacionalmente o sistema fônico de alfabetização e adaptar práticas do Ceará, ampliando a competência da União.",
+      "support_level": "explicit_proposal",
+      "instrument": "Grupo de trabalho, nova base do Sistema Nacional de Educação e adoção do método fônico.",
+      "scope": "Rede escolar nacional, com foco em português e matemática.",
+      "conditions": [
+        "O resumo não especifica a adaptação dos demais elementos do modelo cearense."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "No Brasil, o melhor exemplo de elevação da educação básica encontra-se no Ceará e é, portanto, a este modelo que nos remetemos, pensando modos de adequar as suas práticas no contexto nacional. Também buscaremos a adoção universal do sistema fônico de alfabetização, que se encontra amparado pelas melhores evidências científicas disponíveis, dando aliás respaldo a uma orientação que já se encontra contemplada na BNCC e na Política Nacional de Alfabetização."
+        },
+        {
+          "page": 32,
+          "quote": "Adoção das melhores inovações de um dos raros casos de êxito na educação brasileira, o Ceará. Criar um grupo de trabalho para a implementação, em nível nacional nas escolas, sobre uma nova base do SNE, que confira à União maiores competências. Adotar o sistema fônico nas escolas a partir daí."
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Disciplina escolar e incentivos à gestão",
+      "statement": "Instituir código nacional de conduta, ranking de disciplina que module recursos e transformação provisória de escolas críticas pelo modelo civil-militar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Código de sanções objetivas, alteração do VAAR e ampliação de competências da União.",
+      "scope": "Estudantes e escolas; modelo civil-militar para situações críticas e áreas com violência elevada.",
+      "conditions": [
+        "Ranking de disciplina deve ser combinado com indicadores tradicionais de qualidade.",
+        "Militarização é provisória, não conversão permanente ou universal de todas as escolas.",
+        "A revisão do ECA citada no contexto é disciplinar escolar e não define maioridade penal."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Criar um código de conduta para o estudante, implementado em nível nacional, que lhe prescreva punições objetivas para comportamentos inadequados em sala de aula, com classificação das punições e rol de comportamentos. O código deverá ser amplamente publicizado nas escolas brasileiras."
+        },
+        {
+          "page": 32,
+          "quote": "Estabelecer um ranking oficial de disciplina nas escolas que sirva para modular o VAAR (Valor Aluno Ano Resultado), que será aumentado, aliando o escrutínio da disciplina com os indicadores tradicio- nais da qualidade da educação. Em resumo: escolas mais ordeiras receberão mais recursos, gestores que mantenham a disciplina, de acordo com o código disciplinar, serão premiados. Queremos criar um sistema de incentivos para dirimir esse problema. Para isso deve ser necessário centralizar os poderes e competências na União, reformando as leis de competência da educação."
+        },
+        {
+          "page": 32,
+          "quote": "Transformação das escolas em situação crítica, de acordo com o sistema das escolas civis-militares, buscando exemplo no que dá certo no Brasil e em El Salvador. A militarização das escolas deve ser vista como uma medida provisória, a fim de estancar a violência endêmica, em especial nas regiões com alta criminalidade no entorno."
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Autonomia universitária e direcionamento da formação",
+      "statement": "Substituir autonomia universitária por alinhamento estratégico e redirecionar recursos de cursos bacharelescos para STEM e necessidades de desenvolvimento industrial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma do ensino superior e realocação de financiamento e oferta de cursos.",
+      "scope": "Ensino superior brasileiro e formação de quadros tecnológicos.",
+      "conditions": [
+        "O resumo não delimita quais dimensões da autonomia seriam alteradas ou como seriam escolhidas as prioridades.",
+        "A abolição de cotas está registrada em Cidadania e Direitos, evitando duplicação."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Implementar uma reforma na educação superior brasileira, substituindo a autonomia universitária por uma perspectiva de alinhamento estratégico."
+        },
+        {
+          "page": 31,
+          "quote": "devemos realocar os recursos atualmente investidos em cursos bacharelescos para a área de STEM;"
+        },
+        {
+          "page": 31,
+          "quote": "criar faculdades cuja oferta de cursos dialogue com as necessidades de desenvolvimento industrial delineadas no plano industrial da Missão;"
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Distribuição de recursos de incentivo cultural",
+      "statement": "Manter o fomento cultural e reformar a Lei Rouanet com critérios publicados, teto progressivo para proponentes de alto faturamento e reserva para novos talentos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regulamentos mensuráveis, publicidade de pareceres, teto de captação, editais e percentual reservado.",
+      "scope": "Artistas, produtoras, novos talentos, pequenos projetos e primeiras obras.",
+      "conditions": [
+        "O resumo não define valores dos tetos nem o percentual mínimo reservado."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "não devemos optar por eliminar o fomento à cultura no estado brasileiro, sob pena de preju- dicar gravemente milhares de artistas, grupos culturais e associações que são fundamentais para a criação e disseminação da cultura no país."
+        },
+        {
+          "page": 28,
+          "quote": "Implementação de critérios objetivos publicizados para avaliação de projetos, definidos em regula- mentos a partir de indicadores claros e mensuráveis; publicação detalhada dos pareceres técnicos, garantindo transparência integral e objetividade na avaliação dos projetos; teto progressivo de cap- tação para artistas e produtoras com alto faturamento; categorias específicas para artistas iniciais e projetos de pequeno porte, com editais e linhas de incentivo próprias para esse perfil e uma reserva obrigatória de percentual mínimo do orçamento para novos talentos e projetos de primeira obra."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Gestão dos museus",
+      "statement": "Reformar o IBRAM, incluindo parcerias com organizações sociais e descontingenciamento de folha.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma institucional do IBRAM e parcerias com OSs.",
+      "scope": "Sistema de museus sob responsabilidade do IBRAM.",
+      "conditions": [
+        "Não se inferiu transferência universal da gestão de todo museu nem extensão da proposta à saúde."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Reforma no IBRAM, responsável pela manutenção e gestão do sistema de museus no Brasil, com des- taque para descontingenciamento de folha e parcerias com OSs."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Critério de financiamento do audiovisual",
+      "statement": "Dar maior peso à viabilidade comercial nos editais de cinema nacional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Alteração dos critérios dos editais de audiovisual.",
+      "scope": "Filmes produzidos no Brasil.",
+      "conditions": [
+        "O texto pede maior peso, sem tornar viabilidade comercial o critério exclusivo nem definir sua mensuração."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Reformulação do papel do mercado no cinema nacional, com alteração de editais para conferir maior peso à viabilidade comercial dos filmes produzidos no Brasil."
+        }
+      ],
+      "context_pages": [
+        28
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Ações afirmativas e critério de acesso",
+      "statement": "Abolir cotas na educação e em geral, substituindo no ensino superior o sistema de cotas por bolsas de mérito.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação do sistema de cotas e criação de bolsas de mérito.",
+      "scope": "Educação e alcance geral expressamente indicado pelo plano.",
+      "conditions": [
+        "O alcance geral sustenta aplicação a cotas raciais no serviço público por inclusão lógica; essas modalidades não são nomeadas individualmente.",
+        "Não há desenho das bolsas nem transição para pessoas já beneficiadas."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Abolir o sistema de cotas na educação brasileira e em geral."
+        },
+        {
+          "page": 31,
+          "quote": "substituir o sistema de cotas por um sistema de bolsas de mérito;"
+        }
+      ],
+      "context_pages": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Flexibilidade das relações de trabalho",
+      "statement": "Realizar reforma trabalhista orientada à flexibilização das relações de trabalho.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma da legislação trabalhista, sem dispositivos operacionais detalhados no resumo.",
+      "scope": "Relações de trabalho; diagnóstico adicional de inflexibilidade em regiões de atração de investimentos.",
+      "conditions": [
+        "Não há decisão sobre revogar integralmente a reforma de 2017, teto de jornada ou prevalência de negociações coletivas."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "de reforma trabalhista para flexibilizar relações de trabalho"
+        }
+      ],
+      "context_pages": [
+        5,
+        21,
+        35
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Liberdade de comunicação e responsabilização da imprensa",
+      "statement": "Criar código unificado de imprensa com garantias ao jornalismo e responsabilização transparente, rejeitando regulação de mídia ou internet que reduza liberdade de expressão.",
+      "support_level": "explicit_proposal",
+      "instrument": "Novo marco legal da imprensa, com critérios claros de direitos e responsabilização.",
+      "scope": "Imprensa, comunicação e propostas de regulação da mídia e internet.",
+      "conditions": [
+        "Código de imprensa e oposição a restrições são apresentados conjuntamente, não como oposição a qualquer regulação.",
+        "O resumo não define infrações, sanções ou a fronteira entre responsabilização e restrição da expressão."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Nesse novo marco legal, precisamos de critérios claros, garantias fundamentais para o exercício da função jornalística e estruturas transparentes de responsabilização. É necessário sublinhar nosso estrito comprom- isso com a liberdade de comunicação no Brasil."
+        },
+        {
+          "page": 29,
+          "quote": "Oposição firme a quaisquer propostas de regulação da mídia e da internet que reduzam a margem de liberdade de expressão no Brasil, sem descurar da necessidade de discutir um novo código de impren- sa, em lugar da lei reguladora da imprensa que não foi recepcionada pela Constituição Federal de 1988."
+        },
+        {
+          "page": 29,
+          "quote": "Criação de um Código Unificado de imprensa visando disciplinar o setor e eliminar as lacunas legais que geram insegurança jurídica."
+        }
+      ],
+      "context_pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "estado_gestao"
+      ],
+      "policy_dimension": "Regime excepcional de combate a facções",
+      "statement": "Adotar Direito Penal do Inimigo e Lei Antifacção, com estados de defesa, restrições de direitos de associados e federalização de casos, apoiados por GLO em territórios dominados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Decretos de Estado de Defesa, Lei Antifacção, tribunais especializados, recursos sem efeito suspensivo automático e prazos reduzidos.",
+      "scope": "Organizações criminosas e pessoas comprovadamente associadas às facções classificadas; ações desde o primeiro dia de governo.",
+      "conditions": [
+        "O próprio texto afirma que todos permaneceriam sujeitos a processos legais e alega compatibilidade constitucional; o perfil não chancela essa avaliação jurídica.",
+        "O plano nega que o lema Prendeu, Matou consista em prender e matar criminosos; uso de força é descrito em situação de perigo ou resistência.",
+        "Não especifica adoção do regime adulto para adolescentes de 16 e 17 anos."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "adoção imediata do Direito Penal do Inimigo (DPI) como framework jurídico para o combate ao crime organizado no Brasil. Essa doutrina, formulada pelo jurista alemão Günter Jakobs, distingue entre dois regimes penais: o direito penal do cidadão, que preserva garantias plenas, e o direito penal do inimigo, que aplica medidas preventivas e penas desproporcionais àqueles que demonstram não aceitar o pacto social mediante participação duradoura em organizações criminosas."
+        },
+        {
+          "page": 12,
+          "quote": "A implementação prática do DPI no Brasil se daria por sucessivos decretos de Estado de Defesa em áreas sob comando das facções para realização de operações de retomada territorial, que seriam em seguida am- paradas por uma Lei Antifacção que determinaria:"
+        },
+        {
+          "page": 12,
+          "quote": "a retirada de direitos políticos, civis e a restrição de liberdade de locomoção para indivíduos compro- vadamente associados às facções classificadas;"
+        },
+        {
+          "page": 12,
+          "quote": "a federalização de todos os casos relacionados a facções criminosas;"
+        },
+        {
+          "page": 13,
+          "quote": "intervenção federal em estados com controle territorial faccional, e emprego das Forças Armadas via Garantia da Lei e da Ordem (GLO) com autorização para uso de força pesada em territórios classifica- dos como dominados."
+        }
+      ],
+      "context_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Ônus da prova no confisco patrimonial",
+      "statement": "Presumir a ilicitude de bens de membros de facções até demonstração contrária, invertendo o ônus da prova para o confisco.",
+      "support_level": "explicit_proposal",
+      "instrument": "Lei Antifacção e confisco com inversão probatória.",
+      "scope": "Bens de membros das facções classificadas.",
+      "conditions": [
+        "Não é apresentada como presunção universal aplicável ao patrimônio de toda a população."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "a inversão do ônus da prova no confisco de bens, presumindo ilicitude até comprovação contrária por membros de facções."
+        }
+      ],
+      "context_pages": [
+        12
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Isolamento de lideranças no sistema prisional",
+      "statement": "Deslocar lideranças condenadas para presídios de segurança máxima remotos, com isolamento de comunicações e biometria contínua.",
+      "support_level": "explicit_proposal",
+      "instrument": "Superpresídios inspirados no CECOT, blindagem eletromagnética e monitoramento biométrico.",
+      "scope": "Lideranças criminosas condenadas.",
+      "conditions": [
+        "O trecho se refere a lideranças condenadas; não anuncia transferência indiscriminada de todos os presos."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "As lideranças condenadas serão deslocadas a superpresídios de segurança máxima em regiões remotas, no modelo do CECOT salvadorenho, equipados com blindagem eletromagnética e biometria contínua, neutralizando o comando das facções a partir do cárcere."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Vigilância tecnológica e identificação criminal",
+      "statement": "Empregar drones, denúncias por totens, patrulhamento autônomo e reconhecimento facial em tempo real, com dados genéticos para resolver crimes hediondos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistemas integrados de vigilância, denúncias e identificação.",
+      "scope": "Criminalidade urbana cotidiana e investigação de crimes hediondos.",
+      "conditions": [
+        "O resumo não detalha controles de acesso, auditoria de erros, retenção de biometria ou procedimentos de contestação."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Um novo sistema de drones e totens de denúncia transformará a reação ao crime em prevenção, com patrulhamento autônomo e reconhecimento facial em tempo real, integrado ao uso de dados genéticos e identificação facial para a resolução de crimes hediondos."
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Integração regional e pragmatismo diplomático",
+      "statement": "Construir estratégia externa estável e pragmática, com integração sul-americana e cooperação institucional lusófona.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estratégia Internacional institucionalizada, mecanismos multilaterais, cooperação econômica e de defesa lusófona.",
+      "scope": "América do Sul e países de língua portuguesa, com projeção mais ampla no Sul Global.",
+      "conditions": [
+        "O plano rejeita alinhamento automático; cooperação prioritária em minerais com EUA e UE não foi convertida em adesão automática a todas as suas políticas.",
+        "O resumo não decide apoio ao acordo Mercosul–UE ou ruptura diplomática com Israel."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Proposta de integração Lusófona reposiciona a comunidade de língua portuguesa como bloco geo- político coeso, com mecanismos de cooperação econômica, defesa coordenada e instituições compar- tilhadas, transformando Portugal, Angola, Moçambique e outros países em parceiros estratégicos de primeira ordem."
+        },
+        {
+          "page": 46,
+          "quote": "Adoção do pragmatismo como princípio de política externa rejeita tanto o alinhamento ideológico automático com os EUA quanto o ideologismo de esquerda, estabelecendo em seu lugar uma Estratégia Internacional institucionalizada que persista além de mudanças de governo, garantindo continuidade e previsibilidade nas relações exteriores;"
+        },
+        {
+          "page": 46,
+          "quote": "Proposta de sub-hegemonia brasileira, uma liderança regional sem imperialismo, propõe que o Brasil lidere a América do Sul por meio de mecanismos de integração multilateral, aprendendo tanto dos fra- cassos da Unasul quanto dos problemas da União Europeia, mantendo autonomia estratégica frente a grandes potências."
+        }
+      ],
+      "context_pages": [
+        39,
+        45,
+        46
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Cooperação monetária sul-americana",
+      "statement": "Reduzir dependência regional do dólar com cesta de moedas liderada pelo real, linhas de swap entre bancos centrais e cooperação monetária.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cesta regional, swaps e uso do real como reserva de valor e mecanismo de integração.",
+      "scope": "América do Sul.",
+      "conditions": [
+        "Não se afirma abolir o real ou implantar imediatamente moeda única; o instrumento explicitado é uma cesta de moedas."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Proposta de desdolarização da América do Sul busca reduzir a dependência do dólar americano me- diante a criação de uma cesta de moedas sul-americana liderada pelo real brasileiro, linhas de swap entre bancos centrais e cooperação monetária regional, convertendo o Brasil em âncora financeira do continente."
+        },
+        {
+          "page": 46,
+          "quote": "Proposta do real como alternativa complementa essa estratégia, posicionando a moeda brasileira como reserva de valor regional e mecanismo de integração econômica."
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Atuação no BRICS",
+      "statement": "Obter benefícios de mercados, investimentos e tecnologia dentro do BRICS+, mantendo autonomia perante os objetivos geopolíticos chineses.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estratégia pragmática de atuação no bloco.",
+      "scope": "Participação brasileira no BRICS+.",
+      "conditions": [
+        "A estratégia pressupõe permanência; crítica à influência chinesa não é proposta de saída."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos, por meio dos mercados, investimentos e cooperação tecnológi- ca, enquanto evita ser subordinado aos objetivos geopolíticos de Pequim, mantendo autonomia decisória."
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Cooperação internacional contra o crime",
+      "statement": "Liderar pacto interamericano contra crime organizado tratado como questão de segurança nacional de nível militar, com centro de operações e tribunal especializado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Pacto ancorado na Convenção de Palermo e na OEA, Centro de Operações Central na América Latina e tribunal internacional.",
+      "scope": "Combate à criminalidade transnacional nas Américas.",
+      "conditions": [
+        "O resumo não detalha adesão dos países, jurisdição do tribunal nem seus vínculos com tribunais nacionais."
+      ],
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "Proposta sobre a Guerra contra o Tráfico redefine esse combate como questão de segurança nacional de nível militar, não simplesmente policial, exigindo um Pacto Interamericano contra o crime organizado, liderado pelo Brasil e ancorado na Convenção de Palermo e na OEA, com um Centro de Operações Cen- tral na América Latina e um tribunal internacional especializado em criminalidade transnacional."
+        }
+      ],
+      "context_pages": [
+        45
+      ]
+    },
+    {
+      "id": "P47",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Autonomia nuclear como instrumento de defesa",
+      "statement": "Dominar integralmente o ciclo de combustível nuclear, incluindo reprocessamento, como ativo estratégico de dissuasão.",
+      "support_level": "explicit_proposal",
+      "instrument": "Desenvolvimento das capacidades do ciclo nuclear.",
+      "scope": "Autonomia estratégica e defesa nacional.",
+      "conditions": [
+        "O texto não explicita fabricação de armas nucleares, retirada de tratados ou autorização de seu uso; tais escolhas não foram imputadas."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Proposta de nuclearização brasileira busca alcançar autonomia completa do ciclo de combustível nu- clear, incluindo capacidade de reprocessamento, convertendo-a em ativo estratégico de deterrência e garantia irrestrita da soberania nacional."
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    }
+  ],
+  "complementary_gap_search": {
+    "emissões": [],
+    "adaptação": [
+      46
+    ],
+    "clima": [
+      41
+    ],
+    "climática": [
+      41
+    ],
+    "biodiversidade": [
+      41
+    ],
+    "desmatamento": [
+      23,
+      49
+    ],
+    "carbono": [
+      35
+    ],
+    "consentimento": [],
+    "privacidade": [],
+    "proteção de dados": [],
+    "liberdade": [
+      12,
+      20,
+      27,
+      28,
+      29
+    ],
+    "tratado": [
+      34
+    ],
+    "nuclear": [
+      24,
+      45,
+      46
+    ],
+    "salário mínimo": [
+      9,
+      10
+    ],
+    "aposentadoria": [],
+    "estabilidade": [
+      38
+    ],
+    "armas": [
+      45
+    ],
+    "mulheres": [
+      3,
+      4,
+      25
+    ],
+    "gênero": [
+      28
+    ],
+    "indígenas": [
+      42
+    ]
+  },
+  "position_count": 47,
+  "thesis_seed_count": 8,
+  "validated_at": "2026-09-29T19:11:08.560890+00:00",
+  "validation_result": {
+    "command": "python docs/research/2026-09-29-thematic-profiles/validate.py --candidate 280002540694",
+    "exit_code": 0,
+    "candidate_id": "280002540694",
+    "name": "Renan Santos",
+    "status": "submitted",
+    "valid": true,
+    "errors": [],
+    "same_original_agent": true,
+    "category_count": 10,
+    "category_presence": {
+      "substantive": 10
+    },
+    "positions": 47,
+    "support_levels": {
+      "explicit_proposal": 47
+    },
+    "thesis_seeds": 8,
+    "revisited_pages": 28,
+    "quote_matches": {
+      "layout": 86
+    },
+    "profile_sha256": "f601db4a8eb76ce597291b10f2a57fac80b669e963a92844c31c1d301690507c",
+    "markdown_sha256": "2d914fdd4b6d8cdd6a73463a3ef9dd6f8304c2b73a98fa4de37014fee84049c8"
+  }
+}

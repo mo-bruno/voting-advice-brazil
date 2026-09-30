@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551544",
+  "candidate_name": "Flavio Bolsonaro",
+  "agent_id": "/root/plan_flavio",
+  "model_requested": "gpt-5.6-sol",
+  "reasoning_effort_requested": "xhigh",
+  "document_sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002551544.json",
+  "method": "Continuação por agente substituto após a interrupção do responsável original durante a troca de modelo. O contexto documental integral foi restaurado a partir da revisão completa anterior de 76 páginas, do respectivo checkpoint, do perfil temático e de seu checkpoint. Em seguida, foi feita busca integral nas extrações layout-pages.json e raw-pages.json (páginas 1–76) com termos e sinônimos dos quatro objetos e releitura contextual do PDF extraído em 26 páginas físicas. As citações foram preservadas literalmente. Não se declara uma segunda leitura integral e não foram consultados outros planos ou fontes externas.",
+  "revisited_pages": [
+    8,
+    29,
+    30,
+    31,
+    32,
+    33,
+    45,
+    46,
+    50,
+    51,
+    53,
+    54,
+    55,
+    56,
+    57,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    68,
+    69,
+    70,
+    71,
+    72
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A pergunta exige decisão sobre um imposto específico incidente sobre grandes patrimônios. A busca integral não localizou grandes fortunas, imposto sobre fortunas nem outro compromisso que institua ou rejeite esse tributo. O plano propõe reduzir a carga sobre produção e consumo, o IVA e outros impostos, mas essas escolhas de tributação agregada e do consumo podem coexistir com diferentes posições sobre um imposto patrimonial específico. Por isso, não sustentam concordância nem discordância com o objeto exato.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Vamos promover a revisão e o redimensionamento da reforma tributária em curso e da majoração de impostos efetuada pelo atual governo, com o objetivo de reduzir efetivamente a carga sobre a produção e o consumo. Vamos corrigir suas distorções, reduzir o IVA, hoje projetado num dos patamares mais altos do mundo, e assegurar a não cumulatividade, para que não se cobre imposto sobre imposto.",
+          "role": "context",
+          "interpretation": "A proposta tributária identificada se concentra em produção, consumo e IVA; não decide o imposto específico sobre grandes fortunas."
+        },
+        {
+          "page": 72,
+          "quote": "O esforço de simplificação continuará: menos impostos, legislação unificada, desoneração das exportações e dos investimentos e redução das exceções, para que grupos parecidos paguem impostos parecidos.",
+          "role": "context",
+          "interpretation": "A orientação por menos impostos é agregada e não especifica manter, criar ou rejeitar o tributo patrimonial perguntado."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "riqueza",
+        "patrimônio",
+        "patrimonial",
+        "imposto",
+        "tributo",
+        "tributária",
+        "renda",
+        "herança",
+        "dividendo",
+        "alíquota",
+        "progressivo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Não houve ocorrência de ‘grandes fortunas’, ‘patrimonial’ ou ‘dividendo’. ‘Fortuna’ aparece apenas no sentido coloquial de grande perda logística na p.50; patrimônio, riqueza e herança aparecem em objetos distintos. Reduzir outros impostos ou a carga total não prova rejeição ao imposto específico, conforme a delimitação aprovada. As citações registram o contexto tributário, mas não são prova isolada do silêncio integral.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "No capítulo de energia, o plano escolhe o segmento de biogás dentro da prioridade de transformar o Brasil em potência de biocombustíveis e promete literalmente oferecer linhas especiais de financiamento às empresas desse segmento. Trata-se de uma linha de empréstimo direcionada por escolha de política pública a um setor produtivo industrial/energético prioritário, que satisfaz o objeto da pergunta sem exigir subsídio, banco estatal ou seleção de empresas individuais. A proposta posterior de limitar crédito subsidiado do Tesouro não contradiz a linha: o plano não diz que ela será subsidiada.",
+      "conditions": [
+        "A linha explicitada é voltada a empresas de biogás, no conjunto da política de biocombustíveis.",
+        "O plano não identifica instituição financeira, taxa, volume, prazo, elegibilidade individual ou fonte dos recursos.",
+        "Não se atribui subsídio de juros, porque a redação do plano e a pergunta aprovada não o exigem."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "E vamos transformar o Brasil em potência de biocombustíveis: etanol, biodiesel, HVO, SAF e biogás, fomentando a aplicação da Lei do Combustível do Futuro e oferecendo linhas especiais de financiamento para empresas de biogás, que transformam resíduos em energia.",
+          "role": "support",
+          "interpretation": "Seleciona biogás como prioridade produtiva e oferece explicitamente linhas especiais de financiamento às empresas do segmento."
+        },
+        {
+          "page": 71,
+          "quote": "Vamos construir o equilíbrio fiscal duradouro, entregando superávits primários e limitando o crédito subsidiado com recursos do Tesouro, mitigando pressões inflacionárias.",
+          "role": "counterevidence",
+          "interpretation": "Impõe limite ao crédito subsidiado do Tesouro, mas não extingue linhas direcionadas nem afirma que a linha de biogás será subsidiada."
+        }
+      ],
+      "search_terms": [
+        "crédito",
+        "empréstimo",
+        "financiamento",
+        "linha",
+        "linhas especiais",
+        "BNDES",
+        "bancos públicos",
+        "subsidiado",
+        "indústria",
+        "industrial",
+        "setor",
+        "prioridade",
+        "biogás",
+        "biocombustíveis",
+        "agroindústria",
+        "capital de giro",
+        "política industrial",
+        "FNDCT",
+        "Finep"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "O apoio é demonstrado por um segmento concreto, biogás, e não por uma política de crédito para todos os setores industriais. Outras passagens tratam de crédito geral a empreendedores, BNDES para infraestrutura e internacionalização, garantias para projetos minerais e financiamento de transporte; elas não foram usadas para ampliar artificialmente o alcance. A limitação de crédito subsidiado na p.71 restringe um tipo de financiamento, sem negar a oferta explícita da p.53.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "A seção ‘Minerais críticos’ articula, no mesmo programa, Estado regulador em vez de empresário, atração de capital estrangeiro, investimento na mineração, licenciamento e direitos minerários. Na continuação, o plano explicita que os projetos abrangem extrair e exportar matéria bruta, embora pretenda agregar valor no Brasil. Essa articulação implica claramente que empresas ou capital estrangeiro podem participar da atividade extrativa de minerais críticos sob regulação e condições. Não é apenas abertura genérica ao investimento nem apoio restrito ao processamento; ainda assim, como não há uma única frase com a formulação literal ‘empresa estrangeira na extração’, a força correta é clear_implication.",
+      "conditions": [
+        "Estado como regulador e coordenador, com marco regulatório claro, licenciamento técnico, governança e transparência.",
+        "Atração de tecnologia e transferência de conhecimento ao Brasil.",
+        "Verticalização e agregação de valor no Brasil, sem limitar o investimento externo apenas ao processamento.",
+        "O plano não define participação acionária, controle, países, modelo contratual ou percentuais nacionais/estrangeiros."
+      ],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "O Estado atuará como regulador e coordenador, não como empresário, apoiado em seis pilares: marco regulatório claro e estável, licenciamento ágil e técnico, atração de capital e tecnologia, verticalização com incentivos de mercado, governança e transparência. Vamos trabalhar para atrair o capital estrangeiro e a tecnologia que já existem no mundo, aplicando aqui o que outros países já dominam e transferindo esse conhecimento ao Brasil. Para termos sucesso nesse desafio, vamos tratar o investimento na mineração com o mesmo respeito e atenção com que trataremos o investimento na indústria de transformação.",
+          "role": "support",
+          "interpretation": "Na seção de minerais críticos, vincula capital estrangeiro ao investimento em mineração e reserva ao Estado funções de regulação e coordenação."
+        },
+        {
+          "page": 56,
+          "quote": "Vamos equacionar as garantias de crédito ao financiamento dos projetos e acelerar o licenciamento e o processo de direitos minerários. Assim o país deixa de apenas extrair e exportar matéria bruta e passa a agregar valor aqui dentro, o que significa emprego qualificado e renda que fica no Brasil.",
+          "role": "support",
+          "interpretation": "Confirma que os projetos minerários do programa incluem extração de matéria bruta, além da etapa posterior de agregação de valor."
+        }
+      ],
+      "search_terms": [
+        "minerais críticos",
+        "mineração",
+        "mineral",
+        "minério",
+        "terras-raras",
+        "terras raras",
+        "lítio",
+        "nióbio",
+        "capital estrangeiro",
+        "estrangeiro",
+        "investimento",
+        "extração",
+        "extrair",
+        "exploração",
+        "lavra",
+        "subsolo",
+        "verticalização",
+        "direitos minerários",
+        "parcerias internacionais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A extração e o capital estrangeiro aparecem em frases articuladas da mesma seção, não na mesma oração; por isso não se marcou força explicit. A ênfase em agregar valor, transferir conhecimento e licenciar tecnicamente limita o desenho, mas a explicação aprovada permite condições e limites. Não se infere controle estrangeiro irrestrito, dispensa ambiental ou aceitação de qualquer projeto.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A pergunta trata da suspensão geral dos pagamentos da dívida pública durante uma auditoria. O plano propõe estabilizar e reduzir a dívida, produzir superávits e controlar gastos, mas não propõe auditoria da dívida nem define o que aconteceria com os pagamentos durante uma investigação. Disciplina fiscal ordinária, renegociação de dívidas privadas e redução da relação dívida/PIB não equivalem a rejeitar ou apoiar a suspensão temporária perguntada. Sem a sequência auditoria–suspensão, não há base para classificar concordância, discordância ou posição mista.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 71,
+          "quote": "Apresentaremos uma reformulação nas atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública conforme determina a Constituição. Vamos construir o equilíbrio fiscal duradouro, entregando superávits primários e limitando o crédito subsidiado com recursos do Tesouro, mitigando pressões inflacionárias.",
+          "role": "context",
+          "interpretation": "Define política fiscal e trajetória da dívida em condições ordinárias, sem auditoria nem decisão sobre suspender pagamentos durante ela."
+        }
+      ],
+      "search_terms": [
+        "auditoria",
+        "auditar",
+        "dívida pública",
+        "dívida",
+        "suspensão",
+        "suspender",
+        "pagamento",
+        "moratória",
+        "renegociação",
+        "cancelamento",
+        "serviço da dívida",
+        "superávit",
+        "juros",
+        "credor",
+        "título público",
+        "títulos públicos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Não houve ocorrência de ‘auditoria’, ‘auditar’, ‘suspensão’, ‘suspender’, ‘moratória’, ‘serviço da dívida’, ‘credor’ ou ‘títulos públicos’. As ocorrências de pagamento tratam de outros objetos; renegociação refere-se a dívidas privadas. A defesa de superávits e redução da dívida é contexto fiscal genérico e, pelo protocolo, não prova rejeição a uma suspensão durante auditoria.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

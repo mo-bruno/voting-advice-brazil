@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552487",
+  "candidate_name": "Rui Costa Pimenta",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 7,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Apresentação do programa de luta do PCO: eleições como tribuna, organização e mobilização revolucionária, governo operário e comunismo; nenhuma decisão específica das 16 perguntas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Pontos 1 e 2: reposição e escala móvel dos salários, salário mínimo vital de ao menos R$7.500, Bolsa Família de pelo menos um salário mínimo durante o caos atual, anulação de dívidas, jornada de 35 horas, proibição de demissões, salário-desemprego e proteção a desempregados.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 3,
+      "summary": "Pontos 3 e 4: cancelar reforma trabalhista e restaurar/ampliar CLT, revogar reformas, proteção previdenciária; cancelar privatizações, Petrobras 100% estatal sob controle dos trabalhadores e nacionalizar reservas minerais e refinarias.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Pontos 5 a 7: serviços públicos, estabilidade, concursos e oposição a terceirizações; fim do teto de gastos e da LRF; reforma agrária, terras indígenas, autodefesa no campo, expropriação de imóveis e construção pública de moradias.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Pontos 8 a 10: ensino público, verbas públicas somente para ensino público, gestão escolar eleita e estatização do ensino pago; saúde pública gratuita sob controle dos trabalhadores, investimento em hospitais/formação/Mais Médicos; dissolução da polícia militar e autodefesa.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Continuação do ponto 10: estatização de meios de comunicação, liberdade de expressão e Internet gratuita; ponto 11: banco estatal único, fim da independência do Banco Central, juros e dívidas; ponto 12: direitos políticos/sindicais e fim do STF com eleição de juízes.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Pontos 13 a 15: soberania na Amazônia, oposição à ingerência dos EUA/OEA e apoio a Cuba/Nicarágua/Venezuela; financiamento da cultura popular; mobilização e governo dos trabalhadores, defesa de povos como Palestina, Irã e Rússia; encerramento PCO, agosto de 2026.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Conferência da capa/apresentação e da ordem de leitura.",
+      "finding": "Página com texto em uma coluna; logotipo e ornamentos sem conteúdo programático omitido pela extração."
+    },
+    {
+      "page": 2,
+      "reason": "Conferência de títulos numerados e listas de propostas.",
+      "finding": "Uma coluna, listas legíveis; a condição temporal pertence expressamente à proposta de Bolsa Família."
+    },
+    {
+      "page": 3,
+      "reason": "Conferir sequência entre reforma trabalhista e bloco de privatizações, com listas.",
+      "finding": "Uma coluna e dois blocos separados; a estatização das refinarias é uma proposta distinta, sem integração expressa com a Petrobras."
+    },
+    {
+      "page": 4,
+      "reason": "Conferir título quebrado em duas linhas e agrupamento das propostas de serviços públicos.",
+      "finding": "Uma coluna; itens sobre terceirização estão no ponto 5 e o título do ponto 6 continua em segunda linha, sem conteúdo perdido."
+    },
+    {
+      "page": 5,
+      "reason": "Conferir separação entre educação, saúde e repressão, com títulos quebrados.",
+      "finding": "Três blocos em coluna única; regra de exclusividade das verbas é expressa para ensino, não repetida no bloco de saúde."
+    },
+    {
+      "page": 6,
+      "reason": "Conferir continuação de lista da página anterior e títulos de bancos/Judiciário.",
+      "finding": "Primeira lista continua o ponto 10; ponto 11 contém item autônomo pelo fim da independência do Banco Central."
+    },
+    {
+      "page": 7,
+      "reason": "Conferir conclusão, assinatura e blocos de relações internacionais/cultura.",
+      "finding": "Uma coluna com três blocos e assinatura final; não há anexos nem texto suplementar omitido."
+    }
+  ],
+  "current_position": {
+    "last_page_completed": 7,
+    "next_page": null
+  },
+  "questions_to_resolve": [],
+  "method": "Leitura sequencial integral das 7 páginas pela extração layout, em blocos sem truncamento, com inspeção visual individual das 7 páginas. Categorias anteriores só consultadas após esta conclusão.",
+  "positions_completed": [
+    "BR26-T001",
+    "BR26-T002",
+    "BR26-T003",
+    "BR26-T011",
+    "BR26-T015",
+    "BR26-T017",
+    "BR26-T018",
+    "BR26-T026A",
+    "BR26-T036",
+    "BR26-T038",
+    "BR26-T042",
+    "BR26-T043",
+    "BR26-T057",
+    "BR26-T063",
+    "BR26-T066",
+    "BR26-T067"
+  ],
+  "comparison_counts": {
+    "confirmed": 14,
+    "divergent": 2,
+    "no_prior": 0
+  },
+  "classification_notes": {
+    "BR26-T011": "Condição temporal do piso do Bolsa Família não decide substituição por trabalho para beneficiários ativos: NAO_ENCONTRADA.",
+    "BR26-T038": "Propriedade estatal não decide integração de produção e refino: NAO_ENCONTRADA."
+  }
+}

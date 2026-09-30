@@ -1,0 +1,688 @@
+{
+  "schema_version": 1,
+  "review_id": "semantic-mediation-full-map-2026-09-29",
+  "status": "independent_editorial_draft",
+  "scope": {
+    "source_positions": 636,
+    "source_decision_families": 118,
+    "source_map": "../../2026-09-29-question-editorial-review/DECISION_MAP.json",
+    "approved_anchor_ids": [
+      "B01-Q01",
+      "B01-Q02",
+      "B01-Q03",
+      "B01-Q04"
+    ],
+    "candidate_classification_performed": false,
+    "published_battery_used": false,
+    "note": "A revisão usa somente o mapa de 636 registros, suas 118 famílias, os critérios editoriais e as quatro âncoras B01. Não herda respostas de candidaturas."
+  },
+  "principles": [
+    {
+      "id": "P01",
+      "name": "identidade do objeto",
+      "rule": "Duas formulações só pertencem à mesma tese quando decidem o mesmo objeto institucional, para o mesmo público e alcance. Proximidade temática não basta."
+    },
+    {
+      "id": "P02",
+      "name": "camadas separadas",
+      "rule": "Diagnóstico, justificativa, valor, instrumento, alcance, condição e salvaguarda são camadas distintas. Só permanecem juntas quando a condição é constitutiva da decisão."
+    },
+    {
+      "id": "P03",
+      "name": "modalidade explícita",
+      "rule": "Permitir, obrigar, priorizar, financiar, proibir e extinguir não são equivalentes. O verbo deve revelar a intensidade da decisão."
+    },
+    {
+      "id": "P04",
+      "name": "vocabulário compartilhável",
+      "rule": "Preferir substantivos descritivos e verbos institucionais a slogans, avaliações morais, nomes promocionais e caracterizações pertencentes a um polo."
+    },
+    {
+      "id": "P05",
+      "name": "regra antes do efeito prometido",
+      "rule": "A afirmação pergunta a regra ou o instrumento. Resultados desejados, como reduzir filas, aumentar eficiência ou garantir soberania, ficam fora do enunciado."
+    },
+    {
+      "id": "P06",
+      "name": "condição que muda a resposta",
+      "rule": "Condições capazes de inverter a resposta entram na frase ou geram item próprio. Detalhes que apenas qualificam implementação ficam na explicação e nos limites."
+    },
+    {
+      "id": "P07",
+      "name": "alcance literal",
+      "rule": "Universal, focalizado, setorial, territorial e temporário não se substituem. Uma prioridade para um grupo não implica exclusão dos demais."
+    },
+    {
+      "id": "P08",
+      "name": "alternativas não exaustivas",
+      "rule": "Uma política pode coexistir com outra. Crédito público não rejeita crédito privado; expansão pública não proíbe contratação complementar; BRICS e OCDE não são polos necessários."
+    },
+    {
+      "id": "P09",
+      "name": "sequência em vez de síntese",
+      "rule": "Quando vocabulários diferentes encobrem mais de uma decisão substantiva, usar duas ou três afirmações encadeadas, ou retirar a família da bateria."
+    },
+    {
+      "id": "P10",
+      "name": "silêncio sem polaridade",
+      "rule": "O mapa orienta redações, não respostas. Tema próximo, objetivo comum ou silêncio não autorizam concordância, discordância ou neutralidade."
+    },
+    {
+      "id": "P11",
+      "name": "neutralidade de explicação",
+      "rule": "A explicação define termos e fronteiras sem apresentar benefício, ameaça, intenção ou efeito como fato."
+    },
+    {
+      "id": "P12",
+      "name": "âncoras versionadas",
+      "rule": "As quatro âncoras são avaliadas criticamente, mas seu texto aprovado não é alterado nesta revisão."
+    }
+  ],
+  "family_recommendations": {
+    "strong_single_or_companion_candidates": [
+      "E02",
+      "E04",
+      "E06",
+      "E07",
+      "G04",
+      "G07",
+      "G09",
+      "T02",
+      "T05",
+      "T07",
+      "T11",
+      "A03",
+      "I02",
+      "I07",
+      "I08",
+      "B01",
+      "B02",
+      "B07",
+      "D04",
+      "D07",
+      "C01",
+      "S08",
+      "S10",
+      "R04",
+      "R05"
+    ],
+    "use_only_as_sequences": [
+      "E01",
+      "E05",
+      "G01",
+      "A03",
+      "I05",
+      "I07",
+      "I08",
+      "I09",
+      "B01",
+      "B02",
+      "C05",
+      "C09",
+      "S04",
+      "S10",
+      "R02",
+      "R05"
+    ],
+    "avoid_umbrella_wording": [
+      {
+        "families": ["E01"],
+        "reason": "Manter, substituir ou revogar uma lei fiscal; impor limite ao gasto; perseguir superávit; e desvincular pisos são decisões independentes."
+      },
+      {
+        "families": ["G01", "T01", "B01", "B02"],
+        "reason": "Propriedade, financiamento, operação, gestão delegada e compra de capacidade não formam um único eixo público versus privado."
+      },
+      {
+        "families": ["E03"],
+        "reason": "Simplificação tributária não identifica base, contribuinte, alíquota, tributos substituídos ou transição."
+      },
+      {
+        "families": ["A03"],
+        "reason": "Mercado regulado, crédito voluntário, tributação de emissões e pagamento por conservação têm incentivos e obrigações diferentes."
+      },
+      {
+        "families": ["I08", "I09"],
+        "reason": "Localização de servidor, jurisdição, nacionalidade do operador, propriedade da rede, plataforma e licença de software não são sinônimos de soberania digital."
+      },
+      {
+        "families": ["C05"],
+        "reason": "Cotas na educação, concursos, polícia, emprego e nomeações políticas atingem universos distintos."
+      },
+      {
+        "families": ["C09"],
+        "reason": "Moderação, crimes de informação, concessões de radiodifusão, privacidade e proteção de crianças não devem virar uma pergunta geral sobre liberdade de expressão."
+      },
+      {
+        "families": ["R06"],
+        "reason": "Autonomia diplomática é uma orientação ampla e não decide adesão, saída, ruptura ou cooperação em cada relação concreta."
+      }
+    ]
+  },
+  "candidate_battery": {
+    "total_items": 30,
+    "anchor_items": 4,
+    "new_candidate_items": 26,
+    "selection_note": "O conjunto é uma recomendação sem cotas de categoria. A cobertura documental e a capacidade de diferenciação ainda precisam ser medidas após aprovação humana. Os itens de uma sequência não devem ser separados sem reavaliar o significado do item remanescente.",
+    "items": [
+      {
+        "id": "B01-Q01",
+        "role": "immutable_anchor",
+        "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+        "explanation": "A cobrança seria sobre patrimônios de valor muito elevado. Esta afirmação não define o valor mínimo para cobrança nem a alíquota.",
+        "decision": "Existência de imposto específico sobre grandes fortunas.",
+        "family_ids": ["E03"],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "B01-Q02",
+        "role": "immutable_anchor",
+        "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+        "explanation": "Linhas de crédito são programas de empréstimo. Aqui, os setores atendidos seriam escolhidos pela política industrial do governo.",
+        "decision": "Existência de crédito direcionado a setores industriais selecionados.",
+        "family_ids": ["E06", "E07"],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-01"
+      },
+      {
+        "id": "B01-Q03",
+        "role": "immutable_anchor",
+        "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+        "explanation": "A pergunta trata da extração de minerais considerados estratégicos para a indústria e a tecnologia. A participação estrangeira poderia ter condições e limites.",
+        "decision": "Admissão de participação empresarial estrangeira na extração de minerais estratégicos.",
+        "family_ids": ["E05", "E07"],
+        "semantic_risk": "medium_high",
+        "sequence_id": "SEQ-02"
+      },
+      {
+        "id": "B01-Q04",
+        "role": "immutable_anchor",
+        "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+        "explanation": "Auditoria é uma investigação das contas e dos contratos da dívida. A afirmação trata de interromper os pagamentos durante a investigação, sem decidir pelo cancelamento definitivo da dívida.",
+        "decision": "Suspensão dos pagamentos da dívida pública durante auditoria.",
+        "family_ids": ["E02"],
+        "semantic_risk": "medium_high",
+        "sequence_id": "SEQ-03"
+      },
+      {
+        "id": "SEM-01",
+        "role": "new_candidate",
+        "statement": "O acesso a linhas públicas de crédito para setores industriais prioritários deve depender de contrapartidas previamente divulgadas.",
+        "explanation": "Contrapartidas são obrigações assumidas por quem recebe o crédito, como metas de investimento, produção ou inovação. A afirmação não escolhe uma contrapartida específica.",
+        "decision": "Obrigatoriedade de contrapartidas públicas para crédito industrial direcionado.",
+        "family_ids": ["E06", "E07"],
+        "why": "Separa a existência do crédito, já medida pela âncora, da regra de governança aplicada ao benefício.",
+        "limits": ["Não define prazo, sanção ou conteúdo local.", "Não presume juros subsidiados."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-01"
+      },
+      {
+        "id": "SEM-02",
+        "role": "new_candidate",
+        "statement": "Empresas que extraem minerais estratégicos no Brasil devem ser obrigadas a processar parte desses minerais no país.",
+        "explanation": "Processar significa realizar no Brasil uma etapa de transformação posterior à extração. A afirmação não proíbe exportações nem fixa o percentual processado.",
+        "decision": "Obrigação de processamento doméstico parcial para quem extrai minerais estratégicos.",
+        "family_ids": ["E05", "E07"],
+        "why": "Torna visível uma condição produtiva que a permissão ampla da âncora B01-Q03 não mede.",
+        "limits": ["Não mede transferência de tecnologia, emprego local ou nacionalidade do capital.", "Não decide propriedade das reservas."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-02"
+      },
+      {
+        "id": "SEM-03",
+        "role": "new_candidate",
+        "statement": "O governo deve realizar uma auditoria da dívida pública mesmo que os pagamentos continuem durante a investigação.",
+        "explanation": "A afirmação decide realizar a auditoria sem tornar a suspensão dos pagamentos uma condição necessária.",
+        "decision": "Realização de auditoria da dívida independentemente de suspensão de pagamentos.",
+        "family_ids": ["E02"],
+        "why": "Distingue apoio à investigação de apoio à moratória temporária.",
+        "limits": ["Não presume irregularidade.", "Não decide cancelamento ou reestruturação da dívida."],
+        "semantic_risk": "low_medium",
+        "sequence_id": "SEQ-03"
+      },
+      {
+        "id": "SEM-04",
+        "role": "new_candidate",
+        "statement": "Os valores mínimos federais destinados à saúde e à educação devem continuar vinculados à arrecadação.",
+        "explanation": "A vinculação faz os valores mínimos variarem segundo a receita pública. A afirmação não define outros limites para o gasto federal.",
+        "decision": "Manutenção da vinculação dos pisos federais de saúde e educação à receita.",
+        "family_ids": ["E01"],
+        "why": "Pergunta uma regra distributiva compreensível sem usar o nome de um regime fiscal como atalho.",
+        "limits": ["Saúde e educação permanecem juntas porque o objeto documental é a desvinculação conjunta; se surgirem decisões separadas, dividir.", "Não mede apoio a uma lei fiscal específica."],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "SEM-05",
+        "role": "new_candidate",
+        "statement": "O Banco Central deve ter autonomia institucional para tomar decisões sem subordinação direta ao governo.",
+        "explanation": "A afirmação trata da autonomia da instituição. Não define as metas econômicas, o nível dos juros nem como os dirigentes são escolhidos.",
+        "decision": "Manutenção de autonomia institucional do Banco Central.",
+        "family_ids": ["E04"],
+        "why": "Usa o objeto durável da decisão em vez de pedir revogação ou manutenção de uma lei pelo número.",
+        "limits": ["Autonomia não significa ausência de mandato legal ou prestação de contas.", "Composição da diretoria e do Conselho Monetário Nacional é outro item."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-06",
+        "role": "new_candidate",
+        "statement": "Uma parte do orçamento federal deve ser decidida por processos de participação popular com resultado vinculante.",
+        "explanation": "Resultado vinculante significa que a decisão popular deve orientar a alocação dessa parte do orçamento. A afirmação não define o percentual nem o mecanismo de participação.",
+        "decision": "Poder popular vinculante sobre parcela do orçamento federal.",
+        "family_ids": ["G04"],
+        "why": "Separa consulta e conferência de transferência efetiva de poder decisório.",
+        "limits": ["Não mede plebiscitos sobre outros temas.", "O mecanismo e a conciliação com o Congresso permanecem abertos."],
+        "semantic_risk": "medium_high",
+        "sequence_id": "SEQ-10"
+      },
+      {
+        "id": "SEM-07",
+        "role": "new_candidate",
+        "statement": "Servidores públicos federais devem poder perder o cargo por desempenho insuficiente comprovado, após processo com direito de defesa.",
+        "explanation": "A afirmação admite o desligamento por desempenho, desde que haja avaliação documentada e oportunidade de contestação.",
+        "decision": "Possibilidade de desligamento de servidor por desempenho insuficiente com devido processo.",
+        "family_ids": ["G07"],
+        "why": "Isola a consequência da avaliação sem tratar toda avaliação como perda de estabilidade.",
+        "limits": ["Não define indicadores nem frequência.", "Não alcança cortes de cargos ou contratos temporários."],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "SEM-08",
+        "role": "new_candidate",
+        "statement": "Pedidos administrativos de baixo risco devem ser aprovados quando o órgão público não responder dentro do prazo legal.",
+        "explanation": "A aprovação ocorreria pelo silêncio do órgão apenas em procedimentos classificados como de baixo risco.",
+        "decision": "Deferimento tácito de pedidos administrativos de baixo risco após o prazo.",
+        "family_ids": ["G09"],
+        "why": "Tem instrumento, gatilho e alcance identificáveis.",
+        "limits": ["Não se aplica automaticamente a licença ambiental.", "A classificação de baixo risco precisa ser definida em lei ou regulamento."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-09",
+        "role": "new_candidate",
+        "statement": "Empresas privadas devem poder construir e operar ferrovias de carga no Brasil.",
+        "explanation": "A afirmação admite construção e operação privadas sob regras públicas. Não exige exclusividade privada nem venda de ferrovias públicas.",
+        "decision": "Permissão de construção e operação privada de ferrovias de carga.",
+        "family_ids": ["T01", "T02"],
+        "why": "Recorta o objeto operacional sem transformar concessão ou autorização em privatização universal.",
+        "limits": ["Concessão e autorização continuam mecanismos jurídicos diferentes.", "Não define subsídio, tarifa ou propriedade de redes existentes."],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "SEM-10",
+        "role": "new_candidate",
+        "statement": "Quando houver segurança e viabilidade técnica, a urbanização de assentamentos informais deve priorizar a permanência dos moradores no próprio território.",
+        "explanation": "A prioridade é melhorar o local ocupado e evitar deslocamentos. Situações de risco grave ou impossibilidade técnica podem exigir reassentamento.",
+        "decision": "Prioridade à permanência territorial na urbanização de assentamentos viáveis e seguros.",
+        "family_ids": ["T07"],
+        "why": "Preserva a condição que impede falsa oposição entre urbanização e proteção contra risco.",
+        "limits": ["Não garante permanência em qualquer ocupação.", "Titulação, assistência à reforma e infraestrutura provisória são outros objetos."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-11",
+        "role": "new_candidate",
+        "statement": "O transporte coletivo urbano deve ser gratuito para todos os passageiros.",
+        "explanation": "A afirmação elimina a tarifa cobrada do passageiro. Não define a fonte de financiamento nem quem opera o serviço.",
+        "decision": "Gratuidade universal da tarifa do transporte coletivo urbano.",
+        "family_ids": ["T05"],
+        "why": "Distingue gratuidade universal de passe livre focalizado e de subsídio à operação.",
+        "limits": ["Não mede implantação imediata ou gradual.", "Não decide estatização do transporte."],
+        "semantic_risk": "low"
+      },
+      {
+        "id": "SEM-12",
+        "role": "new_candidate",
+        "statement": "O Brasil deve adotar um mercado regulado de emissões de carbono.",
+        "explanation": "Nesse sistema, regras públicas limitam emissões e permitem negociar autorizações ou créditos correspondentes. A afirmação não trata do mercado voluntário.",
+        "decision": "Adoção de mercado regulado de emissões.",
+        "family_ids": ["A03"],
+        "why": "Isola uma arquitetura obrigatória sem fundi-la a crédito voluntário, imposto ou pagamento por conservação.",
+        "limits": ["Não define setores, teto ou distribuição inicial de autorizações.", "Integridade e repartição de receitas precisam de regras posteriores."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-05"
+      },
+      {
+        "id": "SEM-13",
+        "role": "new_candidate",
+        "statement": "A exploração de gás não convencional por fracking deve ser permitida no Brasil.",
+        "explanation": "Fracking é uma técnica de fraturamento de rochas para extrair gás. Permitir a técnica não autoriza automaticamente cada projeto, que continuaria sujeito às regras aplicáveis.",
+        "decision": "Permissão nacional de exploração de gás por fracking.",
+        "family_ids": ["T11", "A04"],
+        "why": "Decisão binária identificável que não se confunde com segurança energética genérica.",
+        "limits": ["Não define bacias, escala ou licenciamento.", "Não mede apoio geral ao gás natural."],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "SEM-14",
+        "role": "new_candidate",
+        "statement": "O governo federal deve criar uma carreira pública específica para pesquisadores.",
+        "explanation": "A carreira teria vínculo público próprio para atividades de pesquisa. A afirmação não define salários, requisitos ou ritmo de implantação.",
+        "decision": "Criação de carreira pública federal de pesquisador.",
+        "family_ids": ["I02"],
+        "why": "Distingue vínculo público estável de bolsas, retorno de pesquisadores e valorização genérica da ciência.",
+        "limits": ["Não pressupõe que toda pesquisa seja estatal.", "Bolsas e financiamento institucional permanecem separados."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-15",
+        "role": "new_candidate",
+        "statement": "Dados sensíveis do governo federal devem ser armazenados apenas em servidores localizados no Brasil.",
+        "explanation": "A afirmação escolhe a localização física do armazenamento. Não decide a nacionalidade da empresa operadora nem todas as leis que podem alcançá-la.",
+        "decision": "Exigência de localização nacional para servidores que armazenam dados governamentais sensíveis.",
+        "family_ids": ["I08"],
+        "why": "Substitui a expressão ambígua nuvem estrangeira por uma dimensão verificável.",
+        "limits": ["Dados sensíveis precisam de definição normativa.", "Jurisdição e controle societário exigem itens próprios."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-09"
+      },
+      {
+        "id": "SEM-16",
+        "role": "new_candidate",
+        "statement": "Sistemas de inteligência artificial de alto risco devem cumprir regras preventivas antes de serem usados, mesmo sem dano concreto já comprovado.",
+        "explanation": "A afirmação permite obrigações prévias proporcionais ao risco. Não exige autorização estatal para todo sistema de inteligência artificial.",
+        "decision": "Regulação preventiva de sistemas de IA classificados como de alto risco.",
+        "family_ids": ["I07"],
+        "why": "Expõe o contraste entre prevenção por risco e intervenção somente após dano.",
+        "limits": ["Alto risco precisa de exemplos em teste de compreensão.", "Transparência algorítmica é uma obrigação separada."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-06"
+      },
+      {
+        "id": "SEM-17",
+        "role": "new_candidate",
+        "statement": "Quando a rede pública não tiver oferta suficiente, o SUS deve poder contratar atendimentos de hospitais e clínicas privadas.",
+        "explanation": "A contratação compra atendimentos para pacientes do SUS. Não transfere a gestão de uma unidade pública ao prestador privado.",
+        "decision": "Contratação complementar de atendimentos privados diante de insuficiência da oferta pública.",
+        "family_ids": ["B02"],
+        "why": "Isola compra de capacidade assistencial sem prometer redução de filas como resultado certo.",
+        "limits": ["Não define forma de pagamento ou duração.", "A condição é insuficiência de oferta, não mera conveniência."],
+        "semantic_risk": "low_medium",
+        "sequence_id": "SEQ-04"
+      },
+      {
+        "id": "SEM-18",
+        "role": "new_candidate",
+        "statement": "Organizações privadas devem poder administrar unidades públicas de saúde por meio de contrato com o poder público.",
+        "explanation": "A afirmação trata da gestão cotidiana de uma unidade pública por uma organização privada. A unidade continua pública, e a frase não decide a compra avulsa de atendimentos.",
+        "decision": "Permissão de gestão privada contratada de unidades públicas de saúde.",
+        "family_ids": ["B01"],
+        "why": "Distingue gestão delegada, propriedade e contratação complementar.",
+        "limits": ["Organizações sem fins lucrativos e empresas podem exigir análise separada se essa distinção mudar respostas.", "Não define modelo contratual, metas ou fiscalização."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-04"
+      },
+      {
+        "id": "SEM-19",
+        "role": "new_candidate",
+        "statement": "Ao ingressar em emprego formal, a pessoa beneficiária do Bolsa Família deve poder manter parte do benefício por um período de transição.",
+        "explanation": "A manutenção seria temporária e parcial após a contratação. A afirmação não define o valor nem a duração.",
+        "decision": "Manutenção parcial e temporária do Bolsa Família após ingresso em emprego formal.",
+        "family_ids": ["B07"],
+        "why": "Isola transição de renda de substituição do benefício por trabalho público e de retorno após desemprego.",
+        "limits": ["Não decide condicionalidades anteriores ao emprego.", "Tempo e faixa de renda precisam de desenho posterior."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-20",
+        "role": "new_candidate",
+        "statement": "As parcelas do financiamento estudantil federal devem variar conforme a renda de quem estudou.",
+        "explanation": "Quem tiver renda menor pagaria parcela menor. A afirmação não concede gratuidade nem perdoa automaticamente dívidas existentes.",
+        "decision": "Parcelas de financiamento estudantil proporcionais à renda.",
+        "family_ids": ["D07"],
+        "why": "Mantém pagamento contingente à renda separado de acesso gratuito e anistia.",
+        "limits": ["Não define quando começa a cobrança.", "Financiamento novo e dívida passada podem exigir regras diferentes."],
+        "semantic_risk": "low"
+      },
+      {
+        "id": "SEM-21",
+        "role": "new_candidate",
+        "statement": "A educação domiciliar deve ser permitida com fiscalização pública e avaliação periódica da aprendizagem.",
+        "explanation": "A família poderia ensinar fora da escola, mas deveria cumprir acompanhamento e avaliações definidos pelo poder público.",
+        "decision": "Permissão de educação domiciliar condicionada a supervisão pública.",
+        "family_ids": ["D04"],
+        "why": "Preserva a condição de controle e evita confundir permissão com ensino domiciliar sem supervisão.",
+        "limits": ["Fiscalização e avaliação são salvaguardas constitutivas do desenho.", "Não torna a modalidade obrigatória."],
+        "semantic_risk": "low"
+      },
+      {
+        "id": "SEM-22",
+        "role": "new_candidate",
+        "statement": "A jornada máxima legal de trabalho deve ser reduzida para, no máximo, 40 horas semanais sem redução salarial.",
+        "explanation": "A afirmação fixa um teto de 40 horas ou menos para a regra geral. Não define escala semanal nem período de transição.",
+        "decision": "Redução do teto semanal geral para 40 horas ou menos, sem redução salarial.",
+        "family_ids": ["C01"],
+        "why": "Cria um limiar comum que inclui propostas mais curtas sem fingir que 30, 35, 36 e 40 horas são iguais.",
+        "limits": ["Fim da escala 6 por 1 é outra decisão.", "Regras específicas de categorias profissionais permanecem fora."],
+        "semantic_risk": "medium"
+      },
+      {
+        "id": "SEM-23",
+        "role": "new_candidate",
+        "statement": "O uso de reconhecimento facial em espaços públicos deve ser permitido para localizar pessoas procuradas pela Justiça.",
+        "explanation": "A finalidade é comparar imagens com registros de pessoas procuradas. A afirmação não autoriza uso para qualquer finalidade nem decide o emprego de câmeras corporais.",
+        "decision": "Permissão de reconhecimento facial em espaço público para localização de procurados.",
+        "family_ids": ["S08"],
+        "why": "Delimita finalidade e população em vez de perguntar por vigilância ou tecnologia em geral.",
+        "limits": ["Salvaguardas, auditoria e descarte de dados precisam acompanhar eventual versão final.", "Não mede integração geral de bases policiais."],
+        "semantic_risk": "medium_high"
+      },
+      {
+        "id": "SEM-24",
+        "role": "new_candidate",
+        "statement": "O porte de drogas para uso pessoal não deve ser tratado como crime.",
+        "explanation": "A afirmação trata da responsabilização criminal de quem porta droga para consumo próprio. Não legaliza automaticamente produção ou venda.",
+        "decision": "Descriminalização do porte para uso pessoal.",
+        "family_ids": ["S10"],
+        "why": "Separa usuário, mercado e política de cuidado.",
+        "limits": ["Critérios de distinção entre uso e comércio precisam de regra própria.", "Legalização da maconha e redução de danos são decisões adicionais."],
+        "semantic_risk": "medium",
+        "sequence_id": "SEQ-07"
+      },
+      {
+        "id": "SEM-25",
+        "role": "new_candidate",
+        "statement": "O Brasil deve buscar adesão à OCDE.",
+        "explanation": "A afirmação trata do objetivo de ingresso na organização. Não significa aceitar antecipadamente toda condição futura nem sair de outros blocos.",
+        "decision": "Busca de adesão brasileira à OCDE.",
+        "family_ids": ["R05"],
+        "why": "É uma decisão institucional concreta e não precisa ser apresentada como alinhamento ideológico geral.",
+        "limits": ["Aproximação ou cooperação sem objetivo de ingresso não resolve a tese.", "Reformas domésticas específicas devem ser avaliadas separadamente."],
+        "semantic_risk": "low_medium"
+      },
+      {
+        "id": "SEM-26",
+        "role": "new_candidate",
+        "statement": "O Brasil deve permanecer como membro dos BRICS.",
+        "explanation": "A afirmação decide a permanência no grupo. Não define o grau de integração, a relação com a China nem a adesão a outras organizações.",
+        "decision": "Permanência diplomática do Brasil nos BRICS.",
+        "family_ids": ["R04"],
+        "why": "Evita transformar participação pragmática, fortalecimento do grupo e comércio com seus membros numa mesma posição.",
+        "limits": ["Permanecer não significa apoiar toda iniciativa do grupo.", "A tese pode coexistir com SEM-25."],
+        "semantic_risk": "low"
+      }
+    ]
+  },
+  "problem_patterns_and_corrections": [
+    {
+      "problem": "nome jurídico usado como conteúdo",
+      "examples": ["arcabouço fiscal", "marco do saneamento", "reforma trabalhista", "Novo Ensino Médio"],
+      "correction": "Perguntar a regra material sempre que o rótulo abranger um pacote ou puder mudar de conteúdo. Usar o nome somente quando manter ou revogar aquele diploma for a própria decisão."
+    },
+    {
+      "problem": "público versus privado como eixo único",
+      "examples": ["empresa estatal", "concessão", "PPP", "organização social", "compra de capacidade"],
+      "correction": "Separar propriedade do ativo, gestão do serviço, financiamento, operação e contratação de entregas."
+    },
+    {
+      "problem": "objetivo desejável no lugar do instrumento",
+      "examples": ["reduzir filas", "dar segurança jurídica", "garantir soberania", "modernizar"],
+      "correction": "Retirar a promessa causal da afirmação e nomear a ação pública concreta."
+    },
+    {
+      "problem": "permissão lida como abertura irrestrita",
+      "examples": ["capital estrangeiro", "fracking", "ferrovias privadas", "educação domiciliar"],
+      "correction": "Explicitar que permitir admite condições; criar item companheiro quando a condição substantiva diferencia posições."
+    },
+    {
+      "problem": "prioridade lida como exclusão",
+      "examples": ["agricultura familiar", "ferrovias", "permanência em assentamentos", "grupos vulneráveis"],
+      "correction": "Usar priorizar somente quando o objeto for alocação relativa e declarar que os demais públicos ou modais não são abolidos."
+    },
+    {
+      "problem": "alcances reunidos por conveniência",
+      "examples": ["cotas em educação e serviço público", "gratuidade universal e focalizada", "capital estrangeiro setorial e geral"],
+      "correction": "Manter universo e território literais; dividir quando uma pessoa ou plano puder responder de modo diferente a cada alcance."
+    },
+    {
+      "problem": "tecnologias agrupadas",
+      "examples": ["câmera corporal", "reconhecimento facial", "integração de bases", "IA preditiva"],
+      "correction": "Perguntar finalidade, população alcançada, gatilho e tipo de dado para cada tecnologia."
+    },
+    {
+      "problem": "soberania digital como palavra total",
+      "examples": ["nuvem estrangeira", "IA nacional", "plataforma pública", "rede estatal"],
+      "correction": "Escolher uma dimensão por item: localização, jurisdição, nacionalidade do operador, controle acionário, obrigação de uso ou licença de software."
+    },
+    {
+      "problem": "tratamento, descriminalização e mercado fundidos",
+      "examples": ["política de drogas", "redução de danos", "legalização"],
+      "correction": "Separar cuidado em saúde, punição do porte para uso e autorização de produção ou venda."
+    },
+    {
+      "problem": "alternativas aparentes que podem coexistir",
+      "examples": ["BRICS e OCDE", "rede pública e compra complementar", "crédito oficial e privado", "mercado de carbono e pagamento por conservação"],
+      "correction": "Não usar uma como discordância da outra; formular itens independentes e medir redundância depois."
+    }
+  ],
+  "required_pairs_or_triplets": [
+    {
+      "id": "SEQ-01",
+      "topic": "crédito industrial",
+      "members": ["B01-Q02", "SEM-01"],
+      "reason": "Existência de crédito direcionado e exigência de contrapartidas são decisões independentes."
+    },
+    {
+      "id": "SEQ-02",
+      "topic": "capital estrangeiro e minerais",
+      "members": ["B01-Q03", "SEM-02"],
+      "optional_reserve_statement": "Empresas estrangeiras não devem poder controlar sozinhas a extração de minerais estratégicos no Brasil.",
+      "reason": "Participação, condição de processamento doméstico e controle societário medem graus diferentes de abertura."
+    },
+    {
+      "id": "SEQ-03",
+      "topic": "auditoria e pagamentos da dívida",
+      "members": ["SEM-03", "B01-Q04"],
+      "reason": "Apoiar auditoria não implica apoiar suspensão; a ordem evita que o cenário da suspensão pareça ser a única forma de auditar."
+    },
+    {
+      "id": "SEQ-04",
+      "topic": "participação privada no SUS",
+      "members": ["SEM-17", "SEM-18"],
+      "optional_reserve_statement": "Hospitais e clínicas privadas devem ser incorporados à propriedade pública.",
+      "reason": "Comprar atendimento, delegar gestão e mudar propriedade são três decisões institucionais diferentes."
+    },
+    {
+      "id": "SEQ-05",
+      "topic": "instrumentos econômicos ambientais",
+      "members": ["SEM-12"],
+      "optional_reserve_statements": [
+        "Emissões de carbono devem ser tributadas diretamente.",
+        "Proprietários e comunidades devem receber pagamento público pela conservação de ecossistemas."
+      ],
+      "reason": "Mercado regulado, imposto e pagamento por serviços ambientais não representam graus de uma única escala."
+    },
+    {
+      "id": "SEQ-06",
+      "topic": "regulação de inteligência artificial",
+      "members": ["SEM-16"],
+      "optional_reserve_statement": "Sistemas automatizados usados pelo poder público devem divulgar critérios e permitir auditoria de suas decisões.",
+      "reason": "Gatilho preventivo e transparência podem ser aceitos ou rejeitados separadamente."
+    },
+    {
+      "id": "SEQ-07",
+      "topic": "política de drogas",
+      "members": ["SEM-24"],
+      "optional_reserve_statements": [
+        "A produção e a venda de maconha devem ser permitidas sob regulação pública.",
+        "A política para pessoas que usam drogas deve priorizar cuidado em saúde e redução de danos."
+      ],
+      "reason": "Descriminalizar o usuário, regular um mercado e escolher uma abordagem de cuidado não são sinônimos."
+    },
+    {
+      "id": "SEQ-08",
+      "topic": "idade de responsabilização penal",
+      "members": [],
+      "reserve_statements": [
+        "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+        "Mesmo sem reduzir a idade penal para todos os crimes, adolescentes a partir dos 16 anos devem responder pelo regime adulto em crimes hediondos."
+      ],
+      "reason": "Redução geral e exceção por crimes definidos têm alcances diferentes; a expressão crimes graves não é suficientemente estável."
+    },
+    {
+      "id": "SEQ-09",
+      "topic": "hospedagem e jurisdição de dados",
+      "members": ["SEM-15"],
+      "optional_reserve_statements": [
+        "Empresas que armazenam dados sensíveis do governo federal devem estar sob controle de capital brasileiro.",
+        "Dados sensíveis do governo federal não devem ficar sujeitos a ordens judiciais de outros países."
+      ],
+      "reason": "Localização, controle acionário e jurisdição podem produzir respostas diferentes."
+    },
+    {
+      "id": "SEQ-10",
+      "topic": "participação popular",
+      "members": ["SEM-06"],
+      "optional_reserve_statement": "O governo federal deve consultar a população durante a elaboração do orçamento, mesmo quando o resultado não for vinculante.",
+      "reason": "Consulta, conferência e poder vinculante não pertencem ao mesmo grau institucional."
+    }
+  ],
+  "anchor_critiques": [
+    {
+      "id": "B01-Q01",
+      "text_change_recommended": false,
+      "strength": "Isola a existência do tributo e evita fundir patrimônio, renda, herança e dividendos.",
+      "risk": "Grandes fortunas permanece um limiar aberto; eleitores podem responder a faixas muito diferentes. A palavra específico também não esclarece se a cobrança é periódica ou excepcional.",
+      "false_equivalence_to_avoid": "Não tratar qualquer tributação patrimonial, de herança ou de renda alta como resposta à âncora.",
+      "suggestion": "Preservar o texto aprovado. Testar compreensão do termo e registrar limiar ou desenho decisivo como condição na validação."
+    },
+    {
+      "id": "B01-Q02",
+      "text_change_recommended": false,
+      "strength": "Mede crédito setorial sem exigir subsídio, benefício fiscal ou propriedade pública do banco.",
+      "risk": "Considerados prioritários pode esconder critérios muito diferentes, e governo deve oferecer não determina fonte do capital ou operador. Concordâncias podem reunir modelos com e sem contrapartidas.",
+      "false_equivalence_to_avoid": "Não converter redução de crédito subsidiado em rejeição de toda linha setorial; não converter garantia ou participação acionária em linha de crédito.",
+      "suggestion": "Preservar a âncora e usar SEM-01 como companheira se a bateria precisar distinguir crédito sem condição comum de crédito sujeito a contrapartidas."
+    },
+    {
+      "id": "B01-Q03",
+      "text_change_recommended": false,
+      "strength": "Separa participação na extração de investimento voltado apenas ao processamento e não presume abertura irrestrita.",
+      "risk": "Participar abrange participação minoritária, controle, operação e consórcio. Como a explicação admite condições, regimes institucionais bastante diferentes podem produzir a mesma resposta.",
+      "false_equivalence_to_avoid": "Não herdar resposta de propostas sobre capital estrangeiro em geral, processamento mineral ou reestatização de ativos já privatizados.",
+      "suggestion": "Preservar a âncora e acrescentar SEM-02; testar, em reserva, um terceiro item sobre controle societário se a validação mostrar que essa diferença é decisiva."
+    },
+    {
+      "id": "B01-Q04",
+      "text_change_recommended": false,
+      "strength": "Distingue suspensão temporária, auditoria, reestruturação e cancelamento definitivo.",
+      "risk": "A formulação geral dos pagamentos não representa suspensão restrita a determinados credores. A sequência durante uma auditoria também não coincide exatamente com suspensão imediata seguida de auditoria.",
+      "false_equivalence_to_avoid": "Não classificar apoio a auditoria como apoio à suspensão, nem cancelamento de dívida como simples moratória temporária.",
+      "suggestion": "Preservar a âncora e apresentá-la após SEM-03, que mede a auditoria independentemente da suspensão."
+    }
+  ],
+  "top_risks": [
+    "A bateria pode aparentar diversidade temática e ainda repetir a mesma dimensão público-privada em propriedade, gestão e contratação.",
+    "Itens permissivos podem concentrar concordâncias entre desenhos incompatíveis quando condições e controle não aparecem em item companheiro.",
+    "Termos técnicos como mercado regulado de emissões, alto risco em IA e minerais estratégicos exigem teste de compreensão com explicações versionadas.",
+    "Limiar amplo, como 40 horas ou grandes fortunas, melhora comparabilidade, mas pode esconder preferências substantivas abaixo ou acima do corte.",
+    "Sequências elevam fidelidade semântica, mas podem superponderar um tema; a etapa de cobertura deve avaliar redundância e não remover apenas o item mediador.",
+    "Famílias com poucos registros podem ser substantivas, mas não devem ser promovidas a itens de ranking antes da validação documental completa."
+  ],
+  "next_suggestions": [
+    "Consolidar a bateria usando os 30 itens como teto editorial, não como obrigação de retenção.",
+    "Manter explicação, decisão, limites e sequência vinculados à versão da frase durante a aprovação humana.",
+    "Na validação posterior, pedir a cada revisor que responda à redação exata sem importar respostas de sementes ou de itens semanticamente próximos.",
+    "Medir cobertura e oposição por item, mas também a redundância entre pares e o peso agregado de cada sequência.",
+    "Realizar teste de compreensão antes de congelar termos técnicos ou limiares abertos."
+  ]
+}

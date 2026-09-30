@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002540694",
+  "candidate_name": "Renan Santos",
+  "context_owner_agent_id": "/root/plan_renan",
+  "executor_agent_id": "/root/delta_renan",
+  "document_sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002540694.json",
+    "../2026-09-29-thematic-profiles/profiles/280002540694.md",
+    "../2026-09-29-thematic-profiles/profiles/280002540694.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002540694.json"
+  ],
+  "method": "Reidratei integralmente o perfil JSON, o perfil legível, o checkpoint da leitura temática e o parecer completo da bateria v2 registrados para /root/plan_renan. Confirmei que o PDF oficial reconstruído tem 51 páginas físicas e SHA-256 idêntico ao documento do contexto anterior. Em seguida li o plano inteiro e pesquisei todas as páginas nas extrações raw-pages.json e layout-pages.json, usando os termos exatos, variantes e objetos próximos das quatro teses. Reli nas duas representações todas as páginas citadas, conferi literalmente as transcrições e mantive distintos concessões, PPPs e autorizações; capacidade nacional e propriedade; cotas educacionais e alcance geral; e reconhecimento facial e outras tecnologias de vigilância.",
+  "revisited_pages": [
+    13,
+    24,
+    31,
+    32,
+    42,
+    43
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No capítulo federal de infraestrutura, o plano propõe mobilizar capital privado por concessões e PPPs, na mesma diretriz que cria o regime de autorização ferroviária. Logo depois, fixa expansão da malha ferroviária e obras em ferrovias, portos e aeroportos. A combinação sustenta o uso federal dos dois instrumentos perguntados para ampliar a infraestrutura de transportes, sem exigir sua aplicação a toda obra.",
+      "conditions": [
+        "Concessões, PPPs e autorizações ferroviárias aparecem como instrumentos distintos dentro do mesmo programa de infraestrutura.",
+        "O plano combina capital privado com investimento estatal; o aumento deste último é condicionado a reformas administrativa e fiscal prévias.",
+        "A proposta não exige concessão ou PPP em toda obra nem implica privatização de empresas públicas."
+      ],
+      "evidence": [
+        {
+          "page": 24,
+          "quote": "mobilização do capital privado por concessões, PPPs e o novo regime de autorização ferroviária;",
+          "role": "support",
+          "interpretation": "A diretriz inclui expressamente concessões e PPPs entre os instrumentos do programa e ainda ancora a lista no transporte ao nomear a autorização ferroviária."
+        },
+        {
+          "page": 24,
+          "quote": "Ferrovias: meta mínima de 40 mil km de malha; conclusão antecipada da Ferrovia Alcântara-Açailân- dia, conclusão da Ferrovia de Integração Oeste-Leste (FIOL), início imediato das obras da Ferrogrão e viabilização da Ferrovia Transoceânica.",
+          "role": "support",
+          "interpretation": "A lista imediatamente posterior transforma a diretriz instrumental em expansão concreta da infraestrutura ferroviária de transportes."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "Parcerias Público-Privadas",
+        "PPP",
+        "PPPs",
+        "autorização ferroviária",
+        "infraestrutura",
+        "transporte",
+        "modais",
+        "ferrovias",
+        "rodovias",
+        "portos",
+        "aeroportos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "As PPPs também aparecem em zonas econômicas e no financiamento mineral, contextos que não bastariam por si sós para responder sobre transportes. A classificação se apoia na diretriz da Missão Rondon da página 24 e na lista contígua de modais de transporte.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano submete a agenda computacional do Marco Brasileiro da Inteligência Artificial à lógica explícita de investimento estratégico do Estado. O detalhamento acrescenta incentivos à infraestrutura de datacenters e cria um laboratório nacional de IA voltado às vantagens do país. Esses compromissos cobrem diretamente investimento federal em infraestrutura, pesquisa e desenvolvimento de capacidade nacional.",
+      "conditions": [
+        "A execução combina investimento estatal com capital privado nacional e internacional.",
+        "O laboratório nacional Abaporu teria capital privado majoritário e governança independente; capacidade nacional não exige propriedade estatal.",
+        "A classificação não depende apenas da difusão de sistemas existentes: ela se apoia também em infraestrutura computacional e pesquisa nacional próprias."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "combinar reformas regulatórias amplas com investimento estratégico do Estado, atraindo capital privado nacional e internacional para verticalizar as cadeias produtivas nas quais temos vantagem comparativa natural.",
+          "role": "support",
+          "interpretation": "O plano estabelece investimento estatal como instrumento comum das duas frentes do capítulo, uma delas dedicada à capacidade computacional e à inteligência artificial."
+        },
+        {
+          "page": 42,
+          "quote": "a segunda, o Marco Brasileiro da Inteligência Artificial (MBIA), organiza a agenda computacional.",
+          "role": "support",
+          "interpretation": "A frase identifica expressamente a frente de IA à qual se aplica a lógica de investimento estratégico descrita no mesmo parágrafo."
+        },
+        {
+          "page": 43,
+          "quote": "O Eixo III ataca o problema da dependência computacional do exterior. Favorece políticas de incentivo para a instalação de datacenters",
+          "role": "support",
+          "interpretation": "A proposta investe na infraestrutura computacional instalada no país para reduzir dependência externa."
+        },
+        {
+          "page": 43,
+          "quote": "O Projeto Abaporu será um labo- ratório nacional de inteligência artificial com capital privado majoritário, governança independente e man- dato concentrado na exploração das vantagens competitivas únicas do nosso país.",
+          "role": "support",
+          "interpretation": "O laboratório nacional constitui capacidade de pesquisa e desenvolvimento de IA no Brasil, ainda que sua propriedade seja majoritariamente privada."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "Marco Brasileiro da Inteligência Artificial",
+        "MBIA",
+        "capacidade nacional",
+        "investimento estratégico do Estado",
+        "dependência computacional",
+        "datacenters",
+        "laboratório nacional",
+        "Projeto Abaporu",
+        "IA proprietária brasileira",
+        "venture capital",
+        "pesquisa",
+        "talentos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Capital privado majoritário no Abaporu e atração de investimento estrangeiro não reduzem o caráter nacional da capacidade nem contradizem o investimento federal. O plano não define orçamento próprio para cada eixo, composição acionária completa, propriedade intelectual ou exclusão de tecnologias estrangeiras.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "DISCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano determina abolir cotas na educação e, em alcance adicional expresso, abolir o sistema de cotas em geral. Uma abolição geral é incompatível com manter reserva racial de vagas em concursos públicos federais. A modalidade de concurso e o critério racial não são nomeados separadamente, por isso a oposição decorre do alcance inclusivo da formulação geral.",
+      "conditions": [
+        "A proposta não especifica transição, percentual, procedimento de verificação ou carreira pública.",
+        "Concursos públicos federais e critério racial não são nomeados individualmente; a inclusão decorre da expressão adicional “em geral”.",
+        "A substituição por bolsas de mérito na página 31 é educacional e não foi usada como evidência autônoma sobre concursos."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Abolir o sistema de cotas na educação brasileira e em geral.",
+          "role": "opposition",
+          "interpretation": "Ao acrescentar alcance geral à abolição educacional, o plano rejeita também a manutenção de reservas de vagas por cotas fora da educação, conjunto que inclui os concursos públicos federais."
+        }
+      ],
+      "search_terms": [
+        "cotas",
+        "sistema de cotas",
+        "abolir cotas",
+        "bolsas de mérito",
+        "concursos públicos federais",
+        "concurso público",
+        "reserva de vagas",
+        "critério racial",
+        "racial",
+        "raça",
+        "população negra",
+        "serviço público",
+        "funcionalismo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "A página 31 trata especificamente de substituir cotas por bolsas de mérito no ensino superior e, isoladamente, não responderia à tese. O elemento decisivo é a formulação separada e mais abrangente da página 32. O plano não apresenta exceção que preserve cotas raciais em concursos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No segundo front de combate à criminalidade urbana cotidiana, o plano integra reconhecimento facial em tempo real a drones, totens de denúncia e patrulhamento autônomo para prevenir crimes, além de identificação facial para solucionar crimes hediondos. Esse sistema de patrulhamento e vigilância urbana implica captação em espaços públicos e tem finalidades inequívocas de segurança.",
+      "conditions": [
+        "As finalidades explicitadas são prevenção da criminalidade urbana cotidiana e resolução de crimes hediondos.",
+        "O plano não detalha bases de identificação, precisão, auditoria, retenção de dados, privacidade ou mecanismos de contestação.",
+        "A ausência dessas salvaguardas não foi convertida em rejeição a elas."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Um novo sistema de drones e totens de denúncia transformará a reação ao crime em prevenção, com patrulhamento autônomo e reconhecimento facial em tempo real, integrado ao uso de dados genéticos e identificação facial para a resolução de crimes hediondos.",
+          "role": "support",
+          "interpretation": "Drones, totens e patrulhamento situam o reconhecimento facial em tempo real no monitoramento de áreas urbanas abertas ao público, e tanto a prevenção quanto a investigação citadas são finalidades de segurança."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "espaços públicos",
+        "criminalidade urbana",
+        "patrulhamento autônomo",
+        "drones",
+        "totens de denúncia",
+        "crimes hediondos",
+        "videomonitoramento",
+        "câmeras",
+        "segurança pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Biometria contínua nos presídios, scanners de fronteira e monitoramento aéreo ou espacial são objetos distintos e não foram usados para preencher a tese. A evidência decisiva é o reconhecimento facial em tempo real integrado ao patrulhamento preventivo da criminalidade urbana na página 13.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

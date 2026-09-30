@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552487",
+  "candidate_name": "Rui Costa Pimenta",
+  "context_owner_agent_id": "/root/plan_rui",
+  "executor_agent_id": "/root/delta_rui_exclusive",
+  "document_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002552487.json",
+    "../2026-09-29-thematic-profiles/profiles/280002552487.md",
+    "../2026-09-29-thematic-profiles/profiles/280002552487.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002552487.json"
+  ],
+  "full_text_search_completed": true,
+  "method": "Reidratei os quatro arquivos do contexto anterior na ordem registrada em STATE.json. Depois li integralmente as sete páginas físicas do PDF oficial, conferi visualmente todas elas e confrontei os textos completos de layout-pages.json e raw-pages.json. Para cada uma das quatro teses, pesquisei o objeto decisório e termos próximos em todo o documento, reli os contextos localizados e verifiquei literalmente as citações nas páginas físicas indicadas. Mantive como NAO_ENCONTRADA toda lacuna em que uma posição geral próxima não decide o instrumento e o alcance específicos da pergunta.",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "status": "complete",
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe cancelar privatizações e reestatizar empresas entregues ao capital estrangeiro, mas não decide o uso de concessões ou parcerias público-privadas para ampliar rodovias, ferrovias, portos, aeroportos ou outra infraestrutura de transportes. A referência a obras de infraestrutura apenas as apresenta como possível destino da riqueza do petróleo, e a única medida específica de transporte trata de passe livre para grupos delimitados. Esses trechos não permitem atribuir adesão nem rejeição ao instrumento federal perguntado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)",
+          "role": "context",
+          "interpretation": "O plano rejeita privatizações de empresas, mas não nomeia concessões ou PPPs de infraestrutura de transportes; os instrumentos não são equivalentes."
+        },
+        {
+          "page": 3,
+          "quote": "Colocar a riqueza do petróleo a serviço das necessidades do povo brasileiro, destinando-a à saúde e educação públicas, construção de moradias populares, obras de infraestrutura etc.",
+          "role": "context",
+          "interpretation": "O trecho menciona financiamento de obras de infraestrutura, sem definir concessão, PPP, gestão privada ou um recorte de transportes."
+        },
+        {
+          "page": 2,
+          "quote": "Passe livre nos transportes para desempregados e trabalhadores da economia informal.",
+          "role": "context",
+          "interpretation": "A medida trata da tarifa para usuários e não da ampliação de infraestrutura por concessões ou PPPs."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "parceria público-privada",
+        "PPP",
+        "privatização",
+        "reestatização",
+        "transportes",
+        "infraestrutura",
+        "rodovia",
+        "ferrovia",
+        "porto",
+        "aeroporto",
+        "pedágio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A página 6 usa concessão apenas para os meios de comunicação, fora do universo de transportes. A oposição ampla à venda de empresas estatais não pode ser convertida em rejeição a toda concessão ou PPP, e o plano tampouco oferece apoio afirmativo a esses instrumentos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona inteligência artificial, desenvolvimento de modelos, pesquisa em IA, infraestrutura computacional ou investimento federal voltado a capacidade nacional de IA. As propostas de Internet gratuita e de controle estatal das terras raras tratam de conectividade e recursos minerais, respectivamente, sem formular o desenvolvimento nacional da tecnologia perguntada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Quebra do monopólio na Internet pelas grandes empresas privadas de telecomunicações. Internet gratuita para toda a população",
+          "role": "context",
+          "interpretation": "A proposta amplia conectividade e muda a organização das telecomunicações, mas não prevê pesquisa, computação ou modelos nacionais de inteligência artificial."
+        },
+        {
+          "page": 3,
+          "quote": "Não à entrega das terras raras: criação de empresa estatal que controle sua exploração, comandada pelos trabalhadores, para garantir o uso dessas riquezas em favor do povo.",
+          "role": "context",
+          "interpretation": "A política industrial e mineral proposta não é vinculada no texto ao desenvolvimento de inteligência artificial."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "algoritmo",
+        "modelo",
+        "computação",
+        "pesquisa",
+        "tecnologia",
+        "inovação",
+        "laboratório",
+        "dados",
+        "Internet",
+        "telecomunicações"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Soberania econômica, Internet gratuita e uma estatal de terras raras poderiam compor políticas tecnológicas mais amplas, mas o documento não as relaciona à IA nem determina investimento federal nesse desenvolvimento. Capacidade nacional não pode ser inferida apenas de propriedade estatal ou conectividade.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano defende concursos públicos periódicos para recompor o quadro de servidores, mas não reserva vagas nem estabelece qualquer critério racial nesses concursos. A denúncia do massacre do povo negro trata de violência policial e não formula ação afirmativa no serviço público federal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Pela realização de concursos públicos periódicos para repor o quadro de servidores.",
+          "role": "context",
+          "interpretation": "O trecho apoia a realização de concursos, mas não define reserva de vagas, grupos raciais ou esfera federal específica."
+        },
+        {
+          "page": 5,
+          "quote": "com o massacre do povo negro, dos jovens e trabalhadores",
+          "role": "context",
+          "interpretation": "A referência racial aparece na crítica à violência policial e não cria cotas ou outra regra de ingresso em concursos públicos."
+        }
+      ],
+      "search_terms": [
+        "concurso público",
+        "vaga",
+        "reserva de vagas",
+        "cota",
+        "racial",
+        "raça",
+        "povo negro",
+        "ação afirmativa",
+        "heteroidentificação",
+        "serviço público federal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A defesa de concursos e a crítica ao racismo policial não respondem, juntas ou separadamente, à reserva de vagas por critério racial. O plano não apresenta abolição geral de cotas que pudesse sustentar oposição.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona reconhecimento facial, biometria, câmeras, bancos de imagens, monitoramento automatizado ou comparação de imagens em espaços públicos. A proposta de dissolver a Polícia Militar e todo o aparato repressivo expressa uma mudança institucional ampla, mas não decide o uso da tecnologia por qualquer estrutura pública de segurança que pudesse existir.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Dissolução da polícia militar e de todo o aparato repressivo",
+          "role": "context",
+          "interpretation": "A dissolução institucional proposta não menciona reconhecimento facial nem define as tecnologias permitidas ou proibidas para futuras finalidades de segurança pública."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "facial",
+        "biometria",
+        "câmera",
+        "banco de imagens",
+        "vigilância",
+        "monitoramento",
+        "drone",
+        "polícia",
+        "segurança pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A crítica à violência policial e a dissolução do aparato repressivo podem apontar para uma orientação restritiva, mas não bastam para atribuir rejeição a um instrumento tecnológico específico. Também não há câmeras sem identificação facial que possam ser confundidas com o objeto da tese.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

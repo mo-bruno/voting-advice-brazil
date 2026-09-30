@@ -1,0 +1,1368 @@
+{
+  "schema_version": 1,
+  "group": "labour-security",
+  "theses": [
+    {
+      "id": "BR26-T003",
+      "baseline_text": "As mudanças introduzidas pela reforma trabalhista de 2017 devem ser revogadas.",
+      "action": "keep",
+      "summary": "A revogação de 2017 permanece uma decisão identificável. Buscas adicionais não sustentam novas posições. Trocar revogar por revisar ampliaria respostas sobre outra decisão e tornaria o item pouco preciso.",
+      "search_terms": [
+        "trabalhista",
+        "CLT",
+        "contrarreform",
+        "revogação",
+        "negociado",
+        "negociação coletiva",
+        "flexibilizar"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Alterar regras que precarizam o trabalho e fortalecer negociação coletiva não equivale a revogar integralmente a reforma de 2017.",
+          "evidence": [],
+          "inspected_pages": [
+            75,
+            76
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O resumo oficial defende flexibilização e nova reforma, mas não decide o destino integral da reforma de 2017, um teto semanal ou prevalência normativa das negociações.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            21,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Revogação da reforma trabalhista"
+            }
+          ],
+          "inspected_pages": [
+            8,
+            21,
+            29
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Revogaremos as contrarreformas trabalhista, previdenciária e criaremos a Lei de Responsabilidade Social, com o objetivo de garantir recursos para atender as demandas populares."
+            }
+          ],
+          "inspected_pages": [
+            2,
+            5,
+            13
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Defende manter situações pacificadas pela reforma e chama reversões de retrocesso.",
+          "evidence": [
+            {
+              "page": 45,
+              "quote": "É mais do mesmo: insegurança jurídica e retrocesso. Situações que se repetem na discussão de jornada – onde o governo deseja ignorar a prevalência do negociado sobre o legislado – ou na discussão de situações já pacificadas pela reforma trabalhista, aprovada há quase dez anos."
+            }
+          ],
+          "inspected_pages": [
+            44,
+            45
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano trata de qualificação, reinserção de mulheres e simplificação regulatória; não define reforma de 2017, jornada semanal ou precedência de acordos.",
+          "evidence": [],
+          "inspected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo de motoristas aborda financiamento, taxa das plataformas e apoio ao trabalhador; não define regime geral da CLT, teto semanal ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Não bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a cabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com direitos iguais para todos os trabalhadores."
+            },
+            {
+              "page": 3,
+              "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+            }
+          ],
+          "inspected_pages": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O regime alternativo à CLT não determina revogação integral das mudanças de 2017.",
+          "evidence": [],
+          "inspected_pages": [
+            23,
+            24
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Desoneração da folha, simplificação de declarações e qualificação não decidem estas mudanças nas regras trabalhistas.",
+          "evidence": [],
+          "inspected_pages": [
+            19,
+            20,
+            33
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Modernização do mercado com proteção, formação e redução de custos não especifica revogação, teto semanal ou precedência da negociação.",
+          "evidence": [],
+          "inspected_pages": [
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A discussão histórica dos direitos e os projetos de empreendedorismo/automação não fixam decisão sobre reforma de 2017, jornada geral ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            11,
+            95,
+            96,
+            119,
+            120
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA,"
+            },
+            {
+              "page": 13,
+              "quote": "Imediata a revogação de todas as reformas antipovo, para restaurar os direitos dos trabalhadores e recompor o Orçamento da União e atender as demandas da população."
+            }
+          ],
+          "inspected_pages": [
+            10,
+            12,
+            13,
+            30
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "Não tratar crítica à precarização como revogação integral. A tese não testa toda política trabalhista da candidatura.",
+        "A ampliação para revisar a legislação não foi mantida como alternativa: não distingue conservar a reforma de revogá-la."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 12,
+          "reason": "Conferência das colunas, do título e da continuidade da proposta de revogação trabalhista na página seguinte."
+        },
+        {
+          "candidate_id": "280002538811",
+          "page": 13,
+          "reason": "Conferência das colunas, do título e da continuidade da proposta de revogação trabalhista na página seguinte."
+        }
+      ]
+    },
+    {
+      "id": "BR26-T005",
+      "baseline_text": "O limite legal geral da jornada de trabalho deve ser de 30 horas semanais, sem redução salarial.",
+      "action": "remove_from_shortlist",
+      "summary": "O número exato de 30 horas perde propostas próximas e contém ambiguidade interna. Uma alternativa de até 36 horas recupera quatro apoios, mas não uma oposição categórica segura; não deve entrar na seleção apenas por elevar cobertura.",
+      "search_terms": [
+        "jornada de trabalho",
+        "horas semanais",
+        "6x1",
+        "6×1",
+        "30 horas",
+        "36 horas",
+        "40 horas",
+        "44 horas",
+        "redução salarial",
+        "carga horária",
+        "negociado"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Apoia 40 horas sem redução salarial como medida em tramitação. Isso é uma proposta distinta; o trecho não afirma rejeitar um teto posterior menor. Revisão conservadora da discordância anterior.",
+          "evidence": [
+            {
+              "page": 75,
+              "quote": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados."
+            }
+          ],
+          "inspected_pages": [
+            75,
+            76
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O resumo oficial defende flexibilização e nova reforma, mas não decide o destino integral da reforma de 2017, um teto semanal ou prevalência normativa das negociações.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            21,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Defende 36 horas e reduções adicionais vinculadas à produtividade; não fixa 30 horas como teto geral.",
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego). Trabalhar menos para que todos trabalhem!"
+            },
+            {
+              "page": 29,
+              "quote": "Redução automática da jornada de trabalho, sem redução salarial, na proporção dos ganhos de produtividade oriundos do uso de ferramentas de inteligência artificial e correlatas."
+            }
+          ],
+          "inspected_pages": [
+            8,
+            21,
+            29
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "A proposta fixa jornada geral de 30 horas sem redução salarial.",
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "com a implantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1;"
+            }
+          ],
+          "inspected_pages": [
+            2,
+            5,
+            13
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A liberdade de negociação e jornadas flexíveis não fixa teto geral de 30 horas sem redução salarial.",
+          "evidence": [],
+          "inspected_pages": [
+            44,
+            45
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano trata de qualificação, reinserção de mulheres e simplificação regulatória; não define reforma de 2017, jornada semanal ou precedência de acordos.",
+          "evidence": [],
+          "inspected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo de motoristas aborda financiamento, taxa das plataformas e apoio ao trabalhador; não define regime geral da CLT, teto semanal ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Propõe 35 horas gerais e 30 para professores. Uma meta geral de 35 não documenta rejeição inequívoca de 30 nem é apoio à meta exata.",
+          "evidence": [
+            {
+              "page": 2,
+              "quote": "Para acabar com o desemprego e gerar milhões de novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários."
+            },
+            {
+              "page": 2,
+              "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem"
+            }
+          ],
+          "inspected_pages": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "DISCORDA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Admite até 44 horas em um regime alternativo à CLT; não determina o teto legal geral dos demais regimes. Não transportar automaticamente o regime excepcional para a pergunta geral.",
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à CLT, com mais liberdade para negociarem as regras da contratação:"
+            },
+            {
+              "page": 23,
+              "quote": "Nesse marco trabalhista alternativo, as partes poderão definir consen- sualmente regras como o percentual e o valor da remuneração variável atrelada ao desempenho; a periodicidade do pagamento dos salários (diária, semanal ou quin- zenal), a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limi- te de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão dos períodos de férias."
+            }
+          ],
+          "inspected_pages": [
+            23,
+            24
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Desoneração da folha, simplificação de declarações e qualificação não decidem estas mudanças nas regras trabalhistas.",
+          "evidence": [],
+          "inspected_pages": [
+            19,
+            20,
+            33
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Modernização do mercado com proteção, formação e redução de custos não especifica revogação, teto semanal ou precedência da negociação.",
+          "evidence": [],
+          "inspected_pages": [
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A discussão histórica dos direitos e os projetos de empreendedorismo/automação não fixam decisão sobre reforma de 2017, jornada geral ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            11,
+            95,
+            96,
+            119,
+            120
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "CONDICIONAL_OU_MISTA",
+          "reason": "Na mesma página há defesa de 36 e de 30 horas sem redução salarial, sem explicar relação temporal entre ambas.",
+          "evidence": [
+            {
+              "page": 10,
+              "quote": "avançar ainda mais: defendemos 36 horas semanais, sem redução dos salários, garantindo mais tempo para descanso, família, estudo, cultura e lazer."
+            },
+            {
+              "page": 10,
+              "quote": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial (escala 4x3 ou turnos de 6 horas diárias), permitindo a criação de múltiplos turnos nas indústrias e serviços para gerar novos postos formais de trabalho."
+            }
+          ],
+          "inspected_pages": [
+            10,
+            12,
+            13,
+            30
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "até 36 horas",
+          "text": "O limite legal geral da jornada de trabalho deve ser de, no máximo, 36 horas semanais, sem redução salarial.",
+          "recommendation": "explore",
+          "reason": "Substitui valor exato por limiar: 30, 35 e 36 ficam do mesmo lado. Os quatro apoios são documentáveis, mas não há polo contrário suficientemente seguro. Não recomendar para compor sozinho o contraste do tema.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "CONDICIONAL_OU_MISTA",
+              "reason": "Apoia 40 horas sem redução salarial como medida em tramitação. Isso é uma proposta distinta; o trecho não afirma rejeitar um teto posterior menor. Revisão conservadora da discordância anterior.",
+              "evidence": [
+                {
+                  "page": 75,
+                  "quote": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados."
+                }
+              ],
+              "inspected_pages": [
+                75,
+                76
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "NAO_ENCONTRADA",
+              "reason": "O resumo oficial defende flexibilização e nova reforma, mas não decide o destino integral da reforma de 2017, um teto semanal ou prevalência normativa das negociações.",
+              "evidence": [],
+              "inspected_pages": [
+                5,
+                21,
+                35,
+                36
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "CONCORDA",
+              "reason": "Propõe 36 horas e reduções adicionais: ambas satisfazem o teto de até 36 sem perda salarial.",
+              "evidence": [
+                {
+                  "page": 8,
+                  "quote": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego). Trabalhar menos para que todos trabalhem!"
+                },
+                {
+                  "page": 29,
+                  "quote": "Redução automática da jornada de trabalho, sem redução salarial, na proporção dos ganhos de produtividade oriundos do uso de ferramentas de inteligência artificial e correlatas."
+                }
+              ],
+              "inspected_pages": [
+                8,
+                21,
+                29
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "CONCORDA",
+              "reason": "A jornada geral de 30 horas proposta satisfaz o limite máximo de 36 com preservação salarial.",
+              "evidence": [
+                {
+                  "page": 2,
+                  "quote": "com a implantação da jornada de 30 horas semanais sem redução salarial e o fim da escala 6x1;"
+                }
+              ],
+              "inspected_pages": [
+                2,
+                5,
+                13
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "NAO_ENCONTRADA",
+              "reason": "A liberdade de negociação e jornadas flexíveis não fixa teto geral de até 36 horas sem redução salarial.",
+              "evidence": [],
+              "inspected_pages": [
+                44,
+                45
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "O plano trata de qualificação, reinserção de mulheres e simplificação regulatória; não define reforma de 2017, jornada semanal ou precedência de acordos.",
+              "evidence": [],
+              "inspected_pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "O capítulo de motoristas aborda financiamento, taxa das plataformas e apoio ao trabalhador; não define regime geral da CLT, teto semanal ou prevalência normativa.",
+              "evidence": [],
+              "inspected_pages": [
+                10,
+                11,
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "CONCORDA",
+              "reason": "A jornada geral de 35 horas e o compromisso de não reduzir salários satisfazem o máximo de 36.",
+              "evidence": [
+                {
+                  "page": 2,
+                  "quote": "Para acabar com o desemprego e gerar milhões de novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários."
+                },
+                {
+                  "page": 2,
+                  "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem"
+                }
+              ],
+              "inspected_pages": [
+                2,
+                3,
+                5
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "CONDICIONAL_OU_MISTA",
+              "reason": "Admite até 44 horas em um regime alternativo à CLT; não determina o teto legal geral dos demais regimes. Não transportar automaticamente o regime excepcional para a pergunta geral.",
+              "evidence": [
+                {
+                  "page": 23,
+                  "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à CLT, com mais liberdade para negociarem as regras da contratação:"
+                },
+                {
+                  "page": 23,
+                  "quote": "Nesse marco trabalhista alternativo, as partes poderão definir consen- sualmente regras como o percentual e o valor da remuneração variável atrelada ao desempenho; a periodicidade do pagamento dos salários (diária, semanal ou quin- zenal), a jornada diária, que poderá ultrapassar 8 horas, desde que respeitado o limi- te de 44 horas semanais, o número de dias trabalhados por semana; e a livre divisão dos períodos de férias."
+                }
+              ],
+              "inspected_pages": [
+                23,
+                24
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Desoneração da folha, simplificação de declarações e qualificação não decidem estas mudanças nas regras trabalhistas.",
+              "evidence": [],
+              "inspected_pages": [
+                19,
+                20,
+                33
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Modernização do mercado com proteção, formação e redução de custos não especifica revogação, teto semanal ou precedência da negociação.",
+              "evidence": [],
+              "inspected_pages": [
+                15
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "A discussão histórica dos direitos e os projetos de empreendedorismo/automação não fixam decisão sobre reforma de 2017, jornada geral ou prevalência normativa.",
+              "evidence": [],
+              "inspected_pages": [
+                11,
+                95,
+                96,
+                119,
+                120
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "CONCORDA",
+              "reason": "As duas metas conflitantes sobre o número exato (30 e 36) satisfazem o mesmo limiar de até 36, ambas sem redução salarial.",
+              "evidence": [
+                {
+                  "page": 10,
+                  "quote": "avançar ainda mais: defendemos 36 horas semanais, sem redução dos salários, garantindo mais tempo para descanso, família, estudo, cultura e lazer."
+                },
+                {
+                  "page": 10,
+                  "quote": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial (escala 4x3 ou turnos de 6 horas diárias), permitindo a criação de múltiplos turnos nas indústrias e serviços para gerar novos postos formais de trabalho."
+                }
+              ],
+              "inspected_pages": [
+                10,
+                12,
+                13,
+                30
+              ]
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Não inferir que apoiar uma redução até 40 significa rejeitar qualquer redução adicional.",
+        "Não confundir um regime alternativo com o teto geral da CLT.",
+        "Até 36 é mudança substantiva de sentido e exige nova versão e novas respostas. Não existe validação científica deste limiar como ótimo.",
+        "A meta geral de 35 horas de Rui pode ser codificada como desenho incompatível com o número exato 30 sob outra regra editorial. Esta revisão adota a leitura conservadora de ausência de rejeição inequívoca; essa escolha metodológica foi confrontada em revisão independente."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 10,
+          "reason": "Conferência das duas colunas: o texto de 36 horas e a proposta de 30 horas estão ambos presentes, sem hierarquia temporal declarada."
+        }
+      ]
+    },
+    {
+      "id": "BR26-T015",
+      "baseline_text": "A idade mínima para responder criminalmente como adulto deve ser de 16 anos em crimes graves.",
+      "action": "reformulate",
+      "summary": "O mínimo exato de 16 anos coloca planos favoráveis à redução abaixo de 16 no polo contrário junto a planos contra qualquer redução. Perguntar pelo tratamento dos adolescentes de 16 e 17 separa melhor a escolha central.",
+      "search_terms": [
+        "maioridade",
+        "imputab",
+        "socioeducativ",
+        "16 anos",
+        "14 anos",
+        "18 anos",
+        "dezesseis",
+        "dezoito",
+        "infrator",
+        "menores",
+        "adolescentes",
+        "crime grave"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Prevenção, proteção à juventude negra, justiça restaurativa e combate ao crime não decidem idade de responsabilização adulta.",
+          "evidence": [],
+          "inspected_pages": [
+            26,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O Direito Penal do Inimigo e as medidas antifacção não especificam aplicação do regime adulto aos 16/17 anos.",
+          "evidence": [],
+          "inspected_pages": [
+            11,
+            12,
+            13
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Rejeita a redução da maioridade penal.",
+          "evidence": [
+            {
+              "page": 21,
+              "quote": "Contra a redução da maioridade penal"
+            }
+          ],
+          "inspected_pages": [
+            21
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Rejeita a redução e defende medidas socioeducativas.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "Contra a redução da maioridade penal e ampliação das medidas socioeducativas."
+            }
+          ],
+          "inspected_pages": [
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Apoia redução para 16 e punição também acima de 14 em crimes graves; isso contraria um piso exclusivo de 16, mas não a redução para o grupo de 16/17.",
+          "evidence": [
+            {
+              "page": 13,
+              "quote": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos. Vamos punir também maiores de 14 anos que cometerem crimes graves, como estupro, tráfico, tortura e assassinato. Quem comete crime como gente grande vai ser punido como gente grande."
+            }
+          ],
+          "inspected_pages": [
+            13
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Proteção de crianças/adolescentes, segurança integrada e gestão prisional não decidem idade penal.",
+          "evidence": [],
+          "inspected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Há crítica à impunidade de menores e endurecimento das penas, mas nenhum compromisso com uma idade ou com sua submissão ao regime adulto.",
+          "evidence": [],
+          "inspected_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Dissolução do aparato repressivo e defesa de liberdades não especificam idade mínima penal.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            6,
+            7
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "DISCORDA",
+          "reason": "Prevê responsabilização aos 16 e excepcionalmente abaixo disso: contradiz piso exclusivo de 16. Corrige a categoria condicional anterior para aplicar a mesma leitura usada em Flavio.",
+          "evidence": [
+            {
+              "page": 6,
+              "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal de adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação penal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e estupro, ou reincidência."
+            }
+          ],
+          "inspected_pages": [
+            6
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Cadastro de maus-tratos a animais, prevenção juvenil e plebiscito penitenciário tratam de decisões diferentes de maioridade penal.",
+          "evidence": [],
+          "inspected_pages": [
+            22,
+            23,
+            25
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende redução para 16 em lista de crimes graves, com aplicação integral do regime penal adulto.",
+          "evidence": [
+            {
+              "page": 20,
+              "quote": "Trabalhar fortemente pela aprovação da PEC da redução da maioridade penal para 16 (dezesseis) anos, com redirecionamento para: autores de crimes de homicídio, tentativa de homicídio, tortura, lesão corporal seguida de morte, estupro de vulnerável, roubo cometido com violência ou grave ameaça à pessoa (assalto) e todos os crimes tipificados na Lei de Combate ao Terrorismo Doméstico, submetendo-os integralmente ao regime penal aplicável aos maiores de idade. Realizar as adequações necessárias do Código Penal, Código de Processo Penal, Lei de Execução Penal e Estatuto da Criança e do Adolescente."
+            }
+          ],
+          "inspected_pages": [
+            20
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O projeto FATO detalha integração, prevenção e tecnologia; não estabelece tratamento penal adulto para adolescentes.",
+          "evidence": [],
+          "inspected_pages": [
+            45,
+            46,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "DISCORDA",
+          "reason": "Rejeita a redução da maioridade penal.",
+          "evidence": [
+            {
+              "page": 30,
+              "quote": "Não à redução da maioridade penal. Pelo fim da repressão e em defesa da liberdade de organização e luta da juventude."
+            }
+          ],
+          "inspected_pages": [
+            30
+          ]
+        }
+      ],
+      "alternatives": [
+        {
+          "label": "tratamento de adolescentes de 16 e 17 anos",
+          "text": "Adolescentes de 16 e 17 anos devem responder criminalmente como adultos por crimes graves.",
+          "recommendation": "recommend",
+          "reason": "Fixa o grupo sobre o qual se pergunta, sem declarar que menores de 16 nunca poderão ser responsabilizados. Preserva três apoios e três oposições, com contexto adicional sobre idade inferior e lista de crimes.",
+          "positions": [
+            {
+              "candidate_id": "280002542548",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Prevenção, proteção à juventude negra, justiça restaurativa e combate ao crime não decidem idade de responsabilização adulta.",
+              "evidence": [],
+              "inspected_pages": [
+                26,
+                27,
+                28,
+                29,
+                30
+              ]
+            },
+            {
+              "candidate_id": "280002540694",
+              "category": "NAO_ENCONTRADA",
+              "reason": "O Direito Penal do Inimigo e as medidas antifacção não especificam aplicação do regime adulto aos 16/17 anos.",
+              "evidence": [],
+              "inspected_pages": [
+                11,
+                12,
+                13
+              ]
+            },
+            {
+              "candidate_id": "280002541457",
+              "category": "DISCORDA",
+              "reason": "Rejeita a redução da maioridade penal.",
+              "evidence": [
+                {
+                  "page": 21,
+                  "quote": "Contra a redução da maioridade penal"
+                }
+              ],
+              "inspected_pages": [
+                21
+              ]
+            },
+            {
+              "candidate_id": "280002551975",
+              "category": "DISCORDA",
+              "reason": "Rejeita a redução e defende medidas socioeducativas.",
+              "evidence": [
+                {
+                  "page": 12,
+                  "quote": "Contra a redução da maioridade penal e ampliação das medidas socioeducativas."
+                }
+              ],
+              "inspected_pages": [
+                12
+              ]
+            },
+            {
+              "candidate_id": "280002551544",
+              "category": "CONCORDA",
+              "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano também alcança idades menores, questão que esta formulação não decide.",
+              "evidence": [
+                {
+                  "page": 13,
+                  "quote": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos. Vamos punir também maiores de 14 anos que cometerem crimes graves, como estupro, tráfico, tortura e assassinato. Quem comete crime como gente grande vai ser punido como gente grande."
+                }
+              ],
+              "inspected_pages": [
+                13
+              ]
+            },
+            {
+              "candidate_id": "280002552484",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Proteção de crianças/adolescentes, segurança integrada e gestão prisional não decidem idade penal.",
+              "evidence": [],
+              "inspected_pages": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15
+              ]
+            },
+            {
+              "candidate_id": "280002554479",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Há crítica à impunidade de menores e endurecimento das penas, mas nenhum compromisso com uma idade ou com sua submissão ao regime adulto.",
+              "evidence": [],
+              "inspected_pages": [
+                13,
+                14
+              ]
+            },
+            {
+              "candidate_id": "280002552487",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Dissolução do aparato repressivo e defesa de liberdades não especificam idade mínima penal.",
+              "evidence": [],
+              "inspected_pages": [
+                5,
+                6,
+                7
+              ]
+            },
+            {
+              "candidate_id": "280002539826",
+              "category": "CONCORDA",
+              "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano também alcança idades menores, questão que esta formulação não decide.",
+              "evidence": [
+                {
+                  "page": 6,
+                  "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal de adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação penal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e estupro, ou reincidência."
+                }
+              ],
+              "inspected_pages": [
+                6
+              ]
+            },
+            {
+              "candidate_id": "280002548139",
+              "category": "NAO_ENCONTRADA",
+              "reason": "Cadastro de maus-tratos a animais, prevenção juvenil e plebiscito penitenciário tratam de decisões diferentes de maioridade penal.",
+              "evidence": [],
+              "inspected_pages": [
+                22,
+                23,
+                25
+              ]
+            },
+            {
+              "candidate_id": "280002551932",
+              "category": "CONCORDA",
+              "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano delimita a proposta por uma lista de crimes; preservá-la na explicação.",
+              "evidence": [
+                {
+                  "page": 20,
+                  "quote": "Trabalhar fortemente pela aprovação da PEC da redução da maioridade penal para 16 (dezesseis) anos, com redirecionamento para: autores de crimes de homicídio, tentativa de homicídio, tortura, lesão corporal seguida de morte, estupro de vulnerável, roubo cometido com violência ou grave ameaça à pessoa (assalto) e todos os crimes tipificados na Lei de Combate ao Terrorismo Doméstico, submetendo-os integralmente ao regime penal aplicável aos maiores de idade. Realizar as adequações necessárias do Código Penal, Código de Processo Penal, Lei de Execução Penal e Estatuto da Criança e do Adolescente."
+                }
+              ],
+              "inspected_pages": [
+                20
+              ]
+            },
+            {
+              "candidate_id": "280002551547",
+              "category": "NAO_ENCONTRADA",
+              "reason": "O projeto FATO detalha integração, prevenção e tecnologia; não estabelece tratamento penal adulto para adolescentes.",
+              "evidence": [],
+              "inspected_pages": [
+                45,
+                46,
+                186,
+                187,
+                188,
+                189,
+                190,
+                191,
+                192
+              ]
+            },
+            {
+              "candidate_id": "280002538811",
+              "category": "DISCORDA",
+              "reason": "Rejeita a redução da maioridade penal.",
+              "evidence": [
+                {
+                  "page": 30,
+                  "quote": "Não à redução da maioridade penal. Pelo fim da repressão e em defesa da liberdade de organização e luta da juventude."
+                }
+              ],
+              "inspected_pages": [
+                30
+              ]
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Não equivale a afirmar que os três planos favoráveis propõem a mesma idade mínima, a mesma lista de crimes ou a mesma regra para crimes não graves.",
+        "O ganho sobre a edição publicada é de uma posição categórica, mas, após corrigir a leitura original de Zema, o principal ganho é de significado e polaridade, não de quantidade.",
+        "Requer nova versão e nova resposta; a resposta a um piso exclusivo de 16 não pode ser reaproveitada."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 30,
+          "reason": "Leitura visual confirma o item contra redução da maioridade penal no fim da coluna direita."
+        }
+      ]
+    },
+    {
+      "id": "BR26-T064",
+      "baseline_text": "Trabalhadores e empregadores devem poder negociar condições de trabalho que prevaleçam sobre regras gerais da legislação trabalhista.",
+      "action": "remove_from_shortlist",
+      "summary": "A redação é ampla sobre o que pode prevalecer e não distingue acordo individual, coletivo ou melhoria acima de direitos mínimos. Os dois apoios são explícitos; oposições anteriores dependem de transportar a revogação de uma reforma inteira para este mecanismo. Priorizar T003 até haver contraste documental específico.",
+      "search_terms": [
+        "negociado",
+        "legislado",
+        "negociação coletiva",
+        "convenções coletivas",
+        "CLT",
+        "sindical",
+        "flexibilização",
+        "reforma trabalhista"
+      ],
+      "original_review": [
+        {
+          "candidate_id": "280002542548",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Apoia negociação coletiva, mas não afirma sua prevalência sobre a lei: a antiga categoria condicional não é uma resposta específica ao mecanismo.",
+          "evidence": [
+            {
+              "page": 76,
+              "quote": "Reafirmamos nosso compromisso com o fortalecimento da negociação coletiva e com a atualização do sistema sindical de representação coletiva de interesse."
+            }
+          ],
+          "inspected_pages": [
+            75,
+            76
+          ]
+        },
+        {
+          "candidate_id": "280002540694",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O resumo oficial defende flexibilização e nova reforma, mas não decide o destino integral da reforma de 2017, um teto semanal ou prevalência normativa das negociações.",
+          "evidence": [],
+          "inspected_pages": [
+            5,
+            21,
+            35,
+            36
+          ]
+        },
+        {
+          "candidate_id": "280002541457",
+          "baseline_category": "DISCORDA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Revoga a reforma e rejeita flexibilização de direitos no item de jornada. O texto não decide a redação ampla, que também admite acordos mais favoráveis ao trabalhador; não imputar oposição a todo acordo que prevaleça.",
+          "evidence": [
+            {
+              "page": 8,
+              "quote": "Revogação da reforma trabalhista"
+            },
+            {
+              "page": 8,
+              "quote": "Redução da jornada de trabalho para 36 horas, sem redução dos salários e sem flexibilização de direitos, rumo à escala móvel de horas de trabalho (pleno emprego). Trabalhar menos para que todos trabalhem!"
+            }
+          ],
+          "inspected_pages": [
+            8,
+            21,
+            29
+          ]
+        },
+        {
+          "candidate_id": "280002551975",
+          "baseline_category": "CONDICIONAL_OU_MISTA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Propõe ampliar direitos e obrigar negociação coletiva; não diz quais regras podem prevalecer sobre a lei. Uma ressalva implícita não basta para classificar este mecanismo.",
+          "evidence": [
+            {
+              "page": 5,
+              "quote": "Através de amplos Encontros Nacionais da Classe Trabalhadora (ENCLATs) construiremos uma verdadeira reforma trabalhista que amplie os direitos dos trabalhadores e reforce as entidades sindicais e operárias."
+            },
+            {
+              "page": 5,
+              "quote": "Da mesma maneira criaremos uma legislação para o setor privado, obrigando as empresas a negociarem as convenções coletivas com os sindicatos proletários."
+            }
+          ],
+          "inspected_pages": [
+            2,
+            5,
+            13
+          ]
+        },
+        {
+          "candidate_id": "280002551544",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Defende explicitamente negociado sobre legislado, com acordo direto dentro da lei.",
+          "evidence": [
+            {
+              "page": 44,
+              "quote": "Por isso defendemos o negociado sobre o legislado, ou seja, permitir que trabalhador e empresa combinem diretamente as condições de trabalho que funcionam para os dois, dentro da lei, em vez de seguir uma regra única imposta a todos."
+            }
+          ],
+          "inspected_pages": [
+            44,
+            45
+          ]
+        },
+        {
+          "candidate_id": "280002552484",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O plano trata de qualificação, reinserção de mulheres e simplificação regulatória; não define reforma de 2017, jornada semanal ou precedência de acordos.",
+          "evidence": [],
+          "inspected_pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002554479",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "O capítulo de motoristas aborda financiamento, taxa das plataformas e apoio ao trabalhador; não define regime geral da CLT, teto semanal ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            10,
+            11,
+            12
+          ]
+        },
+        {
+          "candidate_id": "280002552487",
+          "baseline_category": "DISCORDA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Restabelecimento da CLT e revogação da reforma documentam T003, mas não isolam a precedência normativa de acordos nas várias condições abrangidas por T064.",
+          "evidence": [
+            {
+              "page": 3,
+              "quote": "Não bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a cabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com direitos iguais para todos os trabalhadores."
+            },
+            {
+              "page": 3,
+              "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+            }
+          ],
+          "inspected_pages": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "candidate_id": "280002539826",
+          "baseline_category": "CONCORDA",
+          "category": "CONCORDA",
+          "reason": "Propõe explicitamente prevalência do negociado sobre legislado no regime alternativo à CLT; a tese permite o mecanismo, sem exigir que seja obrigatório para todos.",
+          "evidence": [
+            {
+              "page": 23,
+              "quote": "Permitir que trabalhador e empregador ajustem o modelo de contratação às suas preferências e à realidade de cada atividade, com prevalência do negociado sobre o legislado."
+            }
+          ],
+          "inspected_pages": [
+            23,
+            24
+          ]
+        },
+        {
+          "candidate_id": "280002548139",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Desoneração da folha, simplificação de declarações e qualificação não decidem estas mudanças nas regras trabalhistas.",
+          "evidence": [],
+          "inspected_pages": [
+            19,
+            20,
+            33
+          ]
+        },
+        {
+          "candidate_id": "280002551932",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Modernização do mercado com proteção, formação e redução de custos não especifica revogação, teto semanal ou precedência da negociação.",
+          "evidence": [],
+          "inspected_pages": [
+            15
+          ]
+        },
+        {
+          "candidate_id": "280002551547",
+          "baseline_category": "NAO_ENCONTRADA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "A discussão histórica dos direitos e os projetos de empreendedorismo/automação não fixam decisão sobre reforma de 2017, jornada geral ou prevalência normativa.",
+          "evidence": [],
+          "inspected_pages": [
+            11,
+            95,
+            96,
+            119,
+            120
+          ]
+        },
+        {
+          "candidate_id": "280002538811",
+          "baseline_category": "DISCORDA",
+          "category": "NAO_ENCONTRADA",
+          "reason": "Revogação de reformas e restauração de direitos não distinguem negociar proteção superior da redução de direitos; a tese não delimita essa diferença.",
+          "evidence": [
+            {
+              "page": 12,
+              "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA,"
+            },
+            {
+              "page": 13,
+              "quote": "Imediata a revogação de todas as reformas antipovo, para restaurar os direitos dos trabalhadores e recompor o Orçamento da União e atender as demandas da população."
+            }
+          ],
+          "inspected_pages": [
+            10,
+            12,
+            13,
+            30
+          ]
+        }
+      ],
+      "alternatives": [],
+      "limitations": [
+        "Estas perdas de cobertura são propostas conservadoras de revisão, não mudança de opinião atribuída às candidaturas.",
+        "Adicionar mesmo quando reduzirem direitos mínimos mudaria o sentido e não poderia herdar os apoios atuais, que falam dentro da lei.",
+        "Trocar prevalência por negociação em geral mudaria a decisão e poderia criar consenso artificial. Nenhuma dessas redações foi recomendada."
+      ],
+      "visual_checks": [
+        {
+          "candidate_id": "280002538811",
+          "page": 12,
+          "reason": "Conferência das colunas, do título e da continuidade da proposta de revogação trabalhista na página seguinte."
+        },
+        {
+          "candidate_id": "280002538811",
+          "page": 13,
+          "reason": "Conferência das colunas, do título e da continuidade da proposta de revogação trabalhista na página seguinte."
+        }
+      ]
+    }
+  ]
+}

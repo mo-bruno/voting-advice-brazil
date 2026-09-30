@@ -29,13 +29,14 @@ class _ResultsPageState extends State<ResultsPage> {
 
   List<CandidateResult> get _results =>
       [..._session.visibleResults]..sort((a, b) {
-          if (a.hasComparableEvidence != b.hasComparableEvidence) {
-            return a.hasComparableEvidence ? -1 : 1;
+          if (a.rankingEligible != b.rankingEligible) {
+            return a.rankingEligible ? -1 : 1;
           }
-          final byScore = b.scorePercent.compareTo(a.scorePercent);
-          return byScore != 0
-              ? byScore
-              : a.name.toLowerCase().compareTo(b.name.toLowerCase());
+          if (a.rankingEligible) {
+            final byRank = a.rank.compareTo(b.rank);
+            if (byRank != 0) return byRank;
+          }
+          return a.name.toLowerCase().compareTo(b.name.toLowerCase());
         });
 
   void _track(Future<void> event) {
@@ -99,7 +100,9 @@ class _ResultsPageState extends State<ResultsPage> {
 
   Widget _content(TextTheme textTheme) {
     final shareableResults =
-        _results.where((result) => result.hasComparableEvidence).toList();
+        _results.where((result) => result.rankingEligible).toList();
+    final outsideRanking =
+        _results.where((result) => !result.rankingEligible).toList();
     final leaders = _session.topAffinityResults;
     final topResult = leaders.isEmpty ? null : leaders.first;
     if (!_hasTrackedResultsViewed && topResult != null) {
@@ -127,21 +130,41 @@ class _ResultsPageState extends State<ResultsPage> {
               ],
             ),
             const SizedBox(height: 32),
-            if (!_results.any((result) => result.hasComparableEvidence)) ...[
+            if (shareableResults.isEmpty) ...[
               Text(
-                'Não foi possível calcular a afinidade com as candidaturas selecionadas.',
+                'Não houve base suficiente para formar um ranking com as candidaturas selecionadas.',
                 style: textTheme.titleLarge,
               ),
               const SizedBox(height: 16),
             ],
-            Text('AFINIDADE COM SUAS RESPOSTAS', style: textTheme.labelMedium),
-            const SizedBox(height: 16),
-            ..._results.map((result) {
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16),
-                child: _CandidateResultRow(result: result),
-              );
-            }),
+            if (shareableResults.isNotEmpty) ...[
+              Text('MEU RANKING DE AFINIDADE · BETA',
+                  style: textTheme.labelMedium),
+              const SizedBox(height: 16),
+              ...shareableResults.map((result) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: _CandidateResultRow(result: result),
+                );
+              }),
+            ],
+            if (outsideRanking.isNotEmpty) ...[
+              const SizedBox(height: 16),
+              Text('FORA DO RANKING DESTA EDIÇÃO BETA',
+                  style: textTheme.labelMedium),
+              const SizedBox(height: 8),
+              Text(
+                'Os planos continuam disponíveis para consulta. A ausência no ranking indica apenas que esta edição não encontrou base comparável suficiente.',
+                style: textTheme.bodySmall,
+              ),
+              const SizedBox(height: 16),
+              ...outsideRanking.map((result) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: _CandidateResultRow(result: result),
+                );
+              }),
+            ],
             const SizedBox(height: 16),
             if (shareableResults.isNotEmpty) ...[
               SizedBox(
@@ -189,7 +212,7 @@ class _ResultsPageState extends State<ResultsPage> {
                 border: Border.all(color: AppTheme.outlineVariant),
               ),
               child: Text(
-                'Este resultado compara posições documentadas nos planos oficiais. Ele não é uma recomendação de voto.',
+                'O Farol Político está em fase beta. Este resultado compara somente posições documentadas nos planos oficiais e não é uma recomendação de voto.',
                 style: textTheme.bodySmall,
               ),
             ),
@@ -226,28 +249,24 @@ class _CandidateResultRow extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Text(
-                      result.name,
-                      style: textTheme.titleMedium,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  Text(
-                    result.hasComparableEvidence ? result.affinityLabel : '—',
-                    semanticsLabel: result.hasComparableEvidence
-                        ? null
-                        : 'Afinidade indisponível',
-                    style: textTheme.titleMedium,
-                  ),
-                ],
+              Text(
+                result.name,
+                style: textTheme.titleMedium,
+                overflow: TextOverflow.ellipsis,
               ),
               const SizedBox(height: 6),
+              Text(
+                result.affinityLabel,
+                style: textTheme.bodyMedium,
+              ),
+              const SizedBox(height: 2),
               Text(result.abbreviation, style: textTheme.bodySmall),
+              const SizedBox(height: 4),
+              Text(result.coverageLabel, style: textTheme.bodySmall),
+              if (!result.rankingEligible) ...[
+                const SizedBox(height: 4),
+                Text(result.rankingExplanation, style: textTheme.bodySmall),
+              ],
             ],
           ),
         ),

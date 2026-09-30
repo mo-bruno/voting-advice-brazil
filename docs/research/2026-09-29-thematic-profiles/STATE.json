@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "phase": "profiles_complete",
+  "purpose": "Perfis documentais em dez categorias solicitadas pelo usuário, seguidos de síntese transversal e sementes de teses, sem alterar produção.",
+  "source_audit": "../2026-09-29-full-plan-validation",
+  "source_commit": "9ccba57",
+  "remote_main": "32d96c0",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "ultra",
+  "same_agents_required": true,
+  "candidate_count": 13,
+  "category_count": 10,
+  "updated_at": "2026-09-29T20:10:55.618723+00:00",
+  "candidates": [
+    {
+      "id": "280002538811",
+      "name": "Samara",
+      "agent_id": "/root/plan_samara",
+      "pages": 67,
+      "sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002538811",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 51,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 43,
+      "profile_file": "profiles/280002538811.json"
+    },
+    {
+      "id": "280002539826",
+      "name": "Zema",
+      "agent_id": "/root/plan_zema",
+      "pages": 81,
+      "sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002539826",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 58,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 42,
+      "profile_file": "profiles/280002539826.json"
+    },
+    {
+      "id": "280002540694",
+      "name": "Renan Santos",
+      "agent_id": "/root/plan_renan",
+      "pages": 51,
+      "sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002540694",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 47,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 28,
+      "profile_file": "profiles/280002540694.json"
+    },
+    {
+      "id": "280002541457",
+      "name": "Hertz Dias",
+      "agent_id": "/root/plan_hertz",
+      "pages": 33,
+      "sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002541457",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 58,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 27,
+      "profile_file": "profiles/280002541457.json"
+    },
+    {
+      "id": "280002542548",
+      "name": "Lula",
+      "agent_id": "/root/plan_lula",
+      "pages": 84,
+      "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002542548",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 52,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 53,
+      "profile_file": "profiles/280002542548.json"
+    },
+    {
+      "id": "280002548139",
+      "name": "Veterinário Wilson Grassi",
+      "agent_id": "/root/plan_grassi",
+      "pages": 58,
+      "sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002548139",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 49,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 43,
+      "profile_file": "profiles/280002548139.json"
+    },
+    {
+      "id": "280002551544",
+      "name": "Flavio Bolsonaro",
+      "agent_id": "/root/plan_flavio",
+      "pages": 76,
+      "sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551544",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 52,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 54,
+      "profile_file": "profiles/280002551544.json"
+    },
+    {
+      "id": "280002551547",
+      "name": "Escritor Augusto Cury",
+      "agent_id": "/root/plan_cury",
+      "pages": 200,
+      "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551547",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 45,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 68,
+      "profile_file": "profiles/280002551547.json"
+    },
+    {
+      "id": "280002551932",
+      "name": "Ronaldo Caiado",
+      "agent_id": "/root/plan_caiado",
+      "pages": 100,
+      "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551932",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 46,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 50,
+      "profile_file": "profiles/280002551932.json"
+    },
+    {
+      "id": "280002551975",
+      "name": "Edmilson Costa",
+      "agent_id": "/root/plan_edmilson",
+      "pages": 16,
+      "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551975",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 61,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 14,
+      "profile_file": "profiles/280002551975.json"
+    },
+    {
+      "id": "280002552484",
+      "name": "Clariana Barao",
+      "agent_id": "/root/plan_clariana",
+      "pages": 15,
+      "sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552484",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 30,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 15,
+      "profile_file": "profiles/280002552484.json"
+    },
+    {
+      "id": "280002552487",
+      "name": "Rui Costa Pimenta",
+      "agent_id": "/root/plan_rui",
+      "pages": 7,
+      "sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552487",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 44,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 7,
+      "profile_file": "profiles/280002552487.json"
+    },
+    {
+      "id": "280002554479",
+      "name": "Leonardo Avalanche",
+      "agent_id": "/root/plan_leonardo",
+      "pages": 48,
+      "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+      "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002554479",
+      "status": "validated",
+      "profile_categories": 10,
+      "positions": 43,
+      "thesis_seeds": 8,
+      "checkpoint_present": true,
+      "revisited_pages": 40,
+      "profile_file": "profiles/280002554479.json"
+    }
+  ],
+  "dispatch_order": [
+    "280002551547",
+    "280002551932",
+    "280002542548",
+    "280002539826",
+    "280002551544",
+    "280002538811",
+    "280002548139",
+    "280002540694",
+    "280002554479",
+    "280002541457",
+    "280002551975",
+    "280002552484",
+    "280002552487"
+  ],
+  "decisions": [
+    {
+      "id": "D001",
+      "decision": "Reutilizar os mesmos agentes e o diário da leitura integral, com novas conferências contextuais. Nenhum rótulo ideológico inferido, nenhuma fonte externa ou produção alterada."
+    },
+    {
+      "id": "D002",
+      "decision": "As dez categorias ampliam o mapa de temas. Novas teses devem continuar atômicas e só serão chamadas de comparáveis após confronto entre planos. Pablo permanece excluído."
+    },
+    {
+      "id": "D003",
+      "decision": "O número de posições extraídas não é cobertura de teses, afinidade, prioridade programática ou qualidade do plano. A elegibilidade para ranking só será reconsiderada depois da nova matriz de perguntas idênticas."
+    },
+    {
+      "id": "D004",
+      "decision": "Uma síntese que não selecionou um tema não prova silêncio no PDF. A próxima validação volta às páginas e preserva condições, quantificadores, tensões e diferenças entre instrumentos."
+    }
+  ],
+  "adjudications": [
+    {
+      "id": "A001",
+      "candidate_id": "280002551544",
+      "position_id": "P26",
+      "change": "Precisar na síntese e condição que o retorno ao benefício é após o seguro-desemprego, conforme a citação da p.43, não apenas após desemprego. O instrumento já registrava esse momento.",
+      "source_page": 43,
+      "profile_sha256_before": "d76eb840b6a805da73cf1cadc9d80295a441ad2b4a32af3ada91c264eed80e5f",
+      "profile_sha256_after": "87e2cb1ecae2d9354db6dc4e31528b9ee1c0cb96b05620e03223d06a8ed98a89",
+      "resolution": "editorial_correction_from_explicit_quote"
+    },
+    {
+      "id": "A002",
+      "candidate_id": "280002538811",
+      "position_id": "P05/P37",
+      "change": "Solicitado ao mesmo agente: reforma agrária P05 passa à categoria principal Infraestrutura e Território; tensão 36/30 horas fica vinculada apenas à posição P37. Regra estrutural passa a aceitar tensão intraposição, sem exigir referência artificial a outra política.",
+      "resolution": "same_agent_followup_accepted"
+    },
+    {
+      "id": "A003",
+      "candidate_id": "280002551547",
+      "position_id": "P12",
+      "change": "Padronizada categoria principal de P12: Estado e Gestão Pública → Cidadania e Direitos. Conteúdo, condições e evidências preservados; origem mantida como referência secundária, sem dupla contagem.",
+      "resolution": "editorial_taxonomy_normalization",
+      "profile_sha256_before": "fb3d398f458e78fbf1059309b8ec6c9bd4be5f2b73e48030a7b7c8d347bab6a7",
+      "profile_sha256_after": "434fbdc3c5adb444852b165c02cbc7ce7715458579090b7e6e43e56be36a9bbe"
+    },
+    {
+      "id": "A004",
+      "candidate_id": "280002551544",
+      "position_id": "P40",
+      "change": "Padronizada categoria principal de P40: Cidadania e Direitos → Estado e Gestão Pública. Conteúdo, condições e evidências preservados; origem mantida como referência secundária, sem dupla contagem. Estado passa a sete posições por reagrupamento, sem inflar ou excluir escolhas do perfil.",
+      "resolution": "editorial_taxonomy_normalization",
+      "profile_sha256_before": "87e2cb1ecae2d9354db6dc4e31528b9ee1c0cb96b05620e03223d06a8ed98a89",
+      "profile_sha256_after": "77ae389896b928ba85cba4d3fda711305a832450e8d611c863579d440f6372cd"
+    },
+    {
+      "id": "A005",
+      "candidate_id": "280002548139",
+      "position_id": "P25",
+      "change": "Interoperabilidade administrativa dos cadastros federais passou a Estado e Gestão Pública, com CTI e Direitos secundários. Padroniza a organização com outros perfis de governo digital; conteúdo e evidências preservados.",
+      "resolution": "editorial_taxonomy_normalization",
+      "profile_sha256_before": "e4d9ce4345455888007bf6cbb6b472532b107a56e672b0ceb4ce9fa519c493fa",
+      "profile_sha256_after": "8a3e5ced7159a6cfa38bdb319f48d3edeaf7c55286d1f6c24ccd912201dd343b"
+    },
+    {
+      "id": "A006",
+      "candidate_id": "280002540694",
+      "position_id": "P05/P09/S01",
+      "change": "Solicitado ao mesmo agente: assentamentos P05 passam a Infraestrutura; financiamento partidário e eleitoral P09 e semente S01 passam a Cidadania. Conteúdo e evidências preservados. O agente também restringiu S02 ao Minha Casa Minha Vida, eliminando generalização a todos os recursos habitacionais federais.",
+      "resolution": "same_agent_followup_accepted"
+    },
+    {
+      "id": "A007",
+      "candidate_id": "280002554479",
+      "position_id": "P27/P30",
+      "change": "P27 (elegibilidade esportiva por sexo) passa a Cidadania, consistente com o mesmo objeto em Flavio; P30 (subsídio ao primeiro emprego) passa a Economia, conforme a separação entre política de emprego e direitos trabalhistas. Categorias anteriores permanecem secundárias. Economia fica com sete posições pelo reagrupamento; conteúdo e evidências intactos.",
+      "resolution": "editorial_taxonomy_normalization",
+      "profile_sha256_before": "1891d2cbd2ff18ec13c95931d6e663ad6e3b5d5c3c3fc4c63968504d45fee10a",
+      "profile_sha256_after": "191390ee7daf7effb9bb10b6809e7ea59fea9fab1f4cfaee56edc0038c493e3d"
+    },
+    {
+      "id": "A008",
+      "candidate_id": "280002541457",
+      "position_id": "P05/P11/P19/P22",
+      "change": "Solicitado ao mesmo agente reagrupamento de banco estatal único em Estado, desmilitarização policial em Segurança, direitos territoriais tradicionais em Cidadania e crédito agrícola em Economia, alinhado aos mesmos objetos nos demais perfis. Sem mudança de conteúdo ou evidência.",
+      "resolution": "same_agent_followup_accepted"
+    },
+    {
+      "id": "A009",
+      "candidate_id": "280002551975",
+      "position_id": "P01",
+      "change": "Solicitado ao mesmo agente reagrupamento da propriedade do sistema financeiro em Estado, com Economia e Bem-Estar secundárias. Mantém convenção de Hertz P05 e dos demais perfis; conteúdo e evidências preservados.",
+      "resolution": "same_agent_followup_accepted"
+    },
+    {
+      "id": "A010",
+      "candidate_id": "280002552487",
+      "position_id": "P02/P14",
+      "change": "Mesmo agente ajusta propriedade do sistema financeiro para Estado e demarcação/posse indígena para Cidadania, preservando as categorias anteriores como secundárias. Conteúdo e evidências preservados; exceções de extensão justificadas.",
+      "resolution": "same_agent_followup_accepted"
+    }
+  ],
+  "orchestrator_pending": [],
+  "completion_metrics": {
+    "profiles": 13,
+    "category_sections": 130,
+    "selected_positions": 636,
+    "thesis_seeds": 104,
+    "quote_occurrences": 1058,
+    "revisited_document_pages": 484,
+    "source_pages_previously_read": 836,
+    "original_agents": 13,
+    "initial_question_hypotheses": 18,
+    "tensions": 20
+  },
+  "next_phase": "Organizar mapa comum, revisar redações e explicações e obter aprovação do usuário antes de confrontá-las com os treze planos.",
+  "initial_remote_main": "d31078e",
+  "main_sync_commit": "fe718ee"
+}

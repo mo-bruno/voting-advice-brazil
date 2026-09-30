@@ -1,0 +1,781 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 15,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa de Proteger Hoje, Transformar o Amanhã: versão estruturada para desenvolvimento programático; indicadores propostos e metas a calibrar por diagnóstico, estimativa fiscal e competências federativas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Arquitetura do plano em seis capítulos integrados; proteção de mulheres e crianças como eixo transversal e meios para autonomia, oportunidade, liberdade, saúde e entrega.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Capítulo 1: resposta integrada à violência, pré-natal, nutrição, vacinação, creches, autonomia econômica das mulheres, proteção de crianças e adolescentes e início da governança transversal.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T015",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Conclusão da governança transversal: orçamento por resultados, painel de indicadores e avaliação de impacto sobre mulheres e crianças.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Capítulo 2: simplificação regulatória, empreendedorismo, crédito e compras públicas; infraestrutura com concessões e PPPs; segurança energética, conectividade, indústria, inovação e início da responsabilidade fiscal.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036",
+        "BR26-T038",
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Conclusão do item 2.5: revisão de gastos e subsídios, planejamento plurianual por metas e transparência; indicadores fiscais incluem resultado, dívida/PIB e economia de gastos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Capítulo 3: educação infantil, alfabetização, recomposição de aprendizagem, formação e carreira docente, tecnologia, pensamento crítico e início do ensino médio/técnico.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Conclusão do ensino médio/técnico: expansão técnica conforme vocações regionais, carreira e aprendizagem profissional, parcerias com setor produtivo e ensino superior.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011",
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Capítulo 4: monitoramento de fronteiras, inteligência e cooperação contra narcotráfico/armas, combate financeiro às facções, policiamento por evidências e início da política prisional.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017",
+        "BR26-T063"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Conclusão da política prisional: gestão legal de lideranças criminosas, trabalho, educação, qualificação, inteligência penitenciária e controle de comunicações ilícitas.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Capítulo 5: atenção primária, prevenção, saúde de mulheres/crianças, avaliação científica de novas terapias e incorporação ao SUS, esporte e início da saúde digital.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Conclusão da saúde digital: telemedicina integrada, regulação inteligente de filas e IA com governança, auditoria e privacidade; indicadores de espera, consultas e segurança.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Capítulo 6: serviços digitais, metas e avaliação de programas, integridade e transparência, formação/desempenho/mobilidade de servidores e início de federalismo de resultados.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T011",
+        "BR26-T018",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Conclusão do federalismo de resultados: pactos com estados/municípios, transferências condicionadas a indicadores quando cabível e consórcios/soluções compartilhadas.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Matriz de implementação: diagnóstico em 100 dias, implantação/pilotos no ano 1, expansão nos anos 2–3 e avaliação no ano 4; avaliação transversal de impactos e custos; novas terapias dependem de avaliação regulatória e científica.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 15,
+      "reason": "Matriz de implementação em duas colunas: conferir vinculação de cada horizonte temporal à prioridade correspondente e texto das notas.",
+      "finding": "A imagem confirma quatro linhas (primeiros 100 dias, ano 1, anos 2–3 e ano 4), sem conteúdo omitido pela extração; as duas notas inferiores tratam de avaliação transversal e incorporação regulada de terapias ao SUS."
+    }
+  ],
+  "positions": [
+    {
+      "question_id": "BR26-T001",
+      "question_text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 2, item 2.5 (pp. 5–6), propõe revisão de gastos/subsídios, planejamento plurianual e avaliação de impacto, com indicadores de resultado fiscal e dívida/PIB. A governança orçamentária (p. 4), a avaliação de programas (p. 13) e a implementação (p. 15) também não escolhem regra fiscal. A leitura integral e as buscas complementares não identificam o arcabouço ou a LC nº 200/2023. Responsabilidade fiscal genérica pode coexistir com sua manutenção ou alteração e, portanto, não decide a tese.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "2.5 Responsabilidade fiscal com foco em resultado"
+        },
+        {
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios"
+        }
+      ],
+      "context_pages": [
+        4,
+        5,
+        6,
+        13,
+        15
+      ],
+      "complementary_search_terms": [
+        "arcabouço",
+        "200/2023",
+        "teto de gastos",
+        "regra fiscal",
+        "responsabilidade fiscal",
+        "resultado fiscal",
+        "dívida",
+        "gastos",
+        "orçamento"
+      ],
+      "scope_conditions": [
+        "A pergunta é sobre manter uma lei e um regime determinados; resultado fiscal, revisão de gastos e planejamento não estabelecem essa escolha."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T002",
+      "question_text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 2, item 2.3 (p. 5), admite concessões e PPPs em infraestrutura e logística, ao lado de rodovias, ferrovias, hidrovias, portos e cabotagem. O capítulo 6 (pp. 13–14) trata da capacidade de entrega do Estado. Nenhum deles dispõe sobre transferir o controle de empresas estatais ou quantifica essa transferência para todas elas. Concessão e PPP não equivalem automaticamente à alienação do controle empresarial; tampouco o plano apresenta uma exceção estatal que permitiria rejeitar a tese universal.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo"
+        }
+      ],
+      "context_pages": [
+        5,
+        6,
+        13,
+        14
+      ],
+      "complementary_search_terms": [
+        "estatal",
+        "estatais",
+        "privatização",
+        "privatizar",
+        "desestatização",
+        "controle privado",
+        "concessões",
+        "PPPs",
+        "empresa",
+        "público"
+      ],
+      "scope_conditions": [
+        "Preservar a diferença entre delegação contratual em infraestrutura e transferência do controle de todas as empresas estatais."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T003",
+      "question_text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 1, item 1.3 (p. 3), aborda qualificação e reinserção profissional de mulheres; o capítulo 2, item 2.1 (p. 5), propõe simplificação regulatória; o capítulo 3, item 3.5 (pp. 7–8), trata de educação técnica e aprendizagem profissional. Há trabalho e qualificação no contexto prisional (p. 10). Nenhuma dessas passagens discute a reforma trabalhista de 2017, seus dispositivos ou sua revogação. A leitura integral e as buscas por reforma, CLT e revogação não localizam essa decisão.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Qualificação e reinserção profissional"
+        },
+        {
+          "page": 5,
+          "quote": "Simplificação regulatória"
+        }
+      ],
+      "context_pages": [
+        3,
+        5,
+        7,
+        8,
+        10
+      ],
+      "complementary_search_terms": [
+        "reforma trabalhista",
+        "2017",
+        "CLT",
+        "revogação",
+        "revogar",
+        "trabalho",
+        "trabalhista",
+        "reinserção",
+        "qualificação",
+        "simplificação"
+      ],
+      "scope_conditions": [
+        "Uma agenda de qualificação ou simplificação não implica manter nem revogar a reforma de 2017."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T011",
+      "question_text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 1 (p. 3) oferece apoio a famílias vulneráveis e autonomia econômica das mulheres; o capítulo 3 (pp. 7–8) trata da transição da educação técnica para o trabalho. O trabalho mencionado na p. 10 pertence à política prisional. O capítulo 6, item 6.2 (p. 13), admite avaliar, encerrar ou reformular programas ineficazes, sem identificar o Bolsa Família. A matriz da p. 15 também prevê revisão genérica de programas. Nenhum trecho determina substituir esse benefício por trabalho público remunerado, nem delimita beneficiários em idade economicamente ativa.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Creches e apoio às famílias vulneráveis"
+        },
+        {
+          "page": 13,
+          "quote": "Avaliação e encerramento/reformulação de programas ineficazes"
+        }
+      ],
+      "context_pages": [
+        3,
+        7,
+        8,
+        10,
+        13,
+        15
+      ],
+      "complementary_search_terms": [
+        "Bolsa Família",
+        "CadÚnico",
+        "beneficiários",
+        "transferência de renda",
+        "renda mínima",
+        "trabalho remunerado",
+        "emprego público",
+        "frentes de trabalho",
+        "reinserção",
+        "qualificação",
+        "programas ineficazes"
+      ],
+      "scope_conditions": [
+        "Qualificação e apoio à inserção profissional podem coexistir com transferência de renda; a proposta precisa decidir sua substituição e o público atingido."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T015",
+      "question_text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 1, item 1.4 (p. 3), protege crianças e adolescentes contra abuso, exploração e riscos digitais e propõe busca ativa escolar. O capítulo 4 (pp. 9–10) trata de inteligência, crime organizado, policiamento e sistema prisional, com separação de lideranças e redução da reincidência. Não decide idade de responsabilização penal, equiparação de adolescentes de 16–17 anos a adultos ou regime para crimes graves. Proteção da infância e repressão a organizações criminosas não autorizam inferir uma posição sobre essa equiparação.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.4 Proteção de crianças e adolescentes"
+        },
+        {
+          "page": 10,
+          "quote": "Separação e gestão de lideranças criminosas conforme a lei"
+        }
+      ],
+      "context_pages": [
+        3,
+        9,
+        10
+      ],
+      "complementary_search_terms": [
+        "maioridade",
+        "imputabilidade",
+        "idade penal",
+        "16 anos",
+        "17 anos",
+        "crimes graves",
+        "adolescentes",
+        "prisional",
+        "reincidência"
+      ],
+      "scope_conditions": [
+        "A tese exige simultaneamente faixa etária, tratamento penal de adulto e recorte de crimes graves; nenhuma dessas condições é fixada pelo plano."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T017",
+      "question_text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 3 (pp. 7–8) propõe qualidade na educação infantil, alfabetização, formação e carreira docente, tecnologia e formação técnica. A proteção específica de escolas no capítulo de segurança (p. 9) é uma prioridade de policiamento, não uma modalidade de gestão escolar. A busca ativa escolar da p. 3 também não define esse modelo. A leitura integral e as buscas por cívico-militar e militares não localizam autorização nem rejeição a escolas cívico-militares. A menção a ensino integral existente na justificativa anterior não está no PDF e foi retirada desta fundamentação, sem mudança da categoria.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Carreira, liderança escolar e boas práticas"
+        },
+        {
+          "page": 9,
+          "quote": "Proteção específica a mulheres, escolas e áreas vulneráveis"
+        }
+      ],
+      "context_pages": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "complementary_search_terms": [
+        "cívico-militar",
+        "cívico-militares",
+        "militar",
+        "militares",
+        "ensino integral",
+        "escola",
+        "ensino",
+        "proteção específica"
+      ],
+      "scope_conditions": [
+        "Permitir uma modalidade escolar não é o mesmo que proteger escolas ou usar tecnologia e boas práticas de ensino."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T018",
+      "question_text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O contexto mais diretamente pertinente está no capítulo 6, item 6.4 (p. 13): formação, liderança, gestão de desempenho com critérios objetivos e mobilidade de talentos no serviço público. Os capítulos de proteção e educação (pp. 3, 7–8) também não discutem cotas raciais. Critérios objetivos para desempenho não estabelecem critérios de ingresso, muito menos encerramento ou manutenção de cotas raciais. Não há decisão sobre cotas, ações afirmativas ou concursos na leitura integral e nas buscas complementares.",
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "6.4 Serviço público orientado à entrega"
+        },
+        {
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos"
+        }
+      ],
+      "context_pages": [
+        3,
+        7,
+        8,
+        13
+      ],
+      "complementary_search_terms": [
+        "cotas",
+        "racial",
+        "raciais",
+        "raça",
+        "negros",
+        "concurso",
+        "ações afirmativas",
+        "serviço público",
+        "critérios objetivos"
+      ],
+      "scope_conditions": [
+        "Distinguir avaliação de desempenho de servidores de regras de ingresso e reserva racial de vagas no serviço público."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T026A",
+      "question_text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 5 (pp. 11–12) organiza atenção primária, prevenção, incorporação de tecnologias e saúde digital. Fala em equipes, coordenação do cuidado e regulação de filas, sem definir quem administra unidades públicas. As concessões e PPPs da p. 5 pertencem à infraestrutura e logística; não podem ser transferidas por inferência ao setor de saúde. A integração da proteção (p. 3), a gestão/federação (pp. 13–14) e as condições de implementação (p. 15) tampouco determinam gestão exclusivamente pública ou autorizam delegação a entidades privadas. Não há posição sobre a regra universal contida na pergunta.",
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Coordenação do cuidado e prontuário interoperável"
+        },
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo"
+        }
+      ],
+      "context_pages": [
+        3,
+        5,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "complementary_search_terms": [
+        "organizações sociais",
+        "organização social",
+        "gestão privada",
+        "gestão pública",
+        "delegação",
+        "unidades públicas",
+        "hospital",
+        "saúde",
+        "concessões",
+        "PPPs",
+        "SUS"
+      ],
+      "scope_conditions": [
+        "Gestão pelo poder público inclui autarquias e fundações públicas; o silêncio sobre delegação privada permanece mesmo com esse alcance, sem exigir administração direta.",
+        "A tese trata da gestão de todas as unidades públicas, e não simplesmente do financiamento ou da existência do SUS."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T036",
+      "question_text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "No capítulo 1, item 1.3 (p. 3), autonomia refere-se à autonomia econômica das mulheres e há acesso a crédito responsável. O capítulo 2, item 2.2 (p. 5), propõe crédito produtivo e garantias; o item 2.5 (pp. 5–6) trata de responsabilidade fiscal. A autonomia também aparece como finalidade geral na arquitetura da p. 2. Não se trata da autonomia institucional do Banco Central, e não há referência ao banco, à LC nº 179/2021 ou à revogação de seu regime. Crédito e indicadores fiscais não decidem a questão.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.3 Autonomia econômica das mulheres"
+        },
+        {
+          "page": 5,
+          "quote": "Crédito produtivo e garantias"
+        }
+      ],
+      "context_pages": [
+        2,
+        3,
+        5,
+        6
+      ],
+      "complementary_search_terms": [
+        "Banco Central",
+        "179/2021",
+        "autonomia",
+        "independência",
+        "juros",
+        "monetária",
+        "crédito",
+        "resultado fiscal"
+      ],
+      "scope_conditions": [
+        "A autonomia econômica de um público e a oferta de crédito não dizem respeito à autonomia legal do Banco Central."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T038",
+      "question_text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 2, item 2.4 (p. 5), propõe segurança e confiabilidade energética e ambiente para indústria e inovação. Não menciona Petrobras, petróleo, produção de petróleo ou refino, nem organiza atividades empresariais. As passagens sobre concessões e planejamento (pp. 5–6) também não definem essa integração. A produção nacional da p. 11 pertence a pesquisa clínica e novas tecnologias em saúde, não ao petróleo. A leitura integral e as buscas complementares não localizam decisão de integrar ou separar produção e refino na Petrobras.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Segurança e confiabilidade energética"
+        }
+      ],
+      "context_pages": [
+        5,
+        6,
+        11
+      ],
+      "complementary_search_terms": [
+        "Petrobras",
+        "petróleo",
+        "refino",
+        "refinaria",
+        "refinarias",
+        "produção",
+        "integração",
+        "energética"
+      ],
+      "scope_conditions": [
+        "Segurança energética não determina a integração das atividades de uma empresa específica."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T042",
+      "question_text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 5, item 5.5 (pp. 11–12), propõe telemedicina integrada, regulação inteligente de filas e IA com governança, auditoria e privacidade. Isso estabelece ações de organização e acesso, mas não autoriza nem proíbe comprar atendimentos da rede privada. O capítulo de infraestrutura (p. 5) não estende suas PPPs à assistência em saúde. A matriz da p. 15 menciona primeiras contratações sem especificar setor ou objeto. Nenhum desses trechos decide a permissão delimitada da pergunta, mesmo sem exigir expansão irrestrita das contratações privadas.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Telemedicina integrada à rede"
+        },
+        {
+          "page": 12,
+          "quote": "Regulação inteligente de filas"
+        }
+      ],
+      "context_pages": [
+        5,
+        11,
+        12,
+        15
+      ],
+      "complementary_search_terms": [
+        "rede privada",
+        "contratar",
+        "contratação",
+        "atendimentos",
+        "clínicas",
+        "hospitais",
+        "filas",
+        "telemedicina",
+        "SUS",
+        "contratações"
+      ],
+      "scope_conditions": [
+        "A tese pergunta se o SUS deve poder contratar atendimentos privados para reduzir filas; o plano não escolhe esse instrumento, embora discuta as filas."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T043",
+      "question_text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 1, item 1.2 (p. 3), propõe creches e apoio a famílias vulneráveis e acompanha o déficit de vagas. O capítulo 3, item 3.1 (p. 7), pede qualidade pedagógica na educação infantil; as parcerias com setor produtivo e ensino superior da p. 8 estão na educação técnica. As transferências federativas da p. 14 não têm creches privadas como destinatárias. Não há definição da titularidade das creches, financiamento público de vagas privadas, convênios ou vouchers, nem vedação a esse financiamento. Apoiar creches não decide a combinação de origem pública dos recursos e prestador privado.",
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Creches e apoio às famílias vulneráveis"
+        },
+        {
+          "page": 7,
+          "quote": "Qualidade pedagógica na educação infantil"
+        }
+      ],
+      "context_pages": [
+        3,
+        7,
+        8,
+        14
+      ],
+      "complementary_search_terms": [
+        "creches",
+        "creche",
+        "voucher",
+        "privadas",
+        "privados",
+        "convênio",
+        "conveniada",
+        "educação infantil",
+        "vagas",
+        "financiamento"
+      ],
+      "scope_conditions": [
+        "A tese trata da possibilidade de financiar vagas privadas com recursos públicos, não do apoio genérico à educação infantil."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T057",
+      "question_text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "A arquitetura do plano (p. 2) organiza os seis capítulos sem um capítulo de política comercial externa. Na economia (p. 5), exportações de maior valor agregado são um indicador; na segurança (p. 9), a cooperação internacional serve ao combate ao narcotráfico e ao tráfico de armas. Nenhuma passagem da leitura integral nomeia o Mercosul, a União Europeia ou seu acordo comercial, e as buscas confirmam essa lacuna. Uma meta exportadora ou cooperação policial não decide apoio ao acordo específico.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "exportações de maior valor agregado."
+        },
+        {
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional"
+        }
+      ],
+      "context_pages": [
+        2,
+        5,
+        9
+      ],
+      "complementary_search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo comercial",
+        "comércio",
+        "exportações",
+        "internacional"
+      ],
+      "scope_conditions": [
+        "Uma decisão sobre o acordo Mercosul–União Europeia não pode ser inferida de exportações ou cooperação em segurança."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T063",
+      "question_text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O plano é organizado em proteção, economia, educação, segurança, saúde e capacidade estatal (arquitetura na p. 2). Seu capítulo 4, item 4.2 (p. 9), menciona cooperação internacional para enfrentar narcotráfico e tráfico de armas. A leitura sequencial integral não encontra Israel, Palestina, genocídio, apartheid ou relações diplomáticas, e as buscas complementares não recuperam esses termos. Assim, não decide romper nem manter relações com Israel nas condições especificadas pela pergunta.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional"
+        }
+      ],
+      "context_pages": [
+        2,
+        9
+      ],
+      "complementary_search_terms": [
+        "Israel",
+        "palestino",
+        "Palestina",
+        "Gaza",
+        "apartheid",
+        "genocídio",
+        "relações diplomáticas",
+        "romper",
+        "internacional"
+      ],
+      "scope_conditions": [
+        "Não há decisão diplomática nem condições relativas a Israel/Palestina no documento; silêncio não é apoio, oposição ou neutralidade explícita."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T066",
+      "question_text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "A economia do capítulo 2 (p. 5) trata de ambiente de negócios, infraestrutura, energia e exportações; o capítulo 4 (p. 9) menciona cooperação internacional contra crimes. A arquitetura em seis capítulos (p. 2) e todo o restante do plano não tratam de participação em blocos internacionais. Nenhuma ocorrência de BRICS ou decisão de saída/permanência foi encontrada na leitura integral e nas buscas. Cooperação internacional sem identificação de bloco não determina manter nem abandonar o BRICS.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional"
+        }
+      ],
+      "context_pages": [
+        2,
+        5,
+        9
+      ],
+      "complementary_search_terms": [
+        "BRICS",
+        "bloco",
+        "multilateral",
+        "cooperação",
+        "internacional",
+        "exterior"
+      ],
+      "scope_conditions": [
+        "A pergunta é sobre um bloco determinado; internacionalização ou cooperação genérica não estabelece adesão nem retirada."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T067",
+      "question_text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "O capítulo 2 (pp. 5–6) acompanha investimento privado e produtivo e admite concessões e PPPs; não especifica a nacionalidade dos investidores nem sua admissibilidade. O capítulo 6 (p. 13) trata de compras públicas e integridade sem escolher origem de capital; a cooperação internacional da p. 9 pertence à segurança. Não há proibição geral de investimento estrangeiro, autorização identificável de capital externo ou restrição setorial nas páginas lidas e nas buscas complementares. Investimento privado pode ser nacional, portanto não constitui discordância inequívoca da tese.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "investimento privado; produtividade."
+        },
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo"
+        }
+      ],
+      "context_pages": [
+        5,
+        6,
+        9,
+        13
+      ],
+      "complementary_search_terms": [
+        "estrangeiro",
+        "estrangeira",
+        "capital externo",
+        "investimento externo",
+        "multinacionais",
+        "proibir",
+        "proibição",
+        "internacional",
+        "investimento privado",
+        "concessões",
+        "PPPs"
+      ],
+      "scope_conditions": [
+        "Origem pública/privada do investimento é diferente de origem nacional/estrangeira; o texto não decide esta última."
+      ],
+      "reformulation_suggestion": null
+    }
+  ],
+  "candidate_summary": "Leitura integral sequencial das 15 páginas, com inspeção visual da matriz da p. 15 e buscas complementares nos dois extratores. As 16 categorias anteriores NAO_ENCONTRADA foram confirmadas; nenhuma posição substantiva sobre as teses congeladas pôde ser atribuída. O plano define agendas gerais de proteção, economia, educação, segurança, saúde e gestão, mas não escolhe os instrumentos, leis, públicos ou condições específicos perguntados. As citações deste parecer documentam os contextos mais próximos e não constituem decisões sobre as teses. A fundamentação de T017 foi corrigida para retirar a referência anterior a ensino integral, ausente do PDF. Não são sugeridas reformulações: as lacunas são de decisão documental, e trocar as teses por políticas gerais mencionadas alteraria o objeto para aumentar artificialmente a cobertura.",
+  "limitations": [
+    "Na p. 1, o documento se apresenta como versão estruturada para desenvolvimento programático, debate técnico e posterior definição de metas quantitativas; esta revisão não completa seus pontos não definidos.",
+    "Não houve página ilegível ou trecho truncado na leitura; as ausências dizem respeito exclusivamente às 16 perguntas congeladas e não à existência de propostas no plano."
+  ]
+}

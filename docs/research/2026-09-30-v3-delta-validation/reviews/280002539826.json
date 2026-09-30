@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002539826",
+  "candidate_name": "Zema",
+  "context_owner_agent_id": "/root/plan_zema",
+  "executor_agent_id": "/root/delta_zema",
+  "document_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002539826.json",
+    "../2026-09-29-thematic-profiles/profiles/280002539826.md",
+    "../2026-09-29-thematic-profiles/profiles/280002539826.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002539826.json"
+  ],
+  "method": "Reidratei integralmente, na ordem registrada em STATE.json, o perfil JSON, o perfil legível, o checkpoint e o parecer completo da bateria v2 de /root/plan_zema. Confirmei o SHA-256 e as 81 páginas físicas do PDF oficial reconstruído. Depois reli as 81 páginas na extração raw-pages.json, pesquisei o documento inteiro nas extrações raw-pages.json e layout-pages.json com termos exatos, flexões e sinônimos de cada um dos quatro objetos e conferi literalmente, nas duas representações do corpus, todas as citações e os contextos próximos. Concessões, PPPs, capacidade doméstica de IA, cotas raciais em concursos e reconhecimento facial foram tratados como instrumentos distintos; silêncio e tecnologias apenas relacionadas permaneceram evidência insuficiente.",
+  "revisited_pages": [
+    7,
+    19,
+    21,
+    30,
+    34,
+    40,
+    55,
+    71
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano adota expressamente concessões para ativos de infraestrutura economicamente viáveis e PPPs quando a participação financeira do Estado é necessária. No setor de transportes, determina ampliar ambos os instrumentos na infraestrutura rodoviária, inclusive em trechos de menor viabilidade econômica. A escolha corresponde diretamente ao uso federal de concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "conditions": [
+        "Concessões são priorizadas para ativos economicamente viáveis; PPPs combinam investimento público e execução privada onde o mercado não chega sozinho.",
+        "Na infraestrutura rodoviária, concessões e PPPs alcançam inclusive trechos de menor viabilidade econômica.",
+        "O plano não exige concessão ou PPP em toda obra e também prevê cofinanciamento e outros arranjos de investimento."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Conceder à iniciativa privada a construção, operação e manutenção dos ativos com\nviabilidade econômica e, onde o mercado não chega sozinho, garantir a presença do\nEstado via PPPs, unindo investimento público com execução privada eficiente.",
+          "role": "condition",
+          "interpretation": "O plano distingue concessões de ativos viáveis e PPPs apoiadas por investimento público, adotando os dois instrumentos sem torná-los universais."
+        },
+        {
+          "page": 30,
+          "quote": "Aperfeiçoar os modelos de contratação, financiamento e gestão dos ativos rodovi-\nários, ampliando o uso de concessões e PPPs e de contratos de longo prazo orien-\ntados por indicadores de desempenho, inclusive para trechos de menor viabilidade\neconômica",
+          "role": "support",
+          "interpretation": "A proposta aplica explicitamente concessões e PPPs à infraestrutura rodoviária, parte central da infraestrutura de transportes perguntada."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "PPPs",
+        "infraestrutura de transportes",
+        "infraestrutura rodoviária",
+        "rodovias",
+        "ferrovias",
+        "hidrovias",
+        "portos",
+        "aeroportos",
+        "mobilidade urbana",
+        "investimento privado",
+        "execução privada"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "A coexistência de investimento público, cofinanciamento federativo, autorizações e participação privada em outros formatos não reduz o apoio explícito aos dois instrumentos perguntados. Privatização de empresas e concessão de ativos também não foram tratadas como sinônimos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano orienta o governo a atrair investimentos para cadeias de IA e data centers instalados no Brasil e a trazer ao país indústrias intensivas em inteligência artificial, com empregos qualificados e novos investimentos. Também concentra recursos públicos em pesquisa, ciência e tecnologia. Em conjunto, essas medidas desenvolvem infraestrutura e ecossistema produtivo de IA no país, e não apenas difundem sistemas existentes; isso implica apoio à capacidade nacional, embora o texto não use essa expressão nem prometa modelos nacionais específicos.",
+      "conditions": [
+        "A execução proposta depende sobretudo de investimento privado e internacional atraído para cadeias de IA, data centers e indústrias instaladas no Brasil.",
+        "O plano também financia pesquisa, ciência e tecnologia de forma geral, sem reservar expressamente esses recursos à inteligência artificial.",
+        "Não há compromisso específico com modelos nacionais, infraestrutura computacional pública ou exclusão de tecnologias estrangeiras."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Atrair investimentos internacionais em inovação e tecnologia, principalmente em\ndata centers, aproveitando a energia barata em excesso, a disponibilidade de recur-\nsos hídricos e a posição geopolítica favorável, por meio de um ambiente regulatório\nestável, remoção de burocracias e oferta de mão de obra qualificada.",
+          "role": "support",
+          "interpretation": "A proposta busca instalar no Brasil infraestrutura digital relevante para capacidade de IA, ainda que financiada e operada por agentes privados ou estrangeiros."
+        },
+        {
+          "page": 21,
+          "quote": "Atrair investimentos para as cadeias de IA, evitando uma regulação precoce e ampla\nda inteligência artificial, garantindo segurança jurídica para o setor e regulando pon-\ntualmente apenas onde surgirem danos concretos comprovados.",
+          "role": "support",
+          "interpretation": "O objeto do investimento é a própria cadeia de IA; a preferência regulatória qualifica a estratégia, mas não elimina o compromisso de desenvolver atividade no setor."
+        },
+        {
+          "page": 34,
+          "quote": "Aproveitar a abundância de energia limpa e competitiva do país para acelerar a ele-\ntrificação da economia e atrair indústrias intensivas em energia, inteligência artificial\ne data centers, gerando empregos qualificados e novos investimentos no Brasil.",
+          "role": "support",
+          "interpretation": "A instalação no Brasil de indústrias intensivas em IA e data centers transforma atração de capital em infraestrutura, atividade econômica e competências domésticas."
+        },
+        {
+          "page": 55,
+          "quote": "Concentrar recursos de pesquisa, ciência e tecnologia nas instituições com histórico\ncomprovado de produção científica relevante, criando um modelo de financiamento\nbaseado em desempenho que premie resultados e atraia talentos.",
+          "role": "context",
+          "interpretation": "Há investimento público em pesquisa e tecnologia, mas o trecho é geral e não foi usado sozinho para atribuir financiamento específico de IA."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "cadeias de IA",
+        "capacidade nacional",
+        "data center",
+        "data centers",
+        "infraestrutura digital",
+        "infraestrutura computacional",
+        "computação",
+        "modelos de linguagem",
+        "algoritmos",
+        "pesquisa e desenvolvimento",
+        "pesquisa, ciência e tecnologia",
+        "tecnologia brasileira",
+        "indústrias intensivas",
+        "mão de obra qualificada"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "IA para gerir filas do SUS e revisão de obrigações regulatórias sobre IA não demonstram desenvolvimento nacional e não sustentaram a classificação. A conclusão decorre da combinação entre investimento nas cadeias de IA, infraestrutura de data centers e instalação de atividade produtiva no Brasil; propriedade estrangeira não descaracteriza capacidade nacional segundo o objeto aprovado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe modernizar concursos públicos com provas de competências, habilidades, conhecimentos e formação, mas não menciona reserva de vagas por critério racial, cotas raciais, população negra ou ação afirmativa no ingresso no serviço público federal. Critérios de mérito e desenho das provas podem coexistir com cotas e, por isso, não permitem inferir oposição.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Modernizar os concursos públicos, instituindo provas de competências e habilida-\ndes, além do teste de conhecimentos, inclusive com cursos ou programas de forma-\nção quando aplicável.",
+          "role": "context",
+          "interpretation": "A proposta altera os métodos de seleção, sem decidir se parte das vagas deve ou não ser reservada por critério racial."
+        }
+      ],
+      "search_terms": [
+        "concurso público",
+        "concursos públicos",
+        "funcionalismo público",
+        "serviço público",
+        "reserva de vagas",
+        "cota",
+        "cotas",
+        "cotas raciais",
+        "critério racial",
+        "raça",
+        "racial",
+        "população negra",
+        "negros",
+        "ações afirmativas",
+        "ação afirmativa",
+        "competências e habilidades",
+        "mérito"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "As ocorrências aparentes de 'raça' e 'cota' no texto pertencem a 'praças' e 'cota parlamentar'. A valorização do mérito, provas por competências e vínculos sem estabilidade ampla não incluem nem excluem reserva racial de vagas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano menciona equipamentos policiais, integração de informações, monitoramento por satélite e monitoramento tecnológico em destinos turísticos. Não menciona reconhecimento facial, identificação ou biometria facial, nem comparação de imagens captadas em espaços públicos com bases de identidade para segurança. As tecnologias próximas não resolvem o objeto e o silêncio não indica apoio ou rejeição.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Fortalecer a atuação policial, garantindo proteção legal na legítima defesa contra\ncriminosos armados, especialmente com fuzis, e fornecer estrutura para o trabalho\npolicial, integrando em tempo real as informações entre as polícias federal e estadu-\nais e ampliando o acesso a equipamentos e tecnologias.",
+          "role": "context",
+          "interpretation": "Integração de informações e acesso genérico a tecnologias não especificam identificação facial nem imagens de espaços públicos."
+        },
+        {
+          "page": 71,
+          "quote": "Enfrentar o maior obstáculo à vinda de turistas ao Brasil, que é a segurança públi-\nca, por meio de um programa com metas verificáveis de redução da criminalidade,\npoliciamento ostensivo integrado e monitoramento tecnológico nos destinos mais\nvisitados do país, garantindo ambientes seguros para os moradores e visitantes.",
+          "role": "context",
+          "interpretation": "O monitoramento tem finalidade de segurança em destinos visitados, mas o plano não define reconhecimento facial, biometria ou comparação com bases de identificação."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "facial",
+        "face",
+        "bases de identificação",
+        "espaços públicos",
+        "câmeras",
+        "videomonitoramento",
+        "monitoramento tecnológico",
+        "monitoramento",
+        "imagens",
+        "foragidos",
+        "pessoas procuradas",
+        "mandado de prisão",
+        "equipamentos e tecnologias",
+        "integração de informações"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          81
+        ]
+      ],
+      "counterevidence_or_limits": "O monitoramento por satélite combate grilagem, desmatamento e mineração ilegal; a IA na saúde organiza filas; e o monitoramento tecnológico do turismo não identifica a técnica usada. Nenhum desses instrumentos foi convertido em reconhecimento facial, e a ausência de salvaguardas específicas também não autoriza inferir rejeição a elas.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

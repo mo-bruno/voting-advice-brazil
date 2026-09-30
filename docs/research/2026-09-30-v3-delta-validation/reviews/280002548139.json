@@ -1,0 +1,218 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002548139",
+  "candidate_name": "Veterinário Wilson Grassi",
+  "context_owner_agent_id": "/root/plan_grassi",
+  "executor_agent_id": "/root/delta_grassi",
+  "document_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002548139.json",
+    "../2026-09-29-thematic-profiles/profiles/280002548139.md",
+    "../2026-09-29-thematic-profiles/profiles/280002548139.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002548139.json"
+  ],
+  "method": "Reidratei integralmente o perfil JSON, o perfil legível, o checkpoint temático e o parecer da bateria v2 registrados para /root/plan_grassi. Confirmei o SHA-256 do PDF oficial reconstruído e li as 58 páginas físicas do plano. Depois pesquisei o texto completo nas extrações raw-pages.json e layout-pages.json com termos exatos, variantes e sinônimos próprios de cada uma das quatro teses, reli nas duas representações as páginas candidatas e conferi literalmente as citações. Autorizações ferroviárias, concessões, PPPs, capacidade científica geral, seleção pública, integração de bases e vigilância eletrônica foram mantidas como objetos distintos.",
+  "revisited_pages": [
+    6,
+    22,
+    23,
+    36,
+    37,
+    44,
+    46,
+    48,
+    50,
+    51
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONDICIONAL_OU_MISTA",
+      "evidence_strength": "mixed",
+      "rationale": "No eixo de infraestrutura, o plano inclui contratos de concessão entre os instrumentos e defende fiscalizar esse modelo em transportes. Porém, a expansão ferroviária privada é proposta expressamente pelo regime distinto de autorização, e não há parceria público-privada no sentido jurídico específico. Como a tese reúne concessões e PPPs e o texto cobre apenas parte desse conjunto, a posição é mista.",
+      "conditions": [
+        "A referência a concessões integra o programa federal de logística e transportes, mas se concentra em fiscalização contratual.",
+        "A construção e operação privada de novas ferrovias são vinculadas expressamente ao regime de autorização, que não foi convertido em concessão.",
+        "Nenhuma ocorrência de parceria público-privada ou PPP foi encontrada no documento inteiro."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Fiscalização real de contrato de concessão, com penalidade aplicada. O problema brasileiro raramente é o modelo; é a fiscalização que não acontece.",
+          "role": "support",
+          "interpretation": "O trecho aceita contratos de concessão como instrumento da agenda federal de transportes e propõe executá-los com fiscalização e sanção."
+        },
+        {
+          "page": 46,
+          "quote": "Uso pleno do regime de autorização ferroviária, que permite ao setor privado construir e operar ferrovia própria, com o Estado fazendo o que só ele faz: licenciar rápido, desapropriar faixa e garantir estabilidade regulatória.",
+          "role": "condition",
+          "interpretation": "A ampliação privada explicitamente descrita usa autorização ferroviária, instrumento distinto de concessão e de parceria público-privada."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "contrato de concessão",
+        "concessionária",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "autorização ferroviária",
+        "setor privado",
+        "infraestrutura",
+        "transportes",
+        "ferrovia",
+        "rodovia",
+        "porto",
+        "aeroporto"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "counterevidence_or_limits": "Capital privado e autorização ferroviária não foram tratados como sinônimos de concessão. A menção favorável à concessão é suficiente para uma cobertura parcial, mas o plano não anuncia novas concessões nem PPPs e não permite concordância integral com a formulação conjunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona inteligência artificial nem propõe pesquisa, infraestrutura computacional ou desenvolvimento de modelos de IA no Brasil. A carreira federal de pesquisador e o financiamento plurianual da ciência têm alcance geral, sem destinação à capacidade nacional de IA.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Financiamento estável e previsível à pesquisa, com regra plurianual. Ciência não se planeja em ciclo de contingenciamento.",
+          "role": "context",
+          "interpretation": "O compromisso financia pesquisa de modo geral, mas não identifica inteligência artificial, infraestrutura computacional ou modelos nacionais como objeto do investimento."
+        },
+        {
+          "page": 51,
+          "quote": "Defesa cibernética tratada como infraestrutura crítica, integrada ao Eixo 11 e à proteção das bases de dados do Estado.",
+          "role": "context",
+          "interpretation": "Defesa cibernética e proteção de bases são políticas digitais próximas, mas não constituem desenvolvimento nacional de inteligência artificial."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "algoritmo",
+        "aprendizado de máquina",
+        "machine learning",
+        "modelo de linguagem",
+        "modelo nacional",
+        "capacidade nacional",
+        "infraestrutura computacional",
+        "supercomputador",
+        "pesquisa em IA",
+        "desenvolvimento tecnológico",
+        "defesa cibernética"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "counterevidence_or_limits": "Carreira pública de pesquisador, fomento científico geral, interoperabilidade de dados e defesa cibernética não permitem atribuir a prioridade temática específica perguntada. Silêncio sobre IA não foi convertido em concordância, discordância ou neutralidade.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe reserva de vagas por critério racial em concursos públicos federais e não apresenta política de cotas raciais no serviço público. A seleção prevista para a carreira federal de pesquisador usa currículo, produção e outros requisitos profissionais, sem critério racial.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Carreira federal de pesquisador, com ingresso por processo seletivo público de base curricular e de produção, e não apenas por prova escrita, porque produção científica não se mede em múltipla escolha.",
+          "role": "context",
+          "interpretation": "A única seleção pública federal detalhada no plano define critérios curriculares e de produção, sem reserva racial; isso não prova rejeição às cotas, apenas não responde à tese."
+        }
+      ],
+      "search_terms": [
+        "concurso público federal",
+        "concursos públicos federais",
+        "concurso público",
+        "reserva de vagas",
+        "cotas",
+        "cotas raciais",
+        "critério racial",
+        "raça",
+        "população negra",
+        "afrodescendente",
+        "ação afirmativa",
+        "funcionalismo público",
+        "serviço público",
+        "processo seletivo público"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "counterevidence_or_limits": "A reserva legal para pequenos negócios nas compras públicas trata de empresas, e os critérios de nomeação ministerial e ingresso de pesquisadores tratam de qualificação profissional. Nenhum desses objetos informa apoio ou rejeição a cotas raciais em concursos federais.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona reconhecimento facial, biometria facial ou comparação de imagens captadas em espaços públicos com bases de identificação. Ele propõe vigilância eletrônica de fronteiras, sensoriamento remoto e integração de bases de segurança com identificação civil, instrumentos próximos mas distintos do reconhecimento facial para segurança.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "Vigilância eletrônica contínua dos trechos críticos de fronteira, com sensoriamento remoto e apoio logístico das Forças Armadas.",
+          "role": "context",
+          "interpretation": "A vigilância é delimitada a trechos de fronteira e a sensoriamento remoto, sem captação ou comparação biométrica de faces."
+        },
+        {
+          "page": 23,
+          "quote": "Mandado de prisão que não conversa com folha de pagamento pública, com concessão de benefício, com registro de empresa e com sistema de identificação civil produz a situação absurda de o Estado procurar alguém que ele mesmo está pagando.",
+          "role": "context",
+          "interpretation": "O trecho propõe cruzamento de cadastros administrativos para localizar procurados, mas não descreve imagens, reconhecimento facial ou videomonitoramento em espaço público."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "bases de identificação",
+        "espaços públicos",
+        "videomonitoramento",
+        "câmera",
+        "imagem",
+        "vigilância eletrônica",
+        "sensoriamento remoto",
+        "foragido",
+        "procurado",
+        "mandado de prisão",
+        "identificação civil"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          58
+        ]
+      ],
+      "counterevidence_or_limits": "Integração de bases, identificação civil, radares, aeronaves não tripuladas e sensoriamento remoto não equivalem ao instrumento biométrico perguntado. As salvaguardas de LGPD e auditoria de consultas também não autorizam inferir que o plano apoia ou rejeita reconhecimento facial.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

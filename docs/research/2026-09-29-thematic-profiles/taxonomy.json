@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "name": "Economia e Desenvolvimento",
+      "scope": "Política fiscal, monetária e tributária; produção, indústria, agro, investimento e desenvolvimento econômico. Direitos trabalhistas ficam em Cidadania e Direitos; benefícios de renda, em Bem-Estar Social."
+    },
+    {
+      "id": "estado_gestao",
+      "name": "Estado e Gestão Pública",
+      "scope": "Organização e capacidade estatal, administração, servidores, integridade, participação e controle, desenho de empresas estatais e privatização geral. Modelos de serviço específicos ficam na categoria do serviço."
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "name": "Infraestrutura e Território",
+      "scope": "Transportes, logística, mobilidade, saneamento, energia e redes físicas, habitação, ordenamento urbano/regional e ocupação territorial."
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "name": "Meio Ambiente e Clima",
+      "scope": "Clima, emissões, conservação, biodiversidade, florestas, uso ambiental dos recursos e regulação ambiental; transição energética quando o objeto central for ambiental."
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "name": "Ciência, Tecnologia e Inovação",
+      "scope": "Pesquisa, inovação, política científica, infraestrutura digital, dados, inteligência artificial e desenvolvimento tecnológico. Uso de tecnologia em serviço específico pode ser referência secundária."
+    },
+    {
+      "id": "bem_estar_social",
+      "name": "Bem-Estar Social",
+      "scope": "Saúde, assistência, renda, previdência, proteção social, segurança alimentar e cuidado. Habitação física/territorial fica em Infraestrutura; garantias jurídicas, em Direitos."
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "name": "Educação, Cultura e Sociedade",
+      "scope": "Ensino, formação, gestão/financiamento educacional, cultura, artes, esporte e vida social. Ciência e pesquisa como política própria ficam em CTI."
+    },
+    {
+      "id": "cidadania_direitos",
+      "name": "Cidadania e Direitos",
+      "scope": "Direitos civis, políticos, humanos e trabalhistas, igualdade, discriminação, representação, liberdades, acesso à justiça e grupos de direitos. Combate ao crime fica em Segurança."
+    },
+    {
+      "id": "seguranca_publica",
+      "name": "Segurança Pública",
+      "scope": "Prevenção e repressão criminal, polícias, armas, justiça penal, sistema prisional e política de responsabilização. Defesa militar externa fica em Soberania."
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "name": "Soberania e Relações Internacionais",
+      "scope": "Diplomacia, defesa, integração e blocos internacionais, acordos internacionais, autonomia estratégica e relações exteriores. Regras gerais do capital externo podem ter categoria econômica principal."
+    }
+  ],
+  "rule": "Uma posição tem uma categoria principal e pode referenciar outras sem duplicação. Categorias são organizacionais; não são eixos ideológicos nem escalas de afinidade."
+}

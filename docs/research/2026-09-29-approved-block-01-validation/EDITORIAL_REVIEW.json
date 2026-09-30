@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "reviewer": "/root",
+  "status": "in_progress",
+  "reviewed_candidates": [
+    {
+      "candidate_id": "280002542548",
+      "review_sha256": "9e18e9170d301e8f83df73a2749020df92c566f3e7177cb07c569c572b5facd8",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted",
+      "notes": "Q02 vincula financiamento direcionado a prioridades industriais nas pp.51–52; fundos de participação são apenas contexto. Q01 distingue renda e patrimônio; Q03 processamento não prova extração; Q04 disciplina fiscal não decide suspensão. Conferidos raciocínios, condições e trechos de todas as quatro respostas."
+    },
+    {
+      "candidate_id": "280002551932",
+      "review_sha256": "5ba15c5b62fff83f85efee9de67d33985572ee0ad8c01883edd4e5b1145dc721",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted_after_revision",
+      "notes": "Revisados quatro raciocínios, condições e trechos. Q02 é sustentada por instrumentos específicos para cada eixo industrial. Q01 não transforma rejeição à carga agregada em veto ao instrumento. Q03 revista pelo agente: compra/fornecimento não comprova operação extrativa. Q04 diagnóstico fiscal e auditoria administrativa não respondem suspensão. Versão inicial preservada em REVIEW_REVISIONS.json."
+    },
+    {
+      "candidate_id": "280002551547",
+      "review_sha256": "f123e8b166a9a2bd4db9ed2d3cc53fd61c1599d5a5dfdafa4cc0bc9f85c253a1",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted_after_revision",
+      "notes": "Q02 revisada pelo agente após distinção entre política creditícia e oferta de empréstimos. Q03 aceita como implicação contextual: empresas internacionais, parcerias internacionais, acordos de exploração e cadeia desde retirada do solo na mesma página 179, que o orquestrador releu integralmente. Q01 e Q04 preservam insuficiência. Raciocínios, condições e evidências das quatro respostas conferidos."
+    },
+    {
+      "candidate_id": "280002539826",
+      "review_sha256": "98e26f75032375421f78c887d6607216b17767da13ad931d14c1f6d2a8462275",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted",
+      "notes": "Q02 preserva corretamente a diferença entre redução gradual de programas direcionados e proibição de toda linha industrial. Q03 resulta do nexo contextual entre oportunidade em minerais críticos, extração privada, atração de investimento estrangeiro e capital estrangeiro para setores estratégicos, com autorização e conservação; não deriva apenas de abertura genérica. Q01 e Q04 mantêm insuficiência. Raciocínios, condições e evidências das quatro respostas conferidos."
+    },
+    {
+      "candidate_id": "280002551544",
+      "review_sha256": "39ccc124d036c4df72b104a946485e6224d7c1215a34aeffae4db769d7cee594",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted",
+      "notes": "Q02 é sustentada pela linha especial de financiamento para empresas de biogás dentro da prioridade produtiva de biocombustíveis e do capítulo que relaciona energia e indústria; a classificação não estende o apoio a todos os setores. Q03 vincula, na mesma seção mineral, capital estrangeiro, investimento em mineração, direitos minerários e extração de matéria bruta; condições de regulação e agregação de valor permanecem registradas. Q01 e Q04 mantêm insuficiência. Raciocínios, condições, contexto integral e evidências conferidos."
+    },
+    {
+      "candidate_id": "280002538811",
+      "review_sha256": "2ff29c872e483804b68cd9a142d922070d60bb0159721cc42f19e68eed526cdb",
+      "reviewed_question_ids": [
+        "B01-Q01",
+        "B01-Q02",
+        "B01-Q03",
+        "B01-Q04"
+      ],
+      "result": "accepted",
+      "notes": "Q01 é proposta explícita. Q02 é uma implicação contextual mais forte que mera política creditícia: ações de financiamento são vinculadas à política industrial dirigida e o sistema bancário seria estatal; a ausência de linha nomeada e de parâmetros permanece registrada. Q03 combina proibição geral de capital estrangeiro com monopólio público da mineração. Q04 preserva a sequência suspensão imediata seguida de auditoria e registra a ausência da palavra durante. Raciocínios, condições e evidências conferidos."
+    }
+  ],
+  "limits": [
+    "Revisão documental por IA, com aprovação humana prévia da redação. Não é teste de compreensão com eleitores nem validação científica do ranking."
+  ]
+}

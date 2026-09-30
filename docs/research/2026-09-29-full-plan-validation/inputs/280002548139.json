@@ -1,0 +1,204 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002548139",
+    "name": "Veterinário Wilson Grassi",
+    "party": "DEMOCRATA",
+    "pages": 58,
+    "member": "BR/2026BR280002548139_01.pdf",
+    "sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      14
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002548139",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por arcabouço, regime/regras fiscais, teto, LRF e déficit e leitura dos contextos fiscais/digitais das páginas 39, 43 e 44 não localizaram decisão sobre a LC 200/2023. A ocorrência de arcabouço na página 44 descreve digitalização do governo, não regra fiscal.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        43,
+        44
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por privatização, desestatização, estatais, estatal, bancos públicos e patrimônio público, com contextos econômicos das páginas 39 e 52, não localizaram decisão sobre controle de todas as estatais. Contrapartidas nacionais ao investimento não especificam propriedade pública.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        52
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Desoneração da folha, simplificação de declarações e qualificação não decidem estas mudanças nas regras trabalhistas.",
+      "evidence": [],
+      "inspected_pages": [
+        19,
+        20,
+        33
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por Bolsa Família, transferência de renda, frentes de trabalho, CadÚnico e beneficiários nos textos completos não localizaram manutenção ou substituição no público da tese. Os contextos das páginas 36 e 41 tratam de habitação e direitos da pessoa idosa, não do instrumento proposto.",
+      "evidence": [],
+      "inspected_pages": [
+        36,
+        41
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Cadastro de maus-tratos a animais, prevenção juvenil e plebiscito penitenciário tratam de decisões diferentes de maioridade penal.",
+      "evidence": [],
+      "inspected_pages": [
+        22,
+        23,
+        25
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas educacionais examinadas não propõem nem rejeitam o modelo cívico-militar; disciplina, proteção ou qualidade não são equivalentes à militarização da gestão.",
+      "evidence": [],
+      "inspected_pages": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        34,
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. Contratos de gestão e metas nos contextos examinados não identificam OS nem empresa privada responsável pela operação. Gestão por resultados não implica gestão privada.",
+      "evidence": [],
+      "inspected_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "As ocorrências do Banco Central nas páginas 11, 12 e 57 são fontes estatísticas/indicadores. Busca por autonomia, independência e política monetária não localizou proposta sobre o regime institucional.",
+      "evidence": [],
+      "inspected_pages": [
+        11,
+        12,
+        57
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Os contextos econômicos e de soberania nas páginas 39 e 52 não decidem organizar a Petrobras de forma integrada. Contrapartidas ao investimento estrangeiro não especificam produção/refino/transporte/logística.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        52
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas integrais e leitura dos contextos: Metas e contratos de gestão citados não identificam prestador privado nem compra de sua capacidade ociosa.",
+      "evidence": [],
+      "inspected_pages": [
+        34,
+        35
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Não localizada proposta de voucher ou subsídio de matrícula privada nos capítulos examinados; metas educacionais não esclarecem o instrumento.",
+      "evidence": [],
+      "inspected_pages": [
+        35,
+        36,
+        37
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano declara não formular doutrina de política externa e prevê avaliar foros caso a caso; não decide este acordo.",
+      "evidence": [],
+      "inspected_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        51,
+        52
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano permite investimento estrangeiro em setor estratégico, condicionado a conteúdo nacional, transferência de tecnologia e emprego.",
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil."
+        }
+      ],
+      "inspected_pages": [
+        52
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

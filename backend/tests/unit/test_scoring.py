@@ -6,14 +6,18 @@ from hypothesis import strategies as st
 
 from app.core.scoring import (
     MIN_ANSWERS,
+    MIN_COMPARABLE_CATEGORIES,
+    MIN_COMPARABLE_THESES,
     CandidateStance,
     InsufficientAnswersError,
     RankedCandidate,
+    RankingStatus,
     ScoreBreakdown,
     Stance,
     UserAnswer,
     Weight,
     rank,
+    ranking_status,
     score,
     validate_minimum,
 )
@@ -62,6 +66,44 @@ class TestCandidateStanceDataclass:
 class TestMinAnswers:
     def test_value_is_five(self):
         assert MIN_ANSWERS == 5
+
+
+class TestRankingEligibility:
+    def test_thresholds_match_the_approved_beta_method(self):
+        assert MIN_COMPARABLE_THESES == 5
+        assert MIN_COMPARABLE_CATEGORIES == 4
+
+    def test_candidate_below_documentary_floor_stays_out_of_ranking(self):
+        assert ranking_status(
+            documented_theses=4,
+            documented_categories=4,
+            compared_theses=4,
+            compared_categories=4,
+        ) is RankingStatus.INSUFFICIENT_DOCUMENTED_COVERAGE
+
+    def test_answer_subset_below_floor_stays_out_of_ranking(self):
+        assert ranking_status(
+            documented_theses=12,
+            documented_categories=8,
+            compared_theses=4,
+            compared_categories=4,
+        ) is RankingStatus.INSUFFICIENT_ANSWER_COVERAGE
+
+    def test_four_categories_are_required_even_with_many_comparisons(self):
+        assert ranking_status(
+            documented_theses=12,
+            documented_categories=8,
+            compared_theses=10,
+            compared_categories=3,
+        ) is RankingStatus.INSUFFICIENT_ANSWER_COVERAGE
+
+    def test_exact_floor_is_eligible(self):
+        assert ranking_status(
+            documented_theses=5,
+            documented_categories=4,
+            compared_theses=5,
+            compared_categories=4,
+        ) is RankingStatus.ELIGIBLE
 
 
 class TestInsufficientAnswersError:

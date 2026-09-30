@@ -127,7 +127,8 @@ class _ComparisonPageState extends State<ComparisonPage> {
           final item = byThesis[match.thesisId];
           return item == null ||
               item.thesisText != match.thesisText ||
-              item.position != match.candidatePosition;
+              item.position != match.candidatePosition ||
+              item.analyticalPosition != match.candidateAnalysis;
         });
         if (changed) {
           setState(() => _comparisonOutdated = true);
@@ -292,7 +293,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
             Text('COMPARAÇÃO\nDE RESPOSTAS', style: textTheme.displayMedium),
             const SizedBox(height: 16),
             Text(
-              'Toque em uma pergunta para ver a justificativa e a fonte. “?” indica ausência de evidência suficiente no plano; não significa posição neutra nem discordância.',
+              'Toque em uma pergunta para ver a justificativa e a fonte. “±” indica uma posição condicional ou mista, que fica fora do cálculo. “?” indica ausência de evidência suficiente.',
               style: textTheme.bodyMedium,
             ),
             const SizedBox(height: 12),
@@ -471,8 +472,8 @@ class _ComparisonRow extends StatelessWidget {
     required this.onTap,
   });
 
-  ThesisAnswer _candidateAnswer(CandidateResult result) {
-    final match = result.matches.firstWhere(
+  ThesisMatch _candidateMatch(CandidateResult result) {
+    return result.matches.firstWhere(
       (item) => item.thesisId == thesisId,
       orElse: () => ThesisMatch(
         thesisId: thesisId,
@@ -483,10 +484,13 @@ class _ComparisonRow extends StatelessWidget {
         matchType: 'skipped',
       ),
     );
-    return match.candidateAnswerEnum;
   }
 
-  Widget _buildIndicator(ThesisAnswer answer, {bool isUser = false}) {
+  Widget _buildIndicator(
+    ThesisAnswer answer, {
+    bool isUser = false,
+    String? analyticalPosition,
+  }) {
     IconData icon;
     Color color;
     String label;
@@ -507,9 +511,15 @@ class _ComparisonRow extends StatelessWidget {
         label = 'Neutro';
         break;
       default:
-        icon = Icons.help_outline;
-        color = AppTheme.onSurfaceVariant;
-        label = isUser ? 'Pergunta pulada' : 'Sem evidência suficiente';
+        if (!isUser && analyticalPosition == 'CONDICIONAL_OU_MISTA') {
+          icon = Icons.call_split;
+          color = AppTheme.primary;
+          label = 'Posição condicional ou mista';
+        } else {
+          icon = Icons.help_outline;
+          color = AppTheme.onSurfaceVariant;
+          label = isUser ? 'Pergunta pulada' : 'Sem evidência suficiente';
+        }
     }
 
     return Tooltip(
@@ -559,12 +569,18 @@ class _ComparisonRow extends StatelessWidget {
                   ),
                 ),
                 ...selectedResults.map(
-                  (result) => SizedBox(
-                    width: 46,
-                    child: Center(
-                      child: _buildIndicator(_candidateAnswer(result)),
-                    ),
-                  ),
+                  (result) {
+                    final match = _candidateMatch(result);
+                    return SizedBox(
+                      width: 46,
+                      child: Center(
+                        child: _buildIndicator(
+                          match.candidateAnswerEnum,
+                          analyticalPosition: match.candidateAnalysis,
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ],
             ),

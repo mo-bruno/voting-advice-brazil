@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 15,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "current_page": 15,
+  "next_page": null,
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa de Proteger Hoje, Transformar o Amanhã: versão estruturada para desenvolvimento programático; indicadores propostos e metas a calibrar por diagnóstico, estimativa fiscal e competências federativas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Arquitetura do plano em seis capítulos integrados; proteção de mulheres e crianças como eixo transversal e meios para autonomia, oportunidade, liberdade, saúde e entrega.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Capítulo 1: resposta integrada à violência, pré-natal, nutrição, vacinação, creches, autonomia econômica das mulheres, proteção de crianças e adolescentes e início da governança transversal.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T015",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Conclusão da governança transversal: orçamento por resultados, painel de indicadores e avaliação de impacto sobre mulheres e crianças.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Capítulo 2: simplificação regulatória, empreendedorismo, crédito e compras públicas; infraestrutura com concessões e PPPs; segurança energética, conectividade, indústria, inovação e início da responsabilidade fiscal.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036",
+        "BR26-T038",
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Conclusão do item 2.5: revisão de gastos e subsídios, planejamento plurianual por metas e transparência; indicadores fiscais incluem resultado, dívida/PIB e economia de gastos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Capítulo 3: educação infantil, alfabetização, recomposição de aprendizagem, formação e carreira docente, tecnologia, pensamento crítico e início do ensino médio/técnico.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Conclusão do ensino médio/técnico: expansão técnica conforme vocações regionais, carreira e aprendizagem profissional, parcerias com setor produtivo e ensino superior.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011",
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Capítulo 4: monitoramento de fronteiras, inteligência e cooperação contra narcotráfico/armas, combate financeiro às facções, policiamento por evidências e início da política prisional.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T017",
+        "BR26-T063"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Conclusão da política prisional: gestão legal de lideranças criminosas, trabalho, educação, qualificação, inteligência penitenciária e controle de comunicações ilícitas.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Capítulo 5: atenção primária, prevenção, saúde de mulheres/crianças, avaliação científica de novas terapias e incorporação ao SUS, esporte e início da saúde digital.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Conclusão da saúde digital: telemedicina integrada, regulação inteligente de filas e IA com governança, auditoria e privacidade; indicadores de espera, consultas e segurança.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Capítulo 6: serviços digitais, metas e avaliação de programas, integridade e transparência, formação/desempenho/mobilidade de servidores e início de federalismo de resultados.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T011",
+        "BR26-T018",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Conclusão do federalismo de resultados: pactos com estados/municípios, transferências condicionadas a indicadores quando cabível e consórcios/soluções compartilhadas.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Matriz de implementação: diagnóstico em 100 dias, implantação/pilotos no ano 1, expansão nos anos 2–3 e avaliação no ano 4; avaliação transversal de impactos e custos; novas terapias dependem de avaliação regulatória e científica.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 15,
+      "reason": "Matriz de implementação em duas colunas: conferir vinculação de cada horizonte temporal à prioridade correspondente e texto das notas.",
+      "finding": "A imagem confirma quatro linhas (primeiros 100 dias, ano 1, anos 2–3 e ano 4), sem conteúdo omitido pela extração; as duas notas inferiores tratam de avaliação transversal e incorporação regulada de terapias ao SUS."
+    }
+  ],
+  "questions_to_resolve": [],
+  "complementary_search_log": [
+    {
+      "question_id": "BR26-T001",
+      "terms": [
+        "arcabouço",
+        "200/2023",
+        "teto de gastos",
+        "regra fiscal",
+        "responsabilidade fiscal",
+        "resultado fiscal",
+        "dívida",
+        "gastos",
+        "orçamento"
+      ],
+      "pages_by_term": {
+        "arcabouço": [],
+        "200/2023": [],
+        "teto de gastos": [],
+        "regra fiscal": [],
+        "responsabilidade fiscal": [
+          5
+        ],
+        "resultado fiscal": [
+          6
+        ],
+        "dívida": [
+          6
+        ],
+        "gastos": [
+          6
+        ],
+        "orçamento": [
+          4
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T002",
+      "terms": [
+        "estatal",
+        "estatais",
+        "privatização",
+        "privatizar",
+        "desestatização",
+        "controle privado",
+        "concessões",
+        "PPPs",
+        "empresa",
+        "público"
+      ],
+      "pages_by_term": {
+        "estatal": [],
+        "estatais": [],
+        "privatização": [],
+        "privatizar": [],
+        "desestatização": [],
+        "controle privado": [],
+        "concessões": [
+          5
+        ],
+        "PPPs": [
+          5
+        ],
+        "empresa": [
+          5
+        ],
+        "público": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          11,
+          13
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T003",
+      "terms": [
+        "reforma trabalhista",
+        "2017",
+        "CLT",
+        "revogação",
+        "revogar",
+        "trabalho",
+        "trabalhista",
+        "reinserção",
+        "qualificação",
+        "simplificação"
+      ],
+      "pages_by_term": {
+        "reforma trabalhista": [],
+        "2017": [],
+        "CLT": [],
+        "revogação": [],
+        "revogar": [],
+        "trabalho": [
+          3,
+          7,
+          10
+        ],
+        "trabalhista": [],
+        "reinserção": [
+          3
+        ],
+        "qualificação": [
+          3,
+          10
+        ],
+        "simplificação": [
+          5
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T011",
+      "terms": [
+        "Bolsa Família",
+        "CadÚnico",
+        "beneficiários",
+        "transferência de renda",
+        "renda mínima",
+        "trabalho remunerado",
+        "emprego público",
+        "frentes de trabalho",
+        "reinserção",
+        "qualificação",
+        "programas ineficazes"
+      ],
+      "pages_by_term": {
+        "Bolsa Família": [],
+        "CadÚnico": [],
+        "beneficiários": [],
+        "transferência de renda": [],
+        "renda mínima": [],
+        "trabalho remunerado": [],
+        "emprego público": [],
+        "frentes de trabalho": [],
+        "reinserção": [
+          3
+        ],
+        "qualificação": [
+          3,
+          10
+        ],
+        "programas ineficazes": [
+          13
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T015",
+      "terms": [
+        "maioridade",
+        "imputabilidade",
+        "idade penal",
+        "16 anos",
+        "17 anos",
+        "crimes graves",
+        "adolescentes",
+        "prisional",
+        "reincidência"
+      ],
+      "pages_by_term": {
+        "maioridade": [],
+        "imputabilidade": [],
+        "idade penal": [],
+        "16 anos": [],
+        "17 anos": [],
+        "crimes graves": [],
+        "adolescentes": [
+          3
+        ],
+        "prisional": [
+          9
+        ],
+        "reincidência": [
+          3,
+          9,
+          10
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T017",
+      "terms": [
+        "cívico-militar",
+        "cívico-militares",
+        "militar",
+        "militares",
+        "ensino integral",
+        "escola",
+        "ensino",
+        "proteção específica"
+      ],
+      "pages_by_term": {
+        "cívico-militar": [],
+        "cívico-militares": [],
+        "militar": [],
+        "militares": [],
+        "ensino integral": [],
+        "escola": [
+          3,
+          7
+        ],
+        "ensino": [
+          7,
+          8
+        ],
+        "proteção específica": [
+          9
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T018",
+      "terms": [
+        "cotas",
+        "racial",
+        "raciais",
+        "raça",
+        "negros",
+        "concurso",
+        "ações afirmativas",
+        "serviço público",
+        "critérios objetivos"
+      ],
+      "pages_by_term": {
+        "cotas": [],
+        "racial": [],
+        "raciais": [],
+        "raça": [],
+        "negros": [],
+        "concurso": [],
+        "ações afirmativas": [],
+        "serviço público": [
+          13
+        ],
+        "critérios objetivos": [
+          13
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T026A",
+      "terms": [
+        "organizações sociais",
+        "organização social",
+        "gestão privada",
+        "gestão pública",
+        "delegação",
+        "unidades públicas",
+        "hospital",
+        "saúde",
+        "concessões",
+        "PPPs",
+        "SUS"
+      ],
+      "pages_by_term": {
+        "organizações sociais": [],
+        "organização social": [],
+        "gestão privada": [],
+        "gestão pública": [],
+        "delegação": [],
+        "unidades públicas": [],
+        "hospital": [],
+        "saúde": [
+          2,
+          3,
+          11,
+          15
+        ],
+        "concessões": [
+          5
+        ],
+        "PPPs": [
+          5
+        ],
+        "SUS": [
+          11,
+          15
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T036",
+      "terms": [
+        "Banco Central",
+        "179/2021",
+        "autonomia",
+        "independência",
+        "juros",
+        "monetária",
+        "crédito",
+        "resultado fiscal"
+      ],
+      "pages_by_term": {
+        "Banco Central": [],
+        "179/2021": [],
+        "autonomia": [
+          2,
+          3
+        ],
+        "independência": [],
+        "juros": [],
+        "monetária": [],
+        "crédito": [
+          3,
+          5
+        ],
+        "resultado fiscal": [
+          6
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T038",
+      "terms": [
+        "Petrobras",
+        "petróleo",
+        "refino",
+        "refinaria",
+        "refinarias",
+        "produção",
+        "integração",
+        "energética"
+      ],
+      "pages_by_term": {
+        "Petrobras": [],
+        "petróleo": [],
+        "refino": [],
+        "refinaria": [],
+        "refinarias": [],
+        "produção": [
+          11
+        ],
+        "integração": [
+          3,
+          9
+        ],
+        "energética": [
+          5
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T042",
+      "terms": [
+        "rede privada",
+        "contratar",
+        "contratação",
+        "atendimentos",
+        "clínicas",
+        "hospitais",
+        "filas",
+        "telemedicina",
+        "SUS",
+        "contratações"
+      ],
+      "pages_by_term": {
+        "rede privada": [],
+        "contratar": [],
+        "contratação": [],
+        "atendimentos": [],
+        "clínicas": [],
+        "hospitais": [],
+        "filas": [
+          12
+        ],
+        "telemedicina": [
+          12
+        ],
+        "SUS": [
+          11,
+          15
+        ],
+        "contratações": [
+          15
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T043",
+      "terms": [
+        "creches",
+        "creche",
+        "voucher",
+        "privadas",
+        "privados",
+        "convênio",
+        "conveniada",
+        "educação infantil",
+        "vagas",
+        "financiamento"
+      ],
+      "pages_by_term": {
+        "creches": [
+          3
+        ],
+        "creche": [
+          3
+        ],
+        "voucher": [],
+        "privadas": [],
+        "privados": [],
+        "convênio": [],
+        "conveniada": [],
+        "educação infantil": [
+          7
+        ],
+        "vagas": [
+          3
+        ],
+        "financiamento": []
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T057",
+      "terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo comercial",
+        "comércio",
+        "exportações",
+        "internacional"
+      ],
+      "pages_by_term": {
+        "Mercosul": [],
+        "União Europeia": [],
+        "acordo comercial": [],
+        "comércio": [],
+        "exportações": [
+          5
+        ],
+        "internacional": [
+          9
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T063",
+      "terms": [
+        "Israel",
+        "palestino",
+        "Palestina",
+        "Gaza",
+        "apartheid",
+        "genocídio",
+        "relações diplomáticas",
+        "romper",
+        "internacional"
+      ],
+      "pages_by_term": {
+        "Israel": [],
+        "palestino": [],
+        "Palestina": [],
+        "Gaza": [],
+        "apartheid": [],
+        "genocídio": [],
+        "relações diplomáticas": [],
+        "romper": [],
+        "internacional": [
+          9
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T066",
+      "terms": [
+        "BRICS",
+        "bloco",
+        "multilateral",
+        "cooperação",
+        "internacional",
+        "exterior"
+      ],
+      "pages_by_term": {
+        "BRICS": [],
+        "bloco": [],
+        "multilateral": [],
+        "cooperação": [
+          9
+        ],
+        "internacional": [
+          9
+        ],
+        "exterior": []
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    },
+    {
+      "question_id": "BR26-T067",
+      "terms": [
+        "estrangeiro",
+        "estrangeira",
+        "capital externo",
+        "investimento externo",
+        "multinacionais",
+        "proibir",
+        "proibição",
+        "internacional",
+        "investimento privado",
+        "concessões",
+        "PPPs"
+      ],
+      "pages_by_term": {
+        "estrangeiro": [],
+        "estrangeira": [],
+        "capital externo": [],
+        "investimento externo": [],
+        "multinacionais": [],
+        "proibir": [],
+        "proibição": [],
+        "internacional": [
+          9
+        ],
+        "investimento privado": [
+          5
+        ],
+        "concessões": [
+          5
+        ],
+        "PPPs": [
+          5
+        ]
+      },
+      "method": "Busca complementar de palavras/frases com limites de palavra, insensível a caixa e acentos e com espaços normalizados, em todas as páginas de layout e raw, após leitura sequencial integral."
+    }
+  ],
+  "positions_compared": 16,
+  "comparison_counts": {
+    "confirmed": 16,
+    "divergent": 0,
+    "no_prior": 0
+  },
+  "category_counts": {
+    "NAO_ENCONTRADA": 16
+  },
+  "review_file": "reviews/280002552484.json",
+  "validation_status": "passed",
+  "validation_command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002552484",
+  "validation_result": {
+    "complete_and_valid": true,
+    "invalid_submissions": 0,
+    "quote_matches": {
+      "layout": 28
+    }
+  }
+}

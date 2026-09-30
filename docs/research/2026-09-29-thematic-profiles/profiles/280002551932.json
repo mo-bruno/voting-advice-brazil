@@ -1,0 +1,1864 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551932",
+  "candidate_name": "Ronaldo Caiado",
+  "agent_id": "/root/plan_caiado",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002551932.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    6,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    16,
+    17,
+    18,
+    19,
+    20,
+    23,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    35,
+    36,
+    40,
+    41,
+    43,
+    46,
+    47,
+    48,
+    50,
+    51,
+    53,
+    54,
+    56,
+    59,
+    61,
+    62,
+    67,
+    68,
+    72,
+    73,
+    74,
+    77,
+    78,
+    83,
+    84,
+    90,
+    92,
+    100
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O plano reúne escolhas substantivas nas dez categorias: controle do crescimento de despesas, apoio produtivo condicionado, gestão por metas, concessões de infraestrutura, instrumentos econômicos de conservação, financiamento científico protegido, proteção social com transição por renda, reorganização do SUS e mudanças penais e eleitorais. O perfil seleciona 46 decisões com evidência literal e propõe oito sementes para comparação futura. Funções de bancos públicos não são convertidas em compromissos de controle acionário; contratos de atendimento tampouco são tratados como delegação de gestão. As tensões de distribuição educacional e alcance do REDAD permanecem documentadas.",
+    "position_ids": [
+      "P01",
+      "P02",
+      "P05",
+      "P09",
+      "P15",
+      "P18",
+      "P22",
+      "P23",
+      "P30",
+      "P34",
+      "P37",
+      "P43"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "name": "Economia e Desenvolvimento",
+      "presence": "substantive",
+      "summary": "O plano combina restrição ao crescimento automático das despesas com apoio industrial condicionado, financiamento agrícola público e privado e investimento externo associado a agregação de valor no Brasil.",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03",
+        "P04"
+      ],
+      "gaps": [
+        {
+          "topic": "Regra fiscal e composição do ajuste",
+          "reason": "Não identifica decisão sobre a LC 200/2023 nem apresenta a decomposição quantitativa do ajuste por despesa; a diretriz abaixo do PIB nominal não especifica todas as alterações legais.",
+          "context_pages": [
+            12,
+            13
+          ]
+        },
+        {
+          "topic": "Custos e contrapartidas econômicas",
+          "reason": "Crédito, garantias, depreciação acelerada e apoio a processamento local são instrumentos definidos, mas sem carteira integral custeada, valores por setor ou critérios completos para medir adicionalidade.",
+          "context_pages": [
+            14,
+            23,
+            43,
+            53,
+            54,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "name": "Estado e Gestão Pública",
+      "presence": "substantive",
+      "summary": "A gestão é organizada por missões, metas públicas, seleção de dirigentes, rastreabilidade orçamentária e revisão periódica de políticas, sem apresentar uma decisão geral de controle acionário das estatais.",
+      "position_ids": [
+        "P05",
+        "P06",
+        "P07"
+      ],
+      "gaps": [
+        {
+          "topic": "Controle acionário de estatais",
+          "reason": "As funções de bancos públicos e a promessa de governança de Petrobras e demais estatais não escolhem inequivocamente entre preservação e transferência de controle. Não se presume privatização universal nem uma exceção acionária a ela.",
+          "context_pages": [
+            14,
+            35,
+            47
+          ]
+        },
+        {
+          "topic": "Desenho institucional da coordenação",
+          "reason": "O Centro de Governo e as avaliações de dirigentes não vêm acompanhados de especificação completa de competências, composição, sanções ou alterações nas carreiras do serviço público.",
+          "context_pages": [
+            6,
+            9,
+            100
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "name": "Infraestrutura e Território",
+      "presence": "substantive",
+      "summary": "As escolhas centrais são planejamento técnico de longo prazo, concessões e PPPs, cofinanciamento do transporte coletivo, revisão da incidência de subsídios elétricos e saneamento regionalizado.",
+      "position_ids": [
+        "P08",
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "gaps": [
+        {
+          "topic": "Financiamento e execução territorial",
+          "reason": "O plano lista fontes para transporte coletivo e determina planejamento e manutenção, mas não fornece valores anuais, participação de cada fonte ou carteira territorial completa.",
+          "context_pages": [
+            46,
+            47,
+            48,
+            56
+          ]
+        },
+        {
+          "topic": "Limite das parcerias sociais",
+          "reason": "As PPPs citadas para hospitais e escolas são propostas de infraestrutura; não especificam delegação de toda a gestão assistencial ou pedagógica das unidades.",
+          "context_pages": [
+            47
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "name": "Meio Ambiente e Clima",
+      "presence": "substantive",
+      "summary": "A política ambiental combina licenciamento por impacto, mercados de carbono, remuneração por conservação, adaptação territorial e responsabilização econômica das cadeias ilegais.",
+      "position_ids": [
+        "P13",
+        "P14",
+        "P15",
+        "P16",
+        "P17"
+      ],
+      "gaps": [
+        {
+          "topic": "Parâmetros dos instrumentos ambientais",
+          "reason": "Não fixa tetos setoriais ou preços de carbono, valores de PSA, orçamento por bacia ou cronograma detalhado da adaptação. Essas lacunas não anulam a escolha dos instrumentos.",
+          "context_pages": [
+            50,
+            51
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "name": "Ciência, Tecnologia e Inovação",
+      "presence": "substantive",
+      "summary": "O plano privilegia previsibilidade do financiamento científico, regulação de IA por uso e risco, incentivos condicionados a data centers e conectividade com acesso material a equipamentos.",
+      "position_ids": [
+        "P18",
+        "P19",
+        "P20",
+        "P21"
+      ],
+      "gaps": [
+        {
+          "topic": "Operação da regulação de IA",
+          "reason": "Não estabelece matriz completa de níveis de risco, competências de cada regulador, sanções ou critérios finais de autorização. Não se pode converter o texto em defesa de ausência geral de regulação.",
+          "context_pages": [
+            26,
+            27
+          ]
+        },
+        {
+          "topic": "Quantificação tributária e tecnológica",
+          "reason": "Não informa alíquotas do regime de data centers, tamanho da reserva computacional nacional, redução tributária do smartphone ou orçamento completo de expansão da conexão.",
+          "context_pages": [
+            26
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "name": "Bem-Estar Social",
+      "presence": "substantive",
+      "summary": "A proteção social preserva transferências com transição por renda. O SUS recebe propostas de prioridade clínica, contratação complementar, pagamento por resultados, redução de danos e cuidado de longa duração.",
+      "position_ids": [
+        "P22",
+        "P23",
+        "P24",
+        "P25",
+        "P26",
+        "P27"
+      ],
+      "gaps": [
+        {
+          "topic": "Regras de benefícios e custeio do cuidado",
+          "reason": "A transição dos benefícios não traz limiares, valores ou duração; o financiamento dos cuidados de longa duração tampouco tem fórmula definida.",
+          "context_pages": [
+            61,
+            62,
+            83
+          ]
+        },
+        {
+          "topic": "Gestão e remuneração de unidades",
+          "reason": "Contratação de atendimentos privados não decide delegação da gestão de unidades públicas. O pagamento por resultados não define pesos, percentuais ou fórmula uniforme para todas as unidades.",
+          "context_pages": [
+            47,
+            77,
+            92
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "name": "Educação, Cultura e Sociedade",
+      "presence": "substantive",
+      "summary": "O perfil reúne expansão regulada da educação infantil, exigências para formação docente, financiamento cultural diversificado, proteção no esporte e destinação de recursos escolares conforme avaliação.",
+      "position_ids": [
+        "P28",
+        "P29",
+        "P30",
+        "P31",
+        "P32"
+      ],
+      "gaps": [
+        {
+          "topic": "Natureza dos convênios e modelo escolar",
+          "reason": "O conveniamento de creches não identifica parceiros privados nem um programa de compra de vagas. As propostas de segurança e formação não decidem adotar escolas cívico-militares.",
+          "context_pages": [
+            32,
+            33
+          ]
+        },
+        {
+          "topic": "Critério de distribuição educacional",
+          "reason": "Não esclarece como melhor avaliação será calculada nem como a regra se articula à prioridade aos estudantes com maior perda de aprendizagem e às correções de desigualdade; tensão registrada separadamente.",
+          "context_pages": [
+            32,
+            33,
+            67
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "name": "Cidadania e Direitos",
+      "presence": "substantive",
+      "summary": "As escolhas incluem fim da reeleição consecutiva no Executivo, representação distrital mista, indicadores para correção de desigualdades e aplicação da igualdade remuneratória.",
+      "position_ids": [
+        "P33",
+        "P34",
+        "P35",
+        "P36"
+      ],
+      "gaps": [
+        {
+          "topic": "Detalhes da reforma eleitoral",
+          "reason": "Proporção entre assentos distritais e de lista, desenho dos distritos e regras das listas ficam para negociação e transição.",
+          "context_pages": [
+            8,
+            10
+          ]
+        },
+        {
+          "topic": "Instrumentos específicos de inclusão e trabalho",
+          "reason": "A inclusão em concursos não é definida como reserva racial de vagas nem decide encerramento de cotas; a proteção laboral não decide revogar a reforma trabalhista de 2017.",
+          "context_pages": [
+            59,
+            67,
+            68
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "name": "Segurança Pública",
+      "presence": "substantive",
+      "summary": "O programa amplia instrumentos penais e patrimoniais: terrorismo doméstico para grupos definidos, REDAD, perda de bens, regime adulto para crimes juvenis enumerados, sanções à violência grave contra mulheres e restrição publicitária de apostas.",
+      "position_ids": [
+        "P37",
+        "P38",
+        "P39",
+        "P40",
+        "P41",
+        "P42"
+      ],
+      "gaps": [
+        {
+          "topic": "Alcance e garantias do REDAD",
+          "reason": "As redações sobre todos os membros e lideranças, monitoramento de conversas e defesa técnica legítima não recebem procedimento completo de compatibilização; preservar essa indefinição é necessário.",
+          "context_pages": [
+            16,
+            17,
+            18,
+            19
+          ]
+        },
+        {
+          "topic": "Procedimento patrimonial e execução penal",
+          "reason": "O texto prevê perda autônoma e alienação imediata, mas não descreve integralmente recursos, restituição e demais garantias procedimentais. O perfil registra a proposta sem afirmar sua viabilidade jurídica.",
+          "context_pages": [
+            17,
+            19,
+            20,
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "name": "Soberania e Relações Internacionais",
+      "presence": "substantive",
+      "summary": "O documento propõe diversificar parcerias sem alinhamento automático, consolidar Mercosul–UE, participar do BRICS enquanto se aproxima da OCDE e manter defesa profissional sob poder civil.",
+      "position_ids": [
+        "P43",
+        "P44",
+        "P45",
+        "P46"
+      ],
+      "gaps": [
+        {
+          "topic": "Decisões externas específicas e implementação",
+          "reason": "Não detalha cláusulas setoriais do acordo comercial, calendário de aproximação à OCDE ou decisões sobre ruptura diplomática com Israel. Diversificação não equivale a neutralidade obrigatória em todo conflito.",
+          "context_pages": [
+            72,
+            73,
+            74
+          ]
+        },
+        {
+          "topic": "Programa material de defesa",
+          "reason": "Diretrizes de autonomia tecnológica e planejamento não trazem orçamento completo, quantitativos ou cronograma de aquisição de todos os meios militares.",
+          "context_pages": [
+            30,
+            31
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Regra para expansão do gasto obrigatório",
+      "statement": "O plano propõe desacelerar as despesas obrigatórias para que cresçam abaixo do PIB nominal, em estratégia fiscal plurianual.",
+      "support_level": "explicit_proposal",
+      "instrument": "Medidas legislativas e de gestão sobre o crescimento automático das despesas.",
+      "scope": "Governo federal em 2027–2030, com horizonte de estabilização superior a um mandato.",
+      "conditions": [
+        "Preservação de direitos adquiridos e regras de transição.",
+        "O ajuste é apresentado sem aumentos sucessivos de impostos nem cortes lineares.",
+        "Não decide manter ou revogar a LC 200/2023."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "3. Fazer as despesas obrigatórias crescerem abaixo do PIB nominal Encaminhar medidas legislativas e de gestão que desacelerem o crescimento automático do gasto, preservando direitos adquiridos e estabelecendo regras de transição claras."
+        },
+        {
+          "page": 12,
+          "quote": "O ajuste não será baseado em aumentos sucessivos de impostos nem em cortes lineares."
+        }
+      ],
+      "context_pages": [
+        12,
+        13
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Apoio industrial por prioridades com contrapartidas e prazo",
+      "statement": "O plano propõe política industrial coordenada, com prioridades nacionais transparentes e apoio condicionado a contrapartidas verificáveis e prazo definido.",
+      "support_level": "explicit_proposal",
+      "instrument": "Avaliação de produtividade, crédito de longo prazo, depreciação acelerada e recursos para investimento e inovação.",
+      "scope": "Indústria brasileira, incluindo pequenas e médias empresas, no programa 2027–2030.",
+      "conditions": [
+        "Prioridades baseadas em vantagens nacionais, valor agregado e risco de dependência externa.",
+        "O texto rejeita proteção de empresas específicas como finalidade da estratégia.",
+        "Papel de BNDES e Finep no financiamento não determina seu controle acionário."
+      ],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "Selecionar prioridades nacionais por critérios transparentes: vantagens reais do país, potencial de agregar valor e risco da dependência externa com apoio sempre condicionado a contrapartida verificável e prazo definido: a estratégia indica rumos duradouros, não protege empresas específicas."
+        },
+        {
+          "page": 43,
+          "quote": "Estabelecer programa definitivo de depreciação acelerada para modernização industrial (PL 473/2026), inclusive para pequenas e médias empresas."
+        }
+      ],
+      "context_pages": [
+        43,
+        14
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Complementaridade do crédito agrícola público e privado",
+      "statement": "O plano propõe ampliar financiamento privado e instrumentos de mercado para o agro, preservando o crédito oficial como complemento essencial.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fundo garantidor do crédito privado, recursos públicos para garantias e seguro e Plano Safra plurianual.",
+      "scope": "Financiamento agrícola e investimentos em irrigação e armazenagem; Plano Safra com horizonte de cinco anos.",
+      "conditions": [
+        "Instrumentos de mercado complementam, não substituem, crédito oficial.",
+        "Recursos públicos priorizam redução de riscos e investimentos definidos."
+      ],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Direcionar os recursos públicos prioritariamente para garantias, seguro, redução de riscos e investimentos em irrigação e armazenagem. Criar um fundo garantidor para o crédito agrícola privado e dar previsibilidade ao financiamento das safras e dos projetos de longo prazo. Estruturar um Plano Safra plurianual, com horizonte de cinco anos, para dar previsibilidade e planejamento de longo prazo ao setor produtivo."
+        },
+        {
+          "page": 23,
+          "quote": "Ampliar o uso da Cédula de Produto Rural e demais instrumentos de mercado como complemento, e não substituto, do crédito oficial, que permanece essencial à competitividade do setor."
+        }
+      ],
+      "context_pages": [
+        23
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Capital externo associado a processamento e tecnologia no país",
+      "statement": "O plano admite investimento estrangeiro em mineração e propõe negociar acesso aos recursos com contrapartidas de agregação de valor, tecnologia e fornecedores locais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Acordos de investimento e incentivos a processamento, pesquisa, formação e produção no Brasil.",
+      "scope": "Mineração estratégica e minerais críticos no programa 2027–2030.",
+      "conditions": [
+        "Parcerias diversificadas, evitando dependência de um comprador ou fornecedor.",
+        "Incentivos sujeitos a prazo, metas e contrapartidas.",
+        "Admissão condicionada não equivale a proibição do investimento estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "A política não fechará o país ao investimento estrangeiro, mas negociará acesso a recursos em troca de valor agregado, tecnologia, qualificação e fornecedores locais."
+        },
+        {
+          "page": 54,
+          "quote": "Acesso a recursos será associado a processamento no Brasil, formação de profissionais, pesquisa conjunta, transferência tecnológica e integração de empresas nacionais."
+        }
+      ],
+      "context_pages": [
+        53,
+        54
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Coordenação executiva por missões e avaliação de dirigentes",
+      "statement": "O plano propõe um Centro de Governo para coordenar prioridades e cobrar resultados públicos da alta administração.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cartas de missão, metas, indicadores, avaliações periódicas e seleção por competência, experiência e integridade.",
+      "scope": "Ministros e dirigentes superiores do Executivo federal, incluindo órgãos estratégicos.",
+      "conditions": [
+        "Verificação prévia de conflitos de interesse.",
+        "A proposta reconhece cargos políticos e os submete a responsabilidade técnica; não estabelece concurso universal para esses cargos."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Criar um Centro de Governo responsável por prioridades, monitoramento, análise de riscos e integração ministerial. Cada ministro terá carta de missão, metas públicas, indicadores e avaliação periódica de entrega."
+        },
+        {
+          "page": 9,
+          "quote": "Selecionar dirigentes por competência, experiência e integridade, com verificação prévia de conflitos de interesse e avaliação de desempenho."
+        }
+      ],
+      "context_pages": [
+        6,
+        9
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Rastreabilidade e planejamento das emendas parlamentares",
+      "statement": "O plano propõe painel que permita acompanhar autoria, beneficiário e execução das emendas, articulando-as ao planejamento nacional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Painel público único e pactuação de critérios de planejamento, custo total e resultado com o Congresso.",
+      "scope": "Emendas parlamentares e sua execução territorial.",
+      "conditions": [
+        "Pactuação institucional com o Congresso.",
+        "Não anuncia eliminação de todas as emendas ou concentração unilateral do orçamento no Executivo."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Criar painel único com autoria, objeto, município, convenente, beneficiário final, licitação, execução física e resultado de cada emenda, permitindo que o eleitor acompanhe a atuação de seu representante."
+        },
+        {
+          "page": 13,
+          "quote": "Pactuar com o Congresso critérios de planejamento, transparência, manutenção, custo total e resultado, reduzindo pulverização e impedindo que recursos escassos sejam destinados a objetos sem capacidade de operação."
+        }
+      ],
+      "context_pages": [
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Revisão periódica de programas e benefícios sem resultado",
+      "statement": "O plano propõe avaliar gastos, fundos, subsídios e benefícios tributários e redesenhar ou encerrar políticas ineficazes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão periódica, avaliação independente, prazo e contrapartidas para benefícios e relatório anual.",
+      "scope": "Políticas federais e programas estratégicos no programa 2027–2030.",
+      "conditions": [
+        "Preservação de direitos e transições necessárias.",
+        "Políticas eficazes podem ser ampliadas.",
+        "Não são cortes lineares automáticos em toda política pública."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Instituir revisão periódica de programas, subsídios, fundos e benefícios tributários. Políticas eficazes serão ampliadas; as que não entregarem resultado serão redesenhadas ou encerradas, preservando direitos e transições necessárias."
+        },
+        {
+          "page": 12,
+          "quote": "Exigir prazo, objetivo, beneficiário, estimativa de custo, contrapartida e avaliação independente. Benefícios sem resultado ou incompatíveis com as prioridades nacionais serão reduzidos ou encerrados."
+        }
+      ],
+      "context_pages": [
+        6,
+        12,
+        100
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Planejamento de infraestrutura com avaliação técnica independente",
+      "statement": "O plano propõe carteira única de infraestrutura de longo prazo, avaliada por instância técnica independente com mandato próprio.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plano de trinta anos, revisões periódicas e análises públicas de custo e benefício.",
+      "scope": "Grandes projetos e ativos estratégicos de infraestrutura nacional.",
+      "conditions": [
+        "Priorização por retorno econômico e social.",
+        "Contratação de novos ativos acompanhada de manutenção financiada.",
+        "Não detalha composição, forma de nomeação ou poderes finais da instância independente."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Instituir um planejamento integrado de longo prazo, com horizonte de trinta anos e revisões periódicas, e uma carteira única de projetos priorizados por critérios técnicos de retorno econômico e social. Para que esse planejamento atravesse governos, contará com uma instância técnica independente, de mandato próprio, encarregada de avaliar os grandes projetos, mapear ativos estratégicos de interesse nacional e publicar suas análises de custo e benefício."
+        },
+        {
+          "page": 46,
+          "quote": "nenhum ativo novo deve ser contratado sem plano de manutenção financiado"
+        }
+      ],
+      "context_pages": [
+        46
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Expansão de concessões e PPPs com outorgas reinvestidas no setor",
+      "statement": "O plano propõe calendário permanente de concessões e parcerias, incluindo infraestrutura social, e reinvestimento setorial das outorgas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Leilões pelo PPI, apoio técnico a estados e municípios e concessão de ativos maduros para financiar infraestrutura nova.",
+      "scope": "Rodovias, ferrovias, portos, aeroportos, saneamento, energia, hospitais, escolas e iluminação pública.",
+      "conditions": [
+        "Concessões e PPPs de infraestrutura não estabelecem, por si, delegação da gestão assistencial ou pedagógica.",
+        "Não implicam transferência do controle de todas as empresas estatais."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Manter um calendário permanente e previsível de leilões (dando continuidade ao Programa de Parcerias em Investimentos, o PPI) em rodovias, ferrovias, portos, aeroportos, saneamento, energia e infraestrutura social, como hospitais, escolas e iluminação pública."
+        },
+        {
+          "page": 47,
+          "quote": "Assegurar que as outorgas geradas pelas concessões sejam reinvestidas no próprio setor, reduzindo gargalos e ampliando a eficiência, em vez de dispersar-se no orçamento geral."
+        }
+      ],
+      "context_pages": [
+        46,
+        47
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Financiamento federal plurianual do transporte coletivo",
+      "statement": "O plano propõe financiar o transporte coletivo com fontes diversificadas e participação da União, sem novo imposto geral ou aumento da carga tributária.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proposta legislativa no primeiro ano, reorganização de receitas, recursos climáticos, contrapartidas, outorgas, estacionamento, mais-valias e crédito.",
+      "scope": "Transporte público coletivo de titularidade estadual e municipal.",
+      "conditions": [
+        "Operação local permanece descentralizada.",
+        "Acesso a recursos federais condicionado a qualidade, eficiência e transparência.",
+        "Gratuidades e benefícios devem ter fonte explícita, evitando repasse do custo à tarifa dos demais passageiros."
+      ],
+      "evidence": [
+        {
+          "page": 56,
+          "quote": "A União coordenará diretrizes, informação, financiamento e apoio técnico sem centralizar a operação local."
+        },
+        {
+          "page": 56,
+          "quote": "Enviar ao Congresso proposta de financiamento plurianual, sem novo imposto geral e sem aumento da carga tributária. Reorganizar receitas existentes, recursos climáticos, contrapartidas de beneficiários indiretos, receitas de estacionamento e outorgas, recuperação de mais-valias urbanas e instrumentos de crédito. O acesso federal será condicionado a metas públicas de qualidade, eficiência e transparência."
+        }
+      ],
+      "context_pages": [
+        56
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Transferência de subsídios da tarifa elétrica para o orçamento",
+      "statement": "O plano propõe deslocar progressivamente para o orçamento políticas sociais ou setoriais embutidas na tarifa e sem ligação direta com o funcionamento do sistema elétrico.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão transparente de encargos, prazo de vigência, avaliação periódica e decisão do Congresso.",
+      "scope": "Subsídios e encargos da conta de energia elétrica.",
+      "conditions": [
+        "Transição gradual, respeito a contratos e competências institucionais.",
+        "Sem mudanças retroativas.",
+        "O texto não propõe simplesmente extinguir toda política social de energia."
+      ],
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "transferir progressivamente para o orçamento público, mediante decisão do Congresso, as políticas de natureza social ou setorial que não estejam diretamente vinculadas ao funcionamento do sistema elétrico."
+        },
+        {
+          "page": 35,
+          "quote": "A redução de distorções será feita com previsibilidade, transição adequada e sem mudanças retroativas, preservando a confiança de consumidores e investidores."
+        }
+      ],
+      "context_pages": [
+        35,
+        36
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Saneamento regionalizado sob normas nacionais",
+      "statement": "O plano propõe cumprir e acelerar a universalização do saneamento e ampliar prestação regionalizada, preservando a segurança regulatória do marco vigente.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prestação regionalizada, normas de referência da ANA e concessões ou parcerias, inclusive em drenagem.",
+      "scope": "Água e esgoto com horizonte de universalização até 2033, além de resíduos e drenagem.",
+      "conditions": [
+        "Regionalização deve alcançar municípios de menor atratividade econômica.",
+        "Autonomia decisória, orçamento e capacidade técnica da ANA.",
+        "Não define uma única forma de propriedade ou operação para todas as redes."
+      ],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "Cumprir e acelerar as metas do marco legal do saneamento (universalização até 2033), água tratada e coleta e tratamento de esgoto para todos os brasileiros"
+        },
+        {
+          "page": 48,
+          "quote": "avançar na prestação regionalizada, que viabiliza a universalização nos municípios de menor atratividade"
+        },
+        {
+          "page": 48,
+          "quote": "Assegurar à ANA autonomia decisória, orçamento e capacidade técnica para editar e fazer cumprir as normas de referência de aplicação nacional, garantindo padrão regulatório uniforme entre os entes."
+        }
+      ],
+      "context_pages": [
+        48
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Licenciamento ambiental proporcional ao impacto",
+      "statement": "O plano propõe licenciamento com exigências proporcionais ao impacto e procedimentos simplificados para atividades de baixo risco.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco nacional, termos de referência padronizados, prazos públicos, coordenação entre órgãos e monitoramento de condicionantes por resultado.",
+      "scope": "Projetos sujeitos a licenciamento, com tratamento distinto conforme complexidade e impacto.",
+      "conditions": [
+        "Participação social e equipes multidisciplinares para processos complexos.",
+        "Regularização assistida não inclui anistia a dano doloso ou reincidência."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Implementar marco nacional com exigências proporcionais ao impacto, termos de referência padronizados, prazos públicos, coordenação entre órgãos e participação social. Processos complexos terão equipes multidisciplinares; baixo risco terá procedimentos simplificados; condicionantes serão monitoradas por resultado."
+        },
+        {
+          "page": 50,
+          "quote": "A sequência será orientação, suporte, financiamento, geração de ativos e fiscalização, sem anistia a dano doloso ou reincidência."
+        }
+      ],
+      "context_pages": [
+        50
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Mercado regulado de carbono e integridade dos créditos",
+      "statement": "O plano propõe operacionalizar o sistema regulado de carbono e integrá-lo aos mercados voluntários e mecanismos internacionais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Padrões de mensuração e rastreabilidade e destinação de receitas ambientais.",
+      "scope": "Mercado de carbono brasileiro no programa 2027–2030.",
+      "conditions": [
+        "Respeito a direitos territoriais e repartição de benefícios.",
+        "Receitas destinadas a inovação, adaptação, infraestrutura verde e inclusão."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Operacionalizar o sistema regulado brasileiro, integrar mercados voluntários, estabelecer padrões de mensuração e rastreabilidade e articular mecanismos internacionais. Receitas financiarão inovação, adaptação, infraestrutura verde e inclusão, com respeito a direitos territoriais e repartição de benefícios."
+        }
+      ],
+      "context_pages": [
+        51
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Pagamento por conservação de recursos naturais",
+      "statement": "O plano propõe remunerar serviços de conservação de água, solo, biodiversidade e carbono.",
+      "support_level": "explicit_proposal",
+      "instrument": "Pagamento por Serviços Ambientais com recursos públicos, privados e de mercado.",
+      "scope": "Bacias críticas, corredores ecológicos, produtores responsáveis, povos indígenas, quilombolas e comunidades tradicionais.",
+      "conditions": [
+        "Contratos simples e verificação confiável.",
+        "Prioridades territoriais e repartição vinculada a serviços ambientais, sem valores unitários definidos."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Remunerar conservação de água, solo, biodiversidade e carbono, articulando recursos públicos, privados e de mercados. Priorizar bacias críticas, corredores ecológicos, produtores responsáveis, povos indígenas, quilombolas e comunidades tradicionais, com contratos simples e verificação confiável."
+        }
+      ],
+      "context_pages": [
+        51
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Recursos para adaptação climática condicionados a planejamento",
+      "statement": "O plano propõe financiar prevenção de desastres e adaptação territorial mediante planos e manutenção.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mapeamento de risco, alertas, drenagem, contenção e soluções baseadas na natureza.",
+      "scope": "Planos nacionais e municipais, com prioridade a populações em áreas de risco.",
+      "conditions": [
+        "Acesso a recursos condicionado a planejamento e manutenção.",
+        "Não estabelece envelope orçamentário ou cronograma por território."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Atualizar planos nacionais e municipais de adaptação, mapear risco, implantar sistemas de alerta, obras de drenagem e contenção e soluções baseadas na natureza. Recursos serão condicionados a planejamento e manutenção, com prioridade a populações em áreas de risco."
+        }
+      ],
+      "context_pages": [
+        51
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "meio_ambiente_clima",
+      "secondary_category_ids": [
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Responsabilização econômica por desmatamento e grilagem ilegais",
+      "statement": "O plano propõe atingir financiadores e compradores das cadeias de crimes ambientais, além de recuperar terras públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fiscalização coordenada, inteligência financeira e operações com segurança pública e Receita.",
+      "scope": "Desmatamento, grilagem e cadeias de produtos ilegais.",
+      "conditions": [
+        "Proteção dos agentes de fiscalização.",
+        "A proposta se dirige às cadeias ilegais; não equivale à proibição de toda produção ou de todo uso regular da terra."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Fortalecer fiscalização e inteligência financeira, recuperar terras públicas, responsabilizar financiadores e compradores de produtos ilegais e proteger agentes. Operações serão coordenadas com segurança pública e Receita, atingindo cadeias econômicas e não apenas executores na ponta."
+        }
+      ],
+      "context_pages": [
+        50,
+        51
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Proteção orçamentária do financiamento científico",
+      "statement": "O plano propõe execução plurianual do FNDCT protegida contra contingenciamentos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Financiamento estável, avaliação por resultados e estímulo a fundos patrimoniais.",
+      "scope": "Instituições e projetos de ciência de longo prazo.",
+      "conditions": [
+        "Governança transparente e avaliação de resultados.",
+        "Não estabelece valor mínimo ou nova alíquota de arrecadação para o fundo."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Assegurar execução plurianual do FNDCT, proteção contra contingenciamentos, governança transparente, avaliação por resultados e estímulo a fundos patrimoniais que deem estabilidade às instituições e aos projetos de longo prazo."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Regulação da inteligência artificial por uso e risco",
+      "statement": "O plano propõe marco de IA centrado no uso, dano e risco concreto, com supervisão setorial e tratamento proporcional.",
+      "support_level": "explicit_proposal",
+      "instrument": "Marco legal, coordenação central leve e ambientes experimentais.",
+      "scope": "Aplicações de inteligência artificial, com regras proporcionais para pesquisa e pequenas empresas.",
+      "conditions": [
+        "Transparência, responsabilização e não discriminação.",
+        "O texto usa a expressão proteger direitos sem licenciar a matemática; não especifica um regime completo de autorização ou dispensa de modelos."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Adotar marco legal centrado no uso, no dano e no risco concreto, com transparência, responsabilização e não discriminação, supervisão dos reguladores setoriais, coordenação central leve, ambientes experimentais e tratamento proporcional para pesquisa e pequenas empresas. O objetivo será proteger direitos sem licenciar a matemática nem bloquear a inovação."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "meio_ambiente_clima"
+      ],
+      "policy_dimension": "Benefício tributário para data centers com contrapartidas",
+      "statement": "O plano propõe regime tributário estável para data centers condicionado a requisitos ambientais, capacidade tecnológica nacional e investimento local.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regime para bens de capital e serviços de data center.",
+      "scope": "Projetos de infraestrutura computacional no Brasil.",
+      "conditions": [
+        "Energia nova e renovável, eficiência hídrica com métricas públicas e resfriamento de ciclo fechado.",
+        "Reserva de capacidade para universidades, pesquisa e empresas brasileiras.",
+        "Qualificação, emprego local e investimento na rede elétrica; coerência com a reforma tributária."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Criar regime tributário estável para bens de capital e serviços de data center, coerente com a reforma tributária, condicionado a energia nova e renovável, eficiência hídrica com métricas públicas e resfriamento de ciclo fechado, reserva de capacidade para universidades, pesquisa e empresas brasileiras, qualificação e emprego local e investimento na rede elétrica."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Conectividade com infraestrutura e acesso a dispositivos",
+      "statement": "O plano propõe direcionar o FUST à conexão de escolas, unidades de saúde e áreas rurais e reduzir a tributação do smartphone de entrada para inclusão digital.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fibra e backhaul, satélites como complemento, FUST, recondicionamento de equipamentos e incentivo tributário ao aparelho de entrada.",
+      "scope": "Interior, Amazônia, serviços públicos e população de baixa renda.",
+      "conditions": [
+        "Editais de espectro orientados por cobertura e qualidade.",
+        "Satélites de órbita baixa como complemento regulado.",
+        "Conectividade significativa inclui qualidade, equipamentos e letramento, não apenas cobertura nominal."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Levar fibra e backhaul ao interior e à Amazônia, acelerar infovias, usar satélites de órbita baixa como complemento regulado e orientar editais de espectro por cobertura e qualidade."
+        },
+        {
+          "page": 26,
+          "quote": "Colocar o FUST a serviço de escolas, unidades de saúde e conectividade rural; ampliar recondicionamento e doação de equipamentos; reduzir a carga tributária do smartphone de entrada, como uma forma de subsídio e inclusão digital da população de baixa renda; promover letramento digital; e criar indicador oficial por município e faixa de renda."
+        }
+      ],
+      "context_pages": [
+        26
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Preservação de renda com redução gradual após inserção produtiva",
+      "statement": "O plano propõe preservar programas de transferência de renda e reduzir gradualmente o benefício de quem entra no emprego formal ou aumenta a renda.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regra de transição articulada a qualificação, creche e intermediação de trabalho.",
+      "scope": "Famílias beneficiárias, incluindo pessoas economicamente ativas.",
+      "conditions": [
+        "Atualização cadastral e combate a fraude sem constranger beneficiários.",
+        "A redução depende de ingresso no trabalho formal ou ampliação de renda; não é substituição geral por trabalho público.",
+        "Valores, duração da transição e limiares não são definidos."
+      ],
+      "evidence": [
+        {
+          "page": 61,
+          "quote": "Preservar os programas de transferência de renda, atualizar cadastros e combater fraude sem constranger beneficiários. Criar regra de transição para quem ingressa no trabalho formal ou amplia renda, reduzindo benefício gradualmente e conectando a qualificação, creche e intermediação."
+        }
+      ],
+      "context_pages": [
+        61
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Regulação de filas por prioridade clínica e reavaliação",
+      "statement": "O plano propõe ordenar o acesso do SUS por risco clínico, vulnerabilidade e tempo de espera, com jornada rastreável e reavaliação da prioridade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistema Nacional de Acesso e Regulação Inteligente e plataformas interoperáveis.",
+      "scope": "Consultas, exames, cirurgias e linhas especializadas; articulação federativa.",
+      "conditions": [
+        "Tempo transcorrido continua sendo um critério; não é eliminado.",
+        "Paciente que piora deve ter prioridade atualizada.",
+        "Canais digitais e não digitais e acompanhamento pela UBS durante a espera."
+      ],
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "Criar um Sistema Nacional de Acesso e Regulação Inteligente que substitua progressivamente a fila passiva por uma jornada clínica rastreável. A posição do cidadão não será definida apenas pela data do pedido, mas por gravidade, risco de progressão, impacto do atraso, vulnerabilidade e tempo já transcorrido."
+        },
+        {
+          "page": 77,
+          "quote": "Adotar critérios nacionais de prioridade clínica e reavaliação dinâmica; pacientes que piorarem terão sua prioridade atualizada."
+        }
+      ],
+      "context_pages": [
+        77,
+        78
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Contratação complementar de atendimento privado para filas",
+      "statement": "O plano propõe mobilizar hospitais privados contratados quando necessário para organizar a oferta regional e reduzir a espera no SUS.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratualização regional de serviços com hospitais públicos, filantrópicos, universitários e privados.",
+      "scope": "Ação de redução de filas e integração das linhas de cuidado.",
+      "conditions": [
+        "Contratação quando necessária e pagamento combinado com critérios de qualidade e resultado.",
+        "Não estabelece delegação da gestão de unidades públicas a entidades privadas."
+      ],
+      "evidence": [
+        {
+          "page": 77,
+          "quote": "Oferta regional integrada e contratualização inteligente. Definir carteira de serviços, referências e transporte sanitário por região; mobilizar hospitais públicos, filantrópicos, universitários e privados contratados quando necessário; e combinar pagamento por produção com população, complexidade, acesso, qualidade, desfecho, segurança e eficiência."
+        }
+      ],
+      "context_pages": [
+        77
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Remuneração do SUS por qualidade e resultados além de volume",
+      "statement": "O plano propõe migrar de pagamento exclusivamente por produção para modelos que também considerem qualidade, eficiência e resultados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Contratos auditáveis, painel de eficiência e modelos de remuneração com ajuste por população e complexidade.",
+      "scope": "Redes e unidades do SUS, com implantação progressiva.",
+      "conditions": [
+        "Comparar unidades de perfil semelhante, sem rankings simplistas.",
+        "Volume de produção não desaparece necessariamente: o plano prevê combinar critérios.",
+        "Não define fórmula, pesos ou percentuais de remuneração por desempenho."
+      ],
+      "evidence": [
+        {
+          "page": 92,
+          "quote": "Migrar progressivamente de pagamento exclusivamente por produção para modelos que também considerem população, complexidade, qualidade, eficiência e resultados."
+        },
+        {
+          "page": 92,
+          "quote": "Comparar unidades de perfil semelhante para identificar oportunidades de melhoria e direcionar apoio técnico, não para produzir rankings simplistas."
+        }
+      ],
+      "context_pages": [
+        77,
+        78,
+        92
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Redução de danos no cuidado de álcool e outras drogas",
+      "statement": "O plano propõe incorporar redução de danos e respostas clínicas proporcionais à gravidade na rede de saúde mental e de álcool e outras drogas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Integração entre APS, CAPS AD, emergência, hospital, assistência e vigilância.",
+      "scope": "Pessoas com uso prejudicial de substâncias; atenção específica a adolescentes, gestantes, pessoas em situação de rua ou privadas de liberdade e famílias.",
+      "conditions": [
+        "Prevenção, tratamento por evidências, cuidado de crises, continuidade e reinserção.",
+        "A política não adota solução única para situações clínicas distintas.",
+        "Não constitui proposta de legalização ou descriminalização de drogas."
+      ],
+      "evidence": [
+        {
+          "page": 84,
+          "quote": "A política deverá reconhecer diferentes níveis de gravidade e oferecer respostas proporcionais, evitando soluções únicas para situações clínicas distintas."
+        },
+        {
+          "page": 84,
+          "quote": "Redução de danos e prevenção de intoxicações: incorporar estratégias de redução de danos, vigilância epidemiológica, monitoramento de novas substâncias e fortalecimento da capacidade de resposta das emergências."
+        }
+      ],
+      "context_pages": [
+        84
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Cuidado de longa duração e atenção domiciliar",
+      "statement": "O plano propõe financiar uma rede de cuidados de longa duração e expandir atendimento domiciliar para idosos dependentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Centros-dia, cuidadores, reabilitação, padrões de qualidade e integração entre saúde e assistência.",
+      "scope": "Pessoas idosas, famílias cuidadoras e pessoas com perda de autonomia.",
+      "conditions": [
+        "Apoio a famílias e municípios.",
+        "Cuidado articulado a avaliação funcional, reabilitação e suporte aos cuidadores.",
+        "Não define benefício monetário universal para cuidadores nem uma fórmula de financiamento."
+      ],
+      "evidence": [
+        {
+          "page": 62,
+          "quote": "Criar política integrada de prevenção, convivência, atenção domiciliar, centros-dia, cuidadores, reabilitação e proteção contra violência e fraude. Desenvolver financiamento e padrões de qualidade para cuidados de longa duração, apoiando famílias e municípios."
+        },
+        {
+          "page": 83,
+          "quote": "Atenção domiciliar, deficiência e continuidade do cuidado: expandir atenção domiciliar para idosos dependentes, ampliar apoio às pessoas com deficiência e integrar saúde e assistência social no plano de cuidado quando houver perda de autonomia."
+        }
+      ],
+      "context_pages": [
+        62,
+        83
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Expansão da educação infantil por construção e convênios",
+      "statement": "O plano propõe universalizar a pré-escola e ampliar creches mediante construção, conveniamento regulado e apoio municipal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão física e convênios regulados com avaliação de qualidade.",
+      "scope": "Prioridade a famílias vulneráveis e territórios com baixa oferta.",
+      "conditions": [
+        "Avaliar formação profissional, desenvolvimento infantil e integração com saúde e assistência.",
+        "Não identifica a natureza privada dos conveniados nem define pagamento público por vagas privadas."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Universalizar pré-escola e ampliar creches prioritariamente para famílias vulneráveis e territórios com baixa oferta, combinando construção, conveniamento regulado e apoio a municípios. Avaliar qualidade, formação de profissionais, desenvolvimento infantil e integração com saúde e assistência."
+        }
+      ],
+      "context_pages": [
+        32
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Formação docente com prática supervisionada e restrição de cursos insuficientes",
+      "statement": "O plano propõe elevar a qualidade das licenciaturas, exigir prática supervisionada e restringir cursos de baixa qualidade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regras de formação, bolsas a estudantes que escolhem docência, formação continuada e mentoria.",
+      "scope": "Formação inicial e desenvolvimento de professores.",
+      "conditions": [
+        "A restrição se refere a cursos de baixa qualidade; não é proibição geral de toda licenciatura a distância.",
+        "Apoio a carreiras e redução de burocracia acompanham a exigência de qualidade."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Elevar padrão das licenciaturas, exigir prática supervisionada robusta, restringir cursos de baixa qualidade e oferecer bolsas a bons estudantes que escolham docência. Apoiar carreiras atrativas, formação continuada na escola, mentoria de iniciantes e redução de burocracia."
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Financiamento cultural com incentivos fiscais e transferências federativas",
+      "statement": "O plano propõe financiamento cultural estável que combine transferências fundo a fundo, investimento direto, incentivo fiscal e crédito.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sistema Nacional de Cultura, Fundo Nacional de Cultura e fundos retornáveis.",
+      "scope": "Agentes culturais, com correção de desigualdades regionais e facilitação para pequenos agentes.",
+      "conditions": [
+        "Seleções com critérios públicos, comissões qualificadas e diversidade de visões.",
+        "Apoio público não deve servir a censura ou propaganda partidária."
+      ],
+      "evidence": [
+        {
+          "page": 28,
+          "quote": "Consolidar transferências fundo a fundo, fortalecer o Fundo Nacional de Cultura e combinar investimento direto, incentivo fiscal, crédito e fundos retornáveis. Critérios corrigirão desigualdades regionais e simplificarão acesso de pequenos agentes."
+        },
+        {
+          "page": 29,
+          "quote": "Garantir que apoio público não seja usado para censura ou propaganda partidária. Seleções terão critérios públicos, comissões qualificadas, diversidade de visões, prestação de contas proporcional e publicação de beneficiários e resultados."
+        }
+      ],
+      "context_pages": [
+        28,
+        29
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Proteção infantil como condição de financiamento esportivo",
+      "statement": "O plano propõe condicionar recursos públicos ao esporte a protocolos de prevenção e resposta a abuso e violência contra crianças e adolescentes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Requisitos para seleção de profissionais, canais de denúncia, formação em direitos e fiscalização.",
+      "scope": "Organizações de formação esportiva que recebem recursos públicos.",
+      "conditions": [
+        "Assegurar estudo, saúde, convivência familiar e contratos transparentes.",
+        "Fiscalização e apoio aos conselhos de direitos."
+      ],
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Condicionar recursos públicos a protocolos de prevenção, seleção de profissionais, canais de denúncia, resposta a abuso e violência sexual e formação em direitos. Organizações formadoras deverão cumprir a legislação, assegurar estudo, saúde, convivência familiar e contratos transparentes, com fiscalização e apoio aos conselhos de direitos."
+        }
+      ],
+      "context_pages": [
+        40,
+        41
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Destinação de recursos escolares vinculada à avaliação",
+      "statement": "O plano propõe direcionar recursos e apoio às escolas com melhor avaliação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Saeb, Ideb e avaliações formativas com indicadores de aprendizagem, equidade, clima escolar e trajetória.",
+      "scope": "Escolas da educação básica no programa 2027–2030.",
+      "conditions": [
+        "O texto pede evitar rankings simplistas.",
+        "Não define se melhor avaliação significa nível de desempenho, progresso ou outro critério composto.",
+        "A regra convive com prioridade aos estudantes que mais perderam aprendizagem, sem critério explícito de conciliação."
+      ],
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Produzir indicadores de aprendizagem, equidade, clima escolar e trajetória, evitando rankings simplistas. Recursos e apoio serão direcionados às escolas com melhor avaliação."
+        },
+        {
+          "page": 32,
+          "quote": "As metas serão públicas e a prioridade será o estudante que mais perdeu aprendizagem."
+        }
+      ],
+      "context_pages": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Extinção da reeleição consecutiva no Executivo",
+      "statement": "O plano propõe extinguir a reeleição consecutiva para cargos do Poder Executivo, incluindo o mandato presidencial iniciado em 2027.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proposta de emenda à Constituição enviada no início do mandato.",
+      "scope": "Cargos do Executivo; a proposta inclui aplicação ao próprio mandato presidencial.",
+      "conditions": [
+        "Depende de aprovação pelo Congresso.",
+        "Não é proibição de todo retorno futuro ao cargo nem vedação a reeleições legislativas."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Encaminhar ao Congresso, no início do mandato, proposta de emenda à Constituição para extinguir a reeleição consecutiva para os cargos do Poder Executivo, com aplicação inclusive ao mandato presidencial iniciado em 2027."
+        }
+      ],
+      "context_pages": [
+        8
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Representação legislativa por sistema distrital misto",
+      "statement": "O plano propõe combinar eleição em distritos territoriais e listas partidárias, preservando proporcionalidade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reforma eleitoral negociada com Congresso, Justiça Eleitoral, partidos e sociedade.",
+      "scope": "Representação legislativa hoje tratada no diagnóstico de deputados e vereadores.",
+      "conditions": [
+        "Regras de listas, desenho dos distritos e calendário permanecem a definir.",
+        "Transição deve proteger representação regional e de minorias.",
+        "Não é adoção de um sistema exclusivamente majoritário ou distrital puro."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Propor modelo em que parte dos representantes seja eleita em distritos territoriais e parte por listas partidárias, preservando a proporcionalidade e combinando vínculo local com representação das correntes de opinião."
+        },
+        {
+          "page": 10,
+          "quote": "Construir a reforma com o Congresso, Justiça Eleitoral, partidos, especialistas e sociedade, definindo desenho dos distritos, regras de listas, critérios de proporcionalidade, calendário de implantação e proteção à representação regional e de minorias."
+        }
+      ],
+      "context_pages": [
+        10
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Correção de desigualdades a partir de indicadores raciais e territoriais",
+      "statement": "O plano propõe exigir resultados desagregados por raça, território e gênero nas políticas relevantes e criar planos corretivos quando persistirem diferenças.",
+      "support_level": "explicit_proposal",
+      "instrument": "Publicação de indicadores, assistência técnica e direcionamento de recursos.",
+      "scope": "Educação, saúde, segurança, trabalho, habitação e crédito.",
+      "conditions": [
+        "Proteção de dados pessoais.",
+        "Inclusão em concursos não é especificada como reserva racial de vagas; não se deduz posição sobre extinção de cotas."
+      ],
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "Exigir que programas relevantes de educação, saúde, segurança, trabalho, habitação e crédito publiquem resultados por raça, território e gênero, observada a proteção de dados. Diferenças persistentes gerarão planos de correção, recursos e assistência técnica."
+        }
+      ],
+      "context_pages": [
+        67,
+        68
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [],
+      "policy_dimension": "Aplicação da igualdade remuneratória e correção de discriminação",
+      "statement": "O plano propõe aplicar a legislação de igualdade remuneratória e corrigir discriminação comprovada, com transparência e proteção de dados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Critérios objetivos de avaliação e selo público para práticas empresariais de igualdade.",
+      "scope": "Mulheres no mercado de trabalho, incluindo mulheres periféricas, mães atípicas e mulheres acima de cinquenta anos.",
+      "conditions": [
+        "Correção fundada em discriminação comprovada.",
+        "Retorno após maternidade, desenvolvimento de liderança e combate ao assédio são medidas complementares.",
+        "Não decide a revogação da reforma trabalhista de 2017."
+      ],
+      "evidence": [
+        {
+          "page": 59,
+          "quote": "Aplicar a legislação de igualdade remuneratória com critérios objetivos, proteção de dados e correção de discriminação comprovada. Estimular avaliação de funções, retorno após maternidade, desenvolvimento de liderança e ambientes sem assédio."
+        }
+      ],
+      "context_pages": [
+        59
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Enquadramento de organizações criminosas como terrorismo doméstico",
+      "statement": "O plano propõe uma lei de terrorismo doméstico para organizações e milícias com determinados atributos de poder territorial e violência.",
+      "support_level": "explicit_proposal",
+      "instrument": "Novo enquadramento legal e amparo ao Sistema Integrado de Proteção à Soberania Nacional.",
+      "scope": "Grupos com estrutura permanente de comando, domínio territorial, capacidade armada, poder econômico e uso sistemático de violência para controlar populações ou restringir o Estado.",
+      "conditions": [
+        "Compatibilidade declarada com compromissos internacionais e padrões de cooperação jurídica.",
+        "A lei proposta permitiria integrar Forças Armadas ao enfrentamento sem acionamento de GLO.",
+        "O diagnóstico criminal não autoriza aplicar esse rótulo a grupos fora dos critérios indicados."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "Propor legislação que enquadre como terrorismo doméstico as organizações criminosas e milícias que apresentem estrutura permanente de comando, domínio territorial, capacidade armada, poder econômico e uso sistemático da violência para controlar populações ou restringir a atuação do Estado, com desenho compatível com os compromissos internacionais assumidos pelo Brasil e com os padrões de cooperação jurídica internacional."
+        },
+        {
+          "page": 17,
+          "quote": "permite que as Forças Armadas sejam integradas ao enfrentamento do crime organizado sem acionamento da GLO; dá amparo legal ao Sistema Integrado de Proteção à Soberania Nacional; e facilita o asfixiamento financeiro do crime organizado."
+        }
+      ],
+      "context_pages": [
+        16,
+        17
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Regime penitenciário especial para terrorismo doméstico",
+      "statement": "O plano propõe o REDAD, com isolamento, restrições de visitas e comunicações e progressão somente após noventa por cento da pena.",
+      "support_level": "explicit_proposal",
+      "instrument": "Regime Especial Disciplinar Antiterrorismo Doméstico e regras legais de monitoramento.",
+      "scope": "A p.17 o torna obrigatório para membros das organizações enquadradas; a p.18 enfatiza aplicação às lideranças.",
+      "conditions": [
+        "Cela individual e proibição de visita íntima.",
+        "A p.17 prevê monitoramento obrigatório de todas as conversas com advogados; a p.19 exige cadeia de custódia, supervisão judicial e preservação da defesa técnica legítima.",
+        "Presos sem participação nas estruturas de comando recebem previsão de trabalho, educação e reinserção.",
+        "Não se resolve aqui a diferença de alcance entre todos os membros e lideranças; o plano não fornece regra completa de compatibilização."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "REDAD (Regime Especial Disciplinar Antiterrorismo Doméstico), obrigatório para membros de organizações enquadradas pela nova Lei, com separação absoluta de lideranças, cela individual obrigatória, proibição de visita íntima, monitoramento obrigatório de todas as conversas com advogados, e direito à progressão somente após cumprimento de 90% da pena."
+        },
+        {
+          "page": 18,
+          "quote": "Aplicar às lideranças o Regime Especial Disciplinar Antiterrorismo Doméstico (REDAD), com isolamento em cela individual, bloqueio de celulares, monitoramento ambiental, proibição de visitas íntimas e progressão somente após o cumprimento de 90% da pena"
+        },
+        {
+          "page": 19,
+          "quote": "Estabelecer em lei regras para o monitoramento dos contatos de presos submetidos ao REDAD, inclusive nos parlatórios, com cadeia de custódia, supervisão judicial e preservação da defesa técnica legítima. Para presos sem participação nas estruturas de comando, ampliar trabalho, educação, profissionalização e reinserção."
+        }
+      ],
+      "context_pages": [
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Inversão do ônus patrimonial e perda independente da ação penal",
+      "statement": "O plano propõe acelerar a retirada de patrimônio de organizações criminosas com inversão do ônus de prova, perda autônoma e alienação antecipada.",
+      "support_level": "explicit_proposal",
+      "instrument": "Novo tipo de enriquecimento incompatível e dispositivos legais de confisco e leilão.",
+      "scope": "Patrimônio relacionado a organizações criminosas e seus integrantes ou operadores descritos na proposta.",
+      "conditions": [
+        "A inversão de prova depende de incompatibilidade patrimonial relevante demonstrada.",
+        "Perda patrimonial poderá ser requerida independentemente da ação penal.",
+        "O texto apresenta alienação antecipada obrigatória e imediata; não fornece aqui um procedimento completo de recursos ou restituição."
+      ],
+      "evidence": [
+        {
+          "page": 17,
+          "quote": "inversão do ônus de prova patrimonial, cabendo ao interessado comprovar a origem lícita dos bens uma vez demonstrada incompatibilidade patrimonial relevante; perda patrimonial autônoma, que poderá ser requerida independentemente da ação penal; alienação antecipada obrigatória e imediata"
+        }
+      ],
+      "context_pages": [
+        16,
+        17,
+        20
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Regime penal adulto desde dezesseis anos em crimes enumerados",
+      "statement": "O plano propõe reduzir a maioridade penal para dezesseis anos para uma lista de crimes, submetendo os autores integralmente ao regime adulto.",
+      "support_level": "explicit_proposal",
+      "instrument": "PEC e adequações do Código Penal, CPP, LEP e ECA.",
+      "scope": "Adolescentes de dezesseis e dezessete anos autores dos crimes especificados.",
+      "conditions": [
+        "Homicídio e tentativa, tortura, lesão corporal seguida de morte, estupro de vulnerável, roubo com violência ou grave ameaça e crimes da lei proposta de terrorismo doméstico.",
+        "Não abrange explicitamente toda infração juvenil."
+      ],
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Trabalhar fortemente pela aprovação da PEC da redução da maioridade penal para 16 (dezesseis) anos, com redirecionamento para: autores de crimes de homicídio, tentativa de homicídio, tortura, lesão corporal seguida de morte, estupro de vulnerável, roubo cometido com violência ou grave ameaça à pessoa (assalto) e todos os crimes tipificados na Lei de Combate ao Terrorismo Doméstico, submetendo-os integralmente ao regime penal aplicável aos maiores de idade."
+        }
+      ],
+      "context_pages": [
+        20
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Sanções penais e patrimoniais por violência grave contra mulheres",
+      "statement": "O plano propõe progressão após noventa por cento da pena e perda total dos bens em determinados crimes graves contra mulheres, destinando patrimônio às vítimas e familiares.",
+      "support_level": "explicit_proposal",
+      "instrument": "Endurecimento penal e perdimento patrimonial na forma da lei.",
+      "scope": "Feminicídio, tentativa de feminicídio e lesão corporal grave ou gravíssima contra a mulher.",
+      "conditions": [
+        "Destinação à vítima e, quando cabível, filhos ou familiares.",
+        "O capítulo de mulheres também exige devido processo na reparação patrimonial.",
+        "Não equivale a confisco por qualquer denúncia ou por qualquer infração."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Endurecer a resposta penal aos crimes de feminicídio, tentativa de feminicídio e lesão corporal grave ou gravíssima contra a mulher, com progressão somente após o cumprimento de 90% da pena e confisco (perdimento) total dos bens do condenado, destinados à vítima e, quando cabível, a seus filhos ou familiares, na forma da lei."
+        },
+        {
+          "page": 59,
+          "quote": "Aprimorar bloqueio judicial, indenização, alimentos e destinação de bens do condenado às vítimas e filhos, dentro do devido processo."
+        }
+      ],
+      "context_pages": [
+        19,
+        59
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Proibição de publicidade de jogos e apostas on-line",
+      "statement": "O plano propõe proibir publicidade de jogos e apostas on-line em comunicação de massa e redes sociais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Endurecimento regulatório do setor e restrição publicitária.",
+      "scope": "Publicidade de jogos e apostas on-line nos meios expressamente indicados.",
+      "conditions": [
+        "Integra agenda de combate a lavagem, fraude, superendividamento e riscos à saúde.",
+        "Não é declaração de proibição absoluta de toda atividade legal de aposta."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Regulamentar e endurecer as regras, com máximo rigor, dos jogos e das apostas on-line, atividade inexistente no país até 2018 e hoje associada à lavagem de dinheiro, uso de contas de terceiros, manipulação de identidades, fraudes, evasão fiscal e riscos à integridade esportiva, com proibição da publicidade em veículos de comunicação de massa e em redes sociais."
+        }
+      ],
+      "context_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Rejeição de alinhamento automático a polos geopolíticos",
+      "statement": "O plano rejeita alinhamentos automáticos e propõe relações simultâneas com diferentes polos para diversificar mercados, tecnologias e financiamento.",
+      "support_level": "explicit_rejection",
+      "instrument": "Diplomacia econômica e diversificação de parceiros.",
+      "scope": "Estados Unidos, União Europeia, América Latina, África, Ásia e Oriente Médio.",
+      "conditions": [
+        "O texto define autonomia como liberdade de decisão, não como neutralidade ou equidistância obrigatória.",
+        "Não decide por isso relações diplomáticas formais com um país específico não tratado."
+      ],
+      "evidence": [
+        {
+          "page": 73,
+          "quote": "Fortalecer simultaneamente as relações com os Estados Unidos, a União Europeia, a América Latina, a África, a Ásia e o Oriente Médio, sem hierarquias ou preferências determinadas por afinidades ideológicas. Não adotaremos alinhamentos automáticos nem aceitaremos falsas escolhas entre polos geopolíticos rivais."
+        },
+        {
+          "page": 72,
+          "quote": "Autonomia não significará neutralidade ou equidistância, mas liberdade de decisão sustentada pela diversificação de mercados, parceiros, tecnologias e fontes de financiamento."
+        }
+      ],
+      "context_pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Consolidação do acordo Mercosul–União Europeia",
+      "statement": "O plano propõe consolidar o acordo Mercosul–União Europeia e ampliar a rede de acordos comerciais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Integração econômica regional e negociação de acesso a mercados.",
+      "scope": "Relações comerciais do Brasil e do Mercosul com a União Europeia e outros mercados.",
+      "conditions": [
+        "Abertura comercial coordenada com política econômica, industrial, tecnológica e de inovação.",
+        "Não detalha cláusulas a alterar ou calendário de implementação por setor."
+      ],
+      "evidence": [
+        {
+          "page": 73,
+          "quote": "Consolidar o acordo entre o Mercosul e a União Europeia, aprofundar a integração econômica regional e negociar novos acordos que ampliem o acesso das empresas e dos produtos brasileiros aos mercados mais dinâmicos do mundo. A abertura comercial será construída em coordenação com as políticas econômica, industrial, tecnológica e de inovação."
+        }
+      ],
+      "context_pages": [
+        72,
+        73
+      ]
+    },
+    {
+      "id": "P45",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Participação no BRICS simultânea à aproximação com a OCDE",
+      "statement": "O plano propõe participar ativamente do BRICS e de organismos multilaterais, retomando também a aproximação com a OCDE.",
+      "support_level": "explicit_proposal",
+      "instrument": "Participação institucional para influenciar decisões e regras internacionais.",
+      "scope": "BRICS, ONU, OMC, G20 e processo de aproximação à OCDE.",
+      "conditions": [
+        "Não apresenta adesão a esses espaços como escolhas excludentes.",
+        "A participação deve produzir influência em decisões, não apenas presença institucional."
+      ],
+      "evidence": [
+        {
+          "page": 74,
+          "quote": "Participar ativamente da ONU, da OMC, do G20 e do BRICS e retomar, com pragmatismo, o processo de aproximação com a OCDE. Não participaremos dessas organizações para ocupar cadeiras ou buscar protagonismo retórico, mas para influenciar decisões e contribuir para a formulação das regras internacionais."
+        }
+      ],
+      "context_pages": [
+        74
+      ]
+    },
+    {
+      "id": "P46",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Defesa profissional sob poder civil e capacidade tecnológica nacional",
+      "statement": "O plano propõe Forças Armadas profissionais sob poder civil, com defesa da soberania como missão principal e desenvolvimento de sistemas nacionais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Atualização da Estratégia Nacional de Defesa, planejamento plurianual, pesquisa, encomendas tecnológicas e compras públicas.",
+      "scope": "Defesa territorial, fronteiras, Amazônia, Atlântico Sul, ciberespaço e infraestruturas estratégicas.",
+      "conditions": [
+        "Atribuições subsidiárias em logística, engenharia, saúde e defesa civil.",
+        "No capítulo de defesa, investigação, prisão e persecução penal permanecem com órgãos competentes.",
+        "Cooperação tecnológica internacional diversificada, sem dependência de um fornecedor."
+      ],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "Manter Forças Armadas profissionais, preparadas e submetidas à Constituição e ao poder civil, preservando como missão principal a Defesa da Pátria e a garantia da soberania."
+        },
+        {
+          "page": 31,
+          "quote": "Utilizar pesquisa, encomendas tecnológicas e compras públicas para desenvolver sistemas estratégicos e tecnologias de uso militar e civil, reduzir dependências externas e assegurar capacidade nacional de operação e manutenção."
+        },
+        {
+          "page": 31,
+          "quote": "investigação, prisão e persecução penal permanecerão sob responsabilidade dos órgãos competentes."
+        }
+      ],
+      "context_pages": [
+        30,
+        31
+      ]
+    }
+  ],
+  "tensions": [
+    {
+      "description": "A p.33 direciona recursos e apoio às escolas com melhor avaliação (P32), enquanto a p.32 prioriza estudantes que mais perderam aprendizagem e a p.67 prevê recursos corretivos para diferenças persistentes (P35). O plano não define uma regra conjunta de distribuição.",
+      "position_ids": [
+        "P32",
+        "P35"
+      ],
+      "interpretation_limit": "Pode haver combinação de incentivos por desempenho com financiamento por necessidade. Sem fórmula ou critérios, não se afirma contradição inevitável nem se substitui melhor avaliação por maior carência."
+    },
+    {
+      "description": "Na proposta de lei de terrorismo doméstico e seu regime penitenciário (P37–P38), a p.17 apresenta REDAD obrigatório para membros das organizações enquadradas; a p.18 destaca lideranças e a p.19 diferencia presos fora das estruturas de comando. O monitoramento de todas as conversas com advogados também convive com preservação da defesa técnica legítima.",
+      "position_ids": [
+        "P37",
+        "P38"
+      ],
+      "interpretation_limit": "A menção às lideranças não revoga explicitamente o alcance amplo da p.17; tampouco é possível inventar exceções procedimentais às comunicações monitoradas. O perfil conserva as duas redações e não julga sua validade constitucional."
+    }
+  ],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O crescimento das despesas obrigatórias deve ficar abaixo do crescimento nominal do PIB.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P01"
+      ],
+      "necessary_conditions": [
+        "Preservação de direitos adquiridos e transições claras.",
+        "Não equivale a apoiar uma lei fiscal específica nem a congelar cada despesa individualmente."
+      ],
+      "contrast_to_investigate": "Buscar propostas que usem outro referencial para despesas obrigatórias ou rejeitem esse limite agregado.",
+      "why_useful": "Discute a regra de expansão de gastos, em vez de uma meta genérica de responsabilidade fiscal.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A União deve cofinanciar o transporte público coletivo de forma plurianual.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P10"
+      ],
+      "necessary_conditions": [
+        "Titularidade e operação permanecem locais.",
+        "No plano, financiamento sem novo imposto geral ou aumento da carga tributária e condicionado a metas."
+      ],
+      "contrast_to_investigate": "Pesquisar modelos que concentrem custeio em tarifas ou em governos subnacionais, e os que atribuam papel financeiro permanente à União.",
+      "why_useful": "Traz mobilidade urbana e distribuição federativa do financiamento ao debate.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "meio_ambiente_clima",
+      "statement": "A conservação de água, solo e biodiversidade deve poder ser remunerada por pagamentos por serviços ambientais.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P15"
+      ],
+      "necessary_conditions": [
+        "Serviços verificados e prioridades territoriais.",
+        "Preservar participação de produtores, povos indígenas e comunidades tradicionais; não generalizar valor ou direito automático a toda pessoa."
+      ],
+      "contrast_to_investigate": "Investigar planos que adotem pagamentos por conservação e alternativas centradas em outros instrumentos ambientais, sem presumir discordância pelo silêncio.",
+      "why_useful": "Representa um instrumento econômico de conservação ausente das dezesseis perguntas anteriores.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Os recursos do FNDCT devem ser protegidos contra contingenciamento orçamentário.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P18"
+      ],
+      "necessary_conditions": [
+        "A proteção é acompanhada por governança e avaliação de resultados.",
+        "Não significa eliminar todo controle da aplicação do fundo."
+      ],
+      "contrast_to_investigate": "Pesquisar defesa de execução protegida do fundo frente a propostas de sujeitá-lo a ajustes discricionários do orçamento.",
+      "why_useful": "Expõe uma escolha concreta entre previsibilidade científica e flexibilidade fiscal.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "bem_estar_social",
+      "statement": "O pagamento de serviços pelo SUS deve considerar qualidade e resultados, além do volume de procedimentos.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P25"
+      ],
+      "necessary_conditions": [
+        "Mudança progressiva, com ajuste por população e complexidade.",
+        "Não impor remuneração exclusivamente por resultado ou supor uma fórmula já definida."
+      ],
+      "contrast_to_investigate": "Pesquisar como cada plano remunera prestadores: volume, orçamento fixo, população, qualidade e desfechos.",
+      "why_useful": "Amplia a discussão da saúde para incentivos de financiamento e prestação, sem confundir contratação com gestão.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "O financiamento público da cultura deve incluir incentivos fiscais.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P30"
+      ],
+      "necessary_conditions": [
+        "No plano, incentivos coexistem com investimento direto, fundos e crédito.",
+        "Seleção plural, transparência e correção de desigualdades regionais."
+      ],
+      "contrast_to_investigate": "Pesquisar defesa de incentivos fiscais, sua substituição por financiamento direto ou restrições explícitas ao mecanismo.",
+      "why_useful": "Introduz cultura por uma escolha de financiamento identificável, sem associar silêncio a rejeição.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "cidadania_direitos",
+      "statement": "A eleição de representantes legislativos deve combinar distritos territoriais e listas partidárias.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P34"
+      ],
+      "necessary_conditions": [
+        "Preservação da proporcionalidade.",
+        "Desenho e transição negociados, com representação regional e de minorias."
+      ],
+      "contrast_to_investigate": "Pesquisar manutenção da lista aberta, sistemas de listas diferentes e modelos distritais puros ou mistos.",
+      "why_useful": "Recupera uma decisão de representação política fora das teses anteriores.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "statement": "Uma lei deve permitir enquadrar como terrorismo doméstico organizações criminosas que controlem territórios por violência.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P37"
+      ],
+      "necessary_conditions": [
+        "O plano exige estrutura permanente de comando, domínio territorial, capacidade armada, poder econômico e violência sistemática.",
+        "Compatibilidade declarada com compromissos internacionais; não estender automaticamente a toda associação ou infração."
+      ],
+      "contrast_to_investigate": "Pesquisar uso da legislação penal comum e de organizações criminosas frente a propostas de enquadramento antiterrorismo.",
+      "why_useful": "Discute uma mudança material de regime jurídico, sem reunir na mesma pergunta todas as penas e medidas penitenciárias.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "Síntese de escolhas principais do documento; não é catálogo de cada ação das cem páginas nem avaliação da opinião pessoal ou da ideologia da candidatura.",
+    "Reutiliza a leitura integral anterior e reconsulta contextos em cinquenta páginas nesta etapa; não declara uma nova leitura integral.",
+    "Custos, efeitos e viabilidade jurídica não foram validados externamente. As sementes ainda exigem confronto com os demais planos e não são teses prontas para o questionário."
+  ]
+}

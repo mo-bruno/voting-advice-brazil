@@ -86,6 +86,21 @@ void main() {
     });
   });
 
+  test('submitQuiz sends the selected candidate ids', () async {
+    final client = _CapturingClient();
+    final api = ApiClient(
+      baseUrl: 'https://example.test/api/v1',
+      client: client,
+    );
+
+    await api.submitQuiz(
+      const <Thesis>[],
+      candidateIds: const {'7', '13'},
+    );
+
+    expect(client.lastBody['candidate_ids'], [7, 13]);
+  });
+
   test('submitQuiz omits device_id when not provided', () async {
     final client = _CapturingClient();
     final api = ApiClient(

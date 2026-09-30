@@ -65,6 +65,11 @@ void main() {
         matches: [],
         countedTheses: 10,
         answeredTheses: 30,
+        comparableCategories: 5,
+        documentedTheses: 14,
+        documentedCategories: 8,
+        rankingStatus: 'eligible',
+        rankingEligible: true,
       )
     ],
     publicUrl: 'https://exemplo.com.br',
@@ -81,6 +86,11 @@ void main() {
               matches: const [],
               countedTheses: 20,
               answeredTheses: 30,
+              comparableCategories: 6,
+              documentedTheses: 20,
+              documentedCategories: 6,
+              rankingStatus: 'eligible',
+              rankingEligible: true,
             )),
   );
 
@@ -195,6 +205,19 @@ void main() {
     expect(find.text('Edição 2026'), findsOneWidget);
   });
 
+  testWidgets('imagem mostra colocação e base comparável sem percentual',
+      (tester) async {
+    final device = _ShareDevice();
+    await pumpPage(tester, device);
+
+    expect(find.text('1º lugar'), findsOneWidget);
+    expect(
+      find.text('Base: 10 de 30 respostas comparáveis · 5 categorias'),
+      findsOneWidget,
+    );
+    expect(find.textContaining('%'), findsNothing);
+  });
+
   testWidgets('exporta a marca branca sem herdar o acento da paleta',
       (tester) async {
     final device = _ShareDevice();
@@ -258,7 +281,7 @@ void main() {
     await pumpPage(tester, device, shareData: rankingData);
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meus 5 alinhamentos.'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
     expect(find.text('Pessoa 5'), findsOneWidget);
     expect(find.text('Pessoa 6'), findsNothing);
     await tap(tester, 'Baixar imagem');
@@ -267,7 +290,7 @@ void main() {
 
     await tap(tester, 'Top 10');
     await waitForImage(tester);
-    expect(find.text('Meus 10 alinhamentos.'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
     expect(find.text('Pessoa 10'), findsOneWidget);
     expect(find.text('Pessoa 11'), findsNothing);
     await tap(tester, 'Post · 4:5');
@@ -276,7 +299,7 @@ void main() {
     expectPng(device.downloaded, 1080, 1350);
     expect(device.downloaded, isNot(topFiveImage));
     await tap(tester, 'WhatsApp');
-    expect(device.networkData!.caption, contains('10. Pessoa 10'));
+    expect(device.networkData!.caption, contains('10º. Pessoa 10'));
     expect(device.networkData!.caption, isNot(contains('Pessoa 11')));
 
     await tap(tester, 'Maior alinhamento');
@@ -285,7 +308,7 @@ void main() {
     expect(find.text('Pessoa 2'), findsNothing);
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meus 10 alinhamentos.'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
     expect(tester.takeException(), isNull);
   });
 
@@ -297,7 +320,7 @@ void main() {
             ResultShareData(results: rankingData.results.take(3).toList()));
     await tap(tester, 'Ranking');
     await waitForImage(tester);
-    expect(find.text('Meus 3 alinhamentos.'), findsOneWidget);
+    expect(find.text('Meu ranking de afinidade · Beta'), findsOneWidget);
     expect(find.text('Pessoa 4'), findsNothing);
     expect(
         tester

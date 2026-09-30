@@ -20,6 +20,7 @@ void main() {
             matches: [],
             countedTheses: 0,
             answeredTheses: 5,
+            rankingEligible: false,
           ),
           CandidateResult(
             candidateId: '2',
@@ -30,6 +31,7 @@ void main() {
             matches: [],
             countedTheses: 5,
             answeredTheses: 5,
+            rankingEligible: true,
           ),
           CandidateResult(
             candidateId: '3',
@@ -40,9 +42,21 @@ void main() {
             matches: [],
             countedTheses: 5,
             answeredTheses: 5,
+            rankingEligible: true,
+          ),
+          CandidateResult(
+            candidateId: '4',
+            name: 'Segundo lugar com score interno maior',
+            party: 'DC',
+            scorePercent: 100,
+            rank: 2,
+            matches: [],
+            countedTheses: 5,
+            answeredTheses: 5,
+            rankingEligible: true,
           ),
         ]
-        ..selectedCandidateIds = {'1', '2'};
+        ..selectedCandidateIds = {'1', '2', '4'};
       expect(session.topAffinityResults.map((result) => result.candidateId), [
         '2',
       ]);
@@ -145,11 +159,13 @@ void main() {
                 category: 'Economia',
                 answer: ThesisAnswer.agree,
               ),
-            ];
+            ]
+            ..selectedCandidateIds = {'13'};
 
       await session.submit();
 
       expect(api.receivedDeviceId, deviceId);
+      expect(api.receivedCandidateIds, {'13'});
       expect(session.results, hasLength(1));
     });
   });
@@ -157,13 +173,16 @@ void main() {
 
 class _FakeApiClient extends ApiClient {
   String? receivedDeviceId;
+  Set<String>? receivedCandidateIds;
 
   @override
   Future<List<CandidateResult>> submitQuiz(
     List<Thesis> theses, {
     String? deviceId,
+    Set<String> candidateIds = const {},
   }) async {
     receivedDeviceId = deviceId;
+    receivedCandidateIds = candidateIds;
     return const [
       CandidateResult(
         candidateId: '13',

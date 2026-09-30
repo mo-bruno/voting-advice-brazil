@@ -1,0 +1,283 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551932",
+  "candidate_name": "Ronaldo Caiado",
+  "agent_id": "/root/plan_caiado",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002551932.json",
+  "prior_thematic_profile": "../2026-09-29-thematic-profiles/profiles/280002551932.json",
+  "method": "Retomada do diário completo da leitura integral anterior das 100 páginas e das posições pertinentes do perfil temático. Busca nas 100 páginas das extrações layout e raw do mesmo PDF, com termos e radicais declarados em cada resposta, comparação sem distinção de caixa ou acento e inspeção de resultados com contexto. Releitura integral, nesta etapa, das 20 páginas listadas em revisited_pages; os demais resultados lexicais foram inspecionados em trechos. Não foi realizada nem declarada uma nova leitura integral do PDF. Citações conferidas literalmente nas extrações, com páginas físicas base 1, e hash do PDF comparado ao da leitura integral anterior. Nenhuma fonte externa ou plano de outra candidatura foi consultado.",
+  "revisited_pages": [
+    5,
+    6,
+    12,
+    13,
+    14,
+    15,
+    25,
+    26,
+    27,
+    42,
+    43,
+    44,
+    45,
+    47,
+    53,
+    54,
+    56,
+    73,
+    74,
+    100
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "Não foi encontrada proposta de criar, cobrar ou rejeitar um imposto específico incidente sobre grandes patrimônios. O capítulo fiscal prefere ajuste pelo gasto, rejeita aumentos sucessivos de impostos e aumentos permanentes da carga tributária, mas não decide a existência do instrumento perguntado nem a composição dessa carga. Rejeitar expansão agregada de tributos não implica rejeitar necessariamente um imposto patrimonial específico, que poderia integrar uma alteração de composição; o plano tampouco propõe essa alternativa. A busca nas cem páginas e a retomada do diário não localizaram decisão sobre grandes fortunas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "O ajuste não será baseado em aumentos sucessivos de impostos nem em cortes lineares.",
+          "role": "context",
+          "interpretation": "Delimita a estratégia de ajuste; não contém proibição de cada imposto novo nem decisão específica sobre grandes fortunas."
+        },
+        {
+          "page": 13,
+          "quote": "COMPROMISSO: estabilizar a dívida, reconstruir superávits, proteger o investimento e reduzir o peso dos juros sem transferir a conta aos mais pobres e sem recorrer a aumentos permanentes de carga tributária.",
+          "role": "context",
+          "interpretation": "Compromisso sobre a carga total, insuficiente para atribuir resposta à composição patrimonial dos tributos."
+        },
+        {
+          "page": 56,
+          "quote": "Enviar ao Congresso proposta de financiamento plurianual, sem novo imposto geral e sem aumento da carga tributária.",
+          "role": "context",
+          "interpretation": "A restrição aparece no financiamento da mobilidade urbana; não é posição específica sobre imposto de grandes fortunas."
+        }
+      ],
+      "counterevidence_or_limits": "As menções a patrimônio abrangem bens do Estado, patrimônio cultural/ambiental, proteção de vítimas e medidas contra enriquecimento ilícito; não estabelecem incidência tributária sobre grandes fortunas. A ausência das expressões fortuna, IGF, herança e dividendo nas duas extrações é informação de busca, não prova autossuficiente de silêncio. Os contextos fiscais acima são relacionados, mas não autorizam DISCORDA. Não se inferiu posição a partir de reputação ou ideologia.",
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "patrimônio",
+        "patrimonial",
+        "riqueza",
+        "imposto",
+        "tribut",
+        "herança",
+        "dividendo",
+        "renda alta",
+        "IGF",
+        "rico",
+        "milion",
+        "bilion"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano afirma que a política industrial governamental coordenará crédito com prioridades transparentes e define oito eixos de reindustrialização. Em seguida determina que cada eixo contará com instrumentos específicos de crédito, além de ampliar crédito de longo prazo ao investimento produtivo. Isso responde diretamente à oferta de linhas de empréstimo direcionadas a setores/cadeias priorizados pelo governo: a evidência decisiva é o vínculo expresso entre cada eixo selecionado e crédito específico, não apenas a oferta universal a empresas. As contrapartidas e os prazos qualificam o desenho sem impedir concordância com a existência das linhas.",
+      "conditions": [
+        "Prioridades selecionadas por critérios transparentes: vantagens nacionais, agregação de valor e risco de dependência externa.",
+        "Apoio condicionado a contrapartida verificável e prazo definido; a estratégia não se destina a proteger empresas específicas.",
+        "Política industrial integrada à estabilidade macroeconômica, ao equilíbrio fiscal e ao protagonismo da iniciativa privada."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "A política industrial será uma política permanente de Estado, integrada à estabilidade macroeconômica, ao equilíbrio fiscal e ao protagonismo da iniciativa privada. O governo coordenará crédito, inovação, formação, energia, compras públicas e comércio exterior, com prioridades transparentes, contrapartidas verificáveis e avaliação de resultados.",
+          "role": "support",
+          "interpretation": "Estabelece coordenação governamental do crédito dentro de política industrial com prioridades."
+        },
+        {
+          "page": 43,
+          "quote": "Selecionar prioridades nacionais por critérios transparentes: vantagens reais do país, potencial de agregar valor e risco da dependência externa com apoio sempre condicionado a contrapartida verificável e prazo definido: a estratégia indica rumos duradouros, não protege empresas específicas.",
+          "role": "condition",
+          "interpretation": "Define a seleção pública das prioridades e as condições do apoio; distinguir prioridade de cadeia de favorecimento de firma não elimina crédito direcionado."
+        },
+        {
+          "page": 43,
+          "quote": "Ampliar significativamente o crédito de longo prazo para investimento produtivo.",
+          "role": "support",
+          "interpretation": "Confirma o instrumento de crédito, além dos mecanismos de inovação e compras públicas."
+        },
+        {
+          "page": 43,
+          "quote": "Concentrar esforços nas cadeias capazes de elevar a produtividade, reduzir dependências e ampliar exportações, em oito eixos de futuro:",
+          "role": "context",
+          "interpretation": "Introduz os oito eixos industriais selecionados, entre eles energia, saúde, minerais estratégicos e manufatura avançada."
+        },
+        {
+          "page": 43,
+          "quote": "Cada eixo, que mobiliza distintas cadeias produtivas, contará com instrumentos específicos de crédito, inovação, compras públicas, desenvolvimento tecnológico e formação profissional.",
+          "role": "support",
+          "interpretation": "Liga de modo explícito os eixos/cadeias industriais selecionados aos instrumentos específicos de crédito."
+        }
+      ],
+      "counterevidence_or_limits": "A revisão de subsídios e benefícios sem resultado nas páginas 6 e 12 não elimina as linhas específicas expressamente propostas na página 43. O plano não fixa taxas, volumes, critérios completos de acesso ou grau de subsídio de cada linha; a tese não exige esses detalhes. Também não exige propriedade estatal dos bancos nem seleção de empresas individuais. Não foi inferida manutenção de controle acionário a partir das funções de BNDES e Finep.",
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "search_terms": [
+        "crédito",
+        "financia",
+        "empréstimo",
+        "bndes",
+        "finep",
+        "indústr",
+        "industrial",
+        "priorit",
+        "subsidi",
+        "setoria",
+        "linhas de crédito"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite expressamente investimento estrangeiro no capítulo de mineração estratégica e propõe negociar acesso aos recursos com contrapartidas de processamento, tecnologia e fornecedores locais. Isso sustenta abertura condicionada à participação estrangeira na cadeia mineral, mas não resolve a etapa específica de EXTRAÇÃO da versão aprovada. Acesso aos recursos também pode ser obtido por compra, fornecimento ou acordo de suprimento de minério extraído por terceiros, sem que a empresa estrangeira participe da mina ou da operação extrativa. Essa leitura permanece plausível no próprio contexto: a página 54 fala em comprador/fornecedor, e a página 73 descreve as parcerias por processamento, pesquisa, formação e indústria. Não foi encontrado vínculo adicional que atribua à empresa estrangeira concessão, lavra, mina ou operação de extração. Assim, a associação entre investimento externo e mineração não alcança, sozinha, implicação clara sobre o objeto mais restrito; a classificação é insuficiência documental, não rejeição nem posição mista.",
+      "conditions": [
+        "Na abertura estrangeira admitida para a cadeia mineral, acesso aos recursos é negociado em troca de valor agregado, tecnologia, qualificação e fornecedores locais.",
+        "As parcerias associam acesso a processamento no Brasil, formação profissional, pesquisa conjunta, transferência tecnológica e integração de empresas nacionais, diversificando compradores e fornecedores.",
+        "Essas condições estão documentadas para as parcerias na cadeia; não esclarecem se a participação estrangeira pode alcançar a extração."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "Minerais críticos e terras raras serão tratados como ativos estratégicos de soberania, transição energética, defesa e indústria digital.",
+          "role": "context",
+          "interpretation": "Identifica minerais críticos e terras raras como objeto estratégico do capítulo; não identifica a etapa permitida ao investidor estrangeiro."
+        },
+        {
+          "page": 53,
+          "quote": "A política não fechará o país ao investimento estrangeiro, mas negociará acesso a recursos em troca de valor agregado, tecnologia, qualificação e fornecedores locais.",
+          "role": "context",
+          "interpretation": "Abertura estrangeira e acesso aos recursos são expressos, mas a frase não determina se esse acesso se dá pela extração própria ou por fornecimento/compra."
+        },
+        {
+          "page": 54,
+          "quote": "Negociar com diferentes polos econômicos, evitando dependência de um único comprador ou fornecedor. Acesso a recursos será associado a processamento no Brasil, formação de profissionais, pesquisa conjunta, transferência tecnológica e integração de empresas nacionais.",
+          "role": "context",
+          "interpretation": "O texto admite interlocução com compradores e fornecedores e lista contrapartidas posteriores à extração. Isso mantém plausível um acordo de suprimento sem operação estrangeira da mina."
+        },
+        {
+          "page": 73,
+          "quote": "As parcerias em minerais estratégicos incorporarão processamento, pesquisa, formação e indústria no território nacional.",
+          "role": "context",
+          "interpretation": "O complemento de política externa descreve participação nas etapas de processamento, pesquisa e indústria; não acrescenta uma decisão sobre empresas estrangeiras na extração."
+        }
+      ],
+      "counterevidence_or_limits": "A abertura ao investimento estrangeiro é real e não foi convertida em proibição. Contudo, o plano não associa essa abertura de forma inequívoca à etapa extrativa nem distingue investimento na extração de acordos de compra/fornecimento e processamento. As páginas 47 e 74 oferecem contexto de financiamento externo e atração de investimento, sem preencher esse vínculo. Não se exige o uso de uma palavra jurídica específica: bastaria descrição funcional clara de participação estrangeira na obtenção do mineral, mas ela não foi localizada. Não classificar como CONDICIONAL_OU_MISTA apenas pelas contrapartidas: o problema é falta de determinação da etapa, não uma condição que inverte o sinal. Esta insuficiência é específica à redação sobre EXTRAÇÃO e não revoga a constatação temática anterior de abertura estrangeira condicionada na cadeia mineral.",
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "search_terms": [
+        "estrangeir",
+        "minera",
+        "minério",
+        "críticos",
+        "críticas",
+        "estratégicos",
+        "estratégicas",
+        "extração",
+        "exploração",
+        "recursos naturais",
+        "investimento externo",
+        "capital externo",
+        "acesso a recursos",
+        "concess",
+        "mina",
+        "lavra",
+        "operador",
+        "operação",
+        "joint venture",
+        "acion",
+        "título",
+        "parceria internacional",
+        "fornecedor",
+        "comprador"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "Não foi encontrada proposta de interromper pagamentos da dívida pública durante auditoria, nem rejeição específica a esse procedimento. O plano prevê diagnóstico de passivos e riscos fiscais, estratégia para estabilizar a relação dívida/PIB e fortalecimento de auditoria em sua agenda de integridade. Nenhuma dessas passagens estabelece investigação dos contratos da dívida acompanhada de suspensão geral de pagamentos. A disciplina fiscal e o objetivo de reduzir juros não permitem inferir discordância com a hipótese exata aprovada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Apresentar, nos primeiros meses, diagnóstico completo de despesas obrigatórias, passivos, subsídios, benefícios tributários, restos a pagar, fundos, garantias e riscos fiscais, acompanhado de projeções e alternativas de decisão.",
+          "role": "context",
+          "interpretation": "O Orçamento da Verdade prevê diagnóstico fiscal abrangente, mas não define suspensão nem sequência auditoria/pagamentos."
+        },
+        {
+          "page": 12,
+          "quote": "Definir trajetória para estabilizar a dívida em relação ao PIB, recuperar superávits primários e reduzir a despesa de juros, com metas anuais, bandas de tolerância, cláusulas de correção e prestação periódica de contas.",
+          "role": "context",
+          "interpretation": "Apresenta objetivos de estabilização, não uma regra sobre pagamentos durante investigação."
+        },
+        {
+          "page": 100,
+          "quote": "Toda proposta com impacto fiscal terá estimativa, fonte e compatibilidade com a trajetória de dívida. Contratações, benefícios e parcerias terão transparência de beneficiário final e conflito de interesse. O governo protegerá denunciantes, fortalecerá auditoria e publicará agendas de autoridades.",
+          "role": "context",
+          "interpretation": "Auditoria aparece em integridade administrativa e transparência, sem relacioná-la à suspensão geral da dívida."
+        }
+      ],
+      "counterevidence_or_limits": "Não foram localizados moratória, suspensão de pagamentos, auditoria da dívida ou sequência equivalente. Outras auditorias localizadas dizem respeito a financiamento político, barragens, saúde, vieses raciais e serviços turísticos. A ocorrência de dívida em superendividamento por apostas não se refere à dívida pública. Não se converte estabilização fiscal, diagnóstico de passivos ou auditoria administrativa em apoio ou rejeição ao objeto perguntado.",
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "search_terms": [
+        "dívida",
+        "auditoria",
+        "auditar",
+        "suspens",
+        "suspend",
+        "pagamento",
+        "moratória",
+        "renegocia",
+        "cancel",
+        "credores",
+        "títulos públicos",
+        "dívida externa",
+        "serviço da dívida",
+        "juros e amortizações"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "reformulation_suggestion": null
+    }
+  ]
+}

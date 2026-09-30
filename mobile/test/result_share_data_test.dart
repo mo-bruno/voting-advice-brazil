@@ -11,10 +11,19 @@ const _result = CandidateResult(
   matches: [],
   countedTheses: 10,
   answeredTheses: 30,
+  comparableCategories: 6,
+  documentedTheses: 14,
+  documentedCategories: 8,
+  rankingStatus: 'eligible',
+  rankingEligible: true,
 );
 
 CandidateResult _candidate(int id, double score,
-        {int? rank, String? name, int countedTheses = 10}) =>
+        {int? rank,
+        String? name,
+        int countedTheses = 10,
+        int comparableCategories = 5,
+        bool rankingEligible = true}) =>
     CandidateResult(
       candidateId: '$id',
       name: name ?? 'Candidatura $id',
@@ -24,6 +33,13 @@ CandidateResult _candidate(int id, double score,
       matches: [],
       countedTheses: countedTheses,
       answeredTheses: 30,
+      comparableCategories: comparableCategories,
+      documentedTheses: countedTheses,
+      documentedCategories: comparableCategories,
+      rankingStatus: rankingEligible
+          ? 'eligible'
+          : 'insufficient_documented_coverage',
+      rankingEligible: rankingEligible,
     );
 
 void main() {
@@ -31,18 +47,18 @@ void main() {
     expect(() => ResultShareData(results: []), throwsArgumentError);
   });
 
-  test('copia, ordena por afinidade e desempata pelo nome de forma estável',
+  test('copia, respeita a colocação da API e organiza empates pelo nome',
       () {
     final input = [
-      _candidate(1, 40),
-      _candidate(2, 90, rank: 1, name: 'Beatriz'),
-      _candidate(3, 90, rank: 2, name: 'ana'),
-      _candidate(4, 90, rank: 3, name: 'Ana'),
+      _candidate(1, 99, rank: 3),
+      _candidate(2, 40, rank: 1, name: 'Beatriz'),
+      _candidate(3, 10, rank: 1, name: 'ana'),
+      _candidate(4, 80, rank: 2, name: 'Ana'),
     ];
     final data = ResultShareData(results: input);
     expect(input.map((result) => result.candidateId), ['1', '2', '3', '4']);
     expect(
-        data.results.map((result) => result.candidateId), ['3', '4', '2', '1']);
+        data.results.map((result) => result.candidateId), ['3', '2', '4', '1']);
     expect(data.result.candidateId, '3');
     input.clear();
     expect(data.results, hasLength(4));
@@ -52,7 +68,13 @@ void main() {
 
   test('exclui candidaturas sem evidência e recusa lista sem base comparável',
       () {
-    final unavailable = _candidate(1, 99, countedTheses: 0);
+    final unavailable = _candidate(
+      1,
+      99,
+      countedTheses: 2,
+      comparableCategories: 2,
+      rankingEligible: false,
+    );
     final trueZero = _candidate(2, 0);
     final data = ResultShareData(
       results: [unavailable, trueZero, _result],
@@ -60,9 +82,11 @@ void main() {
     );
     expect(data.results, [_result, trueZero]);
     expect(data.displayResults, [_result, trueZero]);
-    expect(data.rankingTitle, 'Meus 2 alinhamentos.');
+    expect(data.rankingTitle, 'Meu ranking de afinidade · Beta');
     expect(data.caption, isNot(contains(unavailable.name)));
-    expect(data.caption, contains('Candidatura 2 (PSD) — 0%'));
+    expect(data.caption, contains('2º. Candidatura 2 (PSD)'));
+    expect(data.caption, contains('10 de 30 respostas comparáveis'));
+    expect(data.caption, isNot(contains('%')));
     expect(() => ResultShareData(results: [unavailable]), throwsArgumentError);
   });
 
@@ -79,7 +103,7 @@ void main() {
     final five = data.withVariant(ResultShareVariant.topFive);
     expect(five.displayResults, hasLength(5));
     expect(five.displayResults.last.candidateId, '5');
-    expect(five.rankingTitle, 'Meus 5 alinhamentos.');
+    expect(five.rankingTitle, 'Meu ranking de afinidade · Beta');
     expect(five.isRanking, isTrue);
     expect(five.results, data.results);
     expect(five.siteUrl, 'https://exemplo.com.br/quiz/');
@@ -91,12 +115,12 @@ void main() {
     final onlyOne =
         ResultShareData(results: [_result], variant: ResultShareVariant.topTen);
     expect(onlyOne.displayResults, [_result]);
-    expect(onlyOne.rankingTitle, 'Meu alinhamento.');
+    expect(onlyOne.rankingTitle, 'Meu alinhamento · Beta');
     final three = ResultShareData(
       results: data.results.take(3).toList(),
       variant: ResultShareVariant.topFive,
     );
-    expect(three.rankingTitle, 'Meus 3 alinhamentos.');
+    expect(three.rankingTitle, 'Meu ranking de afinidade · Beta');
     expect(three.displayResults, hasLength(3));
   });
 
@@ -131,7 +155,7 @@ void main() {
   test('identifica o resultado como edição 2026', () {
     final data = ResultShareData(results: [_result]);
     expect(data.editionLabel, 'Edição 2026');
-    expect(data.basisLabel, 'Quiz presidencial de 2026.');
+    expect(data.basisLabel, 'Quiz presidencial de 2026 · Beta.');
     expect('2026'.allMatches(data.caption), hasLength(1));
     expect(data.caption, contains(data.basisLabel));
     expect(data.caption, isNot(contains('2022')));
@@ -142,8 +166,12 @@ void main() {
       results: [_result, _candidate(7, 20)],
       publicUrl: 'https://exemplo.com.br',
     );
-    expect(data.caption,
-        contains('Minha maior afinidade foi de 72,5% com Joana & Luís (PSD)'));
+    expect(
+      data.caption,
+      contains('Meu maior alinhamento neste teste foi com Joana & Luís (PSD)'),
+    );
+    expect(data.caption, contains('10 de 30 respostas comparáveis'));
+    expect(data.caption, isNot(contains('%')));
     expect(data.caption, contains('entre os candidatos que comparei'));
     expect(data.caption, isNot(contains('Candidatura 7')));
     final twitter = data.networkUri(ResultShareNetwork.twitter);
@@ -160,7 +188,7 @@ void main() {
     });
   });
 
-  test('ranking compartilha apenas nomes, partidos e percentuais selecionados',
+  test('ranking compartilha colocação, nomes, partidos e base comparável',
       () {
     final data = ResultShareData(
       results: List.generate(
@@ -173,10 +201,11 @@ void main() {
       expect(
           caption,
           contains(
-              '$position. Candidatura $position (PSD) — ${100 - position}%'));
+              '$positionº. Candidatura $position (PSD) — 10 de 30 respostas comparáveis · 5 categorias'));
     }
     expect(caption, isNot(contains('Candidatura 6')));
     expect(caption, contains('entre os candidatos que comparei'));
+    expect(caption, isNot(contains('%')));
     expect(data.networkUri(ResultShareNetwork.whatsapp).queryParameters['text'],
         '$caption\n${data.siteUrl}');
   });
@@ -207,9 +236,10 @@ void main() {
         contains('Meu maior alinhamento'));
   });
 
-  test('percentuais usam vírgula e omitem decimal zero', () {
-    expect(ResultShareData.formatPercent(87.5), '87,5');
-    expect(ResultShareData.formatPercent(87), '87');
-    expect(ResultShareData(results: [_result]).percent, '72,5');
+  test('nenhuma variante compartilhável expõe percentual de afinidade', () {
+    final data = ResultShareData(results: [_result, _candidate(2, 100)]);
+    for (final variant in ResultShareVariant.values) {
+      expect(data.withVariant(variant).caption, isNot(contains('%')));
+    }
   });
 }

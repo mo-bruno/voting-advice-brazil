@@ -1,0 +1,316 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551975",
+  "candidate_name": "Edmilson Costa",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 16,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "current_position": {
+    "next_page": null,
+    "phase": "complete_and_validated"
+  },
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Apresentação de Edmilson Costa e Cleusa Santos, trajetórias políticas e avaliação da conjuntura eleitoral; defesa de poder popular e transformação socialista.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Objetivos da candidatura: solidariedade internacional, estatização de setores estratégicos, jornada de 30 horas, revogação de contrarreformas, fim do arcabouço fiscal e saúde, transporte e educação 100% públicos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 3,
+      "summary": "Diagnóstico crítico da concentração econômica e da democracia parlamentar; apresenta cinco transformações e inicia proposta de orçamento popular deliberativo e Constituinte de Novo Tipo.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 4,
+      "summary": "Continua reforma política com conselhos, revogação de mandatos, comunicação pública e Judiciário; na economia propõe estatização financeira, retomada de empresas estratégicas, revogação do arcabouço fiscal e fim da autonomia do Banco Central.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Propõe composição social do Banco Central, Petrobras 100% estatal voltada à transição energética e reindustrialização, revogação das contrarreformas trabalhista e previdenciária, salários, redução de jornada e direitos sindicais.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Reformas agrária e urbana, desmilitarização policial e combate às opressões; propõe tornar público todo o sistema de saúde, fortalecer o complexo industrial, atenção primária, medicamentos e controle por Conselhos Populares.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Estatização integral do ensino das creches à pós-graduação, cotas nas universidades, valorização docente, política cultural popular, transporte público gratuito e início do diagnóstico ambiental.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Políticas ambientais emergenciais e estruturais, preservação, reciclagem e fiscalização; relações internacionais enfatizam integração, autodeterminação, ALBA e UNASUL e parcerias comerciais com retenção das riquezas no país.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Inicia plataforma de 21 pontos: conselhos populares, combate à fome, estoques e restaurantes, frentes de trabalho priorizando desempregados e famílias do CadÚnico, reforma agrária e expropriação do agronegócio.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Habitação, saneamento e energia estatais; saúde 100% pública com revogação de todos os contratos de OSs e estatização privada; educação estatizada, fim das escolas cívico-militares, ciência e tecnologia públicas.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T017",
+        "BR26-T018",
+        "BR26-T026A",
+        "BR26-T042",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Estatização e expansão dos transportes, proteção ambiental e povos tradicionais; combate às opressões, licenças parentais, legalização do aborto, universalização das creches e políticas para população trans e travesti.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Combate ao racismo, ampliação de cotas universitárias, oposição à redução da maioridade penal, direitos indígenas e de pessoas com deficiência; na segurança defende cotas raciais em todos os concursos federais e estaduais das forças de segurança.",
+      "relevant_question_ids": [
+        "BR26-T015",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Conclui segurança pública, reforma do Judiciário e socialização das comunicações; reitera revogação das reformas trabalhista e previdenciária, arcabouço e autonomia do Banco Central, fim das privatizações e reestatização.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T002",
+        "BR26-T003",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Tributação, trabalho, previdência e assistência; Petrobras expressamente integrada, 100% estatal, com retomada de ativos, monopólio de exploração a distribuição e ampliação da capacidade de refino.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Conclui direitos dos petroleiros; reforma militar, estatização bélica, memória e reparação, relações internacionais e rompimento imediato de todas as relações econômicas e diplomáticas com Israel.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T063",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 16,
+      "summary": "Conclui seção internacional com defesa do fim da OTAN, do Conselho de Segurança da ONU e de instituições imperialistas; assinatura do PCB e número 21.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T066"
+      ]
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 10,
+      "reason": "Confirmar separação das seções de saúde e educação e o alcance das frases sobre todas as OSs e estatização.",
+      "finding": "Página em coluna única; revogação de contratos de todas as OSs e estatização de todo o setor privado são compromissos de saúde; fim das escolas cívico-militares consta na seção de educação."
+    },
+    {
+      "page": 12,
+      "reason": "Distinguir cotas universitárias de cotas em concursos e conferir oposição à redução da maioridade penal.",
+      "finding": "Página em coluna única; cotas raciais em concursos federais e estaduais das forças de segurança estão na seção 13, distintas das cotas universitárias; oposição à redução da maioridade penal é explícita na seção 11."
+    },
+    {
+      "page": 14,
+      "reason": "Confirmar unidade do bloco Petrobras e ordem de leitura de composição do conselho em frações.",
+      "finding": "Página em coluna única; seção Petrobras articula empresa integrada, retomada dos ativos e exploração, produção e refino; frações de um terço referem-se ao conselho, sem alterar as propostas de integração."
+    },
+    {
+      "page": 16,
+      "reason": "Extração de apenas 165 caracteres exigiu verificar se havia conteúdo omitido.",
+      "finding": "Imagem confirma somente continuação da frase internacional, identificação do PCB, número 21 e marca CamScanner; o restante é espaço em branco."
+    }
+  ],
+  "questions_to_resolve": [],
+  "complementary_search_results": {
+    "BR26-T011": {
+      "Bolsa Família": [],
+      "CadÚnico": [
+        9
+      ],
+      "frentes de trabalho": [
+        9
+      ],
+      "renda": [
+        4,
+        5,
+        7,
+        11,
+        14
+      ],
+      "assistência": [
+        6,
+        14
+      ],
+      "auxílios": [
+        14
+      ],
+      "beneficiários": [],
+      "substitui": [
+        4,
+        5,
+        12
+      ]
+    },
+    "BR26-T057": {
+      "Mercosul": [],
+      "União Europeia": [],
+      "europe": [],
+      "acordo comercial": [],
+      "comércio exterior": [
+        4,
+        8
+      ],
+      "parcerias comerciais": [
+        8
+      ],
+      "integração": [
+        6,
+        8,
+        10
+      ]
+    },
+    "BR26-T066": {
+      "BRICS": [],
+      "bloco": [],
+      "integração": [
+        6,
+        8,
+        10
+      ],
+      "ALBA": [
+        8
+      ],
+      "UNASUL": [
+        8
+      ],
+      "ordem internacional": [
+        8
+      ]
+    },
+    "BR26-T067": {
+      "investimento estrangeiro": [],
+      "investimentos estrangeiros": [],
+      "capital estrangeiro": [],
+      "capital internacional": [
+        3,
+        14
+      ],
+      "estrangeir": [
+        14
+      ],
+      "multinacion": [
+        3
+      ],
+      "comércio exterior": [
+        4,
+        8
+      ],
+      "estatização": [
+        2,
+        4,
+        7,
+        10,
+        11,
+        13,
+        15
+      ],
+      "proib": [
+        10,
+        13
+      ],
+      "bolsas de valores": [
+        14
+      ],
+      "parcerias comerciais": [
+        8
+      ]
+    }
+  },
+  "comparison_counts": {
+    "confirmed": 16
+  },
+  "validation": {
+    "command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002551975",
+    "exit_code": 0,
+    "valid": true,
+    "quote_matches": {
+      "layout": 29
+    }
+  }
+}

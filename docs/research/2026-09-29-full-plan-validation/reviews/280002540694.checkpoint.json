@@ -1,0 +1,834 @@
+{
+  "candidate_id": "280002540694",
+  "candidate_name": "Renan Santos",
+  "status": "complete",
+  "full_read_completed": true,
+  "document_sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "pages_total": 51,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa do plano O futuro é glorioso, resumo executivo do Livro Amarelo, Partido Missão Brasil 2026.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Sumário com prefácio, introdução, quatorze capítulos distribuídos em três partes e posfácio.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Prefácio de Renan Santos apresenta potencial nacional, critica elites políticas e culturais e reivindica ruptura geracional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Conclusão do prefácio associa propostas do plano à restauração nacional e à esperança acompanhada de realismo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 5,
+      "summary": "Introdução define o documento como resumo de obra de mais de 500 páginas e apresenta liberalismo econômico crítico de panaceias genéricas de privatização e desregulação.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Introdução resume ajuste fiscal, segurança, pacto federativo, trabalho remunerado substitutivo do Bolsa Família, infraestrutura, SUS, cultura e educação.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T011",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Conclusão da introdução resume zonas econômicas especiais, terras raras, agricultura e IA, política externa e desfavelização.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 8,
+      "summary": "Abertura da Parte I Estado Novo enumera capítulos de ajuste fiscal, segurança, pacto federativo e responsabilidade gerencial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 9,
+      "summary": "Diagnóstico fiscal critica o Novo Arcabouço Fiscal, compara-o ao teto de gastos e apresenta dívida e crescimento das despesas.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Propõe PEC de transição com desindexação, desvinculação, revisão de benefícios, funcionalismo e substituição do arcabouço fiscal.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Diagnóstico de segurança enquadra facções como ameaça à soberania e critica a capacidade jurídica e operacional de combate.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 12,
+      "summary": "Detalha Direito Penal do Inimigo, Lei Antifacção, restrições de direitos e desenho processual para combater facções.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 13,
+      "summary": "Completa segurança com intervenção, GLO, vigilância, superpresídios, penas para reincidência e crimes de rua sem definir idade penal.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Diagnostica inviabilidade fiscal municipal, dependência de transferências, clientelismo e gastos com shows.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 15,
+      "summary": "Propõe Grande Consolidação Municipal mediante critérios fiscais, geográficos, econômicos e urbanos, preservando serviços nas antigas sedes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 16,
+      "summary": "Gráfico visual da expansão do número de municípios brasileiros entre 1940 e 2026, de 1.574 a 5.570, sem propostas adicionais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Diagnostica patrimonialismo, fundos partidários e emendas como incentivos para perpetuação de oligarquias sem melhora de serviços.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 18,
+      "summary": "Propõe Comissariado com autonomia inspirada na independência do Banco Central, metas gerenciais, sanções, cláusula antimáfia e fundos condicionados.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 19,
+      "summary": "Abertura da Parte II Reformas de Base lista economia, infraestrutura, saúde, cultura e educação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 20,
+      "summary": "Diagnostica estagnação produtiva, subsídios e aumento dos gastos com Bolsa Família e BPC.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 21,
+      "summary": "Apresenta reformas microeconômicas e Frentes Cidadãs como substituição do Bolsa Família para participação no trabalho.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Completa a proposta de frentes de trabalho para projetos de bem público e articula cidadania com produtividade.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 23,
+      "summary": "Diagnostica atraso de infraestrutura, obras interrompidas, isolamento amazônico e limitações de transmissão elétrica.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 24,
+      "summary": "Propõe investimento estatal condicionado ao ajuste, concessões e PPPs, licenciamento e obras de ferrovias, portos, aeroportos e energia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Diagnostica barreiras de acesso ao SUS e propõe fila dinâmica ENER segundo risco clínico e social.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 26,
+      "summary": "Propõe saúde digital, genômica, prontuário público-privado interoperável, centros regionais, fundo por desempenho e incentivos esportivos.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Abre cultura e imprensa com crítica à Lei Rouanet, defesa do propósito educativo do fomento e revisão institucional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 28,
+      "summary": "Propõe reformar Rouanet, IPHAN, IBRAM com OSs, audiovisual e criar código de imprensa preservando liberdade de comunicação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 29,
+      "summary": "Conclui cultura com fusão ministerial, oposição a restrições de expressão e criação de Código Unificado de imprensa.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Diagnóstico educacional examina resultados PISA, competências básicas e diferença entre redes pública e privada.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 31,
+      "summary": "Propõe modelo do Ceará, alfabetização fônica, disciplina, escolas civis-militares em áreas críticas e reforma universitária com bolsas de mérito.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 32,
+      "summary": "Lista dez propostas educacionais, incluindo abolir cotas na educação e em geral e militarização provisória de escolas em situação crítica.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 33,
+      "summary": "Abertura da Parte III País do Futuro enumera ZEEs, terras raras, agricultura e tecnologia, política externa e desfavelização.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 34,
+      "summary": "Apresenta potencial nordestino e diagnostica desindustrialização, dependência de importações e limitações das zonas de exportação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 35,
+      "summary": "Diagnostica limites trabalhistas e à propriedade estrangeira de terras e propõe ZEEs com incentivos, licenças ágeis e polos nordestinos.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 36,
+      "summary": "Completa ZEEs com PPPs, consórcios, reurbanização, defesa e verticalização da cadeia de terras raras.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 37,
+      "summary": "Introduz terras raras com diagnóstico de dependência tecnológica e reservas minerais brasileiras.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 38,
+      "summary": "Detalha riscos geopolíticos da dependência chinesa e propõe cooperação tecnológica prioritária com EUA e União Europeia.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Propõe acordos minerais, investimento direto estrangeiro qualificado, financiamento liderado por BNDES e parcerias tecnológicas diversificadas.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 40,
+      "summary": "Detalha financiamento mineral com BNDES e agências estrangeiras, cronograma, controle estratégico estatal, riscos compartilhados e fundo soberano.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 41,
+      "summary": "Diagnostica vantagens agrícolas e computacionais, exportações agropecuárias, importação de fertilizantes e política fundiária.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 42,
+      "summary": "Propõe AgroBrasil 2030 e marco de IA com atração de capital internacional, segurança fundiária, produtividade e verticalização do agro.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 43,
+      "summary": "Detalha auditoria de material educacional pela Embrapa e eixo de IA com talentos, datacenters, dados agropecuários e laboratório de capital privado majoritário.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 44,
+      "summary": "Introduz agenda geopolítica, identifica fragilidade institucional, falta de liderança internacional e custo do narcotráfico.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 45,
+      "summary": "Diagnostica influência chinesa no BRICS e dependências monetária/nuclear; inicia propostas de arbitragem no Sul Global e pacto contra tráfico.",
+      "relevant_question_ids": [
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 46,
+      "summary": "Propõe integração lusófona, pragmatismo, desdolarização regional, benefícios no BRICS+ com autonomia, fronteiras e indústria militar.",
+      "relevant_question_ids": [
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 47,
+      "summary": "Conclui política externa articulando treze propostas de soberania, liderança e reorganização institucional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 48,
+      "summary": "Diagnostica favelização, moradia informal, violência, saneamento e limites de políticas habitacionais anteriores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 49,
+      "summary": "Propõe desfavelização integral em dez anos com títulos, cadastro, instrumentos penais, financiamento e serviços públicos obrigatórios, incluindo creches.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 50,
+      "summary": "Posfácio apresenta continuidade e revisão futura do projeto partidário e contém apelo político aos apoiadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 51,
+      "summary": "Contracapa amarela com logotipo do Partido Missão e identificação Brasil 2026, sem conteúdo programático.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Capa com pouco texto útil extraído.",
+      "finding": "Capa amarela com título e identificação partidária; nenhum conteúdo programático adicional."
+    },
+    {
+      "page": 5,
+      "reason": "Caixa introdutória e estrutura gráfica poderiam afetar a leitura.",
+      "finding": "Caixa confirma edição condensada de obra maior; corpo em uma coluna, integralmente capturado."
+    },
+    {
+      "page": 8,
+      "reason": "Página divisória com pouco texto.",
+      "finding": "Abertura decorativa da Parte I sem propostas adicionais."
+    },
+    {
+      "page": 9,
+      "reason": "Quadros de indicadores e respostas omitidos da extração.",
+      "finding": "Quadros registram dívida de R$ 8,64 tri, trajetória de 80% para 100% do PIB, ajuste de R$ 250 bi, economia de R$ 1,1 tri e fim dos supersalários."
+    },
+    {
+      "page": 10,
+      "reason": "Tabela gráfica ausente da extração.",
+      "finding": "Tabela compara economia de desindexação previdenciária/BPC, desvinculação saúde/educação/Fundeb, abono salarial e isenções; não contém compromisso adicional sobre as 16 perguntas."
+    },
+    {
+      "page": 11,
+      "reason": "Quadros de indicadores e respostas omitidos.",
+      "finding": "Quadros apresentam um em cinco brasileiros sob facções, Guerra ao Crime no dia 1, confisco invertido e superpresídios; nada sobre idade penal."
+    },
+    {
+      "page": 14,
+      "reason": "Quadros gráficos omitidos da extração.",
+      "finding": "Quadros resumem dependência municipal, gastos com shows e meta de consolidação de 5.570 para 1.656 municípios."
+    },
+    {
+      "page": 16,
+      "reason": "Extrator retornou apenas rodapé.",
+      "finding": "Página contém gráfico de número de municípios entre 1940 e 2026, baseado em dados históricos do IBGE; leitura visual concluída."
+    },
+    {
+      "page": 17,
+      "reason": "Quadros gráficos e espaçamento do corpo poderiam afetar leitura.",
+      "finding": "Quadros especificam emendas, fundos eleitorais, comissários, até 24 meses de gestão federal e fundo condicionado; corpo corresponde ao extraído."
+    },
+    {
+      "page": 19,
+      "reason": "Página divisória de pouco texto.",
+      "finding": "Abertura da Parte II com cinco títulos sem conteúdo adicional."
+    },
+    {
+      "page": 20,
+      "reason": "Quadros e gráfico ausentes da extração.",
+      "finding": "Quadro afirma Frentes Cidadãs substituindo Bolsa Família por trabalho remunerado comunitário; gráfico compara produtividade setorial e não altera as perguntas."
+    },
+    {
+      "page": 23,
+      "reason": "Quadros ausentes da extração.",
+      "finding": "Quadros resumem obras paralisadas, energia cortada, investimento de 2% para 4% do PIB, ferrovias e Angra 3."
+    },
+    {
+      "page": 25,
+      "reason": "Quadros de diagnóstico e propostas ausentes da extração.",
+      "finding": "Quadros tratam dependência do SUS, fila cronológica, prioridade por risco, resolutividade de 80% e prontuário PRONTO, sem gestão privada ou contratação de atendimento."
+    },
+    {
+      "page": 27,
+      "reason": "Quadros ausentes da extração.",
+      "finding": "Quadros propõem teto de captação Rouanet, recursos Rouanet para presídios e código de imprensa."
+    },
+    {
+      "page": 30,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros com PISA, método fônico, autoridade escolar e bolsas por mérito no lugar de cotas."
+    },
+    {
+      "page": 33,
+      "reason": "Divisória com pouco texto.",
+      "finding": "Títulos dos cinco capítulos da Parte III sem outras propostas."
+    },
+    {
+      "page": 34,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros de importações, déficit habitacional, prazo de licenças, polos industriais e cadeia mineral integrada."
+    },
+    {
+      "page": 37,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros resumem concentração chinesa, reservas brasileiras, financiamento de R$ 20 bi, planta-piloto e política mineral como questão de Estado."
+    },
+    {
+      "page": 41,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros apresentam fertilizantes importados, renda rural, redução da importação a 50%, exportação de inferência e cluster de 10 mil GPUs."
+    },
+    {
+      "page": 44,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros de crime, SISFRON, pacto contra tráfico, vigilância de fronteiras e ciclo nuclear completo; não acrescentam posição sobre Israel ou Mercosul-UE."
+    },
+    {
+      "page": 48,
+      "reason": "Quadros omitidos da extração.",
+      "finding": "Quadros apresentam população em favelas, furto de energia, desfavelização em dez anos, parcelas de títulos e demolição de imóveis não habitados."
+    },
+    {
+      "page": 51,
+      "reason": "Extrator retornou apenas rodapé.",
+      "finding": "Contracapa decorativa com logotipo e identificação partidária, sem outras propostas."
+    }
+  ],
+  "current_position": {
+    "next_page": null,
+    "phase": "complete"
+  },
+  "unresolved_questions": [],
+  "inputs_read": true,
+  "sequential_read_finished_at": "2026-09-29T17:54:50.467113+00:00",
+  "independent_categories_before_prior": {
+    "BR26-T001": "DISCORDA",
+    "BR26-T002": "NAO_ENCONTRADA",
+    "BR26-T003": "NAO_ENCONTRADA",
+    "BR26-T011": "CONCORDA",
+    "BR26-T015": "NAO_ENCONTRADA",
+    "BR26-T017": "CONCORDA",
+    "BR26-T018": "CONCORDA",
+    "BR26-T026A": "NAO_ENCONTRADA",
+    "BR26-T036": "NAO_ENCONTRADA",
+    "BR26-T038": "NAO_ENCONTRADA",
+    "BR26-T042": "NAO_ENCONTRADA",
+    "BR26-T043": "NAO_ENCONTRADA",
+    "BR26-T057": "NAO_ENCONTRADA",
+    "BR26-T063": "NAO_ENCONTRADA",
+    "BR26-T066": "DISCORDA",
+    "BR26-T067": "DISCORDA"
+  },
+  "complementary_search_method": "Após leitura sequencial completa, busca nas extrações layout e raw com normalização de espaço/acentos e recomposição apenas para busca de palavras hifenizadas; citações literais preservam o texto extraído.",
+  "complementary_search_results": {
+    "BR26-T001": {
+      "arcabouço": [
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        43
+      ],
+      "200/2023": [],
+      "PEC de Transição": [
+        10
+      ]
+    },
+    "BR26-T002": {
+      "privat": [
+        5
+      ],
+      "estatais": [],
+      "controle acionário": [],
+      "controle estratégico": [
+        40
+      ],
+      "BNDES": [
+        39,
+        40,
+        42
+      ],
+      "Embrapa": [
+        43
+      ]
+    },
+    "BR26-T003": {
+      "reforma trabalhista": [
+        5
+      ],
+      "2017": [
+        49
+      ],
+      "13.467": [],
+      "CLT": [],
+      "legislação trabalhista": [
+        21
+      ]
+    },
+    "BR26-T011": {
+      "Bolsa Família": [
+        6,
+        14,
+        20,
+        21
+      ],
+      "Frentes Cidadãs": [
+        21
+      ],
+      "idade economicamente ativa": [
+        6
+      ],
+      "trabalho remunerado": []
+    },
+    "BR26-T015": {
+      "maioridade": [],
+      "idade penal": [],
+      "16 anos": [],
+      "17 anos": [],
+      "adolescente": [
+        31
+      ],
+      "ECA": [
+        31
+      ],
+      "crime hediondo": []
+    },
+    "BR26-T017": {
+      "civis-militares": [
+        31,
+        32
+      ],
+      "cívico-militares": [],
+      "militarização": [
+        32
+      ],
+      "escolas em situação crítica": [
+        32
+      ]
+    },
+    "BR26-T018": {
+      "cotas": [
+        6,
+        31,
+        32
+      ],
+      "raciais": [],
+      "racial": [],
+      "concurso": [],
+      "serviço público": [],
+      "em geral": [
+        32
+      ]
+    },
+    "BR26-T026A": {
+      "organizações sociais": [],
+      "OSs": [
+        28
+      ],
+      "delegação": [],
+      "gestão": [
+        14,
+        18,
+        25,
+        28,
+        50
+      ],
+      "hospitais públicos e privados": [
+        26
+      ],
+      "saúde": [
+        2,
+        3,
+        5,
+        6,
+        10,
+        14,
+        15,
+        19,
+        25,
+        26,
+        39,
+        48,
+        49,
+        50
+      ]
+    },
+    "BR26-T036": {
+      "Banco Central": [
+        9,
+        18
+      ],
+      "179/2021": [],
+      "autonomia": [
+        15,
+        18,
+        25,
+        32,
+        34,
+        38,
+        45,
+        46
+      ],
+      "independência": [
+        18
+      ],
+      "mandatos fixos": [
+        18
+      ]
+    },
+    "BR26-T038": {
+      "Petrobras": [],
+      "Petrobrás": [],
+      "petróleo": [],
+      "refino": [
+        36,
+        37,
+        39
+      ],
+      "refinaria": [],
+      "Transpetro": [],
+      "desverticalização": [],
+      "petroquímica": [
+        35
+      ]
+    },
+    "BR26-T042": {
+      "fila": [
+        2,
+        6,
+        19,
+        25
+      ],
+      "contratar": [],
+      "contratação": [
+        14
+      ],
+      "atendimento privado": [],
+      "hospitais públicos e privados": [
+        26
+      ],
+      "PRONTO": [
+        26
+      ]
+    },
+    "BR26-T043": {
+      "creche": [
+        15,
+        49
+      ],
+      "voucher": [],
+      "vaga": [
+        5,
+        6
+      ],
+      "matrícula": [
+        30
+      ],
+      "privadas": [
+        12,
+        36,
+        39
+      ]
+    },
+    "BR26-T057": {
+      "Mercosul": [],
+      "União Europeia": [
+        38,
+        39,
+        46
+      ],
+      "acordo comercial": [],
+      "acordos bilaterais": [
+        39
+      ]
+    },
+    "BR26-T063": {
+      "Israel": [
+        31
+      ],
+      "Palestina": [],
+      "palestino": [],
+      "genocídio": [],
+      "apartheid": [],
+      "relações diplomáticas": [],
+      "romper": [
+        13,
+        18,
+        48
+      ]
+    },
+    "BR26-T066": {
+      "BRICS": [
+        45,
+        46
+      ],
+      "retirada": [
+        12
+      ],
+      "saída": [],
+      "pragmática": [
+        46
+      ]
+    },
+    "BR26-T067": {
+      "investimento direto estrangeiro": [
+        39
+      ],
+      "capital privado nacional e internacional": [
+        42
+      ],
+      "propriedade estrangeira": [
+        35
+      ],
+      "investimentos": [
+        6,
+        15,
+        23,
+        34,
+        35,
+        38,
+        39,
+        40,
+        46
+      ]
+    }
+  },
+  "inputs_first_read_after_full_sequential_read": true,
+  "comparison_preliminary": {
+    "confirmed": 16,
+    "divergent": 0,
+    "no_prior": 0
+  },
+  "final_categories": {
+    "BR26-T001": "DISCORDA",
+    "BR26-T002": "NAO_ENCONTRADA",
+    "BR26-T003": "NAO_ENCONTRADA",
+    "BR26-T011": "CONCORDA",
+    "BR26-T015": "NAO_ENCONTRADA",
+    "BR26-T017": "CONCORDA",
+    "BR26-T018": "CONCORDA",
+    "BR26-T026A": "NAO_ENCONTRADA",
+    "BR26-T036": "NAO_ENCONTRADA",
+    "BR26-T038": "NAO_ENCONTRADA",
+    "BR26-T042": "NAO_ENCONTRADA",
+    "BR26-T043": "NAO_ENCONTRADA",
+    "BR26-T057": "NAO_ENCONTRADA",
+    "BR26-T063": "NAO_ENCONTRADA",
+    "BR26-T066": "DISCORDA",
+    "BR26-T067": "DISCORDA"
+  },
+  "comparison_counts": {
+    "confirmed": 16
+  },
+  "validated_at": "2026-09-29T18:01:26.557241+00:00",
+  "validation_result": {
+    "command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002540694",
+    "exit_code": 0,
+    "complete_and_valid": true,
+    "pages_logged": 51,
+    "questions": 16,
+    "visual_check_count": 22,
+    "comparisons": {
+      "confirmed": 16
+    },
+    "quote_matches": {
+      "layout": 16
+    }
+  }
+}

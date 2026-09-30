@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002540694",
+    "name": "Renan Santos",
+    "party": "MISSÃO",
+    "pages": 51,
+    "member": "BR/2026BR280002540694_01.pdf",
+    "sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      12
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002540694",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "DISCORDA",
+      "reason": "A finalidade de substituir o arcabouço fiscal por outro modelo é expressa na proposta de PEC da Transição. O contexto da página 9 identifica o novo arcabouço vigente, e não uma regra fiscal abstrata.",
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente."
+        }
+      ],
+      "inspected_pages": [
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O prefácio critica a versão simplista de liberalismo segundo a qual privatizar tudo resolveria os problemas e o plano propõe financiamento pelo BNDES. A crítica à suficiência de uma receita não equivale, por si, a rejeitar a transferência de toda empresa estatal, nem há compromisso inequívoco de realizá-la.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "bastava privatizar tudo, retirar o Estado de todas as áreas"
+        },
+        {
+          "page": 5,
+          "quote": "rejeitamos a versão vulgarizada que oferecia panaceias e falava vagamente em desburocratização e privatizações"
+        }
+      ],
+      "inspected_pages": [
+        5,
+        39
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O resumo oficial defende flexibilização e nova reforma, mas não decide o destino integral da reforma de 2017, um teto semanal ou prevalência normativa das negociações.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        21,
+        35,
+        36
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "CONCORDA",
+      "reason": "A página 6 propõe substituir o Bolsa Família por frentes remuneradas precisamente para a população em idade economicamente ativa. As páginas 21–22 explicitam atividades de bem público; a presença de trabalho público isoladamente não bastaria sem o vínculo de substituição.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "a substituição do Bolsa Família por frentes de trabalho remunera- das para a população em idade economicamente ativa."
+        }
+      ],
+      "inspected_pages": [
+        6,
+        21,
+        22
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O Direito Penal do Inimigo e as medidas antifacção não especificam aplicação do regime adulto aos 16/17 anos.",
+      "evidence": [],
+      "inspected_pages": [
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "CONCORDA",
+      "reason": "Propõe transformação de escolas críticas pelo modelo, embora provisória. Isso sustenta sua admissibilidade em condições delimitadas, sem afirmar que toda escola deva adotá-lo ou que a expansão deva ser permanente.",
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Transformação das escolas em situação crítica, de acordo com o sistema das escolas civis-militares"
+        },
+        {
+          "page": 32,
+          "quote": "A militarização das escolas deve ser vista como uma medida provisória, a fim de estancar a violência endêmica, em especial nas regiões com alta criminalidade no entorno."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        30,
+        31,
+        32,
+        49
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "CONCORDA",
+      "reason": "A expressão final de abolir cotas na educação e em geral alcança o serviço público; não há, no contexto, exceção de manutenção racial em concursos.",
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Abolir o sistema de cotas na educação brasileira e em geral."
+        }
+      ],
+      "inspected_pages": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. As páginas de saúde enfatizam organização, formação e tecnologia; integração de informação com hospitais privados não decide quem gere serviços públicos de saúde.",
+      "evidence": [],
+      "inspected_pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Na página 18, a independência do Banco Central inspira uma nova autarquia de fiscalização municipal. A analogia favorável não promete manter ou revogar a autonomia do próprio BC. A busca no texto completo não encontrou decisão adicional sobre a LC 179/2021.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Uma autarquia especial vinculada ao Ministério da Fazenda, com autonomia técnica e mandatos fixos, inspirada na inde- pendência do Banco Central."
+        }
+      ],
+      "inspected_pages": [
+        18
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por Petrobras, refino, refinaria, Transpetro, desverticalização e integração, com contexto industrial das páginas 39, 42 e 43, não localizaram escolha sobre manter essas operações integradas na Petrobras. Indústria nacional e investimento não decidem estrutura empresarial.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        42,
+        43
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas integrais e leitura dos contextos: Tecnologia e integração do histórico assistencial com hospitais não estabelecem compra de capacidade privada para filas.",
+      "evidence": [],
+      "inspected_pages": [
+        25,
+        26
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. As p15 e p49 preveem manter ou instalar escolas e creches em programas territoriais; não informam voucher nem financiamento de matrícula privada.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        30,
+        31,
+        32,
+        49
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Integração regional e acordos bilaterais com a União Europeia para minerais críticos não decidem apoio a este acordo Mercosul–UE.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        39,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "DISCORDA",
+      "reason": "O plano formula uma estratégia pragmática no BRICS+ para obter benefícios de mercados, investimentos e cooperação tecnológica, o que pressupõe permanência.",
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos, por meio dos mercados, investimentos e cooperação tecnológi- ca, enquanto evita ser subordinado aos objetivos geopolíticos de Pequim, mantendo autonomia decisória."
+        }
+      ],
+      "inspected_pages": [
+        39,
+        44,
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano cria incentivos fiscais e regulatórios para atrair investimento direto estrangeiro qualificado no processamento de terras raras.",
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado."
+        }
+      ],
+      "inspected_pages": [
+        39
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

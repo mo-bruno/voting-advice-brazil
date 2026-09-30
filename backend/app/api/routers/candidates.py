@@ -102,6 +102,7 @@ def get_positions(
                 theme_id=p.theme_id,
                 theme_name=p.theme_name,
                 position=p.position,
+                analytical_position=p.analytical_position,
             )
             for p in positions
         ],
@@ -130,6 +131,7 @@ def get_justifications(
             theme=p.theme_slug,  # type: ignore[attr-defined]
             theme_name=p.theme_name,  # type: ignore[attr-defined]
             position=p.position,  # type: ignore[attr-defined]
+            analytical_position=p.analytical_position,  # type: ignore[attr-defined]
             justification=p.justification,  # type: ignore[attr-defined]
             quote=p.quote,  # type: ignore[attr-defined]
             source_ref=p.source_ref,  # type: ignore[attr-defined]

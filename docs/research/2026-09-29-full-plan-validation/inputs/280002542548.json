@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002542548",
+    "name": "Lula",
+    "party": "PT",
+    "pages": 84,
+    "member": "BR/2026BR280002542548_01.pdf",
+    "sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      14
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002542548",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "CONCORDA",
+      "reason": "O compromisso futuro de manter o novo arcabouço fiscal é explícito. O contexto das páginas 10 e 49 identifica o regime aprovado no atual mandato, correspondente ao objeto da formulação; não se está inferindo apoio apenas de responsabilidade fiscal genérica.",
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "manteremos o novo arcabouço fiscal"
+        }
+      ],
+      "inspected_pages": [
+        10,
+        49
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano prevê manter patrocínios das empresas estatais e ampliar investimentos da Petrobras, mas essas propostas não enunciam a manutenção do controle público. A transferência de controle não impede participação estatal minoritária ou continuidade de patrocínios; por isso não se atribui discordância a partir desses instrumentos.",
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "além de manter o patrocínio das empresas estatais"
+        }
+      ],
+      "inspected_pages": [
+        43,
+        58,
+        67
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Alterar regras que precarizam o trabalho e fortalecer negociação coletiva não equivale a revogar integralmente a reforma de 2017.",
+      "evidence": [],
+      "inspected_pages": [
+        75,
+        76
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A defesa de manter e ampliar proteção social e o elogio ao Bolsa Família não resolvem especificamente sua substituição para beneficiários em idade economicamente ativa. O estímulo a ocupações socialmente úteis na página 74 também não é vinculado a substituir esse benefício.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita."
+        },
+        {
+          "page": 74,
+          "quote": "Vamos buscar estimular ocupações sociais, criando oportunidades de trabalho em atividades de interesse coletivo"
+        }
+      ],
+      "inspected_pages": [
+        18,
+        19,
+        58,
+        74
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Prevenção, proteção à juventude negra, justiça restaurativa e combate ao crime não decidem idade de responsabilização adulta.",
+      "evidence": [],
+      "inspected_pages": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As páginas de educação propõem expansão, tempo integral, conectividade e valorização profissional; não localizei adoção nem rejeição de escolas cívico-militares.",
+      "evidence": [],
+      "inspected_pages": [
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "DISCORDA",
+      "reason": "Compromisso explícito de continuidade da participação da população negra no funcionalismo alinhada às cotas do serviço público.",
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato."
+        }
+      ],
+      "inspected_pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A parceria com hospitais privados para exames e cirurgias (p37) é compra de oferta para o SUS, não transferência da gestão de unidades públicas a OS ou PPP.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+        }
+      ],
+      "inspected_pages": [
+        34,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano critica juros elevados e propõe condições fiscais e econômicas para reduzi-los, sem manifestar decisão sobre revogar ou manter a autonomia institucional do Banco Central. A crítica aos juros não implica revogação.",
+      "evidence": [],
+      "inspected_pages": [
+        49
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "CONCORDA",
+      "reason": "A própria Petrobras amplia exploração e expande sua capacidade de refino na página 67. O texto mantém os dois segmentos na Petrobras; não é só compromisso com propriedade estatal.",
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "Entendemos que a Petrobras continuará ampliando investimentos em exploração onshore e offshore"
+        },
+        {
+          "page": 67,
+          "quote": "A Petrobras deverá retornar ao segmento de distribuição de combustíveis, expandindo sua capacidade de refino e ampliando a atuação da Transpetro para logística de GNL."
+        }
+      ],
+      "inspected_pages": [
+        67
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "CONCORDA",
+      "reason": "A continuidade da parceria com hospitais privados para oferecer exames e cirurgias ao SUS, por créditos ou dívidas, sustenta a possibilidade de contratar essa oferta. A alternativa não exige ociosidade nem uma forma exclusiva de pagamento.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS."
+        }
+      ],
+      "inspected_pages": [
+        34,
+        36,
+        37,
+        38
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Expansão pública de creches/escolas e obras do Novo PAC não decide vouchers nem compra de vagas privadas.",
+      "evidence": [],
+      "inspected_pages": [
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "CONCORDA",
+      "reason": "Apresenta a conclusão do acordo com a União Europeia como realização positiva de sua diplomacia. Isso sustenta apoio ao acordo, sem atribuir promessa específica de ratificação ou execução de cada cláusula.",
+      "evidence": [
+        {
+          "page": 79,
+          "quote": "Nossa diplomacia comercial permitiu abrir 656 novos mercados para os produtos brasileiros e a conclusão de acordos do Mercosul com a União Europeia, EFTA e Singapura."
+        }
+      ],
+      "inspected_pages": [
+        54,
+        77,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        54,
+        77,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "DISCORDA",
+      "reason": "O plano propõe aprofundar a aproximação geopolítica com o BRICS e fortalecer seus mecanismos financeiros.",
+      "evidence": [
+        {
+          "page": 81,
+          "quote": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20, espaços fundamentais para a afirmação dos interesses da maioria da humanidade."
+        }
+      ],
+      "inspected_pages": [
+        54,
+        77,
+        79,
+        80,
+        81
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "NAO_ENCONTRADA",
+      "reason": "As páginas 79 e 83 defendem cooperação/comércio internacional e soberania contra subordinação externa. Essas passagens não decidem acolher investimento estrangeiro nem proibi-lo na economia inteira; comércio e soberania não foram tratados como equivalentes a fluxo de capital.",
+      "evidence": [],
+      "inspected_pages": [
+        79,
+        83
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

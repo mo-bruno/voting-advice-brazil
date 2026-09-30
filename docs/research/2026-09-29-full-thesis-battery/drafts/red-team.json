@@ -1,0 +1,567 @@
+{
+  "schema_version": 1,
+  "review_id": "full-battery-red-team-v1",
+  "status": "completed_editorial_red_team",
+  "scope": {
+    "reviewed_item_count": 26,
+    "candidate_classification_performed": false,
+    "pdf_validation_performed": false,
+    "central_files_modified": false,
+    "published_battery_used": false,
+    "source_scope_note": "A revisão usa a bateria consolidada derivada do mapa documental e não atribui respostas a candidaturas."
+  },
+  "inputs_reviewed": [
+    "../BATTERY.json",
+    "../BATTERY.md",
+    "../ORCHESTRATION.md",
+    "coverage-review.json",
+    "coverage-review.md",
+    "semantic-review.json",
+    "semantic-review.md",
+    "whole-battery.json",
+    "whole-battery.md",
+    "../../2026-09-29-question-editorial-review/DECISION_MAP.json",
+    "../../2026-09-29-question-editorial-review/PROTOCOL.md"
+  ],
+  "criteria": [
+    "atomicidade",
+    "neutralidade",
+    "vocabulário compreensível",
+    "consistência entre afirmação e explicação",
+    "falso paralelismo",
+    "alcance aberto",
+    "duplicação e peso",
+    "correspondência com a família decisória"
+  ],
+  "verdict_counts": {
+    "accept": 12,
+    "revise_before_user": 10,
+    "remove_or_reserve": 4
+  },
+  "size_recommendation": {
+    "recommended_core_size": 22,
+    "current_size": 26,
+    "reserve_ids": [
+      "FB-Q10",
+      "FB-Q13",
+      "FB-Q18",
+      "FB-Q20"
+    ],
+    "rationale": "Uma bateria principal de 22 itens preserva os quatro itens imutáveis e os contrastes mais defensáveis, depois das dez revisões indicadas. Os quatro itens em reserva usam a contagem de uma família ampla para sustentar subdecisões presentes em apenas um ou dois registros, ou exigem condições que tornam a resposta materialmente ambígua. A recomendação não deriva de cotas temáticas."
+  },
+  "override_audit": [
+    {
+      "item_id": "FB-Q12",
+      "topic": "inteligência artificial",
+      "result": "corresponds_with_revision",
+      "finding": "O override preserva o contraste de I07 entre obrigação preventiva e intervenção apenas após dano, e não herda resposta de reconhecimento facial. Falta definir alto risco e a expressão mesmo sem dano concreto já comprovado introduz o enquadramento do debate na própria tese.",
+      "action": "Manter o objeto, retirar a oração adversativa e definir alto risco na explicação."
+    },
+    {
+      "item_id": "FB-Q22",
+      "topic": "idade penal",
+      "result": "does_not_correspond_exactly",
+      "finding": "Crimes hediondos é uma categoria jurídica diferente da lista mapeada em S04.03, que inclui crimes não necessariamente coincidentes com essa categoria. O override criou um universo novo e não representa as propostas gerais de redução aos 16 anos em S04.02.",
+      "action": "Substituir pelo contraste geral aos 16 anos ou, se a exceção restrita for indispensável, reproduzir a lista exata e tratá-la como item de baixo alcance."
+    },
+    {
+      "item_id": "FB-Q24",
+      "topic": "segregação prisional",
+      "result": "corresponds_to_subfamily",
+      "finding": "A separação de lideranças em segurança máxima corresponde ao núcleo de S05.01. A família S05 inteira também contém vagas, reinserção, gestão privada e consulta, que não sustentam esta tese; integrantes em geral e presos de alta periculosidade tampouco podem ser contados como lideranças.",
+      "action": "Manter o texto, mas calcular alcance apenas com registros que tratem de lideranças e separação ou segurança máxima."
+    }
+  ],
+  "items": [
+    {
+      "id": "B01-Q01",
+      "anchor_immutable": true,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede a existência de um tributo específico."},
+        "neutrality": {"status": "pass", "note": "Não promete efeito nem atribui intenção."},
+        "vocabulary": {"status": "concern", "note": "Grande fortuna não tem limiar compartilhado."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação preserva a escolha geral e explicita as lacunas."},
+        "false_parallelism": {"status": "concern", "note": "Herança, dividendos, renda alta e patrimônio em geral não podem valer como respostas equivalentes."},
+        "open_scope": {"status": "concern", "note": "Limiar, periodicidade e alíquota permanecem abertos."},
+        "duplication_weight": {"status": "pass", "note": "Não há outro item tributário na bateria."},
+        "family_fit": {"status": "concern", "note": "E03 é muito mais ampla; apenas sua subdecisão patrimonial sustenta a âncora."}
+      },
+      "primary_risk": "Pessoas podem concordar com limiares radicalmente diferentes e parecer equivalentes.",
+      "exact_suggestion": null,
+      "anchor_note": "Texto imutável; o risco deve acompanhar a validação posterior."
+    },
+    {
+      "id": "B01-Q02",
+      "anchor_immutable": true,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Pergunta pela existência de crédito setorial dirigido."},
+        "neutrality": {"status": "pass", "note": "Não qualifica o instrumento como eficiente ou injusto."},
+        "vocabulary": {"status": "pass", "note": "Linhas de crédito recebe definição simples."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Afirmação e explicação tratam de empréstimo para setores selecionados."},
+        "false_parallelism": {"status": "concern", "note": "Garantia, subsídio, participação acionária, desoneração e investimento direto não equivalem a linha de crédito."},
+        "open_scope": {"status": "concern", "note": "Critérios de prioridade, contrapartidas, fonte e operador ficam abertos."},
+        "duplication_weight": {"status": "concern", "note": "É uma das quatro âncoras econômicas e compartilha material industrial com B01-Q03."},
+        "family_fit": {"status": "concern", "note": "E06 contém crédito direto, mas E07 é apenas ligação produtiva secundária e não deve ampliar o alcance do item."}
+      },
+      "primary_risk": "Concordâncias podem juntar crédito com e sem subsídio ou contrapartidas substantivas.",
+      "exact_suggestion": null,
+      "anchor_note": "Texto imutável; não usar a soma de E06 e E07 como cobertura da redação exata."
+    },
+    {
+      "id": "B01-Q03",
+      "anchor_immutable": true,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "concern", "note": "Participar pode significar investimento minoritário, controle, consórcio ou operação."},
+        "neutrality": {"status": "pass", "note": "Não promete desenvolvimento nem acusa perda de soberania."},
+        "vocabulary": {"status": "concern", "note": "Minerais estratégicos é um conjunto aberto; exploração pode ser lida como cadeia inteira."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação fixa exploração como extração."},
+        "false_parallelism": {"status": "concern", "note": "Capital para processamento, conteúdo local e reestatização não respondem automaticamente à permissão para extrair."},
+        "open_scope": {"status": "concern", "note": "Tipo de participação, controle e condições ficam abertos."},
+        "duplication_weight": {"status": "concern", "note": "Reforça indústria e mineração já presentes em B01-Q02."},
+        "family_fit": {"status": "concern", "note": "E05 apoia o eixo de capital externo; E07 reúne sobretudo processamento e propriedade, não autorização de extração."}
+      },
+      "primary_risk": "A explicação reduz a polissemia, mas a resposta ainda pode esconder regimes de controle incompatíveis.",
+      "exact_suggestion": null,
+      "anchor_note": "Texto imutável; validar condições sem importar material de processamento mineral."
+    },
+    {
+      "id": "B01-Q04",
+      "anchor_immutable": true,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede a suspensão temporária durante auditoria."},
+        "neutrality": {"status": "pass", "note": "Não presume ilegitimidade da dívida."},
+        "vocabulary": {"status": "pass", "note": "Auditoria é definida de modo compreensível."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação separa suspensão de cancelamento."},
+        "false_parallelism": {"status": "concern", "note": "Auditoria isolada, reestruturação e cancelamento não são equivalentes à suspensão."},
+        "open_scope": {"status": "fail", "note": "Pagamentos dessa dívida sugere todos os credores, embora registros restrinjam grandes investidores, bancos ou tipos de dívida."},
+        "duplication_weight": {"status": "pass", "note": "Não repete outra decisão fiscal da bateria."},
+        "family_fit": {"status": "concern", "note": "E02 contém o objeto, mas sequência e universo de credores variam em todos os quatro registros."}
+      },
+      "primary_risk": "A formulação geral é mais ampla que os universos documentais que a originaram.",
+      "exact_suggestion": null,
+      "anchor_note": "Texto imutável; exigir correspondência exata de sequência e credores na validação."
+    },
+    {
+      "id": "FB-Q05",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "O núcleo é a existência de limite ao gasto."},
+        "neutrality": {"status": "concern", "note": "Manter pressupõe continuidade de uma regra vigente e pode ser lido como apoio a uma lei específica."},
+        "vocabulary": {"status": "concern", "note": "Regra fiscal é definida como limite ou meta, embora a tese pergunte apenas por limite de despesa."},
+        "statement_explanation_consistency": {"status": "fail", "note": "A explicação amplia limite de despesa para metas fiscais em geral."},
+        "false_parallelism": {"status": "fail", "note": "Limite de gasto, meta de resultado, limite de dívida, desvinculação de pisos e revisão de programas são objetos distintos em E01."},
+        "open_scope": {"status": "concern", "note": "Base de gasto, índice e exceções não são definidos."},
+        "duplication_weight": {"status": "concern", "note": "É o quinto item econômico; a retenção deve decorrer do objeto, não de uma contagem ampla da família."},
+        "family_fit": {"status": "concern", "note": "A redação cabe em uma subdecisão de E01, mas a família inteira não sustenta alcance alto para esse texto."}
+      },
+      "primary_risk": "A explicação cria uma família artificial de regras fiscais e o verbo manter torna o referente temporalmente dependente.",
+      "exact_suggestion": {
+        "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+        "explanation": "A afirmação pergunta se esse limite deve existir. Ela não escolhe uma lei, um índice de correção, uma meta de resultado nem um limite para a dívida."
+      }
+    },
+    {
+      "id": "FB-Q06",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "fail", "note": "Empresas estatais sob controle do Estado é quase uma definição, não um alvo institucional preciso."},
+        "neutrality": {"status": "pass", "note": "Não associa controle estatal a eficiência ou soberania."},
+        "vocabulary": {"status": "concern", "note": "Setores estratégicos não informa quais empresas o eleitor está avaliando."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Ambas tratam de controle, mas mantêm o mesmo universo aberto."},
+        "false_parallelism": {"status": "concern", "note": "Impedir privatização, reestatizar e tornar integralmente estatal são decisões diferentes."},
+        "open_scope": {"status": "fail", "note": "O conjunto de empresas pode mudar de pessoa para pessoa."},
+        "duplication_weight": {"status": "concern", "note": "Soma um terceiro eixo público-privado a concessão de saneamento e compra privada pelo SUS; os objetos devem permanecer separados."},
+        "family_fit": {"status": "concern", "note": "G01 oferece um objeto mais preciso e recorrente, Petrobras, que evita a categoria aberta."}
+      },
+      "primary_risk": "O eleitor pode concordar por considerar um setor estratégico e outro não, sem que a resposta revele qual empresa deve permanecer estatal.",
+      "exact_suggestion": {
+        "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+        "explanation": "A afirmação trata de manter o governo federal como acionista controlador. Ela não exige propriedade integral, monopólio no setor, integração de refinarias ou reestatização de outras empresas."
+      }
+    },
+    {
+      "id": "FB-Q07",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede desligamento como consequência do baixo desempenho."},
+        "neutrality": {"status": "pass", "note": "Não caracteriza servidores como improdutivos."},
+        "vocabulary": {"status": "concern", "note": "Avaliações repetidas e baixo desempenho não têm critério comum."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação preserva desligamento após mais de uma avaliação."},
+        "false_parallelism": {"status": "concern", "note": "Avaliar, remunerar por mérito e demitir não são consequências equivalentes."},
+        "open_scope": {"status": "concern", "note": "Faltam direito de defesa, oportunidade de melhora e alcance sobre servidores atuais ou futuros."},
+        "duplication_weight": {"status": "pass", "note": "Não há outro item sobre vínculo público."},
+        "family_fit": {"status": "concern", "note": "G07 contém o desligamento, mas muitos registros tratam apenas de avaliação, carreira ou estabilidade."}
+      },
+      "primary_risk": "Sem salvaguarda mínima, concordância pode significar tanto um processo objetivo quanto demissão discricionária.",
+      "exact_suggestion": {
+        "statement": "Um servidor público estável deve poder ser demitido por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+        "explanation": "A afirmação trata da demissão como consequência de desempenho insuficiente. Ela não abrange cargos temporários, remuneração por mérito nem demissão sem processo."
+      }
+    },
+    {
+      "id": "FB-Q08",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede gratuidade universal da tarifa."},
+        "neutrality": {"status": "pass", "note": "Não promete efeito social ou ambiental."},
+        "vocabulary": {"status": "pass", "note": "A formulação é direta e cotidiana."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação limita o objeto à tarifa do passageiro."},
+        "false_parallelism": {"status": "pass", "note": "Distingue gratuidade universal de operação pública ou privada e de gratuidade focalizada."},
+        "open_scope": {"status": "concern", "note": "Implantação gradual e abrangência metropolitana podem mudar respostas, mas não desfazem o núcleo."},
+        "duplication_weight": {"status": "pass", "note": "Não repete outro instrumento de transporte."},
+        "family_fit": {"status": "pass", "note": "T05 contém diretamente tarifa zero universal e também permite contraste com benefícios focalizados."}
+      },
+      "primary_risk": "Não converter passe livre de grupos específicos em resposta à gratuidade universal.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q09",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede permissão de concessão privada em água e esgoto."},
+        "neutrality": {"status": "pass", "note": "Não atribui eficiência à empresa privada nem ineficiência à pública."},
+        "vocabulary": {"status": "pass", "note": "Concessão recebe definição suficiente."},
+        "statement_explanation_consistency": {"status": "pass", "note": "O verbo permitir é mantido na explicação."},
+        "false_parallelism": {"status": "concern", "note": "Concessão, PPP, regionalização e privatização de ativo permanecem distintas."},
+        "open_scope": {"status": "pass", "note": "O universo está limitado a água e esgoto e a permissão não exige concessão universal."},
+        "duplication_weight": {"status": "concern", "note": "Compartilha a dimensão público-privada com FB-Q06 e FB-Q14, mas mede operação contratual, não propriedade nem compra de atendimento."},
+        "family_fit": {"status": "pass", "note": "T09 contém concessões explícitas e a alternativa de monopólio estatal, além de material não equivalente que deve ser excluído do alcance."}
+      },
+      "primary_risk": "A contagem de T09 não pode incluir universalização sem natureza do operador definida.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q10",
+      "anchor_immutable": false,
+      "verdict": "remove_or_reserve",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "O núcleo é o efeito jurídico do silêncio."},
+        "neutrality": {"status": "pass", "note": "Não qualifica o licenciamento como lento ou excessivo."},
+        "vocabulary": {"status": "concern", "note": "Cumprir as exigências legais não informa quem certifica o cumprimento antes da decisão."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Ambas descrevem aprovação por silêncio."},
+        "false_parallelism": {"status": "fail", "note": "Prazo, rito prioritário, responsabilização por atraso e exigências proporcionais ao risco não sustentam licença tácita."},
+        "open_scope": {"status": "fail", "note": "Tipo de projeto, risco e forma de comprovação podem inverter a resposta."},
+        "duplication_weight": {"status": "pass", "note": "Não duplica outro item ambiental."},
+        "family_fit": {"status": "fail", "note": "A redação exata aparece somente em A01.3; os seis vínculos da família não são alcance deste item."}
+      },
+      "primary_risk": "A hipótese de alcance baixo é, na prática, uma subdecisão de um único registro e depende de uma condição probatória aberta.",
+      "exact_suggestion_if_retained": {
+        "statement": "Uma licença ambiental deve ser concedida automaticamente quando o órgão responsável não decidir no prazo, desde que o empreendedor tenha apresentado os estudos e cumprido as condições exigidas antes da decisão.",
+        "explanation": "A afirmação dá efeito de aprovação ao silêncio do órgão. Ela não dispensa estudos, outras condições legais nem fiscalização posterior."
+      }
+    },
+    {
+      "id": "FB-Q11",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede a adoção de mercado regulado."},
+        "neutrality": {"status": "concern", "note": "A explicação mistura limitar ou precificar e pode aproximar mercado regulado de tributo."},
+        "vocabulary": {"status": "concern", "note": "Mercado regulado de carbono ainda precisa de definição operacional."},
+        "statement_explanation_consistency": {"status": "concern", "note": "Negociar créditos corresponde ao mercado; precificar emissões também pode descrever instrumentos que não são mercado."},
+        "false_parallelism": {"status": "concern", "note": "Mercado voluntário, tributo e pagamento por conservação não são variações da mesma decisão."},
+        "open_scope": {"status": "concern", "note": "Setores, teto, integridade e distribuição inicial ficam abertos."},
+        "duplication_weight": {"status": "pass", "note": "Não há outro instrumento econômico ambiental."},
+        "family_fit": {"status": "pass", "note": "A03.2, A03.3 e parte de A03.4 sustentam o objeto, sem incorporar as demais subdecisões."}
+      },
+      "primary_risk": "A definição atual permite ler qualquer preço de carbono como mercado regulado.",
+      "exact_suggestion": {
+        "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+        "explanation": "Mercado regulado de carbono é um sistema obrigatório para os setores abrangidos: cada emissor deve cumprir regras sobre suas emissões e pode negociar créditos conforme normas públicas. A afirmação não define os setores, os limites nem a distribuição inicial dos créditos."
+      }
+    },
+    {
+      "id": "FB-Q12",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede obrigações preventivas antes do uso."},
+        "neutrality": {"status": "concern", "note": "Mesmo sem dano concreto já comprovado incorpora a moldura do polo que prefere intervenção posterior."},
+        "vocabulary": {"status": "fail", "note": "Alto risco não é definido nem exemplificado."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação mantém o gatilho anterior ao uso e exclui autorização universal."},
+        "false_parallelism": {"status": "concern", "note": "Transparência, rastreio, marco geral e regulação por risco podem coexistir e não são respostas equivalentes."},
+        "open_scope": {"status": "concern", "note": "A classificação de alto risco pode mudar a resposta."},
+        "duplication_weight": {"status": "concern", "note": "Pode correlacionar com reconhecimento facial, mas não deve herdar nem determinar FB-Q23."},
+        "family_fit": {"status": "pass", "note": "O núcleo corresponde ao contraste de gatilho em I07, desde que transparência isolada não seja contada como concordância."}
+      },
+      "primary_risk": "O override corresponde à família, mas ainda é técnico e contém enquadramento argumentativo dispensável.",
+      "exact_suggestion": {
+        "statement": "Sistemas de inteligência artificial classificados como de alto risco devem cumprir obrigações preventivas antes de serem usados.",
+        "explanation": "Alto risco se refere a usos capazes de afetar segurança, direitos ou acesso a serviços relevantes. As obrigações podem incluir avaliação de risco, registro e supervisão; a afirmação não exige autorização prévia para toda inteligência artificial."
+      }
+    },
+    {
+      "id": "FB-Q13",
+      "anchor_immutable": false,
+      "verdict": "remove_or_reserve",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede proteção contra contingenciamento."},
+        "neutrality": {"status": "pass", "note": "Não defende áreas ou resultados científicos."},
+        "vocabulary": {"status": "concern", "note": "Recursos aprovados e bloqueios orçamentários não distinguem autorização, empenho e execução."},
+        "statement_explanation_consistency": {"status": "fail", "note": "A explicação transforma recurso autorizado em obrigação integral de execução."},
+        "false_parallelism": {"status": "fail", "note": "Aumento de orçamento, FNDCT, plurianualidade e diversidade de fontes não equivalem a vedar contingenciamento."},
+        "open_scope": {"status": "concern", "note": "Exceções fiscais e mecanismo jurídico de proteção não são definidos."},
+        "duplication_weight": {"status": "pass", "note": "Não duplica o item de IA."},
+        "family_fit": {"status": "fail", "note": "A vedação exata aparece em I01.5; I01.3 relata fim de contingenciamento e não cria automaticamente uma nova blindagem permanente."}
+      },
+      "primary_risk": "A família de sete vínculos mascara uma subdecisão exata de alcance muito baixo.",
+      "exact_suggestion_if_retained": {
+        "statement": "Recursos do orçamento federal destinados à ciência e à pesquisa não devem ser contingenciados.",
+        "explanation": "Contingenciar é bloquear temporariamente a execução de uma despesa autorizada. A afirmação não fixa o valor do orçamento nem escolhe áreas de pesquisa."
+      }
+    },
+    {
+      "id": "FB-Q14",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede compra complementar de atendimento privado."},
+        "neutrality": {"status": "pass", "note": "Não afirma superioridade de prestador público ou privado."},
+        "vocabulary": {"status": "pass", "note": "A explicação torna a contratação concreta."},
+        "statement_explanation_consistency": {"status": "fail", "note": "A afirmação diz deve contratar; a explicação enfraquece para permite comprar."},
+        "false_parallelism": {"status": "pass", "note": "Separa compra de atendimento de gestão privada de unidade pública."},
+        "open_scope": {"status": "concern", "note": "Capacidade insuficiente, tipo de atendimento, ociosidade e duração podem ser decisivos."},
+        "duplication_weight": {"status": "concern", "note": "É outro item público-privado, mas mede contratação complementar e não propriedade ou concessão."},
+        "family_fit": {"status": "pass", "note": "B02.1 e B02.3 sustentam diretamente o objeto; remuneração e repasses não devem entrar no alcance."}
+      },
+      "primary_risk": "A diferença entre obrigação e autorização altera a resposta e precisa ser resolvida antes de mostrar o item.",
+      "exact_suggestion": {
+        "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+        "explanation": "A afirmação prevê a compra complementar de consultas, exames, leitos ou procedimentos. Ela não transfere a gestão de unidades públicas nem exige contratação permanente."
+      }
+    },
+    {
+      "id": "FB-Q15",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede manutenção parcial e temporária após emprego."},
+        "neutrality": {"status": "pass", "note": "Não presume fraude nem desincentivo ao trabalho."},
+        "vocabulary": {"status": "concern", "note": "Benefício de renda pode abranger BPC, seguro-desemprego ou qualquer transferência."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação mantém redução gradual e prazo limitado."},
+        "false_parallelism": {"status": "pass", "note": "Distingue redução gradual de acúmulo integral, retorno e substituição por trabalho público."},
+        "open_scope": {"status": "fail", "note": "O sujeito quem consegue emprego formal omite que já recebe uma transferência de renda e não delimita o tipo de benefício."},
+        "duplication_weight": {"status": "pass", "note": "Não há outro item sobre transição de benefícios."},
+        "family_fit": {"status": "pass", "note": "B07.6 sustenta o núcleo, sem autorizar alcance a todos os benefícios listados na família."}
+      },
+      "primary_risk": "A redação pode ser lida como criação de benefício para qualquer pessoa que consiga emprego.",
+      "exact_suggestion": {
+        "statement": "Quem recebe benefício de transferência de renda e consegue emprego formal deve poder manter parte do benefício por um período de transição.",
+        "explanation": "A afirmação permite reduzir o benefício gradualmente depois da entrada no emprego formal, em vez de encerrá-lo de uma vez. Ela não fixa o programa, o valor nem a duração."
+      }
+    },
+    {
+      "id": "FB-Q16",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "concern", "note": "Reúne idosos e pessoas com deficiência, mas usa o mesmo critério funcional de alta dependência."},
+        "neutrality": {"status": "pass", "note": "Não apresenta cuidado domiciliar como superior às alternativas."},
+        "vocabulary": {"status": "pass", "note": "Cuidado domiciliar recebe definição clara."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação preserva serviço na residência e separa renda, acolhimento e centros-dia."},
+        "false_parallelism": {"status": "pass", "note": "Não funde serviço domiciliar, renda do cuidador, tecnologia assistiva e instituição de longa permanência."},
+        "open_scope": {"status": "concern", "note": "Alto grau de dependência e execução direta ou contratada permanecem abertos."},
+        "duplication_weight": {"status": "pass", "note": "Não repete outro serviço de cuidado."},
+        "family_fit": {"status": "pass", "note": "B09.5 e B09.6 sustentam cuidado domiciliar com dependência elevada; os demais vínculos não devem inflar alcance."}
+      },
+      "primary_risk": "A classificação posterior precisa exigir alta dependência e serviço domiciliar, sem herdar apoio a renda ou acolhimento.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q17",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede consequência financeira de metas de aprendizagem."},
+        "neutrality": {"status": "pass", "note": "Não diz que metas melhoram a aprendizagem nem que redes têm culpa pelo resultado."},
+        "vocabulary": {"status": "pass", "note": "A formulação é compreensível e a explicação define o vínculo."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Ambas condicionam somente uma parcela do recurso."},
+        "false_parallelism": {"status": "pass", "note": "Avaliar, divulgar, apoiar redes piores e condicionar verbas ficam separados."},
+        "open_scope": {"status": "concern", "note": "Percentual, exame, baseline e proteção de redes vulneráveis podem mudar a resposta."},
+        "duplication_weight": {"status": "pass", "note": "Não repete outro item educacional de financiamento."},
+        "family_fit": {"status": "pass", "note": "D03.05 contém diretamente avaliação com consequência financeira, sem apoio das demais subdecisões curriculares."}
+      },
+      "primary_risk": "Não contar avaliação sem efeito financeiro como concordância e registrar salvaguardas distributivas como condições.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q18",
+      "anchor_immutable": false,
+      "verdict": "remove_or_reserve",
+      "checks": {
+        "atomicity": {"status": "fail", "note": "Permissão, fiscalização geral e avaliação periódica são três escolhas que podem receber respostas diferentes."},
+        "neutrality": {"status": "pass", "note": "Não caracteriza escola ou família de modo valorativo."},
+        "vocabulary": {"status": "pass", "note": "Educação domiciliar é explicada sem jargão."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação mantém as duas salvaguardas como condições."},
+        "false_parallelism": {"status": "fail", "note": "Escolas cívico-militares, disciplina e educação domiciliar são objetos diferentes dentro de D04."},
+        "open_scope": {"status": "concern", "note": "Frequência, critérios e consequências da avaliação não são definidos."},
+        "duplication_weight": {"status": "pass", "note": "Não duplica FB-Q17."},
+        "family_fit": {"status": "fail", "note": "A redação exata aparece apenas em D04.03, com dois registros; os seis vínculos da família não medem homeschooling."}
+      },
+      "primary_risk": "O item aparenta alcance médio porque herda material sobre outros modelos escolares.",
+      "exact_suggestion_if_retained": {
+        "statement": "A educação domiciliar deve ser permitida desde que a aprendizagem seja avaliada periodicamente pelo poder público.",
+        "explanation": "A família pode ensinar fora da escola, mas a avaliação periódica é condição da permissão. A afirmação não trata de escolas cívico-militares nem torna a modalidade obrigatória."
+      }
+    },
+    {
+      "id": "FB-Q19",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Redução da jornada sem redução salarial constitui um pacote decisório inteligível."},
+        "neutrality": {"status": "pass", "note": "Não promete emprego, produtividade ou bem-estar."},
+        "vocabulary": {"status": "pass", "note": "A frase é direta."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação assume conscientemente a direção sem fixar o novo limite."},
+        "false_parallelism": {"status": "concern", "note": "Fim da escala 6 por 1 não equivale por si a reduzir o total semanal."},
+        "open_scope": {"status": "concern", "note": "Trinta, 35, 36 ou 40 horas e condições de produtividade podem mudar a resposta."},
+        "duplication_weight": {"status": "pass", "note": "É o único item de jornada substantiva."},
+        "family_fit": {"status": "pass", "note": "C01.01 e C01.02 sustentam a direção, desde que remuneração e salário mínimo não sejam misturados."}
+      },
+      "primary_risk": "A validação deve preservar limites numéricos e condicionantes como divergências internas, sem transformar fim da escala em resposta automática.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q20",
+      "anchor_immutable": false,
+      "verdict": "remove_or_reserve",
+      "checks": {
+        "atomicity": {"status": "fail", "note": "Regras gerais da legislação trabalhista cobre jornada, remuneração, saúde, segurança, férias e outros direitos materialmente separáveis."},
+        "neutrality": {"status": "pass", "note": "Não descreve a negociação como modernização ou perda de direitos."},
+        "vocabulary": {"status": "concern", "note": "Prevalecer e determinados temas exigem que o eleitor imagine limites não escritos."},
+        "statement_explanation_consistency": {"status": "concern", "note": "A explicação restringe a tese sem dizer quais direitos não podem ser substituídos."},
+        "false_parallelism": {"status": "fail", "note": "Negociação coletiva, contrato alternativo, flexibilidade genérica e revogação da reforma não são o mesmo objeto."},
+        "open_scope": {"status": "fail", "note": "A resposta depende de quais temas e direitos entram na negociação."},
+        "duplication_weight": {"status": "concern", "note": "Acrescenta um segundo item trabalhista e sua abertura pode correlacionar respostas sem medir a mesma decisão de FB-Q19."},
+        "family_fit": {"status": "fail", "note": "O núcleo aparece diretamente em apenas dois registros de C02.01; a família de oito vínculos não sustenta a formulação guarda-chuva."}
+      },
+      "primary_risk": "Sem um direito concreto, concordo e discordo agregam posições incompatíveis.",
+      "exact_suggestion_if_retained": {
+        "statement": "Convenções e acordos coletivos devem poder definir uma jornada diária diferente da regra geral da lei, desde que respeitem o limite semanal e os direitos constitucionais.",
+        "explanation": "A afirmação trata apenas da jornada diária. Ela não autoriza negociação individual nem renúncia a salário mínimo, férias, FGTS ou normas de saúde e segurança."
+      }
+    },
+    {
+      "id": "FB-Q21",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede retirada da punição criminal."},
+        "neutrality": {"status": "pass", "note": "Não usa justificativa moral ou clínica."},
+        "vocabulary": {"status": "pass", "note": "Descriminalizado é explicado em linguagem comum."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Ambas tratam do regime criminal e separam atendimento clínico."},
+        "false_parallelism": {"status": "concern", "note": "Descriminalização, legalização e oferta pública são decisões distintas."},
+        "open_scope": {"status": "fail", "note": "O texto pode ser lido como retirada da punição em qualquer fase da gestação e para todos os agentes."},
+        "duplication_weight": {"status": "pass", "note": "Não há outro item de direitos reprodutivos."},
+        "family_fit": {"status": "pass", "note": "C07.01 sustenta o princípio, mas apenas três registros tratam do aborto e nenhum fixa limite gestacional comum."}
+      },
+      "primary_risk": "A ausência de prazo não é neutra: pessoas podem responder a universos temporais diferentes.",
+      "exact_suggestion": {
+        "statement": "A lei deve prever um período da gestação em que a interrupção voluntária deixe de ser crime.",
+        "explanation": "A afirmação pergunta se deve existir uma janela legal sem punição criminal. Ela não define o prazo gestacional, a forma de atendimento nem as regras clínicas."
+      }
+    },
+    {
+      "id": "FB-Q22",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede regime adulto aos 16 anos para um universo de crimes."},
+        "neutrality": {"status": "pass", "note": "Não qualifica a medida como proteção ou punição excessiva."},
+        "vocabulary": {"status": "pass", "note": "Crimes hediondos é definido como categoria legal."},
+        "statement_explanation_consistency": {"status": "pass", "note": "Afirmação e explicação usam o mesmo universo."},
+        "false_parallelism": {"status": "fail", "note": "A categoria de crimes hediondos não coincide com a lista de homicídio, tentativa, tortura, lesão seguida de morte, estupro de vulnerável, roubo violento e terrorismo doméstico mapeada em S04.03."},
+        "open_scope": {"status": "pass", "note": "A categoria jurídica é mais fechada que crimes graves, mas fecha o universo errado em relação ao mapa."},
+        "duplication_weight": {"status": "pass", "note": "Não repete outro item penal juvenil."},
+        "family_fit": {"status": "fail", "note": "O override não representa exatamente S04.03 e deixa de representar a redução geral de S04.02."}
+      },
+      "primary_risk": "A correção editorial trocou uma expressão aberta por uma categoria jurídica semanticamente diferente da evidência de origem.",
+      "exact_suggestion": {
+        "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+        "explanation": "A afirmação propõe aplicar o regime penal adulto a adolescentes de 16 e 17 anos em todos os crimes. Ela não altera as medidas socioeducativas para menores de 16 anos."
+      },
+      "alternative_if_restricted_scope_is_required": "Reproduzir a lista exata de crimes de S04.03 e declarar o item como de baixo alcance, sem chamá-la de crimes hediondos."
+    },
+    {
+      "id": "FB-Q23",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede uma tecnologia, em espaço público, para uma finalidade delimitada."},
+        "neutrality": {"status": "pass", "note": "Não promete redução do crime nem presume abuso."},
+        "vocabulary": {"status": "pass", "note": "A explicação descreve a comparação de imagens e bases."},
+        "statement_explanation_consistency": {"status": "concern", "note": "Não autoriza qualquer armazenamento pode ser lido como proibição total de guarda; o sentido pretendido parece ser ausência de autorização irrestrita."},
+        "false_parallelism": {"status": "pass", "note": "Não funde câmeras corporais, integração de bases, previsão de risco e reconhecimento facial."},
+        "open_scope": {"status": "concern", "note": "Retenção, auditoria, taxa de erro, revisão humana e contestação não são definidos."},
+        "duplication_weight": {"status": "concern", "note": "Pode ser uma aplicação de IA de alto risco, mas deve receber resposta independente de FB-Q12."},
+        "family_fit": {"status": "concern", "note": "A finalidade de localizar foragidos corresponde diretamente a parte de S08.02; uso policial genérico não deve inflar alcance."}
+      },
+      "primary_risk": "Salvaguardas podem ser condições decisivas, mas o recorte de finalidade torna o item utilizável.",
+      "exact_suggestion": null,
+      "minor_copy_note": "Na explicação futura, preferir: Ela não define outras finalidades nem o prazo de armazenamento dos dados."
+    },
+    {
+      "id": "FB-Q24",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Separação em unidade de segurança máxima forma um único regime prisional delimitado."},
+        "neutrality": {"status": "pass", "note": "Não presume culpa além da condição de liderança condenada nem promete impedir crimes."},
+        "vocabulary": {"status": "pass", "note": "Liderança de facção e segurança máxima são termos reconhecíveis; a explicação usa organização criminosa."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação preserva separação e exclui proibição total de comunicação."},
+        "false_parallelism": {"status": "pass", "note": "Separa vagas, reinserção, gestão privada e bloqueio total de comunicação."},
+        "open_scope": {"status": "concern", "note": "Critério de liderança, duração, revisão judicial e alcance a presos de alta periculosidade ficam abertos."},
+        "duplication_weight": {"status": "pass", "note": "Não repete idade penal ou reconhecimento facial."},
+        "family_fit": {"status": "pass", "note": "Corresponde ao núcleo de S05.01; a família S05 inteira e registros sobre integrantes ou alta periculosidade não podem ser somados sem exame."}
+      },
+      "primary_risk": "O override corresponde à subfamília, mas a hipótese de alcance alto está superestimada se usar todos os doze vínculos de S05.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q25",
+      "anchor_immutable": false,
+      "verdict": "accept",
+      "checks": {
+        "atomicity": {"status": "pass", "note": "Mede permanência no grupo."},
+        "neutrality": {"status": "pass", "note": "Não associa permanência a alinhamento ideológico ou benefício econômico."},
+        "vocabulary": {"status": "pass", "note": "BRICS é o único termo institucional e a explicação o trata como grupo."},
+        "statement_explanation_consistency": {"status": "pass", "note": "A explicação mantém permanência e exclui apoio a todas as decisões."},
+        "false_parallelism": {"status": "pass", "note": "Fortalecer o bloco, usar seu banco, aderir à OCDE e manter comércio são decisões separadas."},
+        "open_scope": {"status": "pass", "note": "A decisão de permanecer é binária o bastante para esta etapa."},
+        "duplication_weight": {"status": "pass", "note": "Não duplica o acordo Mercosul-União Europeia."},
+        "family_fit": {"status": "pass", "note": "R04 contém saída, permanência pragmática e fortalecimento; somente os dois primeiros polos sustentam diretamente a decisão de permanência."}
+      },
+      "primary_risk": "Não transformar aproximação a outra instituição em discordância automática.",
+      "exact_suggestion": null
+    },
+    {
+      "id": "FB-Q26",
+      "anchor_immutable": false,
+      "verdict": "revise_before_user",
+      "checks": {
+        "atomicity": {"status": "concern", "note": "Apoiar entrada em vigor pode significar negociar, ratificar, implementar ou apenas declarar apoio."},
+        "neutrality": {"status": "pass", "note": "Não promete ganhos de comércio nem presume perdas."},
+        "vocabulary": {"status": "concern", "note": "Entrada em vigor e procedimento de ratificação não são explicados."},
+        "statement_explanation_consistency": {"status": "fail", "note": "A afirmação pede apoio à entrada em vigor; a explicação traduz isso como apoio político à implementação, que é etapa diferente."},
+        "false_parallelism": {"status": "concern", "note": "Criticar cláusulas, pedir reciprocidade, diversificar comércio e rejeitar o texto final não são equivalentes."},
+        "open_scope": {"status": "fail", "note": "A versão do acordo não está fixada e cláusulas futuras não é uma fronteira estável."},
+        "duplication_weight": {"status": "pass", "note": "É independente da permanência nos BRICS."},
+        "family_fit": {"status": "pass", "note": "R03.01 e R03.02 sustentam o contraste sobre o acordo específico, desde que a versão e o ato decisório sejam fixados."}
+      },
+      "primary_risk": "Sem identificar o texto e a ação institucional, pessoas podem responder a versões diferentes do acordo.",
+      "exact_suggestion": {
+        "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+        "explanation": "Ratificar é concluir a aprovação interna necessária para que o acordo produza efeitos para o Brasil. A afirmação não implica apoiar outros acordos nem impede relações comerciais com outros parceiros."
+      }
+    }
+  ]
+}

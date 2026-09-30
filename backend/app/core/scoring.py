@@ -31,6 +31,42 @@ class Weight(int, Enum):
     DOUBLE = 2
 
 
+MIN_COMPARABLE_THESES: Final[int] = 5
+MIN_COMPARABLE_CATEGORIES: Final[int] = 4
+
+
+class RankingStatus(str, Enum):
+    ELIGIBLE = "eligible"
+    INSUFFICIENT_DOCUMENTED_COVERAGE = "insufficient_documented_coverage"
+    INSUFFICIENT_ANSWER_COVERAGE = "insufficient_answer_coverage"
+
+
+def ranking_status(
+    *,
+    documented_theses: int,
+    documented_categories: int,
+    compared_theses: int,
+    compared_categories: int,
+) -> RankingStatus:
+    """Classify ranking eligibility for the beta edition.
+
+    Documentary coverage is evaluated for the whole edition first. The
+    person's effective comparisons are then evaluated after skipped answers
+    and undocumented positions have been removed.
+    """
+    if (
+        documented_theses < MIN_COMPARABLE_THESES
+        or documented_categories < MIN_COMPARABLE_CATEGORIES
+    ):
+        return RankingStatus.INSUFFICIENT_DOCUMENTED_COVERAGE
+    if (
+        compared_theses < MIN_COMPARABLE_THESES
+        or compared_categories < MIN_COMPARABLE_CATEGORIES
+    ):
+        return RankingStatus.INSUFFICIENT_ANSWER_COVERAGE
+    return RankingStatus.ELIGIBLE
+
+
 @dataclass(frozen=True, slots=True)
 class UserAnswer:
     thesis_id: int

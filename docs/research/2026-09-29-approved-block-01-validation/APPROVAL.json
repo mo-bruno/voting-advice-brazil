@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "user_message": "aprovado",
+  "recorded_at": "2026-09-29T22:30:37.498379+00:00",
+  "scope": "Quatro teses B01 v1; autorização para validação documental nos mesmos treze planos. Texto e explicação versionados juntos conforme protocolo já apresentado. Não aprova classificação, ranking ou alterações de produção.",
+  "approved_question_versions": [
+    {
+      "id": "B01-Q01",
+      "version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+    },
+    {
+      "id": "B01-Q02",
+      "version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+    },
+    {
+      "id": "B01-Q03",
+      "version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+    },
+    {
+      "id": "B01-Q04",
+      "version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+    }
+  ],
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b"
+}
