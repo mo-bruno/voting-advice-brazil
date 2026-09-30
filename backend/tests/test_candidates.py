@@ -91,6 +91,37 @@ class TestCandidatePositions:
 
 
 class TestCandidateJustifications:
+    def test_returns_the_preserved_analytical_position(
+        self, client, db_session, candidate_ids
+    ):
+        from app.api.cache import cache_delete_prefix
+        from app.infrastructure.database.models import CandidatePositionModel
+
+        candidate_id = candidate_ids["cand_a"]
+        position = (
+            db_session.query(CandidatePositionModel)
+            .filter_by(candidate_id=candidate_id)
+            .first()
+        )
+        original = getattr(position, "analytical_position", None)
+        position.analytical_position = "CONDICIONAL_OU_MISTA"
+        db_session.commit()
+        cache_delete_prefix("candidates:")
+        try:
+            response = client.get(
+                f"/api/v1/candidates/{candidate_id}/justifications"
+            )
+            item = next(
+                item
+                for item in response.json()["justifications"]
+                if item["thesis_id"] == position.thesis_id
+            )
+            assert item["analytical_position"] == "CONDICIONAL_OU_MISTA"
+        finally:
+            position.analytical_position = original
+            db_session.commit()
+            cache_delete_prefix("candidates:")
+
     def test_returns_persisted_evidence_source(self, client, db_session, candidate_ids):
         from app.api.cache import cache_delete_prefix
         from app.infrastructure.database.models import CandidatePositionModel

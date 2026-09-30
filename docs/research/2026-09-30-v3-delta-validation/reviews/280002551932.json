@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551932",
+  "candidate_name": "Ronaldo Caiado",
+  "context_owner_agent_id": "/root/plan_caiado",
+  "executor_agent_id": "/root/battery_caiado",
+  "document_sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002551932.json",
+    "../2026-09-29-thematic-profiles/profiles/280002551932.md",
+    "../2026-09-29-thematic-profiles/profiles/280002551932.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002551932.json"
+  ],
+  "method": "Reidratação dos quatro arquivos de contexto listados em STATE.json, incluindo o parecer da bateria v2; busca integral das 100 páginas físicas em raw-pages.json e layout-pages.json do corpus oficial reconstruído, com termos e sinônimos específicos para as quatro teses; releitura das páginas pertinentes e conferência literal de cada citação nos dois modos de extração. As classificações usam exclusivamente o plano oficial.",
+  "revisited_pages": [
+    25,
+    26,
+    27,
+    46,
+    47,
+    67,
+    68
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano federal propõe ampliar concessões e parcerias público-privadas por meio de calendário permanente de leilões que inclui rodovias, ferrovias, portos e aeroportos. O uso desses instrumentos em infraestrutura de transportes responde diretamente à tese, sem exigir que sejam aplicados a toda obra.",
+      "conditions": [
+        "Calendário permanente e previsível, com continuidade do Programa de Parcerias em Investimentos.",
+        "Apoio técnico a estados e municípios para estruturar suas próprias parcerias.",
+        "Reinvestimento das outorgas no próprio setor e uso de ativos maduros para financiar infraestrutura nova."
+      ],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Manter um calendário permanente e previsível de leilões (dando continuidade ao Programa de Parcerias em Investimentos, o PPI) em rodovias, ferrovias, portos, aeroportos, saneamento, energia e infraestrutura social, como hospitais, escolas e iluminação pública.",
+          "role": "support",
+          "interpretation": "Determina explicitamente o uso continuado de concessões e parcerias em quatro modalidades de infraestrutura de transportes."
+        },
+        {
+          "page": 47,
+          "quote": "Atacar o gargalo real da agenda, que é a capacidade de estruturar bons projetos, apoiando tecnicamente estados e municípios a desenvolver suas próprias parcerias, e usar a concessão de ativos públicos maduros para financiar a infraestrutura nova.",
+          "role": "condition",
+          "interpretation": "Explica o papel federativo e o mecanismo pelo qual concessões também financiam expansão de infraestrutura."
+        }
+      ],
+      "search_terms": [
+        "concessões",
+        "parcerias público-privadas",
+        "PPPs",
+        "Programa de Parcerias em Investimentos",
+        "PPI",
+        "rodovias",
+        "ferrovias",
+        "portos",
+        "aeroportos",
+        "infraestrutura de transportes"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não obriga concessão em toda obra nem equipara esses instrumentos à privatização de empresas públicas; recursos públicos continuam previstos para projetos e regiões sem atração suficiente de capital privado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano determina investimento público em formação, pesquisa e computação para transformar recursos em capacidade nacional, além de ampliar modelos em português e infraestrutura computacional de alto desempenho. A agenda cobre diretamente pesquisa, infraestrutura e desenvolvimento nacional de IA.",
+      "conditions": [
+        "Cooperação entre Estado, universidades, empresas e instituições de pesquisa, sem exigir propriedade estatal exclusiva.",
+        "Infraestrutura computacional associada a requisitos ambientais, reserva de capacidade e investimento local.",
+        "Desenvolvimento acompanhado de regulação por uso, dano e risco concreto."
+      ],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Fortalecer ciência, matemática, computação e inteligência artificial desde a educação básica; valorizar bolsas e carreiras; repatriar brasileiros e atrair pesquisadores; apoiar formação nas melhores universidades; e criar contrapartidas que transformem o investimento público em capacidade nacional.",
+          "role": "support",
+          "interpretation": "Vincula expressamente investimento público, formação e inteligência artificial à construção de capacidade nacional."
+        },
+        {
+          "page": 26,
+          "quote": "Organizar bases públicas de qualidade, interoperáveis e documentadas, com proteção de dados, segurança e regras claras de acesso; ampliar conteúdos e modelos em português; e garantir capacidade computacional de alto desempenho para universidades, saúde, pesquisa, empresas e serviços públicos.",
+          "role": "support",
+          "interpretation": "Especifica desenvolvimento de modelos e infraestrutura computacional no país para pesquisa, empresas e serviços públicos."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "capacidade nacional",
+        "investimento público",
+        "infraestrutura computacional",
+        "capacidade computacional",
+        "modelos em português",
+        "pesquisa",
+        "Centro de Excelência em Inteligência Artificial",
+        "soluções brasileiras"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "counterevidence_or_limits": "O documento não fixa propriedade pública dos modelos, orçamento exclusivo para IA ou proibição de tecnologia estrangeira; a tese aprovada não exige essas escolhas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "No capítulo sobre racismo, o plano propõe aprimorar políticas de inclusão em concursos, respeitando decisões judiciais e mérito. Contudo, não identifica reserva de vagas, critério racial, percentual ou alcance federal desse instrumento. Inclusão em concursos pode ocorrer por medidas diferentes de cotas e não basta para atribuir a decisão exata.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 68,
+          "quote": "Aprimorar políticas de inclusão em concursos e formação, respeitando decisões judiciais e mérito.",
+          "role": "context",
+          "interpretation": "Mostra uma orientação de inclusão no universo de concursos, mas não especifica reserva de vagas por critérios raciais."
+        }
+      ],
+      "search_terms": [
+        "concursos públicos",
+        "concursos federais",
+        "inclusão em concursos",
+        "reserva de vagas",
+        "vagas reservadas",
+        "critérios raciais",
+        "cotas raciais",
+        "quotas",
+        "raça",
+        "serviço público"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "counterevidence_or_limits": "O contexto racial do capítulo torna a proposta relacionada, mas não transforma inclusão genérica em cotas. A única ocorrência de “quotas” aparece em outro sentido no capítulo cultural e não responde à tese.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No eixo de segurança pública, o plano inclui expressamente reconhecimento facial e câmeras dentro do videomonitoramento com inteligência artificial. Esse uso de identificação por imagens para ações de segurança implica aplicação em espaços monitorados pelo poder público e responde à redação ampliada da tese.",
+      "conditions": [
+        "Consideração da diversidade brasileira no desenho e treinamento.",
+        "Auditoria permanente e medidas para identificar e reduzir vieses raciais.",
+        "Supervisão e responsabilização no uso da tecnologia."
+      ],
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "Aperfeiçoar formação, protocolos de abordagem, videomonitoramento com Inteligência Artificial (estratégias de reconhecimento facial e uso de câmeras deverão considerar toda a diversidade brasileira, com auditoria permanente e medidas para treinar, identificar e reduzir vieses raciais e enfrentar o racismo algorítmico), supervisão e responsabilização, protegendo simultaneamente cidadãos e policiais.",
+          "role": "support",
+          "interpretation": "Adota reconhecimento facial no videomonitoramento de segurança pública e registra salvaguardas de auditoria, supervisão e redução de vieses."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "videomonitoramento",
+        "uso de câmeras",
+        "biometria facial",
+        "segurança pública",
+        "espaços públicos",
+        "auditoria permanente",
+        "racismo algorítmico",
+        "supervisão"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não enumera bases de identificação, retenção de dados ou locais específicos e não autoriza usos sem finalidade. Essas lacunas não anulam a adoção do reconhecimento facial para segurança na redação v2.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

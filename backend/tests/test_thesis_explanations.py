@@ -23,9 +23,9 @@ def catalogue(monkeypatch):
 def lookup(**overrides):
     return get_thesis_explanation(**{
         "election_year": 2026,
-        "editorial_id": "BR26-T001",
-        "editorial_version": 2,
-        "text": "O governo federal deve manter o arcabouço fiscal previsto na Lei Complementar nº 200/2023.",
+        "editorial_id": "B01-Q01",
+        "editorial_version": 1,
+        "text": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
         **overrides,
     })
 
@@ -34,7 +34,7 @@ def test_all_published_questions_have_exact_version_explanations(catalogue):
     snapshot = json.loads((DATA_DIR / "theses/2026/theses.json").read_text())
     approved = [thesis for thesis in snapshot["theses"] if thesis["status"] == "approved"]
     entries = _load_catalogue(DATA_DIR / "theses/2026/explanations.json", 2026)
-    assert len(approved) == 30
+    assert len(approved) == 20
     assert set(entries) == {thesis["id"] for thesis in approved}
     for thesis in approved:
         explanation = lookup(
@@ -50,7 +50,7 @@ def test_all_published_questions_have_exact_version_explanations(catalogue):
     {"editorial_id": "BR26-UNKNOWN"},
     {"editorial_id": None},
     {"editorial_version": None},
-    {"editorial_version": 3},
+    {"editorial_version": 2},
     {"text": "Uma redação diferente, ainda que tenha o mesmo identificador."},
 ])
 def test_never_attaches_an_explanation_to_another_question(catalogue, overrides):

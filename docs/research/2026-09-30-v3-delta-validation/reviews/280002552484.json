@@ -1,0 +1,232 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "context_owner_agent_id": "/root/plan_clariana",
+  "executor_agent_id": "/root/delta_clariana",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002552484.json",
+    "../2026-09-29-thematic-profiles/profiles/280002552484.md",
+    "../2026-09-29-thematic-profiles/profiles/280002552484.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002552484.json"
+  ],
+  "method": "Reidratação integral dos quatro arquivos de contexto listados em STATE.json, incluindo o parecer da bateria v2; confirmação do SHA-256 e das 15 páginas físicas do PDF oficial; leitura integral de raw-pages.json e layout-pages.json; busca, nos dois extratores, de termos e sinônimos específicos das quatro teses; releitura das páginas tematicamente próximas e conferência literal das citações. As classificações usam exclusivamente o plano oficial e preservam o silêncio como ausência de posição.",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "No capítulo de infraestrutura e logística, o plano inclui rodovias, ferrovias, hidrovias, portos e cabotagem e adota expressamente concessões e PPPs como instrumentos de planejamento de longo prazo. A proposta responde diretamente ao uso federal desses modelos para ampliar a infraestrutura de transportes, sem exigir que toda obra seja concedida.",
+      "conditions": [
+        "O uso de concessões e PPPs está delimitado à agenda de infraestrutura e logística.",
+        "O plano não fixa projetos, modalidades contratuais, distribuição de riscos ou metas quantitativas finais."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Ferrovias, hidrovias, portos e cabotagem",
+          "role": "support",
+          "interpretation": "Delimita a agenda a modalidades de infraestrutura de transportes e logística."
+        },
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo",
+          "role": "support",
+          "interpretation": "Adota literalmente concessões e parcerias público-privadas como instrumentos da agenda de infraestrutura e logística."
+        }
+      ],
+      "search_terms": [
+        "concessões",
+        "concessão",
+        "parcerias público-privadas",
+        "PPPs",
+        "infraestrutura",
+        "logística",
+        "rodovias",
+        "ferrovias",
+        "hidrovias",
+        "portos",
+        "cabotagem",
+        "transporte"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O texto não determina concessão em toda obra, não identifica projetos ou modalidades contratuais e não equivale concessão ou PPP à privatização de empresas públicas. Essas lacunas não anulam a adoção explícita dos instrumentos no setor perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê usos de inteligência artificial na escola e na saúde e apresenta uma orientação geral favorável à inovação e à economia digital. Não propõe, porém, investimento federal em pesquisa, infraestrutura computacional ou desenvolvimento de modelos de IA no Brasil. Difundir ou governar sistemas existentes não basta para atribuir desenvolvimento de capacidade nacional.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital",
+          "role": "context",
+          "interpretation": "É um objetivo econômico e tecnológico geral, sem instrumento de investimento ou desenvolvimento nacional de IA."
+        },
+        {
+          "page": 7,
+          "quote": "Tecnologia e inteligência artificial com uso responsável",
+          "role": "context",
+          "interpretation": "O trecho trata do uso educacional responsável de IA, não da criação de capacidade nacional."
+        },
+        {
+          "page": 12,
+          "quote": "IA como apoio clínico e administrativo com governança, auditoria e privacidade",
+          "role": "context",
+          "interpretation": "O uso setorial na saúde e suas salvaguardas não definem pesquisa, infraestrutura ou modelos nacionais de IA."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "capacidade nacional",
+        "desenvolvimento nacional",
+        "modelos nacionais",
+        "modelos de IA",
+        "infraestrutura computacional",
+        "capacidade computacional",
+        "pesquisa em IA",
+        "investimento federal",
+        "inovação",
+        "economia digital",
+        "produção nacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "A expressão “Pesquisa clínica e produção nacional” da p. 11 pertence ao item de inovação e terapias avaliadas para o SUS; não se refere a inteligência artificial. A expansão genérica de infraestrutura e formação da p. 15 também não especifica capacidade nacional de IA.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano aborda gestão, formação, liderança, desempenho e mobilidade no serviço público, mas não trata do ingresso por concurso, de reserva de vagas ou de critérios raciais. Políticas voltadas a mulheres e crianças também não autorizam inferir cotas raciais em concursos públicos federais.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Serviço público orientado à entrega",
+          "role": "context",
+          "interpretation": "É o item mais próximo sobre servidores, mas seu objeto é a gestão do serviço público, não o ingresso por concurso."
+        },
+        {
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos",
+          "role": "context",
+          "interpretation": "Critérios de desempenho durante a gestão não equivalem a reserva de vagas por critério racial."
+        }
+      ],
+      "search_terms": [
+        "concursos públicos",
+        "concursos federais",
+        "concurso",
+        "reserva de vagas",
+        "vagas reservadas",
+        "critérios raciais",
+        "cotas raciais",
+        "cotas",
+        "raça",
+        "racial",
+        "serviço público",
+        "ingresso"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não menciona concursos, cotas, raça ou reserva de vagas. Formação e gestão de desempenho são decisões sobre a administração de servidores e não definem critérios de ingresso.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe monitoramento remoto, drones e análise de imagens nas fronteiras, dentro do marco legal, além de segurança urbana orientada por dados. Não identifica reconhecimento facial, biometria, comparação com bases de identificação ou seu uso em espaços públicos. Câmeras e análise de imagens, sem tecnologia de identificação facial, não respondem à tese.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Sensores, radares e monitoramento remoto",
+          "role": "context",
+          "interpretation": "O monitoramento é proposto para fronteiras, mas o trecho não especifica identificação facial."
+        },
+        {
+          "page": 9,
+          "quote": "Drones e análise de imagens dentro do marco legal",
+          "role": "context",
+          "interpretation": "Análise de imagens é uma categoria mais ampla e não equivale automaticamente à comparação biométrica de rostos."
+        },
+        {
+          "page": 9,
+          "quote": "Integração de informações e mapas de risco",
+          "role": "context",
+          "interpretation": "A segurança urbana usa dados e mapas de risco, sem estabelecer reconhecimento facial em espaços públicos."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "biometria facial",
+        "identificação facial",
+        "comparação de imagens",
+        "base de identificação",
+        "espaços públicos",
+        "segurança",
+        "videomonitoramento",
+        "câmeras",
+        "análise de imagens",
+        "monitoramento remoto",
+        "drones"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O marco legal limita o uso de drones e análise de imagens, mas não determina tecnologia biométrica, base de comparação, local público ou finalidade de identificação. A redação não permite converter monitoramento genérico em reconhecimento facial.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

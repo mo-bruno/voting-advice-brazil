@@ -91,7 +91,13 @@ def submit(
     ]
     answers = _deduplicate_answers(answers)
     try:
-        results = submit_quiz(answers, candidate_repo, position_repo, thesis_repo)
+        results = submit_quiz(
+            answers,
+            candidate_repo,
+            position_repo,
+            thesis_repo,
+            selected_candidate_ids=body.candidate_ids,
+        )
     except InvalidThesisIdsError as err:
         raise HTTPException(
             status_code=422,
@@ -131,6 +137,11 @@ def submit(
                 rank=r.rank,
                 counted_theses=r.counted_theses,
                 answered_theses=r.answered_theses,
+                comparable_categories=r.comparable_categories,
+                documented_theses=r.documented_theses,
+                documented_categories=r.documented_categories,
+                ranking_status=r.ranking_status,
+                ranking_eligible=r.ranking_eligible,
                 matches=[
                     ThesisMatchOut(
                         thesis_id=m.thesis_id,
@@ -138,6 +149,7 @@ def submit(
                         theme_id=m.theme_id,
                         user_answer=m.user_answer,
                         candidate_position=m.candidate_position,
+                        candidate_analysis=m.candidate_analysis,
                         match_type=m.match_type,
                     )
                     for m in r.matches

@@ -56,6 +56,7 @@ class ApiClient {
   Future<List<CandidateResult>> submitQuiz(
     List<Thesis> theses, {
     String? deviceId,
+    Set<String> candidateIds = const {},
   }) async {
     final answers = theses
         .where((thesis) => thesis.wasAnswered)
@@ -64,6 +65,9 @@ class ApiClient {
     final body = <String, dynamic>{'answers': answers};
     if (deviceId != null) {
       body['device_id'] = deviceId;
+    }
+    if (candidateIds.isNotEmpty) {
+      body['candidate_ids'] = candidateIds.map(int.parse).toList()..sort();
     }
 
     final uri = Uri.parse('$baseUrl/quiz/submit');

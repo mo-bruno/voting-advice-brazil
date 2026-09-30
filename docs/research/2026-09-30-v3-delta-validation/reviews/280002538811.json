@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002538811",
+  "candidate_name": "Samara",
+  "context_owner_agent_id": "/root/plan_samara",
+  "executor_agent_id": "/root/delta_samara",
+  "document_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002538811.json",
+    "../2026-09-29-thematic-profiles/profiles/280002538811.md",
+    "../2026-09-29-thematic-profiles/profiles/280002538811.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002538811.json"
+  ],
+  "method": "Reidratei integralmente o perfil JSON, o perfil legível, o checkpoint da leitura temática e o parecer completo da bateria v2 registrados para /root/plan_samara. Confirmei que o PDF oficial reconstruído tem 67 páginas e SHA-256 idêntico ao contexto anterior; em seguida li sequencialmente as 67 páginas físicas, pesquisei raw-pages.json e layout-pages.json com termos exatos e sinônimos das quatro teses e conferi na extração com layout todas as citações e páginas decisivas. Instrumentos apenas próximos e silêncio foram mantidos como evidência insuficiente.",
+  "revisited_pages": [
+    7,
+    11,
+    22,
+    23,
+    30,
+    31,
+    32,
+    38,
+    48,
+    51,
+    52,
+    56,
+    58,
+    59,
+    60
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "DISCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano rejeita expressamente os dois instrumentos perguntados. Ele descreve concessões e PPPs federais como entrega da infraestrutura a interesses privados, propõe revisar e revogar concessões de portos, aeroportos e estradas e escolhe reestatizar as malhas ferroviárias. A ampliação da infraestrutura de transportes aparece no plano, mas por investimento e operação públicos, regra incompatível com usar concessões e PPPs para esse fim.",
+      "conditions": [
+        "A oposição alcança concessões e PPPs de infraestrutura de transportes, e não decorre apenas de uma crítica genérica à privatização de empresas.",
+        "O plano também encerra concessões privadas de ônibus e reestatiza metrôs e trens, mas a classificação federal já se sustenta nas propostas para portos, aeroportos, estradas e malhas ferroviárias.",
+        "Investimento público em ferrovias, metrôs e VLTs não foi tratado como concessão ou parceria público-privada."
+      ],
+      "evidence": [
+        {
+          "page": 58,
+          "quote": "REVISÃO E REVOGAÇÃO DAS CONCESSÕES DOS PORTOS, AEROPORTOS E ESTRADAS BRASILEIRAS ENTREGUES A EMPRESAS PRIVADAS",
+          "role": "opposition",
+          "interpretation": "A proposta manda rever e revogar concessões precisamente nos modais federais de transporte abrangidos pela tese."
+        },
+        {
+          "page": 59,
+          "quote": "O atual governo Lula seguiu a política de concessões e parcerias público- privadas (PPPs) e Programa de Parcerias de Investimentos” (PPI), que, de fato, entregam a interesses privados o grosso da infraestrutura do país, como privatização de rodovias,",
+          "role": "opposition",
+          "interpretation": "O texto nomeia concessões e PPPs e as rejeita por transferirem infraestrutura de transportes a interesses privados."
+        },
+        {
+          "page": 60,
+          "quote": "Reestatização das Empresas Estratégicas: Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale, das malhas ferroviárias, das companhias de saneamento e de telecomunicações;",
+          "role": "opposition",
+          "interpretation": "Para a infraestrutura ferroviária, o plano escolhe propriedade estatal, reforçando a incompatibilidade com o uso de concessões e PPPs."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "PPI",
+        "privatização",
+        "reestatização",
+        "portos",
+        "aeroportos",
+        "estradas",
+        "rodovias",
+        "ferrovias",
+        "metrôs",
+        "trens"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "O plano quer ampliar a infraestrutura ferroviária e metroviária e executar obras públicas, mas não adota participação privada como instrumento para isso. Nenhuma passagem apoia concessões ou PPPs de transporte; todas as ocorrências pertinentes são críticas ou propostas de reversão.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano investe em ciência e tecnologia para a soberania econômica, amplia instituições e bolsas de pesquisa e prevê pesquisa e desenvolvimento na política industrial. Não identifica, porém, inteligência artificial, desenvolvimento nacional de modelos, infraestrutura computacional ou pesquisa específica de IA. A agenda científica geral não permite atribuir a decisão específica perguntada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Investir em ciência e tecnologia com vistas a fortalecer a soberania econômica, criando mecanismos de maior participação e controle popular na agenda de pesquisa e nos seus resultados.",
+          "role": "context",
+          "interpretation": "A passagem apoia investimento científico nacional em termos gerais, sem incluir inteligência artificial como área, capacidade ou instrumento."
+        },
+        {
+          "page": 38,
+          "quote": "Fim do monopólio estrangeiro sobre as redes digitais no Brasil;",
+          "role": "context",
+          "interpretation": "Controle econômico das redes digitais não equivale a desenvolver pesquisa, infraestrutura ou modelos nacionais de IA."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "aprendizado de máquina",
+        "machine learning",
+        "algoritmo",
+        "transparência algorítmica",
+        "modelo de linguagem",
+        "modelos nacionais",
+        "infraestrutura computacional",
+        "supercomputador",
+        "datacenter",
+        "centro de dados",
+        "ciência",
+        "tecnologia",
+        "pesquisa",
+        "inovação",
+        "soberania econômica",
+        "redes digitais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "A transparência algorítmica aparece somente como direito de trabalhadores de plataformas, e o fim do monopólio estrangeiro alcança redes digitais. Nenhum dos trechos define desenvolvimento nacional de IA. Silêncio sobre a área não foi convertido em concordância nem discordância.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano propõe ampliar vagas reservadas para a população negra nos setores públicos e, no capítulo do emprego público, realizar concursos públicos regulares. No programa de uma candidatura à Presidência, a combinação sustenta a reserva racial de vagas no ingresso por concursos do setor público federal, embora a frase sobre a reserva não repita literalmente a esfera federal nem a palavra concurso.",
+      "conditions": [
+        "O plano não fixa percentual, procedimento de verificação, carreiras abrangidas ou duração da reserva.",
+        "A ligação com concursos resulta da leitura conjunta das vagas reservadas no setor público e da proposta de concursos públicos regulares; por isso a força é implicação clara, não evidência literal integral.",
+        "As cotas para pessoas com deficiência da página 34 têm outro critério e não foram usadas para responder à tese racial."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Ampliar vagas nos setores públicos reservadas para a população negra.",
+          "role": "support",
+          "interpretation": "A proposta estabelece diretamente reserva de vagas no setor público com base em critério racial."
+        },
+        {
+          "page": 11,
+          "quote": "Realizar concursos públicos regulares,",
+          "role": "context",
+          "interpretation": "O plano define concursos públicos como a via regular de ingresso e recomposição das carreiras às quais se aplica a reserva racial de vagas."
+        }
+      ],
+      "search_terms": [
+        "concursos públicos federais",
+        "concurso público",
+        "concursos públicos",
+        "reserva de vagas",
+        "vagas reservadas",
+        "cotas raciais",
+        "cotas",
+        "população negra",
+        "critério racial",
+        "setores públicos",
+        "serviço público",
+        "servidores públicos",
+        "funcionalismo público",
+        "ações afirmativas"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "O texto não restringe a reserva a universidades, empresas privadas ou eleições; seu objeto é o setor público. A formulação ampla também não autoriza inventar percentual, método de heteroidentificação ou extensão automática a cada cargo e esfera subnacional.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe substituir operações policiais sem inteligência por ações de inteligência e controlar armas e munições, mas não menciona reconhecimento facial, identificação biométrica, câmeras em espaços públicos ou comparação de imagens com bases de pessoas. A finalidade ampla de segurança não supre a ausência do instrumento específico.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "inteligência preventiva, substituindo- as por ações de inteligência, com forte fiscalização e controle das armas e munições em controle do governo;",
+          "role": "context",
+          "interpretation": "A proposta de inteligência policial não define reconhecimento facial nem qualquer sistema de identificação por imagens em espaços públicos."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "bases de identificação",
+        "espaços públicos",
+        "videomonitoramento",
+        "câmeras",
+        "imagens",
+        "vigilância",
+        "inteligência policial",
+        "inteligência preventiva",
+        "foragidos",
+        "pessoas procuradas"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          67
+        ]
+      ],
+      "counterevidence_or_limits": "A busca integral não encontrou reconhecimento facial, facial, biometria, câmeras ou videomonitoramento. Ações de inteligência são categoria aberta e não permitem inferir apoio ao reconhecimento facial; a ausência de salvaguardas específicas tampouco autoriza inferir rejeição.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

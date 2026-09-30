@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "decision": "approved",
+  "user_message": "sim",
+  "approved_at": "2026-09-30T02:26:05.632133+00:00",
+  "battery_approval": "../2026-09-29-full-thesis-battery/APPROVAL.json",
+  "battery_wording_fingerprint": "e1837e8dd34bddab2ba8ec0d4010568d3735d4a6270dc949ba9c54cf9d3f0f70",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "approved_question_versions": [
+    {
+      "id": "FB-Q23",
+      "version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45"
+    },
+    {
+      "id": "FB-Q24",
+      "version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674"
+    },
+    {
+      "id": "FB-Q25",
+      "version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a"
+    },
+    {
+      "id": "FB-Q19",
+      "version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce"
+    }
+  ]
+}

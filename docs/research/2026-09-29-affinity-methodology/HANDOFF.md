@@ -2,7 +2,7 @@
 
 ## Estado entregue
 
-A branch `codex/affinity-methodology` contém o estudo documental e editorial em um worktree isolado. A `origin/main` é ancestral direta da branch; o último `fetch` foi feito antes da publicação.
+A branch `codex/affinity-methodology` contém o estudo, a matriz final e a implementação do beta no worktree isolado `.worktrees/affinity-methodology`. A branch deve permanecer separada para a continuação por outro desenvolvedor.
 
 A bateria editorial canônica é a **versão 3**, com 20 teses aprovadas e os botões **Concordo, Discordo, Neutro e Pular**:
 
@@ -11,7 +11,7 @@ A bateria editorial canônica é a **versão 3**, com 20 teses aprovadas e os bo
 - aprovação: `../2026-09-29-full-thesis-battery/APPROVAL.json`;
 - versão anterior preservada: `BATTERY_V2.*` e `APPROVAL_V2.json` no mesmo diretório.
 
-Pablo Marçal foi excluído do corpus por decisão do usuário. Nenhuma tese da edição anteriormente publicada foi usada para gerar esta bateria. Nenhum código de produção, ranking, seed ou interface foi alterado.
+Pablo Marçal foi excluído do corpus por decisão do usuário. Nenhuma tese da edição anteriormente publicada foi usada para gerar esta bateria. Em 30/09/2026, o ZIP oficial do TSE foi baixado novamente; o pacote tem SHA-256 `2c4073d55a4c6606d42137ce3e30bf1dd3f87557d14b5feaad4058a152f1e970` e os hashes dos 13 planos incluídos permaneceram iguais.
 
 ## O que foi feito
 
@@ -20,7 +20,11 @@ Pablo Marçal foi excluído do corpus por decisão do usuário. Nenhuma tese da 
 3. A bateria passou por revisão semântica, cobertura, crítica adversarial e duas decisões humanas.
 4. Os treze planos foram confrontados com a versão 2: 13 pareceres válidos, 260 respostas e 273 ocorrências de citações verificadas contra o corpus local.
 5. A validação revelou quatro redações com interseção artificialmente baixa. O usuário aprovou as quatro mudanças, agora incorporadas na versão 3.
-6. Foi registrada uma regra preliminar de elegibilidade para impedir que uma única coincidência produza “100%”: pelo menos cinco posições comparáveis em pelo menos quatro categorias. Essa regra ainda é hipótese de produto, não implementação.
+6. Treze executores exclusivos, um por candidatura, reclassificaram as quatro teses alteradas a partir do contexto do respectivo plano. Rui Costa Pimenta e Leonardo Avalanche foram processados por executores novos e dedicados; qualquer resultado parcial de agentes reaproveitados foi descartado. O validador rejeita executor repetido entre candidaturas. A rodada final tem 13 pareceres válidos, 52 respostas e 107 ocorrências de citações verificadas.
+7. A matriz final combina 208 respostas reutilizadas e 52 novas, totalizando 260 classificações. Posições condicionais ou mistas permanecem documentadas, mas não entram no score nem são tratadas como resposta neutra.
+8. O beta adota o piso de cinco posições comparáveis em pelo menos quatro categorias para a edição e para as respostas efetivas de cada pessoa. Nove candidaturas entram no ranking; Leonardo Avalanche, Rui Costa Pimenta, Clariana Barao e Veterinário Wilson Grassi aparecem fora dele com a base explicada.
+9. Backend, seed, aplicativo e compartilhamento foram atualizados. O ranking é calculado somente entre as candidaturas selecionadas pela pessoa. A interface mostra colocação e base comparável, preserva `Concordo`, `Discordo`, `Neutro` e `Pular`, não mostra percentual e mantém candidaturas inelegíveis disponíveis para consulta.
+10. As oito posições condicionais ou mistas atravessam snapshot, banco, API e comparação com rótulo próprio, mas continuam fora do score. O aplicativo falha fechado se receber um contrato antigo sem a elegibilidade explícita da metodologia beta.
 
 ## Bateria final aprovada
 
@@ -47,45 +51,20 @@ Pablo Marçal foi excluído do corpus por decisão do usuário. Nenhuma tese da 
 | 19 | FB-Q21 v1 | O Brasil deve permanecer nos BRICS. |
 | 20 | FB-Q22 v1 | O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia. |
 
-## Validação que pode ser reutilizada
+## Validação final
 
-O diretório `../2026-09-29-approved-full-battery-validation/` contém os 13 pareceres da versão 2 e o validador que confere identidade, hash do PDF, cobertura, página e literalidade das citações. O comando abaixo retorna 13 pareceres válidos e 260 respostas:
+O diretório `../2026-09-30-v3-delta-validation/` contém os 13 pareceres das quatro teses alteradas, a matriz de 260 células e o relatório de cobertura. `FINAL_MATRIX.json` é a entrada documental canônica para o snapshot publicado. `scripts/build_affinity_beta_2026_data.py` gera de forma reproduzível `data/theses/2026/theses.json` e `explanations.json`.
 
-```bash
-python docs/research/2026-09-29-approved-full-battery-validation/validate.py
-```
+O percentual técnico permanece apenas como valor interno para ordenar o ranking. A API marca a elegibilidade e a colocação; aplicativo, sessão e imagem compartilhada usam esses campos, preservam empates e não reordenam por percentual.
 
-As classificações das 16 teses que não mudaram podem ser copiadas para uma matriz da versão 3. Não reutilizar as classificações antigas das posições 8, 10, 12 e 18, porque o objeto ou o alcance mudou.
+Na verificação final de 30/09/2026, passaram 612 testes do backend com 94,05% de cobertura, 310 testes do aplicativo, `flutter analyze`, Ruff, mypy, os três validadores documentais e a conferência reprodutível dos snapshots.
 
-## O que falta
+## Continuação recomendada
 
-### 1. Reclassificar quatro teses
-
-Se a continuação precisar calcular afinidade real, cada um dos 13 planos deve responder às teses `FB-Q23`, `FB-Q24`, `FB-Q25` e `FB-Q19 v2`. São 52 classificações. As hipóteses de interseção em `EDITORIAL_ADJUDICATION.json` servem apenas para orientar buscas; não são respostas finais.
-
-Depois disso:
-
-- juntar as 52 classificações novas às 208 classificações reutilizáveis;
-- executar as mesmas verificações de citações e páginas;
-- recalcular cobertura por tese, candidatura e categoria;
-- decidir quais candidaturas atingem o piso editorial do ranking.
-
-### 2. Fechar a metodologia do ranking beta
-
-A direção aceita pelo usuário é manter um ranking compartilhável, sem percentual de “100% de afinidade” em destaque. O resultado deve mostrar quantidade de respostas comparáveis e explicar candidaturas com dados insuficientes.
-
-A hipótese mais recente exige pelo menos cinco posições comparáveis em quatro categorias. Deve ser testada depois da matriz versão 3. A falta de posição de um plano não pode virar discordância, neutralidade ou nota zero.
-
-### 3. Implementar no produto
-
-Ainda falta alterar backend, aplicativo e compartilhamento para:
-
-- versionar a edição das teses e a metodologia;
-- separar afinidade observada de suficiência documental;
-- aplicar a mesma ordenação na API, tela, sessão e imagem compartilhada;
-- exibir estado beta, base comparável e candidaturas fora do ranking;
-- preservar os quatro botões e distinguir `Neutro` de `Pular`;
-- testar pouca evidência, empates, pesos, respostas puladas e paridade com o compartilhamento.
+- Fazer uma revisão editorial humana das 260 classificações antes de retirar o selo beta. A aprovação humana registrada cobre a redação das 20 teses; as posições dos planos continuam identificadas como revisão por agentes.
+- Fazer QA visual em dispositivo com resultados que tenham nove elegíveis, empates e nenhuma candidatura elegível.
+- Se o piso 5/4 mudar em outra edição, versionar a metodologia e atualizar em conjunto backend, metadados do snapshot e textos do aplicativo.
+- Manter o histórico da versão 2 e os pareceres delta. Não substituir `CONDICIONAL_OU_MISTA` por `neutro`: neutralidade do usuário é uma resposta distinta.
 
 ## Arquivos principais
 
@@ -94,6 +73,9 @@ Ainda falta alterar backend, aplicativo e compartilhamento para:
 - `../2026-09-29-full-thesis-battery/BATTERY.md`: bateria final aprovada.
 - `../2026-09-29-approved-full-battery-validation/FINAL_REPORT.md`: cobertura da versão 2.
 - `../2026-09-29-approved-full-battery-validation/EDITORIAL_ADJUDICATION.md`: motivo das quatro mudanças.
+- `../2026-09-30-v3-delta-validation/FINAL_MATRIX.json`: matriz final de 20 teses por 13 planos.
+- `../2026-09-30-v3-delta-validation/FINAL_REPORT.md`: cobertura final e elegibilidade 5/4.
+- `../../../scripts/build_affinity_beta_2026_data.py`: exportador do snapshot de produção.
 - `PROPOSTA_BETA.md`: desenho de ranking e comunicação.
 
 ## Verificações antes do handoff
@@ -101,7 +83,11 @@ Ainda falta alterar backend, aplicativo e compartilhamento para:
 ```bash
 python docs/research/2026-09-29-full-thesis-battery/validate.py
 python docs/research/2026-09-29-approved-full-battery-validation/validate.py
+python docs/research/2026-09-30-v3-delta-validation/validate.py
+python scripts/build_affinity_beta_2026_data.py --check
+cd backend && .venv/bin/pytest
+cd ../mobile && flutter test && flutter analyze
 git diff --check
 ```
 
-O primeiro comando valida a bateria versão 3. O segundo preserva a prova histórica da rodada completa contra a versão 2.
+O validador histórico espera o corpus em `/tmp/farol-full-plan-review-20260929`; o corpus oficial reconstruído em 30/09 pode ser ligado a esse caminho porque os hashes dos 13 PDFs são idênticos.

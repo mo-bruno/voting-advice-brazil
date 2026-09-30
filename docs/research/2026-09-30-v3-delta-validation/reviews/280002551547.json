@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551547",
+  "candidate_name": "Escritor Augusto Cury",
+  "context_owner_agent_id": "/root/plan_cury",
+  "executor_agent_id": "/root/battery_cury",
+  "document_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002551547.json",
+    "../2026-09-29-thematic-profiles/profiles/280002551547.md",
+    "../2026-09-29-thematic-profiles/profiles/280002551547.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002551547.json"
+  ],
+  "method": "Reidratação dos quatro arquivos de contexto definidos no STATE, incluindo o parecer integral da bateria versão 2; confirmação do SHA-256 do PDF oficial reconstruído; busca de texto completo nas 200 páginas de raw-pages.json e layout-pages.json, com termos diretos, flexões e sinônimos próprios das quatro teses; e releitura, no corpus oficial, das páginas citadas e das páginas usadas para delimitar trechos tematicamente próximos. As classificações usam somente o plano oficial, exigem coincidência do objeto decisório e tratam silêncio ou proximidade temática insuficiente como NAO_ENCONTRADA.",
+  "revisited_pages": [
+    29,
+    37,
+    38,
+    41,
+    49,
+    50,
+    55,
+    57,
+    58,
+    64,
+    89,
+    186,
+    187,
+    188,
+    189,
+    190
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "Na seção nacional de infraestrutura, o plano propõe ampliar concessões e parcerias público-privadas para acelerar obras e reduzir o custo da infraestrutura. Na sequência imediata, inclui rodovias, ferrovias, hidrovias, portos e aeroportos no programa de modernização logística. A combinação sustenta o uso federal desses instrumentos para ampliar a infraestrutura de transportes, sem afirmar que seriam usados em toda obra.",
+      "conditions": [
+        "As concessões e parcerias público-privadas deverão observar regras claras, segurança jurídica e rigorosa fiscalização.",
+        "O plano não torna esses instrumentos obrigatórios para toda obra de transporte nem propõe privatização geral de empresas públicas."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Por isso, ampliaremos as concessões e as parcerias público-privadas, sempre com regras claras, segurança jurídica e rigorosa fiscalização. O objetivo será acelerar obras, melhorar a qualidade dos serviços públicos, atrair investimentos nacionais e internacionais e reduzir o custo da infraestrutura para a sociedade.",
+          "role": "support",
+          "interpretation": "O plano adota concessões e parcerias público-privadas como instrumentos de expansão e melhoria da infraestrutura."
+        },
+        {
+          "page": 50,
+          "quote": "Rodovias, ferrovias, hidrovias, portos e aeroportos formam a espinha dorsal da economia brasileira. Implantaremos um grande programa nacional de integração logística para reduzir o custo do transporte de cargas, aumentar a competitividade do agronegócio, da indústria e do comércio e conectar de forma eficiente todas as regiões do país.",
+          "role": "support",
+          "interpretation": "A subseção imediatamente seguinte aplica a agenda de infraestrutura à rede nacional de transportes e logística."
+        }
+      ],
+      "search_terms": [
+        "concessões",
+        "parcerias público-privadas",
+        "PPP",
+        "infraestrutura",
+        "transportes",
+        "logística",
+        "rodovias",
+        "ferrovias",
+        "hidrovias",
+        "portos",
+        "aeroportos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "A ligação entre os instrumentos e o setor de transportes resulta da estrutura da seção e da sequência entre as subseções, não de uma frase que diga literalmente 'concessões de transportes'. O texto também não define projetos, modalidades contratuais ou participação privada para cada obra.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete ampliar significativamente os investimentos em ciência, pesquisa e desenvolvimento com foco expresso em inteligência artificial. Também cria uma política nacional de desenvolvimento da IA, trata essa capacidade como infraestrutura estratégica de Estado e vincula o investimento a soberania tecnológica e formação de ecossistemas nacionais de pesquisa e inovação.",
+      "conditions": [
+        "A estratégia combina Estado, universidades e empresas; o plano não exige propriedade estatal exclusiva da capacidade de IA.",
+        "O desenvolvimento deverá ocorrer sob um marco legal que associe inovação, ética e segurança jurídica."
+      ],
+      "evidence": [
+        {
+          "page": 57,
+          "quote": "O Brasil precisa deixar de ser apenas consumidor de tecnologia e se tornar produtor de inovação. Ampliaremos significativamente os investimentos em ciência, pesquisa e desenvolvimento, com foco em áreas estratégicas como biotecnologia, energia, saúde, defesa e inteligência artificial.",
+          "role": "support",
+          "interpretation": "O plano determina investimento ampliado em pesquisa e desenvolvimento de inteligência artificial no Brasil."
+        },
+        {
+          "page": 58,
+          "quote": "A inteligência artificial será tratada como infraestrutura estratégica de Estado. Criaremos uma política nacional para desenvolvimento, regulação e aplicação da IA em serviços públicos, educação, saúde, segurança e gestão governamental, garantindo soberania tecnológica e competitividade global.",
+          "role": "support",
+          "interpretation": "A política nacional tem como objeto expresso desenvolver capacidade de IA e fortalecer a soberania tecnológica."
+        },
+        {
+          "page": 58,
+          "quote": "Ao mesmo tempo, aumentaremos o investimento em Ciência, Tecnologia e Inovação (CT&I), fomentando ecossistemas que conectem universidades e empresas para gerar soluções aplicadas e produtos de alto valor agregado.",
+          "role": "support",
+          "interpretation": "O investimento público sustenta um ecossistema nacional cooperativo de pesquisa e desenvolvimento."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "capacidade nacional",
+        "desenvolvimento",
+        "pesquisa",
+        "infraestrutura estratégica",
+        "soberania tecnológica",
+        "computação",
+        "modelos nacionais",
+        "Ciência, Tecnologia e Inovação"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não especifica orçamento, infraestrutura computacional, modelos próprios ou repartição da execução entre governo, universidades e empresas. Esses detalhes não são exigidos pela tese aprovada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe nem rejeita reserva de vagas por critérios raciais em concursos públicos federais. As referências a raça tratam de desigualdade na concessão de crédito entre homens e mulheres da mesma raça; a reserva mínima de vagas encontrada trata de mulheres na composição do STF. Nenhum desses objetos decide cotas raciais no ingresso no serviço público federal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 64,
+          "quote": "Das nove vagas, no mínimo três deverão ser ocupadas por mulheres de ilibado saber jurídico e notável histórico comportamental.",
+          "role": "context",
+          "interpretation": "A única reserva mínima de vagas identificada refere-se a gênero na composição do STF, não a critério racial em concurso público federal."
+        },
+        {
+          "page": 89,
+          "quote": "O Relatório de Cidadania Financeira do Banco Central também identificou que, considerando grupos de uma mesma raça, as mulheres contrataram créditos mais caros que os homens.",
+          "role": "context",
+          "interpretation": "A referência racial integra um diagnóstico sobre crédito e não formula política de cotas para o serviço público."
+        }
+      ],
+      "search_terms": [
+        "cotas",
+        "quotas",
+        "reserva de vagas",
+        "critério racial",
+        "raça",
+        "racial",
+        "racismo",
+        "negros",
+        "pretos",
+        "pardos",
+        "indígenas",
+        "ações afirmativas",
+        "concursos públicos",
+        "servidores públicos",
+        "serviço público"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "A modernização das carreiras públicas e a avaliação de desempenho da página 37 não tratam do ingresso por concurso. A proposta de vagas para mulheres no STF e o diagnóstico racial de crédito não podem ser transpostos para o universo específico perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O Projeto FATO é apresentado como um sistema nacional de segurança pública e inclui monitoramento urbano entre as funções da força municipal. Na lista de tecnologias do mesmo sistema, o plano inclui expressamente reconhecimento facial, câmeras inteligentes, sensores urbanos e monitoramento em tempo real. A combinação sustenta o uso de reconhecimento facial em espaços públicos para segurança, condicionado à legislação vigente.",
+      "conditions": [
+        "O reconhecimento facial deverá observar a legislação vigente.",
+        "A posição comprovada está vinculada ao Projeto FATO e às finalidades de segurança pública descritas no plano.",
+        "O plano não detalha regras de finalidade, privacidade, auditoria, precisão, armazenamento ou supervisão; essa ausência não prova rejeição dessas salvaguardas."
+      ],
+      "evidence": [
+        {
+          "page": 186,
+          "quote": "O Projeto FATO – Força de Alerta Total propõe a maior integração da história da segurança pública brasileira. Seu objetivo é unir inteligência, tecnologia, treinamento e cooperação entre as forças de segurança para reduzir drasticamente a criminalidade, aumentar a capacidade preventiva do Estado e oferecer uma resposta rápida às ameaças contra a população.",
+          "role": "support",
+          "interpretation": "O programa que reúne as tecnologias tem finalidade expressa de segurança pública e prevenção da criminalidade."
+        },
+        {
+          "page": 187,
+          "quote": "A FOCO será preparada para atuar em: • Prevenção da violência; • Proteção do patrimônio público; • Monitoramento urbano; • Apoio às demais forças policiais; • Proteção escolar; • Defesa civil; • Grandes eventos; • Resposta rápida a crises.",
+          "role": "support",
+          "interpretation": "O mesmo sistema atuará em monitoramento urbano, proteção de patrimônio público, escolas e grandes eventos, situando seu uso no espaço público."
+        },
+        {
+          "page": 188,
+          "quote": "O FATO utilizará tecnologia de última geração. Entre elas: • Inteligência artificial; • Reconhecimento facial (conforme a legislação vigente); • Leitura automática de placas; • Drones de patrulhamento; • Drones de emergência; • Câmeras inteligentes; • Sensores urbanos; • Monitoramento em tempo real; • Análise preditiva da criminalidade; • Centros de comando digitais.",
+          "role": "support",
+          "interpretation": "O reconhecimento facial integra explicitamente o aparato de monitoramento e segurança urbana, com a condição textual de conformidade legal."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "biometria",
+        "câmeras",
+        "monitoramento urbano",
+        "monitoramento inteligente",
+        "monitoramento em tempo real",
+        "sensores urbanos",
+        "espaços públicos",
+        "patrimônio público",
+        "segurança pública",
+        "FATO",
+        "FOCO"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "A expressão 'espaços públicos' não aparece ao lado de 'reconhecimento facial'; o alcance decorre da integração dessa tecnologia ao mesmo sistema que executará monitoramento urbano e protegerá patrimônio público, escolas e grandes eventos. O plano não especifica base de identificação, procedimentos operacionais ou salvaguardas além da observância da legislação vigente.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

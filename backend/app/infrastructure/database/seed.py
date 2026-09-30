@@ -38,6 +38,66 @@ _THEME_META: dict[str, _ThemeMeta] = {
     "governanca":       {"name": "Governança",        "area": "institucional",   "icon_slug": "landmark",  "sort_order": 10},
     "politica_externa": {"name": "Política Externa",  "area": "institucional",   "icon_slug": "globe",     "sort_order": 11},
     "seguranca":        {"name": "Segurança",         "area": "institucional",   "icon_slug": "shield",    "sort_order": 12},
+    "economia_desenvolvimento": {
+        "name": "Economia e Desenvolvimento",
+        "area": "economica",
+        "icon_slug": "chart-bar",
+        "sort_order": 101,
+    },
+    "estado_gestao": {
+        "name": "Estado e Gestão Pública",
+        "area": "institucional",
+        "icon_slug": "landmark",
+        "sort_order": 102,
+    },
+    "infraestrutura_territorio": {
+        "name": "Infraestrutura e Território",
+        "area": "ambiental_infra",
+        "icon_slug": "road",
+        "sort_order": 103,
+    },
+    "meio_ambiente_clima": {
+        "name": "Meio Ambiente e Clima",
+        "area": "ambiental_infra",
+        "icon_slug": "leaf",
+        "sort_order": 104,
+    },
+    "ciencia_tecnologia_inovacao": {
+        "name": "Ciência, Tecnologia e Inovação",
+        "area": "economica",
+        "icon_slug": "cpu",
+        "sort_order": 105,
+    },
+    "bem_estar_social": {
+        "name": "Bem-Estar Social",
+        "area": "social",
+        "icon_slug": "heart",
+        "sort_order": 106,
+    },
+    "educacao_cultura_sociedade": {
+        "name": "Educação, Cultura e Sociedade",
+        "area": "social",
+        "icon_slug": "book",
+        "sort_order": 107,
+    },
+    "cidadania_direitos": {
+        "name": "Cidadania e Direitos",
+        "area": "social",
+        "icon_slug": "users",
+        "sort_order": 108,
+    },
+    "seguranca_publica": {
+        "name": "Segurança Pública",
+        "area": "institucional",
+        "icon_slug": "shield",
+        "sort_order": 109,
+    },
+    "soberania_relacoes_internacionais": {
+        "name": "Soberania e Relações Internacionais",
+        "area": "institucional",
+        "icon_slug": "globe",
+        "sort_order": 110,
+    },
 }
 
 
@@ -289,6 +349,7 @@ def _seed_theses_and_positions(
                 position = CandidatePositionModel(candidate_id=candidate_id, thesis_id=thesis.id)
                 db.add(position)
             position.position = data["position"]
+            position.analytical_position = data.get("analytical_position")
             position.justification = data.get("justification")
             position.quote = data.get("quote")
             position.source_ref = data.get("source_ref")
