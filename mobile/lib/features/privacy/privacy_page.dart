@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_consent_controller.dart';
+import '../../core/analytics/analytics_operational_config.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/link/link_opener.dart';
 import 'privacy_config.dart';
@@ -11,11 +12,13 @@ class PrivacyPage extends StatelessWidget {
     required this.consentController,
     required this.config,
     this.openLink,
+    this.analyticsEnabled = AnalyticsOperationalConfig.enabled,
   });
 
   final AnalyticsConsentController consentController;
   final PrivacyConfig config;
   final LinkOpener? openLink;
+  final bool analyticsEnabled;
 
   static final googlePartnerSitesUri = Uri.parse(
     'https://policies.google.com/technologies/partner-sites?hl=pt-BR',
@@ -108,6 +111,9 @@ class PrivacyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final emailUri = Uri(scheme: 'mailto', path: config.contactEmail);
+    final analyticsRetention = analyticsEnabled
+        ? 'Eventos e dados de usuário aceitos têm retenção configurada por 2 meses no GA4; relatórios agregados padrão podem seguir regras e prazos próprios. As tabelas novas do BigQuery expiram em até 60 dias.'
+        : 'A coleta de métricas está pausada nesta versão. Antes de ativá-la, a retenção de eventos e dados de usuário no GA4 deve ser confirmada em 2 meses e a expiração das tabelas novas do BigQuery em até 60 dias; relatórios agregados padrão podem seguir regras e prazos próprios.';
     final sections = <(String, String)>[
       (
         'Quem decide e como falar conosco',
@@ -143,7 +149,7 @@ class PrivacyPage extends StatelessWidget {
       ),
       (
         'Retenção e segurança',
-        'Respostas do quiz não são persistidas na versão pública atual. Eventos e dados de usuário aceitos têm retenção configurada por 2 meses no GA4; relatórios agregados padrão podem seguir regras e prazos próprios. As tabelas novas do BigQuery expiram em até 60 dias. Logs operacionais do Cloud Run roteados ao bucket padrão do Cloud Logging são mantidos por 30 dias; registros de auditoria obrigatórios seguem política própria e mais longa. Dados funcionais permanecem somente enquanto necessários à função, segurança, obrigação legal ou exercício de direitos. Mensagens de privacidade permanecem durante o atendimento e, depois, somente enquanto necessárias para comprovar cumprimento legal ou exercer direitos, com revisão ao menos anual e eliminação quando essa necessidade terminar; a cópia entregue à caixa de e-mail é distinta dos registros mínimos de entrega que o ImprovMX mantém por 7 dias.',
+        'Respostas do quiz não são persistidas na versão pública atual. $analyticsRetention Logs operacionais do Cloud Run roteados ao bucket padrão do Cloud Logging são mantidos por 30 dias; registros de auditoria obrigatórios seguem política própria e mais longa. Dados funcionais permanecem somente enquanto necessários à função, segurança, obrigação legal ou exercício de direitos. Mensagens de privacidade permanecem durante o atendimento e, depois, somente enquanto necessárias para comprovar cumprimento legal ou exercer direitos, com revisão ao menos anual e eliminação quando essa necessidade terminar; a cópia entregue à caixa de e-mail é distinta dos registros mínimos de entrega que o ImprovMX mantém por 7 dias.',
       ),
       (
         'Seus direitos',

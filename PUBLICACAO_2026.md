@@ -25,7 +25,7 @@ Republicações manuais devem iniciar o workflow `Deploy Backend` em `main`; a i
 
 O processo registra `SAFE_BRIDGE_REVISION` nos logs depois de publicar a revisão intermediária. Se a carga ou ativação falhar, ela continua apta a servir a eleição anterior com filtros. Após carregar 2026, não restaurar imagem anterior a esses filtros: ela pode misturar eleições.
 
-Para recuperação, transferir 100% do tráfego para a revisão intermediária registrada, na região `us-east4` e projeto `farol-politico-495210`. Não executar downgrade destrutivo de banco. Se apenas a interface falhar, restaurar a versão anterior do Firebase Hosting; o backend preserva contratos existentes.
+Para recuperação, transferir 100% do tráfego para a revisão intermediária registrada, na região `us-east4` e projeto `farol-politico-495210`. Não executar downgrade destrutivo de banco. Se apenas a interface falhar após o cutover de privacidade, não restaurar uma versão do Firebase Hosting anterior ao consentimento opt-in: ela pode voltar a carregar Analytics sem consentimento e enviar o UUID do quiz. Manter Analytics pausado (`ANALYTICS_ENABLED=false`) e corrigir a interface por um novo deploy validado. Uma restauração do Hosting só é segura para um release previamente verificado com a barreira de persistência, consentimento negado por padrão, configuração GA4 correspondente e cabeçalhos de cache corretos.
 
 Na inspeção anterior à entrega, a produção estava na revisão `farol-politico-api-00029-8kr`; esta não é um destino seguro de recuperação após carregar 2026. Moderação NVIDIA, `IOT_FEATURE_ENABLED=false` e `POLITICIAN_FOLLOW_ENABLED=false` devem ser preservados.
 

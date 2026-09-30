@@ -47,6 +47,7 @@ Future<void> _pumpPage(
   WidgetTester tester,
   AnalyticsConsentController controller, {
   Future<bool> Function(Uri)? openLink,
+  bool analyticsEnabled = false,
 }) async {
   await tester.pumpWidget(MaterialApp(
     theme: AppTheme.dark,
@@ -54,11 +55,29 @@ Future<void> _pumpPage(
       consentController: controller,
       config: _config,
       openLink: openLink,
+      analyticsEnabled: analyticsEnabled,
     ),
   ));
 }
 
 void main() {
+  testWidgets('retention copy distinguishes paused and active analytics',
+      (tester) async {
+    final controller = await _controller(_Store());
+    addTearDown(controller.dispose);
+    await _pumpPage(tester, controller);
+    expect(find.textContaining('A coleta de métricas está pausada nesta versão',
+        skipOffstage: false), findsOneWidget);
+    expect(find.textContaining('têm retenção configurada por 2 meses',
+        skipOffstage: false), findsNothing);
+
+    await _pumpPage(tester, controller, analyticsEnabled: true);
+    expect(find.textContaining('têm retenção configurada por 2 meses',
+        skipOffstage: false), findsOneWidget);
+    expect(find.textContaining('A coleta de métricas está pausada nesta versão',
+        skipOffstage: false), findsNothing);
+  });
+
   testWidgets('notice identifies controller and the key processing boundaries',
       (tester) async {
     final controller = await _controller(_Store());
