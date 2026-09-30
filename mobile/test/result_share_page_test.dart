@@ -161,8 +161,9 @@ void main() {
   }
 
   Future<void> tap(WidgetTester tester, String label) async {
-    await tester.ensureVisible(find.text(label));
-    await tester.tap(find.text(label));
+    final target = find.text(label).last;
+    await tester.ensureVisible(target);
+    await tester.tap(target);
     await tester.pumpAndSettle();
   }
 
@@ -311,7 +312,7 @@ void main() {
         .queryParameters['text']!;
     expect(whatsappText, contains('10º. Pessoa 10'));
     expect(whatsappText, isNot(contains('Pessoa 11')));
-    await tap(tester, 'X / Twitter');
+    await tap(tester, 'X');
     final xText = device.networkData!
         .networkUri(ResultShareNetwork.twitter)
         .queryParameters['text']!;
@@ -386,7 +387,7 @@ void main() {
       (tester) async {
     final device = _ShareDevice();
     await pumpPage(tester, device);
-    await tap(tester, 'X / Twitter');
+    await tap(tester, 'X');
     expect(device.networks, [ResultShareNetwork.twitter]);
     expect(device.shared, isNull);
     await tap(tester, 'WhatsApp');

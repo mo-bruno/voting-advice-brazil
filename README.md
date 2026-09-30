@@ -116,7 +116,7 @@ A imagem inclui colocação, nomes, partidos, a identificação do quiz presiden
 
 - **Stories:** PNG de 1080 × 1920; **Post:** PNG de 1080 × 1350. As fontes do cartão acompanham o app para a exportação não depender de downloads de fontes.
 - **Compartilhar imagem:** envia somente o PNG pelo menu padrão do dispositivo, para qualquer app disponível. A imagem é preparada antes do toque e o botão fica indisponível durante o envio. Cancelar não inicia download, não abre redes e não confirma publicação.
-- **X / Twitter:** abre diretamente o compositor com texto e link. O ranking usa um resumo curto, sem levar a lista completa de candidaturas para a legenda.
+- **X:** abre diretamente o compositor com texto e link. O ranking usa um resumo curto, sem levar a lista completa de candidaturas para a legenda.
 - **WhatsApp:** abre diretamente a seleção de conversa com o texto do resultado selecionado e o link.
 
 Se o navegador recusar o compartilhamento da imagem, uma mensagem oferece **Baixar** em um novo toque, para anexar o PNG manualmente. O retorno sem status de entrega do navegador não é tratado como falha. A tela mantém somente essas três ações principais; Stories/Post definem o tamanho da imagem, sem direcionar a um app ou modo de publicação.

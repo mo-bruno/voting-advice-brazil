@@ -286,7 +286,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     _NetworkButton(
-                      label: 'X / Twitter',
+                      label: 'X',
                       detail: 'Texto e link',
                       icon: const Text('X',
                           style: TextStyle(
