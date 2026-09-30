@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
+import '../../shared/models/thesis.dart';
 import '../../shared/quiz_session.dart';
 import 'quiz_processing_notice.dart';
 
@@ -26,7 +27,25 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
   @override
   void initState() {
     super.initState();
-    unawaited(_analytics.quizIntroViewed());
+    _track(_analytics.quizIntroViewed());
+  }
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  AnalyticsQuizStage _currentStage(QuizSession session) {
+    if (session.candidates.isNotEmpty ||
+        session.selectedCandidateIds.isNotEmpty) {
+      return AnalyticsQuizStage.candidateSelection;
+    }
+    final questionsFinished = session.theses.isNotEmpty &&
+        session.theses.every(
+          (thesis) => thesis.answer != ThesisAnswer.unanswered,
+        );
+    return questionsFinished
+        ? AnalyticsQuizStage.weighting
+        : AnalyticsQuizStage.questions;
   }
 
   /// Comecar e o momento de descartar o teste anterior. Antes isso vivia no
@@ -36,13 +55,22 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
   void _startQuiz() {
     final session = QuizSession.instance;
     if (session.hasStartedFlow) {
-      unawaited(_analytics.quizRestarted());
+      if (session.results.isEmpty) {
+        _track(_analytics.quizAbandoned(
+          stage: _currentStage(session),
+          reason: AnalyticsAbandonReason.restart,
+          totalAnswered: session.totalAnswered,
+          totalSkipped: session.totalSkipped,
+          durationMs: session.quizDurationMs(),
+        ));
+      }
+      _track(_analytics.quizRestarted());
       // Antes de `markQuizStarted`: `resetQuiz` zera `quizStartedAt`, e na
       // ordem inversa a duracao do quiz sairia sem inicio.
       session.resetQuiz();
     }
     session.markQuizStarted();
-    unawaited(_analytics.quizStarted());
+    _track(_analytics.quizStarted());
     Navigator.pushNamed(context, '/quiz');
   }
 

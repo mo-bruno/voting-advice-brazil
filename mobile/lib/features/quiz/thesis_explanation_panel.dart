@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/link/link_opener.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/models/thesis_explanation.dart';
@@ -7,11 +10,13 @@ import '../../shared/models/thesis_explanation.dart';
 class ThesisExplanationPanel extends StatefulWidget {
   final ThesisExplanation explanation;
   final LinkOpener linkOpener;
+  final AnalyticsService? analytics;
 
   const ThesisExplanationPanel({
     super.key,
     required this.explanation,
     this.linkOpener = openExternalLink,
+    this.analytics,
   });
 
   @override
@@ -19,14 +24,40 @@ class ThesisExplanationPanel extends StatefulWidget {
 }
 
 class _ThesisExplanationPanelState extends State<ThesisExplanationPanel> {
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   bool _expanded = false;
+  bool _hasTrackedExpansion = false;
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  void _toggleExpanded() {
+    setState(() => _expanded = !_expanded);
+    if (_expanded && !_hasTrackedExpansion) {
+      _hasTrackedExpansion = true;
+      _track(_analytics.engagementAction(
+        action: AnalyticsAction.evidenceOpen,
+        surface: AnalyticsSurface.quiz,
+      ));
+    }
+  }
 
   Future<void> _openSource(ExplanationSource source) async {
+    var opened = false;
     try {
-      if (await widget.linkOpener(source.url)) return;
+      opened = await widget.linkOpener(source.url);
     } catch (_) {
       // The question and its explanation remain available if a link fails.
     }
+    _track(_analytics.engagementAction(
+      action: AnalyticsAction.outboundOpen,
+      surface: AnalyticsSurface.quiz,
+      target: AnalyticsTarget.quizSource,
+      outcome: opened ? AnalyticsOutcome.success : AnalyticsOutcome.failed,
+    ));
+    if (opened) return;
     if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(
@@ -50,7 +81,7 @@ class _ThesisExplanationPanelState extends State<ThesisExplanationPanel> {
             child: Semantics(
               expanded: _expanded,
               child: TextButton(
-                onPressed: () => setState(() => _expanded = !_expanded),
+                onPressed: _toggleExpanded,
                 style: TextButton.styleFrom(
                   minimumSize: const Size(48, 64),
                   padding: const EdgeInsets.all(16),

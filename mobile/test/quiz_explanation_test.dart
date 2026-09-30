@@ -12,6 +12,8 @@ import 'package:guia_eleitoral/shared/models/thesis.dart';
 import 'package:guia_eleitoral/shared/models/thesis_explanation.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
 
+import 'helpers/analytics_test_support.dart';
+
 class _SilentAnalytics implements AnalyticsSink {
   @override
   Future<void> logEvent(
@@ -48,6 +50,7 @@ void main() {
     Size size = const Size(390, 844),
     double scale = 1,
     bool withExplanation = true,
+    RecordingAnalyticsSink? analyticsSink,
   }) async {
     await tester.binding.setSurfaceSize(size);
     addTearDown(() => tester.binding.setSurfaceSize(null));
@@ -80,7 +83,9 @@ void main() {
         iotEnabled: false,
         controller: QuizController(
             session: session,
-            analytics: AnalyticsService(sink: _SilentAnalytics())),
+            analytics: AnalyticsService(
+              sink: analyticsSink ?? _SilentAnalytics(),
+            )),
       ),
       routes: {
         '/weighting': (_) => const Scaffold(body: Text('Revisar respostas'))
@@ -112,6 +117,28 @@ void main() {
     await tester.pumpAndSettle();
     expect(tester.getRect(find.text('CONCORDO')), answerPosition);
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('help expansion emits evidence once without political payload',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await pumpQuiz(tester, analyticsSink: sink);
+
+    await tester.tap(find.text('Entenda esta pergunta'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Entenda esta pergunta'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Entenda esta pergunta'));
+    await tester.pumpAndSettle();
+
+    final evidence = named(sink.calls, 'engagement_action')
+        .where((call) => call.parameters?['action'] == 'evidence_open')
+        .toList();
+    expect(evidence, hasLength(1));
+    expect(evidence.single.parameters, {
+      'action': 'evidence_open',
+      'surface': 'quiz',
+    });
   });
 
   testWidgets('each new question starts at the top with its own help collapsed',
@@ -237,12 +264,14 @@ void main() {
   testWidgets('source links use the cited URL and report an opening failure',
       (tester) async {
     Uri? opened;
+    final sink = RecordingAnalyticsSink();
     await tester.pumpWidget(MaterialApp(
         theme: AppTheme.dark,
         home: Scaffold(
           body: SingleChildScrollView(
               child: ThesisExplanationPanel(
             explanation: _explanation,
+            analytics: AnalyticsService(sink: sink),
             linkOpener: (url) async {
               opened = url;
               return false;
@@ -258,6 +287,16 @@ void main() {
     expect(opened, _explanation.sources.first.url);
     expect(find.text('Não foi possível abrir a fonte. Tente novamente.'),
         findsOneWidget);
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'outbound_open',
+      'surface': 'quiz',
+      'target': 'quiz_source',
+      'outcome': 'failed',
+    });
+    expect(
+      lastEngagement(sink.calls).parameters!.values,
+      isNot(contains(_explanation.sources.first.url.toString())),
+    );
   });
 
   test('parses help while keeping the submitted answer payload unchanged', () {

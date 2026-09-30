@@ -28,6 +28,18 @@ class _ResultsPageState extends State<ResultsPage> {
   final QuizSession _session = QuizSession.instance;
   bool _hasTrackedResultsViewed = false;
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || _hasTrackedResultsViewed || _session.results.isEmpty) {
+        return;
+      }
+      _hasTrackedResultsViewed = true;
+      _track(_analytics.resultsViewed());
+    });
+  }
+
   List<CandidateResult> get _results =>
       [..._session.visibleResults]..sort((a, b) {
           if (a.rankingEligible != b.rankingEligible) {
@@ -102,11 +114,6 @@ class _ResultsPageState extends State<ResultsPage> {
         _results.where((result) => result.rankingEligible).toList();
     final outsideRanking =
         _results.where((result) => !result.rankingEligible).toList();
-    if (!_hasTrackedResultsViewed && _session.topAffinityResults.isNotEmpty) {
-      _hasTrackedResultsViewed = true;
-      _track(_analytics.resultsViewed());
-    }
-
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),

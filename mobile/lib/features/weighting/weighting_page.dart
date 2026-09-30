@@ -9,9 +9,10 @@ import '../../shared/models/thesis.dart';
 import '../../shared/quiz_session.dart';
 
 class WeightingPage extends StatefulWidget {
-  const WeightingPage({super.key, this.analytics});
+  const WeightingPage({super.key, this.analytics, this.session});
 
   final AnalyticsService? analytics;
+  final QuizSession? session;
 
   @override
   State<WeightingPage> createState() => _WeightingPageState();
@@ -20,19 +21,42 @@ class WeightingPage extends StatefulWidget {
 class _WeightingPageState extends State<WeightingPage> {
   late final AnalyticsService _analytics =
       widget.analytics ?? AnalyticsService();
-  final QuizSession _session = QuizSession.instance;
+  late final QuizSession _session = widget.session ?? QuizSession.instance;
   int? _editingThesisId;
+  bool _abandonmentRecorded = false;
+  bool _stageCompleted = false;
+  late final bool _enteredAfterResults;
 
   List<Thesis> get _theses => _session.theses;
 
   @override
   void initState() {
     super.initState();
+    _enteredAfterResults = _session.results.isNotEmpty;
     _track(_analytics.weightingStarted());
   }
 
   void _track(Future<void> event) {
     unawaited(event.catchError((_) {}));
+  }
+
+  void _recordAbandonment() {
+    if (_abandonmentRecorded || _stageCompleted || _enteredAfterResults) {
+      return;
+    }
+    _abandonmentRecorded = true;
+    _track(_analytics.quizAbandoned(
+      stage: AnalyticsQuizStage.weighting,
+      reason: AnalyticsAbandonReason.back,
+      totalAnswered: _session.totalAnswered,
+      totalSkipped: _session.totalSkipped,
+      durationMs: _session.quizDurationMs(),
+    ));
+  }
+
+  void _backToQuestions() {
+    _recordAbandonment();
+    Navigator.maybePop(context);
   }
 
   void _toggleWeight(int index) {
@@ -61,9 +85,20 @@ class _WeightingPageState extends State<WeightingPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AppScaffold(
-      title: 'FAROL POLÍTICO',
-      body: _theses.isEmpty ? _emptyState(context) : _content(context),
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) _recordAbandonment();
+      },
+      child: AppScaffold(
+        title: 'FAROL POLÍTICO',
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'Voltar às perguntas',
+          onPressed: _backToQuestions,
+        ),
+        body: _theses.isEmpty ? _emptyState(context) : _content(context),
+      ),
     );
   }
 
@@ -167,13 +202,17 @@ class _WeightingPageState extends State<WeightingPage> {
             child: ElevatedButton(
               onPressed: !_session.canSubmit
                   ? null
-                  : () {
+                  : () async {
+                      _stageCompleted = true;
                       _track(
                         _analytics.weightingCompleted(
                           countWeighted: _session.countWeighted,
                         ),
                       );
-                      Navigator.pushNamed(context, '/party-selection');
+                      await Navigator.pushNamed(context, '/party-selection');
+                      if (mounted && _session.results.isEmpty) {
+                        _stageCompleted = false;
+                      }
                     },
               child: const Text('CONTINUAR PARA SELEÇÃO'),
             ),
