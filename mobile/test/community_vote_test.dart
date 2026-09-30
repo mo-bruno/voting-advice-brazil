@@ -3,12 +3,15 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/community/community_feed_page.dart';
 import 'package:guia_eleitoral/features/community/community_session.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 Map<String, dynamic> _post(String id, {int score = 3}) => {
       'id': id,
@@ -51,6 +54,11 @@ class _VoteGateClient extends http.BaseClient {
   }
 }
 
+List<RecordedAnalyticsCall> _voteOperations(RecordingAnalyticsSink sink) =>
+    named(sink.calls, 'operation_result')
+        .where((call) => call.parameters?['operation'] == 'community_vote')
+        .toList();
+
 void main() {
   setUp(() {
     SharedPreferences.setMockInitialValues({});
@@ -61,11 +69,13 @@ void main() {
       (tester) async {
     final gate = Completer<void>();
     final client = _VoteGateClient(gate.future);
+    final sink = RecordingAnalyticsSink();
     await tester.pumpWidget(MaterialApp(
       theme: AppTheme.dark,
       home: CommunityFeedPage(
         apiClient:
             ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
+        analytics: AnalyticsService(sink: sink),
       ),
     ));
     await tester.pump();
@@ -91,6 +101,19 @@ void main() {
 
     // Depois que termina, votar de novo volta a funcionar.
     expect(find.text('4'), findsOneWidget);
+    final operation = _voteOperations(sink).single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_vote'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
+    expect(
+      operation.parameters!.keys,
+      unorderedEquals(['operation', 'outcome', 'trigger', 'duration_ms']),
+    );
   });
 
   testWidgets('score so muda depois da resposta do servidor', (tester) async {
@@ -122,5 +145,38 @@ void main() {
     await tester.pump(const Duration(milliseconds: 200));
 
     expect(find.text('4'), findsOneWidget);
+  });
+
+  testWidgets('voto pendente ainda emite terminal depois do unmount',
+      (tester) async {
+    final gate = Completer<void>();
+    final client = _VoteGateClient(gate.future);
+    final sink = RecordingAnalyticsSink();
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.dark,
+      home: CommunityFeedPage(
+        apiClient:
+            ApiClient(baseUrl: 'https://api.test/api/v1', client: client),
+        analytics: AnalyticsService(sink: sink),
+      ),
+    ));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+
+    await tester.tap(find.byIcon(Icons.keyboard_arrow_up_rounded));
+    await tester.pump();
+    await tester.pumpWidget(const SizedBox());
+    gate.complete();
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 50));
+
+    expect(
+      _voteOperations(sink).single.parameters,
+      allOf(
+        containsPair('operation', 'community_vote'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
   });
 }

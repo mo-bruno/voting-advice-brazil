@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
+import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
@@ -14,9 +16,15 @@ import 'widgets/community_actions.dart';
 import 'widgets/post_card.dart';
 
 class PostDetailPage extends StatefulWidget {
-  const PostDetailPage({super.key, required this.postId, this.apiClient});
+  const PostDetailPage({
+    super.key,
+    required this.postId,
+    this.apiClient,
+    this.analytics,
+  });
   final String postId;
   final ApiClient? apiClient;
+  final AnalyticsService? analytics;
 
   @override
   State<PostDetailPage> createState() => _PostDetailPageState();
@@ -24,6 +32,8 @@ class PostDetailPage extends StatefulWidget {
 
 class _PostDetailPageState extends State<PostDetailPage> {
   late final ApiClient _api = widget.apiClient ?? ApiClient();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   final _commentController = TextEditingController();
   final _scrollController = ScrollController();
   final Set<String> _acting = {};
@@ -54,10 +64,50 @@ class _PostDetailPageState extends State<PostDetailPage> {
     super.dispose();
   }
 
-  Future<void> _load() async {
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  Future<T> _runWrite<T>({
+    required AnalyticsOperation operation,
+    required bool moderationWrite,
+    required Future<T> Function() action,
+  }) async {
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    try {
+      final result = await action();
+      outcome = AnalyticsOutcome.success;
+      return result;
+    } catch (error) {
+      failureType = classifyAnalyticsFailure(
+        error,
+        moderationWrite: moderationWrite,
+      );
+      rethrow;
+    } finally {
+      stopwatch.stop();
+      _track(_analytics.operationResult(
+        operation: operation,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.submit,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+      ));
+    }
+  }
+
+  Future<void> _load({
+    AnalyticsTrigger trigger = AnalyticsTrigger.initial,
+  }) async {
     if (!mounted) return;
     final generation = ++_loadGeneration;
     final version = _mutationVersion;
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    int? itemCount;
     setState(() {
       _loading = _detail == null;
       _refreshing = _detail != null;
@@ -70,16 +120,42 @@ class _PostDetailPageState extends State<PostDetailPage> {
       if (!mounted ||
           generation != _loadGeneration ||
           version != _mutationVersion) {
+        outcome = AnalyticsOutcome.stale;
         return;
       }
-      _detail = PostDetail.fromJson(data);
+      final detail = PostDetail.fromJson(data);
+      itemCount = detail.comments.length;
+      outcome = AnalyticsOutcome.success;
+      _detail = detail;
       CommunitySession().updatePost(_detail!.post);
     } catch (error) {
-      if (!mounted || generation != _loadGeneration) return;
+      if (!mounted ||
+          generation != _loadGeneration ||
+          version != _mutationVersion) {
+        outcome = AnalyticsOutcome.stale;
+        failureType = null;
+        itemCount = null;
+        return;
+      }
+      failureType = classifyAnalyticsFailure(error);
       _loadError = error is ApiException && error.statusCode == 404
           ? 'Esta discussão não foi encontrada.'
           : 'Não foi possível carregar a discussão. Verifique sua conexão e tente novamente.';
     } finally {
+      stopwatch.stop();
+      if (generation != _loadGeneration || version != _mutationVersion) {
+        outcome = AnalyticsOutcome.stale;
+        failureType = null;
+        itemCount = null;
+      }
+      _track(_analytics.operationResult(
+        operation: AnalyticsOperation.communityPostLoad,
+        outcome: outcome,
+        trigger: trigger,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+        itemCount: itemCount,
+      ));
       if (mounted && generation == _loadGeneration) {
         setState(() {
           _loading = false;
@@ -104,12 +180,20 @@ class _PostDetailPageState extends State<PostDetailPage> {
     }
     setState(() => _voting = true);
     try {
-      final data =
-          await _api.votePost(widget.postId, value, anonymousId: _anonymousId!);
+      final vote = await _runWrite(
+        operation: AnalyticsOperation.communityVote,
+        moderationWrite: false,
+        action: () async => PostSummary.fromJson(
+          await _api.votePost(
+            widget.postId,
+            value,
+            anonymousId: _anonymousId!,
+          ),
+        ),
+      );
       if (!mounted) return;
       final current = _detail!;
-      final updated = PostSummary.fromJson(data)
-          .copyWith(commentCount: current.comments.length);
+      final updated = vote.copyWith(commentCount: current.comments.length);
       _mutationVersion++;
       setState(() =>
           _detail = PostDetail(post: updated, comments: current.comments));
@@ -117,7 +201,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
     } catch (error) {
       _notice(communityErrorMessage(error,
           fallback: 'Não foi possível registrar seu voto.'));
-      if (error is ApiException && error.statusCode == 410) unawaited(_load());
+      if (error is ApiException && error.statusCode == 410) {
+        unawaited(_load(trigger: AnalyticsTrigger.refresh));
+      }
     } finally {
       if (mounted) setState(() => _voting = false);
     }
@@ -138,11 +224,19 @@ class _PostDetailPageState extends State<PostDetailPage> {
       _commentError = null;
     });
     try {
-      final data = await _api.createComment(widget.postId, content,
-          anonymousId: _anonymousId!);
+      final created = await _runWrite(
+        operation: AnalyticsOperation.communityCommentCreate,
+        moderationWrite: true,
+        action: () async => PostComment.fromJson(
+          await _api.createComment(
+            widget.postId,
+            content,
+            anonymousId: _anonymousId!,
+          ),
+        ),
+      );
       if (!mounted) return;
       final current = _detail!;
-      final created = PostComment.fromJson(data);
       final comments =
           current.comments.any((comment) => comment.id == created.id)
               ? current.comments
@@ -165,7 +259,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
       setState(() => _commentError = communityErrorMessage(error,
           fallback:
               'Não foi possível enviar seu comentário. Verifique sua conexão e tente novamente.'));
-      if (error is ApiException && error.statusCode == 410) unawaited(_load());
+      if (error is ApiException && error.statusCode == 410) {
+        unawaited(_load(trigger: AnalyticsTrigger.refresh));
+      }
     } finally {
       if (mounted) setState(() => _sendingComment = false);
     }
@@ -180,11 +276,26 @@ class _PostDetailPageState extends State<PostDetailPage> {
         final reason = await chooseReportReason(context);
         if (reason == null || !mounted) return;
         if (comment == null) {
-          await _api.reportPost(widget.postId,
-              reason: reason, anonymousId: _anonymousId!);
+          await _runWrite(
+            operation: AnalyticsOperation.communityReport,
+            moderationWrite: false,
+            action: () => _api.reportPost(
+              widget.postId,
+              reason: reason,
+              anonymousId: _anonymousId!,
+            ),
+          );
         } else {
-          await _api.reportComment(widget.postId, comment.id,
-              reason: reason, anonymousId: _anonymousId!);
+          await _runWrite(
+            operation: AnalyticsOperation.communityReport,
+            moderationWrite: false,
+            action: () => _api.reportComment(
+              widget.postId,
+              comment.id,
+              reason: reason,
+              anonymousId: _anonymousId!,
+            ),
+          );
         }
         _notice('Denúncia registrada. Obrigado.');
       } else {
@@ -200,7 +311,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
         }
         _notice(comment == null ? 'Post removido.' : 'Comentário removido.');
       }
-      await _load();
+      await _load(trigger: AnalyticsTrigger.refresh);
     } catch (error) {
       _notice(communityErrorMessage(error,
           fallback: report
@@ -272,7 +383,9 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           textAlign: TextAlign.center),
                       const SizedBox(height: 16),
                       OutlinedButton(
-                          onPressed: _load,
+                          onPressed: () => _load(
+                                trigger: AnalyticsTrigger.retry,
+                              ),
                           child: const Text('TENTAR DE NOVO')),
                     ]),
                   ))
@@ -281,12 +394,16 @@ class _PostDetailPageState extends State<PostDetailPage> {
                           if (_refreshing) const LinearProgressIndicator(),
                           if (_loadError != null)
                             TextButton(
-                                onPressed: _load,
+                                onPressed: () => _load(
+                                      trigger: AnalyticsTrigger.retry,
+                                    ),
                                 child: const Text(
                                     'Não foi possível atualizar. TENTAR DE NOVO')),
                           Expanded(
                               child: RefreshIndicator(
-                            onRefresh: _load,
+                            onRefresh: () => _load(
+                              trigger: AnalyticsTrigger.refresh,
+                            ),
                             child: ListView(
                               controller: _scrollController,
                               physics: const AlwaysScrollableScrollPhysics(),
