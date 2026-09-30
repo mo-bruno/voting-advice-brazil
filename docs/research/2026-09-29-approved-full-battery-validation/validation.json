@@ -2,10 +2,10 @@
   "schema_version": 1,
   "approved_questions": 20,
   "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
-  "completed_reviews": 9,
-  "valid_reviews": 9,
-  "answers": 180,
-  "quote_occurrences": 183,
+  "completed_reviews": 12,
+  "valid_reviews": 12,
+  "answers": 240,
+  "quote_occurrences": 250,
   "valid": false,
   "results": [
     {
@@ -24,8 +24,18 @@
     },
     {
       "candidate_id": "280002539826",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 21,
+      "counts": {
+        "NAO_ENCONTRADA": 11,
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 5,
+        "DISCORDA": 3
+      },
+      "review_sha256": "64c1f405924e1df271a54aa66b366e9af5772182b5597c96f01b530d9ea4f0b4",
+      "markdown_sha256": "abf053f5900d8bf24cce1ae341c19f2b89d1e8b86fb73817f7e1de322ae79729"
     },
     {
       "candidate_id": "280002540694",
@@ -57,8 +67,17 @@
     },
     {
       "candidate_id": "280002542548",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 24,
+      "counts": {
+        "NAO_ENCONTRADA": 13,
+        "CONCORDA": 6,
+        "CONDICIONAL_OU_MISTA": 1
+      },
+      "review_sha256": "8a58ff4e77ef5dcb3de19886038c18f4f3b0defed9ef19121b25657a183479f9",
+      "markdown_sha256": "669b461bb3d7468a877d01fe537b3c91101aad1ee5e24e34579aee1e32c2b9a9"
     },
     {
       "candidate_id": "280002548139",
@@ -93,8 +112,17 @@
     },
     {
       "candidate_id": "280002551932",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 22,
+      "counts": {
+        "NAO_ENCONTRADA": 7,
+        "CONCORDA": 9,
+        "CONDICIONAL_OU_MISTA": 4
+      },
+      "review_sha256": "97ad9ba6e916e271d2adc18ce587d83f5c3c13d12b00007e13631858076f0519",
+      "markdown_sha256": "1056a50a5ddf985b3626f28c478f59922b0661dbed72f30b40ade70e43aecb73"
     },
     {
       "candidate_id": "280002551975",

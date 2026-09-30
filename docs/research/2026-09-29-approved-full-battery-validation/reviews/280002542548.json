@@ -1,0 +1,808 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002542548",
+  "candidate_name": "Lula",
+  "context_owner_agent_id": "/root/plan_lula",
+  "executor_agent_id": "/root/battery_lula",
+  "document_sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002542548.json",
+    "../2026-09-29-thematic-profiles/profiles/280002542548.md",
+    "../2026-09-29-thematic-profiles/profiles/280002542548.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002542548.json"
+  ],
+  "method": "Reidratei integralmente o perfil JSON, o perfil legível, o checkpoint e o parecer da leitura integral anterior de /root/plan_lula. Em seguida pesquisei as 84 páginas do plano oficial nas extrações raw.txt e layout.txt e nos mapas raw-pages.json e layout-pages.json, usando termos exatos e sinônimos próprios das vinte teses. Reli no corpus oficial todas as páginas citadas, conferi a literalidade das transcrições e mantive como NAO_ENCONTRADA todo objeto não decidido pelo documento.",
+  "revisited_pages": [
+    11,
+    16,
+    18,
+    22,
+    29,
+    30,
+    31,
+    37,
+    38,
+    46,
+    49,
+    50,
+    51,
+    52,
+    55,
+    67,
+    75,
+    79,
+    80,
+    81
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano relata tributação da renda dos super-ricos, offshores e fundos exclusivos, mas não cria nem rejeita um imposto específico sobre grandes fortunas ou patrimônio de valor muito elevado. Tributar renda e fechar brechas não decide o objeto patrimonial da afirmação.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Nossa estrutura tributária mudou para melhor. Tributamos a renda dos super ricos e fechamos diversas brechas que só geravam distorções na economia, como a tributação de offshores e fundos exclusivos.",
+          "role": "context",
+          "interpretation": "O trecho prova tributação de renda alta e veículos financeiros, mas não um imposto sobre grandes fortunas."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "grande fortuna",
+        "fortuna",
+        "patrimônio",
+        "imposto sobre patrimônio",
+        "super ricos",
+        "tributação patrimonial",
+        "riqueza líquida"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A diretriz de progressividade tributária e a tributação da renda do topo não podem ser convertidas em Imposto sobre Grandes Fortunas sem menção ao patrimônio e ao tributo específico.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano seleciona inovação, inteligência artificial, minerais críticos e outras áreas portadoras de futuro como focos da neoindustrialização e anuncia financiamento direcionado, com crédito público e privado, para apoiar a indústria. Isso corresponde à existência de crédito dirigido a prioridades escolhidas pela política industrial.",
+      "conditions": [
+        "O financiamento combina crédito público e privado e outros instrumentos de política industrial.",
+        "Benefícios são condicionados a conteúdo local e valor agregado nacional; o plano não fixa taxa de juros ou percentual universal."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "O foco estratégico está na inovação, IA, minerais críticos e outros ativos capazes de colocar o Brasil de uma vez por todas como protagonista em áreas portadoras de futuro.",
+          "role": "support",
+          "interpretation": "O trecho identifica áreas industriais escolhidas como prioridades do próximo ciclo."
+        },
+        {
+          "page": 51,
+          "quote": "Seguiremos fortalecendo os instrumentos de apoio à indústria. Utilizaremos financiamento direcionado, com soluções inovadoras de parceria entre crédito público e privado, compras públicas, concessões, regulações e benefícios condicionados a conteúdo local, valor agregado nacional, margens de preferência com estímulos para empresas brasileiras.",
+          "role": "support",
+          "interpretation": "O plano propõe expressamente financiamento direcionado com crédito público e privado dentro da política industrial."
+        }
+      ],
+      "search_terms": [
+        "financiamento direcionado",
+        "crédito público",
+        "crédito privado",
+        "linhas de crédito",
+        "política industrial",
+        "Nova Indústria Brasil",
+        "setores prioritários",
+        "setores dinâmicos",
+        "áreas portadoras de futuro"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A proposta não restringe o apoio a uma fonte pública exclusiva, não define juros e combina crédito com compras, concessões, regulação e benefícios. Esses detalhes não alteram a admissão do instrumento perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano organiza cadeias de minerais críticos e terras raras, busca beneficiamento nacional e inserção soberana em cadeias globais, mas não decide se empresas estrangeiras podem participar da extração desses minerais. Comércio, agregação de valor e soberania não equivalem a uma regra de participação empresarial na lavra.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Desenvolveremos uma política específica para minerais críticos e terras raras, capaz de organizar suas cadeias produtivas, diferenciar seus usos tecnológicos e evitar a simples exportação de matérias-primas estratégicas. promoveremos uma estratégia regional de mapeamento, beneficiamento e agregação de valor, para inserir o país de forma soberana nas cadeias globais de valor desses recursos.",
+          "role": "context",
+          "interpretation": "O trecho define beneficiamento e inserção global, sem autorizar ou proibir participação estrangeira na extração."
+        }
+      ],
+      "search_terms": [
+        "minerais críticos",
+        "terras raras",
+        "exploração mineral",
+        "extração mineral",
+        "mineração",
+        "empresa estrangeira",
+        "participação estrangeira",
+        "capital estrangeiro",
+        "investimento estrangeiro",
+        "cadeias globais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A oposição à simples exportação de matéria-prima e à subordinação a interesses estrangeiros não proíbe nem admite, por si, investimento estrangeiro condicionado na extração mineral.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe auditoria da dívida pública nem suspensão de juros, amortizações ou pagamentos durante uma investigação. As referências a endividamento de famílias e empresas tratam de outro objeto.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "dívida pública",
+        "serviço da dívida",
+        "auditoria",
+        "auditoria cidadã",
+        "suspensão dos pagamentos",
+        "juros e amortização",
+        "moratória",
+        "credores"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Programas de renegociação de dívidas privadas e a estratégia fiscal não informam tratamento dos pagamentos da dívida pública durante auditoria.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete manter o novo arcabouço fiscal e o caracteriza pela capacidade de controlar o crescimento das despesas. Assim, sustenta expressamente a existência de uma regra federal que limita esse crescimento, sem exigir que a pergunta escolha a lei ou o índice.",
+      "conditions": [
+        "A regra é associada à preservação das políticas sociais e a uma estratégia de inflação controlada e política fiscal responsável.",
+        "O plano também menciona controle do aumento do gasto primário, eficiência, justiça tributária e combate a privilégios."
+      ],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Para isso, manteremos o novo arcabouço fiscal, que controlou o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário.",
+          "role": "support",
+          "interpretation": "A manutenção do arcabouço identificado pelo próprio plano como controlador do crescimento das despesas responde diretamente à existência do limite normativo."
+        }
+      ],
+      "search_terms": [
+        "arcabouço fiscal",
+        "crescimento das despesas",
+        "gasto primário",
+        "despesa pública",
+        "limite de gastos",
+        "regra fiscal",
+        "responsabilidade fiscal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A classificação não atribui apoio a qualquer teto nominal, desvinculação de pisos ou índice específico; ela se limita à existência da regra defendida pelo documento.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano atribui à Petrobras investimentos futuros em exploração, refino, distribuição e transição energética, mas não enuncia manutenção do governo federal como acionista controlador. Continuidade operacional, integração produtiva e orientação de investimentos não resolvem o desenho acionário exato.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 67,
+          "quote": "A Petrobras deverá retornar ao segmento de distribuição de combustíveis, expandindo sua capacidade de refino e ampliando a atuação da Transpetro para logística de GNL.",
+          "role": "context",
+          "interpretation": "O trecho comprova funções futuras da Petrobras, sem declarar quem deve deter seu controle acionário."
+        }
+      ],
+      "search_terms": [
+        "Petrobras",
+        "acionista controlador",
+        "controle acionário",
+        "controle federal",
+        "controle estatal",
+        "controle público",
+        "privatização da Petrobras",
+        "capital da Petrobras"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O documento não propõe transferir o controle, mas silêncio sobre transferência não prova manutenção. A expansão simultânea de exploração e refino também não equivale a controle federal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano valoriza servidores e negociação permanente, mas não prevê avaliações periódicas de desempenho nem a possibilidade de demitir servidor estável por baixo desempenho comprovado com direito de defesa.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 16,
+          "quote": "Houve a maior reestruturação na gestão de pessoas do governo federal em um único mandato nas últimas três décadas e a retomada da política de valorização e diálogo com servidores. Vamos aprofundar este processo, a partir da Mesa Nacional de Negociação Permanente, que foi reaberta em nosso mandato.",
+          "role": "context",
+          "interpretation": "O trecho trata de valorização e diálogo, sem avaliação periódica ligada à perda do cargo."
+        }
+      ],
+      "search_terms": [
+        "servidor público",
+        "servidores",
+        "estabilidade",
+        "servidor estável",
+        "avaliação de desempenho",
+        "baixo desempenho",
+        "demissão",
+        "exoneração",
+        "perda do cargo",
+        "direito de defesa"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Reestruturação da gestão de pessoas e eficiência administrativa não implicam autorização legal para demissão por desempenho.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano reconhece o elevado custo das tarifas e anuncia apoio federal a infraestrutura, transporte coletivo de alta capacidade e renovação de frotas. Não propõe gratuidade universal para passageiros nem repasse federal aos municípios para financiar tarifa zero.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Nosso compromisso é continuar apoiando investimentos em transporte coletivo de alta capacidade e na modernização e eletrificação progressiva das frotas do transporte coletivo.",
+          "role": "context",
+          "interpretation": "A medida financia investimento e frota, não o custeio federal da gratuidade universal."
+        }
+      ],
+      "search_terms": [
+        "tarifa zero",
+        "passe livre",
+        "transporte gratuito",
+        "gratuidade do transporte",
+        "subsídio tarifário",
+        "repasse federal",
+        "transporte coletivo",
+        "custo das tarifas",
+        "passageiros"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Reduzir o custo social da mobilidade por infraestrutura ou eletrificação não define tarifa zero, público universal ou participação federal no subsídio operacional municipal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete avançar na regulamentação do Sistema Brasileiro de Comércio de Emissões, que o próprio documento identifica como mercado regulado de carbono. O instrumento coincide diretamente com a afirmação.",
+      "conditions": [
+        "A regulamentação será articulada aos objetivos da Nova Indústria Brasil.",
+        "O plano não define setores abrangidos, limites de emissão, preços ou distribuição inicial de créditos."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Avançaremos em uma regulamentação do Sistema Brasileiro de Comércio de Emissões (SBCE), aprovado neste mandato, articulada com objetivos da Nova Indústria Brasil.",
+          "role": "support",
+          "interpretation": "O compromisso futuro de regulamentar o SBCE apoia expressamente o mercado público regulado de emissões."
+        }
+      ],
+      "search_terms": [
+        "mercado regulado de carbono",
+        "mercado de carbono",
+        "Sistema Brasileiro de Comércio de Emissões",
+        "SBCE",
+        "comércio de emissões",
+        "créditos de carbono",
+        "emissões"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Financiamento climático, títulos sustentáveis e pagamento por serviços ambientais são instrumentos adicionais e não foram usados como substitutos da evidência direta sobre o SBCE.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê transparência algorítmica, rastreabilidade de conteúdo sintético, regras para dados e salvaguardas socioambientais para datacenters. Não classifica sistemas de IA por alto risco nem exige avaliação, registro ou supervisão antes do uso desses sistemas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Vamos consolidar a transparência algorítmica e a rastreabilidade de conteúdo sintético, ancoradas no Centro Nacional de Transparência Algorítmica – porque democracia não convive com decisão automatizada que ninguém pode examinar.",
+          "role": "context",
+          "interpretation": "Transparência de decisões automatizadas não define obrigações preventivas anteriores ao uso para sistemas classificados como de alto risco."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "sistemas de IA",
+        "alto risco",
+        "risco elevado",
+        "avaliação de risco",
+        "avaliação de impacto algorítmico",
+        "registro",
+        "supervisão humana",
+        "obrigações preventivas",
+        "transparência algorítmica"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "As salvaguardas obrigatórias das pp. 54–55 recaem sobre impactos de infraestrutura e datacenters, não sobre a autorização prévia de usos de IA de alto risco.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No contexto explícito de reduzir filas da atenção especializada e ampliar a oferta de consultas, exames e cirurgias, o plano promete continuar parcerias com hospitais privados para prestar exames e cirurgias ao SUS. Isso admite capacidade privada complementar quando a oferta pública não atende a demanda, embora o texto use parceria e créditos em vez de descrever um contrato comum.",
+      "conditions": [
+        "A capacidade privada citada abrange exames e cirurgias dentro do Agora Tem Especialistas.",
+        "A contrapartida prevista aos hospitais é formada por créditos financeiros ou compensação de dívidas.",
+        "A medida complementa investimentos na rede pública e não transfere a gestão de unidades públicas."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Começamos a atuar de forma firme na integração entre serviços, na regulação do sistema, na ampliação da rede hospitalar e de equipamentos para reduzir filas para exames e tratamentos especializados.",
+          "role": "context",
+          "interpretation": "O trecho identifica insuficiência de oferta e filas como problema que o programa busca enfrentar."
+        },
+        {
+          "page": 37,
+          "quote": "Daremos continuidade à parceria com hospitais privados para assegurar, em troca de créditos financeiros ou de dívidas, a oferta de exames e cirurgias para o SUS.",
+          "role": "support",
+          "interpretation": "A parceria autoriza oferta assistencial privada complementar de exames e cirurgias para usuários do SUS."
+        }
+      ],
+      "search_terms": [
+        "hospitais privados",
+        "clínicas privadas",
+        "parceria",
+        "oferta de exames",
+        "cirurgias",
+        "filas",
+        "capacidade da rede pública",
+        "atenção especializada",
+        "Agora Tem Especialistas"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O compromisso com SUS público e universal e a ampliação de equipamentos próprios coexistem com a parceria privada; não eliminam a autorização complementar documentada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano elogia e amplia proteção social, Bolsa Família, inclusão produtiva e emprego formal, mas não diz que uma pessoa que obtém emprego formal pode manter parte de um benefício de transferência de renda por um período de transição. Continuidade geral da proteção não estabelece redução gradual individual.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "O combate às desigualdades requer justiça tributária, fortalecimento do Estado de bem-estar social, valorização do salário-mínimo, inclusão produtiva, educação, saúde, programas eficientes de transferência de renda. Por isso, devemos manter, aperfeiçoar e ampliar as políticas de proteção social para quem mais necessita.",
+          "role": "context",
+          "interpretation": "A diretriz apoia proteção social em geral, sem regra sobre benefício parcial após ingresso em emprego formal."
+        }
+      ],
+      "search_terms": [
+        "Bolsa Família",
+        "transferência de renda",
+        "emprego formal",
+        "carteira assinada",
+        "regra de proteção",
+        "regra de emancipação",
+        "benefício parcial",
+        "desligamento gradual",
+        "período de transição",
+        "manutenção parcial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O crescimento do emprego formal, a qualificação e a inclusão produtiva podem coexistir com vários desenhos de benefício e não revelam o tratamento do benefício depois da contratação.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "CONDICIONAL_OU_MISTA",
+      "evidence_strength": "mixed",
+      "rationale": "O plano oferece atendimento domiciliar público e multiprofissional para pessoas idosas com maior dependência, dificuldades de locomoção e limitações funcionais. Porém, o capítulo sobre pessoas com deficiência prevê reabilitação, acessibilidade e inclusão, sem estender a elas o cuidado domiciliar. O recorte cobre diretamente os idosos, mas não todo o público composto da afirmação.",
+      "conditions": [
+        "A oferta domiciliar é explicitamente dirigida a pessoas idosas com maior dependência, limitações funcionais, condições crônicas ou fragilidades clínicas.",
+        "O plano promete dar escala nacional ao PADI Brasil por meio do SUS.",
+        "Não foi encontrada oferta domiciliar correspondente para pessoas com deficiência."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "No próximo mandato, intensificaremos tanto as ações de promoção da autonomia das pessoas idosas, voltadas para aquelas pessoas com baixo grau de dependência, quanto medidas centradas na garantia do cuidado para aquelas pessoas com maior dependência.",
+          "role": "condition",
+          "interpretation": "O plano inclui expressamente pessoas idosas de maior dependência como público de cuidado."
+        },
+        {
+          "page": 22,
+          "quote": "O Programa de Atenção Domiciliar ao Idoso – PADI Brasil, voltado ao atendimento domiciliar multiprofissional às pessoas idosas com limitações funcionais, condições crônicas e fragilidades clínicas, já está implantado em 2.655 municípios. Vamos dar escala a esse programa do SUS para que idosos tenham acesso a esse direito em todo território nacional.",
+          "role": "support",
+          "interpretation": "O trecho cria a coincidência de oferta pública, modalidade domiciliar, equipe multiprofissional e idosos dependentes, mas permanece restrito aos idosos."
+        }
+      ],
+      "search_terms": [
+        "cuidado domiciliar",
+        "atenção domiciliar",
+        "atendimento domiciliar",
+        "porta em porta",
+        "PADI Brasil",
+        "idosos",
+        "pessoas com deficiência",
+        "maior dependência",
+        "alta dependência",
+        "limitações funcionais",
+        "cuidador"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A p. 23 mantém o Viver sem Limites e amplia centros de reabilitação e oficinas ortopédicas para pessoas com deficiência, mas não oferece atendimento profissional na residência para esse grupo. Esse silêncio impede concordância integral e o apoio explícito aos idosos impede tratar o objeto inteiro como ausente.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano estabelece metas de alfabetização, recomposição da aprendizagem e financiamento federal de expansão e infraestrutura educacional. Não vincula uma parcela dos recursos federais ao cumprimento de metas de aprendizagem pelas redes.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 31,
+          "quote": "Seguiremos com as ações e políticas já pactuadas com os estados e municípios brasileiros para chegarmos à meta de 80% das nossas crianças alfabetizadas na idade certa.",
+          "role": "context",
+          "interpretation": "O trecho define uma meta de aprendizagem, mas não a torna condição para repasse de recursos."
+        }
+      ],
+      "search_terms": [
+        "metas de aprendizagem",
+        "aprendizagem",
+        "alfabetização",
+        "desempenho escolar",
+        "resultado educacional",
+        "Fundeb",
+        "VAAR",
+        "recursos federais",
+        "financiamento da educação",
+        "condicionamento de recursos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Apoio federativo, avaliação de resultados, metas do PNE e financiamento do tempo integral aparecem no documento, mas não são conectados por uma regra de remuneração ou repasse condicionado a desempenho.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete atuar pela redução da jornada semanal para 40 horas sem redução salarial. A afirmação aprovada não fixa um novo limite numérico, portanto o compromisso responde diretamente à direção da mudança.",
+      "conditions": [
+        "O compromisso é associado ao fim da escala 6x1 e aos termos aprovados na Câmara dos Deputados.",
+        "O plano não detalha exceções setoriais nem calendário de transição."
+      ],
+      "evidence": [
+        {
+          "page": 75,
+          "quote": "Manteremos nossa ação junto ao Senado Federal para assegurar o fim da escala 6x1 e a redução da jornada de trabalho para 40 horas, sem redução salarial, nos termos aprovados na Câmara dos Deputados.",
+          "role": "support",
+          "interpretation": "O trecho apoia literalmente redução da jornada semanal sem perda salarial."
+        }
+      ],
+      "search_terms": [
+        "jornada semanal",
+        "jornada de trabalho",
+        "redução da jornada",
+        "40 horas",
+        "36 horas",
+        "30 horas",
+        "escala 6x1",
+        "sem redução salarial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O fim da escala 6x1 é uma medida adicional. A evidência decisiva é a redução explícita para 40 horas sem redução salarial.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona aborto, interrupção voluntária da gestação, descriminalização ou prazo gestacional. Planejamento reprodutivo, contracepção e maternidade segura tratam de assistência em saúde e não decidem a punição criminal do aborto voluntário.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Fortaleceremos o planejamento reprodutivo ampliando o acesso a métodos contraceptivos modernos e de longa duração, a serem distribuídos gratuitamente no SUS, como fizemos com o Implanom.",
+          "role": "context",
+          "interpretation": "A política de contracepção não informa se o aborto voluntário deve deixar de ser crime em algum prazo."
+        }
+      ],
+      "search_terms": [
+        "aborto",
+        "descriminalização",
+        "legalização",
+        "interrupção voluntária",
+        "interrupção da gestação",
+        "gestação indesejada",
+        "prazo gestacional",
+        "saúde reprodutiva",
+        "planejamento reprodutivo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O compromisso com saúde integral das mulheres e contraceptivos não deve ser usado para inferir uma posição penal que o plano não formula.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano protege crianças e adolescentes e propõe prevenção da violência juvenil, mediação e justiça restaurativa, mas não define maioridade penal, imputabilidade ou aplicação do regime penal adulto aos 16 e 17 anos. Políticas preventivas não respondem ao alcance geral da afirmação.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "Fortaleceremos as políticas de prevenção à violência com foco na proteção da juventude negra e da expansão de programas de mediação comunitária e justiça restaurativa em parceria com estados e municípios.",
+          "role": "context",
+          "interpretation": "O trecho trata prevenção e justiça restaurativa, sem estabelecer regime penal por idade."
+        }
+      ],
+      "search_terms": [
+        "maioridade penal",
+        "responsabilidade penal",
+        "imputabilidade",
+        "imputável",
+        "16 anos",
+        "16 e 17",
+        "adolescentes",
+        "regime penal adulto",
+        "medida socioeducativa",
+        "crimes graves"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A afirmação abrange qualquer crime. Mesmo uma referência a crimes graves seria insuficiente para concordância geral, e nenhuma regra etária foi encontrada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê inteligência policial, sensores, imagens de satélite, centros de comando e câmeras corporais, mas não reconhecimento facial em espaços públicos nem comparação de imagens com bases de foragidos. Tecnologias de monitoramento com outras finalidades não respondem ao instrumento e à finalidade específicos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 30,
+          "quote": "Ampliaremos o programa de estímulos para uso de câmeras corporais, com padrões nacionais para utilização, gestão e preservação das imagens.",
+          "role": "context",
+          "interpretation": "Câmeras no corpo de policiais e regras de preservação das imagens não constituem reconhecimento facial em espaço público para localizar foragidos."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "videomonitoramento",
+        "foragidos",
+        "pessoas procuradas",
+        "mandado de prisão",
+        "câmeras",
+        "imagens",
+        "inteligência policial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "O uso de IA contra crimes ambientais e as câmeras corporais não autorizam inferir identificação biométrica de pessoas em locais públicos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano promete aprofundar a aproximação geopolítica do Brasil com o BRICS e fortalecer o banco e os mecanismos financeiros do grupo. A continuidade e intensificação dessa atuação pressupõem que o Brasil permaneça no BRICS.",
+      "conditions": [
+        "A aproximação com o BRICS coexiste com participação no G20, reforma de instituições multilaterais e política externa universalista.",
+        "Permanência não implica apoio a toda decisão do grupo ou de seus membros."
+      ],
+      "evidence": [
+        {
+          "page": 81,
+          "quote": "Defenderemos a reforma da arquitetura financeira internacional, com a democratização do FMI, do Banco Mundial e dos bancos multilaterais e o fortalecimento do CAF, do Novo Banco de Desenvolvimento (NDB) e dos mecanismos financeiros dos BRICS.",
+          "role": "support",
+          "interpretation": "O fortalecimento de instituições e mecanismos do BRICS exige continuidade da atuação brasileira no grupo."
+        },
+        {
+          "page": 81,
+          "quote": "Aprofundaremos a aproximação geopolítica com o BRICS e com o Sul Global, bem como com o G20, espaços fundamentais para a afirmação dos interesses da maioria da humanidade.",
+          "role": "support",
+          "interpretation": "A promessa de aprofundar a aproximação com o BRICS implica permanência, embora não use a palavra permanecer."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "BRICS+",
+        "Novo Banco de Desenvolvimento",
+        "NDB",
+        "mecanismos financeiros dos BRICS",
+        "Sul Global",
+        "permanecer",
+        "sair do grupo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A política externa também busca outros fóruns e regiões; essa diversificação não contradiz a permanência e o aprofundamento explícito da relação com o BRICS.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano celebra a conclusão do acordo Mercosul–União Europeia e promete aprofundar o Mercosul e investir em novos acordos comerciais. Contudo, não promete ratificar o texto final, não descreve aprovação interna e não avalia cláusulas ou condições do texto final. Apoio diplomático ao acordo concluído é insuficiente para atribuir a decisão procedimental específica.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 79,
+          "quote": "Nossa diplomacia comercial permitiu abrir 656 novos mercados para os produtos brasileiros e a conclusão de acordos do Mercosul com a União Europeia, EFTA e Singapura.",
+          "role": "context",
+          "interpretation": "O acordo é apresentado como realização diplomática, mas o trecho não decide sua ratificação pelo Brasil."
+        },
+        {
+          "page": 80,
+          "quote": "Investiremos em novos acordos comerciais e na abertura de novos mercados para nossos bens e serviços, de modo a continuar enfrentando agressões comerciais e a defender os interesses do país com base nas normas internacionais e no multilateralismo.",
+          "role": "context",
+          "interpretation": "A orientação comercial geral não substitui uma posição sobre a ratificação do texto final específico."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo Mercosul-União Europeia",
+        "acordo comercial",
+        "conclusão de acordos",
+        "ratificação",
+        "ratificar",
+        "texto final",
+        "aprovação interna",
+        "Congresso"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A avaliação favorável da conclusão do acordo sustenta interesse político, mas o objeto aprovado é a ratificação do texto final. Sem esse passo ou uma aprovação inequívoca do texto final, a classificação permanece ausente.",
+      "reformulation_suggestion": null
+    }
+  ]
+}
