@@ -6,6 +6,8 @@ import 'package:guia_eleitoral/core/theme/app_theme.dart';
 void main() {
   test('web bootstrap starts with only the denied consent command', () {
     final index = File('web/index.html').readAsStringSync();
+    final workflow =
+        File('../.github/workflows/deploy-web.yml').readAsStringSync();
     expect(index, contains("gtag('consent', 'default'"));
     for (final field in [
       'analytics_storage',
@@ -25,6 +27,8 @@ void main() {
     ]) {
       expect(index, isNot(contains(forbidden)));
     }
+    expect(workflow, contains('--no-web-resources-cdn'));
+    expect(workflow, contains('--dart-define=ANALYTICS_ENABLED='));
   });
 
   test('Flutter and Android startup keep collection off', () {
