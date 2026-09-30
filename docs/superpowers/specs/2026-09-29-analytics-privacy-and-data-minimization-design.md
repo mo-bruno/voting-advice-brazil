@@ -6,7 +6,7 @@
 
 **Projeto:** Farol Político
 
-**Base auditada:** `origin/main` em `d31078e6e4975b0b0c61f1fe0e4d263cc55a451b`
+**Base auditada:** `origin/main` em `32d96c02e666db91d7f5a90aec23b0e5c53c4625`
 
 ## Objetivo
 
@@ -39,6 +39,13 @@ cria fluxos, permissões ou textos específicos de lojas iOS/Android.
 - O mesmo UUID local continua necessário para seguir um ator político,
   autoria/ações na comunidade e um possível retorno do IoT. A mudança no quiz
   não pode apagar nem rotacionar essa identidade funcional.
+- A gaveta cria hoje esse UUID funcional local ao montar e mostra apenas um
+  trecho à própria pessoa. Essa criação local não é Analytics nem transmite o
+  UUID; o envio só ocorre quando uma função que dele depende é usada.
+- Posts e comentários podem revelar opinião política, ficam persistidos e
+  públicos sob alias pseudônimo estável e passam por moderação via NVIDIA NIM.
+  Por isso, publicação e comentário também precisam de aviso específico junto
+  da ação, sem serem confundidos com consentimento de Analytics.
 - O PR #59 permite que a própria pessoa gere e compartilhe uma imagem e uma
   legenda com candidato e afinidade. Essa divulgação é voluntária e precisa
   ser descrita separadamente; ela não autoriza envio desses valores ao GA4.
@@ -55,6 +62,16 @@ cria fluxos, permissões ou textos específicos de lojas iOS/Android.
   `follow_waitlist_registered` e `follow_waitlist_failed`, todos sem
   parâmetros. Eles pertencem ao mesmo gate de consentimento dos demais
   eventos.
+- O PR #63 atualizou identidade visual, ícones e previews sociais estáticos,
+  sem criar evento ou integração analítica. O exportador determinístico desses
+  assets passou a consumir as mesmas fixtures Inter; ao promovê-las para assets
+  locais, o caminho do exportador e sua documentação também precisam mudar para
+  que a geração de marca continue reproduzível.
+- O tema usa hoje `google_fonts` e o build Web padrão pode buscar recursos de
+  runtime em CDNs do Flutter/Google antes da escolha sobre métricas. O corte
+  promoverá as variantes Inter já versionadas como fixtures para assets locais
+  do aplicativo, preservará sua licença/proveniência e produzirá o Web com
+  recursos de runtime locais.
 
 ## Decisões de escopo
 
@@ -76,8 +93,8 @@ Não inclui:
 - publicidade, Google Signals, remarketing ou personalização de anúncios;
 - criação de conta, login ou recuperação do UUID local;
 - exclusão da comunidade, de follows ou do compartilhamento voluntário;
-- remoção das tabelas de quiz do schema, pois elas continuam pertencendo ao
-  modo IoT desativado;
+- remoção das tabelas de quiz do schema, pois elas continuam pertencendo a um
+  eventual modo IoT explicitamente habilitado;
 - instrumentação de todas as lacunas de produto encontradas na auditoria de
   cobertura. Essa cobertura será estudada separadamente antes de ampliar o
   vocabulário de eventos.
@@ -116,7 +133,7 @@ destas duas decisões fora do código:
   publicados.
 
 A falta da identidade real ou de um canal funcional bloqueia a publicação do
-novo aviso; não será contornada com nome de marca, placeholder ou e-mail
+novo aviso; não será contornada com nome de marca, valor fictício ou e-mail
 inventado.
 
 ## Consentimento de Analytics
@@ -153,6 +170,21 @@ consentimento. Esse sink:
 4. inicializa Firebase e Analytics uma única vez;
 5. envia o evento pelo único pipeline Firebase já existente.
 
+Além da escolha da pessoa, o build terá um kill switch operacional
+`ANALYTICS_ENABLED`, negado por padrão. Quando falso, o sink descarta eventos e
+a ponte mantém todos os estados Google negados mesmo que a preferência local
+seja `granted`; a preferência não é apagada. Esse controle será usado para
+pausar a coleta durante o relink entre Firebase e a nova propriedade, sem
+transformar uma variável operacional em consentimento.
+
+Como esse switch é compilado no bundle Web, a resposta da rota raiz `/` e os
+arquivos mutáveis de entrada e código (`index.html`, bootstrap, service worker,
+`main.dart.js` e versão)
+exigirão revalidação no Hosting. O corte provará a atualização também em um
+perfil previamente aquecido. Uma aba já aberta não pode ser desligada por um
+deploy remoto; esse risco residual será tratado por espera/monitoramento do ID
+antigo, sem alegar pausa universal enquanto houver tráfego.
+
 No Web, antes da inicialização, a ponte só emitirá o comando de consentimento.
 Ela não carregará `gtag.js` nem chamará `js`, `config` ou `event`. O Firebase
 continuará sendo o único carregador e emissor.
@@ -184,6 +216,12 @@ permite apenas eventos futuros. Falha ao inicializar ou atualizar o SDK não
 impede o uso do site; o evento é perdido e o erro fica restrito a diagnóstico
 sem payload político.
 
+A revogação vale para a coleta futura. Ela não promete apagar
+retroativamente o Firebase Installation ID, cookies ou eventos já recebidos;
+esses dados permanecem sujeitos aos prazos publicados e aos pedidos de direitos
+pelo canal de privacidade. Enquanto o estado estiver negado, identificadores
+locais remanescentes não poderão gerar novos hits.
+
 ## Experiência no site
 
 ### Primeira visita
@@ -201,6 +239,11 @@ O banner terá ações com igual destaque visual e sem opção pré-marcada:
 
 Fechar, continuar navegando ou iniciar o quiz não conta como aceitação. O
 banner não bloqueia o conteúdo nem o quiz.
+
+O site não fará requisições de fonte ao Google nem buscará CanvasKit/recursos
+do Flutter em CDN. A tipografia de corpo continuará usando Inter, agora
+empacotada localmente nos pesos 400, 600 e 800; a fonte de display já
+empacotada continuará local e o build Web usará `--no-web-resources-cdn`.
 
 ### Aviso e preferências permanentes
 
@@ -237,12 +280,26 @@ anônima”. A formulação será “registro sem nome, separado das outras
 atividades”, deixando claro que o navegador guarda uma credencial aleatória
 para consultar ou retirar o interesse.
 
-### Transparência específica do quiz
+### Transparência e manifestação específica no quiz
 
-A introdução do quiz informará, sem uma segunda caixa de consentimento, que as
-respostas são enviadas à API para calcular o resultado e não são armazenadas
-na versão pública com IoT desligado. O processamento necessário ao cálculo é
-separado e independente da escolha sobre Analytics.
+A introdução do quiz e o trecho imediatamente anterior à ação final de ver o
+resultado informarão, em destaque e sem uma segunda caixa, que as respostas
+podem revelar opinião política, são enviadas à API para calcular o resultado e
+não são armazenadas na versão pública com IoT desligado. Acionar
+`VER RESULTADOS` depois desse aviso constitui a manifestação positiva,
+específica para esse processamento transitório. O cálculo é separado e
+independente da escolha sobre Analytics; rejeitar métricas não impede o quiz.
+
+### Transparência na comunidade
+
+Imediatamente antes de `PUBLICAR` e do envio de comentário, um aviso destacado
+informará que o texto pode revelar opinião política, será persistido, ficará
+público sob alias pseudônimo estável e será enviado à NVIDIA NIM para
+moderação. A ação deliberada de publicar/comentar depois desse aviso será a
+manifestação específica para essa função; não haverá checkbox e ela não aceitará
+Analytics. A pessoa será orientada a não incluir dados pessoais que não queira
+publicar e a política explicará os mecanismos reais de remoção e de exercício
+de direitos.
 
 ## Persistência das respostas do quiz
 
@@ -308,7 +365,9 @@ receber a página e o referrer, sem prometer que toda URL é anônima.
 - retenção de eventos e usuários: 2 meses;
 - redefinição da retenção em nova atividade: desligada;
 - sem Google Signals, personalização de anúncios ou links publicitários;
-- apenas o stream Web ativo para esta entrega.
+- somente o stream Web recebe tráfego e é selecionado para exportação nesta
+  entrega; o mapeamento Android criado pelo vínculo do Firebase permanece sem
+  coleta e sem tráfego, e não existe alvo iOS configurado.
 
 Relatórios agregados padrão podem ter comportamento de retenção próprio do
 GA4; o aviso não prometerá que toda contagem agregada desaparece em 60 dias.
@@ -316,7 +375,9 @@ GA4; o aviso não prometerá que toda contagem agregada desaparece em 60 dias.
 ### BigQuery
 
 - expiração padrão de novas tabelas: 60 dias;
-- exportação de dados pseudônimos por usuário: desligada;
+- exportação `users_*`/`pseudonymous_users_*` de user-data: desligada; as
+  tabelas diárias de eventos continuam contendo o `user_pseudo_id` próprio do
+  GA4;
 - exportação limitada aos eventos necessários;
 - os papéis de projeto concedidos anteriormente aos dois colaboradores serão
   preservados, conforme instrução expressa, sem ampliar novos acessos.
@@ -332,13 +393,51 @@ sem apresentar identificadores pseudônimos como anônimos.
   da exclusão histórica do quiz;
 - o interesse na validação da área Acompanhar será retido até a pessoa retirar
   o registro, até o encerramento da validação ou por no máximo 180 dias após o
-  registro, o que ocorrer primeiro; a limpeza será uma operação explícita e
-  verificável, sem scheduler novo nesta entrega;
+  registro, o que ocorrer primeiro; a operação registrará a próxima expiração
+  e executará uma limpeza explícita e verificável até essa data, sem scheduler
+  novo nesta entrega;
 - logs padrão do Cloud Run permanecem sujeitos à retenção configurada no
   Cloud Logging; o aviso usará o prazo efetivamente verificado na implantação,
   atualmente 30 dias para `_Default`;
+- o encaminhamento de privacidade usará no ImprovMX o nível efetivo `Minimum`
+  e retenção de 7 dias, verificados sem expor o destino privado; a cópia entregue
+  à caixa segue o critério separado de atendimento/necessidade legal com revisão
+  anual;
 - logs de auditoria obrigatórios têm finalidade e retenção próprias e não
   serão descritos como analytics de produto.
+
+## Cobertura de produto após os PRs atuais
+
+A base auditada possui 23 eventos customizados. Entre visitantes que aceitarem
+métricas, a cobertura é suficiente para observar o funil por macroetapas do
+quiz — introdução, início/reinício, avanço e resposta genérica, conclusão,
+ponderação, seleção, resultado e comparação. Sem índice/ID de tese, ela não
+localiza abandono em uma tese específica, deliberadamente. Os cinco eventos
+novos da validação Acompanhar cobrem visualização, abertura do convite, clique,
+registro e falha sem parâmetro; a contagem deduplicada no banco, e não o GA4,
+continua sendo a fonte de verdade da demanda registrada.
+
+Ela não cobre integralmente:
+
+- entrada da Home e clique inicial para o quiz, além do `page_view` automático;
+- leitura, publicação, comentário, voto ou denúncia na comunidade;
+- início/sucesso do compartilhamento voluntário do resultado;
+- busca, perfil e follow de atores quando a função real for habilitada;
+- falhas funcionais do quiz/API e métricas próprias de desempenho.
+
+A recomendação é não acrescentar esses eventos no mesmo corte. Primeiro será
+criada uma linha de base limpa, consentida e sem duplicação. Isso evita ampliar
+coleta durante uma correção de privacidade e evita instrumentar funções ainda
+desligadas. Comunidade e compartilhamento também exigem desenho cuidadoso para
+que texto, destino, candidato, partido e afinidade nunca virem parâmetros.
+
+Depois de ao menos um ciclo estável do novo Analytics, uma revisão separada
+de cobertura poderá propor o menor conjunto necessário. Cada evento novo terá
+de responder a uma decisão de produto concreta, usar nome genérico e baixa
+cardinalidade, carregar no máximo contagens/durações não negativas, passar pelo
+mesmo consent gate e ganhar teste negativo contra conteúdo político, texto
+livre e identificadores. Até essa revisão, os 23 nomes formam uma allowlist
+fechada; lacuna de produto não autoriza coleta improvisada.
 
 ## Limpeza e corte de histórico
 
@@ -352,11 +451,12 @@ Uma solicitação comum de exclusão do GA4 não remove parâmetros numéricos n
 zera necessariamente as contagens históricas. Como o histórico contém IDs
 numéricos de teses e eventos duplicados, o corte limpo será:
 
-1. criar e configurar uma nova propriedade GA4 sem publicidade;
+1. criar e configurar uma nova propriedade GA4 vazia, sem stream manual e sem
+   publicidade;
 2. remover o link do Firebase com a propriedade antiga;
 3. vincular o mesmo projeto Firebase à nova propriedade;
-4. atualizar o `measurementId` do Web app no código gerado e validar o único
-   pipeline;
+4. inventariar e endurecer os streams provisionados pelo vínculo, atualizar o
+   `measurementId` do Web app no código gerado e validar o único pipeline;
 5. recriar o vínculo do BigQuery com as configurações mínimas;
 6. mover a propriedade antiga para a lixeira do Analytics.
 
@@ -393,12 +493,16 @@ verificados imediatamente antes da operação.
 1. publicar o backend com o gate de IoT;
 2. provar em produção que submissões com e sem UUID não gravam quando IoT está
    desligado;
-3. publicar o site com consentimento, aviso e omissão do UUID no quiz;
-4. validar os três estados em navegador limpo;
-5. configurar a nova propriedade GA4, o stream e a retenção;
-6. configurar BigQuery e sua expiração;
-7. observar um ciclo de exportação e confirmar os campos de consentimento;
-8. executar a limpeza aprovada;
+3. publicar o site com consentimento, aviso e omissão do UUID no quiz, mantendo
+   `ANALYTICS_ENABLED=false`;
+4. validar a UI, o corpo real de `POST /quiz/submit` e a ausência de recursos
+   Analytics/Google/Flutter CDN enquanto pausado;
+5. criar, vincular e endurecer a nova propriedade GA4 e implantar seu novo
+   `measurementId` ainda com coleta pausada;
+6. configurar o BigQuery diário, sem user-data export, e sua expiração;
+7. habilitar Analytics, validar todos os estados e aguardar a tabela diária
+   completar a janela de atualização tardia de 72 horas;
+8. executar, somente após confirmações separadas, a limpeza aprovada;
 9. registrar inventários, horários, resultados e janelas de recuperação.
 
 O workflow existente já publica backend antes do Web para o mesmo commit. Um
@@ -441,6 +545,11 @@ porque isso reativaria a persistência silenciosa para clientes antigos.
 - a validação de interesse é descrita como pseudônima/sem nome, nunca como
   anônima, e informa finalidade, retirada e retenção máxima de 180 dias;
 - quiz com IoT falso omite UUID;
+- a introdução e a ação final do quiz destacam o processamento transitório de
+  respostas que podem revelar opinião política, sem vinculá-lo ao aceite de
+  Analytics;
+- post e comentário exibem aviso destacado sobre opinião política, persistência,
+  alias público e NVIDIA NIM imediatamente antes da ação deliberada;
 - backend com IoT falso e UUID legado devolve 200 sem criar ou atualizar
   `devices`/`quiz_responses` nem fazer push;
 - backend com IoT verdadeiro preserva persistência e push;
@@ -452,12 +561,19 @@ porque isso reativaria a persistência silenciosa para clientes antigos.
 Em perfil limpo, sem bloqueador e com `Preserve log`:
 
 - antes da escolha e depois de rejeitar: zero chamadas a `g/collect`,
-  `google-analytics.com`, `googletagmanager.com` e Firebase Installations;
+  `google-analytics.com`, `googletagmanager.com`, Firebase Installations,
+  `fonts.googleapis.com`, `fonts.gstatic.com` ou recursos Flutter/CanvasKit em
+  `www.gstatic.com`;
 - antes da escolha: nenhum cookie `_ga*` e nenhum FID no IndexedDB;
+- o UUID funcional local pode existir, mas não sai do navegador até uma ação de
+  comunidade/follow/IoT que realmente o use;
 - depois de aceitar: um único carregamento/configuração e eventos únicos;
-- depois de revogar: cessam novos hits;
+- depois de revogar: cessam novos hits; cookies/FID remanescentes não são
+  apresentados como apagados nem geram tráfego enquanto negado;
 - ao recarregar: a escolha é restaurada sem banner incorreto;
 - o quiz completa normalmente nos três estados;
+- no build real com IoT falso, `POST /quiz/submit` contém respostas apenas para
+  o cálculo transitório e não contém `device_id`; contagens do Neon não mudam;
 - o BigQuery novo mostra `analytics_storage=Yes` apenas para tráfego aceito e
   estados de publicidade negados.
 
@@ -474,13 +590,19 @@ flutter analyze
 flutter test
 flutter test --platform chrome test/analytics_default_pipeline_web_test.dart
 flutter build web --release \
+  --no-web-resources-cdn \
   --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
+  --dart-define=ANALYTICS_ENABLED="$ANALYTICS_ENABLED" \
+  --dart-define=PUBLIC_APP_URL="$PUBLIC_APP_URL" \
   --dart-define=PRIVACY_CONTROLLER_NAME="$PRIVACY_CONTROLLER_NAME" \
   --dart-define=PRIVACY_CONTACT_EMAIL="$PRIVACY_CONTACT_EMAIL"
 ```
 
-As duas variáveis do comando são fornecidas pela implantação. O workflow
-rejeita sua ausência antes de executar o build.
+As quatro variáveis de implantação do comando (`ANALYTICS_ENABLED`,
+`PUBLIC_APP_URL`, controlador e contato) são fornecidas pelo workflow. A
+identidade e o contato têm validação obrigatória; o kill switch aceita apenas
+`true`/`false`, e todos os valores são explícitos antes do build.
 
 ## Fontes normativas e técnicas usadas no desenho
 
