@@ -13,6 +13,7 @@ import 'widgets/news_card.dart';
 import 'widgets/news_states.dart';
 
 const String _camaraNewsUrl = 'https://www.camara.leg.br/noticias';
+const String _quizGuideUrl = 'https://fpolitico.com.br/eleicoes-2026/';
 
 class HomePage extends StatefulWidget {
   const HomePage({
@@ -51,11 +52,15 @@ class _HomePageState extends State<HomePage> {
     unawaited(_news.load());
   }
 
-  Future<void> _open(String url) async {
+  Future<void> _open(String url, {bool isQuizGuide = false}) async {
     final ok = await _openLink(Uri.parse(url));
     if (!ok && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Não foi possível abrir a notícia.')),
+        SnackBar(
+          content: Text(isQuizGuide
+              ? 'Não foi possível abrir o guia do quiz.'
+              : 'Não foi possível abrir a notícia.'),
+        ),
       );
     }
   }
@@ -80,7 +85,11 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (!desktop) ...[
-                          _QuizInvitation(onPressed: widget.onStartQuiz),
+                          _QuizInvitation(
+                            onPressed: widget.onStartQuiz,
+                            onLearnMore: () => unawaited(
+                                _open(_quizGuideUrl, isQuizGuide: true)),
+                          ),
                           const SizedBox(height: 40),
                         ],
                         const _SectionTitle(),
@@ -117,7 +126,10 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                                 flex: 36,
                                 child: _QuizInvitation(
-                                    onPressed: widget.onStartQuiz)),
+                                  onPressed: widget.onStartQuiz,
+                                  onLearnMore: () => unawaited(
+                                      _open(_quizGuideUrl, isQuizGuide: true)),
+                                )),
                           ],
                         ),
                       ),
@@ -169,9 +181,10 @@ class _HomePageState extends State<HomePage> {
 }
 
 class _QuizInvitation extends StatelessWidget {
-  const _QuizInvitation({required this.onPressed});
+  const _QuizInvitation({required this.onPressed, required this.onLearnMore});
 
   final VoidCallback onPressed;
+  final VoidCallback onLearnMore;
 
   @override
   Widget build(BuildContext context) {
@@ -212,6 +225,11 @@ class _QuizInvitation extends StatelessWidget {
                   onPressed: onPressed,
                   child: const Text('Começar o quiz'),
                 ),
+              ),
+              const SizedBox(height: 8),
+              TextButton(
+                onPressed: onLearnMore,
+                child: const Text('Entenda as fontes e o resultado'),
               ),
             ],
           ),

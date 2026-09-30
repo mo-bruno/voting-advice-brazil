@@ -128,6 +128,27 @@ flutter build web --release \
 
 O valor é público e deve ser uma URL HTTPS. Parâmetros e fragmentos são removidos do endereço compartilhado. Consulte [mobile/.env.example](mobile/.env.example). O compartilhamento depende dos apps disponíveis no dispositivo; abrir o menu não confirma que algo foi publicado.
 
+## Página pública e SEO
+
+O aplicativo permanece na raiz de `https://fpolitico.com.br/`. A página
+`/eleicoes-2026/` apresenta o quiz, as fontes, a metodologia e as perguntas
+frequentes em HTML, disponível sem JavaScript. Seu botão abre `/?tab=quiz`,
+que seleciona a introdução do quiz dentro do shell do aplicativo.
+
+Os arquivos ficam em `mobile/web/` e são copiados pelo próprio
+`flutter build web`; o workflow de publicação existente também os publica.
+Não há etapa adicional de geração nem dependência nova. `robots.txt` aponta
+para o sitemap com a raiz e a página pública. Cada página tem seu próprio
+endereço canônico. As rotas conhecidas do aplicativo continuam usando
+`index.html`; outros endereços inexistentes recebem a página `404.html`.
+
+Depois de publicar, inspecione a raiz e `/eleicoes-2026/` no Search Console,
+execute o teste ao vivo e consulte o HTML renderizado. Envie `/sitemap.xml`
+e solicite a indexação das duas páginas. A solicitação não garante indexação
+nem posição. No relatório de desempenho, acompanhe consultas, impressões,
+cliques e CTR; o funil do quiz já registra `quiz_started`, `quiz_completed`
+e `results_viewed` sem opiniões ou afinidades nos eventos de analytics.
+
 ## API ativa
 
 Os caminhos abaixo usam o prefixo `/api/v1`, exceto saúde e documentação.

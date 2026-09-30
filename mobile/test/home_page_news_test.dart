@@ -229,6 +229,24 @@ void main() {
     expect(starts, 1);
   });
 
+  testWidgets('convite permite consultar a página pública e sua metodologia',
+      (tester) async {
+    final opened = <Uri>[];
+    await tester.pumpWidget(_app(
+      NewsSession.testOnly(api: _api(_payload)),
+      opened: opened,
+    ));
+    await tester.pumpAndSettle();
+
+    final link = find.text('Entenda as fontes e o resultado');
+    expect(link, findsOneWidget);
+    await tester.ensureVisible(link);
+    await tester.tap(link);
+    await tester.pump();
+
+    expect(opened, [Uri.parse('https://fpolitico.com.br/eleicoes-2026/')]);
+  });
+
   testWidgets('mostra os cards quando ha noticias', (tester) async {
     await tester.pumpWidget(_app(NewsSession.testOnly(api: _api(_payload))));
     await tester.pumpAndSettle();
