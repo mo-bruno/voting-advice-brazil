@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "context_owner_agent_id": "/root/plan_clariana",
+  "executor_agent_id": "/root/battery_clariana",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002552484.json",
+    "../2026-09-29-thematic-profiles/profiles/280002552484.md",
+    "../2026-09-29-thematic-profiles/profiles/280002552484.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002552484.json"
+  ],
+  "method": "Reidratei integralmente os quatro arquivos de contexto da leitura anterior, confirmei os hashes do PDF e de questions.json, reli as 15 páginas físicas em raw.txt, layout.txt, raw-pages.json e layout-pages.json, e pesquisei em ambos os extratores os termos e sinônimos registrados em cada resposta. Para cada aproximação temática, reli a página física correspondente e distingui objetivo, instrumento, público, alcance e condição do objeto aprovado.",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano trata de responsabilidade fiscal por revisão de gastos, subsídios e avaliação de impacto, mas não propõe criar imposto sobre grandes fortunas nem qualquer tributo específico sobre patrimônio elevado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios",
+          "role": "context",
+          "interpretation": "O trecho mostra o instrumento fiscal mais próximo, voltado à despesa e a subsídios; ele não decide a existência de imposto sobre grandes fortunas."
+        }
+      ],
+      "search_terms": [
+        "imposto",
+        "tributo",
+        "tributação",
+        "grandes fortunas",
+        "fortuna",
+        "patrimônio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "A responsabilidade fiscal e a transparência de benefícios podem coexistir com adoção ou rejeição do imposto; o plano silencia sobre tributação de fortunas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "Há crédito produtivo e garantias para pequenos negócios e um objetivo geral de ambiente favorável à indústria, mas o plano não direciona linhas de crédito a setores industriais escolhidos como prioritários pela política pública.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Crédito produtivo e garantias",
+          "role": "context",
+          "interpretation": "A linha pertence ao item de pequenos negócios; não seleciona setores industriais prioritários."
+        },
+        {
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital",
+          "role": "context",
+          "interpretation": "O objetivo industrial não identifica crédito dirigido nem setores escolhidos."
+        }
+      ],
+      "search_terms": [
+        "crédito",
+        "financiamento",
+        "empréstimo",
+        "indústria",
+        "industrial",
+        "setor prioritário",
+        "setores prioritários"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O público explícito do crédito são pequenos negócios, critério distinto de seleção setorial industrial; não há banco operador, fonte ou política industrial de crédito.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não trata de minerais estratégicos, extração mineral nem da nacionalidade das empresas admitidas nessa atividade. Investimento privado genérico e concessões de infraestrutura não respondem à participação estrangeira na exploração mineral.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "mineral",
+        "minerais estratégicos",
+        "mineração",
+        "extração",
+        "exploração",
+        "estrangeira",
+        "estrangeiro",
+        "capital externo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O indicador de investimento privado não informa origem nacional ou estrangeira e não tem escopo mineral.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A dívida aparece apenas como indicador fiscal. Não há proposta de auditoria da dívida pública nem de suspender pagamentos durante uma investigação.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Indicadores sugeridos: resultado fiscal; dívida/PIB; programas avaliados; economia obtida por revisão de gastos.",
+          "role": "context",
+          "interpretation": "A dívida/PIB é indicador de acompanhamento; o trecho não prescreve auditoria ou interrupção de pagamentos."
+        }
+      ],
+      "search_terms": [
+        "dívida pública",
+        "dívida",
+        "auditoria",
+        "suspensão",
+        "suspender",
+        "pagamento da dívida"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Monitorar dívida/PIB é compatível com diversas políticas de pagamento e não implica suspensão durante auditoria.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano apoia revisão de gastos, planejamento plurianual e acompanhamento do resultado fiscal, mas não estabelece a existência de uma regra normativa que limite o crescimento das despesas federais.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Planejamento plurianual orientado a metas",
+          "role": "context",
+          "interpretation": "Metas de planejamento não equivalem, por si, a limite normativo para o crescimento da despesa."
+        },
+        {
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios",
+          "role": "context",
+          "interpretation": "Rever gastos é um instrumento de gestão e não define uma regra permanente de crescimento."
+        }
+      ],
+      "search_terms": [
+        "limite",
+        "crescimento das despesas",
+        "despesa",
+        "gasto",
+        "regra fiscal",
+        "teto de gastos",
+        "responsabilidade fiscal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não escolhe lei, índice, teto ou fórmula de crescimento; responsabilidade fiscal genérica não decide o objeto aprovado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano menciona segurança e confiabilidade energética, mas não nomeia a Petrobras nem decide seu controle acionário pelo governo federal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Segurança e confiabilidade energética",
+          "role": "context",
+          "interpretation": "O objetivo energético não especifica propriedade ou controle de qualquer empresa."
+        }
+      ],
+      "search_terms": [
+        "Petrobras",
+        "petróleo",
+        "estatal",
+        "controle acionário",
+        "controle do governo",
+        "energia"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Política energética e controle societário são decisões distintas; não há referência à empresa ou a privatização/reestatização.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe gestão de desempenho com critérios objetivos no serviço público, mas não prevê demissão, mudança de estabilidade, avaliações periódicas com efeito rescisório ou direito de defesa. Pelo recorte da versão 2, avaliação sem consequência de demissão não basta.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos",
+          "role": "context",
+          "interpretation": "O trecho apoia avaliação de desempenho, mas não conecta baixo desempenho à demissão de servidor estável."
+        }
+      ],
+      "search_terms": [
+        "servidor",
+        "serviço público",
+        "desempenho",
+        "demissão",
+        "desligamento",
+        "estabilidade",
+        "avaliação periódica",
+        "direito de defesa"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Formação, liderança e mobilidade de talentos podem existir sem autorização legal para demitir servidor estável por baixo desempenho.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe tarifa zero, gratuidade universal do transporte coletivo urbano nem repasse federal aos municípios para essa finalidade. Sua agenda de transportes limita-se à infraestrutura logística.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Rodovias e manutenção baseada em desempenho",
+          "role": "context",
+          "interpretation": "O item mais próximo trata de infraestrutura rodoviária e não de transporte coletivo urbano gratuito."
+        }
+      ],
+      "search_terms": [
+        "tarifa zero",
+        "gratuidade",
+        "transporte coletivo",
+        "transporte urbano",
+        "passageiros",
+        "repasse federal",
+        "recursos federais",
+        "municípios"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Concessões e PPPs logísticas não estabelecem subsídio federal nem gratuidade universal municipal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "Não há política de carbono, metas de emissões, créditos ambientais ou mercado regulado de carbono no plano. Segurança energética não define esse instrumento climático.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "carbono",
+        "emissões",
+        "crédito de carbono",
+        "mercado regulado",
+        "mercado de carbono",
+        "clima",
+        "ambiental"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "A confiabilidade do fornecimento de energia é objetivo de infraestrutura, sem instrumento ambiental ou obrigação de negociação de créditos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano exige uso responsável de IA na escola e governança, auditoria e privacidade para IA de apoio na saúde, mas não cria uma categoria de sistemas de alto risco nem obrigações preventivas que devam ser cumpridas antes do uso. Salvaguardas setoriais não bastam para atribuir a regra aprovada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Tecnologia e inteligência artificial com uso responsável",
+          "role": "context",
+          "interpretation": "A expressão qualifica o uso escolar, sem classificar risco ou definir deveres prévios."
+        },
+        {
+          "page": 12,
+          "quote": "IA como apoio clínico e administrativo com governança, auditoria e privacidade",
+          "role": "context",
+          "interpretation": "Há salvaguardas para uso setorial em saúde, mas o trecho não estabelece avaliação preventiva anterior ao uso de sistemas classificados como de alto risco."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "alto risco",
+        "risco",
+        "obrigações preventivas",
+        "antes do uso",
+        "governança",
+        "auditoria"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Auditoria pode ocorrer antes, durante ou depois do uso; o documento não fixa momento, classificação de alto risco, registro ou avaliação prévia.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano busca organizar filas por telemedicina e regulação inteligente, mas não autoriza nem rejeita a contratação complementar de clínicas e hospitais privados pelo SUS quando faltar capacidade pública.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Regulação inteligente de filas",
+          "role": "context",
+          "interpretation": "O trecho reconhece o problema de acesso, mas escolhe regulação de filas, sem definir compra de capacidade assistencial privada."
+        },
+        {
+          "page": 12,
+          "quote": "Telemedicina integrada à rede",
+          "role": "context",
+          "interpretation": "A integração digital não identifica a natureza pública ou privada do prestador."
+        }
+      ],
+      "search_terms": [
+        "SUS",
+        "clínicas",
+        "hospitais",
+        "rede privada",
+        "prestador privado",
+        "contratação privada",
+        "capacidade",
+        "filas",
+        "atendimento"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "As PPPs citadas pertencem à infraestrutura e logística; as primeiras contratações da matriz de implementação não têm setor ou objeto especificado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe qualificação e reinserção profissional e apoio a famílias vulneráveis, mas não desenha benefício de transferência de renda nem manutenção parcial temporária após obtenção de emprego formal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Qualificação e reinserção profissional",
+          "role": "context",
+          "interpretation": "A reinserção no trabalho não determina o tratamento de um benefício de renda depois da formalização."
+        },
+        {
+          "page": 3,
+          "quote": "Creches e apoio às famílias vulneráveis",
+          "role": "context",
+          "interpretation": "O apoio não é definido como transferência de renda nem como regra de transição."
+        }
+      ],
+      "search_terms": [
+        "transferência de renda",
+        "benefício",
+        "Bolsa Família",
+        "emprego formal",
+        "formalização",
+        "período de transição",
+        "redução gradual",
+        "reinserção profissional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Inserção profissional, formalização e apoio social podem coexistir com encerramento imediato, manutenção parcial ou outras regras; o documento não escolhe entre elas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A rede de cuidado aparece como apoio à participação laboral das mulheres, e a saúde prioriza atenção territorial. O plano não oferece cuidado profissional no domicílio a idosos ou pessoas com deficiência com alto grau de dependência.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Rede de cuidado para ampliar participação no trabalho",
+          "role": "context",
+          "interpretation": "O objetivo é facilitar participação laboral; não define cuidado domiciliar nem o público de alta dependência."
+        },
+        {
+          "page": 11,
+          "quote": "Equipes completas e acesso territorial",
+          "role": "context",
+          "interpretation": "A atenção primária territorial não é especificada como atendimento no domicílio para idosos e pessoas com deficiência altamente dependentes."
+        }
+      ],
+      "search_terms": [
+        "cuidado domiciliar",
+        "domicílio",
+        "idosos",
+        "pessoas com deficiência",
+        "deficiência",
+        "alta dependência",
+        "cuidador",
+        "rede de cuidado"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O documento não define atendimento domiciliar, dependência funcional, equipes de apoio em residência ou execução pública desse serviço.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite transferências a estados e municípios associadas a indicadores quando juridicamente cabível e propõe avaliação da aprendizagem, mas não conecta parte dos recursos federais destinados às redes de ensino ao cumprimento de metas de aprendizagem.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Transferências associadas a indicadores quando juridicamente cabível",
+          "role": "context",
+          "interpretation": "A regra federativa é geral: não identifica recursos educacionais, parcela condicionada ou metas de aprendizagem."
+        },
+        {
+          "page": 7,
+          "quote": "Avaliação frequente com intervenção pedagógica",
+          "role": "context",
+          "interpretation": "Avaliar e intervir pedagogicamente não implica condicionar financiamento federal ao resultado."
+        }
+      ],
+      "search_terms": [
+        "metas de aprendizagem",
+        "aprendizagem",
+        "recursos federais",
+        "recursos educacionais",
+        "financiamento educacional",
+        "transferências",
+        "indicadores",
+        "redes de ensino"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "A sobreposição entre indicadores federativos e avaliação educacional exigiria inferir setor, fonte, parcela e consequência não escritos no plano.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano aborda participação no trabalho, qualificação e transição profissional, mas não propõe reduzir a jornada semanal legal nem preservar salários nessa redução.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "jornada",
+        "horas semanais",
+        "redução da jornada",
+        "sem redução salarial",
+        "salário",
+        "escala 6 por 1",
+        "trabalho"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Qualificação, emprego e participação laboral não definem duração legal do trabalho ou remuneração após sua redução.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano trata de pré-natal, saúde da mulher e cuidado materno-infantil, mas não aborda aborto voluntário, punição criminal, descriminalização ou prazo gestacional. Atendimento de saúde sem decisão penal geral não responde à versão 2.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Pré-natal e cuidado materno-infantil",
+          "role": "context",
+          "interpretation": "O cuidado materno-infantil não estabelece regra penal sobre aborto voluntário."
+        },
+        {
+          "page": 11,
+          "quote": "Saúde da mulher e da criança",
+          "role": "context",
+          "interpretation": "A política de saúde é geral e não define descriminalização ou prazo gestacional."
+        }
+      ],
+      "search_terms": [
+        "aborto",
+        "aborto voluntário",
+        "descriminalização",
+        "crime",
+        "prazo gestacional",
+        "gestação",
+        "gravidez"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Não há sequer referência às exceções legais vigentes; o silêncio não permite concordância, discordância ou posição mista.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A proteção de crianças e adolescentes e a política prisional não fixam idade de imputabilidade, aplicação do regime penal adulto a jovens de 16 e 17 anos ou abrangência por qualquer crime.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.4 Proteção de crianças e adolescentes",
+          "role": "context",
+          "interpretation": "O capítulo trata de abuso, exploração, riscos digitais e evasão escolar, sem responsabilização penal adulta."
+        },
+        {
+          "page": 9,
+          "quote": "Sistema prisional e redução da reincidência",
+          "role": "context",
+          "interpretation": "A gestão do sistema prisional não define quem ingressa no regime penal adulto nem a idade aplicável."
+        }
+      ],
+      "search_terms": [
+        "maioridade penal",
+        "imputabilidade",
+        "regime penal adulto",
+        "16 anos",
+        "17 anos",
+        "adolescentes",
+        "qualquer crime",
+        "crime grave"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Combate ao crime organizado e gestão prisional não implicam redução geral ou seletiva da maioridade penal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite drones e análise de imagens nas fronteiras dentro do marco legal, mas não identifica reconhecimento facial, comparação biométrica, espaços públicos ou a finalidade de localizar pessoas foragidas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Drones e análise de imagens dentro do marco legal",
+          "role": "context",
+          "interpretation": "O uso é fronteiriço e a tecnologia de identificação não é especificada; análise de imagens não equivale automaticamente a reconhecimento facial de foragidos."
+        },
+        {
+          "page": 9,
+          "quote": "Centros integrados de comando e compartilhamento de dados",
+          "role": "context",
+          "interpretation": "Integração de dados operacionais não define base biométrica, finalidade de busca de foragidos ou uso em espaço público."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "biometria",
+        "face",
+        "foragidos",
+        "procurados",
+        "espaços públicos",
+        "análise de imagens",
+        "câmeras"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "O marco legal é condição genérica do monitoramento de fronteira e não supre tecnologia, local e finalidade específicos da pergunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona BRICS nem permanência ou saída de blocos internacionais. A cooperação internacional aparece somente como instrumento contra o tráfico de drogas e armas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional",
+          "role": "context",
+          "interpretation": "A cooperação está no item de combate ao narcotráfico e ao tráfico de armas; não trata de adesão ao BRICS."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "bloco",
+        "blocos internacionais",
+        "permanecer",
+        "saída",
+        "multilateral",
+        "cooperação internacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Cooperação policial genérica pode coexistir com permanência ou saída do BRICS e não identifica o grupo.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não nomeia Mercosul, União Europeia, acordo comercial ou ratificação. Exportações de maior valor agregado são apenas indicador econômico e não decidem o texto final do acordo específico.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "exportações de maior valor agregado.",
+          "role": "context",
+          "interpretation": "O indicador acompanha competitividade exportadora sem identificar parceiro, tratado ou decisão de ratificação."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo comercial",
+        "ratificação",
+        "ratificar",
+        "comércio",
+        "exportações"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          15
+        ]
+      ],
+      "counterevidence_or_limits": "Promover exportações ou cooperação internacional não estabelece apoio ao acordo Mercosul-União Europeia, muito menos ao seu texto final.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

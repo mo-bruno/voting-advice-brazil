@@ -62,17 +62,18 @@
       "sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002540694",
       "context_owner_agent_id": "/root/plan_renan",
-      "executor_agent_id": null,
+      "executor_agent_id": "/root/battery_renan",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "queued",
+      "status": "dispatched",
       "review_file": "reviews/280002540694.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002540694.json",
         "profile_md": "../2026-09-29-thematic-profiles/profiles/280002540694.md",
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002540694.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002540694.json"
-      }
+      },
+      "dispatched_at": "2026-09-30T00:51:05.575861+00:00"
     },
     {
       "id": "280002541457",
@@ -82,17 +83,18 @@
       "sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002541457",
       "context_owner_agent_id": "/root/plan_hertz",
-      "executor_agent_id": null,
+      "executor_agent_id": "/root/battery_hertz",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "queued",
+      "status": "dispatched",
       "review_file": "reviews/280002541457.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002541457.json",
         "profile_md": "../2026-09-29-thematic-profiles/profiles/280002541457.md",
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002541457.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002541457.json"
-      }
+      },
+      "dispatched_at": "2026-09-30T00:47:53.033493+00:00"
     },
     {
       "id": "280002542548",
@@ -205,7 +207,7 @@
       "executor_agent_id": "/root/battery_edmilson",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "dispatched",
+      "status": "valid",
       "review_file": "reviews/280002551975.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002551975.json",
@@ -213,7 +215,8 @@
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002551975.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002551975.json"
       },
-      "dispatched_at": "2026-09-30T00:40:06.981308+00:00"
+      "dispatched_at": "2026-09-30T00:40:06.981308+00:00",
+      "validated_at": "2026-09-30T00:50:48.744735+00:00"
     },
     {
       "id": "280002552484",
@@ -226,7 +229,7 @@
       "executor_agent_id": "/root/battery_clariana",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "dispatched",
+      "status": "valid",
       "review_file": "reviews/280002552484.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002552484.json",
@@ -234,7 +237,8 @@
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002552484.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002552484.json"
       },
-      "dispatched_at": "2026-09-30T00:40:06.897085+00:00"
+      "dispatched_at": "2026-09-30T00:40:06.897085+00:00",
+      "validated_at": "2026-09-30T00:50:48.744735+00:00"
     },
     {
       "id": "280002552487",
@@ -247,7 +251,7 @@
       "executor_agent_id": "/root/battery_rui",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "dispatched",
+      "status": "valid",
       "review_file": "reviews/280002552487.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002552487.json",
@@ -255,7 +259,8 @@
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002552487.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002552487.json"
       },
-      "dispatched_at": "2026-09-30T00:40:06.825526+00:00"
+      "dispatched_at": "2026-09-30T00:40:06.825526+00:00",
+      "validated_at": "2026-09-30T00:50:48.744735+00:00"
     },
     {
       "id": "280002554479",
@@ -265,26 +270,27 @@
       "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002554479",
       "context_owner_agent_id": "/root/plan_leonardo",
-      "executor_agent_id": null,
+      "executor_agent_id": "/root/battery_leonardo",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "queued",
+      "status": "dispatched",
       "review_file": "reviews/280002554479.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002554479.json",
         "profile_md": "../2026-09-29-thematic-profiles/profiles/280002554479.md",
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002554479.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002554479.json"
-      }
+      },
+      "dispatched_at": "2026-09-30T00:48:31.242773+00:00"
     }
   ],
   "metrics": {
     "approved_questions": 20,
     "expected_reviews": 13,
     "expected_answers": 260,
-    "completed_reviews": 0,
-    "valid_reviews": 0,
-    "validated_answers": 0
+    "completed_reviews": 3,
+    "valid_reviews": 3,
+    "validated_answers": 60
   },
-  "updated_at": "2026-09-30T00:40:06.981308+00:00"
+  "updated_at": "2026-09-30T00:51:05.575861+00:00"
 }
