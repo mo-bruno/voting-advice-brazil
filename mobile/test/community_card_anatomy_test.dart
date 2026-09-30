@@ -31,7 +31,7 @@ void main() {
 
     expect(find.text('128'), findsOneWidget);
     expect(find.text('Conteudo do post'), findsOneWidget);
-    expect(find.text('ECONOMIA'), findsOneWidget);
+    expect(find.text('Economia'), findsOneWidget);
     expect(find.text('u/abc123def0'), findsOneWidget);
     expect(find.text('AB'), findsOneWidget);
   });
@@ -56,7 +56,7 @@ void main() {
       _wrap(PostCard(post: _post(themeSlug: null), onTap: () {})),
     );
 
-    expect(find.text('ECONOMIA'), findsNothing);
+    expect(find.text('Economia'), findsNothing);
   });
 
   testWidgets('setas ficam inertes enquanto o voto esta em voo',

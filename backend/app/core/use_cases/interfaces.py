@@ -225,6 +225,7 @@ class IotDeviceEventRepository(ABC):
 
 from app.core.entities.community import (  # noqa: E402
     Comment,
+    CommentReport,
     ModerationResult,
     Post,
     PostReport,
@@ -240,12 +241,31 @@ class ModerationPort(ABC):
         report_reasons: list[str] | None = None,
     ) -> ModerationResult: ...
 
+    def moderate_comment(
+        self,
+        content: str,
+        parent_content: str | None,
+        report_reasons: list[str] | None = None,
+    ) -> ModerationResult:
+        """Moderate the target comment, with parent text treated as untrusted data."""
+        return self.moderate(content, report_reasons=report_reasons)
+
 
 class ModerationUnavailable(Exception):
     """Raised when required content moderation cannot produce a decision."""
 
 
 class PostRepository(ABC):
+    def enrich(self, posts: list[Post], viewer_id: str | None) -> list[Post]:
+        """Add viewer votes, discussion counts and theme labels in one batch."""
+        return posts
+
+    def create_with_rate_limit(self, post: Post, since: datetime, max_posts: int) -> Post | None:
+        """SQL repositories override with atomic count and insert; retain old doubles."""
+        if self.count_by_author_since(post.anonymous_id, since) >= max_posts:
+            return None
+        return self.create(post)
+
     @abstractmethod
     def create(self, post: Post) -> Post: ...
 
@@ -273,6 +293,12 @@ class PostRepository(ABC):
 
 
 class CommentRepository(ABC):
+    def get_by_id(self, comment_id: str) -> Comment | None:
+        raise NotImplementedError
+
+    def mark_removed(self, comment_id: str, removed_by: str, now: datetime) -> None:
+        raise NotImplementedError
+
     @abstractmethod
     def create(self, comment: Comment) -> Comment: ...
 
@@ -291,6 +317,10 @@ class CommentRepository(ABC):
 
 
 class PostVoteRepository(ABC):
+    # SQL implementations can persist the aggregate with the vote transaction.
+    # Legacy repositories let the use case perform the separate score update.
+    updates_post_score_atomically = False
+
     @abstractmethod
     def upsert(self, vote: PostVote) -> int: ...
 
@@ -307,6 +337,17 @@ class PostReportRepository(ABC):
 
     @abstractmethod
     def reasons_for_post(self, post_id: str) -> list[str]: ...
+
+
+class CommentReportRepository(ABC):
+    @abstractmethod
+    def upsert(self, report: CommentReport) -> None: ...
+
+    @abstractmethod
+    def count_distinct_reporters(self, comment_id: str) -> int: ...
+
+    @abstractmethod
+    def reasons_for_comment(self, comment_id: str) -> list[str]: ...
 
 
 class ModerationLogRepository(ABC):

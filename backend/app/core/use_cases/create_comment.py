@@ -32,7 +32,7 @@ def moderate_and_create_comment(
     if post.removed_at is not None:
         raise PostRemovedError()
 
-    result = moderation_client.moderate(content)
+    result = moderation_client.moderate_comment(content, post.content)
     content_hash = hashlib.sha256(content.encode()).hexdigest()
     if not result.approved:
         log_repo.record(

@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'dart:async';
 import 'package:http/http.dart' as http;
 
 import '../../shared/models/candidate_result.dart';
@@ -15,8 +16,10 @@ class ApiException implements Exception {
   final String message;
   final String? code;
   final int? statusCode;
+  final int? retryAfterSeconds;
 
-  const ApiException(this.message, {this.code, this.statusCode});
+  const ApiException(this.message,
+      {this.code, this.statusCode, this.retryAfterSeconds});
 
   @override
   String toString() => message;
@@ -30,9 +33,14 @@ class ApiClient {
 
   final String baseUrl;
   final http.Client _client;
+  final Duration _communityWriteTimeout;
 
-  ApiClient({this.baseUrl = defaultBaseUrl, http.Client? client})
-      : _client = client ?? http.Client();
+  ApiClient({
+    this.baseUrl = defaultBaseUrl,
+    http.Client? client,
+    Duration communityWriteTimeout = const Duration(seconds: 45),
+  })  : _client = client ?? http.Client(),
+        _communityWriteTimeout = communityWriteTimeout;
 
   Future<List<Thesis>> fetchQuizQuestions({int limit = 60}) async {
     final uri = Uri.parse('$baseUrl/quiz/questions?limit=$limit');
@@ -305,6 +313,7 @@ class ApiClient {
     return await _postJson(
       uri,
       body,
+      community: true,
       headers: {'X-Farol-Anonymous-Id': anonymousId},
     ) as Map<String, dynamic>;
   }
@@ -352,6 +361,7 @@ class ApiClient {
     return await _postJson(
       uri,
       {'value': value},
+      community: true,
       headers: {'X-Farol-Anonymous-Id': anonymousId},
     ) as Map<String, dynamic>;
   }
@@ -365,6 +375,7 @@ class ApiClient {
     return await _postJson(
       uri,
       {'content': content},
+      community: true,
       headers: {'X-Farol-Anonymous-Id': anonymousId},
     ) as Map<String, dynamic>;
   }
@@ -378,13 +389,28 @@ class ApiClient {
     Uri uri,
     Map<String, dynamic> body, {
     Map<String, String>? headers,
+    bool community = false,
   }) async {
-    final response = await _client.post(
+    final request = _client.post(
       uri,
       headers: {'Content-Type': 'application/json', ...?headers},
       body: jsonEncode(body),
     );
+    final response =
+        community ? await _communityResponse(request) : await request;
     return _decode(response);
+  }
+
+  Future<http.Response> _communityResponse(
+      Future<http.Response> request) async {
+    try {
+      return await request.timeout(_communityWriteTimeout);
+    } on TimeoutException {
+      throw const ApiException(
+        'O envio demorou mais que o esperado. Verifique a discussão antes de tentar novamente.',
+        statusCode: 408,
+      );
+    }
   }
 
   Future<dynamic> _putJson(
@@ -401,10 +427,20 @@ class ApiClient {
   }
 
   dynamic _decode(http.Response response) {
-    final decoded = response.body.isEmpty ? null : jsonDecode(response.body);
+    dynamic decoded;
+    if (response.body.isNotEmpty) {
+      try {
+        decoded = jsonDecode(response.body);
+      } on FormatException {
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          throw const ApiException('A API retornou uma resposta inválida.');
+        }
+      }
+    }
     if (response.statusCode >= 200 && response.statusCode < 300) {
       return decoded;
     }
+    final retryAfter = int.tryParse(response.headers['retry-after'] ?? '');
 
     if (decoded is Map<String, dynamic>) {
       final detail = decoded['detail'];
@@ -413,15 +449,24 @@ class ApiClient {
           detail['message'] as String,
           code: detail['code'] as String?,
           statusCode: response.statusCode,
+          retryAfterSeconds: retryAfter,
         );
       }
       if (detail is String) {
-        throw ApiException(detail, statusCode: response.statusCode);
+        throw ApiException(detail,
+            statusCode: response.statusCode, retryAfterSeconds: retryAfter);
+      }
+      if (detail is List && response.statusCode == 422) {
+        throw const ApiException(
+          'Revise os dados informados e tente novamente.',
+          statusCode: 422,
+        );
       }
     }
     throw ApiException(
       'Erro ${response.statusCode} ao conectar com a API.',
       statusCode: response.statusCode,
+      retryAfterSeconds: retryAfter,
     );
   }
 
@@ -453,7 +498,7 @@ class ApiClient {
     required String anonymousId,
   }) async {
     final uri = Uri.parse('$baseUrl/community/posts/$postId/reports');
-    final response = await _client.post(
+    final response = await _communityResponse(_client.post(
       uri,
       headers: {
         'Content-Type': 'application/json',
@@ -463,21 +508,44 @@ class ApiClient {
         'reason': reason,
         if (detail != null) 'detail': detail,
       }),
-    );
-    if (response.statusCode >= 400) {
-      throw ApiException('Erro ${response.statusCode} ao denunciar.');
-    }
+    ));
+    _decode(response);
   }
 
   Future<void> deletePost(String postId, {required String anonymousId}) async {
     final uri = Uri.parse('$baseUrl/community/posts/$postId');
-    final response = await _client.delete(
+    final response = await _communityResponse(_client.delete(
       uri,
       headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ));
+    _decode(response);
+  }
+
+  Future<void> reportComment(
+    String postId,
+    String commentId, {
+    required String reason,
+    String? detail,
+    required String anonymousId,
+  }) async {
+    await _postJson(
+      Uri.parse('$baseUrl/community/posts/$postId/comments/$commentId/reports'),
+      {'reason': reason, if (detail != null) 'detail': detail},
+      community: true,
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
     );
-    if (response.statusCode >= 400) {
-      throw ApiException('Erro ${response.statusCode} ao remover o post.');
-    }
+  }
+
+  Future<void> deleteComment(
+    String postId,
+    String commentId, {
+    required String anonymousId,
+  }) async {
+    final response = await _communityResponse(_client.delete(
+      Uri.parse('$baseUrl/community/posts/$postId/comments/$commentId'),
+      headers: {'X-Farol-Anonymous-Id': anonymousId},
+    ));
+    _decode(response);
   }
 }
 

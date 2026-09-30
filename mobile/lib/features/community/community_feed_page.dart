@@ -7,7 +7,10 @@ import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
 import 'create_post_page.dart';
 import 'models/community_models.dart';
+import 'models/community_theme.dart';
 import 'post_detail_page.dart';
+import 'utils/community_errors.dart';
+import 'widgets/community_actions.dart';
 import 'widgets/post_card.dart';
 
 enum _SortMode {
@@ -15,19 +18,11 @@ enum _SortMode {
   recentes('recent');
 
   const _SortMode(this.apiValue);
-
-  /// O valor que o backend entende. Antes desta entrega o enum existia mas
-  /// nunca chegava ao servidor: as abas eram decorativas.
   final String apiValue;
 }
 
 class CommunityFeedPage extends StatefulWidget {
   const CommunityFeedPage({super.key, this.apiClient});
-
-  /// Injetavel para teste, seguindo o padrao das sessions: sem isto os estados
-  /// de sucesso e de vazio nao sao verificaveis, porque em teste de widget toda
-  /// chamada HTTP devolve 400.
-  @visibleForTesting
   final ApiClient? apiClient;
 
   @override
@@ -37,16 +32,19 @@ class CommunityFeedPage extends StatefulWidget {
 class _CommunityFeedPageState extends State<CommunityFeedPage> {
   final _session = CommunitySession();
   late final ApiClient _api = widget.apiClient ?? ApiClient();
+  final _scrollController = ScrollController();
+  final Set<String> _voting = {};
+  final Set<String> _acting = {};
   bool _loading = true;
   bool _failed = false;
   bool _loadMoreFailed = false;
-
-  /// Posts com voto em voo. Sem isto cada toque na seta disparava uma
-  /// requisicao nova, concorrente com a anterior.
-  final Set<String> _voting = {};
+  bool _loadingThemes = false;
   String? _anonymousId;
+  String? _themeSlug;
+  String? _themeName;
+  List<CommunityTheme>? _themes;
   _SortMode _sort = _SortMode.votados;
-  final _scrollController = ScrollController();
+  int _generation = 0;
 
   @override
   void initState() {
@@ -55,20 +53,32 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     _init();
   }
 
+  Future<void> _init() async {
+    try {
+      final id = await DeviceIdentityStore().getOrCreateDeviceId();
+      if (!mounted) return;
+      _anonymousId = id;
+      await _loadPage(1);
+    } catch (_) {
+      if (mounted) {
+        setState(() {
+          _loading = false;
+          _failed = true;
+        });
+      }
+    }
+  }
+
   @override
   void dispose() {
+    _generation++;
     _scrollController.dispose();
     super.dispose();
   }
 
-  Future<void> _init() async {
-    _anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-    await _loadPage(1);
-  }
-
   void _onScroll() {
-    if (_scrollController.position.pixels >=
-            _scrollController.position.maxScrollExtent - 200 &&
+    if (_scrollController.hasClients &&
+        _scrollController.position.extentAfter < 200 &&
         _session.hasMore &&
         !_loadMoreFailed &&
         !_loading) {
@@ -77,10 +87,13 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
   }
 
   Future<void> _loadPage(int page) async {
-    if (_anonymousId == null) return;
+    if (!mounted || _anonymousId == null || (page > 1 && _loading)) return;
+    if (page == 1) _generation++;
+    final generation = _generation;
+    final revisions = _session.postRevisions;
     setState(() {
       _loading = true;
-      if (page == 1) _failed = false;
+      _failed = false;
       _loadMoreFailed = false;
     });
     try {
@@ -88,35 +101,41 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         anonymousId: _anonymousId!,
         page: page,
         sort: _sort.apiValue,
+        themeSlug: _themeSlug,
       );
+      if (!mounted || generation != _generation) return;
+      final current = {for (final post in _session.feed) post.id: post};
+      final latestRevisions = _session.postRevisions;
       final posts = (data['posts'] as List)
           .map((p) => PostSummary.fromJson(p as Map<String, dynamic>))
+          .map((post) => latestRevisions[post.id] != revisions[post.id]
+              ? _session.updatedPost(post.id) ?? current[post.id] ?? post
+              : post)
           .toList();
-      final hasNext = data['has_next'] as bool;
+      final hasMore = data['has_next'] as bool && posts.isNotEmpty;
       if (page == 1) {
-        _session.setFeed(posts, hasMore: hasNext, page: page);
+        _session.setFeed(posts, hasMore: hasMore, page: page);
       } else {
-        _session.appendFeed(posts, hasMore: hasNext, page: page);
+        _session.appendFeed(posts, hasMore: hasMore, page: page);
       }
     } catch (_) {
-      if (!mounted) return;
+      if (!mounted || generation != _generation) return;
       if (page == 1) {
-        // Falha na primeira pagina: nao ha nada para mostrar, entao a tela
-        // inteira vira estado de erro. Antes isto virava "feed vazio", que e
-        // indistinguivel de uma comunidade sem posts.
-        setState(() => _failed = true);
+        _failed = true;
       } else {
-        // Falha ao paginar: o que ja veio continua valendo. Sem este flag o
-        // rodape da lista giraria para sempre, porque `hasMore` segue true.
-        setState(() => _loadMoreFailed = true);
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-              content: Text('Não foi possível carregar mais posts.')),
-        );
+        _loadMoreFailed = true;
+        _notice('Não foi possível carregar mais posts.');
       }
     } finally {
-      if (mounted) setState(() => _loading = false);
+      if (mounted && generation == _generation) {
+        setState(() => _loading = false);
+      }
     }
+  }
+
+  void _notice(String text) {
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
   }
 
   Future<void> _vote(String postId, int value) async {
@@ -125,74 +144,131 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     try {
       final data =
           await _api.votePost(postId, value, anonymousId: _anonymousId!);
-      final updated = PostSummary.fromJson(data);
-      _session.updatePost(updated);
-      if (mounted) setState(() {});
-    } catch (_) {
       if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Não foi possível registrar seu voto.')),
-      );
+      _session.updatePost(PostSummary.fromJson(data));
+    } catch (error) {
+      _notice(communityErrorMessage(error,
+          fallback: 'Não foi possível registrar seu voto.'));
+      if (error is ApiException && error.statusCode == 410) await _loadPage(1);
     } finally {
       if (mounted) setState(() => _voting.remove(postId));
     }
   }
 
   Future<void> _reportPost(String postId) async {
-    final id = _anonymousId;
-    if (id == null) return;
-    final motivo = await showModalBottomSheet<String>(
-      context: context,
-      backgroundColor: AppTheme.surface,
-      builder: (_) => const _ReportSheet(),
-    );
-    if (motivo == null) return;
+    if (_anonymousId == null || _acting.contains(postId)) return;
+    _acting.add(postId);
     try {
-      await _api.reportPost(postId, reason: motivo, anonymousId: id);
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Denúncia registrada. Obrigado.')),
-      );
-    } catch (_) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Não foi possível enviar a denúncia.')),
-      );
+      final reason = await chooseReportReason(context);
+      if (reason == null || !mounted) return;
+      await _api.reportPost(postId, reason: reason, anonymousId: _anonymousId!);
+      _notice('Denúncia registrada. Obrigado.');
+      await _loadPage(1);
+    } catch (error) {
+      _notice(communityErrorMessage(error,
+          fallback: 'Não foi possível enviar a denúncia.'));
+    } finally {
+      _acting.remove(postId);
     }
   }
 
   Future<void> _deletePost(String postId) async {
-    final id = _anonymousId;
-    if (id == null) return;
-    final confirmar = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        backgroundColor: AppTheme.surface,
-        title: const Text('Apagar este post?'),
-        content: const Text(
-          'O texto some, mas os comentários das outras pessoas continuam.',
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: const Text('CANCELAR'),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: const Text('APAGAR'),
-          ),
-        ],
-      ),
-    );
-    if (confirmar != true) return;
+    if (_anonymousId == null || _acting.contains(postId)) return;
+    _acting.add(postId);
     try {
-      await _api.deletePost(postId, anonymousId: id);
+      if (!await confirmCommunityRemoval(context, comment: false) || !mounted) {
+        return;
+      }
+      await _api.deletePost(postId, anonymousId: _anonymousId!);
+      _notice('Post removido.');
+      await _loadPage(1);
+    } catch (error) {
+      _notice(communityErrorMessage(error,
+          fallback: 'Não foi possível apagar o post.'));
+    } finally {
+      _acting.remove(postId);
+    }
+  }
+
+  Future<void> _openDetail(PostSummary post) async {
+    await Navigator.push<void>(
+        context,
+        MaterialPageRoute(
+          builder: (_) => PostDetailPage(postId: post.id, apiClient: _api),
+        ));
+    if (mounted) setState(() {});
+  }
+
+  Future<void> _create() async {
+    final created = await Navigator.push<PostSummary>(
+        context,
+        MaterialPageRoute(
+          builder: (_) =>
+              CreatePostPage(apiClient: _api, initialThemeSlug: _themeSlug),
+        ));
+    if (!mounted || created == null) return;
+    _session.invalidate();
+    setState(() {
+      _sort = _SortMode.recentes;
+      _themeSlug = null;
+      _themeName = null;
+    });
+    _loadPage(1);
+    _notice('Publicação aprovada e enviada.');
+    await _openDetail(created);
+  }
+
+  void _changeSort(_SortMode mode) {
+    if (_sort == mode) return;
+    _session.invalidate();
+    setState(() => _sort = mode);
+    if (_scrollController.hasClients) _scrollController.jumpTo(0);
+    _loadPage(1);
+  }
+
+  Future<void> _chooseTheme() async {
+    if (_loadingThemes) return;
+    setState(() => _loadingThemes = true);
+    try {
+      _themes ??= await _api.fetchThemes();
+      if (!mounted) return;
+      final selected = await showModalBottomSheet<String>(
+        context: context,
+        isScrollControlled: true,
+        builder: (context) => SafeArea(
+            child: SizedBox(
+          height: MediaQuery.sizeOf(context).height * .65,
+          child: ListView(
+            children: [
+              const Padding(
+                  padding: EdgeInsets.all(16), child: Text('FILTRAR POR TEMA')),
+              ListTile(
+                  title: const Text('Todos os temas'),
+                  selected: _themeSlug == null,
+                  onTap: () => Navigator.pop(context, '')),
+              for (final theme in _themes!)
+                ListTile(
+                    title: Text(theme.nome),
+                    selected: _themeSlug == theme.slug,
+                    onTap: () => Navigator.pop(context, theme.slug)),
+            ],
+          ),
+        )),
+      );
+      if (!mounted || selected == null) return;
+      _session.invalidate();
+      setState(() {
+        _themeSlug = selected.isEmpty ? null : selected;
+        _themeName = selected.isEmpty
+            ? null
+            : _themes!.firstWhere((t) => t.slug == selected).nome;
+      });
+      if (_scrollController.hasClients) _scrollController.jumpTo(0);
       await _loadPage(1);
     } catch (_) {
-      if (!mounted) return;
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Não foi possível apagar o post.')),
-      );
+      _notice('Não foi possível carregar os temas. Tente novamente.');
+    } finally {
+      if (mounted) setState(() => _loadingThemes = false);
     }
   }
 
@@ -202,280 +278,152 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     return AppScaffold(
       title: 'FÓRUM POLÍTICO',
       subtitle: 'discussão sob aliases pseudônimos',
-      body: Column(
-        children: [
-          _buildSortBar(),
-          const Divider(height: 1, color: AppTheme.outlineVariant),
-          Expanded(
+      body: Column(children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Wrap(
+              spacing: 8,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                _SortTab(
+                    label: 'MAIS VOTADOS',
+                    selected: _sort == _SortMode.votados,
+                    onTap: () => _changeSort(_SortMode.votados)),
+                _SortTab(
+                    label: 'RECENTES',
+                    selected: _sort == _SortMode.recentes,
+                    onTap: () => _changeSort(_SortMode.recentes)),
+                IconButton(
+                    tooltip: 'Filtrar por tema',
+                    onPressed: _loadingThemes ? null : _chooseTheme,
+                    icon: Icon(_themeSlug == null
+                        ? Icons.filter_list
+                        : Icons.filter_list_alt)),
+              ]),
+        ),
+        if (_themeName != null)
+          Padding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 8),
+              child: Text('Tema: $_themeName')),
+        const Divider(height: 1),
+        if (_loading && feed.isNotEmpty) const LinearProgressIndicator(),
+        if (_failed && feed.isNotEmpty)
+          TextButton(
+              onPressed: () => _loadPage(1),
+              child: const Text('Não foi possível atualizar. TENTAR DE NOVO')),
+        Expanded(
             child: _loading && feed.isEmpty
                 ? const Center(child: CircularProgressIndicator())
                 : _failed && feed.isEmpty
                     ? _FeedMessage(
-                        icon: Icons.warning_amber_rounded,
-                        iconColor: AppTheme.error,
                         title: 'Não foi possível carregar o fórum',
                         body: 'Verifique sua conexão e tente novamente.',
                         action: OutlinedButton(
-                          onPressed: () => _loadPage(1),
-                          child: const Text('TENTAR DE NOVO'),
-                        ),
+                            onPressed: _init,
+                            child: const Text('TENTAR DE NOVO')),
                       )
                     : feed.isEmpty
-                        ? const _FeedMessage(
-                            icon: Icons.forum_outlined,
-                            iconColor: AppTheme.surfaceContainerHighest,
+                        ? _FeedMessage(
                             title: 'Nenhum post por aqui ainda',
-                            body: 'Seja o primeiro a começar uma discussão.',
-                          )
+                            body: _themeSlug == null
+                                ? 'Seja o primeiro a começar uma discussão.'
+                                : 'Nenhuma publicação neste tema. Escolha outro tema ou comece uma discussão.')
                         : RefreshIndicator(
                             onRefresh: () => _loadPage(1),
                             child: ListView.separated(
                               controller: _scrollController,
+                              physics: const AlwaysScrollableScrollPhysics(),
                               itemCount:
                                   feed.length + (_session.hasMore ? 1 : 0),
-                              separatorBuilder: (_, __) => const Divider(
-                                height: 1,
-                                color: AppTheme.outlineVariant,
-                              ),
+                              separatorBuilder: (_, __) =>
+                                  const Divider(height: 1),
                               itemBuilder: (context, index) {
                                 if (index == feed.length) {
-                                  // Se a paginacao falhou, o rodape vira um botao em
-                                  // vez de um spinner que nunca terminaria.
-                                  return Center(
-                                    child: Padding(
+                                  return Padding(
                                       padding: const EdgeInsets.all(16),
-                                      child: _loadMoreFailed
-                                          ? OutlinedButton(
-                                              onPressed: () => _loadPage(
-                                                  _session.currentPage + 1),
-                                              child:
-                                                  const Text('CARREGAR MAIS'),
-                                            )
-                                          : const CircularProgressIndicator(),
-                                    ),
-                                  );
+                                      child: Center(
+                                        child: _loading
+                                            ? const CircularProgressIndicator()
+                                            : OutlinedButton(
+                                                onPressed: () => _loadPage(
+                                                    _session.currentPage + 1),
+                                                child: const Text(
+                                                    'CARREGAR MAIS')),
+                                      ));
                                 }
                                 final post = feed[index];
                                 return PostCard(
-                                  post: post,
-                                  onReport: () => _reportPost(post.id),
-                                  onDelete: () => _deletePost(post.id),
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (_) =>
-                                            PostDetailPage(postId: post.id),
-                                      ),
-                                    );
-                                    if (mounted) setState(() {});
-                                  },
-                                  onVote: (value) => _vote(post.id, value),
-                                );
+                                    post: post,
+                                    votePending: _voting.contains(post.id),
+                                    onReport: () => _reportPost(post.id),
+                                    onDelete: () => _deletePost(post.id),
+                                    onTap: () => _openDetail(post),
+                                    onVote: (value) => _vote(post.id, value));
                               },
                             ),
-                          ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: const BoxDecoration(
-              border: Border(top: BorderSide(color: AppTheme.outlineVariant)),
-            ),
-            child: SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () async {
-                  final created = await Navigator.push<bool>(
-                    context,
-                    MaterialPageRoute(builder: (_) => const CreatePostPage()),
-                  );
-                  if (created == true) _loadPage(1);
-                },
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.edit_rounded, size: 17),
-                    SizedBox(width: 10),
-                    Text('ESCREVER UM POST'),
-                  ],
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+                          )),
+        SafeArea(
+            top: false,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: _create,
+                    child: const Row(children: [
+                      Icon(Icons.edit_rounded, size: 20),
+                      SizedBox(width: 10),
+                      Expanded(
+                          child: Text('ESCREVER UM POST',
+                              textAlign: TextAlign.center)),
+                    ]),
+                  )),
+            )),
+      ]),
     );
-  }
-
-  Widget _buildSortBar() {
-    return Container(
-      decoration: const BoxDecoration(
-        border: Border(bottom: BorderSide(color: AppTheme.outlineVariant)),
-      ),
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: Row(
-        children: [
-          _SortTab(
-            label: 'MAIS VOTADOS',
-            selected: _sort == _SortMode.votados,
-            onTap: () => _changeSort(_SortMode.votados),
-          ),
-          const SizedBox(width: 24),
-          _SortTab(
-            label: 'RECENTES',
-            selected: _sort == _SortMode.recentes,
-            onTap: () => _changeSort(_SortMode.recentes),
-          ),
-        ],
-      ),
-    );
-  }
-
-  void _changeSort(_SortMode modo) {
-    if (_sort == modo) return;
-    setState(() => _sort = modo);
-    _loadPage(1);
   }
 }
 
 class _SortTab extends StatelessWidget {
-  const _SortTab({
-    required this.label,
-    required this.selected,
-    required this.onTap,
-  });
-
+  const _SortTab(
+      {required this.label, required this.selected, required this.onTap});
   final String label;
   final bool selected;
   final VoidCallback onTap;
-
   @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(top: 14),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Text(
-                label,
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 1,
-                  color:
-                      selected ? AppTheme.primary : AppTheme.onSurfaceVariant,
-                ),
-              ),
-            ),
-            const SizedBox(height: 8),
-            Container(
-              height: 2,
-              color: selected ? AppTheme.primary : Colors.transparent,
-            ),
-          ],
+  Widget build(BuildContext context) => Semantics(
+        selected: selected,
+        child: TextButton(
+          onPressed: onTap,
+          style: TextButton.styleFrom(
+              foregroundColor:
+                  selected ? AppTheme.primary : AppTheme.onSurfaceVariant,
+              minimumSize: const Size(48, 48),
+              side:
+                  selected ? const BorderSide(color: AppTheme.outline) : null),
+          child: Text(label),
         ),
-      ),
-    );
-  }
+      );
 }
 
 class _FeedMessage extends StatelessWidget {
-  const _FeedMessage({
-    required this.icon,
-    required this.iconColor,
-    required this.title,
-    required this.body,
-    this.action,
-  });
-
-  final IconData icon;
-  final Color iconColor;
+  const _FeedMessage({required this.title, required this.body, this.action});
   final String title;
   final String body;
   final Widget? action;
-
   @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(icon, size: 44, color: iconColor),
-            const SizedBox(height: 18),
-            Text(
-              title,
+  Widget build(BuildContext context) => Center(
+          child: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          const Icon(Icons.forum_outlined, size: 40),
+          const SizedBox(height: 16),
+          Text(title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w800,
-                color: AppTheme.onSurface,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              body,
-              textAlign: TextAlign.center,
-              style: const TextStyle(
-                fontSize: 12,
-                height: 1.55,
-                color: AppTheme.onSurfaceVariant,
-              ),
-            ),
-            if (action != null) ...[
-              const SizedBox(height: 24),
-              action!,
-            ],
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _ReportSheet extends StatelessWidget {
-  const _ReportSheet();
-
-  static const _motivos = <String, String>{
-    'desinformacao': 'Desinformação',
-    'discurso_de_odio': 'Discurso de ódio',
-    'spam': 'Spam',
-    'outro': 'Outro',
-  };
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const Padding(
-            padding: EdgeInsets.all(16),
-            child: Text(
-              'POR QUE DENUNCIAR?',
-              style: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.w700,
-                letterSpacing: 1.2,
-                color: AppTheme.onSurfaceVariant,
-              ),
-            ),
-          ),
-          for (final e in _motivos.entries)
-            ListTile(
-              title: Text(
-                e.value,
-                style: const TextStyle(color: AppTheme.onSurface),
-              ),
-              onTap: () => Navigator.pop(context, e.key),
-            ),
-        ],
-      ),
-    );
-  }
+              style: Theme.of(context).textTheme.titleMedium),
+          const SizedBox(height: 8),
+          Text(body, textAlign: TextAlign.center),
+          if (action != null) ...[const SizedBox(height: 16), action!],
+        ]),
+      ));
 }

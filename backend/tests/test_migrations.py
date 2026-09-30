@@ -39,6 +39,27 @@ def test_migration_up_and_down(tmp_path: Path) -> None:
     assert reup.returncode == 0, reup.stderr
 
 
+def test_comment_management_migration_preserves_existing_discussion(tmp_path: Path) -> None:
+    db_url = f"sqlite:///{tmp_path / 'comment-management.db'}"
+    before = _alembic(["upgrade", "0011_candidate_position_analysis"], db_url)
+    assert before.returncode == 0, before.stderr
+    engine = create_engine(db_url)
+    with engine.begin() as connection:
+        connection.execute(text("INSERT INTO posts (id, anonymous_id, content, score, created_at) VALUES ('p1', 'a', 'Política', 0, '2026-09-01')"))
+        connection.execute(text("INSERT INTO comments (id, post_id, anonymous_id, content, created_at) VALUES ('c1', 'p1', 'a', 'Concordo.', '2026-09-01')"))
+    upgraded = _alembic(["upgrade", "head"], db_url)
+    assert upgraded.returncode == 0, upgraded.stderr
+    with engine.connect() as connection:
+        row = connection.execute(text("SELECT content, removed_at, removed_by FROM comments WHERE id = 'c1'")).one()
+        assert tuple(row) == ("Concordo.", None, None)
+    assert "comment_reports" in inspect(engine).get_table_names()
+    down = _alembic(["downgrade", "0011_candidate_position_analysis"], db_url)
+    assert down.returncode == 0, down.stderr
+    with engine.connect() as connection:
+        assert connection.execute(text("SELECT content FROM comments WHERE id = 'c1'")).scalar_one() == "Concordo."
+    engine.dispose()
+
+
 def test_election_refresh_migration_preserves_existing_answers(tmp_path, monkeypatch):
     from sqlalchemy import create_engine
     from sqlalchemy.orm import Session
@@ -100,6 +121,7 @@ def test_iot_deduplication_upgrade_preserves_existing_event(tmp_path: Path) -> N
     assert upgraded.returncode == 0, upgraded.stderr
     assert set(inspect(engine).get_table_names()) == tables_before | {
         "comment_admission_locks",
+        "comment_reports",
         "politician_follow_interests",
     }
     constraints = inspect(engine).get_unique_constraints("iot_device_events")
@@ -113,7 +135,7 @@ def test_iot_deduplication_upgrade_preserves_existing_event(tmp_path: Path) -> N
         """)).one()
         assert tuple(row) == ("old-device", "vote_alert", '{"vote":"Sim"}', None)
         assert connection.scalar(text("SELECT version_num FROM alembic_version")) == (
-            "0011_candidate_position_analysis"
+            "0012_comment_management"
         )
         assert "analytical_position" in {
             column["name"] for column in inspect(engine).get_columns("candidate_positions")
@@ -140,16 +162,17 @@ def test_comment_admission_upgrade_preserves_comments(tmp_path: Path) -> None:
     assert upgraded.returncode == 0, upgraded.stderr
     assert set(inspect(engine).get_table_names()) == tables_before | {
         "comment_admission_locks",
+        "comment_reports",
         "politician_follow_interests",
     }
     assert inspect(engine).get_pk_constraint("comment_admission_locks")["constrained_columns"] == ["anonymous_id"]
     with engine.connect() as connection:
-        assert tuple(connection.execute(text("SELECT * FROM comments")).one()) == (
+        assert tuple(connection.execute(text("SELECT id, post_id, anonymous_id, content, created_at FROM comments")).one()) == (
             "old-comment", "old-post", "old-author", "Concordo", "2026-09-09 12:01:00",
         )
         assert connection.scalar(text("SELECT COUNT(*) FROM comment_admission_locks")) == 0
         assert connection.scalar(text("SELECT version_num FROM alembic_version")) == (
-            "0011_candidate_position_analysis"
+            "0012_comment_management"
         )
         assert "analytical_position" in {
             column["name"] for column in inspect(engine).get_columns("candidate_positions")

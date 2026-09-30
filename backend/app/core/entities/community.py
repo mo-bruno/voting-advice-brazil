@@ -13,6 +13,9 @@ class Post:
     created_at: datetime
     removed_at: datetime | None = None
     removed_by: str | None = None  # "author" | "moderation"
+    my_vote: int = 0
+    comment_count: int = 0
+    theme_name: str | None = None
 
     @property
     def removed(self) -> bool:
@@ -26,6 +29,12 @@ class Comment:
     anonymous_id: str
     content: str
     created_at: datetime
+    removed_at: datetime | None = None
+    removed_by: str | None = None
+
+    @property
+    def removed(self) -> bool:
+        return self.removed_at is not None
 
 
 @dataclass(frozen=True)
@@ -45,6 +54,15 @@ class ModerationResult:
 @dataclass(frozen=True)
 class PostReport:
     post_id: str
+    anonymous_id: str
+    reason: str
+    detail: str | None
+    created_at: datetime
+
+
+@dataclass(frozen=True)
+class CommentReport:
+    comment_id: str
     anonymous_id: str
     reason: str
     detail: str | None
