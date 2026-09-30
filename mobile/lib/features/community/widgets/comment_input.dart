@@ -33,7 +33,7 @@ class CommentInput extends StatelessWidget {
             children: [
               const CommunityProcessingNotice.comment(),
               const SizedBox(height: 12),
-              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              Row(crossAxisAlignment: CrossAxisAlignment.end, children: [
                 Expanded(
                     child: TextField(
                   controller: controller,

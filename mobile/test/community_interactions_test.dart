@@ -693,4 +693,59 @@ void main() {
     await tester.pumpAndSettle();
     expect(find.text('Descartar comentário?'), findsOneWidget);
   });
+  testWidgets(
+      '410 libera envio mesmo quando recarregar discussao fica pendente',
+      (tester) async {
+    final refresh = Completer<http.Response>();
+    var loads = 0;
+    await openDetail(tester, api((r) {
+      if (r.method == 'POST') {
+        return response({'detail': 'Este post foi removido.'}, 410);
+      }
+      return ++loads == 1
+          ? response({'post': post('p1'), 'comments': []})
+          : refresh.future;
+    }));
+    await tester.enterText(find.byType(TextField), 'Meu rascunho');
+    await tester.pump();
+    await tester.ensureVisible(find.byTooltip('Enviar comentário'));
+    await tester.pump();
+    await tester.tap(find.byTooltip('Enviar comentário'));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(loads, 2);
+    expect(tester.widget<TextField>(find.byType(TextField)).enabled, isTrue);
+    expect(tester.widget<TextField>(find.byType(TextField)).controller!.text,
+        'Meu rascunho');
+    await tester.tap(find.byTooltip('Voltar'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 300));
+    expect(find.text('Descartar comentário?'), findsOneWidget);
+    refresh.complete(response({'post': post('p1'), 'comments': []}));
+    await tester.pumpAndSettle();
+  });
+  for (final scenario in [
+    (const Size(320, 568), 300.0, 1.3),
+    (const Size(390, 844), 320.0, 2.0),
+  ]) {
+    testWidgets(
+        'enviar continua visivel com comentario multilinha e fonte ${scenario.$3}',
+        (tester) async {
+      await mount(
+          tester,
+          PostDetailPage(
+              postId: 'p1',
+              apiClient:
+                  api((r) => response({'post': post('p1'), 'comments': []}))),
+          size: scenario.$1,
+          keyboard: scenario.$2,
+          scale: scenario.$3);
+      await tester.enterText(find.byType(TextField),
+          'Como acompanhar e melhorar a transparência dos gastos públicos?');
+      await tester.ensureVisible(find.byType(TextField));
+      await tester.pumpAndSettle();
+      expect(find.byTooltip('Enviar comentário').hitTestable(), findsOneWidget);
+      expect(tester.takeException(), isNull);
+    });
+  }
 }

@@ -267,7 +267,7 @@ void main() {
       }
       final action = page == 'post'
           ? find.widgetWithText(ElevatedButton, 'PUBLICAR')
-          : find.byTooltip('ENVIAR COMENTÁRIO');
+          : find.byTooltip('Enviar comentário');
       await tester.ensureVisible(action);
       await tester.pump();
       expect(action.hitTestable(), findsOneWidget);
