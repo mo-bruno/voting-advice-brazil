@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Feixe refinado — Farol Político</title>
+<link rel="icon" href="feixe.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-Regular.ttf');font-weight:400}
+@font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-SemiBold.ttf');font-weight:600}
+@font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-ExtraBold.ttf');font-weight:800}
+*{box-sizing:border-box}body{margin:0;background:#131313;color:#fff;font-family:Inter,system-ui,sans-serif;line-height:1.55}main{max-width:1224px;margin:auto;padding:52px 32px 72px}header{max-width:860px}.wordmark{display:flex;align-items:center;gap:14px;font-size:23px;font-weight:600}.wordmark img{width:42px;height:42px}h1{font-size:clamp(30px,5vw,54px);line-height:1.08;letter-spacing:-.045em;margin:34px 0 20px;font-weight:800}.intro{font-size:18px;color:#d0d0d0;max-width:780px}.status{font-size:13px;color:#aaa;border-left:2px solid #aaa;padding-left:12px;margin:24px 0 40px}nav{display:flex;flex-wrap:wrap;gap:20px;margin-bottom:48px}a{color:inherit;text-underline-offset:5px}nav a{font-size:14px;color:#e2e2e2}a:focus-visible{outline:2px solid #fff;outline-offset:5px}section{margin:0 0 52px;scroll-margin-top:24px}h2{font-size:26px;letter-spacing:-.025em;line-height:1.2;margin:0 0 12px;font-weight:600}.summary{font-size:15px;color:#bbb;margin:0 0 24px;max-width:830px}.art{width:100%;height:auto;display:block;border:1px solid #393939}.caption{font-size:12px;color:#aaa;margin-top:10px}.specimens{display:grid;grid-template-columns:1fr 1fr;gap:20px}.specimen{border:1px solid #393939;padding:26px;background:#1b1b1b}.specimen.light{background:#eee;color:#131313}.specimen>p{font-size:12px;opacity:.7;margin:0 0 22px}.sizes{display:flex;gap:28px;align-items:center;min-height:90px}.sizes figure{margin:0;text-align:center;min-width:44px}.sizes img{display:block;margin:auto}.sizes figcaption{font-size:11px;opacity:.6;margin-top:12px}.invert{filter:invert(1)}.iconbox{width:76px;height:76px;background:#131313;display:grid;place-items:center;border-radius:16px}.demo-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px}.demo{border:1px solid #393939;background:#1b1b1b}.appbar{display:flex;align-items:center;padding:18px;gap:16px;border-bottom:1px solid #393939}.appbar .brand{display:flex;align-items:center;gap:10px;justify-content:center;flex:1;font-weight:800;letter-spacing:1px;font-size:15px}.appbar img{width:27px;height:27px}.hamburger{font-size:22px;width:28px}.balance{width:28px}.app-body{padding:28px;min-height:136px}.app-body p{color:#9e9e9e;font-size:14px;margin:0}.app-body strong{font-size:21px;display:block;margin-bottom:10px}.drawer{padding:30px;min-height:232px;position:relative;overflow:hidden}.drawer:after{content:'';position:absolute;left:64px;top:16px;width:330px;height:138px;background:rgba(255,255,255,.06);clip-path:polygon(0 26%,100% 0,100% 100%,0 48%);pointer-events:none}.drawer img{width:42px;height:42px;position:relative;z-index:1}.drawer .title{font-size:28px;line-height:1.03;letter-spacing:1.5px;font-weight:800;margin:22px 0 12px}.drawer small{color:#9e9e9e;letter-spacing:2px}.implementation{display:grid;grid-template-columns:1fr 1fr;gap:28px}.implementation p{font-size:14px;color:#bbb;margin:0}.implementation strong{color:white;display:block;margin-bottom:8px}.implementation ul{padding-left:20px;color:#bbb;font-size:14px;margin:10px 0 0}.implementation li{margin-bottom:7px}.footer{border-top:1px solid #393939;padding-top:24px;color:#aaa;font-size:13px}.footer p{max-width:880px}.back{font-size:13px;color:#aaa}.token-row{display:flex;gap:14px;flex-wrap:wrap;margin:18px 0}.token{font-size:12px;border:1px solid #393939;padding:8px 12px;color:#bbb}
+@media(max-width:700px){main{padding:26px 16px 48px}.specimens,.demo-grid,.implementation{grid-template-columns:1fr}.intro{font-size:16px}.appbar .brand{font-size:12px;gap:8px}.specimen{padding:22px}.sizes{gap:18px}nav{gap:16px}}
+</style>
+</head>
+<body><main>
+<header>
+  <div class="wordmark"><img src="feixe.svg" alt="Feixe"><span>farol político</span></div>
+  <h1>O Feixe, em branco<br>e transparência.</h1>
+  <p class="intro">A mesma assinatura do conceito escolhido, com uma abertura de luz translúcida. No compartilhamento de resultados, mudam o símbolo e o padrão de fundo; as cores, a tipografia e a personalização continuam.</p>
+  <p class="status">Direção aprovada, entregue no <a href="https://github.com/mo-bruno/voting-advice-brazil/pull/63">PR #63</a> e implantada. <a href="implementado/index.html">Ver as imagens finais e os cards reais</a>. Para uma nova revisão dos banners, consulte o <a href="HANDOFF.md">handoff</a>.</p>
+</header>
+<nav aria-label="Revisão do Feixe"><a href="angulos.html">Novo: ângulos do feixe</a><a href="#marca">Marca e preview</a><a href="#cards">Cards de resultado</a><a href="#reducoes">Ícones em tamanho real</a><a href="#aplicativo">Aplicativo</a><a href="#aplicacao">Aplicação prevista</a></nav>
+<section id="marca">
+  <h2>Marca e preview institucional</h2>
+  <p class="summary">F branco sólido, abertura branca com transparência e feixe suave sobre o carvão. O conjunto usa somente preto, branco e cinza.</p>
+  <img class="art" src="marca-monocromatica.png" alt="Feixe monocromático aplicado ao preview de link e favicon, sem azul ou outros matizes.">
+  <p class="caption">Prancha conceitual usada na aprovação. A arte final é vetorial e o preview foi exportado em 1200 × 630.</p>
+</section>
+<section id="cards">
+  <h2>Cards de resultado: cores preservadas</h2>
+  <p class="summary">O símbolo de horizonte dá lugar ao Feixe. Um raio discreto conecta a marca ao fundo. Barlow Condensed, as paletas atuais, a escolha de cores, Stories, Post e rankings permanecem.</p>
+  <img class="art" src="cards-cores-preservadas.png" alt="Cards azul, verde e preto com o novo Feixe branco, tipografia e cores originais preservadas, usando resultados fictícios.">
+  <p class="caption">Dados fictícios para avaliar a identidade visual. A imagem ilustra o padrão, não é uma captura da implementação Flutter.</p>
+</section>
+<section id="reducoes">
+  <h2>Um símbolo que funciona pequeno</h2>
+  <p class="summary">Estudo SVG em tamanho real, com abertura a 32% de opacidade. A versão preta atende aos fundos claros dos cards sem introduzir outra cor na marca.</p>
+  <div class="specimens">
+    <div class="specimen"><p>Aplicação branca sobre fundo escuro</p><div class="sizes"><figure><img src="feixe.svg" width="64" height="64" alt="Feixe branco de 64 pixels"><figcaption>64 px</figcaption></figure><figure><img src="feixe.svg" width="32" height="32" alt="Feixe branco de 32 pixels"><figcaption>32 px</figcaption></figure><figure><img src="feixe.svg" width="16" height="16" alt="Feixe branco de 16 pixels"><figcaption>16 px</figcaption></figure></div></div>
+    <div class="specimen light"><p>Versão inversa para fundos claros / ícone instalável</p><div class="sizes"><figure><img class="invert" src="feixe.svg" width="64" height="64" alt="Feixe preto em fundo claro"><figcaption>Inverso</figcaption></figure><figure><img class="invert" src="feixe.svg" width="16" height="16" alt="Feixe preto de 16 pixels"><figcaption>16 px</figcaption></figure><figure><div class="iconbox"><img src="feixe.svg" width="48" height="48" alt="Ícone de aplicativo em fundo escuro"></div><figcaption>Aplicativo</figcaption></figure></div></div>
+  </div>
+  <div class="token-row"><span class="token">Fundo #131313</span><span class="token">Marca #FFFFFF</span><span class="token">Abertura branca 32%</span><span class="token">Feixe branco 8–12%</span></div>
+</section>
+<section id="aplicativo">
+  <h2>A mesma assinatura dentro do aplicativo</h2>
+  <p class="summary">Referência da aplicação no cabeçalho e no menu lateral, mantendo a Inter e a estrutura atual. Os ícones funcionais de navegação seguem com seu significado.</p>
+  <div class="demo-grid">
+    <div class="demo"><div class="appbar"><span class="hamburger" aria-hidden="true">☰</span><div class="brand"><img src="feixe.svg" alt="Marca no cabeçalho"><span>FAROL POLÍTICO</span></div><span class="balance"></span></div><div class="app-body"><strong>Faça seu quiz agora</strong><p>Descubra sua afinidade com as propostas para a eleição presidencial de 2026.</p></div></div>
+    <div class="demo drawer"><img src="feixe.svg" alt="Marca no menu lateral"><div class="title">FAROL<br>POLÍTICO</div><small>BRASIL 2026</small></div>
+  </div>
+  <p class="caption">Estudo HTML aprovado; a mesma identidade foi aplicada e publicada nas telas reais.</p>
+</section>
+<section id="aplicacao">
+  <h2>Onde a atualização foi aplicada</h2>
+  <div class="implementation"><div><strong>Web e aplicativos</strong><ul><li>Favicon SVG/PNG e preview do link.</li><li>Ícones PWA, Apple Touch e versões adaptáveis.</li><li>Ícones instaláveis do Android e iOS.</li><li>Cabeçalho, menu, títulos institucionais e diálogo Sobre.</li></ul></div><div><strong>Compartilhamento</strong><ul><li>Marca única nos formatos Post e Stories.</li><li>Maior alinhamento, Top 5 e Top 10.</li><li>Feixe de fundo com transparência discreta.</li><li>Paletas, fontes, dados e controles atuais preservados.</li></ul></div></div>
+</section>
+<footer class="footer"><p>As pranchas conceituais foram geradas com a ferramenta integrada de imagem. A implementação final usa uma única geometria vetorial compartilhada entre Flutter, SVG e exportações. <a href="implementado/index.html">Veja os arquivos finais</a>.</p><p><a href="HANDOFF.md">Handoff para continuação</a> · <a href="NOTAS.md">Notas, escopo e prompts desta revisão</a></p></footer>
+</main></body></html>
