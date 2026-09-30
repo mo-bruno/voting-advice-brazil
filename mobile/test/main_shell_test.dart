@@ -217,6 +217,40 @@ void main() {
   });
 
   group('tabFromArguments', () {
+    testWidgets('link público abre a introdução do quiz dentro do shell',
+        (tester) async {
+      await tester.pumpWidget(_wrap(
+        tab: MainShell.tabFromArguments(
+          Uri.parse('https://fpolitico.com.br/?tab=quiz'),
+        ),
+      ));
+
+      expect(find.text('tela-quiz'), findsOneWidget);
+      expect(find.text('tela-inicio'), findsNothing);
+      expect(
+        tester
+            .widget<BottomNavigationBar>(find.byType(BottomNavigationBar))
+            .currentIndex,
+        MainShellTab.quiz.index,
+      );
+    });
+
+    test('links comuns e abas desconhecidas abrem o início', () {
+      for (final url in [
+        'https://fpolitico.com.br/',
+        'https://fpolitico.com.br/?tab=',
+        'https://fpolitico.com.br/?tab=results',
+        'https://fpolitico.com.br/?utm_source=google',
+        'https://fpolitico.com.br/?tab=%ZZ',
+      ]) {
+        expect(
+          MainShell.tabFromArguments(Uri.parse(url)),
+          MainShellTab.inicio,
+          reason: url,
+        );
+      }
+    });
+
     test('devolve a aba quando o argumento e um MainShellTab', () {
       expect(MainShell.tabFromArguments(MainShellTab.quiz), MainShellTab.quiz);
     });

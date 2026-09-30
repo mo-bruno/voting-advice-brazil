@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "battery_id": "full-battery-human-review-v3",
+  "battery_version": 3,
+  "status": "approved",
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "wording_fingerprint": "e1837e8dd34bddab2ba8ec0d4010568d3735d4a6270dc949ba9c54cf9d3f0f70",
+  "items": [
+    {
+      "id": "FB-Q23",
+      "display_number": 8,
+      "version": 1,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "explanation": "Concessões e parcerias público-privadas permitem que empresas participem do financiamento, da construção ou da operação de projetos. A afirmação não exige esse modelo em toda obra nem implica privatizar empresas públicas.",
+      "decision_object": "Uso federal de concessões e parcerias público-privadas na ampliação da infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "family_ids": [
+        "T01",
+        "T04"
+      ],
+      "measurement_risks": [
+        "Concessão, parceria público-privada, autorização e privatização de empresa são instrumentos diferentes.",
+        "Apoio a capital privado em um projeto não prova adesão a esse modelo em toda a infraestrutura.",
+        "Estatização ou reversão de concessões só constitui oposição quando alcança a infraestrutura de transportes perguntada."
+      ],
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45"
+    },
+    {
+      "id": "FB-Q24",
+      "display_number": 10,
+      "version": 1,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "explanation": "Capacidade nacional inclui pesquisa, infraestrutura e desenvolvimento de modelos de inteligência artificial no Brasil. A afirmação não define se a execução será pública, privada ou cooperativa nem exige excluir tecnologias estrangeiras.",
+      "decision_object": "Investimento federal no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "family_ids": [
+        "I05"
+      ],
+      "measurement_risks": [
+        "Capacidade nacional não significa propriedade estatal, uso obrigatório ou proibição de modelos estrangeiros.",
+        "Difusão de sistemas existentes sem desenvolvimento nacional não responde integralmente à tese.",
+        "Laboratório, infraestrutura computacional, pesquisa e modelos nacionais são instrumentos distintos que podem sustentar a mesma direção geral."
+      ],
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674"
+    },
+    {
+      "id": "FB-Q25",
+      "display_number": 12,
+      "version": 1,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "explanation": "A reserva separa parte das vagas de concursos federais para grupos raciais definidos pela política pública. A afirmação não fixa percentual, procedimento de verificação nem duração da medida.",
+      "decision_object": "Reserva de vagas por critério racial em concursos públicos federais.",
+      "category_id": "cidadania_direitos",
+      "family_ids": [
+        "C05"
+      ],
+      "measurement_risks": [
+        "Cotas em universidades, empresas privadas e eleições não respondem automaticamente a concursos públicos federais.",
+        "Cotas para pessoas com deficiência ou por identidade de gênero não substituem uma posição sobre critério racial.",
+        "Abolição geral das cotas pode constituir oposição quando seu alcance inclui o serviço público."
+      ],
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a"
+    },
+    {
+      "id": "FB-Q19",
+      "display_number": 18,
+      "version": 2,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "explanation": "A afirmação admite comparar imagens captadas em espaços públicos com bases de identificação para ações de segurança. Ela não dispensa regras de finalidade, privacidade, auditoria, precisão, armazenamento ou supervisão.",
+      "decision_object": "Uso de reconhecimento facial em espaços públicos para finalidades de segurança.",
+      "category_id": "seguranca_publica",
+      "family_ids": [
+        "S08"
+      ],
+      "measurement_risks": [
+        "Câmeras corporais, integração de bases e drones não equivalem a reconhecimento facial.",
+        "Uma proposta restrita a finalidade ou local específico pode exigir classificação condicional.",
+        "Ausência de salvaguardas no plano não autoriza afirmar que a candidatura as rejeita."
+      ],
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce"
+    }
+  ]
+}

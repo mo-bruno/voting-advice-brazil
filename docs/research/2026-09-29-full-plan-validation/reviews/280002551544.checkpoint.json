@@ -1,0 +1,882 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551544",
+  "candidate_name": "Flavio Bolsonaro",
+  "document_sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 76,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa com Flávio Bolsonaro presidente, slogan Para o Brasil vencer o atraso e diretrizes 2027–2030.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Página em branco confirmada por inspeção visual.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Sumário da apresentação e eixos de segurança, mulheres, serviços digitais e custo de vida.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Continuação do sumário: educação, saúde, prosperidade, infraestrutura, relações internacionais, reformas institucionais e fiscais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 5,
+      "summary": "Índice temático em duas colunas: agro, previdência, assistência, cultura, desenvolvimento regional, economia e educação; referências a programas sociais, estatais, vouchers e escolas cívico-militares.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 6,
+      "summary": "Índice em duas colunas com empreendedorismo, energia, Poderes, esporte, gestão pública, idosos, infraestrutura, jovens, ambiente e mulheres.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 7,
+      "summary": "Índice em duas colunas com pacto federativo, deficiência, exterior, saúde, segurança jurídica e pública, tecnologia e trabalho.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 8,
+      "summary": "Apresentação organiza problemas familiares de forma integrada e critica gasto público e evolução da dívida.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 9,
+      "summary": "Valores de liberdade e família; promete manter e aperfeiçoar programas sociais com caminhos de qualificação e autonomia.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Jornada proteção, formação, trabalho, crédito, patrimônio e envelhecimento; articula tecnologia e crescimento nacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 11,
+      "summary": "Panorama dos eixos de segurança, mulheres, serviços, custo de vida, preparação, prosperidade e crescimento.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 12,
+      "summary": "Complementa eixos constitucional e fiscal; declara alternativa liberal, conservadora e reformista.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 13,
+      "summary": "Segurança propõe tratar facções como narcoterroristas, reduzir maioridade penal a 16 e punir maiores de 14 por crimes graves.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Fronteiras militarizadas, cinco presídios máximos e 500 mil vagas; castração química e cumprimento integral para agressores de mulheres.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 15,
+      "summary": "Monitoramento militar de portos, aumento de investimento, reconhecimento facial, auxílio a vítimas e fim de progressão para hediondos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 16,
+      "summary": "Finaliza penas integrais e propõe punições maiores para furto e revenda de celulares.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Brasil por Elas integra proteção e autonomia; Central da Mulher reunirá serviços com parceiros públicos e privados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 18,
+      "summary": "Aplicativo, pacote de internet, assistente ClarIA e unificação de canais de denúncia para mulheres.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 19,
+      "summary": "Avaliação de risco e tornozeleiras; orientação financeira e pontos por capacitação, trabalho e pagamentos no Ganha, Ganha.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 20,
+      "summary": "Ganha, Ganha voluntário sem perda de direitos; bancos públicos, escritura própria, formação e integração de vagas para mulheres.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 21,
+      "summary": "Vouchers de creche privada credenciada até surgir vaga pública, rede de cuidado em parcerias e atenção preventiva para mulheres.",
+      "relevant_question_ids": [
+        "BR26-T043",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Conclusão do eixo mulheres destaca proteção, crédito, creche e patrimônio.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 23,
+      "summary": "Diagnóstico das filas e retrospectiva de serviços digitais, Gov.br, PIX, carteira de trabalho e 5G.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 24,
+      "summary": "Internet como infraestrutura, pacotes de conexão e cobertura rural e escolar; portal único do Estado.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Digitalização integral de serviços cabíveis, identidade única, assistentes de IA e introdução ao prontuário eletrônico.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 26,
+      "summary": "Prontuário interoperável público/privado, agendamento por IA e profissionalização e digitalização do INSS.",
+      "relevant_question_ids": [
+        "BR26-T042",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Liberdade econômica, revogação regulatória, facilitação empresarial e redução da burocracia de irrigação e titulação rural.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 28,
+      "summary": "Rastreabilidade e integração de registros fundiários e ambientais para crédito e reconhecimento de produtores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 29,
+      "summary": "Diagnóstico do custo de vida, juros, impostos e dívida; promete repetir reduções tributárias.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Revisão da reforma tributária para reduzir IVA e carga e preservar simplificação e não cumulatividade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 31,
+      "summary": "Energia mais barata via encargos e impostos, mantendo tarifa social; logística, seguro e armazenagem agrícola.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 32,
+      "summary": "Armazenagem e fertilizantes nacionais; explica crédito caro por dívida e promete equilíbrio fiscal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 33,
+      "summary": "Reduzir dívida e inflação, vedar apostas com recursos sociais e orientação financeira pela CAIXA.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 34,
+      "summary": "Brasil que Prepara relaciona educação, saúde e cuidado ao trabalho e inicia diagnóstico educacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 35,
+      "summary": "Método fônico, reforço remunerado, metas, professores, expansão de escolas cívico-militares, competências digitais e tempo integral.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 36,
+      "summary": "Voucher na falta de vaga, ensino técnico com empresas, formação de talentos e governança do superior no MCTI.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 37,
+      "summary": "Financiamento contingente à renda, correção da tabela SUS, saúde da família e contratação privada de exames e serviços em horários ociosos.",
+      "relevant_question_ids": [
+        "BR26-T042",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 38,
+      "summary": "Hospitais EBSERH, telessaúde e entrega de remédios; rede de cuidado a idosos e deficientes em parceria com organizações sociais.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Acessibilidade e instituições de longa permanência para idosos, inclusão de deficiência/doenças raras e atenção à saúde mental.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 40,
+      "summary": "Esporte escolar, paralímpico e alto rendimento por parcerias e bolsas; inicia restrição da categoria feminina por sexo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 41,
+      "summary": "Conclui categoria esportiva feminina e propõe patrimônio e incentivos culturais descentralizados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 42,
+      "summary": "Promete manter programas sociais existentes sem retirar ajuda de quem depende e oferecer caminho para autonomia.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 43,
+      "summary": "Prioridade de beneficiários na qualificação e emprego e retorno ao benefício se elegível; redução do custo do trabalho sem perda de direitos.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 44,
+      "summary": "Contratos para jovens e maiores de 50, negociado sobre legislado, vagas e defesa do fim do imposto sindical de 2017.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 45,
+      "summary": "Rejeita retrocessos sobre situações pacificadas pela reforma trabalhista; trabalho por apps e apoio ao primeiro negócio.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 46,
+      "summary": "BNDES/Apex apoiam internacionalização e CAIXA assume missão de Banco da Prosperidade; Ganha-Ganha voluntário.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 47,
+      "summary": "Casa Verde e Amarela, regularização e PPPs urbanas; aplicação do marco do saneamento e expansão de concessões.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 48,
+      "summary": "Conclusão curta da proposta de eliminar lixões e proteger a saúde infantil.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 49,
+      "summary": "Meta de crescimento de 4%, investimento privado e segurança jurídica no licenciamento ambiental.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 50,
+      "summary": "Licenciamento tácito, estabilidade contratual, autonomia produtiva indígena/quilombola e infraestrutura por concessões, PPPs e BNDES.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 51,
+      "summary": "R$900 bilhões em logística, ferrovias e hidrovias; transporte urbano financiado por bancos públicos.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 52,
+      "summary": "Obras hídricas e prevenção de desastres; segurança energética, refino, fracking, redes e concorrência no gás.",
+      "relevant_question_ids": [
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 53,
+      "summary": "Escoamento privado de gás, modernização do refino, fertilizantes, energia elétrica barata, data centers e biocombustíveis.",
+      "relevant_question_ids": [
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 54,
+      "summary": "Seguro agrícola, armazenagem, fertilizantes, titulação e emprego no campo com retorno ao benefício social.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 55,
+      "summary": "Irrigação, SAF, CAR e serviços ambientais; minerais críticos com regulação estatal e atração explícita de capital estrangeiro.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 56,
+      "summary": "Cooperação internacional em minerais e estratégia de IA para pequenas empresas, pesquisa, compras públicas e liberdade de inovar.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 57,
+      "summary": "Startups, privacidade e defesa cibernética; conservação, saneamento, mercado de carbono e serviços ambientais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 58,
+      "summary": "Meta de zerar desmatamento ilegal em 2029, fiscalização integrada e soberania/cooperação na Amazônia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 59,
+      "summary": "Combate ao crime ambiental com apoio a moradores, integração de órgãos, transparência de ONGs e promoção do turismo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 60,
+      "summary": "Segurança para turismo e desenvolvimento regional por água, irrigação, trens e energia no Nordeste.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 61,
+      "summary": "Bioeconomia no Norte e autonomia produtiva tradicional; soberania e crítica da política externa em Venezuela e Irã.",
+      "relevant_question_ids": [
+        "BR26-T063"
+      ]
+    },
+    {
+      "page": 62,
+      "summary": "Diplomacia pragmática, reverter relações à beira do rompimento com Israel/EUA/Argentina, negociar com China/UE e atrair investimentos.",
+      "relevant_question_ids": [
+        "BR26-T063",
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 63,
+      "summary": "Adesão à OCDE, governança de estatais, cadeias globais, atração de investimento energético até 2030 e defesa em país membro de blocos.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T057",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 64,
+      "summary": "Competitividade interna baseada em produtividade, segurança jurídica, macroeconomia, crédito e infraestrutura.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 65,
+      "summary": "Equilíbrio entre Poderes e reforma do STF: competência criminal, decisões monocráticas, ações abstratas e quarentena ministerial.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 66,
+      "summary": "Impedimentos de parentes e composição dos conselhos; reforma política, fim da reeleição presidencial e revogação de atos de censura.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 67,
+      "summary": "Conclusão de liberdade de expressão, direito de defesa e direito de criticar o governo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 68,
+      "summary": "Tesouraço fiscal e administrativo para sustentar políticas e retomar federalismo municipal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 69,
+      "summary": "Orçamento e emendas transparentes, reforma administrativa, corte de ministérios e direção técnica de agências e estatais.",
+      "relevant_question_ids": [
+        "BR26-T018",
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 70,
+      "summary": "Fortalecer Lei das Estatais, seleção técnica e desestatização caso a caso; critica substituição do teto por regras fiscais frágeis.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 71,
+      "summary": "Reformulação das regras fiscais atuais, superávits, limitação de gastos, redução da dívida e revisão da reforma tributária.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 72,
+      "summary": "Redução do IVA e distorções tributárias; pacote antifraude previdenciário e nova governança do consignado.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 73,
+      "summary": "Dupla checagem de consignado e remissão a digitalização e profissionalização do INSS.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 74,
+      "summary": "Conclusão articula segurança, mulheres, digitalização, menor custo, preparação, prosperidade, crescimento e equilíbrio fiscal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 75,
+      "summary": "Convite eleitoral, compromisso institucional e país moderno, próspero, democrático e justo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 76,
+      "summary": "Contracapa ilustrada com Flávio Bolsonaro presidente; ausência de outras propostas confirmada visualmente.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extração sem texto.",
+      "finding": "Capa ilustrada com título, nome e horizonte 2027–2030."
+    },
+    {
+      "page": 2,
+      "reason": "Extração sem texto.",
+      "finding": "Página efetivamente em branco."
+    },
+    {
+      "page": 5,
+      "reason": "Índice em duas colunas; primeira saída conjunta truncada.",
+      "finding": "Índice completo lido visualmente por coluna, sem propostas adicionais."
+    },
+    {
+      "page": 6,
+      "reason": "Índice em duas colunas.",
+      "finding": "Separação das colunas e referências confirmada; nenhuma tabela de propostas."
+    },
+    {
+      "page": 7,
+      "reason": "Índice em duas colunas.",
+      "finding": "Separação das colunas e referências confirmada, inclusive saúde e trabalho."
+    },
+    {
+      "page": 48,
+      "reason": "Extração excepcionalmente curta.",
+      "finding": "Somente duas linhas finais sobre lixões, além de cabeçalho e rodapé."
+    },
+    {
+      "page": 76,
+      "reason": "Extração sem texto.",
+      "finding": "Contracapa gráfica com nome da candidatura, sem propostas adicionais."
+    }
+  ],
+  "current_position": 76,
+  "questions_to_resolve": [],
+  "reading_method": "Leitura sequencial integral de layout-pages.json em blocos e visual das páginas 1, 2, 5, 6, 7, 48 e 76. A primeira saída conjunta 3–7 foi truncada e desconsiderada; 3–4 e 6–7 foram relidas integralmente, e 5 foi lida integralmente na imagem. Busca complementar somente após concluir a leitura.",
+  "provisional_categories_before_prior": {
+    "BR26-T001": "DISCORDA",
+    "BR26-T002": "CONDICIONAL_OU_MISTA",
+    "BR26-T003": "DISCORDA",
+    "BR26-T011": "DISCORDA",
+    "BR26-T015": "CONCORDA",
+    "BR26-T017": "CONCORDA",
+    "BR26-T018": "NAO_ENCONTRADA",
+    "BR26-T026A": "NAO_ENCONTRADA",
+    "BR26-T036": "NAO_ENCONTRADA",
+    "BR26-T038": "NAO_ENCONTRADA",
+    "BR26-T042": "CONCORDA",
+    "BR26-T043": "CONCORDA",
+    "BR26-T057": "NAO_ENCONTRADA",
+    "BR26-T063": "DISCORDA",
+    "BR26-T066": "NAO_ENCONTRADA",
+    "BR26-T067": "DISCORDA"
+  },
+  "complementary_search_results": {
+    "16 anos": [
+      13
+    ],
+    "179/2021": [],
+    "200/2023": [],
+    "2017": [
+      44
+    ],
+    "BRICS": [],
+    "Banco Central": [],
+    "CAIXA": [
+      4,
+      5,
+      11,
+      20,
+      26,
+      29,
+      33,
+      45,
+      46
+    ],
+    "EBSERH": [
+      38
+    ],
+    "Escolas Cívico-Militares": [
+      5,
+      35
+    ],
+    "Israel": [
+      62
+    ],
+    "Mercosul": [],
+    "Petrobras": [],
+    "União Europeia": [
+      62
+    ],
+    "acordos comerciais": [
+      63
+    ],
+    "apartheid": [],
+    "arcabouço": [],
+    "autonomia": [
+      4,
+      9,
+      19,
+      20,
+      39,
+      40,
+      42,
+      43,
+      46,
+      50,
+      54,
+      61,
+      68
+    ],
+    "ações afirmativas": [],
+    "benefício": [
+      16,
+      17,
+      19,
+      20,
+      25,
+      43,
+      46,
+      54,
+      73
+    ],
+    "blocos": [
+      63
+    ],
+    "capital estrangeiro": [
+      55
+    ],
+    "concurso": [],
+    "cotas": [],
+    "creches": [
+      21,
+      38
+    ],
+    "crimes graves": [
+      13,
+      14
+    ],
+    "desestatização": [
+      5,
+      70
+    ],
+    "estatais": [
+      5,
+      63,
+      69,
+      70
+    ],
+    "gestão de unidades": [],
+    "gestão hospitalar": [],
+    "horários ociosos": [
+      7,
+      37
+    ],
+    "imposto sindical": [
+      44
+    ],
+    "investimento": [
+      7,
+      15,
+      28,
+      30,
+      39,
+      47,
+      49,
+      50,
+      51,
+      53,
+      55,
+      56,
+      57,
+      61,
+      62,
+      63,
+      65,
+      72
+    ],
+    "juros": [
+      4,
+      19,
+      29,
+      32,
+      33,
+      46,
+      47,
+      51,
+      64,
+      68,
+      70,
+      71,
+      74
+    ],
+    "maioridade penal": [
+      7,
+      13
+    ],
+    "mérito": [
+      40,
+      41,
+      68
+    ],
+    "negociado sobre o legislado": [
+      7,
+      44,
+      45
+    ],
+    "organizações sociais": [
+      21,
+      38
+    ],
+    "palestino": [],
+    "política monetária": [],
+    "programas sociais": [
+      5,
+      9,
+      33,
+      42,
+      72
+    ],
+    "qualificação": [
+      5,
+      9,
+      17,
+      20,
+      35,
+      36,
+      43,
+      46,
+      54,
+      70
+    ],
+    "raciais": [],
+    "racial": [],
+    "rede de ensino": [
+      34
+    ],
+    "rede privada": [
+      7,
+      21,
+      37
+    ],
+    "refino": [
+      52,
+      53
+    ],
+    "reforma trabalhista": [
+      45
+    ],
+    "regras fiscais": [
+      5,
+      71
+    ],
+    "servidor": [
+      45,
+      69
+    ],
+    "serviços e exames": [
+      37
+    ],
+    "terceirização": [],
+    "teto de gastos": [
+      70
+    ],
+    "trabalho": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      16,
+      17,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      28,
+      36,
+      38,
+      40,
+      42,
+      43,
+      44,
+      45,
+      51,
+      54,
+      56,
+      57,
+      65,
+      72
+    ],
+    "voucher-creche": [
+      5,
+      6,
+      7,
+      21,
+      38
+    ]
+  },
+  "prior_consulted_after_page": 76,
+  "final_categories": {
+    "BR26-T001": "DISCORDA",
+    "BR26-T002": "CONDICIONAL_OU_MISTA",
+    "BR26-T003": "DISCORDA",
+    "BR26-T011": "DISCORDA",
+    "BR26-T015": "CONCORDA",
+    "BR26-T017": "CONCORDA",
+    "BR26-T018": "NAO_ENCONTRADA",
+    "BR26-T026A": "NAO_ENCONTRADA",
+    "BR26-T036": "NAO_ENCONTRADA",
+    "BR26-T038": "NAO_ENCONTRADA",
+    "BR26-T042": "CONCORDA",
+    "BR26-T043": "CONCORDA",
+    "BR26-T057": "NAO_ENCONTRADA",
+    "BR26-T063": "DISCORDA",
+    "BR26-T066": "NAO_ENCONTRADA",
+    "BR26-T067": "DISCORDA"
+  },
+  "comparison_counts": {
+    "confirmed": 16,
+    "divergent": 0,
+    "no_prior": 0
+  },
+  "validation": {
+    "command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002551544",
+    "valid": true,
+    "errors": []
+  }
+}

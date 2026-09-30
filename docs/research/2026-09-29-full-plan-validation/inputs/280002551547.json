@@ -1,0 +1,290 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002551547",
+    "name": "Escritor Augusto Cury",
+    "party": "AVANTE",
+    "pages": 200,
+    "member": "BR/2026BR280002551547_01.pdf",
+    "sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      16
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551547",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O compromisso com equilíbrio fiscal, déficit próximo de zero e redução da dívida não especifica manutenção nem revogação da LC 200/2023.",
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "Nossa meta será perseguir o déficit próximo de zero, sem aventuras fiscais"
+        }
+      ],
+      "inspected_pages": [
+        36
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano prevê renda de participações da União e parcerias com bancos públicos, mas não decide explicitamente transferir ou conservar o controle de todas as estatais.",
+      "evidence": [
+        {
+          "page": 98,
+          "quote": "Parte dos lucros das empresas em que a União possui participação será direcionada para políticas públicas voltadas ao empreendedorismo."
+        },
+        {
+          "page": 107,
+          "quote": "cooperativas de crédito, bancos públicos, fintechs e agentes locais."
+        }
+      ],
+      "inspected_pages": [
+        98,
+        107
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A discussão histórica dos direitos e os projetos de empreendedorismo/automação não fixam decisão sobre reforma de 2017, jornada geral ou prevalência normativa.",
+      "evidence": [],
+      "inspected_pages": [
+        11,
+        95,
+        96,
+        119,
+        120
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "Defende conservar o benefício durante a entrada no emprego formal ou na microempresa, mas limita essa continuidade a determinado tempo. Não apresenta programa público de trabalho remunerado nem define a situação posterior ao prazo; não sustenta concordância ou discordância integral e incondicionada.",
+      "evidence": [
+        {
+          "page": 98,
+          "quote": "Toda família beneficiada com"
+        },
+        {
+          "page": 99,
+          "quote": "Bolsa Família não será punida se assinar a carteira ou se abrir uma microempresa, por determinado tempo."
+        }
+      ],
+      "inspected_pages": [
+        98,
+        99
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O projeto FATO detalha integração, prevenção e tecnologia; não estabelece tratamento penal adulto para adolescentes.",
+      "evidence": [],
+      "inspected_pages": [
+        45,
+        46,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        192
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional e a p189, sobre proteção escolar, não propõem gestão militar. Patrulhamento e botão de emergência têm objeto diferente.",
+      "evidence": [],
+      "inspected_pages": [
+        49,
+        50,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        135,
+        189
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        56,
+        64,
+        99
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. O fortalecimento de cooperativas de saúde (p135) e a plataforma de atenção pública (p161–164) não determinam delegação nem encerramento de gestão pública por OS ou PPP.",
+      "evidence": [],
+      "inspected_pages": [
+        43,
+        44,
+        135,
+        161,
+        162,
+        163,
+        164
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "As referências ao Banco Central tratam de dados e articulação sobre crédito para mulheres; juros e crédito acessível não determinam a autonomia institucional.",
+      "evidence": [
+        {
+          "page": 89,
+          "quote": "Em articulação com o Banco Central, instituições financeiras, Sebrae, universidades e entidades especializadas"
+        }
+      ],
+      "inspected_pages": [
+        55,
+        89
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Os contextos de tecnologia e financiamento nas páginas 58 e 107 não decidem a estrutura da Petrobras. Buscas por Petrobras, Transpetro, refino, refinarias e integração não localizaram a decisão da tese.",
+      "evidence": [],
+      "inspected_pages": [
+        58,
+        107
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas integrais e leitura dos contextos: Cooperativas de saúde (p135), organização digital, triagem e a plataforma pública das p161–164 não especificam compra de atendimento privado pelo SUS.",
+      "evidence": [],
+      "inspected_pages": [
+        43,
+        44,
+        135,
+        161,
+        162,
+        163,
+        164
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. Incentiva escolas comunitárias e cooperativas educacionais na p135, mas não afirma voucher ou uso de recursos públicos para custear vagas privadas.",
+      "evidence": [],
+      "inspected_pages": [
+        49,
+        50,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        135,
+        189
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A integração econômica com o Mercosul ligada à zona franca do Rio Grande do Sul não resolve o acordo comercial com a União Europeia.",
+      "evidence": [],
+      "inspected_pages": [
+        60,
+        61,
+        114,
+        115,
+        116,
+        141,
+        158
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Convida Israel a liderar cooperação de irrigação. O trecho não decide expressamente manter relações diplomáticas enquanto perdurarem as condições da tese; o instrumento, os interlocutores e o momento da cooperação não estão fixados nesse sentido. A discordância anterior extrapolava a proposta setorial.",
+      "evidence": [
+        {
+          "page": 116,
+          "quote": "O Brasil deve convidar Israel para liderar um eixo de irrigação de precisão, fertirrigação, sensores, reuso e preparo de solo."
+        }
+      ],
+      "inspected_pages": [
+        60,
+        61,
+        114,
+        115,
+        116,
+        141,
+        158
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        60,
+        61,
+        114,
+        115,
+        116,
+        141,
+        158
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano propõe atrair capital internacional para infraestrutura e agroindústria no Semiárido.",
+      "evidence": [
+        {
+          "page": 118,
+          "quote": "Atrair capital internacional para irrigação, reservação, packing houses, centros logísticos, câmaras frias e agroindústria."
+        }
+      ],
+      "inspected_pages": [
+        118
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

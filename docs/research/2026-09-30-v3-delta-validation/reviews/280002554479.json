@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002554479",
+  "candidate_name": "Leonardo Avalanche",
+  "context_owner_agent_id": "/root/plan_leonardo",
+  "executor_agent_id": "/root/delta_leonardo_exclusive",
+  "document_sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002554479.json",
+    "../2026-09-29-thematic-profiles/profiles/280002554479.md",
+    "../2026-09-29-thematic-profiles/profiles/280002554479.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002554479.json"
+  ],
+  "method": "Reidratei os quatro arquivos de contexto anteriores do mesmo candidato, reli as 48 páginas físicas do PDF oficial e inspecionei a renderização integral. Pesquisei e confrontei as 48 entradas de raw-pages.json e layout-pages.json com termos diretos, variações e conceitos próximos dos quatro objetos. As páginas citadas foram relidas nos dois extratores. A classificação preserva as distinções do protocolo entre operação privada, concessão e parceria público-privada; entre usos de IA e desenvolvimento de capacidade nacional; entre concursos e reserva racial; e entre câmeras em geral e reconhecimento facial.",
+  "revisited_pages": [
+    13,
+    14,
+    19,
+    20,
+    26
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe investimento nacional em rodovias, hidrovias e ferrovias e quer ampliar a malha ferroviária operada por empresas privadas. Porém, não menciona concessão, parceria público-privada ou PPP como instrumento federal para ampliar a infraestrutura de transportes. Participação privada e aplicação do marco ferroviário não bastam para atribuir apoio aos dois instrumentos específicos perguntados.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Ferrovia: o Marco Legal das Ferrovias, em vigor desde 2021, permite a operadores privados construir e operar trechos ferroviários de menor porte (as chamadas \"shortlines\"), num modelo baseado na desregulamentação do setor ferroviário adotada nos Estados Unidos em 1980.",
+          "role": "context",
+          "interpretation": "O trecho admite construção e operação privada de ferrovias, mas não identifica concessão ou parceria público-privada como o instrumento adotado."
+        },
+        {
+          "page": 26,
+          "quote": "Nosso governo vai acelerar a implementação dessa legislação já existente, com meta de ampliação da malha ferroviária operada pelo setor privado.",
+          "role": "context",
+          "interpretation": "A meta de operação privada é próxima ao tema, mas não resolve a escolha específica por concessões e PPPs exigida pela pergunta."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "infraestrutura de transportes",
+        "rodovia",
+        "ferrovia",
+        "hidrovia",
+        "setor privado",
+        "operadores privados",
+        "Marco Legal das Ferrovias"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "A operação ferroviária privada é compatível com participação empresarial na infraestrutura, mas o protocolo determina que operação privada, concessão, autorização e PPP não sejam tratadas como equivalentes. O plano tampouco rejeita concessões ou PPPs; por isso, a ausência não autoriza DISCORDA.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano situa expressamente o Brasil na disputa mundial por liderança em inteligência artificial e propõe sair da posição de espectador. Para isso, adota tecnologia própria e protagonismo de empresas brasileiras, recomposição federal de Capes e CNPq e infraestrutura de pesquisa em universidades e centros do país. A combinação sustenta investimento federal no desenvolvimento de capacidade nacional de IA, mesmo sem criar um programa exclusivo de modelos de IA.",
+      "conditions": [
+        "A capacidade de IA aparece dentro de uma política tecnológica e científica ampla, sem orçamento, cronograma ou órgão exclusivos para IA.",
+        "O plano aceita empresas estrangeiras e parcerias internacionais, enquanto reserva protagonismo a empresas, tecnologia e pesquisa brasileiras."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Enquanto isso, o mundo inteiro disputa a liderança em inteligência artificial e inovação, e o Brasil, que tem tudo pra liderar essa corrida, fica só assistindo de fora.",
+          "role": "support",
+          "interpretation": "O diagnóstico define liderança brasileira em inteligência artificial como parte da capacidade tecnológica que o governo pretende desenvolver."
+        },
+        {
+          "page": 19,
+          "quote": "Na prática: criação de um polo tecnológico de escala mundial em território brasileiro, com incentivo fiscal pesado pra empresa brasileira de tecnologia, parcerias internacionais, e retomada forte do investimento em pesquisa científica através da recomposição do orçamento de Capes e CNPq.",
+          "role": "support",
+          "interpretation": "O trecho apresenta instrumentos federais de investimento e incentivo para desenvolver tecnologia e pesquisa no Brasil."
+        },
+        {
+          "page": 20,
+          "quote": "Tecnologia de ponta em toda universidade federal e centro de pesquisa: esse polo tecnológico não é só pra empresa estrangeira nem só pra quem trabalha com startup: é um compromisso de trazer tecnologia de ponta pra dentro de toda universidade federal e centro de pesquisa do Brasil, com laboratório equipado, bolsa de pesquisa com valor real e carreira científica estruturada",
+          "role": "support",
+          "interpretation": "Laboratórios, bolsas e carreira científica em instituições federais fornecem infraestrutura e pessoal para a capacidade tecnológica nacional, incluindo a corrida de IA nomeada na página anterior."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "liderança em inteligência artificial",
+        "tecnologia própria",
+        "tecnologia brasileira",
+        "polo tecnológico",
+        "pesquisa científica",
+        "Capes",
+        "CNPq",
+        "laboratório",
+        "universidade federal",
+        "centro de pesquisa",
+        "modelo nacional",
+        "infraestrutura computacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Os usos de IA em estoque de medicamentos, segurança e educação são aplicações de sistemas e, isoladamente, não provariam desenvolvimento nacional. A conclusão depende do capítulo tecnológico, que liga a disputa em IA ao polo nacional, à tecnologia própria e ao investimento federal em pesquisa e laboratórios. O plano não especifica treinamento de modelos nacionais, capacidade computacional dedicada ou exclusão de tecnologia estrangeira.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano menciona novos concursos públicos para a polícia, mas não apresenta reserva de vagas, cota ou critério racial nesses concursos nem em concursos federais de modo geral. Políticas voltadas a mulheres, jovens e pessoas com deficiência tratam de outros públicos e instrumentos e não preenchem essa lacuna.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Vamos somar as duas coisas: tecnologia de ponta unida a mais concursos públicos pra polícia, salário digno e reconhecimento de verdade pra quem arrisca a vida todos os dias enfrentando o crime na rua.",
+          "role": "context",
+          "interpretation": "A única proposta explícita de ampliar concursos não contém reserva de vagas ou qualquer critério racial."
+        }
+      ],
+      "search_terms": [
+        "cota",
+        "cotas",
+        "cota racial",
+        "critério racial",
+        "raça",
+        "negro",
+        "negros",
+        "preto",
+        "pretos",
+        "pardo",
+        "pardos",
+        "reserva de vagas",
+        "ação afirmativa",
+        "concurso público",
+        "concursos públicos",
+        "serviço público federal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "A menção a concursos policiais apenas amplia recrutamento e não define os critérios de seleção. O plano não contém abolição geral de cotas que pudesse sustentar oposição, nem apoio a cotas em outro universo que pudesse ser indevidamente transferido aos concursos federais.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano declara apoio ao reconhecimento facial ligado a câmeras de monitoramento e descreve seu uso quando um suspeito volta a passar por outra câmera na cidade, com alerta ao policial para prisão. Também prevê identificar pessoas sem documento por reconhecimento facial. Isso adota de forma direta o uso do instrumento em espaços públicos para segurança.",
+      "conditions": [
+        "O uso descrito é voltado ao combate ao crime, à identificação de suspeitos e à ação policial em câmeras urbanas.",
+        "O plano não detalha finalidade legal, privacidade, retenção, auditoria, precisão, revisão humana ou contestação de erros biométricos."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Na prática: somos a favor de toda tecnologia disponível pra combater o crime — câmera de monitoramento, reconhecimento facial, integração de dado em tempo real. É essa tecnologia que permite ver o roubo acontecendo, identificar o rosto de quem cometeu o crime, e, quando esse mesmo suspeito passar de novo por outra câmera na cidade, alertar na hora o policial mais próximo pra fazer a prisão.",
+          "role": "support",
+          "interpretation": "A passagem apoia expressamente reconhecimento facial em uma rede de câmeras urbanas para localizar e prender suspeitos."
+        },
+        {
+          "page": 14,
+          "quote": "Com o Sistema Único Nacional de Segurança funcionando em conjunto com tecnologia de reconhecimento facial, vai ser possível identificar a pessoa mesmo sem documento em mãos, cruzar antecedente na hora, e acabar com a brecha que hoje devolve esse jovem pra rua antes mesmo de a vítima registrar o boletim de ocorrência.",
+          "role": "support",
+          "interpretation": "O sistema biométrico é proposto para identificação policial imediata de pessoas, reforçando a finalidade de segurança pública."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "câmera de monitoramento",
+        "câmera na cidade",
+        "identificar o rosto",
+        "identificação biométrica",
+        "sem documento",
+        "mandado de prisão",
+        "foragido",
+        "procurado",
+        "espaço público",
+        "segurança pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "A proposta descreve usos policiais específicos, e não um uso irrestrito para qualquer finalidade. A falta de salvaguardas não permite afirmar que a candidatura rejeita controles, mas constitui uma limitação relevante do desenho apresentado.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

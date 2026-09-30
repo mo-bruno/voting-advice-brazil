@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "block_id": "B01",
+  "title": "Economia e Desenvolvimento",
+  "status": "approved",
+  "candidate_validation_dispatched": true,
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "note": "Origens são vínculos de pesquisa, não respostas à redação. A aprovação se refere conjuntamente à afirmação e à explicação. Este bloco não é a bateria final.",
+  "items": [
+    {
+      "id": "B01-Q01",
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "explanation": "A cobrança seria sobre patrimônios de valor muito elevado. Esta afirmação não define o valor mínimo para cobrança nem a alíquota.",
+      "decision": "Existência de um imposto sobre grandes fortunas.",
+      "why_selected": "Recupera uma escolha tributária identificável em vários registros e separa tributação do patrimônio, da renda e do consumo.",
+      "limits": [
+        "Grandes fortunas não tem limiar único nos registros; Hertz explicita patrimônio a partir de R$ 1 bilhão. A aprovação desta redação será apenas da escolha geral. Se o limiar for decisivo para o usuário ou para um plano, o item deve ser refinado ou permanecer condicional.",
+        "Criar esse imposto não equivale a tributar heranças, dividendos, toda renda alta ou todo patrimônio.",
+        "A existência de outras propostas tributárias em um plano não prova rejeição a este imposto."
+      ],
+      "editorial_changes": [
+        "Removida a progressividade da hipótese anterior para perguntar uma decisão por vez: criar o tributo.",
+        "Excluídas justificativas como fazer os ricos pagarem sua parte ou punir quem produz."
+      ],
+      "review_risk": "medium",
+      "version": 1,
+      "status": "approved",
+      "candidate_answers": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
+      "sources": [
+        {
+          "position_key": "280002538811:P03",
+          "candidate_name": "Samara",
+          "pages": [
+            16,
+            17
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002538811.json"
+        },
+        {
+          "position_key": "280002541457:P03",
+          "candidate_name": "Hertz Dias",
+          "pages": [
+            27
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002541457.json"
+        },
+        {
+          "position_key": "280002551975:P05",
+          "candidate_name": "Edmilson Costa",
+          "pages": [
+            4,
+            14
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551975.json"
+        },
+        {
+          "position_key": "280002552487:P04",
+          "candidate_name": "Rui Costa Pimenta",
+          "pages": [
+            3,
+            6
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002552487.json"
+        }
+      ],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Nenhum diagnóstico de injustiça ou insuficiência de arrecadação é presumido.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002552487:P04",
+            "page": 3,
+            "paraphrase": "O trecho associa imposto sobre grandes fortunas a recursos para aposentadorias e pensões."
+          }
+        ],
+        "interpretation_limit": "A finalidade declarada nesse trecho não é atribuída aos demais planos. A proposta não autoriza inferir uma motivação moral pessoal."
+      },
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "decision_family_ids": [
+        "E03"
+      ]
+    },
+    {
+      "id": "B01-Q02",
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "explanation": "Linhas de crédito são programas de empréstimo. Aqui, os setores atendidos seriam escolhidos pela política industrial do governo.",
+      "decision": "Existência de crédito direcionado a setores da indústria escolhidos pela política pública.",
+      "why_selected": "Compara um instrumento concreto de política industrial, sem confundir empréstimo, participação acionária, benefício tributário ou propriedade de bancos.",
+      "limits": [
+        "A frase não determina subsídio aos juros, fonte pública exclusiva do dinheiro, percentual de empréstimos ou escolha de uma empresa específica.",
+        "Reduzir gradualmente linhas subsidiadas não significa necessariamente rejeitar toda linha direcionada. O registro de Zema é um alerta para essa distinção, não uma resposta atribuída.",
+        "Contrapartidas, prazos e critérios de prioridade precisam acompanhar a classificação posterior.",
+        "Financiamento universal a todas as empresas não resolve por si a seleção setorial."
+      ],
+      "editorial_changes": [
+        "Substituída a expressão setores escolhidos politicamente por setores considerados prioritários, sem repetir a justificativa favorável ou crítica de um plano.",
+        "A explicação não promete crescimento, emprego ou barateamento do crédito."
+      ],
+      "review_risk": "medium",
+      "version": 1,
+      "status": "approved",
+      "candidate_answers": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
+      "sources": [
+        {
+          "position_key": "280002542548:P02",
+          "candidate_name": "Lula",
+          "pages": [
+            51
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002542548.json"
+        },
+        {
+          "position_key": "280002539826:P03",
+          "candidate_name": "Zema",
+          "pages": [
+            18
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002539826.json"
+        },
+        {
+          "position_key": "280002551932:P02",
+          "candidate_name": "Ronaldo Caiado",
+          "pages": [
+            43
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551932.json"
+        },
+        {
+          "position_key": "280002540694:P04",
+          "candidate_name": "Renan Santos",
+          "pages": [
+            39,
+            42
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002540694.json"
+        },
+        {
+          "position_key": "280002554479:P03",
+          "candidate_name": "Leonardo Avalanche",
+          "pages": [
+            22
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002554479.json"
+        }
+      ],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que escolher setores produzirá crescimento nem que todo crédito direcionado favoreça indevidamente empresas.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002539826:P03",
+            "page": 18,
+            "paraphrase": "A redução de programas direcionados é justificada no trecho pela ampliação da concorrência bancária e pelo barateamento do crédito."
+          },
+          {
+            "position_key": "280002551932:P02",
+            "page": 43,
+            "paraphrase": "O trecho propõe prioridades baseadas em vantagens nacionais, agregação de valor e dependência externa, com contrapartidas e prazo."
+          }
+        ],
+        "interpretation_limit": "Justificativas opostas ou distintas não geram automaticamente respostas opostas sobre toda modalidade de financiamento."
+      },
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "decision_family_ids": [
+        "E06",
+        "E07"
+      ]
+    },
+    {
+      "id": "B01-Q03",
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "explanation": "A pergunta trata da extração de minerais considerados estratégicos para a indústria e a tecnologia. A participação estrangeira poderia ter condições e limites.",
+      "decision": "Admissão de participação empresarial estrangeira na extração de minerais estratégicos.",
+      "why_selected": "Há propostas sobre abertura, contrapartidas, atuação do capital estrangeiro e propriedade dos recursos. O recorte setorial evita estender automaticamente posições sobre mineração a toda a economia.",
+      "limits": [
+        "Concordar permite participação condicionada; não significa abertura irrestrita. Se a condição muda o posicionamento, ela precisa aparecer no registro posterior.",
+        "Atrair capital para transformar minerais não comprova autorização para extraí-los: o registro de Flavio é contexto relacionado, sem resposta presumida.",
+        "Reestatizar ativos já entregues ao exterior não estabelece sozinho toda a política de futuros investimentos.",
+        "Minerais estratégicos não recebem lista exaustiva nesta redação. O termo e eventuais exceções precisam ser testados."
+      ],
+      "editorial_changes": [
+        "Delimitada extração, evitando confundir esse objeto com processamento industrial ou compra do produto mineral.",
+        "Retiradas expressões como entregar riquezas ou atrair desenvolvimento, que antecipariam juízo de valor."
+      ],
+      "review_risk": "medium",
+      "version": 1,
+      "status": "approved",
+      "candidate_answers": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
+      "sources": [
+        {
+          "position_key": "280002551932:P04",
+          "candidate_name": "Ronaldo Caiado",
+          "pages": [
+            53,
+            54
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551932.json"
+        },
+        {
+          "position_key": "280002551547:P06",
+          "candidate_name": "Escritor Augusto Cury",
+          "pages": [
+            179
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551547.json"
+        },
+        {
+          "position_key": "280002538811:P06",
+          "candidate_name": "Samara",
+          "pages": [
+            58
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002538811.json"
+        },
+        {
+          "position_key": "280002552487:P06",
+          "candidate_name": "Rui Costa Pimenta",
+          "pages": [
+            3
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002552487.json"
+        },
+        {
+          "position_key": "280002551544:P04",
+          "candidate_name": "Flavio Bolsonaro",
+          "pages": [
+            55
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551544.json"
+        }
+      ],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que participação estrangeira implique perda de soberania nem que garanta desenvolvimento.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002551547:P06",
+            "page": 179,
+            "paraphrase": "O trecho apresenta como objetivo agregar valor no Brasil antes de exportar, quando viável, e buscar contrapartidas tecnológicas e produtivas."
+          }
+        ],
+        "interpretation_limit": "A afirmação compara admissão da participação na extração; finalidades de processamento e tecnologia não provam sozinhas permissão para extrair."
+      },
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "decision_family_ids": [
+        "E05",
+        "E07"
+      ]
+    },
+    {
+      "id": "B01-Q04",
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "explanation": "Auditoria é uma investigação das contas e dos contratos da dívida. A afirmação trata de interromper os pagamentos durante a investigação, sem decidir pelo cancelamento definitivo da dívida.",
+      "decision": "Interrupção de pagamentos da dívida pública durante uma auditoria.",
+      "why_selected": "Distingue auditar a dívida, suspender pagamentos, renegociar e cancelar. São decisões relacionadas, com consequências de classificação diferentes.",
+      "limits": [
+        "A redação abrange os pagamentos de forma geral. Suspensão restrita a grandes investidores não equivale automaticamente a apoio à interrupção geral.",
+        "No plano de Samara, a suspensão é imediata e a auditoria vem em seguida; a sequência não deve ser apagada.",
+        "Cancelar dívidas com determinados credores não é sinônimo de uma suspensão temporária durante auditoria.",
+        "Não há afirmação de que a dívida seja ilegítima ou de que uma auditoria provará irregularidades."
+      ],
+      "editorial_changes": [
+        "Mantidos juntos instrumento e condição temporal indispensável, sem presumir o resultado da auditoria.",
+        "Retiradas justificativas sobre liberar recursos ou combater rentistas, que poderiam orientar a resposta.",
+        "A auditoria foi colocada como cenário da pergunta, para concentrar a resposta na suspensão dos pagamentos durante esse período."
+      ],
+      "review_risk": "medium",
+      "version": 1,
+      "status": "approved",
+      "candidate_answers": null,
+      "user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "user_message": "aprovado",
+        "recorded_at": "2026-09-29T22:30:37.498379+00:00"
+      },
+      "sources": [
+        {
+          "position_key": "280002551975:P02",
+          "candidate_name": "Edmilson Costa",
+          "pages": [
+            4,
+            13
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002551975.json"
+        },
+        {
+          "position_key": "280002538811:P02",
+          "candidate_name": "Samara",
+          "pages": [
+            14
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002538811.json"
+        },
+        {
+          "position_key": "280002541457:P01",
+          "candidate_name": "Hertz Dias",
+          "pages": [
+            28
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002541457.json"
+        },
+        {
+          "position_key": "280002552487:P05",
+          "candidate_name": "Rui Costa Pimenta",
+          "pages": [
+            6
+          ],
+          "source_profile": "../2026-09-29-thematic-profiles/profiles/280002552487.json"
+        }
+      ],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume irregularidade, ilegitimidade ou resultado da auditoria.",
+        "explicit_justifications": [],
+        "interpretation_limit": "Os trechos selecionados descrevem os instrumentos e suas condições. A ausência de uma justificativa transcrita aqui não prova que o restante do plano não a apresente."
+      },
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "decision_family_ids": [
+        "E02"
+      ]
+    }
+  ],
+  "deferred_topics": [
+    {
+      "topic": "Autonomia do Banco Central",
+      "reason": "Autonomia institucional, escolha de dirigentes, metas e decisão sobre juros não devem ser tratadas como uma decisão única. Delimitar o objeto antes de submetê-lo ao usuário."
+    },
+    {
+      "topic": "Regra fiscal",
+      "reason": "Manter a regra nominal de uma lei, reduzir despesa, mudar vinculações e suspender limites são decisões diferentes; requer recorte específico e explicação compreensível."
+    },
+    {
+      "topic": "Imposto único",
+      "reason": "Os desenhos registrados variam em base, alíquota, tributos substituídos e transição. Perguntar apenas por imposto único criaria equivalência artificial."
+    }
+  ],
+  "approval_record": "../2026-09-29-approved-block-01-validation/APPROVAL.json"
+}

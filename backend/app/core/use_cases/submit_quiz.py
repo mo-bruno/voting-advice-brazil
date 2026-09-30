@@ -11,11 +11,13 @@ from app.core.entities.candidate import CandidatePosition
 from app.core.scoring import (
     CandidateStance,
     InsufficientAnswersError,  # re-exportado para o router
+    RankingStatus,
     ScoreBreakdown,
     Stance,
     UserAnswer,
     Weight,
     rank,
+    ranking_status,
     score,
     validate_minimum,
 )
@@ -74,6 +76,7 @@ class ThesisMatch:
     theme_id: int
     user_answer: str
     candidate_position: str
+    candidate_analysis: str | None
     match_type: str  # "match" | "mismatch" | "partial" | "skipped"
 
 
@@ -89,6 +92,11 @@ class CandidateResult:
     rank: int
     counted_theses: int
     answered_theses: int
+    comparable_categories: int
+    documented_theses: int
+    documented_categories: int
+    ranking_status: str
+    ranking_eligible: bool
     matches: list[ThesisMatch] = field(default_factory=list)
 
 
@@ -146,6 +154,7 @@ def submit_quiz(
     candidate_repo: CandidateRepository,
     position_repo: PositionRepository,
     thesis_repo: ThesisRepository,
+    selected_candidate_ids: list[int] | None = None,
 ) -> list[CandidateResult]:
     """Pipeline: valida teses e mínimo → calcula scores → monta o ranking."""
     requested_ids = list(dict.fromkeys(answer.thesis_id for answer in answers))
@@ -160,10 +169,13 @@ def submit_quiz(
 
     answered_ids = [a.thesis_id for a in answers if a.answer != "skip"]
     candidates, _ = candidate_repo.list(page_size=100)
+    if selected_candidate_ids is not None:
+        selected_ids = set(selected_candidate_ids)
+        candidates = [candidate for candidate in candidates if candidate.id in selected_ids]
     candidate_ids = [c.id for c in candidates]
-    positions_map = position_repo.get_by_candidates_and_theses(
-        candidate_ids, answered_ids
-    )
+    edition_theses = thesis_repo.list_approved(limit=60)
+    edition_ids = [thesis.id for thesis in edition_theses]
+    positions_map = position_repo.get_by_candidates_and_theses(candidate_ids, edition_ids)
     theses = {t.id: t for t in available_theses if t.id in answered_ids}
 
     scored: list[tuple[int, str, ScoreBreakdown]] = []
@@ -173,6 +185,28 @@ def submit_quiz(
         stances = [_to_candidate_stance(p) for p in cand_positions.values()]
         breakdown = score(user_answers, stances)
         by_theme = _score_by_theme(answers, cand_positions)
+        documented_positions = [
+            position
+            for position in cand_positions.values()
+            if position.position != "sem_posicao"
+        ]
+        comparable_positions = [
+            position
+            for thesis_id, position in cand_positions.items()
+            if thesis_id in answered_ids and position.position != "sem_posicao"
+        ]
+        documented_categories = len(
+            {position.theme_id for position in documented_positions}
+        )
+        comparable_categories = len(
+            {position.theme_id for position in comparable_positions}
+        )
+        status = ranking_status(
+            documented_theses=len(documented_positions),
+            documented_categories=documented_categories,
+            compared_theses=breakdown.counted_theses,
+            compared_categories=comparable_categories,
+        )
 
         matches: list[ThesisMatch] = []
         for ans in answers:
@@ -188,6 +222,7 @@ def submit_quiz(
                     theme_id=thesis.theme_id,
                     user_answer=ans.answer,
                     candidate_position=cand_pos_str,
+                    candidate_analysis=pos.analytical_position if pos else None,
                     match_type=_match_type(ans.answer, cand_pos_str),
                 )
             )
@@ -197,18 +232,39 @@ def submit_quiz(
             "breakdown": breakdown,
             "by_theme": by_theme,
             "matches": matches,
+            "comparable_categories": comparable_categories,
+            "documented_theses": len(documented_positions),
+            "documented_categories": documented_categories,
+            "ranking_status": status,
         }
         scored.append((candidate.id, candidate.name, breakdown))
 
-    ranked = rank(item for item in scored if item[2].counted_theses > 0)
-    # A lack of evidence is not a zero-percent disagreement. Keep the numeric
-    # score for older clients, but leave these candidates explicitly unranked.
-    unscored = rank(item for item in scored if item[2].counted_theses == 0)
+    ranked = rank(
+        item
+        for item in scored
+        if intermediate[item[0]]["ranking_status"] is RankingStatus.ELIGIBLE
+    )
+    unranked = sorted(
+        (
+            item
+            for item in scored
+            if intermediate[item[0]]["ranking_status"] is not RankingStatus.ELIGIBLE
+        ),
+        key=lambda item: item[1].casefold(),
+    )
 
     results: list[CandidateResult] = []
-    for rc in [*ranked, *unscored]:
-        data = intermediate[rc.candidate_id]
+    ordered = [
+        (rc.candidate_id, rc.score, rc.rank)
+        for rc in ranked
+    ] + [
+        (candidate_id, breakdown, 0)
+        for candidate_id, _name, breakdown in unranked
+    ]
+    for candidate_id, result_score, result_rank in ordered:
+        data = intermediate[candidate_id]
         candidate = data["candidate"]
+        status = data["ranking_status"]
         results.append(
             CandidateResult(
                 candidate_id=candidate.id,
@@ -216,11 +272,16 @@ def submit_quiz(
                 party_acronym=candidate.party_acronym,
                 party_logo_url=candidate.party_logo_url,
                 photo_url=candidate.photo_url,
-                score_percent=rc.score.score_percent,
+                score_percent=result_score.score_percent,
                 score_by_theme=data["by_theme"],
-                rank=rc.rank if rc.score.counted_theses else 0,
-                counted_theses=rc.score.counted_theses,
+                rank=result_rank,
+                counted_theses=result_score.counted_theses,
                 answered_theses=len(answered_ids),
+                comparable_categories=data["comparable_categories"],
+                documented_theses=data["documented_theses"],
+                documented_categories=data["documented_categories"],
+                ranking_status=status.value,
+                ranking_eligible=status is RankingStatus.ELIGIBLE,
                 matches=data["matches"],
             )
         )

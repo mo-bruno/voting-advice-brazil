@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002552484",
+    "name": "Clariana Barao",
+    "party": "DC",
+    "pages": 15,
+    "member": "BR/2026BR280002552484_01.pdf",
+    "sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      16
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002552484",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Revisão de gastos, planejamento e transparência fiscal não constituem decisão sobre manter o arcabouço de 2023.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios"
+        }
+      ],
+      "inspected_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Concessões e PPPs em infraestrutura não determinam transferência de controle de todas as empresas estatais.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo"
+        }
+      ],
+      "inspected_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano trata de qualificação, reinserção de mulheres e simplificação regulatória; não define reforma de 2017, jornada semanal ou precedência de acordos.",
+      "evidence": [],
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por Bolsa Família, transferência de renda, frentes de trabalho, CadÚnico e beneficiários e contextos de autonomia/qualificação das páginas 3 e 9 não decidem a substituição do benefício por trabalho público remunerado.",
+      "evidence": [],
+      "inspected_pages": [
+        3,
+        9
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Proteção de crianças/adolescentes, segurança integrada e gestão prisional não decidem idade penal.",
+      "evidence": [],
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. O capítulo educacional trata de alfabetização, ensino integral e aprendizagem; não decide a presença militar na escola.",
+      "evidence": [],
+      "inspected_pages": [
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. PPPs na p5 aparecem na agenda de infraestrutura; saúde nas p11–12 prioriza organização e acesso. Não há decisão identificável sobre gestão assistencial por OS ou por empresas em PPP.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        11,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Crédito responsável e indicadores fiscais não especificam a autonomia do Banco Central.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Concessões, PPPs e planejamento econômico das páginas 5–6 não decidem organização da Petrobras. As buscas por empresa, refinarias e integração nos dois textos completos não recuperaram essa decisão.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        6
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas integrais e leitura dos contextos: Organização das filas, telemedicina e regulação não determinam contratar clínicas ou hospitais privados.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        11,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. A p3 propõe creches e apoio a famílias vulneráveis; o capítulo educacional não especifica voucher ou vaga privada paga pelo governo.",
+      "evidence": [],
+      "inspected_pages": [
+        3,
+        7,
+        8
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A cooperação internacional contra crimes não decide sobre o acordo comercial Mercosul–UE.",
+      "evidence": [],
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "NAO_ENCONTRADA",
+      "reason": "As buscas por capital/investimento estrangeiro, externo, internacional e multinacionais, com leitura dos contextos econômicos das páginas 5–6, não localizaram decisão de proibição geral nem de admissão de investimento externo. Concessões e PPPs sem origem do capital não resolvem a tese.",
+      "evidence": [],
+      "inspected_pages": [
+        5,
+        6
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

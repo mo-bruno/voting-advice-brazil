@@ -1,0 +1,272 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002542548",
+  "candidate_name": "Lula",
+  "agent_id": "/root/plan_lula",
+  "document_sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002542548.json",
+  "method": "Reutilizei a leitura integral anterior das 84 páginas e seu diário, e o perfil temático do próprio plano como índices. Nesta rodada extraí novamente o texto do PDF oficial para conferir as 84 páginas, pesquisei o documento completo com os termos e radicais declarados (sem distinguir acentos ou caixa) e reli integralmente as páginas listadas em revisited_pages, incluindo contextos tributários, industriais, minerais, fiscais e de política externa. Conferi visualmente a página física 51. Esta rodada é busca integral com releitura contextual, não uma segunda leitura integral. Não consultei outros planos ou fontes externas e não usei o mapa editorial para atribuir códigos.",
+  "revisited_pages": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    14,
+    18,
+    19,
+    29,
+    33,
+    37,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    55,
+    56,
+    57,
+    58,
+    59,
+    61,
+    63,
+    67,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A tese exige um imposto específico incidente sobre patrimônios de valor muito elevado. O plano relata tributação da renda dos super ricos, de offshores e de fundos exclusivos e promete justiça tributária, mas não especifica um imposto sobre grandes fortunas. Essas medidas não identificam o objeto patrimonial exigido, e tampouco constituem rejeição a ele. A leitura integral anterior, a busca em todas as 84 páginas e a releitura dos contextos tributários não forneceram apoio ou oposição documental suficiente.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Tributamos a renda dos super ricos e fechamos diversas brechas que só geravam distorções na economia, como a tributação de offshores e fundos exclusivos.",
+          "role": "context",
+          "interpretation": "O objeto declarado é renda e tributação de estruturas financeiras; não há identificação de imposto específico sobre grandes patrimônios."
+        },
+        {
+          "page": 49,
+          "quote": "O resultado fiscal virá, como fizemos até aqui, da retomada do crescimento econômico, do controle do aumento do gasto primário, investindo na melhoria da eficiência e da qualidade do gasto público, da promoção de justiça tributária e do combate aos privilégios e às distorções.",
+          "role": "context",
+          "interpretation": "Justiça tributária integra a estratégia futura, mas a passagem não escolhe o imposto perguntado."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "riqueza",
+        "patrimonio",
+        "tribut",
+        "imposto",
+        "progressiv",
+        "renda",
+        "dividend",
+        "heranca",
+        "tax",
+        "propriedade",
+        "riquezas",
+        "IGF"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Não se encontrou proposta nem rejeição do imposto específico. Isenção de imposto de renda, reforma do consumo e tributação de renda dos mais ricos não permitem preencher essa lacuna. As citações são contextos relacionados, não prova autônoma de ausência no documento.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano anuncia que utilizará financiamento direcionado em apoio à indústria, incluindo parceria entre crédito público e privado (p.51), e define como prioridade setores de alta e média intensidade tecnológica (p.52). Lidas na sequência da seção de política industrial, essas passagens estabelecem empréstimos direcionados conforme prioridades governamentais, respondendo ao objeto aprovado. A ligação entre instrumento de crédito e prioridade setorial é uma implicação clara do conjunto de propostas, sem depender de inferir subsídio de juros, propriedade dos bancos ou escolha de empresas individuais.",
+      "conditions": [
+        "O pacote de apoio inclui benefícios condicionados a conteúdo local e valor agregado nacional, além de margens de preferência com estímulos para empresas brasileiras.",
+        "O plano combina crédito público e privado; não fixa fonte exclusivamente pública, taxa uniforme ou subsídio obrigatório.",
+        "A prioridade destacada recai sobre cadeias estratégicas e setores de alta e média intensidade tecnológica; o documento não enumera todas as futuras linhas e respectivos beneficiários.",
+        "Essas condições delimitam o desenho dos instrumentos e não impedem um sinal favorável à existência de crédito industrial direcionado."
+      ],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Seguiremos fortalecendo os instrumentos de apoio à indústria. Utilizaremos financiamento direcionado, com soluções inovadoras de parceria entre crédito público e privado, compras públicas, concessões, regulações e benefícios condicionados a conteúdo local, valor agregado nacional, margens de preferência com estímulos para empresas brasileiras.",
+          "role": "support",
+          "interpretation": "Compromisso futuro com financiamento direcionado e crédito no âmbito dos instrumentos de apoio industrial; preserva a combinação de fontes e as contrapartidas do pacote."
+        },
+        {
+          "page": 52,
+          "quote": "Nosso compromisso será ampliar a produção local em cadeias produtivas estratégicas e fortalecer a inserção do Brasil nas tecnologias da Indústria 4.0, internalizando tecnologias, verticalizando cadeias produtivas e promovendo um amplo processo de digitalização e renovação do maquinário industrial. Nesse esforço, priorizaremos o fortalecimento de setores de alta e média intensidade tecnológica.",
+          "role": "support",
+          "interpretation": "Explicita seleção de prioridades setoriais no mesmo desenvolvimento da política industrial; sustenta o direcionamento, em vez de presumir crédito indistinto para toda empresa."
+        },
+        {
+          "page": 58,
+          "quote": "Também ampliaremos investimentos para apoiar o crescimento de pequenas e médias empresas em setores dinâmicos e portadores de futuro, por meio de fundos de participação estruturados pelos bancos públicos, em parceria com gestores privados e em conformidade com as diretrizes da política industrial.",
+          "role": "context",
+          "interpretation": "Confirma prioridades industriais em outro instrumento, mas fundos de participação não são tratados como empréstimos nem usados isoladamente para atribuir concordância."
+        }
+      ],
+      "search_terms": [
+        "credito",
+        "emprest",
+        "financi",
+        "fundo",
+        "bndes",
+        "nova industria",
+        "setor",
+        "missao",
+        "industr",
+        "setores estrategicos",
+        "prioriz",
+        "direcionad",
+        "emprestimo",
+        "subsid"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A expressão exata linhas de crédito específicas para setores industriais não aparece reunida em uma única frase; a conexão se apoia no financiamento direcionado explicitado na p.51 e nas prioridades industriais da p.52. O crédito geral a MPMEs, o crédito rural e os fundos de participação da p.58, isoladamente, não bastariam. Não há regra encontrada que elimine esse direcionamento.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe política para minerais críticos e terras raras com mapeamento, beneficiamento e agregação de valor no país. Não define se empresas estrangeiras poderão participar da extração desses minerais, com ou sem limites. A atração de plantas industriais para processamento não resolve a etapa extrativa. As formulações sobre soberania e oposição à subordinação externa também não são proibição geral de participação estrangeira. Por isso não há base para concordância, discordância ou uma condição decisiva sobre a permissão perguntada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Desenvolveremos uma política específica para minerais críticos e terras raras, capaz de organizar suas cadeias produtivas, diferenciar seus usos tecnológicos e evitar a simples exportação de matérias-primas estratégicas.",
+          "role": "context",
+          "interpretation": "Há política mineral explícita, mas seu objetivo de organizar cadeias e evitar exportação primária não define nacionalidade das empresas autorizadas à extração."
+        },
+        {
+          "page": 52,
+          "quote": "promoveremos uma estratégia regional de mapeamento, beneficiamento e agregação de valor, para inserir o país de forma soberana nas cadeias globais de valor desses recursos.",
+          "role": "context",
+          "interpretation": "A passagem destaca mapeamento e etapas de beneficiamento; não estabelece participação estrangeira na lavra."
+        },
+        {
+          "page": 56,
+          "quote": "Vamos transformar a região em um polo de atração de plantas industriais eletrointensivas que buscam energia renovável e previsível para produzir com baixa emissão — siderurgia verde, fertilizantes, química, cimento, alumínio, processamento de minerais críticos, hidrogênio de baixo carbono e seus derivados.",
+          "role": "context",
+          "interpretation": "O contexto é o Nordeste e a atração de plantas de processamento; não identifica nacionalidade nem participação estrangeira na extração."
+        },
+        {
+          "page": 83,
+          "quote": "Faremos firme oposição a qualquer tentativa de subordinar o Brasil a interesses estrangeiros ou de reduzir nosso país a uma posição de dependência geopolítica.",
+          "role": "context",
+          "interpretation": "Rejeitar subordinação não equivale a vedar qualquer investimento ou participação estrangeira, e não decide o subconjunto mineral extrativo."
+        }
+      ],
+      "search_terms": [
+        "minera",
+        "extracao",
+        "explora",
+        "estrangeir",
+        "internacion",
+        "capital",
+        "terras raras",
+        "joint",
+        "parcer",
+        "soberan",
+        "particip",
+        "nacionaliz",
+        "lavra",
+        "jazida",
+        "concess",
+        "minerio",
+        "beneficiamento",
+        "extrativ",
+        "investimento estrangeiro"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "As menções a financiamento internacional e abertura comercial são gerais; as de minerais concentram-se em cadeias produtivas, processamento, soberania e combate à mineração ilegal. Nenhuma delas explicita a permissão ou a proibição perguntada. Ausência de regra sobre extração estrangeira não foi convertida em rejeição nem em apoio condicionado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A tese liga a suspensão geral dos pagamentos da dívida pública ao período de uma auditoria. Não foi localizada proposta de auditoria acompanhada dessa interrupção, nem rejeição explícita a tal combinação. O compromisso com o arcabouço e a responsabilidade fiscal não determina por si o tratamento dos pagamentos durante uma investigação. As referências a renegociação de dívidas dizem respeito principalmente a famílias, empresas e estudantes, não à hipótese de dívida pública enunciada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 49,
+          "quote": "Para impulsionar ainda mais os investimentos produtivos e o crescimento econômico de longo prazo, vamos criar as condições para uma redução sustentada das taxas de juros, com inflação controlada e assegurando uma política fiscal responsável. Para isso, manteremos o novo arcabouço fiscal, que controlou o crescimento das despesas sem prejudicar as políticas sociais e permitiu uma redução significativa do déficit primário.",
+          "role": "context",
+          "interpretation": "A estratégia macroeconômica não menciona auditoria nem suspensão de pagamentos; não é tratada como oposição implícita à tese."
+        },
+        {
+          "page": 12,
+          "quote": "Para aliviar o comprometimento da renda com dívidas das famílias e das empresas, promovemos duas edições do programa Desenrola Brasil.",
+          "role": "context",
+          "interpretation": "O objeto é endividamento privado, distinto da dívida pública e de sua eventual auditoria."
+        },
+        {
+          "page": 8,
+          "quote": "Na tentativa de se reeleger, Bolsonaro dilapidou os cofres públicos, deu calote em precatórios e armou uma bomba fiscal para estados e municípios com a desoneração artificial de combustíveis.",
+          "role": "context",
+          "interpretation": "A crítica atribuída ao plano trata de episódio e obrigações específicos; não formula uma regra geral sobre pagamentos durante auditoria da dívida."
+        }
+      ],
+      "search_terms": [
+        "divida",
+        "audit",
+        "pagament",
+        "suspens",
+        "suspend",
+        "morat",
+        "renegoc",
+        "servico",
+        "juros",
+        "amort",
+        "calote",
+        "divida publica",
+        "titulo",
+        "credor",
+        "revisao",
+        "inadimpl",
+        "fiscal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Não se encontrou sequência de suspensão e auditoria, alcance geral de credores, duração da interrupção ou posição contrária explícita. Renegociação privada e crítica a precatórios não suprem esses elementos; continuidade fiscal genérica também não prova rejeição. As citações documentam contextos próximos, não comprovam isoladamente ausência integral.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

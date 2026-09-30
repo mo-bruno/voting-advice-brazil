@@ -131,7 +131,7 @@ class PrivacyPage extends StatelessWidget {
       ),
       (
         'Validação da área Acompanhar',
-        'Ao registrar interesse na área Acompanhar, o navegador cria um identificador aleatório separado das outras atividades. O servidor guarda somente um hash contextualizado e a data do registro. É um registro sem nome ou contato, mas pseudônimo: o mesmo navegador consegue consultá-lo e retirá-lo enquanto conservar o identificador. Ele é apagado na retirada, no encerramento da validação ou em até 180 dias, o que ocorrer primeiro.',
+        'Ao registrar interesse na área Acompanhar, o navegador cria um identificador aleatório separado das outras atividades. O servidor guarda somente um hash contextualizado e a data do registro. É um registro sem nome ou contato, mas pseudônimo: o mesmo navegador pode consultá-lo enquanto conservar o identificador. A interface atual não oferece retirada direta; para solicitar a exclusão do registro, use ${config.contactEmail}. Ele é apagado quando a retirada é processada, no encerramento da validação ou em até 180 dias, o que ocorrer primeiro.',
       ),
       (
         'Compartilhamento do resultado',

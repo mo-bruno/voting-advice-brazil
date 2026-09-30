@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002542548",
+  "candidate_name": "Lula",
+  "context_owner_agent_id": "/root/plan_lula",
+  "executor_agent_id": "/root/battery_lula",
+  "document_sha256": "e1c162c20c81dafadf69b10bab230b5a6dc48f6b6c27c2cfce853b131a8bcc36",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002542548.json",
+    "../2026-09-29-thematic-profiles/profiles/280002542548.md",
+    "../2026-09-29-thematic-profiles/profiles/280002542548.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002542548.json"
+  ],
+  "method": "Reidratei o perfil JSON, o perfil legível, o checkpoint da leitura temática e o parecer completo da bateria v2 registrados para /root/plan_lula. Em seguida pesquisei as 84 páginas físicas do PDF oficial reconstruído, com hash idêntico ao documento anterior, nas extrações raw-pages.json e layout-pages.json. Para cada uma das quatro teses usei termos exatos e sinônimos, reli todas as páginas citadas nas duas representações do corpus e conferi literalmente cada transcrição. Relações apenas temáticas e silêncio foram mantidos como evidência insuficiente.",
+  "revisited_pages": [
+    19,
+    29,
+    30,
+    53,
+    54,
+    55
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONDICIONAL_OU_MISTA",
+      "evidence_strength": "mixed",
+      "rationale": "O plano promete dar sequência a concessões de infraestrutura logística, mantendo concessões rodoviárias e intensificando as ferroviárias, o que apoia diretamente metade do conjunto instrumental perguntado. Porém, não propõe parceria público-privada no sentido jurídico específico. Como a redação aprovada reúne concessões e PPPs e o protocolo exige distingui-las, a cobertura apenas das concessões impede concordância integral.",
+      "conditions": [
+        "O apoio explícito alcança concessões rodoviárias e ferroviárias, com leilões de novos projetos e repactuação de contratos existentes.",
+        "Obras públicas e concessões coexistem; o plano não exige concessão em toda obra nem privatização de empresas públicas.",
+        "Investimentos públicos e privados articulados não foram tratados como sinônimo de contrato de parceria público-privada."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "A nova edição do Novo PAC manterá a articulação dos investimentos públicos e privados em infraestrutura logística, dando sequência a obras públicas e concessões.",
+          "role": "condition",
+          "interpretation": "O plano combina execução pública e concessões, em vez de aplicar um único modelo a toda infraestrutura."
+        },
+        {
+          "page": 53,
+          "quote": "Manteremos o ritmo nas concessões rodoviárias e intensificaremos as de ferrovias em duas frentes: leilão de novos projetos e repactuação dos contratos existentes.",
+          "role": "support",
+          "interpretation": "O trecho sustenta explicitamente o uso federal de concessões para ampliar infraestrutura de transportes rodoviários e ferroviários."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "investimentos públicos e privados",
+        "infraestrutura logística",
+        "rodovias",
+        "ferrovias",
+        "portos",
+        "aeroportos",
+        "leilões"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A política de concessões é inequívoca, mas nenhuma ocorrência de PPP ou parceria público-privada foi encontrada. A articulação genérica de capital público e privado não resolve essa lacuna porque os instrumentos são distintos na própria formulação aprovada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano mobiliza investimentos e compras governamentais para fortalecer a capacidade nacional nas cadeias digitais, promete infraestrutura computacional soberana operada por instituições nacionais, modelos de linguagem voltados aos problemas do país e investimento em pesquisa pública de IA. Esses compromissos coincidem diretamente com investimento federal em pesquisa, infraestrutura e modelos nacionais.",
+      "conditions": [
+        "A execução combina empresas públicas e privadas, universidades, centros de pesquisa e instituições nacionais.",
+        "O plano não exige monopólio estatal nem exclusão de tecnologias estrangeiras.",
+        "Datacenters instalados no Brasil devem oferecer contrapartidas de conteúdo local e capacidade computacional para o mercado interno."
+      ],
+      "evidence": [
+        {
+          "page": 54,
+          "quote": "No próximo ciclo, vamos fomentar o desenvolvimento do ecossistema nacional de tecnologia digital, desde a cadeia de datacenters até os serviços de nuvem, com destaque para o fortalecimento da inteligência artificial desenvolvida por empresas brasileiras.",
+          "role": "support",
+          "interpretation": "O governo promete fomentar diretamente um ecossistema nacional e o desenvolvimento de IA por empresas brasileiras."
+        },
+        {
+          "page": 54,
+          "quote": "Mobilizaremos investimentos, inovação, compras governamentais e sinergias entre empresas públicas e privadas, universidades e centros de pesquisa, fortalecendo a capacidade nacional nas cadeias digitais.",
+          "role": "support",
+          "interpretation": "O trecho explicita instrumentos federais de investimento e cooperação para ampliar capacidade nacional."
+        },
+        {
+          "page": 54,
+          "quote": "Vamos avançar numa infraestrutura computacional soberana, com supercomputadores desenvolvidos e operados por instituições nacionais.",
+          "role": "support",
+          "interpretation": "A proposta inclui infraestrutura computacional nacional, um dos componentes expressos da tese."
+        },
+        {
+          "page": 55,
+          "quote": "Vamos desenvolver e sustentar modelos de linguagem em português e outras línguas, voltados aos problemas do País, apoiados numa plataforma nacional de dados para treinamento e avaliação.",
+          "role": "support",
+          "interpretation": "O plano acrescenta desenvolvimento e sustentação de modelos e uma plataforma nacional de dados."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "capacidade nacional",
+        "soberania digital",
+        "infraestrutura computacional",
+        "supercomputadores",
+        "instituições nacionais",
+        "modelos de linguagem",
+        "plataforma nacional de dados",
+        "pesquisa e desenvolvimento",
+        "empresas brasileiras",
+        "compras governamentais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "A difusão de IA no setor produtivo, isoladamente, seria insuficiente; a classificação se apoia nos compromissos adicionais de desenvolver infraestrutura, pesquisa e modelos no país. A cooperação privada não reduz o caráter nacional nem exige propriedade federal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No capítulo das políticas federais de combate às desigualdades, o plano promete continuidade da participação da população negra no funcionalismo público e a vincula expressamente à política de cotas no serviço público aprimorada no mandato federal atual. Cotas raciais de ingresso no funcionalismo implicam reserva de vagas nos concursos públicos correspondentes, embora o trecho não repita a expressão concursos públicos federais.",
+      "conditions": [
+        "O plano não fixa percentual, procedimento de verificação, carreiras abrangidas ou duração da reserva.",
+        "A evidência trata da população negra no funcionalismo e é distinta das cotas universitárias descritas na página seguinte.",
+        "O alcance federal decorre do compromisso de continuidade de uma política do próprio mandato federal e não de uma inferência a partir de políticas subnacionais."
+      ],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "As políticas de fomento à participação da população negra no funcionalismo público, especialmente nos espaços superiores da gestão governamental, terão continuidade, alinhadas à política de cotas no serviço público que aprimoramos no atual mandato.",
+          "role": "support",
+          "interpretation": "A continuidade expressamente alinhada às cotas raciais no serviço público sustenta a manutenção da reserva de vagas de ingresso no funcionalismo federal."
+        }
+      ],
+      "search_terms": [
+        "concursos públicos federais",
+        "concurso público",
+        "reserva de vagas",
+        "cotas",
+        "cotas raciais",
+        "política de cotas no serviço público",
+        "funcionalismo público",
+        "população negra",
+        "critério racial",
+        "ações afirmativas",
+        "igualdade racial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "As cotas universitárias da p. 20 não foram usadas para preencher o objeto. A evidência decisiva é a política de cotas no serviço público da p. 19; a ausência da palavra concurso reduz a força a implicação clara, sem apagar o instrumento de ingresso reservado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê inteligência policial, integração de sistemas, drones, sensores, imagens de satélite, centros de comando e câmeras corporais. Não menciona reconhecimento facial, identificação biométrica nem comparação de imagens de espaços públicos com bases de identidade para qualquer finalidade de segurança. A versão 2 amplia a finalidade além de foragidos, mas a ausência do instrumento permanece.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "Daremos continuidade aos investimentos em radares, drones, sensores, imagens de satélite e centros integrados de comando e controle para fortalecer o monitoramento territorial, integrar a detecção do desmatamento às ações de segurança e incorporar o controle das rotas fluviais ao sistema nacional de enfrentamento ao crime ambiental.",
+          "role": "context",
+          "interpretation": "O monitoramento usa imagens e sensores para território, desmatamento e rotas fluviais, sem identificação facial de pessoas."
+        },
+        {
+          "page": 30,
+          "quote": "Ampliaremos o programa de estímulos para uso de câmeras corporais, com padrões nacionais para utilização, gestão e preservação das imagens.",
+          "role": "context",
+          "interpretation": "Câmeras corporais e preservação de imagens não constituem reconhecimento facial em espaços públicos."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "bases de identificação",
+        "espaços públicos",
+        "videomonitoramento",
+        "câmeras",
+        "imagens",
+        "sensores",
+        "drones",
+        "inteligência policial",
+        "segurança pública",
+        "foragidos",
+        "pessoas procuradas"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          84
+        ]
+      ],
+      "counterevidence_or_limits": "Integração de bases, monitoramento territorial e câmeras são tecnologias relacionadas, mas o protocolo determina que não sejam convertidas em reconhecimento facial. A ausência de salvaguardas específicas também não permite inferir rejeição a elas.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

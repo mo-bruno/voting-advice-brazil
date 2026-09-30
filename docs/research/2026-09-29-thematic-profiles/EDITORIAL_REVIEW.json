@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "reviews": [
+    {
+      "candidate_id": "280002551547",
+      "agent_id": "/root/plan_cury",
+      "profile_sha256": "434fbdc3c5adb444852b165c02cbc7ce7715458579090b7e6e43e56be36a9bbe",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 45 sínteses, condições e oito sementes; cotejo adicional das evidências de P03, P10, P14, P17, P23, P32, P37, P38 e P44. Preservadas tensão sobre seleção do STF, condições de urbanização/licenciamento e limite dos anexos ausentes. A003: Padronizada categoria principal de P12: Estado e Gestão Pública → Cidadania e Direitos. Conteúdo, condições e evidências preservados; origem mantida como referência secundária, sem dupla contagem.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002542548",
+      "agent_id": "/root/plan_lula",
+      "profile_sha256": "f25d18fcd7d759252a07a6d1efe142f019b9cb8196ed865bfd7ff2f71d8f1c72",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 52 posições e suas evidências selecionadas, condições e oito sementes. Preservadas distinções incentivo/obrigação de câmeras, função/controle de estatais e exploração petrolífera/transição. Condições numéricas de alimentação escolar não foram somadas.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002551932",
+      "agent_id": "/root/plan_caiado",
+      "profile_sha256": "da1f500fc08ba254667b8c9a61c25f1644a9744258fbc4c3e07240729c6bd883",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 46 posições e evidências selecionadas, condições e oito sementes. Preservadas compra de atendimento/gestão de unidade, critério clínico da fila, redução de danos/regime jurídico das drogas, tensões de recursos escolares e alcance do REDAD.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002539826",
+      "agent_id": "/root/plan_zema",
+      "profile_sha256": "549810646b5670dbb3ef16b03dd91e6795cb323ebb0c964536fe06cdc1ad91d2",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 58 sínteses, condições e oito sementes; cotejo adicional de 20 conjuntos de evidências, incluindo privatização/bancos, IA, previdência, Bolsa Família, internação, ensino domiciliar, trabalho, moderação de opiniões e competência penal estadual. Preservadas a literalidade incomum do plano e a tensão societária; hipóteses não convertidas em juízo de viabilidade jurídica.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002551544",
+      "agent_id": "/root/plan_flavio",
+      "profile_sha256": "77ae389896b928ba85cba4d3fda711305a832450e8d611c863579d440f6372cd",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 52 sínteses, condições e 8 sementes, com cotejo adicional de 23 conjuntos de citações sobre regras fiscais, desestatização, licenciamento, saúde, educação, direitos, segurança e OCDE. Correção A001 explicita o retorno ao benefício após seguro-desemprego. Preservadas diferenças de alcance, atribuições de alegações e limites de viabilidade. A004: Padronizada categoria principal de P40: Cidadania e Direitos → Estado e Gestão Pública. Conteúdo, condições e evidências preservados; origem mantida como referência secundária, sem dupla contagem. Estado passa a sete posições por reagrupamento, sem inflar ou excluir escolhas do perfil.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002538811",
+      "agent_id": "/root/plan_samara",
+      "profile_sha256": "156068a63c25085dae91cf1f26cbce562b30d847fffe7de3b51a6e593b932180",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 51 sínteses, condições e oito sementes, com cotejo de 22 conjuntos de evidências. Mesmo agente realizou A002: reforma agrária na categoria territorial e tensão numérica 36/30 horas vinculada só a P37. Mantidas distinções entre direitos nas plataformas/vínculo CLT e saúde pública/legalização do comércio de drogas.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002548139",
+      "agent_id": "/root/plan_grassi",
+      "profile_sha256": "8a3e5ced7159a6cfa38bdb319f48d3edeaf7c55286d1f6c24ccd912201dd343b",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 49 sínteses, condições e oito sementes, com cotejo de 21 conjuntos de evidências. Preservados limites do IUF, financiamento habitacional, consentimento indígena, carreira científica, plebiscito e missões militares. A005 padroniza a categoria de interoperabilidade administrativa, sem alterar evidências.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002540694",
+      "agent_id": "/root/plan_renan",
+      "profile_sha256": "f601db4a8eb76ce597291b10f2a57fac80b669e963a92844c31c1d301690507c",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 47 sínteses, condições e oito sementes, com cotejo de 23 conjuntos de evidências. Mesmo agente fez A006 e restringiu S02 ao Minha Casa Minha Vida. Preservados desenho de tutelas municipais, limites de remoção habitacional, alcance de cotas, condição fiscal dos investimentos e ausência de proposta expressa de armas nucleares.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente; livro externo anunciado permanece fora da fonte."
+    },
+    {
+      "candidate_id": "280002554479",
+      "agent_id": "/root/plan_leonardo",
+      "profile_sha256": "191390ee7daf7effb9bb10b6809e7ea59fea9fab1f4cfaee56edc0038c493e3d",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 43 sínteses, condições e oito sementes, com cotejo de 23 conjuntos de citações. Preservados compromissos de estudo, condições de aplicativos, permanência de benefício restrita ao programa, requisitos do primeiro emprego e tensões tributária/plataformas. A007 padroniza categorias sem alterar posições.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de alegações clínicas, esportivas, internacionais ou de viabilidade do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002552484",
+      "agent_id": "/root/plan_clariana",
+      "profile_sha256": "201fdcc3ac8af03306609b436546ac2a72e5efc0c9648bf17e99ca81bbd57991",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 30 sínteses e seus trechos literais, condições e oito sementes. Aceitas sete categorias substantivas, CTI geral e duas sem decisão própria; tecnologias usadas em serviços não foram contadas novamente como política científica autônoma. Preservadas avaliação prévia no SUS e natureza de versão em desenvolvimento. Não se atribuiu ensino integral, modelo privado de saúde ou privatização universal a frases gerais.",
+      "limitations": "Conferência documental e semântica, sem validar cientificamente terapias, resultados ou viabilidade. Listas operacionais não fornecem detalhamento de implementação; sementes ainda não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002541457",
+      "agent_id": "/root/plan_hertz",
+      "profile_sha256": "6612146ff9e225533762e921af5623822f40f21c7bffbd20954e81ffc1b5085f",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 58 sínteses, condições e oito sementes, com cotejo adicional de 29 grupos de evidências. Mesmo agente realizou A008 de consistência temática. Preservados limites de alcance, voluntariedade das contribuições de plataformas, proposta de câmeras contínuas e crítica ao acordo Mercosul–UE sem convertê-la em instrumento ausente.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002551975",
+      "agent_id": "/root/plan_edmilson",
+      "profile_sha256": "ab25816c0b73f72de5bdbb834ec683ed089e206756791002cc60aa397b2e2194",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 61 sínteses, condições e oito sementes, com cotejo adicional de 23 conjuntos de evidências. Mesmo agente realizou A009 de consistência temática. Preservadas ambiguidades no alcance agrário, percentuais de cotas e compatibilização da transição energética, além de distinções entre descriminalizar uso e legalizar mercado, cuidado domiciliar e equipamento assistivo, e frentes de trabalho e substituição de benefícios.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    },
+    {
+      "candidate_id": "280002552487",
+      "agent_id": "/root/plan_rui",
+      "profile_sha256": "797dbbd489c9b27f7398acf4fe13a51738800d32913b07d17c9b66dc09905eb6",
+      "editorial_review": "accepted",
+      "scope": "Conferidas as 44 sínteses, condições e oito sementes, com cotejo adicional de 28 grupos de evidências. Mesmo agente realizou A010 de consistência temática. Preservados limite temporal do Bolsa Família, alcance da expropriação, ausência de integração empresarial expressa, distinção de dissolução e desmilitarização, abrangência do armamento e limite das declarações de solidariedade. Tensão sobre expressão e concessões preservada sem atribuir incompatibilidade necessária.",
+      "limitations": "Conferência documental e semântica, sem verificação externa de viabilidade ou de alegações empíricas do plano. Sementes não validadas transversalmente."
+    }
+  ]
+}

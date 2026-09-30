@@ -81,7 +81,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
-    expect(find.text('RETIRAR INTERESSE'), findsOneWidget);
+    expect(find.text('RETIRAR INTERESSE'), findsNothing);
     expect(find.textContaining('registro sem nome ou contato'), findsOneWidget);
     expect(find.textContaining('registro anônimo'), findsNothing);
     expect(sink.names, [
@@ -156,7 +156,7 @@ void main() {
     expect(sink.names, contains('follow_waitlist_registered'));
   });
 
-  testWidgets('denied metrics do not block interest registration or withdrawal',
+  testWidgets('denied metrics do not block interest registration',
       (tester) async {
     final runtime = _Runtime();
     final controller = AnalyticsConsentController.testOnly(
@@ -187,12 +187,8 @@ void main() {
     expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
     expect(api.registerCalls, 1);
     expect(api.interestIds, everyElement(interestId));
-    await tester.ensureVisible(find.text('RETIRAR INTERESSE'));
-    await tester.pump();
-    await tester.tap(find.text('RETIRAR INTERESSE'));
-    await tester.pumpAndSettle();
-    expect(find.text('TENHO INTERESSE'), findsOneWidget);
-    expect(api.deleteCalls, 1);
+    expect(find.text('RETIRAR INTERESSE'), findsNothing);
+    expect(api.deleteCalls, 0);
     expect(runtime.events, isEmpty);
     expect(runtime.initializationCalls, 0);
   });

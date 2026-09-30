@@ -1,0 +1,615 @@
+{
+  "candidate_id": "280002538811",
+  "status": "complete",
+  "full_read_completed": true,
+  "document_sha256": "23c510d5b06bb149bb9390bbc144dcda9cfd2b6a677a854b3d993b16ed7a94e6",
+  "pages_total": 67,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67
+  ],
+  "current_page": 67,
+  "next_page": null,
+  "reading_method": "Leitura sequencial; layout nas páginas 1–8, raw preferido daí em diante para respeitar duas colunas. Retirada apenas de linhas consecutivas exatamente idênticas. Imagens nas páginas com extração insuficiente ou ordem duvidosa.",
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa eleitoral da candidatura Samara e vice Raquel, UP 80; programa pelo socialismo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Epígrafe de Marx e Engels sobre partido proletário e abolição de classes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Fotografia das duas candidatas, sem propostas textuais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Diagnóstico mundial de pobreza, desigualdade, guerras e deslocamentos; soberania e autodeterminação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 5,
+      "summary": "Crítica a intervenções imperialistas e ataques ao povo palestino; soberania de recursos brasileiros.",
+      "relevant_question_ids": [
+        "BR26-T063",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Riqueza brasileira, concentração de renda, precarização e insuficiência do salário mínimo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 7,
+      "summary": "Governo dos trabalhadores, controle público de setores estratégicos, planejamento democrático e serviços como direitos.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Introdução ao emprego e renda, exploração do trabalho e proposta de dobrar salário mínimo.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 9,
+      "summary": "Aumento imediato de 100% do mínimo; fim do arcabouço fiscal; início da defesa do fim da escala 6x1.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Redução da jornada, obrigação e garantia de trabalho para adultos capazes, proibição do trabalho infantil.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Emprego público, concursos, regulação de aplicativos, fim da propriedade estrangeira sobre aplicativos e cooperativas.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Frentes emergenciais de trabalho e defesa explícita de revogar reformas trabalhista, previdenciária, terceirização e arcabouço fiscal.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Revogação de todas as reformas antipovo; combate a supersalários e uso obrigatório do SUS e escola pública por agentes políticos.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Diagnóstico da dívida pública e proposta de suspender juros e amortizações com auditoria.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 15,
+      "summary": "Crítica à dívida, isenções e austeridade; realocação do serviço da dívida a necessidades sociais.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 16,
+      "summary": "Tributação indireta regressiva; isenção para trabalhadores e itens essenciais, com imposto progressivo sobre fortunas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 17,
+      "summary": "Tributação progressiva e justificativa da nacionalização do sistema bancário contra domínio financeiro privado.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 18,
+      "summary": "Fusão dos bancos sob controle estatal e gestão dos trabalhadores, nacionalização financeira e fim da autonomia do Banco Central.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 19,
+      "summary": "História do SUS, universalização e defesa de saúde pública gratuita e fim da exploração dos planos.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 20,
+      "summary": "SUS 100% estatal; fim da gestão por OS, fundações privadas e cooperativas empresariais; rede sanitária integralmente de gestão direta pública.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 21,
+      "summary": "Educação pública gratuita em todos os níveis, fim do lucro e do vestibular; diagnóstico da concentração empresarial.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Crítica a PPP e financiamento privado na educação; suspensão de verbas públicas para ensino privado e estatização progressiva.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 23,
+      "summary": "Ciência e tecnologia, bolsas de graduação e pós-graduação e valorização educacional; repetição editorial de propostas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 24,
+      "summary": "Introdução ao combate à corrupção, captura empresarial do Estado e caso Banco Master.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Responsabilização de corruptos/corruptores, confisco de bens, transparência e controle popular de orçamento e empresas estatais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 26,
+      "summary": "Introdução à emancipação das mulheres trabalhadoras e desigualdade salarial e de gênero.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 27,
+      "summary": "Diagnóstico de violência e sobrecarga do cuidado; creches públicas e participação política das mulheres.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 28,
+      "summary": "Combate à misoginia e violência, igualdade salarial, rede pública universal de creches e legalização do aborto.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 29,
+      "summary": "Introdução ao programa para juventude, desemprego, exclusão educacional e violência contra jovens negros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Educação, emprego, aprendizagem, transporte e cultura para jovens; rejeição expressa à redução da maioridade penal.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 31,
+      "summary": "Diagnóstico do racismo, desigualdades e encarceramento da população negra.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 32,
+      "summary": "Reparação histórica, ensino afro-brasileiro e indígena, ampliação de vagas reservadas à população negra nos setores públicos; introdução à LGBTfobia.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 33,
+      "summary": "Violências contra pessoas LGBTI+, atendimento especializado, educação sem discriminação e casas de acolhimento.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 34,
+      "summary": "Direitos de pessoas com deficiência: educação inclusiva, acessibilidade, cotas e ampliação do BPC.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 35,
+      "summary": "Demarcação de terras indígenas, retirada de invasores, fim do marco temporal e fortalecimento da Funai.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 36,
+      "summary": "Saúde e educação indígena públicas, participação indígena, liberdade política e combate a doações de capitalistas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 37,
+      "summary": "Democracia participativa e laicidade; democratização e estatização de monopólios dos meios de comunicação.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 38,
+      "summary": "Fim do monopólio estrangeiro sobre redes digitais, acesso popular à comunicação e restrição de publicidade nociva.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Cultura popular contra domínio empresarial, nacionalização de gravadoras e produtoras cinematográficas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 40,
+      "summary": "Infraestrutura cultural gratuita e financiamento de pequenos produtores; instituições públicas e nacionalização cultural.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 41,
+      "summary": "Crítica à mercantilização do futebol e das apostas; democratização do esporte.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 42,
+      "summary": "Sistema público de esporte e lazer, equipamentos, escolas, transparência de entidades e esporte feminino.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 43,
+      "summary": "Introdução à reforma agrária popular, nacionalização da terra e combate ao monopólio privado fundiário.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 44,
+      "summary": "Reforma agrária, crédito camponês, agroecologia, desapropriações e soberania alimentar.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 45,
+      "summary": "Compras públicas da agricultura familiar, Embrapa orientada aos camponeses; reforma urbana e moradias populares.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 46,
+      "summary": "Habitação popular em imóveis ociosos, função social da propriedade e infraestrutura urbana e climática.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 47,
+      "summary": "Introdução à segurança pública e crítica ao modelo repressivo militarizado.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 48,
+      "summary": "Desmilitarização policial, controle popular, inteligência e transição da guerra às drogas para saúde pública.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 49,
+      "summary": "Conselhos populares de segurança; eleição de juízes, reforma penitenciária e debate de cotas no Judiciário.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 50,
+      "summary": "Combate ao racismo e seletividade penal, abuso de prisão provisória e responsabilização de agentes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 51,
+      "summary": "Diagnóstico de transporte coletivo caro e domínio privado dos ônibus; proposta de estatização.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 52,
+      "summary": "Empresas públicas de transporte, tarifa zero, reestatização integral da CBTU e linhas privatizadas.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 53,
+      "summary": "Introdução à memória da ditadura e proposta de rever a Lei da Anistia e punir torturadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 54,
+      "summary": "Punição por crimes da ditadura e golpes, abertura de arquivos, CNV e rejeição de anistia a golpistas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 55,
+      "summary": "Introdução à soberania e fim das privatizações, com controle social de monopólios e setores estratégicos.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 56,
+      "summary": "Socialização e estatização de monopólios, planejamento e política industrial; introdução à crítica do capital estrangeiro.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 57,
+      "summary": "Crítica ao capital externo, remessas de lucros e dependência; monopólio estatal de comércio exterior.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 58,
+      "summary": "Proibição da atuação de capital estrangeiro na economia nacional; história de privatizações e concessões.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 59,
+      "summary": "Crítica à venda de refinarias Petrobras, privatizações de subsidiárias e infraestrutura e impactos sociais.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 60,
+      "summary": "Reestatização de empresas estratégicas, Petrobras 100% estatal com integração das refinarias e monopólios públicos.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 61,
+      "summary": "Introdução ambiental: defesa da natureza, Amazônia, expulsão de monopólios estrangeiros e demarcação.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 62,
+      "summary": "Diagnóstico climático e ambiental, combustíveis fósseis e importância das terras indígenas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 63,
+      "summary": "Transição ecológica, recuperação ambiental, trabalho emergencial, banimento de agrotóxicos e demarcação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 64,
+      "summary": "Solidariedade internacional, soberania e crítica a dívidas externas e acordo Mercosul–União Europeia.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 65,
+      "summary": "Crítica à dependência de potências, apoio a Cuba e Palestina e ruptura diplomática com Israel durante genocídio e apartheid.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 66,
+      "summary": "Fotografia de duas mulheres abraçadas com título A luta pelo socialismo, sem novas propostas; inspeção visual concluída.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 67,
+      "summary": "Conclusão socialista do programa, candidaturas de Samara e Raquel e convite à organização partidária.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extração contém apenas subtítulo.",
+      "finding": "Capa com Samara, vice Raquel e slogan A UP é o partido do povo; sem proposta adicional."
+    },
+    {
+      "page": 2,
+      "reason": "Texto curto em caixa e amplo espaço sem extração.",
+      "finding": "Epígrafe integral e rodapés eleitorais, sem conteúdo adicional."
+    },
+    {
+      "page": 3,
+      "reason": "Extração contém apenas cabeçalho.",
+      "finding": "Fotografia das candidatas; página não está vazia."
+    },
+    {
+      "page": 4,
+      "reason": "Layout mistura linhas de duas colunas.",
+      "finding": "Colunas devem ser lidas esquerda e direita; raw preserva sequência do texto principal e desloca caixa destacada ao final."
+    },
+    {
+      "page": 9,
+      "reason": "Ordem do raw desloca o diagnóstico salarial após propostas.",
+      "finding": "Imagem confirma diagnóstico à esquerda, proposta salarial e fim do arcabouço à direita; leitura completa sem conteúdo oculto."
+    },
+    {
+      "page": 12,
+      "reason": "Título em caixa pode deslocar a ordem da extração.",
+      "finding": "Caixa afirma revogar reformas trabalhista e previdenciária, terceirização irrestrita e arcabouço fiscal; texto das frentes de emprego é independente."
+    },
+    {
+      "page": 18,
+      "reason": "Proposta começa no fim de uma coluna e termina na outra.",
+      "finding": "Fim da autonomia do Banco Central continua a proposta de estatização bancária; dois blocos são a mesma sequência."
+    },
+    {
+      "page": 20,
+      "reason": "Texto substantivo em duas colunas e em negrito duplicado na extração.",
+      "finding": "Confirmados SUS 100% estatal e toda a rede sanitária de gestão direta pública, no mesmo item."
+    },
+    {
+      "page": 22,
+      "reason": "Conferir escopo da regra de financiamento em lista com contextos de ensino superior.",
+      "finding": "Suspensão do envio de verbas públicas para ensino privado consta de item geral de fim da privatização; educação infantil está incluída no capítulo."
+    },
+    {
+      "page": 30,
+      "reason": "Conferir alcance da negativa em lista da juventude.",
+      "finding": "Não à redução da maioridade penal é frase autônoma sem exceção por crime grave."
+    },
+    {
+      "page": 32,
+      "reason": "Precisar reserva de vagas raciais em duas colunas.",
+      "finding": "Texto confirma ampliar vagas nos setores públicos reservadas para a população negra."
+    },
+    {
+      "page": 38,
+      "reason": "Extração muito curta.",
+      "finding": "Página contém somente três propostas de comunicação e amplo espaço em branco; nenhum trecho oculto."
+    },
+    {
+      "page": 41,
+      "reason": "Raw antecipa a coluna direita e duplica título.",
+      "finding": "Imagem recompõe esquerda para direita: futebol, apostas e democratização do esporte, sem conteúdo adicional relacionado às perguntas."
+    },
+    {
+      "page": 43,
+      "reason": "Título em caixa deslocado na extração e fotografia.",
+      "finding": "Fotografia de movimento de moradia e caixa sobre reforma agrária; texto continua da esquerda para a direita."
+    },
+    {
+      "page": 50,
+      "reason": "Extração muito curta.",
+      "finding": "Página contém um único item sobre racismo penal e direitos humanos e amplo espaço em branco."
+    },
+    {
+      "page": 58,
+      "reason": "Confirmar alcance da proibição antes da mudança de seção.",
+      "finding": "Proibição de atuação do capital estrangeiro dentro da economia nacional é item integral e geral antes do título de reestatização."
+    },
+    {
+      "page": 60,
+      "reason": "Proposta duplica segmentos em negrito no raw.",
+      "finding": "Imagem confirma estatização imediata de Petrobras com controle 100% estatal e integração das refinarias."
+    },
+    {
+      "page": 64,
+      "reason": "Raw antecipa a coluna direita e frase continua na página seguinte.",
+      "finding": "A crítica ao acordo Mercosul–União Europeia termina com priorizam e continua no início da p.65; fotografia sem proposta adicional."
+    },
+    {
+      "page": 65,
+      "reason": "Confirmar continuidade de p.64 e condição da ruptura com Israel.",
+      "finding": "Acordo é associado a relações de dependência; ruptura diplomática com Israel explicitamente dura enquanto genocídio e apartheid."
+    },
+    {
+      "page": 66,
+      "reason": "Extração contém apenas título.",
+      "finding": "Fotografia de duas mulheres abraçadas e título A luta pelo socialismo; nenhuma proposta omitida."
+    },
+    {
+      "page": 67,
+      "reason": "Extração duplica segmentos da conclusão e contém chamada gráfica.",
+      "finding": "Conclusão integral e convite de filiação confirmados; sem novas posições entre as 16 perguntas."
+    }
+  ],
+  "questions_to_resolve": [],
+  "classification_counts": {
+    "DISCORDA": 7,
+    "CONCORDA": 6,
+    "NAO_ENCONTRADA": 3
+  },
+  "comparisons": {
+    "confirmed": 16
+  }
+}

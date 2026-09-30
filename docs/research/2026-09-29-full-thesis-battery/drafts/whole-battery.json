@@ -1,0 +1,1211 @@
+{
+  "schema_version": 1,
+  "draft_id": "whole-battery-v0",
+  "status": "editorial_draft_pending_user_review",
+  "selection_basis": {
+    "mapped_positions": 636,
+    "decision_families": 118,
+    "rule": "quality_over_category_quota",
+    "candidate_classification_performed": false,
+    "pdf_validation_performed": false,
+    "existing_battery_used": false,
+    "note": "A seleção deriva exclusivamente do mapa de decisões, dos perfis consolidados, das quatro âncoras B01 v1 e dos critérios editoriais desta rodada. Vínculos abaixo indicam apenas origem ou provável interseção semântica; não são respostas de candidaturas."
+  },
+  "item_count": 29,
+  "items": [
+    {
+      "id": "B01-Q01",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "explanation": "A cobrança seria sobre patrimônios de valor muito elevado. Esta afirmação não define o valor mínimo para cobrança nem a alíquota.",
+      "decision": "Existência de um imposto sobre grandes fortunas.",
+      "rationale": "Recupera uma escolha tributária identificável em vários registros e separa tributação do patrimônio, da renda e do consumo.",
+      "decision_family_ids": ["E03"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Nenhum diagnóstico de injustiça ou insuficiência de arrecadação é presumido.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002552487:P04",
+            "page": 3,
+            "paraphrase": "O trecho associa imposto sobre grandes fortunas a recursos para aposentadorias e pensões."
+          }
+        ],
+        "interpretation_limit": "A finalidade declarada nesse trecho não é atribuída aos demais planos. A proposta não autoriza inferir uma motivação moral pessoal."
+      },
+      "limits": [
+        "Grandes fortunas não tem limiar único nos registros; Hertz explicita patrimônio a partir de R$ 1 bilhão. A aprovação desta redação será apenas da escolha geral. Se o limiar for decisivo para o usuário ou para um plano, o item deve ser refinado ou permanecer condicional.",
+        "Criar esse imposto não equivale a tributar heranças, dividendos, toda renda alta ou todo patrimônio.",
+        "A existência de outras propostas tributárias em um plano não prova rejeição a este imposto."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P03", "decision_family_ids": ["E03"]},
+        {"position_key": "280002541457:P03", "decision_family_ids": ["E03"]},
+        {"position_key": "280002551975:P05", "decision_family_ids": ["E03"]},
+        {"position_key": "280002552487:P04", "decision_family_ids": ["E03"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": true
+    },
+    {
+      "id": "B01-Q02",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "explanation": "Linhas de crédito são programas de empréstimo. Aqui, os setores atendidos seriam escolhidos pela política industrial do governo.",
+      "decision": "Existência de crédito direcionado a setores da indústria escolhidos pela política pública.",
+      "rationale": "Compara um instrumento concreto de política industrial, sem confundir empréstimo, participação acionária, benefício tributário ou propriedade de bancos.",
+      "decision_family_ids": ["E06", "E07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que escolher setores produzirá crescimento nem que todo crédito direcionado favoreça indevidamente empresas.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002539826:P03",
+            "page": 18,
+            "paraphrase": "A redução de programas direcionados é justificada no trecho pela ampliação da concorrência bancária e pelo barateamento do crédito."
+          },
+          {
+            "position_key": "280002551932:P02",
+            "page": 43,
+            "paraphrase": "O trecho propõe prioridades baseadas em vantagens nacionais, agregação de valor e dependência externa, com contrapartidas e prazo."
+          }
+        ],
+        "interpretation_limit": "Justificativas opostas ou distintas não geram automaticamente respostas opostas sobre toda modalidade de financiamento."
+      },
+      "limits": [
+        "A frase não determina subsídio aos juros, fonte pública exclusiva do dinheiro, percentual de empréstimos ou escolha de uma empresa específica.",
+        "Reduzir gradualmente linhas subsidiadas não significa necessariamente rejeitar toda linha direcionada. O registro de Zema é um alerta para essa distinção, não uma resposta atribuída.",
+        "Contrapartidas, prazos e critérios de prioridade precisam acompanhar a classificação posterior.",
+        "Financiamento universal a todas as empresas não resolve por si a seleção setorial."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P03", "decision_family_ids": ["E06"]},
+        {"position_key": "280002542548:P02", "decision_family_ids": ["E06", "E07"]},
+        {"position_key": "280002551932:P02", "decision_family_ids": ["E06", "E07"]},
+        {"position_key": "280002540694:P04", "decision_family_ids": ["E06", "E07"]},
+        {"position_key": "280002554479:P03", "decision_family_ids": ["E06", "E07"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": true
+    },
+    {
+      "id": "B01-Q03",
+      "category_id": "economia_desenvolvimento",
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "explanation": "A pergunta trata da extração de minerais considerados estratégicos para a indústria e a tecnologia. A participação estrangeira poderia ter condições e limites.",
+      "decision": "Admissão de participação empresarial estrangeira na extração de minerais estratégicos.",
+      "rationale": "Há propostas sobre abertura, contrapartidas, atuação do capital estrangeiro e propriedade dos recursos. O recorte setorial evita estender automaticamente posições sobre mineração a toda a economia.",
+      "decision_family_ids": ["E05", "E07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que participação estrangeira implique perda de soberania nem que garanta desenvolvimento.",
+        "explicit_justifications": [
+          {
+            "position_key": "280002551547:P06",
+            "page": 179,
+            "paraphrase": "O trecho apresenta como objetivo agregar valor no Brasil antes de exportar, quando viável, e buscar contrapartidas tecnológicas e produtivas."
+          }
+        ],
+        "interpretation_limit": "A afirmação compara admissão da participação na extração; finalidades de processamento e tecnologia não provam sozinhas permissão para extrair."
+      },
+      "limits": [
+        "Concordar permite participação condicionada; não significa abertura irrestrita. Se a condição muda o posicionamento, ela precisa aparecer no registro posterior.",
+        "Atrair capital para transformar minerais não comprova autorização para extraí-los: o registro de Flavio é contexto relacionado, sem resposta presumida.",
+        "Reestatizar ativos já entregues ao exterior não estabelece sozinho toda a política de futuros investimentos.",
+        "Minerais estratégicos não recebem lista exaustiva nesta redação. O termo e eventuais exceções precisam ser testados."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P06", "decision_family_ids": ["E05"]},
+        {"position_key": "280002551544:P04", "decision_family_ids": ["E05", "E07"]},
+        {"position_key": "280002551547:P06", "decision_family_ids": ["E05", "E07"]},
+        {"position_key": "280002551932:P04", "decision_family_ids": ["E05", "E07"]},
+        {"position_key": "280002552487:P06", "decision_family_ids": ["E07"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": true
+    },
+    {
+      "id": "B01-Q04",
+      "category_id": "economia_desenvolvimento",
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "explanation": "Auditoria é uma investigação das contas e dos contratos da dívida. A afirmação trata de interromper os pagamentos durante a investigação, sem decidir pelo cancelamento definitivo da dívida.",
+      "decision": "Interrupção de pagamentos da dívida pública durante uma auditoria.",
+      "rationale": "Distingue auditar a dívida, suspender pagamentos, renegociar e cancelar. São decisões relacionadas, com consequências de classificação diferentes.",
+      "decision_family_ids": ["E02"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume irregularidade, ilegitimidade ou resultado da auditoria.",
+        "explicit_justifications": [],
+        "interpretation_limit": "Os trechos selecionados descrevem os instrumentos e suas condições. A ausência de uma justificativa transcrita aqui não prova que o restante do plano não a apresente."
+      },
+      "limits": [
+        "A redação abrange os pagamentos de forma geral. Suspensão restrita a grandes investidores não equivale automaticamente a apoio à interrupção geral.",
+        "No plano de Samara, a suspensão é imediata e a auditoria vem em seguida; a sequência não deve ser apagada.",
+        "Cancelar dívidas com determinados credores não é sinônimo de uma suspensão temporária durante auditoria.",
+        "Não há afirmação de que a dívida seja ilegítima ou de que uma auditoria provará irregularidades."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P02", "decision_family_ids": ["E02"]},
+        {"position_key": "280002541457:P01", "decision_family_ids": ["E02"]},
+        {"position_key": "280002551975:P02", "decision_family_ids": ["E02"]},
+        {"position_key": "280002552487:P05", "decision_family_ids": ["E02"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": true
+    },
+    {
+      "id": "WB-Q05",
+      "category_id": "economia_desenvolvimento",
+      "statement": "O Banco Central deve deixar de ter autonomia em relação ao governo federal.",
+      "explanation": "A autonomia permite que a instituição tome decisões dentro de seu mandato legal sem subordinação direta ao governo. A afirmação não define a taxa de juros nem a composição de sua diretoria.",
+      "decision": "Fim da autonomia institucional do Banco Central.",
+      "rationale": "Isola uma regra institucional com potencial de contraste e evita confundi-la com preferências sobre juros, inflação ou nomes para a diretoria.",
+      "decision_family_ids": ["E04"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se avalia o desempenho atual do Banco Central.",
+        "justification_in_statement": "Nenhuma finalidade econômica é usada para orientar a resposta.",
+        "interpretation_limit": "Posição sobre juros ou sobre bancos estatais não decide, sozinha, a autonomia institucional."
+      },
+      "limits": [
+        "Mudar a composição da diretoria ou do Conselho Monetário Nacional é decisão separada.",
+        "Autonomia não significa ausência de mandato legal ou de prestação de contas.",
+        "A redação geral precisa ser confrontada com o alcance jurídico exato defendido em cada plano."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P04", "decision_family_ids": ["E04"]},
+        {"position_key": "280002551975:P04", "decision_family_ids": ["E04"]},
+        {"position_key": "280002552487:P03", "decision_family_ids": ["E04"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q06",
+      "category_id": "estado_gestao",
+      "statement": "A Petrobras deve ser integralmente estatal.",
+      "explanation": "Isso significa que o poder público controlaria todo o capital da empresa. A afirmação não decide se a Petrobras teria monopólio do setor nem quais etapas da cadeia reuniria.",
+      "decision": "Propriedade integralmente estatal da Petrobras.",
+      "rationale": "Seleciona um objeto de propriedade reconhecível e evita transformar toda privatização, integração produtiva ou política de combustíveis na mesma escolha.",
+      "decision_family_ids": ["G01"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que propriedade estatal seja mais eficiente ou mais soberana.",
+        "justification_in_statement": "Nenhuma consequência sobre preços, investimento ou emprego é prometida.",
+        "interpretation_limit": "Propriedade integral não implica monopólio, reestatização de toda empresa estratégica ou integração de todas as atividades."
+      },
+      "limits": [
+        "O item não pergunta pela privatização de todas as estatais.",
+        "Integração de refinarias, eleição de dirigentes e monopólio setorial são decisões separadas.",
+        "Planos que defendem avaliação caso a caso precisam ser lidos especificamente para a Petrobras."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P07", "decision_family_ids": ["G01"]},
+        {"position_key": "280002539826:P07", "decision_family_ids": ["G01"]},
+        {"position_key": "280002541457:P08", "decision_family_ids": ["G01"]},
+        {"position_key": "280002551544:P08", "decision_family_ids": ["G01"]},
+        {"position_key": "280002551975:P12", "decision_family_ids": ["G01"]},
+        {"position_key": "280002552487:P07", "decision_family_ids": ["G01"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q07",
+      "category_id": "estado_gestao",
+      "statement": "Ministros do Supremo Tribunal Federal devem ser escolhidos pelo voto popular.",
+      "explanation": "A afirmação trata apenas da forma de escolha dos ministros do STF. Ela não define duração de mandato, possibilidade de revogação nem regras para outros tribunais.",
+      "decision": "Eleição popular dos ministros do Supremo Tribunal Federal.",
+      "rationale": "Compara um método de seleção concreto diante de alternativas de indicação, escolha pelas carreiras jurídicas ou extinção do órgão.",
+      "decision_family_ids": ["G05"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se avalia a atuação atual do STF.",
+        "justification_in_statement": "A frase não associa eleição a democratização, qualidade ou independência.",
+        "interpretation_limit": "Apoiar mandato, reduzir o tamanho da Corte ou extingui-la não estabelece automaticamente posição sobre eleição popular."
+      },
+      "limits": [
+        "Eleição de juízes em geral não prova, sem leitura, apoio à mesma regra específica para o STF.",
+        "Escolha por integrantes das carreiras jurídicas não equivale a voto popular.",
+        "A transição e os requisitos de candidatura não são definidos."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P11", "decision_family_ids": ["G05"]},
+        {"position_key": "280002551547:P10", "decision_family_ids": ["G05"]},
+        {"position_key": "280002551975:P10", "decision_family_ids": ["G05"]},
+        {"position_key": "280002552487:P10", "decision_family_ids": ["G05"]},
+        {"position_key": "280002552487:P11", "decision_family_ids": ["G05"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q08",
+      "category_id": "estado_gestao",
+      "statement": "O serviço público deve preservar estabilidade ampla para seus servidores.",
+      "explanation": "Estabilidade limita a demissão sem procedimento e motivo previstos em lei. A afirmação pergunta pela regra geral e não impede avaliação de desempenho nem sanções legais.",
+      "decision": "Preservação de estabilidade ampla como regra dos vínculos no serviço público.",
+      "rationale": "Coloca em comparação modelos de vínculo estável e contratos por tempo indeterminado sem estabilidade ampla, sem confundir avaliação com demissão automática.",
+      "decision_family_ids": ["G07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que a estabilidade cause proteção indevida ou independência funcional suficiente.",
+        "justification_in_statement": "Nenhuma avaliação moral de servidores aparece na frase.",
+        "interpretation_limit": "Concurso, avaliação, bônus, contratos temporários e regras para cargos típicos de Estado permanecem separados."
+      },
+      "limits": [
+        "A redação não define se a mesma regra vale para todo vínculo temporário ou para futuras admissões.",
+        "Avaliação de desempenho não implica rejeição à estabilidade sem consequência de desligamento expressa.",
+        "Incorporação de terceirizados e estabilidade de vínculos precários exigem leitura própria."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P10", "decision_family_ids": ["G07"]},
+        {"position_key": "280002541457:P10", "decision_family_ids": ["G07"]},
+        {"position_key": "280002551547:P07", "decision_family_ids": ["G07"]},
+        {"position_key": "280002552487:P08", "decision_family_ids": ["G07"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q09",
+      "category_id": "infraestrutura_territorio",
+      "statement": "Empresas privadas devem poder operar ferrovias no Brasil.",
+      "explanation": "A operação privada poderia ocorrer por concessão ou autorização pública. A afirmação não exige exclusividade privada nem define quem seria proprietário da infraestrutura.",
+      "decision": "Admissão de operação privada de ferrovias.",
+      "rationale": "Isola a participação privada na operação ferroviária, mantendo separadas expansão da malha, modalidade contratual e transferência de propriedade.",
+      "decision_family_ids": ["T01", "T02", "T04"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que a operação privada seja mais eficiente ou que a operação pública seja insuficiente.",
+        "justification_in_statement": "Nenhuma promessa de investimento ou redução de custo é embutida.",
+        "interpretation_limit": "Concessão, autorização e privatização de ativos são mecanismos diferentes; o núcleo comum é somente permitir operação privada."
+      },
+      "limits": [
+        "Permitir operação privada não obriga a concessão de toda a malha.",
+        "Ferrovias próprias autorizadas e redes públicas concedidas têm regimes distintos.",
+        "Posições sobre ônibus, portos, aeroportos ou rodovias não são automaticamente transferidas às ferrovias."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002540694:P12", "decision_family_ids": ["T01"]},
+        {"position_key": "280002542548:P13", "decision_family_ids": ["T01"]},
+        {"position_key": "280002548139:P11", "decision_family_ids": ["T02"]},
+        {"position_key": "280002551975:P15", "decision_family_ids": ["T02", "T04"]},
+        {"position_key": "280002554479:P09", "decision_family_ids": ["T02"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q10",
+      "category_id": "infraestrutura_territorio",
+      "statement": "O transporte coletivo urbano deve ser gratuito para todos os passageiros.",
+      "explanation": "A afirmação trata da tarifa cobrada do passageiro. Ela não define se a operação seria pública ou privada nem qual fonte pagaria o serviço.",
+      "decision": "Tarifa zero universal no transporte coletivo urbano.",
+      "rationale": "Oferece uma escolha de alcance compreensível e separa gratuidade universal, benefícios para grupos e propriedade do operador.",
+      "decision_family_ids": ["T05"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que a tarifa atual seja injusta ou que a gratuidade aumentará o uso do transporte.",
+        "justification_in_statement": "Nenhum benefício social ou ambiental é prometido.",
+        "interpretation_limit": "Subsidiar o serviço ou conceder passe livre a grupos não decide gratuidade para todos."
+      },
+      "limits": [
+        "Gratuidade universal e passe livre para desempregados ou trabalhadores informais têm alcances diferentes.",
+        "Implantação progressiva pode exigir classificação condicional conforme a redação do plano.",
+        "O item não define fonte de custeio, modalidade de transporte ou abrangência intermunicipal."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P15", "decision_family_ids": ["T05"]},
+        {"position_key": "280002541457:P14", "decision_family_ids": ["T05"]},
+        {"position_key": "280002551932:P10", "decision_family_ids": ["T05"]},
+        {"position_key": "280002551975:P15", "decision_family_ids": ["T05"]},
+        {"position_key": "280002552487:P17", "decision_family_ids": ["T05"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q11",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A urbanização de assentamentos informais deve priorizar a permanência dos moradores no próprio território.",
+      "explanation": "Priorizar a permanência significa urbanizar e regularizar no local quando isso for viável. A afirmação admite reassentamento em situações de risco grave ou impossibilidade técnica e jurídica.",
+      "decision": "Prioridade à permanência dos moradores na urbanização de assentamentos informais.",
+      "rationale": "Compara o princípio que orienta urbanização e reassentamento sem confundir permanência, titulação, assistência técnica ou garantia de crédito.",
+      "decision_family_ids": ["T07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que toda ocupação possa permanecer nem que toda remoção seja abusiva.",
+        "justification_in_statement": "A redação não promete integração urbana ou valorização imobiliária.",
+        "interpretation_limit": "Prioridade não é garantia absoluta; risco e inviabilidade continuam sendo exceções decisivas."
+      },
+      "limits": [
+        "Reassentamento com alternativa de moradia não equivale automaticamente a rejeitar a prioridade de permanência.",
+        "Titulação e provisão de infraestrutura são instrumentos adicionais.",
+        "A regra não se aplica automaticamente a construções vazias ou ocupações em áreas de risco grave."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002540694:P16", "decision_family_ids": ["T07"]},
+        {"position_key": "280002548139:P16", "decision_family_ids": ["T07"]},
+        {"position_key": "280002551544:P13", "decision_family_ids": ["T07"]},
+        {"position_key": "280002551547:P14", "decision_family_ids": ["T07"]},
+        {"position_key": "280002554479:P11", "decision_family_ids": ["T07"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q12",
+      "category_id": "meio_ambiente_clima",
+      "statement": "A licença ambiental deve ser concedida se o órgão não se manifestar no prazo e o empreendedor tiver cumprido as exigências legais.",
+      "explanation": "A regra é chamada de aprovação tácita: o silêncio do órgão após o prazo produziria a licença, desde que as exigências já tivessem sido cumpridas.",
+      "decision": "Concessão automática de licença ambiental pelo silêncio do órgão após o prazo.",
+      "rationale": "Seleciona um efeito jurídico concreto e o separa de prioridade de tramitação, prazo administrativo ou simplificação proporcional ao risco.",
+      "decision_family_ids": ["A01"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que o licenciamento seja lento nem que o empreendimento seja ambientalmente seguro.",
+        "justification_in_statement": "A explicação descreve o mecanismo sem defender aceleração ou proteção ambiental.",
+        "interpretation_limit": "Fixar prazo ou responsabilizar atrasos não equivale a conceder a licença pelo silêncio."
+      },
+      "limits": [
+        "Cumprimento das exigências legais é condição indispensável.",
+        "Simplificação para baixo risco não decide aprovação tácita.",
+        "O alcance por tipo de empreendimento e a forma de comprovar o cumprimento ainda precisam de validação."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P19", "decision_family_ids": ["A01"]},
+        {"position_key": "280002540694:P18", "decision_family_ids": ["A01"]},
+        {"position_key": "280002548139:P18", "decision_family_ids": ["A01"]},
+        {"position_key": "280002551544:P17", "decision_family_ids": ["A01"]},
+        {"position_key": "280002551547:P17", "decision_family_ids": ["A01"]},
+        {"position_key": "280002551932:P13", "decision_family_ids": ["A01"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q13",
+      "category_id": "meio_ambiente_clima",
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "explanation": "Nesse sistema, setores abrangidos têm limites ou obrigações sobre emissões e podem negociar créditos conforme regras públicas. A afirmação não define os setores, o limite nem a distribuição inicial dos créditos.",
+      "decision": "Criação de um sistema regulado de comércio de emissões de carbono.",
+      "rationale": "Distingue mercado regulado, créditos voluntários, tributação de emissões e pagamento por conservação.",
+      "decision_family_ids": ["A03"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume eficácia climática ou custo econômico do mercado.",
+        "justification_in_statement": "Nenhuma promessa de receita, emprego ou redução de emissões orienta a resposta.",
+        "interpretation_limit": "Apoiar créditos voluntários ou pagamento por serviços ambientais não decide a existência de obrigações reguladas."
+      },
+      "limits": [
+        "Mercado regulado não é sinônimo de imposto sobre carbono.",
+        "Integração internacional, mensuração e repartição de receitas permanecem em aberto.",
+        "A omissão de salvaguardas no item não autoriza presumir apoio a qualquer desenho."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P21", "decision_family_ids": ["A03"]},
+        {"position_key": "280002542548:P17", "decision_family_ids": ["A03"]},
+        {"position_key": "280002551544:P19", "decision_family_ids": ["A03"]},
+        {"position_key": "280002551547:P18", "decision_family_ids": ["A03"]},
+        {"position_key": "280002551932:P14", "decision_family_ids": ["A03"]},
+        {"position_key": "280002551975:P18", "decision_family_ids": ["A03"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q14",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Sistemas de inteligência artificial de alto risco devem cumprir obrigações preventivas antes de causar dano comprovado.",
+      "explanation": "Obrigações preventivas podem incluir avaliação de risco, registro e supervisão proporcionais ao uso. A afirmação não exige autorização prévia para todo sistema de inteligência artificial.",
+      "decision": "Regulação preventiva de sistemas de inteligência artificial de alto risco.",
+      "rationale": "Cria contraste entre intervenção apenas após dano concreto e obrigações proporcionais ao risco, sem fundir transparência, propriedade ou investimento em IA.",
+      "decision_family_ids": ["I07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que toda inteligência artificial seja perigosa.",
+        "justification_in_statement": "A redação não promete segurança nem inovação.",
+        "interpretation_limit": "Transparência algorítmica pode coexistir com modelos preventivos ou posteriores; não resolve sozinha o gatilho regulatório."
+      },
+      "limits": [
+        "Alto risco precisa de definição regulatória comum na validação.",
+        "Regra proporcional ao risco não significa autorização prévia universal.",
+        "Resposta a dano comprovado e prevenção podem coexistir para obrigações diferentes."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P24", "decision_family_ids": ["I07"]},
+        {"position_key": "280002542548:P24", "decision_family_ids": ["I07"]},
+        {"position_key": "280002551547:P22", "decision_family_ids": ["I07"]},
+        {"position_key": "280002551932:P19", "decision_family_ids": ["I07"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q15",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "statement": "Dados sensíveis do governo federal não devem ser hospedados em serviços de nuvem submetidos à jurisdição de outro país.",
+      "explanation": "Jurisdição é o conjunto de leis e autoridades que podem alcançar o serviço e os dados. A afirmação não exige que todo servidor esteja fisicamente no Brasil nem que a nuvem seja estatal.",
+      "decision": "Proibição de hospedar dados governamentais sensíveis em nuvens sujeitas a jurisdição estrangeira.",
+      "rationale": "Recorta uma dimensão precisa de soberania de dados e evita tratar nacionalidade da empresa, localização física e propriedade da infraestrutura como sinônimos.",
+      "decision_family_ids": ["I08"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que serviços estrangeiros sejam inseguros por definição.",
+        "justification_in_statement": "A frase não promete soberania, economia ou proteção absoluta.",
+        "interpretation_limit": "Integração de dados, privacidade e propriedade estatal da infraestrutura são decisões separadas."
+      },
+      "limits": [
+        "Dados sensíveis exigem definição jurídica ou operacional comum.",
+        "Jurisdição estrangeira não é idêntica à localização física do servidor.",
+        "A regra não decide o uso de nuvens estrangeiras para dados não sensíveis."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002541457:P25", "decision_family_ids": ["I08"]},
+        {"position_key": "280002551544:P25", "decision_family_ids": ["I08"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q16",
+      "category_id": "bem_estar_social",
+      "statement": "A gestão de unidades públicas de saúde por organizações sociais deve ser encerrada.",
+      "explanation": "Organizações sociais são entidades privadas sem fins lucrativos contratadas para administrar serviços públicos. A afirmação trata da gestão das unidades, não da compra de consultas ou exames privados pelo SUS.",
+      "decision": "Fim da gestão de unidades públicas de saúde por organizações sociais.",
+      "rationale": "Separa propriedade, gestão delegada e contratação complementar de atendimento, três objetos que o debate costuma misturar.",
+      "decision_family_ids": ["B01"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se avalia a qualidade histórica das organizações sociais.",
+        "justification_in_statement": "A frase não presume economia, corrupção ou eficiência de qualquer modelo.",
+        "interpretation_limit": "Encerrar gestão por organizações sociais não decide contratação de capacidade privada nem estatização de todo prestador."
+      },
+      "limits": [
+        "Organizações sociais e empresas em PPP não são a mesma modalidade jurídica.",
+        "Expansão da rede pública não prova, sozinha, rejeição à gestão delegada.",
+        "O item não define transição dos contratos ou vínculo dos trabalhadores."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P25", "decision_family_ids": ["B01"]},
+        {"position_key": "280002539826:P32", "decision_family_ids": ["B01"]},
+        {"position_key": "280002541457:P30", "decision_family_ids": ["B01"]},
+        {"position_key": "280002551975:P27", "decision_family_ids": ["B01"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q17",
+      "category_id": "bem_estar_social",
+      "statement": "O SUS deve contratar a capacidade ociosa de clínicas e hospitais privados quando a rede pública não conseguir atender a demanda.",
+      "explanation": "Capacidade ociosa são consultas, exames, leitos ou procedimentos disponíveis e não utilizados. A afirmação trata da compra de atendimento, sem transferir a gestão de uma unidade pública.",
+      "decision": "Contratação pelo SUS de capacidade assistencial privada ociosa quando faltar oferta pública.",
+      "rationale": "Mede um instrumento direto para ampliar atendimento e explicita a diferença entre comprar serviços e delegar gestão.",
+      "decision_family_ids": ["B02"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que o setor privado sempre tenha capacidade nem que a rede pública deva deixar de expandir.",
+        "justification_in_statement": "A condição de falta de atendimento delimita o uso, sem prometer redução de filas.",
+        "interpretation_limit": "Apoio a PPPs de gestão não decide compra de procedimentos; rede integralmente pública pode apontar oposição, mas exige validação exata."
+      },
+      "limits": [
+        "A contratação é condicionada à insuficiência da rede pública.",
+        "Créditos financeiros, mutirões por resultado e reajuste da tabela são desenhos diferentes.",
+        "O item não define preço, duração do contrato ou natureza lucrativa do prestador."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P31", "decision_family_ids": ["B02"]},
+        {"position_key": "280002541457:P30", "decision_family_ids": ["B01"]},
+        {"position_key": "280002551544:P27", "decision_family_ids": ["B02"]},
+        {"position_key": "280002551932:P24", "decision_family_ids": ["B02"]},
+        {"position_key": "280002551975:P27", "decision_family_ids": ["B01"]},
+        {"position_key": "280002554479:P17", "decision_family_ids": ["B02"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q18",
+      "category_id": "bem_estar_social",
+      "statement": "Quem começa um emprego formal deve poder continuar recebendo temporariamente parte do benefício de transferência de renda.",
+      "explanation": "A manutenção seria parcial e por tempo limitado após a entrada no emprego. A afirmação não define o benefício, o percentual nem a duração.",
+      "decision": "Acúmulo temporário e parcial de benefício de renda com emprego formal.",
+      "rationale": "Compara uma regra de transição entre benefício e trabalho sem fundir retorno após desemprego, condicionalidade de busca de emprego ou substituição por trabalho público.",
+      "decision_family_ids": ["B07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume que benefícios desestimulem o emprego.",
+        "justification_in_statement": "Nenhuma promessa de formalização ou aumento de renda orienta a resposta.",
+        "interpretation_limit": "Preservar direito de retorno após demissão não é o mesmo que manter pagamento durante o emprego."
+      },
+      "limits": [
+        "O percentual e o período podem ser condições decisivas na validação.",
+        "Acúmulo integral e redução gradual não são desenhos idênticos.",
+        "A regra não se aplica automaticamente a BPC, seguro-desemprego ou qualquer outro benefício."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002551544:P26", "decision_family_ids": ["B07"]},
+        {"position_key": "280002551547:P25", "decision_family_ids": ["B07"]},
+        {"position_key": "280002551932:P22", "decision_family_ids": ["B07"]},
+        {"position_key": "280002554479:P20", "decision_family_ids": ["B07"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q19",
+      "category_id": "bem_estar_social",
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "explanation": "Cuidado domiciliar é o atendimento realizado por profissionais na residência da pessoa. A afirmação não substitui transferência de renda ao cuidador nem acolhimento institucional.",
+      "decision": "Oferta pública de cuidado profissional no domicílio para pessoas com alta dependência.",
+      "rationale": "Seleciona um serviço concreto de cuidado e separa provisão profissional, apoio financeiro familiar, centro-dia e longa permanência.",
+      "decision_family_ids": ["B09"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume incapacidade das famílias de cuidar nem superioridade universal do domicílio.",
+        "justification_in_statement": "A frase não usa redução do trabalho não remunerado como justificativa.",
+        "interpretation_limit": "Apoiar centros-dia, tecnologia assistiva ou acolhimento não decide oferta profissional domiciliar."
+      },
+      "limits": [
+        "Alto grau de dependência precisa de critério comum.",
+        "O item não define gestão pública direta ou contratação do prestador.",
+        "Cuidado de crianças e creches não integram automaticamente este objeto."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P28", "decision_family_ids": ["B09"]},
+        {"position_key": "280002541457:P34", "decision_family_ids": ["B09"]},
+        {"position_key": "280002542548:P28", "decision_family_ids": ["B09"]},
+        {"position_key": "280002551544:P30", "decision_family_ids": ["B09"]},
+        {"position_key": "280002551932:P27", "decision_family_ids": ["B09"]},
+        {"position_key": "280002551975:P31", "decision_family_ids": ["B09"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q20",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "Quando não houver vaga em creche pública, o governo deve financiar temporariamente uma vaga em creche privada credenciada.",
+      "explanation": "O financiamento duraria até surgir vaga na rede pública. A afirmação trata de falta de oferta em creche e não cria um direito geral a escolher qualquer escola privada.",
+      "decision": "Voucher temporário para creche privada quando faltar vaga pública.",
+      "rationale": "Recorta público, condição e duração de um instrumento de financiamento educacional, evitando equipará-lo a convênio ou privatização da rede.",
+      "decision_family_ids": ["D01"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que a rede privada seja melhor nem que a pública seja incapaz de se expandir.",
+        "justification_in_statement": "A falta de vaga é condição operacional, não justificativa moral.",
+        "interpretation_limit": "Parcerias, convênios e estatização do ensino privado não respondem automaticamente ao voucher temporário de creche."
+      },
+      "limits": [
+        "A condição de ausência de vaga pública e a duração temporária são essenciais.",
+        "O credenciamento não define preço, coparticipação ou seleção da instituição.",
+        "A redação não se estende automaticamente ao ensino fundamental, médio ou superior."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P31", "decision_family_ids": ["D01"]},
+        {"position_key": "280002539826:P35", "decision_family_ids": ["D01"]},
+        {"position_key": "280002541457:P36", "decision_family_ids": ["D01"]},
+        {"position_key": "280002551544:P35", "decision_family_ids": ["D01"]},
+        {"position_key": "280002551932:P28", "decision_family_ids": ["D01"]},
+        {"position_key": "280002551975:P34", "decision_family_ids": ["D01"]},
+        {"position_key": "280002552487:P26", "decision_family_ids": ["D01"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q21",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "A educação domiciliar deve ser permitida com fiscalização pública e avaliação periódica da aprendizagem.",
+      "explanation": "A família poderia ensinar fora da escola, mas o poder público acompanharia o cumprimento das regras e avaliaria a aprendizagem. A afirmação não torna a educação domiciliar obrigatória.",
+      "decision": "Permissão de educação domiciliar sujeita a fiscalização e avaliação periódica.",
+      "rationale": "Compara uma modalidade educacional identificável e incorpora os controles que alteram seu significado.",
+      "decision_family_ids": ["D04"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume falha da escola nem maior capacidade da família.",
+        "justification_in_statement": "A frase não invoca liberdade familiar ou socialização escolar.",
+        "interpretation_limit": "Defender escolas públicas ou disciplina escolar não estabelece oposição à modalidade domiciliar."
+      },
+      "limits": [
+        "Permissão sem supervisão e permissão com avaliação não são o mesmo desenho.",
+        "A frequência e os critérios de avaliação permanecem em aberto.",
+        "O item não define quais responsáveis podem ensinar nem como ocorre retorno à escola."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P37", "decision_family_ids": ["D04"]},
+        {"position_key": "280002554479:P26", "decision_family_ids": ["D04"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q22",
+      "category_id": "cidadania_direitos",
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "explanation": "A afirmação pergunta pela direção da mudança na regra geral. Ela não fixa uma jornada de 30, 35, 36 ou 40 horas nem define a transição.",
+      "decision": "Redução da jornada semanal legal sem redução de salário.",
+      "rationale": "Preserva o contraste substantivo comum a propostas com números distintos, deixando explícito que a intensidade da redução será testada depois.",
+      "decision_family_ids": ["C01"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que a jornada atual seja excessiva nem que a redução aumentará produtividade.",
+        "justification_in_statement": "Nenhuma consequência econômica ou social é prometida.",
+        "interpretation_limit": "Fim da escala 6 por 1, limite semanal e reduções futuras condicionadas à produtividade são decisões relacionadas, mas não idênticas."
+      },
+      "limits": [
+        "Planos com limites de horas diferentes podem convergir na direção e divergir na redação exata.",
+        "Fim da escala 6 por 1 não determina sozinho o total semanal.",
+        "Redução condicionada a ganhos futuros pode exigir classificação condicional."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P37", "decision_family_ids": ["C01"]},
+        {"position_key": "280002541457:P41", "decision_family_ids": ["C01"]},
+        {"position_key": "280002542548:P39", "decision_family_ids": ["C01"]},
+        {"position_key": "280002551975:P40", "decision_family_ids": ["C01"]},
+        {"position_key": "280002552487:P33", "decision_family_ids": ["C01"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q23",
+      "category_id": "cidadania_direitos",
+      "statement": "As mudanças da reforma trabalhista de 2017 devem ser revogadas.",
+      "explanation": "A afirmação trata da revogação do conjunto de mudanças legais da reforma. Ela não define qual legislação a substituiria nem pergunta separadamente sobre terceirização, negociação coletiva ou estabilidade.",
+      "decision": "Revogação da reforma trabalhista de 2017.",
+      "rationale": "Há direções explícitas de revogação e de preservação ou ampliação da flexibilidade contratual; o item mantém a decisão legal geral sem atribuir motivos.",
+      "decision_family_ids": ["C02"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se avalia o desempenho histórico da reforma.",
+        "justification_in_statement": "A redação não afirma que a reforma criou empregos ou retirou direitos.",
+        "interpretation_limit": "Apoiar uma regra de negociação ou rejeitar terceirização não decide automaticamente revogação integral."
+      },
+      "limits": [
+        "Revogação integral e alteração de dispositivos específicos têm alcances diferentes.",
+        "O texto substitutivo e a transição não são definidos.",
+        "Propostas genéricas de flexibilização não informam todos os dispositivos que seriam mantidos."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P41", "decision_family_ids": ["C02"]},
+        {"position_key": "280002540694:P37", "decision_family_ids": ["C02"]},
+        {"position_key": "280002541457:P42", "decision_family_ids": ["C02"]},
+        {"position_key": "280002551544:P38", "decision_family_ids": ["C02"]},
+        {"position_key": "280002551975:P50", "decision_family_ids": ["C02"]},
+        {"position_key": "280002552487:P34", "decision_family_ids": ["C02"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q24",
+      "category_id": "cidadania_direitos",
+      "statement": "Trabalhadores de aplicativos devem ter vínculo de emprego com as plataformas.",
+      "explanation": "Vínculo de emprego significa enquadramento na relação empregatícia prevista em lei. A afirmação não pergunta apenas por contribuição previdenciária, remuneração mínima ou representação coletiva.",
+      "decision": "Reconhecimento de vínculo de emprego entre trabalhadores de aplicativos e plataformas.",
+      "rationale": "Distingue o status jurídico do trabalho de proteções avulsas e da regulação da comissão cobrada pelas plataformas.",
+      "decision_family_ids": ["C03"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume exploração nem autonomia real dos trabalhadores.",
+        "justification_in_statement": "A frase não promete proteção social ou flexibilidade.",
+        "interpretation_limit": "Defender previdência, piso ou representação sem vínculo universal não resolve a pergunta."
+      },
+      "limits": [
+        "O alcance universal da palavra trabalhadores precisa ser testado diante de modalidades distintas de uso da plataforma.",
+        "Registro formal e vínculo integral podem ter consequências jurídicas diferentes.",
+        "Limite de comissão e plataforma pública alternativa são outros objetos."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P39", "decision_family_ids": ["C03"]},
+        {"position_key": "280002541457:P43", "decision_family_ids": ["C03"]},
+        {"position_key": "280002542548:P40", "decision_family_ids": ["C03"]},
+        {"position_key": "280002551975:P41", "decision_family_ids": ["C03"]},
+        {"position_key": "280002554479:P29", "decision_family_ids": ["C03"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q25",
+      "category_id": "cidadania_direitos",
+      "statement": "O aborto deve deixar de ser crime.",
+      "explanation": "A afirmação trata da descriminalização. Ela não fixa prazo gestacional, condições médicas, forma de oferta pelo sistema de saúde ou regras para casos específicos.",
+      "decision": "Descriminalização do aborto.",
+      "rationale": "Isola a decisão penal central e evita combiná-la com financiamento, protocolo clínico ou uma justificativa moral.",
+      "decision_family_ids": ["C07"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se atribui avaliação moral à gravidez, à gestante ou ao procedimento.",
+        "justification_in_statement": "Nenhuma justificativa de autonomia, saúde ou proteção fetal aparece na frase.",
+        "interpretation_limit": "Oferta pública, legalização regulada e descriminalização podem ter alcances diferentes."
+      },
+      "limits": [
+        "Os registros não fixam um limite gestacional comum; a redação ampla aumenta o risco de respostas condicionais.",
+        "Descriminalizar não define quem pode realizar o procedimento nem em quais serviços.",
+        "Licença parental e estabilidade de responsáveis são decisões separadas."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P40", "decision_family_ids": ["C07"]},
+        {"position_key": "280002541457:P45", "decision_family_ids": ["C07"]},
+        {"position_key": "280002551975:P44", "decision_family_ids": ["C07"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q26",
+      "category_id": "seguranca_publica",
+      "statement": "A idade mínima para responder criminalmente como adulto deve ser de 16 anos em crimes graves.",
+      "explanation": "A afirmação restringe a mudança a crimes graves cometidos por adolescentes de 16 ou 17 anos. Ela não define a lista de crimes nem altera as medidas socioeducativas para os demais casos.",
+      "decision": "Aplicação do regime penal adulto a partir de 16 anos em crimes graves.",
+      "rationale": "Coloca em comparação redução restrita e manutenção da idade atual, sem transformar propostas mais amplas em equivalentes automáticos.",
+      "decision_family_ids": ["S04"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que o regime atual seja brando nem que a redução diminua crimes.",
+        "justification_in_statement": "Nenhuma avaliação moral de adolescentes orienta a resposta.",
+        "interpretation_limit": "Redução geral para 16 anos é mais ampla; rejeitar a redução não significa rejeitar responsabilização socioeducativa."
+      },
+      "limits": [
+        "Crimes graves precisam de lista ou critério comum na validação.",
+        "Propostas com exceções abaixo de 16 anos não equivalem a esta regra.",
+        "A redação não define estabelecimento prisional, pena ou procedimento."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P45", "decision_family_ids": ["S04"]},
+        {"position_key": "280002539826:P48", "decision_family_ids": ["S04"]},
+        {"position_key": "280002541457:P54", "decision_family_ids": ["S04"]},
+        {"position_key": "280002551544:P45", "decision_family_ids": ["S04"]},
+        {"position_key": "280002551932:P40", "decision_family_ids": ["S04"]},
+        {"position_key": "280002551975:P53", "decision_family_ids": ["S04"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q27",
+      "category_id": "seguranca_publica",
+      "statement": "O governo deve poder usar reconhecimento facial em espaços públicos para localizar pessoas foragidas da Justiça.",
+      "explanation": "O sistema compararia imagens captadas em espaços públicos com uma base de pessoas procuradas. A afirmação não autoriza previsão de crimes nem identificação para qualquer finalidade.",
+      "decision": "Uso governamental de reconhecimento facial em espaços públicos para localizar foragidos.",
+      "rationale": "Delimita tecnologia, ambiente e finalidade, evitando equiparar reconhecimento facial a câmeras corporais, drones ou integração genérica de dados.",
+      "decision_family_ids": ["S08"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se presume eficácia, precisão ou ausência de viés do sistema.",
+        "justification_in_statement": "A finalidade de localizar foragidos delimita o uso sem afirmar que ele aumentará a segurança.",
+        "interpretation_limit": "Apoio a reconhecimento facial para outra finalidade ou a câmeras comuns não decide este uso específico."
+      },
+      "limits": [
+        "Base de comparação, prazo de guarda, auditoria e contestação não são definidos.",
+        "A ausência de salvaguardas descritas em um registro não prova rejeição a elas.",
+        "Uso geral de inteligência artificial em segurança pode ser amplo demais para responder."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002540694:P42", "decision_family_ids": ["S08"]},
+        {"position_key": "280002551544:P48", "decision_family_ids": ["S08"]},
+        {"position_key": "280002551547:P38", "decision_family_ids": ["S08"]},
+        {"position_key": "280002552484:P29", "decision_family_ids": ["S08"]},
+        {"position_key": "280002554479:P36", "decision_family_ids": ["S08"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q28",
+      "category_id": "seguranca_publica",
+      "statement": "O porte de drogas para consumo pessoal deve deixar de ser crime.",
+      "explanation": "A descriminalização retiraria a punição criminal do usuário pela posse para consumo próprio. A afirmação não legaliza a produção nem a venda de todas as drogas.",
+      "decision": "Descriminalização do porte de drogas para consumo pessoal.",
+      "rationale": "Separa tratamento penal do usuário, prioridade de saúde e legalização de mercados.",
+      "decision_family_ids": ["S10"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se afirma que o consumo seja seguro nem que a política atual tenha fracassado.",
+        "justification_in_statement": "A frase não usa saúde pública ou liberdade individual como justificativa.",
+        "interpretation_limit": "Priorizar saúde e prevenção não implica descriminalização; legalizar maconha não decide todas as demais substâncias."
+      },
+      "limits": [
+        "Critérios para distinguir consumo pessoal e tráfico não são definidos.",
+        "Descriminalização do uso e revogação integral da legislação antidrogas têm alcances diferentes.",
+        "A afirmação não decide comércio regulado, cultivo ou tratamento compulsório."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002538811:P44", "decision_family_ids": ["S10"]},
+        {"position_key": "280002541457:P52", "decision_family_ids": ["S10"]},
+        {"position_key": "280002551975:P52", "decision_family_ids": ["S10"]}
+      ],
+      "risk": "high",
+      "anchor_approved": false
+    },
+    {
+      "id": "WB-Q29",
+      "category_id": "soberania_relacoes_internacionais",
+      "statement": "O Brasil deve sair dos BRICS.",
+      "explanation": "A saída encerraria a participação brasileira na articulação política dos BRICS. A afirmação não exige romper comércio ou relações diplomáticas com os países do grupo.",
+      "decision": "Saída do Brasil dos BRICS.",
+      "rationale": "Compara permanência e saída de uma instituição identificável sem transformar autonomia diplomática ou relação com a China em resposta automática.",
+      "decision_family_ids": ["R04"],
+      "semantic_layers": {
+        "diagnosis_in_statement": "Não se avalia o desempenho dos BRICS nem a qualidade de seus integrantes.",
+        "justification_in_statement": "Nenhuma consequência comercial, financeira ou geopolítica orienta a resposta.",
+        "interpretation_limit": "Participação pragmática, fortalecimento do grupo e aproximação simultânea à OCDE são posições distintas dentro da permanência."
+      },
+      "limits": [
+        "Sair do bloco não equivale a romper comércio com seus membros.",
+        "Autonomia diante de um país integrante não significa apoio à saída.",
+        "A afirmação não decide participação no banco dos BRICS ou em outros organismos."
+      ],
+      "likely_overlap_keys": [
+        {"position_key": "280002539826:P53", "decision_family_ids": ["R04"]},
+        {"position_key": "280002540694:P45", "decision_family_ids": ["R04"]},
+        {"position_key": "280002542548:P50", "decision_family_ids": ["R04"]},
+        {"position_key": "280002551932:P45", "decision_family_ids": ["R04"]}
+      ],
+      "risk": "medium",
+      "anchor_approved": false
+    }
+  ],
+  "coverage_diagnostic": {
+    "note": "Contagem descritiva posterior à seleção; não houve cota ou piso por categoria.",
+    "by_category": {
+      "economia_desenvolvimento": 5,
+      "estado_gestao": 3,
+      "infraestrutura_territorio": 3,
+      "meio_ambiente_clima": 2,
+      "ciencia_tecnologia_inovacao": 2,
+      "bem_estar_social": 4,
+      "educacao_cultura_sociedade": 2,
+      "cidadania_direitos": 4,
+      "seguranca_publica": 3,
+      "soberania_relacoes_internacionais": 1
+    },
+    "selected_family_count": 32,
+    "excluded_family_count": 86
+  },
+  "difficult_editorial_decisions": [
+    "Manter uma tese direcional sobre redução da jornada sem escolher entre os diferentes limites semanais presentes nos registros.",
+    "Formular estabilidade como regra ampla sem converter avaliação de desempenho em apoio a demissão ou perda automática do vínculo.",
+    "Permitir operação ferroviária privada sem equiparar concessão, autorização e transferência de propriedade.",
+    "Reter itens relevantes de provável cobertura estreita, como jurisdição estrangeira de nuvem e educação domiciliar, marcando risco alto ou médio para validação posterior.",
+    "Separar gestão privada de unidade pública de saúde da compra de capacidade assistencial privada pelo SUS."
+  ],
+  "excluded_families": [
+    {
+      "family_ids": ["E01"],
+      "reason": "A família reúne manutenção, substituição ou revogação de regras fiscais, metas de resultado e composição do gasto. Uma frase geral criaria equivalência entre instrumentos jurídicos e fiscais diferentes; o recorte exige decisão posterior sobre qual regra medir."
+    },
+    {
+      "family_ids": ["E08"],
+      "reason": "Crédito oficial, garantia pública, seguro, subsídio, renegociação, compras e rastreabilidade têm beneficiários e efeitos distintos. Nenhum núcleo comum permaneceu atômico e comparável sem escolher um público muito específico."
+    },
+    {
+      "family_ids": ["E09"],
+      "reason": "Há apenas um registro e a formulação combina simplificação regulatória com digitalização, sem indicar uma regra concreta a manter ou abolir."
+    },
+    {
+      "family_ids": ["E10"],
+      "reason": "Contratação pública emergencial e subsídio temporário ao primeiro emprego são dois instrumentos e dois públicos sem pergunta comum."
+    },
+    {
+      "family_ids": ["E11"],
+      "reason": "O único registro combina calendário de leilões, expansão produtiva e exportações de petróleo; seria necessário escolher uma dessas três decisões antes de testar cobertura."
+    },
+    {
+      "family_ids": ["E12"],
+      "reason": "Proibição da atividade, bloqueio de transações e expropriação patrimonial são decisões separadas, apoiadas por um único registro de origem."
+    },
+    {
+      "family_ids": ["G02"],
+      "reason": "Estatizar, fundir bancos, criar banco único e instituir controle de trabalhadores não formam um único desenho. A bateria já contém decisões de propriedade e de política monetária mais delimitadas."
+    },
+    {
+      "family_ids": ["G03"],
+      "reason": "Semipresidencialismo, Constituinte, unicameralismo e transformação estrutural do Estado são reformas constitucionais independentes e com interseção documental estreita."
+    },
+    {
+      "family_ids": ["G04"],
+      "reason": "Consulta, conferência, conselho com poder orçamentário e orçamento deliberativo variam entre participação consultiva e decisão vinculante. A fronteira precisaria ser refinada antes de uma redação comum."
+    },
+    {
+      "family_ids": ["G06"],
+      "reason": "Limitar ou extinguir decisões monocráticas, impor prazo de vista e presumir constitucionalidade legislativa são regras processuais diferentes e aparecem em poucos registros."
+    },
+    {
+      "family_ids": ["G08"],
+      "reason": "Redução de ministérios, serviços compartilhados, critérios de nomeação e Centro de Governo não compartilham uma decisão única."
+    },
+    {
+      "family_ids": ["G09"],
+      "reason": "Digitalização, reaproveitamento de dados, interoperabilidade, atendimento presencial e aprovação administrativa por silêncio precisam de itens separados; o efeito do silêncio ambiental já recebeu recorte próprio em A01."
+    },
+    {
+      "family_ids": ["G10"],
+      "reason": "Transparência, avaliação, encerramento de programas, controle de emendas e prevenção de fraude são instrumentos distintos. As formulações mais gerais também tendem a produzir concordância pouco informativa."
+    },
+    {
+      "family_ids": ["G11"],
+      "reason": "Fusão de municípios, critérios do FPM, tutela administrativa e dissolução de governos locais têm fundamentos e efeitos constitucionais diferentes."
+    },
+    {
+      "family_ids": ["G12"],
+      "reason": "Investigação, condenação, confisco e destinação do patrimônio não podem ser fundidos; os registros deixam diferenças relevantes sobre processo e alcance dos bens."
+    },
+    {
+      "family_ids": ["T03"],
+      "reason": "Expansão de transporte de massa, eletrificação, crédito e vagões exclusivos são decisões independentes; expansão genérica teria baixo poder de diferenciação."
+    },
+    {
+      "family_ids": ["T06"],
+      "reason": "Construção, financiamento, compra de imóvel pronto, ocupação de estoque vazio e desapropriação têm públicos e instrumentos diferentes. Nenhum recorte superou, nesta bateria, os itens territoriais já selecionados."
+    },
+    {
+      "family_ids": ["T08"],
+      "reason": "Assentamento, crédito fundiário, suspensão de novos assentamentos, desapropriação e expropriação variam em objeto, recorte da terra e indenização."
+    },
+    {
+      "family_ids": ["T09"],
+      "reason": "Meta de universalização, marco legal, regionalização, concessão e monopólio estatal não podem ser condensados sem escolher entre propriedade, contrato ou resultado."
+    },
+    {
+      "family_ids": ["T10"],
+      "reason": "Encargos da conta de luz, transferência de subsídios ao orçamento, regras de leilão e preço de combustíveis pertencem a objetos diferentes."
+    },
+    {
+      "family_ids": ["T11"],
+      "reason": "Transmissão, Angra 3, fracking e propriedade da Eletrobras são decisões específicas sem um núcleo comum de política energética."
+    },
+    {
+      "family_ids": ["T12"],
+      "reason": "Separação ou integração da cadeia da Petrobras é relevante, mas acrescentaria outro item sobre a mesma empresa e eixo de propriedade/organização já representado por G01."
+    },
+    {
+      "family_ids": ["A02"],
+      "reason": "Metas de desmatamento, inteligência financeira, fiscalização e resposta a incêndios são instrumentos diferentes; formulações gerais de combater ilegalidades tenderiam a pouco contraste."
+    },
+    {
+      "family_ids": ["A04"],
+      "reason": "Transição energética, restrição territorial ao petróleo, substituição de fontes e destino de renda fóssil exigem decisões e horizontes temporais próprios."
+    },
+    {
+      "family_ids": ["A05"],
+      "reason": "Banimento seletivo ou geral de agrotóxicos, bioeconomia e redução da pecuária não formam uma pergunta comum; os recortes atômicos encontrados tinham baixa interseção provável."
+    },
+    {
+      "family_ids": ["A06"],
+      "reason": "Planejamento, obra preventiva, financiamento privado, repasse condicionado e proteção imediata em desastres são instrumentos independentes."
+    },
+    {
+      "family_ids": ["A07"],
+      "reason": "Restauração, ampliação de áreas protegidas e revisão do Código Florestal precisariam de itens separados; recuperação ambiental genérica distinguiria pouco."
+    },
+    {
+      "family_ids": ["A08"],
+      "reason": "A concessão de serviços em parques aparece em um único registro e não oferece interseção documental suficiente nesta etapa."
+    },
+    {
+      "family_ids": ["A09"],
+      "reason": "Os dois registros diferem em mineral, finalidade, consentimento e salvaguardas; uma autorização geral de mineração em terra indígena ampliaria indevidamente ambos."
+    },
+    {
+      "family_ids": ["A10", "A11"],
+      "reason": "Cadastro animal, castração, reciclagem, fechamento de lixões e restrição a descartáveis têm recortes claros, mas poucos vínculos e contraste potencial menor que os dois instrumentos ambientais selecionados."
+    },
+    {
+      "family_ids": ["I01"],
+      "reason": "Aumento de orçamento, fonte de recursos, regra plurianual e vedação de contingenciamento são decisões financeiras diferentes."
+    },
+    {
+      "family_ids": ["I02"],
+      "reason": "Bolsa, carreira pública e política de retorno de pesquisadores não são equivalentes; a criação de carreira específica tem pouca interseção provável."
+    },
+    {
+      "family_ids": ["I03"],
+      "reason": "Quem governa a agenda, quem recebe recursos e quais critérios selecionam projetos são dimensões diferentes, com alto risco de linguagem valorativa."
+    },
+    {
+      "family_ids": ["I04"],
+      "reason": "Benefício fiscal, empresa pública, compra governamental, royalties e centro empresarial em universidade são instrumentos de inovação distintos."
+    },
+    {
+      "family_ids": ["I05"],
+      "reason": "Capacidade nacional, propriedade estatal, capital privado majoritário e adoção obrigatória no governo não podem ser tratados como uma única tese sobre IA nacional."
+    },
+    {
+      "family_ids": ["I06"],
+      "reason": "Incentivo a datacenter, capacidade pública de supercomputação e contrapartidas socioambientais precisam de objetos separados e têm baixa interseção provável."
+    },
+    {
+      "family_ids": ["I09"],
+      "reason": "Telecomunicações, plataformas digitais e licenças de software têm objetos de propriedade diferentes; quebrar monopólio, criar alternativa pública e impor monopólio estatal não são equivalentes."
+    },
+    {
+      "family_ids": ["I10"],
+      "reason": "Expandir conectividade é uma meta ampla; espectro, fibra, satélite, parceria e financiamento precisariam de perguntas próprias."
+    },
+    {
+      "family_ids": ["I11"],
+      "reason": "Gratuidade universal, pacote focalizado, benefício para dispositivo e acesso condicionado a curso diferem em público, duração e instrumento."
+    },
+    {
+      "family_ids": ["B03"],
+      "reason": "Atenção primária, carreira, validação de diploma, vigilância e linhas de cuidado são decisões independentes; metas gerais de expansão distinguiriam pouco."
+    },
+    {
+      "family_ids": ["B04"],
+      "reason": "Prioridade de fila, posição consultável, prontuário, telemedicina e triagem por IA têm objetos e riscos próprios."
+    },
+    {
+      "family_ids": ["B05"],
+      "reason": "Produção estatal, gratuidade de dispensação, preferência nacional, incorporação clínica e gestão de estoque não formam uma tese única."
+    },
+    {
+      "family_ids": ["B06"],
+      "reason": "Internação involuntária, redução de danos, financiamento ou proibição de comunidades terapêuticas e acesso juvenil não são alternativas exaustivas."
+    },
+    {
+      "family_ids": ["B08"],
+      "reason": "Idade, tempo de contribuição, cobertura, custeio e indexação dos benefícios exigem itens separados; revogar uma reforma não define a regra substituta."
+    },
+    {
+      "family_ids": ["B10"],
+      "reason": "Abrigo, SUAS, delegacia especializada e protocolos intersetoriais atendem públicos e momentos distintos; proteção genérica teria baixo contraste."
+    },
+    {
+      "family_ids": ["B11"],
+      "reason": "Restrição à exportação, compra pública, estoque regulador e oferta de refeição são instrumentos alimentares diferentes."
+    },
+    {
+      "family_ids": ["B12"],
+      "reason": "Impedir descontos consignados não autorizados e anular dívidas válidas são decisões sem núcleo comum."
+    },
+    {
+      "family_ids": ["D02"],
+      "reason": "Expansão física, interiorização, creche e tempo integral são metas de capacidade distintas, com baixo contraste se formuladas genericamente."
+    },
+    {
+      "family_ids": ["D03"],
+      "reason": "Método de alfabetização, currículo, avaliação, vínculo de recursos e continuidade de cursos não podem ser fundidos."
+    },
+    {
+      "family_ids": ["D05"],
+      "reason": "Seleção de reitores, eleição de diretores e alinhamento estratégico alcançam instituições e formas de autoridade diferentes."
+    },
+    {
+      "family_ids": ["D06"],
+      "reason": "Piso, progressão, mérito, formação e redução de burocracia docente são decisões independentes."
+    },
+    {
+      "family_ids": ["D07"],
+      "reason": "Fim de vestibular, cotas, benefício de permanência, crédito condicionado à renda e anistia estudantil não compartilham uma decisão atômica."
+    },
+    {
+      "family_ids": ["D08"],
+      "reason": "Expandir ensino técnico, alinhar formação à demanda, condicionar curso à empregabilidade e criar crédito de formação são instrumentos diferentes."
+    },
+    {
+      "family_ids": ["D09"],
+      "reason": "Os dois registros tratam de formas diferentes de apoio especializado e não sustentam uma obrigação uniforme sem critérios individuais."
+    },
+    {
+      "family_ids": ["D10"],
+      "reason": "Fundo, incentivo fiscal, crédito, desconcentração, gestão de museus e critérios comerciais são escolhas culturais distintas; uma tese genérica sobre fomento distinguiria pouco."
+    },
+    {
+      "family_ids": ["D11"],
+      "reason": "Produtoras culturais, meios privados e comunicação pública são universos diferentes; nacionalização, cooperativização e revisão de concessões não são equivalentes."
+    },
+    {
+      "family_ids": ["D12"],
+      "reason": "Benefício a atleta, repasse a organização, integridade, educação física e controle de clube têm objetos diferentes."
+    },
+    {
+      "family_ids": ["C04"],
+      "reason": "Pluralidade sindical, filiação, contribuição, intervenção estatal e direito de greve precisam de redações separadas e têm poucos vínculos comparáveis."
+    },
+    {
+      "family_ids": ["C05"],
+      "reason": "Cotas em ensino, concursos, polícia e emprego alcançam universos diferentes; preferência em nomeação e plano corretivo sem cota também não podem ser agregados."
+    },
+    {
+      "family_ids": ["C06"],
+      "reason": "Igualdade salarial, crédito, acessibilidade, elegibilidade esportiva e investigação de assédio não compartilham objeto decisório."
+    },
+    {
+      "family_ids": ["C08"],
+      "reason": "Demarcação, titulação, marco temporal, autonomia econômica e retirada de invasores são decisões independentes; a redação ampla apagaria condições territoriais."
+    },
+    {
+      "family_ids": ["C09"],
+      "reason": "Moderação, desinformação, concessões de mídia, privacidade e proteção de crianças online precisam de itens próprios; liberdade de expressão genérica seria moralizante e imprecisa."
+    },
+    {
+      "family_ids": ["C10"],
+      "reason": "Financiamento eleitoral, sistema distrital, reeleição, recall e regras partidárias são reformas diferentes."
+    },
+    {
+      "family_ids": ["C11"],
+      "reason": "Garantias processuais, reparação por violência estatal e velocidade de tramitação não formam uma posição única sobre Justiça."
+    },
+    {
+      "family_ids": ["C12"],
+      "reason": "O único registro nomeia grupos específicos e combina regularização com nacionalidade; generalizar a todos os fluxos migratórios distorceria o alcance."
+    },
+    {
+      "family_ids": ["S01"],
+      "reason": "Desmilitarização, unificação, dissolução, criação de ministério e competência penal estadual são reformas institucionais diferentes."
+    },
+    {
+      "family_ids": ["S02"],
+      "reason": "Tipificação de facções, federalização, uso militar e regras de força letal não podem compor uma única tese sem consequências jurídicas e operacionais distintas."
+    },
+    {
+      "family_ids": ["S03"],
+      "reason": "Inteligência financeira, inversão do ônus, congelamento e confisco de ativos exigem garantias e gatilhos próprios."
+    },
+    {
+      "family_ids": ["S05"],
+      "reason": "Segregação de lideranças, bloqueio de comunicação, criação de vagas, reinserção e gestão prisional são decisões independentes."
+    },
+    {
+      "family_ids": ["S06"],
+      "reason": "Prisão preventiva, progressão, cumprimento integral, aumento de pena e anistia têm gatilhos e universos distintos."
+    },
+    {
+      "family_ids": ["S07"],
+      "reason": "Rastreabilidade de armas, porte rural e autodefesa comunitária não são respostas ao mesmo objeto."
+    },
+    {
+      "family_ids": ["S09"],
+      "reason": "Serviço de proteção, monitoramento cautelar, pena, perda patrimonial e reabilitação de agressores pertencem a etapas distintas."
+    },
+    {
+      "family_ids": ["S11"],
+      "reason": "Proibir publicidade e proibir a atividade de apostas são decisões diferentes, com apenas dois registros no conjunto."
+    },
+    {
+      "family_ids": ["S12"],
+      "reason": "Tratamento farmacológico, bloqueio de conteúdo e aumento de pena não compartilham instrumento, público ou garantia processual."
+    },
+    {
+      "family_ids": ["R01"],
+      "reason": "Órgão estatal de comércio exterior e autorização de transferências financeiras são dois controles diferentes, apoiados por poucos registros."
+    },
+    {
+      "family_ids": ["R02"],
+      "reason": "Formato aduaneiro do Mercosul, integração energética e coordenação monetária são decisões distintas; a bateria reteve a escolha institucional mais direta de R04."
+    },
+    {
+      "family_ids": ["R03"],
+      "reason": "Acordo Mercosul-União Europeia, reciprocidade e diversificação de parceiros exigem perguntas próprias e condições comerciais específicas."
+    },
+    {
+      "family_ids": ["R05"],
+      "reason": "OCDE, reforma financeira multilateral, fundo global e extinção de instâncias de segurança não formam um eixo único."
+    },
+    {
+      "family_ids": ["R06"],
+      "reason": "Autonomia diplomática é orientação ampla; rupturas, prioridades bilaterais e não intervenção precisam de decisões nomeadas para evitar linguagem moral ou identitária."
+    },
+    {
+      "family_ids": ["R07"],
+      "reason": "Rompimento condicionado, rompimento imediato, comércio, cooperação e reconhecimento internacional têm alcances diferentes e dependem de condições formuladas nos registros."
+    },
+    {
+      "family_ids": ["R08"],
+      "reason": "Metas comerciais de embaixadas e redistribuição geográfica de diplomatas são decisões administrativas específicas com baixa interseção provável."
+    },
+    {
+      "family_ids": ["R09"],
+      "reason": "Dispensa de visto turístico e atração de imigração qualificada pertencem a regimes diferentes e aparecem em um único registro."
+    },
+    {
+      "family_ids": ["R10"],
+      "reason": "Orçamento, conteúdo nacional, indústria estatal, modernização e ciclo nuclear são decisões de defesa independentes."
+    },
+    {
+      "family_ids": ["R11"],
+      "reason": "Comando, inteligência, remuneração, poder de polícia em fronteira, profissionalização e serviço militar obrigatório não compartilham uma pergunta única."
+    },
+    {
+      "family_ids": ["R12"],
+      "reason": "Cooperação contra crime, acordos militares com um país e extinção de organismos internacionais têm objetos incompatíveis para uma tese comum."
+    }
+  ]
+}

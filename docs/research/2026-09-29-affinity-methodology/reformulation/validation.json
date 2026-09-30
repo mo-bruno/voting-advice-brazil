@@ -1,0 +1,2122 @@
+{
+  "schema_version": 1,
+  "valid": true,
+  "errors": [],
+  "source_archive_sha256": "444bcd8f266cd244ea0e11e92db8b3e3f194103e1e2c2b57a92ca7cb447be188",
+  "source_theses_sha256": "25447e55aa8e4baffc6d29a10fabedb4995d816008bab751571552016008a5a3",
+  "review_files_sha256": {
+    "economy-social": "021a3d27590229a93b10fb22fcd5835431b615e3f184aad78df5ef9b7af0c650",
+    "services-rights": "2910defaaf13bee506f36e0a465b37da1d32f676080e07e06a021e927473f6dc",
+    "institutions-external": "19b91f9a9a4d3762a28ec13edcb9b1311b0edf33adb7a3c0682bdd24dbc0d9a3",
+    "labour-security": "ab17ce08b2a7bc4c4f46f0227d0770bb9620046b5fea3ab985db15b44afb65fa"
+  },
+  "candidates": 13,
+  "source_pages": 836,
+  "theses": 30,
+  "original_cells": 390,
+  "alternative_count": 12,
+  "reviewed_records": 546,
+  "quotation_matches": {
+    "layout": 332,
+    "raw": 17,
+    "raw_dedup": 12
+  },
+  "unique_context_pages_by_candidate": {
+    "280002542548": [
+      10,
+      11,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      36,
+      37,
+      38,
+      43,
+      45,
+      49,
+      54,
+      58,
+      67,
+      72,
+      74,
+      75,
+      76,
+      77,
+      79,
+      80,
+      81,
+      83
+    ],
+    "280002540694": [
+      5,
+      6,
+      9,
+      10,
+      11,
+      12,
+      13,
+      15,
+      17,
+      18,
+      21,
+      22,
+      24,
+      25,
+      26,
+      30,
+      31,
+      32,
+      35,
+      36,
+      39,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      49
+    ],
+    "280002541457": [
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      21,
+      26,
+      27,
+      28,
+      29
+    ],
+    "280002551975": [
+      2,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "280002551544": [
+      13,
+      20,
+      21,
+      34,
+      35,
+      36,
+      37,
+      38,
+      42,
+      43,
+      44,
+      45,
+      52,
+      53,
+      55,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      68,
+      69,
+      70,
+      71,
+      72
+    ],
+    "280002552484": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "280002554479": [
+      6,
+      7,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      32,
+      33,
+      34,
+      37,
+      40,
+      41,
+      42,
+      43,
+      46
+    ],
+    "280002552487": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "280002539826": [
+      6,
+      11,
+      12,
+      13,
+      14,
+      15,
+      18,
+      21,
+      22,
+      23,
+      24,
+      33,
+      36,
+      37,
+      38,
+      40,
+      41,
+      50,
+      51,
+      52,
+      53,
+      54,
+      57,
+      59,
+      60,
+      61,
+      63,
+      75,
+      76
+    ],
+    "280002548139": [
+      11,
+      12,
+      19,
+      20,
+      21,
+      22,
+      23,
+      25,
+      33,
+      34,
+      35,
+      36,
+      37,
+      39,
+      40,
+      41,
+      43,
+      44,
+      46,
+      51,
+      52,
+      53,
+      57,
+      58
+    ],
+    "280002551932": [
+      8,
+      10,
+      12,
+      13,
+      14,
+      15,
+      17,
+      20,
+      26,
+      27,
+      28,
+      29,
+      32,
+      33,
+      35,
+      44,
+      47,
+      53,
+      58,
+      59,
+      61,
+      62,
+      65,
+      67,
+      68,
+      72,
+      73,
+      74,
+      76,
+      77
+    ],
+    "280002551547": [
+      11,
+      14,
+      27,
+      31,
+      32,
+      36,
+      37,
+      43,
+      44,
+      45,
+      46,
+      49,
+      50,
+      55,
+      56,
+      58,
+      60,
+      61,
+      64,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      89,
+      95,
+      96,
+      98,
+      99,
+      107,
+      114,
+      115,
+      116,
+      118,
+      119,
+      120,
+      122,
+      135,
+      141,
+      158,
+      161,
+      162,
+      163,
+      164,
+      186,
+      187,
+      188,
+      189,
+      190,
+      191,
+      192
+    ],
+    "280002538811": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      30,
+      32,
+      34,
+      49,
+      56,
+      57,
+      58,
+      59,
+      60,
+      64,
+      65
+    ]
+  },
+  "actions": {
+    "keep": 8,
+    "reformulate": 6,
+    "remove_from_shortlist": 14,
+    "replace": 2
+  },
+  "proposed_shortlist_count": 16,
+  "proposed_shortlist_ids": [
+    "BR26-T001",
+    "BR26-T002",
+    "BR26-T003",
+    "BR26-T011",
+    "BR26-T015",
+    "BR26-T017",
+    "BR26-T018",
+    "BR26-T026A",
+    "BR26-T036",
+    "BR26-T038",
+    "BR26-T042",
+    "BR26-T043",
+    "BR26-T057",
+    "BR26-T063",
+    "BR26-T066",
+    "BR26-T067"
+  ],
+  "proposed_shortlist_themes": {
+    "economia": 5,
+    "trabalho": 1,
+    "politica_social": 1,
+    "seguranca": 1,
+    "educacao": 2,
+    "direitos_sociais": 1,
+    "saude": 2,
+    "politica_externa": 3
+  },
+  "hypothetical_eligibility": {
+    "280002542548": {
+      "comparable_themes": [
+        "direitos_sociais",
+        "economia",
+        "politica_externa",
+        "saude"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002540694": {
+      "comparable_themes": [
+        "direitos_sociais",
+        "economia",
+        "educacao",
+        "politica_externa",
+        "politica_social"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002541457": {
+      "comparable_themes": [
+        "direitos_sociais",
+        "economia",
+        "educacao",
+        "politica_externa",
+        "saude",
+        "seguranca",
+        "trabalho"
+      ],
+      "eligible_under_prior_beta_proposal": true
+    },
+    "280002551975": {
+      "comparable_themes": [
+        "direitos_sociais",
+        "economia",
+        "educacao",
+        "politica_externa",
+        "saude",
+        "seguranca",
+        "trabalho"
+      ],
+      "eligible_under_prior_beta_proposal": true
+    },
+    "280002551544": {
+      "comparable_themes": [
+        "economia",
+        "educacao",
+        "politica_externa",
+        "politica_social",
+        "saude",
+        "seguranca",
+        "trabalho"
+      ],
+      "eligible_under_prior_beta_proposal": true
+    },
+    "280002552484": {
+      "comparable_themes": [],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002554479": {
+      "comparable_themes": [
+        "economia",
+        "politica_social",
+        "saude"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002552487": {
+      "comparable_themes": [
+        "economia",
+        "educacao",
+        "trabalho"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002539826": {
+      "comparable_themes": [
+        "economia",
+        "educacao",
+        "politica_externa",
+        "politica_social",
+        "saude",
+        "seguranca"
+      ],
+      "eligible_under_prior_beta_proposal": true
+    },
+    "280002548139": {
+      "comparable_themes": [
+        "economia"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002551932": {
+      "comparable_themes": [
+        "economia",
+        "politica_externa",
+        "politica_social",
+        "saude",
+        "seguranca"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002551547": {
+      "comparable_themes": [
+        "economia"
+      ],
+      "eligible_under_prior_beta_proposal": false
+    },
+    "280002538811": {
+      "comparable_themes": [
+        "direitos_sociais",
+        "economia",
+        "educacao",
+        "politica_externa",
+        "saude",
+        "seguranca",
+        "trabalho"
+      ],
+      "eligible_under_prior_beta_proposal": true
+    }
+  },
+  "proposed_shortlist_pairs": [
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002540694"
+      ],
+      "common": 3,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002541457"
+      ],
+      "common": 3,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551975"
+      ],
+      "common": 4,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551544"
+      ],
+      "common": 2,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002552484"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002554479"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002552487"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002539826"
+      ],
+      "common": 3,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002548139"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551932"
+      ],
+      "common": 3,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002551547"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002542548",
+        "280002538811"
+      ],
+      "common": 5,
+      "opposing": 3
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002541457"
+      ],
+      "common": 2,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551975"
+      ],
+      "common": 3,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551544"
+      ],
+      "common": 4,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002552484"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002554479"
+      ],
+      "common": 2,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002552487"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002539826"
+      ],
+      "common": 4,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002548139"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551932"
+      ],
+      "common": 3,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002540694",
+        "280002538811"
+      ],
+      "common": 3,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551975"
+      ],
+      "common": 7,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551544"
+      ],
+      "common": 4,
+      "opposing": 4
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002552484"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002554479"
+      ],
+      "common": 1,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002552487"
+      ],
+      "common": 2,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002539826"
+      ],
+      "common": 5,
+      "opposing": 5
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002548139"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551932"
+      ],
+      "common": 3,
+      "opposing": 3
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002551547"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002541457",
+        "280002538811"
+      ],
+      "common": 7,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551544"
+      ],
+      "common": 7,
+      "opposing": 6
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002552484"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002554479"
+      ],
+      "common": 1,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002552487"
+      ],
+      "common": 4,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002539826"
+      ],
+      "common": 7,
+      "opposing": 7
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002548139"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551932"
+      ],
+      "common": 3,
+      "opposing": 3
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002551547"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551975",
+        "280002538811"
+      ],
+      "common": 11,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002552484"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002554479"
+      ],
+      "common": 3,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002552487"
+      ],
+      "common": 2,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002539826"
+      ],
+      "common": 6,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002548139"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002551932"
+      ],
+      "common": 4,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551544",
+        "280002538811"
+      ],
+      "common": 7,
+      "opposing": 6
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002554479"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002552487"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002539826"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002548139"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002551932"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002551547"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552484",
+        "280002538811"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002552487"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002539826"
+      ],
+      "common": 3,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002548139"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002551932"
+      ],
+      "common": 3,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002554479",
+        "280002538811"
+      ],
+      "common": 2,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002539826"
+      ],
+      "common": 2,
+      "opposing": 2
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002548139"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002551932"
+      ],
+      "common": 1,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002551547"
+      ],
+      "common": 0,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002552487",
+        "280002538811"
+      ],
+      "common": 4,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002548139"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002551932"
+      ],
+      "common": 5,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002539826",
+        "280002538811"
+      ],
+      "common": 7,
+      "opposing": 7
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002551932"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002548139",
+        "280002538811"
+      ],
+      "common": 1,
+      "opposing": 1
+    },
+    {
+      "candidate_ids": [
+        "280002551932",
+        "280002551547"
+      ],
+      "common": 1,
+      "opposing": 0
+    },
+    {
+      "candidate_ids": [
+        "280002551932",
+        "280002538811"
+      ],
+      "common": 5,
+      "opposing": 5
+    },
+    {
+      "candidate_ids": [
+        "280002551547",
+        "280002538811"
+      ],
+      "common": 1,
+      "opposing": 1
+    }
+  ],
+  "candidate_counts": {
+    "280002542548": {
+      "name": "Lula",
+      "published": 9,
+      "reviewed_originals": 5,
+      "suggested_wordings_all_30": 8,
+      "proposed_shortlist": 6
+    },
+    "280002540694": {
+      "name": "Renan Santos",
+      "published": 7,
+      "reviewed_originals": 7,
+      "suggested_wordings_all_30": 8,
+      "proposed_shortlist": 6
+    },
+    "280002541457": {
+      "name": "Hertz Dias",
+      "published": 13,
+      "reviewed_originals": 10,
+      "suggested_wordings_all_30": 11,
+      "proposed_shortlist": 8
+    },
+    "280002551975": {
+      "name": "Edmilson Costa",
+      "published": 19,
+      "reviewed_originals": 17,
+      "suggested_wordings_all_30": 18,
+      "proposed_shortlist": 12
+    },
+    "280002551544": {
+      "name": "Flavio Bolsonaro",
+      "published": 11,
+      "reviewed_originals": 12,
+      "suggested_wordings_all_30": 12,
+      "proposed_shortlist": 9
+    },
+    "280002552484": {
+      "name": "Clariana Barao",
+      "published": 0,
+      "reviewed_originals": 0,
+      "suggested_wordings_all_30": 0,
+      "proposed_shortlist": 0
+    },
+    "280002554479": {
+      "name": "Leonardo Avalanche",
+      "published": 3,
+      "reviewed_originals": 3,
+      "suggested_wordings_all_30": 3,
+      "proposed_shortlist": 3
+    },
+    "280002552487": {
+      "name": "Rui Costa Pimenta",
+      "published": 10,
+      "reviewed_originals": 6,
+      "suggested_wordings_all_30": 6,
+      "proposed_shortlist": 4
+    },
+    "280002539826": {
+      "name": "Zema",
+      "published": 17,
+      "reviewed_originals": 16,
+      "suggested_wordings_all_30": 17,
+      "proposed_shortlist": 10
+    },
+    "280002548139": {
+      "name": "Veterinário Wilson Grassi",
+      "published": 1,
+      "reviewed_originals": 1,
+      "suggested_wordings_all_30": 1,
+      "proposed_shortlist": 1
+    },
+    "280002551932": {
+      "name": "Ronaldo Caiado",
+      "published": 5,
+      "reviewed_originals": 6,
+      "suggested_wordings_all_30": 8,
+      "proposed_shortlist": 7
+    },
+    "280002551547": {
+      "name": "Escritor Augusto Cury",
+      "published": 4,
+      "reviewed_originals": 2,
+      "suggested_wordings_all_30": 2,
+      "proposed_shortlist": 1
+    },
+    "280002538811": {
+      "name": "Samara",
+      "published": 17,
+      "reviewed_originals": 16,
+      "suggested_wordings_all_30": 18,
+      "proposed_shortlist": 13
+    }
+  },
+  "theses_summary": [
+    {
+      "id": "BR26-T001",
+      "action": "keep",
+      "published_categorical": 5,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "CONCORDA": 1,
+        "DISCORDA": 4,
+        "NAO_ENCONTRADA": 8
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T002",
+      "action": "keep",
+      "published_categorical": 5,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 4,
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "A Petrobras deve permanecer sob controle estatal.",
+          "recommendation": "reject",
+          "categorical": 5,
+          "counts": {
+            "NAO_ENCONTRADA": 8,
+            "CONCORDA": 4,
+            "DISCORDA": 1
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002541457",
+              "name": "Hertz Dias",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002551975",
+              "name": "Edmilson Costa",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002551544",
+              "name": "Flavio Bolsonaro",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "NAO_ENCONTRADA"
+            },
+            {
+              "candidate_id": "280002552487",
+              "name": "Rui Costa Pimenta",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "CONCORDA",
+              "after": "DISCORDA"
+            },
+            {
+              "candidate_id": "280002538811",
+              "name": "Samara",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T003",
+      "action": "keep",
+      "published_categorical": 5,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 8,
+        "CONCORDA": 4,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T005",
+      "action": "remove_from_shortlist",
+      "published_categorical": 4,
+      "reviewed_categorical": 1,
+      "reviewed_counts": {
+        "CONDICIONAL_OU_MISTA": 5,
+        "NAO_ENCONTRADA": 7,
+        "CONCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002542548",
+          "name": "Lula",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        },
+        {
+          "candidate_id": "280002552487",
+          "name": "Rui Costa Pimenta",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        },
+        {
+          "candidate_id": "280002539826",
+          "name": "Zema",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "O limite legal geral da jornada de trabalho deve ser de, no máximo, 36 horas semanais, sem redução salarial.",
+          "recommendation": "explore",
+          "categorical": 4,
+          "counts": {
+            "CONDICIONAL_OU_MISTA": 2,
+            "NAO_ENCONTRADA": 7,
+            "CONCORDA": 4
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002541457",
+              "name": "Hertz Dias",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002552487",
+              "name": "Rui Costa Pimenta",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002538811",
+              "name": "Samara",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T011",
+      "action": "keep",
+      "published_categorical": 4,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 6,
+        "CONCORDA": 1,
+        "DISCORDA": 4,
+        "CONDICIONAL_OU_MISTA": 2
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002551932",
+          "name": "Ronaldo Caiado",
+          "before": "NAO_ENCONTRADA",
+          "after": "DISCORDA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T015",
+      "action": "reformulate",
+      "published_categorical": 5,
+      "reviewed_categorical": 6,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 5,
+        "CONCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002539826",
+          "name": "Zema",
+          "before": "CONDICIONAL_OU_MISTA",
+          "after": "DISCORDA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "Adolescentes de 16 e 17 anos devem responder criminalmente como adultos por crimes graves.",
+          "recommendation": "recommend",
+          "categorical": 6,
+          "counts": {
+            "NAO_ENCONTRADA": 7,
+            "DISCORDA": 3,
+            "CONCORDA": 3
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002551544",
+              "name": "Flavio Bolsonaro",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "DISCORDA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T017",
+      "action": "reformulate",
+      "published_categorical": 3,
+      "reviewed_categorical": 3,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 2,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "A rede pública de ensino deve admitir escolas cívico-militares.",
+          "recommendation": "recommend",
+          "categorical": 5,
+          "counts": {
+            "NAO_ENCONTRADA": 8,
+            "CONCORDA": 3,
+            "DISCORDA": 2
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002540694",
+              "name": "Renan Santos",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "NAO_ENCONTRADA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T018",
+      "action": "reformulate",
+      "published_categorical": 5,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "DISCORDA": 4,
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 8
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "As cotas raciais no serviço público devem ser encerradas.",
+          "recommendation": "recommend",
+          "categorical": 5,
+          "counts": {
+            "DISCORDA": 4,
+            "CONCORDA": 1,
+            "NAO_ENCONTRADA": 8
+          },
+          "changes_from_reviewed": []
+        }
+      ]
+    },
+    {
+      "id": "BR26-T026A",
+      "action": "replace",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "A gestão de todas as unidades públicas de saúde deve ficar com o poder público, sem delegação a organizações privadas.",
+          "recommendation": "recommend",
+          "categorical": 4,
+          "counts": {
+            "NAO_ENCONTRADA": 9,
+            "CONCORDA": 3,
+            "DISCORDA": 1
+          },
+          "changes_from_reviewed": []
+        }
+      ]
+    },
+    {
+      "id": "BR26-T026B",
+      "action": "remove_from_shortlist",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T034A",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T034B",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T036",
+      "action": "keep",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T038",
+      "action": "reformulate",
+      "published_categorical": 3,
+      "reviewed_categorical": 1,
+      "reviewed_counts": {
+        "CONDICIONAL_OU_MISTA": 5,
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002542548",
+          "name": "Lula",
+          "before": "CONCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        },
+        {
+          "candidate_id": "280002551975",
+          "name": "Edmilson Costa",
+          "before": "CONCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "A Petrobras deve manter integradas as atividades de produção e refino de petróleo.",
+          "recommendation": "recommend",
+          "categorical": 4,
+          "counts": {
+            "CONCORDA": 3,
+            "NAO_ENCONTRADA": 7,
+            "CONDICIONAL_OU_MISTA": 2,
+            "DISCORDA": 1
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002542548",
+              "name": "Lula",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002551975",
+              "name": "Edmilson Costa",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002538811",
+              "name": "Samara",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T041",
+      "action": "remove_from_shortlist",
+      "published_categorical": 6,
+      "reviewed_categorical": 5,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 6,
+        "DISCORDA": 2,
+        "CONDICIONAL_OU_MISTA": 2,
+        "CONCORDA": 3
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002551975",
+          "name": "Edmilson Costa",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        },
+        {
+          "candidate_id": "280002551544",
+          "name": "Flavio Bolsonaro",
+          "before": "NAO_ENCONTRADA",
+          "after": "CONCORDA"
+        },
+        {
+          "candidate_id": "280002552487",
+          "name": "Rui Costa Pimenta",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T042",
+      "action": "reformulate",
+      "published_categorical": 6,
+      "reviewed_categorical": 6,
+      "reviewed_counts": {
+        "CONDICIONAL_OU_MISTA": 2,
+        "NAO_ENCONTRADA": 5,
+        "DISCORDA": 3,
+        "CONCORDA": 3
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "O SUS deve poder contratar atendimentos da rede privada para reduzir filas.",
+          "recommendation": "recommend",
+          "categorical": 8,
+          "counts": {
+            "CONCORDA": 5,
+            "NAO_ENCONTRADA": 5,
+            "DISCORDA": 3
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002542548",
+              "name": "Lula",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002551932",
+              "name": "Ronaldo Caiado",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T043",
+      "action": "reformulate",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 8,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 3,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": [
+        {
+          "text": "Recursos públicos devem poder financiar vagas em creches privadas.",
+          "recommendation": "recommend",
+          "categorical": 5,
+          "counts": {
+            "NAO_ENCONTRADA": 7,
+            "CONDICIONAL_OU_MISTA": 1,
+            "DISCORDA": 3,
+            "CONCORDA": 2
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "NAO_ENCONTRADA",
+              "after": "CONCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T044",
+      "action": "remove_from_shortlist",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 8,
+        "CONDICIONAL_OU_MISTA": 1,
+        "DISCORDA": 3,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T054",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONDICIONAL_OU_MISTA": 2,
+        "CONCORDA": 1,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T056",
+      "action": "remove_from_shortlist",
+      "published_categorical": 3,
+      "reviewed_categorical": 1,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 12,
+        "CONCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002541457",
+          "name": "Hertz Dias",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        },
+        {
+          "candidate_id": "280002552487",
+          "name": "Rui Costa Pimenta",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "A idade mínima para aposentadoria deve ser reduzida.",
+          "recommendation": "reject",
+          "categorical": 1,
+          "counts": {
+            "NAO_ENCONTRADA": 12,
+            "CONCORDA": 1
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002541457",
+              "name": "Hertz Dias",
+              "before": "NAO_ENCONTRADA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "CONCORDA",
+              "after": "NAO_ENCONTRADA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T057",
+      "action": "replace",
+      "published_categorical": 2,
+      "reviewed_categorical": 1,
+      "reviewed_counts": {
+        "CONDICIONAL_OU_MISTA": 1,
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002542548",
+          "name": "Lula",
+          "before": "CONCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "O Brasil deve apoiar o acordo comercial entre o Mercosul e a União Europeia.",
+          "recommendation": "recommend",
+          "categorical": 4,
+          "counts": {
+            "CONCORDA": 2,
+            "NAO_ENCONTRADA": 9,
+            "DISCORDA": 2
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002542548",
+              "name": "Lula",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002541457",
+              "name": "Hertz Dias",
+              "before": "NAO_ENCONTRADA",
+              "after": "DISCORDA"
+            },
+            {
+              "candidate_id": "280002539826",
+              "name": "Zema",
+              "before": "DISCORDA",
+              "after": "NAO_ENCONTRADA"
+            },
+            {
+              "candidate_id": "280002551932",
+              "name": "Ronaldo Caiado",
+              "before": "NAO_ENCONTRADA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002538811",
+              "name": "Samara",
+              "before": "NAO_ENCONTRADA",
+              "after": "DISCORDA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T058",
+      "action": "remove_from_shortlist",
+      "published_categorical": 3,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 9,
+        "CONDICIONAL_OU_MISTA": 2,
+        "DISCORDA": 1,
+        "CONCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002539826",
+          "name": "Zema",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        }
+      ],
+      "alternatives": [
+        {
+          "text": "Os juízes das instâncias inferiores ao STF devem ser eleitos pelo voto popular.",
+          "recommendation": "reject",
+          "categorical": 2,
+          "counts": {
+            "NAO_ENCONTRADA": 10,
+            "CONDICIONAL_OU_MISTA": 1,
+            "CONCORDA": 2
+          },
+          "changes_from_reviewed": [
+            {
+              "candidate_id": "280002552487",
+              "name": "Rui Costa Pimenta",
+              "before": "CONDICIONAL_OU_MISTA",
+              "after": "CONCORDA"
+            },
+            {
+              "candidate_id": "280002551547",
+              "name": "Escritor Augusto Cury",
+              "before": "DISCORDA",
+              "after": "NAO_ENCONTRADA"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "BR26-T061",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 11,
+        "DISCORDA": 1,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T062",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 1,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 11,
+        "CONCORDA": 1,
+        "CONDICIONAL_OU_MISTA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002541457",
+          "name": "Hertz Dias",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T063",
+      "action": "keep",
+      "published_categorical": 4,
+      "reviewed_categorical": 3,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 10,
+        "CONCORDA": 2,
+        "DISCORDA": 1
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002551547",
+          "name": "Escritor Augusto Cury",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T064",
+      "action": "remove_from_shortlist",
+      "published_categorical": 5,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 11,
+        "CONCORDA": 2
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002542548",
+          "name": "Lula",
+          "before": "CONDICIONAL_OU_MISTA",
+          "after": "NAO_ENCONTRADA"
+        },
+        {
+          "candidate_id": "280002541457",
+          "name": "Hertz Dias",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        },
+        {
+          "candidate_id": "280002551975",
+          "name": "Edmilson Costa",
+          "before": "CONDICIONAL_OU_MISTA",
+          "after": "NAO_ENCONTRADA"
+        },
+        {
+          "candidate_id": "280002552487",
+          "name": "Rui Costa Pimenta",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        },
+        {
+          "candidate_id": "280002538811",
+          "name": "Samara",
+          "before": "DISCORDA",
+          "after": "NAO_ENCONTRADA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T065",
+      "action": "remove_from_shortlist",
+      "published_categorical": 4,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "CONDICIONAL_OU_MISTA": 2,
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 2
+      },
+      "corrections": [
+        {
+          "candidate_id": "280002542548",
+          "name": "Lula",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        },
+        {
+          "candidate_id": "280002551547",
+          "name": "Escritor Augusto Cury",
+          "before": "DISCORDA",
+          "after": "CONDICIONAL_OU_MISTA"
+        }
+      ],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T066",
+      "action": "keep",
+      "published_categorical": 4,
+      "reviewed_categorical": 4,
+      "reviewed_counts": {
+        "DISCORDA": 3,
+        "NAO_ENCONTRADA": 9,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T067",
+      "action": "keep",
+      "published_categorical": 8,
+      "reviewed_categorical": 8,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 5,
+        "DISCORDA": 7,
+        "CONCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    },
+    {
+      "id": "BR26-T068",
+      "action": "remove_from_shortlist",
+      "published_categorical": 2,
+      "reviewed_categorical": 2,
+      "reviewed_counts": {
+        "NAO_ENCONTRADA": 11,
+        "CONCORDA": 1,
+        "DISCORDA": 1
+      },
+      "corrections": [],
+      "alternatives": []
+    }
+  ],
+  "caveat": "Literal verification is not semantic or human approval. Counts reflect this proposed review, not production data. The proposed shortlist is not a validated questionnaire."
+}

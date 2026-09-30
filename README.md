@@ -4,9 +4,9 @@ Site acadêmico de orientação eleitoral para o Brasil, da Universidade Presbit
 
 O produto atual reúne uma comparação de planos presidenciais de 2026, comunidade sob aliases pseudônimos e notícias oficiais dos últimos sete dias. A área de acompanhamento de políticos está em validação: o público pode registrar interesse sem fornecer nome ou contato, enquanto a busca, o perfil e o acompanhamento já implementados permanecem retidos atrás de feature flag. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas não compõem esse score. Não há índice de consistência implementado.
 
-O site gera e guarda localmente um UUID v4 (`anonymous_id`). O contrato do quiz ainda aceita esse UUID no campo `device_id`, mas o cliente público não o envia com IoT desligado; o backend calcula o ranking sem gravar respostas nem criar ou atualizar `devices`, mesmo quando um cliente antigo envia o campo. Com IoT habilitado, `device_id` permite a persistência histórica do quiz. Na comunidade e nas rotas `/me`, `X-Farol-Anonymous-Id` funciona como credencial privada de posse e gera um alias público estável. A validação usa outro UUID aleatório, exclusivo do experimento, e o backend armazena somente seu hash SHA-256 contextualizado. Esse hash é unidirecional, mas o mesmo navegador pode reproduzi-lo a partir do UUID retido para consultar ou retirar o registro. As respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessas identidades.
+O site gera e guarda localmente um UUID v4 (`anonymous_id`). O contrato do quiz ainda aceita esse UUID no campo `device_id`, mas o cliente público não o envia com IoT desligado; o backend calcula o ranking sem gravar respostas nem criar ou atualizar `devices`, mesmo quando um cliente antigo envia o campo. Com IoT habilitado, `device_id` permite a persistência histórica do quiz. Na comunidade e nas rotas `/me`, `X-Farol-Anonymous-Id` funciona como credencial privada de posse e gera um alias público estável. A validação usa outro UUID aleatório, exclusivo do experimento, e o backend armazena somente seu hash SHA-256 contextualizado. Esse hash é unidirecional, mas o mesmo navegador pode reproduzi-lo a partir do UUID retido para consultar o registro; a API também aceita retirada, embora a interface atual não ofereça botão para isso. As respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessas identidades.
 
-Posts e comentários podem revelar opinião política. O site destaca, antes de cada ação, que o texto será armazenado, publicado sob alias pseudônimo estável e enviado à NVIDIA NIM para moderação. O autor pode remover o conteúdo do próprio post, deixando uma lápide e preservando os comentários; pedidos para retirar comentários e outros direitos usam `privacidade@fpolitico.com.br`. Os dados funcionais permanecem enquanto necessários à função, segurança ou obrigações legais, sem promessa de um prazo fixo para toda a comunidade. Métricas GA contam apenas visitantes que aceitaram o opt-in opcional; a contagem de linhas ativas deduplicadas no banco continua sendo a fonte de demanda da validação. O interesse pode ser retirado e tem retenção operacional máxima de 180 dias.
+Posts e comentários podem revelar opinião política. O site destaca, antes de cada ação, que o texto será armazenado, publicado sob alias pseudônimo estável e enviado à NVIDIA NIM para moderação. O autor pode remover o conteúdo do próprio post, deixando uma lápide e preservando os comentários; pedidos para retirar comentários, interesse na área Acompanhar e outros direitos usam `privacidade@fpolitico.com.br`. Os dados funcionais permanecem enquanto necessários à função, segurança ou obrigações legais, sem promessa de um prazo fixo para toda a comunidade. Métricas GA contam apenas visitantes que aceitaram o opt-in opcional; a contagem de linhas ativas deduplicadas no banco continua sendo a fonte de demanda da validação. O interesse tem retenção operacional máxima de 180 dias.
 
 ## Stack e estrutura
 
@@ -133,6 +133,27 @@ flutter build web --release --no-web-resources-cdn \
 
 O valor é público e deve ser uma URL HTTPS. Parâmetros e fragmentos são removidos do endereço compartilhado. Consulte [mobile/.env.example](mobile/.env.example). O compartilhamento depende dos apps disponíveis no dispositivo; abrir o menu não confirma que algo foi publicado.
 
+## Página pública e SEO
+
+O aplicativo permanece na raiz de `https://fpolitico.com.br/`. A página
+`/eleicoes-2026/` apresenta o quiz, as fontes, a metodologia e as perguntas
+frequentes em HTML, disponível sem JavaScript. Seu botão abre `/?tab=quiz`,
+que seleciona a introdução do quiz dentro do shell do aplicativo.
+
+Os arquivos ficam em `mobile/web/` e são copiados pelo próprio
+`flutter build web`; o workflow de publicação existente também os publica.
+Não há etapa adicional de geração nem dependência nova. `robots.txt` aponta
+para o sitemap com a raiz e a página pública. Cada página tem seu próprio
+endereço canônico. As rotas conhecidas do aplicativo continuam usando
+`index.html`; outros endereços inexistentes recebem a página `404.html`.
+
+Depois de publicar, inspecione a raiz e `/eleicoes-2026/` no Search Console,
+execute o teste ao vivo e consulte o HTML renderizado. Envie `/sitemap.xml`
+e solicite a indexação das duas páginas. A solicitação não garante indexação
+nem posição. No relatório de desempenho, acompanhe consultas, impressões,
+cliques e CTR; o funil do quiz já registra `quiz_started`, `quiz_completed`
+e `results_viewed` sem opiniões ou afinidades nos eventos de analytics.
+
 ## API ativa
 
 Os caminhos abaixo usam o prefixo `/api/v1`, exceto saúde e documentação.
@@ -155,7 +176,7 @@ Arquivos públicos em `/data/...` são servidos quando `DATA_DIR` existe. Notíc
 
 O funil usa somente eventos genéricos do Firebase Analytics, sem UUID, nome de político, partido, resposta ou texto livre: `follow_waitlist_viewed`, `follow_waitlist_prompt_viewed`, `follow_waitlist_cta_clicked`, `follow_waitlist_registered` e `follow_waitlist_failed`. `viewed` mede a exposição geral; a conversão principal é a proporção de usuários únicos que acionam `registered` após `prompt_viewed`, quando o CTA realmente ficou elegível. Cliques e falhas ajudam a diagnosticar atrito.
 
-A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusivo do experimento, é a fonte de verdade para a demanda atual. O hash é unidirecional; o navegador que conserva o UUID pode reproduzi-lo para consultar ou retirar o registro. O evento GA de sucesso só é emitido quando a API informa que criou um registro novo e somente para visitantes que aceitaram métricas; chamadas idempotentes não geram conversões adicionais. Como não há conta ou contato, a contagem representa instalações que manifestaram interesse, não uma quantidade garantida de pessoas únicas; o limite global da API reduz abuso básico, mas não substitui proteção distribuída contra tráfego coordenado.
+A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusivo do experimento, é a fonte de verdade para a demanda atual. O hash é unidirecional; o navegador que conserva o UUID pode reproduzi-lo para consultar o registro. A API aceita retirada por esse identificador, mas a interface pública atual não oferece essa ação; o pedido pode ser feito pelo canal de privacidade. O evento GA de sucesso só é emitido quando a API informa que criou um registro novo e somente para visitantes que aceitaram métricas; chamadas idempotentes não geram conversões adicionais. Como não há conta ou contato, a contagem representa instalações que manifestaram interesse, não uma quantidade garantida de pessoas únicas; o limite global da API reduz abuso básico, mas não substitui proteção distribuída contra tráfego coordenado.
 
 ## Features retidas e deploy
 

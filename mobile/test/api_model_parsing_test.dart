@@ -190,22 +190,22 @@ void main() {
 
   group('CandidateResult.fromJson', () {
     Map<String, dynamic> payload(List<Map<String, dynamic>> matches) => {
-      'candidate_id': 1,
-      'name': 'Candidata',
-      'party_acronym': 'PT',
-      'score_percent': 0,
-      'rank': 0,
-      'matches': matches,
-    };
+          'candidate_id': 1,
+          'name': 'Candidata',
+          'party_acronym': 'PT',
+          'score_percent': 0,
+          'rank': 0,
+          'matches': matches,
+        };
 
     Map<String, dynamic> match(int id, String user, String candidate) => {
-      'thesis_id': id,
-      'thesis_text': 'Tese $id',
-      'theme_id': 1,
-      'user_answer': user,
-      'candidate_position': candidate,
-      'match_type': 'skipped',
-    };
+          'thesis_id': id,
+          'thesis_text': 'Tese $id',
+          'theme_id': 1,
+          'user_answer': user,
+          'candidate_position': candidate,
+          'match_type': 'skipped',
+        };
 
     test('legacy payload counts only answered theses with evidence', () {
       final result = CandidateResult.fromJson(
@@ -221,13 +221,30 @@ void main() {
       expect(result.hasComparableEvidence, isTrue);
     });
 
+    test('legacy payload cannot opt into the beta ranking implicitly', () {
+      final result = CandidateResult.fromJson({
+        ...payload([
+          match(1, 'agree', 'concordo'),
+          match(2, 'agree', 'concordo'),
+          match(3, 'agree', 'concordo'),
+          match(4, 'agree', 'concordo'),
+          match(5, 'agree', 'concordo'),
+        ]),
+        'rank': 1,
+      });
+
+      expect(result.rankingEligible, isFalse);
+    });
+
     test('no evidence does not become a zero affinity label', () {
       final result = CandidateResult.fromJson(
         payload([match(1, 'agree', 'sem_posicao')]),
       );
       expect(result.hasComparableEvidence, isFalse);
-      expect(result.affinityLabel, 'Sem base comparável');
-      expect(result.coverageLabel, '0 de 1 respostas comparáveis');
+      expect(result.rankingEligible, isFalse);
+      expect(result.affinityLabel, 'Fora do ranking desta edição');
+      expect(
+          result.coverageLabel, '0 de 1 respostas comparáveis · 0 categorias');
     });
 
     test('explicit counts take precedence over incomplete legacy matches', () {
@@ -236,10 +253,22 @@ void main() {
         'counted_theses': 2,
         'answered_theses': 9,
         'score_percent': 100,
+        'comparable_categories': 2,
+        'documented_theses': 2,
+        'documented_categories': 2,
+        'ranking_status': 'insufficient_documented_coverage',
+        'ranking_eligible': false,
       });
       expect(result.hasComparableEvidence, isTrue);
-      expect(result.affinityLabel, '100.0%');
-      expect(result.coverageLabel, '2 de 9 respostas comparáveis');
+      expect(result.rankingEligible, isFalse);
+      expect(result.affinityLabel, 'Fora do ranking desta edição');
+      expect(
+          result.coverageLabel, '2 de 9 respostas comparáveis · 2 categorias');
+      expect(
+        result.rankingExplanation,
+        'O plano oferece posições comparáveis em 2 teses e 2 categorias. '
+        'Esta edição exige pelo menos 5 teses e 4 categorias.',
+      );
     });
 
     test(
@@ -254,6 +283,13 @@ void main() {
           'score_percent': 87.5,
           'score_by_theme': {'economia': 92.0, 'saude': 83.0},
           'rank': 1,
+          'counted_theses': 7,
+          'answered_theses': 12,
+          'comparable_categories': 4,
+          'documented_theses': 11,
+          'documented_categories': 7,
+          'ranking_status': 'eligible',
+          'ranking_eligible': true,
           'matches': [
             {
               'thesis_id': 7,
@@ -262,6 +298,7 @@ void main() {
               'theme_id': 3,
               'user_answer': 'agree',
               'candidate_position': 'concordo',
+              'candidate_analysis': 'CONCORDA',
               'match_type': 'exact',
             },
           ],
@@ -273,12 +310,23 @@ void main() {
         expect(result.photoUrl, '/data/fotos/2026/BR/280002542548.jpg');
         expect(result.scorePercent, 87.5);
         expect(result.rank, 1);
+        expect(result.rankingEligible, isTrue);
+        expect(result.rankingStatus, 'eligible');
+        expect(result.comparableCategories, 4);
+        expect(result.documentedTheses, 11);
+        expect(result.documentedCategories, 7);
+        expect(result.affinityLabel, '1º lugar');
+        expect(
+          result.coverageLabel,
+          '7 de 12 respostas comparáveis · 4 categorias',
+        );
         expect(result.matches, hasLength(1));
         expect(result.matches.single.thesisId, 7);
         expect(result.matches.single.themeId, 3);
         expect(result.matches.single.themeId, isA<int>());
         expect(result.matches.single.userAnswerEnum, ThesisAnswer.agree);
         expect(result.matches.single.candidateAnswerEnum, ThesisAnswer.agree);
+        expect(result.matches.single.candidateAnalysis, 'CONCORDA');
       },
     );
   });
@@ -291,6 +339,7 @@ void main() {
         'theme': 'saude',
         'theme_name': 'Saude',
         'position': 'concordo',
+        'analytical_position': 'CONCORDA',
         'justification': 'Plano de governo defende fortalecimento do SUS.',
         'quote': 'Fortalecer o SUS',
         'source_ref': 'PG_2026_BR_123_01#page=4',
@@ -306,6 +355,7 @@ void main() {
       expect(justification.themeName, 'Saude');
       expect(justification.position, 'concordo');
       expect(justification.positionAnswer, ThesisAnswer.agree);
+      expect(justification.analyticalPosition, 'CONCORDA');
       expect(justification.quote, 'Fortalecer o SUS');
       expect(justification.sourceRef, 'PG_2026_BR_123_01#page=4');
       expect(justification.sourceUrl, 'https://example.test/plano.pdf');

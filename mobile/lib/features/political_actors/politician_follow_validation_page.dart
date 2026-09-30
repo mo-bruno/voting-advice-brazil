@@ -111,26 +111,6 @@ class _PoliticianFollowValidationPageState
     }
   }
 
-  Future<void> _withdraw() async {
-    if (_submitting) return;
-    setState(() {
-      _submitting = true;
-      _actionFailed = false;
-    });
-    try {
-      await _api.deletePoliticianFollowInterest(
-        anonymousId: await _identity(),
-      );
-      if (!mounted) return;
-      setState(() => _registered = false);
-    } catch (_) {
-      if (!mounted) return;
-      setState(() => _actionFailed = true);
-    } finally {
-      if (mounted) setState(() => _submitting = false);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
@@ -182,11 +162,7 @@ class _PoliticianFollowValidationPageState
           if (_loading)
             const Center(child: CircularProgressIndicator())
           else if (_registered)
-            _RegisteredState(
-              submitting: _submitting,
-              failed: _actionFailed,
-              onWithdraw: _withdraw,
-            )
+            const _RegisteredState()
           else
             _InterestAction(
               submitting: _submitting,
@@ -246,15 +222,7 @@ class _InterestAction extends StatelessWidget {
 }
 
 class _RegisteredState extends StatelessWidget {
-  const _RegisteredState({
-    required this.submitting,
-    required this.failed,
-    required this.onWithdraw,
-  });
-
-  final bool submitting;
-  final bool failed;
-  final VoidCallback onWithdraw;
+  const _RegisteredState();
 
   @override
   Widget build(BuildContext context) {
@@ -283,21 +251,6 @@ class _RegisteredState extends StatelessWidget {
             'Obrigado. Esse registro sem nome ou contato, separado das outras atividades, entra na nossa medição de '
             'demanda.',
             style: textTheme.bodyMedium?.copyWith(height: 1.5),
-          ),
-          if (failed) ...[
-            const SizedBox(height: 12),
-            Text(
-              'Não foi possível retirar seu interesse.',
-              style: textTheme.bodySmall,
-            ),
-          ],
-          const SizedBox(height: 20),
-          SizedBox(
-            width: double.infinity,
-            child: OutlinedButton(
-              onPressed: submitting ? null : onWithdraw,
-              child: const Text('RETIRAR INTERESSE'),
-            ),
           ),
         ],
       ),

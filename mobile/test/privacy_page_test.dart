@@ -89,6 +89,7 @@ void main() {
       'NVIDIA NIM',
       'ImprovMX',
       '180 dias',
+      'interface atual não oferece retirada direta',
       'Autoridade Nacional de Proteção de Dados',
     ]) {
       expect(find.textContaining(phrase, skipOffstage: false), findsWidgets);

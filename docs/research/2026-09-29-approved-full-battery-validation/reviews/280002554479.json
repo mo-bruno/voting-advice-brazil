@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002554479",
+  "candidate_name": "Leonardo Avalanche",
+  "context_owner_agent_id": "/root/plan_leonardo",
+  "executor_agent_id": "/root/battery_leonardo",
+  "document_sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002554479.json",
+    "../2026-09-29-thematic-profiles/profiles/280002554479.md",
+    "../2026-09-29-thematic-profiles/profiles/280002554479.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002554479.json"
+  ],
+  "method": "Reidratei integralmente, na ordem registrada em STATE.json, o perfil JSON, o perfil legível, o checkpoint e o parecer da leitura integral anterior. Confirmei os hashes do PDF oficial e de questions.json, pesquisei o texto completo de raw.txt, layout.txt, raw-pages.json e layout-pages.json com termos diretos e sinônimos dos vinte objetos e reli, nas extrações paginadas, todas as páginas usadas nas citações. As classificações distinguem objeto, instrumento, público, alcance e condição e usam exclusivamente o plano oficial.",
+  "revisited_pages": [
+    4,
+    6,
+    7,
+    9,
+    13,
+    14,
+    19,
+    22,
+    26,
+    28,
+    29,
+    34,
+    37,
+    42,
+    43,
+    44
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe substituir tributos enumerados por um imposto único de 3,5%, mas não menciona imposto sobre grandes fortunas nem identifica patrimônio elevado como base tributável. A reforma tributária geral não permite atribuir apoio ou rejeição ao imposto específico.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Nossa proposta é reduzir toda essa avalanche de impostos que pesa sobre o brasileiro pra uma alíquota única de 3,5%. Nada de ICMS, ISS, PIS, Cofins, IPI, INSS, Imposto de Renda separados — um imposto só, pra tudo.",
+          "role": "context",
+          "interpretation": "A passagem define a unificação de tributos, mas não cria, abrange de modo identificável nem rejeita um imposto sobre grandes fortunas."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "patrimônio",
+        "riqueza",
+        "imposto",
+        "tributo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "As ocorrências de patrimônio tratam de recursos naturais, bens de idosos ou formação patrimonial; nenhuma trata de tributação de grandes patrimônios. Outros tributos não provam rejeição ao imposto perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No plano nacional de reindustrialização, o documento seleciona o beneficiamento de nióbio e terras raras como prioridade estratégica e, na mesma política, oferece crédito facilitado para a indústria nacional. Embora não use a expressão formal 'linha de crédito', há direcionamento creditício a atividade industrial escolhida pela política pública.",
+      "conditions": [
+        "O crédito é formulado de maneira ampla para a indústria nacional; o plano não define operador, alíquota de juros, prazo, contrapartidas ou reserva exclusiva do crédito ao beneficiamento mineral.",
+        "A prioridade estratégica expressamente nomeada recai sobre o beneficiamento de nióbio e terras raras dentro do mesmo pacote de reindustrialização."
+      ],
+      "evidence": [
+        {
+          "page": 22,
+          "quote": "Na prática: plano nacional de reindustrialização, com desoneração — ou seja, redução e isenção de imposto — especificamente pra quem produz e transforma matéria-prima dentro do Brasil, incentivo à instalação de indústrias de beneficiamento mineral com prioridade estratégica pra nióbio e terras raras, crédito facilitado pra indústria nacional crescer, e investimento direto do próprio governo em indústria estratégica, com capital público entrando de verdade na construção de fábrica, não só concedendo desconto de imposto.",
+          "role": "support",
+          "interpretation": "O trecho reúne seleção industrial estratégica e crédito facilitado como instrumentos da política de reindustrialização."
+        }
+      ],
+      "search_terms": [
+        "crédito facilitado",
+        "crédito industrial",
+        "linha de crédito",
+        "linhas específicas",
+        "financiamento",
+        "indústria estratégica",
+        "setor prioritário",
+        "setores prioritários"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "As linhas por porte da página 25 são crédito rural e não fundamentam esta classificação. A conclusão depende do vínculo, na página 22, entre reindustrialização, prioridade estratégica e crédito para a indústria nacional.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite capital estrangeiro em tecnologia e em fábricas automobilísticas e combate exploração estrangeira irregular na Amazônia, mas não decide se empresas estrangeiras podem participar da extração de minerais estratégicos. A industrialização nacional e a vedação do que é irregular não definem o regime da extração estrangeira lícita.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Empresa estrangeira que quiser investir e trazer capital pra cá também é bem-vinda, mas o protagonismo é da empresa brasileira.",
+          "role": "context",
+          "interpretation": "A autorização pertence ao polo tecnológico e não à extração mineral."
+        },
+        {
+          "page": 28,
+          "quote": "Vamos instalar rede de drones de vigilância cobrindo a Amazônia inteira, monitorando em tempo real desmatamento ilegal, garimpo clandestino, contaminação de rio e qualquer exploração estrangeira irregular da nossa água, da nossa madeira e da nossa biodiversidade.",
+          "role": "context",
+          "interpretation": "O alvo é exploração irregular; o trecho não autoriza nem proíbe participação estrangeira regular na extração de minerais estratégicos."
+        }
+      ],
+      "search_terms": [
+        "minerais estratégicos",
+        "nióbio",
+        "terras raras",
+        "mineração",
+        "mineradora estrangeira",
+        "empresa estrangeira",
+        "capital estrangeiro",
+        "exploração estrangeira"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "As páginas 21–22 priorizam processamento nacional, e as páginas 24 e 28 tratam de exploração de reservas nacionais e de atividade irregular. Nenhuma passagem especifica a nacionalidade admitida das empresas extratoras em operação regular.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe auditoria da dívida pública, moratória ou suspensão temporária de pagamentos durante investigação.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "dívida pública",
+        "dívida interna",
+        "dívida externa",
+        "auditoria da dívida",
+        "moratória",
+        "suspender pagamentos",
+        "juros da dívida"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Dívidas rurais e endividamento de produtores são objetos privados e setoriais; não respondem sobre pagamentos da dívida pública federal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O documento estima ou promete orçamento para políticas específicas, mas não estabelece regra normativa que limite o crescimento das despesas federais.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "despesas públicas",
+        "gastos públicos",
+        "limite de gastos",
+        "teto de gastos",
+        "regra fiscal",
+        "arcabouço",
+        "meta fiscal",
+        "crescimento da despesa",
+        "orçamento"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Orçamento de defesa, publicidade, pesquisa e programas setoriais não equivale a limite geral de crescimento da despesa; não há índice, teto ou regra fiscal correspondente.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano menciona o petróleo da Amazônia Azul como ativo a proteger, mas não cita Petrobras, controle acionário, privatização ou manutenção do controle federal da empresa.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "petróleo da Amazônia Azul, mineral estratégico e riqueza pesqueira só rendem receita ao Brasil se o Brasil conseguir de fato monitorar e proteger essas áreas;",
+          "role": "context",
+          "interpretation": "A passagem trata de proteção territorial e não da propriedade ou do controle acionário da Petrobras."
+        }
+      ],
+      "search_terms": [
+        "Petrobras",
+        "Petrobrás",
+        "controle acionário",
+        "controle estatal",
+        "empresa estatal",
+        "petróleo",
+        "refinaria"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Capital público em indústria estratégica e proteção do petróleo não identificam a empresa controladora nem uma regra de preservação do controle federal da Petrobras.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não vincula avaliação periódica de servidor estável a demissão por baixo desempenho, nem descreve processo com defesa. A ocorrência de avaliação periódica pertence ao homeschooling.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Nosso governo vai apoiar a regulamentação do homeschooling no país, com fiscalização rigorosa e avaliação periódica obrigatória",
+          "role": "context",
+          "interpretation": "A avaliação é educacional e não funcional; não há consequência de demissão de servidor estável."
+        }
+      ],
+      "search_terms": [
+        "servidor público",
+        "servidor estável",
+        "estabilidade",
+        "baixo desempenho",
+        "avaliação periódica",
+        "demissão",
+        "desligamento",
+        "reforma administrativa",
+        "funcionalismo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Estabilidade das leis nas páginas 32–33 e avaliação educacional na página 44 são falsos positivos temáticos. Não há política de desempenho para servidores estáveis.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A única proposta sobre transporte urbano de passageiros é reservar vagões para mulheres. O plano não apresenta tarifa zero universal, gratuidade para passageiros ou repasse federal aos municípios para financiá-la.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Nosso governo vai criar lei nacional obrigando vagão exclusivo pra mulher em todo sistema de metrô e trem urbano do país, com a quantidade de vagões definida conforme a demanda de passageiros de cada cidade",
+          "role": "context",
+          "interpretation": "A obrigação de reserva de vagões é uma política de segurança e não de gratuidade ou financiamento tarifário."
+        }
+      ],
+      "search_terms": [
+        "tarifa zero",
+        "transporte coletivo",
+        "transporte público gratuito",
+        "gratuidade",
+        "passe livre",
+        "repasse federal",
+        "ônibus municipal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Investimento em ferrovias de carga e aplicativo para motoristas também não responde ao financiamento federal da gratuidade universal municipal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano menciona emissões de CO2 como diagnóstico da matriz de transporte, mas não propõe mercado regulado de carbono, teto de emissões ou negociação de créditos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "O modal rodoviário também responde por 86% das emissões de CO2 do setor de transporte no país.",
+          "role": "context",
+          "interpretation": "A frase é diagnóstico setorial; não define qualquer instrumento de mercado de carbono."
+        }
+      ],
+      "search_terms": [
+        "mercado de carbono",
+        "crédito de carbono",
+        "emissões",
+        "carbono",
+        "clima",
+        "aquecimento global"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Ferrovias, veículos elétricos, resíduos e fiscalização ambiental podem reduzir impactos, mas são instrumentos distintos de um mercado regulado de carbono.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano emprega inteligência artificial em saúde e educação e exige transparência de algoritmo para crianças, mas não classifica sistemas de alto risco nem impõe avaliação, registro ou supervisão antes do uso.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "vamos instalar um sistema de inteligência artificial que monitora em tempo real o estoque de medicamentos em hospitais, postos de saúde e UBS de todo o país, avisando com antecedência quando um remédio está acabando",
+          "role": "context",
+          "interpretation": "O trecho propõe um uso concreto de IA, sem obrigações preventivas para sistemas classificados como de alto risco."
+        },
+        {
+          "page": 43,
+          "quote": "Nosso governo vai exigir transparência obrigatória sobre o funcionamento do algoritmo de recomendação pra usuário até 14 anos: qual critério prioriza um vídeo sobre o outro, e relatório público periódico sobre o tipo de conteúdo mais entregue nessa faixa etária.",
+          "role": "context",
+          "interpretation": "Transparência de recomendação infantil não estabelece controle preventivo anterior ao uso de IA de alto risco."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "alto risco",
+        "avaliação de risco",
+        "obrigação preventiva",
+        "supervisão humana",
+        "algoritmo",
+        "antes de ser usado"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Usar IA e exigir transparência algorítmica são escolhas relacionadas, mas não respondem ao momento preventivo nem ao recorte de alto risco da pergunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "Para zerar a fila do SUS, o plano propõe parceria com hospitais privados ociosos para absorver demanda reprimida. Isso autoriza de modo claro o uso complementar de capacidade assistencial privada quando a rede pública não atende a demanda, embora a modalidade contratual não seja especificada.",
+      "conditions": [
+        "A parceria é limitada a hospitais privados ociosos e à finalidade de absorver demanda reprimida.",
+        "O plano não define remuneração, prazo, volume, clínica ambulatorial ou transferência da gestão de unidades públicas."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde.",
+          "role": "support",
+          "interpretation": "A passagem admite capacidade hospitalar privada como complemento ao SUS para atender demanda reprimida."
+        }
+      ],
+      "search_terms": [
+        "SUS",
+        "clínica privada",
+        "hospital privado",
+        "hospitais privados",
+        "ociosos",
+        "demanda reprimida",
+        "parceria",
+        "rede privada"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "A evidência não autoriza concluir gestão privada de unidade pública nem contratação permanente; ela sustenta somente o atendimento complementar previsto na pergunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano preserva integralmente o Bolsa Família de participantes que obtenham renda no programa digital, inclusive diante do medo de perder o benefício ao assinar carteira. Não define manutenção parcial, redução gradual nem período de transição após emprego formal, que são o objeto específico da pergunta.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Sem medo de perder o benefício: pra quem está no Bolsa Família, essa é a solução perfeita pra finalmente ter uma renda extra. Hoje, muita gente tem medo de perder o benefício assim que assina carteira ou consegue um trabalho, e por isso acaba nem tentando. Aqui não: a renda extra vem garantida pelo nosso governo, sem perder o Bolsa Família.",
+          "role": "context",
+          "interpretation": "O trecho apoia acúmulo integral em um programa específico; não estabelece a manutenção parcial e temporária aprovada na pergunta."
+        }
+      ],
+      "search_terms": [
+        "Bolsa Família",
+        "benefício",
+        "emprego formal",
+        "renda extra",
+        "transição",
+        "manter parte",
+        "sem perder",
+        "carteira assinada"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Manutenção integral sem duração definida e manutenção parcial por transição são desenhos distintos segundo o objeto aprovado. O programa Meu Primeiro Emprego subsidia o salário da empresa, não regula benefício de transferência de renda.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano oferece centros e espaços de cuidado para pessoas autistas, geriatras no SUS e acolhimento de idosos em risco, mas não oferece atendimento domiciliar por profissionais a idosos ou pessoas com deficiência com alto grau de dependência.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Nosso governo vai criar o Abraço Azul, uma rede nacional presente nas principais cidades do país, oferecendo: apoio jurídico gratuito pra mãe que precisa garantir direito do filho; apoio psicológico gratuito pra mãe, não só pra criança; e espaço de cuidado qualificado — uma espécie de creche especializada em criança atípica — pra que a mãe consiga, finalmente, sair de casa, trabalhar ou simplesmente descansar, sabendo que o filho está em boas mãos.",
+          "role": "context",
+          "interpretation": "A proposta é uma rede territorial com espaço de cuidado, não serviço prestado na residência da pessoa altamente dependente."
+        }
+      ],
+      "search_terms": [
+        "cuidado domiciliar",
+        "atendimento domiciliar",
+        "em casa",
+        "residência",
+        "cuidador",
+        "alta dependência",
+        "dependência",
+        "idoso",
+        "pessoa com deficiência"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Empreender de casa, viver em casa e acolhimento institucional são ocorrências distintas de cuidado domiciliar. O grau de dependência também não é delimitado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe currículo, acompanhamento de talentos, avaliação periódica no homeschooling e incentivos fiscais à contratação de jovens, mas não condiciona recursos federais das redes de ensino ao cumprimento de metas de aprendizagem.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "meta de aprendizagem",
+        "metas de aprendizagem",
+        "recursos educacionais",
+        "financiamento da educação",
+        "resultado educacional",
+        "desempenho escolar",
+        "Fundeb",
+        "aprendizagem"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Avaliar estudantes ou premiar empresas que contratam jovens não equivale a vincular parcela do financiamento das redes de ensino a resultados de aprendizagem.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe reduzir a jornada semanal legal, extinguir a escala 6 por 1 ou preservar salários em uma redução de horas.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "jornada semanal",
+        "redução da jornada",
+        "reduzir jornada",
+        "sem redução salarial",
+        "escala 6 por 1",
+        "escala 6x1",
+        "carga horária",
+        "horas semanais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Salário integral no programa de primeiro emprego e políticas para motoristas de aplicativo não alteram a jornada semanal legal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A política de saúde da mulher trata de prevenção da gravidez precoce, anticoncepcionais, climatério e menopausa. Não há decisão sobre descriminalização do aborto voluntário nem prazo gestacional.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "nosso governo vai criar programas de prevenção de doenças voltados às jovens, incluindo orientação pra evitar gravidez precoce, ampliação do acesso a ginecologistas mulheres pra realização de exames preventivos regulares, e garantia de que não falte o anticoncepcional mais adequado ao perfil de cada mulher",
+          "role": "context",
+          "interpretation": "Prevenção da gravidez e contracepção não respondem à descriminalização do aborto voluntário."
+        }
+      ],
+      "search_terms": [
+        "aborto",
+        "gestação",
+        "gravidez",
+        "interrupção voluntária",
+        "descriminalização",
+        "descriminalizar"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Não foram encontradas referências a aborto, interrupção voluntária, descriminalização ou prazo gestacional. Atendimento de saúde e contracepção são objetos distintos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano cita menores e jovens em um diagnóstico de identificação policial e propõe penas mais duras para crimes violentos e organizados, mas não fixa 16 anos como idade penal adulta nem aplica esse regime a qualquer crime.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Vamos endurecer as penas para crimes violentos e organizados, fechar as brechas jurídicas que soltam criminoso perigoso de volta pra rua, e garantir que quem faz mal ao cidadão de bem pague de verdade por isso.",
+          "role": "context",
+          "interpretation": "Endurecimento para crimes violentos e organizados não define idade de imputabilidade nem aplicação geral do regime adulto."
+        }
+      ],
+      "search_terms": [
+        "maioridade penal",
+        "idade penal",
+        "regime penal adulto",
+        "16 anos",
+        "17 anos",
+        "adolescente",
+        "menor",
+        "qualquer crime"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "As idades de 16 e 17 anos aparecem em esporte, redes sociais e educação. A segurança pública não atribui regime penal adulto a adolescentes e ainda restringe o endurecimento a tipos de crime, diferente de qualquer crime.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano apoia reconhecimento facial em câmeras na cidade para identificar e prender suspeitos e integra em tempo real bases policiais que incluem mandados de prisão em aberto. A combinação responde claramente ao uso em espaços públicos para localizar pessoas procuradas pela Justiça, embora o termo 'foragido' não seja usado.",
+      "conditions": [
+        "O uso é vinculado ao combate ao crime, a câmeras urbanas, a bases policiais integradas e à ação do policial em campo.",
+        "O plano não detalha retenção de dados, controle de erro, auditoria, revisão humana ou rito de contestação."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Na prática: somos a favor de toda tecnologia disponível pra combater o crime — câmera de monitoramento, reconhecimento facial, integração de dado em tempo real. É essa tecnologia que permite ver o roubo acontecendo, identificar o rosto de quem cometeu o crime, e, quando esse mesmo suspeito passar de novo por outra câmera na cidade, alertar na hora o policial mais próximo pra fazer a prisão.",
+          "role": "support",
+          "interpretation": "O trecho autoriza reconhecimento facial em câmeras urbanas para localizar e prender uma pessoa identificada."
+        },
+        {
+          "page": 13,
+          "quote": "vamos construir um Sistema Único Nacional de Segurança, integrando em tempo real todas as bases policiais do país — antecedente criminal, mandado de prisão em aberto, registro de arma, veículo e medida protetiva —, pra que a informação certa esteja disponível na hora certa, em qualquer cidade do Brasil, e nenhum criminoso perigoso escape só porque o sistema não conversa entre si.",
+          "role": "support",
+          "interpretation": "A base associada ao sistema de identificação inclui mandados de prisão em aberto e operação em qualquer cidade."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "câmera de monitoramento",
+        "mandado de prisão",
+        "foragido",
+        "procurado",
+        "espaço público",
+        "identificação biométrica"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "A finalidade textual é mais ampla que localizar foragidos, mas contém a finalidade específica da pergunta por meio das câmeras urbanas e dos mandados em aberto. A ausência de salvaguardas detalhadas limita a implementação, sem retirar o apoio ao uso.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano defende capacidade de negociar com qualquer potência e menciona países em exemplos setoriais, mas não cita BRICS nem decide ingresso, saída ou permanência no grupo.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 29,
+          "quote": "um país que investe na própria capacidade de defesa é um país que negocia de igual pra igual com qualquer potência, sem depender da caridade ou da paciência alheia.",
+          "role": "context",
+          "interpretation": "Autonomia genérica diante de potências não determina participação em um bloco específico."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "bloco multilateral",
+        "multilateral",
+        "bloco internacional",
+        "potência",
+        "China",
+        "Rússia",
+        "Índia",
+        "África do Sul"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Rússia é citada como fornecedora de fertilizantes e China em logística; essas referências não são compromissos sobre o BRICS.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O documento deseja atrair multinacionais europeias e ampliar comércio e investimento, mas não menciona Mercosul, União Europeia como bloco, o acordo comercial entre ambos ou sua ratificação.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "multinacionais americanas, europeias e asiáticas que hoje avaliam o Brasil como um mercado atrativo, mas tributariamente hostil, passam a ter um motivo concreto pra instalar fábrica, centro de distribuição ou sede regional aqui — trazendo capital estrangeiro, tecnologia e emprego direto pro país.",
+          "role": "context",
+          "interpretation": "Atração geral de empresas europeias não decide a ratificação de um acordo comercial específico."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo comercial",
+        "ratificar",
+        "ratificação",
+        "europeia",
+        "Europa",
+        "reciprocidade"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          48
+        ]
+      ],
+      "counterevidence_or_limits": "Capital estrangeiro, exportações e referências a empresas europeias são compatíveis com diversas posições sobre o texto final do acordo; não permitem atribuir concordância ou discordância.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

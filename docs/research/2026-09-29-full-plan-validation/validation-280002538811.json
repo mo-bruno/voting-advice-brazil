@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002538811",
+      "name": "Samara",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 67,
+      "pages_logged": 67,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 7,
+        "CONCORDA": 6,
+        "NAO_ENCONTRADA": 3
+      },
+      "quote_matches": {
+        "layout": 4,
+        "raw": 5,
+        "raw_dedup": 13
+      },
+      "visual_check_count": 21,
+      "review_sha256": "104efcfac1530173e9560bf31535ea0b095a8892a9cfe17710590c146af6d1ba"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

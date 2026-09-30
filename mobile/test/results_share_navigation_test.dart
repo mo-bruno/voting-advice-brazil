@@ -25,6 +25,9 @@ void main() {
         matches: [],
         countedTheses: 10,
         answeredTheses: 30,
+        comparableCategories: 5,
+        rankingStatus: 'eligible',
+        rankingEligible: true,
       ),
       CandidateResult(
         candidateId: '2',
@@ -35,6 +38,9 @@ void main() {
         matches: [],
         countedTheses: 10,
         answeredTheses: 30,
+        comparableCategories: 5,
+        rankingStatus: 'eligible',
+        rankingEligible: true,
       ),
       CandidateResult(
         candidateId: '3',
@@ -45,6 +51,9 @@ void main() {
         matches: [],
         countedTheses: 10,
         answeredTheses: 30,
+        comparableCategories: 5,
+        rankingStatus: 'eligible',
+        rankingEligible: true,
       ),
     ];
     QuizSession.instance.selectedCandidateIds = {'2', '3'};
@@ -91,6 +100,8 @@ void main() {
         matches: [],
         countedTheses: 0,
         answeredTheses: 30,
+        rankingStatus: 'insufficient_documented_coverage',
+        rankingEligible: false,
       )
     ];
     await tester.pumpWidget(MaterialApp(

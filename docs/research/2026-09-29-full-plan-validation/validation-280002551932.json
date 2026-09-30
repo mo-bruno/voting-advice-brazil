@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002551932",
+      "name": "Ronaldo Caiado",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 100,
+      "pages_logged": 100,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 9,
+        "DISCORDA": 4,
+        "CONCORDA": 3
+      },
+      "quote_matches": {
+        "layout": 28,
+        "raw": 1
+      },
+      "visual_check_count": 20,
+      "review_sha256": "264180b0151ac4b9c11a8c6eae06badbeb8a4a219580317ab692db430b2941de"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

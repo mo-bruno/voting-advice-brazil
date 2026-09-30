@@ -1,0 +1,111 @@
+{
+  "candidate_id": "280002541457",
+  "agent_id": "/root/plan_hertz",
+  "status": "complete",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "prior_full_read_pages": 33,
+  "revisited_pages": [
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    32,
+    33
+  ],
+  "completed_categories": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Uma categoria principal por posição; referências secundárias sem duplicação.",
+    "Propriedade estatal da Petrobras não decide integração de produção e refino.",
+    "Reforma agrária em Infraestrutura; desenho de órgãos e tribunais em Estado; mandatos eletivos e revogáveis em Cidadania.",
+    "Separar tarifa zero de propriedade estatal do transporte.",
+    "Registrar SUS estatal e saúde mental como escolhas diferentes; benefício aos desempregados não decide substituição do Bolsa Família.",
+    "Economia inclui instrumentos tributários, dívida, LRF, crédito, retenção de excedentes e regulação das bets; sem converter isso em opinião sobre LC200/2023 ou BC.",
+    "Soberania registra ruptura descrita no próprio texto e crítica ao acordo Mercosul–UE, sem inferir posição sobre BRICS ou Israel.",
+    "Separar estrutura de polícia civil unificada, em Estado, de eleições de comandantes e mandatos revogáveis, em Direitos.",
+    "Registrar horizonte estratégico de substituição policial e medidas imediatas como transição declarada, sem chamá-los automaticamente de contraditórios.",
+    "Conferidas reforma agrária, desapropriação urbana, política de drogas e rejeição ao petróleo da Margem Equatorial.",
+    "Proteção social voluntária nas plataformas públicas e vínculo empregatício nas plataformas atuais devem preservar contextos diferentes.",
+    "Direito ao aborto, licença parental e serviços de cuidado são instrumentos distintos; cotas incluem negros e trans apenas nos públicos expressos.",
+    "IDs padronizados como P01–P58 para o validador de correspondência entre Markdown e JSON.",
+    "Alinhamento editorial final autorizado: P05 em Estado, P11 em Segurança, P19 em Cidadania e P22 em Economia; textos, evidências, IDs e sementes preservados."
+  ],
+  "pending": [],
+  "updated_at": "2026-09-29T19:23:28.771732+00:00",
+  "positions_drafted": 58,
+  "seeds_drafted": 8,
+  "validation": {
+    "command": "python docs/research/2026-09-29-thematic-profiles/validate.py --candidate 280002541457",
+    "exit_code": 0,
+    "valid": true,
+    "errors": [],
+    "literal_quote_matches": 112,
+    "profile_sha256": "6612146ff9e225533762e921af5623822f40f21c7bffbd20954e81ffc1b5085f",
+    "markdown_sha256": "c147c6c8a169446129b76c3192a80e0d9c2f64bc728340443b9428ee485a2d91"
+  },
+  "positions_completed": 58,
+  "seeds_completed": 8,
+  "category_reassignments": [
+    {
+      "position_id": "P05",
+      "primary_category": "estado_gestao",
+      "secondary_categories": [
+        "economia_desenvolvimento"
+      ]
+    },
+    {
+      "position_id": "P11",
+      "primary_category": "seguranca_publica",
+      "secondary_categories": [
+        "estado_gestao"
+      ]
+    },
+    {
+      "position_id": "P19",
+      "primary_category": "cidadania_direitos",
+      "secondary_categories": [
+        "infraestrutura_territorio",
+        "meio_ambiente_clima"
+      ]
+    },
+    {
+      "position_id": "P22",
+      "primary_category": "economia_desenvolvimento",
+      "secondary_categories": [
+        "meio_ambiente_clima",
+        "bem_estar_social"
+      ]
+    }
+  ]
+}

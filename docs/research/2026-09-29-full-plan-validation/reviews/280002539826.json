@@ -1,0 +1,1115 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002539826",
+  "candidate_name": "Romeu Zema",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "5a5804622017a8e9c123fb64540a5ee3d06009de681026b505bc2a152d5e646e",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 81,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81
+  ],
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa visualmente confirmada: Plano Implacável, propostas concretas, retrato e identificação Zema 30/vice Eduardo Girão.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Sumário de 21 capítulos temáticos, carta de abertura e equipe, com paginação física coincidente.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Carta relata trajetória empresarial, ingresso na política, diagnóstico e realizações atribuídas ao governo de Minas Gerais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Conclusão da carta promete aplicar ao Brasil cortes de privilégios e respeito ao dinheiro público/leis; imagem e assinatura verificadas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 5,
+      "summary": "Segurança: diagnóstico de homicídios e domínio territorial de facções; propõe classificá-las como terroristas e integrar Forças Armadas às polícias.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 6,
+      "summary": "Propõe presídios isolados, combate ao financiamento de facções, prisão após terceira captura e maioridade penal de 16 anos ou menos.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Propõe prisão efetiva seguida de liberdade monitorada, autonomia penal estadual, apoio policial e proteção de mulheres após denúncia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 8,
+      "summary": "Diagnóstico de corrupção e privilégios; propõe limitar foro presidencialmente e condicionar progressão penal à devolução de recursos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 9,
+      "summary": "Indicações técnicas para PGR/STF, investigação patrimonial automática e fim de supersalários e despesas luxuosas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 10,
+      "summary": "Propõe transparência em dados abertos, fim de sigilos de 100 anos e pedidos de acesso anônimos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 11,
+      "summary": "Diagnóstico de conflitos de interesse e ativismo judicial; propõe requisitos mais rígidos para ministros do STF.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 12,
+      "summary": "Propõe extinguir decisões monocráticas, restringir competências do STF e vedar vínculos empresariais, familiares e políticos nos tribunais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 13,
+      "summary": "Propõe indicações técnicas, corregedoria independente do STF e mecanismos para o Senado investigar e julgar ministros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 14,
+      "summary": "Diagnóstico fiscal e de dívida; propõe reforma previdenciária e revisão do crescimento automático das despesas obrigatórias.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Propõe unificar transferências sociais, reforma administrativa, privatizar todas as estatais, ampliar PPPs inclusive saúde/educação e vender imóveis não essenciais.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T011",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 16,
+      "summary": "Propõe metas progressivas de redução de impostos para impor cortes de gastos.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 17,
+      "summary": "Diagnostica Custo Brasil e defende atrair capital em tecnologia, energia limpa e minerais, abrindo o país ao mundo.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 18,
+      "summary": "Propõe choque fiscal e superávits para baixar juros, menos IOF/crédito direcionado, concorrência bancária e educação financeira.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T036",
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 19,
+      "summary": "Propõe reduzir e simplificar tributos empresariais, implementar reforma tributária e investir em infraestrutura via concessões e PPPs.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 20,
+      "summary": "Propõe reformar regulação, proteger autonomia de agências, segurança jurídica, acordos comerciais e adesão à OCDE.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 21,
+      "summary": "Propõe reduzir barreiras de importação, atrair investimentos internacionais em tecnologia/IA e facilitar expressamente entrada de investimento estrangeiro.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Propõe pesquisa complementar ao investimento privado, biotecnologia agrícola, concorrência e mercado de capitais para atrair capital nacional/estrangeiro.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 23,
+      "summary": "Diagnóstico de informalidade e rigidez trabalhista; propõe marco alternativo à CLT com prevalência do negociado e contratos flexíveis.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 24,
+      "summary": "Propõe reduzir encargos, qualificação com vouchers e liberdade de não filiação/contribuição sindical.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 25,
+      "summary": "Propõe desregulamentar profissões sem riscos e assegurar exploração econômica das terras pelas comunidades indígenas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 26,
+      "summary": "Diagnóstico do déficit de infraestrutura; propõe carteira nacional com investimento público, privado e internacional.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Propõe financiamento e garantias privados, licenciamento simplificado e prioridade a projetos de interesse nacional.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 28,
+      "summary": "Propõe mediação contratual, concessões integradas, agências reguladoras autônomas e governança permanente do PPI.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 29,
+      "summary": "Propõe Ministério da Infraestrutura unificado, regulação de saneamento pela ANA e expansão ferroviária/portuária.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 30,
+      "summary": "Propõe concessões e PPPs rodoviárias, transporte coletivo de alta capacidade, concessão aeroportuária e hidrovias.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 31,
+      "summary": "Propõe universalizar saneamento com concessões/PPPs e ampliar internet de qualidade com parcerias privadas.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 32,
+      "summary": "Diagnóstico energético critica tarifas e domínio da Petrobras da produção ao refino, transporte e logística.",
+      "relevant_question_ids": [
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 33,
+      "summary": "Propõe energia por oferta/demanda, menos subsídios e separar Petrobras em empresas de produção, refino, transporte e logística.",
+      "relevant_question_ids": [
+        "BR26-T038"
+      ]
+    },
+    {
+      "page": 34,
+      "summary": "Propõe flexibilizar conteúdo local, preços de combustíveis de mercado, concorrência no gás e energia limpa voltada à indústria/exportação.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 35,
+      "summary": "Propõe autorizações de mineração céleres, levantamento geológico, combate ao garimpo ilegal e aproveitamento de rejeitos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 36,
+      "summary": "Diagnóstico de isolamento comercial; propõe liderança regional, relações com Mercosul e diplomacia voltada a mercados/investimentos.",
+      "relevant_question_ids": [
+        "BR26-T057",
+        "BR26-T063",
+        "BR26-T066",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 37,
+      "summary": "Propõe mediação independente, abertura migratória, combate ao antissemitismo/IHRA, sair do BRICS preservando comércio e ingressar na OCDE.",
+      "relevant_question_ids": [
+        "BR26-T063",
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 38,
+      "summary": "Propõe transformar Mercosul em zona de livre comércio, novos acordos e cooperação transfronteiriça contra facções.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Diagnóstico de custo e desempenho do Estado; propõe avaliar qualidade das entregas e satisfação dos usuários.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 40,
+      "summary": "Propõe planejamento integrado ao orçamento, metas e avaliações de impacto, concursos por competências e carreiras por desempenho.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 41,
+      "summary": "Propõe lideranças por mérito, vínculos públicos flexíveis, digitalização, transparência de custos e integração federativa de dados.",
+      "relevant_question_ids": [
+        "BR26-T018"
+      ]
+    },
+    {
+      "page": 42,
+      "summary": "Propõe reduzir ministérios e cargos e modernizar a administração indireta com metas e prazo de validade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 43,
+      "summary": "Diagnóstico do agronegócio; propõe concorrência em insumos, importações e entrada de capital internacional em pesquisa agrícola.",
+      "relevant_question_ids": [
+        "BR26-T067",
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 44,
+      "summary": "Propõe logística privada, simplificação ambiental, assistência técnica por metas, mercados externos e seguro rural.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 45,
+      "summary": "Propõe irrigação e biocombustíveis, promoção internacional do agro, porte rural de armas e segurança jurídica da propriedade.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 46,
+      "summary": "Propõe titulação rural ágil e monitoramento por satélite contra grilagem e crime organizado.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 47,
+      "summary": "Diagnóstico de potencial ambiental e desastres; propõe licenciamento previsível e cumprimento do Código Florestal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 48,
+      "summary": "Propõe combater grilagem/desmatamento, atrair investimento nacional/internacional em saneamento, bioeconomia e carbono.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 49,
+      "summary": "Propõe infraestrutura e monitoramento contra desastres, segurança hídrica, adensamento urbano e educação ambiental.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 50,
+      "summary": "Diagnóstico educacional e filas em creches; propõe parcerias privadas/comunitárias com e sem lucro para ampliar vagas e avaliação infantil.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 51,
+      "summary": "Propõe integrar primeira infância, avaliação educacional, recomposição de aprendizagem, ensino integral e BNCC focada.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 52,
+      "summary": "Propõe MEC focado na educação básica, formação docente, liderança escolar por critérios técnicos e ensino profissional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 53,
+      "summary": "Propõe condicionar Pé-de-Meia à aprendizagem, pluralidade incluindo escolas cívico-militares e homeschooling, avaliação e educação inclusiva.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 54,
+      "summary": "Diagnóstico da educação superior e inovação; propõe transferir ensino superior ao MCT e seleção técnica de reitores.",
+      "relevant_question_ids": [
+        "BR26-T057"
+      ]
+    },
+    {
+      "page": 55,
+      "summary": "Propõe reitores por critérios técnicos, financiamento por desempenho, pesquisa concentrada, bolsas de impacto e transparência.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 56,
+      "summary": "Propõe formação em ciências/tecnologia, centros empresariais nas universidades e facilitação de especialistas estrangeiros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 57,
+      "summary": "Diagnóstico das filas do SUS e capacidade privada ociosa; propõe saúde digital/telemedicina e melhor uso do setor privado para reduzir filas.",
+      "relevant_question_ids": [
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 58,
+      "summary": "Propõe prontuário nacional sob controle cidadão, interoperabilidade público-privada, atenção primária, vacinas e pré-natal.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 59,
+      "summary": "Propõe saúde indígena, hábitos saudáveis, atenção a idosos/saúde mental e coordenação regional da rede pública.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 60,
+      "summary": "Propõe reduzir filas do SUS com clínicas/hospitais privados e construir/gerir unidades de saúde por PPPs, concessões e OSs.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 61,
+      "summary": "Propõe financiar atendimento privado para TEA, critérios judiciais vinculantes e flexibilizar regulação de planos/prestadores de saúde.",
+      "relevant_question_ids": [
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 62,
+      "summary": "Diagnóstico de pobreza, longa permanência no Bolsa Família, população de rua e habitação; propõe inclusão produtiva e proteção social.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 63,
+      "summary": "Propõe Casas da Cidadania, manter Bolsa Família condicionado a busca de emprego/estudo, prêmio de saída e concentrar transferências no programa.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 64,
+      "summary": "Propõe melhorar CadÚnico, combater fraudes, remover abrigos improvisados, aluguel social e internação involuntária nos termos legais.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 65,
+      "summary": "Propõe adensamento urbano, titulação, MCMV com boa localização, proteção de idosos e desenvolvimento infantil.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 66,
+      "summary": "Propõe ampliar casas-abrigo e serviços de acolhimento para vítimas vulneráveis de violência.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 67,
+      "summary": "Diagnóstico do gasto esportivo; propõe atrair investimento privado e condicionar repasses a governança/resultados.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 68,
+      "summary": "Propõe parcerias esportivas com clubes/universidades, recursos para formação e integração entre esporte, saúde e educação.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 69,
+      "summary": "Diagnóstico cultural/turístico; propõe focar financiamento em produção regional e ampliar autonomia subnacional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 70,
+      "summary": "Propõe gestão cultural com setor privado, revisão de tombamento, rotas regionais, diplomacia cultural e capacitação de produtores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 71,
+      "summary": "Propõe concessões em parques, infraestrutura turística privada, segurança dos destinos e qualificação profissional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 72,
+      "summary": "Propõe promoção turística orientada por dados e governança regional para competitividade e atração de investimentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 73,
+      "summary": "Diagnóstico de custos políticos, concentração federativa, orçamento parlamentar e censura; introduz reforma institucional.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 74,
+      "summary": "Propõe descriminalizar injúria/difamação, revogar desacato, impedir censura e estimular união de municípios.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 75,
+      "summary": "Propõe autonomia estadual, representação populacional, voto distrital misto, fim de fundos políticos e candidaturas independentes.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 76,
+      "summary": "Propõe limitar publicidade estatal ao interesse público e cortar despesas do Legislativo e Judiciário.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 77,
+      "summary": "Diagnóstico de ameaças e soberania; propõe integração das Forças Armadas e metas conjuntas de defesa.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 78,
+      "summary": "Propõe racionalização do orçamento militar, quadros civis e modernização da inteligência, com proteção operacional da Abin.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 79,
+      "summary": "Lista de coordenadores gerais, equipe executiva e coordenações temáticas em duas colunas; associações nome/área confirmadas visualmente.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 80,
+      "summary": "Agradece mais de 350 especialistas/organizações, ressalva autoria da campanha e lista nomes em três colunas; leitura visual confirmada.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 81,
+      "summary": "Contracapa verde com logotipo Presidente Zema 30 e vice Eduardo Girão; sem propostas, confirmada visualmente.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Título gráfico foi extraído como caracteres de controle e logotipo não aparece no texto.",
+      "finding": "Capa contém Plano Implacável, subtítulo e logotipo Presidente Zema 30, vice Eduardo Girão; nenhum compromisso omitido."
+    },
+    {
+      "page": 4,
+      "reason": "Diagramação com retrato ao lado da conclusão da carta e assinatura gráfica.",
+      "finding": "Imagem confirma coluna textual contínua, retrato e assinatura Romeu Zema, sem conteúdo adicional relevante."
+    },
+    {
+      "page": 79,
+      "reason": "Equipe em duas colunas pode alterar relação entre nomes e títulos na extração.",
+      "finding": "Confirmadas listas de coordenação geral/executiva e áreas temáticas em colunas independentes; sem propostas adicionais."
+    },
+    {
+      "page": 80,
+      "reason": "Agradecimentos contêm quadro introdutório e lista de pessoas em três colunas.",
+      "finding": "Confirmada ressalva de que o plano representa exclusivamente a campanha e lista nominal sem propostas adicionais."
+    },
+    {
+      "page": 81,
+      "reason": "Página não contém texto extraído; necessário distinguir imagem de página vazia.",
+      "finding": "Contracapa contém apenas logotipo Presidente Zema 30, vice Eduardo Girão e faixas coloridas."
+    }
+  ],
+  "positions": [
+    {
+      "question_id": "BR26-T001",
+      "question_text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Finanças Públicas (pp.14–16) e Desenvolvimento Econômico (pp.17–22) defendem cortes, reforma previdenciária, superávits e estabilização da dívida. Não decidem manter ou substituir o regime da LC 200/2023; essas políticas podem coexistir com diferentes regras fiscais. A busca complementar não localizou arcabouço, 200/2023, regra fiscal ou teto de gastos. A citação documenta a proposta efetiva de ajuste, sem atribuir posição sobre a lei.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que per-\nmitam o pagamento da dívida."
+        }
+      ],
+      "context_pages": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "complementary_search_terms": [
+        "arcabouço",
+        "200/2023",
+        "regra fiscal",
+        "teto de gastos",
+        "superávit",
+        "choque fiscal",
+        "dívida"
+      ],
+      "scope_conditions": [],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T002",
+      "question_text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "A página 15 propõe expressamente privatizar todas as empresas estatais, correspondendo ao quantificador universal e à transferência de controle perguntados. Há tensão interna relevante: a página 27 propõe fortalecer a oferta de garantias e contas vinculadas dos bancos públicos; a página 18 reduz gradualmente linhas subsidiadas do BNDES e a 43 reorienta a Embrapa à inovação aplicada. Esses trechos atribuem funções futuras, mas não exigem conservar controle acionário público nem formulam exceção à privatização. Sem cronograma, não é possível determinar se pressupõem transição, continuidade funcional após privatização ou uma exceção não enunciada. A categoria conserva o compromisso universal expresso, registrando integralmente a tensão em vez de apagar os contratrechos.",
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Privatizar todas as empresas estatais:\nPrivatizar todas as empresas estatais para que o governo possa se concentrar na-\nquilo que de fato lhe cabe, como segurança pública e educação, reduzindo o espaço\npara escândalos de corrupção e garantindo maior eficiência no uso dos recursos\npúblicos e mais competição na economia brasileira."
+        },
+        {
+          "page": 27,
+          "quote": "Ampliar os instrumentos de garantia, seguros e compartilhamento de riscos,  forta-\nlecendo o cardápio dos bancos públicos na oferta de garantias e contas vinculadas,\nde forma a reduzir o custo de capital, ampliar a bancabilidade dos projetos e atrair\nmais investidores nacionais e internacionais."
+        }
+      ],
+      "context_pages": [
+        15,
+        18,
+        26,
+        27,
+        43,
+        55
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Privatização de todas as empresas estatais é o compromisso literal da página 15.",
+        "A página 27 atribui oferta de garantias e contas vinculadas aos bancos chamados públicos, sem fixar regime de controle ou horizonte.",
+        "A redução gradual de crédito do BNDES (p.18) e a reorientação da Embrapa (p.43) preservam funções institucionais, mas não afirmam preservação do controle estatal.",
+        "O plano não esclarece cronograma, transição ou compatibilização entre privatização universal e essas funções; a categoria não elimina essa tensão documental."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T003",
+      "question_text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Trabalho e Emprego (pp.23–25) propõe regime alternativo à CLT, prevalência do negociado, desoneração e liberdade sindical. Não há decisão sobre revogar ou conservar o conjunto das mudanças de 2017. Apoiar instrumentos associados à flexibilização não basta para decidir a revogação da lei específica; um marco alternativo pode coexistir com diversas versões da CLT. Busca complementar não encontrou reforma trabalhista, 2017 ou 13.467.",
+      "evidence": [
+        {
+          "page": 23,
+          "quote": "Oferecer ao trabalhador e ao empregador um regime alternativo à\nCLT, com mais liberdade para negociarem as regras da contratação:\nPermitir que trabalhador e empregador ajustem o modelo de contratação às suas\npreferências e à realidade de cada atividade, com prevalência do negociado sobre\no legislado."
+        }
+      ],
+      "context_pages": [
+        23,
+        24,
+        25
+      ],
+      "complementary_search_terms": [
+        "reforma trabalhista",
+        "2017",
+        "13.467",
+        "CLT",
+        "negociado",
+        "legislado",
+        "sindical"
+      ],
+      "scope_conditions": [
+        "Não se deduz apoio ou oposição à revogação integral de uma reforma apenas do apoio a alguns instrumentos de flexibilização."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T011",
+      "question_text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O plano determina que adultos saudáveis e aptos ao trabalho possam permanecer no Bolsa Família enquanto buscam emprego, estudam ou se qualificam, e concentra nele outros programas de transferência (p.63). Isso preserva explicitamente o benefício para uma parcela do público em idade economicamente ativa, incompatível com sua substituição para esse público por trabalho público remunerado. Intermediar ofertas formais e poder suspender o benefício em caso de recusa injustificada não equivale a criar tal programa substitutivo; a discordância decorre da manutenção expressa, não apenas da falta de menção ao instrumento.",
+      "evidence": [
+        {
+          "page": 63,
+          "quote": "Permitir que adultos saudáveis e aptos ao trabalho permaneçam no Bolsa Família\napenas enquanto estiverem buscando emprego, estudando ou se qualificando pro-\nfissionalmente, com possibilidade de suspensão do benefício para quem, sem justifi-\ncativa, recusar ofertas formais de trabalho intermediadas pelo poder público, exceto\nos brasileiros responsáveis pelos cuidados de crianças pequenas, idosos e pessoas\ncom deficiência em situação de dependência."
+        },
+        {
+          "page": 63,
+          "quote": "Concentrar recursos de transferências de renda no Bolsa Família:\nUnificar os programas federais que atendem os mesmos públicos no Bolsa Família,\naprimorando a focalização do gasto nas famílias que mais precisam e reduzindo\nfraudes e custos administrativos desnecessários."
+        }
+      ],
+      "context_pages": [
+        15,
+        62,
+        63,
+        64,
+        65,
+        66
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Permanência condicionada à busca de emprego, estudo ou qualificação.",
+        "Possibilidade de suspensão por recusa injustificada de oferta formal intermediada pelo poder público.",
+        "Exceção explicitada para responsáveis pelos cuidados de crianças pequenas, idosos e pessoas com deficiência dependentes.",
+        "A classificação não implica oposição a todo condicionamento laboral ou a programas de emprego que coexistam com o Bolsa Família."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T015",
+      "question_text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "Reduzir a maioridade penal para 16 anos (p.6) inclui responsabilização criminal adulta de adolescentes de 16 e 17 anos por crimes graves. Trata-se de aplicação inequívoca de uma regra mais abrangente ao caso perguntado. O plano também prevê excepcionalmente imputação a menores de 16 em crimes graves ou reincidência; essa extensão não é condição contrária à admissão aos 16–17.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Reduzir a maioridade penal para 16 anos, assegurando a responsabilização criminal\nde adolescentes a partir dessa idade e permitindo, excepcionalmente, a imputação\npenal de pessoas ainda mais jovens nos casos de crimes graves, como homicídio e\nestupro, ou reincidência."
+        }
+      ],
+      "context_pages": [
+        5,
+        6,
+        7
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "A proposta é mais abrangente que a pergunta: maioridade aos 16 anos sem limitar a crimes graves.",
+        "Também prevê, excepcionalmente, imputação a idades menores em crimes graves ou reincidência; a pergunta não avalia essa extensão."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T017",
+      "question_text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "Na agenda de Educação Básica, a página 53 inclui expressamente escolas cívico-militares entre os modelos a admitir e oferecer às famílias. Isso sustenta permitir o modelo na rede de ensino da política pública, sem significar obrigação para todas as escolas nem substituir outros modelos. A avaliação periódica exigida de todos os modelos qualifica sua implementação, sem negar a permissão perguntada.",
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "Aumentar as opções de modelos educacionais no país:\nDar mais liberdade aos pais de escolher o modelo educacional de seus filhos,  fa-\ncilitando a formalização de parcerias com instituições comunitárias, filantrópicas e\nconfessionais, avançando em uma agenda de parcerias com escolas conveniadas na\neducação, escolas cívico-militares e regulamentando o homeschooling."
+        },
+        {
+          "page": 53,
+          "quote": "Assegurar que todos os modelos educacionais adotem critérios claros de avaliação\nperiódica da aprendizagem e mecanismos de proteção ao desenvolvimento educa-\ncional e social das crianças e adolescentes."
+        }
+      ],
+      "context_pages": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Pluralidade de modelos e liberdade de escolha familiar.",
+        "Avaliação periódica da aprendizagem e proteção do desenvolvimento educacional/social.",
+        "Não atribui transformação obrigatória de toda a rede ou meta numérica de expansão."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T018",
+      "question_text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Gestão Pública e Eficiência (pp.39–42) propõe concursos por competências, lideranças por mérito, avaliação e reorganização de carreiras, sem estabelecer política de cotas raciais. Educação (pp.50–56) também não decide o encerramento de cotas no serviço público. A única ocorrência de cota refere-se à cota parlamentar (p.76), objeto diferente. Não foram encontradas referências a racial/raciais, ações afirmativas ou negros; mérito genérico pode coexistir com cotas e não é oposição documental.",
+      "evidence": [
+        {
+          "page": 40,
+          "quote": "Modernizar os concursos públicos, instituindo provas de competências e habilida-\ndes, além do teste de conhecimentos, inclusive com cursos ou programas de forma-\nção quando aplicável."
+        }
+      ],
+      "context_pages": [
+        39,
+        40,
+        41,
+        42,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        76
+      ],
+      "complementary_search_terms": [
+        "cota",
+        "racial",
+        "raciais",
+        "ação afirmativa",
+        "ações afirmativas",
+        "negro",
+        "concurso",
+        "mérito",
+        "serviço público"
+      ],
+      "scope_conditions": [],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T026A",
+      "question_text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "A página 60 propõe construir e gerir unidades de saúde mediante PPPs e ampliar a rede por concessões e parcerias com OSs. Essa delegação de gestão a organizações privadas contradiz a exigência de gestão pública de todas as unidades, mesmo mantendo fiscalização estatal. Não se confunde a titularidade do serviço, o controle de resultados ou a compra de atendimentos com a gestão das unidades. Gestão pública foi interpretada conforme o protocolo: pode incluir autarquias/fundações públicas, mas exclui delegação privada.",
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Expandir a rede de hospitais, UPAs e atendimentos com\nespecialistas por meio de concessões, PPPs e parcerias com OSs:\nAmpliar o uso de parcerias público-privadas para construir e gerir as unidades de\nsaúde, garantindo maior eficiência operacional, melhor experiência para o paciente\ne controle rigoroso de resultados por parte do poder público."
+        }
+      ],
+      "context_pages": [
+        15,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "O plano exige controle rigoroso de resultados pelo poder público.",
+        "Permitir gestão delegada em parte da rede já contradiz a universalidade da pergunta; não se atribui privatização de todas as unidades."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T036",
+      "question_text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Finanças Públicas e Desenvolvimento Econômico (pp.14–22) abordam Selic, ajuste fiscal, crédito e concorrência bancária, mas não mencionam o Banco Central nem a LC 179/2021. As propostas de autonomia/independência de agências reguladoras (pp.20 e 28–29) têm outro objeto e não definem a autonomia institucional do BC. Portanto não há decisão sobre sua revogação. A citação de redução de juros descreve a política efetiva, não uma posição institucional sobre o banco.",
+      "evidence": [
+        {
+          "page": 18,
+          "quote": "Garantir a queda da curva de juros por meio de um choque fiscal para estabilizar a\nrelação dívida/PIB, promovendo reformas e mantendo superávits primários que per-\nmitam o pagamento da dívida."
+        }
+      ],
+      "context_pages": [
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        28,
+        29
+      ],
+      "complementary_search_terms": [
+        "Banco Central",
+        "179/2021",
+        "autonomia",
+        "independência",
+        "SELIC",
+        "juros"
+      ],
+      "scope_conditions": [],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T038",
+      "question_text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "A proposta de desverticalização da Petrobras (p.33) separa expressamente produção e refino, além de transporte e logística, em empresas diferentes. Isso é oposição direta a manter integradas produção e refino. A conclusão se apoia nessa medida específica, não apenas na privatização universal ou na crítica à concentração empresarial.",
+      "evidence": [
+        {
+          "page": 33,
+          "quote": "Desverticalizar a Petrobras, separando as operações de produção, refino, transporte\ne logística em diferentes empresas para permitir a entrada de novos concorrentes e\nampliar a concorrência em igualdade de condições."
+        }
+      ],
+      "context_pages": [
+        15,
+        32,
+        33,
+        34,
+        35
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Separação das operações em empresas diferentes para permitir concorrência."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T042",
+      "question_text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O capítulo de Saúde diagnostica capacidade privada ociosa (p.57) e manda reduzir filas do SUS por parcerias com clínicas e hospitais privados para consultas, exames e cirurgias (p.60). Isso implica admitir contratação de atendimentos privados, conforme o permissivo da pergunta. Metas de qualidade e aproveitamento de capacidade ociosa são condições de execução, não recusa à autorização. A política é distinta da delegação de gestão avaliada em T026A.",
+      "evidence": [
+        {
+          "page": 60,
+          "quote": "Reduzir as filas e o tempo de espera no SUS por meio de parcerias com clínicas e\nhospitais privados para realização de consultas, exames e cirurgias, com metas cla-\nras de atendimentos e qualidade dos serviços, aproveitando a capacidade ociosa\ndessas unidades de saúde privadas."
+        }
+      ],
+      "context_pages": [
+        15,
+        57,
+        58,
+        59,
+        60,
+        61
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Metas claras de atendimentos e qualidade dos serviços.",
+        "Uso da capacidade ociosa das unidades privadas.",
+        "Não implica contratação ilimitada nem exclusão da expansão da rede pública."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T043",
+      "question_text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "A página 50 prioriza parcerias com entidades privadas e comunitárias, com e sem fins lucrativos, para ampliar vagas em creches/pré-escolas, com transparência no uso dos recursos e metas. Nesse programa governamental de oferta de vagas, financiar as parcerias é o instrumento admitido: a inferência decorre da associação explícita entre expansão por parcerias e controle dos recursos. A pergunta exige apenas permitir financiamento, compatível com fortalecer simultaneamente redes públicas. O texto não especifica voucher nem prazo até surgir vaga pública.",
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Ampliar a oferta de vagas em creches e pré-escolas com foco em\nqualidade e acesso, priorizando parcerias com o setor privado:\nAumentar o acesso à educação infantil, especialmente para famílias mais vulnerá-\nveis, por meio do fortalecimento das redes públicas e de parcerias com entidades\nprivadas e comunitárias, com e sem fins lucrativos, priorizando a expansão com qua-\nlidade, a transparência no uso dos recursos e metas claras de atendimento, apren-\ndizagem e desenvolvimento."
+        }
+      ],
+      "context_pages": [
+        15,
+        50,
+        51,
+        52,
+        53
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Especial atenção às famílias vulneráveis.",
+        "Entidades privadas e comunitárias, com e sem fins lucrativos.",
+        "Expansão com qualidade, transparência dos recursos e metas de atendimento, aprendizagem e desenvolvimento.",
+        "Fortalecimento concomitante da rede pública; sem instrumento específico de voucher ou obrigação universal."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T057",
+      "question_text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Desenvolvimento Econômico (p.20) e Política Externa (pp.36–38) defendem novos acordos e converter Mercosul em zona de livre comércio, mas não decidem apoiar o acordo Mercosul–União Europeia. A referência à Europa em Minas e Energia (p.34) trata de mercados para combustíveis limpos; a União Europeia em Educação Superior (p.54) é comparação de gasto. Nenhuma delas identifica o acordo perguntado. A abertura comercial genérica ou a alteração institucional do Mercosul não demonstra apoio nem rejeição a esse acordo específico.",
+      "evidence": [
+        {
+          "page": 38,
+          "quote": "Flexibilizar a estrutura atual do Mercosul, hoje uma união aduaneira que impede os\npaíses membros de negociarem sozinhos, transformando-o em zona de livre comér-\ncio, para que o Brasil assine acordos comerciais e de investimentos com países e\nblocos que ampliem seu acesso a novos mercados, tecnologia e inovação."
+        }
+      ],
+      "context_pages": [
+        20,
+        21,
+        34,
+        36,
+        37,
+        38,
+        43,
+        44,
+        45,
+        54
+      ],
+      "complementary_search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "Europa",
+        "acordo comercial",
+        "acordos comerciais",
+        "livre comércio"
+      ],
+      "scope_conditions": [],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T063",
+      "question_text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "prior_category": "NAO_ENCONTRADA",
+      "category": "NAO_ENCONTRADA",
+      "comparison": "confirmed",
+      "reason": "Política Externa (pp.36–38) propõe diplomacia pragmática, mediação de conflitos e combate ao antissemitismo com retomada da IHRA, mas não decide romper ou manter relações diplomáticas com Israel sob a condição da pergunta. Defesa (pp.77–78) trata da soberania e das capacidades nacionais, sem resolver o tema. Buscas por Israel, Palestina, genocídio e apartheid não localizaram referências. Combater antissemitismo não implica logicamente manter relações com um Estado e não foi usado para inferir discordância.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Reafirmar o compromisso do Brasil com o combate ao antissemitismo no mundo,\nretomando a participação do país na Aliança Internacional para a Memória do Ho-\nlocausto (IHRA) como parte do resgate de uma tradição diplomática de defesa da\nliberdade e da dignidade humana."
+        }
+      ],
+      "context_pages": [
+        36,
+        37,
+        38,
+        77,
+        78
+      ],
+      "complementary_search_terms": [
+        "Israel",
+        "palestin",
+        "genocid",
+        "apartheid",
+        "relações diplomáticas",
+        "antissemit",
+        "IHRA",
+        "Holocausto"
+      ],
+      "scope_conditions": [
+        "A classificação registra silêncio sobre a decisão diplomática e não confirma nem refuta as caracterizações presentes na redação da pergunta."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T066",
+      "question_text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "prior_category": "CONCORDA",
+      "category": "CONCORDA",
+      "comparison": "confirmed",
+      "reason": "O compromisso da página 37 é retirar o Brasil do BRICS de forma diplomática. Preservar relações comerciais com os membros qualifica a forma de saída e pode coexistir plenamente com ela, portanto não torna a posição mista.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Sair do BRICS:\nRetirar o Brasil do BRICS de forma diplomática, preservando pragmaticamente as\nrelações comerciais com todos os países do bloco e recusando qualquer direciona-\nmento que comprometa valores constitucionais e democráticos do Brasil."
+        }
+      ],
+      "context_pages": [
+        36,
+        37,
+        38
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Saída diplomática, preservando pragmaticamente as relações comerciais com todos os países do bloco.",
+        "Recusa a direcionamentos que comprometam valores constitucionais e democráticos."
+      ],
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "BR26-T067",
+      "question_text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "prior_category": "DISCORDA",
+      "category": "DISCORDA",
+      "comparison": "confirmed",
+      "reason": "O plano propõe facilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras (p.21), e atrair capital nacional/estrangeiro (p.22). Atração explícita de investimento internacional também aparece em infraestrutura, agronegócio e saneamento. Admitir e facilitar esse capital contradiz diretamente sua proibição na economia brasileira, independentemente dos setores prioritários mencionados.",
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Facilitar a entrada de investimentos estrangeiros no Brasil, removendo barreiras e\nfazendo road shows junto com parceiros privados para apresentar as diversas opor-\ntunidades em nosso território e nossas vantagens competitivas, como a sua localiza-\nção privilegiada para o lançamento de satélites e foguetes."
+        }
+      ],
+      "context_pages": [
+        17,
+        20,
+        21,
+        22,
+        26,
+        27,
+        43,
+        48
+      ],
+      "complementary_search_terms": [],
+      "scope_conditions": [
+        "Setores tecnológicos e oportunidades como o aeroespacial são prioridades citadas, sem proposta de proibição geral do capital estrangeiro."
+      ],
+      "reformulation_suggestion": null
+    }
+  ],
+  "candidate_summary": "Leitura integral das 81 páginas, com cinco verificações visuais, confirma todas as 16 categorias anteriores: seis CONCORDA, quatro DISCORDA e seis NAO_ENCONTRADA. Privatização universal, maioridade penal aos 16, escolas cívico-militares, atendimentos privados no SUS, financiamento de vagas privadas em creches e saída do BRICS têm apoio. O plano preserva o Bolsa Família para adultos aptos em condições expressas, admite gestão privada de unidades de saúde, separa produção/refino da Petrobras e atrai capital estrangeiro. Não decide os instrumentos específicos das seis questões ausentes. Nenhuma reformulação é necessária para representar estes achados; trocar perguntas por políticas próximas mudaria o objeto. Em T002, a privatização universal coexiste com atribuições futuras a bancos públicos (p.27), BNDES (p.18) e Embrapa (p.43); não há cronograma nem exceção explícita de controle societário, tensão registrada sem alterar o compromisso literal.",
+  "limitations": []
+}

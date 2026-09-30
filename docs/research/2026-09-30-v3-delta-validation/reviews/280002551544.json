@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551544",
+  "candidate_name": "Flavio Bolsonaro",
+  "context_owner_agent_id": "/root/plan_flavio",
+  "executor_agent_id": "/root/delta_flavio",
+  "document_sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002551544.json",
+    "../2026-09-29-thematic-profiles/profiles/280002551544.md",
+    "../2026-09-29-thematic-profiles/profiles/280002551544.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002551544.json"
+  ],
+  "method": "Reidratei integralmente os quatro arquivos de contexto definidos no STATE, incluindo o parecer da bateria versão 2; confirmei o SHA-256 do PDF oficial reconstruído; li as 76 páginas físicas do plano e pesquisei o texto completo de raw-pages.json e layout-pages.json com termos diretos, flexões, sinônimos e termos de contraste próprios das quatro teses; e reli, nos dois extratos do corpus oficial, as páginas citadas e as passagens tematicamente próximas. O contexto anterior foi usado somente como índice: classificações, transcrições e limites foram reconfirmados no corpus oficial. Silêncio e proximidade temática insuficiente foram classificados como NAO_ENCONTRADA.",
+  "revisited_pages": [
+    5,
+    6,
+    7,
+    15,
+    24,
+    25,
+    35,
+    36,
+    44,
+    45,
+    50,
+    51,
+    55,
+    56,
+    57,
+    61,
+    63,
+    65,
+    66,
+    69,
+    70
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "Na subseção intitulada 'Logística e transporte', o plano afirma que sua estratégia de infraestrutura se apoia na iniciativa privada, que o investimento privado assumirá construção e operação e que o novo modelo usará intensivamente PPPs e concessões. Na continuação imediata, a carteira de investimento inclui rodovias, hidrovias, portos, aeroportos e ferrovias. O texto, portanto, adota diretamente esses instrumentos para ampliar a infraestrutura federal de transportes, sem exigir seu uso em toda obra.",
+      "conditions": [
+        "O Estado deverá garantir segurança jurídica e regras tarifárias estáveis e previsíveis.",
+        "O modelo combina investimento privado, fundo lastreado em ativos e imóveis da União e financiamento do BNDES; não atribui toda a carteira a concessões ou PPPs.",
+        "O financiamento do BNDES é limitado no texto a obras em território brasileiro, e os projetos fluviais deverão observar responsabilidade ambiental, lei e diálogo prévio com comunidades locais."
+      ],
+      "evidence": [
+        {
+          "page": 50,
+          "quote": "Nossa estratégia de infraestrutura se apoia na iniciativa privada: o Estado garante segurança jurídica, regras tarifárias estáveis e previsíveis e respeito à lógica das decisões econômicas privadas, sem intervenções que distorçam os incentivos de mercado, e é sobre essa base que o investimento privado assume a construção e a operação. Vamos modernizar os marcos regulatórios e adotar um novo modelo de financiamento para toda a infraestrutura, com fundo lastreado na securitização de ativos e imóveis da União, uso intensivo de PPPs e concessões e financiamentos do BNDES",
+          "role": "support",
+          "interpretation": "Sob o título 'Logística e transporte', o plano escolhe expressamente PPPs e concessões, ao lado de outros instrumentos, para financiar, construir e operar infraestrutura."
+        },
+        {
+          "page": 51,
+          "quote": "Vamos investir R$ 900 bilhões em quatro anos em rodovias, hidrovias, portos, aeroportos e ferrovias. Criaremos os Corredores Logísticos Inteligentes de integração nacional, com foco em reduzir o custo da logística, hoje em 15,5% do PIB, muito acima dos 8,8% dos Estados Unidos, desenvolvendo os corredores de escoamento do Centro-Oeste até os portos.",
+          "role": "support",
+          "interpretation": "A continuação da mesma subseção explicita que a expansão de infraestrutura abrange os principais modais de transporte."
+        }
+      ],
+      "search_terms": [
+        "concessões",
+        "parcerias público-privadas",
+        "PPPs",
+        "iniciativa privada",
+        "infraestrutura",
+        "logística e transporte",
+        "rodovias",
+        "ferrovias",
+        "hidrovias",
+        "portos",
+        "aeroportos",
+        "mobilidade urbana",
+        "privatização",
+        "desestatização"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não diz que toda obra de transporte será concedida e não discrimina a modalidade contratual de cada projeto. O apoio é a um uso intensivo dentro de um arranjo misto que também contém fundo lastreado em patrimônio da União e crédito do BNDES. A desestatização seletiva da página 70 é uma política distinta e não foi usada para sustentar esta classificação.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano afirma que o Brasil deve produzir inteligência artificial, deixar de ser apenas consumidor e tornar-se desenvolvedor e produtor. Para isso, atribui ao Estado atuação indutora por compras públicas, GovTech e investimento em pesquisa e estabelece como meta elevar a participação brasileira em patentes de IA. A proposta corresponde diretamente a investimento federal no desenvolvimento de capacidade nacional, sem definir propriedade estatal exclusiva ou exclusão de tecnologia estrangeira.",
+      "conditions": [
+        "O Estado atuará como indutor por compras públicas, GovTech e investimento em pesquisa, dentro de uma estratégia que também envolve empresas, universidades, parques tecnológicos, incubadoras e startups.",
+        "A legislação prometida deverá favorecer a liberdade de criar e inovar e se inspirar em práticas internacionais.",
+        "O plano não quantifica orçamento, capacidade computacional, modelos nacionais específicos ou divisão de execução entre os participantes."
+      ],
+      "evidence": [
+        {
+          "page": 56,
+          "quote": "Mais do que usar a inteligência artificial, o Brasil tem tudo para produzi-la.",
+          "role": "support",
+          "interpretation": "O plano adota explicitamente o desenvolvimento e a produção de IA no Brasil como capacidade nacional."
+        },
+        {
+          "page": 56,
+          "quote": "Para isso, o Estado atuará como indutor, pelas compras públicas, pelo GovTech e pelo investimento em pesquisa, e vamos elevar a participação brasileira nas patentes de inteligência artificial.",
+          "role": "support",
+          "interpretation": "O instrumento inclui investimento estatal em pesquisa e uma meta de participação brasileira em patentes de IA."
+        },
+        {
+          "page": 57,
+          "quote": "E vamos construir o ambiente onde a inovação nasce: fortalecer os parques tecnológicos, expandir as incubadoras, apoiar as startups de base tecnológica e aproximar universidades e empresas, com a gestão das universidades integrada à ciência e à tecnologia.",
+          "role": "support",
+          "interpretation": "A capacidade será desenvolvida em um ecossistema nacional que articula infraestrutura de inovação, universidades e empresas."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "Estratégia Nacional de Inteligência Artificial",
+        "pesquisa e desenvolvimento",
+        "produzi-la",
+        "desenvolvedores e produtores",
+        "investimento em pesquisa",
+        "patentes de inteligência artificial",
+        "GovTech",
+        "data centers",
+        "parques tecnológicos",
+        "incubadoras",
+        "startups"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A Estratégia Nacional de IA também prevê difusão da tecnologia em empresas e aplicações governamentais, mas a classificação não se apoia apenas no uso de sistemas existentes: as páginas 56–57 acrescentam produção, desenvolvimento, pesquisa, patentes e ecossistema nacional. O plano não exige capacidade exclusivamente estatal nem proíbe tecnologias estrangeiras.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe nem rejeita reserva de vagas por critérios raciais em concursos públicos federais. A busca integral não encontrou cotas, reserva racial, ações afirmativas raciais ou regra de ingresso racial no serviço público. A passagem mais próxima sobre servidores apenas anuncia modernização da carreira; referências a povos indígenas e quilombolas tratam de autonomia produtiva em suas terras, não de concursos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 69,
+          "quote": "Daremos continuidade à reforma administrativa que já colocamos em discussão, para modernizar o funcionamento do Estado e a carreira do servidor.",
+          "role": "context",
+          "interpretation": "A única formulação geral sobre a carreira do servidor não trata de ingresso, concurso ou reserva racial de vagas."
+        },
+        {
+          "page": 50,
+          "quote": "Será conferida autonomia aos povos indígenas e quilombolas para decidir sobre atividades produtivas em suas terras, com respeito ao desenvolvimento sustentável e às regras ambientais, e com indenização de eventuais restrições ao usufruto e mecanismos de compensação, para que quem vive na terra possa dela tirar o próprio sustento.",
+          "role": "context",
+          "interpretation": "A referência a grupos étnicos tem por objeto atividades produtivas em terras tradicionais e não pode ser transposta para concursos federais."
+        }
+      ],
+      "search_terms": [
+        "cotas",
+        "quotas",
+        "reserva de vagas",
+        "vagas reservadas",
+        "critério racial",
+        "raça",
+        "racial",
+        "racismo",
+        "negros",
+        "pretos",
+        "pardos",
+        "indígenas",
+        "quilombolas",
+        "ações afirmativas",
+        "concursos públicos",
+        "servidores públicos",
+        "serviço público",
+        "carreira do servidor",
+        "ingresso"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "O plano contém vagas de emprego, vagas escolares e vagas prisionais, objetos que não respondem à tese. A modernização da carreira do servidor da página 69 não especifica regras de ingresso. A autonomia de indígenas e quilombolas das páginas 50 e 61 tampouco constitui política de cotas. O silêncio sobre concursos federais exige NAO_ENCONTRADA.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano propõe expressamente um sistema nacional de reconhecimento facial integrado a bancos de dados criminais. No mesmo trecho, vincula o sistema à localização de foragidos e à prevenção de crimes e determina vigilância de portos, aeroportos e áreas públicas por mais de um milhão de câmeras. O objeto decisório coincide diretamente com o uso de reconhecimento facial em espaços públicos para segurança.",
+      "conditions": [
+        "O sistema será integrado a bancos de dados criminais e terá como finalidades declaradas localizar foragidos e prevenir crimes.",
+        "Os espaços identificados são portos, aeroportos e áreas públicas.",
+        "O plano afirma genericamente privacidade e segurança dos dados, mas não especifica para o reconhecimento facial regras de finalidade, retenção, auditoria, precisão, revisão humana, armazenamento ou supervisão."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Vamos implantar o Muralha Brasileira - um sistema nacional de reconhecimento facial integrado a bancos de dados criminais, inspirado no Smart Sampa, da Prefeitura de São Paulo, e no Muralha Paulista, do Governo do Estado. Além de localizar foragidos e prevenir crimes, vamos vigiar portos, aeroportos e áreas públicas com mais de 1 milhão de novas câmeras espalhadas por todo o país.",
+          "role": "support",
+          "interpretation": "O trecho reúne o reconhecimento facial, a comparação com base de identificação criminal, as finalidades de segurança e o uso de câmeras em áreas públicas."
+        },
+        {
+          "page": 57,
+          "quote": "Os dados do cidadão são dele, não do governo, e serão tratados com privacidade e segurança. Vamos fortalecer a defesa cibernética do país, protegendo serviços públicos, infraestrutura crítica e cidadãos contra ataques e fraudes, e garantir que a inteligência artificial seja usada a serviço das pessoas, não contra elas.",
+          "role": "context",
+          "interpretation": "O plano contém uma garantia geral de privacidade e segurança, mas não detalha como ela será aplicada ao sistema de reconhecimento facial."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "biometria",
+        "Muralha Brasileira",
+        "bancos de dados criminais",
+        "localizar foragidos",
+        "prevenir crimes",
+        "câmeras",
+        "portos",
+        "aeroportos",
+        "áreas públicas",
+        "monitoramento",
+        "privacidade",
+        "LGPD",
+        "auditoria",
+        "precisão",
+        "armazenamento",
+        "supervisão"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A garantia geral de privacidade e segurança dos dados na página 57 não revoga nem condiciona de forma operacional o sistema explicitamente proposto na página 15. O plano não informa arquitetura de comparação, retenção de imagens, limiares de precisão, auditoria de vieses, revisão humana ou contestação; essas ausências não autorizam atribuir rejeição às salvaguardas.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

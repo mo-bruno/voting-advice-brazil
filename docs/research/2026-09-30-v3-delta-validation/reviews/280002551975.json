@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551975",
+  "candidate_name": "Edmilson Costa",
+  "context_owner_agent_id": "/root/plan_edmilson",
+  "executor_agent_id": "/root/delta_edmilson",
+  "document_sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002551975.json",
+    "../2026-09-29-thematic-profiles/profiles/280002551975.md",
+    "../2026-09-29-thematic-profiles/profiles/280002551975.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002551975.json"
+  ],
+  "method": "Reidratação integral dos quatro arquivos de contexto listados em STATE.json, incluindo o parecer da bateria v2; conferência do SHA-256 da cópia oficial; leitura integral das 16 páginas físicas em raw-pages.json; buscas por termos e sinônimos das quatro teses em raw-pages.json e layout-pages.json; e releitura no modo layout das páginas pertinentes. As classificações usam exclusivamente o plano oficial hash-idêntico.",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "DISCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano escolhe a estatização completa do sistema de transportes em grande escala, determina reestatizar portos, aeroportos, ferrovias e rodovias e liga a ampliação ferroviária e hidroviária a um transporte 100% público. Esse desenho é incompatível com usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Estatização completa do sistema de transportes em grande escala, sob o controle de Conselhos Populares: serão reestatizados portos, aeroportos, ferrovias e rodovias.",
+          "role": "opposition",
+          "interpretation": "A estatização completa e a reestatização dos principais modais excluem o modelo de concessão privada no alcance relevante da tese."
+        },
+        {
+          "page": 7,
+          "quote": "No transporte será implantada a tarifa zero com transporte 100% público em todo território nacional, acabando com a política de emendas parlamentares para contribuir com o custeio, processo que se complementará com ampliação da malha ferroviária e hidroviária.",
+          "role": "context",
+          "interpretation": "A passagem associa a ampliação da malha ao modelo de transporte integralmente público, confirmando o instrumento escolhido para a expansão."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "parcerias público-privadas",
+        "PPP",
+        "PPPs",
+        "privatização",
+        "reestatização",
+        "estatização",
+        "encampação",
+        "transportes",
+        "rodovias",
+        "ferrovias",
+        "portos",
+        "aeroportos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "counterevidence_or_limits": "A única ocorrência de concessões trata de rádio e teledifusão, não de transportes. O plano não menciona PPPs e propõe ampliar a infraestrutura, mas o faz no mesmo desenho de estatização completa, reestatização dos modais e transporte 100% público; capital privado genérico não foi inferido do silêncio.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano amplia o financiamento público de ciência e tecnologia, investe em semicondutores e propõe Big Techs públicas nacionais, mas não menciona inteligência artificial, desenvolvimento nacional de modelos, infraestrutura computacional ou pesquisa específica de IA. Capacidade tecnológica nacional em outros campos não decide o objeto aprovado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Investimentos robustos no CEITEC (Centro Nacional de Tecnologia Eletrônica Avançada), única fábrica de chips semicondutores da América Latina. O Conselho Administrativo do CEITEC terá representação majoritária dos trabalhadores em geral e dos trabalhadores da empresa. Política de reindustrialização e criação de Big Techs públicas e nacionais, articulada com o monopólio estatal e soberano das terras raras e minerais críticos.",
+          "role": "context",
+          "interpretation": "O trecho estabelece capacidade nacional em semicondutores, plataformas e insumos estratégicos, sem identificar inteligência artificial, modelos ou infraestrutura computacional para IA."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "algoritmo",
+        "algoritmos",
+        "modelo de linguagem",
+        "modelos nacionais",
+        "infraestrutura computacional",
+        "capacidade computacional",
+        "Big Techs",
+        "CEITEC",
+        "semicondutores",
+        "pesquisa"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "counterevidence_or_limits": "Investimento científico geral, CEITEC, Big Techs nacionais, redes sociais estatais e regulação de plataformas podem coexistir com várias escolhas sobre IA. Nenhuma passagem destina investimento ao desenvolvimento nacional de inteligência artificial; silêncio não foi convertido em concordância ou discordância.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "CONDICIONAL_OU_MISTA",
+      "evidence_strength": "mixed",
+      "rationale": "O plano propõe expressamente cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança. Isso apoia a reserva racial em uma parte dos concursos federais, mas limita a política a um setor e não define posição para os demais cargos públicos federais. Como cobre somente parte essencial do alcance da tese, a resposta é condicional.",
+      "conditions": [
+        "A reserva alcança os concursos públicos federais e estaduais das forças de segurança.",
+        "O plano não fixa percentual nem estende expressamente a política aos demais concursos públicos federais."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança.",
+          "role": "condition",
+          "interpretation": "A passagem adota exatamente reserva racial em concursos federais, porém restringe o universo às forças de segurança."
+        }
+      ],
+      "search_terms": [
+        "cotas raciais",
+        "cota racial",
+        "reserva de vagas",
+        "vagas reservadas",
+        "concursos públicos",
+        "concursos federais",
+        "serviço público",
+        "forças de segurança",
+        "população negra"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "counterevidence_or_limits": "As cotas universitárias das páginas 7 e 12 pertencem a outro universo e não foram usadas para generalizar a política de concursos. A expressão da página 12 não autoriza estender a reserva das forças de segurança a todo o funcionalismo federal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano reorganiza a segurança pública e menciona órgãos de inteligência na proteção das fronteiras, mas não trata de reconhecimento facial, identificação biométrica, câmeras, videomonitoramento ou comparação de imagens em espaços públicos para finalidades de segurança.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria",
+        "biométrico",
+        "câmeras",
+        "videomonitoramento",
+        "monitoramento por vídeo",
+        "espaços públicos",
+        "foragidos",
+        "pessoas procuradas",
+        "inteligência",
+        "segurança pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          16
+        ]
+      ],
+      "counterevidence_or_limits": "A referência genérica a órgãos de inteligência na página 13 não identifica tecnologia, base biométrica, captação em espaço público ou uso para reconhecimento de pessoas. Espaços públicos aparecem em outro contexto, relativo a bailes, e não sustentam a tese.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

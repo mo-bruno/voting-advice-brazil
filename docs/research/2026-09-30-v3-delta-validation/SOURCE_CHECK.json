@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-09-30T14:50:37Z",
+  "official_download_url": "https://cdn.tse.jus.br/estatistica/sead/odsele/proposta_governo/proposta_governo_2026_BR.zip",
+  "last_modified": "Wed, 30 Sep 2026 06:49:14 GMT",
+  "archive_sha256": "2c4073d55a4c6606d42137ce3e30bf1dd3f87557d14b5feaad4058a152f1e970",
+  "archive_size": 18275613,
+  "prior_archive_sha256": "73f0ae3b70ddab983d4afbed7ff2c0cc5aa051e599036465a9be1526936effb0",
+  "included_plan_count": 13,
+  "all_included_plan_hashes_unchanged": true,
+  "excluded_candidate_ids": [
+    "280002553884"
+  ],
+  "local_corpus_root": "/tmp/farol-v3-delta-20260930"
+}

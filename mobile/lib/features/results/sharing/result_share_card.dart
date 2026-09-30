@@ -113,18 +113,20 @@ class ResultShareCard extends StatelessWidget {
         children: [
           const Spacer(),
           Text(
-            story ? 'Fiz o quiz.\nMeu alinhamento.' : 'Fiz o quiz.',
+            story
+                ? 'Fiz o quiz.\nMeu alinhamento · Beta'
+                : 'Meu alinhamento · Beta',
             style: _type(story ? 40 : 30, bold: true),
           ),
           SizedBox(height: story ? 18 : 10),
           FittedBox(
             fit: BoxFit.scaleDown,
             alignment: Alignment.centerLeft,
-            child: Text('${data.percent}%',
+            child: Text(data.result.affinityLabel,
                 style:
-                    _type(story ? 112 : 76, bold: true, color: palette.accent)),
+                    _type(story ? 76 : 54, bold: true, color: palette.accent)),
           ),
-          Text('de afinidade com', style: _type(story ? 20 : 18)),
+          Text('no ranking de afinidade', style: _type(story ? 20 : 18)),
           const SizedBox(height: 8),
           SizedBox(
             width: double.infinity,
@@ -140,6 +142,11 @@ class ResultShareCard extends StatelessWidget {
             ),
           ),
           Text(data.result.abbreviation, style: _type(18)),
+          SizedBox(height: story ? 18 : 10),
+          _fitLine(
+            'Base: ${data.result.coverageLabel}',
+            _type(story ? 18 : 15),
+          ),
           const Spacer(flex: 2),
         ],
       );
@@ -147,8 +154,7 @@ class ResultShareCard extends StatelessWidget {
   Widget _ranking(bool story) {
     final dense = data.displayResults.length > 5;
     final nameSize = story ? (dense ? 20.0 : 26.0) : (dense ? 16.0 : 22.0);
-    final partySize = story ? 13.0 : (dense ? 10.0 : 12.0);
-    final scoreSize = story ? (dense ? 28.0 : 34.0) : (dense ? 21.0 : 28.0);
+    final basisSize = story ? (dense ? 11.0 : 13.0) : (dense ? 8.0 : 10.0);
     return Padding(
       padding: EdgeInsets.only(top: story ? 24 : 8, bottom: story ? 20 : 8),
       child: Column(
@@ -161,13 +167,13 @@ class ResultShareCard extends StatelessWidget {
                 style: _type(story ? 36 : 28, bold: true)),
           ),
           SizedBox(height: story ? 16 : 8),
-          for (final (index, result) in data.displayResults.indexed)
+          for (final result in data.displayResults)
             Expanded(
               child: Row(
                 children: [
                   SizedBox(
-                    width: 23,
-                    child: Text('${index + 1}',
+                    width: 30,
+                    child: Text('${result.rank}º',
                         style: _type(story ? 19 : 16, color: palette.accent)),
                   ),
                   Expanded(
@@ -176,14 +182,15 @@ class ResultShareCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _fitLine(result.name, _type(nameSize, bold: true)),
-                        _fitLine(result.abbreviation, _type(partySize)),
+                        _fitLine(
+                          '${result.abbreviation} · Base: '
+                          '${result.countedTheses}/${result.answeredTheses} '
+                          'comparáveis · ${result.comparableCategories} cat.',
+                          _type(basisSize),
+                        ),
                       ],
                     ),
                   ),
-                  const SizedBox(width: 8),
-                  Text('${ResultShareData.formatPercent(result.scorePercent)}%',
-                      style:
-                          _type(scoreSize, bold: true, color: palette.accent)),
                 ],
               ),
             ),

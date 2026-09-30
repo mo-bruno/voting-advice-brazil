@@ -1,0 +1,616 @@
+{
+  "candidate_id": "280002554479",
+  "candidate_name": "Leonardo Avalanche",
+  "document_sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "status": "complete",
+  "full_read_completed": true,
+  "pages_total": 48,
+  "pages_read": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "current_page": 48,
+  "next_page": null,
+  "reading_log": [
+    {
+      "page": 1,
+      "summary": "Capa gráfica identifica plano de Leonardo Avalanche, PRTB 28, eleições de 2026 e mandato 2027–2030; conferida por imagem porque a extração veio vazia.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 2,
+      "summary": "Apresentação anuncia dezenove propostas, reconstrução nacional e valores Deus, pátria e família.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 3,
+      "summary": "Índice distribui dezenove propostas entre imposto único, saúde, segurança, educação, indústria, juventude e saneamento.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 4,
+      "summary": "Imposto único de 3,5% substituiria tributos sobre renda, produção e consumo; promete eliminar sonegação e triplicar arrecadação.",
+      "relevant_question_ids": [
+        "BR26-T001"
+      ]
+    },
+    {
+      "page": 5,
+      "summary": "Exemplifica aumento do salário líquido e redução de encargos, critica reforma tributária e compara carga tributária do Brasil, EUA e Paraguai.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 6,
+      "summary": "Atração de multinacionais e capital estrangeiro é objetivo expresso da simplificação tributária; conclui proposta de imposto único.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 7,
+      "summary": "Programa de iPhone e capacitação prevê emprego remunerado na publicidade oficial e renda extra sem perda do Bolsa Família.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 8,
+      "summary": "Detalha financiamento com orçamento de publicidade e trilhas de letramento digital, ofícios, marketing e formalização empresarial.",
+      "relevant_question_ids": [
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 9,
+      "summary": "Propõe zerar fila do SUS com mutirões, hospitais privados ociosos, telemedicina e gestão por resultado, além de medicamentos e saúde da mulher e do idoso.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 10,
+      "summary": "Amplia geriatras e cuidado crônico e atribui financiamento da saúde ao combate à corrupção e ao desperdício; valoriza o SUS.",
+      "relevant_question_ids": [
+        "BR26-T026A",
+        "BR26-T042"
+      ]
+    },
+    {
+      "page": 11,
+      "summary": "Programa para motoristas de aplicativo inclui financiamento de carro sem impostos e negociação da taxa da plataforma, com restrição de empresas resistentes.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 12,
+      "summary": "Completa alternativa pública de aplicativo de transporte e propõe pontos de apoio, plano de saúde e fundo de manutenção viária para motoristas.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 13,
+      "summary": "Segurança integra câmeras, reconhecimento facial, contratação policial e um Sistema Único Nacional de Segurança para cruzar antecedentes.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 14,
+      "summary": "Associa impunidade de menores à falta de dados, pede penas mais duras e isolamento de facções, sem fixar idade penal.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 15,
+      "summary": "Educação pública prioriza empreendedorismo, inteligência artificial, finanças e formação técnica a partir dos 14–15 anos.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 16,
+      "summary": "Detalha ensino técnico, inglês, ficha individual desde a creche e competências socioemocionais; menciona experiências da Finlândia e Singapura.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 17,
+      "summary": "Usa Israel como exemplo de educação e inovação e promete tecnologia e investimento na escola pública da creche ao ensino médio.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T043",
+        "BR26-T063"
+      ]
+    },
+    {
+      "page": 18,
+      "summary": "Substitui IPVA proporcional por R$ 50 mensais e defende isenção nacional para caminhoneiros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 19,
+      "summary": "Propõe polo tecnológico, incentivos à empresa brasileira, boas-vindas ao capital estrangeiro e recomposição de Capes e CNPq.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 20,
+      "summary": "Prevê laboratórios, bolsas, carreira científica e pesquisa para desenvolver e exportar vacinas e medicamentos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 21,
+      "summary": "Defende agregar valor nacional ao café, carne, couro, soja, suco e minerais estratégicos, antes de exportar.",
+      "relevant_question_ids": [
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 22,
+      "summary": "Reindustrialização combina desoneração, crédito e capital público direto em fábricas estratégicas; não especifica participação de controle ou Petrobras.",
+      "relevant_question_ids": [
+        "BR26-T002",
+        "BR26-T038",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 23,
+      "summary": "Continuação gráfica da assinatura de encerramento da proposta de industrialização e rodapé; imagem confirma ausência de texto programático.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 24,
+      "summary": "Defende fábricas nacionais de fertilizantes e exploração de reservas minerais para reduzir importações e crise de custos do agro.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 25,
+      "summary": "Crédito Raiz vincula renegociação a crédito novo, com linhas por porte e juros menores, sem proposta sobre autonomia do Banco Central.",
+      "relevant_question_ids": [
+        "BR26-T036"
+      ]
+    },
+    {
+      "page": 26,
+      "summary": "Infraestrutura prioriza ferrovias e hidrovias; amplia malha operada por privados e investe em portos e dragagem.",
+      "relevant_question_ids": [
+        "BR26-T002"
+      ]
+    },
+    {
+      "page": 27,
+      "summary": "Completa logística hidroviária e promete melhores estradas, valorização de frete e IPVA zero para caminhoneiros.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 28,
+      "summary": "Defesa aumenta orçamento e equipamentos e emprega drones contra exploração ilegal da Amazônia, incluindo atividade estrangeira irregular.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 29,
+      "summary": "Defende proteger petróleo e recursos estratégicos, modernizar Forças Armadas e indústria nacional de defesa; caixa explica minerais.",
+      "relevant_question_ids": [
+        "BR26-T038",
+        "BR26-T057",
+        "BR26-T066"
+      ]
+    },
+    {
+      "page": 30,
+      "summary": "Indústria automotiva recebe desoneração e incentivos nacionais; avalia positivamente empregos criados por BYD e GWM.",
+      "relevant_question_ids": [
+        "BR26-T001",
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 31,
+      "summary": "Incentiva novas fábricas de montadoras estrangeiras, mas prioriza empresas brasileiras e tecnologia própria em carros elétricos.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 32,
+      "summary": "Segurança jurídica prioriza reduzir processos, estabilidade de regras e previsibilidade para atrair investimento estrangeiro.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 33,
+      "summary": "Garante propriedade privada, regras estáveis e combate à influência indevida na Justiça, relacionando segurança jurídica a investimentos.",
+      "relevant_question_ids": [
+        "BR26-T067"
+      ]
+    },
+    {
+      "page": 34,
+      "summary": "Abraço Azul propõe apoio jurídico, psicológico e creche especializada para famílias atípicas, além de exigir apoio escolar certificado e efetivo.",
+      "relevant_question_ids": [
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 35,
+      "summary": "Completa creches e escolas especializadas, revisão da suficiência do BPC, qualificação da mãe e apoio continuado na vida adulta.",
+      "relevant_question_ids": [
+        "BR26-T011",
+        "BR26-T043"
+      ]
+    },
+    {
+      "page": 36,
+      "summary": "Segurança da mulher combina medidas protetivas, acolhimento, recolocação no trabalho e tratamento de agressores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 37,
+      "summary": "Estende acolhimento a idosos, prevê vagão exclusivo para mulheres, critério biológico no esporte e atenção integral à saúde feminina.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 38,
+      "summary": "Amplia apoio psicológico e cria fiscalização externa do assédio no trabalho aplicável a empresas de qualquer tamanho.",
+      "relevant_question_ids": [
+        "BR26-T003"
+      ]
+    },
+    {
+      "page": 39,
+      "summary": "Enfrenta exploração sexual infantil com penas maiores, sistema nacional de identificação automática de imagens e integração obrigatória das plataformas.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 40,
+      "summary": "Impõe bloqueios e multas a plataformas, duplicação de penas e programa Nunca Mais Sozinha de apoio contínuo à criança vítima.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 41,
+      "summary": "Continua acompanhamento da criança, remoção de conteúdo e estudo do modelo australiano de idade mínima em redes sociais.",
+      "relevant_question_ids": [
+        "BR26-T015"
+      ]
+    },
+    {
+      "page": 42,
+      "summary": "Juventude recebe plataforma nacional de talentos e programa Meu Primeiro Emprego, com subsídio salarial e vínculo formal garantido por um ano.",
+      "relevant_question_ids": [
+        "BR26-T003",
+        "BR26-T011"
+      ]
+    },
+    {
+      "page": 43,
+      "summary": "Detalha subsídio ao primeiro emprego, rede Respira de saúde mental, transparência de algoritmos para crianças e regulamentação de homeschooling.",
+      "relevant_question_ids": [
+        "BR26-T017",
+        "BR26-T026A"
+      ]
+    },
+    {
+      "page": 44,
+      "summary": "Apoia homeschooling fiscalizado e avaliado periodicamente e estuda crédito de qualificação contínua inspirado em Singapura.",
+      "relevant_question_ids": [
+        "BR26-T017"
+      ]
+    },
+    {
+      "page": 45,
+      "summary": "Saneamento prioriza universalização com obras, capacitação técnica municipal e fiscalização dedicada dos contratos.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 46,
+      "summary": "Prevê auxílio técnico, reassentamento digno com saneamento provisório, coleta seletiva e energia de resíduos, valorizando catadores.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 47,
+      "summary": "Conclui saneamento com compromisso de investimento, fiscalização, apoio federativo e atendimento de famílias em situação irregular.",
+      "relevant_question_ids": []
+    },
+    {
+      "page": 48,
+      "summary": "Contracapa reafirma dezenove propostas e identifica Leonardo Avalanche, PRTB 28; imagem confirma texto de encerramento sem políticas adicionais.",
+      "relevant_question_ids": []
+    }
+  ],
+  "visual_checks": [
+    {
+      "page": 1,
+      "reason": "Extração de texto vazia.",
+      "finding": "Imagem contém capa com identificação da candidatura, partido, eleição e mandato; não está vazia."
+    },
+    {
+      "page": 5,
+      "reason": "Tabela de três colunas sobre países, tributação e estrutura.",
+      "finding": "Imagem confirma associação de cada linha aos países e às alíquotas extraídas; nenhuma proposta adicional relativa às perguntas."
+    },
+    {
+      "page": 6,
+      "reason": "Assinatura do quadro final aparece sobreposta na extração.",
+      "finding": "Quadro é slogan e identificação do candidato; texto substantivo sobre atração de capital estrangeiro foi confirmado."
+    },
+    {
+      "page": 23,
+      "reason": "Página com texto útil mínimo e assinatura sobreposta na extração.",
+      "finding": "Só contém continuação da assinatura gráfica e rodapé; restante branco, sem propostas omitidas."
+    },
+    {
+      "page": 7,
+      "reason": "Confirmar visualmente cláusulas decisivas sobre Bolsa Família e contrato público remunerado.",
+      "finding": "Página distingue manutenção expressa do Bolsa Família e oportunidade de contrato com remuneração; não existe substituição do benefício."
+    },
+    {
+      "page": 9,
+      "reason": "Confirmar instrumento de redução das filas e separação entre atendimento privado e gestão das unidades públicas.",
+      "finding": "Texto prevê parceria com hospitais privados ociosos para absorver demanda; não delega gestão de unidade pública."
+    },
+    {
+      "page": 19,
+      "reason": "Confirmar visualmente a ressalva sobre protagonismo nacional junto à acolhida de capital estrangeiro.",
+      "finding": "Empresa estrangeira e seu capital são expressamente bem-vindos, com prioridade de incentivos para empresa brasileira."
+    },
+    {
+      "page": 29,
+      "reason": "Caixa explicativa entre diagnóstico de recursos estratégicos e propostas de defesa.",
+      "finding": "Caixa define nióbio, terras raras e lítio; ordem de leitura e separação em relação às propostas estão corretas."
+    },
+    {
+      "page": 48,
+      "reason": "Contracapa com assinatura duplicada e sobreposta na extração.",
+      "finding": "Imagem contém compromisso geral, nome, candidatura e partido; nenhuma proposta adicional ou trecho ilegível relevante."
+    }
+  ],
+  "open_questions": [],
+  "prior_input_read": true,
+  "independent_categories_before_prior": {
+    "BR26-T001": "NAO_ENCONTRADA",
+    "BR26-T002": "NAO_ENCONTRADA",
+    "BR26-T003": "NAO_ENCONTRADA",
+    "BR26-T011": "DISCORDA",
+    "BR26-T015": "NAO_ENCONTRADA",
+    "BR26-T017": "NAO_ENCONTRADA",
+    "BR26-T018": "NAO_ENCONTRADA",
+    "BR26-T026A": "NAO_ENCONTRADA",
+    "BR26-T036": "NAO_ENCONTRADA",
+    "BR26-T038": "NAO_ENCONTRADA",
+    "BR26-T042": "CONCORDA",
+    "BR26-T043": "NAO_ENCONTRADA",
+    "BR26-T057": "NAO_ENCONTRADA",
+    "BR26-T063": "NAO_ENCONTRADA",
+    "BR26-T066": "NAO_ENCONTRADA",
+    "BR26-T067": "DISCORDA"
+  },
+  "complementary_search_terms": {
+    "BR26-T001": [
+      "arcabouço",
+      "200/2023",
+      "regime fiscal",
+      "regra fiscal",
+      "regras fiscais",
+      "teto de gastos",
+      "déficit",
+      "superávit",
+      "responsabilidade fiscal",
+      "reforma tributária"
+    ],
+    "BR26-T002": [
+      "privat",
+      "desestat",
+      "estatal",
+      "estatais",
+      "controle público",
+      "controle estatal",
+      "capital público",
+      "empresa pública",
+      "empresas públicas",
+      "bancos públicos",
+      "aplicativo de transporte próprio"
+    ],
+    "BR26-T003": [
+      "reforma trabalhista",
+      "2017",
+      "13.467",
+      "CLT",
+      "revog",
+      "direitos",
+      "carteira assinada"
+    ],
+    "BR26-T011": [
+      "Bolsa Família",
+      "benefício",
+      "contratado pelo nosso",
+      "renda extra"
+    ],
+    "BR26-T015": [
+      "16",
+      "17",
+      "maioridade",
+      "idade penal",
+      "menor",
+      "adulto",
+      "crime grave",
+      "crimes graves"
+    ],
+    "BR26-T017": [
+      "cívico",
+      "militar",
+      "militariza",
+      "colégio",
+      "ensino",
+      "homeschooling"
+    ],
+    "BR26-T018": [
+      "cota",
+      "racial",
+      "raciais",
+      "negro",
+      "raça",
+      "discriminação",
+      "concurso",
+      "serviço público"
+    ],
+    "BR26-T026A": [
+      "organizações sociais",
+      "organização social",
+      "organizações privadas",
+      "gestão",
+      "delegação",
+      "terceir",
+      "hospital",
+      "saúde"
+    ],
+    "BR26-T036": [
+      "Banco Central",
+      "179/2021",
+      "autonomia",
+      "independência",
+      "monetária",
+      "juros",
+      "juro"
+    ],
+    "BR26-T038": [
+      "Petrobras",
+      "Petrobrás",
+      "refino",
+      "refinaria",
+      "petróleo",
+      "vertical",
+      "integrada"
+    ],
+    "BR26-T042": [
+      "privad",
+      "hospital",
+      "fila",
+      "parceria"
+    ],
+    "BR26-T043": [
+      "creche",
+      "voucher",
+      "bolsa",
+      "vaga",
+      "privad",
+      "particular"
+    ],
+    "BR26-T057": [
+      "Mercosul",
+      "União Europeia",
+      "acordo comercial",
+      "acordo",
+      "europeia",
+      "europeias",
+      "comércio exterior",
+      "comércio internacional"
+    ],
+    "BR26-T063": [
+      "Israel",
+      "palestin",
+      "apartheid",
+      "genoc",
+      "diplom",
+      "romper",
+      "relações"
+    ],
+    "BR26-T066": [
+      "BRICS",
+      "bloco",
+      "multilateral",
+      "diplom",
+      "internacion"
+    ],
+    "BR26-T067": [
+      "investimento estrangeiro",
+      "capital estrangeiro",
+      "capital internacional",
+      "empresa estrangeira",
+      "multinacionais",
+      "montadoras",
+      "estrangeira irregular"
+    ]
+  },
+  "comparison_preliminary": {
+    "confirmed": 16,
+    "divergent": 0,
+    "no_prior": 0
+  },
+  "final_review_file": "reviews/280002554479.json",
+  "validation": {
+    "command": "python docs/research/2026-09-29-full-plan-validation/validate.py --candidate 280002554479",
+    "exit_code": 0,
+    "complete_and_valid": true,
+    "review_sha256": "7e7521a7160390776d21df9902b89b9158a2760660b5b51c32363ed42bdf4fc4",
+    "literal_quote_matches": {
+      "layout": 18
+    }
+  }
+}

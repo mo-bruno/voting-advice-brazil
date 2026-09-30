@@ -56,10 +56,10 @@ class ResultShareData {
       List.unmodifiable(results.take(variant.limit));
   bool get isRanking => variant != ResultShareVariant.leader;
   String get rankingTitle => displayResults.length == 1
-      ? 'Meu alinhamento.'
-      : 'Meus ${displayResults.length} alinhamentos.';
+      ? 'Meu alinhamento · Beta'
+      : 'Meu ranking de afinidade · Beta';
   String get editionLabel => 'Edição 2026';
-  String get basisLabel => 'Quiz presidencial de 2026.';
+  String get basisLabel => 'Quiz presidencial de 2026 · Beta.';
 
   ResultShareData withVariant(ResultShareVariant variant) => ResultShareData._(
         results: results,
@@ -68,16 +68,15 @@ class ResultShareData {
       );
 
   static List<CandidateResult> _sortedResults(List<CandidateResult> results) {
-    final indexed = results.indexed
-        .where((entry) => entry.$2.hasComparableEvidence)
-        .toList();
+    final indexed =
+        results.indexed.where((entry) => entry.$2.rankingEligible).toList();
     if (indexed.isEmpty) {
       throw ArgumentError.value(
-          results, 'results', 'É necessário um resultado com base comparável.');
+          results, 'results', 'É necessário um resultado elegível ao ranking.');
     }
     indexed.sort((a, b) {
-      final scoreOrder = b.$2.scorePercent.compareTo(a.$2.scorePercent);
-      if (scoreOrder != 0) return scoreOrder;
+      final rankOrder = a.$2.rank.compareTo(b.$2.rank);
+      if (rankOrder != 0) return rankOrder;
       final nameOrder =
           a.$2.name.toLowerCase().compareTo(b.$2.name.toLowerCase());
       return nameOrder != 0 ? nameOrder : a.$1.compareTo(b.$1);
@@ -106,18 +105,11 @@ class ResultShareData {
       .replaceFirst(RegExp(r'^www\.'), '')
       .replaceFirst(RegExp(r'/$'), '');
 
-  String get percent => formatPercent(result.scorePercent);
-
-  static String formatPercent(double value) => value
-      .toStringAsFixed(1)
-      .replaceFirst(RegExp(r'\.0$'), '')
-      .replaceAll('.', ',');
-
   String get caption {
     if (!isRanking) {
-      return 'Fiz o quiz do Farol Político! Minha maior afinidade foi de $percent% '
-          'com ${result.name} (${result.abbreviation}), entre os candidatos '
-          'que comparei. $basisLabel';
+      return 'Fiz o quiz do Farol Político! Meu maior alinhamento neste teste '
+          'foi com ${result.name} (${result.abbreviation}), entre os candidatos '
+          'que comparei. Base: ${result.coverageLabel}. $basisLabel';
     }
     final selected = displayResults;
     final introduction = selected.length == 1
@@ -125,8 +117,8 @@ class ResultShareData {
         : 'Estes são meus ${selected.length} maiores alinhamentos';
     final ranking = selected.indexed.map((entry) {
       final candidate = entry.$2;
-      return '${entry.$1 + 1}. ${candidate.name} (${candidate.abbreviation}) '
-          '— ${formatPercent(candidate.scorePercent)}%';
+      return '${candidate.rank}º. ${candidate.name} '
+          '(${candidate.abbreviation}) — ${candidate.coverageLabel}';
     }).join('\n');
     return 'Fiz o quiz do Farol Político! $introduction entre os candidatos '
         'que comparei:\n$ranking\n$basisLabel';

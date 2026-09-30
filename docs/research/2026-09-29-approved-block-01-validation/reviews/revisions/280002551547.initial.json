@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551547",
+  "candidate_name": "Escritor Augusto Cury",
+  "agent_id": "/root/plan_cury",
+  "document_sha256": "fc0872d2b68aad863c8d62575323cf413a616b23d0f7ca4fd7f4558112c07b38",
+  "questions_sha256": "4a1c6395361d5deb931b02781598c0ace908ff62a4ecea54198e8195acbdef7b",
+  "prior_full_read": "../2026-09-29-full-plan-validation/reviews/280002551547.json",
+  "method": "Retomada da leitura integral anterior de 200 páginas, de seu diário por página e do perfil temático como índices; buscas com termos e variantes em todas as 200 páginas das extrações layout e raw do mesmo PDF oficial; releitura contextual das 54 páginas indicadas, incluindo inspeção visual da página 200. Nesta rodada não foi realizada nova leitura integral. As classificações respondem às quatro redações e explicações aprovadas de B01 v1; o mapa editorial não foi usado para presumir códigos.",
+  "revisited_pages": [
+    9,
+    16,
+    28,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    48,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    65,
+    97,
+    98,
+    99,
+    107,
+    108,
+    109,
+    115,
+    116,
+    117,
+    118,
+    123,
+    126,
+    127,
+    128,
+    129,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    140,
+    141,
+    142,
+    143,
+    158,
+    159,
+    175,
+    176,
+    178,
+    179,
+    180,
+    200
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A versão aprovada pergunta por um imposto específico incidente sobre patrimônios muito elevados. A busca nas 200 páginas e a releitura dos trechos tributários não localizaram criação, manutenção ou rejeição desse imposto. O plano discute simplificação, ajustes à reforma, regimes específicos e redução da carga final; nenhuma dessas decisões identifica a base grandes fortunas. Reduzir a carga agregada não implica rejeitar um tributo particular, assim como defender distribuição de oportunidades não implica instituí-lo.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Caso sejam identificadas distorções ou prejuízos relevantes, serão propostos os ajustes necessários, respeitando os princípios constitucionais e a segurança jurídica.",
+          "role": "context",
+          "interpretation": "A revisão condicionada de distorções da reforma não identifica imposto sobre grandes fortunas."
+        },
+        {
+          "page": 38,
+          "quote": "Nosso compromisso não será apenas administrar a transição, mas trabalhar para que ela resulte em carga menor para o cidadão e para o setor produtivo.",
+          "role": "context",
+          "interpretation": "A meta agregada de carga menor não decide a existência do imposto específico perguntado."
+        }
+      ],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "patrim[oô]ni",
+        "tribut",
+        "imposto",
+        "heran[çc]",
+        "dividend",
+        "renda",
+        "riqueza",
+        "fortu",
+        "patrimonial",
+        "progressiv",
+        "tributa",
+        "riquezas",
+        "capital"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "Nenhuma ocorrência de grandes fortunas, fortuna, herança ou dividendo foi localizada pelas buscas registradas. Referências a patrimônio tratam sobretudo de moradia, garantias, proteção patrimonial e outros temas. Os trechos tributários citados delimitam o conteúdo encontrado; não constituem, sozinhos, prova de ausência no restante do documento. O código registra insuficiência documental, não oposição ou neutralidade.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No PETRA-BR, o plano escolhe a cadeia de minerais estratégicos para industrialização e propõe políticas creditícias que favoreçam produtos de maior valor agregado (p. 178). O contexto imediatamente seguinte define as etapas beneficiadas como separação, refino e transformação industrial e prevê polos industriais de minerais críticos (p. 179). A ligação expressa entre política de crédito e esse recorte industrial sustenta, por implicação clara, crédito dirigido à industrialização de uma cadeia selecionada pelo governo. A conclusão não decorre da simples coexistência de apoio à indústria com crédito geral a empresas: depende da vinculação contida no próprio item do PETRA-BR. O texto não nomeia uma linha de empréstimo nem especifica sua operação; por isso a força é implicação clara, e não proposta operacional explícita de linha já desenhada.",
+      "conditions": [
+        "O crédito favorece produtos de maior valor agregado no contexto de processamento e industrialização de minerais estratégicos; não é atribuído a qualquer setor industrial indistintamente.",
+        "O objetivo de agregar valor no Brasil antes de exportar é qualificado pela viabilidade econômica, tecnológica e ambiental. Essa qualificação orienta a aplicação e não elimina o apoio ao instrumento.",
+        "Não são definidos banco operador, fonte dos recursos, juros, volume, garantias ou critérios de elegibilidade; a redação aprovada não exige esses detalhes."
+      ],
+      "evidence": [
+        {
+          "page": 178,
+          "quote": "Políticas tributárias e creditícias que favoreçam produtos de maior valor agregado.",
+          "role": "support",
+          "interpretation": "Dentro do PETRA-BR, estabelece favorecimento creditício dirigido ao resultado industrial pretendido; não se limita à mera atração de investimento."
+        },
+        {
+          "page": 179,
+          "quote": "Desenvolvimento das etapas de separação, refino e transformação industrial.",
+          "role": "support",
+          "interpretation": "Completa o mesmo item iniciado na p. 178 e identifica as etapas industriais da cadeia mineral beneficiada."
+        },
+        {
+          "page": 179,
+          "quote": "Implantação de polos industriais ligados aos minerais críticos.",
+          "role": "context",
+          "interpretation": "Confirma o recorte industrial setorial escolhido no programa."
+        },
+        {
+          "page": 179,
+          "quote": "O objetivo será claro: sempre que econômica, tecnológica e ambientalmente viável, agregar valor no Brasil antes de exportar.",
+          "role": "condition",
+          "interpretation": "Preserva o limite de viabilidade aplicado à agregação local de valor; não o converte em posição mista sobre oferecer crédito dirigido."
+        },
+        {
+          "page": 42,
+          "quote": "Ampliaremos e simplificaremos as linhas de financiamento à exportação, com condições compatíveis com as praticadas nos mercados com que competimos, alcançando efetivamente as pequenas e médias empresas, que hoje raramente conseguem acessá-las.",
+          "role": "context",
+          "interpretation": "O crédito à exportação é instrumento adicional e mais transversal; sozinho não provaria escolha de setores industriais para a pergunta."
+        }
+      ],
+      "search_terms": [
+        "cr[eé]dito",
+        "financia",
+        "empr[eé]st",
+        "linha",
+        "industr",
+        "agroind",
+        "priorit",
+        "setor",
+        "cr[eé]dit",
+        "finan",
+        "fomento",
+        "banco",
+        "BNDES",
+        "subs[ií]d",
+        "pol[ií]tica industrial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "O trecho decisivo utiliza políticas creditícias, não a expressão linhas específicas. A passagem para programas de empréstimo dirigidos é uma implicação do vínculo entre favorecimento creditício e industrialização da cadeia mineral, sem atribuir desenho financeiro não escrito. O Banco do Empreendedor (pp. 39 e 107–108), o apoio geral ao cooperativismo (pp. 131–138) e o financiamento à exportação (pp. 42–43) não bastariam isoladamente para este código. Caso se exigisse a descrição nominal ou operacional de uma linha, essa exigência adicional não estaria preenchida; ela não consta da versão aprovada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O PETRA-BR prevê atração de empresas nacionais e internacionais e, em seção intitulada Parcerias internacionais com transferência de tecnologia, trata de grandes acordos de exploração e industrialização (p. 179). Na mesma página, explica que a cadeia começa pela retirada de minerais do solo e pela mineração. A combinação dos sujeitos internacionais com acordos que abrangem exploração, contextualizada pela extração, implica participação estrangeira também nessa etapa da cadeia mineral estratégica. A conclusão não se baseia apenas em atrair investimento para processamento: os acordos de exploração são a conexão textual decisiva. As contrapartidas são compatíveis com a explicação aprovada, que permite condições e limites.",
+      "conditions": [
+        "Grandes acordos de exploração e industrialização deverão buscar contrapartidas de desenvolvimento brasileiro: transferência e desenvolvimento conjunto de tecnologia, processamento e produção local, formação, empregos qualificados e centros de pesquisa no Brasil.",
+        "O verbo do plano é buscar contrapartidas; não se atribui automaticamente uma obrigação jurídica uniforme ou um percentual mínimo de participação nacional.",
+        "A agregação de valor no Brasil antes de exportar é condicionada à viabilidade econômica, tecnológica e ambiental; não é proibição geral de participação estrangeira ou de exportação bruta."
+      ],
+      "evidence": [
+        {
+          "page": 179,
+          "quote": "Atração de empresas nacionais e internacionais de alta tecnologia.",
+          "role": "support",
+          "interpretation": "Identifica empresas internacionais entre os agentes admitidos no programa de industrialização mineral."
+        },
+        {
+          "page": 179,
+          "quote": "5. PARCERIAS INTERNACIONAIS COM TRANSFERÊNCIA DE TECNOLOGIA",
+          "role": "context",
+          "interpretation": "A seção torna internacional o contexto dos acordos de exploração e industrialização do item seguinte."
+        },
+        {
+          "page": 179,
+          "quote": "Grandes acordos de exploração e industrialização deverão buscar contrapartidas para o desenvolvimento brasileiro:",
+          "role": "support",
+          "interpretation": "A parceria internacional abrange exploração, além de industrialização; é a conexão que responde à etapa extrativa da pergunta."
+        },
+        {
+          "page": 179,
+          "quote": "O objetivo não será apenas retirar minerais do solo, mas desenvolver cadeias produtivas completas: mineração → processamento → refino → materiais avançados → componentes → indústria tecnológica → exportação.",
+          "role": "support",
+          "interpretation": "Esclarece que exploração está no contexto de retirada mineral e de uma cadeia que se inicia na mineração, não somente no processamento."
+        },
+        {
+          "page": 179,
+          "quote": "Transferência e desenvolvimento conjunto de tecnologia. • Processamento e produção local. • Formação de pesquisadores e trabalhadores brasileiros. • Geração de empregos qualificados. • Instalação de centros de pesquisa e desenvolvimento no Brasil.",
+          "role": "condition",
+          "interpretation": "Lista literalmente as contrapartidas buscadas nos grandes acordos."
+        }
+      ],
+      "search_terms": [
+        "minera",
+        "minerai",
+        "extra[çc]",
+        "explora",
+        "estrangeir",
+        "internacion",
+        "terras raras",
+        "PETRA",
+        "parceria",
+        "min[eé]rio",
+        "garimp",
+        "lavra",
+        "subsolo",
+        "recursos naturais",
+        "capital"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "A permissão de empresas estrangeiras na extração não aparece como artigo jurídico isolado: resulta da leitura conjunta, na p. 179, de empresas internacionais, parcerias internacionais, acordos de exploração e cadeia que começa na mineração. A p. 65, isoladamente, fala em atração para processamento e industrialização e seria insuficiente. Não se inferem abertura irrestrita, concessão concreta, participação societária, regime de autorização ou dispensa de limites ambientais.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A versão aprovada combina uma medida específica — interrupção geral dos pagamentos — com sua duração durante auditoria da dívida. O plano propõe redução gradual e sustentável da dívida por crescimento, equilíbrio fiscal e modernização do Estado (p. 36), mas não determina auditoria dessa dívida nem suspensão de pagamentos durante investigação. A ocorrência de auditorias independentes integra a governança de um fundo internacional contra a fome (pp. 158–159), objeto diferente. Responsabilidade fiscal, redução de dívida/PIB ou respeito geral a contratos não permitem atribuir rejeição ao mecanismo perguntado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "Nossa proposta é promover sua redução gradual e sustentável, por meio do crescimento econômico, da responsabilidade fiscal, do equilíbrio das contas públicas e da modernização do Estado.",
+          "role": "context",
+          "interpretation": "O pronome refere-se à dívida pública no item imediatamente anterior; a passagem define uma trajetória de redução, não suspensão para auditoria."
+        },
+        {
+          "page": 158,
+          "quote": "Esse fundo deverá ser administrado com transparência e responsabilidade, reunindo organismos internacionais como a ONU, a FAO, o Programa Mundial de Alimentos, o Banco Mundial e os países do G20.",
+          "role": "context",
+          "interpretation": "Identifica o fundo internacional cuja governança prossegue na página seguinte; não é a dívida pública brasileira."
+        },
+        {
+          "page": 159,
+          "quote": "A gestão será baseada em metas, auditorias independentes e mecanismos permanentes de prestação de contas, garantindo que cada recurso chegue efetivamente às populações que mais necessitam.",
+          "role": "context",
+          "interpretation": "A ocorrência de auditorias se refere à gestão desse fundo, não à suspensão dos pagamentos da dívida."
+        }
+      ],
+      "search_terms": [
+        "d[ií]vida",
+        "auditor",
+        "suspend",
+        "suspens",
+        "pagamento",
+        "juros",
+        "amortiza",
+        "morat[oó]ria",
+        "renegocia",
+        "cancelamento",
+        "servi[çc]o da d[ií]vida",
+        "d[eé]bito",
+        "credor",
+        "credores",
+        "t[ií]tulos",
+        "honrar",
+        "investiga",
+        "interromp",
+        "cessar",
+        "susta",
+        "reestrutur"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          200
+        ]
+      ],
+      "counterevidence_or_limits": "As buscas por dívida, auditoria, suspensão, amortização, moratória, credores e outras formas registradas não encontraram a combinação institucional exigida. Referências a endividamento rural ou pessoal não foram tratadas como dívida pública. Ausência de proposta e disciplina fiscal genérica não constituem discordância ou neutralidade.",
+      "reformulation_suggestion": null
+    }
+  ],
+  "limitations": [
+    "O PDF oficial termina na página física 200, uma página visual que anuncia outros programas, um projeto proposto por Michel Temer e a Carta das mulheres para a política. Esses conteúdos adicionais não estão presentes no arquivo de 200 páginas e não foram presumidos.",
+    "As concordâncias de Q02 e Q03 são de implicação clara, com a cadeia de raciocínio e seus limites explicitados; não são alegadas formulações literais idênticas às perguntas."
+  ]
+}

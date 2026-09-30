@@ -46,13 +46,21 @@ def _populate(db: Session) -> None:
     economia = ThemeModel(slug="economia", name="Economia", area="economica", icon_slug="chart-bar")
     seguranca = ThemeModel(slug="seguranca", name="Seguranca", area="institucional", icon_slug="shield")
     saude = ThemeModel(slug="saude", name="Saude", area="social", icon_slug="heart")
-    db.add_all([economia, seguranca, saude])
+    cultura = ThemeModel(slug="cultura", name="Cultura", area="social", icon_slug="book")
+    governanca = ThemeModel(slug="governanca", name="Governanca", area="institucional", icon_slug="landmark")
+    db.add_all([economia, seguranca, saude, cultura, governanca])
     db.flush()
 
-    theses = []
-    for i in range(1, 6):
-        t = ThesisModel(text=f"Tese {i}", theme_id=economia.id, status="approved", election_year=2022)
-        theses.append(t)
+    thesis_themes = [economia, economia, seguranca, cultura, governanca]
+    theses = [
+        ThesisModel(
+            text=f"Tese {i}",
+            theme_id=theme.id,
+            status="approved",
+            election_year=2022,
+        )
+        for i, theme in enumerate(thesis_themes, start=1)
+    ]
     t6 = ThesisModel(text="Tese 6", theme_id=seguranca.id, status="approved", election_year=2022)
     t7 = ThesisModel(text="Tese 7 rascunho", theme_id=saude.id, status="draft", election_year=2022)
     theses.extend([t6, t7])

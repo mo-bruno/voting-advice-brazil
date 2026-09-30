@@ -1,0 +1,238 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002554479",
+    "name": "Leonardo Avalanche",
+    "party": "PRTB",
+    "pages": 48,
+    "member": "BR/2026BR280002554479_01.pdf",
+    "sha256": "6956c95e514dded0fc45355c0347f860fd97dc06fbf2886fe24627106ec05053",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      18
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002554479",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por arcabouço, regime/regras fiscais, teto, LRF e déficit nos dois textos completos e inspeção da proposta econômica/tributária nas páginas 6 e 10 não localizaram decisão sobre a LC 200/2023. Reduzir ou reorganizar tributos não decide manter o arcabouço.",
+      "evidence": [],
+      "inspected_pages": [
+        6,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por privatização, desestatização, estatais, estatal, patrimônio público e bancos públicos e contextos de investimento/tecnologia das páginas 6 e 19 não localizaram transferência universal ou exceção explícita de controle estatal. Incentivar empresas privadas não decide privatizar estatais.",
+      "evidence": [],
+      "inspected_pages": [
+        6,
+        19
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O capítulo de motoristas aborda financiamento, taxa das plataformas e apoio ao trabalhador; não define regime geral da CLT, teto semanal ou prevalência normativa.",
+      "evidence": [],
+      "inspected_pages": [
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "DISCORDA",
+      "reason": "O plano mantém expressamente o Bolsa Família para quem se qualificar e obtiver renda, inclusive oferecendo contratação remunerada opcional pelo governo sem substituição do benefício.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Isso inclui tanto quem está no Bolsa Família (sem perder o benefício) quanto quem nunca recebeu nenhum auxílio do governo."
+        },
+        {
+          "page": 7,
+          "quote": "Aqui não: a renda extra vem garantida pelo nosso governo, sem perder o Bolsa Família."
+        },
+        {
+          "page": 7,
+          "quote": "o brasileiro que decidir seguir trabalhando com internet e comunicação digital vai poder ser efetivamente contratado pelo nosso governo federal — com contrato assinado e remuneração — pra atuar na divulgação oficial de programas e serviços públicos em sua própria cidade e região."
+        }
+      ],
+      "inspected_pages": [
+        7
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Há crítica à impunidade de menores e endurecimento das penas, mas nenhum compromisso com uma idade ou com sua submissão ao regime adulto.",
+      "evidence": [],
+      "inspected_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Busca integral nos dois textos extraídos e leitura dos contextos indicados. As propostas educacionais examinadas tratam de carreira técnica, aprendizagem prática e inclusão de crianças autistas; não decidem militarização escolar.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        16,
+        17,
+        34
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        16,
+        17,
+        34
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A parceria com hospitais privados ociosos (p9) é contratação de capacidade para filas, não delegação da gestão da rede pública.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "parceria com hospitais privados ociosos para absorver demanda reprimida"
+        }
+      ],
+      "inspected_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Buscas por Banco Central, autoridade/política monetária, autonomia e independência, com inspeção dos contextos econômicos das páginas 6 e 10, não localizaram decisão institucional sobre o BC.",
+      "evidence": [],
+      "inspected_pages": [
+        6,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Atração de empresas e polos tecnológicos nas páginas 6 e 19 não decide organização da Petrobras; as buscas específicas por Petrobras, refinarias e desverticalização não recuperaram decisão suficiente.",
+      "evidence": [],
+      "inspected_pages": [
+        6,
+        19
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "CONCORDA",
+      "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Na prática: mutirões nacionais de atendimento, parceria com hospitais privados ociosos para absorver demanda reprimida, telemedicina para triagem rápida e gestão por resultado nas secretarias de saúde."
+        }
+      ],
+      "inspected_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há no contexto examinado compromisso com recursos públicos para vagas em creches privadas. A rede de cuidado e creche especializada para crianças autistas na p34 não determina voucher nem matrícula privada financiada.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        16,
+        17,
+        34
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Propostas econômicas e internacionais inspecionadas não manifestam posição sobre este acordo específico.",
+      "evidence": [],
+      "inspected_pages": [
+        17,
+        32,
+        33,
+        40,
+        42,
+        43
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide romper nem manter relações diplomáticas com Israel durante a condição descrita na tese. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        17,
+        32,
+        33,
+        40,
+        42,
+        43
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        17,
+        32,
+        33,
+        40,
+        42,
+        43
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano busca instalar multinacionais no Brasil para trazer capital estrangeiro, tecnologia e emprego direto.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "trazendo capital estrangeiro, tecnologia e emprego direto pro país."
+        }
+      ],
+      "inspected_pages": [
+        6,
+        19
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

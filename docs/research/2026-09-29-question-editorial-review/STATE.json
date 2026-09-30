@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "phase": "block_01_candidate_validation_paused",
+  "source_inventory": "../2026-09-29-thematic-profiles/DOCUMENT_INDEX.json",
+  "source_inventory_sha256": "ce1915d67400c9664d9d6e3c31a57830ebcdc8c513a46893d729dd26ce665bb6",
+  "source_commit": "5af83ac",
+  "remote_main": "32d96c0",
+  "updated_at": "2026-09-29T22:52:03.067136+00:00",
+  "approval_gate": {
+    "required": true,
+    "status": "approved",
+    "approved_question_versions": [
+      {
+        "id": "B01-Q01",
+        "version": 1,
+        "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+      },
+      {
+        "id": "B01-Q02",
+        "version": 1,
+        "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+      },
+      {
+        "id": "B01-Q03",
+        "version": 1,
+        "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+      },
+      {
+        "id": "B01-Q04",
+        "version": 1,
+        "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+      }
+    ],
+    "candidate_validation_dispatched": true,
+    "explanation_included_in_version": true,
+    "approval_record": "../2026-09-29-approved-block-01-validation/APPROVAL.json"
+  },
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "ranking_changes": false,
+  "production_changes": false,
+  "excluded_candidate_ids": [
+    "280002553884"
+  ],
+  "editorial_tasks": [
+    {
+      "agent_id": "/root/plan_cury",
+      "role": "editorial_mapping_only",
+      "output": "maps/economy-state-territory.json",
+      "status": "mapped",
+      "mapped_positions": 202,
+      "family_count": 36,
+      "sha256": "74419b86b709bb4caf2b75fb086b8dbe34b0c2e8cc31e853270a17bd359c1feb"
+    },
+    {
+      "agent_id": "/root/plan_grassi",
+      "role": "editorial_mapping_only",
+      "output": "maps/environment-science-welfare.json",
+      "status": "mapped",
+      "mapped_positions": 169,
+      "family_count": 34,
+      "sha256": "d6d30817ee8a1bb1750b28241e7ab0128833c349c103556be7174c96cde63bb9"
+    },
+    {
+      "agent_id": "/root/plan_lula",
+      "role": "editorial_mapping_only",
+      "output": "maps/education-rights-security-sovereignty.json",
+      "status": "mapped",
+      "mapped_positions": 265,
+      "family_count": 48,
+      "sha256": "d668dd939fd675b4adb9c5ce745c12bb8d79294d84efb348544af18374b82d00"
+    }
+  ],
+  "first_block": {
+    "id": "B01",
+    "topic": "Economia e Desenvolvimento",
+    "target_items": 4,
+    "status": "approved_validation_paused",
+    "file": "BLOCK_01.json"
+  },
+  "remaining": [
+    "Receber a decisão do usuário sobre as 18 novas versões da bateria completa.",
+    "Retomar a validação somente com a bateria completa aprovada.",
+    "Consolidar evidências e divergências; alterações de significado voltam ao usuário."
+  ],
+  "metrics": {
+    "mapped_positions": 636,
+    "decision_families": 118,
+    "categories": 10,
+    "questions_presented": 4,
+    "questions_approved": 4,
+    "candidate_answers_created": 24
+  }
+}

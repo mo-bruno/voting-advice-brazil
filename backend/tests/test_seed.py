@@ -45,7 +45,7 @@ def db():
 
 def test_seed_minimum_counts(db):
     seed(db)
-    assert db.query(ThemeModel).count() == 12
+    assert db.query(ThemeModel).count() == 22
     assert db.query(PartyModel).count() >= 5
     assert db.query(CandidateModel).count() >= 10
     assert db.query(ThesisModel).count() > 0
@@ -297,6 +297,24 @@ def test_refresh_persists_source_url(db, snapshot):
     candidate = db.query(CandidateModel).filter_by(external_id="2026-a").one()
     position = SqlPositionRepository(db).get_by_candidate(candidate.id)[0]
     assert getattr(position, "source_url", None) == "https://example.test/plan.pdf"
+
+
+def test_refresh_persists_analytical_position_separately_from_scoring(db, snapshot):
+    _, theses_path = snapshot
+    _change_json(
+        theses_path,
+        lambda payload: payload["theses"][0]["positions"]["2026-a"].update(
+            position="sem_posicao",
+            analytical_position="CONDICIONAL_OU_MISTA",
+        ),
+    )
+
+    seed(db)
+
+    candidate = db.query(CandidateModel).filter_by(external_id="2026-a").one()
+    position = SqlPositionRepository(db).get_by_candidate(candidate.id)[0]
+    assert position.position == "sem_posicao"
+    assert position.analytical_position == "CONDICIONAL_OU_MISTA"
 
 
 def test_seed_adopts_unique_legacy_text_without_moving_answers(db, snapshot):

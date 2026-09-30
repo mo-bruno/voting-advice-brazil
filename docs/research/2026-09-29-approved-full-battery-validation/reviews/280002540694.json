@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002540694",
+  "candidate_name": "Renan Santos",
+  "context_owner_agent_id": "/root/plan_renan",
+  "executor_agent_id": "/root/battery_renan",
+  "document_sha256": "cdece60b71117c7820dbf90a7d795f76f3b1d1aaa5ebb8ce11f47e9ca6227b5a",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002540694.json",
+    "../2026-09-29-thematic-profiles/profiles/280002540694.md",
+    "../2026-09-29-thematic-profiles/profiles/280002540694.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002540694.json"
+  ],
+  "method": "Reidratação integral dos quatro arquivos de contexto de /root/plan_renan; buscas por termos e sinônimos dos vinte objetos em todas as 51 páginas de raw.txt, layout.txt, raw-pages.json e layout-pages.json; e releitura das páginas físicas relevantes nas extrações paginadas. As classificações usam exclusivamente o plano oficial identificado pelo hash registrado.",
+  "revisited_pages": [
+    9,
+    10,
+    13,
+    18,
+    20,
+    21,
+    22,
+    25,
+    26,
+    32,
+    35,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    46
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe imposto específico sobre grandes fortunas. Revisão de renúncias, redução de isenções e outras referências tributárias não definem esse tributo patrimonial.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "grandes fortunas",
+        "imposto sobre fortunas",
+        "tributação do patrimônio",
+        "imposto patrimonial",
+        "fortuna"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "As medidas tributárias das páginas 10, 35 e 43 tratam de gastos tributários, incentivos setoriais e empresas de tecnologia; nenhuma cria imposto sobre grandes fortunas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano escolhe a agroindústria e a verticalização de cadeias produtivas como prioridades e inclui expressamente linhas de crédito do BNDES entre seus principais instrumentos.",
+      "conditions": [
+        "As linhas de crédito são condicionadas a metas de exportação e dirigidas ao salto da agroindústria e às cadeias produtivas completas.",
+        "O plano não fixa alíquota de juros nem exige fonte pública exclusiva para todo o financiamento."
+      ],
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "A política de Zonas Econômicas Especiais, as linhas de crédito do BNDES condicionadas a metas de exportação e a busca de acordos comerciais bilaterais serão nossos principais instrumentos.",
+          "role": "support",
+          "interpretation": "O trecho prevê crédito direcionado por banco público para as cadeias agroindustriais que o plano seleciona para processamento e verticalização."
+        }
+      ],
+      "search_terms": [
+        "linhas de crédito",
+        "BNDES",
+        "financiamento",
+        "política industrial",
+        "cadeias produtivas",
+        "agroindústria",
+        "setores prioritários"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "O consórcio mineral das páginas 39–40 combina recursos públicos e privados; isso não reduz a clareza da linha de crédito setorial explicitada na página 42.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite investimento e financiamento estrangeiros na cadeia de terras raras, mas localiza o investimento direto estrangeiro no processamento e na manufatura. Não atribui a empresas estrangeiras participação na extração dos minerais.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "Estabelecimento de zonas econômicas especiais (ZEEs) dedicadas ao processamento e manufatura de componentes de terras raras, com incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado.",
+          "role": "counterevidence",
+          "interpretation": "A abertura expressa ao investimento estrangeiro alcança processamento e manufatura; o trecho não autoriza inferir operação estrangeira na extração."
+        },
+        {
+          "page": 40,
+          "quote": "criação de mecanismo de risco compartilhado entre setor público e privado, garantindo ao Estado con- trole estratégico enquanto transfere riscos operacionais e tecnológicos para parceiros privados quali- ficados;",
+          "role": "context",
+          "interpretation": "O plano admite parceiros privados e preserva controle estatal, mas não informa a nacionalidade desses parceiros nem lhes atribui a extração mineral."
+        }
+      ],
+      "search_terms": [
+        "empresas estrangeiras",
+        "investimento direto estrangeiro",
+        "capital internacional",
+        "exploração mineral",
+        "extração",
+        "terras raras",
+        "parceiros privados",
+        "joint venture"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Acordos de compra, transferência tecnológica, fundos estrangeiros e capital para transformação da cadeia podem coexistir com diferentes regras sobre quem extrai; o objeto aprovado exige participação empresarial estrangeira na extração.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A dívida pública aparece no diagnóstico fiscal, sem proposta de auditoria acompanhada por suspensão de pagamentos.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "auditoria da dívida",
+        "dívida pública",
+        "suspensão de pagamentos",
+        "juros e amortizações",
+        "moratória",
+        "serviço da dívida"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "A página 9 quantifica dívida e déficit apenas para justificar ajuste fiscal; não anuncia auditoria nem interrupção temporária dos pagamentos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano rejeita o arcabouço vigente e anuncia um novo modelo fiscal, mas não informa se o substituto conterá limite normativo ao crescimento da despesa, meta de resultado, limite de dívida ou outro mecanismo.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "role": "context",
+          "interpretation": "A existência de um modelo substituto é explícita, mas sua fórmula não responde ao objeto específico de limitar o crescimento das despesas."
+        }
+      ],
+      "search_terms": [
+        "arcabouço fiscal",
+        "teto de gastos",
+        "limite das despesas",
+        "crescimento dos gastos",
+        "regra fiscal",
+        "lei complementar das finanças públicas"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "As páginas 9–10 criticam tanto violações do teto quanto a insustentabilidade do arcabouço e defendem disciplina fiscal; finalidade fiscal não identifica o tipo de regra do novo modelo.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona Petrobras nem decide a manutenção ou transferência de seu controle acionário federal.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "Petrobras",
+        "Petrobrás",
+        "controle acionário",
+        "petróleo",
+        "refinaria",
+        "estatal de energia"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Petroquímica, BNDES, energia nuclear e controle estratégico da política mineral são objetos diferentes do controle da Petrobras.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "A reforma do funcionalismo anunciada limita-se, no resumo, ao fim dos supersalários. Não há avaliação periódica com consequência de demissão de servidor estável e direito de defesa.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "a reforma do funcionalismo público com fim dos supersalários",
+          "role": "context",
+          "interpretation": "O trecho confirma reforma remuneratória, sem decidir estabilidade, avaliação de desempenho ou demissão."
+        }
+      ],
+      "search_terms": [
+        "servidor público estável",
+        "estabilidade",
+        "demissão por desempenho",
+        "baixo desempenho",
+        "avaliação periódica",
+        "direito de defesa",
+        "funcionalismo"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Metas e consequências das páginas 17–18 são dirigidas a gestores municipais eleitos, não a servidores públicos estáveis.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe tarifa zero universal no transporte coletivo urbano nem repasse federal aos municípios para financiá-la.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "tarifa zero",
+        "transporte coletivo urbano",
+        "passe livre",
+        "gratuidade do transporte",
+        "subsídio tarifário",
+        "mobilidade urbana",
+        "ônibus"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Infraestrutura logística, aeroportos, ferrovias e deslocamento de pacientes não constituem política municipal de transporte coletivo gratuito.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano usa baixo carbono como atributo produtivo de mineração e aço, sem criar sistema obrigatório de limites de emissão e negociação de créditos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "insuficiência de padrões de mineração responsável e de baixo carbono na exploração de recursos naturais;",
+          "role": "context",
+          "interpretation": "A expressão baixo carbono qualifica padrões de mineração; não designa mercado regulado de carbono."
+        }
+      ],
+      "search_terms": [
+        "mercado regulado de carbono",
+        "créditos de carbono",
+        "comércio de emissões",
+        "precificação de carbono",
+        "carbono",
+        "emissões"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Mineração e aço de baixo carbono não definem o instrumento regulatório medido pela pergunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O Marco Brasileiro da Inteligência Artificial organiza incentivos, talentos, datacenters, dados e projetos de pesquisa, sem classificar sistemas de alto risco nem impor obrigações preventivas antes do uso.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "O Eixo III ataca o problema da dependência computacional do exterior. Favorece políticas de incentivo para a instalação de datacenters e o arcabouço regulatório que permita o Brasil tornar-se o maior exportador de inferência computacional do hemisfério ocidental, transformando o Nordeste, em especial, na “Arábia Saudita do Brasil”.",
+          "role": "context",
+          "interpretation": "O arcabouço regulatório citado habilita datacenters e exportação de computação; não estabelece avaliação, registro ou supervisão prévia de IA de alto risco."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "alto risco",
+        "avaliação de risco",
+        "obrigações preventivas",
+        "registro de sistemas",
+        "supervisão",
+        "transparência algorítmica",
+        "Marco Brasileiro da Inteligência Artificial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Governança independente do laboratório Abaporu e regulação de infraestrutura computacional são objetos distintos da regulação preventiva de aplicações de alto risco.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano enfrenta filas com estratificação de risco, saúde digital e regionalização. A menção a hospitais privados refere-se à interoperabilidade do prontuário, não à contratação complementar de consultas, exames, leitos ou procedimentos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 26,
+          "quote": "Criação do PRONTO (Prontuário Eletrônico Nacional Interoperável) que irá conectar a atenção primária, os serviços especializados, os hospitais públicos e privados, laboratórios e farmácias, servin- do de repositório para todas as informações do paciente acessíveis a qualquer tempo.",
+          "role": "counterevidence",
+          "interpretation": "Conectar dados de prestadores públicos e privados não autoriza inferir compra de capacidade assistencial privada pelo SUS."
+        }
+      ],
+      "search_terms": [
+        "contratação de clínicas",
+        "hospitais privados",
+        "atendimento privado",
+        "compra de consultas",
+        "compra de exames",
+        "leitos privados",
+        "SUS",
+        "fila"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "A alternativa de reorganizar filas e centros regionais pode coexistir com diferentes políticas de contratação; o plano não escolhe uma delas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano substitui o Bolsa Família por Frentes Cidadãs para incentivar entrada no mercado formal. Não define manutenção parcial e temporária de benefício depois da obtenção de emprego formal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "o projeto de reforma do assistencialismo, com a substituição do Bolsa Família por um programa de Frentes Cidadãs que incentive a inserção dos beneficiários ao mercado formal de trabalho.",
+          "role": "counterevidence",
+          "interpretation": "Substituição por trabalho público e incentivo à formalização são escolhas distintas da redução gradual de um benefício após a contratação formal."
+        }
+      ],
+      "search_terms": [
+        "Bolsa Família",
+        "Frentes Cidadãs",
+        "emprego formal",
+        "mercado formal",
+        "manutenção do benefício",
+        "benefício parcial",
+        "período de transição"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "A forma de saída dos benefícios, inclusive eventual transição após emprego, não é detalhada. A proposta relacionada não basta para atribuir concordância ou discordância.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não oferece cuidado domiciliar profissional a idosos ou pessoas com deficiência com alto grau de dependência.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "cuidado domiciliar",
+        "atendimento domiciliar",
+        "home care",
+        "idosos",
+        "pessoas com deficiência",
+        "alto grau de dependência",
+        "cuidador"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Telemedicina e monitoramento clínico digital não equivalem a serviço público de cuidado prestado na residência.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano manda modular o VAAR, componente federal de financiamento educacional, combinando um ranking de disciplina com indicadores tradicionais de qualidade da educação. Em outro capítulo, identifica o IDEB como meta de resultado setorial. A conexão entre parte do recurso e resultado educacional medido é clara, embora a fórmula seja híbrida.",
+      "conditions": [
+        "A modulação combina indicadores tradicionais de qualidade com um ranking de disciplina; desempenho de aprendizagem não é o único critério.",
+        "O plano não fixa a parcela condicionada, a fórmula de cálculo nem salvaguardas para redes vulneráveis."
+      ],
+      "evidence": [
+        {
+          "page": 32,
+          "quote": "Estabelecer um ranking oficial de disciplina nas escolas que sirva para modular o VAAR (Valor Aluno Ano Resultado), que será aumentado, aliando o escrutínio da disciplina com os indicadores tradicio- nais da qualidade da educação.",
+          "role": "support",
+          "interpretation": "A proposta vincula um componente de recursos educacionais a uma fórmula que inclui indicadores medidos de qualidade, além de disciplina."
+        },
+        {
+          "page": 18,
+          "quote": "Marco Gerencial Nacional: Instituição de um sistema de metas baseado em três famílias de indica- dores: resultados setoriais (IDEB, cobertura vacinal, saneamento, crescimento econômico), integri- dade de gestão e eficiência fiscal.",
+          "role": "context",
+          "interpretation": "O trecho identifica expressamente o IDEB como indicador de meta educacional no sistema de resultados do plano."
+        }
+      ],
+      "search_terms": [
+        "metas de aprendizagem",
+        "IDEB",
+        "VAAR",
+        "Valor Aluno Ano Resultado",
+        "indicadores da qualidade da educação",
+        "recursos por desempenho",
+        "financiamento educacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "O resumo posterior enfatiza que escolas mais ordeiras receberão mais recursos; a classificação se apoia no desenho imediatamente anterior, que combina disciplina com indicadores tradicionais de qualidade, e não atribui exclusividade às metas de aprendizagem.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano observa que a carga horária formal brasileira supera ligeiramente a de países desenvolvidos, mas não propõe reduzir a jornada semanal nem preservar salários nessa redução.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 20,
+          "quote": "Nesse modelo, ainda que a carga horária dos brasileiros em emprego formal seja ligeiramente maior que a de países já desenvolvidos, o esforço não se converte em riqueza proporcional ao potencial da nossa popu- lação e território.",
+          "role": "context",
+          "interpretation": "O trecho é diagnóstico de produtividade e não contém direção normativa sobre jornada ou salário."
+        }
+      ],
+      "search_terms": [
+        "jornada semanal",
+        "carga horária",
+        "horas semanais",
+        "redução de jornada",
+        "sem redução salarial",
+        "escala 6x1",
+        "6 por 1"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Flexibilização trabalhista e diagnóstico de horas trabalhadas admitem várias reformas e não respondem ao objeto conjunto de reduzir a jornada sem reduzir salário.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona aborto voluntário, descriminalização ou prazo gestacional.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "aborto",
+        "gestação",
+        "descriminalização",
+        "interrupção da gravidez",
+        "direitos reprodutivos",
+        "prazo gestacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Políticas de saúde e menções às mulheres não decidem o tratamento penal do aborto voluntário em qualquer período da gestação.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano endurece o regime contra facções, reincidência e crimes de rua, mas não aplica o regime penal adulto a adolescentes de 16 e 17 anos. A referência ao ECA trata de disciplina escolar.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "maioridade penal",
+        "idade penal",
+        "16 anos",
+        "17 anos",
+        "adolescente",
+        "regime penal adulto",
+        "ECA"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Direito Penal do Inimigo para membros de facções e revisão disciplinar escolar do ECA não especificam idade de imputabilidade nem alcance para qualquer crime.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano adota reconhecimento facial em tempo real para prevenção da criminalidade urbana e identificação ligada à resolução de crimes hediondos, mas não define seu uso em espaços públicos para localizar pessoas foragidas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Um novo sistema de drones e totens de denúncia transformará a reação ao crime em prevenção, com patrulhamento autônomo e reconhecimento facial em tempo real, integrado ao uso de dados genéticos e identificação facial para a resolução de crimes hediondos.",
+          "role": "counterevidence",
+          "interpretation": "O plano autoriza reconhecimento facial com outras finalidades, sem mencionar foragidos, bases de procurados ou execução de mandados."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "foragidos",
+        "pessoas procuradas",
+        "mandado de prisão",
+        "espaços públicos"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Uso geral ou para solucionar crimes não responde automaticamente à finalidade específica aprovada de localizar foragidos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano propõe uma estratégia brasileira dentro do BRICS+ para obter mercados, investimentos e tecnologia com autonomia decisória. Executar essa estratégia pressupõe permanecer no bloco.",
+      "conditions": [
+        "A permanência é pragmática e acompanha crítica à influência chinesa e recusa de subordinação geopolítica."
+      ],
+      "evidence": [
+        {
+          "page": 46,
+          "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos, por meio dos mercados, investimentos e cooperação tecnológi- ca, enquanto evita ser subordinado aos objetivos geopolíticos de Pequim, mantendo autonomia decisória.",
+          "role": "support",
+          "interpretation": "A atuação proposta ocorre dentro do BRICS+ e é incompatível com a saída; a crítica condiciona a forma de permanência, não a rejeita."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "BRICS+",
+        "permanência",
+        "saída",
+        "retirada",
+        "bloco",
+        "China"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "O diagnóstico de dominação crescente chinesa poderia sugerir tensão, mas a solução explicitada é extrair benefícios no bloco preservando autonomia, não sair.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe acordos bilaterais setoriais com a União Europeia e integração sul-americana, mas não menciona o acordo comercial Mercosul–União Europeia nem sua ratificação.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 39,
+          "quote": "Celebração de acordos bilaterais com Estados Unidos e União Europeia que garantam off-take agree- ments (compromissos de compra de longo prazo) e transferência tecnológica em processamento de terras raras.",
+          "role": "counterevidence",
+          "interpretation": "O compromisso é um acordo bilateral mineral específico, não o texto final do acordo comercial Mercosul–União Europeia."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo comercial",
+        "ratificação",
+        "texto final",
+        "acordos bilaterais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          51
+        ]
+      ],
+      "counterevidence_or_limits": "Parcerias minerais com a UE e integração regional podem coexistir com apoio, rejeição ou renegociação do acordo específico; o plano não escolhe entre essas alternativas.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002551975",
+    "name": "Edmilson Costa",
+    "party": "PCB",
+    "pages": 16,
+    "member": "BR/2026BR280002551975_01.pdf",
+    "sha256": "52f765533f93409a595d780e9ad8634de72db8f05794a2e70e808913c2ed4dff",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      16
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551975",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "DISCORDA",
+      "reason": "O plano pede o fim do arcabouço fiscal e sua revogação, incompatíveis com manter o regime da LC 200/2023.",
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "o fim do arcabouço fiscal"
+        },
+        {
+          "page": 4,
+          "quote": "Agiremos para promover a revogação do Arcabouço Fiscal"
+        }
+      ],
+      "inspected_pages": [
+        2,
+        4,
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "DISCORDA",
+      "reason": "O programa retoma empresas estratégicas para o patrimônio público e exige Petrobras totalmente estatal. Ambas as decisões rejeitam a privatização universal.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "As empresas estratégicas privatizadas serão retomadas para o patrimônio público"
+        },
+        {
+          "page": 5,
+          "quote": "Defendemos a Petrobras 100% estatal"
+        }
+      ],
+      "inspected_pages": [
+        4,
+        5,
+        14
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "CONCORDA",
+      "reason": "Defende revogar a reforma trabalhista e restaurar direitos; o contexto identifica as reformas recentes.",
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Revogaremos as contrarreformas trabalhista, previdenciária e criaremos a Lei de Responsabilidade Social, com o objetivo de garantir recursos para atender as demandas populares."
+        }
+      ],
+      "inspected_pages": [
+        2,
+        5,
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano organiza frentes de trabalho para desempregados e famílias do CadÚnico e amplia proteção social, mas não estabelece substituição do Bolsa Família para adultos por trabalho público remunerado.",
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Organização das frentes de trabalho urbanas e rurais nos bairros mais pobres"
+        },
+        {
+          "page": 9,
+          "quote": "privilegiando os desempregados e setores mais precários da classe trabalhadora, como as famílias inscritas no CadÚnico."
+        }
+      ],
+      "inspected_pages": [
+        9
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "DISCORDA",
+      "reason": "Rejeita a redução e defende medidas socioeducativas.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Contra a redução da maioridade penal e ampliação das medidas socioeducativas."
+        }
+      ],
+      "inspected_pages": [
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "DISCORDA",
+      "reason": "O fim expresso das escolas cívico-militares é incompatível com sua admissibilidade.",
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Fim das escolas cívico-militares."
+        }
+      ],
+      "inspected_pages": [
+        7,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "DISCORDA",
+      "reason": "Propõe implementar cotas raciais nos concursos das forças de segurança. Isso rejeita encerrá-las no serviço público; não se atribui apoio universal a todo desenho de cota.",
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Implementação da política de cotas raciais em todos os concursos públicos federais e estaduais das forças de segurança."
+        }
+      ],
+      "inspected_pages": [
+        7,
+        12
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "CONCORDA",
+      "reason": "Propõe tornar público todo o sistema de saúde e estatizar todo o setor privado, com conselhos para controle em todos os níveis; isso sustenta direção pública integral, sem transferir operação a empresas.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+        },
+        {
+          "page": 10,
+          "quote": "estatização de todo o setor privado de saúde"
+        },
+        {
+          "page": 10,
+          "quote": "Criação dos Conselhos Populares de Saúde, eleitos pelos trabalhadores, para o controle do sistema de saúde em todos os níveis."
+        }
+      ],
+      "inspected_pages": [
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "CONCORDA",
+      "reason": "O programa explicita fim da autonomia do Banco Central e reafirma sua revogação, correspondendo à decisão da tese.",
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "a retomada do Banco Central (fim da autonomia)"
+        },
+        {
+          "page": 13,
+          "quote": "Revogação de todas as contrarreformas neoliberais, como a previdenciária e a trabalhista e do Arcabouço Fiscal, bem como da autonomia do Banco Central."
+        }
+      ],
+      "inspected_pages": [
+        4,
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "CONCORDA",
+      "reason": "A página 14 exige empresa integrada, retomada dos ativos e ampliação das refinarias. Sustenta reunir produção e refino, sem depender da identidade jurídica de subsidiárias de transporte/logística.",
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "A Petrobrás deve ser uma empresa integrada de energia e 100% estatal"
+        },
+        {
+          "page": 14,
+          "quote": "Transição para o regime de monopólio estatal da exploração, produção, refino, petroquímica e distribuição"
+        },
+        {
+          "page": 14,
+          "quote": "Criação de empresas estatais de serviços e tecnologias petrolíferas (sondas, exploração, engenharia e construção, logística, estaleiros etc.)"
+        }
+      ],
+      "inspected_pages": [
+        5,
+        14
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "DISCORDA",
+      "reason": "Propõe estatizar todo o setor privado de saúde e tornar público o sistema inteiro. Esse desenho é incompatível com usar estabelecimentos mantidos privados como prestadores contratados.",
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "o governo do poder popular tornará público todo o sistema de saúde"
+        },
+        {
+          "page": 10,
+          "quote": "estatização de todo o setor privado de saúde"
+        }
+      ],
+      "inspected_pages": [
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "DISCORDA",
+      "reason": "O ensino inteiramente público desde a creche e a estatização do privado são incompatíveis com financiar vagas em creche que permaneça privada.",
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Na educação, implantaremos o ensino 100% público e gratuito, das creches à pós- graduação, com a estatização do sistema privado de ensino."
+        }
+      ],
+      "inspected_pages": [
+        7,
+        10
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "A proposta de integração latino-americana e de política externa anti-imperialista não decide expressamente o acordo Mercosul–UE.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "CONCORDA",
+      "reason": "O plano propõe rompimento imediato de todas as relações econômicas e diplomáticas com Israel, sem limitar a decisão a uma condição temporal.",
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Rompimento imediato de todas as relações econômicas e diplomáticas com o estado sionista de Israel."
+        }
+      ],
+      "inspected_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        15,
+        16
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "NAO_ENCONTRADA",
+      "reason": "As páginas 4 e 14 retomam empresas estratégicas e retiram ações da Petrobras de bolsas estrangeiras. Não estabelecem proibição de todo investimento estrangeiro na economia; medidas setoriais não foram universalizadas.",
+      "evidence": [],
+      "inspected_pages": [
+        4,
+        14
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

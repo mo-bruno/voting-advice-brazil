@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "candidate": {
+    "id": "280002551544",
+    "name": "Flavio Bolsonaro",
+    "party": "PL",
+    "pages": 76,
+    "member": "BR/2026BR280002551544_01.pdf",
+    "sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+    "same_as_prior_snapshot": true,
+    "in_prior_product_roster": true,
+    "official_roster_status": "#NE",
+    "source_last_modified": [
+      2026,
+      9,
+      29,
+      6,
+      46,
+      16
+    ],
+    "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551544",
+    "status": "queued",
+    "agent_id": null,
+    "requested_model": "gpt-6-astra",
+    "requested_reasoning_effort": "ultra",
+    "pages_read": 0
+  },
+  "questions_file": "/home/brunooliveira/Repositorios/voting-advice-brazil/.worktrees/affinity-methodology/docs/research/2026-09-29-full-plan-validation/questions.json",
+  "prior_positions": [
+    {
+      "question_id": "BR26-T001",
+      "category": "DISCORDA",
+      "reason": "O contexto das páginas 70-71 critica as regras que substituíram o teto e propõe reformulação das regras fiscais atuais, com novo controle de despesas e foco na dívida. É proposta de alterar o regime, incompatível com mantê-lo na formulação dada.",
+      "evidence": [
+        {
+          "page": 71,
+          "quote": "Apresentaremos uma reformulação nas atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública"
+        }
+      ],
+      "inspected_pages": [
+        70,
+        71
+      ]
+    },
+    {
+      "question_id": "BR26-T002",
+      "category": "CONDICIONAL_OU_MISTA",
+      "reason": "A política expressa é desestatizar mediante avaliação individual de onde a presença estatal deixou de fazer sentido, enquanto fortalece a governança das estatais e atribui missão pública à CAIXA. Essa condição substantiva impede representar a proposta como apoio irrestrito à transferência de todas as empresas.",
+      "evidence": [
+        {
+          "page": 70,
+          "quote": "vamos retomar o Programa Nacional de Desestatização com critério, avaliando caso a caso onde a presença do Estado deixou de fazer sentido."
+        }
+      ],
+      "inspected_pages": [
+        52,
+        69,
+        70
+      ]
+    },
+    {
+      "question_id": "BR26-T003",
+      "category": "DISCORDA",
+      "reason": "Defende manter situações pacificadas pela reforma e chama reversões de retrocesso.",
+      "evidence": [
+        {
+          "page": 45,
+          "quote": "É mais do mesmo: insegurança jurídica e retrocesso. Situações que se repetem na discussão de jornada – onde o governo deseja ignorar a prevalência do negociado sobre o legislado – ou na discussão de situações já pacificadas pela reforma trabalhista, aprovada há quase dez anos."
+        }
+      ],
+      "inspected_pages": [
+        44,
+        45
+      ]
+    },
+    {
+      "question_id": "BR26-T011",
+      "category": "DISCORDA",
+      "reason": "O plano promete manter os programas sociais existentes, sem retirar a ajuda dos dependentes atuais, e prevê qualificação e intermediação de emprego para beneficiários, com retorno ao benefício após o seguro-desemprego. Esse desenho preserva o benefício e é incompatível com sua substituição por trabalho público remunerado para adultos.",
+      "evidence": [
+        {
+          "page": 42,
+          "quote": "vamos manter os programas sociais existentes"
+        },
+        {
+          "page": 42,
+          "quote": "Quem depende hoje da ajuda do Estado para pôr comida na mesa não vai ter essa ajuda tirada."
+        },
+        {
+          "page": 43,
+          "quote": "garantiremos o retorno imediato e sem fila ao benefício após o seguro-desemprego, mantidas as condições de elegibilidade"
+        }
+      ],
+      "inspected_pages": [
+        42,
+        43
+      ]
+    },
+    {
+      "question_id": "BR26-T015",
+      "category": "CONCORDA",
+      "reason": "Defende expressamente responsabilização penal adulta a partir de 16 anos, incluindo crimes graves. O plano também alcança idades menores, questão que esta formulação não decide.",
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos. Vamos punir também maiores de 14 anos que cometerem crimes graves, como estupro, tráfico, tortura e assassinato. Quem comete crime como gente grande vai ser punido como gente grande."
+        }
+      ],
+      "inspected_pages": [
+        13
+      ]
+    },
+    {
+      "question_id": "BR26-T017",
+      "category": "CONCORDA",
+      "reason": "A ampliação explícita requer admissibilidade do modelo e por isso sustenta a alternativa.",
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "Vamos ampliar as Escolas Cívico-Militares"
+        }
+      ],
+      "inspected_pages": [
+        20,
+        21,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "question_id": "BR26-T018",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não localizada decisão sobre abolir ou preservar cotas raciais no serviço público; referências educacionais, a mérito em geral ou a outros tipos de cota não bastam.",
+      "evidence": [],
+      "inspected_pages": [
+        20,
+        21,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "question_id": "BR26-T026A",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Não há evidência suficiente de decisão entre gestão direta pública e gestão delegada de unidades públicas. A p21 prevê uma rede de cuidado a idosos e pessoas com deficiência com parceiros e OS; não identifica gestão de unidades do SUS. Na p37, a contratação de exames privados tem objeto distinto de gerir unidades públicas.",
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Também estruturaremos uma Rede Nacional de Cuidado, ampliando o apoio a idosos e pessoas com deficiência, com centros-dia e atendimento domiciliar em parcerias público privado com estados, municípios e organizações sociais."
+        }
+      ],
+      "inspected_pages": [
+        21,
+        37,
+        38
+      ]
+    },
+    {
+      "question_id": "BR26-T036",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano associa a queda dos juros à disciplina fiscal e critica a dívida, mas não decide sobre a autonomia institucional do Banco Central. Não se atribuiu defesa da autonomia pela orientação econômica geral.",
+      "evidence": [],
+      "inspected_pages": [
+        71
+      ]
+    },
+    {
+      "question_id": "BR26-T038",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Os contextos de empresas estatais, energia e mineração nas páginas 52–55 e 70 não decidem integração ou separação das operações da Petrobras. Desestatização caso a caso não especifica estrutura produtiva.",
+      "evidence": [],
+      "inspected_pages": [
+        52,
+        53,
+        55,
+        70
+      ]
+    },
+    {
+      "question_id": "BR26-T042",
+      "category": "CONCORDA",
+      "reason": "O apoio expresso à contratação/parceria com capacidade privada ociosa sustenta poder contratar atendimento privado para reduzir filas. A classificação não atribui preferência por contratação ilimitada nem dispensa as condições do plano.",
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Para usar bem o que já existe, vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame"
+        }
+      ],
+      "inspected_pages": [
+        21,
+        37,
+        38
+      ]
+    },
+    {
+      "question_id": "BR26-T043",
+      "category": "CONCORDA",
+      "reason": "O voucher-creche expressamente proposto financia acesso à rede privada credenciada. Sustenta a possibilidade de financiamento, preservadas no plano a falta de vaga pública e a duração temporária.",
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Onde não houver vaga na rede pública, a família receberá um voucher-creche para acesso à rede privada credenciada até a vaga pública surgir"
+        }
+      ],
+      "inspected_pages": [
+        20,
+        21,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "question_id": "BR26-T057",
+      "category": "NAO_ENCONTRADA",
+      "reason": "Pragmatismo comercial, abertura de mercados e recuperação de relações não identificam este acordo.",
+      "evidence": [],
+      "inspected_pages": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "question_id": "BR26-T063",
+      "category": "DISCORDA",
+      "reason": "O plano afirma que a relação com Israel foi levada ao limite do rompimento e promete reverter esse quadro.",
+      "evidence": [
+        {
+          "page": 62,
+          "quote": "Nos últimos anos, as relações com países como Argentina, Estados Unidos e Israel foram levadas ao limite do rompimento. Vamos reverter esse quadro com profissionalismo e foco no interesse do Brasil."
+        }
+      ],
+      "inspected_pages": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "question_id": "BR26-T066",
+      "category": "NAO_ENCONTRADA",
+      "reason": "O plano não decide a saída nem a permanência do Brasil no BRICS. Não é inferida oposição a partir dessa lacuna.",
+      "evidence": [],
+      "inspected_pages": [
+        61,
+        62,
+        63
+      ]
+    },
+    {
+      "question_id": "BR26-T067",
+      "category": "DISCORDA",
+      "reason": "O plano propõe atrair capital estrangeiro e tecnologia para a mineração e a indústria de transformação.",
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Vamos trabalhar para atrair o capital estrangeiro e a tecnologia que já existem no mundo"
+        }
+      ],
+      "inspected_pages": [
+        53,
+        55
+      ]
+    }
+  ],
+  "instructions": "Read PROTOCOL.md and whole plan before comparing prior labels. Missing prior means no_prior, not NAO_ENCONTRADA."
+}

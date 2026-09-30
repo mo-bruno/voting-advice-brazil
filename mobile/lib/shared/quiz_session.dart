@@ -95,7 +95,11 @@ class QuizSession extends ChangeNotifier {
   Future<void> submit() async {
     final deviceId =
         iotEnabled ? await deviceIdentityStore.getOrCreateDeviceId() : null;
-    results = await api.submitQuiz(theses, deviceId: deviceId);
+    results = await api.submitQuiz(
+      theses,
+      deviceId: deviceId,
+      candidateIds: selectedCandidateIds,
+    );
     notifyListeners();
   }
 
@@ -107,16 +111,13 @@ class QuizSession extends ChangeNotifier {
   }
 
   List<CandidateResult> get topAffinityResults {
-    final comparable =
-        visibleResults.where((result) => result.hasComparableEvidence).toList();
-    if (comparable.isEmpty) return [];
-    final highestScore = comparable.fold<double>(
-      0,
-      (highest, result) =>
-          result.scorePercent > highest ? result.scorePercent : highest,
+    final ranked =
+        visibleResults.where((result) => result.rankingEligible).toList();
+    if (ranked.isEmpty) return [];
+    final bestRank = ranked.fold<int>(
+      ranked.first.rank,
+      (best, result) => result.rank < best ? result.rank : best,
     );
-    return comparable
-        .where((result) => result.scorePercent == highestScore)
-        .toList();
+    return ranked.where((result) => result.rank == bestRank).toList();
   }
 }

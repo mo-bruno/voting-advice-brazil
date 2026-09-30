@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "battery_id": "full-battery-human-review-v3",
+  "battery_version": 3,
+  "decision": "approved",
+  "user_message": "sim",
+  "approved_at": "2026-09-30T02:26:05.632133+00:00",
+  "scope": "As quatro mudanças propostas na adjudicação e a bateria final de 20 afirmações com os quatro botões.",
+  "item_count": 20,
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "wording_fingerprint": "e1837e8dd34bddab2ba8ec0d4010568d3735d4a6270dc949ba9c54cf9d3f0f70",
+  "prior_approval": "APPROVAL_V2.json",
+  "adjudication": "../2026-09-29-approved-full-battery-validation/EDITORIAL_ADJUDICATION.json",
+  "items": [
+    {
+      "id": "B01-Q01",
+      "version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+    },
+    {
+      "id": "B01-Q02",
+      "version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+    },
+    {
+      "id": "B01-Q03",
+      "version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+    },
+    {
+      "id": "B01-Q04",
+      "version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+    },
+    {
+      "id": "FB-Q05",
+      "version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3"
+    },
+    {
+      "id": "FB-Q06",
+      "version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5"
+    },
+    {
+      "id": "FB-Q07",
+      "version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7"
+    },
+    {
+      "id": "FB-Q23",
+      "version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45"
+    },
+    {
+      "id": "FB-Q10",
+      "version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98"
+    },
+    {
+      "id": "FB-Q24",
+      "version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674"
+    },
+    {
+      "id": "FB-Q12",
+      "version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084"
+    },
+    {
+      "id": "FB-Q25",
+      "version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a"
+    },
+    {
+      "id": "FB-Q14",
+      "version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81"
+    },
+    {
+      "id": "FB-Q15",
+      "version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c"
+    },
+    {
+      "id": "FB-Q16",
+      "version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9"
+    },
+    {
+      "id": "FB-Q17",
+      "version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc"
+    },
+    {
+      "id": "FB-Q18",
+      "version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b"
+    },
+    {
+      "id": "FB-Q19",
+      "version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce"
+    },
+    {
+      "id": "FB-Q21",
+      "version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb"
+    },
+    {
+      "id": "FB-Q22",
+      "version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840"
+    }
+  ]
+}

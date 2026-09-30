@@ -1,0 +1,580 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002548139",
+  "candidate_name": "Veterinário Wilson Grassi",
+  "context_owner_agent_id": "/root/plan_grassi",
+  "executor_agent_id": "/root/battery_grassi_full",
+  "document_sha256": "df2acdb7a6d8b080d6d8a235b8fe8f0d987bf0f24be4f4aa9abc80e4ebb24904",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002548139.json",
+    "../2026-09-29-thematic-profiles/profiles/280002548139.md",
+    "../2026-09-29-thematic-profiles/profiles/280002548139.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002548139.json"
+  ],
+  "method": "Reidratei integralmente os quatro arquivos do contexto anterior na ordem registrada em STATE.json. Em seguida pesquisei do início ao fim raw.txt, layout.txt, raw-pages.json e layout-pages.json do corpus oficial, usando termos e sinônimos próprios para cada um dos vinte objetos, e reli nas duas extrações estruturadas todas as páginas físicas usadas como evidência. Reconfirmei os hashes do PDF e de questions.json e verifiquei a literalidade e a página de cada citação.",
+  "revisited_pages": [
+    7,
+    19,
+    34,
+    36,
+    47,
+    48,
+    51,
+    52
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano detalha o Imposto Único Federal sobre movimentação financeira e mudanças no IRPF e no IRPJ, mas não propõe imposto específico sobre grandes fortunas. Menções genéricas a patrimônio não criam essa base tributária.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "grandes fortunas",
+        "fortuna",
+        "patrimônio",
+        "riqueza",
+        "imposto",
+        "tributação"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "O IUF, o IRPF progressivo e outros tributos discutidos no plano têm fatos geradores diferentes do patrimônio muito elevado e não respondem ao objeto aprovado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê crédito simplificado para agricultura familiar, garantia parcial para financiamento habitacional e compras públicas para sustentar a base industrial de saúde. Nenhuma dessas medidas é uma linha de crédito destinada a setores industriais escolhidos como prioritários pela política industrial.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "linha de crédito",
+        "linhas de crédito",
+        "crédito direcionado",
+        "crédito",
+        "financiamento",
+        "indústria",
+        "industrial",
+        "setor prioritário",
+        "política industrial",
+        "BNDES"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Crédito agrícola e habitacional não tem o público industrial perguntado; política de compras para medicamentos e imunizantes não é programa de empréstimo.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano admite investimento estrangeiro em setores estratégicos mediante contrapartidas e, separadamente, propõe um regime para aproveitamento mineral em terras indígenas. Ele não liga as duas propostas nem diz se empresas estrangeiras podem participar da extração de minerais estratégicos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 48,
+          "quote": "O compromisso que assumo é o de enviar ao Congresso o projeto que regulamenta o art. 231, §3º, com três condições inegociáveis no texto: consentimento da comunidade afetada apurado por consulta na forma da Convenção nº 169; participação econômica dos indígenas nos resultados, paga diretamente e com governança definida pela própria comunidade, e não por intermediário; e licenciamento ambiental pleno, com proibição de mercúrio, garantia financeira prévia para recuperação de área degradada e responsabilidade solidária de quem compra o minério.",
+          "role": "context",
+          "interpretation": "O trecho define condições territoriais, comunitárias e ambientais para aproveitamento mineral, mas não identifica a nacionalidade das empresas autorizadas a extrair."
+        },
+        {
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil.",
+          "role": "context",
+          "interpretation": "A admissão condicionada de investimento estrangeiro é geral e não especifica extração mineral nem participação de empresa estrangeira na lavra."
+        }
+      ],
+      "search_terms": [
+        "minerais estratégicos",
+        "minério",
+        "mineração",
+        "garimpo",
+        "lavra",
+        "aproveitamento mineral",
+        "empresa estrangeira",
+        "investimento estrangeiro",
+        "setor estratégico"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "A proximidade temática entre investimento estrangeiro estratégico e mineração não autoriza concluir que o primeiro alcance a extração mineral. A pergunta exige esse vínculo específico.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe auditoria da dívida pública nem suspensão dos pagamentos durante uma auditoria.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "dívida pública",
+        "dívida interna",
+        "dívida externa",
+        "auditoria da dívida",
+        "auditoria",
+        "suspensão de pagamentos",
+        "serviço da dívida",
+        "credor"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Referências a responsabilidade fiscal, financiamento e obrigações financeiras não estabelecem a sequência específica de auditoria e interrupção temporária dos pagamentos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano declara uma estratégia de crescimento sem expansão do gasto e exige estimativas pela Lei de Responsabilidade Fiscal, mas não propõe uma regra normativa que limite o crescimento das despesas federais. Objetivo político e estimativa de impacto não equivalem ao limite perguntado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "A aposta econômica desta candidatura está declarada: crescer reduzindo atrito, não expandindo gasto.",
+          "role": "context",
+          "interpretation": "A frase descreve a estratégia econômica do plano, sem criar ou manter uma regra legal, índice ou mecanismo limitador do crescimento da despesa federal."
+        }
+      ],
+      "search_terms": [
+        "crescimento das despesas",
+        "limite de despesas",
+        "regra fiscal",
+        "arcabouço fiscal",
+        "teto de gastos",
+        "gasto público",
+        "despesa pública",
+        "responsabilidade fiscal",
+        "espaço fiscal"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "O apoio a um piso constitucional de defesa e a exigência de impacto orçamentário tratam de vinculação setorial e responsabilidade na apresentação de projetos, não de uma regra geral de crescimento da despesa.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não nomeia a Petrobras nem decide a manutenção de seu controle acionário federal. A única referência ao pré-sal aparece como justificativa para capacidade de defesa nacional.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "Petrobras",
+        "Petrobrás",
+        "petróleo",
+        "pré-sal",
+        "controle acionário",
+        "controle estatal",
+        "empresa estatal",
+        "privatização"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Energia renovável, indústria de defesa, conteúdo nacional e proteção do pré-sal não determinam quem deve controlar a Petrobras.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano manda registrar atrasos injustificados na avaliação funcional e tratá-los como infração disciplinar por desídia. Não afirma que baixo desempenho comprovado em avaliações periódicas autoriza a demissão de servidor estável com direito de defesa; a referência a permanência no cargo se limita a cargo em comissão de dirigente.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Atraso reiterado e sem justificativa aceita entra na avaliação funcional do servidor e caracteriza infração disciplinar por desídia, na forma da Lei nº 8.112/1990.",
+          "role": "context",
+          "interpretation": "O trecho define apuração de uma conduta específica, mas não enuncia demissão por baixo desempenho em avaliação periódica nem as garantias do processo perguntado."
+        },
+        {
+          "page": 19,
+          "quote": "O dirigente máximo do órgão responde por índice de descumprimento acima do limite fixado em regulamento, com efeito sobre gratificação de desempenho e sobre a permanência no cargo em comissão.",
+          "role": "counterevidence",
+          "interpretation": "A consequência expressa sobre permanência alcança cargo em comissão, vínculo distinto da estabilidade abrangida pela pergunta."
+        }
+      ],
+      "search_terms": [
+        "servidor estável",
+        "estabilidade",
+        "baixo desempenho",
+        "avaliação funcional",
+        "avaliação periódica",
+        "demissão",
+        "exoneração",
+        "desídia",
+        "processo disciplinar",
+        "direito de defesa",
+        "permanência no cargo"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "O protocolo da versão 2 exige que a avaliação possa levar à demissão do servidor estável. Avaliação, desídia e responsabilização sem essa consequência explícita são insuficientes.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe gratuidade universal do transporte coletivo urbano municipal nem repasse federal para financiá-la. A agenda de transportes se concentra em logística de cargas e ferrovias.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "transporte coletivo",
+        "transporte público",
+        "transporte urbano",
+        "tarifa zero",
+        "passe livre",
+        "gratuidade",
+        "mobilidade urbana",
+        "ônibus",
+        "repasse federal"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Autorização ferroviária, frete e infraestrutura logística não tratam da prestação municipal de transporte coletivo de passageiros nem de tarifa universal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe mercado regulado de carbono, negociação obrigatória de créditos ou instrumento equivalente. A referência climática concreta é adaptação pela defesa civil.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 47,
+          "quote": "Adaptação climática com foco em defesa civil, incluindo a proteção de animais em desastres prevista na Lei nº 15.355/2026.",
+          "role": "context",
+          "interpretation": "A medida climática localizada trata de adaptação a desastres, sem criar mercado, limite de emissões ou negociação de créditos de carbono."
+        }
+      ],
+      "search_terms": [
+        "mercado de carbono",
+        "crédito de carbono",
+        "carbono",
+        "emissões",
+        "gases de efeito estufa",
+        "clima",
+        "mudança climática"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Matriz renovável, combate ao desmatamento ilegal e adaptação climática são políticas ambientais relacionadas, mas não respondem ao instrumento econômico regulado perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não trata de sistemas de inteligência artificial de alto risco nem de obrigações preventivas antes de seu uso.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "inteligência artificial",
+        "IA de alto risco",
+        "alto risco",
+        "algoritmo",
+        "avaliação de risco",
+        "supervisão humana",
+        "registro de sistema"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Digitalização estatal, integração de dados, LGPD e defesa cibernética não estabelecem regulação preventiva de IA de alto risco.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prevê mutirões diagnósticos e cirúrgicos contratualizados por resultado, mas não identifica clínicas ou hospitais privados, insuficiência da capacidade pública como gatilho ou compra complementar de capacidade privada pelo SUS.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 34,
+          "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada.",
+          "role": "context",
+          "interpretation": "O trecho define a forma de pagamento do mutirão, sem informar a natureza pública ou privada do prestador contratado."
+        }
+      ],
+      "search_terms": [
+        "SUS",
+        "rede privada",
+        "clínica privada",
+        "hospital privado",
+        "prestador privado",
+        "capacidade ociosa",
+        "capacidade insuficiente",
+        "contratualização",
+        "mutirão",
+        "procedimento"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Contratualizar resultado pode ocorrer com prestadores de diferentes naturezas e não prova, sozinho, compra complementar de atendimento privado quando a rede pública não comportar a demanda.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe manutenção parcial e temporária de benefício de transferência de renda após ingresso em emprego formal. Formalização do trabalho é um efeito esperado da reforma tributária, sem regra de transição para beneficiários.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "transferência de renda",
+        "Bolsa Família",
+        "CadÚnico",
+        "beneficiário",
+        "benefício",
+        "emprego formal",
+        "carteira assinada",
+        "transição do benefício",
+        "redução gradual"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Bolsas de pesquisa e esporte, financiamento habitacional e transição tributária têm públicos e objetos diferentes da transferência de renda perguntada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não oferece cuidado domiciliar por profissionais ou equipes a idosos e pessoas com deficiência com alto grau de dependência.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "cuidado domiciliar",
+        "atenção domiciliar",
+        "assistência domiciliar",
+        "idoso",
+        "pessoa com deficiência",
+        "alta dependência",
+        "dependência",
+        "cuidador",
+        "residência"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Atenção primária, saúde da família, acessibilidade de paratletas e habitação não equivalem a serviço de cuidado realizado no domicílio para o público definido.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "Ao definir a atuação federal na alfabetização, o plano vincula expressamente apoio técnico e financeiro a resultados medidos em avaliação externa. Isso estabelece que recursos federais destinados às redes nessa política dependam do resultado de aprendizagem, sem condicionar todo o financiamento educacional.",
+      "conditions": [
+        "A condicionalidade é apresentada para a política federal de alfabetização na idade certa.",
+        "O plano não define percentual dos recursos, fórmula da condição nem solução completa para compatibilizar a condição com o socorro às redes que pioram."
+      ],
+      "evidence": [
+        {
+          "page": 36,
+          "quote": "O que acrescentamos é condicionalidade: apoio técnico e financeiro vinculado a resultado aferido em avaliação externa, e não apenas a adesão formal do ente.",
+          "role": "support",
+          "interpretation": "O trecho liga diretamente apoio financeiro federal à rede de alfabetização a resultado educacional medido externamente."
+        },
+        {
+          "page": 36,
+          "quote": "A União não administra escola de ensino fundamental. Vale dizer isso de saída, porque metade das promessas de campanha em educação é feita por quem não tem a caneta. O que a Presidência faz é financiar, avaliar, induzir e formar. É a isso que este eixo se limita.",
+          "role": "context",
+          "interpretation": "O enquadramento confirma que o apoio financeiro condicionado é instrumento da União para as redes, conforme o objeto federal da pergunta."
+        }
+      ],
+      "search_terms": [
+        "recursos federais",
+        "apoio técnico e financeiro",
+        "cofinanciamento federal",
+        "metas de aprendizagem",
+        "resultado educacional",
+        "avaliação externa",
+        "alfabetização",
+        "condicionalidade",
+        "rede de ensino"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Avaliação de aptidão física, metas de cursos técnicos e condições esportivas são instrumentos distintos. A evidência suficiente vem da política de alfabetização. A frase de que redes que pioram precisam ser socorridas revela uma lacuna de desenho, mas não desfaz a condicionalidade expressa.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe reduzir a jornada semanal legal de trabalho sem redução salarial.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "jornada semanal",
+        "redução da jornada",
+        "horas semanais",
+        "escala 6 por 1",
+        "6x1",
+        "redução salarial",
+        "sem redução de salário",
+        "carga horária"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Desoneração da folha, formalização e carga horária escolar não mudam a duração legal da jornada de trabalho.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não trata da descriminalização do aborto voluntário em qualquer prazo gestacional.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "aborto",
+        "aborto voluntário",
+        "gestação",
+        "prazo gestacional",
+        "descriminalização",
+        "interrupção da gravidez",
+        "direitos reprodutivos"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "As políticas de saúde do plano tratam de atenção primária, filas e insumos, sem decisão penal sobre aborto voluntário.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe aplicar o regime penal adulto a adolescentes de 16 e 17 anos por qualquer crime. Programas territoriais para juventude e endurecimento da custódia de lideranças de facções não alteram a idade penal.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "maioridade penal",
+        "16 anos",
+        "17 anos",
+        "adolescente",
+        "juventude",
+        "regime penal adulto",
+        "responsabilidade penal",
+        "crime grave"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "A expressão crimes graves aparece em contexto de evidência sobre maus-tratos e violência, sem relação com responsabilização penal de adolescentes.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe reconhecimento facial em espaços públicos para localizar foragidos. Seu diagnóstico sobre mandados em bases desconectadas e suas propostas de integração de dados não especificam captura de imagens ou comparação facial.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "reconhecimento facial",
+        "foragido",
+        "procurado",
+        "câmera",
+        "imagem",
+        "biometria facial",
+        "videomonitoramento",
+        "espaço público",
+        "mandado"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Interoperabilidade de cadastros, Sinesp e defesa cibernética podem apoiar segurança, mas não autorizam inferir o instrumento biométrico e a finalidade específicos da pergunta.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não cita os BRICS nem decide se o Brasil deve permanecer no grupo. A avaliação caso a caso em foros multilaterais e a rejeição de alinhamento automático são compatíveis tanto com permanecer quanto com sair.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada.",
+          "role": "context",
+          "interpretation": "O plano anuncia que deixa decisões externas específicas em aberto, o que impede atribuir posição sobre permanência nos BRICS."
+        },
+        {
+          "page": 52,
+          "quote": "Posição brasileira em foro multilateral definida caso a caso, por conveniência nacional declarada, e não por alinhamento automático.",
+          "role": "context",
+          "interpretation": "O critério geral de atuação multilateral não estabelece permanência ou saída de um grupo determinado."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "bloco",
+        "foro multilateral",
+        "multilateral",
+        "alinhamento",
+        "permanência",
+        "saída do bloco"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Não se interpreta a ausência de alinhamento automático como saída, oposição ou neutralidade explícita sobre os BRICS.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona o acordo Mercosul–União Europeia nem avalia seu texto final. A exigência geral de abertura de mercado para assinar acordos não informa se esse acordo específico satisfaz o critério e deve ser ratificado.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 52,
+          "quote": "Acordo comercial que não abre mercado para produto brasileiro não é assinado. Acesso se troca por acesso.",
+          "role": "context",
+          "interpretation": "O trecho fixa um critério geral de negociação, sem aplicar esse critério ao texto final do acordo Mercosul–União Europeia."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo Mercosul-União Europeia",
+        "acordo comercial",
+        "texto final",
+        "ratificação",
+        "reciprocidade",
+        "mercado europeu"
+      ],
+      "searched_page_ranges": [[1, 58]],
+      "counterevidence_or_limits": "Rastreabilidade para o regulamento europeu e diplomacia sanitária tratam de acesso a mercados, mas não decidem a ratificação do acordo comercial perguntado.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

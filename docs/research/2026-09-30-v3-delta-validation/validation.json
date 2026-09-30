@@ -1,0 +1,184 @@
+{
+  "schema_version": 1,
+  "approved_questions": 4,
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "completed_reviews": 13,
+  "valid_reviews": 13,
+  "answers": 52,
+  "quote_occurrences": 107,
+  "valid": true,
+  "results": [
+    {
+      "candidate_id": "280002538811",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 8,
+      "counts": {
+        "DISCORDA": 1,
+        "NAO_ENCONTRADA": 2,
+        "CONCORDA": 1
+      },
+      "review_sha256": "ea4efa4e1bff395d153d48b3ccd456ca0cc7b478a1067c96906b88284a9ef585",
+      "markdown_sha256": "0d7e25cbc6fb4019bb47ba37a39a289f91061dfaa5826366971959be1f1d9b58"
+    },
+    {
+      "candidate_id": "280002539826",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 9,
+      "counts": {
+        "CONCORDA": 2,
+        "NAO_ENCONTRADA": 2
+      },
+      "review_sha256": "feaccc31171ab3e795956adaaf9decccd573e5344f34b04a7e57def3d90e092e",
+      "markdown_sha256": "56f1303ebeccfdf56730f8e0980aaacef8c3849b2cff920809306f74ccb3b526"
+    },
+    {
+      "candidate_id": "280002540694",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 8,
+      "counts": {
+        "CONCORDA": 3,
+        "DISCORDA": 1
+      },
+      "review_sha256": "9e009cea49aeb348761edd9187bd644b85d4e5e60291fe2b5561eb0e77b2ed44",
+      "markdown_sha256": "9dd6a6664709df97d05fdde04c0d875a6c53a6d1aadc35d6c1c05093bc3883ae"
+    },
+    {
+      "candidate_id": "280002541457",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 11,
+      "counts": {
+        "DISCORDA": 1,
+        "CONCORDA": 2,
+        "NAO_ENCONTRADA": 1
+      },
+      "review_sha256": "a5b4aaf96320fb82d82512afe70bfd6f6d8e8a437eeb8ac98828f5ca102dbfaa",
+      "markdown_sha256": "cafb3bacda27674f9a96fec6f7fbda179b85b9d740fd013974e71cc436c9843f"
+    },
+    {
+      "candidate_id": "280002542548",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 9,
+      "counts": {
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 2,
+        "NAO_ENCONTRADA": 1
+      },
+      "review_sha256": "9219e0ed0163a3571cbca6f622249f722621ee9cd09363b6bcdcd8b111f4d1a5",
+      "markdown_sha256": "030e613fd2587910c3f8ddc79406f1e598d14660f0cfe104bdec5de25ecfbd17"
+    },
+    {
+      "candidate_id": "280002548139",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 7,
+      "counts": {
+        "CONDICIONAL_OU_MISTA": 1,
+        "NAO_ENCONTRADA": 3
+      },
+      "review_sha256": "f817d19a74ecf59741a7efe0b5ccc754c046b52986a78018d5631f237423d9e9",
+      "markdown_sha256": "3a112e4bb69aa9a5883a139e1d68b0401dc541677aa7bcfa9ad02052b591b1ef"
+    },
+    {
+      "candidate_id": "280002551544",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 9,
+      "counts": {
+        "CONCORDA": 3,
+        "NAO_ENCONTRADA": 1
+      },
+      "review_sha256": "124945b74f6c2b46efe3a491b943c4f79f9da8f0e13285f0a95c6cfb2cb2c623",
+      "markdown_sha256": "337f99183c02d7c812a9f0a08334da3bb25a89ec170d7f9180ad7c5397ddf43b"
+    },
+    {
+      "candidate_id": "280002551547",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 10,
+      "counts": {
+        "CONCORDA": 3,
+        "NAO_ENCONTRADA": 1
+      },
+      "review_sha256": "834ef8d848051c8d54b25ae87abb563c6aaa6b1de387f21595aa2e7a7b83f6d9",
+      "markdown_sha256": "17f9d10c28e6246f8d505c834d95e8a931a622e00b40a23cb2cee28361f54455"
+    },
+    {
+      "candidate_id": "280002551932",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 6,
+      "counts": {
+        "CONCORDA": 3,
+        "NAO_ENCONTRADA": 1
+      },
+      "review_sha256": "62df240d63a4c39723b967123cb9ec19450d0388d7871989ec8798a8ff9824b1",
+      "markdown_sha256": "1923627240cdc7c80c549c9932522e190369d0ecae3182f9215c6789832649c3"
+    },
+    {
+      "candidate_id": "280002551975",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 4,
+      "counts": {
+        "DISCORDA": 1,
+        "NAO_ENCONTRADA": 2,
+        "CONDICIONAL_OU_MISTA": 1
+      },
+      "review_sha256": "93a7e2df295f719d281e6f8b2419a52857c3aa6c5a93d17f986d96f70574615c",
+      "markdown_sha256": "be3e6092ea51d08baeed316a9308570939a2bd8043000743bd2f4fec12564e77"
+    },
+    {
+      "candidate_id": "280002552484",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 10,
+      "counts": {
+        "CONCORDA": 1,
+        "NAO_ENCONTRADA": 3
+      },
+      "review_sha256": "4095f3bc194e4fc534f402d6dcce9ff491b1fc85307ed9d72f07bcdc168c151f",
+      "markdown_sha256": "8090cea9d8573fce7cd74f69a0356abd8d1a9f3f261507f29fee742df2ad54bf"
+    },
+    {
+      "candidate_id": "280002552487",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 8,
+      "counts": {
+        "NAO_ENCONTRADA": 4
+      },
+      "review_sha256": "b271f8a142b532abb8d40c075438f8b49b31b569b1aa0b091b29b107b1b2e77b",
+      "markdown_sha256": "fa8b3ad33794f10f1890c82efd5144856df8a705befb02dda31cd41285e734a5"
+    },
+    {
+      "candidate_id": "280002554479",
+      "status": "valid",
+      "errors": [],
+      "answers": 4,
+      "quotes": 8,
+      "counts": {
+        "NAO_ENCONTRADA": 2,
+        "CONCORDA": 2
+      },
+      "review_sha256": "94b3e6cc1c45f089e597cbef8c4c53ffab6c71e19a211fc83cd51348c4756504",
+      "markdown_sha256": "7a1ef149497221f71ba0d3983a86f9c2ec88f25fce8cf9c4344be9152432c50e"
+    }
+  ]
+}

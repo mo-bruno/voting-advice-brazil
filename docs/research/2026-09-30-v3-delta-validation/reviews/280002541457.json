@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002541457",
+  "candidate_name": "Hertz Dias",
+  "context_owner_agent_id": "/root/plan_hertz",
+  "executor_agent_id": "/root/delta_hertz",
+  "document_sha256": "1868565fb0d5de77d40a982a1be07dc7f44f7af7565ee3b40d93b31407d31468",
+  "questions_sha256": "15ef3d20483ef301a296ea238b7e875be9d96fba9f50050307ca30f3b1681751",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002541457.json",
+    "../2026-09-29-thematic-profiles/profiles/280002541457.md",
+    "../2026-09-29-thematic-profiles/profiles/280002541457.checkpoint.json",
+    "../2026-09-29-approved-full-battery-validation/reviews/280002541457.json"
+  ],
+  "method": "Reidratei o contexto específico das quatro fontes registradas para /root/plan_hertz: perfil JSON, perfil legível, checkpoint da leitura temática e parecer completo da bateria v2. Confirmei que o PDF oficial reconstruído tem 33 páginas físicas e SHA-256 idêntico ao documento do contexto anterior. Em seguida li as 33 páginas do plano e pesquisei integralmente as extrações raw-pages.json e layout-pages.json com termos exatos, variantes e objetos próximos das quatro teses. Reli nas duas representações todas as páginas citadas e conferi literalmente as transcrições, mantendo distintos concessões, PPPs e provisão estatal; capacidade nacional de IA e propriedade; cotas raciais no serviço público e cotas em outros universos; e câmeras corporais, vigilância no trabalho e reconhecimento facial.",
+  "revisited_pages": [
+    6,
+    8,
+    10,
+    13,
+    14,
+    19,
+    21,
+    25,
+    28,
+    29
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "FB-Q23",
+      "question_version": 1,
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "classification": "DISCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano rejeita os instrumentos privados perguntados no alcance relevante. Na seção que inclui transporte entre os serviços públicos, apresenta as PPPs como parte do modelo que transfere recursos públicos a grandes empresas. No capítulo específico de transporte, caracteriza concessões de metrôs, estradas e ferrovias como mercantilização da mobilidade e determina estatizar os sistemas urbanos e reverter concessões privadas. Embora proponha ampliar e integrar a rede, escolhe provisão estatal, direção incompatível com usar concessões e PPPs para essa ampliação.",
+      "conditions": [
+        "O programa não separa expressamente competências federais, estaduais e municipais; seu alcance geral como programa presidencial e a menção a estradas e ferrovias sustentam a aplicação federal por implicação clara.",
+        "A crítica às PPPs aparece no enquadramento conjunto de saúde, educação, moradia, transporte público e aposentadoria; as medidas específicas do transporte rejeitam concessões e operação privada.",
+        "A ampliação da rede é proposta dentro de um modelo estatal e não foi convertida em apoio a concessões, PPPs ou subsídios a empresas privadas."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Hoje, esses direitos são atacados por um modelo que transforma tudo em mercadoria. A privatização, as Parcerias Público-Privadas (PPPs,) a precarização e o subfinanciamento transferem recursos públicos para grandes empresas, enquanto a população paga mais caro por serviços piores.",
+          "role": "opposition",
+          "interpretation": "No bloco que inclui transporte público entre os serviços tratados, o plano apresenta as PPPs como mecanismo de mercantilização e transferência de recursos, não como instrumento a adotar para expandir a infraestrutura."
+        },
+        {
+          "page": 13,
+          "quote": "Avançam processos de privatização e concessão de metrôs, estradas e ferrovias, aprofundando a mercantilização da mobilidade.",
+          "role": "opposition",
+          "interpretation": "A avaliação negativa alcança concessões nos modais de transporte pertinentes à tese, inclusive estradas e ferrovias."
+        },
+        {
+          "page": 14,
+          "quote": "Estatização dos sistemas de transporte urbano e reversão das concessões privadas",
+          "role": "opposition",
+          "interpretation": "A medida operacional escolhe propriedade estatal e reversão das concessões existentes, regra incompatível com ampliar o transporte por novas concessões privadas."
+        },
+        {
+          "page": 14,
+          "quote": "Ampliação e integração da rede (ônibus, metrô, trem)",
+          "role": "context",
+          "interpretation": "O plano quer ampliar a rede, mas insere essa expansão imediatamente após as propostas de transporte estatal e reversão das concessões."
+        }
+      ],
+      "search_terms": [
+        "concessão",
+        "concessões",
+        "parceria público-privada",
+        "Parcerias Público-Privadas",
+        "PPP",
+        "PPPs",
+        "privatização",
+        "transporte público",
+        "infraestrutura",
+        "metrôs",
+        "estradas",
+        "ferrovias",
+        "ampliação da rede"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "counterevidence_or_limits": "O plano prevê um plano nacional de obras e fundos públicos para expansão de infraestrutura, além de ampliar a rede de ônibus, metrô e trem. Esses compromissos confirmam o objetivo de expansão, mas os instrumentos definidos são empresa pública, fundos públicos, estatização e reversão de concessões. As referências a PPPs em saúde e educação reforçam a direção geral, mas não foram usadas isoladamente para responder sobre transportes.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q24",
+      "question_version": 1,
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano determina desenvolver inteligência artificial no país sob controle estatal e, no programa de soberania digital, manda construir uma base tecnológica própria articulada a universidades e institutos públicos. A proposta culmina em uma inteligência artificial pública nacional financiada por excedentes de empresas estratégicas expropriadas. Isso responde diretamente ao investimento federal em pesquisa, infraestrutura e desenvolvimento de capacidade nacional de IA.",
+      "conditions": [
+        "O modelo escolhido é público e submetido a controle de trabalhadores, mas a tese não exige propriedade privada, pública ou cooperativa.",
+        "O financiamento viria dos excedentes de empresas estratégicas expropriadas; o plano não fixa montante, cronograma, arquitetura ou capacidade computacional.",
+        "A possibilidade de adquirir estrategicamente tecnologias maduras não contradiz o desenvolvimento nacional de IA, que o texto exige de forma específica."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Tecnologias que concentram décadas de conhecimento acumulado, como os semicondutores, poderão ser adquiridas estrategicamente; já aquelas oriundas do desenvolvimento técnico recente – como a inteligência artificial e suas aplicações em plataformas de comércio, transporte e serviços – deverão ser desenvolvidas sob controle do Estado, com a participação organizada dos trabalhadores que as produzem, dos trabalhadores autônomos e das pequenas empresas que delas dependem.",
+          "role": "support",
+          "interpretation": "A proposta exige desenvolvimento estatal de inteligência artificial e de suas aplicações, em vez de se limitar à adoção de sistemas existentes."
+        },
+        {
+          "page": 28,
+          "quote": "O país deve utilizar os excedentes das empresas estratégicas expropriadas para construir uma base tecnológica própria, articulada às universidades públicas, aos institutos de pesquisa, sob controle dos conselhos de trabalhadores que produzem e utilizam essas ferramentas.",
+          "role": "support",
+          "interpretation": "O compromisso combina financiamento nacional, infraestrutura própria e pesquisa pública para formar capacidade tecnológica no Brasil."
+        },
+        {
+          "page": 28,
+          "quote": "Desenvolvimento de uma inteligência artificial pública nacional, financiada por excedentes de empresas estratégicas expropriadas, com uso obrigatório na gestão e em empresas públicas e como opção subsidiada às diversas modalidades de trabalho por plataformas e aos consumidores em geral.",
+          "role": "support",
+          "interpretation": "A medida nomeia diretamente desenvolvimento, caráter nacional e fonte de financiamento da capacidade de IA."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "modelos de linguagem",
+        "base tecnológica própria",
+        "infraestrutura digital",
+        "infraestrutura de dados",
+        "soberania digital",
+        "universidades públicas",
+        "institutos de pesquisa",
+        "algoritmos",
+        "automação"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "counterevidence_or_limits": "O plano permite adquirir tecnologias maduras, mas separa explicitamente esse caso da IA recente, que deverá ser desenvolvida sob controle estatal. Não há orçamento, cronograma, desenho de modelos, infraestrutura computacional quantificada ou regra de exclusão de tecnologias estrangeiras; nenhum desses detalhes é exigido pela tese.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q25",
+      "question_version": 1,
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "No programa específico para a população negra, o plano propõe manter e ampliar cotas para negros nos serviços públicos. Em outra passagem, define concurso público como a via para novas contratações no serviço público. A leitura conjunta sustenta reserva racial de vagas no ingresso por concursos públicos, inclusive federais no alcance geral do programa presidencial, embora a frase das cotas não repita literalmente a expressão concursos públicos federais.",
+      "conditions": [
+        "O plano não fixa percentual, procedimento de verificação, carreiras abrangidas, duração ou transição da reserva.",
+        "A ligação com concursos resulta da leitura conjunta das cotas para negros nos serviços públicos e do concurso público para novas contratações; por isso a força é implicação clara.",
+        "As cotas trans em concursos públicos da página 25 têm outro critério e não foram usadas para preencher a tese racial."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Manutenção e ampliação de cotas para negros nas universidades e serviços públicos",
+          "role": "support",
+          "interpretation": "A proposta estabelece ação afirmativa por critério racial para ingresso no serviço público, além do universo universitário."
+        },
+        {
+          "page": 8,
+          "quote": "Revogação da lei das terceirizações. Fim da terceirização, salário igual para trabalho igual e direitos para todos os trabalhadores. Incorporação dos trabalhadores terceirizados no quadro efetivo do serviço público e realização de concurso público para novas contratações.",
+          "role": "context",
+          "interpretation": "O plano identifica o concurso público como a forma de realizar novas contratações no serviço público ao qual aplica as cotas raciais."
+        }
+      ],
+      "search_terms": [
+        "cotas",
+        "cotas para negros",
+        "racial",
+        "raça",
+        "negros",
+        "população negra",
+        "ações afirmativas",
+        "serviço público",
+        "serviços públicos",
+        "concurso público",
+        "concursos públicos",
+        "reserva de vagas",
+        "novas contratações"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "counterevidence_or_limits": "A evidência decisiva não é a cota universitária nem a cota trans: é a manutenção e ampliação de cotas para negros nos serviços públicos, lida com a regra de concurso para novas contratações. O texto não nomeia separadamente a esfera federal, mas sua proposta geral não cria exceção para ela e integra um programa para a Presidência.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 2,
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe câmeras corporais para agentes de segurança e proíbe vigilância digital invasiva no trabalho, mas não menciona reconhecimento facial, identificação facial, biometria ou comparação de imagens captadas em espaços públicos com bases de identificação para fins de segurança. Os instrumentos próximos têm objeto e alcance diferentes, e o silêncio não permite atribuir apoio ou rejeição.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 19,
+          "quote": "Implantação de câmeras corporais para todos os agentes de segurança pública, com gravação ininterrupta e armazenamento das imagens sob controle de órgãos civis, garantindo acesso às gravações quando houver processo legal.",
+          "role": "context",
+          "interpretation": "As câmeras registram a atividade dos agentes; o trecho não compara rostos com bases de identificação nem estabelece reconhecimento facial em espaços públicos."
+        },
+        {
+          "page": 29,
+          "quote": "Proibição de sistemas invasivos de vigilância digital e de monitoramento opaco de desempenho, assegurando transparência e controle social sobre todas as ferramentas digitais utilizadas no trabalho.",
+          "role": "counterevidence",
+          "interpretation": "A proibição é expressamente delimitada às ferramentas digitais usadas no trabalho e ao monitoramento de desempenho; ela não decide o uso de reconhecimento facial para segurança em espaços públicos."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "identificação facial",
+        "biometria facial",
+        "biometria",
+        "comparação de imagens",
+        "espaços públicos",
+        "videomonitoramento",
+        "câmeras",
+        "imagens",
+        "vigilância",
+        "monitoramento",
+        "segurança pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "counterevidence_or_limits": "Câmeras corporais, investigação e inteligência financeira não equivalem a reconhecimento facial. A vedação a vigilância digital invasiva é restrita ao monitoramento no trabalho e não foi ampliada para segurança pública. A busca integral não encontrou reconhecimento ou identificação facial, biometria, videomonitoramento facial nem integração de imagens com bases de identidade.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

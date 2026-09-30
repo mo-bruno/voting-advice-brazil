@@ -36,6 +36,7 @@ class CandidatePosition:
     theme_slug: str
     theme_name: str
     position: str
+    analytical_position: str | None
     justification: str | None
     quote: str | None
     source_ref: str | None = None

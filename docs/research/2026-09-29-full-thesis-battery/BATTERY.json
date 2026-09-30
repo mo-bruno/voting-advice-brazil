@@ -1,0 +1,935 @@
+{
+  "schema_version": 1,
+  "battery_id": "full-battery-human-review-v3",
+  "battery_version": 3,
+  "status": "approved",
+  "item_count": 20,
+  "approved_anchor_count": 4,
+  "pending_item_count": 0,
+  "response_buttons": [
+    "Concordo",
+    "Discordo",
+    "Neutro",
+    "Pular"
+  ],
+  "published_theses_used": false,
+  "candidate_validation_dispatched": false,
+  "selection_note": "O conjunto foi derivado dos 636 registros e 118 famílias. O tamanho resulta da revisão editorial, sem cota rígida por categoria. Contagens do mapa são apenas pistas de busca, não respostas de candidatos.",
+  "removed_after_human_review": [
+    {
+      "id": "FB-Q09",
+      "previous_version": 1,
+      "previous_wording_sha256": "dfc23818f258a734242d5c3397d7521d977365081bce3ad4eace4c103fb2a723",
+      "statement": "Os serviços de água e esgoto devem poder ser concedidos a empresas privadas.",
+      "reason": "A redação mede uma decisão do titular local ou interfederativo do serviço, sem recortar uma ação própria do governo federal."
+    },
+    {
+      "id": "FB-Q20",
+      "previous_version": 1,
+      "previous_wording_sha256": "45ed9c0f7011fe7e7c81dbea2308097b94888bc1f577bf3a662197e46c08c3c2",
+      "statement": "Lideranças de facções criminosas devem cumprir pena separadamente dos demais presos, em unidades de segurança máxima.",
+      "reason": "A redação descreve em grande parte uma regra jurídica e uma prática já existentes, reduzindo sua utilidade como escolha política discriminante."
+    }
+  ],
+  "items": [
+    {
+      "id": "B01-Q01",
+      "display_number": 1,
+      "version": 1,
+      "status": "approved_anchor",
+      "anchor_approved": true,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "explanation": "A cobrança seria sobre patrimônios de valor muito elevado. Esta afirmação não define o valor mínimo para cobrança nem a alíquota.",
+      "decision_object": "Existência de um imposto sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "family_ids": [
+        "E03"
+      ],
+      "measurement_risks": [
+        "Grandes fortunas não tem limiar único nos registros; Hertz explicita patrimônio a partir de R$ 1 bilhão. A aprovação desta redação será apenas da escolha geral. Se o limiar for decisivo para o usuário ou para um plano, o item deve ser refinado ou permanecer condicional.",
+        "Criar esse imposto não equivale a tributar heranças, dividendos, toda renda alta ou todo patrimônio.",
+        "A existência de outras propostas tributárias em um plano não prova rejeição a este imposto."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 12,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "A família tributária é ampla, mas a subdecisão sobre grandes fortunas aparece em recorte menor.",
+        "label": "hipótese editorial"
+      },
+      "source_drafts": [
+        "BLOCK_01.json",
+        "coverage-review.json"
+      ],
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "B01-Q02",
+      "display_number": 2,
+      "version": 1,
+      "status": "approved_anchor",
+      "anchor_approved": true,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "explanation": "Linhas de crédito são programas de empréstimo. Aqui, os setores atendidos seriam escolhidos pela política industrial do governo.",
+      "decision_object": "Existência de crédito direcionado a setores da indústria escolhidos pela política pública.",
+      "category_id": "economia_desenvolvimento",
+      "family_ids": [
+        "E06",
+        "E07"
+      ],
+      "measurement_risks": [
+        "A frase não determina subsídio aos juros, fonte pública exclusiva do dinheiro, percentual de empréstimos ou escolha de uma empresa específica.",
+        "Reduzir gradualmente linhas subsidiadas não significa necessariamente rejeitar toda linha direcionada. O registro de Zema é um alerta para essa distinção, não uma resposta atribuída.",
+        "Contrapartidas, prazos e critérios de prioridade precisam acompanhar a classificação posterior.",
+        "Financiamento universal a todas as empresas não resolve por si a seleção setorial."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 20,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "Há bastante material sobre crédito e política industrial, mas garantia, subsídio, participação acionária e crédito direcionado precisam permanecer separados.",
+        "label": "hipótese editorial"
+      },
+      "source_drafts": [
+        "BLOCK_01.json",
+        "coverage-review.json"
+      ],
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "B01-Q03",
+      "display_number": 3,
+      "version": 1,
+      "status": "approved_anchor",
+      "anchor_approved": true,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "explanation": "A pergunta trata da extração de minerais considerados estratégicos para a indústria e a tecnologia. A participação estrangeira poderia ter condições e limites.",
+      "decision_object": "Admissão de participação empresarial estrangeira na extração de minerais estratégicos.",
+      "category_id": "economia_desenvolvimento",
+      "family_ids": [
+        "E05",
+        "E07"
+      ],
+      "measurement_risks": [
+        "Concordar permite participação condicionada; não significa abertura irrestrita. Se a condição muda o posicionamento, ela precisa aparecer no registro posterior.",
+        "Atrair capital para transformar minerais não comprova autorização para extraí-los: o registro de Flavio é contexto relacionado, sem resposta presumida.",
+        "Reestatizar ativos já entregues ao exterior não estabelece sozinho toda a política de futuros investimentos.",
+        "Minerais estratégicos não recebem lista exaustiva nesta redação. O termo e eventuais exceções precisam ser testados."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 19,
+        "family_candidate_ids": 12,
+        "band": "medium",
+        "basis": "As famílias têm grande alcance indexado, mas atração de capital para processamento não resolve automaticamente a permissão para extração.",
+        "label": "hipótese editorial"
+      },
+      "source_drafts": [
+        "BLOCK_01.json",
+        "coverage-review.json"
+      ],
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "B01-Q04",
+      "display_number": 4,
+      "version": 1,
+      "status": "approved_anchor",
+      "anchor_approved": true,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "explanation": "Auditoria é uma investigação das contas e dos contratos da dívida. A afirmação trata de interromper os pagamentos durante a investigação, sem decidir pelo cancelamento definitivo da dívida.",
+      "decision_object": "Interrupção de pagamentos da dívida pública durante uma auditoria.",
+      "category_id": "economia_desenvolvimento",
+      "family_ids": [
+        "E02"
+      ],
+      "measurement_risks": [
+        "A redação abrange os pagamentos de forma geral. Suspensão restrita a grandes investidores não equivale automaticamente a apoio à interrupção geral.",
+        "No plano de Samara, a suspensão é imediata e a auditoria vem em seguida; a sequência não deve ser apagada.",
+        "Cancelar dívidas com determinados credores não é sinônimo de uma suspensão temporária durante auditoria.",
+        "Não há afirmação de que a dívida seja ilegítima ou de que uma auditoria provará irregularidades."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "A família é pequena, mas os quatro vínculos tratam diretamente de suspensão, auditoria, reestruturação ou cancelamento.",
+        "label": "hipótese editorial"
+      },
+      "source_drafts": [
+        "BLOCK_01.json",
+        "coverage-review.json"
+      ],
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q05",
+      "source_draft_id": "CR-Q05",
+      "display_number": 5,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "explanation": "A afirmação pergunta se esse limite deve existir. Ela não escolhe uma lei, um índice de correção, uma meta de resultado nem um limite para a dívida.",
+      "decision_object": "Existência de limite normativo ao crescimento da despesa federal.",
+      "category_id": "economia_desenvolvimento",
+      "family_ids": [
+        "E01"
+      ],
+      "measurement_risks": [
+        "A formulação geral perde diferenças entre limite de gasto, meta de resultado e limite de dívida.",
+        "Manter alguma regra não significa manter uma lei nominal nem aceitar desvinculação de pisos."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 10,
+        "band": "high",
+        "basis": "E01 reúne manutenção, substituição e revogação de regras, além de metas e limites de gasto.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "regra fiscal",
+        "crescimento das despesas públicas"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q06",
+      "source_draft_id": "CR-Q06",
+      "display_number": 6,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "explanation": "A afirmação trata de manter o governo federal como acionista controlador. Ela não exige propriedade integral, monopólio no setor, integração de refinarias ou reestatização de outras empresas.",
+      "decision_object": "Manutenção do controle acionário federal da Petrobras.",
+      "category_id": "estado_gestao",
+      "family_ids": [
+        "G01"
+      ],
+      "measurement_risks": [
+        "Setor estratégico é um conceito aberto.",
+        "Permanecer sob controle estatal não resolve reestatização de empresa já privatizada.",
+        "Controle acionário, monopólio e integração produtiva são decisões distintas."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 7,
+        "family_candidate_ids": 6,
+        "band": "medium",
+        "basis": "G01 contém privatização ampla, desestatização caso a caso, reestatização e controle integral de empresas nomeadas.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "setor estratégico",
+        "controle do Estado"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q07",
+      "source_draft_id": "CR-Q07",
+      "display_number": 7,
+      "version": 2,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "explanation": "A afirmação pergunta se o baixo desempenho pode ser motivo legal para demissão. Ela não torna a demissão automática e não abrange cargos temporários, remuneração por mérito nem demissão sem processo.",
+      "decision_object": "Permissão legal para demitir servidor estável por baixo desempenho comprovado, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "family_ids": [
+        "G07"
+      ],
+      "measurement_risks": [
+        "Avaliar desempenho não implica desligar.",
+        "Recuperação profissional, recurso e critérios objetivos podem ser condições decisivas.",
+        "Vínculos futuros e servidores atuais não devem ser confundidos."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 9,
+        "band": "medium",
+        "basis": "A família tem amplo material sobre estabilidade e avaliação, mas poucos registros especificam a consequência de desligamento.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "servidor estável",
+        "avaliações repetidas",
+        "baixo desempenho"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
+      ],
+      "revision_history": {
+        "previous_version": 1,
+        "previous_wording_sha256": "4fea5e6441d0e4ba9cffb4969e56a62c7d06f2060f7a13062523090963656a02",
+        "reason": "Substitui a construção 'deve poder' por uma ação legal direta e preserva avaliação, prova e defesa."
+      },
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q23",
+      "version": 1,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "explanation": "Concessões e parcerias público-privadas permitem que empresas participem do financiamento, da construção ou da operação de projetos. A afirmação não exige esse modelo em toda obra nem implica privatizar empresas públicas.",
+      "decision_object": "Uso federal de concessões e parcerias público-privadas na ampliação da infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "family_ids": [
+        "T01",
+        "T04"
+      ],
+      "measurement_risks": [
+        "Concessão, parceria público-privada, autorização e privatização de empresa são instrumentos diferentes.",
+        "Apoio a capital privado em um projeto não prova adesão a esse modelo em toda a infraestrutura.",
+        "Estatização ou reversão de concessões só constitui oposição quando alcança a infraestrutura de transportes perguntada."
+      ],
+      "reach_hypothesis": "Sete planos documentam concessões ou parcerias na infraestrutura; planos que defendem estatização ou reversão podem fornecer oposição, sujeita a reclassificação.",
+      "display_number": 8,
+      "status": "approved",
+      "anchor_approved": false,
+      "source_drafts": [
+        "EDITORIAL_ADJUDICATION.md"
+      ],
+      "revision_history": {
+        "previous_id": "FB-Q08",
+        "previous_version": 2,
+        "previous_wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+        "reason": "A versão atual combina gratuidade universal e financiamento federal e teve cobertura de 1/13. A alternativa expressa uma decisão federal recorrente e potencialmente contrastante."
+      },
+      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+        "user_message": "sim",
+        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+      }
+    },
+    {
+      "id": "FB-Q10",
+      "source_draft_id": "CR-Q11",
+      "display_number": 9,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "explanation": "Mercado regulado de carbono é um sistema obrigatório para os setores abrangidos: cada emissor deve cumprir regras sobre suas emissões e pode negociar créditos conforme normas públicas. A afirmação não define os setores, os limites nem a distribuição inicial dos créditos.",
+      "decision_object": "Existência de mercado de carbono regulado pelo poder público.",
+      "category_id": "meio_ambiente_clima",
+      "family_ids": [
+        "A03"
+      ],
+      "measurement_risks": [
+        "Mercado regulado, créditos voluntários, tributo ambiental e pagamento por serviços ambientais são instrumentos diferentes.",
+        "Apoio ao instrumento pode depender de mensuração, integridade e repartição de receitas."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 8,
+        "family_candidate_ids": 6,
+        "band": "medium",
+        "basis": "A03 reúne mercado regulado, mercado voluntário, tributação de emissões e pagamento por conservação.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "mercado regulado de carbono",
+        "crédito de carbono"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q24",
+      "version": 1,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "explanation": "Capacidade nacional inclui pesquisa, infraestrutura e desenvolvimento de modelos de inteligência artificial no Brasil. A afirmação não define se a execução será pública, privada ou cooperativa nem exige excluir tecnologias estrangeiras.",
+      "decision_object": "Investimento federal no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "family_ids": [
+        "I05"
+      ],
+      "measurement_risks": [
+        "Capacidade nacional não significa propriedade estatal, uso obrigatório ou proibição de modelos estrangeiros.",
+        "Difusão de sistemas existentes sem desenvolvimento nacional não responde integralmente à tese.",
+        "Laboratório, infraestrutura computacional, pesquisa e modelos nacionais são instrumentos distintos que podem sustentar a mesma direção geral."
+      ],
+      "reach_hypothesis": "Cinco planos documentam alguma forma de capacidade nacional de inteligência artificial, sujeita a reclassificação no escopo exato.",
+      "display_number": 10,
+      "status": "approved",
+      "anchor_approved": false,
+      "source_drafts": [
+        "EDITORIAL_ADJUDICATION.md"
+      ],
+      "revision_history": {
+        "previous_id": "FB-Q11",
+        "previous_version": 1,
+        "previous_wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+        "reason": "A regulação preventiva teve cobertura de 2/13 e nenhum apoio integral; cinco planos documentam capacidade nacional de IA por instrumentos distintos."
+      },
+      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+        "user_message": "sim",
+        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+      }
+    },
+    {
+      "id": "FB-Q12",
+      "source_draft_id": "CR-Q14",
+      "display_number": 11,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "explanation": "A afirmação prevê a compra complementar de consultas, exames, leitos ou procedimentos. Ela não transfere a gestão de unidades públicas nem exige contratação permanente.",
+      "decision_object": "Contratação complementar de capacidade assistencial privada pelo SUS.",
+      "category_id": "bem_estar_social",
+      "family_ids": [
+        "B02"
+      ],
+      "measurement_risks": [
+        "Compra de procedimentos e gestão privada de unidade pública são objetos diferentes.",
+        "Ociosidade, necessidade, prazo e tipo de atendimento podem ser condições decisivas.",
+        "Contratação por resultado não identifica necessariamente a natureza do prestador."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 9,
+        "family_candidate_ids": 7,
+        "band": "high",
+        "basis": "B02 contém compra de capacidade privada, contratação por resultado, reajuste de tabela e alternativas de expansão pública.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "capacidade da rede pública",
+        "contratação complementar"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q25",
+      "version": 1,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "explanation": "A reserva separa parte das vagas de concursos federais para grupos raciais definidos pela política pública. A afirmação não fixa percentual, procedimento de verificação nem duração da medida.",
+      "decision_object": "Reserva de vagas por critério racial em concursos públicos federais.",
+      "category_id": "cidadania_direitos",
+      "family_ids": [
+        "C05"
+      ],
+      "measurement_risks": [
+        "Cotas em universidades, empresas privadas e eleições não respondem automaticamente a concursos públicos federais.",
+        "Cotas para pessoas com deficiência ou por identidade de gênero não substituem uma posição sobre critério racial.",
+        "Abolição geral das cotas pode constituir oposição quando seu alcance inclui o serviço público."
+      ],
+      "reach_hypothesis": "Quatro planos apresentam apoio potencial no serviço público e um plano rejeita cotas em geral; o contraste requer reclassificação uniforme.",
+      "display_number": 12,
+      "status": "approved",
+      "anchor_approved": false,
+      "source_drafts": [
+        "EDITORIAL_ADJUDICATION.md"
+      ],
+      "revision_history": {
+        "previous_id": "FB-Q13",
+        "previous_version": 1,
+        "previous_wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+        "reason": "A versão atual reproduz em grande parte a Regra de Proteção vigente do Bolsa Família. A alternativa tem competência federal clara e contraste documental preliminar."
+      },
+      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+        "user_message": "sim",
+        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+      }
+    },
+    {
+      "id": "FB-Q14",
+      "source_draft_id": "CR-Q16",
+      "display_number": 13,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "explanation": "Cuidado domiciliar é o atendimento realizado na residência por profissionais ou equipes de apoio. A afirmação não substitui automaticamente centros-dia, acolhimento ou apoio financeiro à família.",
+      "decision_object": "Oferta pública de cuidado domiciliar para pessoas com alta dependência.",
+      "category_id": "bem_estar_social",
+      "family_ids": [
+        "B09"
+      ],
+      "measurement_risks": [
+        "Serviço domiciliar, renda do cuidador, tecnologia assistiva e acolhimento institucional não são equivalentes.",
+        "Alto grau de dependência precisa de definição operacional.",
+        "Oferta pública não esclarece se a execução será direta ou contratada."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 8,
+        "family_candidate_ids": 8,
+        "band": "medium",
+        "basis": "B09 tem amplo material sobre redes de cuidado, mas atendimento domiciliar intensivo é uma modalidade específica.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "cuidado domiciliar",
+        "alto grau de dependência"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q15",
+      "source_draft_id": "CR-Q17",
+      "display_number": 14,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "explanation": "A afirmação vincula uma parte do financiamento ao resultado educacional medido. Ela não determina retirar todo o recurso de redes vulneráveis nem escolhe um único exame.",
+      "decision_object": "Condicionamento parcial de recursos educacionais a metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "family_ids": [
+        "D03"
+      ],
+      "measurement_risks": [
+        "Avaliar aprendizagem não implica condicionar recursos.",
+        "Metas, bônus, manutenção de cursos e apoio a redes com pior desempenho são instrumentos diferentes.",
+        "A proporção condicionada e a proteção de redes vulneráveis podem ser decisivas."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 14,
+        "family_candidate_ids": 9,
+        "band": "high",
+        "basis": "D03 reúne avaliação, metas, incentivos e alocação de recursos, além de salvaguardas para redes vulneráveis.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "metas de aprendizagem",
+        "parte dos recursos federais"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q16",
+      "source_draft_id": "CR-Q19",
+      "display_number": 15,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "explanation": "A afirmação pergunta pela direção da mudança na jornada legal, sem fixar se o novo limite será de 40, 36, 35 ou 30 horas.",
+      "decision_object": "Redução da jornada semanal legal sem redução de salário.",
+      "category_id": "cidadania_direitos",
+      "family_ids": [
+        "C01"
+      ],
+      "measurement_risks": [
+        "Fim da escala 6 por 1 e limite semanal de horas são decisões separáveis.",
+        "A redação ampla aumenta alcance, mas perde a diferença entre limites numéricos.",
+        "Redução condicionada a produtividade pode exigir classificação condicional."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 9,
+        "family_candidate_ids": 5,
+        "band": "medium",
+        "basis": "C01 concentra propostas de redução de jornada e fim da escala 6 por 1, com diferentes números e transições.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "jornada semanal",
+        "sem redução salarial"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q17",
+      "source_draft_id": "CR-Q21",
+      "display_number": 16,
+      "version": 2,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "explanation": "A afirmação pergunta se deve existir um prazo gestacional em que o aborto voluntário não tenha punição criminal. Ela não define esse prazo, a forma de atendimento nem as regras clínicas.",
+      "decision_object": "Descriminalização do aborto voluntário até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "family_ids": [
+        "C07"
+      ],
+      "measurement_risks": [
+        "Descriminalização, legalização e oferta pelo sistema público são decisões separáveis.",
+        "A ausência de prazo gestacional nos registros não autoriza interpretar alcance irrestrito.",
+        "O item deve permanecer mesmo com alcance baixo somente se o usuário valorizar o contraste substantivo."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 5,
+        "family_candidate_ids": 3,
+        "band": "low",
+        "basis": "C07 reúne poucos registros e também contém licenças parentais, que não aumentam o alcance desta decisão.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "descriminalização"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
+      ],
+      "revision_history": {
+        "previous_version": 1,
+        "previous_wording_sha256": "ee2bff21023ff7e0fe973f7305ee3ddb2df134f621a620696f1fbaafd024858b",
+        "reason": "Usa o termo comum 'aborto' para reduzir custo de interpretação sem incorporar justificativa moral."
+      },
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q18",
+      "source_draft_id": "CR-Q22",
+      "display_number": 17,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "explanation": "A afirmação propõe aplicar o regime penal adulto a adolescentes de 16 e 17 anos em todos os crimes. Ela não altera as medidas socioeducativas para menores de 16 anos.",
+      "decision_object": "Aplicação geral do regime penal adulto a partir dos 16 anos.",
+      "category_id": "seguranca_publica",
+      "family_ids": [
+        "S04"
+      ],
+      "measurement_risks": [
+        "Redução geral e redução apenas para crimes enumerados têm alcances diferentes.",
+        "Crime grave precisa de definição ou exemplos neutros.",
+        "Hipóteses abaixo de 16 anos em alguns registros não cabem nesta redação."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 6,
+        "family_candidate_ids": 6,
+        "band": "high",
+        "basis": "Todos os vínculos de S04 tratam diretamente de manter ou reduzir a idade penal, com alcance geral ou restrito.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "responder criminalmente como adulto",
+        "crime grave"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q19",
+      "version": 2,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "explanation": "A afirmação admite comparar imagens captadas em espaços públicos com bases de identificação para ações de segurança. Ela não dispensa regras de finalidade, privacidade, auditoria, precisão, armazenamento ou supervisão.",
+      "decision_object": "Uso de reconhecimento facial em espaços públicos para finalidades de segurança.",
+      "category_id": "seguranca_publica",
+      "family_ids": [
+        "S08"
+      ],
+      "measurement_risks": [
+        "Câmeras corporais, integração de bases e drones não equivalem a reconhecimento facial.",
+        "Uma proposta restrita a finalidade ou local específico pode exigir classificação condicional.",
+        "Ausência de salvaguardas no plano não autoriza afirmar que a candidatura as rejeita."
+      ],
+      "reach_hypothesis": "Cinco planos documentam reconhecimento facial ou identificação por inteligência artificial na segurança, sujeita ao escopo exato.",
+      "display_number": 18,
+      "status": "approved",
+      "anchor_approved": false,
+      "source_drafts": [
+        "EDITORIAL_ADJUDICATION.md"
+      ],
+      "revision_history": {
+        "previous_id": "FB-Q19",
+        "previous_version": 1,
+        "previous_wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+        "reason": "A finalidade restrita a pessoas foragidas teve cobertura de 2/13; cinco planos documentam algum uso de reconhecimento facial ou identificação por IA na segurança."
+      },
+      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+        "user_message": "sim",
+        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+      }
+    },
+    {
+      "id": "FB-Q21",
+      "source_draft_id": "CR-Q25",
+      "display_number": 19,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "explanation": "A afirmação trata da permanência do Brasil no grupo. Ela não exige apoiar toda decisão do bloco nem impede relações com outros países e organizações.",
+      "decision_object": "Permanência do Brasil no BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "family_ids": [
+        "R04"
+      ],
+      "measurement_risks": [
+        "Permanecer não significa fortalecer o bloco.",
+        "Sair do grupo não significa romper comércio com seus membros.",
+        "Aproximação com outras instituições não é oposição automática à permanência."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "R04 contém saída, permanência pragmática, fortalecimento e atuação simultânea com aproximação a outras instituições.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "BRICS"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    },
+    {
+      "id": "FB-Q22",
+      "source_draft_id": "CR-Q26",
+      "display_number": 20,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "explanation": "Ratificar é concluir a aprovação interna necessária para que o acordo produza efeitos para o Brasil. A afirmação não implica apoiar outros acordos nem impede relações comerciais com outros parceiros.",
+      "decision_object": "Ratificação do texto final do acordo Mercosul-União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "family_ids": [
+        "R03"
+      ],
+      "measurement_risks": [
+        "Diversificar comércio com países europeus não decide o acordo específico.",
+        "Criticar cláusulas não equivale automaticamente a rejeitar qualquer versão revisada.",
+        "Reciprocidade pode ser condição decisiva."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 7,
+        "family_candidate_ids": 7,
+        "band": "high",
+        "basis": "R03 reúne crítica ao acordo, valorização de sua conclusão, reciprocidade e diversificação comercial.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "entrada em vigor",
+        "acordo Mercosul-União Europeia"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
+    }
+  ],
+  "approved_item_count": 20,
+  "approval_record": "APPROVAL.json",
+  "approved_at": "2026-09-30T02:26:05.632133+00:00",
+  "candidate_validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json",
+  "candidate_validation_status": "partial_from_v2_four_items_require_reclassification",
+  "validated_unchanged_item_count": 16,
+  "items_requiring_reclassification": [
+    "FB-Q23",
+    "FB-Q24",
+    "FB-Q25",
+    "FB-Q19"
+  ],
+  "prior_battery": "BATTERY_V2.json",
+  "prior_approval": "APPROVAL_V2.json",
+  "replaced_after_plan_validation": [
+    {
+      "display_number": 8,
+      "previous_id": "FB-Q08",
+      "previous_version": 2,
+      "replacement_id": "FB-Q23",
+      "replacement_version": 1
+    },
+    {
+      "display_number": 10,
+      "previous_id": "FB-Q11",
+      "previous_version": 1,
+      "replacement_id": "FB-Q24",
+      "replacement_version": 1
+    },
+    {
+      "display_number": 12,
+      "previous_id": "FB-Q13",
+      "previous_version": 1,
+      "replacement_id": "FB-Q25",
+      "replacement_version": 1
+    },
+    {
+      "display_number": 18,
+      "previous_id": "FB-Q19",
+      "previous_version": 1,
+      "replacement_id": "FB-Q19",
+      "replacement_version": 2
+    }
+  ]
+}

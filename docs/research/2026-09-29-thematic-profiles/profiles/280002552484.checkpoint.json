@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "agent_id": "/root/plan_clariana",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002552484.json",
+  "status": "complete",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "reinspection_log": [
+    {
+      "pages": [
+        1,
+        2,
+        5,
+        6,
+        13,
+        14,
+        15
+      ],
+      "purpose": "Conferir caráter programático, arquitetura, economia, infraestrutura, conectividade, organização estatal e cronograma; leitura contextual temática aproveitando o diário integral anterior, sem declarar nova leitura integral."
+    },
+    {
+      "pages": [
+        3,
+        4,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "purpose": "Conferir instrumentos e públicos da proteção, educação, segurança e saúde; todas as páginas acabaram revisitadas por grupos temáticos, sem simular uma nova leitura integral sequencial."
+    }
+  ],
+  "categories_completed": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Economia terá escolhas de simplificação/pequenos negócios e revisão de gastos; não inferir desenho de banco ou regra fiscal.",
+    "Estado terá governo digital, avaliação de programas, integridade, servidores e federalismo, com condições jurídicas preservadas.",
+    "Energia e inovação geral têm apenas objetivos; não inventar fonte energética, política ambiental ou instrumentos de pesquisa.",
+    "Cooperação internacional contra tráfico pertence à segurança; não convertê-la em política diplomática.",
+    "Plano contém escolhas operacionais, mas não metas quantitativas finais; preservar nota metodológica p1 e cronograma geral p15.",
+    "Rede de atendimento a vítimas é Bem-Estar; repressão ao crime é Segurança; autonomia econômica feminina e proteção de crianças são Direitos.",
+    "Esporte fica em Educação, Cultura e Sociedade, com referência secundária a Bem-Estar; tecnologia de serviço permanece na categoria do serviço.",
+    "Presença prevista: sete categorias substantivas, CTI somente objetivos gerais, Meio Ambiente e Soberania sem decisões próprias.",
+    "Não atribuir ensino integral; nenhuma inferência de rótulos ideológicos; nenhuma nova fonte ou plano consultado."
+  ],
+  "pending": [],
+  "positions_count": 30,
+  "category_presence": {
+    "substantive": 7,
+    "not_addressed": 2,
+    "general_only": 1
+  },
+  "thesis_seeds_count": 8,
+  "validation_status": "passed",
+  "validation_command": "python docs/research/2026-09-29-thematic-profiles/validate.py --candidate 280002552484",
+  "validation_result": {
+    "candidate_id": "280002552484",
+    "name": "Clariana Barao",
+    "status": "submitted",
+    "valid": true,
+    "errors": [],
+    "same_original_agent": true,
+    "category_count": 10,
+    "category_presence": {
+      "substantive": 7,
+      "not_addressed": 2,
+      "general_only": 1
+    },
+    "positions": 30,
+    "support_levels": {
+      "explicit_proposal": 27,
+      "general_goal": 3
+    },
+    "thesis_seeds": 8,
+    "revisited_pages": 15,
+    "quote_matches": {
+      "layout": 93
+    },
+    "profile_sha256": "201fdcc3ac8af03306609b436546ac2a72e5efc0c9648bf17e99ca81bbd57991",
+    "markdown_sha256": "acd4d4968386747f03af3e6645766ec5e46721908a04f2f136ce608c26924293"
+  }
+}

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'core/analytics/analytics_consent_controller.dart';
 import 'core/analytics/analytics_dependencies.dart';
@@ -93,7 +94,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       navigatorKey: _navigatorKey,
       scaffoldMessengerKey: _scaffoldMessengerKey,
-      title: 'Farol Político',
+      title:
+          kIsWeb ? 'Farol Político | Quiz presidencial 2026' : 'Farol Político',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
       // O `builder` intercepta a construção de TODAS as telas e aplica uma
@@ -141,7 +143,8 @@ class _MyAppState extends State<MyApp> {
               politicianFollowEnabled: featureFlags.politicianFollowEnabled,
               pageBuilders: widget.pageBuilders,
               initialTab: MainShell.tabFromArguments(
-                ModalRoute.of(context)?.settings.arguments,
+                ModalRoute.of(context)?.settings.arguments ??
+                    (kIsWeb ? Uri.base : null),
               ),
             ),
         '/quiz': (context) => QuizPage(iotEnabled: featureFlags.iotEnabled),

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 13,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002538811",
+      "name": "Samara",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 67,
+      "pages_logged": 67,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 7,
+        "CONCORDA": 6,
+        "NAO_ENCONTRADA": 3
+      },
+      "quote_matches": {
+        "layout": 4,
+        "raw": 5,
+        "raw_dedup": 13
+      },
+      "visual_check_count": 21,
+      "review_sha256": "104efcfac1530173e9560bf31535ea0b095a8892a9cfe17710590c146af6d1ba"
+    },
+    {
+      "candidate_id": "280002539826",
+      "name": "Zema",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 81,
+      "pages_logged": 81,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 6,
+        "CONCORDA": 6,
+        "DISCORDA": 4
+      },
+      "quote_matches": {
+        "layout": 19
+      },
+      "visual_check_count": 5,
+      "review_sha256": "59a6ecb0e6c8de74a25d1366f9082db0351fa2dc83a42d0fd87f3f8dec38c789"
+    },
+    {
+      "candidate_id": "280002540694",
+      "name": "Renan Santos",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 51,
+      "pages_logged": 51,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 3,
+        "NAO_ENCONTRADA": 10,
+        "CONCORDA": 3
+      },
+      "quote_matches": {
+        "layout": 16
+      },
+      "visual_check_count": 22,
+      "review_sha256": "d754c5d9d9f11742ebbf9e2167621e30a5f07961fb47024baa5db48c008c362c"
+    },
+    {
+      "candidate_id": "280002541457",
+      "name": "Hertz Dias",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 33,
+      "pages_logged": 33,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 14,
+        "divergent": 2
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 7,
+        "DISCORDA": 7,
+        "CONCORDA": 2
+      },
+      "quote_matches": {
+        "layout": 30
+      },
+      "visual_check_count": 10,
+      "review_sha256": "a90a032df1dce8f3b9ba2055ceb456f79322a2d045691baaf0a45a6c0584ca82"
+    },
+    {
+      "candidate_id": "280002542548",
+      "name": "Lula",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 84,
+      "pages_logged": 84,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 15,
+        "divergent": 1
+      },
+      "categories": {
+        "CONCORDA": 4,
+        "DISCORDA": 3,
+        "NAO_ENCONTRADA": 9
+      },
+      "quote_matches": {
+        "layout": 25
+      },
+      "visual_check_count": 7,
+      "review_sha256": "9408d9bfb5265b98bfc306e6f3a9cfe5cc4b05f7924cd13a8a60116b7907f47f"
+    },
+    {
+      "candidate_id": "280002548139",
+      "name": "Veterinário Wilson Grassi",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 58,
+      "pages_logged": 58,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 15,
+        "DISCORDA": 1
+      },
+      "quote_matches": {
+        "layout": 6
+      },
+      "visual_check_count": 11,
+      "review_sha256": "2dbdec6b5598de092622a8141abfaf15744b63a85bc90408ce84301f7d5325cc"
+    },
+    {
+      "candidate_id": "280002551544",
+      "name": "Flavio Bolsonaro",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 76,
+      "pages_logged": 76,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 5,
+        "CONDICIONAL_OU_MISTA": 1,
+        "CONCORDA": 4,
+        "NAO_ENCONTRADA": 6
+      },
+      "quote_matches": {
+        "layout": 20
+      },
+      "visual_check_count": 7,
+      "review_sha256": "7fa54cb756a54aff30fb174eae3ea71c69b532199c616e1d0d90172285b9fc83"
+    },
+    {
+      "candidate_id": "280002551547",
+      "name": "Escritor Augusto Cury",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 200,
+      "pages_logged": 200,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 15,
+        "divergent": 1
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 15,
+        "DISCORDA": 1
+      },
+      "quote_matches": {
+        "layout": 23
+      },
+      "visual_check_count": 26,
+      "review_sha256": "11610826791ac3875eb8ad01e5b4c9e06efe164bdfad9d0f0fc8aa4b3e89d467"
+    },
+    {
+      "candidate_id": "280002551932",
+      "name": "Ronaldo Caiado",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 100,
+      "pages_logged": 100,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 9,
+        "DISCORDA": 4,
+        "CONCORDA": 3
+      },
+      "quote_matches": {
+        "layout": 28,
+        "raw": 1
+      },
+      "visual_check_count": 20,
+      "review_sha256": "264180b0151ac4b9c11a8c6eae06badbeb8a4a219580317ab692db430b2941de"
+    },
+    {
+      "candidate_id": "280002551975",
+      "name": "Edmilson Costa",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 16,
+      "pages_logged": 16,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "DISCORDA": 7,
+        "CONCORDA": 5,
+        "NAO_ENCONTRADA": 4
+      },
+      "quote_matches": {
+        "layout": 29
+      },
+      "visual_check_count": 4,
+      "review_sha256": "97e397608c9647dd17402a3a69bc34115ad28f7428ad502c297ab8e3653e020f"
+    },
+    {
+      "candidate_id": "280002552484",
+      "name": "Clariana Barao",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 15,
+      "pages_logged": 15,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 16
+      },
+      "quote_matches": {
+        "layout": 28
+      },
+      "visual_check_count": 1,
+      "review_sha256": "96ecbbfd1d8852122d0025c9583fc76cb49b92a901e30974fcb0b667e1cf28e5"
+    },
+    {
+      "candidate_id": "280002552487",
+      "name": "Rui Costa Pimenta",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 7,
+      "pages_logged": 7,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 14,
+        "divergent": 2
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 12,
+        "DISCORDA": 2,
+        "CONCORDA": 2
+      },
+      "quote_matches": {
+        "layout": 26,
+        "raw": 1
+      },
+      "visual_check_count": 7,
+      "review_sha256": "21153acfb34634203617f9e63d3fba950deb4521e8f37fd998ac9264f3776a11"
+    },
+    {
+      "candidate_id": "280002554479",
+      "name": "Leonardo Avalanche",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 48,
+      "pages_logged": 48,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 16
+      },
+      "categories": {
+        "NAO_ENCONTRADA": 13,
+        "DISCORDA": 2,
+        "CONCORDA": 1
+      },
+      "quote_matches": {
+        "layout": 18
+      },
+      "visual_check_count": 9,
+      "review_sha256": "7e7521a7160390776d21df9902b89b9158a2760660b5b51c32363ed42bdf4fc4"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

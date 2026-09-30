@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "candidate_count": 13,
+  "evidence_source": "fresh_official_archive_extraction",
+  "archive_sha256": "73f0ae3b70ddab983d4afbed7ff2c0cc5aa051e599036465a9be1526936effb0",
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "profiles": [
+    {
+      "candidate_id": "280002538811",
+      "name": "Samara",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 51,
+      "support_levels": {
+        "explicit_proposal": 48,
+        "explicit_rejection": 3
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 43,
+      "quote_matches": {
+        "raw_dedup": 43,
+        "raw": 4,
+        "layout": 19
+      },
+      "profile_sha256": "156068a63c25085dae91cf1f26cbce562b30d847fffe7de3b51a6e593b932180",
+      "markdown_sha256": "c4c886dd01e260d399244938dfcbcb045ead41c532358bb1cee5245b8961c6e1"
+    },
+    {
+      "candidate_id": "280002539826",
+      "name": "Zema",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 58,
+      "support_levels": {
+        "explicit_proposal": 57,
+        "explicit_rejection": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 42,
+      "quote_matches": {
+        "layout": 69
+      },
+      "profile_sha256": "549810646b5670dbb3ef16b03dd91e6795cb323ebb0c964536fe06cdc1ad91d2",
+      "markdown_sha256": "c45b0427d96720aae8d1157d7cad3e3246a5f27277ec52a6bdeb457d7da47da9"
+    },
+    {
+      "candidate_id": "280002540694",
+      "name": "Renan Santos",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 47,
+      "support_levels": {
+        "explicit_proposal": 47
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 28,
+      "quote_matches": {
+        "layout": 86
+      },
+      "profile_sha256": "f601db4a8eb76ce597291b10f2a57fac80b669e963a92844c31c1d301690507c",
+      "markdown_sha256": "2d914fdd4b6d8cdd6a73463a3ef9dd6f8304c2b73a98fa4de37014fee84049c8"
+    },
+    {
+      "candidate_id": "280002541457",
+      "name": "Hertz Dias",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 58,
+      "support_levels": {
+        "explicit_proposal": 51,
+        "explicit_rejection": 4,
+        "general_goal": 2,
+        "clear_implication": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 27,
+      "quote_matches": {
+        "layout": 112
+      },
+      "profile_sha256": "6612146ff9e225533762e921af5623822f40f21c7bffbd20954e81ffc1b5085f",
+      "markdown_sha256": "c147c6c8a169446129b76c3192a80e0d9c2f64bc728340443b9428ee485a2d91"
+    },
+    {
+      "candidate_id": "280002542548",
+      "name": "Lula",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 52,
+      "support_levels": {
+        "explicit_proposal": 51,
+        "general_goal": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 53,
+      "quote_matches": {
+        "layout": 78
+      },
+      "profile_sha256": "f25d18fcd7d759252a07a6d1efe142f019b9cb8196ed865bfd7ff2f71d8f1c72",
+      "markdown_sha256": "e6259087d64bb8a5705acf0ffea6cb659d8307c346252737eb502b57ba03520c"
+    },
+    {
+      "candidate_id": "280002548139",
+      "name": "Veterinário Wilson Grassi",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 49,
+      "support_levels": {
+        "explicit_proposal": 48,
+        "explicit_rejection": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 43,
+      "quote_matches": {
+        "layout": 97
+      },
+      "profile_sha256": "8a3e5ced7159a6cfa38bdb319f48d3edeaf7c55286d1f6c24ccd912201dd343b",
+      "markdown_sha256": "ae53a00a862174496aad266aed0280c3f63e52b0c50c3f93afcea27bff982fc3"
+    },
+    {
+      "candidate_id": "280002551544",
+      "name": "Flavio Bolsonaro",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 52,
+      "support_levels": {
+        "explicit_proposal": 51,
+        "general_goal": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 54,
+      "quote_matches": {
+        "layout": 74
+      },
+      "profile_sha256": "77ae389896b928ba85cba4d3fda711305a832450e8d611c863579d440f6372cd",
+      "markdown_sha256": "6733b6883f233cc5ead926e6583ab32981068fcde0915ed6dd675b4e813d9afe"
+    },
+    {
+      "candidate_id": "280002551547",
+      "name": "Escritor Augusto Cury",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 45,
+      "support_levels": {
+        "explicit_proposal": 43,
+        "explicit_rejection": 1,
+        "general_goal": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 68,
+      "quote_matches": {
+        "layout": 82
+      },
+      "profile_sha256": "434fbdc3c5adb444852b165c02cbc7ce7715458579090b7e6e43e56be36a9bbe",
+      "markdown_sha256": "c72e5b3d3680959e4c646e91daec7261acf4b1bb174ce7a39b03d544cec41335"
+    },
+    {
+      "candidate_id": "280002551932",
+      "name": "Ronaldo Caiado",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 46,
+      "support_levels": {
+        "explicit_proposal": 45,
+        "explicit_rejection": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 50,
+      "quote_matches": {
+        "layout": 75
+      },
+      "profile_sha256": "da1f500fc08ba254667b8c9a61c25f1644a9744258fbc4c3e07240729c6bd883",
+      "markdown_sha256": "bbc084d3a41e13cfca8b44a5266c70ce3f87a0545484e52edfacf362ba9f650b"
+    },
+    {
+      "candidate_id": "280002551975",
+      "name": "Edmilson Costa",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 61,
+      "support_levels": {
+        "explicit_proposal": 59,
+        "explicit_rejection": 2
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 14,
+      "quote_matches": {
+        "layout": 92
+      },
+      "profile_sha256": "ab25816c0b73f72de5bdbb834ec683ed089e206756791002cc60aa397b2e2194",
+      "markdown_sha256": "bd5a4293aca7838a41b9cc610bbe73064d2ea6522a60831275289401d0691f2b"
+    },
+    {
+      "candidate_id": "280002552484",
+      "name": "Clariana Barao",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 7,
+        "not_addressed": 2,
+        "general_only": 1
+      },
+      "positions": 30,
+      "support_levels": {
+        "explicit_proposal": 27,
+        "general_goal": 3
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 15,
+      "quote_matches": {
+        "layout": 93
+      },
+      "profile_sha256": "201fdcc3ac8af03306609b436546ac2a72e5efc0c9648bf17e99ca81bbd57991",
+      "markdown_sha256": "acd4d4968386747f03af3e6645766ec5e46721908a04f2f136ce608c26924293"
+    },
+    {
+      "candidate_id": "280002552487",
+      "name": "Rui Costa Pimenta",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 9,
+        "not_addressed": 1
+      },
+      "positions": 44,
+      "support_levels": {
+        "explicit_proposal": 41,
+        "general_goal": 2,
+        "explicit_rejection": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 7,
+      "quote_matches": {
+        "layout": 60,
+        "raw": 1
+      },
+      "profile_sha256": "797dbbd489c9b27f7398acf4fe13a51738800d32913b07d17c9b66dc09905eb6",
+      "markdown_sha256": "51e2c2923ec2bea34b7f4af23fa6eb46f7342337b61878043c62ba17229b5c22"
+    },
+    {
+      "candidate_id": "280002554479",
+      "name": "Leonardo Avalanche",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "same_original_agent": true,
+      "category_count": 10,
+      "category_presence": {
+        "substantive": 10
+      },
+      "positions": 43,
+      "support_levels": {
+        "explicit_proposal": 42,
+        "general_goal": 1
+      },
+      "thesis_seeds": 8,
+      "revisited_pages": 40,
+      "quote_matches": {
+        "layout": 73
+      },
+      "profile_sha256": "191390ee7daf7effb9bb10b6809e7ea59fea9fab1f4cfaee56edc0038c493e3d",
+      "markdown_sha256": "3aba0a919246f4c48f390fe3aec28b2159f525d5c8c9f7e41a6f0fc8007f4f12"
+    }
+  ],
+  "caveat": "Checks provenance, structure and literal evidence. Does not prove semantic interpretation, ideology or questionnaire validity."
+}

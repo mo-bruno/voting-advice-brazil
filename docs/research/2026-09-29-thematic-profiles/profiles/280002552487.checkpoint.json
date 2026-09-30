@@ -1,0 +1,1227 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552487",
+  "candidate_name": "Rui Costa Pimenta",
+  "agent_id": "/root/plan_rui",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002552487.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "status": "complete",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "categories_completed": [
+    "economia_desenvolvimento",
+    "estado_gestao",
+    "infraestrutura_territorio",
+    "meio_ambiente_clima",
+    "ciencia_tecnologia_inovacao",
+    "bem_estar_social",
+    "educacao_cultura_sociedade",
+    "cidadania_direitos",
+    "seguranca_publica",
+    "soberania_relacoes_internacionais"
+  ],
+  "decisions": [
+    "Reutilizada leitura integral anterior; a rodada atual registra reinspeções, sem alegar nova leitura integral.",
+    "Salários, jornada e proteção contra demissões serão tratados como direitos trabalhistas; benefícios de renda em Bem-Estar Social.",
+    "Não inferir integração produtiva da Petrobras/refinarias nem substituição do Bolsa Família por trabalho.",
+    "Reforma agrária será principal em Infraestrutura; tribunais em Estado; regras partidárias e eleitorais em Cidadania.",
+    "Há escolhas de terra/moradia, formação médica e gestão educacional além das 16 teses antigas.",
+    "Amazônia é abordada como soberania e controle territorial: não atribuir automaticamente política ambiental.",
+    "Oposição a terceirização de vínculos de servidores não resolve a gestão de todas as unidades de saúde.",
+    "Meio Ambiente e Clima será not_addressed: a Amazônia é tratada como soberania/exploração, sem decisão identificável de conservação/clima.",
+    "Citações do desenho do Judiciário sustentam decisões distintas de extinguir STF e eleger juízes; as sementes usarão somente uma decisão por frase.",
+    "44 posições editoriais distintas; uma categoria principal por posição e referências secundárias sem duplicação.",
+    "Cidadania e Direitos reúne 8 posições: exceção de síntese necessária para preservar direitos trabalhistas, imprensa, partidos e greve sem aglutinar escolhas independentes.",
+    "Soberania distingue rejeição explícita de ingerência e apoio genérico a povos; não deduz atos diplomáticos específicos.",
+    "Convenção final do orquestrador aplicada: P02 propriedade bancária em Estado; P14 direitos territoriais indígenas em Cidadania; reforma agrária permanece em Infraestrutura.",
+    "Exceções justificadas após reagrupamento: 7 posições em Estado e 9 em Cidadania, todas com contagem única."
+  ],
+  "pending": [],
+  "positions_draft": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Limites fiscais",
+      "statement": "O plano propõe acabar com o teto de gastos e com a Lei de Responsabilidade Fiscal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Extinção dos instrumentos fiscais nomeados.",
+      "scope": "Teto de gastos, LRF e congelamento de gastos atribuído ao governo Temer.",
+      "conditions": [
+        "Não identifica o arcabouço da LC 200/2023; não se transfere a rejeição para uma lei distinta."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Fim do teto de gastos e da Lei de Responsabilidade Fiscal"
+        },
+        {
+          "page": 4,
+          "quote": "Abaixo o congelamento de gastos públicos decretado no governo Temer"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Organização do sistema financeiro",
+      "statement": "O plano propõe estatizar o sistema financeiro e constituir um banco estatal único sob controle dos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização e unificação bancária.",
+      "scope": "Sistema financeiro; controle dos trabalhadores sobre o banco estatal único.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Estatização do sistema financeiro; banco estatal único sob o controle dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Autonomia do Banco Central",
+      "statement": "O plano propõe o fim da independência do Banco Central.",
+      "support_level": "explicit_proposal",
+      "instrument": "Encerramento da independência institucional.",
+      "scope": "Banco Central; a lei correspondente não é indicada pelo número.",
+      "conditions": [
+        "O mesmo bloco pede redução imediata dos juros, sem definir uma taxa ou regra de decisão."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim da “independência” do Banco Central"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Base da tributação",
+      "statement": "O plano propõe eliminar impostos sobre consumo e salários e cobrar impostos somente sobre ganhos dos capitalistas e grandes fortunas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Mudança das bases tributárias; imposto sobre grandes fortunas também destinado a aposentadorias e pensões.",
+      "scope": "Consumo, salários, ganhos dos capitalistas e grandes fortunas, conforme os termos do plano.",
+      "conditions": [
+        "Não apresenta alíquotas, estimativa de arrecadação ou definição operacional de ganhos dos capitalistas."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim dos impostos sobre o consumo e os salários. Imposto somente sobre os ganhos dos capitalistas e grandes fortunas."
+        },
+        {
+          "page": 3,
+          "quote": "Imposto sobre as grandes fortunas para garantir os recursos necessários para as aposentadorias e pensões"
+        }
+      ],
+      "context_pages": [
+        3,
+        6
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [],
+      "policy_dimension": "Dívida com bancos e grandes credores",
+      "statement": "O plano propõe cancelar as dívidas externa e interna com bancos e grandes credores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cancelamento de dívidas.",
+      "scope": "Dívidas externa e interna tratadas no contexto da dívida pública; credores expressamente delimitados.",
+      "conditions": [
+        "Não descreve renegociação, compensações, cronograma ou tratamento de credores não nomeados."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Cancelamento das dívidas externa e interna com os bancos e grandes credores"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "infraestrutura_territorio",
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Controle estatal de recursos minerais",
+      "statement": "O plano propõe nacionalizar e estatizar sem indenização reservas minerais e refinarias entregues a grupos internacionais, e criar estatal para controlar a exploração de terras raras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização sem indenização dos ativos indicados; empresa estatal de terras raras comandada pelos trabalhadores.",
+      "scope": "Reservas minerais/refinarias entregues a grupos internacionais e exploração de terras raras.",
+      "conditions": [
+        "A ausência de indenização está expressa para reservas/refinarias recuperadas, não é estendida a toda estatização do documento.",
+        "Não determina integração das refinarias à Petrobras nem proibição de todo investimento estrangeiro."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais"
+        },
+        {
+          "page": 3,
+          "quote": "Não à entrega das terras raras: criação de empresa estatal que controle sua exploração, comandada pelos trabalhadores, para garantir o uso dessas riquezas em favor do povo."
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Privatizações e propriedade de estatais",
+      "statement": "O plano propõe cancelar todas as privatizações realizadas e manter Petrobras 100% estatal, com dirigentes eleitos pelos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Reestatização e eleição dos postos de direção da Petrobras pelos trabalhadores.",
+      "scope": "Cancelamento geral das privatizações; Eletrobras, Vale, bancos e telefonia são exemplos; Petrobras recebe regra específica de propriedade e governança.",
+      "conditions": [
+        "Propriedade integralmente estatal não determina integração entre produção e refino."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Cancelamento de todas as privatizações realizadas (Eletrobrás, Vale, bancos, telefonia etc.)"
+        },
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Estabilidade e vínculos no serviço público",
+      "statement": "O plano rejeita o fim da estabilidade e as terceirizações e propõe estabilidade imediata para servidores contratados precariamente, com isonomia de direitos e salários.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proteção da estabilidade e regularização dos vínculos precários.",
+      "scope": "Servidores públicos; extensão imediata aos contratados precariamente.",
+      "conditions": [
+        "A regra de vínculos trabalhistas não especifica proibição de todos os contratos de gestão de unidades de saúde."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Não ao fim da estabilidade dos servidores públicos"
+        },
+        {
+          "page": 4,
+          "quote": "Contra as terceirizações; estabilidade imediata para todos os servidores contratados precariamente, com isonomia de direitos e salários"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Reposição do quadro de servidores",
+      "statement": "O plano propõe concursos públicos periódicos para repor o quadro de servidores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Realização periódica de concursos públicos.",
+      "scope": "Quadro de servidores; sem número de vagas ou periodicidade detalhada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Pela realização de concursos públicos periódicos para repor o quadro de servidores."
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Desenho do tribunal constitucional",
+      "statement": "O plano propõe o fim do Supremo Tribunal Federal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Extinção do STF.",
+      "scope": "Supremo Tribunal Federal; não é apresentada a instituição que assumiria suas competências.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com mandatos revogáveis."
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Seleção e mandato de magistrados e procuradores",
+      "statement": "O plano propõe eleger todos os juízes e procuradores pelo voto popular, com mandatos revogáveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eleição popular e revogabilidade dos mandatos.",
+      "scope": "Todos os juízes e procuradores.",
+      "conditions": [
+        "Não estabelece duração dos mandatos, elegibilidade, procedimento de revogação ou garantias de independência."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim do Supremo Tribunal Federal (STF); eleição de todos os juízes e procuradores pelo voto popular e com mandatos revogáveis."
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Forma de governo reivindicada",
+      "statement": "O documento apresenta como objetivo um governo das organizações operárias e camponesas e vincula sua conquista à mobilização revolucionária.",
+      "support_level": "general_goal",
+      "instrument": "Organização e mobilização revolucionárias; arranjo constitucional não detalhado.",
+      "scope": "Programa de luta atribuído ao próprio PCO, apresentado nas eleições.",
+      "conditions": [
+        "É uma autodefinição e objetivo do documento; não permite inventar regras de representação ou de transição."
+      ],
+      "evidence": [
+        {
+          "page": 1,
+          "quote": "Apresentamos nas eleições o mesmo programa de luta que defendemos nas lutas gerais dos explorados, um programa próprio da classe trabalhadora, visando sua emancipação da escravidão do capitalismo, por meio da revolução e da conquista de um governo próprio dos trabalhadores, um governo das organizações operárias, camponesas e de todos os setores explorados."
+        },
+        {
+          "page": 7,
+          "quote": "Por um governo das organizações operárias e camponesas, sem patrões e sem golpistas."
+        }
+      ],
+      "context_pages": [
+        1,
+        7
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Redistribuição de terras",
+      "statement": "O plano defende reforma agrária com expropriação do latifúndio e assentamento imediato dos sem-terra acampados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expropriação/ocupação do latifúndio e assentamento.",
+      "scope": "Sem-terra acampados em todo o país; terra para quem nela more e trabalhe.",
+      "conditions": [
+        "Não define limiar de latifúndio, procedimento expropriatório nem regras de indenização para esta medida."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Reforma Agrária com expropriação do latifúndio e demarcação das terras dos índios"
+        },
+        {
+          "page": 4,
+          "quote": "Assentamento imediato dos milhões de sem-terra acampados em todo o País"
+        },
+        {
+          "page": 4,
+          "quote": "Ocupar o latifúndio para garantir terra para quem nela more e trabalhe, e a produção de alimentos para toda a classe trabalhadora"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Posse e demarcação de terras indígenas",
+      "statement": "O plano propõe demarcação e posse da terra para indígenas das retomadas e expulsão dos latifundiários que invadiram essas terras.",
+      "support_level": "explicit_proposal",
+      "instrument": "Demarcação, garantia da posse e retirada de invasores.",
+      "scope": "Indígenas das retomadas e terras indígenas invadidas por latifundiários.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Demarcação e posse da terra para todos os índios das retomadas; expulsão dos latifundiários que invadiram as terras dos índios"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [],
+      "policy_dimension": "Imóveis vagos e especulação urbana",
+      "statement": "O plano propõe expropriar imóveis vagos pertencentes a especuladores do mercado imobiliário.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expropriação imobiliária.",
+      "scope": "Imóveis vagos dos especuladores, conforme a delimitação textual.",
+      "conditions": [
+        "Não define critérios de identificação de especulação, indenização ou destinação individual de cada imóvel."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Expropriação dos imóveis vagos dos especuladores do mercado imobiliário"
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Construção de habitação popular",
+      "statement": "O plano propõe um plano nacional de construção de milhões de moradias populares sob controle dos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Construção de habitação por um plano nacional.",
+      "scope": "População que precisa de habitação digna; geração de milhões de empregos é finalidade adicional declarada.",
+      "conditions": [
+        "Não define fonte de recursos, metas anuais, forma de contratação ou critérios de atendimento."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Elaboração de um plano nacional de construção de milhões de moradias populares, para garantir habitação digna para a população e gerar milhões de empregos, sob o controle dos trabalhadores."
+        }
+      ],
+      "context_pages": [
+        4
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Gratuidade no transporte",
+      "statement": "O plano propõe passe livre nos transportes para desempregados e trabalhadores da economia informal.",
+      "support_level": "explicit_proposal",
+      "instrument": "Passe livre para os grupos indicados.",
+      "scope": "Desempregados e trabalhadores da economia informal.",
+      "conditions": [
+        "A proposta não é apresentada como gratuidade universal para toda a população."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Passe livre nos transportes para desempregados e trabalhadores da economia informal."
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Preço dos combustíveis",
+      "statement": "O plano propõe reduzir imediatamente pela metade os preços dos combustíveis e terminar a paridade com o dólar.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução imediata de 50% e encerramento da política de paridade.",
+      "scope": "Preços dos combustíveis; sem fórmula posterior de reajuste.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Redução imediata do preço dos combustíveis em 50%. Fim da política de paridade com o dólar"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Acesso à Internet",
+      "statement": "O plano propõe Internet gratuita para toda a população e quebra do monopólio das grandes empresas privadas de telecomunicações.",
+      "support_level": "explicit_proposal",
+      "instrument": "Gratuidade universal e ruptura do monopólio mencionado; forma operacional não detalhada.",
+      "scope": "Toda a população.",
+      "conditions": [
+        "Não detalha infraestrutura, financiamento, prestadores, dados pessoais ou regulação de plataformas."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Quebra do monopólio na Internet pelas grandes empresas privadas de telecomunicações. Internet gratuita para toda a população"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Piso do Bolsa Família",
+      "statement": "O plano propõe Bolsa Família de pelo menos um salário mínimo enquanto durar a situação de caos atual.",
+      "support_level": "explicit_proposal",
+      "instrument": "Fixação de piso do benefício; o mesmo item reivindica auxílio emergencial.",
+      "scope": "Bolsa Família durante a situação de caos atual descrita pelo documento.",
+      "conditions": [
+        "A condição temporal é expressa, mas não há critério para seu término.",
+        "Não decide substituição do benefício por trabalho público para pessoas em idade economicamente ativa."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual"
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Renda após demissão",
+      "statement": "O plano propõe salário-desemprego igual ao último salário recebido para todos os trabalhadores demitidos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Benefício vinculado ao último salário.",
+      "scope": "Todos os trabalhadores demitidos.",
+      "conditions": [
+        "Não define duração do benefício, requisitos contributivos ou fonte de custeio."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Salário-desemprego igual ao último salário recebido para todos os trabalhadores demitidos"
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [],
+      "policy_dimension": "Elegibilidade à aposentadoria",
+      "statement": "O plano propõe aposentadoria após, no máximo, 25 anos de trabalho para mulheres e 30 para homens.",
+      "support_level": "explicit_proposal",
+      "instrument": "Limite de tempo de trabalho para aposentadoria.",
+      "scope": "Mulheres e homens com os tempos de trabalho expressamente diferenciados.",
+      "conditions": [
+        "O item não estabelece idade mínima nem explica contagem de tempo informal ou períodos de cuidado.",
+        "A expressão no máximo é preservada; não é convertida em idade de aposentadoria."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Aposentadoria, no máximo, aos 25 anos de trabalho para as mulheres e 30 anos para os homens"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Endividamento dos trabalhadores",
+      "statement": "O plano propõe anular todas as dívidas dos trabalhadores com o sistema financeiro.",
+      "support_level": "explicit_proposal",
+      "instrument": "Anulação integral de dívidas.",
+      "scope": "Trabalhadores devedores do sistema financeiro; sem teto de valor especificado.",
+      "conditions": [
+        "Não delimita modalidade de crédito, critérios de comprovação ou compensação aos credores."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Anulação de todas as dívidas dos trabalhadores com o sistema financeiro."
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade",
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Capacidade da rede pública de saúde",
+      "statement": "O plano propõe expandir a rede pública de saúde com construção de hospitais e postos, retomada do Mais Médicos e abertura de cursos públicos de formação em saúde.",
+      "support_level": "explicit_proposal",
+      "instrument": "Plano emergencial de obras, programa de provimento médico e expansão de cursos públicos com livre ingresso.",
+      "scope": "Todo o país; cursos de medicina, enfermagem e outras áreas citadas genericamente.",
+      "conditions": [
+        "A expansão da capacidade pública não decide proibição de compra complementar de atendimentos privados nem gestão obrigatoriamente pública de todas as unidades.",
+        "A validação dos diplomas, contida no mesmo item do Mais Médicos, é uma decisão distinta registrada em P25."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Plano de emergência para construção de hospitais e postos de saúde em todo o País"
+        },
+        {
+          "page": 5,
+          "quote": "Volta do programa Mais Médicos e validação imediata de todos os diplomas de médicos brasileiros e estrangeiros residentes no País"
+        },
+        {
+          "page": 5,
+          "quote": "Abertura imediata de centenas de cursos de medicina, enfermagem etc. com livre acesso (sem vestibular!) nas universidades públicas, para suprir a falta de profissionais"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Reconhecimento de diplomas médicos",
+      "statement": "O plano propõe validação imediata de todos os diplomas de médicos brasileiros e estrangeiros residentes no país.",
+      "support_level": "explicit_proposal",
+      "instrument": "Validação imediata dos diplomas.",
+      "scope": "Médicos brasileiros e estrangeiros residentes no Brasil.",
+      "conditions": [
+        "A residência no país é uma delimitação expressa.",
+        "O texto não descreve exames, avaliação curricular ou regras transitórias."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Volta do programa Mais Médicos e validação imediata de todos os diplomas de médicos brasileiros e estrangeiros residentes no País"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Destinação das verbas educacionais",
+      "statement": "O plano propõe que verbas públicas sejam destinadas somente ao ensino público.",
+      "support_level": "explicit_proposal",
+      "instrument": "Exclusividade de financiamento educacional público para ensino público.",
+      "scope": "Verbas públicas para educação, sem exceção indicada.",
+      "conditions": [
+        "A regra universal também exclui financiamento de vagas educacionais em instituições privadas; não precisa repetir cada etapa de ensino."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Propriedade do ensino pago",
+      "statement": "O plano propõe estatizar o ensino pago.",
+      "support_level": "explicit_proposal",
+      "instrument": "Estatização das instituições de ensino pago.",
+      "scope": "Ensino pago, sem etapa ou modalidade delimitada.",
+      "conditions": [
+        "Não explica transição, indenização ou tratamento de instituições privadas gratuitas."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Estatização do ensino pago"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Governança das instituições de ensino",
+      "statement": "O plano propõe escolas e universidades sob controle da comunidade escolar, direção escolar eleita e governo universitário tripartite.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eleição dos diretores e de todos os postos de direção escolar; governo universitário por estudantes, professores e funcionários.",
+      "scope": "Escolas e universidades.",
+      "conditions": [
+        "Não informa pesos de representação universitária nem decide admissão de escolas cívico-militares."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Escolas e Universidades sob o controle da comunidade escolar: eleição dos diretores e de todos os postos de direção nas escolas; governo tripartite (estudantes, professores e funcionários) nas Universidades"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Seleção no acesso universitário",
+      "statement": "O plano propõe fim dos vestibulares e livre ingresso nas universidades.",
+      "support_level": "explicit_proposal",
+      "instrument": "Eliminação dos vestibulares.",
+      "scope": "Ingresso universitário; a expansão de cursos de saúde repete acesso sem vestibular.",
+      "conditions": [
+        "Não define seleção alternativa, distribuição de vagas ou capacidade necessária para absorver a demanda."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Fim dos vestibulares. Livre ingresso nas universidades"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Financiamento e controle da cultura popular",
+      "statement": "O plano propõe patrocínio público das festas populares sob controle de organizações populares e de trabalhadores do setor.",
+      "support_level": "explicit_proposal",
+      "instrument": "Financiamento público e controle social das festas populares.",
+      "scope": "Cultura popular; carnaval, samba e futebol aparecem como exemplos no bloco.",
+      "conditions": [
+        "Não apresenta orçamento, critérios de seleção ou composição dos órgãos de controle."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Pesados investimentos na cultura popular, patrocínio público das festas populares, sob o controle das organizações populares e dos trabalhadores do setor."
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P31",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Governança dos clubes de futebol",
+      "statement": "O plano propõe controle dos clubes pelos torcedores e trabalhadores do setor e rejeita perseguição às torcidas organizadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Transferência do controle dos clubes aos grupos indicados.",
+      "scope": "Clubes de futebol, torcedores e trabalhadores do setor.",
+      "conditions": [
+        "Não define propriedade, participação acionária ou procedimento eleitoral dos clubes."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Fim da perseguição às torcidas organizadas. Controle dos clubes pelos torcedores e pelos trabalhadores do setor"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P32",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Proteção automática dos salários contra a inflação",
+      "statement": "O plano propõe aumento automático dos salários sempre que o custo de vida do trabalhador subir 3%.",
+      "support_level": "explicit_proposal",
+      "instrument": "Escala móvel salarial com gatilho de custo de vida.",
+      "scope": "Salários dos trabalhadores; gatilho de 3%.",
+      "conditions": [
+        "O índice de custo de vida e a forma de mensuração não são definidos."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Escala móvel dos salários, diante da escalada da inflação: aumento automático toda vez que o custo de vida do trabalhador subir 3%"
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P33",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Limite da jornada de trabalho",
+      "statement": "O plano propõe jornada máxima de 7 horas diárias, 5 dias por semana, sem perda salarial; para professores, o teto específico é de 30 horas semanais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Redução legal da jornada, com limite geral de 35 horas semanais e teto menor para professores.",
+      "scope": "Trabalhadores em geral; professores recebem regra específica.",
+      "conditions": [
+        "O teto de 30 horas para professores é mais restritivo e compatível com o teto geral, não uma contradição."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Para acabar com o desemprego e gerar milhões de novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários."
+        },
+        {
+          "page": 2,
+          "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem"
+        },
+        {
+          "page": 5,
+          "quote": "Jornada de trabalho dos professores de no máximo 30 horas semanais"
+        }
+      ],
+      "context_pages": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": "P34",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Reforma trabalhista e terceirização",
+      "statement": "O plano propõe cancelar a reforma trabalhista, restabelecer e ampliar a legislação de proteção e terminar a terceirização com direitos iguais para os trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revogação da reforma, restauração da CLT e fim da terceirização.",
+      "scope": "Trabalhadores; o contexto identifica a reforma vinculada ao período posterior a 2016.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Não bastam palavras. É preciso uma ampla mobilização que ponha fim à criminosa reforma trabalhista levada a cabo pelos golpistas e imponha o imediato restabelecimento de toda a CLT e o fim da terceirização, com direitos iguais para todos os trabalhadores."
+        },
+        {
+          "page": 3,
+          "quote": "Cancelamento da \"reforma\" trabalhista, retorno e ampliação de toda a legislação de proteção dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P35",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Proteção contra demissões",
+      "statement": "O plano propõe proibir demissões e ocupar empresas que demitam ou ameacem fechar, sob controle dos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Proibição de demissões e ocupação/controle dos trabalhadores nas empresas indicadas.",
+      "scope": "Empresas que demitam ou ameacem fechar.",
+      "conditions": [
+        "O plano não indica exceções à proibição nem define o procedimento de ocupação."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Proibição das demissões; ocupação e controle dos trabalhadores sobre as empresas que demitam ou ameacem fechar"
+        }
+      ],
+      "context_pages": [
+        2
+      ]
+    },
+    {
+      "id": "P36",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Liberdade de expressão",
+      "statement": "O plano defende liberdade irrestrita de expressão e fim de todo tipo de censura, na imprensa, na Internet e nas ruas, e rejeita a chamada Lei Felca.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantia irrestrita de expressão e rejeição de medidas tratadas pelo plano como censura.",
+      "scope": "Imprensa, Internet, ruas e demais espaços indicados de forma aberta.",
+      "conditions": [
+        "Não se presume o conteúdo de norma externa a partir do nome Lei Felca.",
+        "A relação com cancelamento de concessões e estatização de meios é registrada nas tensões."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Fim de todo tipo de censura, liberdade irrestrita de expressão, na imprensa, na Internet, nas ruas etc. Abaixo a “Lei Felca”"
+        },
+        {
+          "page": 6,
+          "quote": "Liberdade irrestrita de expressão; abaixo a censura."
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P37",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Controle dos grandes meios de comunicação",
+      "statement": "O plano propõe cancelar a concessão da Rede Globo e dos demais grandes meios por crimes contra o país, e estatizar as empresas sob controle dos trabalhadores.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cancelamento de concessões e estatização das empresas.",
+      "scope": "Rede Globo e demais grandes meios de comunicação, conforme a redação do documento.",
+      "conditions": [
+        "Crimes contra o país é fundamento alegado pelo plano, não constatação factual deste perfil.",
+        "Não define procedimento de apuração, critérios, recurso ou garantias editoriais posteriores."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Acabar com a ditadura do \"PIG\" (\"Partido da Imprensa Golpista\"): cancelamento da concessão da Rede Globo (e dos demais grandes meios de comunicação) por crimes contra o País. Estatização das empresas, sob o controle dos trabalhadores"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P38",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [],
+      "policy_dimension": "Liberdade partidária e barreiras eleitorais",
+      "statement": "O plano propõe liberdade total de organização política e partidária, controle dos partidos por seus filiados e cancelamento das leis que chama de restritivas, incluindo ficha limpa e cláusula de barreira.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cancelamento das restrições citadas e controle interno exclusivo pelos filiados.",
+      "scope": "Partidos, filiados e participação política/eleitoral.",
+      "conditions": [
+        "Não decide reeleição nem especifica uma reforma completa do sistema eleitoral."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Liberdade total de organização política e partidária. Partidos sob o exclusivo controle dos seus filiados; cancelamento das leis restritivas (\"ficha limpa\", \"cláusula de barreira\" etc.)"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P39",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Greve e autonomia sindical",
+      "statement": "O plano propõe direito irrestrito de greve e se opõe a todo tipo de intervenção estatal nos sindicatos.",
+      "support_level": "explicit_proposal",
+      "instrument": "Garantia irrestrita de greve e não intervenção estatal.",
+      "scope": "Trabalhadores e sindicatos; sem exceções descritas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Direito irrestrito de greve, contra todo tipo de intervenção do Estado nos sindicatos"
+        }
+      ],
+      "context_pages": [
+        6
+      ]
+    },
+    {
+      "id": "P40",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [],
+      "policy_dimension": "Organização policial",
+      "statement": "O plano propõe dissolver a Polícia Militar e todo o aparato repressivo.",
+      "support_level": "explicit_proposal",
+      "instrument": "Dissolução das estruturas mencionadas.",
+      "scope": "Polícia Militar e o conjunto designado como aparato repressivo.",
+      "conditions": [
+        "Não equivale apenas à desmilitarização ou unificação de polícias; o texto utiliza dissolução.",
+        "Não apresenta modelo completo de polícia substituta, investigação ou justiça penal."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Dissolução da polícia militar e de todo o aparato repressivo"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P41",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Autodefesa e armamento",
+      "statement": "O plano defende autodefesa e comitês de trabalhadores urbanos, rurais e comunidades indígenas, com direito expresso de armamento para trabalhadores do campo e indígenas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Comitês de autodefesa e direito de armamento dos grupos explicitados.",
+      "scope": "Autodefesa/comitês na cidade, no campo e em comunidades indígenas; armamento explicitamente referido ao campo e aos indígenas.",
+      "conditions": [
+        "Não se generaliza autorização de armas a qualquer pessoa nem se inventam regras de porte, registro ou treinamento."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Direito de autodefesa e armamento para os trabalhadores do campo e índios"
+        },
+        {
+          "page": 5,
+          "quote": "Direito de autodefesa dos trabalhadores da cidade e do campo"
+        },
+        {
+          "page": 5,
+          "quote": "Formar comitês de autodefesa dos trabalhadores da cidade, do campo e das comunidades de índios"
+        }
+      ],
+      "context_pages": [
+        4,
+        5
+      ]
+    },
+    {
+      "id": "P42",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [
+        "infraestrutura_territorio",
+        "cidadania_direitos",
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Soberania e controle da Amazônia",
+      "statement": "O plano rejeita internacionalização e ingerência estrangeira na Amazônia e defende controle de suas riquezas por organizações populares e indígenas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Defesa da soberania e controle popular/indígena das riquezas e de sua exploração.",
+      "scope": "Território amazônico e exploração de suas riquezas.",
+      "conditions": [
+        "Não especifica metas de conservação, desmatamento, clima ou licenciamento."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Não à internacionalização da Amazônia e a toda a política de ingerência do imperialismo na região"
+        },
+        {
+          "page": 7,
+          "quote": "Defesa da soberania e da unidade nacional, com o controle das organizações populares e dos índios sobre as riquezas do território amazônico e da sua exploração em benefício do povo"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P43",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Intervenção externa na América Latina",
+      "statement": "O plano rejeita ingerência dos Estados Unidos e da OEA na América Latina e declara apoio a Cuba, Nicarágua e Venezuela e à luta do povo boliviano.",
+      "support_level": "explicit_rejection",
+      "instrument": "Rejeição política da ingerência e declaração de solidariedade; ação diplomática concreta não especificada.",
+      "scope": "América Latina e países nomeados.",
+      "conditions": [
+        "Não define rompimento de relações, sanções, tratados ou saída de organismos internacionais."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Em defesa de Cuba, Nicarágua e Venezuela. Todo apoio à luta do povo boliviano contra o regime ditatorial. Abaixo a ingerência dos EUA e da OEA; fora o imperialismo da América Latina."
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P44",
+      "category_id": "soberania_relacoes_internacionais",
+      "secondary_category_ids": [],
+      "policy_dimension": "Solidariedade a povos em luta",
+      "statement": "O plano declara defesa de povos que se levantam contra o imperialismo, citando Palestina, Irã e Rússia e reconhecendo sua luta armada.",
+      "support_level": "general_goal",
+      "instrument": "Solidariedade política; mecanismo diplomático, financeiro ou militar brasileiro não definido.",
+      "scope": "Povos e países exemplificados: Palestina, Irã e Rússia.",
+      "conditions": [
+        "Não determina rompimento diplomático com Israel, envio de tropas/armas, participação no BRICS ou conteúdo de acordos comerciais."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Defender os povos que se levantam em todo o mundo contra o imperialismo, de armas nas mãos e pelos meios que sejam necessários, como a Palestina, o Irã e a Rússia"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    }
+  ],
+  "positions_completed": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08",
+    "P09",
+    "P10",
+    "P11",
+    "P12",
+    "P13",
+    "P14",
+    "P15",
+    "P16",
+    "P17",
+    "P18",
+    "P19",
+    "P20",
+    "P21",
+    "P22",
+    "P23",
+    "P24",
+    "P25",
+    "P26",
+    "P27",
+    "P28",
+    "P29",
+    "P30",
+    "P31",
+    "P32",
+    "P33",
+    "P34",
+    "P35",
+    "P36",
+    "P37",
+    "P38",
+    "P39",
+    "P40",
+    "P41",
+    "P42",
+    "P43",
+    "P44"
+  ],
+  "thesis_seed_ids": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08"
+  ],
+  "category_presence": {
+    "substantive": 9,
+    "not_addressed": 1
+  },
+  "validation_status": "passed",
+  "validation_summary": {
+    "same_original_agent": true,
+    "category_count": 10,
+    "substantive_categories": 9,
+    "not_addressed_categories": 1,
+    "positions": 44,
+    "thesis_seeds": 8,
+    "revisited_pages": 7,
+    "literal_quote_matches": 61,
+    "errors": []
+  }
+}

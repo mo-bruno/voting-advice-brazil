@@ -1,0 +1,1429 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "agent_id": "/root/plan_clariana",
+  "model_requested": "gpt-6-astra",
+  "reasoning_effort_requested": "ultra",
+  "document_sha256": "6390152c66285558ecd5459f4f73f3f65650beb77022b14e7750190b1b536d68",
+  "taxonomy_sha256": "2f42cbf1b713a52d24bb3d5b598d9a30fb1372825e1c68566e7ebf6118c9f006",
+  "prior_full_review": "../2026-09-29-full-plan-validation/reviews/280002552484.json",
+  "reading_basis": "prior_full_read_and_contextual_reinspection",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "status": "complete",
+  "overview": {
+    "text": "O documento se apresenta como versão estruturada para desenvolvimento programático e posterior definição de metas quantitativas (p. 1). Sua orientação expressa é a proteção transversal de mulheres e crianças, associada a gestão por resultados, simplificação econômica, infraestrutura por concessões/PPPs, formação técnica regional, tecnologia e inteligência no serviço público e na segurança, e saúde com atenção primária e avaliação científica de novas terapias. O perfil recupera escolhas operacionais que não coincidiam com as 16 teses anteriores, sem transformar objetivos genéricos em programas definidos. Há sete categorias com propostas substantivas, CTI com objetivos gerais próprios e duas categorias sem decisões próprias: Meio Ambiente e Soberania. Usa a leitura integral anterior e uma reinspeção contextual, em grupos temáticos, que abrangeu efetivamente as 15 páginas.",
+    "position_ids": [
+      "P09",
+      "P01",
+      "P05",
+      "P10",
+      "P22",
+      "P27",
+      "P16",
+      "P17"
+    ]
+  },
+  "categories": [
+    {
+      "id": "economia_desenvolvimento",
+      "presence": "substantive",
+      "summary": "Simplificação de negócios, apoio instrumental a pequenos empreendimentos e responsabilidade fiscal por revisão de gastos; não fixa um regime macroeconômico completo.",
+      "position_ids": [
+        "P01",
+        "P02",
+        "P03"
+      ],
+      "gaps": [
+        {
+          "topic": "Tributação, política monetária e regra fiscal",
+          "reason": "Não define tributos, autonomia do Banco Central, arcabouço fiscal, valores de metas ou fontes de financiamento; gastos e subsídios a rever não são individualizados.",
+          "context_pages": [
+            1,
+            5,
+            6
+          ]
+        },
+        {
+          "topic": "Produção, agro e origem do investimento",
+          "reason": "Indústria e exportações aparecem como ambiente/indicadores, sem política agropecuária detalhada, seleção setorial ou regra para capital estrangeiro.",
+          "context_pages": [
+            5,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "id": "estado_gestao",
+      "presence": "substantive",
+      "summary": "Administração orientada a resultados, dados e integração, com avaliação transversal sobre mulheres/crianças e federalismo condicionado à viabilidade jurídica.",
+      "position_ids": [
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "P09"
+      ],
+      "gaps": [
+        {
+          "topic": "Desenho institucional e servidores",
+          "reason": "Não define reforma constitucional, composição de órgãos, mudança de estabilidade, ingresso, remuneração ou controle acionário de estatais.",
+          "context_pages": [
+            13,
+            14
+          ]
+        },
+        {
+          "topic": "Metas e implementação",
+          "reason": "A p. 1 anuncia metas a calibrar; a matriz da p. 15 dá fases gerais, mas não orçamento, responsáveis nominados ou entregas quantitativas por programa.",
+          "context_pages": [
+            1,
+            4,
+            13,
+            14,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "infraestrutura_territorio",
+      "presence": "substantive",
+      "summary": "Admite concessões e PPPs na infraestrutura/logística e manutenção rodoviária por desempenho; energia recebe objetivo geral de confiabilidade.",
+      "position_ids": [
+        "P10",
+        "P11"
+      ],
+      "gaps": [
+        {
+          "topic": "Projetos, financiamento e energia",
+          "reason": "Não lista obras, custos, modelos contratuais ou fontes energéticas; concessões e PPPs são anunciadas sem distribuição de riscos.",
+          "context_pages": [
+            5,
+            15
+          ]
+        },
+        {
+          "topic": "Habitação, saneamento, ordenamento e reforma agrária",
+          "reason": "O diário integral e os contextos de infraestrutura/território não identificam decisões nesses campos; referência regional na formação técnica não é ordenamento territorial.",
+          "context_pages": [
+            2,
+            5,
+            8,
+            14
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meio_ambiente_clima",
+      "presence": "not_addressed",
+      "summary": "Não foi identificada política própria de clima, conservação ou regulação ambiental. A confiabilidade energética está registrada em Infraestrutura, sem inferir transição ambiental.",
+      "position_ids": [],
+      "gaps": [
+        {
+          "topic": "Clima e conservação",
+          "reason": "A leitura integral anterior e a reinspeção contextual não localizam metas de emissões, florestas, biodiversidade, uso ambiental dos recursos ou licenciamento; segurança energética e logística não preenchem essa lacuna.",
+          "context_pages": [
+            2,
+            5,
+            6,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ciencia_tecnologia_inovacao",
+      "presence": "general_only",
+      "summary": "A categoria própria contém apenas objetivos gerais de conectividade e ambiente de inovação. Usos tecnológicos concretos estão alocados uma vez em Estado, saúde, educação, proteção de crianças e segurança, com referência secundária a CTI.",
+      "position_ids": [
+        "P12",
+        "P13"
+      ],
+      "gaps": [
+        {
+          "topic": "Política científica e digital própria",
+          "reason": "Não especifica sistema de fomento, financiamento da pesquisa, agências, política industrial tecnológica, implantação de banda larga ou regulação geral de IA/dados. Pesquisa clínica tem escopo de incorporação em saúde (P17).",
+          "context_pages": [
+            5,
+            7,
+            9,
+            11,
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bem_estar_social",
+      "presence": "substantive",
+      "summary": "Proteção intersetorial de vítimas e cuidado na primeira infância articulam-se à atenção primária, avaliação científica de terapias e tecnologia para acesso à saúde.",
+      "position_ids": [
+        "P14",
+        "P15",
+        "P16",
+        "P17",
+        "P18"
+      ],
+      "gaps": [
+        {
+          "topic": "Assistência, renda e previdência",
+          "reason": "Apoio a famílias vulneráveis e cuidado não se convertem em desenho de benefício de renda, Bolsa Família ou previdência; não há critérios de elegibilidade e valores.",
+          "context_pages": [
+            3,
+            11,
+            12,
+            15
+          ]
+        },
+        {
+          "topic": "Provisão e financiamento da saúde",
+          "reason": "Não define gestão pública/privada das unidades, compra de atendimentos privados para filas ou orçamento. Novas terapias não têm incorporação automática.",
+          "context_pages": [
+            1,
+            11,
+            12,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "educacao_cultura_sociedade",
+      "presence": "substantive",
+      "summary": "Escolhas em alfabetização e recomposição, apoio docente, uso responsável de tecnologia, formação técnica regional e atividade física comunitária; nenhuma atribuição de ensino integral.",
+      "position_ids": [
+        "P19",
+        "P20",
+        "P21",
+        "P22",
+        "P23"
+      ],
+      "gaps": [
+        {
+          "topic": "Gestão, financiamento e organização educacional",
+          "reason": "Não decide escolas cívico-militares, vouchers, vagas privadas financiadas pelo poder público, ensino integral, remuneração docente ou desenho das parcerias técnicas.",
+          "context_pages": [
+            3,
+            7,
+            8
+          ]
+        },
+        {
+          "topic": "Cultura e artes",
+          "reason": "O diário integral não identifica política própria de patrimônio, artes, financiamento cultural ou diversidade cultural; esporte está presente com finalidade de saúde.",
+          "context_pages": [
+            2,
+            7,
+            8,
+            11
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cidadania_direitos",
+      "presence": "substantive",
+      "summary": "Autonomia econômica das mulheres e proteção de crianças/adolescentes são os recortes explícitos; salvaguardas de direitos e inclusão aparecem como condições secundárias em gestão, saúde e segurança.",
+      "position_ids": [
+        "P24",
+        "P25"
+      ],
+      "gaps": [
+        {
+          "topic": "Garantias jurídicas, representação e regras eleitorais",
+          "reason": "Não detalha novas garantias civis/trabalhistas, cotas raciais, mudanças eleitorais, representação política ou regras de acesso à justiça; não se infere posição a partir dos objetivos de proteção.",
+          "context_pages": [
+            3,
+            4,
+            7,
+            13,
+            15
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seguranca_publica",
+      "presence": "substantive",
+      "summary": "Segurança combina monitoramento e integração, prioridade às grandes redes do tráfico, investigação financeira, policiamento por dados e política prisional com trabalho/educação.",
+      "position_ids": [
+        "P26",
+        "P27",
+        "P28",
+        "P29",
+        "P30"
+      ],
+      "gaps": [
+        {
+          "topic": "Organização policial e responsabilização",
+          "reason": "Não define reforma de corporações, efetivos, orçamento, regras de uso da força, porte civil de armas, idade penal ou novas penas.",
+          "context_pages": [
+            3,
+            9,
+            10
+          ]
+        },
+        {
+          "topic": "Operação e garantias",
+          "reason": "O plano exige marco legal, devido processo e gestão prisional conforme a lei, mas não especifica protocolos, tecnologia de identificação, governança dos dados ou regime de separação.",
+          "context_pages": [
+            9,
+            10
+          ]
+        }
+      ]
+    },
+    {
+      "id": "soberania_relacoes_internacionais",
+      "presence": "not_addressed",
+      "summary": "Não há decisão autônoma sobre diplomacia, defesa militar, integração ou blocos. A cooperação internacional expressa limita-se ao enfrentamento do tráfico e está contabilizada em Segurança (P27).",
+      "position_ids": [],
+      "gaps": [
+        {
+          "topic": "Diplomacia, defesa e integração",
+          "reason": "Não identifica acordos diplomáticos/comerciais, BRICS, Mercosul–UE, relações com Israel ou desenho de defesa militar; fronteiras são tratadas no capítulo de segurança pública.",
+          "context_pages": [
+            2,
+            5,
+            9
+          ]
+        }
+      ]
+    }
+  ],
+  "positions": [
+    {
+      "id": "P01",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao",
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Simplificação do ambiente de negócios",
+      "statement": "Simplificar a regulação e digitalizar a abertura de empresas, com avaliação de normas e segurança jurídica.",
+      "support_level": "explicit_proposal",
+      "instrument": "Simplificação regulatória, digitalização e avaliação de normas.",
+      "scope": "Abertura e funcionamento de empresas; não especifica setores ou normas a alterar.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Simplificação regulatória"
+        },
+        {
+          "page": 5,
+          "quote": "Digitalização e abertura rápida de empresas"
+        },
+        {
+          "page": 5,
+          "quote": "Segurança jurídica e avaliação de normas"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P02",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Instrumentos para pequenos negócios",
+      "statement": "Apoiar pequenos negócios com crédito produtivo, garantias, capacitação gerencial/digital e acesso a compras públicas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Crédito, garantias, capacitação e ampliação do acesso a compras públicas.",
+      "scope": "Pequenos negócios e empreendedorismo; os indicadores citam MPEs.",
+      "conditions": [
+        "Não especifica banco operador, taxa, fonte de recursos ou regra de preferência nas licitações."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Crédito produtivo e garantias"
+        },
+        {
+          "page": 5,
+          "quote": "Capacitação gerencial e digital"
+        },
+        {
+          "page": 5,
+          "quote": "Compras públicas acessíveis a pequenos negócios"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P03",
+      "category_id": "economia_desenvolvimento",
+      "secondary_category_ids": [
+        "estado_gestao"
+      ],
+      "policy_dimension": "Responsabilidade fiscal por revisão de gastos e avaliação",
+      "statement": "Adotar revisão de gastos e subsídios, planejamento plurianual orientado a metas e transparência de benefícios com avaliação de impacto.",
+      "support_level": "explicit_proposal",
+      "instrument": "Revisão de gastos/subsídios, planejamento plurianual e avaliação.",
+      "scope": "Orçamento e programas públicos, acompanhados por resultado fiscal, dívida/PIB e economia de gastos.",
+      "conditions": [
+        "Não define metas numéricas finais nem escolhe regra fiscal específica."
+      ],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios"
+        },
+        {
+          "page": 6,
+          "quote": "Planejamento plurianual orientado a metas"
+        },
+        {
+          "page": 6,
+          "quote": "Transparência de benefícios e avaliação de impacto"
+        }
+      ],
+      "context_pages": [
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "P04",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Integração de dados e canais de atendimento público",
+      "statement": "Integrar identidade e serviços digitais, pedir dados uma única vez e manter atendimento multicanal para incluir quem está offline.",
+      "support_level": "explicit_proposal",
+      "instrument": "Identidade integrada, reutilização de dados e canais múltiplos de atendimento.",
+      "scope": "Serviços públicos e seus usuários, inclusive pessoas sem acesso online.",
+      "conditions": [
+        "A digitalização deve preservar atendimento para quem está offline; não há arquitetura técnica ou regra detalhada de compartilhamento."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Identidade e serviços digitais integrados"
+        },
+        {
+          "page": 13,
+          "quote": "Princípio de pedir dados uma única vez"
+        },
+        {
+          "page": 13,
+          "quote": "Atendimento multicanal para não excluir quem está offline"
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P05",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Avaliação de programas e gestão por resultados",
+      "statement": "Definir objetivos anuais públicos e painéis de desempenho, avaliando programas e encerrando ou reformulando os ineficazes.",
+      "support_level": "explicit_proposal",
+      "instrument": "Metas públicas, painéis, avaliação de programas e revisão de sua continuidade ou desenho.",
+      "scope": "Programas governamentais; a matriz prevê diagnóstico inicial, pilotos no ano 1, escala nos anos 2–3 e avaliação independente no ano 4.",
+      "conditions": [
+        "O texto oferece encerramento ou reformulação; não determina o fim automático de todo programa avaliado negativamente.",
+        "Metas quantitativas finais dependem do diagnóstico e da calibração anunciados na p. 1."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Objetivos anuais públicos"
+        },
+        {
+          "page": 13,
+          "quote": "Painéis de desempenho"
+        },
+        {
+          "page": 13,
+          "quote": "Avaliação e encerramento/reformulação de programas ineficazes"
+        },
+        {
+          "page": 15,
+          "quote": "Escala nacional dos programas com evidência de resultado; correções de desenho; expansão de infraestrutura e formação."
+        }
+      ],
+      "context_pages": [
+        1,
+        13,
+        15
+      ]
+    },
+    {
+      "id": "P06",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Rastreabilidade e prevenção de fraude",
+      "statement": "Dar rastreabilidade às compras públicas, divulgar dados abertos em linguagem simples e usar gestão de riscos para prevenir fraude.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rastreabilidade de compras, dados abertos, linguagem simples e gestão de riscos.",
+      "scope": "Compras e transparência da administração pública.",
+      "conditions": [
+        "Não especifica alteração de lei de licitações, órgão de controle ou sanções."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Compras públicas rastreáveis"
+        },
+        {
+          "page": 13,
+          "quote": "Dados abertos e linguagem simples"
+        },
+        {
+          "page": 13,
+          "quote": "Gestão de riscos e prevenção de fraude"
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P07",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Gestão de pessoas por desempenho e mobilidade",
+      "statement": "Organizar o serviço público com formação e liderança, critérios objetivos de desempenho, mobilidade de talentos e equipes de missão.",
+      "support_level": "explicit_proposal",
+      "instrument": "Formação, gestão de desempenho, mobilidade e equipes de missão.",
+      "scope": "Servidores e funções públicas; foco em capacitação, funções críticas e desempenho dos serviços.",
+      "conditions": [
+        "Não define vínculo, remuneração, estabilidade, demissão ou critérios de ingresso."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "Formação e liderança"
+        },
+        {
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos"
+        },
+        {
+          "page": 13,
+          "quote": "Mobilidade de talentos e equipes de missão"
+        }
+      ],
+      "context_pages": [
+        13
+      ]
+    },
+    {
+      "id": "P08",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [],
+      "policy_dimension": "Federalismo vinculado a resultados",
+      "statement": "Pactuar com estados e municípios, associando transferências a indicadores quando juridicamente cabível e usando consórcios e soluções compartilhadas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Pactos federativos, transferências vinculadas a indicadores e consórcios.",
+      "scope": "Relações entre governo federal, estados e municípios.",
+      "conditions": [
+        "A associação entre transferências e indicadores vale quando juridicamente cabível; o texto não abrange indistintamente todas as transferências."
+      ],
+      "evidence": [
+        {
+          "page": 14,
+          "quote": "Pactos com estados e municípios"
+        },
+        {
+          "page": 14,
+          "quote": "Transferências associadas a indicadores quando juridicamente cabível"
+        },
+        {
+          "page": 14,
+          "quote": "Consórcios e compartilhamento de soluções"
+        }
+      ],
+      "context_pages": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "P09",
+      "category_id": "estado_gestao",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Avaliação transversal de impactos sobre mulheres e crianças",
+      "statement": "Orientar a governança por resultados e exigir que cada política explicite impactos sobre mulheres, crianças e famílias, custo fiscal, responsabilidade institucional, riscos, salvaguardas de direitos e método de avaliação.",
+      "support_level": "explicit_proposal",
+      "instrument": "Orçamento por resultados, painel de indicadores e explicitação de impactos e salvaguardas em cada política.",
+      "scope": "Critério transversal do plano, com foco em mulheres, crianças e famílias.",
+      "conditions": [
+        "Trata-se de requisito de avaliação/explicitação, sem percentuais orçamentários ou teste de veto definidos."
+      ],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Avaliação de impacto sobre mulheres e crianças"
+        },
+        {
+          "page": 15,
+          "quote": "Critério transversal: cada política deverá explicitar impactos esperados sobre mulheres, crianças e famílias, custo fiscal, responsabilidade institucional, riscos, salvaguardas de direitos e método de avaliação."
+        }
+      ],
+      "context_pages": [
+        2,
+        3,
+        4,
+        15
+      ]
+    },
+    {
+      "id": "P10",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Modelo de provisão e manutenção da infraestrutura de transportes",
+      "statement": "Admitir concessões e PPPs no planejamento de infraestrutura e logística, com manutenção rodoviária baseada em desempenho e agenda de ferrovias, hidrovias, portos e cabotagem.",
+      "support_level": "explicit_proposal",
+      "instrument": "Concessões, parcerias público-privadas, planejamento de longo prazo e manutenção por desempenho.",
+      "scope": "Infraestrutura de transportes e logística; não fixa projetos ou modalidades de concessão.",
+      "conditions": [
+        "A autorização é setorial; não equivale a privatizar todas as empresas estatais nem a delegar a gestão de saúde ou educação."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Rodovias e manutenção baseada em desempenho"
+        },
+        {
+          "page": 5,
+          "quote": "Ferrovias, hidrovias, portos e cabotagem"
+        },
+        {
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P11",
+      "category_id": "infraestrutura_territorio",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Confiabilidade energética",
+      "statement": "Buscar segurança e confiabilidade energética, acompanhando custo e interrupções de energia.",
+      "support_level": "general_goal",
+      "instrument": "Não especificado; apresenta objetivo e indicadores.",
+      "scope": "Sistema energético, sem matriz de geração, fonte ou empreendimento definido.",
+      "conditions": [
+        "Não há decisão sobre fontes energéticas, transição ambiental ou propriedade das empresas."
+      ],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Segurança e confiabilidade energética"
+        },
+        {
+          "page": 5,
+          "quote": "custo e interrupções de energia"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P12",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "infraestrutura_territorio"
+      ],
+      "policy_dimension": "Ampliação da conectividade",
+      "statement": "Expandir a conectividade, tendo cobertura de banda larga como indicador.",
+      "support_level": "general_goal",
+      "instrument": "Não especificado; a expansão é anunciada sem desenho de financiamento ou execução.",
+      "scope": "Conectividade e cobertura de banda larga; não delimita territórios ou público prioritário.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Expansão de conectividade"
+        },
+        {
+          "page": 5,
+          "quote": "cobertura de banda larga"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P13",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Ambiente para inovação e economia digital",
+      "statement": "Promover um ambiente para indústria, inovação e economia digital.",
+      "support_level": "general_goal",
+      "instrument": "Não especificado; o texto apresenta uma orientação de ambiente econômico/tecnológico.",
+      "scope": "Indústria, inovação e economia digital, sem programas científicos, agências, orçamento ou setores tecnológicos definidos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital"
+        }
+      ],
+      "context_pages": [
+        5
+      ]
+    },
+    {
+      "id": "P14",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "cidadania_direitos",
+        "seguranca_publica"
+      ],
+      "policy_dimension": "Rede integrada de atendimento a vítimas de violência",
+      "statement": "Organizar uma rede nacional de proteção e resposta à violência com atendimento humanizado, integração entre saúde, assistência, segurança e justiça, protocolos de risco e acompanhamento da reincidência.",
+      "support_level": "explicit_proposal",
+      "instrument": "Rede intersetorial de atendimento e protocolos de risco/acompanhamento.",
+      "scope": "Mulheres e crianças no eixo transversal de proteção; indicadores incluem medidas protetivas acompanhadas.",
+      "conditions": [
+        "Não define número de equipamentos, orçamento, cobertura mínima ou atribuições detalhadas de cada ente."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.1 Rede nacional de proteção e resposta à violência"
+        },
+        {
+          "page": 3,
+          "quote": "Atendimento integrado e humanizado"
+        },
+        {
+          "page": 3,
+          "quote": "Integração entre saúde, assistência, segurança e justiça"
+        },
+        {
+          "page": 3,
+          "quote": "Protocolos de risco e acompanhamento de reincidência"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P15",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Cuidado materno-infantil e apoio às famílias",
+      "statement": "Priorizar a primeira infância com pré-natal, cuidado materno-infantil, nutrição, vacinação, desenvolvimento infantil, creches e apoio às famílias vulneráveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Cuidados de saúde e nutrição, vacinação, creches e apoio familiar.",
+      "scope": "Primeira infância, gestantes e famílias vulneráveis.",
+      "conditions": [
+        "Não define desenho do apoio às famílias, valores de benefício, fonte de financiamento ou titularidade das creches."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Pré-natal e cuidado materno-infantil"
+        },
+        {
+          "page": 3,
+          "quote": "Nutrição, vacinação e desenvolvimento infantil"
+        },
+        {
+          "page": 3,
+          "quote": "Creches e apoio às famílias vulneráveis"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P16",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Atenção primária coordenada e prevenção",
+      "statement": "Organizar a atenção primária com equipes completas, acesso territorial, coordenação do cuidado, prontuário interoperável e acompanhamento de condições crônicas, articulados a rastreamento baseado em evidências.",
+      "support_level": "explicit_proposal",
+      "instrument": "Equipes territoriais, prontuário interoperável, metas de acompanhamento e rastreamento.",
+      "scope": "Atenção primária e prevenção; indicadores incluem internações evitáveis e controle de hipertensão/diabetes.",
+      "conditions": [
+        "Não estabelece quantitativo de equipes, modelo de gestão das unidades ou calendário de rastreamento."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Equipes completas e acesso territorial"
+        },
+        {
+          "page": 11,
+          "quote": "Coordenação do cuidado e prontuário interoperável"
+        },
+        {
+          "page": 11,
+          "quote": "Metas de acompanhamento de condições crônicas"
+        },
+        {
+          "page": 11,
+          "quote": "rastreamento baseado em evidências"
+        }
+      ],
+      "context_pages": [
+        11
+      ]
+    },
+    {
+      "id": "P17",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Critérios de incorporação de novas tecnologias ao SUS",
+      "statement": "Adotar avaliação transparente de novas tecnologias, com pesquisa clínica e produção nacional, e incorporar ao SUS com base em segurança, eficácia e custo-efetividade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Avaliação regulatória e técnico-científica, pesquisa clínica e critérios de incorporação.",
+      "scope": "Novas tecnologias e terapias; a nota final inclui peptídeos entre os objetos sujeitos à avaliação.",
+      "conditions": [
+        "Nenhuma substância específica tem incorporação presumida.",
+        "Peptídeos e demais terapias inovadoras dependem de avaliação regulatória e técnico-científica antes de oferta pública."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Via transparente de avaliação de novas tecnologias"
+        },
+        {
+          "page": 11,
+          "quote": "Pesquisa clínica e produção nacional"
+        },
+        {
+          "page": 11,
+          "quote": "Incorporação ao SUS baseada em segurança, eficácia e custo-efetividade"
+        },
+        {
+          "page": 15,
+          "quote": "Observação sobre saúde e inovação: o documento não presume a incorporação de uma substância específica ao SUS. Peptídeos e demais terapias inovadoras devem seguir avaliação regulatória e técnico-científica antes de qualquer oferta pública."
+        }
+      ],
+      "context_pages": [
+        11,
+        15
+      ]
+    },
+    {
+      "id": "P18",
+      "category_id": "bem_estar_social",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Tecnologia para acesso e organização da saúde",
+      "statement": "Integrar telemedicina à rede, usar regulação inteligente de filas e empregar IA como apoio clínico e administrativo com governança, auditoria e privacidade.",
+      "support_level": "explicit_proposal",
+      "instrument": "Telemedicina, regulação de filas e IA de apoio.",
+      "scope": "Rede de saúde e acesso a atendimentos; indicadores incluem espera, resolução de teleatendimentos e absenteísmo.",
+      "conditions": [
+        "A IA é descrita como apoio, não como substituição autônoma de profissionais.",
+        "O documento não atribui a regulação de filas à contratação de prestadores privados."
+      ],
+      "evidence": [
+        {
+          "page": 12,
+          "quote": "Telemedicina integrada à rede"
+        },
+        {
+          "page": 12,
+          "quote": "Regulação inteligente de filas"
+        },
+        {
+          "page": 12,
+          "quote": "IA como apoio clínico e administrativo com governança, auditoria e privacidade"
+        }
+      ],
+      "context_pages": [
+        11,
+        12
+      ]
+    },
+    {
+      "id": "P19",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Percurso de alfabetização e recuperação de aprendizagem",
+      "statement": "Estruturar a transição da educação infantil para a alfabetização, recompor aprendizagens e realizar avaliações frequentes associadas a intervenção pedagógica.",
+      "support_level": "explicit_proposal",
+      "instrument": "Transição pedagógica, recomposição de aprendizagem e avaliação com intervenção.",
+      "scope": "Educação infantil e alfabetização na idade adequada; sem idade numérica ou modelo de avaliação definidos.",
+      "conditions": [
+        "A expressão idade adequada não é quantificada; não há proposta de ensino integral."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Transição estruturada para alfabetização"
+        },
+        {
+          "page": 7,
+          "quote": "Alfabetização na idade adequada"
+        },
+        {
+          "page": 7,
+          "quote": "Recomposição de aprendizagem"
+        },
+        {
+          "page": 7,
+          "quote": "Avaliação frequente com intervenção pedagógica"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P20",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [],
+      "policy_dimension": "Formação e apoio ao professor",
+      "statement": "Apoiar professores com formação inicial e continuada baseada em evidências, carreira e liderança escolar, redução de burocracia e apoio pedagógico.",
+      "support_level": "explicit_proposal",
+      "instrument": "Formação docente, apoio pedagógico e simplificação de tarefas burocráticas.",
+      "scope": "Professores e lideranças escolares.",
+      "conditions": [
+        "Não especifica piso salarial, plano de carreira ou carga horária docente."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Formação inicial e continuada baseada em evidências"
+        },
+        {
+          "page": 7,
+          "quote": "Carreira, liderança escolar e boas práticas"
+        },
+        {
+          "page": 7,
+          "quote": "Redução de burocracia e apoio pedagógico"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P21",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Tecnologia e conteúdos na educação escolar",
+      "statement": "Usar tecnologia e IA de modo responsável na escola e desenvolver pensamento crítico, ciência, resolução de problemas, educação financeira, cidadania e competências digitais.",
+      "support_level": "explicit_proposal",
+      "instrument": "Uso educacional de tecnologia/IA e desenvolvimento de competências e conteúdos.",
+      "scope": "Educação escolar; não fixa etapas, carga horária, plataforma ou mudança legal curricular.",
+      "conditions": [
+        "O uso da tecnologia é qualificado como responsável, sem parâmetros adicionais definidos no capítulo."
+      ],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Tecnologia e inteligência artificial com uso responsável"
+        },
+        {
+          "page": 7,
+          "quote": "Pensamento crítico, ciência e resolução de problemas"
+        },
+        {
+          "page": 7,
+          "quote": "Educação financeira, cidadania e competências digitais"
+        }
+      ],
+      "context_pages": [
+        7
+      ]
+    },
+    {
+      "id": "P22",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "economia_desenvolvimento"
+      ],
+      "policy_dimension": "Formação técnica orientada às regiões e ao trabalho",
+      "statement": "Expandir formação técnica ligada às vocações regionais, com orientação de carreira, aprendizagem profissional e parcerias com setor produtivo e ensino superior.",
+      "support_level": "explicit_proposal",
+      "instrument": "Expansão de cursos técnicos, orientação de carreira, aprendizagem e parcerias.",
+      "scope": "Ensino médio/técnico e transição para o trabalho; indicadores incluem emprego após formação e aderência entre curso e ocupação.",
+      "conditions": [
+        "Não determina que todo ensino médio seja técnico nem fixa modelo de financiamento das parcerias."
+      ],
+      "evidence": [
+        {
+          "page": 8,
+          "quote": "Expansão de formação técnica conectada às vocações regionais"
+        },
+        {
+          "page": 8,
+          "quote": "Orientação de carreira e aprendizagem profissional"
+        },
+        {
+          "page": 8,
+          "quote": "Parcerias com setor produtivo e ensino superior"
+        }
+      ],
+      "context_pages": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "P23",
+      "category_id": "educacao_cultura_sociedade",
+      "secondary_category_ids": [
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Oferta comunitária de atividade física",
+      "statement": "Promover programas comunitários de movimento, ampliar o uso de espaços escolares e públicos e permitir prescrição/encaminhamento para atividade física quando indicado.",
+      "support_level": "explicit_proposal",
+      "instrument": "Programas comunitários, uso ampliado de espaços e encaminhamento a atividade física.",
+      "scope": "Esporte e atividade física com finalidade de saúde; sem modalidades ou quantitativos definidos.",
+      "conditions": [
+        "Prescrição e encaminhamento dependem de indicação."
+      ],
+      "evidence": [
+        {
+          "page": 11,
+          "quote": "Programas comunitários de movimento"
+        },
+        {
+          "page": 11,
+          "quote": "Uso ampliado de espaços escolares e públicos"
+        },
+        {
+          "page": 11,
+          "quote": "Prescrição e encaminhamento para atividade física quando indicado"
+        }
+      ],
+      "context_pages": [
+        11
+      ]
+    },
+    {
+      "id": "P24",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "economia_desenvolvimento",
+        "bem_estar_social"
+      ],
+      "policy_dimension": "Autonomia econômica e participação laboral das mulheres",
+      "statement": "Ampliar a autonomia econômica das mulheres por qualificação e reinserção profissional, empreendedorismo, crédito responsável e uma rede de cuidado que facilite a participação no trabalho.",
+      "support_level": "explicit_proposal",
+      "instrument": "Qualificação, reinserção, crédito, empreendedorismo e rede de cuidado.",
+      "scope": "Mulheres e negócios liderados por mulheres; indicadores incluem participação feminina, formalização e renda.",
+      "conditions": [
+        "Não define cotas, nova garantia trabalhista, modalidade de crédito ou desenho da rede de cuidado."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.3 Autonomia econômica das mulheres"
+        },
+        {
+          "page": 3,
+          "quote": "Qualificação e reinserção profissional"
+        },
+        {
+          "page": 3,
+          "quote": "Empreendedorismo e acesso a crédito responsável"
+        },
+        {
+          "page": 3,
+          "quote": "Rede de cuidado para ampliar participação no trabalho"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P25",
+      "category_id": "cidadania_direitos",
+      "secondary_category_ids": [
+        "seguranca_publica",
+        "ciencia_tecnologia_inovacao",
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Proteção de crianças e adolescentes nos ambientes social e digital",
+      "statement": "Prevenir abuso e exploração de crianças/adolescentes, promover segurança digital e educação para riscos e buscar ativamente crianças fora da escola.",
+      "support_level": "explicit_proposal",
+      "instrument": "Prevenção, educação para riscos e busca ativa escolar.",
+      "scope": "Crianças e adolescentes.",
+      "conditions": [
+        "Não especifica restrições a plataformas, controles parentais obrigatórios, idades de acesso ou mudança da responsabilização penal."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "1.4 Proteção de crianças e adolescentes"
+        },
+        {
+          "page": 3,
+          "quote": "Prevenção de abuso e exploração"
+        },
+        {
+          "page": 3,
+          "quote": "Ambiente digital seguro e educação para riscos"
+        },
+        {
+          "page": 3,
+          "quote": "Busca ativa de crianças fora da escola"
+        }
+      ],
+      "context_pages": [
+        3
+      ]
+    },
+    {
+      "id": "P26",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao"
+      ],
+      "policy_dimension": "Monitoramento tecnológico e integração das fronteiras",
+      "statement": "Monitorar fronteiras com sensores, radares, drones e análise de imagens, integrados a centros de comando e compartilhamento de dados.",
+      "support_level": "explicit_proposal",
+      "instrument": "Sensores, radares, monitoramento remoto, drones e centros integrados.",
+      "scope": "Fronteiras no capítulo de segurança pública.",
+      "conditions": [
+        "Drones e análise de imagens devem operar dentro do marco legal; o texto não define tecnologia biométrica nem missão militar externa."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Sensores, radares e monitoramento remoto"
+        },
+        {
+          "page": 9,
+          "quote": "Drones e análise de imagens dentro do marco legal"
+        },
+        {
+          "page": 9,
+          "quote": "Centros integrados de comando e compartilhamento de dados"
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P27",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "soberania_relacoes_internacionais"
+      ],
+      "policy_dimension": "Prioridade investigativa no combate ao tráfico",
+      "statement": "Combater narcotráfico e tráfico de armas com inteligência sobre rotas/redes e cooperação interestadual/internacional, priorizando grandes organizações e cadeias de abastecimento.",
+      "support_level": "explicit_proposal",
+      "instrument": "Inteligência e cooperação policial/investigativa, com priorização de organizações e cadeias.",
+      "scope": "Narcotráfico e tráfico de armas.",
+      "conditions": [
+        "Prioridade não significa imunidade ou exclusão de investigação de outros agentes; não estabelece legalização de drogas ou mudança de penas."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "4.2 Combate ao narcotráfico e ao tráfico de armas"
+        },
+        {
+          "page": 9,
+          "quote": "Inteligência sobre rotas e redes"
+        },
+        {
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional"
+        },
+        {
+          "page": 9,
+          "quote": "Prioridade a grandes organizações e cadeias de abastecimento"
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P28",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Ataque às finanças das facções",
+      "statement": "Usar inteligência financeira e patrimonial, rastreamento de lavagem de dinheiro e recuperação de ativos para enfrentar facções.",
+      "support_level": "explicit_proposal",
+      "instrument": "Investigação patrimonial/financeira, rastreamento e recuperação de ativos.",
+      "scope": "Financiamento e patrimônio de facções e organizações criminosas.",
+      "conditions": [
+        "A recuperação de ativos deve observar o devido processo."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Inteligência financeira e patrimonial"
+        },
+        {
+          "page": 9,
+          "quote": "Rastreamento de lavagem de dinheiro"
+        },
+        {
+          "page": 9,
+          "quote": "Recuperação de ativos com devido processo"
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P29",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "ciencia_tecnologia_inovacao",
+        "cidadania_direitos"
+      ],
+      "policy_dimension": "Policiamento orientado por dados e proteção territorial",
+      "statement": "Orientar o policiamento por evidências, integração de informações e mapas de risco, com proteção específica a mulheres, escolas e áreas vulneráveis.",
+      "support_level": "explicit_proposal",
+      "instrument": "Policiamento por evidências, dados integrados e mapas de risco.",
+      "scope": "Segurança urbana e públicos/locais indicados no plano.",
+      "conditions": [
+        "A proteção de escolas é uma ação de segurança, não proposta de gestão cívico-militar do ensino."
+      ],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Policiamento baseado em evidências"
+        },
+        {
+          "page": 9,
+          "quote": "Integração de informações e mapas de risco"
+        },
+        {
+          "page": 9,
+          "quote": "Proteção específica a mulheres, escolas e áreas vulneráveis"
+        }
+      ],
+      "context_pages": [
+        9
+      ]
+    },
+    {
+      "id": "P30",
+      "category_id": "seguranca_publica",
+      "secondary_category_ids": [
+        "educacao_cultura_sociedade"
+      ],
+      "policy_dimension": "Separação de lideranças e redução da reincidência no sistema prisional",
+      "statement": "Adotar separação e gestão de lideranças criminosas conforme a lei, trabalho/educação/qualificação e inteligência penitenciária contra comunicações ilícitas.",
+      "support_level": "explicit_proposal",
+      "instrument": "Separação e gestão de lideranças, atividades de trabalho/educação e controle de comunicações ilícitas.",
+      "scope": "Sistema prisional, com acompanhamento de reincidência e participação de presos em educação/trabalho.",
+      "conditions": [
+        "A separação/gestão deve observar a lei; não define regime, duração ou quais agrupamentos deverão ser separados.",
+        "O trabalho prisional é citado sem definição de obrigatoriedade, remuneração ou vínculo."
+      ],
+      "evidence": [
+        {
+          "page": 10,
+          "quote": "Separação e gestão de lideranças criminosas conforme a lei"
+        },
+        {
+          "page": 10,
+          "quote": "Trabalho, educação e qualificação"
+        },
+        {
+          "page": 10,
+          "quote": "Inteligência penitenciária e controle de comunicações ilícitas"
+        }
+      ],
+      "context_pages": [
+        9,
+        10
+      ]
+    }
+  ],
+  "tensions": [],
+  "thesis_seeds": [
+    {
+      "id": "S01",
+      "category_id": "infraestrutura_territorio",
+      "statement": "A infraestrutura de transportes deve admitir concessões e parcerias público-privadas.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P10"
+      ],
+      "necessary_conditions": [
+        "Restringir a comparação à infraestrutura de transportes; não confundir concessão/PPP com transferência do controle de todas as estatais."
+      ],
+      "contrast_to_investigate": "Pesquisar defesa de execução exclusivamente estatal ou de limitações às concessões/PPPs nesse setor.",
+      "why_useful": "Compara modelo de provisão de infraestrutura, tema não decidido pela tese anterior sobre privatizar todas as estatais.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S02",
+      "category_id": "estado_gestao",
+      "statement": "Transferências a estados e municípios devem poder ser associadas a indicadores de resultado, quando juridicamente cabível.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P08"
+      ],
+      "necessary_conditions": [
+        "Manter a condição jurídica e a possibilidade delimitada; o plano não propõe condicionar indistintamente todas as transferências."
+      ],
+      "contrast_to_investigate": "Pesquisar transferências sem condicionamento a desempenho ou restrições a esse instrumento de coordenação federativa.",
+      "why_useful": "Expõe uma escolha sobre financiamento e incentivos no federalismo.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S03",
+      "category_id": "estado_gestao",
+      "statement": "Os serviços públicos devem solicitar os mesmos dados do cidadão apenas uma vez.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P04"
+      ],
+      "necessary_conditions": [
+        "Comparar o princípio de não repetir solicitações; não inferir compartilhamento irrestrito ou eliminação de atendimento offline."
+      ],
+      "contrast_to_investigate": "Pesquisar propostas que mantenham solicitações independentes por órgão, ou que imponham condições/limites à reutilização dos dados.",
+      "why_useful": "Compara uma regra operacional para a integração de serviços e o ônus de comprovação do cidadão.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S04",
+      "category_id": "bem_estar_social",
+      "statement": "A incorporação de novas tecnologias ao SUS deve considerar custo-efetividade.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P17"
+      ],
+      "necessary_conditions": [
+        "O critério integra avaliação também baseada em segurança e eficácia; não é critério único.",
+        "O plano não presume incorporação de nenhuma substância e exige avaliação antes da oferta pública."
+      ],
+      "contrast_to_investigate": "Pesquisar aceitação, rejeição ou limites ao uso de custo-efetividade nas decisões de incorporação ao SUS.",
+      "why_useful": "Introduz uma decisão sobre alocação de recursos e critérios de incorporação, distinta de gestão ou contratação privada.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S05",
+      "category_id": "bem_estar_social",
+      "statement": "A inteligência artificial deve poder ser usada como apoio clínico, com governança, auditoria e proteção da privacidade.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P18"
+      ],
+      "necessary_conditions": [
+        "Manter o papel de apoio clínico e as três salvaguardas; não converter em substituição autônoma de profissionais."
+      ],
+      "contrast_to_investigate": "Pesquisar permissão, vedação ou escopo mais restrito para apoio clínico por IA.",
+      "why_useful": "Compara a admissibilidade de uma tecnologia em decisões de saúde, além da informatização administrativa.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S06",
+      "category_id": "educacao_cultura_sociedade",
+      "statement": "A expansão da formação técnica deve ser orientada pelas vocações regionais.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P22"
+      ],
+      "necessary_conditions": [
+        "A proposição trata da expansão técnica; não implica converter todo ensino médio em técnico nem restringir acesso à formação geral."
+      ],
+      "contrast_to_investigate": "Pesquisar orientação curricular nacional uniforme ou outros critérios de expansão técnica que dispensem a orientação por vocações regionais.",
+      "why_useful": "Acrescenta uma escolha de organização da formação profissional e sua relação com o desenvolvimento regional.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S07",
+      "category_id": "seguranca_publica",
+      "statement": "O combate ao tráfico de drogas e armas deve priorizar grandes organizações e suas cadeias de abastecimento.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P27"
+      ],
+      "necessary_conditions": [
+        "Prioridade não significa exclusividade nem imunidade de outros agentes; não decidir política de drogas ou penas por esta frase."
+      ],
+      "contrast_to_investigate": "Pesquisar prioridades alternativas de investigação e repressão ou rejeição expressa a essa hierarquia de alvos.",
+      "why_useful": "Compara distribuição do esforço de segurança entre níveis das redes criminosas.",
+      "requires_cross_plan_validation": true
+    },
+    {
+      "id": "S08",
+      "category_id": "seguranca_publica",
+      "statement": "O sistema prisional deve adotar separação de lideranças criminosas, conforme a lei.",
+      "candidate_response": "CONCORDA",
+      "position_ids": [
+        "P30"
+      ],
+      "necessary_conditions": [
+        "O plano não define quais agrupamentos separar, regime, duração ou tipo de estabelecimento; não inserir esses detalhes na resposta."
+      ],
+      "contrast_to_investigate": "Pesquisar rejeição, condicionamento adicional ou modelos alternativos à separação de lideranças na gestão prisional.",
+      "why_useful": "Acrescenta uma escolha de organização penitenciária distinta de idade penal e de aumento de penas.",
+      "requires_cross_plan_validation": true
+    }
+  ],
+  "limitations": [
+    "O plano é explicitamente uma versão para desenvolvimento programático e debate técnico: metas finais dependem de diagnóstico oficial, linha de base, estimativa fiscal, competências federativas e avaliação jurídica (p. 1). Propostas explícitas de instrumentos não equivalem a desenho pronto para execução.",
+    "A leitura integral anterior foi reutilizada. Nesta rodada as páginas foram conferidas por contexto temático; todas foram efetivamente revisitadas, sem alegar nova leitura integral sequencial. A matriz da p. 15 já teve inspeção visual na rodada anterior.",
+    "Não se identificaram tensões documentais que exijam imputar contradição. Concessões em transportes, avaliação pública de programas e cuidado social podem coexistir; condições legais/científicas foram preservadas.",
+    "Metas gerais de energia, conectividade e ambiente de inovação foram marcadas como general_goal; aplicações setoriais de tecnologia não foram duplicadas como políticas próprias de CTI.",
+    "Os 30 registros sintetizam dimensões do programa; não representam 30 teses prontas nem unidade de peso de afinidade. As oito sementes são provisórias, dependem de contraste e revalidação em outros planos e não foram usadas para atribuir opinião a outras candidaturas."
+  ]
+}

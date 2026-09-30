@@ -53,12 +53,6 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
                 )
             )
         )
-        draft_id = db.scalar(
-            select(ThesisModel.id).where(
-                ThesisModel.election_year == 2026,
-                ThesisModel.status == "draft",
-            )
-        )
         assert db.get(CandidateModel, legacy_id) is not None
 
         application = create_app(
@@ -89,17 +83,18 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
                 # presidential edition must not hide its one-question topics.
                 themes = client.get("/api/v1/themes").json()
                 assert {theme["slug"] for theme in themes} == {
-                    "economia",
-                    "trabalho",
-                    "politica_social",
-                    "educacao",
-                    "direitos_sociais",
-                    "seguranca",
-                    "saude",
-                    "politica_externa",
-                    "governanca",
+                    "economia_desenvolvimento",
+                    "estado_gestao",
+                    "infraestrutura_territorio",
+                    "meio_ambiente_clima",
+                    "ciencia_tecnologia_inovacao",
+                    "bem_estar_social",
+                    "educacao_cultura_sociedade",
+                    "cidadania_direitos",
+                    "seguranca_publica",
+                    "soberania_relacoes_internacionais",
                 }
-                assert sum(theme["total_teses_aprovadas"] for theme in themes) == 30
+                assert sum(theme["total_teses_aprovadas"] for theme in themes) == 20
                 answers = [
                     {"thesis_id": question["id"], "answer": "agree"}
                     for question in questions
@@ -108,6 +103,7 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
                 assert response.status_code == 200
                 results = response.json()["results"]
                 assert len(results) == len(candidates)
+                assert sum(result["ranking_eligible"] for result in results) == 9
                 assert {result["answered_theses"] for result in results} == {
                     len(questions)
                 }
@@ -132,14 +128,15 @@ def test_presidential_snapshot_survives_legacy_data_and_reaches_the_app(
                         if item["candidate_id"] == candidate["id"]
                     )
                     assert result["counted_theses"] == len(categorical)
-                    if not categorical:
+                    assert result["documented_theses"] == len(categorical)
+                    if not result["ranking_eligible"]:
                         assert result["rank"] == 0
                 invalid = client.post(
                     "/api/v1/quiz/submit",
                     json={
                         "answers": [
                             *answers,
-                            {"thesis_id": draft_id, "answer": "skip"},
+                            {"thesis_id": 999_999, "answer": "skip"},
                         ]
                     },
                 )

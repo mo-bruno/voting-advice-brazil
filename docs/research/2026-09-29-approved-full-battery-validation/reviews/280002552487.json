@@ -1,0 +1,680 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002552487",
+  "candidate_name": "Rui Costa Pimenta",
+  "context_owner_agent_id": "/root/plan_rui",
+  "executor_agent_id": "/root/battery_rui",
+  "document_sha256": "ed380b23d6e033e8616ce71efcf66eb42d2baee2b58f1c9ae80690009c20dfe9",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002552487.json",
+    "../2026-09-29-thematic-profiles/profiles/280002552487.md",
+    "../2026-09-29-thematic-profiles/profiles/280002552487.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002552487.json"
+  ],
+  "method": "Reidratei integralmente os quatro arquivos do contexto anterior na ordem registrada em STATE.json. Em seguida li integralmente raw.txt, layout.txt, raw-pages.json e layout-pages.json do corpus oficial, pesquisei termos e sinônimos para cada um dos vinte objetos e reli as páginas físicas usadas como evidência. Reconfirmei o hash do PDF e verifiquei cada citação literalmente no texto da página indicada.",
+  "revisited_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano propõe expressamente um imposto sobre grandes fortunas e atribui a arrecadação ao financiamento de aposentadorias e pensões. A ausência de limiar e alíquota não impede a resposta ao objeto geral aprovado.",
+      "conditions": [
+        "O plano não define patrimônio mínimo, alíquota ou estimativa de arrecadação."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Imposto sobre as grandes fortunas para garantir os recursos necessários para as aposentadorias e pensões",
+          "role": "support",
+          "interpretation": "O trecho afirma literalmente a existência do imposto perguntado."
+        },
+        {
+          "page": 6,
+          "quote": "Fim dos impostos sobre o consumo e os salários. Imposto somente sobre os ganhos dos capitalistas e grandes fortunas.",
+          "role": "support",
+          "interpretation": "O segundo trecho confirma grandes fortunas como base tributária proposta."
+        }
+      ],
+      "search_terms": [
+        "imposto",
+        "tributação",
+        "grandes fortunas",
+        "patrimônio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Não há definição operacional de grande fortuna, mas a redação aprovada deliberadamente não exige limiar nem alíquota.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não propõe linhas de crédito ou empréstimos direcionados a setores industriais escolhidos por uma política industrial. Estatização bancária e redução de juros não determinam seleção setorial do crédito.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "crédito",
+        "financiamento",
+        "empréstimo",
+        "indústria",
+        "industrial",
+        "setor prioritário",
+        "BNDES"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Há proposta de banco estatal único e redução imediata dos juros, mas não há destinação de crédito a setores industriais prioritários.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano quer reestatizar reservas minerais já entregues a grupos internacionais e criar uma estatal que controle a exploração de terras raras. Esses compromissos definem propriedade e controle, mas não dizem se empresas estrangeiras poderiam participar de modo minoritário, contratado ou condicionado em explorações futuras.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização e estatização, sem indenização, de todas as reservas minerais, refinarias etc. entregues aos tubarões internacionais",
+          "role": "context",
+          "interpretation": "O trecho determina a recuperação estatal de ativos entregues a grupos internacionais, sem estabelecer uma regra completa para toda participação estrangeira futura."
+        },
+        {
+          "page": 3,
+          "quote": "Não à entrega das terras raras: criação de empresa estatal que controle sua exploração, comandada pelos trabalhadores, para garantir o uso dessas riquezas em favor do povo.",
+          "role": "context",
+          "interpretation": "Controle estatal da exploração não resolve se outras empresas podem participar sob limites e sem receber o controle."
+        }
+      ],
+      "search_terms": [
+        "minerais",
+        "reservas minerais",
+        "terras raras",
+        "exploração",
+        "estrangeiro",
+        "internacional",
+        "estatal"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A oposição à entrega e a reestatização de ativos não equivalem, por si, a proibir toda forma de participação empresarial estrangeira na extração.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano propõe cancelar dívidas externa e interna com bancos e grandes credores, mas não menciona auditoria nem uma suspensão temporária de pagamentos durante sua realização. Cancelamento para credores delimitados não responde à interrupção geral e provisória perguntada.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 6,
+          "quote": "Cancelamento das dívidas externa e interna com os bancos e grandes credores",
+          "role": "context",
+          "interpretation": "O trecho propõe cancelamento para credores nomeados, sem auditoria, período de suspensão ou regra para todos os pagamentos."
+        }
+      ],
+      "search_terms": [
+        "dívida",
+        "auditoria",
+        "suspensão",
+        "pagamento",
+        "cancelamento",
+        "credor"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A caracterização da dívida pública como fraudulenta e a proposta de cancelamento não fornecem a sequência auditoria-suspensão exigida pelo objeto.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "DISCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano propõe extinguir o teto de gastos e a Lei de Responsabilidade Fiscal, rejeita o congelamento do gasto público e afirma que não pode haver limite para gastos de saúde destinados a salvar vidas. Em conjunto, os trechos são contrários à manutenção de uma regra federal de contenção do crescimento das despesas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Fim do teto de gastos e da Lei de Responsabilidade Fiscal",
+          "role": "opposition",
+          "interpretation": "O plano pede o fim de instrumentos normativos que limitam o gasto federal."
+        },
+        {
+          "page": 4,
+          "quote": "Abaixo o congelamento de gastos públicos decretado no governo Temer",
+          "role": "opposition",
+          "interpretation": "O texto também rejeita explicitamente o congelamento do gasto público."
+        },
+        {
+          "page": 5,
+          "quote": "Mais verbas para a saúde pública. Não pode haver limite nos gastos para salvar a vida do povo",
+          "role": "opposition",
+          "interpretation": "A ausência de limite é afirmada expressamente para a despesa em saúde."
+        }
+      ],
+      "search_terms": [
+        "teto",
+        "gastos",
+        "despesas",
+        "fiscal",
+        "responsabilidade",
+        "limite",
+        "congelamento"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não descreve uma regra fiscal alternativa. A frase sem limite é setorial, para saúde, mas a revogação do teto e da LRF é geral e não vem acompanhada de substituto limitador.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "A proposta de Petrobras 100% estatal implica manutenção integral da propriedade pública e, portanto, do controle acionário federal. A eleição da direção pelos trabalhadores altera a governança proposta, mas não reduz o controle público da propriedade.",
+      "conditions": [
+        "O plano propõe que os trabalhadores elejam todos os postos de direção da empresa."
+      ],
+      "evidence": [
+        {
+          "page": 3,
+          "quote": "Nacionalização do petróleo, Petrobrás 100% estatal, sob o controle dos trabalhadores, com eleição de todos os seus postos de direção pelos trabalhadores",
+          "role": "support",
+          "interpretation": "Propriedade 100% estatal é mais abrangente que a manutenção de um acionista público controlador; a governança interna proposta fica com os trabalhadores."
+        }
+      ],
+      "search_terms": [
+        "Petrobras",
+        "Petrobrás",
+        "petróleo",
+        "estatal",
+        "privatização",
+        "controle"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "O texto não usa a expressão acionista controlador federal, mas a propriedade integralmente estatal da Petrobras sustenta essa conclusão. O controle dos trabalhadores refere-se à governança indicada no mesmo item.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano defende a estabilidade dos servidores e a regularização de vínculos precários, mas não trata de avaliação periódica, baixo desempenho, processo de defesa ou demissão de servidor estável por esse motivo. Defender estabilidade não resolve quais causas legais de desligamento seriam admitidas.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 4,
+          "quote": "Não ao fim da estabilidade dos servidores públicos",
+          "role": "context",
+          "interpretation": "O trecho protege a estabilidade em geral, sem decidir a hipótese específica de demissão por baixo desempenho comprovado com defesa."
+        }
+      ],
+      "search_terms": [
+        "servidor",
+        "funcionalismo",
+        "estabilidade",
+        "desempenho",
+        "avaliação",
+        "demissão",
+        "direito de defesa"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A proibição de demissões aparece no bloco sobre empresas que demitam ou ameacem fechar e não define o regime disciplinar de servidores estáveis.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano oferece passe livre somente a desempregados e trabalhadores da economia informal. Não há gratuidade para todos os passageiros, repasse federal aos municípios ou desenho de financiamento nacional do transporte urbano.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Passe livre nos transportes para desempregados e trabalhadores da economia informal.",
+          "role": "context",
+          "interpretation": "O benefício é focalizado em dois grupos e não contém financiamento federal nem universalidade."
+        }
+      ],
+      "search_terms": [
+        "transporte",
+        "passe livre",
+        "tarifa",
+        "gratuidade",
+        "município",
+        "federal",
+        "repasse",
+        "subsídio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Passe livre focalizado não responde ao objeto aprovado de gratuidade universal financiada pela União.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona mercado de carbono, créditos de carbono, metas de emissões ou instrumento regulado equivalente. As referências a riquezas naturais e à Amazônia tratam de soberania, propriedade e exploração.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "carbono",
+        "créditos de carbono",
+        "mercado",
+        "emissões",
+        "clima",
+        "ambiental"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A soberania sobre a Amazônia e o controle de recursos naturais não determinam um mecanismo de precificação ou negociação de emissões.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona inteligência artificial, algoritmos, sistemas de alto risco ou obrigações preventivas antes do uso.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "inteligência artificial",
+        "algoritmo",
+        "alto risco",
+        "avaliação de risco",
+        "supervisão",
+        "registro",
+        "tecnologia"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Internet gratuita e liberdade de expressão na Internet são temas digitais relacionados, mas não regulam sistemas de IA de alto risco.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano critica a privatização da saúde e propõe ampliar a capacidade pública com hospitais, postos, profissionais e verbas. Não decide se o SUS pode comprar atendimento complementar de clínicas ou hospitais privados quando faltar capacidade pública.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Plano de emergência para construção de hospitais e postos de saúde em todo o País",
+          "role": "context",
+          "interpretation": "O trecho aumenta a capacidade própria da rede pública, mas não autoriza nem proíbe a compra complementar de atendimento privado."
+        }
+      ],
+      "search_terms": [
+        "SUS",
+        "saúde",
+        "clínica",
+        "hospital",
+        "privado",
+        "contratação",
+        "atendimento",
+        "fila"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Crítica ao lucro e à privatização, expansão pública e compra temporária de procedimentos são decisões distintas; o texto não formula a terceira.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano fixa um piso temporariamente condicionado para o Bolsa Família e propõe salário-desemprego, mas não trata do que ocorre com benefício de transferência de renda depois que o beneficiário obtém emprego formal. Não há manutenção parcial nem período de transição.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Auxílio emergencial de verdade, Bolsa Família de pelo menos um salário mínimo, enquanto durar a situação de caos atual",
+          "role": "context",
+          "interpretation": "A condição temporal incide sobre o piso proposto e não cria uma regra de transição após emprego formal."
+        }
+      ],
+      "search_terms": [
+        "Bolsa Família",
+        "benefício",
+        "transferência",
+        "emprego formal",
+        "transição",
+        "renda",
+        "auxílio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "O salário-desemprego para demitidos tampouco responde à manutenção parcial de benefício depois da entrada em emprego formal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não formula atendimento domiciliar, equipes de cuidado na residência ou política específica para idosos e pessoas com deficiência com alto grau de dependência.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "idoso",
+        "pessoa com deficiência",
+        "dependência",
+        "domiciliar",
+        "cuidador",
+        "residência",
+        "assistência"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A defesa geral de saúde pública e construção de unidades não define cuidado prestado no domicílio ao público delimitado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano pede mais recursos para educação e restringe verbas públicas ao ensino público, mas não vincula parcela do financiamento ao cumprimento de metas de aprendizagem ou a resultados medidos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 5,
+          "quote": "Mais verbas para a educação; verbas públicas somente para o ensino público",
+          "role": "context",
+          "interpretation": "O trecho decide volume e destino institucional das verbas, não um condicionamento por desempenho de aprendizagem."
+        }
+      ],
+      "search_terms": [
+        "aprendizagem",
+        "meta",
+        "educação",
+        "ensino",
+        "recursos",
+        "verbas",
+        "desempenho",
+        "resultado"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Gestão escolar eleita, expansão de verbas e financiamento apenas público não implicam premiar ou penalizar redes por metas de aprendizagem.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano pede explicitamente redução da carga horária sem prejuízo salarial e fixa jornada máxima geral de 35 horas semanais. O objeto aprovado não exige um novo teto numérico específico.",
+      "conditions": [
+        "O limite geral proposto é de 7 horas por dia e 5 dias por semana; professores recebem teto específico de 30 horas semanais."
+      ],
+      "evidence": [
+        {
+          "page": 2,
+          "quote": "Para acabar com o desemprego e gerar milhões de novos postos de trabalho, é preciso conquistar a redução da carga horária sem prejuízo dos salários.",
+          "role": "support",
+          "interpretation": "O trecho responde diretamente à redução da jornada sem redução salarial."
+        },
+        {
+          "page": 2,
+          "quote": "Redução da jornada de trabalho para o máximo de 7 horas por dia, 5 dias por semana (35 horas semanais): trabalhar menos para que todos trabalhem",
+          "role": "support",
+          "interpretation": "O item dá conteúdo operacional à redução defendida."
+        }
+      ],
+      "search_terms": [
+        "jornada",
+        "carga horária",
+        "horas semanais",
+        "salários",
+        "redução"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A motivação declarada é combater o desemprego; não há condição de produtividade ou redução salarial.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona aborto, interrupção voluntária da gestação, prazo gestacional ou descriminalização penal.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "aborto",
+        "gestação",
+        "interrupção voluntária",
+        "descriminalização",
+        "crime",
+        "prazo gestacional"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "As propostas gerais de saúde e direitos não oferecem base para inferir a decisão penal específica.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não fixa idade penal nem propõe aplicar o regime adulto a adolescentes de 16 e 17 anos. A referência a jovens vítimas de violência policial não trata de sua responsabilização criminal.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "16 anos",
+        "17 anos",
+        "adolescente",
+        "maioridade penal",
+        "regime penal",
+        "crime",
+        "jovens"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Dissolução da Polícia Militar e crítica à repressão não definem o regime jurídico penal de adolescentes.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona reconhecimento facial, biometria, câmeras, bancos de imagens ou uso tecnológico para localizar pessoas foragidas.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "reconhecimento facial",
+        "facial",
+        "câmera",
+        "foragido",
+        "procurado",
+        "biometria",
+        "vigilância"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "As propostas de dissolução do aparato repressivo e de liberdade na Internet não respondem ao uso policial específico perguntado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano cita a Rússia em uma declaração de solidariedade, mas não menciona BRICS nem decide se o Brasil deve permanecer no grupo. Apoio a um país integrante não determina participação brasileira no bloco.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 7,
+          "quote": "Defender os povos que se levantam em todo o mundo contra o imperialismo, de armas nas mãos e pelos meios que sejam necessários, como a Palestina, o Irã e a Rússia",
+          "role": "context",
+          "interpretation": "A Rússia é citada em solidariedade internacional, sem referência ao BRICS ou à permanência do Brasil."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "bloco",
+        "China",
+        "Rússia",
+        "Índia",
+        "África do Sul"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "A ausência de proposta de saída não pode ser convertida em apoio à permanência.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não menciona Mercosul, União Europeia, ratificação ou o acordo comercial entre os dois blocos. As posições contra ingerência estrangeira e em defesa da soberania não decidem o texto específico do acordo.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo",
+        "comercial",
+        "ratificação",
+        "comércio"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "counterevidence_or_limits": "Crítica geral ao imperialismo ou defesa da soberania não substituem uma posição sobre a ratificação deste acordo comercial.",
+      "reformulation_suggestion": null
+    }
+  ]
+}

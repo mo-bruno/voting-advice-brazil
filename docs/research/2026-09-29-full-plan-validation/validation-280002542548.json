@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "question_set_sha256": "5f9cc8c112d64f242293ca692394775f132b38eb805a0606bf54f48d36040c1d",
+  "plan_count": 1,
+  "pending": 0,
+  "invalid_submissions": 0,
+  "complete_and_valid": true,
+  "reviews": [
+    {
+      "candidate_id": "280002542548",
+      "name": "Lula",
+      "status": "submitted",
+      "valid": true,
+      "errors": [],
+      "pages": 84,
+      "pages_logged": 84,
+      "questions": 16,
+      "comparisons": {
+        "confirmed": 15,
+        "divergent": 1
+      },
+      "categories": {
+        "CONCORDA": 4,
+        "DISCORDA": 3,
+        "NAO_ENCONTRADA": 9
+      },
+      "quote_matches": {
+        "layout": 25
+      },
+      "visual_check_count": 7,
+      "review_sha256": "9408d9bfb5265b98bfc306e6f3a9cfe5cc4b05f7924cd13a8a60116b7907f47f"
+    }
+  ],
+  "caveat": "Checks declared page coverage and literal evidence, not semantic correctness, human reading or approval."
+}

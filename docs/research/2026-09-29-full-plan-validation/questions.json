@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "edition": "full-plan-validation-2026-09-29",
+  "baseline_commit": "f1e6db0c6229eac1c0699a5b156a4d1b6b683f67",
+  "questions": [
+    {
+      "id": "BR26-T001",
+      "text": "O governo federal deve manter o arcabouço fiscal previsto na Lei Complementar nº 200/2023.",
+      "text_sha256": "4ad0e6ef35dfe87cc62b42b49350e9fe3ccc25c9cce966b0dc9d3a5198b86542",
+      "origin": "economy-social#BR26-T001",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T002",
+      "text": "Todas as empresas estatais devem ser transferidas ao controle privado.",
+      "text_sha256": "2533c52d817645117010ee24cca3ef9c95080b52e9ad753155e644caefe69b64",
+      "origin": "economy-social#BR26-T002",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T003",
+      "text": "As mudanças introduzidas pela reforma trabalhista de 2017 devem ser revogadas.",
+      "text_sha256": "1278101168e9e17ffbad66d56870ecf2d5f804753f524784aa996eb1ebd27828",
+      "origin": "labour-security#BR26-T003",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T011",
+      "text": "O Bolsa Família deve ser substituído, para seus beneficiários em idade economicamente ativa, por um programa público de trabalho remunerado.",
+      "text_sha256": "b8bd69aa85c8cf5f7addccac6be8ef0119a0555938a232d8ec022dfa4dfe6c92",
+      "origin": "economy-social#BR26-T011",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T015",
+      "text": "Adolescentes de 16 e 17 anos devem responder criminalmente como adultos por crimes graves.",
+      "text_sha256": "aeda3d296e17698a95fd734cc80f5386ae7efc0a5980962b46c11ea8d31941a6",
+      "origin": "labour-security#BR26-T015",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T017",
+      "text": "A rede pública de ensino deve admitir escolas cívico-militares.",
+      "text_sha256": "c54813beefd3ff33352324e6951a6419c74e3b73211ae09d1dee3faa2e035996",
+      "origin": "services-rights#BR26-T017",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T018",
+      "text": "As cotas raciais no serviço público devem ser encerradas.",
+      "text_sha256": "edac4570b6810e2f4c1ef78b82aaf20bce651df5eefa5e5f7b35dd90c8616b2e",
+      "origin": "services-rights#BR26-T018",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T026A",
+      "text": "A gestão de todas as unidades públicas de saúde deve ficar com o poder público, sem delegação a organizações privadas.",
+      "text_sha256": "b8a2de48073ec79fe33ff2b3f7d9a600837eec28884e649b8f7b5e5c20acbe1f",
+      "origin": "services-rights#BR26-T026A",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T036",
+      "text": "A autonomia institucional do Banco Central estabelecida pela Lei Complementar nº 179/2021 deve ser revogada.",
+      "text_sha256": "2cda956bb6f02a1938b7df3101afed0dcc05f01cf19330b18320ce364e17e10a",
+      "origin": "economy-social#BR26-T036",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T038",
+      "text": "A Petrobras deve manter integradas as atividades de produção e refino de petróleo.",
+      "text_sha256": "e064ede2fe192391c4b8c4c9550528fbdb342ef43c4f7a71cb3cb3c93ae6d72f",
+      "origin": "economy-social#BR26-T038",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T042",
+      "text": "O SUS deve poder contratar atendimentos da rede privada para reduzir filas.",
+      "text_sha256": "8a9bac40f4914ce05526a0320814eaf292a939b43e58cad45a9bd0c91964e128",
+      "origin": "services-rights#BR26-T042",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T043",
+      "text": "Recursos públicos devem poder financiar vagas em creches privadas.",
+      "text_sha256": "ccd8b84b6004f28816b0f2cca48c97ebaf97d2062f52bdf82d9bbe1d968880b2",
+      "origin": "services-rights#BR26-T043",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T057",
+      "text": "O Brasil deve apoiar o acordo comercial entre o Mercosul e a União Europeia.",
+      "text_sha256": "cff8224dc0e6cd1a6180499ebe16b17054ef92c6b34fba26d1758daf1332ce4a",
+      "origin": "institutions-external#BR26-T057",
+      "new_wording": true
+    },
+    {
+      "id": "BR26-T063",
+      "text": "Enquanto perdurarem as condições descritas nos planos como genocídio do povo palestino e regime de apartheid em Israel, o Brasil deve romper relações diplomáticas com Israel.",
+      "text_sha256": "485990a92d02842f87d8928f87a5bd799de6acc1d346b753ffe13d07791f21d0",
+      "origin": "institutions-external#BR26-T063",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T066",
+      "text": "O Brasil deve sair do BRICS.",
+      "text_sha256": "a4e85d110d08a0b969c4f8f31debd4c05fcef50c5b19e59c7d000cfb71ef699e",
+      "origin": "institutions-external#BR26-T066",
+      "new_wording": false
+    },
+    {
+      "id": "BR26-T067",
+      "text": "O investimento estrangeiro na economia brasileira deve ser proibido.",
+      "text_sha256": "029b0c898454b856557441c09dacbcae70d921b31acf922c4e333c6f8da3c515",
+      "origin": "economy-social#BR26-T067",
+      "new_wording": false
+    }
+  ]
+}

@@ -159,6 +159,60 @@ class TestEndpointQuestions:
 
 
 class TestEndpointSubmit:
+    def test_ranks_only_the_candidates_selected_by_the_user(
+        self, client, thesis_ids, candidate_ids
+    ):
+        response = client.post(
+            "/api/v1/quiz/submit",
+            json={
+                "candidate_ids": [candidate_ids["cand_b"]],
+                "answers": _agree5(thesis_ids),
+            },
+        )
+
+        assert response.status_code == 200
+        results = response.json()["results"]
+        assert [item["name"] for item in results] == ["Candidato B"]
+        assert results[0]["rank"] == 1
+
+    def test_conditional_analysis_is_exposed_but_excluded_from_score(
+        self, client, db_session, thesis_ids, candidate_ids
+    ):
+        from app.infrastructure.database.models import CandidatePositionModel
+
+        position = (
+            db_session.query(CandidatePositionModel)
+            .filter_by(
+                candidate_id=candidate_ids["cand_a"],
+                thesis_id=thesis_ids["Tese 1"],
+            )
+            .one()
+        )
+        original = position.position, position.analytical_position
+        position.position = "sem_posicao"
+        position.analytical_position = "CONDICIONAL_OU_MISTA"
+        db_session.commit()
+        try:
+            response = client.post(
+                "/api/v1/quiz/submit",
+                json={
+                    "candidate_ids": [candidate_ids["cand_a"]],
+                    "answers": _agree5(thesis_ids),
+                },
+            )
+            result = response.json()["results"][0]
+            match = next(
+                item
+                for item in result["matches"]
+                if item["thesis_id"] == thesis_ids["Tese 1"]
+            )
+            assert match["candidate_position"] == "sem_posicao"
+            assert match["candidate_analysis"] == "CONDICIONAL_OU_MISTA"
+            assert result["counted_theses"] == 4
+        finally:
+            position.position, position.analytical_position = original
+            db_session.commit()
+
     def test_results_report_comparable_and_answered_thesis_counts(
         self, client, thesis_ids
     ):
@@ -176,7 +230,44 @@ class TestEndpointSubmit:
         assert {item["answered_theses"] for item in results} == {5}
         by_name = {item["name"]: item for item in results}
         assert by_name["Candidato A"]["counted_theses"] == 5
+        assert by_name["Candidato A"]["comparable_categories"] == 4
+        assert by_name["Candidato A"]["documented_theses"] == 6
+        assert by_name["Candidato A"]["documented_categories"] == 4
+        assert by_name["Candidato A"]["ranking_status"] == "eligible"
+        assert by_name["Candidato A"]["ranking_eligible"] is True
         assert by_name["Candidato C"]["counted_theses"] == 4
+        assert by_name["Candidato C"]["documented_theses"] == 5
+        assert by_name["Candidato C"]["documented_categories"] == 3
+        assert by_name["Candidato C"]["ranking_status"] == (
+            "insufficient_documented_coverage"
+        )
+        assert by_name["Candidato C"]["ranking_eligible"] is False
+        assert by_name["Candidato C"]["rank"] == 0
+
+    def test_enough_answers_in_too_few_categories_remain_unranked(
+        self, client, thesis_ids
+    ):
+        response = client.post(
+            "/api/v1/quiz/submit",
+            json={
+                "answers": [
+                    {
+                        "thesis_id": thesis_ids[f"Tese {number}"],
+                        "answer": "agree",
+                    }
+                    for number in (1, 2, 3, 4, 6)
+                ]
+            },
+        )
+
+        assert response.status_code == 200
+        by_name = {item["name"]: item for item in response.json()["results"]}
+        candidate = by_name["Candidato A"]
+        assert candidate["counted_theses"] == 5
+        assert candidate["comparable_categories"] == 3
+        assert candidate["ranking_status"] == "insufficient_answer_coverage"
+        assert candidate["ranking_eligible"] is False
+        assert candidate["rank"] == 0
 
     def test_unscored_candidates_are_unranked_and_follow_real_zero_scores(
         self,
@@ -681,9 +772,15 @@ class TestEndpointSubmit:
             "/api/v1/quiz/submit",
             json={"answers": _agree5(thesis_ids)},
         )
-        ranks = [res["rank"] for res in r.json()["results"]]
-        assert ranks[0] == 1
-        assert all(isinstance(rk, int) and rk >= 1 for rk in ranks)
+        results = r.json()["results"]
+        assert results[0]["rank"] == 1
+        assert all(isinstance(result["rank"], int) for result in results)
+        assert all(
+            result["rank"] >= 1
+            if result["ranking_eligible"]
+            else result["rank"] == 0
+            for result in results
+        )
 
     def test_matches_present(self, client, thesis_ids):
         r = client.post(
