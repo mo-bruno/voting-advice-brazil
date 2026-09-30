@@ -34,7 +34,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002538811.json"
       },
       "dispatched_at": "2026-09-30T01:00:04.494324+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002539826",
@@ -77,7 +77,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002540694.json"
       },
       "dispatched_at": "2026-09-30T00:51:05.575861+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002541457",
@@ -99,7 +99,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002541457.json"
       },
       "dispatched_at": "2026-09-30T00:47:53.033493+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002542548",
@@ -142,7 +142,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002548139.json"
       },
       "dispatched_at": "2026-09-30T00:59:51.636991+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002551544",
@@ -155,7 +155,7 @@
       "executor_agent_id": "/root/battery_flavio",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "dispatched",
+      "status": "valid",
       "review_file": "reviews/280002551544.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002551544.json",
@@ -163,7 +163,8 @@
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002551544.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002551544.json"
       },
-      "dispatched_at": "2026-09-30T01:06:35.162938+00:00"
+      "dispatched_at": "2026-09-30T01:06:35.162938+00:00",
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002551547",
@@ -193,17 +194,18 @@
       "sha256": "b0ba46eb58d1827c99167a0df60e539b6bfa8a70fa247e4653ba2fcca8ade415",
       "corpus_directory": "/tmp/farol-full-plan-review-20260929/280002551932",
       "context_owner_agent_id": "/root/plan_caiado",
-      "executor_agent_id": null,
+      "executor_agent_id": "/root/battery_caiado",
       "executor_model": "gpt-5.6-sol",
       "executor_reasoning_effort": "xhigh",
-      "status": "queued",
+      "status": "dispatched",
       "review_file": "reviews/280002551932.json",
       "prior_context": {
         "profile_json": "../2026-09-29-thematic-profiles/profiles/280002551932.json",
         "profile_md": "../2026-09-29-thematic-profiles/profiles/280002551932.md",
         "profile_checkpoint": "../2026-09-29-thematic-profiles/profiles/280002551932.checkpoint.json",
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002551932.json"
-      }
+      },
+      "dispatched_at": "2026-09-30T01:17:10.469462+00:00"
     },
     {
       "id": "280002551975",
@@ -225,7 +227,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002551975.json"
       },
       "dispatched_at": "2026-09-30T00:40:06.981308+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002552484",
@@ -247,7 +249,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002552484.json"
       },
       "dispatched_at": "2026-09-30T00:40:06.897085+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002552487",
@@ -269,7 +271,7 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002552487.json"
       },
       "dispatched_at": "2026-09-30T00:40:06.825526+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     },
     {
       "id": "280002554479",
@@ -291,16 +293,16 @@
         "prior_full_validation": "../2026-09-29-full-plan-validation/reviews/280002554479.json"
       },
       "dispatched_at": "2026-09-30T00:48:31.242773+00:00",
-      "validated_at": "2026-09-30T01:14:19.327456+00:00"
+      "validated_at": "2026-09-30T01:26:33.172019+00:00"
     }
   ],
   "metrics": {
     "approved_questions": 20,
     "expected_reviews": 13,
     "expected_answers": 260,
-    "completed_reviews": 8,
-    "valid_reviews": 8,
-    "validated_answers": 160
+    "completed_reviews": 9,
+    "valid_reviews": 9,
+    "validated_answers": 180
   },
-  "updated_at": "2026-09-30T01:14:19.327456+00:00"
+  "updated_at": "2026-09-30T01:26:33.172019+00:00"
 }

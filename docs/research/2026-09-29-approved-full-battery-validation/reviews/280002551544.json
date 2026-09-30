@@ -1,0 +1,728 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002551544",
+  "candidate_name": "Flavio Bolsonaro",
+  "context_owner_agent_id": "/root/plan_flavio",
+  "executor_agent_id": "/root/battery_flavio",
+  "document_sha256": "7d1d95075e11e3c4113e8dcd502438049a34f5147a84cb0f746bf59046e477a4",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "prior_context_files": [
+    "../2026-09-29-thematic-profiles/profiles/280002551544.json",
+    "../2026-09-29-thematic-profiles/profiles/280002551544.md",
+    "../2026-09-29-thematic-profiles/profiles/280002551544.checkpoint.json",
+    "../2026-09-29-full-plan-validation/reviews/280002551544.json"
+  ],
+  "method": "Reidratei integralmente os quatro arquivos de contexto do responsável original, confirmei os hashes do PDF oficial e da bateria aprovada, pesquisei raw.txt e layout.txt em todas as 76 páginas físicas com termos e sinônimos específicos para cada objeto e reli em raw-pages.json e layout-pages.json todas as páginas citadas ou decisivas. O contexto anterior foi usado somente como índice; classificações, limites e transcrições foram reconfirmados no corpus oficial.",
+  "revisited_pages": [
+    9,
+    13,
+    15,
+    21,
+    35,
+    37,
+    43,
+    44,
+    51,
+    53,
+    55,
+    56,
+    57,
+    62,
+    63,
+    69,
+    70,
+    71
+  ],
+  "full_text_search_completed": true,
+  "answers": [
+    {
+      "question_id": "B01-Q01",
+      "question_version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano discute redução do IVA, da carga sobre produção e consumo e de exceções tributárias, mas não propõe nem rejeita um imposto específico sobre grandes fortunas. Outros tributos e referências genéricas a patrimônio não respondem ao objeto.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "grandes fortunas",
+        "imposto sobre fortunas",
+        "patrimônio elevado",
+        "tributação patrimonial",
+        "imposto"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A revisão tributária das páginas 30 e 71–72 se concentra em produção, consumo, IVA, simplificação e exceções; não há decisão sobre tributação de grandes fortunas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q02",
+      "question_version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano seleciona o setor de biogás dentro da política de biocombustíveis e promete linhas especiais de financiamento para suas empresas. Isso constitui crédito direcionado a um setor produtivo escolhido pela política pública, embora a fonte, os juros e as contrapartidas não sejam definidos.",
+      "conditions": [
+        "O setor explicitamente selecionado é o de empresas de biogás.",
+        "O plano não define fonte do crédito, taxa, prazo ou critérios de elegibilidade."
+      ],
+      "evidence": [
+        {
+          "page": 53,
+          "quote": "E vamos transformar o Brasil em potência de biocombustíveis: etanol, biodiesel, HVO, SAF e biogás, fomentando a aplicação da Lei do Combustível do Futuro e oferecendo linhas especiais de financiamento para empresas de biogás, que transformam resíduos em energia.",
+          "role": "support",
+          "interpretation": "A promessa cria financiamento especial para empresas de um setor selecionado pela estratégia governamental de biocombustíveis."
+        }
+      ],
+      "search_terms": [
+        "linhas especiais de financiamento",
+        "linhas de crédito",
+        "crédito direcionado",
+        "empresas de biogás",
+        "política industrial",
+        "setores prioritários"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Crédito para infraestrutura, habitação, empreendedorismo e agro aparece em outros trechos, mas não é necessário para a classificação. A correspondência aqui se limita à linha especial para biogás; o plano não apresenta uma política geral de crédito para todos os setores industriais considerados prioritários.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q03",
+      "question_version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano quer atrair capital estrangeiro, tecnologia e parcerias para a cadeia de minerais críticos e para agregar valor no Brasil, mas não afirma que empresas estrangeiras poderão participar da extração. Transformação, financiamento de projetos e cooperação internacional não resolvem a titularidade ou participação empresarial na lavra.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 55,
+          "quote": "Em vez de somente exportar a pedra bruta e comprar de volta o produto acabado, vamos agregar valor no Brasil, conectando nossa riqueza mineral, nossa energia e a demanda dos data centers e das novas tecnologias numa estratégia única. O Estado atuará como regulador e coordenador, não como empresário, apoiado em seis pilares: marco regulatório claro e estável, licenciamento ágil e técnico, atração de capital e tecnologia, verticalização com incentivos de mercado, governança e transparência. Vamos trabalhar para atrair o capital estrangeiro e a tecnologia que já existem no mundo, aplicando aqui o que outros países já dominam e transferindo esse conhecimento ao Brasil.",
+          "role": "context",
+          "interpretation": "O trecho apoia capital externo e tecnologia para transformação e verticalização, mas não autoriza expressamente participação estrangeira na extração."
+        }
+      ],
+      "search_terms": [
+        "minerais críticos",
+        "minerais estratégicos",
+        "mineração",
+        "extração",
+        "direitos minerários",
+        "capital estrangeiro",
+        "parcerias internacionais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A página 56 promete acelerar licenciamento e direitos minerários e diz que o país deixará de apenas extrair e exportar matéria bruta; ainda assim, não identifica quem poderá realizar a extração nem decide a participação de empresas estrangeiras nessa etapa.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "B01-Q04",
+      "question_version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano quer estabilizar e reduzir a dívida por regras fiscais e superávits, mas não propõe auditoria da dívida nem suspensão temporária de pagamentos durante uma investigação.",
+      "conditions": [],
+      "evidence": [],
+      "search_terms": [
+        "auditoria da dívida",
+        "auditoria",
+        "suspender pagamentos",
+        "suspensão da dívida",
+        "moratória",
+        "dívida pública"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A estratégia fiscal das páginas 70–71 trata de gastos, superávit e relação Dívida/PIB. Nenhum desses instrumentos equivale a interromper pagamentos durante auditoria.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q05",
+      "question_version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano promete reformular as regras fiscais e instituir uma regra clara de controle dos gastos discricionários dos três Poderes da União. No contexto de crítica ao gasto discricionário crescente e às despesas fora do limite, isso implica a existência de um limite normativo ao crescimento dessa parcela da despesa federal.",
+      "conditions": [
+        "A regra mencionada alcança gastos discricionários dos três Poderes da União, não toda despesa federal.",
+        "O plano não fixa índice de correção, fórmula ou teto numérico."
+      ],
+      "evidence": [
+        {
+          "page": 71,
+          "quote": "Apresentaremos uma reformulação nas atuais regras fiscais, com regras claras focadas na estabilização e na redução da dívida pública conforme determina a Constituição. Vamos construir o equilíbrio fiscal duradouro, entregando superávits primários e limitando o crédito subsidiado com recursos do Tesouro, mitigando pressões inflacionárias. E haverá uma regra clara de controle de gastos discricionários dos três Poderes da União.",
+          "role": "support",
+          "interpretation": "A regra de controle de gastos discricionários federais satisfaz a escolha geral pela existência de limitação normativa, ainda que seu desenho permaneça aberto."
+        }
+      ],
+      "search_terms": [
+        "regras fiscais",
+        "controle de gastos",
+        "controle da despesa",
+        "teto de gastos",
+        "limite de gastos",
+        "gastos discricionários"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "O plano também enfatiza meta de dívida e superávit, instrumentos distintos. A classificação se apoia especificamente na regra prometida para gastos discricionários e não a estende às despesas obrigatórias.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q06",
+      "question_version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano fortalece a governança de estatais e prevê desestatização caso a caso, mas não cita a Petrobras nem decide se o governo federal deve manter seu controle acionário.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 70,
+          "quote": "E vamos retomar o Programa Nacional de Desestatização com critério, avaliando caso a caso onde a presença do Estado deixou de fazer sentido.",
+          "role": "context",
+          "interpretation": "A avaliação individual não identifica a Petrobras nem permite concluir manutenção ou perda de seu controle federal."
+        }
+      ],
+      "search_terms": [
+        "Petrobras",
+        "controle acionário",
+        "acionista controlador",
+        "controle estatal",
+        "estatais",
+        "desestatização",
+        "refino"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Modernizar o refino com petróleo nacional e tratar estatais como patrimônio brasileiro não determina a estrutura acionária da Petrobras. A política de desestatização condicionada também não seleciona a empresa.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q07",
+      "question_version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano promete modernizar a carreira do servidor e menciona avaliações periódicas apenas para dirigentes de agências reguladoras. Não estabelece baixo desempenho comprovado como hipótese legal de demissão de servidor estável nem descreve avaliação periódica com direito de defesa para esse fim.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 69,
+          "quote": "Daremos continuidade à reforma administrativa que já colocamos em discussão, para modernizar o funcionamento do Estado e a carreira do servidor.",
+          "role": "context",
+          "interpretation": "A reforma e a modernização da carreira são genéricas e não decidem a demissão por desempenho."
+        }
+      ],
+      "search_terms": [
+        "servidor",
+        "carreira do servidor",
+        "baixo desempenho",
+        "demissão",
+        "desligamento",
+        "estabilidade",
+        "avaliações periódicas",
+        "reforma administrativa"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "As avaliações periódicas da página 69 qualificam critérios técnicos na indicação de dirigentes de agências; não são avaliações de desempenho destinadas à perda da estabilidade.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q08",
+      "question_version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano prioriza transporte coletivo e financiamento por bancos públicos de infraestrutura e veículos, mas não propõe gratuidade universal, tarifa zero nem repasse federal aos municípios para custear passagens de todos.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 51,
+          "quote": "Vamos pensar o desenvolvimento das cidades para reduzir o deslocamento da população, com o transporte coletivo como base da mobilidade e parcerias que diminuam o tempo de viagem do trabalhador, valorizando os contratos que conciliam moradia e infraestrutura no mesmo projeto. Os bancos públicos priorizarão o financiamento de linhas de metrô, transporte sobre trilhos e ônibus movidos a eletricidade e biocombustíveis.",
+          "role": "context",
+          "interpretation": "O trecho financia ativos e infraestrutura do transporte coletivo, sem decidir gratuidade da tarifa ou transferência federal aos municípios."
+        }
+      ],
+      "search_terms": [
+        "tarifa zero",
+        "transporte gratuito",
+        "gratuidade",
+        "passe livre",
+        "transporte coletivo",
+        "mobilidade urbana",
+        "subsídio tarifário",
+        "repasse aos municípios"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Financiamento bancário de metrô, trilhos e ônibus não equivale ao financiamento federal da tarifa zero universal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q10",
+      "question_version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete expressamente consolidar o mercado regulado de carbono com segurança jurídica.",
+      "conditions": [
+        "Não são definidos setores cobertos, teto de emissões, preço, cronograma ou distribuição inicial de créditos."
+      ],
+      "evidence": [
+        {
+          "page": 57,
+          "quote": "E vamos consolidar o mercado regulado de carbono com segurança jurídica, posicionando o Brasil como fornecedor global de ativos ambientais, e impulsionar a bioeconomia, com biotecnologia, fármacos, cosméticos e novos materiais a partir da biodiversidade.",
+          "role": "support",
+          "interpretation": "A expressão literal adota o instrumento regulado perguntado."
+        }
+      ],
+      "search_terms": [
+        "mercado regulado de carbono",
+        "mercado de carbono",
+        "créditos de carbono",
+        "Renovabio",
+        "ativos ambientais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A venda de créditos no exterior e o pagamento por serviços ambientais são instrumentos adicionais e não substituem a evidência direta do mercado regulado.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q11",
+      "question_version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano promove a difusão e o desenvolvimento de IA, liberdade de inovação, privacidade e segurança cibernética, mas não classifica sistemas de alto risco nem exige avaliação, registro, supervisão ou outra obrigação preventiva antes do uso.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 56,
+          "quote": "A Estratégia Nacional de Inteligência Artificial vai difundir a IA para as micro, pequenas e médias empresas em larga escala, com prioridade para indústria, agronegócio, saúde e logística.",
+          "role": "context",
+          "interpretation": "A difusão setorial da tecnologia não estabelece um regime preventivo para sistemas de alto risco."
+        },
+        {
+          "page": 57,
+          "quote": "Os dados do cidadão são dele, não do governo, e serão tratados com privacidade e segurança. Vamos fortalecer a defesa cibernética do país, protegendo serviços públicos, infraestrutura crítica e cidadãos contra ataques e fraudes, e garantir que a inteligência artificial seja usada a serviço das pessoas, não contra elas.",
+          "role": "context",
+          "interpretation": "As garantias gerais de privacidade, segurança e finalidade não definem obrigações prévias baseadas em risco."
+        }
+      ],
+      "search_terms": [
+        "inteligência artificial",
+        "IA",
+        "alto risco",
+        "avaliação de risco",
+        "auditoria algorítmica",
+        "registro",
+        "supervisão humana",
+        "obrigação preventiva"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A legislação prometida na página 56 é orientada à liberdade de criar e inovar; o texto não a conecta a uma categoria de alto risco nem define controles anteriores ao uso.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q12",
+      "question_version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "No capítulo de saúde, o plano promete contratar serviços e exames da rede privada em horários ociosos porque pacientes aguardam meses. O instrumento e a finalidade correspondem à compra complementar de capacidade assistencial quando a rede pública não atende a demanda.",
+      "conditions": [
+        "A contratação é limitada à capacidade privada ociosa.",
+        "O plano cita serviços e exames, sem prometer contratação permanente ou transferência da gestão de unidades públicas."
+      ],
+      "evidence": [
+        {
+          "page": 37,
+          "quote": "Para usar bem o que já existe, vamos contratar serviços e exames na rede privada nos horários ociosos: há aparelho parado enquanto gente espera meses pelo mesmo exame",
+          "role": "support",
+          "interpretation": "A contratação de serviços e exames privados ociosos é apresentada como resposta direta à espera de pacientes."
+        }
+      ],
+      "search_terms": [
+        "rede privada",
+        "serviços e exames",
+        "horários ociosos",
+        "capacidade ociosa",
+        "SUS",
+        "clínicas",
+        "hospitais"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A proposta contrata capacidade privada ociosa e não decide gestão privada de unidades públicas.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q13",
+      "question_version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano oferece prioridade de qualificação e emprego e garante retorno ao benefício depois do seguro-desemprego, se a pessoa voltar a cumprir a elegibilidade. Não promete manter parte do benefício enquanto o beneficiário está em emprego formal durante uma transição.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 43,
+          "quote": "E garantiremos o retorno imediato e sem fila ao benefício após o seguro-desemprego, mantidas as condições de elegibilidade, para que ninguém tenha medo de tentar um emprego e acabar desamparado se não der certo.",
+          "role": "counterevidence",
+          "interpretation": "Retorno posterior ao benefício é mecanismo distinto da manutenção parcial durante o emprego formal."
+        }
+      ],
+      "search_terms": [
+        "benefício",
+        "emprego formal",
+        "carteira assinada",
+        "seguro-desemprego",
+        "manter parte",
+        "redução gradual do benefício",
+        "transição"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A manutenção dos programas sociais e a trilha ao trabalho não informam acumulação parcial e temporária de benefício com salário formal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q14",
+      "question_version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "classification": "CONCORDA",
+      "evidence_strength": "clear_implication",
+      "rationale": "O plano institui uma Rede Nacional de Cuidado e inclui atendimento domiciliar para idosos e pessoas com deficiência. Como a oferta cobre essas populações sem excluir quem tem alta dependência, ela abrange o público da afirmação, embora o plano não defina grau de dependência nem critérios de elegibilidade.",
+      "conditions": [
+        "Execução em parceria público-privada com estados, municípios e organizações sociais.",
+        "O plano não define alto grau de dependência nem os critérios de acesso ao atendimento domiciliar."
+      ],
+      "evidence": [
+        {
+          "page": 21,
+          "quote": "Também estruturaremos uma Rede Nacional de Cuidado, ampliando o apoio a idosos e pessoas com deficiência, com centros-dia e atendimento domiciliar em parcerias público privado com estados, municípios e organizações sociais.",
+          "role": "support",
+          "interpretation": "A proposta oferece exatamente a modalidade domiciliar às duas populações abrangidas pela pergunta, por meio de uma rede organizada pelo poder público."
+        }
+      ],
+      "search_terms": [
+        "atendimento domiciliar",
+        "cuidado domiciliar",
+        "Rede Nacional de Cuidado",
+        "idosos",
+        "pessoas com deficiência",
+        "alto grau de dependência",
+        "dependentes"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A página 39 remete à mesma rede e acrescenta instituições de longa permanência quando o cuidado familiar não for suficiente. Isso não substitui o atendimento domiciliar já proposto nem esclarece sua elegibilidade.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q15",
+      "question_version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano afirma literalmente que o financiamento escolar seguirá orçamento por resultados e que repasses serão vinculados a metas de aprendizagem.",
+      "conditions": [
+        "O texto ressalva que regiões com maiores dificuldades não serão abandonadas.",
+        "Não define a proporção condicionada, os indicadores, os pesos ou mecanismos compensatórios."
+      ],
+      "evidence": [
+        {
+          "page": 35,
+          "quote": "A gestão passa a ser baseada em indicadores de resultado e proficiência, e o financiamento seguirá o orçamento por resultados, com repasses vinculados a metas de aprendizagem, sem abandonar regiões que enfrentam maiores dificuldades.",
+          "role": "support",
+          "interpretation": "O trecho vincula diretamente repasses educacionais a metas de aprendizagem e preserva uma ressalva distributiva."
+        }
+      ],
+      "search_terms": [
+        "repasses vinculados",
+        "metas de aprendizagem",
+        "orçamento por resultados",
+        "financiamento escolar",
+        "proficiência",
+        "indicadores de resultado"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Avaliação e gestão por indicadores aparecem no mesmo trecho, mas a classificação decorre da vinculação explícita dos repasses, não da mera existência de avaliação.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q16",
+      "question_version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano defende jornada flexível e prevalência do negociado sobre o legislado, mas não propõe nem rejeita a redução do limite semanal legal sem redução salarial. Flexibilizar condições por negociação é objeto distinto da direção da jornada legal.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 44,
+          "quote": "Vamos também dar mais liberdade a quem trabalha, com jornada flexível que caiba na vida de mães, jovens e de quem tem mais dificuldade de entrar no mercado. Por isso defendemos o negociado sobre o legislado, ou seja, permitir que trabalhador e empresa combinem diretamente as condições de trabalho que funcionam para os dois, dentro da lei, em vez de seguir uma regra única imposta a todos.",
+          "role": "context",
+          "interpretation": "O trecho escolhe flexibilidade negociada, mas não informa se o teto semanal legal deve diminuir nem preserva expressamente o salário nessa hipótese."
+        }
+      ],
+      "search_terms": [
+        "redução da jornada",
+        "jornada semanal",
+        "jornada de trabalho",
+        "sem redução salarial",
+        "jornada flexível",
+        "negociado sobre o legislado",
+        "escala 6 por 1"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A crítica da página 45 a propostas que ignoram o negociado sobre o legislado também não identifica qual redução de jornada está em discussão nem decide o novo limite semanal e o salário.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q17",
+      "question_version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano declara como valor o respeito à vida desde a concepção, mas não menciona aborto, descriminalização, prazo gestacional ou regime penal. Um valor geral não basta para atribuir uma decisão específica sobre punição criminal do aborto voluntário.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 9,
+          "quote": "Nossa forma de governar permanece fiel a valores que consideramos inegociáveis e que sustentam a sociedade brasileira: o respeito à liberdade, à família, à vida desde a concepção, à propriedade privada, à democracia, à liberdade de expressão e à liberdade religiosa.",
+          "role": "context",
+          "interpretation": "A referência à vida desde a concepção é valor geral; o trecho não decide descriminalização, prazo ou sanção penal."
+        }
+      ],
+      "search_terms": [
+        "aborto",
+        "descriminalização",
+        "interrupção da gravidez",
+        "gestação",
+        "gestacional",
+        "vida desde a concepção",
+        "concepção",
+        "crime"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A única ocorrência de gestação trata de exames de saúde da mulher. Não há proposta sobre aborto voluntário nem sobre sua punição criminal.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q18",
+      "question_version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete reduzir a maioridade penal de 18 para 16 anos sem restringir essa regra geral a tipos de crime. A proposta adicional para maiores de 14 anos é limitada a crimes graves, mas não reduz o alcance geral declarado para 16 e 17 anos.",
+      "conditions": [
+        "A regra geral de maioridade penal é fixada em 16 anos.",
+        "A proposta separada para maiores de 14 anos alcança apenas crimes graves e fica fora do recorte da afirmação."
+      ],
+      "evidence": [
+        {
+          "page": 13,
+          "quote": "O novo governo do Brasil vai apoiar e sancionar a redução da maioridade penal de 18 para 16 anos. Vamos punir também maiores de 14 anos que cometerem crimes graves, como estupro, tráfico, tortura e assassinato. Quem comete crime como gente grande vai ser punido como gente grande.",
+          "role": "support",
+          "interpretation": "A primeira frase estabelece responsabilização penal adulta geral desde os 16 anos; a segunda cria um alcance adicional e mais restrito abaixo dessa idade."
+        }
+      ],
+      "search_terms": [
+        "maioridade penal",
+        "18 para 16 anos",
+        "16 anos",
+        "regime penal adulto",
+        "crime como gente grande",
+        "crimes graves"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "O plano não detalha rito, estabelecimentos ou transição, mas essas lacunas não alteram a escolha geral de idade e alcance para 16 e 17 anos.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q19",
+      "question_version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "classification": "CONCORDA",
+      "evidence_strength": "explicit",
+      "rationale": "O plano promete um sistema nacional de reconhecimento facial integrado a bases criminais, com câmeras em áreas públicas, e nomeia a localização de foragidos como finalidade.",
+      "conditions": [
+        "O sistema é integrado a bancos de dados criminais e tem localização de foragidos e prevenção de crimes como finalidades.",
+        "O plano não detalha retenção, auditoria de erros, revisão humana ou contestação."
+      ],
+      "evidence": [
+        {
+          "page": 15,
+          "quote": "Vamos implantar o Muralha Brasileira - um sistema nacional de reconhecimento facial integrado a bancos de dados criminais, inspirado no Smart Sampa, da Prefeitura de São Paulo, e no Muralha Paulista, do Governo do Estado. Além de localizar foragidos e prevenir crimes, vamos vigiar portos, aeroportos e áreas públicas com mais de 1 milhão de novas câmeras espalhadas por todo o país.",
+          "role": "support",
+          "interpretation": "O trecho reúne o instrumento, a finalidade de localizar foragidos e o uso de câmeras em áreas públicas."
+        }
+      ],
+      "search_terms": [
+        "reconhecimento facial",
+        "localizar foragidos",
+        "bancos de dados criminais",
+        "áreas públicas",
+        "câmeras",
+        "Muralha Brasileira"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "As garantias gerais de privacidade da página 57 não acrescentam controles específicos ao reconhecimento facial nem negam seu uso explícito.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q21",
+      "question_version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano não nomeia os BRICS nem decide permanência ou saída. Relações com a China, adesão à OCDE e referência genérica a diferentes blocos e grupos podem coexistir com qualquer resposta sobre o BRICS.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 63,
+          "quote": "Os investimentos nas Forças Armadas devem ser condizentes com a inserção de um país que é membro de diferentes blocos e grupos de nações, voltados ao enfrentamento de desafios políticos e econômicos globais.",
+          "role": "context",
+          "interpretation": "A menção genérica não identifica o BRICS nem uma decisão de permanência."
+        }
+      ],
+      "search_terms": [
+        "BRICS",
+        "blocos",
+        "grupos de nações",
+        "permanecer",
+        "sair do bloco",
+        "China",
+        "OCDE"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "A proposta de negociar com a China e integrar o Brasil a outros polos econômicos não decide a filiação institucional perguntada.",
+      "reformulation_suggestion": null
+    },
+    {
+      "question_id": "FB-Q22",
+      "question_version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "classification": "NAO_ENCONTRADA",
+      "evidence_strength": "insufficient",
+      "rationale": "O plano promete negociar com a União Europeia e avançar em acordos que ampliem mercados, mas não menciona Mercosul nem o acordo Mercosul–União Europeia e não decide a ratificação de seu texto final.",
+      "conditions": [],
+      "evidence": [
+        {
+          "page": 62,
+          "quote": "Negociaremos com todos os que interessam ao Brasil, da China à União Europeia, dos Estados Unidos aos mercados asiáticos, porque o que orienta a nossa diplomacia é o interesse do produtor e do trabalhador brasileiro, não a simpatia ou a antipatia por este ou aquele governo.",
+          "role": "context",
+          "interpretation": "Negociar com a União Europeia é orientação diplomática geral e não equivale a ratificar o acordo comercial específico."
+        }
+      ],
+      "search_terms": [
+        "Mercosul",
+        "União Europeia",
+        "acordo Mercosul-União Europeia",
+        "acordos comerciais",
+        "ratificação",
+        "texto final",
+        "negociação comercial"
+      ],
+      "searched_page_ranges": [
+        [
+          1,
+          76
+        ]
+      ],
+      "counterevidence_or_limits": "Acordos de ganho mútuo e abertura comercial são compatíveis com apoio, revisão ou rejeição do texto específico; o documento não escolhe entre essas alternativas.",
+      "reformulation_suggestion": null
+    }
+  ]
+}
