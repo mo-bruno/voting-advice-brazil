@@ -10,7 +10,7 @@
 ## Global Constraints
 
 - Site no celular e worktree isolada; produção autorizada.
-- Main base `91b73dd`; preservar privacidade e variáveis públicas.
+- Main base `162e357`; preservar privacidade e variáveis públicas.
 - Arquivos preparados antes do toque, cancelamento sem ação secundária.
 - PNG permanece utilizável quando a conversão JPEG falha.
 - Não anunciar publicação nem garantir destinatário que o navegador não informa.
