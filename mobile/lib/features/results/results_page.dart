@@ -175,6 +175,7 @@ class _ResultsPageState extends State<ResultsPage> {
                       settings: const RouteSettings(name: resultShareRoute),
                       builder: (_) => ResultSharePage(
                         data: ResultShareData(results: shareableResults),
+                        analytics: _analytics,
                       ),
                     ),
                   ),

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_navigation.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/features/results/results_page.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_card.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_page.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 void main() {
   setUp(() {
@@ -16,6 +19,8 @@ void main() {
 
   testWidgets('compartilha o resultado visível e preserva o quiz ao voltar',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final analytics = AnalyticsService(sink: sink);
     await tester.runAsync(ResultShareCard.loadFonts);
     QuizSession.instance.results = const [
       CandidateResult(
@@ -61,7 +66,7 @@ void main() {
     QuizSession.instance.selectedCandidateIds = {'2', '3'};
     await tester.pumpWidget(MaterialApp(
       theme: ThemeData.dark(),
-      home: const ResultsPage(),
+      home: ResultsPage(analytics: analytics),
     ));
     await tester.pumpAndSettle();
 
@@ -69,10 +74,15 @@ void main() {
     await tester.tap(find.text('Compartilhar resultado'));
     await tester.pump();
     for (var attempt = 0; attempt < 40; attempt++) {
+      await tester.pump(const Duration(milliseconds: 20));
       await tester.runAsync(
           () => Future<void>.delayed(const Duration(milliseconds: 20)));
       await tester.pump();
-      if (find.text('Preparando imagem…').evaluate().isEmpty) break;
+      if (named(sink.calls, 'operation_result').any(
+        (call) => call.parameters?['operation'] == 'share_render',
+      )) {
+        break;
+      }
     }
     await tester.pumpAndSettle();
 
@@ -85,6 +95,13 @@ void main() {
     );
     expect(find.text('Candidata B'), findsOneWidget);
     expect(find.text('Candidata A'), findsNothing);
+    final render = named(sink.calls, 'operation_result').singleWhere(
+      (call) => call.parameters?['operation'] == 'share_render',
+    );
+    expect(render.parameters, containsPair('outcome', 'success'));
+    expect(render.parameters, containsPair('trigger', 'initial'));
+    expect(named(sink.calls, 'screen_viewed'), isEmpty,
+        reason: 'screen_viewed pertence somente ao observer de navegação');
     await tester.tap(find.text('Ranking'));
     await tester.pumpAndSettle();
     expect(find.text('Candidata C'), findsOneWidget);
