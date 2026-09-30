@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Direções do Feixe — Farol Político</title>
+  <link rel="icon" href="feixe.svg" type="image/svg+xml">
+  <style>
+    @font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-Regular.ttf');font-weight:400}
+    @font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-SemiBold.ttf');font-weight:600}
+    @font-face{font-family:Inter;src:url('../../../../mobile/test/fixtures/fonts/Inter-ExtraBold.ttf');font-weight:800}
+    @font-face{font-family:Barlow;src:url('../../../../mobile/assets/fonts/BarlowCondensed-SemiBold.ttf');font-weight:600}
+    @font-face{font-family:Barlow;src:url('../../../../mobile/assets/fonts/BarlowCondensed-ExtraBold.ttf');font-weight:800}
+    *{box-sizing:border-box}
+    body{margin:0;background:#131313;color:#fff;font:400 15px/1.6 Inter,system-ui,sans-serif}
+    main{max-width:1160px;margin:auto;padding:40px 32px 48px}
+    a{color:#bbb;text-underline-offset:4px}
+    .intro{display:flex;justify-content:space-between;gap:36px;align-items:flex-end;margin:28px 0 32px}
+    h1{font-size:clamp(30px,4.5vw,48px);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin:0}
+    .intro p{max-width:470px;margin:0;color:#bbb}
+    .controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:26px}
+    button{font:600 13px Inter,system-ui,sans-serif;padding:12px 17px;min-height:44px;cursor:pointer;border:1px solid #555;background:transparent;color:#fff;border-radius:3px}
+    button.primary{background:#fff;color:#131313;border-color:#fff}
+    button:hover{border-color:#fff}
+    button.primary:hover{background:#dedede}
+    button:focus-visible,a:focus-visible{outline:2px solid #fff;outline-offset:4px}
+    .controls p{font-size:12px;color:#aaa;margin:0 0 0 auto}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    figure{margin:0;min-width:0}
+    .share{display:block;width:100%;height:auto;background:var(--background);font-family:Barlow,sans-serif;font-weight:600;overflow:hidden}
+    .share text{fill:var(--foreground)}
+    .share .accent{fill:var(--accent)}
+    .share .bold{font-weight:800}
+    .beam{fill:#fff}
+    .blue{--background:#2045d8;--foreground:#f5faff;--accent:#c6f5ea}
+    .green{--background:#075d50;--foreground:#f4fff8;--accent:#e1f7b0}
+    .black{--background:#181b24;--foreground:#fff;--accent:#d0dcf7}
+    .neutral .share{--background:#131313;--foreground:#fff;--accent:#fff}
+    figcaption{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:#aaa;margin-top:10px}
+    figcaption output{color:#e2e2e2;font-variant-numeric:tabular-nums}
+    .rules{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:30px 0;border-top:1px solid #393939;padding-top:22px}
+    .rules p{font-size:13px;color:#aaa;margin:0}
+    .rules strong{color:#fff;display:block;font-weight:600;margin-bottom:5px}
+    footer{font-size:12px;color:#888;max-width:850px}
+    .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+    @media(max-width:760px){main{padding:24px 18px}.intro{display:block}.intro p{margin-top:20px}.cards{gap:16px;grid-template-columns:1fr}.cards figure{width:100%;max-width:360px;justify-self:center}.rules{grid-template-columns:1fr;gap:18px}.controls p{width:100%;margin:0}}
+  </style>
+</head>
+<body>
+<main>
+  <a href="index.html">Voltar à proposta completa</a>
+  <header class="intro">
+    <h1>Uma marca.<br>Várias direções.</h1>
+    <p>O F permanece no lugar. Só a luz muda de ângulo, criando uma composição diferente a cada novo card — sempre branca, translúcida e discreta.</p>
+  </header>
+  <div class="controls">
+    <button class="primary" id="shuffle" type="button">Sortear novas direções</button>
+    <button id="neutral" type="button" aria-pressed="false">Ver em carvão</button>
+    <p>Referência interativa · identidade publicada no PR #63</p>
+  </div>
+  <div class="cards" id="cards"></div>
+  <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+  <noscript><p>Ative o JavaScript para comparar os ângulos nesta prévia.</p></noscript>
+  <div class="rules">
+    <p><strong>Aleatoriedade com intenção</strong>A direção varia entre 10° e 70°, apontando para dentro do card. O símbolo e o ponto de origem ficam fixos.</p>
+    <p><strong>A mesma imagem até o envio</strong>Proposta: sortear ao abrir um novo compartilhamento. Trocar cor, formato ou baixar não sorteia outro ângulo.</p>
+    <p><strong>A leitura vem primeiro</strong>Uma abertura suave de luz, sem movimento contínuo. Cores, fontes, textos e resultados continuam como estão.</p>
+  </div>
+  <footer>Estudo vetorial do fundo, com dados fictícios e fontes reais do projeto. O botão de sorteio serve apenas para comparar a proposta aqui; não é um novo controle do app. <a href="implementado/index.html">Ver as imagens finais e os cards reais da implementação local</a>.</footer>
+</main>
+<template id="card-template">
+  <figure>
+    <svg class="share" viewBox="0 0 360 640" role="img" aria-label="Card fictício do Farol Político com feixe branco translúcido">
+      <!-- O cone sai do centro da barra do F: 28 + 54 × .375, 48 + 35 × .375. -->
+      <g transform="translate(48.25 61.125)">
+        <g class="beam" data-beam>
+          <path fill-opacity=".075" d="M 0 -1 L 950 -210 L 950 210 L 0 1 Z"/>
+          <path fill-opacity=".035" d="M 0 -1 L 950 -210 L 950 -52 Z"/>
+        </g>
+      </g>
+      <g transform="translate(28 48) scale(.375)" fill="#fff">
+        <path d="m12 13 42-7v12l-30 5v35H12z"/>
+        <path d="m31 32 23-4v14l-23-4z"/>
+        <path fill-opacity=".32" d="m24 25 7 7v6l-7 5z"/>
+      </g>
+      <text x="60" y="68" font-size="22">farol político</text>
+      <text class="bold" x="28" y="170" font-size="40"><tspan>Fiz o quiz.</tspan><tspan x="28" dy="42">Meu alinhamento.</tspan></text>
+      <text class="bold accent" x="28" y="328" font-size="112">87,5%</text>
+      <text x="28" y="360" font-size="20">de afinidade com</text>
+      <text class="bold" x="28" y="406" font-size="36">Candidatura A</text>
+      <text x="28" y="438" font-size="18">Exemplo fictício</text>
+      <text class="bold" x="28" y="548" font-size="14">Edição 2026</text>
+      <text x="28" y="564" font-size="12">Entre os candidatos que comparei.</text>
+      <text class="accent" x="28" y="591" font-size="17">fpolitico.com.br</text>
+    </svg>
+    <figcaption><span data-caption></span><output data-angle></output></figcaption>
+  </figure>
+</template>
+<script>
+  const cards = document.getElementById('cards');
+  const template = document.getElementById('card-template');
+  const studies = [
+    { palette: 'blue', label: 'Azul atual', angle: 14 },
+    { palette: 'green', label: 'Verde atual', angle: 38 },
+    { palette: 'black', label: 'Preto atual', angle: 64 },
+  ];
+
+  for (const study of studies) {
+    const fragment = template.content.cloneNode(true);
+    const figure = fragment.querySelector('figure');
+    figure.querySelector('svg').classList.add(study.palette);
+    figure.querySelector('[data-caption]').textContent = study.label;
+    study.figure = figure;
+    cards.append(fragment);
+  }
+
+  function renderAngles() {
+    for (const study of studies) {
+      const label = cards.classList.contains('neutral') ? 'Carvão institucional' : study.label;
+      study.figure.querySelector('[data-beam]').setAttribute('transform', `rotate(${study.angle})`);
+      study.figure.querySelector('[data-angle]').textContent = `${study.angle}°`;
+      study.figure.querySelector('[data-caption]').textContent = label;
+      study.figure.querySelector('svg').setAttribute('aria-label', `${label}: exemplo fictício com feixe a ${study.angle} graus.`);
+    }
+  }
+
+  document.getElementById('shuffle').addEventListener('click', () => {
+    // Os três intervalos mantêm uma comparação legível; não associam uma
+    // direção a uma cor no produto. Na implementação, o sorteio é por card.
+    const bands = [[10, 25], [32, 48], [55, 70]];
+    const offset = Math.floor(Math.random() * studies.length);
+    studies.forEach((study, index) => {
+      const [min, max] = bands[(index + offset) % studies.length];
+      const candidates = Array.from({ length: max - min + 1 }, (_, n) => n + min)
+        .filter(angle => Math.abs(angle - study.angle) >= 5);
+      study.angle = candidates[Math.floor(Math.random() * candidates.length)];
+    });
+    renderAngles();
+    document.getElementById('announcement').textContent = `Novas direções: ${studies.map(study => `${study.angle} graus`).join(', ')}.`;
+  });
+
+  document.getElementById('neutral').addEventListener('click', event => {
+    const neutral = cards.classList.toggle('neutral');
+    event.currentTarget.setAttribute('aria-pressed', String(neutral));
+    event.currentTarget.textContent = neutral ? 'Restaurar cores atuais' : 'Ver em carvão';
+    renderAngles();
+  });
+
+  renderAngles();
+</script>
+</body>
+</html>
