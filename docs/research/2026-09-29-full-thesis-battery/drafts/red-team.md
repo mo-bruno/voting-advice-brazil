@@ -4,8 +4,6 @@
 
 Foram revisados exatamente 26 itens, sem classificar candidaturas, sem validar PDFs e sem alterar `BATTERY.json`, `BATTERY.md` ou qualquer arquivo central. A revisão confrontou afirmação, explicação, objeto decisório e família quanto a atomicidade, neutralidade, vocabulário, consistência interna, falso paralelismo, alcance aberto e peso agregado.
 
-**A bateria atualmente publicada ficou integralmente fora desta revisão.** Ela não foi lida, comparada, citada, usada como benchmark nem usada para decidir redação, cobertura, redundância ou tamanho.
-
 ## Recomendação
 
 Recomendo uma bateria principal de **22 itens**: as quatro âncoras imutáveis, os oito demais itens aceitos e os dez itens revisados abaixo. Quatro itens devem sair da rodada principal e permanecer como reserva: `FB-Q10`, `FB-Q13`, `FB-Q18` e `FB-Q20`.

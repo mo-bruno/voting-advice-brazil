@@ -1,10 +1,11 @@
 {
   "schema_version": 1,
-  "battery_id": "full-battery-human-review-v1",
+  "battery_id": "full-battery-human-review-v2",
+  "battery_version": 2,
   "status": "pending_user_review",
-  "item_count": 22,
+  "item_count": 20,
   "approved_anchor_count": 4,
-  "pending_item_count": 18,
+  "pending_item_count": 16,
   "response_buttons": [
     "Concordo",
     "Discordo",
@@ -14,6 +15,22 @@
   "published_theses_used": false,
   "candidate_validation_dispatched": false,
   "selection_note": "O conjunto foi derivado dos 636 registros e 118 famílias. O tamanho resulta da revisão editorial, sem cota rígida por categoria. Contagens do mapa são apenas pistas de busca, não respostas de candidatos.",
+  "removed_after_human_review": [
+    {
+      "id": "FB-Q09",
+      "previous_version": 1,
+      "previous_wording_sha256": "dfc23818f258a734242d5c3397d7521d977365081bce3ad4eace4c103fb2a723",
+      "statement": "Os serviços de água e esgoto devem poder ser concedidos a empresas privadas.",
+      "reason": "A redação mede uma decisão do titular local ou interfederativo do serviço, sem recortar uma ação própria do governo federal."
+    },
+    {
+      "id": "FB-Q20",
+      "previous_version": 1,
+      "previous_wording_sha256": "45ed9c0f7011fe7e7c81dbea2308097b94888bc1f577bf3a662197e46c08c3c2",
+      "statement": "Lideranças de facções criminosas devem cumprir pena separadamente dos demais presos, em unidades de segurança máxima.",
+      "reason": "A redação descreve em grande parte uma regra jurídica e uma prática já existentes, reduzindo sua utilidade como escolha política discriminante."
+    }
+  ],
   "items": [
     {
       "id": "B01-Q01",
@@ -223,12 +240,12 @@
       "id": "FB-Q07",
       "source_draft_id": "CR-Q07",
       "display_number": 7,
-      "version": 1,
+      "version": 2,
       "status": "pending_user_review",
       "anchor_approved": false,
-      "statement": "Um servidor público estável deve poder ser demitido por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
-      "explanation": "A afirmação trata da demissão como consequência de desempenho insuficiente. Ela não abrange cargos temporários, remuneração por mérito nem demissão sem processo.",
-      "decision_object": "Possibilidade de desligamento de servidor estável por baixo desempenho reiterado.",
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "explanation": "A afirmação pergunta se o baixo desempenho pode ser motivo legal para demissão. Ela não torna a demissão automática e não abrange cargos temporários, remuneração por mérito nem demissão sem processo.",
+      "decision_object": "Permissão legal para demitir servidor estável por baixo desempenho comprovado, com direito de defesa.",
       "category_id": "estado_gestao",
       "family_ids": [
         "G07"
@@ -254,20 +271,26 @@
         "coverage-review.json",
         "whole-battery.json",
         "semantic-review.json",
-        "red-team.json"
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
       ],
-      "wording_sha256": "4fea5e6441d0e4ba9cffb4969e56a62c7d06f2060f7a13062523090963656a02"
+      "revision_history": {
+        "previous_version": 1,
+        "previous_wording_sha256": "4fea5e6441d0e4ba9cffb4969e56a62c7d06f2060f7a13062523090963656a02",
+        "reason": "Substitui a construção 'deve poder' por uma ação legal direta e preserva avaliação, prova e defesa."
+      },
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7"
     },
     {
       "id": "FB-Q08",
       "source_draft_id": "CR-Q08",
       "display_number": 8,
-      "version": 1,
+      "version": 2,
       "status": "pending_user_review",
       "anchor_approved": false,
-      "statement": "O transporte coletivo urbano deve ser gratuito para todos os passageiros.",
-      "explanation": "A afirmação trata da tarifa cobrada do passageiro. Ela não decide se o serviço será operado por empresa pública ou privada nem qual fonte pagará a operação.",
-      "decision_object": "Gratuidade universal da tarifa do transporte coletivo urbano.",
+      "statement": "O governo federal deve repassar recursos para que os municípios ofereçam transporte coletivo urbano gratuito a todos os passageiros.",
+      "explanation": "A afirmação trata do financiamento federal da tarifa zero universal. A organização e a prestação do serviço permanecem locais; a pergunta não define a fonte dos recursos, os critérios de distribuição nem o operador.",
+      "decision_object": "Financiamento federal da gratuidade universal no transporte coletivo urbano municipal.",
       "category_id": "infraestrutura_territorio",
       "family_ids": [
         "T05"
@@ -292,52 +315,20 @@
         "coverage-review.json",
         "whole-battery.json",
         "semantic-review.json",
-        "red-team.json"
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
       ],
-      "wording_sha256": "e3c81d6427738af6c3639abf761c6eac28e4a5b7902574dfe8a8815ea44742f9"
-    },
-    {
-      "id": "FB-Q09",
-      "source_draft_id": "CR-Q09",
-      "display_number": 9,
-      "version": 1,
-      "status": "pending_user_review",
-      "anchor_approved": false,
-      "statement": "Os serviços de água e esgoto devem poder ser concedidos a empresas privadas.",
-      "explanation": "Concessão é um contrato em que uma empresa presta o serviço por prazo e regras definidos pelo poder público. A afirmação permite esse modelo, sem exigir que todo serviço seja concedido.",
-      "decision_object": "Admissão de concessões privadas na prestação de água e esgoto.",
-      "category_id": "infraestrutura_territorio",
-      "family_ids": [
-        "T09"
-      ],
-      "measurement_risks": [
-        "Universalizar saneamento não define a natureza do operador.",
-        "Concessão, PPP, regionalização e privatização do ativo não são sinônimos.",
-        "A pergunta deve ficar restrita a água e esgoto."
-      ],
-      "reach_hypothesis": {
-        "family_position_keys": 10,
-        "family_candidate_ids": 9,
-        "band": "high",
-        "basis": "T09 reúne concessões, parcerias, regionalização, prestação pública e proposta de monopólio estatal.",
-        "label": "hipótese editorial"
+      "revision_history": {
+        "previous_version": 1,
+        "previous_wording_sha256": "e3c81d6427738af6c3639abf761c6eac28e4a5b7902574dfe8a8815ea44742f9",
+        "reason": "Recorta o instrumento de competência federal: repasse de recursos para a tarifa zero municipal."
       },
-      "terms_to_explain": [
-        "concessão",
-        "prestação do serviço"
-      ],
-      "source_drafts": [
-        "coverage-review.json",
-        "whole-battery.json",
-        "semantic-review.json",
-        "red-team.json"
-      ],
-      "wording_sha256": "dfc23818f258a734242d5c3397d7521d977365081bce3ad4eace4c103fb2a723"
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab"
     },
     {
       "id": "FB-Q10",
       "source_draft_id": "CR-Q11",
-      "display_number": 10,
+      "display_number": 9,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -374,7 +365,7 @@
     {
       "id": "FB-Q11",
       "source_draft_id": "CR-Q12",
-      "display_number": 11,
+      "display_number": 10,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -413,7 +404,7 @@
     {
       "id": "FB-Q12",
       "source_draft_id": "CR-Q14",
-      "display_number": 12,
+      "display_number": 11,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -451,7 +442,7 @@
     {
       "id": "FB-Q13",
       "source_draft_id": "CR-Q15",
-      "display_number": 13,
+      "display_number": 12,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -490,7 +481,7 @@
     {
       "id": "FB-Q14",
       "source_draft_id": "CR-Q16",
-      "display_number": 14,
+      "display_number": 13,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -528,7 +519,7 @@
     {
       "id": "FB-Q15",
       "source_draft_id": "CR-Q17",
-      "display_number": 15,
+      "display_number": 14,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -566,7 +557,7 @@
     {
       "id": "FB-Q16",
       "source_draft_id": "CR-Q19",
-      "display_number": 16,
+      "display_number": 15,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -604,13 +595,13 @@
     {
       "id": "FB-Q17",
       "source_draft_id": "CR-Q21",
-      "display_number": 17,
-      "version": 1,
+      "display_number": 16,
+      "version": 2,
       "status": "pending_user_review",
       "anchor_approved": false,
-      "statement": "A lei deve prever um período da gestação em que a interrupção voluntária deixe de ser crime.",
-      "explanation": "A afirmação pergunta se deve existir uma janela legal sem punição criminal. Ela não define o prazo gestacional, a forma de atendimento nem as regras clínicas.",
-      "decision_object": "Existência de período gestacional em que a interrupção voluntária não seja criminalizada.",
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "explanation": "A afirmação pergunta se deve existir um prazo gestacional em que o aborto voluntário não tenha punição criminal. Ela não define esse prazo, a forma de atendimento nem as regras clínicas.",
+      "decision_object": "Descriminalização do aborto voluntário até determinado período da gestação.",
       "category_id": "cidadania_direitos",
       "family_ids": [
         "C07"
@@ -634,14 +625,20 @@
         "coverage-review.json",
         "whole-battery.json",
         "semantic-review.json",
-        "red-team.json"
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
       ],
-      "wording_sha256": "ee2bff21023ff7e0fe973f7305ee3ddb2df134f621a620696f1fbaafd024858b"
+      "revision_history": {
+        "previous_version": 1,
+        "previous_wording_sha256": "ee2bff21023ff7e0fe973f7305ee3ddb2df134f621a620696f1fbaafd024858b",
+        "reason": "Usa o termo comum 'aborto' para reduzir custo de interpretação sem incorporar justificativa moral."
+      },
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc"
     },
     {
       "id": "FB-Q18",
       "source_draft_id": "CR-Q22",
-      "display_number": 18,
+      "display_number": 17,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -679,7 +676,7 @@
     {
       "id": "FB-Q19",
       "source_draft_id": "CR-Q23",
-      "display_number": 19,
+      "display_number": 18,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -716,47 +713,9 @@
       "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f"
     },
     {
-      "id": "FB-Q20",
-      "source_draft_id": "CR-Q24",
-      "display_number": 20,
-      "version": 1,
-      "status": "pending_user_review",
-      "anchor_approved": false,
-      "statement": "Lideranças de facções criminosas devem cumprir pena separadamente dos demais presos, em unidades de segurança máxima.",
-      "explanation": "A afirmação trata de separar lideranças de organizações criminosas em unidades de segurança máxima. Ela não proíbe toda comunicação com familiares ou advogados.",
-      "decision_object": "Segregação de lideranças de facções em unidades de segurança máxima.",
-      "category_id": "seguranca_publica",
-      "family_ids": [
-        "S05"
-      ],
-      "measurement_risks": [
-        "Lideranças, integrantes e presos de alta periculosidade não são universos idênticos.",
-        "Segregação não implica automaticamente monitorar ou proibir toda comunicação.",
-        "Construir vagas, reinserir e retirar gestão privada são decisões separadas."
-      ],
-      "reach_hypothesis": {
-        "family_position_keys": 12,
-        "family_candidate_ids": 11,
-        "band": "high",
-        "basis": "S05 é uma das famílias de maior alcance e contém segurança máxima, segregação, reintegração, capacidade e gestão prisional.",
-        "label": "hipótese editorial"
-      },
-      "terms_to_explain": [
-        "liderança de facção",
-        "unidade de segurança máxima"
-      ],
-      "source_drafts": [
-        "coverage-review.json",
-        "whole-battery.json",
-        "semantic-review.json",
-        "red-team.json"
-      ],
-      "wording_sha256": "45ed9c0f7011fe7e7c81dbea2308097b94888bc1f577bf3a662197e46c08c3c2"
-    },
-    {
       "id": "FB-Q21",
       "source_draft_id": "CR-Q25",
-      "display_number": 21,
+      "display_number": 19,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,
@@ -793,7 +752,7 @@
     {
       "id": "FB-Q22",
       "source_draft_id": "CR-Q26",
-      "display_number": 22,
+      "display_number": 20,
       "version": 1,
       "status": "pending_user_review",
       "anchor_approved": false,

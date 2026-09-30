@@ -2,7 +2,7 @@
 
 ## Escopo e conclusão
 
-Esta revisão percorre o mapa completo de 636 registros e 118 famílias, as quatro âncoras B01 e os critérios editoriais. Ela não classifica candidaturas, não herda respostas das sementes e não mede cobertura. Também não usa, compara, critica ou cita a bateria publicada. A unidade de análise é a decisão pública, e não o vocabulário de uma candidatura.
+Esta revisão percorre o mapa completo de 636 registros e 118 famílias, as quatro âncoras B01 e os critérios editoriais. Ela não classifica candidaturas, não herda respostas das sementes e não mede cobertura. A unidade de análise é a decisão pública, e não o vocabulário de uma candidatura.
 
 A recomendação é um teto editorial de 30 itens: as quatro âncoras imutáveis e 26 redações candidatas. O número não deve ser tratado como meta. Alguns itens só preservam seu significado dentro de pares; se a consolidação remover um deles, deve reavaliar o item remanescente em vez de apenas encurtar a lista.
 

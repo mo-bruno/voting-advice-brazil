@@ -5,7 +5,7 @@
 **Fonte:** 636 posições organizadas em 118 famílias decisórias
 **Botões previstos:** Concordo, Discordo, Neutro e Pular
 
-A seleção foi feita pelo conjunto completo, sem cotas por categoria. Categoria aparece abaixo somente como diagnóstico. Não houve classificação de candidaturas nem nova leitura ou validação de PDFs. A bateria existente não foi usada como fonte, benchmark ou critério de seleção. Os vínculos de posição e família indicam somente origem ou provável interseção semântica; não são respostas às teses.
+A seleção foi feita pelo conjunto completo, sem cotas por categoria. Categoria aparece abaixo somente como diagnóstico. Não houve classificação de candidaturas nem nova leitura ou validação de PDFs. Os vínculos de posição e família indicam somente origem ou provável interseção semântica; não são respostas às teses.
 
 ## Leitura editorial do conjunto
 

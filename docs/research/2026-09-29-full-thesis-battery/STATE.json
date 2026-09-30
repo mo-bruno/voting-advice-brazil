@@ -17,11 +17,14 @@
   ],
   "battery": {
     "file": "BATTERY.json",
-    "item_count": 22,
+    "version": 2,
+    "item_count": 20,
     "approved_anchor_count": 4,
-    "pending_user_review_count": 18,
-    "reserve_count": 4,
-    "sha256": "68449e4a57a1b6239401078159c1042c25a259735840715cc329180ce32fee2b"
+    "pending_user_review_count": 16,
+    "reserve_count": 6,
+    "removed_after_human_review_count": 2,
+    "revised_after_human_review_count": 3,
+    "sha256": "fb2df18a69aaaa6f641951d026695313eadaf59fd4e5ae343d2d3ab2901b0753"
   },
   "candidate_validation": {
     "status": "paused_by_user",
@@ -62,8 +65,8 @@
     },
     {
       "id": "human_review",
-      "output": null,
-      "status": "pending"
+      "output": "HUMAN_REVIEW_01.md",
+      "status": "in_progress"
     }
   ]
 }

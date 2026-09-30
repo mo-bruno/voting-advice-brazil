@@ -6,7 +6,7 @@ Recomendo uma bateria final de **26 teses**: as quatro âncoras B01 v1 e 22 iten
 
 A seleção liga diretamente 27 das 118 famílias. A união dessas famílias contém 220 dos 636 `position_keys` e alcança os 13 prefixos de candidatura. Esses números são somente um índice de onde procurar evidência. Não são respostas, cobertura validada, polos, afinidade nem denominador de ranking.
 
-Esta revisão deriva somente dos 636 registros, das 118 famílias, das quatro âncoras B01 e dos critérios editoriais. **A bateria atualmente publicada, suas redações, posições e métricas não foram usadas.** Nenhuma candidatura foi classificada nesta etapa.
+Esta revisão deriva somente dos 636 registros, das 118 famílias, das quatro âncoras B01 e dos critérios editoriais. Nenhuma candidatura foi classificada nesta etapa.
 
 ## Critérios
 

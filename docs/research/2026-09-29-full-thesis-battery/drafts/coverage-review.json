@@ -26,7 +26,7 @@
       "../2026-09-29-thematic-profiles/THESIS_DESIGN.md"
     ],
     "published_battery_used": false,
-    "published_battery_note": "A bateria atualmente publicada, suas redações, posições e métricas foram excluídas desta análise. A seleção deriva somente dos 636 registros, das 118 famílias, das quatro âncoras B01 e dos critérios editoriais.",
+    "source_scope_note": "A seleção deriva somente dos 636 registros, das 118 famílias, das quatro âncoras B01 e dos critérios editoriais.",
     "candidate_classification_performed": false,
     "candidate_positions_inferred": false
   },

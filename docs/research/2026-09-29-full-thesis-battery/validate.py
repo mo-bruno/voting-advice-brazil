@@ -37,16 +37,18 @@ def main():
     items = battery["items"]
 
     assert battery["status"] == "pending_user_review"
-    assert battery["item_count"] == len(items) == 22
+    assert battery["battery_version"] == 2
+    assert battery["item_count"] == len(items) == 20
     assert battery["approved_anchor_count"] == 4
-    assert battery["pending_item_count"] == 18
+    assert battery["pending_item_count"] == 16
     assert battery["published_theses_used"] is False
     assert battery["candidate_validation_dispatched"] is False
     assert battery["response_buttons"] == ["Concordo", "Discordo", "Neutro", "Pular"]
-    assert [item["display_number"] for item in items] == list(range(1, 23))
-    assert len({item["id"] for item in items}) == 22
-    assert len({item["statement"] for item in items}) == 22
-    assert len({item["wording_sha256"] for item in items}) == 22
+    assert [item["display_number"] for item in items] == list(range(1, 21))
+    assert len({item["id"] for item in items}) == 20
+    assert len({item["statement"] for item in items}) == 20
+    assert len({item["wording_sha256"] for item in items}) == 20
+    assert {item["id"] for item in battery["removed_after_human_review"]} == {"FB-Q09", "FB-Q20"}
 
     category_counts = collections.Counter()
     for item in items:
@@ -64,7 +66,7 @@ def main():
             assert item["wording_sha256"] == source["wording_sha256"]
         else:
             assert item["status"] == "pending_user_review"
-            assert item["version"] == 1
+            assert item["version"] == (2 if item["id"] in {"FB-Q07", "FB-Q08", "FB-Q17"} else 1)
 
     assert len(category_counts) == 10
     result = {

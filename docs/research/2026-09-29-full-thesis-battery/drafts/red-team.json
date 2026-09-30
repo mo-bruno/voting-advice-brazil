@@ -8,7 +8,7 @@
     "pdf_validation_performed": false,
     "central_files_modified": false,
     "published_battery_used": false,
-    "published_battery_note": "A bateria atualmente publicada ficou integralmente fora desta revisão: não foi lida, comparada, citada, usada como benchmark nem usada para decidir redação, cobertura, redundância ou tamanho."
+    "source_scope_note": "A revisão usa a bateria consolidada derivada do mapa documental e não atribui respostas a candidaturas."
   },
   "inputs_reviewed": [
     "../BATTERY.json",
