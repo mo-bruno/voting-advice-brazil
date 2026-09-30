@@ -153,7 +153,7 @@ void main() {
       expect(matches.single['headers'], [
         {
           'key': 'Cache-Control',
-          'value': 'no-cache, max-age=0, must-revalidate',
+          'value': 'no-cache, no-store, must-revalidate',
         },
       ]);
     }
