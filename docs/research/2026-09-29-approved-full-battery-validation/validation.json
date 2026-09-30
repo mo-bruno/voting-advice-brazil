@@ -2,11 +2,11 @@
   "schema_version": 1,
   "approved_questions": 20,
   "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
-  "completed_reviews": 12,
-  "valid_reviews": 12,
-  "answers": 240,
-  "quote_occurrences": 250,
-  "valid": false,
+  "completed_reviews": 13,
+  "valid_reviews": 13,
+  "answers": 260,
+  "quote_occurrences": 273,
+  "valid": true,
   "results": [
     {
       "candidate_id": "280002538811",
@@ -107,8 +107,16 @@
     },
     {
       "candidate_id": "280002551547",
-      "status": "pending",
-      "errors": []
+      "status": "valid",
+      "errors": [],
+      "answers": 20,
+      "quotes": 23,
+      "counts": {
+        "NAO_ENCONTRADA": 18,
+        "CONCORDA": 2
+      },
+      "review_sha256": "c1dfcc0038cf2294d8db50f2146bfa67bd843e34bf82fa12539c77e813f51c59",
+      "markdown_sha256": "10a2988581f79f4e4fd99462f5110ad41f37857ce3a0bbe25ae3526908f8fb30"
     },
     {
       "candidate_id": "280002551932",

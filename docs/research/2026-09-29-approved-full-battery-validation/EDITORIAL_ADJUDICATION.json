@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "status": "awaiting_human_decision",
+  "source_questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "validated_plans": 13,
+  "validated_answers": 260,
+  "quote_occurrences": 273,
+  "excluded_candidate_ids": [
+    "280002553884"
+  ],
+  "unchanged_question_count": 16,
+  "proposals": [
+    {
+      "display_number": 8,
+      "action": "replace",
+      "current_question_id": "FB-Q08",
+      "current_version": 2,
+      "current_statement": "O governo federal deve repassar recursos para que os municípios ofereçam transporte coletivo urbano gratuito a todos os passageiros.",
+      "proposed_question_id": "FB-Q23",
+      "proposed_version": 1,
+      "proposed_statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "reason": "A versão atual combina gratuidade universal e financiamento federal e teve cobertura de 1/13. A alternativa expressa uma decisão federal recorrente e potencialmente contrastante.",
+      "prevalidation_hypothesis": {
+        "potential_documented_support": 7,
+        "potential_documented_opposition": true
+      }
+    },
+    {
+      "display_number": 10,
+      "action": "replace",
+      "current_question_id": "FB-Q11",
+      "current_version": 1,
+      "current_statement": "Sistemas de inteligência artificial classificados como de alto risco devem cumprir obrigações preventivas antes de serem usados.",
+      "proposed_question_id": "FB-Q24",
+      "proposed_version": 1,
+      "proposed_statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "reason": "A regulação preventiva teve cobertura de 2/13 e nenhum apoio integral; cinco planos documentam capacidade nacional de IA por instrumentos distintos.",
+      "prevalidation_hypothesis": {
+        "potential_documented_support": 5,
+        "potential_documented_opposition": false
+      }
+    },
+    {
+      "display_number": 12,
+      "action": "replace",
+      "current_question_id": "FB-Q13",
+      "current_version": 1,
+      "current_statement": "Quem recebe benefício de transferência de renda e consegue emprego formal deve poder manter parte do benefício por um período de transição.",
+      "proposed_question_id": "FB-Q25",
+      "proposed_version": 1,
+      "proposed_statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "reason": "A versão atual reproduz em grande parte a Regra de Proteção vigente do Bolsa Família. A alternativa tem competência federal clara e contraste documental preliminar.",
+      "official_current_policy_source": "https://www.gov.br/mds/pt-br/acoes-e-programas/bolsa-familia/regra-de-protecao/regras-de-protecao",
+      "prevalidation_hypothesis": {
+        "potential_documented_support": 4,
+        "potential_documented_opposition": true
+      }
+    },
+    {
+      "display_number": 18,
+      "action": "revise",
+      "current_question_id": "FB-Q19",
+      "current_version": 1,
+      "current_statement": "O poder público deve poder usar reconhecimento facial em espaços públicos para localizar pessoas foragidas.",
+      "proposed_question_id": "FB-Q19",
+      "proposed_version": 2,
+      "proposed_statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "reason": "A finalidade restrita a pessoas foragidas teve cobertura de 2/13; cinco planos documentam algum uso de reconhecimento facial ou identificação por IA na segurança.",
+      "prevalidation_hypothesis": {
+        "potential_documented_support": 5,
+        "potential_documented_opposition": false
+      }
+    }
+  ],
+  "deliberately_unchanged_low_coverage": [
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "reason": "Avaliação de desempenho não equivale a demissão, progressão ou perda de estabilidade."
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "reason": "O objeto está claro; a baixa cobertura decorre de silêncio documental."
+    }
+  ],
+  "preliminary_ranking_eligibility": {
+    "minimum_documented_positions": 5,
+    "minimum_categories": 4,
+    "recalculate_after_revalidation": true,
+    "currently_eligible_candidate_ids": [
+      "280002551932",
+      "280002551975",
+      "280002541457",
+      "280002538811",
+      "280002539826",
+      "280002551544",
+      "280002542548"
+    ],
+    "currently_insufficient_candidate_ids": [
+      "280002552487",
+      "280002554479",
+      "280002540694",
+      "280002551547",
+      "280002548139",
+      "280002552484"
+    ]
+  },
+  "production_changed": false,
+  "ranking_calculated": false
+}

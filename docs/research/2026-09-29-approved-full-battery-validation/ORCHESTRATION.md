@@ -6,7 +6,7 @@ A bateria de vinte teses foi aprovada pelo usuário. Cada um dos treze planos of
 
 ## Estado
 
-Inicialização da rodada. Esperados: 13 pareceres, 20 respostas por plano e 260 classificações documentais.
+Os 13 pareceres foram concluídos e validados: 20 respostas por plano, 260 classificações documentais e 273 ocorrências de citações literais. A consolidação editorial propôs quatro mudanças e aguarda a decisão humana registrada em `EDITORIAL_ADJUDICATION.md`. Nenhuma tese aprovada foi alterada nesta etapa.
 
 ## Fluxo
 
