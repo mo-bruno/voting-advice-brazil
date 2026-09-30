@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/shared/models/iot_device.dart';
 import 'package:guia_eleitoral/shared/widgets/drawer/farol_led_state.dart';
@@ -10,9 +9,7 @@ import 'package:guia_eleitoral/shared/widgets/drawer/farol_status_tile.dart';
 /// dizer duas coisas sem que o usuario abra outra tela: o que o LED esta
 /// mostrando agora e por que.
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   final agora = DateTime.utc(2026, 3, 10, 12, 0);
 
@@ -131,8 +128,7 @@ void main() {
   });
 
   group('pulso', () {
-    testWidgets('o ponto pendente pulsa, como o LED do gadget',
-        (tester) async {
+    testWidgets('o ponto pendente pulsa, como o LED do gadget', (tester) async {
       await pump(tester, device: deviceVisto(const Duration(minutes: 3)));
 
       final inicio = pulseScale(tester);

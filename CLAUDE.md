@@ -6,9 +6,9 @@ Repository guidance for coding agents. Farol Político is a Brazilian voting-adv
 
 The active quiz compares weighted answers against the 2026 presidential plans using City Block Distance. The current edition has 30 active theses and thirteen candidacies, with documentary citations. Only explicit categorical positions affect scores; silence, conditional positions and insufficient evidence do not imply agreement or disagreement. The calculation uses only questions answered by the user for which the candidacy has a documented categorical position, retaining the user's weights. Agreement on all nine comparable answers yields 100%, even if the user answered 30 questions.
 
-The main results screen displays each candidate's photo, name, party and percentage, ordered from highest to lowest percentage. Candidates without comparable answers display `—` and appear last. Cards omit coverage counts and lengthy explanations; evidence coverage, missing positions, sources and excerpts remain available in the answer comparison screen. The results do not recommend a vote. The public political-following entry points currently show an anonymous demand-validation page. Search, profiles, evidence and one-actor follow code are retained behind `POLITICIAN_FOLLOW_ENABLED=false`; existing data is preserved. The app also provides an anonymous community and official weekly news. Legislative evidence does not feed the quiz score.
+The main results screen displays each candidate's photo, name, party and percentage, ordered from highest to lowest percentage. Candidates without comparable answers display `—` and appear last. Cards omit coverage counts and lengthy explanations; evidence coverage, missing positions, sources and excerpts remain available in the answer comparison screen. The results do not recommend a vote. The public political-following entry points currently show a demand-validation page without name or contact details; its locally retained identifier is pseudonymous. Search, profiles, evidence and one-actor follow code are retained behind `POLITICIAN_FOLLOW_ENABLED=false`; existing data is preserved. The app also provides a community under stable pseudonymous aliases and official weekly news. Legislative evidence does not feed the quiz score.
 
-Quiz answers submitted by the app are persisted on the backend under its local UUID v4. The API's optional quiz field is still named `device_id`; it carries the app's `anonymous_id`. Omitting it computes results without saving answers.
+The API's optional quiz field is still named `device_id` and may carry the app's local UUID v4. With `IOT_FEATURE_ENABLED=false`, the backend calculates results without persisting answers or creating or updating `devices`, even if a legacy client supplies `device_id`. With IoT enabled, a supplied ID retains the historical persistence and push behavior. The UUID remains in use for community and follow actions.
 
 ## Architecture and integrations
 
@@ -26,6 +26,8 @@ Câmara's official APIs provide deputies/evidence, and its official news source 
 ## Identity and community contract
 
 `anonymous_id` is a locally generated UUID v4, not a hardware identifier. It is a private bearer credential in `X-Farol-Anonymous-Id` for `/me/...` and community writes. Community reads accept the header optionally. Public post/comment payloads expose `author_alias` and `is_mine`; never publish the UUID or use the alias as a write credential. This is possession-based access without accounts, recovery or one-person-one-identity enforcement.
+
+The demand-validation interest uses a separate local UUID; the contextual database hash is one-way, while the browser holding the UUID can reproduce it to consult its row. The API accepts withdrawal with that UUID, but the current public UI has no withdrawal button; requests go through `privacidade@fpolitico.com.br`. Deduplicated active database rows are the demand source of truth. GA funnel events cover only opt-in visitors. Operational interest retention is capped at 180 days. Posts and comments may reveal political opinion, are stored and publicly displayed under a stable alias, and are sent to NVIDIA NIM for moderation. Removing a post replaces its content with a tombstone and preserves comments; comment-removal and other applicable rights requests go to the privacy channel. Functional community retention follows necessity for the feature, security, legal duties and rights, not a fixed global period.
 
 Posts allow 500 characters and five publications per ten minutes; comments allow 300 characters and ten publications per ten minutes. Counts are persisted per identity; 429 includes `Retry-After: 600`. Removed posts still count toward publication quota. New votes and comments on removed posts return 410; unknown posts return 404. The author can soft-delete a post, other identities receive 403. Reports are deduplicated and may trigger remoderation. General IP throttling is in-process, not distributed.
 
@@ -58,7 +60,13 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+flutter build web --release --no-web-resources-cdn \
+  --dart-define=IOT_FEATURE_ENABLED=false \
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 Keep migrations authoritative for schema changes; startup only performs idempotent seed in development. Production seed is an explicit deployment step; see PUBLICACAO_2026.md for migration, traffic and rollback order. Never claim a deploy or full-suite pass from a source review or a focused test run.

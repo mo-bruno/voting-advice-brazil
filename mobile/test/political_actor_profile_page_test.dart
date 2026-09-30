@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/features/political_actors/political_actor_profile_page.dart';
 import 'package:guia_eleitoral/shared/models/official_evidence.dart';
@@ -9,9 +8,7 @@ import 'package:guia_eleitoral/shared/political_actor_session.dart';
 import 'package:http/http.dart' as http;
 
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   testWidgets('retries transient evidence fetch without showing raw error',
       (tester) async {

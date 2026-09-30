@@ -1,32 +1,11 @@
-import 'package:firebase_analytics/firebase_analytics.dart';
+import 'analytics_dependencies.dart';
+import 'analytics_sink.dart';
 
-abstract class AnalyticsSink {
-  Future<void> logEvent({
-    required String name,
-    Map<String, Object>? parameters,
-  });
-}
-
-class FirebaseAnalyticsSink implements AnalyticsSink {
-  const FirebaseAnalyticsSink({FirebaseAnalytics? analytics})
-      : _analytics = analytics;
-
-  final FirebaseAnalytics? _analytics;
-
-  FirebaseAnalytics get _instance => _analytics ?? FirebaseAnalytics.instance;
-
-  @override
-  Future<void> logEvent({
-    required String name,
-    Map<String, Object>? parameters,
-  }) async {
-    await _instance.logEvent(name: name, parameters: parameters);
-  }
-}
+export 'analytics_sink.dart';
 
 class AnalyticsService {
   AnalyticsService({AnalyticsSink? sink})
-      : _sink = sink ?? const FirebaseAnalyticsSink();
+      : _sink = sink ?? AnalyticsDependencies.instance.sink;
 
   final AnalyticsSink _sink;
 

@@ -6,6 +6,7 @@ import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import '../../shared/quiz_session.dart';
+import 'quiz_processing_notice.dart';
 
 class QuizIntroPage extends StatefulWidget {
   const QuizIntroPage({super.key, this.analytics});
@@ -82,6 +83,8 @@ class _QuizIntroPageState extends State<QuizIntroPage> {
                       'Responda pelo menos ${QuizSession.minimumAnswers} perguntas para calcular o resultado. A comparação considera apenas posições documentadas nos planos oficiais; ausência de evidência não significa discordância.',
                       style: textTheme.bodyMedium?.copyWith(height: 1.5),
                     ),
+                    const SizedBox(height: 16),
+                    const QuizProcessingNotice(),
                     const SizedBox(height: 24),
                     const _TutorialStep(
                       icon: Icons.check,

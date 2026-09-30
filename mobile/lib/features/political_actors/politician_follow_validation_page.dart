@@ -248,7 +248,7 @@ class _RegisteredState extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            'Obrigado. Esse registro anônimo entra na nossa medição de '
+            'Obrigado. Esse registro sem nome ou contato, separado das outras atividades, entra na nossa medição de '
             'demanda.',
             style: textTheme.bodyMedium?.copyWith(height: 1.5),
           ),

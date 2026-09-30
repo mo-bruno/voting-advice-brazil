@@ -143,7 +143,7 @@ void main() {
       expect(sink.events.single.parameters, isNull);
     });
 
-    test('logs the anonymous follow validation funnel without parameters',
+    test('logs the pseudonymous follow validation funnel without parameters',
         () async {
       final sink = FakeAnalyticsSink();
       final service = AnalyticsService(sink: sink);

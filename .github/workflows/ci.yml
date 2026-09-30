@@ -30,6 +30,8 @@ jobs:
             mobile:
               - 'mobile/**'
               - '.github/workflows/ci.yml'
+              - '.github/workflows/deploy-web.yml'
+              - 'firebase.json'
 
   backend:
     needs: changes
@@ -92,4 +94,11 @@ jobs:
         run: flutter test --platform chrome test/analytics_default_pipeline_web_test.dart
 
       - name: Build web (smoke test)
-        run: flutter build web --release --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+        run: >-
+          flutter build web --release --no-web-resources-cdn
+          --dart-define=IOT_FEATURE_ENABLED=false
+          --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+          --dart-define=ANALYTICS_ENABLED=true
+          --dart-define=PUBLIC_APP_URL=https://example.invalid
+          --dart-define=PRIVACY_CONTROLLER_NAME="Responsável de Teste"
+          --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid

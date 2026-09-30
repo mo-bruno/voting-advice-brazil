@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
@@ -23,7 +22,6 @@ class _Tab extends StatelessWidget {
 
 void main() {
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({
       'farol_politico_device_id': 'a3f9c21b-0000-4000-8000-000000000000',
     });

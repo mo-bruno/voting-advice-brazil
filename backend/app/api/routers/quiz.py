@@ -118,11 +118,10 @@ def submit(
             },
         ) from err
 
-    if body.device_id is not None:
+    if body.device_id is not None and request.app.state.settings.iot_feature_enabled:
         anonymous_id = str(body.device_id)
         quiz_response_repo.upsert_answers(anonymous_id, answers)
-        if request.app.state.settings.iot_feature_enabled:
-            _push_news_for_quiz_submission(anonymous_id)
+        _push_news_for_quiz_submission(anonymous_id)
 
     return SubmitQuizResponse(
         results=[

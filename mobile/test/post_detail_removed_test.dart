@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/features/community/post_detail_page.dart';
+import 'package:guia_eleitoral/features/community/community_processing_notice.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class _RemovedPostApi extends ApiClient {
@@ -39,9 +39,33 @@ class _RemovedPostApi extends ApiClient {
       };
 }
 
+class _ActivePostApi extends ApiClient {
+  _ActivePostApi() : super(baseUrl: 'https://example.test');
+
+  @override
+  Future<Map<String, dynamic>> getPost(
+    String postId, {
+    required String anonymousId,
+  }) async =>
+      {
+        'post': {
+          'id': postId,
+          'author_alias': 'u/abc123def0',
+          'is_mine': true,
+          'content': 'Texto público',
+          'political_actor_id': null,
+          'theme_slug': null,
+          'score': 0,
+          'created_at': '2026-09-09T12:00:00Z',
+          'removed': false,
+          'removed_by': null,
+        },
+        'comments': [],
+      };
+}
+
 void main() {
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({
       'farol_politico_device_id': 'a3f9c21b-0000-4000-8000-000000000000',
     });
@@ -60,5 +84,32 @@ void main() {
     expect(find.byType(TextField), findsNothing);
     expect(find.byIcon(Icons.keyboard_arrow_up_rounded), findsNothing);
     expect(find.byIcon(Icons.keyboard_arrow_down_rounded), findsNothing);
+  });
+
+  testWidgets('comment notice precedes reachable send action at 200% text',
+      (tester) async {
+    tester.view.physicalSize = const Size(320, 568);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(MediaQuery(
+      data: MediaQueryData.fromView(tester.view).copyWith(
+        textScaler: const TextScaler.linear(2),
+      ),
+      child: MaterialApp(
+        home: PostDetailPage(postId: 'p1', apiClient: _ActivePostApi()),
+      ),
+    ));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 200));
+    expect(find.byType(CommunityProcessingNotice), findsOneWidget);
+    await tester.enterText(find.byType(TextField), 'Uma opinião');
+    await tester.pump();
+    final send = find.byTooltip('ENVIAR COMENTÁRIO');
+    expect(send, findsOneWidget);
+    await tester.ensureVisible(send);
+    await tester.pump();
+    expect(send.hitTestable(), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 }

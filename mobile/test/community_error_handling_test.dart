@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/community/community_feed_page.dart';
 import 'package:guia_eleitoral/features/community/post_detail_page.dart';
@@ -11,7 +10,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// falha de rede que o usuario veria com o backend fora do ar.
 void main() {
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({});
   });
 

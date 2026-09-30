@@ -14,6 +14,11 @@ jobs:
   deploy:
     if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_APP_URL: ${{ vars.PUBLIC_APP_URL || 'https://fpolitico.com.br' }}
+      PRIVACY_CONTROLLER_NAME: ${{ vars.PRIVACY_CONTROLLER_NAME }}
+      PRIVACY_CONTACT_EMAIL: ${{ vars.PRIVACY_CONTACT_EMAIL }}
+      ANALYTICS_ENABLED: ${{ vars.ANALYTICS_ENABLED }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -30,10 +35,55 @@ jobs:
         run: flutter pub get
         working-directory: mobile
 
+      - name: Validate public privacy identity
+        shell: bash
+        run: |
+          set -euo pipefail
+          export LC_ALL=C.UTF-8
+          controller="${PRIVACY_CONTROLLER_NAME//[[:space:]]/}"
+          contact="${PRIVACY_CONTACT_EMAIL//[[:space:]]/}"
+          test -n "$controller" || { echo "PRIVACY_CONTROLLER_NAME is required"; exit 1; }
+          test -n "$contact" || { echo "PRIVACY_CONTACT_EMAIL is required"; exit 1; }
+          lowered_controller="${PRIVACY_CONTROLLER_NAME,,}"
+          normalized_controller="$(sed -E 's/[^[:alnum:]]+/ /g' <<< "$lowered_controller")"
+          read -r -a controller_tokens <<< "$normalized_controller"
+          for token in "${controller_tokens[@]}"; do
+            case "$token" in
+              exemplo|example|teste|test|todo|tbd|placeholder)
+                echo "Privacy identity must use production values"
+                exit 1
+                ;;
+            esac
+          done
+          compact_controller="${normalized_controller//[[:space:]]/}"
+          test -n "$compact_controller" || {
+            echo "PRIVACY_CONTROLLER_NAME must contain letters or numbers"
+            exit 1
+          }
+          case "$compact_controller" in
+            farolpolítico|farolpolitico)
+              echo "PRIVACY_CONTROLLER_NAME must be the real civil/legal identity, not the brand alone"
+              exit 1
+              ;;
+          esac
+          test "$PRIVACY_CONTACT_EMAIL" = "privacidade@fpolitico.com.br" || {
+            echo "PRIVACY_CONTACT_EMAIL must be the approved public mailbox"
+            exit 1
+          }
+          case "$ANALYTICS_ENABLED" in
+            true|false) ;;
+            *) echo "ANALYTICS_ENABLED must be exactly true or false"; exit 1 ;;
+          esac
+
       - name: Build web release
-        env:
-          PUBLIC_APP_URL: ${{ vars.PUBLIC_APP_URL || 'https://fpolitico.com.br' }}
-        run: flutter build web --release --dart-define=IOT_FEATURE_ENABLED=false --dart-define=POLITICIAN_FOLLOW_ENABLED=false --dart-define=PUBLIC_APP_URL="$PUBLIC_APP_URL"
+        run: >-
+          flutter build web --release --no-web-resources-cdn
+          --dart-define=IOT_FEATURE_ENABLED=false
+          --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+          --dart-define=PUBLIC_APP_URL="$PUBLIC_APP_URL"
+          --dart-define=ANALYTICS_ENABLED="$ANALYTICS_ENABLED"
+          --dart-define=PRIVACY_CONTROLLER_NAME="$PRIVACY_CONTROLLER_NAME"
+          --dart-define=PRIVACY_CONTACT_EMAIL="$PRIVACY_CONTACT_EMAIL"
         working-directory: mobile
 
       - name: Deploy Firebase Hosting

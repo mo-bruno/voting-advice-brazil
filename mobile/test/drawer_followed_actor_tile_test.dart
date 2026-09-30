@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/shared/models/political_actor.dart';
 import 'package:guia_eleitoral/shared/widgets/drawer/followed_actor_tile.dart';
 
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   PoliticalActor actor({String? party = 'PDT', String? state = 'RS'}) {
     return PoliticalActor(

@@ -5,6 +5,7 @@ import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
+import 'community_processing_notice.dart';
 import 'models/community_models.dart';
 import 'utils/community_utils.dart';
 
@@ -192,40 +193,49 @@ class _PostDetailPageState extends State<PostDetailPage> {
         icon: const Icon(Icons.arrow_back),
         onPressed: () => Navigator.pop(context),
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                _PostBody(post: post, onVote: _vote),
-                const SizedBox(height: 8),
-                if (comments.isNotEmpty)
-                  const Padding(
-                    padding: EdgeInsets.fromLTRB(16, 8, 16, 4),
-                    child: Text(
-                      'COMENTÁRIOS',
-                      style: TextStyle(
-                        fontSize: 11,
-                        fontWeight: FontWeight.w600,
-                        color: AppTheme.onSurfaceVariant,
-                        letterSpacing: 1.5,
+      body: LayoutBuilder(
+        builder: (context, constraints) => Column(
+          children: [
+            Expanded(
+              child: ListView(
+                padding: EdgeInsets.zero,
+                children: [
+                  _PostBody(post: post, onVote: _vote),
+                  const SizedBox(height: 8),
+                  if (comments.isNotEmpty)
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(16, 8, 16, 4),
+                      child: Text(
+                        'COMENTÁRIOS',
+                        style: TextStyle(
+                          fontSize: 11,
+                          fontWeight: FontWeight.w600,
+                          color: AppTheme.onSurfaceVariant,
+                          letterSpacing: 1.5,
+                        ),
                       ),
                     ),
+                  ...comments.map((c) => _CommentTile(comment: c)),
+                  const SizedBox(height: 80),
+                ],
+              ),
+            ),
+            if (!post.removed)
+              ConstrainedBox(
+                constraints: BoxConstraints(
+                  maxHeight: constraints.maxHeight * .55,
+                ),
+                child: SingleChildScrollView(
+                  child: _CommentInput(
+                    controller: _commentController,
+                    sending: _sendingComment,
+                    onSend: _addComment,
+                    onChanged: () => setState(() {}),
                   ),
-                ...comments.map((c) => _CommentTile(comment: c)),
-                const SizedBox(height: 80),
-              ],
-            ),
-          ),
-          if (!post.removed)
-            _CommentInput(
-              controller: _commentController,
-              sending: _sendingComment,
-              onSend: _addComment,
-              onChanged: () => setState(() {}),
-            ),
-        ],
+                ),
+              ),
+          ],
+        ),
       ),
     );
   }
@@ -318,25 +328,27 @@ class _AuthorRow extends StatelessWidget {
           ),
         ),
         const SizedBox(width: 10),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              authorAlias,
-              style: const TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w600,
-                color: AppTheme.onSurface,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                authorAlias,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                  color: AppTheme.onSurface,
+                ),
               ),
-            ),
-            Text(
-              timeAgo(createdAt),
-              style: const TextStyle(
-                fontSize: 11,
-                color: AppTheme.onSurfaceVariant,
+              Text(
+                timeAgo(createdAt),
+                style: const TextStyle(
+                  fontSize: 11,
+                  color: AppTheme.onSurfaceVariant,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
@@ -513,61 +525,70 @@ class _CommentInput extends StatelessWidget {
           border: Border(top: BorderSide(color: AppTheme.outlineVariant)),
         ),
         padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-        child: Row(
+        child: Column(
           children: [
-            Expanded(
-              child: TextField(
-                controller: controller,
-                style: const TextStyle(fontSize: 14, color: AppTheme.onSurface),
-                decoration: const InputDecoration(
-                  hintText: 'Adicionar comentário...',
-                  hintStyle: TextStyle(
-                    color: AppTheme.onSurfaceVariant,
-                    fontSize: 14,
-                  ),
-                  filled: true,
-                  fillColor: AppTheme.surfaceContainer,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.outlineVariant),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.outlineVariant),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.primary),
-                  ),
-                  contentPadding:
-                      EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                  isDense: true,
-                ),
-                maxLines: null,
-                textCapitalization: TextCapitalization.sentences,
-                onChanged: (_) => onChanged(),
-              ),
-            ),
-            const SizedBox(width: 4),
-            sending
-                ? const SizedBox(
-                    width: 40,
-                    height: 40,
-                    child: Center(
-                      child: SizedBox(
-                        width: 18,
-                        height: 18,
-                        child: CircularProgressIndicator(strokeWidth: 2),
+            const CommunityProcessingNotice.comment(),
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: controller,
+                    style: const TextStyle(
+                        fontSize: 14, color: AppTheme.onSurface),
+                    decoration: const InputDecoration(
+                      hintText: 'Adicionar comentário...',
+                      hintStyle: TextStyle(
+                        color: AppTheme.onSurfaceVariant,
+                        fontSize: 14,
                       ),
+                      filled: true,
+                      fillColor: AppTheme.surfaceContainer,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.zero,
+                        borderSide: BorderSide(color: AppTheme.outlineVariant),
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.zero,
+                        borderSide: BorderSide(color: AppTheme.outlineVariant),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.zero,
+                        borderSide: BorderSide(color: AppTheme.primary),
+                      ),
+                      contentPadding:
+                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                      isDense: true,
                     ),
-                  )
-                : IconButton(
-                    icon: const Icon(Icons.send_rounded),
-                    color: controller.text.trim().isEmpty
-                        ? AppTheme.onSurfaceVariant
-                        : AppTheme.primary,
-                    onPressed: controller.text.trim().isEmpty ? null : onSend,
+                    maxLines: null,
+                    textCapitalization: TextCapitalization.sentences,
+                    onChanged: (_) => onChanged(),
                   ),
+                ),
+                const SizedBox(width: 4),
+                sending
+                    ? const SizedBox(
+                        width: 40,
+                        height: 40,
+                        child: Center(
+                          child: SizedBox(
+                            width: 18,
+                            height: 18,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          ),
+                        ),
+                      )
+                    : IconButton(
+                        tooltip: 'ENVIAR COMENTÁRIO',
+                        icon: const Icon(Icons.send_rounded),
+                        color: controller.text.trim().isEmpty
+                            ? AppTheme.onSurfaceVariant
+                            : AppTheme.primary,
+                        onPressed:
+                            controller.text.trim().isEmpty ? null : onSend,
+                      ),
+              ],
+            ),
           ],
         ),
       ),

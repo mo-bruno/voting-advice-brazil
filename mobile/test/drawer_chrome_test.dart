@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/app_info.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/shared/widgets/drawer/drawer_footer.dart';
@@ -10,9 +9,7 @@ import 'package:guia_eleitoral/shared/widgets/drawer/farol_drawer_header.dart';
 import 'package:guia_eleitoral/shared/widgets/drawer/farol_led_state.dart';
 
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   Future<void> pump(WidgetTester tester, Widget child) async {
     await tester.pumpWidget(MaterialApp(
@@ -114,10 +111,10 @@ void main() {
       // Sem package_info_plus no projeto, a versao e uma constante. Este teste
       // e o que impede a gaveta de anunciar uma versao que nao existe mais.
       final pubspec = File('pubspec.yaml').readAsStringSync();
-      final declared = RegExp(r'^version:\s*([0-9]+\.[0-9]+\.[0-9]+)',
-              multiLine: true)
-          .firstMatch(pubspec)!
-          .group(1);
+      final declared =
+          RegExp(r'^version:\s*([0-9]+\.[0-9]+\.[0-9]+)', multiLine: true)
+              .firstMatch(pubspec)!
+              .group(1);
 
       expect(kAppVersion, declared);
     });

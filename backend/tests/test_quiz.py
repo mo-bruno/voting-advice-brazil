@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 import pytest
 from fastapi.testclient import TestClient
+from sqlalchemy import inspect
 
 from app.config import Settings
 from app.infrastructure.database.models import DeviceModel, QuizResponseModel
@@ -96,6 +97,13 @@ def _agree5(thesis_ids: dict[str, int]) -> list[dict]:
     """Payload mínimo válido (5 respostas não-skip) a partir do seed de teste."""
     ids = [thesis_ids[f"Tese {i}"] for i in range(1, 6)]
     return [{"thesis_id": tid, "answer": "agree", "weight": 1} for tid in ids]
+
+
+def _mapped_column_snapshot(row: object) -> tuple:
+    return tuple(
+        getattr(row, column.key)
+        for column in inspect(type(row)).mapper.column_attrs
+    )
 
 
 class TestEndpointQuestions:
@@ -387,6 +395,7 @@ class TestEndpointSubmit:
 
     def test_submit_with_device_id_skips_news_push_when_iot_is_disabled(
         self,
+        client,
         db_session,
         monkeypatch,
         thesis_ids,
@@ -403,6 +412,7 @@ class TestEndpointSubmit:
             fail_if_called,
         )
 
+        device_id = "550e8400-e29b-41d4-a716-446655440006"
         configured_app = create_app(
             Settings(_env_file=None, app_env="test", iot_feature_enabled=False)
         )
@@ -411,16 +421,96 @@ class TestEndpointSubmit:
             yield db_session
 
         configured_app.dependency_overrides[get_db] = override_get_db
-        with TestClient(configured_app) as client:
-            r = client.post(
+        answers = _agree5(thesis_ids)
+        with TestClient(configured_app) as disabled_client:
+            r = disabled_client.post(
                 "/api/v1/quiz/submit",
-                json={
-                    "device_id": "550e8400-e29b-41d4-a716-446655440006",
-                    "answers": _agree5(thesis_ids),
-                },
+                json={"device_id": device_id, "answers": answers},
             )
+        control = client.post("/api/v1/quiz/submit", json={"answers": answers})
 
         assert r.status_code == 200
+        assert control.status_code == 200
+        assert r.json()["results"] == control.json()["results"]
+        assert db_session.get(DeviceModel, device_id) is None
+        assert (
+            db_session.query(QuizResponseModel).filter_by(device_id=device_id).count()
+            == 0
+        )
+
+    def test_submit_with_device_id_does_not_update_existing_data_when_iot_is_disabled(
+        self, client, db_session, monkeypatch, thesis_ids
+    ):
+        from app.api.routers import quiz as quiz_router
+
+        device_id = "550e8400-e29b-41d4-a716-446655440016"
+        original = _agree5(thesis_ids)
+        changed = [
+            {
+                "thesis_id": original[0]["thesis_id"],
+                "answer": "disagree",
+                "weight": 2,
+            },
+            *original[1:],
+        ]
+        pushed_for: list[str] = []
+        monkeypatch.setattr(
+            quiz_router, "_push_news_for_quiz_submission", pushed_for.append
+        )
+        created = client.post(
+            "/api/v1/quiz/submit",
+            json={"device_id": device_id, "answers": original},
+        )
+        assert created.status_code == 200
+        assert pushed_for == [device_id]
+        pushed_for.clear()
+        db_session.expire_all()
+        before_device = db_session.get(DeviceModel, device_id)
+        assert before_device is not None
+        before_device_snapshot = _mapped_column_snapshot(before_device)
+        before_rows = sorted(
+            (
+                _mapped_column_snapshot(row)
+                for row in db_session.query(QuizResponseModel)
+                .filter_by(device_id=device_id)
+                .all()
+            ),
+            key=repr,
+        )
+
+        configured_app = create_app(
+            Settings(_env_file=None, app_env="test", iot_feature_enabled=False)
+        )
+
+        def override_get_db():
+            yield db_session
+
+        configured_app.dependency_overrides[get_db] = override_get_db
+        with TestClient(configured_app) as disabled_client:
+            response = disabled_client.post(
+                "/api/v1/quiz/submit",
+                json={"device_id": device_id, "answers": changed},
+            )
+        control = client.post("/api/v1/quiz/submit", json={"answers": changed})
+
+        assert response.status_code == 200
+        assert control.status_code == 200
+        assert response.json()["results"] == control.json()["results"]
+        assert pushed_for == []
+        db_session.expire_all()
+        after_device = db_session.get(DeviceModel, device_id)
+        assert after_device is not None
+        assert _mapped_column_snapshot(after_device) == before_device_snapshot
+        after_rows = sorted(
+            (
+                _mapped_column_snapshot(row)
+                for row in db_session.query(QuizResponseModel)
+                .filter_by(device_id=device_id)
+                .all()
+            ),
+            key=repr,
+        )
+        assert after_rows == before_rows
 
     def test_factory_enabled_app_pushes_news_when_global_iot_is_disabled(
         self,
@@ -456,6 +546,11 @@ class TestEndpointSubmit:
 
         assert r.status_code == 200
         assert pushed_for == [device_id]
+        assert db_session.get(DeviceModel, device_id) is not None
+        assert (
+            db_session.query(QuizResponseModel).filter_by(device_id=device_id).count()
+            == len(_agree5(thesis_ids))
+        )
 
     def test_submit_with_uuidv1_device_id_rejected_without_persisting_device(
         self,

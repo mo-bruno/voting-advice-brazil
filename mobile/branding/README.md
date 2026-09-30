@@ -15,10 +15,9 @@ python3 mobile/tool/generate_web_brand_assets.py
 dart format mobile/lib/core/branding/feixe_geometry.dart
 ```
 
-Requer Pillow. A arte do link usa os arquivos Inter já versionados em
-`mobile/test/fixtures/fonts`, com proveniência e licença SIL OFL nesse diretório.
-As fontes são usadas somente na exportação; não se adicionou dependência de
-rede ou um segundo pacote de fontes ao app. Os PNGs finais são versionados.
+Requer Pillow. Os arquivos Inter em `mobile/assets/fonts`, com proveniência e
+licença SIL OFL, alimentam tanto o tema Flutter quanto o exportador
+determinístico. Não há busca de fonte na rede. Os PNGs finais são versionados.
 
 ## Compartilhamento de resultado
 

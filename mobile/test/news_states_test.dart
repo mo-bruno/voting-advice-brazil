@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/home/widgets/news_states.dart';
 
@@ -15,9 +14,7 @@ import 'package:guia_eleitoral/features/home/widgets/news_states.dart';
 /// a linha toda com a fonte de teste, e o bloco pareceria centralizado mesmo
 /// encolhido. Numa largura que nenhum texto preenche, encolher fica visivel.
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   Future<void> pumpNaColunaDaHome(WidgetTester tester, Widget estado) async {
     // A superficie padrao do teste tem 800px; sem alarga-la, o SizedBox de

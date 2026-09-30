@@ -9,6 +9,7 @@ import '../../core/theme/app_theme.dart';
 import '../../shared/models/party.dart';
 import '../../shared/quiz_session.dart';
 import '../../shared/widgets/candidate_logo.dart';
+import '../quiz/quiz_processing_notice.dart';
 
 class PartySelectionPage extends StatefulWidget {
   const PartySelectionPage({super.key, this.session, this.analytics});
@@ -113,9 +114,8 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
     try {
       await _session.submit();
       if (!mounted) return;
-      final availableIds = _session.results
-          .map((result) => result.candidateId)
-          .toSet();
+      final availableIds =
+          _session.results.map((result) => result.candidateId).toSet();
       if (_selected.difference(availableIds).isNotEmpty) {
         _selected.retainAll(availableIds);
         _session.results = [];
@@ -136,9 +136,8 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
     } catch (error) {
       if (mounted) {
         setState(
-          () => _submitError = error is ApiException
-              ? error
-              : ApiException(error.toString()),
+          () => _submitError =
+              error is ApiException ? error : ApiException(error.toString()),
         );
       }
     } finally {
@@ -169,8 +168,8 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
             outdated
                 ? 'As perguntas foram atualizadas. Refaça o quiz para comparar as candidaturas da edição atual.'
                 : error.code == 'candidates_updated'
-                ? error.message
-                : 'Não foi possível calcular o resultado. ${error.message}',
+                    ? error.message
+                    : 'Não foi possível calcular o resultado. ${error.message}',
             style: textTheme.bodyMedium,
           ),
           if (outdated || insufficient)
@@ -195,32 +194,41 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
           Navigator.pushReplacementNamed(context, '/weighting');
         },
       ),
-      body: Column(
-        children: [
-          Expanded(child: _buildBody(Theme.of(context).textTheme)),
-          Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                if (_submitError != null)
-                  _submissionError(Theme.of(context).textTheme),
-                ElevatedButton(
-                  onPressed:
-                      _selected.isNotEmpty &&
-                          !_isSubmitting &&
-                          _submitError?.code != 'invalid_thesis_ids'
-                      ? _submitAndNavigate
-                      : null,
-                  child: Text(
-                    _isSubmitting ? 'CALCULANDO...' : 'VER RESULTADOS',
+      body: LayoutBuilder(
+        builder: (context, constraints) => Column(
+          children: [
+            Expanded(child: _buildBody(Theme.of(context).textTheme)),
+            ConstrainedBox(
+              constraints:
+                  BoxConstraints(maxHeight: constraints.maxHeight * .55),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      if (_submitError != null)
+                        _submissionError(Theme.of(context).textTheme),
+                      const QuizProcessingNotice(),
+                      const SizedBox(height: 12),
+                      ElevatedButton(
+                        onPressed: _selected.isNotEmpty &&
+                                !_isSubmitting &&
+                                _submitError?.code != 'invalid_thesis_ids'
+                            ? _submitAndNavigate
+                            : null,
+                        child: Text(
+                          _isSubmitting ? 'CALCULANDO...' : 'VER RESULTADOS',
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -322,13 +330,15 @@ class _SelectAllButton extends StatelessWidget {
               size: 20,
             ),
             const SizedBox(width: 12),
-            Text(
-              'SELECIONAR TODOS',
-              style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.w700,
-                color: isSelected ? AppTheme.background : AppTheme.onSurface,
-                letterSpacing: 0.8,
+            Expanded(
+              child: Text(
+                'SELECIONAR TODOS',
+                style: TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.w700,
+                  color: isSelected ? AppTheme.background : AppTheme.onSurface,
+                  letterSpacing: 0.8,
+                ),
               ),
             ),
           ],

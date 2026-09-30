@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/app.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
@@ -62,7 +61,6 @@ QuizController _quizController() {
 
 void main() {
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({});
   });
 

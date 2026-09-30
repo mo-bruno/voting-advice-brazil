@@ -2,8 +2,11 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_consent_controller.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_event_policy.dart';
+import 'package:guia_eleitoral/core/analytics/consent_aware_analytics_sink.dart';
+import 'package:guia_eleitoral/core/analytics/firebase_analytics_runtime.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/device/device_identity_store.dart';
 import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
@@ -11,9 +14,7 @@ import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/political_actors/politician_follow_validation_page.dart';
 
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   Future<void> pumpPage(
     WidgetTester tester, {
@@ -81,6 +82,8 @@ void main() {
 
     expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
     expect(find.text('RETIRAR INTERESSE'), findsNothing);
+    expect(find.textContaining('registro sem nome ou contato'), findsOneWidget);
+    expect(find.textContaining('registro anônimo'), findsNothing);
     expect(sink.names, [
       'follow_waitlist_viewed',
       'follow_waitlist_prompt_viewed',
@@ -152,6 +155,43 @@ void main() {
 
     expect(sink.names, contains('follow_waitlist_registered'));
   });
+
+  testWidgets('denied metrics do not block interest registration',
+      (tester) async {
+    final runtime = _Runtime();
+    final controller = AnalyticsConsentController.testOnly(
+      store: _Store(),
+      effects: runtime,
+    );
+    await controller.hydrate();
+    await controller.deny();
+    addTearDown(controller.dispose);
+    final api = _FakeInterestApi(registered: false);
+    const interestId = '550e8400-e29b-41d4-a716-446655440000';
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+    );
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.dark,
+      home: PoliticianFollowValidationPage(
+        apiClient: api,
+        interestIdentityStore: _FakeIdentityStore(),
+        analytics: AnalyticsService(sink: sink),
+      ),
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('TENHO INTERESSE'));
+    await tester.pumpAndSettle();
+    expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
+    expect(api.registerCalls, 1);
+    expect(api.interestIds, everyElement(interestId));
+    expect(find.text('RETIRAR INTERESSE'), findsNothing);
+    expect(api.deleteCalls, 0);
+    expect(runtime.events, isEmpty);
+    expect(runtime.initializationCalls, 0);
+  });
 }
 
 class _FakeInterestApi extends ApiClient {
@@ -167,17 +207,22 @@ class _FakeInterestApi extends ApiClient {
   final Future<bool>? registration;
   final Object? registrationError;
   int registerCalls = 0;
+  int deleteCalls = 0;
+  final List<String> interestIds = [];
 
   @override
   Future<bool> fetchPoliticianFollowInterest({
     required String anonymousId,
-  }) async =>
-      await (status ?? Future<bool>.value(registered));
+  }) async {
+    interestIds.add(anonymousId);
+    return await (status ?? Future<bool>.value(registered));
+  }
 
   @override
   Future<bool> registerPoliticianFollowInterest({
     required String anonymousId,
   }) async {
+    interestIds.add(anonymousId);
     registerCalls++;
     if (registrationError != null) throw registrationError!;
     final isNew = await (registration ?? Future<bool>.value(true));
@@ -189,8 +234,38 @@ class _FakeInterestApi extends ApiClient {
   Future<void> deletePoliticianFollowInterest({
     required String anonymousId,
   }) async {
+    interestIds.add(anonymousId);
+    deleteCalls++;
     registered = false;
   }
+}
+
+class _Store implements AnalyticsConsentStore {
+  String? value;
+
+  @override
+  Future<String?> read() async => value;
+
+  @override
+  Future<void> write(String value) async => this.value = value;
+}
+
+class _Runtime implements AnalyticsRuntime {
+  final List<SanitizedAnalyticsEvent> events = [];
+  int initializationCalls = 0;
+
+  @override
+  Future<void> initializeForGrantedConsent() async {
+    initializationCalls++;
+  }
+
+  @override
+  Future<void> logEvent(SanitizedAnalyticsEvent event) async {
+    events.add(event);
+  }
+
+  @override
+  Future<void> updateConsent({required bool granted}) async {}
 }
 
 class _FakeIdentityStore extends PoliticianFollowInterestIdentityStore {

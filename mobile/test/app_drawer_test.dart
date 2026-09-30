@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:guia_eleitoral/shared/models/iot_device.dart';
@@ -19,21 +18,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 /// os estados de cada bloco tem arquivo proprio.
 void main() {
   setUpAll(() async {
-    for (final font in {
-      'Inter_regular': 'Regular',
-      'Inter_600': 'SemiBold',
-      'Inter_800': 'ExtraBold',
-    }.entries) {
-      final bytes = await File('test/fixtures/fonts/Inter-${font.value}.ttf')
-          .readAsBytes();
-      await (FontLoader(font.key)
-            ..addFont(Future.value(ByteData.sublistView(bytes))))
-          .load();
-    }
+    final bytes = await File('assets/fonts/Inter-Regular.ttf').readAsBytes();
+    await (FontLoader('Inter')
+          ..addFont(Future.value(ByteData.sublistView(bytes))))
+        .load();
+    expect(AppTheme.dark.textTheme.bodyMedium!.fontFamily, 'Inter');
   });
 
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({
       'farol_politico_device_id': 'a3f9c21b-0000-4000-8000-000000000000',
     });
@@ -103,6 +95,8 @@ void main() {
           '/iot-pairing': (_) =>
               const Scaffold(body: Text('tela de pareamento')),
           '/results': (_) => const Scaffold(body: Text('comparação aberta')),
+          '/privacidade': (_) =>
+              const Scaffold(body: Text('página de privacidade')),
         },
       ),
     );
@@ -241,7 +235,7 @@ void main() {
     expect(find.text('tela do dispositivo'), findsOneWidget);
   });
 
-  testWidgets('privacidade explica o identificador sem sair da gaveta', (
+  testWidgets('privacidade abre uma rota e fecha a gaveta', (
     tester,
   ) async {
     await openDrawer(tester);
@@ -249,7 +243,8 @@ void main() {
     await tester.tap(find.text('PRIVACIDADE'));
     await settleDrawer(tester);
 
-    expect(find.byType(AlertDialog), findsOneWidget);
+    expect(find.text('página de privacidade'), findsOneWidget);
+    expect(find.byType(AlertDialog), findsNothing);
   });
 
   testWidgets('sobre e privacidade descrevem o produto atual sem hardware',
@@ -271,14 +266,7 @@ void main() {
     await tester.tap(find.text('PRIVACIDADE'));
     await settleDrawer(tester);
 
-    expect(find.textContaining('salvar respostas do quiz'), findsOneWidget);
-    expect(find.textContaining('participar da comunidade'), findsOneWidget);
-    expect(
-        find.textContaining('não aparece para outras pessoas'), findsOneWidget);
-    expect(find.textContaining('Firebase Analytics'), findsOneWidget);
-    expect(find.textContaining('sem respostas políticas'), findsOneWidget);
-    expect(find.textContaining('Farol físico'), findsNothing);
-    expect(find.textContaining('não saem do aparelho'), findsNothing);
+    expect(find.text('página de privacidade'), findsOneWidget);
   });
 
   testWidgets('sobre e privacidade descrevem a validação quando desabilitada',
@@ -294,14 +282,15 @@ void main() {
 
     expect(find.textContaining('ainda está em validação'), findsOneWidget);
     expect(find.textContaining('apresenta deputados atuais'), findsNothing);
+    expect(find.textContaining('registro de interesse sem nome ou contato'),
+        findsOneWidget);
+    expect(find.textContaining('registro anônimo'), findsNothing);
 
     await tester.tap(find.text('FECHAR'));
     await settleDrawer(tester);
     await tester.tap(find.text('PRIVACIDADE'));
     await settleDrawer(tester);
 
-    expect(
-        find.textContaining('outro identificador aleatório'), findsOneWidget);
-    expect(find.textContaining('lembrar quem você segue'), findsNothing);
+    expect(find.text('página de privacidade'), findsOneWidget);
   });
 }

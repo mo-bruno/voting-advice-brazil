@@ -1,10 +1,12 @@
 # Farol Político
 
-Aplicativo acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
+Site acadêmico de orientação eleitoral para o Brasil, da Universidade Presbiteriana Mackenzie.
 
-O produto atual reúne uma comparação de planos presidenciais de 2026, comunidade anônima e notícias oficiais dos últimos sete dias. A área de acompanhamento de políticos está em validação: o público pode registrar interesse anonimamente, enquanto a busca, o perfil e o acompanhamento já implementados permanecem retidos atrás de feature flag. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas não compõem esse score. Não há índice de consistência implementado.
+O produto atual reúne uma comparação de planos presidenciais de 2026, comunidade sob aliases pseudônimos e notícias oficiais dos últimos sete dias. A área de acompanhamento de políticos está em validação: o público pode registrar interesse sem fornecer nome ou contato, enquanto a busca, o perfil e o acompanhamento já implementados permanecem retidos atrás de feature flag. Os resultados usam respostas e pesos do quiz para comparar posições documentadas; as evidências legislativas não compõem esse score. Não há índice de consistência implementado.
 
-O app gera e guarda localmente um UUID v4 (`anonymous_id`). Ao enviar o quiz, transmite esse UUID no campo `device_id`, e as respostas são persistidas no backend por UUID. Na comunidade e nas rotas `/me`, `X-Farol-Anonymous-Id` funciona como credencial privada de posse. A validação usa outro UUID aleatório, exclusivo do experimento, e o backend armazena somente seu hash SHA-256 contextualizado. As respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessas identidades.
+O site gera e guarda localmente um UUID v4 (`anonymous_id`). O contrato do quiz ainda aceita esse UUID no campo `device_id`, mas o cliente público não o envia com IoT desligado; o backend calcula o ranking sem gravar respostas nem criar ou atualizar `devices`, mesmo quando um cliente antigo envia o campo. Com IoT habilitado, `device_id` permite a persistência histórica do quiz. Na comunidade e nas rotas `/me`, `X-Farol-Anonymous-Id` funciona como credencial privada de posse e gera um alias público estável. A validação usa outro UUID aleatório, exclusivo do experimento, e o backend armazena somente seu hash SHA-256 contextualizado. Esse hash é unidirecional, mas o mesmo navegador pode reproduzi-lo a partir do UUID retido para consultar o registro; a API também aceita retirada, embora a interface atual não ofereça botão para isso. As respostas públicas mostram `author_alias` e `is_mine`, sem divulgar o UUID do autor. Não há conta autenticada ou recuperação dessas identidades.
+
+Posts e comentários podem revelar opinião política. O site destaca, antes de cada ação, que o texto será armazenado, publicado sob alias pseudônimo estável e enviado à NVIDIA NIM para moderação. O autor pode remover o conteúdo do próprio post, deixando uma lápide e preservando os comentários; pedidos para retirar comentários, interesse na área Acompanhar e outros direitos usam `privacidade@fpolitico.com.br`. Os dados funcionais permanecem enquanto necessários à função, segurança ou obrigações legais, sem promessa de um prazo fixo para toda a comunidade. Métricas GA contam apenas visitantes que aceitaram o opt-in opcional; a contagem de linhas ativas deduplicadas no banco continua sendo a fonte de demanda da validação. O interesse tem retenção operacional máxima de 180 dias.
 
 ## Stack e estrutura
 
@@ -118,13 +120,16 @@ A imagem inclui percentuais, nomes, partidos, a identificação do quiz presiden
 - **WhatsApp:** abre o menu do dispositivo com o PNG, a legenda do resultado selecionado e o link. Escolha o WhatsApp no menu. Se o navegador não conseguir compartilhar esse conteúdo, inicia o download e oferece **Abrir WhatsApp** com a mensagem correspondente à imagem; anexe o arquivo baixado. A aceitação de imagem e texto juntos depende do aplicativo e do dispositivo.
 - **X / Twitter:** abre texto e link de acordo com o tipo selecionado, com um resumo curto da quantidade de alinhamentos. Para enviar o PNG, use o menu de compartilhamento ou anexe o arquivo baixado.
 
-O endereço público é `https://fpolitico.com.br`. A variável de repositório **PUBLIC_APP_URL** no GitHub Actions deve usar esse mesmo valor; para compilar localmente:
+O endereço público é `https://fpolitico.com.br`. O deploy exige as variáveis de repositório `PUBLIC_APP_URL`, `ANALYTICS_ENABLED`, `PRIVACY_CONTROLLER_NAME` e `PRIVACY_CONTACT_EMAIL`. O controlador deve ser uma identidade civil/jurídica real, não a marca nem um exemplo. Para um build local de desenvolvimento, sem valores de produção:
 
 ```bash
-flutter build web --release \
+flutter build web --release --no-web-resources-cdn \
   --dart-define=IOT_FEATURE_ENABLED=false \
   --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
-  --dart-define=PUBLIC_APP_URL=https://fpolitico.com.br
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 O valor é público e deve ser uma URL HTTPS. Parâmetros e fragmentos são removidos do endereço compartilhado. Consulte [mobile/.env.example](mobile/.env.example). O compartilhamento depende dos apps disponíveis no dispositivo; abrir o menu não confirma que algo foi publicado.
@@ -172,13 +177,13 @@ Arquivos públicos em `/data/...` são servidos quando `DATA_DIR` existe. Notíc
 
 O funil usa somente eventos genéricos do Firebase Analytics, sem UUID, nome de político, partido, resposta ou texto livre: `follow_waitlist_viewed`, `follow_waitlist_prompt_viewed`, `follow_waitlist_cta_clicked`, `follow_waitlist_registered` e `follow_waitlist_failed`. `viewed` mede a exposição geral; a conversão principal é a proporção de usuários únicos que acionam `registered` após `prompt_viewed`, quando o CTA realmente ficou elegível. Cliques e falhas ajudam a diagnosticar atrito.
 
-A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusivo do experimento e reversível pelo próprio aparelho, é a fonte de verdade para a demanda atual. O evento de sucesso só é emitido quando a API informa que criou um registro novo; chamadas idempotentes não geram conversões adicionais. Como não há conta ou contato, essa métrica representa instalações que manifestaram interesse, não uma contagem garantida de pessoas únicas; o limite global da API reduz abuso básico, mas não substitui proteção distribuída contra tráfego coordenado.
+A contagem de interesses ativos no banco, deduplicada pelo hash do UUID exclusivo do experimento, é a fonte de verdade para a demanda atual. O hash é unidirecional; o navegador que conserva o UUID pode reproduzi-lo para consultar o registro. A API aceita retirada por esse identificador, mas a interface pública atual não oferece essa ação; o pedido pode ser feito pelo canal de privacidade. O evento GA de sucesso só é emitido quando a API informa que criou um registro novo e somente para visitantes que aceitaram métricas; chamadas idempotentes não geram conversões adicionais. Como não há conta ou contato, a contagem representa instalações que manifestaram interesse, não uma quantidade garantida de pessoas únicas; o limite global da API reduz abuso básico, mas não substitui proteção distribuída contra tráfego coordenado.
 
 ## Features retidas e deploy
 
-O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. O acompanhamento real também fica desativado por padrão com `POLITICIAN_FOLLOW_ENABLED=false`; o app mostra a validação anônima e o backend rejeita operações antigas de follow, sem apagar código ou dados existentes.
+O Farol físico está desativado e invisível por padrão: `IOT_FEATURE_ENABLED=false` no backend e no build Flutter. O acompanhamento real também fica desativado por padrão com `POLITICIAN_FOLLOW_ENABLED=false`; o site mostra o registro de interesse sem nome ou contato e o backend rejeita operações antigas de follow, sem apagar código ou dados existentes.
 
-Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow de Firebase Hosting compila o app com os mesmos valores. Nenhum scheduler é iniciado pelo processo da API.
+Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow de Firebase Hosting compila o site com os mesmos valores. O build Web de produção exige a identidade pública real e a chave operacional `ANALYTICS_ENABLED` explicitamente `true` ou `false`. Mesmo com `true`, eventos só são enviados após o opt-in; `false` pausa toda a coleta. Nenhum scheduler é iniciado pelo processo da API.
 
 A publicação automática da interface aguarda o sucesso do backend e usa o mesmo commit. Mudanças apenas na interface também acionam essa sequência para manter um único fluxo de release. A aprovação exigida por `main` não é contornada; consulte [PUBLICACAO_2026.md](PUBLICACAO_2026.md) para ordem, verificações e recuperação.
 
@@ -202,9 +207,13 @@ cd mobile
 flutter pub get
 flutter analyze
 flutter test
-flutter build web --release \
+flutter build web --release --no-web-resources-cdn \
   --dart-define=IOT_FEATURE_ENABLED=false \
-  --dart-define=POLITICIAN_FOLLOW_ENABLED=false
+  --dart-define=POLITICIAN_FOLLOW_ENABLED=false \
+  --dart-define=ANALYTICS_ENABLED=false \
+  --dart-define=PUBLIC_APP_URL=https://example.invalid \
+  --dart-define='PRIVACY_CONTROLLER_NAME=Responsável de Teste' \
+  --dart-define=PRIVACY_CONTACT_EMAIL=privacidade@example.invalid
 ```
 
 ## Contribuição e licença

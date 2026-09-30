@@ -3,7 +3,7 @@
 
 Run from any directory: python3 mobile/tool/generate_web_brand_assets.py
 Requires Pillow. The canonical geometry lives in branding/feixe.json.
-Fonts are the vendored Inter files, licensed in test/fixtures/fonts/OFL.txt.
+Fonts are the vendored Inter files, licensed in assets/fonts/Inter-OFL.txt.
 No AI-rendered text or external font download is used by this exporter.
 """
 
@@ -18,7 +18,7 @@ WEB = ROOT / "web"
 ICONS = WEB / "icons"
 BRAND = ROOT / "branding"
 GEOMETRY = json.loads((BRAND / "feixe.json").read_text())
-FONTS = ROOT / "test/fixtures/fonts"
+FONTS = ROOT / "assets/fonts"
 BACKGROUND = "#131313"
 
 

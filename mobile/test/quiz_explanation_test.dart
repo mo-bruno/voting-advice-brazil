@@ -3,7 +3,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_controller.dart';
@@ -37,19 +36,12 @@ final _explanation = ThesisExplanation(
 
 void main() {
   setUpAll(() async {
-    for (final font in {
-      'Inter_regular': 'Regular',
-      'Inter_600': 'SemiBold',
-      'Inter_800': 'ExtraBold',
-    }.entries) {
-      final bytes = await File('test/fixtures/fonts/Inter-${font.value}.ttf')
-          .readAsBytes();
-      await (FontLoader(font.key)
-            ..addFont(Future.value(ByteData.sublistView(bytes))))
-          .load();
-    }
+    final bytes = await File('assets/fonts/Inter-Regular.ttf').readAsBytes();
+    await (FontLoader('Inter')
+          ..addFont(Future.value(ByteData.sublistView(bytes))))
+        .load();
+    expect(AppTheme.dark.textTheme.bodyMedium!.fontFamily, 'Inter');
   });
-  setUp(() => GoogleFonts.config.allowRuntimeFetching = false);
 
   Future<QuizSession> pumpQuiz(
     WidgetTester tester, {

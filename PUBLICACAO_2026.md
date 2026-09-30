@@ -25,13 +25,22 @@ Republicações manuais devem iniciar o workflow `Deploy Backend` em `main`; a i
 
 O processo registra `SAFE_BRIDGE_REVISION` nos logs depois de publicar a revisão intermediária. Se a carga ou ativação falhar, ela continua apta a servir a eleição anterior com filtros. Após carregar 2026, não restaurar imagem anterior a esses filtros: ela pode misturar eleições.
 
-Para recuperação, transferir 100% do tráfego para a revisão intermediária registrada, na região `us-east4` e projeto `farol-politico-495210`. Não executar downgrade destrutivo de banco. Se apenas a interface falhar, restaurar a versão anterior do Firebase Hosting; o backend preserva contratos existentes.
+Para recuperação, transferir 100% do tráfego para a revisão intermediária registrada, na região `us-east4` e projeto `farol-politico-495210`. Não executar downgrade destrutivo de banco. Se apenas a interface falhar após o cutover de privacidade, não restaurar uma versão do Firebase Hosting anterior ao consentimento opt-in: ela pode voltar a carregar Analytics sem consentimento e enviar o UUID do quiz. Manter Analytics pausado (`ANALYTICS_ENABLED=false`) e corrigir a interface por um novo deploy validado. Uma restauração do Hosting só é segura para um release previamente verificado com a barreira de persistência, consentimento negado por padrão, configuração GA4 correspondente e cabeçalhos de cache corretos.
 
 Na inspeção anterior à entrega, a produção estava na revisão `farol-politico-api-00029-8kr`; esta não é um destino seguro de recuperação após carregar 2026. Moderação NVIDIA, `IOT_FEATURE_ENABLED=false` e `POLITICIAN_FOLLOW_ENABLED=false` devem ser preservados.
 
 ## Privacidade
 
-Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. O serviço conserva a persistência funcional já existente das respostas, separada dessas métricas.
+Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. Com IoT desligado, o backend usa as respostas do quiz apenas para calcular o ranking e não as persiste, mesmo se um cliente antigo enviar `device_id`. A persistência histórica permanece disponível somente com IoT habilitado. O UUID funcional da comunidade e do acompanhamento continua separado do UUID exclusivo da validação de interesse.
+
+Antes do próximo deploy, confirmar e registrar fora do repositório:
+
+- `PRIVACY_CONTROLLER_NAME` é o nome civil/jurídico público real e aparece em `/#/privacidade`; `PRIVACY_CONTACT_EMAIL=privacidade@fpolitico.com.br` recebe uma mensagem de teste.
+- Registrar a decisão sobre o contato responsável: se a dispensa aplicável para agente de pequeno porte estiver fundamentada, publicar controlador e canal. Se houver encarregado formalmente designado, parar o release até ampliar deliberadamente `PrivacyConfig`, textos e testes com identidade/contato aprovados.
+- Confirmar diretamente no ImprovMX o logging efetivo em `Minimum` e retenção de 7 dias, sem expor o destino privado do alias. Responder sem revelar esse destino requer envio autenticado configurado e testado; o recebimento isolado não comprova essa capacidade.
+- Validar que o backend com a barreira de persistência está ativo antes do Web. Não fazer rollback para revisão anterior a essa barreira.
+- Definir `ANALYTICS_ENABLED=true` somente para coleta normal após o cutover; `false` é pausa operacional segura, sem dispensar o consentimento individual quando reativado.
+- Configurar e conferir GA4/BigQuery e seus prazos antes de declarar a política publicada como efetiva. Não executar expurgos históricos sem inventário, backup verificável e confirmação explícita.
 
 ## Verificação da entrega
 
