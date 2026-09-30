@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 COVERAGE = ROOT / "drafts" / "coverage-review.json"
 ANCHORS = ROOT.parent / "2026-09-29-question-editorial-review" / "BLOCK_01.json"
+APPROVAL = ROOT / "APPROVAL.json"
 
 BUTTONS = ["Concordo", "Discordo", "Neutro", "Pular"]
 
@@ -133,6 +134,8 @@ def digest(item):
 
 
 def main():
+    if APPROVAL.exists():
+        raise SystemExit("A bateria já foi aprovada; assemble.py não pode sobrescrever decisões humanas.")
     coverage = read(COVERAGE)
     anchors = read(ANCHORS)
     coverage_items = {item["id"]: item for item in coverage["proposed_battery"]}

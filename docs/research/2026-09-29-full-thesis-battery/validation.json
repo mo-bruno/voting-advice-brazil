@@ -3,7 +3,8 @@
   "valid": true,
   "item_count": 20,
   "anchor_count": 4,
-  "pending_count": 16,
+  "approved_count": 20,
+  "pending_count": 0,
   "unique_family_count": 21,
   "category_counts": {
     "economia_desenvolvimento": 5,
@@ -17,7 +18,8 @@
     "seguranca_publica": 2,
     "soberania_relacoes_internacionais": 2
   },
-  "battery_sha256": "fb2df18a69aaaa6f641951d026695313eadaf59fd4e5ae343d2d3ab2901b0753",
+  "battery_sha256": "b3061d36325b491b32aa85ac09b53a313d66e59d9c9edbe83b3d4e8c57d13990",
   "published_theses_used": false,
+  "candidate_validation_dispatched": true,
   "candidate_answers_created": 0
 }

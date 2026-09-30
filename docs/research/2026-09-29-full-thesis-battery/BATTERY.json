@@ -2,10 +2,10 @@
   "schema_version": 1,
   "battery_id": "full-battery-human-review-v2",
   "battery_version": 2,
-  "status": "pending_user_review",
+  "status": "approved",
   "item_count": 20,
   "approved_anchor_count": 4,
-  "pending_item_count": 16,
+  "pending_item_count": 0,
   "response_buttons": [
     "Concordo",
     "Discordo",
@@ -13,7 +13,7 @@
     "Pular"
   ],
   "published_theses_used": false,
-  "candidate_validation_dispatched": false,
+  "candidate_validation_dispatched": true,
   "selection_note": "O conjunto foi derivado dos 636 registros e 118 famílias. O tamanho resulta da revisão editorial, sem cota rígida por categoria. Contagens do mapa são apenas pistas de busca, não respostas de candidatos.",
   "removed_after_human_review": [
     {
@@ -61,7 +61,14 @@
         "BLOCK_01.json",
         "coverage-review.json"
       ],
-      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "B01-Q02",
@@ -94,7 +101,14 @@
         "BLOCK_01.json",
         "coverage-review.json"
       ],
-      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "B01-Q03",
@@ -127,7 +141,14 @@
         "BLOCK_01.json",
         "coverage-review.json"
       ],
-      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "B01-Q04",
@@ -159,14 +180,21 @@
         "BLOCK_01.json",
         "coverage-review.json"
       ],
-      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q05",
       "source_draft_id": "CR-Q05",
       "display_number": 5,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
       "explanation": "A afirmação pergunta se esse limite deve existir. Ela não escolhe uma lei, um índice de correção, uma meta de resultado nem um limite para a dívida.",
@@ -196,14 +224,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3"
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q06",
       "source_draft_id": "CR-Q06",
       "display_number": 6,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "A Petrobras deve permanecer sob controle do governo federal.",
       "explanation": "A afirmação trata de manter o governo federal como acionista controlador. Ela não exige propriedade integral, monopólio no setor, integração de refinarias ou reestatização de outras empresas.",
@@ -234,14 +269,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5"
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q07",
       "source_draft_id": "CR-Q07",
       "display_number": 7,
       "version": 2,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
       "explanation": "A afirmação pergunta se o baixo desempenho pode ser motivo legal para demissão. Ela não torna a demissão automática e não abrange cargos temporários, remuneração por mérito nem demissão sem processo.",
@@ -279,14 +321,21 @@
         "previous_wording_sha256": "4fea5e6441d0e4ba9cffb4969e56a62c7d06f2060f7a13062523090963656a02",
         "reason": "Substitui a construção 'deve poder' por uma ação legal direta e preserva avaliação, prova e defesa."
       },
-      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7"
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q08",
       "source_draft_id": "CR-Q08",
       "display_number": 8,
       "version": 2,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O governo federal deve repassar recursos para que os municípios ofereçam transporte coletivo urbano gratuito a todos os passageiros.",
       "explanation": "A afirmação trata do financiamento federal da tarifa zero universal. A organização e a prestação do serviço permanecem locais; a pergunta não define a fonte dos recursos, os critérios de distribuição nem o operador.",
@@ -323,14 +372,21 @@
         "previous_wording_sha256": "e3c81d6427738af6c3639abf761c6eac28e4a5b7902574dfe8a8815ea44742f9",
         "reason": "Recorta o instrumento de competência federal: repasse de recursos para a tarifa zero municipal."
       },
-      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab"
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q10",
       "source_draft_id": "CR-Q11",
       "display_number": 9,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O Brasil deve adotar um mercado regulado de carbono.",
       "explanation": "Mercado regulado de carbono é um sistema obrigatório para os setores abrangidos: cada emissor deve cumprir regras sobre suas emissões e pode negociar créditos conforme normas públicas. A afirmação não define os setores, os limites nem a distribuição inicial dos créditos.",
@@ -360,14 +416,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98"
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q11",
       "source_draft_id": "CR-Q12",
       "display_number": 10,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "Sistemas de inteligência artificial classificados como de alto risco devem cumprir obrigações preventivas antes de serem usados.",
       "explanation": "Alto risco se refere a usos capazes de afetar segurança, direitos ou acesso a serviços relevantes. As obrigações podem incluir avaliação de risco, registro e supervisão; a afirmação não exige autorização prévia para toda inteligência artificial.",
@@ -399,14 +462,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81"
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q12",
       "source_draft_id": "CR-Q14",
       "display_number": 11,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
       "explanation": "A afirmação prevê a compra complementar de consultas, exames, leitos ou procedimentos. Ela não transfere a gestão de unidades públicas nem exige contratação permanente.",
@@ -437,14 +507,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084"
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q13",
       "source_draft_id": "CR-Q15",
       "display_number": 12,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "Quem recebe benefício de transferência de renda e consegue emprego formal deve poder manter parte do benefício por um período de transição.",
       "explanation": "A afirmação permite reduzir o benefício gradualmente depois da entrada no emprego formal, em vez de encerrá-lo de uma vez. Ela não fixa o programa, o valor nem a duração.",
@@ -476,14 +553,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9"
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q14",
       "source_draft_id": "CR-Q16",
       "display_number": 13,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
       "explanation": "Cuidado domiciliar é o atendimento realizado na residência por profissionais ou equipes de apoio. A afirmação não substitui automaticamente centros-dia, acolhimento ou apoio financeiro à família.",
@@ -514,14 +598,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81"
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q15",
       "source_draft_id": "CR-Q17",
       "display_number": 14,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
       "explanation": "A afirmação vincula uma parte do financiamento ao resultado educacional medido. Ela não determina retirar todo o recurso de redes vulneráveis nem escolhe um único exame.",
@@ -552,14 +643,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c"
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q16",
       "source_draft_id": "CR-Q19",
       "display_number": 15,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
       "explanation": "A afirmação pergunta pela direção da mudança na jornada legal, sem fixar se o novo limite será de 40, 36, 35 ou 30 horas.",
@@ -590,14 +688,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9"
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q17",
       "source_draft_id": "CR-Q21",
       "display_number": 16,
       "version": 2,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
       "explanation": "A afirmação pergunta se deve existir um prazo gestacional em que o aborto voluntário não tenha punição criminal. Ela não define esse prazo, a forma de atendimento nem as regras clínicas.",
@@ -633,14 +738,21 @@
         "previous_wording_sha256": "ee2bff21023ff7e0fe973f7305ee3ddb2df134f621a620696f1fbaafd024858b",
         "reason": "Usa o termo comum 'aborto' para reduzir custo de interpretação sem incorporar justificativa moral."
       },
-      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc"
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 2,
+        "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q18",
       "source_draft_id": "CR-Q22",
       "display_number": 17,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
       "explanation": "A afirmação propõe aplicar o regime penal adulto a adolescentes de 16 e 17 anos em todos os crimes. Ela não altera as medidas socioeducativas para menores de 16 anos.",
@@ -671,14 +783,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b"
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q19",
       "source_draft_id": "CR-Q23",
       "display_number": 18,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O poder público deve poder usar reconhecimento facial em espaços públicos para localizar pessoas foragidas.",
       "explanation": "A afirmação permite comparar imagens de câmeras com bases de pessoas procuradas pela Justiça. Ela não autoriza qualquer uso, finalidade ou armazenamento dos dados.",
@@ -710,14 +829,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f"
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q21",
       "source_draft_id": "CR-Q25",
       "display_number": 19,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O Brasil deve permanecer nos BRICS.",
       "explanation": "A afirmação trata da permanência do Brasil no grupo. Ela não exige apoiar toda decisão do bloco nem impede relações com outros países e organizações.",
@@ -747,14 +873,21 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb"
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     },
     {
       "id": "FB-Q22",
       "source_draft_id": "CR-Q26",
       "display_number": 20,
       "version": 1,
-      "status": "pending_user_review",
+      "status": "approved",
       "anchor_approved": false,
       "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
       "explanation": "Ratificar é concluir a aprovação interna necessária para que o acordo produza efeitos para o Brasil. A afirmação não implica apoiar outros acordos nem impede relações comerciais com outros parceiros.",
@@ -785,7 +918,18 @@
         "semantic-review.json",
         "red-team.json"
       ],
-      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840"
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+      "full_battery_user_decision": {
+        "decision": "approved",
+        "version": 1,
+        "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
+      }
     }
-  ]
+  ],
+  "approved_item_count": 20,
+  "approval_record": "APPROVAL.json",
+  "approved_at": "2026-09-30T00:27:36.258209+00:00",
+  "candidate_validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json"
 }

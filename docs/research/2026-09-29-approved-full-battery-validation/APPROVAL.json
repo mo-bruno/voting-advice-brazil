@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "decision": "approved",
+  "user_message": "aprovada chefe",
+  "approved_at": "2026-09-30T00:27:36.258209+00:00",
+  "battery_approval": "../2026-09-29-full-thesis-battery/APPROVAL.json",
+  "battery_wording_fingerprint": "bdcc8da8a36f9f3da08ca2e758bc2f3691a6c90760720ad37359ead62a4b340c",
+  "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
+  "approved_question_versions": [
+    {
+      "id": "B01-Q01",
+      "version": 1,
+      "wording_sha256": "5fc326da0b416ab571535eba499f196211c271c1c7d9d10db13eae9a3c8570c8"
+    },
+    {
+      "id": "B01-Q02",
+      "version": 1,
+      "wording_sha256": "600a2f371d903bb31c1df29250e0a8ddf406c3d5885e77562b6e1483edfebf90"
+    },
+    {
+      "id": "B01-Q03",
+      "version": 1,
+      "wording_sha256": "9e2891f25cbee0d03d0709277cfbc13db107529b7df4f147ce0fe74b84c4ae6b"
+    },
+    {
+      "id": "B01-Q04",
+      "version": 1,
+      "wording_sha256": "330f285f3564212579c5941150008aafc7debc8ca63950602cd91d29dd6f3b33"
+    },
+    {
+      "id": "FB-Q05",
+      "version": 1,
+      "wording_sha256": "cf41d87d4124521b8b72ad43ee72b3d5ec4914cb8bb523ece3b8e338cd200ef3"
+    },
+    {
+      "id": "FB-Q06",
+      "version": 1,
+      "wording_sha256": "4384b38b9fa46dfc7c88f095b13f68764411e49dfa03da7105050800baab48c5"
+    },
+    {
+      "id": "FB-Q07",
+      "version": 2,
+      "wording_sha256": "67ee8c461a159b610e68600819a98d99b8a4711abccfd5c9ec6236969e0a86f7"
+    },
+    {
+      "id": "FB-Q08",
+      "version": 2,
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab"
+    },
+    {
+      "id": "FB-Q10",
+      "version": 1,
+      "wording_sha256": "ad12c28ec190497c83b67029ab1958918bd910d473a1fa4c2b18e59463d03c98"
+    },
+    {
+      "id": "FB-Q11",
+      "version": 1,
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81"
+    },
+    {
+      "id": "FB-Q12",
+      "version": 1,
+      "wording_sha256": "5e0967caacc6a3eac00fc95cc5e2f9001afc379d145a929180568a7529ca8084"
+    },
+    {
+      "id": "FB-Q13",
+      "version": 1,
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9"
+    },
+    {
+      "id": "FB-Q14",
+      "version": 1,
+      "wording_sha256": "8ad434b4b061dea800c9a228250c82b81638a83ddd7dee4457c641a4bb7dcb81"
+    },
+    {
+      "id": "FB-Q15",
+      "version": 1,
+      "wording_sha256": "8b73dbd34b6a73f43b7194e076ccc042574986499093814675bb362f3324ae3c"
+    },
+    {
+      "id": "FB-Q16",
+      "version": 1,
+      "wording_sha256": "b66bed7b19cecbf1cf25f1e329851b623ed9a74fbe999e19eec32b3d2c94f6b9"
+    },
+    {
+      "id": "FB-Q17",
+      "version": 2,
+      "wording_sha256": "e57deb35aeadb106a4732b6ae118e11084310f78f5afb6c7796ebc93dde9f4fc"
+    },
+    {
+      "id": "FB-Q18",
+      "version": 1,
+      "wording_sha256": "8be70d87d4ab354ded2decf5a3dcdc00c0d1999462d9baf369f4b11389eadb6b"
+    },
+    {
+      "id": "FB-Q19",
+      "version": 1,
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f"
+    },
+    {
+      "id": "FB-Q21",
+      "version": 1,
+      "wording_sha256": "2d3d3388eb5aec4fd26b0c3b50402acc5c114d4b6692880a00432b604cec72bb"
+    },
+    {
+      "id": "FB-Q22",
+      "version": 1,
+      "wording_sha256": "cd073eb73dbbb6cef23103adaba65eaa4f476aafed51bafb6793b4b4f623a840"
+    }
+  ]
+}
