@@ -3,6 +3,7 @@ from sqlalchemy.orm import Session
 
 from app.config import settings
 from app.infrastructure.database.community_repositories import (
+    SqlCommentReportRepository,
     SqlCommentRepository,
     SqlModerationLogRepository,
     SqlPostReportRepository,
@@ -123,6 +124,10 @@ def get_post_repo(db: Session = Depends(get_db)) -> SqlPostRepository:
 
 def get_comment_repo(db: Session = Depends(get_db)) -> SqlCommentRepository:
     return SqlCommentRepository(db)
+
+
+def get_comment_report_repo(db: Session = Depends(get_db)) -> SqlCommentReportRepository:
+    return SqlCommentReportRepository(db)
 
 
 def get_vote_repo(db: Session = Depends(get_db)) -> SqlPostVoteRepository:

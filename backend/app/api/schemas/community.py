@@ -29,6 +29,9 @@ class PostOut(BaseModel):
     created_at: datetime
     removed: bool = False
     removed_by: str | None = None
+    my_vote: int = 0
+    comment_count: int = 0
+    theme_name: str | None = None
 
 
 class CommentOut(BaseModel):
@@ -38,6 +41,8 @@ class CommentOut(BaseModel):
     is_mine: bool
     content: str
     created_at: datetime
+    removed: bool = False
+    removed_by: str | None = None
 
 
 class PostDetailOut(BaseModel):

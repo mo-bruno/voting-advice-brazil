@@ -1,23 +1,21 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
-import '../../core/theme/app_theme.dart';
 import 'community_session.dart';
-import 'community_processing_notice.dart';
 import 'models/community_models.dart';
-import 'utils/community_utils.dart';
+import 'utils/community_errors.dart';
+import 'widgets/comment_input.dart';
+import 'widgets/comment_tile.dart';
+import 'widgets/community_actions.dart';
+import 'widgets/post_card.dart';
 
 class PostDetailPage extends StatefulWidget {
+  const PostDetailPage({super.key, required this.postId, this.apiClient});
   final String postId;
-  const PostDetailPage({
-    super.key,
-    required this.postId,
-    this.apiClient,
-  });
-
-  @visibleForTesting
   final ApiClient? apiClient;
 
   @override
@@ -26,12 +24,21 @@ class PostDetailPage extends StatefulWidget {
 
 class _PostDetailPageState extends State<PostDetailPage> {
   late final ApiClient _api = widget.apiClient ?? ApiClient();
+  final _commentController = TextEditingController();
+  final _scrollController = ScrollController();
+  final Set<String> _acting = {};
   PostDetail? _detail;
+  String? _anonymousId;
+  String? _loadError;
+  String? _commentError;
   bool _loading = true;
-  bool _failed = false;
+  bool _refreshing = false;
   bool _sendingComment = false;
   bool _voting = false;
-  final _commentController = TextEditingController();
+  bool _allowPop = false;
+  bool _confirmingExit = false;
+  int _loadGeneration = 0;
+  int _mutationVersion = 0;
 
   @override
   void initState() {
@@ -41,56 +48,76 @@ class _PostDetailPageState extends State<PostDetailPage> {
 
   @override
   void dispose() {
+    _loadGeneration++;
     _commentController.dispose();
+    _scrollController.dispose();
     super.dispose();
   }
 
   Future<void> _load() async {
-    if (mounted) {
-      setState(() {
-        _loading = true;
-        _failed = false;
-      });
-    }
+    if (!mounted) return;
+    final generation = ++_loadGeneration;
+    final version = _mutationVersion;
+    setState(() {
+      _loading = _detail == null;
+      _refreshing = _detail != null;
+      _loadError = null;
+    });
     try {
-      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
-      final data = await _api.getPost(widget.postId, anonymousId: anonymousId);
-      if (mounted) setState(() => _detail = PostDetail.fromJson(data));
-    } catch (_) {
-      // Sem este catch a excecao escapava e `_loading` ficava true para sempre.
-      // O `_failed` existe porque o build faz `_detail!`: liberar o loading sem
-      // um ramo de erro trocaria o spinner eterno por um crash.
-      if (mounted) setState(() => _failed = true);
+      _anonymousId ??= await DeviceIdentityStore().getOrCreateDeviceId();
+      final data =
+          await _api.getPost(widget.postId, anonymousId: _anonymousId!);
+      if (!mounted ||
+          generation != _loadGeneration ||
+          version != _mutationVersion) {
+        return;
+      }
+      _detail = PostDetail.fromJson(data);
+      CommunitySession().updatePost(_detail!.post);
+    } catch (error) {
+      if (!mounted || generation != _loadGeneration) return;
+      _loadError = error is ApiException && error.statusCode == 404
+          ? 'Esta discussão não foi encontrada.'
+          : 'Não foi possível carregar a discussão. Verifique sua conexão e tente novamente.';
     } finally {
-      if (mounted) setState(() => _loading = false);
+      if (mounted && generation == _loadGeneration) {
+        setState(() {
+          _loading = false;
+          _refreshing = false;
+        });
+      }
     }
   }
 
-  void _avisar(String mensagem) {
-    if (!mounted) return;
-    ScaffoldMessenger.of(context)
-        .showSnackBar(SnackBar(content: Text(mensagem)));
+  void _notice(String text) {
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+    }
   }
 
   Future<void> _vote(int value) async {
-    final atual = _detail;
-    // Mesma trava do feed: sem ela, toques repetidos enquanto a requisicao
-    // esta em voo disparam votos concorrentes.
-    if (atual == null || atual.post.removed || _voting) return;
+    if (_detail == null ||
+        _detail!.post.removed ||
+        _voting ||
+        _anonymousId == null) {
+      return;
+    }
     setState(() => _voting = true);
     try {
-      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
       final data =
-          await _api.votePost(widget.postId, value, anonymousId: anonymousId);
-      final updated = PostSummary.fromJson(data);
+          await _api.votePost(widget.postId, value, anonymousId: _anonymousId!);
+      if (!mounted) return;
+      final current = _detail!;
+      final updated = PostSummary.fromJson(data)
+          .copyWith(commentCount: current.comments.length);
+      _mutationVersion++;
+      setState(() =>
+          _detail = PostDetail(post: updated, comments: current.comments));
       CommunitySession().updatePost(updated);
-      if (mounted) {
-        setState(() {
-          _detail = PostDetail(post: updated, comments: atual.comments);
-        });
-      }
-    } catch (_) {
-      _avisar('Não foi possível registrar seu voto.');
+    } catch (error) {
+      _notice(communityErrorMessage(error,
+          fallback: 'Não foi possível registrar seu voto.'));
+      if (error is ApiException && error.statusCode == 410) unawaited(_load());
     } finally {
       if (mounted) setState(() => _voting = false);
     }
@@ -98,499 +125,214 @@ class _PostDetailPageState extends State<PostDetailPage> {
 
   Future<void> _addComment() async {
     final content = _commentController.text.trim();
-    final atual = _detail;
-    if (content.isEmpty || atual == null || atual.post.removed) return;
-    setState(() => _sendingComment = true);
+    if (content.isEmpty ||
+        content.runes.length > 300 ||
+        _detail == null ||
+        _detail!.post.removed ||
+        _sendingComment ||
+        _anonymousId == null) {
+      return;
+    }
+    setState(() {
+      _sendingComment = true;
+      _commentError = null;
+    });
     try {
-      final anonymousId = await DeviceIdentityStore().getOrCreateDeviceId();
       final data = await _api.createComment(widget.postId, content,
-          anonymousId: anonymousId);
-      final comment = PostComment.fromJson(data);
+          anonymousId: _anonymousId!);
+      if (!mounted) return;
+      final current = _detail!;
+      final created = PostComment.fromJson(data);
+      final comments =
+          current.comments.any((comment) => comment.id == created.id)
+              ? current.comments
+              : [...current.comments, created];
+      final updated = current.post.copyWith(commentCount: comments.length);
+      _mutationVersion++;
       _commentController.clear();
-      if (mounted) {
-        setState(() {
-          _detail = PostDetail(
-            post: atual.post,
-            comments: [...atual.comments, comment],
-          );
-        });
-      }
-    } catch (_) {
-      // Sem o finally o `_sendingComment` ficava true e o botao de enviar
-      // ficava travado para sempre.
-      _avisar('Não foi possível enviar seu comentário.');
+      setState(() => _detail = PostDetail(post: updated, comments: comments));
+      CommunitySession().updatePost(updated);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted && _scrollController.hasClients) {
+          _scrollController.animateTo(
+              _scrollController.position.maxScrollExtent,
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.easeOut);
+        }
+      });
+    } catch (error) {
+      if (!mounted) return;
+      setState(() => _commentError = communityErrorMessage(error,
+          fallback:
+              'Não foi possível enviar seu comentário. Verifique sua conexão e tente novamente.'));
+      if (error is ApiException && error.statusCode == 410) unawaited(_load());
     } finally {
       if (mounted) setState(() => _sendingComment = false);
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    if (_loading) {
-      return AppScaffold(
-        title: 'COMENTÁRIOS',
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        body: const Center(child: CircularProgressIndicator()),
-      );
+  Future<void> _act({PostComment? comment, required bool report}) async {
+    final key = comment?.id ?? widget.postId;
+    if (_anonymousId == null || _acting.contains(key)) return;
+    _acting.add(key);
+    try {
+      if (report) {
+        final reason = await chooseReportReason(context);
+        if (reason == null || !mounted) return;
+        if (comment == null) {
+          await _api.reportPost(widget.postId,
+              reason: reason, anonymousId: _anonymousId!);
+        } else {
+          await _api.reportComment(widget.postId, comment.id,
+              reason: reason, anonymousId: _anonymousId!);
+        }
+        _notice('Denúncia registrada. Obrigado.');
+      } else {
+        if (!await confirmCommunityRemoval(context, comment: comment != null) ||
+            !mounted) {
+          return;
+        }
+        if (comment == null) {
+          await _api.deletePost(widget.postId, anonymousId: _anonymousId!);
+        } else {
+          await _api.deleteComment(widget.postId, comment.id,
+              anonymousId: _anonymousId!);
+        }
+        _notice(comment == null ? 'Post removido.' : 'Comentário removido.');
+      }
+      await _load();
+    } catch (error) {
+      _notice(communityErrorMessage(error,
+          fallback: report
+              ? 'Não foi possível enviar a denúncia.'
+              : 'Não foi possível apagar o conteúdo.'));
+    } finally {
+      _acting.remove(key);
     }
-    final detail = _detail;
-    if (_failed || detail == null) {
-      return AppScaffold(
-        title: 'COMENTÁRIOS',
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () => Navigator.pop(context),
-        ),
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Icon(Icons.warning_amber_rounded,
-                    size: 44, color: AppTheme.error),
-                const SizedBox(height: 18),
-                const Text(
-                  'Não foi possível carregar a discussão',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w800,
-                    color: AppTheme.onSurface,
-                  ),
-                ),
-                const SizedBox(height: 12),
-                const Text(
-                  'Verifique sua conexão e tente novamente.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 12,
-                    height: 1.55,
-                    color: AppTheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 24),
-                OutlinedButton(
-                  onPressed: _load,
-                  child: const Text('TENTAR DE NOVO'),
-                ),
-              ],
-            ),
-          ),
-        ),
-      );
+  }
+
+  Future<void> _requestExit() async {
+    if (_confirmingExit || !mounted) return;
+    if (_sendingComment) {
+      _notice('Aguarde a verificação do comentário antes de sair.');
+      return;
     }
-
-    final post = detail.post;
-    final comments = detail.comments;
-
-    return AppScaffold(
-      title: '${comments.length} COMENTÁRIO${comments.length != 1 ? 'S' : ''}',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        onPressed: () => Navigator.pop(context),
-      ),
-      body: LayoutBuilder(
-        builder: (context, constraints) => Column(
-          children: [
-            Expanded(
-              child: ListView(
-                padding: EdgeInsets.zero,
-                children: [
-                  _PostBody(post: post, onVote: _vote),
-                  const SizedBox(height: 8),
-                  if (comments.isNotEmpty)
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(16, 8, 16, 4),
-                      child: Text(
-                        'COMENTÁRIOS',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.onSurfaceVariant,
-                          letterSpacing: 1.5,
-                        ),
-                      ),
-                    ),
-                  ...comments.map((c) => _CommentTile(comment: c)),
-                  const SizedBox(height: 80),
+    if (_commentController.text.trim().isNotEmpty) {
+      _confirmingExit = true;
+      FocusScope.of(context).unfocus();
+      final discard = await showDialog<bool>(
+          context: context,
+          builder: (context) => AlertDialog(
+                scrollable: true,
+                title: const Text('Descartar comentário?'),
+                content: const Text('O texto ainda não foi enviado.'),
+                actions: [
+                  TextButton(
+                      onPressed: () => Navigator.pop(context, false),
+                      child: const Text('CONTINUAR ESCREVENDO')),
+                  TextButton(
+                      onPressed: () => Navigator.pop(context, true),
+                      child: const Text('DESCARTAR')),
                 ],
-              ),
-            ),
-            if (!post.removed)
-              ConstrainedBox(
-                constraints: BoxConstraints(
-                  maxHeight: constraints.maxHeight * .55,
-                ),
-                child: SingleChildScrollView(
-                  child: _CommentInput(
-                    controller: _commentController,
-                    sending: _sendingComment,
-                    onSend: _addComment,
-                    onChanged: () => setState(() {}),
-                  ),
-                ),
-              ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _PostBody extends StatelessWidget {
-  final PostSummary post;
-  final void Function(int value) onVote;
-
-  const _PostBody({required this.post, required this.onVote});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: AppTheme.surfaceContainer,
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          _AuthorRow(authorAlias: post.authorAlias, createdAt: post.createdAt),
-          const SizedBox(height: 12),
-          if (post.removed)
-            Text(
-              post.tombstoneLabel,
-              style: const TextStyle(
-                fontSize: 16,
-                fontStyle: FontStyle.italic,
-                color: AppTheme.onSurfaceVariant,
-              ),
-            )
-          else
-            // Maior que no card: aqui o post e o assunto, nao um item de lista.
-            Text(
-              post.content,
-              style: const TextStyle(
-                fontSize: 16,
-                height: 1.55,
-                color: AppTheme.onSurface,
-              ),
-            ),
-          if (post.themeSlug != null && !post.removed) ...[
-            const SizedBox(height: 10),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-              decoration: BoxDecoration(
-                border: Border.all(color: AppTheme.outlineVariant),
-                borderRadius: BorderRadius.circular(2),
-              ),
-              child: Text(
-                post.themeSlug!.toUpperCase(),
-                style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.onSurfaceVariant,
-                  letterSpacing: 0.5,
-                ),
-              ),
-            ),
-          ],
-          if (!post.removed) ...[
-            const SizedBox(height: 16),
-            _VoteRow(score: post.score, onVote: onVote),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _AuthorRow extends StatelessWidget {
-  final String authorAlias;
-  final DateTime createdAt;
-
-  const _AuthorRow({required this.authorAlias, required this.createdAt});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        CircleAvatar(
-          radius: 14,
-          backgroundColor: avatarColor(authorAlias),
-          child: Text(
-            avatarInitials(authorAlias),
-            style: const TextStyle(
-              fontSize: 11,
-              fontWeight: FontWeight.w700,
-              color: Colors.white,
-            ),
-          ),
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                authorAlias,
-                style: const TextStyle(
-                  fontSize: 13,
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.onSurface,
-                ),
-              ),
-              Text(
-                timeAgo(createdAt),
-                style: const TextStyle(
-                  fontSize: 11,
-                  color: AppTheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _VoteRow extends StatelessWidget {
-  final int score;
-  final void Function(int value) onVote;
-
-  const _VoteRow({required this.score, required this.onVote});
-
-  Color get _scoreColor {
-    if (score > 0) return const Color(0xFFFF6314);
-    if (score < 0) return const Color(0xFF7193FF);
-    return AppTheme.onSurfaceVariant;
+              ));
+      _confirmingExit = false;
+      if (!mounted || discard != true) return;
+    }
+    setState(() => _allowPop = true);
+    if (mounted) Navigator.pop(context);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          decoration: BoxDecoration(
-            color: AppTheme.surfaceContainerHigh,
-            borderRadius: BorderRadius.circular(2),
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _VoteButton(
-                icon: Icons.keyboard_arrow_up_rounded,
-                onTap: () => onVote(1),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8),
-                child: Text(
-                  '$score',
-                  style: TextStyle(
-                    fontSize: 15,
-                    fontWeight: FontWeight.w700,
-                    color: _scoreColor,
-                  ),
-                ),
-              ),
-              _VoteButton(
-                icon: Icons.keyboard_arrow_down_rounded,
-                onTap: () => onVote(-1),
-              ),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _VoteButton extends StatelessWidget {
-  final IconData icon;
-  final VoidCallback onTap;
-
-  const _VoteButton({required this.icon, required this.onTap});
-
-  @override
-  Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(2),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-        child: Icon(icon, size: 20, color: AppTheme.onSurfaceVariant),
-      ),
-    );
-  }
-}
-
-class _CommentTile extends StatelessWidget {
-  final PostComment comment;
-  const _CommentTile({required this.comment});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: const BoxDecoration(
-        // Mais sutil que a regua do feed: aqui os comentarios sao subordinados
-        // ao post, nao itens de mesma hierarquia.
-        border: Border(
-          bottom: BorderSide(color: AppTheme.surfaceContainer, width: 1),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              CircleAvatar(
-                radius: 11,
-                backgroundColor: avatarColor(comment.authorAlias),
-                child: Text(
-                  avatarInitials(comment.authorAlias),
-                  style: const TextStyle(
-                    fontSize: 9,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              const SizedBox(width: 7),
-              Text(
-                comment.authorAlias,
-                style: const TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                  color: AppTheme.onSurfaceVariant,
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5),
-                child: Text(
-                  '·',
-                  style:
-                      TextStyle(color: AppTheme.onSurfaceVariant, fontSize: 12),
-                ),
-              ),
-              Text(
-                timeAgo(comment.createdAt),
-                style: const TextStyle(
-                  fontSize: 11,
-                  color: AppTheme.onSurfaceVariant,
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 7),
-          // Recuado para alinhar com o nome do autor, acima.
-          Padding(
-            padding: const EdgeInsets.only(left: 29),
-            child: Text(
-              comment.content,
-              style: const TextStyle(
-                fontSize: 14,
-                height: 1.5,
-                color: AppTheme.onSurface,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _CommentInput extends StatelessWidget {
-  final TextEditingController controller;
-  final bool sending;
-  final VoidCallback onSend;
-  final VoidCallback onChanged;
-
-  const _CommentInput({
-    required this.controller,
-    required this.sending,
-    required this.onSend,
-    required this.onChanged,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      child: Container(
-        decoration: const BoxDecoration(
-          color: AppTheme.surface,
-          border: Border(top: BorderSide(color: AppTheme.outlineVariant)),
-        ),
-        padding: const EdgeInsets.fromLTRB(16, 8, 8, 8),
-        child: Column(
-          children: [
-            const CommunityProcessingNotice.comment(),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: TextField(
-                    controller: controller,
-                    style: const TextStyle(
-                        fontSize: 14, color: AppTheme.onSurface),
-                    decoration: const InputDecoration(
-                      hintText: 'Adicionar comentário...',
-                      hintStyle: TextStyle(
-                        color: AppTheme.onSurfaceVariant,
-                        fontSize: 14,
-                      ),
-                      filled: true,
-                      fillColor: AppTheme.surfaceContainer,
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide: BorderSide(color: AppTheme.outlineVariant),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide: BorderSide(color: AppTheme.outlineVariant),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.zero,
-                        borderSide: BorderSide(color: AppTheme.primary),
-                      ),
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                      isDense: true,
-                    ),
-                    maxLines: null,
-                    textCapitalization: TextCapitalization.sentences,
-                    onChanged: (_) => onChanged(),
-                  ),
-                ),
-                const SizedBox(width: 4),
-                sending
-                    ? const SizedBox(
-                        width: 40,
-                        height: 40,
-                        child: Center(
-                          child: SizedBox(
-                            width: 18,
-                            height: 18,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          ),
-                        ),
-                      )
-                    : IconButton(
-                        tooltip: 'ENVIAR COMENTÁRIO',
-                        icon: const Icon(Icons.send_rounded),
-                        color: controller.text.trim().isEmpty
-                            ? AppTheme.onSurfaceVariant
-                            : AppTheme.primary,
-                        onPressed:
-                            controller.text.trim().isEmpty ? null : onSend,
-                      ),
-              ],
-            ),
-          ],
-        ),
+    final detail = _detail;
+    final comments = detail?.comments ?? [];
+    return PopScope(
+      canPop: _allowPop ||
+          (!_sendingComment && _commentController.text.trim().isEmpty),
+      onPopInvokedWithResult: (didPop, _) {
+        if (!didPop) _requestExit();
+      },
+      child: AppScaffold(
+        title:
+            '${comments.length} COMENTÁRIO${comments.length == 1 ? '' : 'S'}',
+        leading: IconButton(
+            tooltip: 'Voltar',
+            icon: const Icon(Icons.arrow_back),
+            onPressed: _requestExit),
+        body: _loading
+            ? const Center(child: CircularProgressIndicator())
+            : detail == null
+                ? Center(
+                    child: SingleChildScrollView(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(mainAxisSize: MainAxisSize.min, children: [
+                      Text(
+                          _loadError ??
+                              'Não foi possível carregar a discussão.',
+                          textAlign: TextAlign.center),
+                      const SizedBox(height: 16),
+                      OutlinedButton(
+                          onPressed: _load,
+                          child: const Text('TENTAR DE NOVO')),
+                    ]),
+                  ))
+                : LayoutBuilder(
+                    builder: (context, constraints) => Column(children: [
+                          if (_refreshing) const LinearProgressIndicator(),
+                          if (_loadError != null)
+                            TextButton(
+                                onPressed: _load,
+                                child: const Text(
+                                    'Não foi possível atualizar. TENTAR DE NOVO')),
+                          Expanded(
+                              child: RefreshIndicator(
+                            onRefresh: _load,
+                            child: ListView(
+                              controller: _scrollController,
+                              physics: const AlwaysScrollableScrollPhysics(),
+                              padding: EdgeInsets.zero,
+                              children: [
+                                PostCard(
+                                    post: detail.post,
+                                    detailed: true,
+                                    onTap: () {},
+                                    votePending: _voting,
+                                    onVote: _vote,
+                                    onDelete: () => _act(report: false),
+                                    onReport: () => _act(report: true)),
+                                const Divider(height: 1),
+                                if (comments.isEmpty)
+                                  const Padding(
+                                      padding: EdgeInsets.all(24),
+                                      child: Text(
+                                          'Nenhum comentário ainda. Comece a discussão.')),
+                                for (final comment in comments)
+                                  CommentTile(
+                                      key: ValueKey(comment.id),
+                                      comment: comment,
+                                      onDelete: () =>
+                                          _act(comment: comment, report: false),
+                                      onReport: () =>
+                                          _act(comment: comment, report: true)),
+                                const SizedBox(height: 16),
+                              ],
+                            ),
+                          )),
+                          if (!detail.post.removed)
+                            ConstrainedBox(
+                              constraints: BoxConstraints(
+                                  maxHeight: constraints.maxHeight * .65),
+                              child: SingleChildScrollView(
+                                  child: CommentInput(
+                                controller: _commentController,
+                                sending: _sendingComment,
+                                error: _commentError,
+                                onSend: _addComment,
+                                onChanged: () =>
+                                    setState(() => _commentError = null),
+                              )),
+                            ),
+                        ])),
       ),
     );
   }

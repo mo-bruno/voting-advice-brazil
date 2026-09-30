@@ -105,7 +105,7 @@ void main() {
     expect(find.byType(CommunityProcessingNotice), findsOneWidget);
     await tester.enterText(find.byType(TextField), 'Uma opinião');
     await tester.pump();
-    final send = find.byTooltip('ENVIAR COMENTÁRIO');
+    final send = find.byTooltip('Enviar comentário');
     expect(send, findsOneWidget);
     await tester.ensureVisible(send);
     await tester.pump();

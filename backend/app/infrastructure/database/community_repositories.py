@@ -1,12 +1,21 @@
+from dataclasses import replace
 from datetime import datetime, timezone
 
-from sqlalchemy import func, select
+from sqlalchemy import func, select, update
 from sqlalchemy.dialects.postgresql import insert as pg_insert
 from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.orm import Session
 
-from app.core.entities.community import Comment, Post, PostReport, PostVote
+from app.core.entities.community import (
+    Comment,
+    CommentReport,
+    Post,
+    PostReport,
+    PostVote,
+)
+from app.core.use_cases.community_errors import PostRemovedError
 from app.core.use_cases.interfaces import (
+    CommentReportRepository,
     CommentRepository,
     ModerationLogRepository,
     PostReportRepository,
@@ -16,15 +25,40 @@ from app.core.use_cases.interfaces import (
 from app.infrastructure.database.models import (
     CommentAdmissionLockModel,
     CommentModel,
+    CommentReportModel,
     ModerationLogModel,
     PostModel,
     PostReportModel,
     PostVoteModel,
+    ThemeModel,
 )
 
 
 def _utcnow() -> datetime:
     return datetime.now(timezone.utc)
+
+
+def _lock_author_admission(db: Session, anonymous_id: str) -> str:
+    dialect = db.get_bind().dialect.name
+    if dialect not in {"postgresql", "sqlite"}:
+        raise NotImplementedError(f"Community admission is unsupported for {dialect}")
+    # Reuse the existing persistent author lock for both independent quotas.
+    insert_lock = pg_insert(CommentAdmissionLockModel) if dialect == "postgresql" else sqlite_insert(CommentAdmissionLockModel)
+    db.execute(insert_lock.values(anonymous_id=anonymous_id).on_conflict_do_nothing(index_elements=["anonymous_id"]))
+    db.execute(select(CommentAdmissionLockModel.anonymous_id).where(
+        CommentAdmissionLockModel.anonymous_id == anonymous_id,
+    ).with_for_update()).scalar_one()
+    return dialect
+
+
+def _lock_active_post(db: Session, post_id: str, dialect: str) -> None:
+    if dialect == "postgresql":
+        locked = db.execute(select(PostModel.removed_at).where(PostModel.id == post_id).with_for_update()).one_or_none()
+    else:
+        locked = db.execute(update(PostModel).where(PostModel.id == post_id)
+                            .values(score=PostModel.score).returning(PostModel.removed_at)).one_or_none()
+    if locked is None or locked[0] is not None:
+        raise PostRemovedError()
 
 
 def _to_post(m: PostModel) -> Post:
@@ -48,6 +82,8 @@ def _to_comment(m: CommentModel) -> Comment:
         anonymous_id=m.anonymous_id,
         content=m.content,
         created_at=m.created_at,
+        removed_at=m.removed_at,
+        removed_by=m.removed_by,
     )
 
 
@@ -73,6 +109,45 @@ class SqlPostRepository(PostRepository):
     def get_by_id(self, post_id: str) -> Post | None:
         model = self._db.get(PostModel, post_id)
         return _to_post(model) if model else None
+
+    def create_with_rate_limit(self, post: Post, since: datetime, max_posts: int) -> Post | None:
+        try:
+            _lock_author_admission(self._db, post.anonymous_id)
+            if self.count_by_author_since(post.anonymous_id, since) >= max_posts:
+                self._db.rollback()
+                return None
+            return self.create(post)
+        except Exception:
+            self._db.rollback()
+            raise
+
+    def enrich(self, posts: list[Post], viewer_id: str | None) -> list[Post]:
+        if not posts:
+            return posts
+        post_ids = [post.id for post in posts]
+        counts = (
+            select(CommentModel.post_id, func.count().label("comment_count"))
+            .where(CommentModel.post_id.in_(post_ids))
+            .group_by(CommentModel.post_id).subquery()
+        )
+        # One metadata query for the page. Removed comments remain in detail and
+        # therefore remain in the count; an absent viewer cannot match a vote.
+        rows = self._db.execute(
+            select(
+                PostModel.id, func.coalesce(PostVoteModel.value, 0),
+                func.coalesce(counts.c.comment_count, 0), ThemeModel.name,
+            )
+            .outerjoin(PostVoteModel, (PostVoteModel.post_id == PostModel.id) &
+                       (PostVoteModel.anonymous_id == viewer_id))
+            .outerjoin(counts, counts.c.post_id == PostModel.id)
+            .outerjoin(ThemeModel, ThemeModel.slug == PostModel.theme_slug)
+            .where(PostModel.id.in_(post_ids))
+        ).all()
+        metadata = {row[0]: (int(row[1]), int(row[2]), row[3]) for row in rows}
+        return [replace(
+            post, my_vote=metadata[post.id][0], comment_count=metadata[post.id][1],
+            theme_name=metadata[post.id][2],
+        ) for post in posts]
 
     def list(
         self,
@@ -117,13 +192,9 @@ class SqlPostRepository(PostRepository):
         return int(self._db.execute(stmt).scalar_one())
 
     def mark_removed(self, post_id: str, removed_by: str, now: datetime) -> None:
-        model = self._db.get(PostModel, post_id)
-        if model is None:
-            return
-        model.removed_at = now
-        model.removed_by = removed_by
-        # A lapide nao guarda o texto.
-        model.content = ""
+        self._db.execute(update(PostModel).where(
+            PostModel.id == post_id, PostModel.removed_at.is_(None),
+        ).values(removed_at=now, removed_by=removed_by, content=""))
         self._db.commit()
 
 
@@ -147,27 +218,11 @@ class SqlCommentRepository(CommentRepository):
     def create_with_rate_limit(
         self, comment: Comment, since: datetime, max_comments: int,
     ) -> Comment | None:
-        dialect = self._db.get_bind().dialect.name
-        if dialect not in {"postgresql", "sqlite"}:
-            raise NotImplementedError(f"Comment admission is unsupported for {dialect}")
-        insert_lock = (
-            pg_insert(CommentAdmissionLockModel)
-            if dialect == "postgresql"
-            else sqlite_insert(CommentAdmissionLockModel)
-        )
-
         try:
-            # Even on conflict, SQLite obtains its writer lock before counting.
-            # PostgreSQL also needs the author row lock when the row already exists.
-            self._db.execute(
-                insert_lock.values(anonymous_id=comment.anonymous_id)
-                .on_conflict_do_nothing(index_elements=["anonymous_id"])
-            )
-            self._db.execute(
-                select(CommentAdmissionLockModel.anonymous_id)
-                .where(CommentAdmissionLockModel.anonymous_id == comment.anonymous_id)
-                .with_for_update()
-            ).scalar_one()
+            # Consistent order: author admission lock, then parent row. The parent
+            # can change during moderation and must stay active through insertion.
+            dialect = _lock_author_admission(self._db, comment.anonymous_id)
+            _lock_active_post(self._db, comment.post_id, dialect)
             if self.count_by_author_since(comment.anonymous_id, since) >= max_comments:
                 self._db.rollback()
                 return None
@@ -189,6 +244,18 @@ class SqlCommentRepository(CommentRepository):
         )
         return [_to_comment(r) for r in rows]
 
+    def get_by_id(self, comment_id: str) -> Comment | None:
+        model = self._db.get(CommentModel, comment_id)
+        return _to_comment(model) if model else None
+
+    def mark_removed(self, comment_id: str, removed_by: str, now: datetime) -> None:
+        # Preserve whichever removal won the race, as well as the discussion row.
+        self._db.execute(
+            update(CommentModel).where(CommentModel.id == comment_id, CommentModel.removed_at.is_(None))
+            .values(removed_at=now, removed_by=removed_by, content="")
+        )
+        self._db.commit()
+
     def count_by_author_since(self, anonymous_id: str, since: datetime) -> int:
         stmt = (
             select(func.count())
@@ -202,30 +269,40 @@ class SqlCommentRepository(CommentRepository):
 
 
 class SqlPostVoteRepository(PostVoteRepository):
+    updates_post_score_atomically = True
+
     def __init__(self, db: Session) -> None:
         self._db = db
 
     def upsert(self, vote: PostVote) -> int:
-        stmt = sqlite_insert(PostVoteModel).values(
-            post_id=vote.post_id,
-            anonymous_id=vote.anonymous_id,
-            value=vote.value,
-        )
-        stmt = stmt.on_conflict_do_update(
-            index_elements=["post_id", "anonymous_id"],
-            set_={"value": vote.value},
-        )
-        self._db.execute(stmt)
-        self._db.commit()
-        score = (
-            self._db.scalar(
+        dialect = self._db.get_bind().dialect.name
+        if dialect not in {"postgresql", "sqlite"}:
+            raise NotImplementedError(f"Voting is unsupported for {dialect}")
+        insert_vote = pg_insert(PostVoteModel) if dialect == "postgresql" else sqlite_insert(PostVoteModel)
+        try:
+            # Serialize votes for a post, including the aggregate update. SQLite
+            # obtains its writer lock with a no-op update; PostgreSQL locks the row.
+            _lock_active_post(self._db, vote.post_id, dialect)
+            self._db.execute(
+                insert_vote.values(
+                    post_id=vote.post_id, anonymous_id=vote.anonymous_id, value=vote.value,
+                ).on_conflict_do_update(
+                    index_elements=["post_id", "anonymous_id"], set_={"value": vote.value},
+                )
+            )
+            score = self._db.scalar(
                 select(func.sum(PostVoteModel.value)).where(
                     PostVoteModel.post_id == vote.post_id
                 )
+            ) or 0
+            self._db.execute(
+                update(PostModel).where(PostModel.id == vote.post_id).values(score=score)
             )
-            or 0
-        )
-        return int(score)
+            self._db.commit()
+            return int(score)
+        except Exception:
+            self._db.rollback()
+            raise
 
     def get(self, post_id: str, anonymous_id: str) -> PostVote | None:
         model = self._db.get(PostVoteModel, (post_id, anonymous_id))
@@ -269,23 +346,20 @@ class SqlPostReportRepository(PostReportRepository):
         self._db = db
 
     def upsert(self, report: PostReport) -> None:
-        existing = self._db.get(
-            PostReportModel, (report.post_id, report.anonymous_id)
-        )
-        if existing is None:
-            self._db.add(
-                PostReportModel(
-                    post_id=report.post_id,
-                    anonymous_id=report.anonymous_id,
-                    reason=report.reason,
-                    detail=report.detail,
-                    created_at=report.created_at,
-                )
-            )
-        else:
-            existing.reason = report.reason
-            existing.detail = report.detail
-        self._db.commit()
+        dialect = self._db.get_bind().dialect.name
+        if dialect not in {"postgresql", "sqlite"}:
+            raise NotImplementedError(f"Post reporting is unsupported for {dialect}")
+        insert_report = pg_insert(PostReportModel) if dialect == "postgresql" else sqlite_insert(PostReportModel)
+        try:
+            self._db.execute(insert_report.values(
+                post_id=report.post_id, anonymous_id=report.anonymous_id,
+                reason=report.reason, detail=report.detail, created_at=report.created_at,
+            ).on_conflict_do_update(index_elements=["post_id", "anonymous_id"],
+                                    set_={"reason": report.reason, "detail": report.detail}))
+            self._db.commit()
+        except Exception:
+            self._db.rollback()
+            raise
 
     def count_distinct_reporters(self, post_id: str) -> int:
         stmt = (
@@ -300,3 +374,40 @@ class SqlPostReportRepository(PostReportRepository):
             PostReportModel.post_id == post_id
         )
         return list(self._db.execute(stmt).scalars().all())
+
+
+class SqlCommentReportRepository(CommentReportRepository):
+    def __init__(self, db: Session) -> None:
+        self._db = db
+
+    def upsert(self, report: CommentReport) -> None:
+        dialect = self._db.get_bind().dialect.name
+        if dialect not in {"postgresql", "sqlite"}:
+            raise NotImplementedError(f"Comment reporting is unsupported for {dialect}")
+        insert_report = pg_insert(CommentReportModel) if dialect == "postgresql" else sqlite_insert(CommentReportModel)
+        try:
+            self._db.execute(
+                insert_report.values(
+                    comment_id=report.comment_id, anonymous_id=report.anonymous_id,
+                    reason=report.reason, detail=report.detail, created_at=report.created_at,
+                ).on_conflict_do_update(
+                    index_elements=["comment_id", "anonymous_id"],
+                    set_={"reason": report.reason, "detail": report.detail},
+                )
+            )
+            self._db.commit()
+        except Exception:
+            self._db.rollback()
+            raise
+
+    def count_distinct_reporters(self, comment_id: str) -> int:
+        return int(self._db.execute(
+            select(func.count()).select_from(CommentReportModel)
+            .where(CommentReportModel.comment_id == comment_id)
+        ).scalar_one())
+
+    def reasons_for_comment(self, comment_id: str) -> list[str]:
+        return list(self._db.execute(
+            select(CommentReportModel.reason).where(CommentReportModel.comment_id == comment_id)
+            .order_by(CommentReportModel.anonymous_id)
+        ).scalars().all())

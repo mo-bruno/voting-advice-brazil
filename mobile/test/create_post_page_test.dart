@@ -38,7 +38,18 @@ class _StubClient extends http.BaseClient {
     final raw = await (request as http.Request).finalize().bytesToString();
     posted.add(jsonDecode(raw) as Map<String, dynamic>);
     return http.StreamedResponse(
-      Stream<List<int>>.value(utf8.encode('{}')),
+      Stream<List<int>>.value(utf8.encode(jsonEncode({
+        'id': 'post-1',
+        'author_alias': 'u/abc123def0',
+        'is_mine': true,
+        'content': posted.last['content'],
+        'political_actor_id': null,
+        'theme_slug': posted.last['theme_slug'],
+        'score': 0,
+        'created_at': '2026-09-30T12:00:00Z',
+        'removed': false,
+        'removed_by': null,
+      }))),
       201,
       headers: {'content-type': 'application/json; charset=utf-8'},
     );
@@ -78,9 +89,12 @@ void main() {
 
   testWidgets('lista os temas vindos da api', (tester) async {
     await _pump(tester, _StubClient());
+    await tester.ensureVisible(find.text('Sem tema'));
+    await tester.tap(find.text('Sem tema'));
+    await tester.pumpAndSettle();
 
-    expect(find.text('ECONOMIA'), findsOneWidget);
-    expect(find.text('SAÚDE'), findsOneWidget);
+    expect(find.text('Economia'), findsOneWidget);
+    expect(find.text('Saúde'), findsOneWidget);
   });
 
   testWidgets('tema selecionado vai no corpo da publicacao', (tester) async {
@@ -88,7 +102,10 @@ void main() {
     await _pump(tester, client);
 
     await tester.enterText(find.byType(TextField), 'Um post sobre economia');
-    await tester.tap(find.text('ECONOMIA'));
+    await tester.ensureVisible(find.text('Sem tema'));
+    await tester.tap(find.text('Sem tema'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Economia'));
     await tester.pump();
     await tester.ensureVisible(find.text('PUBLICAR'));
     await tester.pump();

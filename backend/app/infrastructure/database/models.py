@@ -446,6 +446,8 @@ class CommentModel(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
+    removed_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    removed_by: Mapped[str | None] = mapped_column(String(16), nullable=True)
 
     post: Mapped["PostModel"] = relationship(back_populates="comments")
 
@@ -453,6 +455,8 @@ class CommentModel(Base):
 
 
 class CommentAdmissionLockModel(Base):
+    """Existing persistent author rows shared by post and comment admission."""
+
     __tablename__ = "comment_admission_locks"
 
     anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
@@ -482,6 +486,18 @@ class PostReportModel(Base):
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True), nullable=False, default=_utcnow
     )
+
+
+class CommentReportModel(Base):
+    __tablename__ = "comment_reports"
+
+    comment_id: Mapped[str] = mapped_column(
+        String(36), ForeignKey("comments.id", ondelete="CASCADE"), primary_key=True
+    )
+    anonymous_id: Mapped[str] = mapped_column(String(64), primary_key=True)
+    reason: Mapped[str] = mapped_column(String(32), nullable=False)
+    detail: Mapped[str | None] = mapped_column(Text, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), nullable=False, default=_utcnow)
 
 
 class ModerationLogModel(Base):

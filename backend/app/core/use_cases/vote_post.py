@@ -18,5 +18,6 @@ def vote_post(
     if post.removed_at is not None:
         raise PostRemovedError()
     new_score = vote_repo.upsert(PostVote(post_id=post_id, anonymous_id=anonymous_id, value=value))
-    post_repo.update_score(post_id, new_score)
+    if not getattr(vote_repo, "updates_post_score_atomically", False):
+        post_repo.update_score(post_id, new_score)
     return replace(post, score=new_score)
