@@ -1,18 +1,11 @@
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
+import 'dart:typed_data';
+import 'dart:ui' show Rect;
+
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:share_plus/share_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'result_share_data.dart';
-import 'result_share_browser_stub.dart'
-    if (dart.library.js_interop) 'result_share_browser.dart' as browser;
-
-class PreparedResultShareImage {
-  const PreparedResultShareImage(this.png, this.format, this.browserPayload);
-  final Uint8List png;
-  final ResultShareFormat format;
-  final Object? browserPayload;
-}
 
 class ResultShareService {
   ResultShareService({Future<ShareResult> Function(ShareParams)? share})
@@ -21,26 +14,6 @@ class ResultShareService {
   final Future<ShareResult> Function(ShareParams) _share;
 
   bool get canDownload => kIsWeb;
-  bool get canCopyImage => browser.canCopyImage;
-
-  Future<PreparedResultShareImage> prepareImage(
-          Uint8List png, ResultShareFormat format) async =>
-      PreparedResultShareImage(png, format, await browser.prepare(png, format));
-
-  Future<ShareResult> sharePrepared(
-      PreparedResultShareImage image, ResultShareNetwork? network, Rect origin,
-      {String? text}) {
-    final payload = image.browserPayload;
-    return payload != null
-        ? browser.share(payload, network, text: text)
-        : shareImage(image.png, image.format, origin, text: text);
-  }
-
-  Future<void> copyImage(PreparedResultShareImage image) {
-    final payload = image.browserPayload;
-    if (payload == null) throw UnsupportedError('Copiar imagem indisponível.');
-    return browser.copyImage(payload);
-  }
 
   XFile _file(Uint8List bytes, ResultShareFormat format) => XFile.fromData(
         bytes,
@@ -51,16 +24,14 @@ class ResultShareService {
   Future<ShareResult> shareImage(
     Uint8List bytes,
     ResultShareFormat format,
-    Rect origin, {
-    String? text,
-  }) =>
+    Rect origin,
+  ) =>
       _share(ShareParams(
         files: [_file(bytes, format)],
-        text: text,
         fileNameOverrides: [format.fileName],
         sharePositionOrigin: origin,
-        // A legenda é opcional: o botão geral envia só a imagem para manter
-        // compatibilidade com destinos que rejeitam arquivo + texto.
+        // Envia somente o PNG. Texto + arquivo pode perder a imagem no destino.
+        // A tela oferece salvar em um novo gesto quando o navegador recusa.
         downloadFallbackEnabled: false,
       ));
 
@@ -72,16 +43,12 @@ class ResultShareService {
     return file.saveTo(format.fileName);
   }
 
-  Future<void> copyLink(ResultShareData data) =>
-      Clipboard.setData(ClipboardData(text: data.siteUrl));
-
   Future<void> openNetwork(
     ResultShareData data,
-    ResultShareNetwork network, {
-    ResultShareFormat format = ResultShareFormat.story,
-  }) async {
+    ResultShareNetwork network,
+  ) async {
     final opened = await launchUrl(
-      data.networkUri(network, format: format),
+      data.networkUri(network),
       mode: LaunchMode.externalApplication,
       webOnlyWindowName: '_blank',
     );

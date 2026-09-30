@@ -42,18 +42,6 @@ CandidateResult _candidate(int id, double score,
     );
 
 void main() {
-  test('link do Instagram respeita Story e Post sem prometer anexo por URL',
-      () {
-    final data = ResultShareData(results: [_result]);
-    expect(data.networkUri(ResultShareNetwork.instagram).toString(),
-        'https://www.instagram.com/create/story');
-    expect(
-        data
-            .networkUri(ResultShareNetwork.instagram,
-                format: ResultShareFormat.post)
-            .toString(),
-        'https://www.instagram.com/');
-  });
   test('recusa lista vazia', () {
     expect(() => ResultShareData(results: []), throwsArgumentError);
   });

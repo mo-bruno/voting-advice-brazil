@@ -17,7 +17,6 @@ dependencies:
   shared_preferences: ^2.5.5
   url_launcher: ^6.3.2
   uuid: ^4.5.3
-  web: ^1.1.1
 
 dev_dependencies:
   firebase_analytics_platform_interface: ^5.1.1
