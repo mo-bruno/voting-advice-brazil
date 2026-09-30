@@ -202,6 +202,7 @@ class _MyAppState extends State<MyApp> {
         '/privacidade': (_) => PrivacyPage(
               consentController: resolvedConsent,
               config: widget.privacyConfig,
+              analytics: _analytics,
             ),
       },
     );

@@ -1,7 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../../core/analytics/analytics_consent_controller.dart';
 import '../../core/analytics/analytics_operational_config.dart';
+import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/link/link_opener.dart';
 import 'privacy_config.dart';
@@ -12,24 +15,43 @@ class PrivacyPage extends StatelessWidget {
     required this.consentController,
     required this.config,
     this.openLink,
+    this.analytics,
     this.analyticsEnabled = AnalyticsOperationalConfig.enabled,
   });
 
   final AnalyticsConsentController consentController;
   final PrivacyConfig config;
   final LinkOpener? openLink;
+  final AnalyticsService? analytics;
   final bool analyticsEnabled;
 
   static final googlePartnerSitesUri = Uri.parse(
     'https://policies.google.com/technologies/partner-sites?hl=pt-BR',
   );
 
-  Future<void> _open(BuildContext context, Uri uri) async {
+  Future<void> _open(
+    BuildContext context,
+    Uri uri,
+    AnalyticsTarget target,
+  ) async {
+    var opened = false;
     try {
-      if (await (openLink ?? openExternalLink)(uri)) return;
+      opened = await (openLink ?? openExternalLink)(uri);
     } catch (_) {
       // A falha é comunicada sem fechar a página ou expor o conteúdo da URI.
     }
+    unawaited(
+      (analytics ?? AnalyticsService())
+          .engagementAction(
+            action: AnalyticsAction.outboundOpen,
+            surface: AnalyticsSurface.privacy,
+            target: target,
+            outcome:
+                opened ? AnalyticsOutcome.success : AnalyticsOutcome.failed,
+          )
+          .catchError((_) {}),
+    );
+    if (opened) return;
     if (!context.mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       const SnackBar(content: Text('Não foi possível abrir o link.')),
@@ -112,8 +134,8 @@ class PrivacyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final emailUri = Uri(scheme: 'mailto', path: config.contactEmail);
     final analyticsRetention = analyticsEnabled
-        ? 'Eventos e dados de usuário aceitos têm retenção configurada por 2 meses no GA4; relatórios agregados padrão podem seguir regras e prazos próprios. As tabelas novas do BigQuery expiram em até 60 dias.'
-        : 'A coleta de métricas está pausada nesta versão. Antes de ativá-la, a retenção de eventos e dados de usuário no GA4 deve ser confirmada em 2 meses e a expiração das tabelas novas do BigQuery em até 60 dias; relatórios agregados padrão podem seguir regras e prazos próprios.';
+        ? 'Eventos e dados de usuário aceitos têm retenção configurada por 2 meses no GA4; relatórios agregados padrão podem seguir regras e prazos próprios. As tabelas históricas existentes podem não ter expiração; novas tabelas expiram em até 60 dias. A ativação em produção só ocorre se a configuração do GA4 e do BigQuery corresponder a este aviso.'
+        : 'A coleta de métricas está pausada nesta versão. A ativação em produção só ocorre se a configuração do GA4 e do BigQuery corresponder a este aviso: retenção de eventos e dados de usuário em 2 meses no GA4; tabelas históricas existentes podem não ter expiração; e novas tabelas expiram em até 60 dias. Relatórios agregados padrão podem seguir regras e prazos próprios.';
     final sections = <(String, String)>[
       (
         'Quem decide e como falar conosco',
@@ -125,7 +147,7 @@ class PrivacyPage extends StatelessWidget {
       ),
       (
         'Métricas opcionais',
-        'O Google Analytics só é ativado se você aceitar. Depois do aceite, podemos enviar eventos genéricos de uso e desempenho, página e referência, informações do navegador/dispositivo e um Firebase Installation ID pseudônimo. Google, Firebase Analytics, GA4 e BigQuery podem processar esses dados, inclusive fora do Brasil. Provedores também podem tratar endereço IP em trânsito e em registros técnicos e estimar localização aproximada. Não enviamos respostas do quiz, candidatos, partidos, afinidade, texto livre ou identificadores funcionais aos eventos de Analytics. Não usamos esses dados para publicidade. Você pode rejeitar ou revogar sem perder funções do site. Sua escolha sobre métricas é salva localmente no navegador para que o site possa lembrá-la. Após o aceite, o Google pode gravar cookies `_ga` e um Firebase Installation ID no navegador. Revogar interrompe novos envios, mas não apaga automaticamente esses identificadores locais nem eventos já recebidos, que seguem os prazos abaixo e os direitos que você pode exercer pelo canal de privacidade.',
+        'O consentimento é opcional e pode ser revogado sem perder funções do site. O Google Analytics só é ativado depois desse consentimento. Então, podemos enviar eventos sobre telas genéricas, uso de funcionalidades e resultados e durações de operações. O Google pode acrescentar página, referência, informações do navegador e dispositivo e identificadores pseudônimos, como o cookie `_ga` e um Firebase Installation ID. Google, Firebase Analytics, GA4 e BigQuery podem processar esses dados, inclusive fora do Brasil. Provedores também podem tratar endereço IP em trânsito e em registros técnicos e estimar localização aproximada. Nos eventos personalizados, não enviamos respostas do quiz, posições políticas, candidatos, partidos, ranking, afinidade, identificador funcional ou texto livre. Não usamos esses dados para publicidade. Você pode rejeitar ou revogar sem perder funções do site. Sua escolha sobre métricas é salva localmente no navegador para que o site possa lembrá-la. Revogar interrompe novos envios, mas não apaga automaticamente identificadores locais nem eventos já recebidos, que seguem os prazos abaixo e os direitos que você pode exercer pelo canal de privacidade.',
       ),
       (
         'Quiz e respostas políticas',
@@ -177,14 +199,22 @@ class PrivacyPage extends StatelessWidget {
                   if (section.$1 == 'Quem decide e como falar conosco') ...[
                     const SizedBox(height: 8),
                     TextButton(
-                      onPressed: () => _open(context, emailUri),
+                      onPressed: () => _open(
+                        context,
+                        emailUri,
+                        AnalyticsTarget.privacyEmail,
+                      ),
                       child: const Text('ENVIAR E-MAIL'),
                     ),
                   ],
                   if (section.$1 == 'Métricas opcionais') ...[
                     const SizedBox(height: 8),
                     TextButton(
-                      onPressed: () => _open(context, googlePartnerSitesUri),
+                      onPressed: () => _open(
+                        context,
+                        googlePartnerSitesUri,
+                        AnalyticsTarget.googlePrivacy,
+                      ),
                       child: const Text('SAIBA COMO O GOOGLE USA DADOS'),
                     ),
                   ],
