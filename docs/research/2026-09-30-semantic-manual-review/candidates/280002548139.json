@@ -1,0 +1,819 @@
+{
+  "candidate_id": "280002548139",
+  "candidate_name": "Veterinário Wilson Grassi",
+  "reviewer_agent_id": "/root/delta_grassi",
+  "status": "complete",
+  "reviews": [
+    {
+      "question_id": "B01-Q01",
+      "display_number": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano detalha o Imposto Único Federal sobre movimentação financeira e mudanças no IRPF e no IRPJ, mas não propõe imposto específico sobre grandes fortunas. Menções genéricas a patrimônio não criam essa base tributária.",
+      "semantic_neighborhood_summary": "A reforma tributária combina cobrança ampla sobre movimentação financeira, redução de tributos sobre produção e folha e manutenção da progressividade do IRPF. Esse desenho altera quem paga e como se arrecada, mas escolhe fluxo financeiro e renda como bases, sem individualizar patrimônio muito elevado.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P01",
+          "relation": "CONTEXTO",
+          "page": 8,
+          "quote": "Substituir o conjunto de tributos federais que hoje incide sobre folha, faturamento e produção por um único tributo, cobrado automaticamente sobre a movimentação financeira, incidindo em cada lançamento a débito e a crédito em conta.",
+          "semantic_relevance": "É a principal escolha distributiva do plano, mas o fato gerador é a transação bancária, não o estoque de grande patrimônio."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P02",
+          "relation": "QUALIFICA",
+          "page": 9,
+          "quote": "Adotamos o deslocamento da tabela. As quatro alíquotas atuais permanecem, com as mesmas larguras de faixa, e passam a valer a partir de R$ 8.105,00.",
+          "semantic_relevance": "A preservação de progressividade na renda é próxima ao eixo distributivo, porém não cria tributação patrimonial específica."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano reorganiza profundamente a tributação e preserva progressividade sobre renda, mas não oferece instrumento funcionalmente equivalente a um imposto sobre grandes fortunas. O alcance universal do IUF também impede tratá-lo como cobrança dirigida ao topo patrimonial.",
+      "reasons_to_keep": [
+        "As bases explicitadas são movimentação financeira e renda, distintas de patrimônio muito elevado.",
+        "Não há alíquota, limiar, cadastro patrimonial ou incidência vinculada a grandes fortunas."
+      ],
+      "reasons_to_reconsider": [
+        "A combinação de base financeira amplíssima e progressividade do IRPF revela intenção redistributiva que um revisor pode querer comparar ao objetivo político da tese.",
+        "Se a tese fosse interpretada pelo efeito distributivo e não pelo instrumento específico, o desenho tributário seria semanticamente relevante."
+      ],
+      "human_review_question": "O conjunto do plano decide criar, rejeitar ou apenas tangencia um tributo sobre patrimônio muito elevado?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q02",
+      "display_number": 2,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano prevê crédito simplificado para agricultura familiar, garantia parcial para financiamento habitacional e compras públicas para sustentar a base industrial de saúde. Nenhuma dessas medidas é uma linha de crédito destinada a setores industriais escolhidos como prioritários pela política industrial.",
+      "semantic_neighborhood_summary": "O plano seleciona cadeias para apoio público por três instrumentos próximos: crédito agrícola, compras governamentais para a indústria de saúde e conteúdo nacional na defesa. Há política produtiva setorial, mas o crédito não é aplicado aos setores industriais escolhidos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P05",
+          "relation": "QUALIFICA",
+          "page": 33,
+          "quote": "Crédito simplificado para agricultura familiar, com redução drástica de exigência documental.",
+          "semantic_relevance": "Demonstra disposição para crédito dirigido, porém o público é agrícola e não um setor industrial prioritário."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P30",
+          "relation": "CONTEXTO",
+          "page": 34,
+          "quote": "Fortalecer a produção nacional de medicamentos e imunizantes estratégicos, inclusive de uso veterinário, com política de compras que sustente a base industrial.",
+          "semantic_relevance": "Seleciona uma cadeia industrial estratégica, mas usa compras públicas, não linha de crédito."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P47",
+          "relation": "CONTEXTO",
+          "page": 51,
+          "quote": "Base Industrial de Defesa com exigência de conteúdo nacional e meta de exportação, porque defesa que gera indústria se paga em parte e gera emprego qualificado.",
+          "semantic_relevance": "A indústria de defesa recebe orientação setorial, novamente sem financiamento creditício dirigido."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "Há seleção explícita de cadeias produtivas e instrumentos de apoio, o que afasta a ideia de ausência de política industrial. Ainda assim, compras, conteúdo nacional e crédito agrícola não são equivalentes a linhas de crédito industriais.",
+      "reasons_to_keep": [
+        "Nenhum trecho oferece empréstimo, financiamento bancário ou garantia de crédito a um setor industrial prioritário.",
+        "Os instrumentos industriais identificados são compras públicas e requisitos de conteúdo nacional."
+      ],
+      "reasons_to_reconsider": [
+        "O plano já escolhe saúde e defesa como bases industriais estratégicas e lhes destina apoio público específico.",
+        "Um revisor pode investigar se compras garantidas funcionam economicamente como apoio financeiro equivalente, embora não sejam crédito."
+      ],
+      "human_review_question": "O plano adota ou rejeita crédito setorial como instrumento de política industrial?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q03",
+      "display_number": 3,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano admite investimento estrangeiro em setores estratégicos mediante contrapartidas e, separadamente, propõe um regime para aproveitamento mineral em terras indígenas. Ele não liga as duas propostas nem diz se empresas estrangeiras podem participar da extração de minerais estratégicos.",
+      "semantic_neighborhood_summary": "Duas decisões se sobrepõem semanticamente: investimento estrangeiro é admitido em setor estratégico com conteúdo nacional, tecnologia e emprego, enquanto a exploração mineral é admitida sob consentimento indígena, participação econômica e proteção ambiental. A dúvida é se a regra geral sobre capital estrangeiro alcança a lavra mineral.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P06",
+          "relation": "APOIA",
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil.",
+          "semantic_relevance": "A formulação admite capital estrangeiro em setores estratégicos, mas o condiciona; falta apenas a ligação expressa com extração mineral."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P19",
+          "relation": "QUALIFICA",
+          "page": 48,
+          "quote": "O compromisso que assumo é o de enviar ao Congresso o projeto que regulamenta o art. 231, §3º, com três condições inegociáveis no texto: consentimento da comunidade afetada apurado por consulta na forma da Convenção nº 169; participação econômica dos indígenas nos resultados, paga diretamente e com governança definida pela própria comunidade, e não por intermediário; e licenciamento ambiental pleno, com proibição de mercúrio, garantia financeira prévia para recuperação de área degradada e responsabilidade solidária de quem compra o minério.",
+          "semantic_relevance": "O plano permite aproveitamento mineral sob condições rigorosas, sem limitar a nacionalidade do operador ou dizer que minerais estratégicos entram nesse regime."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "A leitura conjunta oferece uma inferência semântica plausível de permissão condicionada: capital estrangeiro pode entrar em setor estratégico e mineração pode ocorrer com salvaguardas. A matriz foi cautelosa porque as duas regras não são conectadas e o plano não define minerais estratégicos nem operadores autorizados.",
+      "reasons_to_keep": [
+        "A regra mineral trata de território e salvaguardas, sem mencionar empresa estrangeira ou mineral estratégico.",
+        "A expressão setor estratégico não é definida e pode não incluir exploração mineral."
+      ],
+      "reasons_to_reconsider": [
+        "A regra sobre investimento estrangeiro é formulada para setor estratégico em geral e pressupõe admissão mediante contrapartidas.",
+        "O plano não reserva a exploração mineral a operadores nacionais e cria um regime que, lido com a regra geral, pode sustentar permissão condicionada."
+      ],
+      "human_review_question": "A regra geral que admite investimento estrangeiro em setor estratégico, combinada ao regime de aproveitamento mineral, basta para classificar permissão condicionada na exploração de minerais estratégicos?",
+      "preliminary_recommendation": "RECLASSIFICAR_CONDICIONAL",
+      "confidence": "media"
+    },
+    {
+      "question_id": "B01-Q04",
+      "display_number": 4,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe auditoria da dívida pública nem suspensão dos pagamentos durante uma auditoria.",
+      "semantic_neighborhood_summary": "O perfil contém compromissos de responsabilidade fiscal, estimativas de impacto e transparência, mas nenhuma decisão sobre legitimidade da dívida, auditoria de passivos, serviço da dívida, credores, moratória ou suspensão de pagamentos.",
+      "semantic_context": [],
+      "semantic_context_absence_reason": "As posições fiscais do perfil tratam de desenho tributário, espaço fiscal e impacto orçamentário. Nenhuma citação se aproxima semanticamente da sequência específica auditoria da dívida seguida de suspensão de pagamentos.",
+      "semantic_assessment": "Não há instrumento próximo ou princípio operacional que possa resolver o objeto. Transparência administrativa e cautela fiscal não equivalem a auditar passivos nem interromper o serviço da dívida.",
+      "reasons_to_keep": [
+        "Faltam tanto a auditoria quanto a suspensão, os dois componentes indispensáveis da tese.",
+        "Nenhuma posição do perfil aborda dívida pública, credores, moratória ou serviço da dívida."
+      ],
+      "reasons_to_reconsider": [
+        "A ênfase em transparência e estimativas de impacto poderia motivar busca documental adicional por auditorias fiscais, embora o material autorizado não as registre.",
+        "Uma concepção muito ampla de auditoria pública aproximaria princípios do plano, mas ainda não forneceria suspensão de pagamentos."
+      ],
+      "human_review_question": "O plano vincula auditoria a suspensão dos pagamentos e com qual alcance?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q05",
+      "display_number": 5,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano declara uma estratégia de crescimento sem expansão do gasto e exige estimativas pela Lei de Responsabilidade Fiscal, mas não propõe uma regra normativa que limite o crescimento das despesas federais. Objetivo político e estimativa de impacto não equivalem ao limite perguntado.",
+      "semantic_neighborhood_summary": "O programa combina preferência por crescer sem expandir gasto, submissão de novas despesas à Lei de Responsabilidade Fiscal e vinculação crescente de recursos à defesa. São escolhas fiscais concretas, mas nenhuma fixa índice ou teto para a despesa federal agregada.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "CONTEXTO",
+          "page": 7,
+          "quote": "A aposta econômica desta candidatura está declarada: crescer reduzindo atrito, não expandindo gasto.",
+          "semantic_relevance": "Expressa orientação de contenção, sem criar regra operacional ou jurídica para limitar despesas."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P23",
+          "relation": "QUALIFICA",
+          "page": 37,
+          "quote": "Criar carreira é despesa obrigatória e continuada, e depende de espaço fiscal e de estimativa de impacto na forma da Lei de Responsabilidade Fiscal.",
+          "semantic_relevance": "Mostra um filtro fiscal para nova despesa, não um limite de crescimento do gasto total."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P44",
+          "relation": "CONTEXTO",
+          "page": 49,
+          "quote": "Apoiamos a aprovação da Proposta de Emenda à Constituição nº 55, de 2023, que destina no mínimo 2% do PIB à defesa e vincula ao menos 35% desse valor à modernização.",
+          "semantic_relevance": "Cria piso e vinculação setorial de gasto, mecanismo fiscal de direção oposta a um teto geral."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano pratica cautela fiscal projeto a projeto e declara preferência por não expandir gasto, mas também cria piso setorial. Falta uma fórmula que limite o crescimento agregado, suas exceções e sua vigência.",
+      "reasons_to_keep": [
+        "Orientação política e exigência de impacto não impõem limite vinculante ao crescimento das despesas.",
+        "O piso constitucional de defesa regula composição mínima, não teto agregado."
+      ],
+      "reasons_to_reconsider": [
+        "A frase sobre crescer sem expandir gasto é mais restritiva que uma defesa abstrata de responsabilidade fiscal.",
+        "A aplicação recorrente de espaço fiscal e LRF revela um princípio operacional de contenção, embora sem fórmula geral."
+      ],
+      "human_review_question": "Há uma regra operacional que limite despesas, rejeição dessa regra ou apenas objetivo fiscal geral?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q06",
+      "display_number": 6,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não nomeia a Petrobras nem decide a manutenção de seu controle acionário federal. A única referência ao pré-sal aparece como justificativa para capacidade de defesa nacional.",
+      "semantic_neighborhood_summary": "O plano aceita investimento estrangeiro condicionado em setores estratégicos e organiza energia por regulação e leilões estáveis. Essas escolhas descrevem abertura com contrapartidas e governança setorial, sem optar por controle público ou privado de uma empresa petrolífera específica.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P06",
+          "relation": "QUALIFICA",
+          "page": 52,
+          "quote": "Investimento estrangeiro em setor estratégico vem acompanhado de contrapartida em conteúdo nacional, transferência de tecnologia e emprego no Brasil.",
+          "semantic_relevance": "Estabelece condições para capital externo em áreas estratégicas, mas não decide alienar ou manter controle acionário estatal."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P15",
+          "relation": "CONTEXTO",
+          "page": 47,
+          "quote": "Previsibilidade regulatória e leilões com regra estável.",
+          "semantic_relevance": "A política energética se concentra em regulação e leilões, sem atribuir papel à Petrobras ou definir sua propriedade."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O programa não oferece equivalência semântica para controle acionário. Capital estrangeiro condicionado e leilões podem coexistir tanto com uma Petrobras estatal quanto privatizada.",
+      "reasons_to_keep": [
+        "Não há referência à Petrobras, ao controle acionário ou à privatização de empresa petrolífera.",
+        "As regras gerais para investimento e energia não determinam propriedade empresarial."
+      ],
+      "reasons_to_reconsider": [
+        "A imposição de contrapartidas em setores estratégicos pode sinalizar preferência por coordenação nacional, mas não por controle estatal.",
+        "A proteção do pré-sal no diagnóstico de defesa aproxima o tema da soberania, sem resolver governança da Petrobras."
+      ],
+      "human_review_question": "O plano decide o controle estatal da Petrobras ou apenas descreve funções e políticas energéticas?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano manda registrar atrasos injustificados na avaliação funcional e tratá-los como infração disciplinar por desídia. Não afirma que baixo desempenho comprovado em avaliações periódicas autoriza a demissão de servidor estável com direito de defesa; a referência a permanência no cargo se limita a cargo em comissão de dirigente.",
+      "semantic_neighborhood_summary": "A gestão pública vincula desempenho a consequências: atraso injustificado entra na avaliação funcional, pode configurar desídia e afeta gratificação ou permanência de dirigentes comissionados. O desenho distingue falha individual de sobrecarga estrutural, mas não cria avaliação periódica capaz de retirar cargo estável.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "QUALIFICA",
+          "page": 19,
+          "quote": "Atraso reiterado e sem justificativa aceita entra na avaliação funcional do servidor e caracteriza infração disciplinar por desídia, na forma da Lei nº 8.112/1990.",
+          "semantic_relevance": "Liga conduta funcional a avaliação e disciplina, porém por falta específica, sem enunciar demissão por desempenho periódico."
+        },
+        {
+          "source": "full_plan_review",
+          "relation": "QUALIFICA",
+          "page": 19,
+          "quote": "O dirigente máximo do órgão responde por índice de descumprimento acima do limite fixado em regulamento, com efeito sobre gratificação de desempenho e sobre a permanência no cargo em comissão.",
+          "semantic_relevance": "Há consequência sobre permanência, mas apenas em cargo em comissão, fora do vínculo estável perguntado."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 20,
+          "quote": "Servidor com carga desproporcional ou sem sistema que funcione não é culpado por falha estrutural, e o mesmo indicador que aponta o desleixo aponta a falta de gente.",
+          "semantic_relevance": "Introduz uma salvaguarda causal semelhante ao direito de defesa, sem definir perda de cargo por baixo desempenho."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano chega perto em avaliação, responsabilização e distinção entre culpa e falha estrutural. A consequência demissional, o caráter periódico e a incidência sobre servidor estável permanecem ausentes, impedindo equivalência funcional.",
+      "reasons_to_keep": [
+        "Desídia disciplinar por atraso não equivale a baixo desempenho comprovado em avaliações periódicas.",
+        "A única perda de permanência expressa recai sobre cargo comissionado."
+      ],
+      "reasons_to_reconsider": [
+        "O plano constrói um sistema objetivo de avaliação, indicador, justificativa e consequência funcional.",
+        "A ressalva para sobrecarga estrutural revela preocupação processual que pode aproximar o desenho das garantias da tese."
+      ],
+      "human_review_question": "O plano liga avaliação periódica de desempenho à perda do cargo com garantias processuais?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q23",
+      "display_number": 8,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "current_classification": "CONDICIONAL_OU_MISTA",
+      "current_rationale": "No eixo de infraestrutura, o plano inclui contratos de concessão entre os instrumentos e defende fiscalizar esse modelo em transportes. Porém, a expansão ferroviária privada é proposta expressamente pelo regime distinto de autorização, e não há parceria público-privada no sentido jurídico específico. Como a tese reúne concessões e PPPs e o texto cobre apenas parte desse conjunto, a posição é mista.",
+      "semantic_neighborhood_summary": "A infraestrutura de cargas usa um modelo combinado: o Estado licencia, desapropria e regula, enquanto empresas podem construir e operar ferrovias próprias por autorização. A matriz também registra contratos de concessão e sua fiscalização, mas o perfil não identifica PPPs.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "QUALIFICA",
+          "page": 46,
+          "quote": "Uso pleno do regime de autorização ferroviária, que permite ao setor privado construir e operar ferrovia própria, com o Estado fazendo o que só ele faz: licenciar rápido, desapropriar faixa e garantir estabilidade regulatória.",
+          "semantic_relevance": "Apoia participação privada na expansão, mas por autorização, instrumento diferente dos dois citados na tese."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "CONTEXTO",
+          "page": 46,
+          "quote": "Critério de priorização por custo logístico por tonelada transportada, publicado por corredor, em vez de escolha por peso político.",
+          "semantic_relevance": "Mostra que a ampliação federal é programática e priorizada por corredor, embora não esclareça o modelo contratual de cada obra."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O apoio a participação privada é inequívoco, mas os instrumentos não são intercambiáveis. A cobertura de concessão combinada à autorização privada, sem PPP, sustenta precisamente a natureza parcial registrada pela matriz.",
+      "reasons_to_keep": [
+        "A tese reúne concessões e PPPs, e apenas concessões recebem apoio registrado na matriz.",
+        "A proposta mais concreta de construção privada usa autorização ferroviária, categoria juridicamente distinta."
+      ],
+      "reasons_to_reconsider": [
+        "O modelo funcional combina capital privado e funções estatais de modo próximo ao objetivo econômico das concessões e PPPs.",
+        "Se a conjunção da tese for interpretada como lista aberta de mecanismos privados, a autorização poderia ampliar o grau de concordância."
+      ],
+      "human_review_question": "O plano apoia concessões, PPPs, ambos ou instrumentos privados diferentes?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q10",
+      "display_number": 9,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "category_id": "meio_ambiente_clima",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe mercado regulado de carbono, negociação obrigatória de créditos ou instrumento equivalente. A referência climática concreta é adaptação pela defesa civil.",
+      "semantic_neighborhood_summary": "A agenda climática atua por adaptação a desastres, rastreabilidade de cadeias e responsabilização patrimonial por desmatamento. Ela contém monitoramento e sanção ambiental, mas não estabelece teto de emissões, ativos negociáveis, registro de créditos ou obrigação de compra e venda.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P17",
+          "relation": "CONTEXTO",
+          "page": 47,
+          "quote": "Combater o desmatamento ilegal com inteligência, rastreabilidade da cadeia produtiva e responsabilização patrimonial, com o mesmo instrumental do Pilar 2 do Eixo 3.",
+          "semantic_relevance": "Cria controle e consequência patrimonial ambiental, mas não precifica emissões nem negocia créditos."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P22",
+          "relation": "QUALIFICA",
+          "page": 47,
+          "quote": "Adaptação climática com foco em defesa civil, incluindo a proteção de animais em desastres prevista na Lei nº 15.355/2026.",
+          "semantic_relevance": "A política climática explícita é de adaptação, eixo diferente da mitigação econômica por mercado."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano oferece instrumentos ambientais coercitivos e rastreabilidade, mas nenhum é funcionalmente equivalente a um mercado regulado de carbono. Tampouco há sinal de rejeição ao mercado.",
+      "reasons_to_keep": [
+        "Não existe unidade de carbono, limite de emissões, crédito negociável ou mercado obrigatório.",
+        "Adaptação e combate ao desmatamento respondem a problemas climáticos por instrumentos distintos."
+      ],
+      "reasons_to_reconsider": [
+        "A responsabilização patrimonial ambiental mostra abertura a incentivos econômicos e sanções, ainda que não a comércio de emissões.",
+        "A rastreabilidade de cadeias poderia ser infraestrutura auxiliar de integridade para créditos, mas o plano não faz essa conexão."
+      ],
+      "human_review_question": "O plano cria ou rejeita um sistema regulado de compra e venda de emissões?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q24",
+      "display_number": 10,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona inteligência artificial nem propõe pesquisa, infraestrutura computacional ou desenvolvimento de modelos de IA no Brasil. A carreira federal de pesquisador e o financiamento plurianual da ciência têm alcance geral, sem destinação à capacidade nacional de IA.",
+      "semantic_neighborhood_summary": "O plano constrói capacidade científica nacional por carreira federal de pesquisador, financiamento plurianual e proteção de projetos tecnológicos de defesa. Essa infraestrutura humana e financeira poderia beneficiar IA, mas nenhuma prioridade, modelo, laboratório, computação ou formação é dirigida ao campo.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P23",
+          "relation": "CONTEXTO",
+          "page": 36,
+          "quote": "O governo enviará ao Congresso a Proposta de Emenda à Constituição da Pesquisa, com um objetivo simples de enunciar: pesquisador que cumprir os requisitos deixa de ser bolsista e passa a ser servidor público, com carreira, com vínculo e com salário compatível com a qualificação que ele tem.",
+          "semantic_relevance": "Forma capacidade nacional de pesquisa de modo transversal, sem identificar especialistas ou projetos de IA."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P24",
+          "relation": "QUALIFICA",
+          "page": 37,
+          "quote": "Financiamento estável e previsível à pesquisa, com regra plurianual. Ciência não se planeja em ciclo de contingenciamento.",
+          "semantic_relevance": "O financiamento científico geral pode alcançar IA, mas não demonstra investimento dirigido em capacidade nacional desse campo."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P47",
+          "relation": "CONTEXTO",
+          "page": 51,
+          "quote": "Base Industrial de Defesa com exigência de conteúdo nacional e meta de exportação, porque defesa que gera indústria se paga em parte e gera emprego qualificado.",
+          "semantic_relevance": "O princípio de conteúdo nacional em tecnologia estratégica é próximo ao objetivo de soberania, porém restrito à indústria de defesa."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "Há uma política robusta de capacidade científica nacional, o que torna o caso semanticamente mais próximo do que simples silêncio tecnológico. Mesmo assim, investimento transversal em pesquisa não escolhe IA como objeto nem assegura infraestrutura computacional ou modelos nacionais.",
+      "reasons_to_keep": [
+        "Nenhuma posição identifica IA, computação, modelos, dados de treinamento ou especialistas no campo.",
+        "Política científica universal não prova prioridade federal específica para capacidade nacional de IA."
+      ],
+      "reasons_to_reconsider": [
+        "Carreira federal e financiamento plurianual criam capacidade nacional que, em princípio, abrange todas as áreas científicas, inclusive IA.",
+        "O princípio de conteúdo nacional em tecnologia estratégica reforça uma orientação de soberania tecnológica."
+      ],
+      "human_review_question": "A política transversal de carreira e financiamento científico basta para afirmar investimento em capacidade nacional de IA, mesmo sem projeto ou prioridade específica?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q12",
+      "display_number": 11,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano prevê mutirões diagnósticos e cirúrgicos contratualizados por resultado, mas não identifica clínicas ou hospitais privados, insuficiência da capacidade pública como gatilho ou compra complementar de capacidade privada pelo SUS.",
+      "semantic_neighborhood_summary": "A política de filas combina rede pública fortalecida com mutirões permanentes contratualizados por resultado. A contratualização pode comportar prestadores privados, mas o texto não informa sua natureza nem condiciona a compra à insuficiência da capacidade pública.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P29",
+          "relation": "QUALIFICA",
+          "page": 34,
+          "quote": "Mutirão diagnóstico e cirúrgico permanente, contratualizado por resultado entregue e não por estrutura disponibilizada.",
+          "semantic_relevance": "É um mecanismo de compra ou contratação de procedimentos, mas deixa em aberto quem presta e qual gatilho ativa a contratação."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P28",
+          "relation": "CONTEXTO",
+          "page": 34,
+          "quote": "Expandir a cobertura de equipes de saúde da família com meta por município e cofinanciamento federal estável, previsível e fora da barganha política.",
+          "semantic_relevance": "A prioridade paralela é expandir capacidade pública de atenção primária, sem rejeitar nem autorizar complementaridade privada hospitalar."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "Contratualização por resultado é semanticamente próxima da compra de atendimento e torna a ausência menos absoluta. A falta de identificação do prestador privado e da insuficiência pública como condição impede atribuir a decisão completa.",
+      "reasons_to_keep": [
+        "O plano não nomeia clínicas, hospitais ou rede privada como contratados.",
+        "Não há regra subsidiária que acione contratação quando a rede pública estiver sem capacidade."
+      ],
+      "reasons_to_reconsider": [
+        "Mutirão permanente contratualizado por procedimento entregue é funcionalmente próximo da compra complementar de serviços.",
+        "A ênfase em eliminar fila pode pressupor mobilização de capacidade além da estrutura pública existente."
+      ],
+      "human_review_question": "A contratualização permanente por resultado permite identificar complementaridade privada, ou a natureza do prestador e o gatilho de insuficiência precisam estar expressos?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q25",
+      "display_number": 12,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe reserva de vagas por critério racial em concursos públicos federais e não apresenta política de cotas raciais no serviço público. A seleção prevista para a carreira federal de pesquisador usa currículo, produção e outros requisitos profissionais, sem critério racial.",
+      "semantic_neighborhood_summary": "O programa cria uma nova carreira federal e especifica seleção pública baseada em currículo e produção. Também privilegia critérios técnicos em nomeações. Essas regras tratam de ingresso e representação institucional, mas não incorporam ação afirmativa racial nem rejeitam sua adoção.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P23",
+          "relation": "CONTEXTO",
+          "page": 37,
+          "quote": "Carreira federal de pesquisador, com ingresso por processo seletivo público de base curricular e de produção, e não apenas por prova escrita, porque produção científica não se mede em múltipla escolha.",
+          "semantic_relevance": "É a regra de ingresso federal mais detalhada, mas seus critérios profissionais não resolvem reserva racial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P10",
+          "relation": "CONTEXTO",
+          "page": 53,
+          "quote": "Composição ministerial por critério técnico e compromisso programático verificável, com currículo e vinculações de cada indicado publicados no ato da nomeação.",
+          "semantic_relevance": "O princípio de composição técnica alcança nomeações políticas, não concursos nem ação afirmativa racial."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "Os critérios de mérito descritos podem coexistir com cotas raciais e não configuram oposição. Como o plano não menciona representação racial, desigualdade no serviço público ou reserva de vagas, não há direção classificável.",
+      "reasons_to_keep": [
+        "Nenhum trecho estabelece reserva, percentual, público racial ou procedimento de cotas em concurso.",
+        "Critérios curriculares e técnicos não são incompatíveis com cotas e não permitem inferir discordância."
+      ],
+      "reasons_to_reconsider": [
+        "A criação de uma carreira federal abre um locus concreto em que o plano poderia aplicar ação afirmativa, mas o texto não o faz.",
+        "Um revisor pode avaliar se a lista detalhada de critérios pretende ser exaustiva; mesmo assim, omissão não prova rejeição."
+      ],
+      "human_review_question": "O plano adota, rejeita ou limita cotas raciais em concursos federais?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q14",
+      "display_number": 13,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não oferece cuidado domiciliar por profissionais ou equipes a idosos e pessoas com deficiência com alto grau de dependência.",
+      "semantic_neighborhood_summary": "A atenção à saúde é territorializada por equipes de saúde da família e carreira para regiões de difícil fixação. Pessoas com deficiência aparecem em política esportiva com custos de acessibilidade. Nenhuma dessas decisões cria cuidado profissional no domicílio, apoio a cuidadores ou serviço de longa duração para dependentes.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P28",
+          "relation": "CONTEXTO",
+          "page": 34,
+          "quote": "Expandir a cobertura de equipes de saúde da família com meta por município e cofinanciamento federal estável, previsível e fora da barganha política.",
+          "semantic_relevance": "Expande atenção territorial, mas não define visita domiciliar, dependência elevada nem os dois públicos da tese."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P35",
+          "relation": "QUALIFICA",
+          "page": 39,
+          "quote": "Paridade de tratamento entre atleta e paratleta, com reconhecimento do custo adicional de acessibilidade, equipamento adaptado e acompanhamento especializado.",
+          "semantic_relevance": "Reconhece custos de deficiência e acompanhamento, porém apenas para paratletas e fora do cuidado domiciliar."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano contém serviços territorializados e sensibilidade a custos de deficiência, mas o público, o local e a função do cuidado não coincidem. Também não há política para idosos dependentes ou cuidadores familiares.",
+      "reasons_to_keep": [
+        "Não há atendimento no domicílio, cuidado de longa duração ou apoio a cuidador.",
+        "Idosos e pessoas com deficiência altamente dependentes não são definidos como público de uma mesma política."
+      ],
+      "reasons_to_reconsider": [
+        "Equipes de saúde da família podem operar no território e eventualmente em domicílios, embora o plano não declare essa modalidade.",
+        "O reconhecimento de acompanhamento especializado para paratletas mostra atenção a necessidades adicionais de deficiência, mas em universo estreito."
+      ],
+      "human_review_question": "O plano oferece cuidado profissional no domicílio para os dois públicos e sob quais condições?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q15",
+      "display_number": 14,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "current_classification": "CONCORDA",
+      "current_rationale": "Ao definir a atuação federal na alfabetização, o plano vincula expressamente apoio técnico e financeiro a resultados medidos em avaliação externa. Isso estabelece que recursos federais destinados às redes nessa política dependam do resultado de aprendizagem, sem condicionar todo o financiamento educacional.",
+      "semantic_neighborhood_summary": "O plano adota condicionalidade financeira explícita na alfabetização e repete o princípio no cofinanciamento de educação física. Ao mesmo tempo, afirma que redes que pioram precisam ser socorridas, deixando em aberto como a sanção ou incentivo convive com apoio corretivo.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P31",
+          "relation": "APOIA",
+          "page": 36,
+          "quote": "O que acrescentamos é condicionalidade: apoio técnico e financeiro vinculado a resultado aferido em avaliação externa, e não apenas a adesão formal do ente.",
+          "semantic_relevance": "Vincula diretamente apoio financeiro federal a resultado educacional mensurado."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P31",
+          "relation": "QUALIFICA",
+          "page": 36,
+          "quote": "Transparência total do dado por escola. Rede que melhora precisa ser reconhecida e rede que piora precisa ser socorrida, e nenhuma das duas coisas acontece com dado escondido.",
+          "semantic_relevance": "A promessa de socorro à rede que piora limita uma leitura puramente punitiva da condicionalidade."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P33",
+          "relation": "CONTEXTO",
+          "page": 38,
+          "quote": "Padrão nacional mínimo de carga horária, espaço e material para educação física, com cofinanciamento federal condicionado ao cumprimento verificado.",
+          "semantic_relevance": "Confirma o uso recorrente de cofinanciamento condicionado, embora aqui a meta seja de insumo e não aprendizagem."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "A evidência direta cobre uma parte dos recursos federais, uma política educacional e resultado em avaliação externa. A ausência de fórmula e o socorro a redes em piora afetam implementação, mas não desfazem a decisão de condicionar apoio.",
+      "reasons_to_keep": [
+        "O texto usa explicitamente condicionalidade e apoio financeiro vinculado a resultado externo.",
+        "A tese exige apenas parte dos recursos, compatível com o recorte da alfabetização."
+      ],
+      "reasons_to_reconsider": [
+        "Resultado aferido não vem acompanhado de meta numérica, fórmula de repasse ou percentual financeiro.",
+        "O compromisso de socorrer redes que pioram pode moderar ou compensar a consequência financeira."
+      ],
+      "human_review_question": "A condicionalidade do apoio à alfabetização, mesmo sem fórmula e coexistindo com socorro às redes em piora, satisfaz a dependência parcial de recursos por metas de aprendizagem?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q16",
+      "display_number": 15,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe reduzir a jornada semanal legal de trabalho sem redução salarial.",
+      "semantic_neighborhood_summary": "A política trabalhista se concentra em reduzir o custo patronal, formalizar vínculos e alinhar qualificação a vagas. Ela muda tributação e acesso ao emprego, mas não altera horas semanais, escalas, negociação coletiva ou proteção do salário durante redução de jornada.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P01",
+          "relation": "CONTEXTO",
+          "page": 14,
+          "quote": "A emenda separará as duas coisas: a extinção da contribuição patronal sobre a folha é definitiva e não retorna, ainda que a arrecadação do IUF fique abaixo do projetado.",
+          "semantic_relevance": "É a principal intervenção no custo do trabalho, mas atua na tributação patronal, sem reduzir jornada ou preservar salário nessa transição."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P32",
+          "relation": "CONTEXTO",
+          "page": 20,
+          "quote": "Programa de qualificação profissional financiado pela União e executado com o sistema S e com a rede federal de ensino técnico, sob uma regra que hoje falta: a oferta de curso sai da demanda declarada de contratação na região, e não do catálogo pronto da instituição. Curso que não coloca ninguém para trabalhar não é reconduzido no ano seguinte.",
+          "semantic_relevance": "A agenda laboral prioriza empregabilidade e contratação, não tempo de trabalho ou remuneração."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano oferece uma estratégia de emprego baseada em desoneração e qualificação. Nenhuma dessas medidas é equivalente à redução legal da jornada, e não há princípio explícito sobre preservação salarial.",
+      "reasons_to_keep": [
+        "Não existe limite semanal, escala, número de horas ou transição de jornada.",
+        "Desoneração da folha altera custo patronal, não duração do trabalho."
+      ],
+      "reasons_to_reconsider": [
+        "A redução permanente do custo patronal poderia facilitar economicamente uma redução de jornada, mas o plano não estabelece essa finalidade.",
+        "A agenda de formalização busca melhorar vínculos, embora não trate deste direito trabalhista específico."
+      ],
+      "human_review_question": "O plano reduz o limite semanal preservando remuneração e qual é o alcance?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não trata da descriminalização do aborto voluntário em qualquer prazo gestacional.",
+      "semantic_neighborhood_summary": "As posições de saúde tratam de atenção primária, filas, medicamentos e vigilância sanitária; as posições de direitos tratam de dados e garantias no uso da coerção estatal. Não há decisão sobre gestação, direitos reprodutivos, exceções legais ou punição do aborto voluntário.",
+      "semantic_context": [],
+      "semantic_context_absence_reason": "Nenhuma posição ou citação dos dois documentos autorizados menciona aborto, gestação, reprodução, saúde sexual ou alteração penal correlata. Saúde geral e garantias individuais são amplas demais para compor contexto probatório útil.",
+      "semantic_assessment": "Não há direção favorável, contrária ou condicional. As agendas de saúde e direitos não alcançam o regime jurídico do aborto e não permitem inferência a partir de princípios gerais.",
+      "reasons_to_keep": [
+        "Faltam objeto penal, voluntariedade, prazo gestacional e qualquer proposta legislativa correlata.",
+        "Políticas gerais de saúde não definem criminalização ou descriminalização."
+      ],
+      "reasons_to_reconsider": [
+        "Um revisor pode perguntar se princípios gerais de garantias individuais alcançam autonomia reprodutiva, mas o plano não faz essa aplicação.",
+        "A ausência completa de contexto torna recomendável confirmar que nenhum trecho adicional da revisão integral foi omitido, sem transformar silêncio em posição."
+      ],
+      "human_review_question": "O plano altera a punição do aborto voluntário e define algum limite ou condição?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q18",
+      "display_number": 17,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe aplicar o regime penal adulto a adolescentes de 16 e 17 anos por qualquer crime. Programas territoriais para juventude e endurecimento da custódia de lideranças de facções não alteram a idade penal.",
+      "semantic_neighborhood_summary": "O endurecimento penal é estreitamente direcionado a lideranças e presos de alta periculosidade, com controle judicial, e convive com prevenção territorial para juventude. O recorte por periculosidade e função criminosa não é recorte etário e não altera o regime socioeducativo.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P38",
+          "relation": "QUALIFICA",
+          "page": 21,
+          "quote": "O centro deste pilar é a expansão e o endurecimento do sistema penitenciário federal de segurança máxima, destinado exclusivamente a lideranças e presos de alta periculosidade. Não é destino de preso comum, nem válvula de escape para superlotação estadual.",
+          "semantic_relevance": "O rigor penal tem público funcional e de periculosidade delimitado, sem referência a adolescentes ou qualquer crime."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P37",
+          "relation": "CONTEXTO",
+          "page": 24,
+          "quote": "Prisão continua dependendo de decisão judicial fundamentada, e transferência para regime de segurança máxima continua sendo ato judicial motivado e sujeito a revisão.",
+          "semantic_relevance": "As salvaguardas qualificam custódia de alta segurança, mas não decidem idade de responsabilidade penal."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O plano endurece custódia para um subconjunto de adultos ou presos definido por liderança e periculosidade, não por idade. Não há transferência de adolescentes ao regime adulto, muito menos para qualquer crime.",
+      "reasons_to_keep": [
+        "Nenhum trecho menciona 16 ou 17 anos, maioridade penal ou regime socioeducativo.",
+        "O rigor proposto é limitado a lideranças e alta periculosidade, alcance incompatível com qualquer crime."
+      ],
+      "reasons_to_reconsider": [
+        "A agenda assume postura rigorosa contra crime organizado, o que pode gerar hipótese política, mas não evidência documental sobre adolescentes.",
+        "A presença de prevenção juvenil confirma que juventude está no campo de segurança, sem definir responsabilização penal."
+      ],
+      "human_review_question": "O plano transfere todos os adolescentes de 16 e 17 anos ao regime adulto ou somente casos delimitados?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q19",
+      "display_number": 18,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona reconhecimento facial, biometria facial ou comparação de imagens captadas em espaços públicos com bases de identificação. Ele propõe vigilância eletrônica de fronteiras, sensoriamento remoto e integração de bases de segurança com identificação civil, instrumentos próximos mas distintos do reconhecimento facial para segurança.",
+      "semantic_neighborhood_summary": "O programa cria infraestrutura que poderia apoiar vigilância: bases públicas interoperáveis, integração de segurança e monitoramento de fronteiras. Em paralelo, exige registro auditável de consultas e responsabilização por uso indevido. Nenhum trecho liga imagens de pessoas a identificação biométrica em espaço público.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P25",
+          "relation": "CONTEXTO",
+          "page": 44,
+          "quote": "Auditoria e publicação, no primeiro ano, do grau de cumprimento da Lei nº 14.534/2023 órgão por órgão, com prazo de regularização e responsável nomeado. Hoje ninguém sabe dizer quantas bases federais já interoperam pelo CPF, o que por si só responde à pergunta.",
+          "semantic_relevance": "A interoperabilidade oferece base identificadora, mas não prevê captura ou comparação facial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P36",
+          "relation": "QUALIFICA",
+          "page": 44,
+          "quote": "Registro auditável de toda consulta a dado pessoal feita por agente público, com responsabilização por consulta indevida.",
+          "semantic_relevance": "Estabelece salvaguarda aplicável a consultas pessoais, sem autorizar nem proibir reconhecimento facial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P36",
+          "relation": "QUALIFICA",
+          "page": 44,
+          "quote": "Cumprimento efetivo da Lei nº 13.709/2018 dentro da administração federal, com encarregado designado em cada órgão e relatórios de impacto publicados.",
+          "semantic_relevance": "A política de proteção de dados condicionaria tecnologias de identificação, mas não seleciona esse instrumento."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "Integração de bases e monitoramento são pré-condições técnicas próximas, e as salvaguardas de dados seriam relevantes a eventual reconhecimento facial. Ainda falta o elemento decisivo: identificação biométrica por imagem em espaços públicos para segurança.",
+      "reasons_to_keep": [
+        "Interoperabilidade pelo CPF não compara imagens nem identifica pessoas captadas em espaço público.",
+        "LGPD e auditoria de consultas regulam dados em geral e não autorizam a tecnologia perguntada."
+      ],
+      "reasons_to_reconsider": [
+        "A combinação de bases civis integradas e vigilância eletrônica cria arquitetura tecnicamente próxima do reconhecimento facial.",
+        "As salvaguardas específicas de consulta e impacto podem ser lidas como condições para vigilância, embora o instrumento permaneça ausente."
+      ],
+      "human_review_question": "A combinação de monitoramento e bases de identificação, sem comparação biométrica expressa, basta para atribuir posição sobre reconhecimento facial?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q21",
+      "display_number": 19,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não cita os BRICS nem decide se o Brasil deve permanecer no grupo. A avaliação caso a caso em foros multilaterais e a rejeição de alinhamento automático são compatíveis tanto com permanecer quanto com sair.",
+      "semantic_neighborhood_summary": "A política externa recusa doutrina fechada e decide posições multilaterais caso a caso segundo conveniência nacional. Esse método evita alinhamento automático, mas não determina filiação, saída ou fortalecimento de qualquer bloco.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P49",
+          "relation": "QUALIFICA",
+          "page": 52,
+          "quote": "Posição brasileira em foro multilateral definida caso a caso, por conveniência nacional declarada, e não por alinhamento automático.",
+          "semantic_relevance": "Estabelece um critério para atuação em instituições multilaterais, mas não aplica esse critério à permanência no BRICS."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P49",
+          "relation": "CONTEXTO",
+          "page": 51,
+          "quote": "Este plano não traz doutrina de política externa, e a omissão é deliberada.",
+          "semantic_relevance": "Explica por que compromissos institucionais específicos foram deixados em aberto."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "O método caso a caso pode ser entendido como recusa de compromisso antecipado, não como saída. Como permanência institucional e voto em um foro são decisões diferentes, o critério geral não fecha a resposta.",
+      "reasons_to_keep": [
+        "BRICS, seus membros e suas instituições não aparecem no plano.",
+        "Decidir posições dentro de foros caso a caso não determina manter ou abandonar a participação."
+      ],
+      "reasons_to_reconsider": [
+        "A política pressupõe atuação brasileira em foros multilaterais e pode sugerir continuidade pragmática em instituições existentes.",
+        "A recusa de alinhamento automático pode ser lida como condição para permanecer, embora não trate do grupo específico."
+      ],
+      "human_review_question": "A regra de atuação multilateral caso a caso pressupõe continuidade institucional suficiente para responder sobre o BRICS, ou filiação permanece objeto distinto?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q22",
+      "display_number": 20,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona o acordo Mercosul–União Europeia nem avalia seu texto final. A exigência geral de abertura de mercado para assinar acordos não informa se esse acordo específico satisfaz o critério e deve ser ratificado.",
+      "semantic_neighborhood_summary": "O plano estabelece regra universal para acordos comerciais: só assinar quando houver abertura a produtos brasileiros, com reciprocidade contra barreiras. Embora não avalie o texto Mercosul–União Europeia, o critério pode tornar a posição condicional ao conteúdo efetivo do acordo.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P48",
+          "relation": "QUALIFICA",
+          "page": 52,
+          "quote": "Acordo comercial que não abre mercado para produto brasileiro não é assinado. Acesso se troca por acesso.",
+          "semantic_relevance": "A regra alcança semanticamente qualquer acordo comercial e faz o apoio depender de acesso, mas não diz se o texto final específico cumpre a condição nem distingue assinatura de ratificação."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P48",
+          "relation": "CONTEXTO",
+          "page": 52,
+          "quote": "Barreira sanitária ou tarifária imposta ao nosso produto é respondida com reciprocidade, pelos instrumentos que o direito internacional já oferece, e não com nota de repúdio.",
+          "semantic_relevance": "Reforça que acesso comercial e reciprocidade são critérios materiais para decisões externas."
+        }
+      ],
+      "semantic_context_absence_reason": "",
+      "semantic_assessment": "A classificação atual exige avaliação explícita do texto final, que falta. Semanticamente, porém, a regra geral oferece uma condição capaz de mudar a resposta: ratificar ou assinar apenas se o acordo abrir mercado para produtos brasileiros. Resta decidir se uma regra universal, sem aplicação factual ao acordo e usando o ato de assinatura, basta para posição condicional sobre ratificação.",
+      "reasons_to_keep": [
+        "O plano não menciona Mercosul, União Europeia, ratificação ou cláusulas do texto final.",
+        "Não é possível saber, a partir do plano, se o acordo satisfaz o teste de acesso a mercado."
+      ],
+      "reasons_to_reconsider": [
+        "A regra é formulada para acordo comercial em geral e, portanto, abrange semanticamente o acordo Mercosul–União Europeia.",
+        "A abertura de mercado é condição explícita capaz de produzir apoio ou rejeição, característica de posição condicional."
+      ],
+      "human_review_question": "A regra universal de não assinar acordo sem acesso a mercado basta para classificar apoio condicional à ratificação, apesar de o plano não avaliar o texto Mercosul–União Europeia?",
+      "preliminary_recommendation": "RECLASSIFICAR_CONDICIONAL",
+      "confidence": "media"
+    }
+  ]
+}

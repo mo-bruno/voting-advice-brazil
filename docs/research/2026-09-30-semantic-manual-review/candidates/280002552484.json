@@ -1,0 +1,900 @@
+{
+  "candidate_id": "280002552484",
+  "candidate_name": "Clariana Barao",
+  "status": "complete",
+  "reviewer_agent_id": "/root/semantic_clariana",
+  "reviews": [
+    {
+      "question_id": "B01-Q01",
+      "display_number": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano trata de responsabilidade fiscal por revisão de gastos, subsídios e avaliação de impacto, mas não propõe criar imposto sobre grandes fortunas nem qualquer tributo específico sobre patrimônio elevado.",
+      "semantic_neighborhood_summary": "O plano organiza a responsabilidade fiscal pelo lado da despesa, dos subsídios, do planejamento e da avaliação de impacto. Esse desenho pode conviver com diferentes escolhas de tributação patrimonial, mas não determina incidência sobre patrimônio elevado, renda do topo, heranças ou dividendos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios",
+          "semantic_relevance": "É o instrumento fiscal mais próximo, porém atua sobre despesas e benefícios, não sobre uma base patrimonial elevada."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Transparência de benefícios e avaliação de impacto",
+          "semantic_relevance": "A avaliação de benefícios reforça uma orientação de governança fiscal, sem criar, rejeitar ou substituir um imposto específico sobre grandes fortunas."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Não há decisão sobre o objeto tributável nem instrumento funcionalmente equivalente. Revisar gastos ou subsídios pode produzir espaço fiscal, mas não realiza a função distributiva e arrecadatória específica de tributar grandes patrimônios.",
+      "reasons_to_keep": [
+        "Os instrumentos fiscais identificados incidem sobre gasto, planejamento e avaliação, e não sobre patrimônio elevado.",
+        "O plano não estabelece criação, rejeição ou substituição do tributo específico por outro mecanismo patrimonial."
+      ],
+      "reasons_to_reconsider": [
+        "A orientação de responsabilidade fiscal torna tributação e arrecadação semanticamente pertinentes, mas seria preciso localizar uma regra de receita ou redistribuição para ultrapassar o contexto geral."
+      ],
+      "human_review_question": "A agenda de responsabilidade fiscal contém alguma decisão sobre tributar grandes patrimônios, ou permanece restrita à revisão de despesas, subsídios e programas?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q02",
+      "display_number": 2,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "Há crédito produtivo e garantias para pequenos negócios e um objetivo geral de ambiente favorável à indústria, mas o plano não direciona linhas de crédito a setores industriais escolhidos como prioritários pela política pública.",
+      "semantic_neighborhood_summary": "O plano reúne dois componentes próximos: crédito produtivo e garantias para pequenos negócios, e uma orientação favorável à indústria, inovação e economia digital. Eles não aparecem conectados por uma seleção de setores industriais estratégicos nem por uma linha de financiamento dirigida a essa seleção.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P02",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Crédito produtivo e garantias",
+          "semantic_relevance": "O plano adota crédito e garantias como instrumentos produtivos, mas a posição temática os situa na agenda de pequenos negócios, um critério por porte e não por setor industrial prioritário."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P13",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital",
+          "semantic_relevance": "Há finalidade industrial explícita, porém sem seleção setorial nem vínculo textual com as linhas de crédito."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P02",
+          "relation": "QUALIFICA",
+          "page": 5,
+          "quote": "Compras públicas acessíveis a pequenos negócios",
+          "semantic_relevance": "Mostra que o apoio produtivo combina instrumentos e prioriza pequenos negócios; compras públicas são adjacentes à política industrial, mas não equivalem a crédito setorial."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Crédito e política industrial estão presentes, mas faltam a conexão entre eles e a escolha de setores industriais prioritários. Somar duas passagens independentes criaria direção setorial que o plano não estabelece.",
+      "reasons_to_keep": [
+        "O destinatário explícito do crédito é definido pelo porte dos negócios, não por setores industriais escolhidos como prioritários.",
+        "A menção à indústria é um objetivo geral e não especifica linha, operador, garantia ou cadeia estratégica."
+      ],
+      "reasons_to_reconsider": [
+        "O plano já aceita crédito produtivo e declara finalidade industrial; uma formulação que vinculasse esses elementos, mesmo sem usar a expressão linha de crédito, poderia constituir equivalente funcional."
+      ],
+      "human_review_question": "As passagens sobre crédito produtivo para pequenos negócios e ambiente industrial formam uma política única de crédito setorial, ou continuam sendo agendas independentes com critérios diferentes?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "B01-Q03",
+      "display_number": 3,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não trata de minerais estratégicos, extração mineral nem da nacionalidade das empresas admitidas nessa atividade. Investimento privado genérico e concessões de infraestrutura não respondem à participação estrangeira na exploração mineral.",
+      "semantic_neighborhood_summary": "O plano admite investimento privado e instrumentos contratuais em infraestrutura, mas não distingue capital nacional de estrangeiro e não transporta esse modelo ao setor mineral. Não há política de soberania mineral, beneficiamento, concessão de lavra ou restrição por origem do capital.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "source_position_id": "BR26-T067",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "investimento privado; produtividade.",
+          "semantic_relevance": "A aceitação de investimento privado não determina a nacionalidade do investidor nem seu acesso à exploração de minerais estratégicos."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P10",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo",
+          "semantic_relevance": "A passagem aceita participação privada em infraestrutura e logística, mas não em extração mineral nem especificamente de capital estrangeiro."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Origem pública ou privada e origem nacional ou estrangeira são eixos diferentes. O plano não fornece regra geral sobre capital externo nem aplicação mineral que permita inferir permissão, proibição ou condicionamento.",
+      "reasons_to_keep": [
+        "Nenhum trecho seleciona minerais estratégicos, exploração mineral ou nacionalidade empresarial.",
+        "Concessões de infraestrutura não são equivalentes funcionais à participação estrangeira na extração de recursos minerais."
+      ],
+      "reasons_to_reconsider": [
+        "Uma regra geral inequívoca de abertura ou vedação a capital estrangeiro poderia alcançar o setor mesmo sem listar minerais, mas essa regra não aparece no material."
+      ],
+      "human_review_question": "A admissão genérica de investimento privado define também origem estrangeira e exploração mineral, ou esses dois recortes continuam sem decisão?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q04",
+      "display_number": 4,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "A dívida aparece apenas como indicador fiscal. Não há proposta de auditoria da dívida pública nem de suspender pagamentos durante uma investigação.",
+      "semantic_neighborhood_summary": "A dívida integra o monitoramento fiscal e o plano propõe revisão de gastos, planejamento plurianual e avaliação de resultados. Esses mecanismos são de gestão orçamentária; não instauram auditoria de legitimidade dos passivos nem alteram temporalmente juros, amortizações ou outros pagamentos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Planejamento plurianual orientado a metas",
+          "semantic_relevance": "Planejamento e metas fiscais podem acompanhar dívida e resultado, mas não constituem auditoria nem moratória."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios",
+          "semantic_relevance": "A revisão incide sobre despesas e benefícios públicos, sem revisar a validade da dívida ou suspender seu serviço."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A tese exige dois elementos ligados por simultaneidade: auditoria da dívida e suspensão dos pagamentos durante o processo. O plano não estabelece nenhum deles; acompanhamento de dívida/PIB e revisão de gastos não exercem a mesma função.",
+      "reasons_to_keep": [
+        "Não há procedimento de auditoria de passivos, credores ou legitimidade da dívida.",
+        "Não há suspensão, moratória, renegociação ou alteração do serviço da dívida."
+      ],
+      "reasons_to_reconsider": [
+        "Uma revisão fiscal poderia ser semanticamente próxima de auditoria, mas só mudaria a classificação se alcançasse explicitamente a dívida e previsse efeito sobre pagamentos."
+      ],
+      "human_review_question": "O monitoramento fiscal proposto revisa apenas gastos e indicadores, ou contém algum efeito jurídico sobre a dívida e seus pagamentos durante uma auditoria?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q05",
+      "display_number": 5,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano apoia revisão de gastos, planejamento plurianual e acompanhamento do resultado fiscal, mas não estabelece a existência de uma regra normativa que limite o crescimento das despesas federais.",
+      "semantic_neighborhood_summary": "A responsabilidade fiscal é operacionalizada por revisão de gastos e subsídios, planejamento plurianual, transparência e avaliação de impacto. O plano pode encerrar ou reformular programas ineficazes, mas não fixa teto, índice, trajetória agregada ou fórmula que limite o crescimento das despesas.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Revisão de gastos e subsídios",
+          "semantic_relevance": "Pode reduzir ou redirecionar despesas caso a caso, mas não impõe limite agregado e permanente ao seu crescimento."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 6,
+          "quote": "Planejamento plurianual orientado a metas",
+          "semantic_relevance": "Metas de planejamento podem disciplinar orçamento, porém não equivalem sem fórmula a uma regra de crescimento da despesa."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P05",
+          "relation": "QUALIFICA",
+          "page": 13,
+          "quote": "Avaliação e encerramento/reformulação de programas ineficazes",
+          "semantic_relevance": "O encerramento por ineficácia produz controle seletivo de gasto, mas sua condição é desempenho do programa, não crescimento agregado da despesa."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano apoia disciplina e eficiência fiscal, mas escolhe instrumentos discricionários e avaliativos. Esses instrumentos não são equivalentes a uma regra normativa de limite de crescimento porque não predeterminam a trajetória total das despesas.",
+      "reasons_to_keep": [
+        "Não há teto, índice, percentual, trajetória ou vínculo legal aplicável ao crescimento agregado das despesas.",
+        "Revisão e encerramento de programas dependem de avaliação específica e podem coexistir com aumento do gasto total."
+      ],
+      "reasons_to_reconsider": [
+        "Se o planejamento orientado a metas fosse acompanhado de uma meta obrigatória de despesa, poderia funcionar como regra mesmo sem a palavra teto; essa obrigação não está definida."
+      ],
+      "human_review_question": "Os mecanismos de planejamento e revisão apenas buscam eficiência, ou estabelecem uma restrição operacional prévia ao crescimento total das despesas?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q06",
+      "display_number": 6,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano menciona segurança e confiabilidade energética, mas não nomeia a Petrobras nem decide seu controle acionário pelo governo federal.",
+      "semantic_neighborhood_summary": "O plano atribui importância à segurança e à confiabilidade energética, mas formula a política como objetivo de sistema. Não identifica petróleo, refino, Petrobras, propriedade estatal, controle acionário, privatização ou papel empresarial específico.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Segurança e confiabilidade energética",
+          "semantic_relevance": "É um objetivo compatível com diferentes estruturas de propriedade e não decide o controle da Petrobras."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "custo e interrupções de energia",
+          "semantic_relevance": "Os indicadores sugerem foco em desempenho do abastecimento, sem atribuir à Petrobras uma função ou estrutura acionária."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Soberania ou segurança energética poderia sustentar controle estatal se vinculada à Petrobras, mas o plano não faz essa ligação. A função desejada para o setor não determina quem controla a empresa.",
+      "reasons_to_keep": [
+        "Não há referência à Petrobras, ao petróleo ou ao controle acionário estatal.",
+        "Segurança energética pode ser perseguida sob arranjos públicos, privados ou mistos."
+      ],
+      "reasons_to_reconsider": [
+        "Uma atribuição futura indispensável à Petrobras ou uma regra geral sobre empresas estratégicas poderia pressupor continuidade estatal, mas nenhum desses vínculos aparece."
+      ],
+      "human_review_question": "O objetivo de segurança energética depende documentalmente do controle federal da Petrobras, ou o plano deixa a estrutura empresarial em aberto?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano propõe gestão de desempenho com critérios objetivos no serviço público, mas não prevê demissão, mudança de estabilidade, avaliações periódicas com efeito rescisório ou direito de defesa. Pelo recorte da versão 2, avaliação sem consequência de demissão não basta.",
+      "semantic_neighborhood_summary": "O plano escolhe gestão de desempenho objetiva, formação, liderança e mobilidade de talentos. Essas medidas podem apoiar melhoria, alocação de equipes ou responsabilização gerencial, mas nenhuma consequência de perda do cargo é associada ao baixo desempenho, e não há regra sobre estabilidade, periodicidade ou defesa.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos",
+          "semantic_relevance": "Atende ao componente de mensuração objetiva do desempenho, mas não o liga a demissão de servidor estável."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "QUALIFICA",
+          "page": 13,
+          "quote": "Mobilidade de talentos e equipes de missão",
+          "semantic_relevance": "Indica uma possível consequência organizacional da gestão de pessoas, distinta da perda do cargo por baixo desempenho."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 13,
+          "quote": "Formação e liderança",
+          "semantic_relevance": "Sugere resposta de desenvolvimento profissional, sem excluir nem autorizar desligamento."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Há proximidade forte no instrumento de avaliação, mas a tese é conjuntiva: servidor estável, baixo desempenho comprovado, avaliações periódicas, demissão e defesa. A omissão da consequência rescisória não é mero vocabulário; preserva uma escolha substantiva ainda aberta.",
+      "reasons_to_keep": [
+        "A gestão de desempenho não recebe consequência demissional nem altera a estabilidade.",
+        "Periodicidade, comprovação, procedimento e direito de defesa não são definidos."
+      ],
+      "reasons_to_reconsider": [
+        "A avaliação objetiva é um pré-requisito importante do mecanismo e torna o caso semanticamente próximo; uma indicação de responsabilização ou desligamento permitiria reavaliar a classificação."
+      ],
+      "human_review_question": "A gestão de desempenho objetiva tem alguma consequência legal de perda do cargo, ou o plano a limita a desenvolvimento, gestão e mobilidade?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q23",
+      "display_number": 8,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "current_classification": "CONCORDA",
+      "current_rationale": "No capítulo de infraestrutura e logística, o plano inclui rodovias, ferrovias, hidrovias, portos e cabotagem e adota expressamente concessões e PPPs como instrumentos de planejamento de longo prazo. A proposta responde diretamente ao uso federal desses modelos para ampliar a infraestrutura de transportes, sem exigir que toda obra seja concedida.",
+      "semantic_neighborhood_summary": "A agenda de infraestrutura e logística nomeia modais de transporte, manutenção orientada por desempenho e, no mesmo bloco, concessões e PPPs com planejamento de longo prazo. O desenho admite provisão combinada e não restringe os instrumentos a um modal isolado.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P10",
+          "relation": "APOIA",
+          "page": 5,
+          "quote": "Rodovias e manutenção baseada em desempenho",
+          "semantic_relevance": "Inclui infraestrutura rodoviária e sua manutenção no escopo de transportes ao qual se aplicam os instrumentos do item."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P10",
+          "relation": "APOIA",
+          "page": 5,
+          "quote": "Ferrovias, hidrovias, portos e cabotagem",
+          "semantic_relevance": "Delimita múltiplos modais e instalações de transporte na agenda de ampliação e planejamento."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P10",
+          "relation": "APOIA",
+          "page": 5,
+          "quote": "Concessões, PPPs e planejamento de longo prazo",
+          "semantic_relevance": "Nomeia diretamente os dois instrumentos perguntados no mesmo conjunto programático de infraestrutura e logística."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Os dois instrumentos e o setor aparecem conjuntamente, constituindo decisão direta. O plano não exige concessão universal, projetos determinados ou distribuição final de riscos para concordar com seu uso na expansão de transportes.",
+      "reasons_to_keep": [
+        "Concessões e PPPs são nomeadas expressamente na agenda de infraestrutura e logística.",
+        "Rodovias, ferrovias, hidrovias, portos e cabotagem fornecem o recorte material de transportes exigido pela tese."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não discrimina projetos, modalidade contratual ou participação federal em cada obra, de modo que a concordância deve permanecer geral e não universal."
+      ],
+      "human_review_question": "A presença conjunta de concessões, PPPs e vários modais de transporte basta para reconhecer seu uso federal geral, preservando em aberto os projetos e contratos específicos?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q10",
+      "display_number": 9,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "category_id": "meio_ambiente_clima",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "Não há política de carbono, metas de emissões, créditos ambientais ou mercado regulado de carbono no plano. Segurança energética não define esse instrumento climático.",
+      "semantic_neighborhood_summary": "O contexto mais próximo é a segurança e confiabilidade energética, tratada por custo e interrupções. O perfil temático não identifica decisão climática própria, precificação de emissões, limites negociáveis, créditos, registro ou fiscalização de um mercado.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Segurança e confiabilidade energética",
+          "semantic_relevance": "É adjacente à transição energética e emissões, mas seu objetivo é confiabilidade do sistema e não regulação de carbono."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P11",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "custo e interrupções de energia",
+          "semantic_relevance": "Os indicadores econômicos e operacionais de energia não instituem preço, teto ou comércio de emissões."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Política energética geral não é funcionalmente equivalente a mercado regulado de carbono. Falta tanto o objeto ambiental, emissões, quanto o mecanismo de compra e venda regulada.",
+      "reasons_to_keep": [
+        "Não há carbono, emissões, créditos, permissões negociáveis ou precificação ambiental.",
+        "Os objetivos energéticos identificados podem ser realizados sem qualquer mercado de carbono."
+      ],
+      "reasons_to_reconsider": [
+        "Uma regra energética que precificasse poluição ou criasse obrigações negociáveis poderia ser equivalente mesmo com outro nome, mas não há esse mecanismo."
+      ],
+      "human_review_question": "A agenda energética contém algum sistema de limite e negociação de emissões, ou trata somente de segurança, custo e continuidade do fornecimento?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q24",
+      "display_number": 10,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano prevê usos de inteligência artificial na escola e na saúde e apresenta uma orientação geral favorável à inovação e à economia digital. Não propõe, porém, investimento federal em pesquisa, infraestrutura computacional ou desenvolvimento de modelos de IA no Brasil. Difundir ou governar sistemas existentes não basta para atribuir desenvolvimento de capacidade nacional.",
+      "semantic_neighborhood_summary": "A inteligência artificial é admitida como tecnologia aplicada à educação e como apoio clínico e administrativo, com salvaguardas. O plano também deseja ambiente para inovação e economia digital, mas não seleciona pesquisa nacional em IA, formação especializada, modelos próprios, dados, chips ou infraestrutura computacional como objetos de investimento federal.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P13",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital",
+          "semantic_relevance": "Oferece orientação tecnológica ampla, sem identificar IA nem instrumento de desenvolvimento de capacidade nacional."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P21",
+          "relation": "CONTEXTO",
+          "page": 7,
+          "quote": "Tecnologia e inteligência artificial com uso responsável",
+          "semantic_relevance": "Confirma uso educacional de IA e um princípio de responsabilidade, mas não pesquisa, produção ou infraestrutura nacional."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P18",
+          "relation": "QUALIFICA",
+          "page": 12,
+          "quote": "IA como apoio clínico e administrativo com governança, auditoria e privacidade",
+          "semantic_relevance": "Define aplicação e salvaguardas no SUS, distinguindo adoção de sistemas do investimento em capacidade nacional para desenvolvê-los."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano tem política de adoção e governança de IA, não uma política de oferta tecnológica nacional. Usar ou regular sistemas, inclusive em serviços públicos, não determina onde são desenvolvidos nem investimento em capacidade própria.",
+      "reasons_to_keep": [
+        "Nenhuma passagem financia pesquisa, computação, modelos, dados ou formação nacional específica em IA.",
+        "As referências a IA definem usos setoriais e salvaguardas, que podem utilizar tecnologia desenvolvida fora do país."
+      ],
+      "reasons_to_reconsider": [
+        "A combinação entre economia digital, educação e saúde mostra prioridade política para IA; se o plano associasse essas aplicações a produção ou pesquisa nacional, haveria equivalente funcional."
+      ],
+      "human_review_question": "O compromisso é desenvolver capacidade brasileira de IA ou apenas empregar sistemas de IA de origem não definida com regras de uso responsável?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q12",
+      "display_number": 11,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano busca organizar filas por telemedicina e regulação inteligente, mas não autoriza nem rejeita a contratação complementar de clínicas e hospitais privados pelo SUS quando faltar capacidade pública.",
+      "semantic_neighborhood_summary": "O plano reconhece o problema de acesso e filas e escolhe telemedicina integrada, coordenação do cuidado e regulação inteligente. Esses instrumentos ampliam ou organizam a capacidade da rede, mas não definem compra subsidiária de consultas, exames, internações ou leitos em prestadores privados.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P18",
+          "relation": "CONTEXTO",
+          "page": 12,
+          "quote": "Regulação inteligente de filas",
+          "semantic_relevance": "Enfrenta a mesma insuficiência de acesso, porém pela organização da demanda, sem identificar contratação privada."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P18",
+          "relation": "CONTEXTO",
+          "page": 12,
+          "quote": "Telemedicina integrada à rede",
+          "semantic_relevance": "Pode ampliar acesso, mas a natureza pública ou privada dos prestadores e a hipótese de contratação complementar não são definidas."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P16",
+          "relation": "CONTEXTO",
+          "page": 11,
+          "quote": "Equipes completas e acesso territorial",
+          "semantic_relevance": "Indica fortalecimento da atenção pública territorial, sem excluir nem autorizar compra de capacidade assistencial privada."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Regulação de filas e telemedicina são respostas adjacentes à insuficiência pública, mas não equivalem a contratar atendimento privado. Também não há regra de exclusividade pública que permita classificar discordância.",
+      "reasons_to_keep": [
+        "Nenhum trecho define clínicas ou hospitais privados como prestadores complementares do SUS.",
+        "As soluções escolhidas reorganizam acesso e rede sem decidir a titularidade do prestador."
+      ],
+      "reasons_to_reconsider": [
+        "Se a integração da rede incluísse explicitamente prestadores conveniados ou se a regulação de filas autorizasse compra externa, o mecanismo poderia ser equivalente à contratação perguntada."
+      ],
+      "human_review_question": "A rede integrada e a regulação de filas incluem compra de atendimento privado na insuficiência pública, ou deixam a origem da capacidade adicional sem definição?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q25",
+      "display_number": 12,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano aborda gestão, formação, liderança, desempenho e mobilidade no serviço público, mas não trata do ingresso por concurso, de reserva de vagas ou de critérios raciais. Políticas voltadas a mulheres e crianças também não autorizam inferir cotas raciais em concursos públicos federais.",
+      "semantic_neighborhood_summary": "A agenda do serviço público começa após o ingresso: formação, liderança, desempenho, mobilidade e entrega. Os públicos transversais do plano são mulheres, crianças e famílias. Não há política de representação racial, ação afirmativa, concurso ou reserva de vagas.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 13,
+          "quote": "Formação e liderança",
+          "semantic_relevance": "Trata do desenvolvimento de pessoas no serviço público, não de critérios de ingresso ou composição racial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 13,
+          "quote": "Gestão de desempenho com critérios objetivos",
+          "semantic_relevance": "Os critérios objetivos dizem respeito ao desempenho de servidores e não substituem uma regra de ação afirmativa no concurso."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P09",
+          "relation": "QUALIFICA",
+          "page": 15,
+          "quote": "Critério transversal: cada política deverá explicitar impactos esperados sobre mulheres, crianças e famílias, custo fiscal, responsabilidade institucional, riscos, salvaguardas de direitos e método de avaliação.",
+          "semantic_relevance": "Mostra quais grupos recebem avaliação transversal explícita; não cria reserva racial nem permite concluir rejeição de outros públicos."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Mérito ou objetividade na avaliação de desempenho não contradiz cotas no ingresso, pois são fases e critérios distintos. Tampouco a transversalidade para mulheres e crianças equivale a ação afirmativa racial.",
+      "reasons_to_keep": [
+        "Não há decisão sobre concurso, reserva de vagas, raça ou representação no serviço público.",
+        "As medidas de desempenho incidem sobre servidores e equipes, não sobre seleção de candidatos."
+      ],
+      "reasons_to_reconsider": [
+        "Uma regra geral de diversidade institucional ou correção de desigualdades raciais poderia sustentar a reserva mesmo sem repetir a palavra concurso, mas ela não aparece."
+      ],
+      "human_review_question": "Alguma política de pessoal do plano alcança o ingresso e a representação racial, ou todas as medidas identificadas operam apenas na gestão posterior dos servidores?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q14",
+      "display_number": 13,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "A rede de cuidado aparece como apoio à participação laboral das mulheres, e a saúde prioriza atenção territorial. O plano não oferece cuidado profissional no domicílio a idosos ou pessoas com deficiência com alto grau de dependência.",
+      "semantic_neighborhood_summary": "O plano reconhece cuidado como infraestrutura para ampliar participação das mulheres no trabalho e organiza atenção primária por equipes e território. Não define atendimento no domicílio, longa duração, dependência funcional, apoio a cuidadores, nem cobre conjuntamente idosos e pessoas com deficiência.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P24",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "Rede de cuidado para ampliar participação no trabalho",
+          "semantic_relevance": "Reconhece função pública ou coletiva do cuidado, mas o objetivo, o local e os beneficiários não são os da tese."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P16",
+          "relation": "CONTEXTO",
+          "page": 11,
+          "quote": "Equipes completas e acesso territorial",
+          "semantic_relevance": "A territorialização pode aproximar serviços da residência, mas não garante atendimento profissional dentro do domicílio para alta dependência."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P16",
+          "relation": "QUALIFICA",
+          "page": 11,
+          "quote": "Coordenação do cuidado e prontuário interoperável",
+          "semantic_relevance": "A coordenação é compatível com cuidado continuado, porém não define modalidade domiciliar nem os dois públicos exigidos."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Rede de cuidado, acesso territorial e coordenação são princípios e condições favoráveis, mas não executam o serviço específico. Local, intensidade da dependência, profissional responsável e cobertura dos dois públicos continuam indeterminados.",
+      "reasons_to_keep": [
+        "Não há atendimento domiciliar ou cuidado de longa duração definido.",
+        "Idosos, pessoas com deficiência e alto grau de dependência não são selecionados como público conjunto."
+      ],
+      "reasons_to_reconsider": [
+        "A rede de cuidado e a territorialização poderiam abrigar atenção domiciliar como instrumento, mas o plano precisaria estabelecer sua prestação ou equipe no domicílio."
+      ],
+      "human_review_question": "A rede territorial de cuidado oferece efetivamente serviço profissional na residência para alta dependência, ou apenas organiza acesso e apoio social de forma geral?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q15",
+      "display_number": 14,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano admite transferências a estados e municípios associadas a indicadores quando juridicamente cabível e propõe avaliação da aprendizagem, mas não conecta parte dos recursos federais destinados às redes de ensino ao cumprimento de metas de aprendizagem.",
+      "semantic_neighborhood_summary": "O plano contém as duas peças gerais da tese em partes distintas: transferências federativas podem ser associadas a indicadores, e a educação terá avaliação frequente com intervenção pedagógica. O texto não liga as transferências ao setor educacional, não transforma avaliação em meta de aprendizagem e não estabelece consequência financeira para as redes.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P08",
+          "relation": "CONTEXTO",
+          "page": 14,
+          "quote": "Transferências associadas a indicadores quando juridicamente cabível",
+          "semantic_relevance": "Admite condicionalidade federativa por indicadores, mas sem identificar educação, aprendizagem, parcela ou tipo de transferência."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P19",
+          "relation": "CONTEXTO",
+          "page": 7,
+          "quote": "Avaliação frequente com intervenção pedagógica",
+          "semantic_relevance": "A avaliação gera intervenção pedagógica, não redução, retenção ou bonificação de recursos federais."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P19",
+          "relation": "QUALIFICA",
+          "page": 7,
+          "quote": "Recomposição de aprendizagem",
+          "semantic_relevance": "Explicita a finalidade de recuperar resultados educacionais, mas não converte a meta pedagógica em condição de financiamento."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A combinação é semanticamente próxima, mas exigiria preencher quatro elos ausentes: setor educacional, origem federal, parcela condicionada e resultado de aprendizagem como gatilho. A proximidade não autoriza fundir políticas separadas.",
+      "reasons_to_keep": [
+        "A cláusula de transferências é federativa e multissetorial, sem menção a redes de ensino.",
+        "A consequência explícita da avaliação educacional é intervenção pedagógica, não condicionalidade financeira."
+      ],
+      "reasons_to_reconsider": [
+        "A presença conjunta de transferências por indicadores e avaliação de aprendizagem torna possível um desenho equivalente; uma conexão setorial ou financeira adicional poderia justificar concordância condicional."
+      ],
+      "human_review_question": "É legítimo unir a regra federativa geral à avaliação educacional, ou o plano mantém separados indicador de transferência e resultado de aprendizagem?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q16",
+      "display_number": 15,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano aborda participação no trabalho, qualificação e transição profissional, mas não propõe reduzir a jornada semanal legal nem preservar salários nessa redução.",
+      "semantic_neighborhood_summary": "A política de trabalho busca ampliar participação feminina por rede de cuidado, qualificação e reinserção, e articula formação técnica com aprendizagem profissional. O plano não altera duração semanal, escala, negociação coletiva ou remuneração, portanto não decide os dois componentes ligados da tese.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P24",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "Qualificação e reinserção profissional",
+          "semantic_relevance": "É uma política de acesso e retorno ao emprego, sem definir jornada ou salário."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P24",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "Rede de cuidado para ampliar participação no trabalho",
+          "semantic_relevance": "Enfrenta barreiras de tempo e cuidado por serviço de apoio, não por redução legal das horas trabalhadas."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P22",
+          "relation": "CONTEXTO",
+          "page": 8,
+          "quote": "Orientação de carreira e aprendizagem profissional",
+          "semantic_relevance": "A transição para o trabalho não estabelece limite semanal nem preservação salarial."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "As propostas tratam de participação, qualificação e compatibilização entre cuidado e trabalho. Nenhuma é funcionalmente equivalente a reduzir a jornada máxima mantendo a remuneração.",
+      "reasons_to_keep": [
+        "Não há limite de horas, escala de trabalho ou negociação sobre duração da jornada.",
+        "Não há regra de preservação salarial associada a eventual redução."
+      ],
+      "reasons_to_reconsider": [
+        "A rede de cuidado reconhece conflito entre tempo de trabalho e responsabilidades familiares, mas oferece outro instrumento e não implica alteração da jornada."
+      ],
+      "human_review_question": "O plano resolve barreiras à participação laboral exclusivamente por cuidado e qualificação, ou estabelece também redução de horas com salário preservado?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano trata de pré-natal, saúde da mulher e cuidado materno-infantil, mas não aborda aborto voluntário, punição criminal, descriminalização ou prazo gestacional. Atendimento de saúde sem decisão penal geral não responde à versão 2.",
+      "semantic_neighborhood_summary": "O plano oferece pré-natal, cuidado materno-infantil e atenção à saúde da mulher e da criança. Essas políticas cobrem gestação e proteção sanitária, mas não alteram o regime penal do aborto voluntário, suas exceções, seu prazo ou as condições de acesso.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P15",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "Pré-natal e cuidado materno-infantil",
+          "semantic_relevance": "Relaciona-se à gestação e à saúde reprodutiva, mas não decide se o aborto voluntário constitui crime."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P15",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "Nutrição, vacinação e desenvolvimento infantil",
+          "semantic_relevance": "Explicita prioridade de saúde materno-infantil, que pode coexistir com diferentes regimes jurídicos do aborto."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Assistência à gestação não equivale a criminalização nem descriminalização. O plano não fornece decisão jurídica, limite gestacional ou mudança das exceções legais da qual se possa inferir direção.",
+      "reasons_to_keep": [
+        "Não há referência a aborto voluntário, punição, descriminalização ou limite gestacional.",
+        "Políticas de pré-natal e cuidado infantil são compatíveis com posições opostas sobre o regime penal."
+      ],
+      "reasons_to_reconsider": [
+        "Uma regra ampla de autonomia reprodutiva ou de não criminalização poderia decidir a tese sem repetir todas as expressões, mas tal princípio não está estabelecido."
+      ],
+      "human_review_question": "As políticas materno-infantis alteram de alguma forma a punição do aborto voluntário, ou apenas organizam cuidado durante e após a gestação?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q18",
+      "display_number": 17,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "A proteção de crianças e adolescentes e a política prisional não fixam idade de imputabilidade, aplicação do regime penal adulto a jovens de 16 e 17 anos ou abrangência por qualquer crime.",
+      "semantic_neighborhood_summary": "O plano protege crianças e adolescentes contra abuso, exploração e riscos digitais e, em outra agenda, organiza o sistema prisional e a repressão a grandes organizações criminosas. Não define transição do regime socioeducativo ao penal adulto, idade, tipo de crime ou tratamento dos jovens de 16 e 17 anos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P25",
+          "relation": "CONTEXTO",
+          "page": 3,
+          "quote": "1.4 Proteção de crianças e adolescentes",
+          "semantic_relevance": "Define crianças e adolescentes como público de proteção, sem estabelecer responsabilização criminal adulta ou uma idade de corte."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P30",
+          "relation": "CONTEXTO",
+          "page": 10,
+          "quote": "Separação e gestão de lideranças criminosas conforme a lei",
+          "semantic_relevance": "Trata da gestão de pessoas já inseridas no sistema prisional, não dos critérios etários de ingresso no regime adulto."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P30",
+          "relation": "QUALIFICA",
+          "page": 10,
+          "quote": "Trabalho, educação e qualificação",
+          "semantic_relevance": "A política penitenciária inclui ressocialização, mas não esclarece se alcança adolescentes nem substitui o regime socioeducativo."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Proteção juvenil não significa, por si, rejeição à redução da maioridade; política prisional também não significa apoio. Faltam idade, regime adulto e alcance por qualquer crime, elementos essenciais e cumulativos da tese.",
+      "reasons_to_keep": [
+        "Nenhuma passagem fixa 16 anos como idade de responsabilidade penal adulta.",
+        "O plano não decide aplicação para todos os crimes nem relação com medidas socioeducativas."
+      ],
+      "reasons_to_reconsider": [
+        "Uma garantia explícita de proteção integral ou preservação do regime socioeducativo poderia sustentar discordância, mas o título de proteção não estabelece essa consequência penal."
+      ],
+      "human_review_question": "A proteção de adolescentes contém garantia de regime juvenil, ou o plano simplesmente não regula a idade e o alcance da responsabilidade penal adulta?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q19",
+      "display_number": 18,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano propõe monitoramento remoto, drones e análise de imagens nas fronteiras, dentro do marco legal, além de segurança urbana orientada por dados. Não identifica reconhecimento facial, biometria, comparação com bases de identificação ou seu uso em espaços públicos. Câmeras e análise de imagens, sem tecnologia de identificação facial, não respondem à tese.",
+      "semantic_neighborhood_summary": "O plano é favorável a sensores, monitoramento remoto, drones e análise de imagens em fronteiras, sob marco legal, e a integração de dados e mapas de risco na segurança urbana. Esses instrumentos podem compartilhar infraestrutura com reconhecimento facial, mas não identificam pessoas por características biométricas nem autorizam esse uso em espaços públicos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P26",
+          "relation": "CONTEXTO",
+          "page": 9,
+          "quote": "Sensores, radares e monitoramento remoto",
+          "semantic_relevance": "Autoriza vigilância tecnológica em fronteiras, mas não especifica captura ou comparação biométrica de rostos."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P26",
+          "relation": "QUALIFICA",
+          "page": 9,
+          "quote": "Drones e análise de imagens dentro do marco legal",
+          "semantic_relevance": "É o instrumento funcionalmente mais próximo; análise de imagens pode ou não identificar rostos, e o marco legal condiciona o uso sem escolher a tecnologia biométrica."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P29",
+          "relation": "CONTEXTO",
+          "page": 9,
+          "quote": "Integração de informações e mapas de risco",
+          "semantic_relevance": "A segurança orientada por dados localiza riscos, mas não individualiza pessoas por reconhecimento facial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P26",
+          "relation": "CONTEXTO",
+          "page": 9,
+          "quote": "Centros integrados de comando e compartilhamento de dados",
+          "semantic_relevance": "Fornece capacidade institucional adjacente, sem definir base biométrica, comparação facial ou espaço público de aplicação."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Análise de imagens e reconhecimento facial não são sinônimos. O primeiro pode detectar objetos, movimentos, placas ou eventos; a tese exige identificação biométrica de pessoas. O recorte de fronteiras também não equivale automaticamente a espaços públicos em geral.",
+      "reasons_to_keep": [
+        "Não há identificação facial, biometria ou comparação de rostos com bases de dados.",
+        "O uso explícito de imagens está condicionado ao marco legal e concentrado em fronteiras, sem autorizar reconhecimento facial em espaços públicos."
+      ],
+      "reasons_to_reconsider": [
+        "A infraestrutura de monitoramento e análise de imagens é compatível com reconhecimento facial; uma descrição de identificação de pessoas ou integração biométrica poderia torná-la equivalente funcional."
+      ],
+      "human_review_question": "A expressão análise de imagens inclui documentalmente identificação biométrica de pessoas, ou preserva usos não faciais e portanto não decide a tecnologia perguntada?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q21",
+      "display_number": 19,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona BRICS nem permanência ou saída de blocos internacionais. A cooperação internacional aparece somente como instrumento contra o tráfico de drogas e armas.",
+      "semantic_neighborhood_summary": "A única cooperação internacional substantiva integra a repressão ao narcotráfico e ao tráfico de armas. O plano não formula estratégia multilateral, cooperação Sul-Sul, participação em bancos ou blocos, relação com membros do BRICS, nem decisão institucional de permanência ou saída.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P27",
+          "relation": "CONTEXTO",
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional",
+          "semantic_relevance": "A cooperação tem finalidade policial e não identifica o BRICS, seus membros ou participação institucional em bloco."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P27",
+          "relation": "QUALIFICA",
+          "page": 9,
+          "quote": "4.2 Combate ao narcotráfico e ao tráfico de armas",
+          "semantic_relevance": "Delimita o contexto da cooperação internacional e impede convertê-la em política geral de alianças ou permanência no BRICS."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Cooperar internacionalmente numa política setorial pode ocorrer dentro ou fora do BRICS e não pressupõe continuidade no grupo. Falta referência institucional ou princípio de política externa com aplicação determinável ao bloco.",
+      "reasons_to_keep": [
+        "Não há decisão sobre participação em blocos, BRICS ou instituições associadas.",
+        "A cooperação internacional é instrumental e restrita ao combate ao tráfico."
+      ],
+      "reasons_to_reconsider": [
+        "Uma estratégia inequívoca de cooperação Sul-Sul ou uso do banco do BRICS poderia pressupor permanência sem dizer a palavra permanecer, mas não está presente."
+      ],
+      "human_review_question": "A cooperação policial internacional pressupõe algum vínculo institucional com o BRICS, ou pode operar independentemente da permanência no grupo?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q22",
+      "display_number": 20,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não nomeia Mercosul, União Europeia, acordo comercial ou ratificação. Exportações de maior valor agregado são apenas indicador econômico e não decidem o texto final do acordo específico.",
+      "semantic_neighborhood_summary": "O plano mede exportações de maior valor agregado e admite cooperação internacional na segurança, mas não apresenta política comercial externa. Não identifica Mercosul, União Europeia, o texto final do acordo, ratificação, renegociação ou cláusulas industriais, agrícolas e ambientais.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "source_position_id": "BR26-T057",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "exportações de maior valor agregado.",
+          "semantic_relevance": "É uma meta de desempenho exportador sem parceiro, tratado, condição de acesso a mercado ou decisão de ratificação."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P27",
+          "relation": "QUALIFICA",
+          "page": 9,
+          "quote": "Cooperação interestadual e internacional",
+          "semantic_relevance": "A cooperação é policial e não sustenta apoio a um acordo comercial específico."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P13",
+          "relation": "CONTEXTO",
+          "page": 5,
+          "quote": "Ambiente para indústria, inovação e economia digital",
+          "semantic_relevance": "Uma orientação produtiva pode influenciar avaliação de cláusulas comerciais, mas não decide o texto Mercosul–União Europeia."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Promover exportações ou indústria não define se o acordo específico favorece esses objetivos, nem se seu texto deve ser ratificado sem mudanças. Falta a decisão institucional e qualquer condição aplicada ao acordo.",
+      "reasons_to_keep": [
+        "Não há menção às partes, ao acordo, ao texto final ou ao processo de ratificação.",
+        "Metas exportadoras são compatíveis com apoio, rejeição ou renegociação do acordo."
+      ],
+      "reasons_to_reconsider": [
+        "Uma defesa ou rejeição inequívoca de tratados comerciais com condições aplicáveis ao acordo poderia decidir a direção sem nomeá-lo, mas o plano não formula essa regra."
+      ],
+      "human_review_question": "O objetivo de exportar produtos de maior valor agregado contém decisão sobre ratificar este acordo e este texto, ou apenas uma meta econômica independente?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    }
+  ]
+}
