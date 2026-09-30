@@ -114,8 +114,8 @@ class ResultShareCard extends StatelessWidget {
           const Spacer(),
           Text(
             story
-                ? 'Fiz o quiz.\nMeu alinhamento · Beta'
-                : 'Meu alinhamento · Beta',
+                ? 'Fiz o quiz.\nMeu alinhamento'
+                : 'Meu alinhamento',
             style: _type(story ? 40 : 30, bold: true),
           ),
           SizedBox(height: story ? 18 : 10),

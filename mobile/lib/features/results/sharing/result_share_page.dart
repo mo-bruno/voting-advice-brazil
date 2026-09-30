@@ -120,32 +120,55 @@ class _ResultSharePageState extends State<ResultSharePage> {
     _queueImage();
   }
 
-  void _notify(String message) {
+  void _notify(String message, {SnackBarAction? action}) {
     if (!mounted) return;
     ScaffoldMessenger.of(context)
       ..hideCurrentSnackBar()
-      ..showSnackBar(SnackBar(content: Text(message)));
+      ..showSnackBar(SnackBar(content: Text(message), action: action));
   }
 
-  Future<void> _shareImage(BuildContext buttonContext) async {
+  Future<void> _shareImage(BuildContext buttonContext,
+      {bool forWhatsApp = false}) async {
     final bytes = _png;
     if (bytes == null || _busy) return;
+    final sharedData = _data;
     final box = buttonContext.findRenderObject()! as RenderBox;
     final origin = box.localToGlobal(Offset.zero) & box.size;
     setState(() => _busy = true);
     try {
-      await _service.shareImage(bytes, _format, origin);
+      await _service.shareImage(bytes, _format, origin,
+          text: forWhatsApp
+              ? '${sharedData.caption}\n${sharedData.siteUrl}'
+              : null);
       // Fechar o menu ou escolher um app não confirma uma publicação.
     } catch (_) {
+      final action = forWhatsApp
+          ? SnackBarAction(
+              label: 'Abrir WhatsApp',
+              onPressed: () => unawaited(_openNetwork(
+                  ResultShareNetwork.whatsapp,
+                  data: sharedData)),
+            )
+          : null;
       if (_service.canDownload) {
         try {
           await _service.downloadImage(bytes, _format);
-          _notify('Download iniciado. Anexe a imagem na rede social.');
+          _notify(
+              forWhatsApp
+                  ? 'Download iniciado. Abra o WhatsApp e anexe a imagem '
+                      'à mensagem.'
+                  : 'Download iniciado. Anexe a imagem na rede social.',
+              action: action);
         } catch (_) {
           _notify('Não foi possível baixar a imagem. Tente novamente.');
         }
       } else {
-        _notify('Não foi possível compartilhar a imagem. Tente novamente.');
+        _notify(
+            forWhatsApp
+                ? 'Não foi possível enviar imagem e texto juntos. '
+                    'Use Compartilhar imagem e abra a mensagem no WhatsApp.'
+                : 'Não foi possível compartilhar a imagem. Tente novamente.',
+            action: action);
       }
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -175,9 +198,10 @@ class _ResultSharePageState extends State<ResultSharePage> {
     }
   }
 
-  Future<void> _openNetwork(ResultShareNetwork network) async {
+  Future<void> _openNetwork(ResultShareNetwork network,
+      {ResultShareData? data}) async {
     try {
-      await _service.openNetwork(_data, network);
+      await _service.openNetwork(data ?? _data, network);
     } catch (_) {
       _notify('Não foi possível abrir a rede social. Use Compartilhar imagem '
           'ou Copiar link.');
@@ -371,18 +395,22 @@ class _ResultSharePageState extends State<ResultSharePage> {
                               fontSize: 24, fontWeight: FontWeight.w700)),
                       onPressed: () => _openNetwork(ResultShareNetwork.twitter),
                     ),
-                    _NetworkButton(
-                      label: 'WhatsApp',
-                      detail: 'Texto e link',
-                      icon: const Icon(Icons.chat_bubble_outline_rounded),
-                      onPressed: () =>
-                          _openNetwork(ResultShareNetwork.whatsapp),
+                    Builder(
+                      builder: (buttonContext) => _NetworkButton(
+                        label: 'WhatsApp',
+                        detail: 'Imagem e texto',
+                        icon: const Icon(Icons.chat_bubble_outline_rounded),
+                        onPressed: ready
+                            ? () => _shareImage(buttonContext,
+                                forWhatsApp: true)
+                            : null,
+                      ),
                     ),
                   ],
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'Para enviar a imagem ao X ou WhatsApp, '
+                  'No menu, escolha o WhatsApp. Para enviar a imagem ao X, '
                   'use Compartilhar imagem${_service.canDownload ? ' ou Baixar imagem' : ''}.',
                   textAlign: TextAlign.center,
                   style: textTheme.bodySmall,
