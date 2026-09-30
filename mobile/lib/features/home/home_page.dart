@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/branding/farol_wordmark.dart';
 import '../../core/link/link_opener.dart';
 import '../../core/layout/responsive_layout.dart';
@@ -22,15 +23,18 @@ class HomePage extends StatefulWidget {
     this.politicianFollowEnabled = false,
     PoliticalActorSession? politicalActorSession,
     NewsSession? newsSession,
+    AnalyticsService? analytics,
     LinkOpener? openLink,
   })  : _politicalActorSession = politicalActorSession,
         _newsSession = newsSession,
+        _analytics = analytics,
         _openLink = openLink;
 
   final VoidCallback onStartQuiz;
   final bool politicianFollowEnabled;
   final PoliticalActorSession? _politicalActorSession;
   final NewsSession? _newsSession;
+  final AnalyticsService? _analytics;
   final LinkOpener? _openLink;
 
   @override
@@ -40,7 +44,10 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   late final PoliticalActorSession _politicalActorSession =
       widget._politicalActorSession ?? PoliticalActorSession.instance;
-  late final NewsSession _news = widget._newsSession ?? NewsSession.instance;
+  late final AnalyticsService _analytics =
+      widget._analytics ?? AnalyticsService();
+  late final NewsSession _news =
+      widget._newsSession ?? NewsSession(analytics: _analytics);
   late final LinkOpener _openLink = widget._openLink ?? openExternalLink;
 
   @override
@@ -52,15 +59,28 @@ class _HomePageState extends State<HomePage> {
     unawaited(_news.load());
   }
 
-  Future<void> _open(String url, {bool isQuizGuide = false}) async {
-    final ok = await _openLink(Uri.parse(url));
-    if (!ok && mounted) {
+  Future<void> _open(
+    Uri uri, {
+    required AnalyticsSurface surface,
+    required AnalyticsTarget target,
+  }) async {
+    var opened = false;
+    try {
+      opened = await _openLink(uri);
+    } catch (_) {
+      opened = false;
+    }
+    unawaited(_analytics
+        .engagementAction(
+          action: AnalyticsAction.outboundOpen,
+          surface: surface,
+          target: target,
+          outcome: opened ? AnalyticsOutcome.success : AnalyticsOutcome.failed,
+        )
+        .catchError((_) {}));
+    if (!opened && mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text(isQuizGuide
-              ? 'Não foi possível abrir o guia do quiz.'
-              : 'Não foi possível abrir a notícia.'),
-        ),
+        const SnackBar(content: Text('Não foi possível abrir o link.')),
       );
     }
   }
@@ -87,8 +107,11 @@ class _HomePageState extends State<HomePage> {
                         if (!desktop) ...[
                           _QuizInvitation(
                             onPressed: widget.onStartQuiz,
-                            onLearnMore: () => unawaited(
-                                _open(_quizGuideUrl, isQuizGuide: true)),
+                            onLearnMore: () => unawaited(_open(
+                              Uri.parse(_quizGuideUrl),
+                              surface: AnalyticsSurface.home,
+                              target: AnalyticsTarget.quizGuide,
+                            )),
                           ),
                           const SizedBox(height: 40),
                         ],
@@ -110,7 +133,13 @@ class _HomePageState extends State<HomePage> {
                         const SizedBox(height: 24),
                         ..._buildBody(),
                         const SizedBox(height: 24),
-                        _SeeAllButton(onPressed: () => _open(_camaraNewsUrl)),
+                        _SeeAllButton(
+                          onPressed: () => unawaited(_open(
+                            Uri.parse(_camaraNewsUrl),
+                            surface: AnalyticsSurface.news,
+                            target: AnalyticsTarget.newsIndex,
+                          )),
+                        ),
                       ],
                     );
                     if (!desktop) return news;
@@ -127,8 +156,11 @@ class _HomePageState extends State<HomePage> {
                                 flex: 36,
                                 child: _QuizInvitation(
                                   onPressed: widget.onStartQuiz,
-                                  onLearnMore: () => unawaited(
-                                      _open(_quizGuideUrl, isQuizGuide: true)),
+                                  onLearnMore: () => unawaited(_open(
+                                    Uri.parse(_quizGuideUrl),
+                                    surface: AnalyticsSurface.home,
+                                    target: AnalyticsTarget.quizGuide,
+                                  )),
                                 )),
                           ],
                         ),
@@ -164,14 +196,25 @@ class _HomePageState extends State<HomePage> {
       case NewsStatus.error:
         return [
           divider,
-          NewsError(onRetry: () => unawaited(_news.load())),
+          NewsError(
+            onRetry: () => unawaited(
+              _news.load(trigger: AnalyticsTrigger.retry),
+            ),
+          ),
           divider,
         ];
       case NewsStatus.ready:
         final widgets = <Widget>[divider];
         for (final article in _news.articles) {
           widgets.add(
-            NewsCard(article: article, onTap: () => _open(article.url)),
+            NewsCard(
+              article: article,
+              onTap: () => unawaited(_open(
+                Uri.parse(article.url),
+                surface: AnalyticsSurface.news,
+                target: AnalyticsTarget.newsArticle,
+              )),
+            ),
           );
           widgets.add(divider);
         }

@@ -94,6 +94,7 @@ class MainShell extends StatefulWidget {
         MainShellTab.inicio => HomePage(
             onStartQuiz: onStartQuiz,
             politicianFollowEnabled: politicianFollowEnabled,
+            analytics: analytics,
           ),
         MainShellTab.acompanhar => politicianFollowEnabled
             ? const PoliticalActorSearchPage()
