@@ -192,105 +192,124 @@ class _ResultSharePageState extends State<ResultSharePage> {
     }
   }
 
-  Future<void> _copyImage() async {
+  Future<bool> _copyImage() async {
     final image = _prepared;
-    if (image == null || _busy) return;
+    if (image == null || _busy) return false;
     setState(() => _busy = true);
     try {
       await _service.copyImage(image);
-      _notify('Imagem copiada. Abra o app e cole na publicação ou conversa.');
+      return true;
     } catch (_) {
-      _notify(
-          'Não foi possível copiar a imagem. Use Compartilhar imagem ou Baixar imagem.');
+      return false;
     } finally {
       if (mounted) setState(() => _busy = false);
     }
   }
 
   void _shareOptions({ResultShareNetwork? network, bool unavailable = false}) {
+    String? copyMessage;
+    var copying = false;
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
       backgroundColor: AppTheme.surface,
-      builder: (context) => SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text('Outras formas de compartilhar',
-                  style: Theme.of(context).textTheme.headlineMedium),
-              const SizedBox(height: 16),
-              Text(
-                unavailable
-                    ? 'O compartilhamento não está disponível desta forma. '
-                        'Tente a imagem padrão, copie ou salve para adicionar no app.'
-                    : 'Copie ou salve o banner e adicione no app. '
-                        'Você também pode enviar apenas o texto e o link.',
-              ),
-              const SizedBox(height: 12),
-              if (network == null || network == ResultShareNetwork.instagram)
-                const Text('Nos Stories, use o adesivo “Link” com o endereço '
-                    'do site. A imagem copiada ou salva pode ser adicionada no editor.'),
-              const SizedBox(height: 24),
-              Builder(
-                builder: (buttonContext) => ElevatedButton.icon(
-                  onPressed: () {
-                    unawaited(_shareImage(buttonContext));
-                    Navigator.pop(context);
-                  },
-                  icon: const Icon(Icons.ios_share_rounded, size: 20),
-                  label: const Text('Compartilhar imagem'),
+      builder: (context) => StatefulBuilder(
+        builder: (sheetContext, setSheetState) => SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Outras formas de compartilhar',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const SizedBox(height: 16),
+                Text(
+                  unavailable
+                      ? 'O compartilhamento não está disponível desta forma. '
+                          'Tente a imagem padrão, copie ou salve para adicionar no app.'
+                      : 'Copie ou salve o banner e adicione no app. '
+                          'Você também pode enviar apenas o texto e o link.',
                 ),
-              ),
-              if (_service.canCopyImage) ...[
+                const SizedBox(height: 12),
+                if (network == null || network == ResultShareNetwork.instagram)
+                  const Text('Nos Stories, use o adesivo “Link” com o endereço '
+                      'do site. A imagem copiada ou salva pode ser adicionada no editor.'),
+                const SizedBox(height: 24),
+                Builder(
+                  builder: (buttonContext) => ElevatedButton.icon(
+                    onPressed: () {
+                      unawaited(_shareImage(buttonContext));
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.ios_share_rounded, size: 20),
+                    label: const Text('Compartilhar imagem'),
+                  ),
+                ),
+                if (_service.canCopyImage) ...[
+                  const SizedBox(height: 8),
+                  OutlinedButton.icon(
+                    onPressed: copying
+                        ? null
+                        : () async {
+                            setSheetState(() => copying = true);
+                            final copied = await _copyImage();
+                            if (!sheetContext.mounted) return;
+                            setSheetState(() {
+                              copying = false;
+                              copyMessage = copied
+                                  ? 'Imagem copiada. Abra o app abaixo e cole na publicação ou conversa.'
+                                  : 'Não foi possível copiar. Tente compartilhar ou baixar a imagem.';
+                            });
+                          },
+                    icon: const Icon(Icons.copy_rounded, size: 20),
+                    label: Text(copying ? 'Copiando imagem…' : 'Copiar imagem'),
+                  ),
+                  if (copyMessage != null) ...[
+                    const SizedBox(height: 12),
+                    Text(copyMessage!, semanticsLabel: copyMessage),
+                  ],
+                ],
+                if (_service.canDownload) ...[
+                  const SizedBox(height: 8),
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      unawaited(_downloadImage());
+                    },
+                    icon: const Icon(Icons.download_rounded, size: 20),
+                    label: const Text('Baixar imagem'),
+                  ),
+                ],
+                for (final destination
+                    in network == null ? ResultShareNetwork.values : [network])
+                  TextButton.icon(
+                    onPressed: () {
+                      unawaited(_openNetwork(destination));
+                      Navigator.pop(context);
+                    },
+                    icon: const Icon(Icons.open_in_new_rounded, size: 20),
+                    label: Text(switch (destination) {
+                      ResultShareNetwork.instagram =>
+                        _format == ResultShareFormat.story
+                            ? 'Abrir Instagram Stories'
+                            : 'Abrir Instagram',
+                      ResultShareNetwork.twitter => 'Abrir X com texto',
+                      ResultShareNetwork.whatsapp => 'Abrir WhatsApp',
+                    }),
+                  ),
                 const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: _copyImage,
-                  icon: const Icon(Icons.copy_rounded, size: 20),
-                  label: const Text('Copiar imagem'),
-                ),
-              ],
-              if (_service.canDownload) ...[
-                const SizedBox(height: 8),
-                OutlinedButton.icon(
-                  onPressed: () {
-                    Navigator.pop(context);
-                    unawaited(_downloadImage());
-                  },
-                  icon: const Icon(Icons.download_rounded, size: 20),
-                  label: const Text('Baixar imagem'),
-                ),
-              ],
-              for (final destination
-                  in network == null ? ResultShareNetwork.values : [network])
                 TextButton.icon(
                   onPressed: () {
-                    unawaited(_openNetwork(destination));
                     Navigator.pop(context);
+                    unawaited(_copyLink());
                   },
-                  icon: const Icon(Icons.open_in_new_rounded, size: 20),
-                  label: Text(switch (destination) {
-                    ResultShareNetwork.instagram =>
-                      _format == ResultShareFormat.story
-                          ? 'Abrir Instagram Stories'
-                          : 'Abrir Instagram',
-                    ResultShareNetwork.twitter => 'Abrir X com texto',
-                    ResultShareNetwork.whatsapp => 'Abrir WhatsApp',
-                  }),
+                  icon: const Icon(Icons.link_rounded, size: 20),
+                  label: const Text('Copiar link'),
                 ),
-              const SizedBox(height: 8),
-              TextButton.icon(
-                onPressed: () {
-                  Navigator.pop(context);
-                  unawaited(_copyLink());
-                },
-                icon: const Icon(Icons.link_rounded, size: 20),
-                label: const Text('Copiar link'),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

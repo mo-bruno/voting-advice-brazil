@@ -12,10 +12,16 @@ import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:share_plus/share_plus.dart';
 
 class _ShareDevice extends ResultShareService {
-  _ShareDevice({this.failSharing = false, this.downloadSupported = true});
+  _ShareDevice(
+      {this.failSharing = false,
+      this.downloadSupported = true,
+      this.failCopying = false,
+      this.copySupported = false});
 
   final bool failSharing;
   final bool downloadSupported;
+  final bool failCopying;
+  final bool copySupported;
   Uint8List? shared;
   String? sharedText;
   Uint8List? downloaded;
@@ -26,6 +32,14 @@ class _ShareDevice extends ResultShareService {
 
   @override
   bool get canDownload => downloadSupported;
+
+  @override
+  bool get canCopyImage => copySupported;
+
+  @override
+  Future<void> copyImage(PreparedResultShareImage image) async {
+    if (failCopying) throw StateError('Clipboard denied');
+  }
 
   @override
   Future<ShareResult> shareImage(
@@ -366,6 +380,21 @@ void main() {
     expectPng(device.shared, 1080, 1920);
     expect(device.downloads, 0);
     expect(find.byType(SnackBar), findsNothing);
+  });
+
+  testWidgets('recusa de copiar imagem mostra erro dentro do menu aberto',
+      (tester) async {
+    final device = _ShareDevice(copySupported: true, failCopying: true);
+    await pumpPage(tester, device);
+    await tap(tester, 'Mais opções');
+    await tap(tester, 'Copiar imagem');
+    expect(
+        find.descendant(
+            of: find.byType(BottomSheet),
+            matching: find.text(
+                'Não foi possível copiar. Tente compartilhar ou baixar a imagem.')),
+        findsOneWidget);
+    expect(find.text('Abrir Instagram Stories'), findsOneWidget);
   });
 
   testWidgets(
