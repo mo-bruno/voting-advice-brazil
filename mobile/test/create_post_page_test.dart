@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/community/create_post_page.dart';
+import 'package:guia_eleitoral/features/community/community_processing_notice.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -64,8 +65,8 @@ void main() {
       (tester) async {
     await _pump(tester, _StubClient());
 
-    expect(find.text('Publicação anônima'), findsOneWidget);
-    expect(find.textContaining('apelido público'), findsOneWidget);
+    expect(find.text('Publicação sob alias pseudônimo'), findsOneWidget);
+    expect(find.textContaining('alias público estável'), findsOneWidget);
     expect(find.textContaining('u/'), findsNothing);
   });
 
@@ -89,6 +90,8 @@ void main() {
     await tester.enterText(find.byType(TextField), 'Um post sobre economia');
     await tester.tap(find.text('ECONOMIA'));
     await tester.pump();
+    await tester.ensureVisible(find.text('PUBLICAR'));
+    await tester.pump();
     await tester.tap(find.text('PUBLICAR'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
@@ -103,10 +106,63 @@ void main() {
     await tester.enterText(find.byType(TextField), 'Um post sem tema');
     // O botao so habilita depois do setState do onChanged.
     await tester.pump();
+    await tester.ensureVisible(find.text('PUBLICAR'));
+    await tester.pump();
     await tester.tap(find.text('PUBLICAR'));
     await tester.pump();
     await tester.pump(const Duration(milliseconds: 200));
 
     expect(client.posted.single.containsKey('theme_slug'), isFalse);
+  });
+
+  testWidgets('notice directly precedes reachable publication action at 200%',
+      (tester) async {
+    tester.view.physicalSize = const Size(320, 568);
+    tester.view.devicePixelRatio = 1;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+    await tester.pumpWidget(MediaQuery(
+      data: MediaQueryData.fromView(tester.view).copyWith(
+        textScaler: const TextScaler.linear(2),
+      ),
+      child: MaterialApp(
+        theme: AppTheme.dark,
+        home: CreatePostPage(
+          apiClient: ApiClient(
+            baseUrl: 'https://api.test/api/v1',
+            client: _StubClient(),
+          ),
+        ),
+      ),
+    ));
+    await tester.pump(const Duration(milliseconds: 200));
+    await tester.enterText(find.byType(TextField), 'Uma opinião política');
+    await tester.pump();
+    final notice = find.byType(CommunityProcessingNotice);
+    final button = find.widgetWithText(ElevatedButton, 'PUBLICAR');
+    expect(notice, findsOneWidget);
+    expect(button, findsOneWidget);
+    expect(find.widgetWithText(TextButton, 'PUBLICAR'), findsNothing);
+    final containingColumns = find
+        .ancestor(of: notice, matching: find.byType(Column))
+        .evaluate()
+        .map((element) => element.widget)
+        .whereType<Column>();
+    expect(
+      containingColumns.any((column) {
+        final index = column.children.indexWhere(
+          (child) => child is CommunityProcessingNotice,
+        );
+        return index >= 0 &&
+            index + 2 < column.children.length &&
+            column.children[index + 1] is SizedBox &&
+            column.children[index + 2] is ElevatedButton;
+      }),
+      isTrue,
+    );
+    await tester.ensureVisible(button);
+    await tester.pump();
+    expect(button.hitTestable(), findsOneWidget);
+    expect(tester.takeException(), isNull);
   });
 }

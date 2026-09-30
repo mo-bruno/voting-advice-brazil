@@ -261,7 +261,7 @@ void _showAbout(
           'do quiz.'
       : 'A área Acompanhar ainda está em validação. Ela poderá reunir '
           'informações de fontes oficiais sobre a atuação de políticos; o '
-          'registro anônimo de interesse ajuda a decidir se ela deve ser '
+          'registro de interesse sem nome ou contato ajuda a decidir se ela deve ser '
           'lançada.';
   _showNote(
     context,

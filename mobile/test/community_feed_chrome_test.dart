@@ -53,6 +53,7 @@ void main() {
 
     expect(find.text('MAIS VOTADOS'), findsOneWidget);
     expect(find.text('RECENTES'), findsOneWidget);
+    expect(find.text('discussão sob aliases pseudônimos'), findsOneWidget);
   });
 
   testWidgets('trocar de aba refaz a busca com o sort correspondente',

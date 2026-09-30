@@ -201,7 +201,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     final feed = _session.feed;
     return AppScaffold(
       title: 'FÓRUM POLÍTICO',
-      subtitle: 'discussão anônima',
+      subtitle: 'discussão sob aliases pseudônimos',
       body: Column(
         children: [
           _buildSortBar(),

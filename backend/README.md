@@ -1,6 +1,6 @@
 # Farol Político — Backend API
 
-FastAPI para quiz de planos presidenciais de 2026, validação anônima da demanda por acompanhamento político, comunidade anônima e notícias semanais da Câmara. A busca, as evidências e o acompanhamento pessoal permanecem implementados, mas o follow público fica retido por feature flag. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos não compõem esse score.
+FastAPI para quiz de planos presidenciais de 2026, validação da demanda por acompanhamento político sem nome ou contato, comunidade sob aliases pseudônimos e notícias semanais da Câmara. A busca, as evidências e o acompanhamento pessoal permanecem implementados, mas o follow público fica retido por feature flag. O score do quiz compara respostas ponderadas com propostas curadas; votos legislativos não compõem esse score.
 
 ## Setup local
 
@@ -89,7 +89,7 @@ O cache de notícias e os demais serviços não foram alterados.
 | `NVIDIA_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
 | `NVIDIA_MODERATION_MODEL` | `nvidia/nemotron-3-super-120b-a12b` | Modelo hospedado usado pelo gate de moderação |
 | `IOT_FEATURE_ENABLED` | `false` | Mantém rotas e efeitos do hardware dormentes |
-| `POLITICIAN_FOLLOW_ENABLED` | `false` | Retém o acompanhamento real e mantém disponível somente a validação anônima |
+| `POLITICIAN_FOLLOW_ENABLED` | `false` | Retém o acompanhamento real e mantém disponível somente o registro de interesse sem nome ou contato |
 | `MQTT_BROKER_URL` | `mqtts://broker.hivemq.com:8883` | Broker da integração IoT histórica |
 | `GNEWS_API_KEY` | ausente | Notícias temáticas do fluxo IoT histórico; não alimenta `/news/weekly` |
 
@@ -97,7 +97,7 @@ O cache de notícias e os demais serviços não foram alterados.
 
 O Flutter gera um UUID v4 local chamado `anonymous_id`. Esse UUID é uma credencial privada de posse, enviada no header `X-Farol-Anonymous-Id` nas rotas `/me/...` e nas escritas da comunidade. Não há login, recuperação de conta ou garantia de que uma pessoa use uma única identidade. Não exponha o UUID em URLs, aliases ou conteúdo público.
 
-Leituras da comunidade aceitam o mesmo header opcional para calcular `is_mine`. Respostas públicas de posts/comentários contêm `author_alias` (`u/` mais dez caracteres do SHA-256 do UUID) e `is_mine`, e não retornam o UUID do autor. O alias público não serve como credencial. Headers obrigatórios ausentes ou UUIDs inválidos retornam 422. O Flutter exige os campos do contrato atual e não usa um UUID público legado como fallback.
+Leituras da comunidade aceitam o mesmo header opcional para calcular `is_mine`. Respostas públicas de posts/comentários contêm `author_alias` (`u/` mais dez caracteres do SHA-256 do UUID) e `is_mine`, e não retornam o UUID do autor. O alias público é estável e pseudônimo; não serve como credencial. Headers obrigatórios ausentes ou UUIDs inválidos retornam 422. O Flutter exige os campos do contrato atual e não usa um UUID público legado como fallback. O hash contextualizado da validação de interesse é unidirecional; o navegador que mantém o UUID pode reproduzir o hash para consultar ou retirar o registro. A linha ativa deduplicada no banco é a fonte de verdade da demanda; eventos GA opcionais representam somente visitantes que aceitaram métricas. O interesse pode ser retirado e sua retenção operacional máxima é de 180 dias.
 
 `POST /quiz/submit` mantém o campo opcional `device_id` por compatibilidade com clientes antigos. Com `IOT_FEATURE_ENABLED=false`, a API usa as respostas enviadas somente para calcular o ranking e não cria nem atualiza `devices` ou `quiz_responses`, mesmo quando um cliente antigo envia `device_id`. Com a flag verdadeira, a persistência e o efeito histórico de IoT permanecem habilitados juntos. A API não exige esse identificador para calcular o resultado.
 
@@ -136,7 +136,7 @@ Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de 
 
 Há limite persistido no banco por `anonymous_id`: cinco posts a cada dez minutos e dez comentários a cada dez minutos. Excesso retorna 429 com `Retry-After: 600`. Posts removidos continuam contando para a cota. O limite geral por IP de 60 requisições/minuto usa memória do processo; ele não é uma cota distribuída entre instâncias.
 
-O autor pode remover seu post; outro UUID recebe 403. O detalhe informa que o post foi removido, e ele não recebe novos votos ou comentários (410); IDs inexistentes retornam 404. A remoção é lógica, sem promessa de apagar o registro do banco. Denúncias são deduplicadas por autor e podem disparar nova moderação. Não há painel de moderação humana ou edição de conteúdo.
+Posts e comentários podem revelar opinião política. A interface avisa antes de publicar que o texto é armazenado, exibido publicamente sob alias pseudônimo estável e enviado à NVIDIA NIM para moderação. O autor pode remover o conteúdo do próprio post; outro UUID recebe 403. O detalhe informa que o post foi removido, e ele não recebe novos votos ou comentários (410); IDs inexistentes retornam 404. A remoção é lógica: deixa uma lápide e preserva comentários da discussão. Pedidos de remoção de comentário e outros direitos usam `privacidade@fpolitico.com.br`. Os dados funcionais permanecem enquanto necessários à função, segurança, obrigação legal ou exercício de direitos; não há prazo fixo prometido para todos os registros da comunidade. Denúncias são deduplicadas por autor e podem disparar nova moderação. Não há painel de moderação humana ou edição de conteúdo.
 
 ## IoT histórico, desativado
 

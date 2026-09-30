@@ -10,6 +10,9 @@ import 'package:guia_eleitoral/features/home/news_session.dart';
 import 'package:guia_eleitoral/features/privacy/privacy_config.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/features/party_selection/party_selection_page.dart';
+import 'package:guia_eleitoral/features/community/create_post_page.dart';
+import 'package:guia_eleitoral/features/community/post_detail_page.dart';
+import 'package:guia_eleitoral/features/community/models/community_theme.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_intro_page.dart';
 import 'package:guia_eleitoral/shared/models/party.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
@@ -55,6 +58,34 @@ class _SilentSink implements AnalyticsSink {
     required String name,
     Map<String, Object>? parameters,
   }) async {}
+}
+
+class _CommunityApi extends ApiClient {
+  _CommunityApi() : super(baseUrl: 'https://api.test/api/v1');
+
+  @override
+  Future<List<CommunityTheme>> fetchThemes() async => [];
+
+  @override
+  Future<Map<String, dynamic>> getPost(
+    String postId, {
+    required String anonymousId,
+  }) async =>
+      {
+        'post': {
+          'id': postId,
+          'author_alias': 'u/abc123def0',
+          'is_mine': true,
+          'content': 'Texto público',
+          'political_actor_id': null,
+          'theme_slug': null,
+          'score': 0,
+          'created_at': '2026-09-09T12:00:00Z',
+          'removed': false,
+          'removed_by': null,
+        },
+        'comments': [],
+      };
 }
 
 void main() {
@@ -180,6 +211,66 @@ void main() {
       await tester.ensureVisible(find.text(action));
       await tester.pump();
       expect(find.text(action).hitTestable(), findsOneWidget);
+      expect(controller.state, AnalyticsConsent.pending);
+      expect(tester.takeException(), isNull);
+    });
+  }
+
+  for (final page in ['post', 'comment']) {
+    testWidgets('pending banner keeps $page publication action reachable',
+        (tester) async {
+      tester.view.physicalSize = const Size(320, 568);
+      tester.view.devicePixelRatio = 1;
+      addTearDown(tester.view.resetPhysicalSize);
+      addTearDown(tester.view.resetDevicePixelRatio);
+      SharedPreferences.setMockInitialValues(<String, Object>{});
+      final controller = AnalyticsConsentController.testOnly(
+        store: _Store(),
+        effects: _Effects(),
+      );
+      await controller.hydrate();
+      addTearDown(controller.dispose);
+      final api = _CommunityApi();
+      await tester.pumpWidget(MediaQuery(
+        data: MediaQueryData.fromView(tester.view).copyWith(
+          textScaler: const TextScaler.linear(2),
+        ),
+        child: MyApp(
+          analyticsConsent: controller,
+          privacyConfig: const PrivacyConfig(
+            controllerName: 'Responsável de Teste',
+            contactEmail: 'privacidade@fpolitico.com.br',
+          ),
+          pageBuilders: [
+            (_) => page == 'post'
+                ? CreatePostPage(apiClient: api)
+                : PostDetailPage(postId: 'p1', apiClient: api),
+            (_) => const Scaffold(body: Text('acompanhar')),
+            (_) => const Scaffold(body: Text('quiz')),
+            (_) => const Scaffold(body: Text('comunidade')),
+          ],
+        ),
+      ));
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 200));
+      expect(tester.takeException(), isNull);
+      await tester.enterText(find.byType(TextField), 'Uma opinião política');
+      await tester.pump();
+      for (final label in [
+        'REJEITAR MÉTRICAS',
+        'ACEITAR MÉTRICAS',
+        'SAIBA MAIS',
+      ]) {
+        await tester.ensureVisible(find.text(label));
+        await tester.pump();
+        expect(find.text(label).hitTestable(), findsOneWidget);
+      }
+      final action = page == 'post'
+          ? find.widgetWithText(ElevatedButton, 'PUBLICAR')
+          : find.byTooltip('ENVIAR COMENTÁRIO');
+      await tester.ensureVisible(action);
+      await tester.pump();
+      expect(action.hitTestable(), findsOneWidget);
       expect(controller.state, AnalyticsConsent.pending);
       expect(tester.takeException(), isNull);
     });

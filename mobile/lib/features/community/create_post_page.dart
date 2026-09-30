@@ -4,6 +4,7 @@ import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
+import 'community_processing_notice.dart';
 import 'community_session.dart';
 import 'models/community_theme.dart';
 
@@ -99,31 +100,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
         icon: const Icon(Icons.arrow_back),
         onPressed: () => Navigator.pop(context),
       ),
-      actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 8),
-          child: TextButton(
-            onPressed: canSubmit ? _submit : null,
-            child: _loading
-                ? const SizedBox(
-                    width: 16,
-                    height: 16,
-                    child: CircularProgressIndicator(strokeWidth: 2),
-                  )
-                : Text(
-                    'PUBLICAR',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w700,
-                      letterSpacing: 1.0,
-                      color: canSubmit
-                          ? AppTheme.primary
-                          : AppTheme.onSurfaceVariant,
-                    ),
-                  ),
-          ),
-        ),
-      ],
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -145,33 +122,25 @@ class _CreatePostPageState extends State<CreatePostPage> {
                         shape: BoxShape.circle,
                       ),
                       alignment: Alignment.center,
-                      child: const Icon(
-                        Icons.person_outline,
-                        size: 16,
-                        color: AppTheme.onSurfaceVariant,
-                      ),
+                      child: const Icon(Icons.person_outline,
+                          size: 16, color: AppTheme.onSurfaceVariant),
                     ),
                     const SizedBox(width: 10),
-                    Expanded(
+                    const Expanded(
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
-                            'Publicação anônima',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w600,
-                              color: AppTheme.onSurface,
-                            ),
-                          ),
-                          const SizedBox(height: 2),
-                          const Text(
-                            'Seu post será identificado por um apelido público.',
-                            style: TextStyle(
-                              fontSize: 11,
-                              color: AppTheme.onSurfaceVariant,
-                            ),
-                          ),
+                          Text('Publicação sob alias pseudônimo',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: AppTheme.onSurface)),
+                          SizedBox(height: 2),
+                          Text(
+                              'Seu UUID local é uma credencial de posse; ele gera um alias público estável para suas publicações.',
+                              style: TextStyle(
+                                  fontSize: 11,
+                                  color: AppTheme.onSurfaceVariant)),
                         ],
                       ),
                     ),
@@ -179,56 +148,42 @@ class _CreatePostPageState extends State<CreatePostPage> {
                 ),
               ),
             const SizedBox(height: 16),
-            Expanded(
-              child: TextField(
-                controller: _controller,
-                maxLength: 500,
-                maxLines: null,
-                expands: true,
-                textAlignVertical: TextAlignVertical.top,
-                style: const TextStyle(
-                  fontSize: 15,
-                  color: AppTheme.onSurface,
-                  height: 1.5,
-                ),
-                decoration: const InputDecoration(
-                  hintText:
-                      'Compartilhe sua visão sobre política brasileira...',
-                  hintStyle: TextStyle(
-                    color: AppTheme.onSurfaceVariant,
-                    fontSize: 15,
-                  ),
-                  filled: true,
-                  fillColor: AppTheme.surfaceContainer,
-                  border: OutlineInputBorder(
+            TextField(
+              controller: _controller,
+              maxLength: 500,
+              minLines: 5,
+              maxLines: 12,
+              textAlignVertical: TextAlignVertical.top,
+              style: const TextStyle(
+                  fontSize: 15, color: AppTheme.onSurface, height: 1.5),
+              decoration: const InputDecoration(
+                hintText: 'Compartilhe sua visão sobre política brasileira...',
+                hintStyle:
+                    TextStyle(color: AppTheme.onSurfaceVariant, fontSize: 15),
+                filled: true,
+                fillColor: AppTheme.surfaceContainer,
+                border: OutlineInputBorder(
                     borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.outlineVariant),
-                  ),
-                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppTheme.outlineVariant)),
+                enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.outlineVariant),
-                  ),
-                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: AppTheme.outlineVariant)),
+                focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.zero,
-                    borderSide: BorderSide(color: AppTheme.primary),
-                  ),
-                  counterStyle: TextStyle(color: AppTheme.onSurfaceVariant),
-                  contentPadding: EdgeInsets.all(12),
-                ),
-                onChanged: (_) => setState(() {}),
+                    borderSide: BorderSide(color: AppTheme.primary)),
+                counterStyle: TextStyle(color: AppTheme.onSurfaceVariant),
+                contentPadding: EdgeInsets.all(12),
               ),
+              onChanged: (_) => setState(() {}),
             ),
             if (_themes.isNotEmpty) ...[
               const SizedBox(height: 20),
-              const Text(
-                'TEMA (OPCIONAL)',
-                style: TextStyle(
-                  fontSize: 11,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 1.5,
-                  color: AppTheme.onSurfaceVariant,
-                ),
-              ),
+              const Text('TEMA (OPCIONAL)',
+                  style: TextStyle(
+                      fontSize: 11,
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 1.5,
+                      color: AppTheme.onSurfaceVariant)),
               const SizedBox(height: 12),
               Wrap(
                 spacing: 8,
@@ -237,33 +192,26 @@ class _CreatePostPageState extends State<CreatePostPage> {
                   final selected = _selectedTheme == t.slug;
                   return InkWell(
                     onTap: () => setState(
-                      () => _selectedTheme = selected ? null : t.slug,
-                    ),
+                        () => _selectedTheme = selected ? null : t.slug),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 7,
-                      ),
+                          horizontal: 12, vertical: 7),
                       decoration: BoxDecoration(
                         color: selected ? AppTheme.primary : Colors.transparent,
                         border: Border.all(
-                          color: selected
-                              ? AppTheme.primary
-                              : AppTheme.outlineVariant,
-                        ),
+                            color: selected
+                                ? AppTheme.primary
+                                : AppTheme.outlineVariant),
                       ),
-                      child: Text(
-                        t.nome.toUpperCase(),
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight:
-                              selected ? FontWeight.w700 : FontWeight.w600,
-                          letterSpacing: 0.5,
-                          color: selected
-                              ? AppTheme.background
-                              : AppTheme.onSurfaceVariant,
-                        ),
-                      ),
+                      child: Text(t.nome.toUpperCase(),
+                          style: TextStyle(
+                              fontSize: 11,
+                              fontWeight:
+                                  selected ? FontWeight.w700 : FontWeight.w600,
+                              letterSpacing: 0.5,
+                              color: selected
+                                  ? AppTheme.background
+                                  : AppTheme.onSurfaceVariant)),
                     ),
                   );
                 }).toList(),
@@ -273,18 +221,16 @@ class _CreatePostPageState extends State<CreatePostPage> {
             Container(
               padding: const EdgeInsets.only(left: 12),
               decoration: const BoxDecoration(
-                border: Border(
-                  left: BorderSide(color: AppTheme.outlineVariant, width: 2),
-                ),
-              ),
+                  border: Border(
+                      left: BorderSide(
+                          color: AppTheme.outlineVariant, width: 2))),
               child: const Text(
                 'Todo post passa por uma verificação automática de relevância '
                 'e de checagem factual antes de aparecer no fórum.',
                 style: TextStyle(
-                  fontSize: 12,
-                  height: 1.55,
-                  color: AppTheme.onSurfaceVariant,
-                ),
+                    fontSize: 12,
+                    height: 1.55,
+                    color: AppTheme.onSurfaceVariant),
               ),
             ),
             if (_error != null) ...[
@@ -295,27 +241,29 @@ class _CreatePostPageState extends State<CreatePostPage> {
                   color: AppTheme.error.withValues(alpha: 0.1),
                   border: Border.all(color: AppTheme.error),
                 ),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.warning_amber_rounded,
-                      color: AppTheme.error,
-                      size: 16,
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        _error!,
-                        style: const TextStyle(
-                          color: AppTheme.error,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+                child: Row(children: [
+                  const Icon(Icons.warning_amber_rounded,
+                      color: AppTheme.error, size: 16),
+                  const SizedBox(width: 8),
+                  Expanded(
+                      child: Text(_error!,
+                          style: const TextStyle(
+                              color: AppTheme.error, fontSize: 13))),
+                ]),
               ),
             ],
+            const SizedBox(height: 16),
+            const CommunityProcessingNotice.post(),
+            const SizedBox(height: 12),
+            ElevatedButton(
+              onPressed: canSubmit ? _submit : null,
+              child: _loading
+                  ? const SizedBox(
+                      width: 16,
+                      height: 16,
+                      child: CircularProgressIndicator(strokeWidth: 2))
+                  : const Text('PUBLICAR'),
+            ),
           ],
         ),
       ),

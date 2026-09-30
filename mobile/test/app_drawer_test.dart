@@ -282,6 +282,9 @@ void main() {
 
     expect(find.textContaining('ainda está em validação'), findsOneWidget);
     expect(find.textContaining('apresenta deputados atuais'), findsNothing);
+    expect(find.textContaining('registro de interesse sem nome ou contato'),
+        findsOneWidget);
+    expect(find.textContaining('registro anônimo'), findsNothing);
 
     await tester.tap(find.text('FECHAR'));
     await settleDrawer(tester);
