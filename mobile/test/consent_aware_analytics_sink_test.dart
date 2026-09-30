@@ -98,10 +98,16 @@ void main() {
     await controller.grant();
     await sink.logEvent(name: 'quiz_completed', parameters: {
       'total_answered': 5,
+      'total_skipped': 1,
+      'duration_ms': 5000,
       'candidate_id': '13',
     });
     expect(runtime.events.map((event) => event.name), ['quiz_completed']);
-    expect(runtime.events.single.parameters, {'total_answered': 5});
+    expect(runtime.events.single.parameters, {
+      'total_answered': 5,
+      'total_skipped': 1,
+      'duration_ms': 5000,
+    });
   });
 
   test('revocation during initialization drops the waiting event', () async {
@@ -137,7 +143,7 @@ void main() {
     expect(runtime.events, isEmpty);
     expect(errors, hasLength(1));
     runtime.failInitialization = false;
-    await sink.logEvent(name: 'quiz_completed');
-    expect(runtime.events.map((event) => event.name), ['quiz_completed']);
+    await sink.logEvent(name: 'quiz_restarted');
+    expect(runtime.events.map((event) => event.name), ['quiz_restarted']);
   });
 }

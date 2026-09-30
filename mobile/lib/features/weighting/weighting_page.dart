@@ -41,8 +41,8 @@ class _WeightingPageState extends State<WeightingPage> {
       thesis.doubleWeight = !thesis.doubleWeight;
     });
     final event = thesis.doubleWeight
-        ? _analytics.weightAdded(thesisId: thesis.id)
-        : _analytics.weightRemoved(thesisId: thesis.id);
+        ? _analytics.weightAdded()
+        : _analytics.weightRemoved();
     _track(event);
   }
 
@@ -291,9 +291,8 @@ class _ThemeWeightCard extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.all(7),
                         decoration: BoxDecoration(
-                          color: isEditing
-                              ? AppTheme.primary
-                              : Colors.transparent,
+                          color:
+                              isEditing ? AppTheme.primary : Colors.transparent,
                           border: Border.all(
                             color: isEditing
                                 ? AppTheme.primary

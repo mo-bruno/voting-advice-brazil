@@ -87,13 +87,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       }
       _expandedPartyId = id;
     });
-    final party = _parties.firstWhere((p) => p.id == id);
-    _track(
-      _analytics.partyToggled(
-        partyAcronym: party.abbreviation,
-        selected: _selected.contains(id),
-      ),
-    );
+    _track(_analytics.partyToggled());
   }
 
   Future<void> _submitAndNavigate() async {

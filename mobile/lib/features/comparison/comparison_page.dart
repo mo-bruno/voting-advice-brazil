@@ -73,7 +73,6 @@ class _ComparisonPageState extends State<ComparisonPage> {
 
   void _toggleCandidate(String candidateId) {
     var candidateAdded = false;
-    var position = 0;
     setState(() {
       if (_selectedCandidateIds.contains(candidateId)) {
         _selectedCandidateIds.remove(candidateId);
@@ -88,16 +87,10 @@ class _ComparisonPageState extends State<ComparisonPage> {
         }
         _selectedCandidateIds.add(candidateId);
         candidateAdded = true;
-        position = _selectedCandidateIds.length;
       }
     });
     if (candidateAdded) {
-      _track(
-        _analytics.comparisonCandidateAdded(
-          candidateId: candidateId,
-          position: position,
-        ),
-      );
+      _track(_analytics.comparisonCandidateAdded());
     }
   }
 
@@ -115,9 +108,6 @@ class _ComparisonPageState extends State<ComparisonPage> {
     try {
       final validated = <String, Map<int, CandidateJustification>>{};
       for (final result in selected) {
-        _track(
-          _analytics.candidatePositionsViewed(candidateId: result.candidateId),
-        );
         final data = await _session.api.fetchCandidateJustifications(
           result.candidateId,
         );

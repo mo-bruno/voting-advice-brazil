@@ -1,6 +1,8 @@
 import 'analytics_dependencies.dart';
+import 'analytics_dimensions.dart';
 import 'analytics_sink.dart';
 
+export 'analytics_dimensions.dart';
 export 'analytics_sink.dart';
 
 class AnalyticsService {
@@ -8,10 +10,6 @@ class AnalyticsService {
       : _sink = sink ?? AnalyticsDependencies.instance.sink;
 
   final AnalyticsSink _sink;
-
-  // Keep public call signatures compatible, but never forward political
-  // answers, priorities, parties, candidates, or affinity to analytics.
-  // Generic usage events do not imply complete anonymization.
 
   Future<void> quizIntroViewed() {
     return _sink.logEvent(name: 'quiz_intro_viewed');
@@ -25,16 +23,11 @@ class AnalyticsService {
     return _sink.logEvent(name: 'quiz_restarted');
   }
 
-  Future<void> thesisViewed({
-    required int thesisId,
-    required int thesisIndex,
-  }) {
+  Future<void> thesisViewed() {
     return _sink.logEvent(name: 'thesis_viewed');
   }
 
   Future<void> thesisAnswered({
-    required int thesisId,
-    required String stance,
     required int timeToAnswerMs,
   }) {
     return _sink.logEvent(
@@ -45,7 +38,7 @@ class AnalyticsService {
     );
   }
 
-  Future<void> thesisSkipped({required int thesisId}) {
+  Future<void> thesisSkipped() {
     return _sink.logEvent(name: 'thesis_skipped');
   }
 
@@ -68,11 +61,11 @@ class AnalyticsService {
     return _sink.logEvent(name: 'weighting_started');
   }
 
-  Future<void> weightAdded({required int thesisId}) {
+  Future<void> weightAdded() {
     return _sink.logEvent(name: 'weight_added');
   }
 
-  Future<void> weightRemoved({required int thesisId}) {
+  Future<void> weightRemoved() {
     return _sink.logEvent(name: 'weight_removed');
   }
 
@@ -87,10 +80,7 @@ class AnalyticsService {
     return _sink.logEvent(name: 'party_selection_viewed');
   }
 
-  Future<void> partyToggled({
-    required String partyAcronym,
-    required bool selected,
-  }) {
+  Future<void> partyToggled() {
     return _sink.logEvent(name: 'party_toggled');
   }
 
@@ -101,10 +91,7 @@ class AnalyticsService {
     );
   }
 
-  Future<void> resultsViewed({
-    required String topCandidateId,
-    required double topScorePercent,
-  }) {
+  Future<void> resultsViewed() {
     return _sink.logEvent(name: 'results_viewed');
   }
 
@@ -112,15 +99,80 @@ class AnalyticsService {
     return _sink.logEvent(name: 'comparison_opened');
   }
 
-  Future<void> comparisonCandidateAdded({
-    required String candidateId,
-    required int position,
-  }) {
+  Future<void> comparisonCandidateAdded() {
     return _sink.logEvent(name: 'comparison_candidate_added');
   }
 
-  Future<void> candidatePositionsViewed({required String candidateId}) {
-    return _sink.logEvent(name: 'candidate_positions_viewed');
+  Future<void> screenViewed({
+    required AnalyticsScreen screen,
+    required AnalyticsSource source,
+  }) {
+    return _sink.logEvent(
+      name: 'screen_viewed',
+      parameters: {
+        'screen': screen.value,
+        'source': source.value,
+      },
+    );
+  }
+
+  Future<void> engagementAction({
+    required AnalyticsAction action,
+    AnalyticsSurface? surface,
+    AnalyticsSource? source,
+    AnalyticsTarget? target,
+    AnalyticsOutcome? outcome,
+  }) {
+    return _sink.logEvent(
+      name: 'engagement_action',
+      parameters: {
+        'action': action.value,
+        if (surface != null) 'surface': surface.value,
+        if (source != null) 'source': source.value,
+        if (target != null) 'target': target.value,
+        if (outcome != null) 'outcome': outcome.value,
+      },
+    );
+  }
+
+  Future<void> operationResult({
+    required AnalyticsOperation operation,
+    required AnalyticsOutcome outcome,
+    required AnalyticsTrigger trigger,
+    AnalyticsFailureType? failureType,
+    int? durationMs,
+    int? itemCount,
+  }) {
+    return _sink.logEvent(
+      name: 'operation_result',
+      parameters: {
+        'operation': operation.value,
+        'outcome': outcome.value,
+        'trigger': trigger.value,
+        if (failureType != null) 'failure_type': failureType.value,
+        if (durationMs != null) 'duration_ms': durationMs,
+        if (itemCount != null) 'item_count': itemCount,
+      },
+    );
+  }
+
+  Future<void> quizAbandoned({
+    required AnalyticsQuizStage stage,
+    required AnalyticsAbandonReason reason,
+    required int totalAnswered,
+    required int totalSkipped,
+    required int durationMs,
+  }) {
+    return _sink.logEvent(
+      name: 'quiz_abandoned',
+      parameters: {
+        'stage': stage.value,
+        'reason': reason.value,
+        'total_answered': totalAnswered,
+        'total_skipped': totalSkipped,
+        'duration_ms': durationMs,
+      },
+    );
   }
 
   Future<void> followWaitlistViewed() {

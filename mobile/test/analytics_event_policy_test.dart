@@ -15,7 +15,6 @@ const noParameterEvents = {
   'results_viewed',
   'comparison_opened',
   'comparison_candidate_added',
-  'candidate_positions_viewed',
   'follow_waitlist_viewed',
   'follow_waitlist_prompt_viewed',
   'follow_waitlist_cta_clicked',
@@ -24,22 +23,74 @@ const noParameterEvents = {
 };
 
 const hostileParameters = <String, Object>{
+  'thesis_id': 12,
   'candidate_id': '13',
+  'party_acronym': 'ABC',
   'stance': 'agree',
+  'score': 91.2,
+  'rank': 1,
+  'url': 'https://example.test/?email=a@example.test',
+  'route': '/candidate/13',
   'anonymous_id': '550e8400-e29b-41d4-a716-446655440000',
   'device_id': '550e8400-e29b-41d4-a716-446655440001',
   'free_text': 'conteúdo político',
-  'count': 1,
 };
 
-const allowedParameterKeys = {
-  'thesis_answered': {'time_to_answer_ms'},
-  'quiz_completed': {'total_answered', 'total_skipped', 'duration_ms'},
-  'weighting_completed': {'count_weighted'},
-  'party_selection_completed': {'count_selected'},
+const validParameterizedEvents = <String, Map<String, Object>>{
+  'thesis_answered': {'time_to_answer_ms': 1},
+  'quiz_completed': {
+    'total_answered': 1,
+    'total_skipped': 0,
+    'duration_ms': 1,
+  },
+  'weighting_completed': {'count_weighted': 1},
+  'party_selection_completed': {'count_selected': 1},
+  'screen_viewed': {'screen': 'home', 'source': 'initial'},
+  'engagement_action': {
+    'action': 'outbound_open',
+    'surface': 'news',
+    'target': 'news_article',
+    'outcome': 'success',
+  },
+  'operation_result': {
+    'operation': 'news_load',
+    'outcome': 'success',
+    'trigger': 'initial',
+  },
+  'quiz_abandoned': {
+    'stage': 'questions',
+    'reason': 'back',
+    'total_answered': 1,
+    'total_skipped': 0,
+    'duration_ms': 1,
+  },
 };
 
 void main() {
+  test('accepts exactly the 26 approved event names', () {
+    final accepted = <String>{
+      for (final name in noParameterEvents)
+        if (AnalyticsEventPolicy.sanitize(name: name) != null) name,
+      for (final entry in validParameterizedEvents.entries)
+        if (AnalyticsEventPolicy.sanitize(
+              name: entry.key,
+              parameters: entry.value,
+            ) !=
+            null)
+          entry.key,
+    };
+
+    expect(accepted, hasLength(26));
+    expect(
+      AnalyticsEventPolicy.sanitize(name: 'candidate_positions_viewed'),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(name: 'candidate_selected'),
+      isNull,
+    );
+  });
+
   for (final name in noParameterEvents) {
     test('$name retains no parameters', () {
       expect(AnalyticsEventPolicy.sanitize(name: name)?.parameters, isNull);
@@ -53,80 +104,292 @@ void main() {
     });
   }
 
-  test('unknown event is dropped', () {
-    expect(AnalyticsEventPolicy.sanitize(name: 'candidate_selected'), isNull);
+  test('required missing or invalid enum drops the whole event', () {
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'screen_viewed',
+        parameters: {'source': 'tab'},
+      ),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'screen_viewed',
+        parameters: {'screen': 'candidate_13', 'source': 'tab'},
+      ),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'quiz_abandoned',
+        parameters: {
+          'stage': 'results',
+          'reason': 'back',
+          'total_answered': 2,
+          'total_skipped': 0,
+          'duration_ms': 1,
+        },
+      ),
+      isNull,
+    );
   });
 
-  for (final entry in allowedParameterKeys.entries) {
-    test('${entry.key} forwards only nonnegative integer schema values', () {
-      final allowed = {
-        for (final key in entry.value) key: 24,
-      };
-      final sanitized = AnalyticsEventPolicy.sanitize(
-        name: entry.key,
-        parameters: {...hostileParameters, ...allowed},
-      );
-      expect(sanitized?.parameters, allowed);
-      expect(
-        AnalyticsEventPolicy.sanitize(
-          name: entry.key,
-          parameters: {
-            for (final key in entry.value) key: -1,
-            ...hostileParameters,
-          },
-        )?.parameters,
-        isNull,
-      );
-    });
-  }
-
-  test('quiz completion keeps only its numeric totals', () {
+  test('hostile identifiers and free text never cross the policy', () {
     final event = AnalyticsEventPolicy.sanitize(
-      name: 'quiz_completed',
+      name: 'engagement_action',
       parameters: {
-        'total_answered': 24,
-        'total_skipped': 6,
-        'duration_ms': 83000,
-        'candidate_id': '13',
-        'affinity': 91.2,
-        'anonymous_id': '550e8400-e29b-41d4-a716-446655440000',
+        'action': 'outbound_open',
+        'surface': 'news',
+        'target': 'news_article',
+        'outcome': 'success',
+        ...hostileParameters,
       },
     );
-    expect(event?.parameters, {
-      'total_answered': 24,
-      'total_skipped': 6,
-      'duration_ms': 83000,
+
+    expect(event!.parameters, {
+      'action': 'outbound_open',
+      'surface': 'news',
+      'target': 'news_article',
+      'outcome': 'success',
     });
   });
 
-  test('answered duration rejects invalid numeric and political values', () {
-    for (final value in <Object>[-1, '2', 1.5, double.nan, double.infinity]) {
+  test('engagement action enforces action-specific fields', () {
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {
+          'action': 'quiz_entry',
+          'surface': 'home',
+          'source': 'home_cta',
+          'target': 'candidate_13',
+          'outcome': 'success',
+        },
+      )?.parameters,
+      {
+        'action': 'quiz_entry',
+        'surface': 'home',
+        'source': 'home_cta',
+      },
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {'action': 'quiz_entry', 'surface': 'home'},
+      ),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {
+          'action': 'evidence_open',
+          'surface': 'quiz',
+          'source': 'route',
+          'outcome': 'failed',
+        },
+      )?.parameters,
+      {'action': 'evidence_open', 'surface': 'quiz'},
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {
+          'action': 'outbound_open',
+          'surface': 'news',
+          'target': 'news_article',
+          'outcome': 'empty',
+        },
+      ),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {
+          'action': 'share',
+          'surface': 'results',
+          'target': 'instagram_help',
+        },
+      )?.parameters,
+      {
+        'action': 'share',
+        'surface': 'results',
+        'target': 'instagram_help',
+      },
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'engagement_action',
+        parameters: {
+          'action': 'share',
+          'surface': 'results',
+          'target': 'download',
+        },
+      ),
+      isNull,
+    );
+  });
+
+  test('operation failures require a generic failure type', () {
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'operation_result',
+        parameters: {
+          'operation': 'news_load',
+          'outcome': 'failed',
+          'trigger': 'initial',
+        },
+      ),
+      isNull,
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'operation_result',
+        parameters: {
+          'operation': 'news_load',
+          'outcome': 'failed',
+          'trigger': 'initial',
+          'failure_type': 'network',
+        },
+      )?.parameters,
+      {
+        'operation': 'news_load',
+        'outcome': 'failed',
+        'trigger': 'initial',
+        'failure_type': 'network',
+      },
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'operation_result',
+        parameters: {
+          'operation': 'news_load',
+          'outcome': 'success',
+          'trigger': 'initial',
+          'failure_type': 'network',
+        },
+      )?.parameters,
+      {
+        'operation': 'news_load',
+        'outcome': 'success',
+        'trigger': 'initial',
+      },
+    );
+  });
+
+  test('numeric fields accept exact upper boundaries', () {
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'quiz_completed',
+        parameters: {
+          'total_answered': 60,
+          'total_skipped': 60,
+          'duration_ms': 86400000,
+        },
+      )?.parameters,
+      {
+        'total_answered': 60,
+        'total_skipped': 60,
+        'duration_ms': 86400000,
+      },
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'party_selection_completed',
+        parameters: {'count_selected': 50},
+      )?.parameters,
+      {'count_selected': 50},
+    );
+    expect(
+      AnalyticsEventPolicy.sanitize(
+        name: 'operation_result',
+        parameters: {
+          'operation': 'community_feed_load',
+          'outcome': 'success',
+          'trigger': 'pagination',
+          'duration_ms': 0,
+          'item_count': 1000,
+        },
+      )?.parameters,
+      {
+        'operation': 'community_feed_load',
+        'outcome': 'success',
+        'trigger': 'pagination',
+        'duration_ms': 0,
+        'item_count': 1000,
+      },
+    );
+  });
+
+  test('numeric fields reject negative, overflow and noninteger values', () {
+    for (final value in <Object>[-1, 86400001, '2', 1.5]) {
       expect(
         AnalyticsEventPolicy.sanitize(
           name: 'thesis_answered',
+          parameters: {'time_to_answer_ms': value},
+        ),
+        isNull,
+      );
+    }
+    for (final value in <Object>[-1, 61]) {
+      expect(
+        AnalyticsEventPolicy.sanitize(
+          name: 'weighting_completed',
+          parameters: {'count_weighted': value},
+        ),
+        isNull,
+      );
+    }
+    for (final value in <Object>[-1, 51]) {
+      expect(
+        AnalyticsEventPolicy.sanitize(
+          name: 'party_selection_completed',
+          parameters: {'count_selected': value},
+        ),
+        isNull,
+      );
+    }
+    for (final value in <Object>[-1, 1001]) {
+      expect(
+        AnalyticsEventPolicy.sanitize(
+          name: 'operation_result',
           parameters: {
-            'time_to_answer_ms': value,
-            'stance': 'agree',
-            'thesis_id': 12,
+            'operation': 'news_load',
+            'outcome': 'success',
+            'trigger': 'initial',
+            'item_count': value,
           },
         )?.parameters,
-        isNull,
+        isNot(contains('item_count')),
       );
     }
   });
 
   test('sanitized event is detached from input and immutable', () {
-    final input = <String, Object>{'total_answered': 5};
+    final input = <String, Object>{
+      'total_answered': 5,
+      'total_skipped': 0,
+      'duration_ms': 20,
+    };
     final event = AnalyticsEventPolicy.sanitize(
       name: 'quiz_completed',
       parameters: input,
     )!;
     input['total_answered'] = 99;
     input['candidate_id'] = '13';
-    expect(event.parameters, {'total_answered': 5});
+    expect(event.parameters, {
+      'total_answered': 5,
+      'total_skipped': 0,
+      'duration_ms': 20,
+    });
     expect(
-        () => event.parameters!['candidate_id'] = '13', throwsUnsupportedError);
-    expect(() => event.parameters!.remove('total_answered'),
-        throwsUnsupportedError);
+      () => event.parameters!['candidate_id'] = '13',
+      throwsUnsupportedError,
+    );
+    expect(
+      () => event.parameters!.remove('total_answered'),
+      throwsUnsupportedError,
+    );
   });
 }

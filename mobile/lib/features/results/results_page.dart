@@ -101,16 +101,9 @@ class _ResultsPageState extends State<ResultsPage> {
         _results.where((result) => result.rankingEligible).toList();
     final outsideRanking =
         _results.where((result) => !result.rankingEligible).toList();
-    final leaders = _session.topAffinityResults;
-    final topResult = leaders.isEmpty ? null : leaders.first;
-    if (!_hasTrackedResultsViewed && topResult != null) {
+    if (!_hasTrackedResultsViewed && _session.topAffinityResults.isNotEmpty) {
       _hasTrackedResultsViewed = true;
-      _track(
-        _analytics.resultsViewed(
-          topCandidateId: topResult.candidateId,
-          topScorePercent: topResult.scorePercent,
-        ),
-      );
+      _track(_analytics.resultsViewed());
     }
 
     return SingleChildScrollView(

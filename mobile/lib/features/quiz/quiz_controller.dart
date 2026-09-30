@@ -71,12 +71,7 @@ class QuizController extends ChangeNotifier {
     if (thesis == null) return;
     _currentThesisViewedAt = now();
     if (_viewedThesisIds.add(thesis.id)) {
-      unawaited(
-        analytics.thesisViewed(
-          thesisId: thesis.id,
-          thesisIndex: _currentIndex + 1,
-        ),
-      );
+      unawaited(analytics.thesisViewed());
     }
   }
 
@@ -91,12 +86,10 @@ class QuizController extends ChangeNotifier {
       final viewedAt = _currentThesisViewedAt ?? now();
       final timeToAnswerMs = now().difference(viewedAt).inMilliseconds;
       await analytics.thesisAnswered(
-        thesisId: thesis.id,
-        stance: thesis.apiAnswer,
         timeToAnswerMs: timeToAnswerMs < 0 ? 0 : timeToAnswerMs,
       );
       if (answer == ThesisAnswer.skipped) {
-        await analytics.thesisSkipped(thesisId: thesis.id);
+        await analytics.thesisSkipped();
       }
 
       if (isLast) {
