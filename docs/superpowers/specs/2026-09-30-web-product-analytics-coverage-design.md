@@ -2,7 +2,7 @@
 
 **Data:** 2026-09-30
 
-**Status:** redigido para revisão
+**Status:** aprovado para planejamento e implementação
 
 **Projeto:** Farol Político
 
