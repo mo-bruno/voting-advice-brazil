@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/app.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
 import 'package:guia_eleitoral/core/shell/shell_drawer_scope.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_intro_page.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_page.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 /// Sink de analytics que nao chama o Firebase.
 class _SilentSink implements AnalyticsSink {
@@ -39,6 +42,27 @@ List<Widget Function(VoidCallback)> _stubs() => [
 
 void main() {
   setUp(() {});
+
+  testWidgets('MyApp attributes the initial quiz deep link', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await tester.pumpWidget(MyApp(
+      analytics: AnalyticsService(sink: sink),
+      initialUri: Uri.parse('https://fpolitico.com.br/?tab=quiz'),
+      pageBuilders: _stubs(),
+    ));
+    await tester.pump();
+
+    expect(find.text('tela-quiz'), findsOneWidget);
+    expect(lastNamed(sink.calls, 'screen_viewed').parameters, {
+      'screen': 'quiz_intro',
+      'source': 'deep_link',
+    });
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'quiz_entry',
+      'surface': 'home',
+      'source': 'deep_link',
+    });
+  });
 
   // O contrato do menu lateral mudou de lista de links para painel de estado e
   // vive inteiro em app_drawer_test.dart — inclusive a verificacao de que ele

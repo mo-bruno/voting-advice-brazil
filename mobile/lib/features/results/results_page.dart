@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_navigation.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/shell/main_shell.dart';
@@ -164,6 +165,7 @@ class _ResultsPageState extends State<ResultsPage> {
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute<void>(
+                      settings: const RouteSettings(name: resultShareRoute),
                       builder: (_) => ResultSharePage(
                         data: ResultShareData(results: shareableResults),
                       ),

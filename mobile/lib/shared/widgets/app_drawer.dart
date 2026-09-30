@@ -11,6 +11,8 @@
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_dimensions.dart';
+import '../../core/analytics/analytics_navigation.dart';
 import '../../core/branding/farol_mark.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/features/feature_flags.dart';
@@ -32,6 +34,7 @@ class AppDrawer extends StatefulWidget {
     this.deviceIdentityStore,
     this.iotEnabled,
     this.politicianFollowEnabled,
+    this.navigationIntent,
   });
 
   /// Injetavel em teste. Em producao a gaveta usa o mesmo armazenamento local
@@ -44,11 +47,16 @@ class AppDrawer extends StatefulWidget {
   /// Quando ausente, usa a flag de compilação da aplicação.
   final bool? politicianFollowEnabled;
 
+  final AnalyticsNavigationIntent? navigationIntent;
+
   @override
   State<AppDrawer> createState() => _AppDrawerState();
 }
 
 class _AppDrawerState extends State<AppDrawer> {
+  late final AnalyticsNavigationIntent _navigationIntent =
+      widget.navigationIntent ?? AnalyticsNavigationIntent();
+
   /// Uma unica assinatura para as tres sessions: qualquer uma que mude
   /// redesenha a gaveta. Montada aqui e nao no `build` para nao criar um
   /// Listenable novo a cada frame.
@@ -87,7 +95,11 @@ class _AppDrawerState extends State<AppDrawer> {
 
   /// Fecha a gaveta antes de navegar. Sem isso ela fica aberta por baixo da
   /// tela nova e reaparece quando a pessoa volta.
-  void _go(void Function(NavigatorState navigator) action) {
+  void _go(
+    void Function(NavigatorState navigator) action, {
+    bool tracked = false,
+  }) {
+    if (tracked) _navigationIntent.mark(AnalyticsSource.drawer);
     final navigator = Navigator.of(context);
     navigator.pop();
     action(navigator);
@@ -97,6 +109,7 @@ class _AppDrawerState extends State<AppDrawer> {
     _go(
       (navigator) =>
           navigator.pushNamedAndRemoveUntil('/', (_) => false, arguments: tab),
+      tracked: true,
     );
   }
 
@@ -160,8 +173,10 @@ class _AppDrawerState extends State<AppDrawer> {
                     const _Rule(),
                     QuizAffinityTile(
                       hasResults: results.isNotEmpty,
-                      onOpenResults: () =>
-                          _go((navigator) => navigator.pushNamed('/results')),
+                      onOpenResults: () => _go(
+                        (navigator) => navigator.pushNamed('/results'),
+                        tracked: true,
+                      ),
                       onStartQuiz: () => _openTab(MainShellTab.quiz),
                     ),
                     // Sem regua depois do ultimo bloco: com a gaveta mais alta
@@ -176,8 +191,10 @@ class _AppDrawerState extends State<AppDrawer> {
                   context,
                   politicianFollowEnabled: politicianFollowEnabled,
                 ),
-                onPrivacy: () =>
-                    _go((navigator) => navigator.pushNamed('/privacidade')),
+                onPrivacy: () => _go(
+                  (navigator) => navigator.pushNamed('/privacidade'),
+                  tracked: true,
+                ),
               ),
             ],
           );

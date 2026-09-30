@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_navigation.dart';
+import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
@@ -22,8 +24,9 @@ enum _SortMode {
 }
 
 class CommunityFeedPage extends StatefulWidget {
-  const CommunityFeedPage({super.key, this.apiClient});
+  const CommunityFeedPage({super.key, this.apiClient, this.analytics});
   final ApiClient? apiClient;
+  final AnalyticsService? analytics;
 
   @override
   State<CommunityFeedPage> createState() => _CommunityFeedPageState();
@@ -194,6 +197,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     await Navigator.push<void>(
         context,
         MaterialPageRoute(
+          settings: const RouteSettings(name: communityPostRoute),
           builder: (_) => PostDetailPage(postId: post.id, apiClient: _api),
         ));
     if (mounted) setState(() {});
@@ -203,6 +207,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     final created = await Navigator.push<PostSummary>(
         context,
         MaterialPageRoute(
+          settings: const RouteSettings(name: communityCreateRoute),
           builder: (_) =>
               CreatePostPage(apiClient: _api, initialThemeSlug: _themeSlug),
         ));

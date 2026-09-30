@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_navigation.dart';
 import 'package:guia_eleitoral/features/results/results_page.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_card.dart';
+import 'package:guia_eleitoral/features/results/sharing/result_share_page.dart';
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
 
@@ -75,6 +77,12 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('Meu resultado em uma imagem.'), findsOneWidget);
+    expect(
+      ModalRoute.of(tester.element(find.byType(ResultSharePage)))
+          ?.settings
+          .name,
+      resultShareRoute,
+    );
     expect(find.text('Candidata B'), findsOneWidget);
     expect(find.text('Candidata A'), findsNothing);
     await tester.tap(find.text('Ranking'));
