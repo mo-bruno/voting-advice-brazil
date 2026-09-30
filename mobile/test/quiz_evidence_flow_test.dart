@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
@@ -75,7 +74,6 @@ class _Api extends ApiClient {
 void main() {
   late AnalyticsService analytics;
   setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
     SharedPreferences.setMockInitialValues({});
     QuizSession.instance.resetQuiz();
     analytics = AnalyticsService(sink: _SilentSink());
@@ -190,7 +188,8 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
-  testWidgets('results show descending percentages and keep comparison details', (
+  testWidgets('results show descending percentages and keep comparison details',
+      (
     tester,
   ) async {
     QuizSession.instance.results = const [
@@ -252,7 +251,8 @@ void main() {
   });
 
   testWidgets(
-      'results sort selected candidates by score with unscored candidates last', (
+      'results sort selected candidates by score with unscored candidates last',
+      (
     tester,
   ) async {
     QuizSession.instance.results = const [
@@ -449,6 +449,8 @@ void main() {
         PartySelectionPage(session: session, analytics: analytics),
         routes: {'/quiz': (_) => const Scaffold(body: Text('Novo quiz'))},
       );
+      await tester.ensureVisible(find.text('VER RESULTADOS'));
+      await tester.pump();
       await tester.tap(find.text('VER RESULTADOS'));
       await tester.pumpAndSettle();
       expect(
@@ -570,8 +572,12 @@ void main() {
       expect(find.text('Nova candidata'), findsOneWidget);
       expect(session.results, isEmpty);
       expect(session.selectedCandidateIds, isEmpty);
+      await tester.ensureVisible(find.text('Nova candidata'));
+      await tester.pump();
       await tester.tap(find.text('Nova candidata'));
       await tester.pumpAndSettle();
+      await tester.ensureVisible(find.text('VER RESULTADOS'));
+      await tester.pump();
       await tester.tap(find.text('VER RESULTADOS'));
       await tester.pumpAndSettle();
       expect(find.text('Resultado atualizado'), findsOneWidget);

@@ -132,25 +132,52 @@ void main() {
       expect(session.candidates, isEmpty);
     });
 
-    test('submit sends the anonymous device id to the API client', () async {
+    test('submit with IoT disabled never reads or sends the device id',
+        () async {
       const deviceId = '550e8400-e29b-41d4-a716-446655440000';
       final api = _FakeApiClient();
       final deviceStore = _FakeDeviceIdentityStore(deviceId);
-      final session =
-          QuizSession.testOnly(api: api, deviceIdentityStore: deviceStore)
-            ..theses = [
-              Thesis(
-                id: 1,
-                title: 'Thesis 1',
-                category: 'Economia',
-                answer: ThesisAnswer.agree,
-              ),
-            ];
+      final session = QuizSession.testOnly(
+        api: api,
+        deviceIdentityStore: deviceStore,
+        iotEnabled: false,
+      )..theses = [
+          Thesis(
+            id: 1,
+            title: 'Thesis 1',
+            category: 'Economia',
+            answer: ThesisAnswer.agree,
+          ),
+        ];
 
       await session.submit();
 
-      expect(api.receivedDeviceId, deviceId);
+      expect(deviceStore.reads, 0);
+      expect(api.receivedDeviceId, isNull);
       expect(session.results, hasLength(1));
+    });
+
+    test('submit with IoT enabled preserves the device contract', () async {
+      const deviceId = '550e8400-e29b-41d4-a716-446655440000';
+      final api = _FakeApiClient();
+      final deviceStore = _FakeDeviceIdentityStore(deviceId);
+      final session = QuizSession.testOnly(
+        api: api,
+        deviceIdentityStore: deviceStore,
+        iotEnabled: true,
+      )..theses = [
+          Thesis(
+            id: 1,
+            title: 'Thesis 1',
+            category: 'Economia',
+            answer: ThesisAnswer.agree,
+          ),
+        ];
+
+      await session.submit();
+
+      expect(deviceStore.reads, 1);
+      expect(api.receivedDeviceId, deviceId);
     });
   });
 }
@@ -179,9 +206,13 @@ class _FakeApiClient extends ApiClient {
 
 class _FakeDeviceIdentityStore extends DeviceIdentityStore {
   final String deviceId;
+  int reads = 0;
 
   _FakeDeviceIdentityStore(this.deviceId);
 
   @override
-  Future<String> getOrCreateDeviceId() async => deviceId;
+  Future<String> getOrCreateDeviceId() async {
+    reads++;
+    return deviceId;
+  }
 }

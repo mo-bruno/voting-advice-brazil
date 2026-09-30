@@ -176,11 +176,8 @@ class _AppDrawerState extends State<AppDrawer> {
                   context,
                   politicianFollowEnabled: politicianFollowEnabled,
                 ),
-                onPrivacy: () => _showPrivacy(
-                  context,
-                  _shortId,
-                  politicianFollowEnabled: politicianFollowEnabled,
-                ),
+                onPrivacy: () =>
+                    _go((navigator) => navigator.pushNamed('/privacidade')),
               ),
             ],
           );
@@ -253,9 +250,7 @@ class _Rule extends StatelessWidget {
   }
 }
 
-/// Sobre e Privacidade sao dois paragrafos cada. Como dialogo eles nao
-/// precisam de rota, de tela e de botao de voltar — e a gaveta continua aberta
-/// atras, que e de onde a pessoa veio.
+/// O aviso "Sobre" continua em diálogo; privacidade tem uma rota própria.
 void _showAbout(
   BuildContext context, {
   required bool politicianFollowEnabled,
@@ -276,34 +271,6 @@ void _showAbout(
         'candidatos nas eleições de 2026. $followDescription\n\n'
         'As fontes incluem dados abertos do TSE e da Câmara. O projeto é '
         'acadêmico e não tem vínculo com nenhum partido ou candidato.',
-  );
-}
-
-void _showPrivacy(
-  BuildContext context,
-  String? shortId, {
-  required bool politicianFollowEnabled,
-}) {
-  final id = shortId == null
-      ? ''
-      : '\n\nO trecho do identificador exibido neste aparelho é $shortId.';
-  final identityUses = politicianFollowEnabled
-      ? 'salvar respostas do quiz, lembrar quem você segue e participar da '
-          'comunidade.'
-      : 'salvar respostas do quiz e participar da comunidade. A validação da '
-          'área Acompanhar usa outro identificador aleatório, exclusivo desse '
-          'registro de interesse.';
-  _showNote(
-    context,
-    title: 'Privacidade',
-    body: 'O app não solicita nome, e-mail ou telefone. Ele cria um '
-        'identificador aleatório no aparelho e o envia como credencial '
-        'privada para $identityUses Publicações e comentários exibem somente '
-        'um apelido público; o identificador completo não aparece para outras '
-        'pessoas. Eventos genéricos de uso são enviados ao Firebase Analytics '
-        'sem esse identificador, sem respostas políticas e sem o nome de '
-        'políticos ou partidos.\n\nNão há conta nem recuperação de acesso. Não compartilhe o '
-        'identificador completo.$id',
   );
 }
 

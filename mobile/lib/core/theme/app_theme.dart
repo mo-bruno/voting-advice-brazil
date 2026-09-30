@@ -6,7 +6,6 @@
 // separação entre estrutura, conteúdo e estilo ensinada em aula.
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static const Color background = Color(0xFF131313);
@@ -48,80 +47,78 @@ class AppTheme {
       onSurface: onSurface,
       onPrimary: background,
     ),
-    textTheme: GoogleFonts.interTextTheme(
-      const TextTheme(
-        displayLarge: TextStyle(
-          fontSize: 40,
-          fontWeight: FontWeight.w900,
-          color: primary,
-          height: 1.0,
-        ),
-        displayMedium: TextStyle(
-          fontSize: 32,
-          fontWeight: FontWeight.w900,
-          color: primary,
-          height: 1.1,
-        ),
-        headlineLarge: TextStyle(
-          fontSize: 24,
-          fontWeight: FontWeight.w800,
-          color: primary,
-        ),
-        headlineMedium: TextStyle(
-          fontSize: 20,
-          fontWeight: FontWeight.w700,
-          color: primary,
-        ),
-        headlineSmall: TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.w700,
-          color: primary,
-        ),
-        titleLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w600,
-          color: primary,
-        ),
-        titleMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w600,
-          color: primary,
-        ),
-        bodyLarge: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w400,
-          color: onSurface,
-        ),
-        bodyMedium: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w400,
-          color: onSurface,
-        ),
-        bodySmall: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w400,
-          color: onSurfaceVariant,
-        ),
-        labelLarge: TextStyle(
-          fontSize: 14,
-          fontWeight: FontWeight.w700,
-          color: primary,
-          letterSpacing: 1.2,
-        ),
-        labelMedium: TextStyle(
-          fontSize: 12,
-          fontWeight: FontWeight.w600,
-          color: onSurfaceVariant,
-          letterSpacing: 1.0,
-        ),
-        labelSmall: TextStyle(
-          fontSize: 10,
-          fontWeight: FontWeight.w500,
-          color: onSurfaceVariant,
-          letterSpacing: 0.8,
-        ),
+    textTheme: const TextTheme(
+      displayLarge: TextStyle(
+        fontSize: 40,
+        fontWeight: FontWeight.w900,
+        color: primary,
+        height: 1.0,
       ),
-    ),
+      displayMedium: TextStyle(
+        fontSize: 32,
+        fontWeight: FontWeight.w900,
+        color: primary,
+        height: 1.1,
+      ),
+      headlineLarge: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.w800,
+        color: primary,
+      ),
+      headlineMedium: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+        color: primary,
+      ),
+      headlineSmall: TextStyle(
+        fontSize: 18,
+        fontWeight: FontWeight.w700,
+        color: primary,
+      ),
+      titleLarge: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+        color: primary,
+      ),
+      titleMedium: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w600,
+        color: primary,
+      ),
+      bodyLarge: TextStyle(
+        fontSize: 16,
+        fontWeight: FontWeight.w400,
+        color: onSurface,
+      ),
+      bodyMedium: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: onSurface,
+      ),
+      bodySmall: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w400,
+        color: onSurfaceVariant,
+      ),
+      labelLarge: TextStyle(
+        fontSize: 14,
+        fontWeight: FontWeight.w700,
+        color: primary,
+        letterSpacing: 1.2,
+      ),
+      labelMedium: TextStyle(
+        fontSize: 12,
+        fontWeight: FontWeight.w600,
+        color: onSurfaceVariant,
+        letterSpacing: 1.0,
+      ),
+      labelSmall: TextStyle(
+        fontSize: 10,
+        fontWeight: FontWeight.w500,
+        color: onSurfaceVariant,
+        letterSpacing: 0.8,
+      ),
+    ).apply(fontFamily: 'Inter'),
     appBarTheme: const AppBarTheme(
       backgroundColor: background,
       foregroundColor: primary,

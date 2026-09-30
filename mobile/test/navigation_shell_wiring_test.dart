@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
 import 'package:guia_eleitoral/core/shell/shell_drawer_scope.dart';
@@ -39,9 +38,7 @@ List<Widget Function(VoidCallback)> _stubs() => [
     ];
 
 void main() {
-  setUp(() {
-    GoogleFonts.config.allowRuntimeFetching = false;
-  });
+  setUp(() {});
 
   // O contrato do menu lateral mudou de lista de links para painel de estado e
   // vive inteiro em app_drawer_test.dart — inclusive a verificacao de que ele

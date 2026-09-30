@@ -2,26 +2,38 @@ import 'package:flutter/material.dart';
 
 import '../core/api/api_client.dart';
 import '../core/device/device_identity_store.dart';
+import '../core/features/feature_flags.dart';
 import 'models/candidate_result.dart';
 import 'models/party.dart';
 import 'models/thesis.dart';
 
 class QuizSession extends ChangeNotifier {
-  QuizSession._({ApiClient? api, DeviceIdentityStore? deviceIdentityStore})
-    : api = api ?? ApiClient(),
-      deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
+  QuizSession._({
+    ApiClient? api,
+    DeviceIdentityStore? deviceIdentityStore,
+    bool? iotEnabled,
+  })  : iotEnabled = iotEnabled ?? FeatureFlags.environment.iotEnabled,
+        api = api ?? ApiClient(),
+        deviceIdentityStore = deviceIdentityStore ?? DeviceIdentityStore();
 
   @visibleForTesting
   factory QuizSession.testOnly({
     ApiClient? api,
     DeviceIdentityStore? deviceIdentityStore,
-  }) => QuizSession._(api: api, deviceIdentityStore: deviceIdentityStore);
+    bool? iotEnabled,
+  }) =>
+      QuizSession._(
+        api: api,
+        deviceIdentityStore: deviceIdentityStore,
+        iotEnabled: iotEnabled,
+      );
 
   static final QuizSession instance = QuizSession._();
   static const minimumAnswers = 5;
 
   final ApiClient api;
   final DeviceIdentityStore deviceIdentityStore;
+  final bool iotEnabled;
   List<Thesis> theses = [];
   List<Party> candidates = [];
   List<CandidateResult> results = [];
@@ -81,7 +93,8 @@ class QuizSession extends ChangeNotifier {
   }
 
   Future<void> submit() async {
-    final deviceId = await deviceIdentityStore.getOrCreateDeviceId();
+    final deviceId =
+        iotEnabled ? await deviceIdentityStore.getOrCreateDeviceId() : null;
     results = await api.submitQuiz(theses, deviceId: deviceId);
     notifyListeners();
   }
@@ -94,9 +107,8 @@ class QuizSession extends ChangeNotifier {
   }
 
   List<CandidateResult> get topAffinityResults {
-    final comparable = visibleResults
-        .where((result) => result.hasComparableEvidence)
-        .toList();
+    final comparable =
+        visibleResults.where((result) => result.hasComparableEvidence).toList();
     if (comparable.isEmpty) return [];
     final highestScore = comparable.fold<double>(
       0,
