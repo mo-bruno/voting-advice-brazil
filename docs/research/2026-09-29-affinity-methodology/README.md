@@ -3,6 +3,8 @@
 Data: 29/09/2026. Base de código: `origin/main`, commit `b61d768`.
 Branch isolada: `codex/affinity-methodology`.
 
+**Handoff atual:** a bateria final aprovada e o estado exato da continuação estão em [HANDOFF.md](HANDOFF.md). Esse documento substitui os cenários provisórios deste estudo como ponto de entrada para desenvolvimento.
+
 **Conclusão:** o percentual atual mede concordância nas posições conhecidas de cada candidatura. Ele não sustenta, sozinho, uma classificação de afinidade sobre todo o questionário. Diminuir o número de perguntas ou trocar Manhattan por outra distância não resolve a falta de evidência. A direção recomendada combina transparência da cobertura, limites ao ranking e revisão editorial das teses.
 
 Este é um estudo e uma recomendação de produto; não é uma metodologia nova já aprovada ou implantada. Código de produção, questionário, classificações dos planos e serviços publicados não foram alterados.

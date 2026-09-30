@@ -3,7 +3,7 @@
   "decision": "approved",
   "user_message": "aprovada chefe",
   "approved_at": "2026-09-30T00:27:36.258209+00:00",
-  "battery_approval": "../2026-09-29-full-thesis-battery/APPROVAL.json",
+  "battery_approval": "../2026-09-29-full-thesis-battery/APPROVAL_V2.json",
   "battery_wording_fingerprint": "bdcc8da8a36f9f3da08ca2e758bc2f3691a6c90760720ad37359ead62a4b340c",
   "questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
   "approved_question_versions": [

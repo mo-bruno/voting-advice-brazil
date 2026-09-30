@@ -1,25 +1,33 @@
 {
   "schema_version": 1,
   "valid": true,
+  "battery_version": 3,
   "item_count": 20,
   "anchor_count": 4,
   "approved_count": 20,
   "pending_count": 0,
-  "unique_family_count": 21,
+  "unique_family_count": 22,
   "category_counts": {
     "economia_desenvolvimento": 5,
     "estado_gestao": 2,
     "infraestrutura_territorio": 1,
     "meio_ambiente_clima": 1,
     "ciencia_tecnologia_inovacao": 1,
-    "bem_estar_social": 3,
+    "bem_estar_social": 2,
+    "cidadania_direitos": 3,
     "educacao_cultura_sociedade": 1,
-    "cidadania_direitos": 2,
     "seguranca_publica": 2,
     "soberania_relacoes_internacionais": 2
   },
-  "battery_sha256": "b3061d36325b491b32aa85ac09b53a313d66e59d9c9edbe83b3d4e8c57d13990",
+  "battery_sha256": "1b915b7e907383a0bdc0ed7b0814e6968688f9061909a581c21643c55521317f",
   "published_theses_used": false,
-  "candidate_validation_dispatched": true,
-  "candidate_answers_created": 0
+  "candidate_validation_dispatched": false,
+  "candidate_answers_created": 0,
+  "validated_unchanged_item_count": 16,
+  "items_requiring_reclassification": [
+    "FB-Q23",
+    "FB-Q24",
+    "FB-Q25",
+    "FB-Q19"
+  ]
 }

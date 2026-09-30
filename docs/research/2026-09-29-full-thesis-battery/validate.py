@@ -56,7 +56,7 @@ def main():
 
     approval = read(APPROVAL)
     assert battery["status"] == "approved"
-    assert battery["battery_version"] == 2
+    assert battery["battery_version"] in {2, 3}
     assert battery["item_count"] == len(items) == 20
     assert battery["approved_anchor_count"] == 4
     assert battery["approved_item_count"] == 20
@@ -98,7 +98,8 @@ def main():
             assert item["wording_sha256"] == source["wording_sha256"]
         else:
             assert item["status"] == "approved"
-            assert item["version"] == (2 if item["id"] in {"FB-Q07", "FB-Q08", "FB-Q17"} else 1)
+            expected_versions = {"FB-Q07": 2, "FB-Q08": 2, "FB-Q17": 2, "FB-Q19": 2}
+            assert item["version"] == expected_versions.get(item["id"], 1)
         assert item["full_battery_user_decision"]["decision"] == "approved"
         assert item["full_battery_user_decision"]["version"] == item["version"]
         assert item["full_battery_user_decision"]["wording_sha256"] == item["wording_sha256"]
@@ -107,6 +108,7 @@ def main():
     result = {
         "schema_version": 1,
         "valid": True,
+        "battery_version": battery["battery_version"],
         "item_count": len(items),
         "anchor_count": sum(item["anchor_approved"] for item in items),
         "approved_count": sum(item["status"] in {"approved", "approved_anchor"} for item in items),
@@ -117,6 +119,8 @@ def main():
         "published_theses_used": False,
         "candidate_validation_dispatched": battery["candidate_validation_dispatched"],
         "candidate_answers_created": 0,
+        "validated_unchanged_item_count": battery.get("validated_unchanged_item_count", 0),
+        "items_requiring_reclassification": battery.get("items_requiring_reclassification", []),
     }
     (ROOT / "validation.json").write_text(
         json.dumps(result, ensure_ascii=False, indent=2) + "\n"

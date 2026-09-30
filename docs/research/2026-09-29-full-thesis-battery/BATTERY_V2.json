@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "battery_id": "full-battery-human-review-v3",
-  "battery_version": 3,
+  "battery_id": "full-battery-human-review-v2",
+  "battery_version": 2,
   "status": "approved",
   "item_count": 20,
   "approved_anchor_count": 4,
@@ -13,7 +13,7 @@
     "Pular"
   ],
   "published_theses_used": false,
-  "candidate_validation_dispatched": false,
+  "candidate_validation_dispatched": true,
   "selection_note": "O conjunto foi derivado dos 636 registros e 118 famílias. O tamanho resulta da revisão editorial, sem cota rígida por categoria. Contagens do mapa são apenas pistas de busca, não respostas de candidatos.",
   "removed_after_human_review": [
     {
@@ -331,41 +331,54 @@
       }
     },
     {
-      "id": "FB-Q23",
-      "version": 1,
-      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
-      "explanation": "Concessões e parcerias público-privadas permitem que empresas participem do financiamento, da construção ou da operação de projetos. A afirmação não exige esse modelo em toda obra nem implica privatizar empresas públicas.",
-      "decision_object": "Uso federal de concessões e parcerias público-privadas na ampliação da infraestrutura de transportes.",
-      "category_id": "infraestrutura_territorio",
-      "family_ids": [
-        "T01",
-        "T04"
-      ],
-      "measurement_risks": [
-        "Concessão, parceria público-privada, autorização e privatização de empresa são instrumentos diferentes.",
-        "Apoio a capital privado em um projeto não prova adesão a esse modelo em toda a infraestrutura.",
-        "Estatização ou reversão de concessões só constitui oposição quando alcança a infraestrutura de transportes perguntada."
-      ],
-      "reach_hypothesis": "Sete planos documentam concessões ou parcerias na infraestrutura; planos que defendem estatização ou reversão podem fornecer oposição, sujeita a reclassificação.",
+      "id": "FB-Q08",
+      "source_draft_id": "CR-Q08",
       "display_number": 8,
+      "version": 2,
       "status": "approved",
       "anchor_approved": false,
+      "statement": "O governo federal deve repassar recursos para que os municípios ofereçam transporte coletivo urbano gratuito a todos os passageiros.",
+      "explanation": "A afirmação trata do financiamento federal da tarifa zero universal. A organização e a prestação do serviço permanecem locais; a pergunta não define a fonte dos recursos, os critérios de distribuição nem o operador.",
+      "decision_object": "Financiamento federal da gratuidade universal no transporte coletivo urbano municipal.",
+      "category_id": "infraestrutura_territorio",
+      "family_ids": [
+        "T05"
+      ],
+      "measurement_risks": [
+        "Gratuidade universal e passe livre para grupos específicos têm alcances diferentes.",
+        "Implantação gradual pode ser condição decisiva.",
+        "Financiamento do sistema deve ser explicado sem induzir uma resposta."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 5,
+        "family_candidate_ids": 5,
+        "band": "medium",
+        "basis": "T05 contrapõe gratuidade universal, gratuidade focalizada e financiamento sem tarifa zero.",
+        "label": "hipótese editorial"
+      },
+      "terms_to_explain": [
+        "gratuito para todos",
+        "transporte coletivo urbano"
+      ],
       "source_drafts": [
-        "EDITORIAL_ADJUDICATION.md"
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json",
+        "HUMAN_REVIEW_01.md"
       ],
       "revision_history": {
-        "previous_id": "FB-Q08",
-        "previous_version": 2,
-        "previous_wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
-        "reason": "A versão atual combina gratuidade universal e financiamento federal e teve cobertura de 1/13. A alternativa expressa uma decisão federal recorrente e potencialmente contrastante."
+        "previous_version": 1,
+        "previous_wording_sha256": "e3c81d6427738af6c3639abf761c6eac28e4a5b7902574dfe8a8815ea44742f9",
+        "reason": "Recorta o instrumento de competência federal: repasse de recursos para a tarifa zero municipal."
       },
-      "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
+      "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
       "full_battery_user_decision": {
         "decision": "approved",
-        "version": 1,
-        "wording_sha256": "0020d2e538693c597755b26707bd382e3d7fb00e9e74d284f57b3df3f770da45",
-        "user_message": "sim",
-        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+        "version": 2,
+        "wording_sha256": "85f6b291fa4d3648eb50be45aa447af2138cbe6b0046e9fe1e2c738faa8b04ab",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
       }
     },
     {
@@ -413,40 +426,49 @@
       }
     },
     {
-      "id": "FB-Q24",
-      "version": 1,
-      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
-      "explanation": "Capacidade nacional inclui pesquisa, infraestrutura e desenvolvimento de modelos de inteligência artificial no Brasil. A afirmação não define se a execução será pública, privada ou cooperativa nem exige excluir tecnologias estrangeiras.",
-      "decision_object": "Investimento federal no desenvolvimento de capacidade nacional de inteligência artificial.",
-      "category_id": "ciencia_tecnologia_inovacao",
-      "family_ids": [
-        "I05"
-      ],
-      "measurement_risks": [
-        "Capacidade nacional não significa propriedade estatal, uso obrigatório ou proibição de modelos estrangeiros.",
-        "Difusão de sistemas existentes sem desenvolvimento nacional não responde integralmente à tese.",
-        "Laboratório, infraestrutura computacional, pesquisa e modelos nacionais são instrumentos distintos que podem sustentar a mesma direção geral."
-      ],
-      "reach_hypothesis": "Cinco planos documentam alguma forma de capacidade nacional de inteligência artificial, sujeita a reclassificação no escopo exato.",
+      "id": "FB-Q11",
+      "source_draft_id": "CR-Q12",
       "display_number": 10,
+      "version": 1,
       "status": "approved",
       "anchor_approved": false,
-      "source_drafts": [
-        "EDITORIAL_ADJUDICATION.md"
+      "statement": "Sistemas de inteligência artificial classificados como de alto risco devem cumprir obrigações preventivas antes de serem usados.",
+      "explanation": "Alto risco se refere a usos capazes de afetar segurança, direitos ou acesso a serviços relevantes. As obrigações podem incluir avaliação de risco, registro e supervisão; a afirmação não exige autorização prévia para toda inteligência artificial.",
+      "decision_object": "Regulação preventiva de sistemas de IA de alto risco.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "family_ids": [
+        "I07"
       ],
-      "revision_history": {
-        "previous_id": "FB-Q11",
-        "previous_version": 1,
-        "previous_wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
-        "reason": "A regulação preventiva teve cobertura de 2/13 e nenhum apoio integral; cinco planos documentam capacidade nacional de IA por instrumentos distintos."
+      "measurement_risks": [
+        "Alto risco exige definição compreensível.",
+        "Transparência algorítmica não resolve sozinha o momento da intervenção.",
+        "A formulação não deve ser usada para atribuir posição sobre reconhecimento facial."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 4,
+        "family_candidate_ids": 4,
+        "band": "medium",
+        "basis": "I07 contém desenhos baseados em risco, dano comprovado, transparência e marco geral.",
+        "label": "hipótese editorial"
       },
-      "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
+      "terms_to_explain": [
+        "inteligência artificial de alto risco",
+        "regra preventiva",
+        "dano comprovado"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
       "full_battery_user_decision": {
         "decision": "approved",
         "version": 1,
-        "wording_sha256": "017575a4664b91d10074ca15c4eadaf88144af80530b7334dce23346f4d3f674",
-        "user_message": "sim",
-        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+        "wording_sha256": "fa56e977eb90360a8d06a6c4dc16fa9c69f53cb88ac2583b74e1dc4506e2db81",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
       }
     },
     {
@@ -495,40 +517,49 @@
       }
     },
     {
-      "id": "FB-Q25",
-      "version": 1,
-      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
-      "explanation": "A reserva separa parte das vagas de concursos federais para grupos raciais definidos pela política pública. A afirmação não fixa percentual, procedimento de verificação nem duração da medida.",
-      "decision_object": "Reserva de vagas por critério racial em concursos públicos federais.",
-      "category_id": "cidadania_direitos",
-      "family_ids": [
-        "C05"
-      ],
-      "measurement_risks": [
-        "Cotas em universidades, empresas privadas e eleições não respondem automaticamente a concursos públicos federais.",
-        "Cotas para pessoas com deficiência ou por identidade de gênero não substituem uma posição sobre critério racial.",
-        "Abolição geral das cotas pode constituir oposição quando seu alcance inclui o serviço público."
-      ],
-      "reach_hypothesis": "Quatro planos apresentam apoio potencial no serviço público e um plano rejeita cotas em geral; o contraste requer reclassificação uniforme.",
+      "id": "FB-Q13",
+      "source_draft_id": "CR-Q15",
       "display_number": 12,
+      "version": 1,
       "status": "approved",
       "anchor_approved": false,
-      "source_drafts": [
-        "EDITORIAL_ADJUDICATION.md"
+      "statement": "Quem recebe benefício de transferência de renda e consegue emprego formal deve poder manter parte do benefício por um período de transição.",
+      "explanation": "A afirmação permite reduzir o benefício gradualmente depois da entrada no emprego formal, em vez de encerrá-lo de uma vez. Ela não fixa o programa, o valor nem a duração.",
+      "decision_object": "Manutenção parcial e temporária de benefício de renda após emprego formal.",
+      "category_id": "bem_estar_social",
+      "family_ids": [
+        "B07"
       ],
-      "revision_history": {
-        "previous_id": "FB-Q13",
-        "previous_version": 1,
-        "previous_wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
-        "reason": "A versão atual reproduz em grande parte a Regra de Proteção vigente do Bolsa Família. A alternativa tem competência federal clara e contraste documental preliminar."
+      "measurement_risks": [
+        "Manutenção integral, manutenção parcial, retorno automático e substituição por trabalho público são decisões diferentes.",
+        "O benefício e a duração podem mudar a resposta.",
+        "Emprego formal não deve ser confundido com renda de programa específico."
+      ],
+      "reach_hypothesis": {
+        "family_position_keys": 12,
+        "family_candidate_ids": 10,
+        "band": "high",
+        "basis": "B07 reúne transição após emprego, condicionalidade laboral, substituição por trabalho público e regras de retorno ao benefício.",
+        "label": "hipótese editorial"
       },
-      "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
+      "terms_to_explain": [
+        "benefício de renda",
+        "período de transição",
+        "emprego formal"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
       "full_battery_user_decision": {
         "decision": "approved",
         "version": 1,
-        "wording_sha256": "031481ac2c804e67bef920398b1fb538c5093552dde25f7ded571187da0a8e2a",
-        "user_message": "sim",
-        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+        "wording_sha256": "3b3de7aaa6073be6554dc40d85c51cd7443648f59ab36ac855d5a14e59863cb9",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
       }
     },
     {
@@ -763,39 +794,48 @@
     },
     {
       "id": "FB-Q19",
-      "version": 2,
-      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
-      "explanation": "A afirmação admite comparar imagens captadas em espaços públicos com bases de identificação para ações de segurança. Ela não dispensa regras de finalidade, privacidade, auditoria, precisão, armazenamento ou supervisão.",
-      "decision_object": "Uso de reconhecimento facial em espaços públicos para finalidades de segurança.",
+      "source_draft_id": "CR-Q23",
+      "display_number": 18,
+      "version": 1,
+      "status": "approved",
+      "anchor_approved": false,
+      "statement": "O poder público deve poder usar reconhecimento facial em espaços públicos para localizar pessoas foragidas.",
+      "explanation": "A afirmação permite comparar imagens de câmeras com bases de pessoas procuradas pela Justiça. Ela não autoriza qualquer uso, finalidade ou armazenamento dos dados.",
+      "decision_object": "Uso de reconhecimento facial em espaços públicos para localizar foragidos.",
       "category_id": "seguranca_publica",
       "family_ids": [
         "S08"
       ],
       "measurement_risks": [
-        "Câmeras corporais, integração de bases e drones não equivalem a reconhecimento facial.",
-        "Uma proposta restrita a finalidade ou local específico pode exigir classificação condicional.",
-        "Ausência de salvaguardas no plano não autoriza afirmar que a candidatura as rejeita."
+        "Uso geral de reconhecimento facial não resolve a finalidade específica de localizar foragidos.",
+        "Salvaguardas, auditoria, retenção e revisão humana podem ser condições decisivas.",
+        "A pergunta não deve herdar resposta da regulação geral de IA em CR-Q12."
       ],
-      "reach_hypothesis": "Cinco planos documentam reconhecimento facial ou identificação por inteligência artificial na segurança, sujeita ao escopo exato.",
-      "display_number": 18,
-      "status": "approved",
-      "anchor_approved": false,
-      "source_drafts": [
-        "EDITORIAL_ADJUDICATION.md"
-      ],
-      "revision_history": {
-        "previous_id": "FB-Q19",
-        "previous_version": 1,
-        "previous_wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
-        "reason": "A finalidade restrita a pessoas foragidas teve cobertura de 2/13; cinco planos documentam algum uso de reconhecimento facial ou identificação por IA na segurança."
+      "reach_hypothesis": {
+        "family_position_keys": 11,
+        "family_candidate_ids": 8,
+        "band": "medium",
+        "basis": "S08 tem amplo material de vigilância e dados, mas câmera corporal, integração de bases e reconhecimento facial não são o mesmo instrumento.",
+        "label": "hipótese editorial"
       },
-      "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
+      "terms_to_explain": [
+        "reconhecimento facial",
+        "pessoa foragida",
+        "espaço público"
+      ],
+      "source_drafts": [
+        "coverage-review.json",
+        "whole-battery.json",
+        "semantic-review.json",
+        "red-team.json"
+      ],
+      "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
       "full_battery_user_decision": {
         "decision": "approved",
-        "version": 2,
-        "wording_sha256": "3fa56b5e5e4d41569d71a8bb33420a737c2bdb2fbe0d3bb5a37af965ccd10cce",
-        "user_message": "sim",
-        "recorded_at": "2026-09-30T02:26:05.632133+00:00"
+        "version": 1,
+        "wording_sha256": "49986449f8dc5b3b94ef08e529b9bf4da704f2a6d0ea1503c3695a22cae19b9f",
+        "user_message": "aprovada chefe",
+        "recorded_at": "2026-09-30T00:27:36.258209+00:00"
       }
     },
     {
@@ -890,46 +930,6 @@
   ],
   "approved_item_count": 20,
   "approval_record": "APPROVAL.json",
-  "approved_at": "2026-09-30T02:26:05.632133+00:00",
-  "candidate_validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json",
-  "candidate_validation_status": "partial_from_v2_four_items_require_reclassification",
-  "validated_unchanged_item_count": 16,
-  "items_requiring_reclassification": [
-    "FB-Q23",
-    "FB-Q24",
-    "FB-Q25",
-    "FB-Q19"
-  ],
-  "prior_battery": "BATTERY_V2.json",
-  "prior_approval": "APPROVAL_V2.json",
-  "replaced_after_plan_validation": [
-    {
-      "display_number": 8,
-      "previous_id": "FB-Q08",
-      "previous_version": 2,
-      "replacement_id": "FB-Q23",
-      "replacement_version": 1
-    },
-    {
-      "display_number": 10,
-      "previous_id": "FB-Q11",
-      "previous_version": 1,
-      "replacement_id": "FB-Q24",
-      "replacement_version": 1
-    },
-    {
-      "display_number": 12,
-      "previous_id": "FB-Q13",
-      "previous_version": 1,
-      "replacement_id": "FB-Q25",
-      "replacement_version": 1
-    },
-    {
-      "display_number": 18,
-      "previous_id": "FB-Q19",
-      "previous_version": 1,
-      "replacement_id": "FB-Q19",
-      "replacement_version": 2
-    }
-  ]
+  "approved_at": "2026-09-30T00:27:36.258209+00:00",
+  "candidate_validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json"
 }

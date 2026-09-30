@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "awaiting_human_decision",
+  "status": "approved_no_revalidation_requested",
   "source_questions_sha256": "24cbb540c74053b6f26835e27fc7c5cb5b2738c638d9777d27dfdaf1f288ac4f",
   "validated_plans": 13,
   "validated_answers": 260,
@@ -111,5 +111,11 @@
     ]
   },
   "production_changed": false,
-  "ranking_calculated": false
+  "ranking_calculated": false,
+  "human_decision": {
+    "decision": "approved",
+    "user_message": "sim",
+    "recorded_at": "2026-09-30T02:26:05.632133+00:00",
+    "battery_approval": "../2026-09-29-full-thesis-battery/APPROVAL.json"
+  }
 }

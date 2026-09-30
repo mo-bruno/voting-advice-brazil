@@ -6,7 +6,7 @@ A bateria de vinte teses foi aprovada pelo usuário. Cada um dos treze planos of
 
 ## Estado
 
-Os 13 pareceres foram concluídos e validados: 20 respostas por plano, 260 classificações documentais e 273 ocorrências de citações literais. A consolidação editorial propôs quatro mudanças e aguarda a decisão humana registrada em `EDITORIAL_ADJUDICATION.md`. Nenhuma tese aprovada foi alterada nesta etapa.
+Os 13 pareceres da bateria versão 2 foram concluídos e validados: 20 respostas por plano, 260 classificações documentais e 273 ocorrências de citações literais. A consolidação editorial propôs quatro mudanças, todas aprovadas pelo usuário e incorporadas à bateria versão 3. Por decisão do usuário, esta entrega termina sem uma nova rodada: 16 classificações por plano permanecem reutilizáveis e quatro itens precisam de reclassificação antes de alimentar o ranking.
 
 ## Fluxo
 

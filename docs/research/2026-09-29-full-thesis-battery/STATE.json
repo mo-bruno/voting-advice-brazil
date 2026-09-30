@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "phase": "full_battery_candidate_validation_in_progress",
+  "phase": "approved_revision_handoff",
   "model": "gpt-5.6-sol",
   "reasoning_effort": "xhigh",
   "target_range": [
@@ -20,18 +20,18 @@
   ],
   "battery": {
     "file": "BATTERY.json",
-    "version": 2,
+    "version": 3,
     "item_count": 20,
     "approved_anchor_count": 4,
     "pending_user_review_count": 0,
     "reserve_count": 6,
     "removed_after_human_review_count": 2,
     "revised_after_human_review_count": 3,
-    "sha256": "b3061d36325b491b32aa85ac09b53a313d66e59d9c9edbe83b3d4e8c57d13990",
+    "sha256": "1b915b7e907383a0bdc0ed7b0814e6968688f9061909a581c21643c55521317f",
     "approved_item_count": 20
   },
   "candidate_validation": {
-    "status": "in_progress",
+    "status": "partial_revalidation_not_requested",
     "pilot_reviews_completed": 6,
     "pilot_answers_completed": 24,
     "pilot_is_final_validation": false,
@@ -39,7 +39,11 @@
     "full_battery_questions": 20,
     "expected_reviews": 13,
     "expected_answers": 260,
-    "validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json"
+    "validation_record": "../2026-09-29-approved-full-battery-validation/STATE.json",
+    "previous_round_complete": true,
+    "validated_unchanged_questions": 16,
+    "questions_requiring_reclassification": 4,
+    "answers_requiring_reclassification": 52
   },
   "excluded_candidate_ids": [
     "280002553884"
@@ -81,6 +85,12 @@
     {
       "id": "human_review",
       "output": "HUMAN_REVIEW_01.md",
+      "status": "complete",
+      "approval_record": "APPROVAL.json"
+    },
+    {
+      "id": "human_adjudication_02",
+      "output": "APPROVAL.json",
       "status": "complete",
       "approval_record": "APPROVAL.json"
     }

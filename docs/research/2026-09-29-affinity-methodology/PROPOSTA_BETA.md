@@ -1,5 +1,7 @@
 # Proposta de ranking de afinidade para a edição beta
 
+> **Atualização para continuação:** a bateria final aprovada é a versão 3 registrada em [HANDOFF.md](HANDOFF.md). O piso de oito posições, metade da bateria e três temas descrito abaixo foi uma hipótese anterior. A hipótese mais recente, ainda pendente de teste após quatro reclassificações, é de cinco posições comparáveis em pelo menos quatro categorias. Não implementar nenhum dos cortes como regra definitiva sem recalcular a matriz final.
+
 Esta proposta continua o estudo de 29/09/2026. Registra a orientação aprovada pelo responsável pelo produto e os resultados de uma segunda investigação; não altera a edição publicada.
 
 **Atualização documental:** a [revisão posterior de todas as 30 perguntas contra os 13 planos](reformulation/README.md) encontrou oito mudanças de redação recomendadas, correções de categorias e um recorte provisório de 16 itens. As listas de 18–20 abaixo são hipóteses anteriores, não uma seleção fechada. A nova análise também mostra que a base mínima operacional, sozinha, não comprova distinção suficiente entre todos os pares do ranking.

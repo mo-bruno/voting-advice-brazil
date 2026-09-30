@@ -1,5 +1,7 @@
 # Adjudicação editorial após os treze planos
 
+**Decisão:** as quatro mudanças foram aprovadas pelo usuário com a mensagem “sim”. A bateria canônica resultante é a versão 3 em `../2026-09-29-full-thesis-battery/BATTERY.json`. O usuário dispensou uma nova rodada nesta entrega; as quatro redações ainda exigem reclassificação por plano antes de alimentar o ranking.
+
 ## Estado da rodada
 
 Os treze pareceres passaram pelo validador central. Foram verificadas 260 respostas e 273 ocorrências de citações literais. Pablo Marçal permaneceu fora do corpus. Esta adjudicação não altera a bateria aprovada: ela prepara a decisão humana que antecede uma eventual revalidação.
@@ -63,6 +65,6 @@ Na bateria ainda não alterada, sete candidaturas passam nesse piso: Ronaldo Cai
 
 Quem não alcançar o piso deve aparecer como **dados insuficientes para um ranking confiável neste beta**, com a quantidade de posições comparáveis. A interface não deve converter uma ou duas coincidências em percentual de afinidade.
 
-## Decisão humana necessária
+## Encaminhamento registrado
 
-As quatro propostas acima aguardam aprovação, edição ou rejeição. Se aprovadas, recebem versões novas, são congeladas com novo hash e voltam aos treze responsáveis. As dezesseis teses não alteradas preservam as classificações já validadas; somente os quatro itens modificados precisam de nova classificação por plano.
+As quatro propostas receberam aprovação humana e foram congeladas com novos hashes. As dezesseis teses não alteradas preservam as classificações já validadas. As quatro redações modificadas representam 52 classificações pendentes caso a continuação precise produzir o ranking final.
