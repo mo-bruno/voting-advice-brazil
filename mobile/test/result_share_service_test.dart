@@ -7,6 +7,25 @@ import 'package:guia_eleitoral/features/results/sharing/result_share_service.dar
 import 'package:share_plus/share_plus.dart';
 
 void main() {
+  test(
+      'imagem preparada mantém o PNG e invoca compartilhamento no próprio gesto',
+      () async {
+    var invoked = false;
+    final service = ResultShareService(share: (params) {
+      invoked = true;
+      expect(params.text, 'Legenda e link');
+      return Future.value(const ShareResult('', ShareResultStatus.dismissed));
+    });
+    final png = Uint8List.fromList([137, 80, 78, 71]);
+    final prepared = await service.prepareImage(png, ResultShareFormat.post);
+    expect(prepared.png, same(png));
+    expect(prepared.format, ResultShareFormat.post);
+    final result = service.sharePrepared(prepared, ResultShareNetwork.twitter,
+        const Rect.fromLTWH(0, 0, 100, 48),
+        text: 'Legenda e link');
+    expect(invoked, isTrue);
+    expect((await result).status, ShareResultStatus.dismissed);
+  });
   test('envia o PNG sozinho com nome, formato e origem do menu do iPad',
       () async {
     ShareParams? sent;

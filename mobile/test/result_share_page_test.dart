@@ -50,8 +50,8 @@ class _ShareDevice extends ResultShareService {
   Future<void> copyLink(ResultShareData data) async => copied = data.siteUrl;
 
   @override
-  Future<void> openNetwork(
-      ResultShareData data, ResultShareNetwork network) async {
+  Future<void> openNetwork(ResultShareData data, ResultShareNetwork network,
+      {ResultShareFormat format = ResultShareFormat.story}) async {
     networks.add(network);
     networkData = data;
   }
@@ -368,14 +368,17 @@ void main() {
     expect(find.byType(SnackBar), findsNothing);
   });
 
-  testWidgets('navegador sem compartilhamento recebe download da imagem',
+  testWidgets(
+      'recusa de compartilhamento oferece alternativas sem baixar sozinha',
       (tester) async {
     final device = _ShareDevice(failSharing: true);
     await pumpPage(tester, device);
     await tap(tester, 'Compartilhar imagem');
+    expect(device.downloads, 0);
+    expect(find.text('Outras formas de compartilhar'), findsOneWidget);
+    await tester.tap(find.text('Baixar imagem').last);
+    await tester.pumpAndSettle();
     expectPng(device.downloaded, 1080, 1920);
-    expect(find.text('Download iniciado. Anexe a imagem na rede social.'),
-        findsOneWidget);
   });
 
   testWidgets('WhatsApp envia o PNG e a legenda do ranking selecionado ao menu',
@@ -402,55 +405,54 @@ void main() {
     expect(sent!.sharePositionOrigin!.isEmpty, isFalse);
     expect(sent!.downloadFallbackEnabled, isFalse);
     expect(find.byType(SnackBar), findsNothing,
-        reason: 'cancelar o menu não anuncia publicação nem aciona alternativa');
+        reason:
+            'cancelar o menu não anuncia publicação nem aciona alternativa');
   });
 
-  testWidgets('WhatsApp sem suporte baixa a imagem e abre a mensagem correspondente',
+  testWidgets('WhatsApp recusado oferece abrir mensagem em um novo gesto',
       (tester) async {
     final device = _ShareDevice(failSharing: true);
     await pumpPage(tester, device, shareData: rankingData);
     await tap(tester, 'WhatsApp');
-    expectPng(device.downloaded, 1080, 1920);
+    expect(device.downloads, 0);
     expect(device.networks, isEmpty,
-        reason: 'abrir a mensagem exige um novo toque para evitar popup bloqueado');
+        reason:
+            'abrir a mensagem exige um novo toque para evitar popup bloqueado');
     expect(find.text('Abrir WhatsApp'), findsOneWidget);
 
-    await tap(tester, 'Ranking');
-    await waitForImage(tester);
     await tap(tester, 'Abrir WhatsApp');
     expect(device.networks, [ResultShareNetwork.whatsapp]);
     expect(device.networkData, same(rankingData),
-        reason: 'a mensagem deve corresponder ao PNG já baixado');
+        reason: 'a mensagem deve corresponder ao banner selecionado');
   });
 
-  testWidgets('WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
+  testWidgets(
+      'WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
       (tester) async {
     final device = _ShareDevice(failSharing: true, downloadSupported: false);
     await pumpPage(tester, device);
     await tap(tester, 'WhatsApp');
     expect(device.downloads, 0);
-    expect(find.textContaining('Não foi possível enviar imagem e texto juntos.'),
+    expect(find.textContaining('O compartilhamento não está disponível'),
         findsOneWidget);
     await tap(tester, 'Abrir WhatsApp');
     expect(device.networks, [ResultShareNetwork.whatsapp]);
   });
 
-  testWidgets('atalho do X e ajuda do Instagram preservam o link',
+  testWidgets('X e Instagram levam o banner direto ao compartilhamento',
       (tester) async {
     final device = _ShareDevice();
     await pumpPage(tester, device);
     await tap(tester, 'X / Twitter');
-    expect(device.networks, [ResultShareNetwork.twitter]);
+    expectPng(device.shared, 1080, 1920);
+    expect(device.networks, isEmpty);
     await tap(tester, 'Copiar link');
     expect(device.copied, 'https://exemplo.com.br');
     await tap(tester, 'Instagram');
-    expect(find.text('Leve para o Instagram'), findsOneWidget);
-    expect(find.textContaining('adesivo “Link”'), findsOneWidget);
-    await tester.tap(find.text('Copiar link').last);
-    await tester.pumpAndSettle();
+    expectPng(device.shared, 1080, 1920);
+    expect(device.sharedText, isNull);
     expect(find.text('Leve para o Instagram'), findsNothing);
-    expect(find.text('Link copiado. Cole na publicação ou no adesivo de link.'),
-        findsOneWidget);
+    expect(device.downloads, 0);
   });
 
   testWidgets('cabe em celular estreito com texto ampliado e nome longo',

@@ -36,19 +36,29 @@ CandidateResult _candidate(int id, double score,
       comparableCategories: comparableCategories,
       documentedTheses: countedTheses,
       documentedCategories: comparableCategories,
-      rankingStatus: rankingEligible
-          ? 'eligible'
-          : 'insufficient_documented_coverage',
+      rankingStatus:
+          rankingEligible ? 'eligible' : 'insufficient_documented_coverage',
       rankingEligible: rankingEligible,
     );
 
 void main() {
+  test('link do Instagram respeita Story e Post sem prometer anexo por URL',
+      () {
+    final data = ResultShareData(results: [_result]);
+    expect(data.networkUri(ResultShareNetwork.instagram).toString(),
+        'https://www.instagram.com/create/story');
+    expect(
+        data
+            .networkUri(ResultShareNetwork.instagram,
+                format: ResultShareFormat.post)
+            .toString(),
+        'https://www.instagram.com/');
+  });
   test('recusa lista vazia', () {
     expect(() => ResultShareData(results: []), throwsArgumentError);
   });
 
-  test('copia, respeita a colocação da API e organiza empates pelo nome',
-      () {
+  test('copia, respeita a colocação da API e organiza empates pelo nome', () {
     final input = [
       _candidate(1, 99, rank: 3),
       _candidate(2, 40, rank: 1, name: 'Beatriz'),
@@ -188,8 +198,7 @@ void main() {
     });
   });
 
-  test('ranking compartilha colocação, nomes, partidos e base comparável',
-      () {
+  test('ranking compartilha colocação, nomes, partidos e base comparável', () {
     final data = ResultShareData(
       results: List.generate(
           12, (index) => _candidate(index + 1, 99 - index.toDouble())),

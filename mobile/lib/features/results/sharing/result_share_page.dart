@@ -5,6 +5,7 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../../core/layout/app_scaffold.dart';
 import '../../../core/theme/app_theme.dart';
@@ -48,6 +49,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
   ResultShareVariant _rankingVariant = ResultShareVariant.topFive;
   ResultShareFormat _format = ResultShareFormat.story;
   Uint8List? _png;
+  PreparedResultShareImage? _prepared;
   bool _imageFailed = false;
   bool _fontsReady = false;
   bool _busy = false;
@@ -82,7 +84,13 @@ class _ResultSharePageState extends State<ResultSharePage> {
         final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
         if (bytes == null) throw StateError('Imagem indisponível');
         if (!mounted || generation != _generation) return;
-        setState(() => _png = bytes.buffer.asUint8List());
+        final png = bytes.buffer.asUint8List();
+        final prepared = await _service.prepareImage(png, _format);
+        if (!mounted || generation != _generation) return;
+        setState(() {
+          _png = png;
+          _prepared = prepared;
+        });
       } finally {
         image.dispose();
       }
@@ -115,6 +123,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
     setState(() {
       update();
       _png = null;
+      _prepared = null;
       _imageFailed = false;
     });
     _queueImage();
@@ -128,51 +137,27 @@ class _ResultSharePageState extends State<ResultSharePage> {
   }
 
   Future<void> _shareImage(BuildContext buttonContext,
-      {bool forWhatsApp = false}) async {
-    final bytes = _png;
-    if (bytes == null || _busy) return;
-    final sharedData = _data;
+      {ResultShareNetwork? network}) async {
+    final image = _prepared;
+    if (image == null || _busy) return;
     final box = buttonContext.findRenderObject()! as RenderBox;
     final origin = box.localToGlobal(Offset.zero) & box.size;
     setState(() => _busy = true);
+    var failed = false;
     try {
-      await _service.shareImage(bytes, _format, origin,
-          text: forWhatsApp
-              ? '${sharedData.caption}\n${sharedData.siteUrl}'
+      final result = await _service.sharePrepared(image, network, origin,
+          text: network == ResultShareNetwork.whatsapp ||
+                  network == ResultShareNetwork.twitter
+              ? '${_data.caption}\n${_data.siteUrl}'
               : null);
+      failed = result.status == ShareResultStatus.unavailable;
       // Fechar o menu ou escolher um app não confirma uma publicação.
     } catch (_) {
-      final action = forWhatsApp
-          ? SnackBarAction(
-              label: 'Abrir WhatsApp',
-              onPressed: () => unawaited(_openNetwork(
-                  ResultShareNetwork.whatsapp,
-                  data: sharedData)),
-            )
-          : null;
-      if (_service.canDownload) {
-        try {
-          await _service.downloadImage(bytes, _format);
-          _notify(
-              forWhatsApp
-                  ? 'Download iniciado. Abra o WhatsApp e anexe a imagem '
-                      'à mensagem.'
-                  : 'Download iniciado. Anexe a imagem na rede social.',
-              action: action);
-        } catch (_) {
-          _notify('Não foi possível baixar a imagem. Tente novamente.');
-        }
-      } else {
-        _notify(
-            forWhatsApp
-                ? 'Não foi possível enviar imagem e texto juntos. '
-                    'Use Compartilhar imagem e abra a mensagem no WhatsApp.'
-                : 'Não foi possível compartilhar a imagem. Tente novamente.',
-            action: action);
-      }
+      failed = true;
     } finally {
       if (mounted) setState(() => _busy = false);
     }
+    if (mounted && failed) _shareOptions(network: network, unavailable: true);
   }
 
   Future<void> _downloadImage() async {
@@ -198,17 +183,31 @@ class _ResultSharePageState extends State<ResultSharePage> {
     }
   }
 
-  Future<void> _openNetwork(ResultShareNetwork network,
-      {ResultShareData? data}) async {
+  Future<void> _openNetwork(ResultShareNetwork network) async {
     try {
-      await _service.openNetwork(data ?? _data, network);
+      await _service.openNetwork(_data, network, format: _format);
     } catch (_) {
       _notify('Não foi possível abrir a rede social. Use Compartilhar imagem '
           'ou Copiar link.');
     }
   }
 
-  void _instagramHelp() {
+  Future<void> _copyImage() async {
+    final image = _prepared;
+    if (image == null || _busy) return;
+    setState(() => _busy = true);
+    try {
+      await _service.copyImage(image);
+      _notify('Imagem copiada. Abra o app e cole na publicação ou conversa.');
+    } catch (_) {
+      _notify(
+          'Não foi possível copiar a imagem. Use Compartilhar imagem ou Baixar imagem.');
+    } finally {
+      if (mounted) setState(() => _busy = false);
+    }
+  }
+
+  void _shareOptions({ResultShareNetwork? network, bool unavailable = false}) {
     showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
@@ -221,21 +220,20 @@ class _ResultSharePageState extends State<ResultSharePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Leve para o Instagram',
+              Text('Outras formas de compartilhar',
                   style: Theme.of(context).textTheme.headlineMedium),
               const SizedBox(height: 16),
               Text(
-                _service.canDownload
-                    ? 'Compartilhe a imagem e escolha o Instagram, se ele '
-                        'aparecer no menu. Você também pode baixar a imagem '
-                        'e adicioná-la aos Stories ou ao feed.'
-                    : 'Compartilhe a imagem e escolha o Instagram no menu '
-                        'do celular. Se ele não aparecer, salve a imagem '
-                        'pelo menu e adicione aos Stories ou ao feed.',
+                unavailable
+                    ? 'O compartilhamento não está disponível desta forma. '
+                        'Tente a imagem padrão, copie ou salve para adicionar no app.'
+                    : 'Copie ou salve o banner e adicione no app. '
+                        'Você também pode enviar apenas o texto e o link.',
               ),
               const SizedBox(height: 12),
-              const Text('Nos Stories, use o adesivo “Link” e cole o endereço '
-                  'do site. O endereço dentro da imagem não é clicável.'),
+              if (network == null || network == ResultShareNetwork.instagram)
+                const Text('Nos Stories, use o adesivo “Link” com o endereço '
+                    'do site. A imagem copiada ou salva pode ser adicionada no editor.'),
               const SizedBox(height: 24),
               Builder(
                 builder: (buttonContext) => ElevatedButton.icon(
@@ -247,6 +245,14 @@ class _ResultSharePageState extends State<ResultSharePage> {
                   label: const Text('Compartilhar imagem'),
                 ),
               ),
+              if (_service.canCopyImage) ...[
+                const SizedBox(height: 8),
+                OutlinedButton.icon(
+                  onPressed: _copyImage,
+                  icon: const Icon(Icons.copy_rounded, size: 20),
+                  label: const Text('Copiar imagem'),
+                ),
+              ],
               if (_service.canDownload) ...[
                 const SizedBox(height: 8),
                 OutlinedButton.icon(
@@ -258,6 +264,23 @@ class _ResultSharePageState extends State<ResultSharePage> {
                   label: const Text('Baixar imagem'),
                 ),
               ],
+              for (final destination
+                  in network == null ? ResultShareNetwork.values : [network])
+                TextButton.icon(
+                  onPressed: () {
+                    unawaited(_openNetwork(destination));
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.open_in_new_rounded, size: 20),
+                  label: Text(switch (destination) {
+                    ResultShareNetwork.instagram =>
+                      _format == ResultShareFormat.story
+                          ? 'Abrir Instagram Stories'
+                          : 'Abrir Instagram',
+                    ResultShareNetwork.twitter => 'Abrir X com texto',
+                    ResultShareNetwork.whatsapp => 'Abrir WhatsApp',
+                  }),
+                ),
               const SizedBox(height: 8),
               TextButton.icon(
                 onPressed: () {
@@ -381,28 +404,39 @@ class _ResultSharePageState extends State<ResultSharePage> {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _NetworkButton(
-                      label: 'Instagram',
-                      detail: 'Imagem',
-                      icon: const Icon(Icons.camera_alt_outlined),
-                      onPressed: ready ? _instagramHelp : null,
-                    ),
-                    _NetworkButton(
-                      label: 'X / Twitter',
-                      detail: 'Texto e link',
-                      icon: const Text('X',
-                          style: TextStyle(
-                              fontSize: 24, fontWeight: FontWeight.w700)),
-                      onPressed: () => _openNetwork(ResultShareNetwork.twitter),
-                    ),
+                    Builder(
+                        builder: (buttonContext) => _NetworkButton(
+                              label: 'Instagram',
+                              detail: _format == ResultShareFormat.story
+                                  ? 'Story'
+                                  : 'Post',
+                              icon: const Icon(Icons.camera_alt_outlined),
+                              onPressed: ready
+                                  ? () => _shareImage(buttonContext,
+                                      network: ResultShareNetwork.instagram)
+                                  : null,
+                            )),
+                    Builder(
+                        builder: (buttonContext) => _NetworkButton(
+                              label: 'X / Twitter',
+                              detail: 'Imagem',
+                              icon: const Text('X',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.w700)),
+                              onPressed: ready
+                                  ? () => _shareImage(buttonContext,
+                                      network: ResultShareNetwork.twitter)
+                                  : null,
+                            )),
                     Builder(
                       builder: (buttonContext) => _NetworkButton(
                         label: 'WhatsApp',
-                        detail: 'Imagem e texto',
+                        detail: 'Imagem',
                         icon: const Icon(Icons.chat_bubble_outline_rounded),
                         onPressed: ready
                             ? () => _shareImage(buttonContext,
-                                forWhatsApp: true)
+                                network: ResultShareNetwork.whatsapp)
                             : null,
                       ),
                     ),
@@ -410,10 +444,13 @@ class _ResultSharePageState extends State<ResultSharePage> {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  'No menu, escolha o WhatsApp. Para enviar a imagem ao X, '
-                  'use Compartilhar imagem${_service.canDownload ? ' ou Baixar imagem' : ''}.',
+                  'Escolha o app no menu do celular para continuar com a imagem.',
                   textAlign: TextAlign.center,
                   style: textTheme.bodySmall,
+                ),
+                TextButton(
+                  onPressed: ready ? () => _shareOptions() : null,
+                  child: const Text('Mais opções'),
                 ),
                 const SizedBox(height: 24),
                 const Divider(color: AppTheme.outlineVariant),

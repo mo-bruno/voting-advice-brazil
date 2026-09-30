@@ -13,7 +13,7 @@ enum ResultShareFormat {
   String get fileName => 'meu-resultado-farol-$name.png';
 }
 
-enum ResultShareNetwork { twitter, whatsapp }
+enum ResultShareNetwork { instagram, twitter, whatsapp }
 
 enum ResultShareVariant {
   leader(1),
@@ -134,7 +134,11 @@ class ResultShareData {
         'que comparei. $basisLabel';
   }
 
-  Uri networkUri(ResultShareNetwork network) => switch (network) {
+  Uri networkUri(ResultShareNetwork network,
+          {ResultShareFormat format = ResultShareFormat.story}) =>
+      switch (network) {
+        ResultShareNetwork.instagram => Uri.https('www.instagram.com',
+            format == ResultShareFormat.story ? '/create/story' : '/'),
         ResultShareNetwork.twitter =>
           Uri.https('twitter.com', '/intent/tweet', {
             'text': _twitterCaption,
