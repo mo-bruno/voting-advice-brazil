@@ -126,6 +126,8 @@ Fontes primárias consultadas em 30/09/2026: [Web Share W3C](https://www.w3.org/
 
 Também investigados: [Telegram](https://core.telegram.org/widgets/share) compartilha URL/texto por link; `shareToStory` com mídia existe dentro de [Mini Apps](https://core.telegram.org/bots/webapps), não em um site comum no navegador. [TikTok Android](https://developers.tiktok.com/docs/en/share-kit-android-quickstart-v2) aceita imagens via integração nativa/Intent com URI local e permissão, diferentes de um link externo. Não foram adicionados botões dessas redes.
 
+Publicação por servidor também foi investigada: [X Upload Media](https://docs.x.com/x-api/media/upload-media) aceita arquivos mediante OAuth; [Instagram Content Publishing](https://developers.facebook.com/documentation/instagram-platform/content-publishing/) usa conta profissional, login e permissões de publicação. Essas integrações exigiriam conexão/autorização da conta e um fluxo de publicação diferente do compartilhamento atual, sem abrir um compositor móvel já preenchido por um simples link.
+
 O endereço público é `https://fpolitico.com.br`. O deploy exige as variáveis de repositório `PUBLIC_APP_URL`, `ANALYTICS_ENABLED`, `PRIVACY_CONTROLLER_NAME` e `PRIVACY_CONTACT_EMAIL`. O controlador deve ser uma identidade civil/jurídica real, não a marca nem um exemplo. Para um build local de desenvolvimento, sem valores de produção:
 
 ```bash

@@ -145,10 +145,15 @@ class _ResultSharePageState extends State<ResultSharePage> {
     setState(() => _busy = true);
     var failed = false;
     try {
+      final caption = network == ResultShareNetwork.twitter
+          ? _data
+              .networkUri(ResultShareNetwork.twitter)
+              .queryParameters['text']!
+          : _data.caption;
       final result = await _service.sharePrepared(image, network, origin,
           text: network == ResultShareNetwork.whatsapp ||
                   network == ResultShareNetwork.twitter
-              ? '${_data.caption}\n${_data.siteUrl}'
+              ? '$caption\n${_data.siteUrl}'
               : null);
       failed = result.status == ShareResultStatus.unavailable;
       // Fechar o menu ou escolher um app não confirma uma publicação.

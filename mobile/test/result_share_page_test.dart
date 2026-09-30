@@ -319,6 +319,11 @@ void main() {
     await tap(tester, 'WhatsApp');
     expect(device.sharedText, contains('10º. Pessoa 10'));
     expect(device.sharedText, isNot(contains('Pessoa 11')));
+    await tap(tester, 'X / Twitter');
+    expect(device.sharedText, contains('Meus 10 maiores alinhamentos'));
+    expect(device.sharedText, isNot(contains('10º. Pessoa 10')),
+        reason:
+            'o X recebe um resumo para não levar a legenda longa do ranking');
 
     await tap(tester, 'Maior alinhamento');
     await waitForImage(tester);
