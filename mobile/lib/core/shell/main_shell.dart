@@ -55,10 +55,21 @@ class MainShell extends StatefulWidget {
   @visibleForTesting
   final List<Widget Function(VoidCallback onStartQuiz)>? pageBuilders;
 
-  /// Lê a aba de abertura dos `arguments` da rota. Argumento ausente ou de
-  /// outro tipo cai em `inicio`, sem erro.
-  static MainShellTab tabFromArguments(Object? arguments) =>
-      arguments is MainShellTab ? arguments : MainShellTab.inicio;
+  /// Aceita a aba passada pela navegação interna ou a URI do link público.
+  /// Apenas `?tab=quiz` abre a introdução; outros valores mantêm o início.
+  static MainShellTab tabFromArguments(Object? arguments) {
+    if (arguments is MainShellTab) return arguments;
+    if (arguments is Uri) {
+      try {
+        if (arguments.queryParameters['tab'] == 'quiz') {
+          return MainShellTab.quiz;
+        }
+      } on FormatException {
+        // Uma query inválida não deve impedir a abertura do aplicativo.
+      }
+    }
+    return MainShellTab.inicio;
+  }
 
   /// A ligação entre aba e tela. Separada do `build` para poder ser verificada
   /// sem montar nada.

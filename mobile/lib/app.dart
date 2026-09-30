@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'core/features/feature_flags.dart';
 import 'core/layout/responsive_layout.dart';
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Farol Político',
+      title:
+          kIsWeb ? 'Farol Político | Quiz presidencial 2026' : 'Farol Político',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.dark,
       // O `builder` intercepta a construção de TODAS as telas e aplica uma
@@ -70,7 +72,8 @@ class MyApp extends StatelessWidget {
               iotEnabled: featureFlags.iotEnabled,
               politicianFollowEnabled: featureFlags.politicianFollowEnabled,
               initialTab: MainShell.tabFromArguments(
-                ModalRoute.of(context)?.settings.arguments,
+                ModalRoute.of(context)?.settings.arguments ??
+                    (kIsWeb ? Uri.base : null),
               ),
             ),
         '/quiz': (context) => QuizPage(iotEnabled: featureFlags.iotEnabled),

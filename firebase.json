@@ -9,8 +9,30 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "/@(quiz|weighting|party-selection|results|comparison|political-actors|political-actor-profile|comunidade|iot-device|iot-pairing)",
         "destination": "/index.html"
+      }
+    ],
+    "headers": [
+      {
+        "source": "/robots.txt",
+        "headers": [
+          { "key": "Content-Type", "value": "text/plain; charset=utf-8" },
+          { "key": "Cache-Control", "value": "public, max-age=300" }
+        ]
+      },
+      {
+        "source": "/sitemap.xml",
+        "headers": [
+          { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
+          { "key": "Cache-Control", "value": "public, max-age=300" }
+        ]
+      },
+      {
+        "source": "/eleicoes-2026/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "public, max-age=300" }
+        ]
       }
     ]
   }
