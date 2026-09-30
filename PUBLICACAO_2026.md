@@ -31,7 +31,7 @@ Na inspeção anterior à entrega, a produção estava na revisão `farol-politi
 
 ## Privacidade
 
-Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. O serviço conserva a persistência funcional já existente das respostas, separada dessas métricas.
+Não enviar respostas, teses identificáveis, seleção de partidos/candidatos ou afinidade individual aos serviços de métricas. Gravação de sessões desativada. Eventos genéricos, duração e contagens permanecem; isso não constitui anonimização completa. Com IoT desligado, o backend usa as respostas do quiz apenas para calcular o ranking e não as persiste, mesmo se um cliente antigo enviar `device_id`. A persistência histórica permanece disponível somente com IoT habilitado. O UUID funcional da comunidade e do acompanhamento continua separado do UUID exclusivo da validação de interesse.
 
 ## Verificação da entrega
 

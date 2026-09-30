@@ -8,7 +8,7 @@ The active quiz compares weighted answers against the 2026 presidential plans us
 
 The main results screen displays each candidate's photo, name, party and percentage, ordered from highest to lowest percentage. Candidates without comparable answers display `—` and appear last. Cards omit coverage counts and lengthy explanations; evidence coverage, missing positions, sources and excerpts remain available in the answer comparison screen. The results do not recommend a vote. The public political-following entry points currently show an anonymous demand-validation page. Search, profiles, evidence and one-actor follow code are retained behind `POLITICIAN_FOLLOW_ENABLED=false`; existing data is preserved. The app also provides an anonymous community and official weekly news. Legislative evidence does not feed the quiz score.
 
-Quiz answers submitted by the app are persisted on the backend under its local UUID v4. The API's optional quiz field is still named `device_id`; it carries the app's `anonymous_id`. Omitting it computes results without saving answers.
+The API's optional quiz field is still named `device_id` and may carry the app's local UUID v4. With `IOT_FEATURE_ENABLED=false`, the backend calculates results without persisting answers or creating or updating `devices`, even if a legacy client supplies `device_id`. With IoT enabled, a supplied ID retains the historical persistence and push behavior. The UUID remains in use for community and follow actions.
 
 ## Architecture and integrations
 

@@ -99,7 +99,7 @@ O Flutter gera um UUID v4 local chamado `anonymous_id`. Esse UUID é uma credenc
 
 Leituras da comunidade aceitam o mesmo header opcional para calcular `is_mine`. Respostas públicas de posts/comentários contêm `author_alias` (`u/` mais dez caracteres do SHA-256 do UUID) e `is_mine`, e não retornam o UUID do autor. O alias público não serve como credencial. Headers obrigatórios ausentes ou UUIDs inválidos retornam 422. O Flutter exige os campos do contrato atual e não usa um UUID público legado como fallback.
 
-`POST /quiz/submit` mantém o campo opcional `device_id` por compatibilidade de contrato. Quando o app o envia, seu valor é o mesmo UUID v4 local: as respostas são gravadas por UUID e tese. Sem `device_id`, a API calcula o ranking sem gravar respostas. A API não exige esse identificador para calcular o resultado.
+`POST /quiz/submit` mantém o campo opcional `device_id` por compatibilidade com clientes antigos. Com `IOT_FEATURE_ENABLED=false`, a API usa as respostas enviadas somente para calcular o ranking e não cria nem atualiza `devices` ou `quiz_responses`, mesmo quando um cliente antigo envia `device_id`. Com a flag verdadeira, a persistência e o efeito histórico de IoT permanecem habilitados juntos. A API não exige esse identificador para calcular o resultado.
 
 ## Endpoints ativos
 
@@ -108,7 +108,7 @@ Todos os caminhos da tabela usam `/api/v1`.
 | Método | Caminho | Comportamento |
 |---|---|---|
 | GET | `/quiz/questions` | Teses, com filtros de temas e limite |
-| POST | `/quiz/submit` | Comparação documental presidencial de 2026, cobertura por candidatura e persistência quando há `device_id` |
+| POST | `/quiz/submit` | Comparação documental presidencial de 2026, cobertura por candidatura e persistência somente com IoT habilitado e `device_id` |
 | GET | `/candidates` | Candidatos com filtros e paginação |
 | GET | `/candidates/{candidate_id}` | Perfil de candidato |
 | GET | `/candidates/{candidate_id}/positions` | Posições nas teses |
