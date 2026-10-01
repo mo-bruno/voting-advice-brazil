@@ -129,42 +129,6 @@ class _ResultsPageState extends State<ResultsPage> {
               ],
             ),
             const SizedBox(height: 32),
-            if (shareableResults.isEmpty) ...[
-              Text(
-                'Não houve base suficiente para formar um ranking com as candidaturas selecionadas.',
-                style: textTheme.titleLarge,
-              ),
-              const SizedBox(height: 16),
-            ],
-            if (shareableResults.isNotEmpty) ...[
-              Text('MEU RANKING DE AFINIDADE · BETA',
-                  style: textTheme.labelMedium),
-              const SizedBox(height: 16),
-              ...shareableResults.map((result) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: _CandidateResultRow(result: result),
-                );
-              }),
-            ],
-            if (outsideRanking.isNotEmpty) ...[
-              const SizedBox(height: 16),
-              Text('FORA DO RANKING DESTA EDIÇÃO BETA',
-                  style: textTheme.labelMedium),
-              const SizedBox(height: 8),
-              Text(
-                'Os planos continuam disponíveis para consulta. A ausência no ranking indica apenas que esta edição não encontrou base comparável suficiente.',
-                style: textTheme.bodySmall,
-              ),
-              const SizedBox(height: 16),
-              ...outsideRanking.map((result) {
-                return Padding(
-                  padding: const EdgeInsets.only(bottom: 16),
-                  child: _CandidateResultRow(result: result),
-                );
-              }),
-            ],
-            const SizedBox(height: 16),
             if (shareableResults.isNotEmpty) ...[
               SizedBox(
                 width: double.infinity,
@@ -183,8 +147,48 @@ class _ResultsPageState extends State<ResultsPage> {
                   label: const Text('Compartilhar resultado'),
                 ),
               ),
+              const SizedBox(height: 32),
+            ],
+            if (shareableResults.isEmpty) ...[
+              Text(
+                'Não houve base suficiente para formar um ranking com as candidaturas selecionadas.',
+                style: textTheme.titleLarge,
+              ),
               const SizedBox(height: 16),
             ],
+            if (shareableResults.isNotEmpty) ...[
+              Text(
+                'MEU RANKING DE AFINIDADE · BETA',
+                style: textTheme.labelMedium,
+              ),
+              const SizedBox(height: 16),
+              ...shareableResults.map((result) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: _CandidateResultRow(result: result),
+                );
+              }),
+            ],
+            if (outsideRanking.isNotEmpty) ...[
+              const SizedBox(height: 16),
+              Text(
+                'FORA DO RANKING DESTA EDIÇÃO BETA',
+                style: textTheme.labelMedium,
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'Os planos continuam disponíveis para consulta. A ausência no ranking indica apenas que esta edição não encontrou base comparável suficiente.',
+                style: textTheme.bodySmall,
+              ),
+              const SizedBox(height: 16),
+              ...outsideRanking.map((result) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 16),
+                  child: _CandidateResultRow(result: result),
+                );
+              }),
+            ],
+            const SizedBox(height: 16),
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
