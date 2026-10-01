@@ -24,6 +24,7 @@ plano e de uma confirmação destrutiva próprios.
 | Conta GA4 | `353673747` |
 | Propriedade GA4 | `535804267` |
 | Stream Web | `properties/535804267/dataStreams/14797759925` |
+| Stream Android dormente | `properties/535804267/dataStreams/14797877644` |
 | Measurement ID | `G-0P9XLRYVWT` |
 | Dataset existente | `farol-politico-495210:analytics_535804267` |
 | Localização do dataset | `southamerica-east1` |
@@ -165,9 +166,11 @@ consomem slots adicionais de definição neste corte.
 
 ### A.1 Pré-requisito para repetir o readback
 
-Este bloco é idempotente para a API, mas substitui a ADC local. Executá-lo
+Este bloco não altera APIs do projeto, mas substitui a ADC local. Executá-lo
 somente quando a conta operadora aprovada precisar repetir o inventário ou uma
-correção. Não é necessário repeti-lo para aceitar o estado já relido acima.
+correção. A Analytics Admin API deve estar previamente habilitada; se a
+verificação somente leitura falhar, interromper o procedimento. Não é necessário
+repeti-lo para aceitar o estado já relido acima.
 
 ```bash
 set -euo pipefail
@@ -175,11 +178,10 @@ set -euo pipefail
 export FP_GCP_PROJECT='farol-politico-495210'
 export FP_GA_PROPERTY='535804267'
 export FP_GA_WEB_STREAM='14797759925'
+export FP_GA_ANDROID_STREAM='14797877644'
 export FP_GA_MEASUREMENT_ID='G-0P9XLRYVWT'
 export FP_BQ_DATASET='farol-politico-495210:analytics_535804267'
 
-gcloud services enable analyticsadmin.googleapis.com \
-  --project="$FP_GCP_PROJECT"
 gcloud auth application-default login \
   --scopes='openid,https://www.googleapis.com/auth/userinfo.email,https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/analytics.edit'
 gcloud auth application-default set-quota-project "$FP_GCP_PROJECT"
@@ -272,12 +274,31 @@ jq -e --arg property_name "properties/${FP_GA_PROPERTY}" '
   .name == $property_name and .parent == "accounts/353673747"
 ' "$FP_CONFIG_DIR/property.json" > /dev/null
 
-jq -e --arg web_name "properties/${FP_GA_PROPERTY}/dataStreams/${FP_GA_WEB_STREAM}" \
+jq -e \
+  --arg web_name "properties/${FP_GA_PROPERTY}/dataStreams/${FP_GA_WEB_STREAM}" \
+  --arg android_name "properties/${FP_GA_PROPERTY}/dataStreams/${FP_GA_ANDROID_STREAM}" \
   --arg measurement_id "$FP_GA_MEASUREMENT_ID" '
-    ([.dataStreams[] |
-      select(.type == "WEB_DATA_STREAM")]) as $web |
+    ([
+      [
+        $web_name,
+        "WEB_DATA_STREAM"
+      ],
+      [
+        $android_name,
+        "ANDROID_APP_DATA_STREAM"
+      ]
+    ] | sort) as $expected_streams |
+    ([
+      (.dataStreams // [])[] |
+      [.name, .type]
+    ] | sort) as $actual_streams |
+    ([
+      (.dataStreams // [])[] |
+      select(.name == $web_name and .type == "WEB_DATA_STREAM")
+    ]) as $web |
+    ((.nextPageToken // "") | length) == 0 and
+    $actual_streams == $expected_streams and
     ($web | length) == 1 and
-    $web[0].name == $web_name and
     $web[0].webStreamData.measurementId == $measurement_id and
     $web[0].webStreamData.defaultUri == "https://fpolitico.com.br"
   ' "$FP_CONFIG_DIR/streams.json" > /dev/null
@@ -286,8 +307,12 @@ test "$(jq '(.bigqueryLinks // []) | length' \
   "$FP_CONFIG_DIR/bigquery-links.json")" -eq 1
 ```
 
-O inventário deve mostrar o Android registrado, mas nenhum comando desta fase
-o altera ou o remove. Se houver outro stream Web, outro link ou outro destino,
+O inventário deve conter exatamente os dois resource names acima: o Web e o
+Android dormente, com seus tipos correspondentes. Qualquer ausência, stream
+substituto, stream extra (inclusive iOS) ou tipo divergente interrompe o bloco
+antes da fase mutável. Um `nextPageToken` também interrompe o procedimento,
+pois um inventário parcial não comprova esse conjunto exato. Nenhum comando
+desta fase altera ou remove o Android. Se houver outro link ou outro destino,
 parar.
 
 ### A.4 Inventário BigQuery — somente leitura
