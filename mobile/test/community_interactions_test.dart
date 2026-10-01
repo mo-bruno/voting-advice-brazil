@@ -3,15 +3,19 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/community/community_feed_page.dart';
 import 'package:guia_eleitoral/features/community/community_session.dart';
+import 'package:guia_eleitoral/features/community/create_post_page.dart';
 import 'package:guia_eleitoral/features/community/post_detail_page.dart';
 import 'package:guia_eleitoral/features/community/widgets/post_card.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 Map<String, dynamic> post(String id,
         {int score = 3, int vote = 0, int count = 0, String? theme}) =>
@@ -58,6 +62,14 @@ ApiClient api(FutureOr<http.Response> Function(http.Request) handler,
       communityWriteTimeout: timeout,
       client: MockClient((r) async => handler(r)),
     );
+
+List<RecordedAnalyticsCall> operations(
+  RecordingAnalyticsSink sink,
+  String operation,
+) =>
+    named(sink.calls, 'operation_result')
+        .where((call) => call.parameters?['operation'] == operation)
+        .toList();
 
 Future<void> mount(WidgetTester tester, Widget page,
     {Size size = const Size(390, 844),
@@ -239,10 +251,12 @@ void main() {
 
   testWidgets('comentario rejeitado mostra motivo e preserva o rascunho',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
     await mount(
         tester,
         PostDetailPage(
             postId: 'p1',
+            analytics: AnalyticsService(sink: sink),
             apiClient: api((r) => r.method == 'GET'
                 ? response({'post': post('p1'), 'comments': []})
                 : response({'detail': 'Revise o ataque pessoal no comentário.'},
@@ -257,16 +271,30 @@ void main() {
     expect(find.text('Revise o ataque pessoal no comentário.'), findsOneWidget);
     expect(tester.widget<TextField>(find.byType(TextField)).controller!.text,
         'Texto do comentário');
+    final operation = operations(sink, 'community_comment_create').single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_comment_create'),
+        containsPair('outcome', 'failed'),
+        containsPair('trigger', 'submit'),
+        containsPair('failure_type', 'moderation_rejected'),
+      ),
+    );
+    expect(operation.parameters.toString(), isNot(contains('Texto')));
+    expect(operation.parameters.toString(), isNot(contains('ataque pessoal')));
   });
 
   testWidgets('respostas simultaneas de voto e comentario preservam ambos',
       (tester) async {
     final vote = Completer<http.Response>();
     final send = Completer<http.Response>();
+    final sink = RecordingAnalyticsSink();
     await mount(
         tester,
         PostDetailPage(
             postId: 'p1',
+            analytics: AnalyticsService(sink: sink),
             apiClient: api((r) {
               if (r.method == 'GET') {
                 return response({'post': post('p1'), 'comments': []});
@@ -291,6 +319,21 @@ void main() {
     expect(find.text('4'), findsOneWidget);
     expect(
         find.text('Precisamos acompanhar os gastos públicos.'), findsOneWidget);
+    expect(operations(sink, 'community_vote'), hasLength(1));
+    final commentOperation =
+        operations(sink, 'community_comment_create').single;
+    expect(
+      commentOperation.parameters,
+      allOf(
+        containsPair('operation', 'community_comment_create'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
+    expect(
+      commentOperation.parameters!.keys,
+      unorderedEquals(['operation', 'outcome', 'trigger', 'duration_ms']),
+    );
   });
 
   testWidgets('autor pode apagar comentario mantendo a lapide', (tester) async {
@@ -406,10 +449,12 @@ void main() {
       'comentario de outra pessoa permite denuncia e nao permite apagar',
       (tester) async {
     final reports = <http.Request>[];
+    final sink = RecordingAnalyticsSink();
     await mount(
         tester,
         PostDetailPage(
             postId: 'p1',
+            analytics: AnalyticsService(sink: sink),
             apiClient: api((r) {
               if (r.method == 'POST') {
                 reports.add(r);
@@ -432,6 +477,19 @@ void main() {
     expect(jsonDecode(reports.single.body)['reason'], 'discurso_de_odio');
     expect(reports.single.headers['x-farol-anonymous-id'], isNotEmpty);
     expect(find.text('Denúncia registrada. Obrigado.'), findsOneWidget);
+    final operation = operations(sink, 'community_report').single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_report'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
+    expect(
+      operation.parameters!.keys,
+      unorderedEquals(['operation', 'outcome', 'trigger', 'duration_ms']),
+    );
   });
 
   testWidgets('post removido preserva comentarios mas oculta voto e editor',
@@ -487,21 +545,26 @@ void main() {
       (tester) async {
     var created = false;
     final sorts = <String?>[];
-    await mount(tester, CommunityFeedPage(apiClient: api((r) {
-      if (r.url.path.endsWith('/themes')) return response([]);
-      if (r.method == 'POST') {
-        created = true;
-        return response(post('novo'), 201);
-      }
-      if (r.url.path.endsWith('/posts/novo')) {
-        return response({'post': post('novo'), 'comments': []});
-      }
-      sorts.add(r.url.queryParameters['sort']);
-      return response({
-        'posts': created ? [post('novo')] : [],
-        'has_next': false
-      });
-    })));
+    final sink = RecordingAnalyticsSink();
+    await mount(
+        tester,
+        CommunityFeedPage(
+            analytics: AnalyticsService(sink: sink),
+            apiClient: api((r) {
+              if (r.url.path.endsWith('/themes')) return response([]);
+              if (r.method == 'POST') {
+                created = true;
+                return response(post('novo'), 201);
+              }
+              if (r.url.path.endsWith('/posts/novo')) {
+                return response({'post': post('novo'), 'comments': []});
+              }
+              sorts.add(r.url.queryParameters['sort']);
+              return response({
+                'posts': created ? [post('novo')] : [],
+                'has_next': false
+              });
+            })));
     await tester.tap(find.text('ESCREVER UM POST'));
     await tester.pumpAndSettle();
     await tester.enterText(find.byType(TextField),
@@ -518,6 +581,118 @@ void main() {
     expect(find.byType(CommunityFeedPage), findsOneWidget);
     expect(find.textContaining('novo'), findsOneWidget);
     expect(sorts.last, 'recent');
+    final operation = operations(sink, 'community_post_create').single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_post_create'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
+  });
+
+  testWidgets('rejeicao de publicacao nao envia texto nem detalhe privado',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await mount(
+      tester,
+      CreatePostPage(
+        analytics: AnalyticsService(sink: sink),
+        apiClient: api((request) => request.method == 'GET'
+            ? response([])
+            : response({'detail': 'private moderation text'}, 422)),
+      ),
+    );
+
+    await tester.enterText(
+      find.byType(TextField),
+      'conteúdo que não pode chegar ao analytics',
+    );
+    await tester.pump();
+    await tester.ensureVisible(find.text('PUBLICAR'));
+    await tester.tap(find.text('PUBLICAR'));
+    await tester.pumpAndSettle();
+
+    final operation = operations(sink, 'community_post_create').single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_post_create'),
+        containsPair('outcome', 'failed'),
+        containsPair('trigger', 'submit'),
+        containsPair('failure_type', 'moderation_rejected'),
+      ),
+    );
+    expect(operation.parameters.toString(), isNot(contains('conteúdo')));
+    expect(
+      operation.parameters.toString(),
+      isNot(contains('private moderation')),
+    );
+  });
+
+  testWidgets('cancelar motivo de denuncia nao cria tentativa', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    var reportCalls = 0;
+    await mount(
+      tester,
+      CommunityFeedPage(
+        analytics: AnalyticsService(sink: sink),
+        apiClient: api((request) {
+          if (request.method == 'POST') reportCalls++;
+          return response({
+            'posts': [post('p1')],
+            'has_next': false,
+          });
+        }),
+      ),
+    );
+
+    await tester.tap(find.byTooltip('Ações do post'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Denunciar'));
+    await tester.pumpAndSettle();
+    Navigator.of(tester.element(find.text('POR QUE DENUNCIAR?'))).pop();
+    await tester.pumpAndSettle();
+
+    expect(reportCalls, 0);
+    expect(operations(sink, 'community_report'), isEmpty);
+  });
+
+  testWidgets('falha ao denunciar no feed e generica', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await mount(
+      tester,
+      CommunityFeedPage(
+        analytics: AnalyticsService(sink: sink),
+        apiClient: api((request) => request.method == 'GET'
+            ? response({
+                'posts': [post('p1')],
+                'has_next': false,
+              })
+            : response({'detail': 'private report reason'}, 503)),
+      ),
+    );
+
+    await tester.tap(find.byTooltip('Ações do post'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Denunciar'));
+    await tester.pumpAndSettle();
+    await tester.tap(find.text('Spam'));
+    await tester.pumpAndSettle();
+
+    final operation = operations(sink, 'community_report').single;
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'community_report'),
+        containsPair('outcome', 'failed'),
+        containsPair('trigger', 'submit'),
+        containsPair('failure_type', 'unavailable'),
+      ),
+    );
+    expect(operation.parameters.toString(), isNot(contains('private')));
+    expect(operation.parameters.toString(), isNot(contains('spam')));
   });
 
   testWidgets('atualizacao antiga do feed preserva um voto ja concluido',
@@ -549,6 +724,92 @@ void main() {
     }));
     await tester.pumpAndSettle();
     expect(find.byTooltip('Retirar voto positivo'), findsOneWidget);
+    expect(find.text('4'), findsOneWidget);
+  });
+
+  testWidgets('refresh do detalhe ultrapassado por voto termina stale',
+      (tester) async {
+    final refresh = Completer<http.Response>();
+    final sink = RecordingAnalyticsSink();
+    var loads = 0;
+    await mount(
+      tester,
+      PostDetailPage(
+        postId: 'p1',
+        analytics: AnalyticsService(sink: sink),
+        apiClient: api((request) {
+          if (request.method == 'POST') {
+            return response(post('p1', score: 4, vote: 1));
+          }
+          loads++;
+          return loads == 1
+              ? response({'post': post('p1'), 'comments': []})
+              : refresh.future;
+        }),
+      ),
+    );
+
+    tester.state<RefreshIndicatorState>(find.byType(RefreshIndicator)).show();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    expect(loads, 2);
+    await tester.tap(find.byTooltip('Votar a favor'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 50));
+    refresh.complete(response({
+      'post': post('p1'),
+      'comments': <dynamic>[],
+    }));
+    await tester.pumpAndSettle();
+
+    final reads = operations(sink, 'community_post_load');
+    expect(
+      reads.map((call) => call.parameters!['outcome']),
+      ['success', 'stale'],
+    );
+    expect(reads.last.parameters!['trigger'], 'refresh');
+    expect(operations(sink, 'community_vote'), hasLength(1));
+    expect(find.text('4'), findsOneWidget);
+  });
+
+  testWidgets('falha antiga do detalhe apos voto termina stale',
+      (tester) async {
+    final refresh = Completer<http.Response>();
+    final sink = RecordingAnalyticsSink();
+    var loads = 0;
+    await mount(
+      tester,
+      PostDetailPage(
+        postId: 'p1',
+        analytics: AnalyticsService(sink: sink),
+        apiClient: api((request) {
+          if (request.method == 'POST') {
+            return response(post('p1', score: 4, vote: 1));
+          }
+          loads++;
+          return loads == 1
+              ? response({'post': post('p1'), 'comments': []})
+              : refresh.future;
+        }),
+      ),
+    );
+
+    tester.state<RefreshIndicatorState>(find.byType(RefreshIndicator)).show();
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+    await tester.tap(find.byTooltip('Votar a favor'));
+    await tester.pump();
+    await tester.pump(const Duration(milliseconds: 50));
+    refresh.complete(response({'detail': 'private stale error'}, 503));
+    await tester.pumpAndSettle();
+
+    final reads = operations(sink, 'community_post_load');
+    expect(
+      reads.map((call) => call.parameters!['outcome']),
+      ['success', 'stale'],
+    );
+    expect(reads.last.parameters, isNot(contains('failure_type')));
+    expect(find.textContaining('Não foi possível atualizar'), findsNothing);
     expect(find.text('4'), findsOneWidget);
   });
 

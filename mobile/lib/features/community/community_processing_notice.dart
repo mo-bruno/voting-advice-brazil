@@ -21,8 +21,8 @@ class CommunityProcessingNotice extends StatelessWidget {
       ),
       child: Text(
         'Seu texto pode revelar opinião política e ficará público sob um alias '
-        'pseudônimo estável. Ele será armazenado e enviado à NVIDIA NIM para '
-        'moderação. Não inclua dados pessoais que não queira publicar. '
+        'pseudônimo estável. Ele será armazenado e avaliado pela moderação '
+        'antes da publicação. Não inclua dados pessoais que não queira publicar. '
         'Ao tocar em $action, você concorda especificamente com esse uso.',
       ),
     );

@@ -13,13 +13,47 @@ import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/political_actors/politician_follow_validation_page.dart';
 
+import 'helpers/analytics_test_support.dart';
+
+const _legacyEventNames = <String>{
+  'follow_waitlist_viewed',
+  'follow_waitlist_prompt_viewed',
+  'follow_waitlist_cta_clicked',
+  'follow_waitlist_registered',
+  'follow_waitlist_failed',
+};
+
+List<RecordedAnalyticsCall> _legacyCalls(RecordingAnalyticsSink sink) =>
+    sink.calls.where((call) => _legacyEventNames.contains(call.name)).toList();
+
+void _expectNoFunctionalIdentifier(RecordedAnalyticsCall call) {
+  final parameters = call.parameters!;
+  expect(
+    parameters.keys,
+    isNot(contains(anyOf('anonymous_id', 'device_id', 'hash'))),
+  );
+  expect(
+    parameters.values,
+    isNot(contains('550e8400-e29b-41d4-a716-446655440000')),
+  );
+}
+
+void _expectParameters(
+  RecordedAnalyticsCall call,
+  Map<String, Object> expected,
+) {
+  for (final entry in expected.entries) {
+    expect(call.parameters, containsPair(entry.key, entry.value));
+  }
+}
+
 void main() {
   setUp(() {});
 
   Future<void> pumpPage(
     WidgetTester tester, {
     required _FakeInterestApi api,
-    required _RecordingSink sink,
+    required RecordingAnalyticsSink sink,
     bool settle = true,
   }) async {
     await tester.pumpWidget(
@@ -41,7 +75,7 @@ void main() {
 
   testWidgets('uses the site shell and explains the anonymous validation',
       (tester) async {
-    final sink = _RecordingSink();
+    final sink = RecordingAnalyticsSink();
 
     await pumpPage(
       tester,
@@ -56,15 +90,26 @@ void main() {
     expect(find.textContaining('Não pedimos nome, e-mail ou telefone'),
         findsOneWidget);
     expect(find.text('TENHO INTERESSE'), findsOneWidget);
-    expect(sink.names, [
+    expect(_legacyCalls(sink).map((call) => call.name), [
       'follow_waitlist_viewed',
       'follow_waitlist_prompt_viewed',
     ]);
+    expect(_legacyCalls(sink).map((call) => call.parameters),
+        everyElement(isNull));
+
+    final status = lastOperation(sink.calls);
+    _expectParameters(status, {
+      'operation': 'follow_status_load',
+      'outcome': 'success',
+      'trigger': 'initial',
+    });
+    expect(status.parameters!['duration_ms'], isA<int>());
+    _expectNoFunctionalIdentifier(status);
   });
 
   testWidgets('one tap registers once and shows the confirmation',
       (tester) async {
-    final sink = _RecordingSink();
+    final sink = RecordingAnalyticsSink();
     final completion = Completer<bool>();
     final api = _FakeInterestApi(
       registered: false,
@@ -84,17 +129,52 @@ void main() {
     expect(find.text('RETIRAR INTERESSE'), findsNothing);
     expect(find.textContaining('registro sem nome ou contato'), findsOneWidget);
     expect(find.textContaining('registro anônimo'), findsNothing);
-    expect(sink.names, [
+    expect(_legacyCalls(sink).map((call) => call.name), [
       'follow_waitlist_viewed',
       'follow_waitlist_prompt_viewed',
       'follow_waitlist_cta_clicked',
       'follow_waitlist_registered',
     ]);
+    expect(_legacyCalls(sink).map((call) => call.parameters),
+        everyElement(isNull));
+    final registration = lastOperation(sink.calls);
+    _expectParameters(registration, {
+      'operation': 'follow_register',
+      'outcome': 'success',
+      'trigger': 'submit',
+    });
+    _expectNoFunctionalIdentifier(registration);
+  });
+
+  testWidgets('an existing registration is still a successful write outcome',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await pumpPage(
+      tester,
+      api: _FakeInterestApi(
+        registered: false,
+        registration: Future<bool>.value(false),
+      ),
+      sink: sink,
+    );
+
+    await tester.tap(find.text('TENHO INTERESSE'));
+    await tester.pumpAndSettle();
+
+    expect(find.text('INTERESSE REGISTRADO'), findsOneWidget);
+    expect(sink.names, isNot(contains('follow_waitlist_registered')));
+    final registration = lastOperation(sink.calls);
+    _expectParameters(registration, {
+      'operation': 'follow_register',
+      'outcome': 'success',
+      'trigger': 'submit',
+    });
+    _expectNoFunctionalIdentifier(registration);
   });
 
   testWidgets('a failed registration stays actionable and can be retried',
       (tester) async {
-    final sink = _RecordingSink();
+    final sink = RecordingAnalyticsSink();
     final api = _FakeInterestApi(
       registered: false,
       registrationError: const ApiException('offline'),
@@ -107,12 +187,47 @@ void main() {
     expect(
         find.text('Não foi possível registrar seu interesse.'), findsOneWidget);
     expect(find.text('TENTAR NOVAMENTE'), findsOneWidget);
-    expect(sink.names.last, 'follow_waitlist_failed');
+    expect(_legacyCalls(sink).map((call) => call.name),
+        contains('follow_waitlist_failed'));
+    expect(lastNamed(sink.calls, 'follow_waitlist_failed').parameters, isNull);
+    final registration = lastOperation(sink.calls);
+    _expectParameters(registration, {
+      'operation': 'follow_register',
+      'outcome': 'failed',
+      'trigger': 'submit',
+      'failure_type': 'unknown',
+    });
+    _expectNoFunctionalIdentifier(registration);
+  });
+
+  testWidgets('a failed status check emits only a generic failure type',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await pumpPage(
+      tester,
+      api: _FakeInterestApi(
+        registered: false,
+        statusError: const ApiException(
+          'private server detail',
+          statusCode: 503,
+        ),
+      ),
+      sink: sink,
+    );
+
+    final status = lastOperation(sink.calls);
+    _expectParameters(status, {
+      'operation': 'follow_status_load',
+      'outcome': 'failed',
+      'trigger': 'initial',
+      'failure_type': 'unavailable',
+    });
+    _expectNoFunctionalIdentifier(status);
   });
 
   testWidgets('a stalled status check falls back to an actionable prompt',
       (tester) async {
-    final sink = _RecordingSink();
+    final sink = RecordingAnalyticsSink();
     final neverCompletes = Completer<bool>();
 
     await pumpPage(
@@ -131,15 +246,21 @@ void main() {
     expect(find.byType(CircularProgressIndicator), findsNothing);
     expect(find.text('TENHO INTERESSE'), findsOneWidget);
     expect(find.textContaining('Não foi possível verificar'), findsOneWidget);
-    expect(sink.names, [
+    expect(_legacyCalls(sink).map((call) => call.name), [
       'follow_waitlist_viewed',
       'follow_waitlist_prompt_viewed',
     ]);
+    _expectParameters(lastOperation(sink.calls), {
+      'operation': 'follow_status_load',
+      'outcome': 'failed',
+      'trigger': 'initial',
+      'failure_type': 'timeout',
+    });
   });
 
   testWidgets('logs a successful write even if the page was closed',
       (tester) async {
-    final sink = _RecordingSink();
+    final sink = RecordingAnalyticsSink();
     final completion = Completer<bool>();
     final api = _FakeInterestApi(
       registered: false,
@@ -154,6 +275,33 @@ void main() {
     await tester.pump();
 
     expect(sink.names, contains('follow_waitlist_registered'));
+    _expectParameters(lastOperation(sink.calls), {
+      'operation': 'follow_register',
+      'outcome': 'success',
+      'trigger': 'submit',
+    });
+  });
+
+  testWidgets('logs a status outcome even if the page was closed',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final completion = Completer<bool>();
+    await pumpPage(
+      tester,
+      api: _FakeInterestApi(registered: false, status: completion.future),
+      sink: sink,
+      settle: false,
+    );
+
+    await tester.pumpWidget(const SizedBox.shrink());
+    completion.complete(false);
+    await tester.pump();
+
+    _expectParameters(lastOperation(sink.calls), {
+      'operation': 'follow_status_load',
+      'outcome': 'success',
+      'trigger': 'initial',
+    });
   });
 
   testWidgets('denied metrics do not block interest registration',
@@ -198,6 +346,7 @@ class _FakeInterestApi extends ApiClient {
   _FakeInterestApi({
     required this.registered,
     this.status,
+    this.statusError,
     this.registration,
     this.registrationError,
   }) : super(baseUrl: 'https://example.test/api/v1');
@@ -206,6 +355,7 @@ class _FakeInterestApi extends ApiClient {
   final Future<bool>? status;
   final Future<bool>? registration;
   final Object? registrationError;
+  final Object? statusError;
   int registerCalls = 0;
   int deleteCalls = 0;
   final List<String> interestIds = [];
@@ -215,6 +365,7 @@ class _FakeInterestApi extends ApiClient {
     required String anonymousId,
   }) async {
     interestIds.add(anonymousId);
+    if (statusError != null) throw statusError!;
     return await (status ?? Future<bool>.value(registered));
   }
 
@@ -272,17 +423,4 @@ class _FakeIdentityStore extends PoliticianFollowInterestIdentityStore {
   @override
   Future<String> getOrCreateInterestId() async =>
       '550e8400-e29b-41d4-a716-446655440000';
-}
-
-class _RecordingSink implements AnalyticsSink {
-  final List<String> names = [];
-
-  @override
-  Future<void> logEvent({
-    required String name,
-    Map<String, Object>? parameters,
-  }) async {
-    expect(parameters, isNull);
-    names.add(name);
-  }
 }

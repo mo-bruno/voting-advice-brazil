@@ -6,6 +6,8 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
+import '../../../core/analytics/analytics_failure_classifier.dart';
+import '../../../core/analytics/analytics_service.dart';
 import '../../../core/layout/app_scaffold.dart';
 import '../../../core/theme/app_theme.dart';
 import 'result_share_card.dart';
@@ -15,13 +17,35 @@ import 'result_share_palette.dart';
 import 'result_share_service.dart';
 
 class ResultSharePage extends StatefulWidget {
-  const ResultSharePage({super.key, required this.data, this.service});
+  const ResultSharePage({
+    super.key,
+    required this.data,
+    this.service,
+    this.analytics,
+    this.imageRenderer,
+  });
 
   final ResultShareData data;
   final ResultShareService? service;
+  final AnalyticsService? analytics;
+  final Future<Uint8List> Function()? imageRenderer;
 
   @override
   State<ResultSharePage> createState() => _ResultSharePageState();
+}
+
+final class _RenderAttempt {
+  _RenderAttempt({
+    required this.generation,
+    required this.trigger,
+    required this.analytics,
+  }) : stopwatch = Stopwatch()..start();
+
+  final int generation;
+  final AnalyticsTrigger trigger;
+  final AnalyticsService analytics;
+  final Stopwatch stopwatch;
+  bool isTerminal = false;
 }
 
 class _ResultSharePageState extends State<ResultSharePage> {
@@ -41,6 +65,8 @@ class _ResultSharePageState extends State<ResultSharePage> {
 
   final _cardKey = GlobalKey();
   late final _service = widget.service ?? ResultShareService();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   late ResultShareData _data = widget.data;
   ResultSharePalette _palette = ResultSharePalette
       .values[Random().nextInt(ResultSharePalette.values.length)];
@@ -52,43 +78,165 @@ class _ResultSharePageState extends State<ResultSharePage> {
   bool _fontsReady = false;
   bool _busy = false;
   int _generation = 0;
+  _RenderAttempt? _renderAttempt;
 
   @override
   void initState() {
     super.initState();
-    _queueImage();
+    _queueImage(AnalyticsTrigger.initial);
   }
 
-  void _queueImage() {
-    final generation = ++_generation;
+  @override
+  void dispose() {
+    _generation++;
+    final attempt = _renderAttempt;
+    if (attempt != null) {
+      _finishRender(attempt, AnalyticsOutcome.stale);
+    }
+    super.dispose();
+  }
+
+  void _track(Future<void> Function() event) {
+    try {
+      unawaited(event().catchError((_) {}));
+    } catch (_) {
+      // Métricas nunca podem impedir a ação escolhida pela pessoa.
+    }
+  }
+
+  void _trackShare(
+    AnalyticsTarget target, {
+    AnalyticsOutcome? outcome,
+    AnalyticsService? analytics,
+  }) {
+    _track(() => (analytics ?? _analytics).engagementAction(
+          action: AnalyticsAction.share,
+          surface: AnalyticsSurface.results,
+          target: target,
+          outcome: outcome,
+        ));
+  }
+
+  void _finishRender(
+    _RenderAttempt attempt,
+    AnalyticsOutcome outcome, {
+    AnalyticsFailureType? failureType,
+  }) {
+    if (attempt.isTerminal) return;
+    attempt.isTerminal = true;
+    attempt.stopwatch.stop();
+    if (identical(_renderAttempt, attempt)) _renderAttempt = null;
+    _track(() => attempt.analytics.operationResult(
+          operation: AnalyticsOperation.shareRender,
+          outcome: outcome,
+          trigger: attempt.trigger,
+          failureType: failureType,
+          durationMs: attempt.stopwatch.elapsedMilliseconds,
+        ));
+  }
+
+  bool _isCurrent(_RenderAttempt attempt) =>
+      mounted && !attempt.isTerminal && attempt.generation == _generation;
+
+  void _queueImage(AnalyticsTrigger trigger) {
+    final previous = _renderAttempt;
+    if (previous != null) {
+      _finishRender(previous, AnalyticsOutcome.stale);
+    }
+    final attempt = _RenderAttempt(
+      generation: ++_generation,
+      trigger: trigger,
+      analytics: _analytics.bindToCurrentConsent(),
+    );
+    _renderAttempt = attempt;
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      unawaited(_prepareImage(generation));
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+        return;
+      }
+      unawaited(_prepareImage(attempt));
     });
   }
 
-  Future<void> _prepareImage(int generation) async {
+  Future<Uint8List> _captureImage() async {
+    final boundary =
+        _cardKey.currentContext!.findRenderObject()! as RenderRepaintBoundary;
+    final image = await boundary.toImage(pixelRatio: 3);
+    try {
+      final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
+      if (bytes == null) throw StateError('Imagem indisponível');
+      return bytes.buffer.asUint8List(
+        bytes.offsetInBytes,
+        bytes.lengthInBytes,
+      );
+    } finally {
+      image.dispose();
+    }
+  }
+
+  Future<void> _waitForNextFrame() {
+    final frame = Completer<void>();
+    WidgetsBinding.instance.addPostFrameCallback((_) => frame.complete());
+    WidgetsBinding.instance.scheduleFrame();
+    return frame.future;
+  }
+
+  Future<void> _waitForRouteTransition() {
+    final animation = ModalRoute.of(context)?.animation;
+    if (animation == null || animation.status == AnimationStatus.completed) {
+      return Future<void>.value();
+    }
+    final transition = Completer<void>();
+    void onStatus(AnimationStatus status) {
+      if (status == AnimationStatus.completed ||
+          status == AnimationStatus.dismissed) {
+        animation.removeStatusListener(onStatus);
+        if (!transition.isCompleted) transition.complete();
+      }
+    }
+
+    animation.addStatusListener(onStatus);
+    return transition.future;
+  }
+
+  Future<void> _prepareImage(_RenderAttempt attempt) async {
     try {
       await ResultShareCard.loadFonts();
-      if (!mounted || generation != _generation) return;
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+        return;
+      }
       // Prepara o PNG antes do toque para preservar o gesto do usuário que
       // os navegadores exigem para abrir o menu nativo de compartilhamento.
-      setState(() => _fontsReady = true);
-      await WidgetsBinding.instance.endOfFrame;
-      if (!mounted || generation != _generation) return;
-      final boundary =
-          _cardKey.currentContext!.findRenderObject()! as RenderRepaintBoundary;
-      final image = await boundary.toImage(pixelRatio: 3);
-      try {
-        final bytes = await image.toByteData(format: ui.ImageByteFormat.png);
-        if (bytes == null) throw StateError('Imagem indisponível');
-        if (!mounted || generation != _generation) return;
-        setState(() => _png = bytes.buffer.asUint8List());
-      } finally {
-        image.dispose();
+      if (!_fontsReady) setState(() => _fontsReady = true);
+      await _waitForRouteTransition();
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+        return;
       }
-    } catch (_) {
-      if (mounted && generation == _generation) {
+      await _waitForNextFrame();
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+        return;
+      }
+      final bytes = await (widget.imageRenderer?.call() ?? _captureImage());
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+        return;
+      }
+      if (bytes.isEmpty) throw StateError('Imagem vazia');
+      setState(() => _png = bytes);
+      _finishRender(attempt, AnalyticsOutcome.success);
+    } catch (error) {
+      if (!_isCurrent(attempt)) {
+        _finishRender(attempt, AnalyticsOutcome.stale);
+      } else {
         setState(() => _imageFailed = true);
+        _finishRender(
+          attempt,
+          AnalyticsOutcome.failed,
+          failureType: classifyAnalyticsFailure(error),
+        );
       }
     }
   }
@@ -117,7 +265,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
       _png = null;
       _imageFailed = false;
     });
-    _queueImage();
+    _queueImage(AnalyticsTrigger.refresh);
   }
 
   void _notify(String message, {SnackBarAction? action}) {
@@ -131,14 +279,25 @@ class _ResultSharePageState extends State<ResultSharePage> {
     final bytes = _png;
     if (bytes == null || _busy) return;
     final format = _format;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final box = buttonContext.findRenderObject()! as RenderBox;
     final origin = box.localToGlobal(Offset.zero) & box.size;
     setState(() => _busy = true);
     try {
       await _service.shareImage(bytes, format, origin);
+      _trackShare(
+        AnalyticsTarget.nativeShare,
+        outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
+      );
       // O navegador pode retornar status desconhecido mesmo após compartilhar.
       // Cancelar ou voltar do menu não dispara outra ação nem confirma publicação.
     } catch (_) {
+      _trackShare(
+        AnalyticsTarget.nativeShare,
+        outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
+      );
       _notify(
         _service.canDownload
             ? 'Não foi possível compartilhar neste navegador. Baixe a imagem para anexar no app.'
@@ -157,11 +316,22 @@ class _ResultSharePageState extends State<ResultSharePage> {
 
   Future<void> _downloadImage(Uint8List bytes, ResultShareFormat format) async {
     if (_busy) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     setState(() => _busy = true);
     try {
       await _service.downloadImage(bytes, format);
+      _trackShare(
+        AnalyticsTarget.download,
+        outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
+      );
       _notify('Download iniciado. Sua imagem está pronta para anexar.');
     } catch (_) {
+      _trackShare(
+        AnalyticsTarget.download,
+        outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
+      );
       _notify('Não foi possível baixar a imagem. Tente novamente.');
     } finally {
       if (mounted) setState(() => _busy = false);
@@ -170,9 +340,24 @@ class _ResultSharePageState extends State<ResultSharePage> {
 
   Future<void> _openNetwork(ResultShareNetwork network) async {
     if (_busy) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
+    final target = switch (network) {
+      ResultShareNetwork.twitter => AnalyticsTarget.twitter,
+      ResultShareNetwork.whatsapp => AnalyticsTarget.whatsapp,
+    };
     try {
       await _service.openNetwork(_data, network);
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
+      );
     } catch (_) {
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
+      );
       _notify(
           'Não foi possível abrir a rede social. Tente novamente ou use Compartilhar imagem.');
     }
@@ -249,7 +434,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
                       TextButton.icon(
                         onPressed: () {
                           setState(() => _imageFailed = false);
-                          _queueImage();
+                          _queueImage(AnalyticsTrigger.retry);
                         },
                         icon: const Icon(Icons.refresh_rounded),
                         label: const Text('Tentar novamente'),

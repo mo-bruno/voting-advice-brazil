@@ -29,4 +29,25 @@ void main() {
     expect(sent!.downloadFallbackEnabled, isFalse);
     expect(result.status, ShareResultStatus.dismissed);
   });
+
+  test('propaga todo resultado resolvido do menu nativo sem fallback próprio',
+      () async {
+    for (final status in ShareResultStatus.values) {
+      var calls = 0;
+      final service = ResultShareService(share: (params) async {
+        calls++;
+        expect(params.downloadFallbackEnabled, isFalse);
+        return ShareResult('', status);
+      });
+
+      final result = await service.shareImage(
+        Uint8List.fromList([137, 80, 78, 71]),
+        ResultShareFormat.story,
+        const Rect.fromLTWH(0, 0, 48, 48),
+      );
+
+      expect(result.status, status);
+      expect(calls, 1);
+    }
+  });
 }

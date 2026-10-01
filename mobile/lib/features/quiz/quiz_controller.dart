@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../shared/models/thesis.dart';
 import '../../shared/quiz_session.dart';
@@ -18,6 +19,8 @@ class QuizController extends ChangeNotifier {
   DateTime? _currentThesisViewedAt;
   final Set<int> _viewedThesisIds = {};
   bool _answering = false;
+  bool _completionTracked = false;
+  bool _disposed = false;
 
   QuizController({
     QuizSession? session,
@@ -43,40 +46,71 @@ class QuizController extends ChangeNotifier {
     _currentIndex = 0;
     _viewedThesisIds.clear();
     _currentThesisViewedAt = null;
+    _completionTracked = false;
   }
 
-  Future<void> loadQuestions({bool force = false}) async {
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  void _notify() {
+    if (!_disposed) notifyListeners();
+  }
+
+  @override
+  void dispose() {
+    _disposed = true;
+    super.dispose();
+  }
+
+  Future<void> loadQuestions({
+    bool force = false,
+    AnalyticsTrigger trigger = AnalyticsTrigger.initial,
+  }) async {
+    final attemptAnalytics = analytics.bindToCurrentConsent();
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    int? itemCount;
     isLoading = true;
     errorMessage = null;
     if (force) {
       resetForNewQuiz();
     }
-    notifyListeners();
+    _notify();
     try {
       await session.loadQuestions(force: force);
       if (_currentIndex >= theses.length) {
         _currentIndex = 0;
       }
-      markCurrentThesisViewed();
+      markCurrentThesisViewed(analytics: attemptAnalytics);
+      itemCount = theses.length;
+      outcome =
+          theses.isEmpty ? AnalyticsOutcome.empty : AnalyticsOutcome.success;
     } catch (error) {
       errorMessage = error.toString();
+      failureType = classifyAnalyticsFailure(error);
     } finally {
+      stopwatch.stop();
       isLoading = false;
-      notifyListeners();
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.quizLoad,
+        outcome: outcome,
+        trigger: trigger,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+        itemCount: itemCount,
+      ));
+      _notify();
     }
   }
 
-  void markCurrentThesisViewed() {
+  void markCurrentThesisViewed({AnalyticsService? analytics}) {
     final thesis = currentThesis;
     if (thesis == null) return;
     _currentThesisViewedAt = now();
     if (_viewedThesisIds.add(thesis.id)) {
-      unawaited(
-        analytics.thesisViewed(
-          thesisId: thesis.id,
-          thesisIndex: _currentIndex + 1,
-        ),
-      );
+      _track((analytics ?? this.analytics).thesisViewed());
     }
   }
 
@@ -90,28 +124,32 @@ class QuizController extends ChangeNotifier {
 
       final viewedAt = _currentThesisViewedAt ?? now();
       final timeToAnswerMs = now().difference(viewedAt).inMilliseconds;
-      await analytics.thesisAnswered(
-        thesisId: thesis.id,
-        stance: thesis.apiAnswer,
-        timeToAnswerMs: timeToAnswerMs < 0 ? 0 : timeToAnswerMs,
-      );
+      final finished = isLast;
+      if (!finished) _currentIndex++;
+
       if (answer == ThesisAnswer.skipped) {
-        await analytics.thesisSkipped(thesisId: thesis.id);
+        _track(analytics.thesisSkipped());
+      } else {
+        _track(analytics.thesisAnswered(
+          timeToAnswerMs: timeToAnswerMs < 0 ? 0 : timeToAnswerMs,
+        ));
       }
 
-      if (isLast) {
-        await analytics.quizCompleted(
-          totalAnswered: session.totalAnswered,
-          totalSkipped: session.totalSkipped,
-          durationMs: session.quizDurationMs(now: now()),
-        );
-        notifyListeners();
+      if (finished) {
+        if (!_completionTracked) {
+          _completionTracked = true;
+          _track(analytics.quizCompleted(
+            totalAnswered: session.totalAnswered,
+            totalSkipped: session.totalSkipped,
+            durationMs: session.quizDurationMs(now: now()),
+          ));
+        }
+        _notify();
         return true;
       }
 
-      _currentIndex++;
       markCurrentThesisViewed();
-      notifyListeners();
+      _notify();
       return false;
     } finally {
       _answering = false;
@@ -124,7 +162,7 @@ class QuizController extends ChangeNotifier {
     if (!isFirst) {
       _currentIndex--;
       markCurrentThesisViewed();
-      notifyListeners();
+      _notify();
     }
   }
 }

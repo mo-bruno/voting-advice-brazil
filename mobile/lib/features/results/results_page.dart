@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_navigation.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/shell/main_shell.dart';
@@ -26,6 +27,18 @@ class _ResultsPageState extends State<ResultsPage> {
       widget.analytics ?? AnalyticsService();
   final QuizSession _session = QuizSession.instance;
   bool _hasTrackedResultsViewed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || _hasTrackedResultsViewed || _session.results.isEmpty) {
+        return;
+      }
+      _hasTrackedResultsViewed = true;
+      _track(_analytics.resultsViewed());
+    });
+  }
 
   List<CandidateResult> get _results =>
       [..._session.visibleResults]..sort((a, b) {
@@ -67,9 +80,7 @@ class _ResultsPageState extends State<ResultsPage> {
       title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, '/party-selection');
-        },
+        onPressed: () => Navigator.pop(context),
       ),
       body: _results.isEmpty ? _emptyState(context) : _content(textTheme),
     );
@@ -103,18 +114,6 @@ class _ResultsPageState extends State<ResultsPage> {
         _results.where((result) => result.rankingEligible).toList();
     final outsideRanking =
         _results.where((result) => !result.rankingEligible).toList();
-    final leaders = _session.topAffinityResults;
-    final topResult = leaders.isEmpty ? null : leaders.first;
-    if (!_hasTrackedResultsViewed && topResult != null) {
-      _hasTrackedResultsViewed = true;
-      _track(
-        _analytics.resultsViewed(
-          topCandidateId: topResult.candidateId,
-          topScorePercent: topResult.scorePercent,
-        ),
-      );
-    }
-
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -173,8 +172,10 @@ class _ResultsPageState extends State<ResultsPage> {
                   onPressed: () => Navigator.push(
                     context,
                     MaterialPageRoute<void>(
+                      settings: const RouteSettings(name: resultShareRoute),
                       builder: (_) => ResultSharePage(
                         data: ResultShareData(results: shareableResults),
+                        analytics: _analytics,
                       ),
                     ),
                   ),

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_navigation.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:guia_eleitoral/core/shell/main_shell.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 /// A gaveta e do APP, nao da aba. Enquanto cada tela-destino trazia a sua, ela
 /// nascia dentro da aba e abaixo da barra inferior: a barra continuava tocavel
@@ -66,6 +70,59 @@ void main() {
 
     // Nascendo dentro da aba, a gaveta parava onde a barra comecava.
     expect(tester.getRect(find.byType(Drawer)).height, 844);
+  });
+
+  testWidgets('quiz aberto pela gaveta preserves drawer as entry source',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final analytics = AnalyticsService(sink: sink);
+    final intent = AnalyticsNavigationIntent();
+    final observer = AnalyticsNavigationObserver(
+      analytics: analytics,
+      intent: intent,
+    );
+    tester.view.physicalSize = const Size(390, 844);
+    tester.view.devicePixelRatio = 1.0;
+    addTearDown(tester.view.resetPhysicalSize);
+    addTearDown(tester.view.resetDevicePixelRatio);
+
+    await tester.pumpWidget(MaterialApp(
+      theme: AppTheme.dark,
+      navigatorObservers: [observer],
+      routes: {
+        '/': (context) => MainShell(
+              initialTab: MainShell.tabFromArguments(
+                ModalRoute.of(context)?.settings.arguments,
+              ),
+              analytics: analytics,
+              navigationIntent: intent,
+              routeObserver: observer,
+              pageBuilders: [
+                (_) => const _Tab('tela-inicio'),
+                (_) => const _Tab('tela-acompanhar'),
+                (_) => const _Tab('tela-quiz'),
+                (_) => const _Tab('tela-comunidade'),
+              ],
+            ),
+      },
+    ));
+    await tester.pumpAndSettle();
+    await tester.tap(find.byIcon(Icons.menu));
+    await tester.pumpAndSettle();
+    await tester.ensureVisible(find.text('Descobrir minha afinidade'));
+    await tester.tap(find.text('Descobrir minha afinidade'));
+    await tester.pumpAndSettle();
+
+    expect(named(sink.calls, 'engagement_action'), hasLength(1));
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'quiz_entry',
+      'surface': 'home',
+      'source': 'drawer',
+    });
+    expect(lastNamed(sink.calls, 'screen_viewed').parameters, {
+      'screen': 'quiz_intro',
+      'source': 'drawer',
+    });
   });
 
   testWidgets('tocar na barra com a gaveta aberta nao troca de aba',

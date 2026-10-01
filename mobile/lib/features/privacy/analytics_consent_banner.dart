@@ -38,7 +38,7 @@ class AnalyticsConsentBanner extends StatelessWidget {
                     style: Theme.of(context).textTheme.titleLarge),
                 const SizedBox(height: 8),
                 const Text(
-                  'Usamos Google Analytics somente se você aceitar, para medir uso e desempenho. Ele pode receber um identificador pseudônimo, a página, navegador/dispositivo e eventos genéricos. Não enviamos suas respostas do quiz, candidatos, partidos ou afinidade e não usamos publicidade.',
+                  'Se você aceitar, enviamos somente métricas de uso e desempenho. Não enviamos respostas do quiz, preferências políticas ou textos e não usamos publicidade.',
                 ),
                 const SizedBox(height: 12),
                 Wrap(

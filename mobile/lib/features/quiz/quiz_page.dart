@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_service.dart';
 import '../../core/features/feature_flags.dart';
 import '../../core/layout/app_scaffold.dart';
 import '../../core/theme/app_theme.dart';
@@ -35,10 +36,14 @@ class _QuizPageState extends State<QuizPage> {
   late final QuizController controller = widget.controller ?? QuizController();
   final _questionScroll = ScrollController();
   int? _visibleThesisId;
+  bool _abandonmentRecorded = false;
+  bool _questionsCompleted = false;
+  late final bool _enteredAfterResults;
 
   @override
   void initState() {
     super.initState();
+    _enteredAfterResults = controller.session.results.isNotEmpty;
     controller.addListener(_onQuestionChanged);
     controller.loadQuestions();
   }
@@ -61,8 +66,36 @@ class _QuizPageState extends State<QuizPage> {
     super.dispose();
   }
 
-  void _onFinishQuiz() {
-    Navigator.pushNamed(context, '/weighting');
+  Future<void> _onFinishQuiz() async {
+    _questionsCompleted = true;
+    await Navigator.pushNamed(context, '/weighting');
+    if (mounted && controller.session.results.isEmpty) {
+      _questionsCompleted = false;
+    }
+  }
+
+  void _recordAbandonment() {
+    if (_abandonmentRecorded || _questionsCompleted || _enteredAfterResults) {
+      return;
+    }
+    _abandonmentRecorded = true;
+    final session = controller.session;
+    unawaited(
+      controller.analytics
+          .quizAbandoned(
+            stage: AnalyticsQuizStage.questions,
+            reason: AnalyticsAbandonReason.back,
+            totalAnswered: session.totalAnswered,
+            totalSkipped: session.totalSkipped,
+            durationMs: session.quizDurationMs(),
+          )
+          .catchError((_) {}),
+    );
+  }
+
+  void _exitQuiz() {
+    _recordAbandonment();
+    Navigator.popUntil(context, (route) => route.isFirst);
   }
 
   String _getAnswerValue(ThesisAnswer answer) {
@@ -92,7 +125,7 @@ class _QuizPageState extends State<QuizPage> {
       );
     }
     controller.answer(value).then((finished) {
-      if (finished && mounted) _onFinishQuiz();
+      if (finished && mounted) unawaited(_onFinishQuiz());
     });
   }
 
@@ -100,25 +133,31 @@ class _QuizPageState extends State<QuizPage> {
   Widget build(BuildContext context) {
     final thesis = controller.currentThesis;
 
-    return AppScaffold(
-      title: 'FAROL POLÍTICO',
-      leading: IconButton(
-        icon: const Icon(Icons.arrow_back),
-        tooltip: 'Sair do quiz',
-        onPressed: () {
-          // Desempilha ate o shell em vez de empilhar /quiz-intro: aquela rota
-          // monta a QuizIntroPage FORA do shell, sem barra inferior, e como ela
-          // e uma tela-aba mostra o hamburguer no lugar da seta — o usuario
-          // ficava sem barra e sem volta.
-          //
-          // Aqui e `popUntil` e nao o `pushNamedAndRemoveUntil` que a
-          // ResultsPage usa: sair do quiz e voltar de onde se veio, e o shell
-          // ja esta na aba certa. Recria-lo jogaria fora as telas que ele
-          // mantem vivas de proposito (ver MainShell._pages).
-          Navigator.popUntil(context, (route) => route.isFirst);
-        },
+    return PopScope(
+      canPop: true,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) _recordAbandonment();
+      },
+      child: AppScaffold(
+        title: 'FAROL POLÍTICO',
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'Sair do quiz',
+          onPressed: () {
+            // Desempilha ate o shell em vez de empilhar /quiz-intro: aquela rota
+            // monta a QuizIntroPage FORA do shell, sem barra inferior, e como ela
+            // e uma tela-aba mostra o hamburguer no lugar da seta — o usuario
+            // ficava sem barra e sem volta.
+            //
+            // Aqui e `popUntil` e nao o `pushNamedAndRemoveUntil` que a
+            // ResultsPage usa: sair do quiz e voltar de onde se veio, e o shell
+            // ja esta na aba certa. Recria-lo jogaria fora as telas que ele
+            // mantem vivas de proposito (ver MainShell._pages).
+            _exitQuiz();
+          },
+        ),
+        body: _buildBody(thesis),
       ),
-      body: _buildBody(thesis),
     );
   }
 
@@ -132,7 +171,10 @@ class _QuizPageState extends State<QuizPage> {
         title: 'Não foi possível carregar as perguntas.',
         message: controller.errorMessage!,
         actionLabel: 'TENTAR NOVAMENTE',
-        onPressed: controller.loadQuestions,
+        onPressed: () => controller.loadQuestions(
+          force: true,
+          trigger: AnalyticsTrigger.retry,
+        ),
       );
     }
 
@@ -141,7 +183,10 @@ class _QuizPageState extends State<QuizPage> {
         title: 'Nenhuma pergunta encontrada.',
         message: 'Confira se o backend está rodando e com dados carregados.',
         actionLabel: 'RECARREGAR',
-        onPressed: controller.loadQuestions,
+        onPressed: () => controller.loadQuestions(
+          force: true,
+          trigger: AnalyticsTrigger.retry,
+        ),
       );
     }
 
@@ -184,6 +229,7 @@ class _QuizPageState extends State<QuizPage> {
                           ThesisExplanationPanel(
                             key: ValueKey(thesis.id),
                             explanation: thesis.explanation!,
+                            analytics: controller.analytics,
                           ),
                         ],
                       ],
@@ -203,7 +249,7 @@ class _QuizPageState extends State<QuizPage> {
                 onAnswer: _handleAnswer,
                 onSkip: () {
                   controller.skip().then((finished) {
-                    if (finished && mounted) _onFinishQuiz();
+                    if (finished && mounted) unawaited(_onFinishQuiz());
                   });
                 },
               ),

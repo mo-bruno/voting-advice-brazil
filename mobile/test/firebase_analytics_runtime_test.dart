@@ -102,6 +102,29 @@ void main() {
     expect(client.collection.last, isFalse);
   });
 
+  test('latest regrant wins over an older blocked grant and denial', () async {
+    final client = _Client();
+    final runtime = FirebaseAnalyticsRuntime(
+      operationallyEnabled: true,
+      isSupportedPlatform: () => true,
+      initializeClient: () async => client,
+      setWebConsent: ({required granted}) => true,
+    );
+    await runtime.updateConsent(granted: true);
+    await runtime.initializeForGrantedConsent();
+    client.blockedGrant = Completer<void>();
+
+    final grantA = runtime.updateConsent(granted: true);
+    await Future<void>.delayed(Duration.zero);
+    final deny = runtime.updateConsent(granted: false);
+    final grantB = runtime.updateConsent(granted: true);
+    client.blockedGrant!.complete();
+    await Future.wait([grantA, deny, grantB]);
+
+    expect(client.consent.last, isTrue);
+    expect(client.collection.last, isTrue);
+  });
+
   test('missing bridge prevents construction and a later event retries',
       () async {
     final client = _Client();
@@ -148,8 +171,8 @@ void main() {
       client.failGrant = false;
       client.failEnable = false;
       await runtime.initializeForGrantedConsent();
-      await runtime.logEvent(SanitizedAnalyticsEvent(name: 'quiz_completed'));
-      expect(client.events.map((event) => event.name), ['quiz_completed']);
+      await runtime.logEvent(SanitizedAnalyticsEvent(name: 'quiz_restarted'));
+      expect(client.events.map((event) => event.name), ['quiz_restarted']);
     });
   }
 
@@ -170,8 +193,8 @@ void main() {
     await expectLater(runtime.initializeForGrantedConsent(), throwsStateError);
     fail = false;
     await runtime.initializeForGrantedConsent();
-    await runtime.logEvent(SanitizedAnalyticsEvent(name: 'quiz_completed'));
-    expect(client.events.map((event) => event.name), ['quiz_completed']);
+    await runtime.logEvent(SanitizedAnalyticsEvent(name: 'quiz_restarted'));
+    expect(client.events.map((event) => event.name), ['quiz_restarted']);
   });
 
   test('runtime resanitizes direct events and drops unknown names', () async {
@@ -188,6 +211,8 @@ void main() {
       name: 'quiz_completed',
       parameters: {
         'total_answered': 5,
+        'total_skipped': 1,
+        'duration_ms': 5000,
         'candidate_id': '13',
         'stance': 'agree',
         'anonymous_id': '550e8400-e29b-41d4-a716-446655440000',
@@ -195,7 +220,11 @@ void main() {
     ));
     await runtime.logEvent(SanitizedAnalyticsEvent(name: 'political_affinity'));
     expect(client.events, hasLength(1));
-    expect(client.events.single.parameters, {'total_answered': 5});
+    expect(client.events.single.parameters, {
+      'total_answered': 5,
+      'total_skipped': 1,
+      'duration_ms': 5000,
+    });
   });
 
   test('failed bridge on reacceptance keeps existing client denied', () async {

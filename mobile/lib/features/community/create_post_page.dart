@@ -1,6 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
+import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
@@ -13,13 +17,19 @@ import 'utils/community_errors.dart';
 import 'utils/community_length_formatter.dart';
 
 class CreatePostPage extends StatefulWidget {
-  const CreatePostPage({super.key, this.apiClient, this.initialThemeSlug});
+  const CreatePostPage({
+    super.key,
+    this.apiClient,
+    this.initialThemeSlug,
+    this.analytics,
+  });
 
   /// Injetavel para teste, seguindo o padrao do feed.
   @visibleForTesting
   final ApiClient? apiClient;
 
   final String? initialThemeSlug;
+  final AnalyticsService? analytics;
 
   @override
   State<CreatePostPage> createState() => _CreatePostPageState();
@@ -29,6 +39,8 @@ class _CreatePostPageState extends State<CreatePostPage> {
   final _controller = TextEditingController();
   final _scrollController = ScrollController();
   late final ApiClient _api = widget.apiClient ?? ApiClient();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   bool _loading = false;
   bool _allowPop = false;
   bool _exitDialogOpen = false;
@@ -38,6 +50,34 @@ class _CreatePostPageState extends State<CreatePostPage> {
   String? _selectedTheme;
 
   bool get _hasDraft => _controller.text.isNotEmpty;
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  Future<T> _runWrite<T>(Future<T> Function() action) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    try {
+      final result = await action();
+      outcome = AnalyticsOutcome.success;
+      return result;
+    } catch (error) {
+      failureType = classifyAnalyticsFailure(error, moderationWrite: true);
+      rethrow;
+    } finally {
+      stopwatch.stop();
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.communityPostCreate,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.submit,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+      ));
+    }
+  }
 
   @override
   void initState() {
@@ -176,12 +216,15 @@ class _CreatePostPageState extends State<CreatePostPage> {
           _anonymousId ?? await DeviceIdentityStore().getOrCreateDeviceId();
       // A identidade pode terminar de carregar depois que a rota foi removida.
       if (!mounted) return;
-      final json = await _api.createPost(
-        content: content,
-        anonymousId: anonymousId,
-        themeSlug: _selectedTheme,
+      final post = await _runWrite(
+        () async => PostSummary.fromJson(
+          await _api.createPost(
+            content: content,
+            anonymousId: anonymousId,
+            themeSlug: _selectedTheme,
+          ),
+        ),
       );
-      final post = PostSummary.fromJson(json);
       CommunitySession().invalidate();
       if (!mounted) return;
       ScaffoldMessenger.of(context).hideCurrentSnackBar();

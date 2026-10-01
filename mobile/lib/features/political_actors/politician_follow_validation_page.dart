@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
@@ -63,50 +64,82 @@ class _PoliticianFollowValidationPageState
   }
 
   Future<void> _loadStatus() async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.success;
+    AnalyticsFailureType? failureType;
     try {
       final registered = await _api
           .fetchPoliticianFollowInterest(
             anonymousId: await _identity(),
           )
           .timeout(_statusTimeout);
-      if (!mounted) return;
-      setState(() => _registered = registered);
-      if (!registered) {
-        _track(_analytics.followWaitlistPromptViewed());
+      if (mounted) {
+        setState(() => _registered = registered);
       }
-    } catch (_) {
-      if (!mounted) return;
-      setState(() => _statusUnavailable = true);
-      _track(_analytics.followWaitlistPromptViewed());
+      if (!registered && mounted) {
+        _track(attemptAnalytics.followWaitlistPromptViewed());
+      }
+    } catch (error) {
+      outcome = AnalyticsOutcome.failed;
+      failureType = classifyAnalyticsFailure(error);
+      if (mounted) {
+        setState(() => _statusUnavailable = true);
+        _track(attemptAnalytics.followWaitlistPromptViewed());
+      }
     } finally {
+      stopwatch.stop();
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.followStatusLoad,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.initial,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+      ));
       if (mounted) setState(() => _loading = false);
     }
   }
 
   Future<void> _register() async {
     if (_submitting) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     setState(() {
       _submitting = true;
       _actionFailed = false;
     });
     _track(_analytics.followWaitlistCtaClicked());
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.success;
+    AnalyticsFailureType? failureType;
     try {
       final newlyRegistered = await _api.registerPoliticianFollowInterest(
         anonymousId: await _identity(),
       );
       if (newlyRegistered) {
-        _track(_analytics.followWaitlistRegistered());
+        _track(attemptAnalytics.followWaitlistRegistered());
       }
-      if (!mounted) return;
-      setState(() {
-        _registered = true;
-        _statusUnavailable = false;
-      });
-    } catch (_) {
-      if (!mounted) return;
-      setState(() => _actionFailed = true);
-      _track(_analytics.followWaitlistFailed());
+      if (mounted) {
+        setState(() {
+          _registered = true;
+          _statusUnavailable = false;
+        });
+      }
+    } catch (error) {
+      outcome = AnalyticsOutcome.failed;
+      failureType = classifyAnalyticsFailure(error);
+      if (mounted) {
+        setState(() => _actionFailed = true);
+        _track(attemptAnalytics.followWaitlistFailed());
+      }
     } finally {
+      stopwatch.stop();
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.followRegister,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.submit,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+      ));
       if (mounted) setState(() => _submitting = false);
     }
   }
