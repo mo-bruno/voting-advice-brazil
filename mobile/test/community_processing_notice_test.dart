@@ -27,7 +27,11 @@ void main() {
       expect(
           find.textContaining('pode revelar opinião política'), findsOneWidget);
       expect(find.textContaining('alias pseudônimo estável'), findsOneWidget);
-      expect(find.textContaining('NVIDIA NIM'), findsOneWidget);
+      expect(
+        find.textContaining('avaliado pela moderação antes da publicação'),
+        findsOneWidget,
+      );
+      expect(find.textContaining('NVIDIA NIM'), findsNothing);
       expect(find.textContaining('Não inclua dados pessoais'), findsOneWidget);
       expect(
         find.textContaining(action == 'post'
