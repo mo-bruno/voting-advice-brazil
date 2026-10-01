@@ -19,9 +19,8 @@ class AnalyticsConsentBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final decisionStyle = OutlinedButton.styleFrom(
-      minimumSize: const Size(0, 48),
-      side: const BorderSide(color: AppTheme.primary),
+    const decisionStyle = ButtonStyle(
+      minimumSize: WidgetStatePropertyAll(Size(0, 48)),
     );
     return Material(
       color: AppTheme.surfaceContainer,
@@ -57,7 +56,7 @@ class AnalyticsConsentBanner extends StatelessWidget {
                         child: const Text('REJEITAR MÉTRICAS'),
                       ),
                     ),
-                    OutlinedButton(
+                    ElevatedButton(
                       style: decisionStyle,
                       onPressed: () async {
                         if (!await controller.grant()) {
