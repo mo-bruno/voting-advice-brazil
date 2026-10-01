@@ -73,6 +73,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
     required bool moderationWrite,
     required Future<T> Function() action,
   }) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
     AnalyticsFailureType? failureType;
@@ -88,7 +89,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
       rethrow;
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: operation,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,
@@ -102,6 +103,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
     AnalyticsTrigger trigger = AnalyticsTrigger.initial,
   }) async {
     if (!mounted) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final generation = ++_loadGeneration;
     final version = _mutationVersion;
     final stopwatch = Stopwatch()..start();
@@ -148,7 +150,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
         failureType = null;
         itemCount = null;
       }
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.communityPostLoad,
         outcome: outcome,
         trigger: trigger,

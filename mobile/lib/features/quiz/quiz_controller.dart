@@ -67,6 +67,7 @@ class QuizController extends ChangeNotifier {
     bool force = false,
     AnalyticsTrigger trigger = AnalyticsTrigger.initial,
   }) async {
+    final attemptAnalytics = analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
     AnalyticsFailureType? failureType;
@@ -82,7 +83,7 @@ class QuizController extends ChangeNotifier {
       if (_currentIndex >= theses.length) {
         _currentIndex = 0;
       }
-      markCurrentThesisViewed();
+      markCurrentThesisViewed(analytics: attemptAnalytics);
       itemCount = theses.length;
       outcome =
           theses.isEmpty ? AnalyticsOutcome.empty : AnalyticsOutcome.success;
@@ -92,7 +93,7 @@ class QuizController extends ChangeNotifier {
     } finally {
       stopwatch.stop();
       isLoading = false;
-      _track(analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.quizLoad,
         outcome: outcome,
         trigger: trigger,
@@ -104,12 +105,12 @@ class QuizController extends ChangeNotifier {
     }
   }
 
-  void markCurrentThesisViewed() {
+  void markCurrentThesisViewed({AnalyticsService? analytics}) {
     final thesis = currentThesis;
     if (thesis == null) return;
     _currentThesisViewedAt = now();
     if (_viewedThesisIds.add(thesis.id)) {
-      _track(analytics.thesisViewed());
+      _track((analytics ?? this.analytics).thesisViewed());
     }
   }
 

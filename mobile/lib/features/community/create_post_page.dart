@@ -56,6 +56,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
   }
 
   Future<T> _runWrite<T>(Future<T> Function() action) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
     AnalyticsFailureType? failureType;
@@ -68,7 +69,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
       rethrow;
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.communityPostCreate,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,

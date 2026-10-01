@@ -38,10 +38,12 @@ final class _RenderAttempt {
   _RenderAttempt({
     required this.generation,
     required this.trigger,
+    required this.analytics,
   }) : stopwatch = Stopwatch()..start();
 
   final int generation;
   final AnalyticsTrigger trigger;
+  final AnalyticsService analytics;
   final Stopwatch stopwatch;
   bool isTerminal = false;
 }
@@ -105,8 +107,9 @@ class _ResultSharePageState extends State<ResultSharePage> {
   void _trackShare(
     AnalyticsTarget target, {
     AnalyticsOutcome? outcome,
+    AnalyticsService? analytics,
   }) {
-    _track(() => _analytics.engagementAction(
+    _track(() => (analytics ?? _analytics).engagementAction(
           action: AnalyticsAction.share,
           surface: AnalyticsSurface.results,
           target: target,
@@ -123,7 +126,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
     attempt.isTerminal = true;
     attempt.stopwatch.stop();
     if (identical(_renderAttempt, attempt)) _renderAttempt = null;
-    _track(() => _analytics.operationResult(
+    _track(() => attempt.analytics.operationResult(
           operation: AnalyticsOperation.shareRender,
           outcome: outcome,
           trigger: attempt.trigger,
@@ -143,6 +146,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
     final attempt = _RenderAttempt(
       generation: ++_generation,
       trigger: trigger,
+      analytics: _analytics.bindToCurrentConsent(),
     );
     _renderAttempt = attempt;
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -275,6 +279,7 @@ class _ResultSharePageState extends State<ResultSharePage> {
       {bool forWhatsApp = false}) async {
     final bytes = _png;
     if (bytes == null || _busy) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final sharedData = _data;
     final target =
         forWhatsApp ? AnalyticsTarget.whatsapp : AnalyticsTarget.nativeShare;
@@ -286,10 +291,18 @@ class _ResultSharePageState extends State<ResultSharePage> {
           text: forWhatsApp
               ? '${sharedData.caption}\n${sharedData.siteUrl}'
               : null);
-      _trackShare(target, outcome: AnalyticsOutcome.success);
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
+      );
       // Fechar o menu ou escolher um app não confirma uma publicação.
     } catch (_) {
-      _trackShare(target, outcome: AnalyticsOutcome.failed);
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
+      );
       final action = forWhatsApp
           ? SnackBarAction(
               label: 'Abrir WhatsApp',
@@ -311,18 +324,21 @@ class _ResultSharePageState extends State<ResultSharePage> {
   Future<void> _downloadImage() async {
     final bytes = _png;
     if (bytes == null || _busy) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     setState(() => _busy = true);
     try {
       await _service.downloadImage(bytes, _format);
       _trackShare(
         AnalyticsTarget.download,
         outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
       );
       _notify('Download iniciado. Sua imagem está pronta para anexar.');
     } catch (_) {
       _trackShare(
         AnalyticsTarget.download,
         outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
       );
       _notify('Não foi possível baixar a imagem. Tente novamente.');
     } finally {
@@ -331,17 +347,20 @@ class _ResultSharePageState extends State<ResultSharePage> {
   }
 
   Future<void> _copyLink() async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     try {
       await _service.copyLink(_data);
       _trackShare(
         AnalyticsTarget.copyLink,
         outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
       );
       _notify('Link copiado. Cole na publicação ou no adesivo de link.');
     } catch (_) {
       _trackShare(
         AnalyticsTarget.copyLink,
         outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
       );
       _notify('Não foi possível copiar. Selecione o endereço no fim da tela.');
     }
@@ -349,15 +368,24 @@ class _ResultSharePageState extends State<ResultSharePage> {
 
   Future<void> _openNetwork(ResultShareNetwork network,
       {ResultShareData? data}) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final target = switch (network) {
       ResultShareNetwork.twitter => AnalyticsTarget.twitter,
       ResultShareNetwork.whatsapp => AnalyticsTarget.whatsapp,
     };
     try {
       await _service.openNetwork(data ?? _data, network);
-      _trackShare(target, outcome: AnalyticsOutcome.success);
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.success,
+        analytics: attemptAnalytics,
+      );
     } catch (_) {
-      _trackShare(target, outcome: AnalyticsOutcome.failed);
+      _trackShare(
+        target,
+        outcome: AnalyticsOutcome.failed,
+        analytics: attemptAnalytics,
+      );
       _notify('Não foi possível abrir a rede social. Use Compartilhar imagem '
           'ou Copiar link.');
     }

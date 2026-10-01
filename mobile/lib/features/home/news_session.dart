@@ -48,6 +48,7 @@ class NewsSession extends ChangeNotifier {
   Future<void> load({
     AnalyticsTrigger trigger = AnalyticsTrigger.initial,
   }) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final generation = ++_loadGeneration;
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
@@ -78,7 +79,7 @@ class NewsSession extends ChangeNotifier {
       failureType = classifyAnalyticsFailure(error);
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.newsLoad,
         outcome: outcome,
         trigger: trigger,

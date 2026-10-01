@@ -54,7 +54,9 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
   Future<void> _loadCandidates({
     bool force = false,
     AnalyticsTrigger trigger = AnalyticsTrigger.initial,
+    AnalyticsService? analytics,
   }) async {
+    final attemptAnalytics = analytics ?? _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
     AnalyticsFailureType? failureType;
@@ -80,7 +82,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       failureType = classifyAnalyticsFailure(error);
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.candidateLoad,
         outcome: outcome,
         trigger: trigger,
@@ -92,12 +94,15 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
     }
   }
 
-  void _recordAbandonment(AnalyticsAbandonReason reason) {
+  void _recordAbandonment(
+    AnalyticsAbandonReason reason, {
+    AnalyticsService? analytics,
+  }) {
     if (_abandonmentRecorded || _stageCompleted || _enteredAfterResults) {
       return;
     }
     _abandonmentRecorded = true;
-    _track(_analytics.quizAbandoned(
+    _track((analytics ?? _analytics).quizAbandoned(
       stage: AnalyticsQuizStage.candidateSelection,
       reason: reason,
       totalAnswered: _session.totalAnswered,
@@ -142,6 +147,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
 
   Future<void> _submitAndNavigate() async {
     if (_isSubmitting) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     if (!_session.canSubmit) {
       setState(
@@ -151,7 +157,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
         ),
       );
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.resultsSubmit,
         outcome: AnalyticsOutcome.blocked,
         trigger: AnalyticsTrigger.submit,
@@ -179,7 +185,10 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
           _session.results.map((result) => result.candidateId).toSet();
       if (_selected.difference(availableIds).isNotEmpty) {
         outcome = AnalyticsOutcome.stale;
-        _recordAbandonment(AnalyticsAbandonReason.recovery);
+        _recordAbandonment(
+          AnalyticsAbandonReason.recovery,
+          analytics: attemptAnalytics,
+        );
         _selected.retainAll(availableIds);
         _session.results = [];
         _session.candidates = [];
@@ -187,6 +196,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
         await _loadCandidates(
           force: true,
           trigger: AnalyticsTrigger.refresh,
+          analytics: attemptAnalytics,
         );
         if (mounted) {
           setState(
@@ -201,7 +211,9 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       outcome = AnalyticsOutcome.success;
       _stageCompleted = true;
       _track(
-        _analytics.partySelectionCompleted(countSelected: _selected.length),
+        attemptAnalytics.partySelectionCompleted(
+          countSelected: _selected.length,
+        ),
       );
       shouldNavigate = true;
     } catch (error) {
@@ -218,7 +230,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       }
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.resultsSubmit,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,

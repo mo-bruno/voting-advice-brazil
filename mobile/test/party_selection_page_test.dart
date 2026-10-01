@@ -21,6 +21,48 @@ class _SilentSink implements AnalyticsSink {
   }) async {}
 }
 
+final class _GenerationRecordingSink
+    implements AnalyticsSink, ConsentBindableAnalyticsSink {
+  final calls = <RecordedAnalyticsCall>[];
+  int _revision = 1;
+
+  void replaceConsent() => _revision++;
+
+  @override
+  AnalyticsSink captureConsentBoundSink() {
+    return _BoundGenerationSink(this, _revision);
+  }
+
+  @override
+  Future<void> logEvent({
+    required String name,
+    Map<String, Object>? parameters,
+  }) async {
+    _record(name, parameters);
+  }
+
+  void _record(String name, Map<String, Object>? parameters) {
+    calls.add(RecordedAnalyticsCall(name, parameters));
+  }
+}
+
+final class _BoundGenerationSink implements AnalyticsSink {
+  const _BoundGenerationSink(this._parent, this._revision);
+
+  final _GenerationRecordingSink _parent;
+  final int _revision;
+
+  @override
+  Future<void> logEvent({
+    required String name,
+    Map<String, Object>? parameters,
+  }) async {
+    if (_revision == _parent._revision) {
+      _parent._record(name, parameters);
+    }
+  }
+}
+
 class _CandidateApi extends ApiClient {
   _CandidateApi(
       {this.failFirstCandidateLoad = false, this.submitResults = const []});
@@ -51,6 +93,18 @@ class _CandidateApi extends ApiClient {
     Set<String> candidateIds = const {},
   }) async =>
       submitResults;
+}
+
+final class _BlockingCandidateApi extends _CandidateApi {
+  final submitResponse = Completer<List<CandidateResult>>();
+
+  @override
+  Future<List<CandidateResult>> submitQuiz(
+    List<Thesis> theses, {
+    String? deviceId,
+    Set<String> candidateIds = const {},
+  }) =>
+      submitResponse.future;
 }
 
 List<Thesis> _answeredTheses(int count) => List.generate(
@@ -213,5 +267,52 @@ void main() {
     );
     expect(lastOperation(sink.calls).parameters?['outcome'], 'success');
     blocker.complete();
+  });
+
+  testWidgets('submit terminal events stay bound to their consent generation',
+      (tester) async {
+    final sink = _GenerationRecordingSink();
+    final api = _BlockingCandidateApi();
+    const result = CandidateResult(
+      candidateId: '13',
+      name: 'Candidatura',
+      party: 'PT',
+      scorePercent: 80,
+      rank: 1,
+      countedTheses: 5,
+      answeredTheses: 5,
+      matches: [],
+    );
+    final session = QuizSession.testOnly(api: api)
+      ..theses = _answeredTheses(5)
+      ..candidates = [_CandidateApi.candidate]
+      ..selectedCandidateIds = {'13'};
+    addTearDown(session.dispose);
+    await tester.pumpWidget(
+      MaterialApp(
+        routes: {
+          '/': (_) => PartySelectionPage(
+                session: session,
+                analytics: AnalyticsService(sink: sink),
+              ),
+          '/results': (_) => const Scaffold(body: Text('resultado aberto')),
+        },
+      ),
+    );
+    await tester.pumpAndSettle();
+    sink.calls.clear();
+
+    await tester.tap(find.text('VER RESULTADOS'));
+    await tester.pump();
+    sink.replaceConsent();
+    api.submitResponse.complete(const [result]);
+    await tester.pumpAndSettle();
+
+    expect(find.text('resultado aberto'), findsOneWidget);
+    expect(
+      sink.calls.map((call) => call.name),
+      isNot(contains('party_selection_completed')),
+    );
+    expect(named(sink.calls, 'operation_result'), isEmpty);
   });
 }

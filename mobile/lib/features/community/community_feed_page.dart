@@ -69,6 +69,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     required AnalyticsOperation operation,
     required Future<T> Function() action,
   }) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.failed;
     AnalyticsFailureType? failureType;
@@ -81,7 +82,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
       rethrow;
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: operation,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,
@@ -134,6 +135,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     required AnalyticsTrigger trigger,
   }) async {
     if (!mounted || _anonymousId == null || (page > 1 && _loading)) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     if (page == 1) _generation++;
     final generation = _generation;
     final revisions = _session.postRevisions;
@@ -195,7 +197,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         failureType = null;
         itemCount = null;
       }
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.communityFeedLoad,
         outcome: outcome,
         trigger: trigger,

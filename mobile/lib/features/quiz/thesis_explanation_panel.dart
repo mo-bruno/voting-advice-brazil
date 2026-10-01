@@ -45,13 +45,14 @@ class _ThesisExplanationPanelState extends State<ThesisExplanationPanel> {
   }
 
   Future<void> _openSource(ExplanationSource source) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     var opened = false;
     try {
       opened = await widget.linkOpener(source.url);
     } catch (_) {
       // The question and its explanation remain available if a link fails.
     }
-    _track(_analytics.engagementAction(
+    _track(attemptAnalytics.engagementAction(
       action: AnalyticsAction.outboundOpen,
       surface: AnalyticsSurface.quiz,
       target: AnalyticsTarget.quizSource,

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_consent_controller.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_event_policy.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/analytics/consent_aware_analytics_sink.dart';
 import 'package:guia_eleitoral/core/analytics/firebase_analytics_runtime.dart';
 
@@ -158,6 +159,59 @@ void main() {
 
     expect(runtime.events.map((event) => event.name), ['quiz_restarted']);
     expect(runtime.consent, [true, false, true]);
+  });
+
+  test('operation started in grant A cannot finish in grant B', () async {
+    final runtime = _Runtime();
+    final controller = await _controller(runtime);
+    await controller.grant();
+    final sink = ConsentAwareAnalyticsSink(
+      controller: controller,
+      runtime: runtime,
+      operationallyEnabled: true,
+    );
+    final analytics = AnalyticsService(sink: sink);
+
+    final grantAOperation = analytics.bindToCurrentConsent();
+    await controller.deny();
+    await controller.grant();
+    await grantAOperation.operationResult(
+      operation: AnalyticsOperation.resultsSubmit,
+      outcome: AnalyticsOutcome.success,
+      trigger: AnalyticsTrigger.submit,
+      itemCount: 5,
+    );
+
+    final grantBOperation = analytics.bindToCurrentConsent();
+    await grantBOperation.operationResult(
+      operation: AnalyticsOperation.resultsSubmit,
+      outcome: AnalyticsOutcome.success,
+      trigger: AnalyticsTrigger.submit,
+      itemCount: 4,
+    );
+
+    expect(runtime.events, hasLength(1));
+    expect(runtime.events.single.name, 'operation_result');
+    expect(runtime.events.single.parameters?['item_count'], 4);
+  });
+
+  test('operation started without consent is not activated by a later grant',
+      () async {
+    final runtime = _Runtime();
+    final controller = await _controller(runtime);
+    final analytics = AnalyticsService(
+      sink: ConsentAwareAnalyticsSink(
+        controller: controller,
+        runtime: runtime,
+        operationallyEnabled: true,
+      ),
+    );
+
+    final pendingOperation = analytics.bindToCurrentConsent();
+    await controller.grant();
+    await pendingOperation.quizStarted();
+
+    expect(runtime.events, isEmpty);
   });
 
   test('events queued before deny are dropped after regrant', () async {

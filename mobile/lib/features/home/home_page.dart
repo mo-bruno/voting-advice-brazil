@@ -64,13 +64,14 @@ class _HomePageState extends State<HomePage> {
     required AnalyticsSurface surface,
     required AnalyticsTarget target,
   }) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     var opened = false;
     try {
       opened = await _openLink(uri);
     } catch (_) {
       opened = false;
     }
-    unawaited(_analytics
+    unawaited(attemptAnalytics
         .engagementAction(
           action: AnalyticsAction.outboundOpen,
           surface: surface,

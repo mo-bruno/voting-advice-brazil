@@ -11,6 +11,13 @@ class AnalyticsService {
 
   final AnalyticsSink _sink;
 
+  /// Captures the current consent generation for work that can outlive the
+  /// user action that started it. Events from the returned service are
+  /// discarded if consent is revoked or replaced before they are emitted.
+  AnalyticsService bindToCurrentConsent() {
+    return AnalyticsService(sink: _sink.bindToCurrentConsent());
+  }
+
   Future<void> quizIntroViewed() {
     return _sink.logEvent(name: 'quiz_intro_viewed');
   }

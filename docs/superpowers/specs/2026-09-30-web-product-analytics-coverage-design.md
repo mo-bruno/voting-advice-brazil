@@ -155,8 +155,9 @@ Uma falha de inicialização ou envio:
 ### Revisão de consentimento
 
 O controlador expõe uma revisão monotônica que muda em toda transição de
-estado. Ao aceitar um evento, o sink captura estado e revisão. Depois de
-qualquer `await`, o envio só ocorre se:
+estado. Call sites assíncronos vinculam seu serviço analítico ao estado e à
+revisão antes do primeiro `await`; eventos imediatos capturam ambos ao chegar
+ao sink. Depois de qualquer `await`, o envio só ocorre se:
 
 - o estado ainda for `granted`;
 - a revisão continuar exatamente igual;

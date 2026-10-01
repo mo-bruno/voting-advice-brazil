@@ -3,7 +3,8 @@ import 'analytics_event_policy.dart';
 import 'analytics_sink.dart';
 import 'firebase_analytics_runtime.dart';
 
-class ConsentAwareAnalyticsSink implements AnalyticsSink {
+class ConsentAwareAnalyticsSink
+    implements AnalyticsSink, ConsentBindableAnalyticsSink {
   ConsentAwareAnalyticsSink({
     required this.controller,
     required this.runtime,
@@ -30,12 +31,34 @@ class ConsentAwareAnalyticsSink implements AnalyticsSink {
     if (!operationallyEnabled || !controller.isGranted) {
       return Future<void>.value();
     }
+    return _logEventAtRevision(
+      name: name,
+      parameters: parameters,
+      revision: controller.revision,
+    );
+  }
+
+  @override
+  AnalyticsSink captureConsentBoundSink() {
+    final revision = operationallyEnabled && controller.isGranted
+        ? controller.revision
+        : null;
+    return _ConsentRevisionAnalyticsSink(this, revision);
+  }
+
+  Future<void> _logEventAtRevision({
+    required String name,
+    required Map<String, Object>? parameters,
+    required int? revision,
+  }) {
+    if (revision == null || !_canSend(revision)) {
+      return Future<void>.value();
+    }
     final event = AnalyticsEventPolicy.sanitize(
       name: name,
       parameters: parameters,
     );
     if (event == null) return Future<void>.value();
-    final revision = controller.revision;
     final task = _tail.then((_) => _deliver(event, revision));
     _tail = task.then<void>((_) {}, onError: (_) {});
     return task;
@@ -53,5 +76,24 @@ class ConsentAwareAnalyticsSink implements AnalyticsSink {
     } catch (_) {
       onError?.call(StateError('analytics event failed'));
     }
+  }
+}
+
+final class _ConsentRevisionAnalyticsSink implements AnalyticsSink {
+  const _ConsentRevisionAnalyticsSink(this._parent, this._revision);
+
+  final ConsentAwareAnalyticsSink _parent;
+  final int? _revision;
+
+  @override
+  Future<void> logEvent({
+    required String name,
+    Map<String, Object>? parameters,
+  }) {
+    return _parent._logEventAtRevision(
+      name: name,
+      parameters: parameters,
+      revision: _revision,
+    );
   }
 }

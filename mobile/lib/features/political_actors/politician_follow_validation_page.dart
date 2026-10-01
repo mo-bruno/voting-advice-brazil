@@ -64,6 +64,7 @@ class _PoliticianFollowValidationPageState
   }
 
   Future<void> _loadStatus() async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     final stopwatch = Stopwatch()..start();
     var outcome = AnalyticsOutcome.success;
     AnalyticsFailureType? failureType;
@@ -77,18 +78,18 @@ class _PoliticianFollowValidationPageState
         setState(() => _registered = registered);
       }
       if (!registered && mounted) {
-        _track(_analytics.followWaitlistPromptViewed());
+        _track(attemptAnalytics.followWaitlistPromptViewed());
       }
     } catch (error) {
       outcome = AnalyticsOutcome.failed;
       failureType = classifyAnalyticsFailure(error);
       if (mounted) {
         setState(() => _statusUnavailable = true);
-        _track(_analytics.followWaitlistPromptViewed());
+        _track(attemptAnalytics.followWaitlistPromptViewed());
       }
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.followStatusLoad,
         outcome: outcome,
         trigger: AnalyticsTrigger.initial,
@@ -101,6 +102,7 @@ class _PoliticianFollowValidationPageState
 
   Future<void> _register() async {
     if (_submitting) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     setState(() {
       _submitting = true;
       _actionFailed = false;
@@ -114,7 +116,7 @@ class _PoliticianFollowValidationPageState
         anonymousId: await _identity(),
       );
       if (newlyRegistered) {
-        _track(_analytics.followWaitlistRegistered());
+        _track(attemptAnalytics.followWaitlistRegistered());
       }
       if (mounted) {
         setState(() {
@@ -127,11 +129,11 @@ class _PoliticianFollowValidationPageState
       failureType = classifyAnalyticsFailure(error);
       if (mounted) {
         setState(() => _actionFailed = true);
-        _track(_analytics.followWaitlistFailed());
+        _track(attemptAnalytics.followWaitlistFailed());
       }
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.followRegister,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,

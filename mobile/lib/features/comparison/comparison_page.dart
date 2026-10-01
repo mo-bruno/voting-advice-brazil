@@ -106,6 +106,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
 
   Future<void> _startComparison() async {
     if (_isLoadingJustifications) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     _track(_analytics.comparisonOpened());
     final stopwatch = Stopwatch()..start();
     final request = ++_comparisonRequest;
@@ -168,7 +169,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
       }
     } finally {
       stopwatch.stop();
-      _track(_analytics.operationResult(
+      _track(attemptAnalytics.operationResult(
         operation: AnalyticsOperation.comparisonLoad,
         outcome: outcome,
         trigger: AnalyticsTrigger.submit,
@@ -716,6 +717,8 @@ class _JustificationPanel extends StatelessWidget {
                       icon: const Icon(Icons.open_in_new, size: 16),
                       label: const Text('ABRIR FONTE OFICIAL'),
                       onPressed: () async {
+                        final attemptAnalytics =
+                            analytics.bindToCurrentConsent();
                         var opened = false;
                         try {
                           opened = await openLink(sourceUri);
@@ -723,7 +726,7 @@ class _JustificationPanel extends StatelessWidget {
                           opened = false;
                         }
                         unawaited(
-                          analytics
+                          attemptAnalytics
                               .engagementAction(
                                 action: AnalyticsAction.outboundOpen,
                                 surface: AnalyticsSurface.comparison,

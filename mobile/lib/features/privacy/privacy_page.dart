@@ -34,6 +34,8 @@ class PrivacyPage extends StatelessWidget {
     Uri uri,
     AnalyticsTarget target,
   ) async {
+    final attemptAnalytics =
+        (analytics ?? AnalyticsService()).bindToCurrentConsent();
     var opened = false;
     try {
       opened = await (openLink ?? openExternalLink)(uri);
@@ -41,7 +43,7 @@ class PrivacyPage extends StatelessWidget {
       // A falha é comunicada sem fechar a página ou expor o conteúdo da URI.
     }
     unawaited(
-      (analytics ?? AnalyticsService())
+      attemptAnalytics
           .engagementAction(
             action: AnalyticsAction.outboundOpen,
             surface: AnalyticsSurface.privacy,
