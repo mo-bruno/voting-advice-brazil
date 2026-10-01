@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_consent_controller.dart';
+import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/privacy/analytics_consent_banner.dart';
 
 class _Store implements AnalyticsConsentStore {
@@ -44,6 +46,7 @@ Future<void> _pump(
   required VoidCallback onDenialFailure,
 }) async {
   await tester.pumpWidget(MaterialApp(
+    theme: AppTheme.dark,
     home: Scaffold(
       body: AnalyticsConsentBanner(
         controller: controller,
@@ -70,6 +73,7 @@ void main() {
         await tester.pumpWidget(MediaQuery(
           data: MediaQueryData(textScaler: TextScaler.linear(scale)),
           child: MaterialApp(
+            theme: AppTheme.dark,
             home: Scaffold(
               body: AnalyticsConsentBanner(
                 controller: controller,
@@ -84,14 +88,35 @@ void main() {
         expect(find.text('ACEITAR MÉTRICAS'), findsOneWidget);
         expect(find.text('SAIBA MAIS'), findsOneWidget);
         expect(tester.takeException(), isNull);
-        final buttons = tester
-            .widgetList<OutlinedButton>(
-              find.byType(OutlinedButton),
-            )
-            .toList();
-        expect(buttons, hasLength(2));
+        final reject = tester.widget<OutlinedButton>(
+          find.widgetWithText(OutlinedButton, 'REJEITAR MÉTRICAS'),
+        );
+        final accept = tester.widget<ElevatedButton>(
+          find.widgetWithText(ElevatedButton, 'ACEITAR MÉTRICAS'),
+        );
+        expect(find.byType(OutlinedButton), findsOneWidget);
+        expect(find.byType(ElevatedButton), findsOneWidget);
         expect(
-            buttons.first.style?.minimumSize, buttons.last.style?.minimumSize);
+          reject.style?.minimumSize?.resolve(<WidgetState>{}),
+          const Size(0, 48),
+        );
+        expect(
+          accept.style?.minimumSize?.resolve(<WidgetState>{}),
+          const Size(0, 48),
+        );
+        final rejectPosition = tester.getTopLeft(
+          find.widgetWithText(OutlinedButton, 'REJEITAR MÉTRICAS'),
+        );
+        final acceptPosition = tester.getTopLeft(
+          find.widgetWithText(ElevatedButton, 'ACEITAR MÉTRICAS'),
+        );
+        expect(
+          rejectPosition.dy < acceptPosition.dy ||
+              (rejectPosition.dy == acceptPosition.dy &&
+                  rejectPosition.dx < acceptPosition.dx),
+          isTrue,
+          reason: 'Reject must precede accept in visual reading order.',
+        );
         final semantics = tester.ensureSemantics();
         try {
           await expectLater(tester, meetsGuideline(androidTapTargetGuideline));
@@ -101,6 +126,60 @@ void main() {
       });
     }
   }
+
+  testWidgets('reject precedes accept in keyboard and semantics order',
+      (tester) async {
+    final controller = await _controller(_Store());
+    addTearDown(controller.dispose);
+    await _pump(
+      tester,
+      controller,
+      onLearnMore: () {},
+      onGrantFailure: () {},
+      onDenialFailure: () {},
+    );
+
+    final semantics = tester.ensureSemantics();
+    try {
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      expect(
+        tester.getSemantics(
+          find.widgetWithText(OutlinedButton, 'REJEITAR MÉTRICAS'),
+        ),
+        matchesSemantics(
+          label: 'Rejeitar métricas opcionais\nREJEITAR MÉTRICAS',
+          isButton: true,
+          hasEnabledState: true,
+          isEnabled: true,
+          isFocusable: true,
+          isFocused: true,
+          hasFocusAction: true,
+          hasTapAction: true,
+        ),
+      );
+
+      await tester.sendKeyEvent(LogicalKeyboardKey.tab);
+      await tester.pump();
+      expect(
+        tester.getSemantics(
+          find.widgetWithText(ElevatedButton, 'ACEITAR MÉTRICAS'),
+        ),
+        matchesSemantics(
+          label: 'Aceitar métricas opcionais\nACEITAR MÉTRICAS',
+          isButton: true,
+          hasEnabledState: true,
+          isEnabled: true,
+          isFocusable: true,
+          isFocused: true,
+          hasFocusAction: true,
+          hasTapAction: true,
+        ),
+      );
+    } finally {
+      semantics.dispose();
+    }
+  });
 
   testWidgets('learn more navigates without deciding', (tester) async {
     final store = _Store();
