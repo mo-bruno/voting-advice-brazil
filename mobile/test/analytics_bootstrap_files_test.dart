@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 
@@ -78,6 +79,46 @@ void main() {
     expect(brandReadme, contains('exportador'));
     expect(brandReadme, isNot(contains('mobile/test/fixtures/fonts')));
     expect(AppTheme.dark.textTheme.bodyMedium!.fontFamily, 'Inter');
+  });
+
+  test('web font fallback stays on the site before analytics consent', () {
+    final bootstrapFile = File('web/flutter_bootstrap.js');
+    expect(bootstrapFile.existsSync(), isTrue);
+    final bootstrap = bootstrapFile.readAsStringSync();
+    expect(
+      bootstrap,
+      contains("new URL('font-fallbacks/', document.baseURI).href"),
+    );
+    expect(bootstrap, contains('config: {fontFallbackBaseUrl}'));
+    expect(bootstrap, contains('serviceWorkerSettings:'));
+    expect(bootstrap, contains('{{flutter_service_worker_version}}'));
+    expect(bootstrap, isNot(contains('fonts.gstatic.com')));
+
+    final pubspec = File('pubspec.yaml').readAsStringSync();
+    for (final name in [
+      'Roboto-Regular.ttf',
+      'Roboto-LICENSE.txt',
+      'Roboto-SOURCES.md',
+    ]) {
+      expect(File('assets/fonts/$name').existsSync(), isTrue);
+      expect(pubspec, contains('assets/fonts/$name'));
+    }
+    expect(pubspec, contains('family: Roboto'));
+
+    final states = <WidgetState>{};
+    final theme = AppTheme.dark;
+    expect(
+      theme.elevatedButtonTheme.style?.textStyle?.resolve(states)?.fontFamily,
+      'Inter',
+    );
+    expect(
+      theme.outlinedButtonTheme.style?.textStyle?.resolve(states)?.fontFamily,
+      'Inter',
+    );
+    expect(
+      theme.textButtonTheme.style?.textStyle?.resolve(states)?.fontFamily,
+      'Inter',
+    );
   });
 
   test('test sources no longer require runtime Google fonts', () {

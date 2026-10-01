@@ -32,6 +32,8 @@ flutter:
     - assets/fonts/OFL.txt
     - assets/fonts/Inter-OFL.txt
     - assets/fonts/Inter-SOURCES.md
+    - assets/fonts/Roboto-LICENSE.txt
+    - assets/fonts/Roboto-SOURCES.md
   fonts:
     - family: Inter
       fonts:
@@ -47,3 +49,7 @@ flutter:
           weight: 600
         - asset: assets/fonts/BarlowCondensed-ExtraBold.ttf
           weight: 800
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400

@@ -143,6 +143,7 @@ class AppTheme {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
         textStyle: const TextStyle(
+          fontFamily: 'Inter',
           fontSize: 14,
           fontWeight: FontWeight.w700,
           letterSpacing: 1.2,
@@ -158,6 +159,7 @@ class AppTheme {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
         textStyle: const TextStyle(
+          fontFamily: 'Inter',
           fontSize: 14,
           fontWeight: FontWeight.w700,
           letterSpacing: 1.2,
@@ -168,6 +170,7 @@ class AppTheme {
       style: TextButton.styleFrom(
         foregroundColor: onSurface,
         textStyle: const TextStyle(
+          fontFamily: 'Inter',
           fontSize: 12,
           fontWeight: FontWeight.w600,
           letterSpacing: 1.0,
