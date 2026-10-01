@@ -1,9 +1,15 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/app.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_consent_controller.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/privacy/privacy_config.dart';
 import 'package:guia_eleitoral/features/privacy/privacy_page.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 class _Store implements AnalyticsConsentStore {
   _Store({this.value});
@@ -48,6 +54,7 @@ Future<void> _pumpPage(
   AnalyticsConsentController controller, {
   Future<bool> Function(Uri)? openLink,
   bool analyticsEnabled = false,
+  RecordingAnalyticsSink? sink,
 }) async {
   await tester.pumpWidget(MaterialApp(
     theme: AppTheme.dark,
@@ -56,6 +63,7 @@ Future<void> _pumpPage(
       config: _config,
       openLink: openLink,
       analyticsEnabled: analyticsEnabled,
+      analytics: sink == null ? null : AnalyticsService(sink: sink),
     ),
   ));
 }
@@ -66,16 +74,67 @@ void main() {
     final controller = await _controller(_Store());
     addTearDown(controller.dispose);
     await _pumpPage(tester, controller);
-    expect(find.textContaining('A coleta de métricas está pausada nesta versão',
-        skipOffstage: false), findsOneWidget);
-    expect(find.textContaining('têm retenção configurada por 2 meses',
-        skipOffstage: false), findsNothing);
+    expect(
+        find.textContaining('A coleta de métricas está pausada nesta versão',
+            skipOffstage: false),
+        findsOneWidget);
+    expect(
+        find.textContaining('têm retenção configurada por 2 meses',
+            skipOffstage: false),
+        findsNothing);
 
     await _pumpPage(tester, controller, analyticsEnabled: true);
-    expect(find.textContaining('têm retenção configurada por 2 meses',
-        skipOffstage: false), findsOneWidget);
-    expect(find.textContaining('A coleta de métricas está pausada nesta versão',
-        skipOffstage: false), findsNothing);
+    expect(
+        find.textContaining('têm retenção configurada por 2 meses',
+            skipOffstage: false),
+        findsOneWidget);
+    expect(
+        find.textContaining('A coleta de métricas está pausada nesta versão',
+            skipOffstage: false),
+        findsNothing);
+    expect(
+      find.textContaining(
+        'tabelas históricas existentes podem não ter expiração',
+        skipOffstage: false,
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.textContaining(
+        'novas tabelas expiram em até 60 dias',
+        skipOffstage: false,
+      ),
+      findsOneWidget,
+    );
+    expect(
+      find.textContaining(
+        'ativação em produção só ocorre se a configuração',
+        skipOffstage: false,
+      ),
+      findsOneWidget,
+    );
+  });
+
+  testWidgets('optional metrics copy states coverage and strict exclusions',
+      (tester) async {
+    final controller = await _controller(_Store());
+    addTearDown(controller.dispose);
+    await _pumpPage(tester, controller, analyticsEnabled: true);
+
+    for (final phrase in [
+      'consentimento é opcional e pode ser revogado',
+      'telas genéricas, uso de funcionalidades e resultados e durações de operações',
+      'página, referência, informações do navegador e dispositivo',
+      'identificadores pseudônimos',
+      'respostas do quiz, posições políticas, candidatos, partidos, ranking, afinidade, identificador funcional ou texto livre',
+      'retenção configurada por 2 meses no GA4',
+    ]) {
+      expect(
+        find.textContaining(phrase, skipOffstage: false),
+        findsOneWidget,
+        reason: phrase,
+      );
+    }
   });
 
   testWidgets('notice identifies controller and the key processing boundaries',
@@ -158,12 +217,14 @@ void main() {
 
   testWidgets('public links use their exact destinations', (tester) async {
     final opened = <Uri>[];
+    final sink = RecordingAnalyticsSink();
     final controller = await _controller(_Store());
     addTearDown(controller.dispose);
     await _pumpPage(tester, controller, openLink: (uri) async {
       opened.add(uri);
       return true;
-    });
+    }, sink: sink);
+    expect(sink.names, isNot(contains('screen_viewed')));
     await tester.ensureVisible(find.text('ENVIAR E-MAIL'));
     await tester.tap(find.text('ENVIAR E-MAIL'));
     await tester.pump();
@@ -175,6 +236,98 @@ void main() {
       Uri.parse(
           'https://policies.google.com/technologies/partner-sites?hl=pt-BR'),
     ]);
+    expect(
+      named(sink.calls, 'engagement_action').map((call) => call.parameters),
+      [
+        {
+          'action': 'outbound_open',
+          'surface': 'privacy',
+          'target': 'privacy_email',
+          'outcome': 'success',
+        },
+        {
+          'action': 'outbound_open',
+          'surface': 'privacy',
+          'target': 'google_privacy',
+          'outcome': 'success',
+        },
+      ],
+    );
+    final serialized =
+        sink.calls.map((call) => '${call.name}:${call.parameters}').join('\n');
+    expect(serialized, isNot(contains(_config.contactEmail)));
+    expect(serialized, isNot(contains('policies.google.com')));
+  });
+
+  testWidgets('public links report failed outcomes after the opener finishes',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final controller = await _controller(_Store());
+    final emailCompletion = Completer<bool>();
+    addTearDown(controller.dispose);
+    await _pumpPage(
+      tester,
+      controller,
+      sink: sink,
+      openLink: (uri) {
+        if (uri.scheme == 'mailto') return emailCompletion.future;
+        throw StateError('private opener detail');
+      },
+    );
+
+    await tester.ensureVisible(find.text('ENVIAR E-MAIL'));
+    await tester.tap(find.text('ENVIAR E-MAIL'));
+    await tester.pump();
+    expect(named(sink.calls, 'engagement_action'), isEmpty);
+
+    emailCompletion.complete(false);
+    await tester.pump();
+    await tester.ensureVisible(find.text('SAIBA COMO O GOOGLE USA DADOS'));
+    await tester.tap(find.text('SAIBA COMO O GOOGLE USA DADOS'));
+    await tester.pump();
+
+    expect(
+      named(sink.calls, 'engagement_action').map((call) => call.parameters),
+      [
+        {
+          'action': 'outbound_open',
+          'surface': 'privacy',
+          'target': 'privacy_email',
+          'outcome': 'failed',
+        },
+        {
+          'action': 'outbound_open',
+          'surface': 'privacy',
+          'target': 'google_privacy',
+          'outcome': 'failed',
+        },
+      ],
+    );
+  });
+
+  testWidgets('MyApp gives the privacy route its shared analytics service',
+      (tester) async {
+    final controller = await _controller(_Store());
+    final analytics = AnalyticsService(sink: RecordingAnalyticsSink());
+    addTearDown(controller.dispose);
+    await tester.pumpWidget(MyApp(
+      analyticsConsent: controller,
+      analytics: analytics,
+      privacyConfig: _config,
+      pageBuilders: [
+        (_) => const Scaffold(body: Text('home')),
+        (_) => const Scaffold(body: Text('follow')),
+        (_) => const Scaffold(body: Text('quiz')),
+        (_) => const Scaffold(body: Text('community')),
+      ],
+    ));
+    tester
+        .state<NavigatorState>(find.byType(Navigator))
+        .pushNamed('/privacidade');
+    await tester.pumpAndSettle();
+
+    final page = tester.widget<PrivacyPage>(find.byType(PrivacyPage));
+    expect(page.analytics, same(analytics));
   });
 
   for (final size in [const Size(320, 568), const Size(1440, 900)]) {

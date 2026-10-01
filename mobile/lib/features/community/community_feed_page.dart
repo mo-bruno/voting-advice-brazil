@@ -1,5 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
+import '../../core/analytics/analytics_navigation.dart';
+import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/device/device_identity_store.dart';
 import '../../core/layout/app_scaffold.dart';
@@ -22,8 +27,9 @@ enum _SortMode {
 }
 
 class CommunityFeedPage extends StatefulWidget {
-  const CommunityFeedPage({super.key, this.apiClient});
+  const CommunityFeedPage({super.key, this.apiClient, this.analytics});
   final ApiClient? apiClient;
+  final AnalyticsService? analytics;
 
   @override
   State<CommunityFeedPage> createState() => _CommunityFeedPageState();
@@ -32,6 +38,8 @@ class CommunityFeedPage extends StatefulWidget {
 class _CommunityFeedPageState extends State<CommunityFeedPage> {
   final _session = CommunitySession();
   late final ApiClient _api = widget.apiClient ?? ApiClient();
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
   final _scrollController = ScrollController();
   final Set<String> _voting = {};
   final Set<String> _acting = {};
@@ -53,12 +61,45 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     _init();
   }
 
-  Future<void> _init() async {
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  Future<T> _runWrite<T>({
+    required AnalyticsOperation operation,
+    required Future<T> Function() action,
+  }) async {
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    try {
+      final result = await action();
+      outcome = AnalyticsOutcome.success;
+      return result;
+    } catch (error) {
+      failureType = classifyAnalyticsFailure(error);
+      rethrow;
+    } finally {
+      stopwatch.stop();
+      _track(attemptAnalytics.operationResult(
+        operation: operation,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.submit,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+      ));
+    }
+  }
+
+  Future<void> _init({
+    AnalyticsTrigger trigger = AnalyticsTrigger.initial,
+  }) async {
     try {
       final id = await DeviceIdentityStore().getOrCreateDeviceId();
       if (!mounted) return;
       _anonymousId = id;
-      await _loadPage(1);
+      await _loadPage(1, trigger: trigger);
     } catch (_) {
       if (mounted) {
         setState(() {
@@ -82,15 +123,26 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         _session.hasMore &&
         !_loadMoreFailed &&
         !_loading) {
-      _loadPage(_session.currentPage + 1);
+      unawaited(_loadPage(
+        _session.currentPage + 1,
+        trigger: AnalyticsTrigger.pagination,
+      ));
     }
   }
 
-  Future<void> _loadPage(int page) async {
+  Future<void> _loadPage(
+    int page, {
+    required AnalyticsTrigger trigger,
+  }) async {
     if (!mounted || _anonymousId == null || (page > 1 && _loading)) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     if (page == 1) _generation++;
     final generation = _generation;
     final revisions = _session.postRevisions;
+    final stopwatch = Stopwatch()..start();
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
+    int? itemCount;
     setState(() {
       _loading = true;
       _failed = false;
@@ -103,7 +155,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         sort: _sort.apiValue,
         themeSlug: _themeSlug,
       );
-      if (!mounted || generation != _generation) return;
+      if (!mounted || generation != _generation) {
+        outcome = AnalyticsOutcome.stale;
+        return;
+      }
       final current = {for (final post in _session.feed) post.id: post};
       final latestRevisions = _session.postRevisions;
       final posts = (data['posts'] as List)
@@ -112,14 +167,23 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
               ? _session.updatedPost(post.id) ?? current[post.id] ?? post
               : post)
           .toList();
+      itemCount = posts.length;
+      outcome =
+          posts.isEmpty ? AnalyticsOutcome.empty : AnalyticsOutcome.success;
       final hasMore = data['has_next'] as bool && posts.isNotEmpty;
       if (page == 1) {
         _session.setFeed(posts, hasMore: hasMore, page: page);
       } else {
         _session.appendFeed(posts, hasMore: hasMore, page: page);
       }
-    } catch (_) {
-      if (!mounted || generation != _generation) return;
+    } catch (error) {
+      if (!mounted || generation != _generation) {
+        outcome = AnalyticsOutcome.stale;
+        failureType = null;
+        itemCount = null;
+        return;
+      }
+      failureType = classifyAnalyticsFailure(error);
       if (page == 1) {
         _failed = true;
       } else {
@@ -127,6 +191,20 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         _notice('Não foi possível carregar mais posts.');
       }
     } finally {
+      stopwatch.stop();
+      if (generation != _generation) {
+        outcome = AnalyticsOutcome.stale;
+        failureType = null;
+        itemCount = null;
+      }
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.communityFeedLoad,
+        outcome: outcome,
+        trigger: trigger,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+        itemCount: itemCount,
+      ));
       if (mounted && generation == _generation) {
         setState(() => _loading = false);
       }
@@ -142,14 +220,24 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     if (_anonymousId == null || _voting.contains(postId)) return;
     setState(() => _voting.add(postId));
     try {
-      final data =
-          await _api.votePost(postId, value, anonymousId: _anonymousId!);
+      final updated = await _runWrite(
+        operation: AnalyticsOperation.communityVote,
+        action: () async => PostSummary.fromJson(
+          await _api.votePost(
+            postId,
+            value,
+            anonymousId: _anonymousId!,
+          ),
+        ),
+      );
       if (!mounted) return;
-      _session.updatePost(PostSummary.fromJson(data));
+      _session.updatePost(updated);
     } catch (error) {
       _notice(communityErrorMessage(error,
           fallback: 'Não foi possível registrar seu voto.'));
-      if (error is ApiException && error.statusCode == 410) await _loadPage(1);
+      if (error is ApiException && error.statusCode == 410) {
+        await _loadPage(1, trigger: AnalyticsTrigger.refresh);
+      }
     } finally {
       if (mounted) setState(() => _voting.remove(postId));
     }
@@ -161,9 +249,16 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     try {
       final reason = await chooseReportReason(context);
       if (reason == null || !mounted) return;
-      await _api.reportPost(postId, reason: reason, anonymousId: _anonymousId!);
+      await _runWrite(
+        operation: AnalyticsOperation.communityReport,
+        action: () => _api.reportPost(
+          postId,
+          reason: reason,
+          anonymousId: _anonymousId!,
+        ),
+      );
       _notice('Denúncia registrada. Obrigado.');
-      await _loadPage(1);
+      await _loadPage(1, trigger: AnalyticsTrigger.refresh);
     } catch (error) {
       _notice(communityErrorMessage(error,
           fallback: 'Não foi possível enviar a denúncia.'));
@@ -181,7 +276,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
       }
       await _api.deletePost(postId, anonymousId: _anonymousId!);
       _notice('Post removido.');
-      await _loadPage(1);
+      await _loadPage(1, trigger: AnalyticsTrigger.refresh);
     } catch (error) {
       _notice(communityErrorMessage(error,
           fallback: 'Não foi possível apagar o post.'));
@@ -194,7 +289,12 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     await Navigator.push<void>(
         context,
         MaterialPageRoute(
-          builder: (_) => PostDetailPage(postId: post.id, apiClient: _api),
+          settings: const RouteSettings(name: communityPostRoute),
+          builder: (_) => PostDetailPage(
+            postId: post.id,
+            apiClient: _api,
+            analytics: _analytics,
+          ),
         ));
     if (mounted) setState(() {});
   }
@@ -203,8 +303,12 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     final created = await Navigator.push<PostSummary>(
         context,
         MaterialPageRoute(
-          builder: (_) =>
-              CreatePostPage(apiClient: _api, initialThemeSlug: _themeSlug),
+          settings: const RouteSettings(name: communityCreateRoute),
+          builder: (_) => CreatePostPage(
+            apiClient: _api,
+            initialThemeSlug: _themeSlug,
+            analytics: _analytics,
+          ),
         ));
     if (!mounted || created == null) return;
     _session.invalidate();
@@ -213,7 +317,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
       _themeSlug = null;
       _themeName = null;
     });
-    _loadPage(1);
+    unawaited(_loadPage(1, trigger: AnalyticsTrigger.refresh));
     _notice('Publicação aprovada e enviada.');
     await _openDetail(created);
   }
@@ -223,7 +327,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
     _session.invalidate();
     setState(() => _sort = mode);
     if (_scrollController.hasClients) _scrollController.jumpTo(0);
-    _loadPage(1);
+    unawaited(_loadPage(1, trigger: AnalyticsTrigger.refresh));
   }
 
   Future<void> _chooseTheme() async {
@@ -264,7 +368,7 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
             : _themes!.firstWhere((t) => t.slug == selected).nome;
       });
       if (_scrollController.hasClients) _scrollController.jumpTo(0);
-      await _loadPage(1);
+      await _loadPage(1, trigger: AnalyticsTrigger.refresh);
     } catch (_) {
       _notice('Não foi possível carregar os temas. Tente novamente.');
     } finally {
@@ -309,7 +413,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
         if (_loading && feed.isNotEmpty) const LinearProgressIndicator(),
         if (_failed && feed.isNotEmpty)
           TextButton(
-              onPressed: () => _loadPage(1),
+              onPressed: () => _loadPage(
+                    1,
+                    trigger: AnalyticsTrigger.retry,
+                  ),
               child: const Text('Não foi possível atualizar. TENTAR DE NOVO')),
         Expanded(
             child: _loading && feed.isEmpty
@@ -319,7 +426,9 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                         title: 'Não foi possível carregar o fórum',
                         body: 'Verifique sua conexão e tente novamente.',
                         action: OutlinedButton(
-                            onPressed: _init,
+                            onPressed: () => _init(
+                                  trigger: AnalyticsTrigger.retry,
+                                ),
                             child: const Text('TENTAR DE NOVO')),
                       )
                     : feed.isEmpty
@@ -329,7 +438,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                                 ? 'Seja o primeiro a começar uma discussão.'
                                 : 'Nenhuma publicação neste tema. Escolha outro tema ou comece uma discussão.')
                         : RefreshIndicator(
-                            onRefresh: () => _loadPage(1),
+                            onRefresh: () => _loadPage(
+                              1,
+                              trigger: AnalyticsTrigger.refresh,
+                            ),
                             child: ListView.separated(
                               controller: _scrollController,
                               physics: const AlwaysScrollableScrollPhysics(),
@@ -346,7 +458,10 @@ class _CommunityFeedPageState extends State<CommunityFeedPage> {
                                             ? const CircularProgressIndicator()
                                             : OutlinedButton(
                                                 onPressed: () => _loadPage(
-                                                    _session.currentPage + 1),
+                                                      _session.currentPage + 1,
+                                                      trigger: AnalyticsTrigger
+                                                          .pagination,
+                                                    ),
                                                 child: const Text(
                                                     'CARREGAR MAIS')),
                                       ));

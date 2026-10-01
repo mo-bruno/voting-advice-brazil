@@ -4,8 +4,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/api/api_client.dart';
 import 'package:guia_eleitoral/core/device/device_identity_store.dart';
+import 'package:guia_eleitoral/core/link/link_opener.dart';
 import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:guia_eleitoral/features/home/news_session.dart';
@@ -14,6 +16,8 @@ import 'package:guia_eleitoral/features/home/widgets/news_states.dart';
 import 'package:guia_eleitoral/shared/models/political_actor.dart';
 import 'package:guia_eleitoral/shared/political_actor_session.dart';
 import 'package:http/http.dart' as http;
+
+import 'helpers/analytics_test_support.dart';
 
 const _payload = {
   'period_start': '2026-08-30',
@@ -87,12 +91,31 @@ ApiClient _api(Object body, {int status = 200}) => ApiClient(
       client: _StubClient(body, status: status),
     );
 
+class _RetryNewsApi extends ApiClient {
+  _RetryNewsApi() : super(baseUrl: 'https://api.test/api/v1');
+
+  var calls = 0;
+
+  @override
+  Future<WeeklyNews> fetchWeeklyNews({int limit = 10}) async {
+    if (calls++ == 0) {
+      throw const ApiException(
+        'private backend detail',
+        statusCode: 503,
+      );
+    }
+    return const WeeklyNews(periodLabel: '', articles: []);
+  }
+}
+
 Widget _app(
   NewsSession session, {
   List<Uri>? opened,
   VoidCallback? onStartQuiz,
   bool politicianFollowEnabled = false,
   PoliticalActorSession? politicalActorSession,
+  AnalyticsService? analytics,
+  LinkOpener? openLink,
 }) {
   return MaterialApp(
     theme: AppTheme.dark,
@@ -101,10 +124,12 @@ Widget _app(
       politicianFollowEnabled: politicianFollowEnabled,
       politicalActorSession: politicalActorSession,
       onStartQuiz: onStartQuiz ?? () {},
-      openLink: (uri) async {
-        opened?.add(uri);
-        return true;
-      },
+      analytics: analytics,
+      openLink: openLink ??
+          (uri) async {
+            opened?.add(uri);
+            return true;
+          },
     ),
   );
 }
@@ -317,6 +342,111 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(opened.single, Uri.parse('https://example.org/a'));
+  });
+
+  testWidgets('article opener reports only target and observable outcome',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await tester.pumpWidget(
+      _app(
+        NewsSession.testOnly(api: _api(_payload)),
+        analytics: AnalyticsService(sink: sink),
+        openLink: (_) async => false,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final firstCard = find.byType(NewsCard).first;
+    await tester.ensureVisible(firstCard);
+    await tester.tap(firstCard);
+    await tester.pump();
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'outbound_open',
+      'surface': 'news',
+      'target': 'news_article',
+      'outcome': 'failed',
+    });
+    expect(
+      lastEngagement(sink.calls).parameters!.values,
+      isNot(contains('https://example.org/a')),
+    );
+  });
+
+  testWidgets('quiz guide opener reports its closed category', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await tester.pumpWidget(
+      _app(
+        NewsSession.testOnly(api: _api(_payload)),
+        analytics: AnalyticsService(sink: sink),
+        openLink: (_) async => true,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final guide = find.text('Entenda as fontes e o resultado');
+    await tester.ensureVisible(guide);
+    await tester.tap(guide);
+    await tester.pump();
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'outbound_open',
+      'surface': 'home',
+      'target': 'quiz_guide',
+      'outcome': 'success',
+    });
+    expect(
+      lastEngagement(sink.calls).parameters!.values,
+      isNot(contains('https://fpolitico.com.br/eleicoes-2026/')),
+    );
+  });
+
+  testWidgets('news index opener reports its closed category', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    await tester.pumpWidget(
+      _app(
+        NewsSession.testOnly(api: _api(_payload)),
+        analytics: AnalyticsService(sink: sink),
+        openLink: (_) async => true,
+      ),
+    );
+    await tester.pumpAndSettle();
+
+    final index = find.text('VER TODAS AS NOTÍCIAS');
+    await tester.ensureVisible(index);
+    await tester.tap(index);
+    await tester.pump();
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'outbound_open',
+      'surface': 'news',
+      'target': 'news_index',
+      'outcome': 'success',
+    });
+    expect(
+      lastEngagement(sink.calls).parameters!.values,
+      isNot(contains('https://www.camara.leg.br/noticias')),
+    );
+  });
+
+  testWidgets('news retry records retry as the attempt trigger',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final session = NewsSession.testOnly(
+      api: _RetryNewsApi(),
+      analytics: AnalyticsService(sink: sink),
+    );
+    await tester.pumpWidget(_app(session));
+    await tester.pumpAndSettle();
+
+    final retry = find.text('TENTAR DE NOVO');
+    await tester.ensureVisible(retry);
+    await tester.pumpAndSettle();
+    await tester.tap(retry);
+    await tester.pumpAndSettle();
+
+    expect(operationOutcomes(sink.calls), ['failed', 'empty']);
+    expect(operationTriggers(sink.calls), ['initial', 'retry']);
   });
 
   testWidgets('card sem resumo nao quebra o layout', (tester) async {

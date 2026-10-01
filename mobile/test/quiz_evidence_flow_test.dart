@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
@@ -13,6 +15,8 @@ import 'package:guia_eleitoral/shared/models/party.dart';
 import 'package:guia_eleitoral/shared/models/thesis.dart';
 import 'package:guia_eleitoral/shared/quiz_session.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 class _SilentSink implements AnalyticsSink {
   @override
@@ -73,6 +77,16 @@ class _Api extends ApiClient {
   }
 }
 
+class _DelayedJustificationApi extends _Api {
+  final Completer<List<CandidateJustification>> response = Completer();
+
+  @override
+  Future<List<CandidateJustification>> fetchCandidateJustifications(
+    String candidateId,
+  ) =>
+      response.future;
+}
+
 void main() {
   late AnalyticsService analytics;
   setUp(() {
@@ -124,6 +138,7 @@ void main() {
   testWidgets('zero comparable answers never produces a top affinity', (
     tester,
   ) async {
+    final sink = RecordingAnalyticsSink();
     QuizSession.instance.results = const [
       CandidateResult(
         candidateId: '1',
@@ -136,12 +151,20 @@ void main() {
         matches: [],
       ),
     ];
-    await pump(tester, ResultsPage(analytics: analytics));
+    await pump(
+      tester,
+      ResultsPage(analytics: AnalyticsService(sink: sink)),
+    );
+    await tester.pump();
     expect(find.text('0.0%'), findsNothing);
     expect(find.text('Fora do ranking desta edição'), findsOneWidget);
     expect(find.text('0 de 9 respostas comparáveis · 0 categorias'),
         findsOneWidget);
     expect(find.text('FORA DO RANKING DESTA EDIÇÃO BETA'), findsOneWidget);
+    expect(
+      sink.names.where((name) => name == 'results_viewed'),
+      hasLength(1),
+    );
     expect(tester.takeException(), isNull);
   });
 
@@ -447,11 +470,15 @@ void main() {
   testWidgets('submission failure preserves candidate selection and retry', (
     tester,
   ) async {
+    final sink = RecordingAnalyticsSink();
     final api = _Api()..submitError = const ApiException('Falha de conexão.');
     final session = selectionSession(api);
     await pump(
       tester,
-      PartySelectionPage(session: session, analytics: analytics),
+      PartySelectionPage(
+        session: session,
+        analytics: AnalyticsService(sink: sink),
+      ),
     );
     await tester.tap(find.text('VER RESULTADOS'));
     await tester.pumpAndSettle();
@@ -462,12 +489,22 @@ void main() {
     expect(find.text('Não foi possível carregar os candidatos.'), findsNothing);
     expect(find.text('Candidata Teste'), findsOneWidget);
     expect(session.selectedCandidateIds, {'1'});
+    expect(sink.names, isNot(contains('party_selection_completed')));
+    expect(
+      lastOperation(sink.calls).parameters,
+      allOf(
+        containsPair('operation', 'results_submit'),
+        containsPair('outcome', 'failed'),
+        containsPair('trigger', 'submit'),
+      ),
+    );
     expect(tester.takeException(), isNull);
   });
 
   testWidgets(
     'outdated thesis error offers a new quiz and clears old selection',
     (tester) async {
+      final sink = RecordingAnalyticsSink();
       final api = _Api()
         ..submitError = const ApiException(
           'Tese indisponível.',
@@ -476,7 +513,10 @@ void main() {
       final session = selectionSession(api);
       await pump(
         tester,
-        PartySelectionPage(session: session, analytics: analytics),
+        PartySelectionPage(
+          session: session,
+          analytics: AnalyticsService(sink: sink),
+        ),
         routes: {'/quiz': (_) => const Scaffold(body: Text('Novo quiz'))},
       );
       await tester.ensureVisible(find.text('VER RESULTADOS'));
@@ -493,6 +533,25 @@ void main() {
       expect(session.candidates, isEmpty);
       expect(session.theses, isEmpty);
       expect(session.selectedCandidateIds, isEmpty);
+      expect(
+        named(sink.calls, 'operation_result')
+            .where(
+              (call) => call.parameters?['operation'] == 'results_submit',
+            )
+            .single
+            .parameters,
+        containsPair('outcome', 'stale'),
+      );
+      expect(
+        lastNamed(sink.calls, 'quiz_abandoned').parameters,
+        allOf(
+          containsPair('stage', 'candidate_selection'),
+          containsPair('reason', 'restart'),
+          containsPair('total_answered', 5),
+        ),
+      );
+      expect(
+          sink.names, containsAllInOrder(['quiz_restarted', 'quiz_started']));
       expect(tester.takeException(), isNull);
     },
   );
@@ -500,6 +559,7 @@ void main() {
   testWidgets('comparison exposes evidence and opens exactly its source URL', (
     tester,
   ) async {
+    final sink = RecordingAnalyticsSink();
     final session = QuizSession.testOnly(api: _Api())
       ..results = const [
         CandidateResult(
@@ -536,7 +596,7 @@ void main() {
       tester,
       ComparisonPage(
         session: session,
-        analytics: analytics,
+        analytics: AnalyticsService(sink: sink),
         openLink: (uri) async {
           opened = uri;
           return true;
@@ -545,10 +605,22 @@ void main() {
     );
     await tester.tap(find.text('COMPARAR RESPOSTAS'));
     await tester.pumpAndSettle();
+    expect(
+      lastOperation(sink.calls).parameters,
+      allOf(
+        containsPair('operation', 'comparison_load'),
+        containsPair('outcome', 'success'),
+        containsPair('item_count', 1),
+      ),
+    );
     expect(find.byTooltip('Posição condicional ou mista'), findsOneWidget);
     expect(find.byTooltip('Neutro'), findsOneWidget);
     await tester.tap(find.text('1. A TESE COMPARADA'));
     await tester.pumpAndSettle();
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'evidence_open',
+      'surface': 'comparison',
+    });
     expect(find.text('Trecho do plano: “Trecho verificável”'), findsOneWidget);
     expect(
       find.text('Referência: Documento oficial, páginas 4 e 8'),
@@ -558,12 +630,115 @@ void main() {
     await tester.tap(find.text('ABRIR FONTE OFICIAL'));
     await tester.pumpAndSettle();
     expect(opened.toString(), 'https://example.test/plano.pdf');
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'outbound_open',
+      'surface': 'comparison',
+      'target': 'comparison_source',
+      'outcome': 'success',
+    });
+    expect(
+      lastEngagement(sink.calls).parameters!.values,
+      isNot(contains('https://example.test/plano.pdf')),
+    );
     expect(tester.takeException(), isNull);
+  });
+
+  testWidgets('leaving a comparison attempt reports one stale terminal',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final api = _DelayedJustificationApi();
+    final session = selectionSession(api)
+      ..results = const [
+        CandidateResult(
+          candidateId: '1',
+          name: 'Candidata Teste',
+          party: 'DC',
+          scorePercent: 100,
+          rank: 1,
+          countedTheses: 1,
+          answeredTheses: 1,
+          matches: [
+            ThesisMatch(
+              thesisId: 1,
+              thesisText: 'A tese comparada',
+              themeId: 1,
+              userAnswer: 'agree',
+              candidatePosition: 'concordo',
+              matchType: 'match',
+            ),
+          ],
+        ),
+      ];
+    await pump(
+      tester,
+      ComparisonPage(
+        session: session,
+        analytics: AnalyticsService(sink: sink),
+      ),
+    );
+
+    await tester.tap(find.text('COMPARAR RESPOSTAS'));
+    await tester.pump();
+    await tester.tap(find.byIcon(Icons.arrow_back));
+    await tester.pump();
+    api.response.complete(const []);
+    await tester.pumpAndSettle();
+
+    final operations = named(sink.calls, 'operation_result')
+        .where((call) => call.parameters?['operation'] == 'comparison_load')
+        .toList();
+    expect(operations, hasLength(1));
+    expect(operations.single.parameters?['outcome'], 'stale');
+  });
+
+  testWidgets('comparison request failure is generic and terminal',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final api = _Api()
+      ..justificationError = const ApiException(
+        'mensagem interna',
+        statusCode: 503,
+      );
+    final session = selectionSession(api)
+      ..results = const [
+        CandidateResult(
+          candidateId: '1',
+          name: 'Candidata Teste',
+          party: 'DC',
+          scorePercent: 100,
+          rank: 1,
+          countedTheses: 1,
+          answeredTheses: 1,
+          matches: [],
+        ),
+      ];
+    await pump(
+      tester,
+      ComparisonPage(
+        session: session,
+        analytics: AnalyticsService(sink: sink),
+      ),
+    );
+
+    await tester.tap(find.text('COMPARAR RESPOSTAS'));
+    await tester.pumpAndSettle();
+
+    final operation = lastOperation(sink.calls);
+    expect(
+      operation.parameters,
+      allOf(
+        containsPair('operation', 'comparison_load'),
+        containsPair('outcome', 'failed'),
+        containsPair('failure_type', 'unavailable'),
+      ),
+    );
+    expect(operation.parameters!.values, isNot(contains('mensagem interna')));
   });
 
   testWidgets(
     'a withdrawn selection refreshes candidates and can be resubmitted',
     (tester) async {
+      final sink = RecordingAnalyticsSink();
       final api = _Api()
         ..submitResults = const [
           CandidateResult(
@@ -587,7 +762,10 @@ void main() {
       final session = selectionSession(api);
       await pump(
         tester,
-        PartySelectionPage(session: session, analytics: analytics),
+        PartySelectionPage(
+          session: session,
+          analytics: AnalyticsService(sink: sink),
+        ),
         routes: {
           '/results': (_) => const Scaffold(body: Text('Resultado atualizado')),
         },
@@ -603,6 +781,28 @@ void main() {
       expect(find.text('Nova candidata'), findsOneWidget);
       expect(session.results, isEmpty);
       expect(session.selectedCandidateIds, isEmpty);
+      expect(
+        named(sink.calls, 'operation_result')
+            .where((call) => call.parameters?['operation'] == 'results_submit')
+            .map((call) => call.parameters?['outcome']),
+        ['stale'],
+      );
+      expect(
+        named(sink.calls, 'operation_result')
+            .where(
+              (call) => call.parameters?['operation'] == 'candidate_load',
+            )
+            .map((call) => call.parameters?['trigger']),
+        ['initial', 'refresh'],
+      );
+      expect(
+        lastNamed(sink.calls, 'quiz_abandoned').parameters,
+        allOf(
+          containsPair('stage', 'candidate_selection'),
+          containsPair('reason', 'recovery'),
+          containsPair('total_answered', 5),
+        ),
+      );
       await tester.ensureVisible(find.text('Nova candidata'));
       await tester.pump();
       await tester.tap(find.text('Nova candidata'));
@@ -613,6 +813,16 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.text('Resultado atualizado'), findsOneWidget);
       expect(session.selectedCandidateIds, {'2'});
+      expect(
+        named(sink.calls, 'operation_result')
+            .where((call) => call.parameters?['operation'] == 'results_submit')
+            .map((call) => call.parameters?['outcome']),
+        ['stale', 'success'],
+      );
+      expect(
+        sink.names.where((name) => name == 'party_selection_completed'),
+        hasLength(1),
+      );
       expect(tester.takeException(), isNull);
     },
   );
@@ -621,6 +831,7 @@ void main() {
     testWidgets('comparison blocks incompatible evidence: $change', (
       tester,
     ) async {
+      final sink = RecordingAnalyticsSink();
       final api = _Api()
         ..justifications = change == 'missing'
             ? []
@@ -668,7 +879,10 @@ void main() {
         ];
       await pump(
         tester,
-        ComparisonPage(session: session, analytics: analytics),
+        ComparisonPage(
+          session: session,
+          analytics: AnalyticsService(sink: sink),
+        ),
         routes: {
           '/party-selection': (_) =>
               const Scaffold(body: Text('Recalcular seleção')),
@@ -677,6 +891,13 @@ void main() {
       await tester.tap(find.text('COMPARAR RESPOSTAS'));
       await tester.pumpAndSettle();
       expect(find.text('A comparação precisa ser atualizada.'), findsOneWidget);
+      expect(
+        lastOperation(sink.calls).parameters,
+        allOf(
+          containsPair('operation', 'comparison_load'),
+          containsPair('outcome', 'stale'),
+        ),
+      );
       expect(find.textContaining('Trecho incompatível'), findsNothing);
       expect(find.text('ABRIR FONTE OFICIAL'), findsNothing);
       await tester.tap(find.text('RECALCULAR RESULTADO'));

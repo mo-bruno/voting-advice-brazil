@@ -117,6 +117,35 @@ void main() {
     expect(store.writes, isEmpty);
   });
 
+  testWidgets('consent copy is concise and provider-neutral', (tester) async {
+    final controller = await _controller(_Store());
+    addTearDown(controller.dispose);
+    await _pump(
+      tester,
+      controller,
+      onLearnMore: () {},
+      onGrantFailure: () {},
+      onDenialFailure: () {},
+    );
+
+    expect(
+      find.text(
+        'Se você aceitar, enviamos somente métricas de uso e desempenho. '
+        'Não enviamos respostas do quiz, preferências políticas ou textos e '
+        'não usamos publicidade.',
+      ),
+      findsOneWidget,
+    );
+    for (final provider in [
+      'Google Analytics',
+      'Firebase',
+      'GA4',
+      'BigQuery',
+    ]) {
+      expect(find.textContaining(provider), findsNothing, reason: provider);
+    }
+  });
+
   testWidgets('accept and reject call their matching actions', (tester) async {
     final store = _Store();
     final controller = await _controller(store);

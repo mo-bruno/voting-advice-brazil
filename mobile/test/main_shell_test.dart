@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_navigation.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/core/branding/farol_wordmark.dart';
 import 'package:guia_eleitoral/core/layout/app_scaffold.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -10,6 +12,8 @@ import 'package:guia_eleitoral/features/home/home_page.dart';
 import 'package:guia_eleitoral/features/political_actors/political_actor_search_page.dart';
 import 'package:guia_eleitoral/features/political_actors/politician_follow_validation_page.dart';
 import 'package:guia_eleitoral/features/quiz/quiz_intro_page.dart';
+
+import 'helpers/analytics_test_support.dart';
 
 /// Telas de mentira, uma por aba.
 ///
@@ -57,6 +61,35 @@ Widget _wrap({MainShellTab tab = MainShellTab.inicio}) => MaterialApp(
       theme: AppTheme.dark,
       home: MainShell(initialTab: tab, pageBuilders: _stubs()),
     );
+
+Future<RecordingAnalyticsSink> _pumpAnalyticsShell(
+  WidgetTester tester, {
+  MainShellTab initialTab = MainShellTab.inicio,
+  AnalyticsSource? initialSource,
+  List<Widget Function(VoidCallback)>? pageBuilders,
+}) async {
+  final sink = RecordingAnalyticsSink();
+  final analytics = AnalyticsService(sink: sink);
+  final intent = AnalyticsNavigationIntent();
+  if (initialSource != null) intent.mark(initialSource);
+  final observer = AnalyticsNavigationObserver(
+    analytics: analytics,
+    intent: intent,
+  );
+  await tester.pumpWidget(MaterialApp(
+    theme: AppTheme.dark,
+    navigatorObservers: [observer],
+    home: MainShell(
+      initialTab: initialTab,
+      analytics: analytics,
+      navigationIntent: intent,
+      routeObserver: observer,
+      pageBuilders: pageBuilders ?? _stubs(),
+    ),
+  ));
+  await tester.pump();
+  return sink;
+}
 
 void main() {
   testWidgets('desktop has one brand and menu, compact restores tab bar',
@@ -189,6 +222,100 @@ void main() {
     await tester.pump();
 
     expect(identical(antes, tester.state(find.byType(_Stub))), isTrue);
+  });
+
+  testWidgets('initial tab and real tab changes emit exactly once',
+      (tester) async {
+    final sink = await _pumpAnalyticsShell(tester);
+
+    await tester.tap(find.text('Comunidade'));
+    await tester.pump();
+    await tester.tap(find.text('Comunidade'));
+    await tester.pump();
+
+    expect(
+      named(sink.calls, 'screen_viewed')
+          .map((call) => call.parameters)
+          .toList(),
+      [
+        {'screen': 'home', 'source': 'initial'},
+        {'screen': 'community_feed', 'source': 'tab'},
+      ],
+    );
+  });
+
+  testWidgets('home CTA identifies the quiz entry source', (tester) async {
+    final sink = await _pumpAnalyticsShell(
+      tester,
+      pageBuilders: _stubsWithQuizInvitation(),
+    );
+
+    await tester.tap(find.text('convite-quiz'));
+    await tester.pump();
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'quiz_entry',
+      'surface': 'home',
+      'source': 'home_cta',
+    });
+    expect(lastNamed(sink.calls, 'screen_viewed').parameters, {
+      'screen': 'quiz_intro',
+      'source': 'home_cta',
+    });
+  });
+
+  testWidgets('quiz tab identifies the quiz entry source', (tester) async {
+    final sink = await _pumpAnalyticsShell(tester);
+
+    await tester.tap(find.text('Quiz'));
+    await tester.pump();
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'quiz_entry',
+      'surface': 'home',
+      'source': 'tab',
+    });
+  });
+
+  testWidgets('quiz deep link is attributed once', (tester) async {
+    final sink = await _pumpAnalyticsShell(
+      tester,
+      initialTab: MainShellTab.quiz,
+      initialSource: AnalyticsSource.deepLink,
+    );
+
+    expect(lastEngagement(sink.calls).parameters, {
+      'action': 'quiz_entry',
+      'surface': 'home',
+      'source': 'deep_link',
+    });
+    expect(lastNamed(sink.calls, 'screen_viewed').parameters, {
+      'screen': 'quiz_intro',
+      'source': 'deep_link',
+    });
+  });
+
+  testWidgets('returning to the shell emits the visible tab once as back',
+      (tester) async {
+    final sink = await _pumpAnalyticsShell(tester);
+    final navigator = tester.state<NavigatorState>(find.byType(Navigator));
+
+    navigator.push(MaterialPageRoute<void>(
+      builder: (_) => const Scaffold(body: Text('detail')),
+    ));
+    await tester.pumpAndSettle();
+    navigator.pop();
+    await tester.pumpAndSettle();
+
+    expect(
+      named(sink.calls, 'screen_viewed')
+          .map((call) => call.parameters)
+          .toList(),
+      [
+        {'screen': 'home', 'source': 'initial'},
+        {'screen': 'home', 'source': 'back'},
+      ],
+    );
   });
 
   testWidgets('initialTab seleciona a aba de abertura', (tester) async {

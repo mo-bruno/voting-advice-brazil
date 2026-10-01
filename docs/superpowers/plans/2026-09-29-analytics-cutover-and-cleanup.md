@@ -1,3 +1,7 @@
+> **SUPERSEDED — do not execute.** The approved design and plan dated
+> 2026-09-30 preserve GA4 property 535804267 and its historical BigQuery data.
+> They replace this document's property creation, relink and deletion steps.
+
 # Analytics Cutover and Historical Cleanup Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.

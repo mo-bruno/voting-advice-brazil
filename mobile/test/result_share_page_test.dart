@@ -1,8 +1,10 @@
+import 'dart:async';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_card.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_data.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_page.dart';
@@ -11,11 +13,24 @@ import 'package:guia_eleitoral/features/results/sharing/result_share_service.dar
 import 'package:guia_eleitoral/shared/models/candidate_result.dart';
 import 'package:share_plus/share_plus.dart';
 
+import 'helpers/analytics_test_support.dart';
+
 class _ShareDevice extends ResultShareService {
-  _ShareDevice({this.failSharing = false, this.downloadSupported = true});
+  _ShareDevice({
+    this.failSharing = false,
+    this.downloadSupported = true,
+    this.shareStatus = ShareResultStatus.dismissed,
+    this.failDownload = false,
+    this.failCopy = false,
+    this.failNetwork = false,
+  });
 
   final bool failSharing;
   final bool downloadSupported;
+  final ShareResultStatus shareStatus;
+  final bool failDownload;
+  final bool failCopy;
+  final bool failNetwork;
   Uint8List? shared;
   String? sharedText;
   Uint8List? downloaded;
@@ -37,21 +52,26 @@ class _ShareDevice extends ResultShareService {
     if (failSharing) throw UnsupportedError('Sem menu nativo neste navegador');
     shared = bytes;
     sharedText = text;
-    return const ShareResult('', ShareResultStatus.dismissed);
+    return ShareResult('', shareStatus);
   }
 
   @override
   Future<void> downloadImage(Uint8List bytes, ResultShareFormat format) async {
+    if (failDownload) throw StateError('Falha no download');
     downloaded = bytes;
     downloads++;
   }
 
   @override
-  Future<void> copyLink(ResultShareData data) async => copied = data.siteUrl;
+  Future<void> copyLink(ResultShareData data) async {
+    if (failCopy) throw StateError('Falha ao copiar');
+    copied = data.siteUrl;
+  }
 
   @override
   Future<void> openNetwork(
       ResultShareData data, ResultShareNetwork network) async {
+    if (failNetwork) throw StateError('Falha ao abrir rede');
     networks.add(network);
     networkData = data;
   }
@@ -147,14 +167,69 @@ void main() {
     expect(find.text('Compartilhar imagem'), findsOneWidget);
   }
 
-  Future<void> pumpPage(WidgetTester tester, ResultShareService device,
-      {ResultShareData? shareData}) async {
+  Future<void> pumpPage(
+    WidgetTester tester,
+    ResultShareService device, {
+    ResultShareData? shareData,
+    RecordingAnalyticsSink? sink,
+    Future<Uint8List> Function()? imageRenderer,
+    bool waitForRender = true,
+  }) async {
     await tester.runAsync(ResultShareCard.loadFonts);
     await tester.pumpWidget(MaterialApp(
       theme: ThemeData.dark(),
-      home: ResultSharePage(data: shareData ?? data, service: device),
+      home: ResultSharePage(
+        data: shareData ?? data,
+        service: device,
+        analytics: sink == null ? null : AnalyticsService(sink: sink),
+        imageRenderer: imageRenderer,
+      ),
     ));
-    await waitForImage(tester);
+    if (waitForRender) await waitForImage(tester);
+  }
+
+  Future<void> pumpUntil(
+    WidgetTester tester,
+    bool Function() condition,
+  ) async {
+    for (var attempt = 0; attempt < 40 && !condition(); attempt++) {
+      await tester.runAsync(
+        () => Future<void>.delayed(const Duration(milliseconds: 5)),
+      );
+      await tester.pump();
+    }
+    expect(condition(), isTrue);
+  }
+
+  List<RecordedAnalyticsCall> shareRenders(RecordingAnalyticsSink sink) =>
+      named(sink.calls, 'operation_result')
+          .where((call) => call.parameters?['operation'] == 'share_render')
+          .toList();
+
+  void expectSafeParameters(RecordedAnalyticsCall call) {
+    expect(
+      call.parameters?.keys,
+      isNot(contains(anyOf(<String>[
+        'candidate_id',
+        'candidate',
+        'ranking',
+        'party',
+        'style',
+        'caption',
+        'url',
+        'legend',
+        'direction',
+        'palette',
+      ]))),
+    );
+    expect(
+      call.parameters?.values.map((value) => value.toString()),
+      isNot(contains(anyOf(
+        'Marina de Albuquerque Silva',
+        'PSD',
+        'https://exemplo.com.br',
+      ))),
+    );
   }
 
   Future<void> tap(WidgetTester tester, String label) async {
@@ -170,6 +245,154 @@ void main() {
     expect(header.getUint32(16), width);
     expect(header.getUint32(20), height);
   }
+
+  testWidgets('render inicial emite um único terminal seguro de sucesso',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+
+    await pumpPage(
+      tester,
+      _ShareDevice(),
+      sink: sink,
+      imageRenderer: () async => Uint8List.fromList([1]),
+    );
+
+    final renders = shareRenders(sink);
+    expect(renders, hasLength(1));
+    expect(
+      renders.single.parameters,
+      allOf(
+        containsPair('operation', 'share_render'),
+        containsPair('outcome', 'success'),
+        containsPair('trigger', 'initial'),
+        contains('duration_ms'),
+        hasLength(4),
+      ),
+    );
+    expectSafeParameters(renders.single);
+    expect(named(sink.calls, 'screen_viewed'), isEmpty);
+    expect(named(sink.calls, 'engagement_action'), isEmpty,
+        reason: 'renderizar ou exibir opções não é uma ação de destino');
+  });
+
+  testWidgets('render substituído emite stale e o novo refresh emite success',
+      (tester) async {
+    final first = Completer<Uint8List>();
+    final sink = RecordingAnalyticsSink();
+    var renderCalls = 0;
+    Future<Uint8List> render() {
+      renderCalls++;
+      if (renderCalls == 1) return first.future;
+      return Future.value(Uint8List.fromList([1]));
+    }
+
+    await pumpPage(
+      tester,
+      _ShareDevice(),
+      sink: sink,
+      imageRenderer: render,
+      waitForRender: false,
+    );
+    await pumpUntil(tester, () => renderCalls == 1);
+    final currentPalette =
+        tester.widget<ResultShareCard>(find.byType(ResultShareCard)).palette;
+    final nextPalette = ResultSharePalette.values
+        .firstWhere((palette) => palette != currentPalette);
+    await tester.tap(find.byTooltip(nextPalette.label));
+    await pumpUntil(
+      tester,
+      () => renderCalls == 2 && shareRenders(sink).length == 2,
+    );
+
+    final renders = shareRenders(sink);
+    expect(
+      renders.map((call) => call.parameters?['outcome']),
+      containsAll(<String>['stale', 'success']),
+    );
+    expect(
+      renders.map((call) =>
+          '${call.parameters?['trigger']}:${call.parameters?['outcome']}'),
+      containsAll(<String>['initial:stale', 'refresh:success']),
+    );
+    for (final render in renders) {
+      expect(render.parameters?['operation'], 'share_render');
+      expectSafeParameters(render);
+    }
+
+    first.complete(Uint8List.fromList([2]));
+    await tester.pump();
+    expect(shareRenders(sink), hasLength(2),
+        reason: 'a conclusão tardia não pode duplicar o terminal stale');
+  });
+
+  testWidgets('desmontar encerra render pendente uma vez como stale',
+      (tester) async {
+    final pending = Completer<Uint8List>();
+    final sink = RecordingAnalyticsSink();
+    var renderStarted = false;
+
+    await pumpPage(
+      tester,
+      _ShareDevice(),
+      sink: sink,
+      imageRenderer: () {
+        renderStarted = true;
+        return pending.future;
+      },
+      waitForRender: false,
+    );
+    await pumpUntil(tester, () => renderStarted);
+    await tester.pumpWidget(const SizedBox());
+
+    final render = shareRenders(sink).single;
+    expect(render.parameters, containsPair('trigger', 'initial'));
+    expect(render.parameters, containsPair('outcome', 'stale'));
+    pending.complete(Uint8List.fromList([1]));
+    await tester.pump();
+    expect(shareRenders(sink), hasLength(1));
+  });
+
+  testWidgets('bytes vazios falham e tentativa manual usa trigger retry',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    var renderCalls = 0;
+
+    await pumpPage(
+      tester,
+      _ShareDevice(),
+      sink: sink,
+      imageRenderer: () async {
+        renderCalls++;
+        return renderCalls == 1 ? Uint8List(0) : Uint8List.fromList([1]);
+      },
+      waitForRender: false,
+    );
+    await pumpUntil(
+      tester,
+      () => find
+          .text('Não foi possível preparar a imagem.')
+          .evaluate()
+          .isNotEmpty,
+    );
+
+    expect(
+      shareRenders(sink).single.parameters,
+      allOf(
+        containsPair('trigger', 'initial'),
+        containsPair('outcome', 'failed'),
+        containsPair('failure_type', 'unknown'),
+      ),
+    );
+    await tester.ensureVisible(find.text('Tentar novamente'));
+    await tester.tap(find.text('Tentar novamente'));
+    await waitForImage(tester);
+
+    expect(
+      shareRenders(sink).map((call) =>
+          '${call.parameters?['trigger']}:${call.parameters?['outcome']}'),
+      <String>['initial:failed', 'retry:success'],
+    );
+  });
 
   testWidgets('exporta Stories e Post nas dimensões certas após trocar formato',
       (tester) async {
@@ -360,32 +583,81 @@ void main() {
 
   testWidgets('cancelar o menu não baixa arquivo nem anuncia publicação',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
     final device = _ShareDevice();
-    await pumpPage(tester, device);
+    await pumpPage(tester, device, sink: sink);
     await tap(tester, 'Compartilhar imagem');
     expectPng(device.shared, 1080, 1920);
     expect(device.downloads, 0);
     expect(find.byType(SnackBar), findsNothing);
+    expect(
+      named(sink.calls, 'engagement_action').single.parameters,
+      {
+        'action': 'share',
+        'surface': 'results',
+        'target': 'native_share',
+        'outcome': 'success',
+      },
+    );
   });
 
-  testWidgets('navegador sem compartilhamento recebe download da imagem',
+  testWidgets(
+      'resultados nativos resolvidos contam como tentativa bem-sucedida',
       (tester) async {
+    for (final status in ShareResultStatus.values) {
+      final sink = RecordingAnalyticsSink();
+      final device = _ShareDevice(shareStatus: status);
+      await pumpPage(
+        tester,
+        device,
+        sink: sink,
+        imageRenderer: () async => Uint8List.fromList([1]),
+      );
+      await tap(tester, 'Compartilhar imagem');
+
+      expect(
+        named(sink.calls, 'engagement_action').single.parameters,
+        allOf(
+          containsPair('target', 'native_share'),
+          containsPair('outcome', 'success'),
+        ),
+        reason: 'status nativo resolvido: $status',
+      );
+      expect(device.downloads, 0);
+      await tester.pumpWidget(const SizedBox());
+    }
+  });
+
+  testWidgets('falha nativa não inicia download automático', (tester) async {
+    final sink = RecordingAnalyticsSink();
     final device = _ShareDevice(failSharing: true);
-    await pumpPage(tester, device);
+    await pumpPage(tester, device, sink: sink);
     await tap(tester, 'Compartilhar imagem');
-    expectPng(device.downloaded, 1080, 1920);
-    expect(find.text('Download iniciado. Anexe a imagem na rede social.'),
+    expect(device.downloaded, isNull);
+    expect(device.downloads, 0);
+    expect(find.textContaining('Não foi possível compartilhar a imagem.'),
         findsOneWidget);
+    final actions = named(sink.calls, 'engagement_action');
+    expect(actions, hasLength(1));
+    expect(
+      actions.single.parameters,
+      allOf(
+        containsPair('target', 'native_share'),
+        containsPair('outcome', 'failed'),
+      ),
+    );
+    expect(engagementTargets(sink.calls), isNot(contains('download')));
   });
 
   testWidgets('WhatsApp envia o PNG e a legenda do ranking selecionado ao menu',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
     ShareParams? sent;
     final service = ResultShareService(share: (params) async {
       sent = params;
       return const ShareResult('', ShareResultStatus.dismissed);
     });
-    await pumpPage(tester, service, shareData: rankingData);
+    await pumpPage(tester, service, shareData: rankingData, sink: sink);
     await tap(tester, 'Ranking');
     await tap(tester, 'Post · 4:5');
     await waitForImage(tester);
@@ -402,34 +674,54 @@ void main() {
     expect(sent!.sharePositionOrigin!.isEmpty, isFalse);
     expect(sent!.downloadFallbackEnabled, isFalse);
     expect(find.byType(SnackBar), findsNothing,
-        reason: 'cancelar o menu não anuncia publicação nem aciona alternativa');
+        reason:
+            'cancelar o menu não anuncia publicação nem aciona alternativa');
+    expect(engagementTargets(sink.calls), ['whatsapp']);
+    expect(
+      lastEngagement(sink.calls).parameters,
+      containsPair('outcome', 'success'),
+    );
   });
 
-  testWidgets('WhatsApp sem suporte baixa a imagem e abre a mensagem correspondente',
+  testWidgets('WhatsApp sem suporte não baixa e oferece abrir a mensagem',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
     final device = _ShareDevice(failSharing: true);
-    await pumpPage(tester, device, shareData: rankingData);
+    await pumpPage(tester, device, shareData: rankingData, sink: sink);
     await tap(tester, 'WhatsApp');
-    expectPng(device.downloaded, 1080, 1920);
+    expect(device.downloaded, isNull);
+    expect(device.downloads, 0);
     expect(device.networks, isEmpty,
-        reason: 'abrir a mensagem exige um novo toque para evitar popup bloqueado');
+        reason:
+            'abrir a mensagem exige um novo toque para evitar popup bloqueado');
     expect(find.text('Abrir WhatsApp'), findsOneWidget);
+    expect(
+      lastEngagement(sink.calls).parameters,
+      allOf(
+        containsPair('target', 'whatsapp'),
+        containsPair('outcome', 'failed'),
+      ),
+    );
+    expect(engagementTargets(sink.calls), isNot(contains('download')));
 
     await tap(tester, 'Ranking');
     await waitForImage(tester);
     await tap(tester, 'Abrir WhatsApp');
     expect(device.networks, [ResultShareNetwork.whatsapp]);
     expect(device.networkData, same(rankingData),
-        reason: 'a mensagem deve corresponder ao PNG já baixado');
+        reason: 'a mensagem deve corresponder à seleção do primeiro toque');
+    expect(engagementTargets(sink.calls), ['whatsapp', 'whatsapp']);
   });
 
-  testWidgets('WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
+  testWidgets(
+      'WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
       (tester) async {
     final device = _ShareDevice(failSharing: true, downloadSupported: false);
     await pumpPage(tester, device);
     await tap(tester, 'WhatsApp');
     expect(device.downloads, 0);
-    expect(find.textContaining('Não foi possível enviar imagem e texto juntos.'),
+    expect(
+        find.textContaining('Não foi possível enviar imagem e texto juntos.'),
         findsOneWidget);
     await tap(tester, 'Abrir WhatsApp');
     expect(device.networks, [ResultShareNetwork.whatsapp]);
@@ -437,8 +729,9 @@ void main() {
 
   testWidgets('atalho do X e ajuda do Instagram preservam o link',
       (tester) async {
+    final sink = RecordingAnalyticsSink();
     final device = _ShareDevice();
-    await pumpPage(tester, device);
+    await pumpPage(tester, device, sink: sink);
     await tap(tester, 'X / Twitter');
     expect(device.networks, [ResultShareNetwork.twitter]);
     await tap(tester, 'Copiar link');
@@ -451,6 +744,81 @@ void main() {
     expect(find.text('Leve para o Instagram'), findsNothing);
     expect(find.text('Link copiado. Cole na publicação ou no adesivo de link.'),
         findsOneWidget);
+    expect(
+      engagementTargets(sink.calls),
+      ['twitter', 'copy_link', 'instagram_help', 'copy_link'],
+    );
+    final instagram = named(sink.calls, 'engagement_action')
+        .singleWhere((call) => call.parameters?['target'] == 'instagram_help');
+    expect(instagram.parameters, {
+      'action': 'share',
+      'surface': 'results',
+      'target': 'instagram_help',
+    });
+  });
+
+  testWidgets('download direto emite uma ação segura após o resultado',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final device = _ShareDevice();
+    await pumpPage(tester, device, sink: sink);
+
+    await tap(tester, 'Baixar imagem');
+
+    final action = lastEngagement(sink.calls);
+    expect(action.parameters, {
+      'action': 'share',
+      'surface': 'results',
+      'target': 'download',
+      'outcome': 'success',
+    });
+    expectSafeParameters(action);
+  });
+
+  testWidgets('destinos diretos emitem failed quando a operação lança',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final device = _ShareDevice(
+      failDownload: true,
+      failCopy: true,
+      failNetwork: true,
+    );
+    await pumpPage(tester, device, sink: sink);
+
+    await tap(tester, 'Baixar imagem');
+    await tap(tester, 'Copiar link');
+    await tap(tester, 'X / Twitter');
+
+    final actions = named(sink.calls, 'engagement_action');
+    expect(
+      actions.map((call) => call.parameters?['target']),
+      ['download', 'copy_link', 'twitter'],
+    );
+    expect(
+      actions.map((call) => call.parameters?['outcome']).toSet(),
+      {'failed'},
+    );
+  });
+
+  testWidgets('analytics pendente não bloqueia compartilhamento',
+      (tester) async {
+    final analyticsNeverCompletes = Completer<void>();
+    final sink = RecordingAnalyticsSink(block: analyticsNeverCompletes.future);
+    final device = _ShareDevice();
+    await pumpPage(
+      tester,
+      device,
+      sink: sink,
+      imageRenderer: () async => Uint8List.fromList([1]),
+    );
+
+    await tester.ensureVisible(find.text('Compartilhar imagem'));
+    await tester.tap(find.text('Compartilhar imagem'));
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(device.shared, isNotNull);
+    expect(lastEngagement(sink.calls).parameters,
+        containsPair('target', 'native_share'));
   });
 
   testWidgets('cabe em celular estreito com texto ampliado e nome longo',

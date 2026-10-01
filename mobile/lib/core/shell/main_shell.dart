@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
+import '../analytics/analytics_navigation.dart';
+import '../analytics/analytics_service.dart';
 import '../branding/farol_wordmark.dart';
 import '../features/feature_flags.dart';
 import '../../features/community/community_feed_page.dart';
@@ -37,6 +41,9 @@ class MainShell extends StatefulWidget {
     this.initialTab = MainShellTab.inicio,
     this.iotEnabled,
     this.politicianFollowEnabled,
+    this.analytics,
+    this.navigationIntent,
+    this.routeObserver,
     this.pageBuilders,
   });
 
@@ -47,6 +54,10 @@ class MainShell extends StatefulWidget {
 
   /// Quando ausente, usa a flag de compilação da aplicação.
   final bool? politicianFollowEnabled;
+
+  final AnalyticsService? analytics;
+  final AnalyticsNavigationIntent? navigationIntent;
+  final AnalyticsNavigationObserver? routeObserver;
 
   /// Injetável apenas em teste. O shell responde por trocar de aba e por não
   /// recriar o que já foi visitado — não pelo conteúdo das telas, que têm seus
@@ -77,25 +88,32 @@ class MainShell extends StatefulWidget {
     MainShellTab tab, {
     required VoidCallback onStartQuiz,
     bool politicianFollowEnabled = false,
+    AnalyticsService? analytics,
   }) =>
       switch (tab) {
         MainShellTab.inicio => HomePage(
             onStartQuiz: onStartQuiz,
             politicianFollowEnabled: politicianFollowEnabled,
+            analytics: analytics,
           ),
         MainShellTab.acompanhar => politicianFollowEnabled
             ? const PoliticalActorSearchPage()
-            : const PoliticianFollowValidationPage(),
-        MainShellTab.quiz => const QuizIntroPage(),
-        MainShellTab.comunidade => const CommunityFeedPage(),
+            : PoliticianFollowValidationPage(analytics: analytics),
+        MainShellTab.quiz => QuizIntroPage(analytics: analytics),
+        MainShellTab.comunidade => CommunityFeedPage(analytics: analytics),
       };
 
   @override
   State<MainShell> createState() => _MainShellState();
 }
 
-class _MainShellState extends State<MainShell> {
+class _MainShellState extends State<MainShell> with RouteAware {
   late int _index = widget.initialTab.index;
+  late final AnalyticsService _analytics =
+      widget.analytics ?? AnalyticsService();
+  late final AnalyticsNavigationIntent _navigationIntent =
+      widget.navigationIntent ?? AnalyticsNavigationIntent();
+  PageRoute<dynamic>? _subscribedRoute;
 
   /// A gaveta e do Scaffold daqui, mas quem a abre esta dentro da tela da aba,
   /// fundo demais para `Scaffold.of` chegar. A chave e o atalho.
@@ -122,16 +140,99 @@ class _MainShellState extends State<MainShell> {
             onStartQuiz: _openQuiz,
             politicianFollowEnabled: widget.politicianFollowEnabled ??
                 FeatureFlags.environment.politicianFollowEnabled,
+            analytics: _analytics,
           );
   }
 
-  void _openQuiz() => _select(MainShellTab.quiz.index);
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !(ModalRoute.of(context)?.isCurrent ?? true)) return;
+      final source = _navigationIntent.consumeOr(AnalyticsSource.initial);
+      _trackVisibleTab(
+        source,
+        quizEntry: source == AnalyticsSource.deepLink ||
+            source == AnalyticsSource.drawer,
+      );
+    });
+  }
 
-  void _select(int index) {
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    final observer = widget.routeObserver;
+    final modalRoute = ModalRoute.of(context);
+    final route = modalRoute is PageRoute<dynamic> ? modalRoute : null;
+    if (observer == null || identical(route, _subscribedRoute)) return;
+    if (_subscribedRoute != null) observer.unsubscribe(this);
+    _subscribedRoute = route;
+    if (route != null) observer.subscribe(this, route);
+  }
+
+  @override
+  void dispose() {
+    widget.routeObserver?.unsubscribe(this);
+    super.dispose();
+  }
+
+  void _track(Future<void> event) {
+    unawaited(event.catchError((_) {}));
+  }
+
+  AnalyticsScreen? _screenFor(MainShellTab tab) => switch (tab) {
+        MainShellTab.inicio => AnalyticsScreen.home,
+        MainShellTab.acompanhar => (widget.politicianFollowEnabled ??
+                FeatureFlags.environment.politicianFollowEnabled)
+            ? null
+            : AnalyticsScreen.followValidation,
+        MainShellTab.quiz => AnalyticsScreen.quizIntro,
+        MainShellTab.comunidade => AnalyticsScreen.communityFeed,
+      };
+
+  void _trackVisibleTab(
+    AnalyticsSource source, {
+    bool quizEntry = false,
+  }) {
+    final tab = MainShellTab.values[_index];
+    final screen = _screenFor(tab);
+    if (screen != null) {
+      _track(_analytics.screenViewed(screen: screen, source: source));
+    }
+    if (tab == MainShellTab.quiz && quizEntry) {
+      _track(_analytics.engagementAction(
+        action: AnalyticsAction.quizEntry,
+        surface: AnalyticsSurface.home,
+        source: source,
+      ));
+    }
+  }
+
+  @override
+  void didPopNext() {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!mounted || !(_subscribedRoute?.isCurrent ?? false)) return;
+      _trackVisibleTab(AnalyticsSource.back);
+    });
+  }
+
+  void _openQuiz() => _select(
+        MainShellTab.quiz.index,
+        source: AnalyticsSource.homeCta,
+      );
+
+  void _select(
+    int index, {
+    AnalyticsSource source = AnalyticsSource.tab,
+  }) {
     // Tocar na aba já selecionada não faz nada: as telas de detalhe empilham
     // sobre o shell, não dentro dele, então não há pilha interna a desempilhar.
     if (index == _index) return;
     setState(() => _index = index);
+    _trackVisibleTab(
+      source,
+      quizEntry: index == MainShellTab.quiz.index,
+    );
   }
 
   @override
@@ -147,6 +248,7 @@ class _MainShellState extends State<MainShell> {
       drawer: AppDrawer(
         iotEnabled: iotEnabled,
         politicianFollowEnabled: politicianFollowEnabled,
+        navigationIntent: _navigationIntent,
       ),
       appBar: desktop
           ? PreferredSize(

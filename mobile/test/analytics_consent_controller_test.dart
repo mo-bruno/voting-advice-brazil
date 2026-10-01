@@ -89,6 +89,23 @@ class _BlockedGrantStore extends _MemoryConsentStore {
   }
 }
 
+class _BlockedReadStore extends _MemoryConsentStore {
+  _BlockedReadStore({super.saved, super.writeError});
+
+  final Completer<void> readStarted = Completer<void>();
+  final Completer<void> _readReleased = Completer<void>();
+
+  void releaseRead() => _readReleased.complete();
+
+  @override
+  Future<String?> read() async {
+    final captured = saved;
+    readStarted.complete();
+    await _readReleased.future;
+    return captured;
+  }
+}
+
 class _BlockedGrantEffects implements AnalyticsConsentEffects {
   final List<bool> consentUpdates = [];
   final Completer<void> _grantReleased = Completer<void>();
@@ -103,6 +120,48 @@ class _BlockedGrantEffects implements AnalyticsConsentEffects {
 }
 
 void main() {
+  test('revision is monotonic across hydrate grant and deny intents', () async {
+    final controller = AnalyticsConsentController.testOnly(
+      store: _MemoryConsentStore(saved: 'granted'),
+      effects: _RecordingEffects(),
+    );
+    final beforeHydrate = controller.revision;
+    await controller.hydrate();
+    final afterHydrate = controller.revision;
+    await controller.deny();
+    final afterDeny = controller.revision;
+    await controller.grant();
+
+    expect(beforeHydrate, lessThan(afterHydrate));
+    expect(afterHydrate, lessThan(afterDeny));
+    expect(afterDeny, lessThan(controller.revision));
+  });
+
+  test('stale hydration cannot override or clear a newer denial', () async {
+    final store = _BlockedReadStore(
+      saved: 'granted',
+      writeError: StateError('disk unavailable'),
+    );
+    final effects = _RecordingEffects();
+    final controller = AnalyticsConsentController.testOnly(
+      store: store,
+      effects: effects,
+    );
+
+    final hydration = controller.hydrate();
+    await store.readStarted.future;
+    expect(await controller.deny(), isFalse);
+    expect(controller.state, AnalyticsConsent.denied);
+    expect(controller.denialPersistenceFailed, isTrue);
+
+    store.releaseRead();
+    await hydration;
+
+    expect(controller.state, AnalyticsConsent.denied);
+    expect(controller.denialPersistenceFailed, isTrue);
+    expect(effects.consentUpdates, [false]);
+  });
+
   test('missing or invalid persisted value hydrates as pending', () async {
     for (final value in <String?>[null, '', 'accepted', 'granted-v0']) {
       final controller = AnalyticsConsentController.testOnly(

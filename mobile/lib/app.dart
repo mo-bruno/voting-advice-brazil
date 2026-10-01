@@ -2,6 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'core/analytics/analytics_consent_controller.dart';
 import 'core/analytics/analytics_dependencies.dart';
+import 'core/analytics/analytics_navigation.dart';
+import 'core/analytics/analytics_service.dart';
 import 'core/features/feature_flags.dart';
 import 'core/layout/responsive_layout.dart';
 import 'core/shell/main_shell.dart';
@@ -13,6 +15,7 @@ import 'features/political_actors/political_actor_profile_page.dart';
 import 'features/political_actors/political_actor_search_page.dart';
 import 'features/political_actors/politician_follow_validation_page.dart';
 import 'features/quiz/quiz_page.dart';
+import 'features/quiz/quiz_controller.dart';
 import 'features/results/results_page.dart';
 import 'features/iot/iot_device_page.dart';
 import 'features/iot/iot_pairing_page.dart';
@@ -35,16 +38,22 @@ class MyApp extends StatefulWidget {
     super.key,
     this.featureFlags = FeatureFlags.environment,
     this.analyticsConsent,
+    this.analytics,
     this.privacyConfig = PrivacyConfig.environment,
     this.pageBuilders,
+    this.initialUri,
   });
 
   final FeatureFlags featureFlags;
   final AnalyticsConsentController? analyticsConsent;
+  final AnalyticsService? analytics;
   final PrivacyConfig privacyConfig;
 
   @visibleForTesting
   final List<Widget Function(VoidCallback onStartQuiz)>? pageBuilders;
+
+  @visibleForTesting
+  final Uri? initialUri;
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -53,6 +62,26 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final _navigatorKey = GlobalKey<NavigatorState>();
   final _scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+  late final AnalyticsService _analytics;
+  late final AnalyticsNavigationIntent _navigationIntent;
+  late final AnalyticsNavigationObserver _navigationObserver;
+  late final Uri? _initialUri;
+
+  @override
+  void initState() {
+    super.initState();
+    _analytics = widget.analytics ?? AnalyticsService();
+    _navigationIntent = AnalyticsNavigationIntent();
+    _navigationObserver = AnalyticsNavigationObserver(
+      analytics: _analytics,
+      intent: _navigationIntent,
+      politicianFollowEnabled: widget.featureFlags.politicianFollowEnabled,
+    );
+    _initialUri = widget.initialUri ?? (kIsWeb ? Uri.base : null);
+    if (MainShell.tabFromArguments(_initialUri) == MainShellTab.quiz) {
+      _navigationIntent.mark(AnalyticsSource.deepLink);
+    }
+  }
 
   Widget _buildResponsiveContent(BuildContext context, Widget? child) {
     if (ResponsiveLayout.isDesktop(context)) {
@@ -93,6 +122,7 @@ class _MyAppState extends State<MyApp> {
         widget.analyticsConsent ?? AnalyticsDependencies.instance.controller;
     return MaterialApp(
       navigatorKey: _navigatorKey,
+      navigatorObservers: [_navigationObserver],
       scaffoldMessengerKey: _scaffoldMessengerKey,
       title:
           kIsWeb ? 'Farol Político | Quiz presidencial 2026' : 'Farol Político',
@@ -141,20 +171,26 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => MainShell(
               iotEnabled: featureFlags.iotEnabled,
               politicianFollowEnabled: featureFlags.politicianFollowEnabled,
+              analytics: _analytics,
+              navigationIntent: _navigationIntent,
+              routeObserver: _navigationObserver,
               pageBuilders: widget.pageBuilders,
               initialTab: MainShell.tabFromArguments(
-                ModalRoute.of(context)?.settings.arguments ??
-                    (kIsWeb ? Uri.base : null),
+                ModalRoute.of(context)?.settings.arguments ?? _initialUri,
               ),
             ),
-        '/quiz': (context) => QuizPage(iotEnabled: featureFlags.iotEnabled),
-        '/weighting': (context) => const WeightingPage(),
-        '/party-selection': (context) => const PartySelectionPage(),
-        '/results': (context) => const ResultsPage(),
-        '/comparison': (context) => const ComparisonPage(),
+        '/quiz': (context) => QuizPage(
+              iotEnabled: featureFlags.iotEnabled,
+              controller: QuizController(analytics: _analytics),
+            ),
+        '/weighting': (context) => WeightingPage(analytics: _analytics),
+        '/party-selection': (context) =>
+            PartySelectionPage(analytics: _analytics),
+        '/results': (context) => ResultsPage(analytics: _analytics),
+        '/comparison': (context) => ComparisonPage(analytics: _analytics),
         '/political-actors': (context) => featureFlags.politicianFollowEnabled
             ? const PoliticalActorSearchPage()
-            : const PoliticianFollowValidationPage(),
+            : PoliticianFollowValidationPage(analytics: _analytics),
         if (featureFlags.politicianFollowEnabled)
           '/political-actor-profile': (context) =>
               const PoliticalActorProfilePage(),
@@ -162,10 +198,11 @@ class _MyAppState extends State<MyApp> {
           '/iot-device': (context) => const IotDevicePage(),
           '/iot-pairing': (context) => const IotPairingPage(),
         },
-        '/comunidade': (context) => const CommunityFeedPage(),
+        '/comunidade': (context) => CommunityFeedPage(analytics: _analytics),
         '/privacidade': (_) => PrivacyPage(
               consentController: resolvedConsent,
               config: widget.privacyConfig,
+              analytics: _analytics,
             ),
       },
     );

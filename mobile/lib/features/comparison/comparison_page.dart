@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
+import '../../core/analytics/analytics_failure_classifier.dart';
 import '../../core/analytics/analytics_service.dart';
 import '../../core/api/api_client.dart';
 import '../../core/layout/app_scaffold.dart';
@@ -39,6 +40,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
   bool _comparisonOutdated = false;
   int _comparisonRequest = 0;
   int? _expandedThesisId;
+  final Set<int> _openedEvidenceThesisIds = {};
 
   List<CandidateResult> get _results => [..._session.visibleResults]
     ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
@@ -59,12 +61,20 @@ class _ComparisonPageState extends State<ComparisonPage> {
     unawaited(event.catchError((_) {}));
   }
 
+  @override
+  void dispose() {
+    _comparisonRequest++;
+    super.dispose();
+  }
+
   void _handleBack() {
     if (_showComparison || _comparisonOutdated) {
       _comparisonRequest++;
       setState(() {
         _showComparison = false;
+        _isLoadingJustifications = false;
         _comparisonOutdated = false;
+        _expandedThesisId = null;
       });
       return;
     }
@@ -73,7 +83,6 @@ class _ComparisonPageState extends State<ComparisonPage> {
 
   void _toggleCandidate(String candidateId) {
     var candidateAdded = false;
-    var position = 0;
     setState(() {
       if (_selectedCandidateIds.contains(candidateId)) {
         _selectedCandidateIds.remove(candidateId);
@@ -88,40 +97,41 @@ class _ComparisonPageState extends State<ComparisonPage> {
         }
         _selectedCandidateIds.add(candidateId);
         candidateAdded = true;
-        position = _selectedCandidateIds.length;
       }
     });
     if (candidateAdded) {
-      _track(
-        _analytics.comparisonCandidateAdded(
-          candidateId: candidateId,
-          position: position,
-        ),
-      );
+      _track(_analytics.comparisonCandidateAdded());
     }
   }
 
   Future<void> _startComparison() async {
+    if (_isLoadingJustifications) return;
+    final attemptAnalytics = _analytics.bindToCurrentConsent();
     _track(_analytics.comparisonOpened());
+    final stopwatch = Stopwatch()..start();
     final request = ++_comparisonRequest;
     final selected = List<CandidateResult>.of(_selectedResults);
+    var outcome = AnalyticsOutcome.failed;
+    AnalyticsFailureType? failureType;
     setState(() {
       _showComparison = true;
       _isLoadingJustifications = true;
       _comparisonOutdated = false;
+      _expandedThesisId = null;
+      _openedEvidenceThesisIds.clear();
       _justifications.clear();
     });
 
     try {
       final validated = <String, Map<int, CandidateJustification>>{};
       for (final result in selected) {
-        _track(
-          _analytics.candidatePositionsViewed(candidateId: result.candidateId),
-        );
         final data = await _session.api.fetchCandidateJustifications(
           result.candidateId,
         );
-        if (!mounted || request != _comparisonRequest) return;
+        if (!mounted || request != _comparisonRequest) {
+          outcome = AnalyticsOutcome.stale;
+          return;
+        }
         final byThesis = {for (final item in data) item.thesisId: item};
         final changed = result.matches.any((match) {
           final item = byThesis[match.thesisId];
@@ -131,6 +141,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
               item.analyticalPosition != match.candidateAnalysis;
         });
         if (changed) {
+          outcome = AnalyticsOutcome.stale;
           setState(() => _comparisonOutdated = true);
           return;
         }
@@ -138,18 +149,34 @@ class _ComparisonPageState extends State<ComparisonPage> {
       }
       if (mounted && request == _comparisonRequest) {
         setState(() => _justifications.addAll(validated));
+        outcome = AnalyticsOutcome.success;
+      } else {
+        outcome = AnalyticsOutcome.stale;
       }
     } catch (error) {
-      if (mounted && request == _comparisonRequest) {
+      if (!mounted || request != _comparisonRequest) {
+        outcome = AnalyticsOutcome.stale;
+      } else {
         if (error is ApiException && error.statusCode == 404) {
+          outcome = AnalyticsOutcome.stale;
           setState(() => _comparisonOutdated = true);
         } else {
+          failureType = classifyAnalyticsFailure(error);
           ScaffoldMessenger.of(
             context,
           ).showSnackBar(SnackBar(content: Text(error.toString())));
         }
       }
     } finally {
+      stopwatch.stop();
+      _track(attemptAnalytics.operationResult(
+        operation: AnalyticsOperation.comparisonLoad,
+        outcome: outcome,
+        trigger: AnalyticsTrigger.submit,
+        failureType: failureType,
+        durationMs: stopwatch.elapsedMilliseconds,
+        itemCount: selected.length,
+      ));
       if (mounted && request == _comparisonRequest) {
         setState(() => _isLoadingJustifications = false);
       }
@@ -180,8 +207,10 @@ class _ComparisonPageState extends State<ComparisonPage> {
           const SizedBox(height: 12),
           OutlinedButton(
             onPressed: () {
+              _track(_analytics.quizRestarted());
               _session.resetQuiz();
               _session.markQuizStarted();
+              _track(_analytics.quizStarted());
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/quiz',
@@ -326,11 +355,18 @@ class _ComparisonPageState extends State<ComparisonPage> {
                   justifications: _justifications,
                   isLoadingJustifications: _isLoadingJustifications,
                   openLink: widget.openLink ?? openExternalLink,
+                  analytics: _analytics,
                   onTap: () {
+                    final expanding = _expandedThesisId != match.thesisId;
+                    if (expanding &&
+                        _openedEvidenceThesisIds.add(match.thesisId)) {
+                      _track(_analytics.engagementAction(
+                        action: AnalyticsAction.evidenceOpen,
+                        surface: AnalyticsSurface.comparison,
+                      ));
+                    }
                     setState(() {
-                      _expandedThesisId = _expandedThesisId == match.thesisId
-                          ? null
-                          : match.thesisId;
+                      _expandedThesisId = expanding ? match.thesisId : null;
                     });
                   },
                 );
@@ -457,6 +493,7 @@ class _ComparisonRow extends StatelessWidget {
   final Map<String, Map<int, CandidateJustification>> justifications;
   final bool isLoadingJustifications;
   final LinkOpener openLink;
+  final AnalyticsService analytics;
   final VoidCallback onTap;
 
   const _ComparisonRow({
@@ -469,6 +506,7 @@ class _ComparisonRow extends StatelessWidget {
     required this.justifications,
     required this.isLoadingJustifications,
     required this.openLink,
+    required this.analytics,
     required this.onTap,
   });
 
@@ -593,6 +631,7 @@ class _ComparisonRow extends StatelessWidget {
               justifications: justifications,
               isLoading: isLoadingJustifications,
               openLink: openLink,
+              analytics: analytics,
             ),
             crossFadeState: isExpanded
                 ? CrossFadeState.showSecond
@@ -611,6 +650,7 @@ class _JustificationPanel extends StatelessWidget {
   final Map<String, Map<int, CandidateJustification>> justifications;
   final bool isLoading;
   final LinkOpener openLink;
+  final AnalyticsService analytics;
 
   const _JustificationPanel({
     required this.thesisId,
@@ -618,6 +658,7 @@ class _JustificationPanel extends StatelessWidget {
     required this.justifications,
     required this.isLoading,
     required this.openLink,
+    required this.analytics,
   });
 
   @override
@@ -676,12 +717,26 @@ class _JustificationPanel extends StatelessWidget {
                       icon: const Icon(Icons.open_in_new, size: 16),
                       label: const Text('ABRIR FONTE OFICIAL'),
                       onPressed: () async {
+                        final attemptAnalytics =
+                            analytics.bindToCurrentConsent();
                         var opened = false;
                         try {
                           opened = await openLink(sourceUri);
                         } catch (_) {
                           opened = false;
                         }
+                        unawaited(
+                          attemptAnalytics
+                              .engagementAction(
+                                action: AnalyticsAction.outboundOpen,
+                                surface: AnalyticsSurface.comparison,
+                                target: AnalyticsTarget.comparisonSource,
+                                outcome: opened
+                                    ? AnalyticsOutcome.success
+                                    : AnalyticsOutcome.failed,
+                              )
+                              .catchError((_) {}),
+                        );
                         if (!opened && context.mounted) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
