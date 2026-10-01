@@ -67,9 +67,7 @@ class _ResultsPageState extends State<ResultsPage> {
       title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, '/party-selection');
-        },
+        onPressed: () => Navigator.pop(context),
       ),
       body: _results.isEmpty ? _emptyState(context) : _content(textTheme),
     );
