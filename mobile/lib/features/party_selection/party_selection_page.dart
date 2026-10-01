@@ -190,9 +190,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
       title: 'FAROL POLÍTICO',
       leading: IconButton(
         icon: const Icon(Icons.arrow_back),
-        onPressed: () {
-          Navigator.pushReplacementNamed(context, '/weighting');
-        },
+        onPressed: () => Navigator.pop(context),
       ),
       body: LayoutBuilder(
         builder: (context, constraints) => Column(

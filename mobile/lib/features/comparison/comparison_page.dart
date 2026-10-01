@@ -68,7 +68,7 @@ class _ComparisonPageState extends State<ComparisonPage> {
       });
       return;
     }
-    Navigator.pushReplacementNamed(context, '/results');
+    Navigator.pop(context);
   }
 
   void _toggleCandidate(String candidateId) {
