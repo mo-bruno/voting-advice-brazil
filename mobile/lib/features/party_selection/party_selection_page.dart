@@ -113,11 +113,7 @@ class _PartySelectionPageState extends State<PartySelectionPage> {
 
   void _backToWeighting() {
     _recordAbandonment(AnalyticsAbandonReason.back);
-    if (Navigator.canPop(context)) {
-      Navigator.pop(context);
-    } else {
-      Navigator.pushReplacementNamed(context, '/weighting');
-    }
+    Navigator.pop(context);
   }
 
   void _toggleAll() {
