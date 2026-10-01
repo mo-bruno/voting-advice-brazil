@@ -20,22 +20,21 @@ class _ShareDevice extends ResultShareService {
     this.failSharing = false,
     this.downloadSupported = true,
     this.shareStatus = ShareResultStatus.dismissed,
+    this.pendingShare,
     this.failDownload = false,
-    this.failCopy = false,
     this.failNetwork = false,
   });
 
   final bool failSharing;
   final bool downloadSupported;
   final ShareResultStatus shareStatus;
+  final Future<ShareResult>? pendingShare;
+  int shares = 0;
   final bool failDownload;
-  final bool failCopy;
   final bool failNetwork;
   Uint8List? shared;
-  String? sharedText;
   Uint8List? downloaded;
   int downloads = 0;
-  String? copied;
   final networks = <ResultShareNetwork>[];
   ResultShareData? networkData;
 
@@ -46,12 +45,12 @@ class _ShareDevice extends ResultShareService {
   Future<ShareResult> shareImage(
     Uint8List bytes,
     ResultShareFormat format,
-    Rect origin, {
-    String? text,
-  }) async {
+    Rect origin,
+  ) async {
+    shares++;
     if (failSharing) throw UnsupportedError('Sem menu nativo neste navegador');
     shared = bytes;
-    sharedText = text;
+    if (pendingShare != null) return await pendingShare!;
     return ShareResult('', shareStatus);
   }
 
@@ -60,12 +59,6 @@ class _ShareDevice extends ResultShareService {
     if (failDownload) throw StateError('Falha no download');
     downloaded = bytes;
     downloads++;
-  }
-
-  @override
-  Future<void> copyLink(ResultShareData data) async {
-    if (failCopy) throw StateError('Falha ao copiar');
-    copied = data.siteUrl;
   }
 
   @override
@@ -233,8 +226,9 @@ void main() {
   }
 
   Future<void> tap(WidgetTester tester, String label) async {
-    await tester.ensureVisible(find.text(label));
-    await tester.tap(find.text(label));
+    final target = find.text(label).last;
+    await tester.ensureVisible(target);
+    await tester.tap(target);
     await tester.pumpAndSettle();
   }
 
@@ -398,12 +392,12 @@ void main() {
       (tester) async {
     final device = _ShareDevice();
     await pumpPage(tester, device);
-    await tap(tester, 'Baixar imagem');
-    expectPng(device.downloaded, 1080, 1920);
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1920);
     await tap(tester, 'Post · 4:5');
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expectPng(device.downloaded, 1080, 1350);
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1350);
     expect(tester.takeException(), isNull);
   });
 
@@ -453,8 +447,8 @@ void main() {
     await tester.tap(find.byTooltip('Azul'));
     await tester.pump();
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expect(await tester.runAsync(() => whiteLogoPixels(device.downloaded!)),
+    await tap(tester, 'Compartilhar imagem');
+    expect(await tester.runAsync(() => whiteLogoPixels(device.shared!)),
         greaterThan(100));
   });
 
@@ -464,8 +458,8 @@ void main() {
     await pumpPage(tester, device);
     final initialPalette =
         tester.widget<ResultShareCard>(find.byType(ResultShareCard)).palette;
-    await tap(tester, 'Baixar imagem');
-    final original = device.downloaded!;
+    await tap(tester, 'Compartilhar imagem');
+    final original = device.shared!;
     final otherPalette = initialPalette == ResultSharePalette.green
         ? ResultSharePalette.blue
         : ResultSharePalette.green;
@@ -481,8 +475,8 @@ void main() {
     await tester.tap(find.byTooltip(initialPalette.label));
     await tester.pump();
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expect(device.downloaded, orderedEquals(original));
+    await tap(tester, 'Compartilhar imagem');
+    expect(device.shared, orderedEquals(original));
     await tap(tester, 'Compartilhar imagem');
     expect(device.shared, orderedEquals(original));
   });
@@ -511,9 +505,9 @@ void main() {
     expect(find.text('Meu ranking de afinidade'), findsOneWidget);
     expect(find.text('Pessoa 5'), findsOneWidget);
     expect(find.text('Pessoa 6'), findsNothing);
-    await tap(tester, 'Baixar imagem');
-    expectPng(device.downloaded, 1080, 1920);
-    final topFiveImage = device.downloaded;
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1920);
+    final topFiveImage = device.shared;
 
     await tap(tester, 'Top 10');
     await waitForImage(tester);
@@ -522,12 +516,23 @@ void main() {
     expect(find.text('Pessoa 11'), findsNothing);
     await tap(tester, 'Post · 4:5');
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expectPng(device.downloaded, 1080, 1350);
-    expect(device.downloaded, isNot(topFiveImage));
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1350);
+    expect(device.shared, isNot(topFiveImage));
     await tap(tester, 'WhatsApp');
-    expect(device.sharedText, contains('10º. Pessoa 10'));
-    expect(device.sharedText, isNot(contains('Pessoa 11')));
+    final whatsappText = device.networkData!
+        .networkUri(ResultShareNetwork.whatsapp)
+        .queryParameters['text']!;
+    expect(whatsappText, contains('10º. Pessoa 10'));
+    expect(whatsappText, isNot(contains('Pessoa 11')));
+    await tap(tester, 'X');
+    final xText = device.networkData!
+        .networkUri(ResultShareNetwork.twitter)
+        .queryParameters['text']!;
+    expect(xText, contains('Meus 10 maiores alinhamentos'));
+    expect(xText, isNot(contains('10º. Pessoa 10')),
+        reason:
+            'o X recebe um resumo para não levar a legenda longa do ranking');
 
     await tap(tester, 'Maior alinhamento');
     await waitForImage(tester);
@@ -565,16 +570,16 @@ void main() {
     await tester.tap(find.byTooltip('Roxo'));
     await tester.pump();
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expect(await tester.runAsync(() => imageBackground(device.downloaded!)),
+    await tap(tester, 'Compartilhar imagem');
+    expect(await tester.runAsync(() => imageBackground(device.shared!)),
         const Color(0xFF532B9C));
 
     await tester.ensureVisible(find.byTooltip('Verde'));
     await tester.tap(find.byTooltip('Verde'));
     await tester.pump();
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expect(await tester.runAsync(() => imageBackground(device.downloaded!)),
+    await tap(tester, 'Compartilhar imagem');
+    expect(await tester.runAsync(() => imageBackground(device.shared!)),
         const Color(0xFF075D50));
     expect(find.text('Personalizar cores'), findsNothing);
     expect(find.byType(TextField), findsNothing);
@@ -598,6 +603,36 @@ void main() {
         'target': 'native_share',
         'outcome': 'success',
       },
+    );
+  });
+
+  testWidgets('X e WhatsApp abrem texto direto e deixam a imagem no menu geral',
+      (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final device = _ShareDevice();
+    await pumpPage(tester, device, sink: sink);
+    await tap(tester, 'X');
+    expect(device.networks, [ResultShareNetwork.twitter]);
+    expect(device.shared, isNull);
+    await tap(tester, 'WhatsApp');
+    expect(device.networks,
+        [ResultShareNetwork.twitter, ResultShareNetwork.whatsapp]);
+    expect(device.shared, isNull);
+    expect(find.text('Instagram'), findsNothing);
+    expect(find.text('Mais opções'), findsNothing);
+    expect(find.text('Baixar imagem'), findsNothing);
+    expect(find.text('Copiar link'), findsNothing);
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1920);
+    expect(
+      engagementTargets(sink.calls),
+      ['twitter', 'whatsapp', 'native_share'],
+    );
+    expect(
+      named(sink.calls, 'engagement_action')
+          .map((call) => call.parameters?['outcome'])
+          .toSet(),
+      {'success'},
     );
   });
 
@@ -628,171 +663,135 @@ void main() {
     }
   });
 
-  testWidgets('falha nativa não inicia download automático', (tester) async {
+  testWidgets('recusa de compartilhar oferece baixar com novo toque',
+      (tester) async {
     final sink = RecordingAnalyticsSink();
     final device = _ShareDevice(failSharing: true);
     await pumpPage(tester, device, sink: sink);
     await tap(tester, 'Compartilhar imagem');
-    expect(device.downloaded, isNull);
     expect(device.downloads, 0);
-    expect(find.textContaining('Não foi possível compartilhar a imagem.'),
-        findsOneWidget);
-    final actions = named(sink.calls, 'engagement_action');
-    expect(actions, hasLength(1));
+    expect(find.byType(BottomSheet), findsNothing);
+    expect(find.text('Baixar'), findsOneWidget);
     expect(
-      actions.single.parameters,
+      lastEngagement(sink.calls).parameters,
       allOf(
         containsPair('target', 'native_share'),
         containsPair('outcome', 'failed'),
       ),
     );
     expect(engagementTargets(sink.calls), isNot(contains('download')));
-  });
 
-  testWidgets('WhatsApp envia o PNG e a legenda do ranking selecionado ao menu',
-      (tester) async {
-    final sink = RecordingAnalyticsSink();
-    ShareParams? sent;
-    final service = ResultShareService(share: (params) async {
-      sent = params;
-      return const ShareResult('', ShareResultStatus.dismissed);
-    });
-    await pumpPage(tester, service, shareData: rankingData, sink: sink);
-    await tap(tester, 'Ranking');
-    await tap(tester, 'Post · 4:5');
-    await waitForImage(tester);
-    await tap(tester, 'WhatsApp');
-
-    expect(sent, isNotNull);
-    expectPng(await sent!.files!.single.readAsBytes(), 1080, 1350);
-    expect(sent!.files!.single.mimeType, 'image/png');
-    expect(sent!.fileNameOverrides, ['meu-resultado-farol-post.png']);
-    expect(sent!.text, contains('5º. Pessoa 5 (PSD)'));
-    expect(sent!.text, isNot(contains('Pessoa 6')));
-    expect(sent!.text, contains('20 de 30 respostas comparáveis'));
-    expect(sent!.text, endsWith('https://fpolitico.com.br'));
-    expect(sent!.sharePositionOrigin!.isEmpty, isFalse);
-    expect(sent!.downloadFallbackEnabled, isFalse);
-    expect(find.byType(SnackBar), findsNothing,
-        reason:
-            'cancelar o menu não anuncia publicação nem aciona alternativa');
-    expect(engagementTargets(sink.calls), ['whatsapp']);
+    await tap(tester, 'Baixar');
+    expectPng(device.downloaded, 1080, 1920);
+    expect(device.downloads, 1);
+    expect(engagementTargets(sink.calls), ['native_share', 'download']);
     expect(
       lastEngagement(sink.calls).parameters,
       containsPair('outcome', 'success'),
     );
   });
 
-  testWidgets('WhatsApp sem suporte não baixa e oferece abrir a mensagem',
+  testWidgets('baixar após recusa mantém o PNG mesmo ao trocar o formato',
       (tester) async {
-    final sink = RecordingAnalyticsSink();
     final device = _ShareDevice(failSharing: true);
-    await pumpPage(tester, device, shareData: rankingData, sink: sink);
-    await tap(tester, 'WhatsApp');
-    expect(device.downloaded, isNull);
-    expect(device.downloads, 0);
-    expect(device.networks, isEmpty,
-        reason:
-            'abrir a mensagem exige um novo toque para evitar popup bloqueado');
-    expect(find.text('Abrir WhatsApp'), findsOneWidget);
-    expect(
-      lastEngagement(sink.calls).parameters,
-      allOf(
-        containsPair('target', 'whatsapp'),
-        containsPair('outcome', 'failed'),
-      ),
-    );
-    expect(engagementTargets(sink.calls), isNot(contains('download')));
-
-    await tap(tester, 'Ranking');
+    await pumpPage(tester, device);
+    await tap(tester, 'Compartilhar imagem');
+    await tap(tester, 'Post · 4:5');
     await waitForImage(tester);
-    await tap(tester, 'Abrir WhatsApp');
-    expect(device.networks, [ResultShareNetwork.whatsapp]);
-    expect(device.networkData, same(rankingData),
-        reason: 'a mensagem deve corresponder à seleção do primeiro toque');
-    expect(engagementTargets(sink.calls), ['whatsapp', 'whatsapp']);
+    await tap(tester, 'Baixar');
+    expectPng(device.downloaded, 1080, 1920);
+    expect(device.downloads, 1);
   });
 
   testWidgets(
-      'WhatsApp sem download oferece a mensagem sem tentar salvar arquivo',
-      (tester) async {
-    final device = _ShareDevice(failSharing: true, downloadSupported: false);
-    await pumpPage(tester, device);
-    await tap(tester, 'WhatsApp');
-    expect(device.downloads, 0);
-    expect(
-        find.textContaining('Não foi possível enviar imagem e texto juntos.'),
-        findsOneWidget);
-    await tap(tester, 'Abrir WhatsApp');
-    expect(device.networks, [ResultShareNetwork.whatsapp]);
-  });
-
-  testWidgets('atalho do X e ajuda do Instagram preservam o link',
+      'recusa sem download mostra erro e mantém texto direto disponível',
       (tester) async {
     final sink = RecordingAnalyticsSink();
-    final device = _ShareDevice();
+    final device = _ShareDevice(failSharing: true, downloadSupported: false);
     await pumpPage(tester, device, sink: sink);
-    await tap(tester, 'X / Twitter');
-    expect(device.networks, [ResultShareNetwork.twitter]);
-    await tap(tester, 'Copiar link');
-    expect(device.copied, 'https://exemplo.com.br');
-    await tap(tester, 'Instagram');
-    expect(find.text('Leve para o Instagram'), findsOneWidget);
-    expect(find.textContaining('adesivo “Link”'), findsOneWidget);
-    await tester.tap(find.text('Copiar link').last);
+    await tap(tester, 'Compartilhar imagem');
+    expect(device.downloads, 0);
+    expect(find.text('Baixar'), findsNothing);
+    expect(find.byType(SnackBar), findsOneWidget);
+    await tester.drag(find.byType(SnackBar), const Offset(0, 80));
     await tester.pumpAndSettle();
-    expect(find.text('Leve para o Instagram'), findsNothing);
-    expect(find.text('Link copiado. Cole na publicação ou no adesivo de link.'),
-        findsOneWidget);
+    await tap(tester, 'WhatsApp');
+    expect(device.networks, [ResultShareNetwork.whatsapp]);
+    expect(engagementTargets(sink.calls), ['native_share', 'whatsapp']);
+    expect(
+      named(sink.calls, 'engagement_action')
+          .map((call) => call.parameters?['outcome']),
+      ['failed', 'success'],
+    );
+  });
+
+  testWidgets(
+      'um compartilhamento pendente impede outro envio e troca de formato',
+      (tester) async {
+    final completed = Completer<ShareResult>();
+    final device = _ShareDevice(pendingShare: completed.future);
+    await pumpPage(tester, device);
+    final button = find.widgetWithText(ElevatedButton, 'Compartilhar imagem');
+    await tester.ensureVisible(button);
+    await tester.pumpAndSettle();
+    final position = tester.getCenter(button);
+    await tester.tap(button);
+    await tester.pump();
+    await tester.tapAt(position);
+    await tester.pump();
+    expect(device.shares, 1);
+    expect(
+        tester
+            .widget<ElevatedButton>(
+                find.widgetWithText(ElevatedButton, 'Aguarde…'))
+            .onPressed,
+        isNull);
+    expect(
+        tester
+            .widget<SegmentedButton<ResultShareFormat>>(
+                find.byType(SegmentedButton<ResultShareFormat>))
+            .onSelectionChanged,
+        isNull);
+    completed.complete(const ShareResult('', ShareResultStatus.dismissed));
+    await tester.pumpAndSettle();
+    expect(tester.widget<ElevatedButton>(button).onPressed, isNotNull);
+    expect(device.downloads, 0);
+  });
+
+  testWidgets('falha no download de fallback emite failed', (tester) async {
+    final sink = RecordingAnalyticsSink();
+    final device = _ShareDevice(failSharing: true, failDownload: true);
+    await pumpPage(tester, device, sink: sink);
+    await tap(tester, 'Compartilhar imagem');
+    await tap(tester, 'Baixar');
+
     expect(
       engagementTargets(sink.calls),
-      ['twitter', 'copy_link', 'instagram_help', 'copy_link'],
+      ['native_share', 'download'],
     );
-    final instagram = named(sink.calls, 'engagement_action')
-        .singleWhere((call) => call.parameters?['target'] == 'instagram_help');
-    expect(instagram.parameters, {
-      'action': 'share',
-      'surface': 'results',
-      'target': 'instagram_help',
-    });
+    expect(
+      named(sink.calls, 'engagement_action')
+          .map((call) => call.parameters?['outcome'])
+          .toSet(),
+      {'failed'},
+    );
   });
 
-  testWidgets('download direto emite uma ação segura após o resultado',
+  testWidgets('destinos diretos emitem failed quando abrir a rede falha',
       (tester) async {
     final sink = RecordingAnalyticsSink();
-    final device = _ShareDevice();
+    final device = _ShareDevice(failNetwork: true);
     await pumpPage(tester, device, sink: sink);
 
-    await tap(tester, 'Baixar imagem');
-
-    final action = lastEngagement(sink.calls);
-    expect(action.parameters, {
-      'action': 'share',
-      'surface': 'results',
-      'target': 'download',
-      'outcome': 'success',
-    });
-    expectSafeParameters(action);
-  });
-
-  testWidgets('destinos diretos emitem failed quando a operação lança',
-      (tester) async {
-    final sink = RecordingAnalyticsSink();
-    final device = _ShareDevice(
-      failDownload: true,
-      failCopy: true,
-      failNetwork: true,
-    );
-    await pumpPage(tester, device, sink: sink);
-
-    await tap(tester, 'Baixar imagem');
-    await tap(tester, 'Copiar link');
-    await tap(tester, 'X / Twitter');
+    await tap(tester, 'X');
+    await tester.drag(find.byType(SnackBar), const Offset(0, 80));
+    await tester.pumpAndSettle();
+    await tap(tester, 'WhatsApp');
 
     final actions = named(sink.calls, 'engagement_action');
     expect(
       actions.map((call) => call.parameters?['target']),
-      ['download', 'copy_link', 'twitter'],
+      ['twitter', 'whatsapp'],
     );
     expect(
       actions.map((call) => call.parameters?['outcome']).toSet(),
@@ -843,8 +842,8 @@ void main() {
     await tap(tester, 'Ranking');
     await tap(tester, 'Top 10');
     await waitForImage(tester);
-    await tap(tester, 'Baixar imagem');
-    expectPng(device.downloaded, 1080, 1350);
+    await tap(tester, 'Compartilhar imagem');
+    expectPng(device.shared, 1080, 1350);
     expect(tester.takeException(), isNull);
   });
 }

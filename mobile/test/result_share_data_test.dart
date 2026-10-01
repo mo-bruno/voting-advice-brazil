@@ -36,9 +36,8 @@ CandidateResult _candidate(int id, double score,
       comparableCategories: comparableCategories,
       documentedTheses: countedTheses,
       documentedCategories: comparableCategories,
-      rankingStatus: rankingEligible
-          ? 'eligible'
-          : 'insufficient_documented_coverage',
+      rankingStatus:
+          rankingEligible ? 'eligible' : 'insufficient_documented_coverage',
       rankingEligible: rankingEligible,
     );
 
@@ -47,8 +46,7 @@ void main() {
     expect(() => ResultShareData(results: []), throwsArgumentError);
   });
 
-  test('copia, respeita a colocação da API e organiza empates pelo nome',
-      () {
+  test('copia, respeita a colocação da API e organiza empates pelo nome', () {
     final input = [
       _candidate(1, 99, rank: 3),
       _candidate(2, 40, rank: 1, name: 'Beatriz'),
@@ -188,8 +186,7 @@ void main() {
     });
   });
 
-  test('ranking compartilha colocação, nomes, partidos e base comparável',
-      () {
+  test('ranking compartilha colocação, nomes, partidos e base comparável', () {
     final data = ResultShareData(
       results: List.generate(
           12, (index) => _candidate(index + 1, 99 - index.toDouble())),

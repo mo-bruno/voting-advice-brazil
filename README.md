@@ -112,13 +112,14 @@ flutter run -d chrome \
 
 Na tela de resultados, **Compartilhar resultado** abre uma prévia com dois tipos de imagem: **maior alinhamento**, destacando uma candidatura, ou **ranking**, com os **top 5 ou top 10** alinhamentos. O ranking respeita as candidaturas selecionadas no quiz e mostra apenas quem tem base comparável, em ordem de afinidade e, nos empates, por nome. Se houver menos candidaturas disponíveis, a imagem mostra a quantidade real.
 
-A imagem inclui percentuais, nomes, partidos, a identificação do quiz presidencial de **2026** e o endereço do site, sem respostas individuais nem identidade local. Ao abrir o compartilhamento, uma das **12 paletas prontas** e um dos **4 padrões geométricos** são sorteados de forma independente, sem relação com o resultado. Cada nova abertura sorteia um padrão diferente do anterior na sessão. O padrão não possui controle de troca e permanece durante essa abertura, inclusive ao trocar o conteúdo, o formato ou a cor. Basta tocar em outra paleta para trocar as cores antes de compartilhar.
+A imagem inclui colocação, nomes, partidos, a identificação do quiz presidencial de **2026** e o endereço do site, sem respostas individuais nem identidade local. Ao abrir o compartilhamento, uma das **12 paletas prontas** e um dos **4 padrões geométricos** são sorteados de forma independente, sem relação com o resultado. Cada nova abertura sorteia um padrão diferente do anterior na sessão. O padrão não possui controle de troca e permanece durante essa abertura, inclusive ao trocar o conteúdo, o formato ou a cor. Basta tocar em outra paleta para trocar as cores antes de compartilhar.
 
 - **Stories:** PNG de 1080 × 1920; **Post:** PNG de 1080 × 1350. As fontes do cartão acompanham o app para a exportação não depender de downloads de fontes.
-- **Compartilhar imagem:** abre o menu do dispositivo com o PNG. Na web, quando o menu não estiver disponível, inicia o download. **Baixar imagem** também fica disponível no navegador.
-- **Instagram:** oferece instruções para levar a imagem aos Stories/feed. O link clicável nos Stories é adicionado pela pessoa no adesivo “Link”; a imagem não contém um hyperlink ativo.
-- **WhatsApp:** abre o menu do dispositivo com o PNG, a legenda do resultado selecionado e o link. Escolha o WhatsApp no menu. Se o navegador não conseguir compartilhar esse conteúdo, inicia o download e oferece **Abrir WhatsApp** com a mensagem correspondente à imagem; anexe o arquivo baixado. A aceitação de imagem e texto juntos depende do aplicativo e do dispositivo.
-- **X / Twitter:** abre texto e link de acordo com o tipo selecionado, com um resumo curto da quantidade de alinhamentos. Para enviar o PNG, use o menu de compartilhamento ou anexe o arquivo baixado.
+- **Compartilhar imagem:** envia somente o PNG pelo menu padrão do dispositivo, para qualquer app disponível. A imagem é preparada antes do toque e o botão fica indisponível durante o envio. Cancelar não inicia download, não abre redes e não confirma publicação.
+- **X:** abre diretamente o compositor com texto e link. O ranking usa um resumo curto, sem levar a lista completa de candidaturas para a legenda.
+- **WhatsApp:** abre diretamente a seleção de conversa com o texto do resultado selecionado e o link.
+
+Se o navegador recusar o compartilhamento da imagem, uma mensagem oferece **Baixar** em um novo toque, para anexar o PNG manualmente. O retorno sem status de entrega do navegador não é tratado como falha. A tela mantém somente essas três ações principais; Stories/Post definem o tamanho da imagem, sem direcionar a um app ou modo de publicação.
 
 O endereço público é `https://fpolitico.com.br`. O deploy exige as variáveis de repositório `PUBLIC_APP_URL`, `ANALYTICS_ENABLED`, `PRIVACY_CONTROLLER_NAME` e `PRIVACY_CONTACT_EMAIL`. O controlador deve ser uma identidade civil/jurídica real, não a marca nem um exemplo. Para um build local de desenvolvimento, sem valores de produção:
 
