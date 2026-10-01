@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_navigation.dart';
 import 'package:guia_eleitoral/core/analytics/analytics_service.dart';
+import 'package:guia_eleitoral/core/theme/app_theme.dart';
 import 'package:guia_eleitoral/features/results/results_page.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_card.dart';
 import 'package:guia_eleitoral/features/results/sharing/result_share_page.dart';
@@ -111,6 +112,45 @@ void main() {
     expect(find.byType(ResultsPage), findsOneWidget);
     expect(QuizSession.instance.results, hasLength(3));
     expect(QuizSession.instance.selectedCandidateIds, {'2', '3'});
+  });
+
+  testWidgets('mostra compartilhar antes de um ranking longo', (tester) async {
+    QuizSession.instance.results = List.generate(
+      10,
+      (index) => CandidateResult(
+        candidateId: '${index + 1}',
+        name: 'Candidatura ${index + 1}',
+        party: 'PARTIDO',
+        scorePercent: 90 - index.toDouble(),
+        rank: index + 1,
+        matches: const [],
+        countedTheses: 10,
+        answeredTheses: 30,
+        comparableCategories: 5,
+        rankingStatus: 'eligible',
+        rankingEligible: true,
+      ),
+    );
+
+    await tester.pumpWidget(
+      MaterialApp(theme: AppTheme.dark, home: const ResultsPage()),
+    );
+    await tester.pumpAndSettle();
+
+    final share = find.ancestor(
+      of: find.text('Compartilhar resultado'),
+      matching: find.byWidgetPredicate((widget) => widget is ElevatedButton),
+    );
+    final firstResult = find.text('Candidatura 1');
+    final screenHeight = tester.getSize(find.byType(Scaffold)).height;
+
+    expect(share, findsOneWidget);
+    expect(tester.getBottomRight(share).dy, lessThan(screenHeight));
+    expect(share.hitTestable(), findsOneWidget);
+    expect(
+      tester.getTopLeft(share).dy,
+      lessThan(tester.getTopLeft(firstResult).dy),
+    );
   });
 
   testWidgets('não compartilha quando os resultados não têm base comparável',
