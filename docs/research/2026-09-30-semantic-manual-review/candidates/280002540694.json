@@ -1,0 +1,978 @@
+{
+  "schema_version": 1,
+  "candidate_id": "280002540694",
+  "candidate_name": "Renan Santos",
+  "status": "complete",
+  "reviewer_agent_id": "/root/semantic_renan",
+  "method": "Revisão semântica manual das 20 teses, preservando literalmente a classificação e a justificativa da matriz e confrontando-as com o perfil temático e a revisão integral do plano.",
+  "reviews": [
+    {
+      "question_id": "B01-Q01",
+      "display_number": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não propõe imposto específico sobre grandes fortunas. Revisão de renúncias, redução de isenções e outras referências tributárias não definem esse tributo patrimonial.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O plano trata de ajuste fiscal pela revisão de gastos tributários, redução de isenções e nova lei de finanças públicas. Essa orientação alcança benefícios fiscais e desenho fiscal geral, mas não escolhe tributação patrimonial, patrimônio muito elevado, heranças ou renda do topo como base de um novo tributo.",
+      "semantic_context": [
+        {
+          "page": 10,
+          "quote": "a revisão do abono salarial e a redução de renúncias fiscais (gastos tributários)",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "É uma medida de recomposição fiscal pela redução de benefícios tributários existentes; não cria imposto cuja base seja a grande fortuna.",
+          "source": "thematic_profile",
+          "source_position_id": "P01"
+        },
+        {
+          "page": 10,
+          "quote": "a racionalização do superávit financeiro, a reforma do funcionalismo público com fim dos supersalários, mudanças nas emen- das parlamentares, redução das isenções fiscais e uma nova lei complementar das finanças públicas. Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A reorganização fiscal pode alterar receitas e gastos, mas o trecho não determina tributação federal sobre patrimônio muito elevado.",
+          "source": "thematic_profile",
+          "source_position_id": "P01"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "As propostas próximas operam sobre renúncias e isenções, não sobre uma base patrimonial nova. A direção fiscal geral não basta para concluir apoio ou rejeição ao imposto específico.",
+      "reasons_to_keep": [
+        "Nenhum trecho estabelece patrimônio elevado como fato gerador ou base de cálculo.",
+        "Reduzir isenções e gastos tributários pode coexistir com criar, rejeitar ou não tratar um imposto sobre grandes fortunas."
+      ],
+      "reasons_to_reconsider": [
+        "A agenda de revisão tributária mostra disposição de alterar a arrecadação e merece ser examinada como contexto favorável a reformas fiscais mais amplas.",
+        "Uma versão detalhada do novo modelo fiscal poderia conter tributação patrimonial não explicitada no documento analisado."
+      ],
+      "human_review_question": "A revisão de benefícios tributários decide criar um tributo sobre patrimônio muito elevado, ou apenas tangencia o tema fiscal sem definir esse instrumento?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q02",
+      "display_number": 2,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano escolhe a agroindústria e a verticalização de cadeias produtivas como prioridades e inclui expressamente linhas de crédito do BNDES entre seus principais instrumentos.",
+      "current_evidence": [
+        {
+          "page": 42,
+          "quote": "A política de Zonas Econômicas Especiais, as linhas de crédito do BNDES condicionadas a metas de exportação e a busca de acordos comerciais bilaterais serão nossos principais instrumentos.",
+          "role": "support"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano seleciona terras raras e agroindústria para verticalização, coordena capital público e privado pelo BNDES e prevê crédito condicionado a metas de exportação. Há escolha setorial e instrumento creditício dirigido, com condições explícitas.",
+      "semantic_context": [
+        {
+          "page": 42,
+          "quote": "A política de Zonas Econômicas Especiais, as linhas de crédito do BNDES condicionadas a metas de exportação e a busca de acordos comerciais bilaterais serão nossos principais instrumentos. Em paralelo, o Plano Safra será reorganizado para premiar produtores que invistam em processamento e verticalização.",
+          "relation": "APOIA",
+          "semantic_relevance": "Nomeia linhas de crédito de banco público, condiciona-as a resultados e as insere na verticalização da cadeia agroindustrial priorizada.",
+          "source": "thematic_profile",
+          "source_position_id": "P04"
+        },
+        {
+          "page": 39,
+          "quote": "Estabelecimento de consórcio de financiamento liderado pelo BNDES, reunindo entes públicos e in- vestidores privados, com o banco como gestor de investimentos, mitigador de risco e intermediador de parcerias internacionais, com recurso a Parcerias Público-Privadas quando envolver infraestrutura.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Mostra que o financiamento setorial combina coordenação pública, investidores privados e mitigação de risco; não depende apenas de crédito público isolado.",
+          "source": "thematic_profile",
+          "source_position_id": "P04"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A equivalência com a tese é direta: setores e cadeias prioritários recebem linhas de crédito do BNDES. As metas de exportação delimitam a política, sem retirar seu caráter setorial.",
+      "reasons_to_keep": [
+        "O instrumento é expressamente uma linha de crédito do BNDES.",
+        "O crédito está ligado às cadeias escolhidas para processamento, exportação e verticalização."
+      ],
+      "reasons_to_reconsider": [
+        "O texto concentra o crédito na agroindústria e não anuncia uma política universal para todos os setores industriais prioritários.",
+        "Parte do financiamento mineral ocorre por consórcio e PPP, instrumentos diferentes de linha de crédito."
+      ],
+      "human_review_question": "Linhas de crédito do BNDES condicionadas a exportações e dirigidas à verticalização agroindustrial satisfazem a tese mesmo com alcance setorial delimitado?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q03",
+      "display_number": 3,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano admite investimento e financiamento estrangeiros na cadeia de terras raras, mas localiza o investimento direto estrangeiro no processamento e na manufatura. Não atribui a empresas estrangeiras participação na extração dos minerais.",
+      "current_evidence": [
+        {
+          "page": 39,
+          "quote": "Estabelecimento de zonas econômicas especiais (ZEEs) dedicadas ao processamento e manufatura de componentes de terras raras, com incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado.",
+          "role": "counterevidence"
+        },
+        {
+          "page": 40,
+          "quote": "criação de mecanismo de risco compartilhado entre setor público e privado, garantindo ao Estado con- trole estratégico enquanto transfere riscos operacionais e tecnológicos para parceiros privados quali- ficados;",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano abre a cadeia de terras raras a investimento estrangeiro qualificado no processamento e na manufatura, associa parceiros privados ao risco operacional e preserva controle estratégico estatal. Também acelera o licenciamento da exploração mineral, mas não conecta empresas estrangeiras à etapa de extração.",
+      "semantic_context": [
+        {
+          "page": 39,
+          "quote": "Estabelecimento de zonas econômicas especiais (ZEEs) dedicadas ao processamento e manufatura de componentes de terras raras, com incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Admite capital estrangeiro na cadeia estratégica, porém delimita a abertura às etapas posteriores de processamento e manufatura.",
+          "source": "thematic_profile",
+          "source_position_id": "P04"
+        },
+        {
+          "page": 42,
+          "quote": "Vamos executar e ampliar o Plano Nacional de Fertilizantes (Decreto 10.991/2022); sancionar e regulamentar o Projeto de Lei 2.780/2024, aprovado pela Câmara em 2026, que cria a Política Nacional de Minerais Críticos e Estratégicos e o licenciamento acelerado para a exploração de fosfato, potássio e nitrogênio em território nacional;",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Há decisão favorável à exploração nacional de minerais estratégicos, sem indicação da nacionalidade das empresas autorizadas a extrair.",
+          "source": "thematic_profile",
+          "source_position_id": "P06"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A abertura ao investimento estrangeiro é semanticamente próxima, mas o plano separa a exploração do processamento e só explicita o capital estrangeiro na segunda etapa. Parceiro privado qualificado também não identifica nacionalidade nem função extrativa.",
+      "reasons_to_keep": [
+        "O único investimento estrangeiro explícito é destinado ao processamento e à manufatura.",
+        "Exploração acelerada e participação privada não definem que empresas estrangeiras possam realizar a extração."
+      ],
+      "reasons_to_reconsider": [
+        "A estratégia integra financiamento internacional, parceiros privados e riscos operacionais na mesma cadeia mineral estratégica.",
+        "Se o mecanismo de risco compartilhado abranger a operação extrativa e admitir os investidores estrangeiros citados, haveria apoio condicionado; o documento não estabelece essa ligação."
+      ],
+      "human_review_question": "A integração de capital estrangeiro e parceiros privados na cadeia de terras raras alcança a extração, ou o texto preserva essa abertura apenas para processamento e manufatura?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "B01-Q04",
+      "display_number": 4,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "A dívida pública aparece no diagnóstico fiscal, sem proposta de auditoria acompanhada por suspensão de pagamentos.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O plano diagnostica desequilíbrio fiscal e dívida, propõe substituir o arcabouço e reorganizar despesas, renúncias e regras de finanças públicas. A resposta operacional é um novo modelo fiscal, sem auditoria de legitimidade dos passivos, moratória ou ordem de suspender o serviço da dívida.",
+      "semantic_context": [
+        {
+          "page": 10,
+          "quote": "Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "O plano escolhe mudar o regime fiscal como resposta ao diagnóstico, mas não vincula essa mudança a auditoria ou interrupção dos pagamentos da dívida.",
+          "source": "full_plan_review",
+          "source_position_id": "BR26-T001"
+        },
+        {
+          "page": 10,
+          "quote": "a revisão do abono salarial e a redução de renúncias fiscais (gastos tributários)",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A medida compõe o ajuste fiscal por revisão de despesas e benefícios, sem alcançar a validade ou o pagamento da dívida pública.",
+          "source": "thematic_profile",
+          "source_position_id": "P01"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano tem uma estratégia fiscal definida, porém ela não contém os dois elementos conjuntivos da tese: auditoria da dívida e suspensão de pagamentos durante a auditoria.",
+      "reasons_to_keep": [
+        "Diagnóstico de dívida e reforma fiscal não equivalem a auditoria de passivos.",
+        "Nenhuma medida interrompe juros, amortizações ou qualquer outra classe de pagamento."
+      ],
+      "reasons_to_reconsider": [
+        "A revisão ampla das finanças públicas poderia abrir espaço a exame da dívida, mas o plano não o determina.",
+        "Uma proposta detalhada da nova lei de finanças públicas poderia acrescentar auditoria, sem que isso esteja no documento analisado."
+      ],
+      "human_review_question": "A reforma fiscal proposta contém alguma decisão equivalente a auditar a dívida e suspender seu serviço durante esse processo?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q05",
+      "display_number": 5,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano rejeita o arcabouço vigente e anuncia um novo modelo fiscal, mas não informa se o substituto conterá limite normativo ao crescimento da despesa, meta de resultado, limite de dívida ou outro mecanismo.",
+      "current_evidence": [
+        {
+          "page": 10,
+          "quote": "Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano critica o teto anterior e o arcabouço vigente, promete um modelo fiscal substituto e antecipa medidas de ajuste, como desvinculação de pisos, revisão de benefícios e renúncias. Há intenção de disciplina fiscal, mas falta a regra operacional que diga se e como o crescimento da despesa será limitado.",
+      "semantic_context": [
+        {
+          "page": 10,
+          "quote": "a racionalização do superávit financeiro, a reforma do funcionalismo público com fim dos supersalários, mudanças nas emen- das parlamentares, redução das isenções fiscais e uma nova lei complementar das finanças públicas. Essas propostas já deverão estar presentes no nosso projeto de PEC de Transição, que terá por objetivo substituir o arcabouço fiscal por um novo modelo mais inteligente.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Confirma a adoção de um novo regime fiscal e medidas sobre despesas, porém não revela se o mecanismo substituto limita o crescimento agregado dos gastos.",
+          "source": "thematic_profile",
+          "source_position_id": "P01"
+        },
+        {
+          "page": 10,
+          "quote": "a desvinculação dos pisos de saúde e educação da receita",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Reduz uma vinculação específica de gasto, mas não cria por si uma trajetória ou teto para o crescimento das despesas federais.",
+          "source": "thematic_profile",
+          "source_position_id": "P02"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A decisão por alguma regra fiscal substituta é clara, mas a tese mede um tipo específico de mecanismo. Ajustes em pisos, benefícios e renúncias não permitem inferir um limite normativo ao crescimento total das despesas.",
+      "reasons_to_keep": [
+        "O plano não publica fórmula, índice, teto ou trajetória de crescimento das despesas.",
+        "Meta fiscal, corte pontual e desvinculação de piso são compatíveis tanto com uma regra de gasto quanto com outros desenhos fiscais."
+      ],
+      "reasons_to_reconsider": [
+        "A promessa de substituir o arcabouço por um modelo fiscal e a centralidade do ajuste tornam plausível que exista alguma regra de despesa.",
+        "As medidas antecipadas restringem componentes do gasto, embora não constituam o limite agregado perguntado."
+      ],
+      "human_review_question": "O novo modelo fiscal contém uma regra operacional de crescimento das despesas, ou o plano só define objetivos e ajustes sem escolher esse mecanismo?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q06",
+      "display_number": 6,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona Petrobras nem decide a manutenção ou transferência de seu controle acionário federal.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O plano critica a suficiência de uma agenda de privatização total, preserva papel estratégico do Estado em financiamento, mineração e infraestrutura e mantém atuação futura de empresas públicas como o BNDES. Esses princípios não individualizam a Petrobras nem decidem seu controle acionário.",
+      "semantic_context": [
+        {
+          "page": 5,
+          "quote": "bastava privatizar tudo, retirar o Estado de todas as áreas e proferir platitudes sobre meio ambiente, saúde, educação, cultura e segurança, e tudo se resolveria de uma forma quase mágica.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Rejeita a privatização universal como solução automática, mas não identifica quais estatais devem permanecer públicas nem assegura o controle da Petrobras.",
+          "source": "full_plan_review",
+          "source_position_id": "BR26-T002"
+        },
+        {
+          "page": 24,
+          "quote": "retomada decisiva das obras de Angra 3",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Há política energética com investimento estatal, mas energia nuclear civil não decide propriedade ou governança da empresa petrolífera.",
+          "source": "thematic_profile",
+          "source_position_id": "P15"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A rejeição retórica à privatização de tudo é compatível com preservar algumas estatais, mas não revela se a Petrobras integra esse conjunto. Funções estatais em energia e indústria também não equivalem a controle acionário da empresa.",
+      "reasons_to_keep": [
+        "Nenhuma proposta nomeia a Petrobras, suas ações ou sua governança.",
+        "Defender papel estatal em setores estratégicos não determina a propriedade de uma empresa específica."
+      ],
+      "reasons_to_reconsider": [
+        "A crítica à privatização total e a defesa de coordenação estatal são princípios semanticamente favoráveis à preservação de ativos públicos.",
+        "A estratégia energética e industrial poderia pressupor instrumentos estatais, mas não atribui função à Petrobras."
+      ],
+      "human_review_question": "A crítica à privatização geral e o papel estratégico do Estado permitem decidir o controle da Petrobras sem qualquer referência à empresa ou à sua propriedade?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "A reforma do funcionalismo anunciada limita-se, no resumo, ao fim dos supersalários. Não há avaliação periódica com consequência de demissão de servidor estável e direito de defesa.",
+      "current_evidence": [
+        {
+          "page": 10,
+          "quote": "a reforma do funcionalismo público com fim dos supersalários",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "Há reforma remuneratória do funcionalismo e um sistema robusto de metas, tutela e sanções para gestores municipais. O primeiro não trata estabilidade; o segundo alcança mandatários e pode gerar inelegibilidade ou cassação, não demissão de servidor estável por avaliação periódica com defesa.",
+      "semantic_context": [
+        {
+          "page": 10,
+          "quote": "a reforma do funcionalismo público com fim dos supersalários",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "É a única reforma explicitamente dirigida ao funcionalismo e tem objeto remuneratório, sem consequência funcional por desempenho.",
+          "source": "thematic_profile",
+          "source_position_id": "P11"
+        },
+        {
+          "page": 18,
+          "quote": "Municípios com desempenho crítico entrarão em Tutela Gerencial, exigindo dupla assinatu- ra (Prefeito e Comissário) para gastos. Gestores que falharem reiteradamente nas metas de longo prazo estarão sujeitos à Inelegibilidade Superveniente e ao processo de Cassação por Improbidade Gerencial perante os Tribunais de Justiça.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Liga desempenho a sanções, mas o público são gestores eleitos e a consequência é política/judicial, não perda de cargo estável de servidor.",
+          "source": "thematic_profile",
+          "source_position_id": "P08"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano valoriza metas e consequências, mas aplica esse princípio a gestores municipais. Faltam todos os elementos próprios da tese para servidores: estabilidade, avaliação periódica individual, baixo desempenho, demissão e direito de defesa.",
+      "reasons_to_keep": [
+        "A reforma do funcionalismo tem escopo expresso de supersalários.",
+        "As sanções por metas recaem sobre gestores municipais e não estabelecem regime para servidores estáveis."
+      ],
+      "reasons_to_reconsider": [
+        "O desenho gerencial revela aceitação de responsabilização por resultados e pode inspirar reforma administrativa mais ampla.",
+        "A menção genérica a reforma do funcionalismo poderia abranger outros tópicos em versão detalhada, mas o resumo os omite."
+      ],
+      "human_review_question": "O princípio de responsabilização gerencial dos mandatários pode ser transferido a servidores estáveis, ou faltam público, consequência e garantias essenciais para responder à tese?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q23",
+      "display_number": 8,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "current_classification": "CONCORDA",
+      "current_rationale": "No capítulo federal de infraestrutura, o plano propõe mobilizar capital privado por concessões e PPPs, na mesma diretriz que cria o regime de autorização ferroviária. Logo depois, fixa expansão da malha ferroviária e obras em ferrovias, portos e aeroportos. A combinação sustenta o uso federal dos dois instrumentos perguntados para ampliar a infraestrutura de transportes, sem exigir sua aplicação a toda obra.",
+      "current_evidence": [
+        {
+          "page": 24,
+          "quote": "mobilização do capital privado por concessões, PPPs e o novo regime de autorização ferroviária;",
+          "role": "support"
+        },
+        {
+          "page": 24,
+          "quote": "Ferrovias: meta mínima de 40 mil km de malha; conclusão antecipada da Ferrovia Alcântara-Açailân- dia, conclusão da Ferrovia de Integração Oeste-Leste (FIOL), início imediato das obras da Ferrogrão e viabilização da Ferrovia Transoceânica.",
+          "role": "support"
+        }
+      ],
+      "semantic_neighborhood_summary": "A Missão Rondon combina investimento estatal condicionado a reformas com capital privado por concessões, PPPs e autorizações. A diretriz vem acompanhada de metas e projetos ferroviários, portuários e aeroportuários, ligando instrumentos privados à ampliação de transportes.",
+      "semantic_context": [
+        {
+          "page": 24,
+          "quote": "mobilização do capital privado por concessões, PPPs e o novo regime de autorização ferroviária;",
+          "relation": "APOIA",
+          "semantic_relevance": "Nomeia os dois instrumentos da tese no programa nacional de infraestrutura e acrescenta uma modalidade ferroviária distinta.",
+          "source": "thematic_profile",
+          "source_position_id": "P12"
+        },
+        {
+          "page": 24,
+          "quote": "Ferrovias: meta mínima de 40 mil km de malha; conclusão antecipada da Ferrovia Alcântara-Açailân- dia, conclusão da Ferrovia de Integração Oeste-Leste (FIOL), início imediato das obras da Ferrogrão e viabilização da Ferrovia Transoceânica.",
+          "relation": "APOIA",
+          "semantic_relevance": "A meta de expansão ferroviária dá conteúdo de transporte à diretriz instrumental imediatamente associada.",
+          "source": "thematic_profile",
+          "source_position_id": "P13"
+        },
+        {
+          "page": 24,
+          "quote": "aumento do investimento estatal em infraestrutura, condicionado à reforma administrativa e fiscal prévia;",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "O modelo é misto e mantém investimento estatal, cujo aumento depende de reformas prévias.",
+          "source": "thematic_profile",
+          "source_position_id": "P12"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Concessões e PPPs são instrumentos expressos do mesmo programa que detalha a expansão de modais de transporte. A coexistência de autorização ferroviária e investimento estatal apenas qualifica o modelo.",
+      "reasons_to_keep": [
+        "Concessões e PPPs aparecem literalmente como meios de mobilizar capital privado.",
+        "A sequência do texto define expansão de ferrovias, portos e aeroportos."
+      ],
+      "reasons_to_reconsider": [
+        "O trecho não associa cada obra listada a um contrato de concessão ou PPP específico.",
+        "O programa também usa autorizações e investimento estatal, de modo que nem toda expansão seguirá os dois instrumentos."
+      ],
+      "human_review_question": "A diretriz geral de concessões e PPPs no programa que expande ferrovias, portos e aeroportos é suficiente sem vincular cada obra a um contrato específico?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q10",
+      "display_number": 9,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "category_id": "meio_ambiente_clima",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano usa baixo carbono como atributo produtivo de mineração e aço, sem criar sistema obrigatório de limites de emissão e negociação de créditos.",
+      "current_evidence": [
+        {
+          "page": 35,
+          "quote": "insuficiência de padrões de mineração responsável e de baixo carbono na exploração de recursos naturais;",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano incorpora baixo carbono como padrão desejável de produção mineral e organiza licenciamento de projetos estratégicos. Isso estabelece orientação ambiental e industrial, mas não precifica emissões, cria cotas negociáveis ou distingue mercado regulado de mercado voluntário.",
+      "semantic_context": [
+        {
+          "page": 24,
+          "quote": "licenciamento ambiental: implementação plena da Lei Geral do Licenciamento Ambiental (Lei nº 15.190/2025, oriunda do PL 2159/2021), com uso ostensivo da Licença Ambiental Especial (LAE) — cuja principal inovação frente ao rito ordinário é a equipe técnica permanentemente dedicada à análise — para acelerar projetos estratégicos;",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "O plano escolhe instrumentos de licenciamento ambiental para projetos estratégicos, não um sistema de compra e venda de permissões de emissão.",
+          "source": "thematic_profile",
+          "source_position_id": "P18"
+        },
+        {
+          "page": 39,
+          "quote": "Racionalização e simplificação dos processos de licenciamento ambiental para a exploração dos minéri- os, com base na nova Lei Geral do Licenciamento Ambiental",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Regula a aprovação ambiental da mineração; não estabelece teto de carbono, registro ou negociação de créditos.",
+          "source": "thematic_profile",
+          "source_position_id": "P18"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Padrões de baixo carbono e licenciamento são instrumentos ambientalmente relacionados, porém funcionalmente distintos de um mercado regulado de carbono. Não há arquitetura de teto, obrigação, registro ou comércio.",
+      "reasons_to_keep": [
+        "Baixo carbono aparece como atributo produtivo, não como ativo negociável ou obrigação regulatória.",
+        "As propostas ambientais detalhadas tratam de licenciamento, sem precificação ou comércio de emissões."
+      ],
+      "reasons_to_reconsider": [
+        "A exigência de padrões de baixo carbono revela intenção de reduzir emissões em cadeias produtivas.",
+        "Um marco industrial de baixo carbono poderia usar mercado regulado como instrumento, mas o documento não faz essa escolha."
+      ],
+      "human_review_question": "Os padrões produtivos de baixo carbono são apenas metas e requisitos ambientais, ou o plano chega a estabelecer um sistema regulado de comércio de emissões?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q24",
+      "display_number": 10,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano submete a agenda computacional do Marco Brasileiro da Inteligência Artificial à lógica explícita de investimento estratégico do Estado. O detalhamento acrescenta incentivos à infraestrutura de datacenters e cria um laboratório nacional de IA voltado às vantagens do país. Esses compromissos cobrem diretamente investimento federal em infraestrutura, pesquisa e desenvolvimento de capacidade nacional.",
+      "current_evidence": [
+        {
+          "page": 42,
+          "quote": "combinar reformas regulatórias amplas com investimento estratégico do Estado, atraindo capital privado nacional e internacional para verticalizar as cadeias produtivas nas quais temos vantagem comparativa natural.",
+          "role": "support"
+        },
+        {
+          "page": 42,
+          "quote": "a segunda, o Marco Brasileiro da Inteligência Artificial (MBIA), organiza a agenda computacional.",
+          "role": "support"
+        },
+        {
+          "page": 43,
+          "quote": "O Eixo III ataca o problema da dependência computacional do exterior. Favorece políticas de incentivo para a instalação de datacenters",
+          "role": "support"
+        },
+        {
+          "page": 43,
+          "quote": "O Projeto Abaporu será um labo- ratório nacional de inteligência artificial com capital privado majoritário, governança independente e man- dato concentrado na exploração das vantagens competitivas únicas do nosso país.",
+          "role": "support"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano organiza uma agenda nacional de IA com investimento estratégico estatal, incentivos a datacenters, zonas econômicas próprias, laboratório nacional e aplicações de IA proprietária brasileira. O desenho associa Estado e capital privado, inclusive estrangeiro, sem exigir propriedade estatal integral.",
+      "semantic_context": [
+        {
+          "page": 43,
+          "quote": "O Eixo III ataca o problema da dependência computacional do exterior. Favorece políticas de incentivo para a instalação de datacenters e o arcabouço regulatório que permita o Brasil tornar-se o maior exportador de inferência computacional do hemisfério ocidental, transformando o Nordeste, em especial, na “Arábia Saudita do Brasil”.",
+          "relation": "APOIA",
+          "semantic_relevance": "Propõe infraestrutura computacional instalada no país e orientada a reduzir dependência externa.",
+          "source": "thematic_profile",
+          "source_position_id": "P21"
+        },
+        {
+          "page": 43,
+          "quote": "O Projeto Abaporu será um labo- ratório nacional de inteligência artificial com capital privado majoritário, governança independente e man- dato concentrado na exploração das vantagens competitivas únicas do nosso país.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Cria capacidade nacional de pesquisa, mas com capital privado majoritário e governança independente.",
+          "source": "thematic_profile",
+          "source_position_id": "P22"
+        },
+        {
+          "page": 43,
+          "quote": "Pela Base Agro-Bio Nacion- al, visamos à unificação técnica do maior acervo de dados agropecuários do planeta, viabilizando também a criação de drones agrícolas e robótica movidos por IA proprietária brasileira.",
+          "relation": "APOIA",
+          "semantic_relevance": "A IA proprietária brasileira e seus produtos indicam desenvolvimento interno, além de mera adoção de sistemas prontos.",
+          "source": "thematic_profile",
+          "source_position_id": "P23"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O conjunto vai além de digitalização ou regulação: constrói infraestrutura, pesquisa e tecnologia proprietária no país. A combinação com capital privado qualifica a forma do investimento federal, sem negar sua existência.",
+      "reasons_to_keep": [
+        "O investimento estratégico do Estado se aplica à agenda computacional definida no mesmo capítulo.",
+        "Datacenters, laboratório nacional e IA proprietária formam capacidade doméstica de infraestrutura e desenvolvimento."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não discrimina orçamento federal para cada eixo nem a participação pública no laboratório.",
+        "Incentivos regulatórios e fiscais podem mobilizar capital privado sem desembolso público direto em todos os projetos."
+      ],
+      "human_review_question": "A combinação de investimento estatal, incentivos, infraestrutura nacional e laboratório de capital privado majoritário satisfaz a exigência de investimento federal em capacidade nacional?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q12",
+      "display_number": 11,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano enfrenta filas com estratificação de risco, saúde digital e regionalização. A menção a hospitais privados refere-se à interoperabilidade do prontuário, não à contratação complementar de consultas, exames, leitos ou procedimentos.",
+      "current_evidence": [
+        {
+          "page": 26,
+          "quote": "Criação do PRONTO (Prontuário Eletrônico Nacional Interoperável) que irá conectar a atenção primária, os serviços especializados, os hospitais públicos e privados, laboratórios e farmácias, servin- do de repositório para todas as informações do paciente acessíveis a qualquer tempo.",
+          "role": "counterevidence"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano reorganiza o acesso ao SUS por risco, telemedicina, prontuário interoperável e centros regionais. Hospitais privados entram no fluxo de informação, mas não há compra de consultas, exames, leitos ou procedimentos para suprir insuficiência pública.",
+      "semantic_context": [
+        {
+          "page": 26,
+          "quote": "Criação do PRONTO (Prontuário Eletrônico Nacional Interoperável) que irá conectar a atenção primária, os serviços especializados, os hospitais públicos e privados, laboratórios e farmácias, servin- do de repositório para todas as informações do paciente acessíveis a qualquer tempo. Integração do PRONTO ao sistema digital de saúde.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Integra prestadores públicos e privados em dados clínicos, mas não cria contratação complementar de capacidade assistencial.",
+          "source": "thematic_profile",
+          "source_position_id": "P27"
+        },
+        {
+          "page": 25,
+          "quote": "A ideia central de nossa proposta é criar a ENER, um sistema de fila viva, que não fique engessado na ordem cronológica, mas atenda critérios objetivos de prioridade relativos ao estado do paciente. Com isso, devemos estabelecer uma fila a partir do grau de risco, não mais da simples prioridade cronológica, funda- da nos seguintes critérios: (i) gravidade clínica atual; (ii) risco de progressão em curto e médio prazo; (iii) impacto funcional (a ameaça de perda da capacidade laboral e autonomia do paciente); (iv) vulnerabilidade social associada; (v) tempo acumulado de espera.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A resposta às filas é ordenar atendimento por risco; esse instrumento pode coexistir com qualquer posição sobre compra de capacidade privada.",
+          "source": "thematic_profile",
+          "source_position_id": "P26"
+        },
+        {
+          "page": 26,
+          "quote": "Adoção do modelo Hub-and-Spoke com o objetivo de dirimir a descoordenação na atuação dos mu- nicípios, concentrando demandas mais complexas nos centros regionais de referência, impedindo que sejam utilizados para demandas difusas e primárias.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A regionalização tenta ampliar eficiência dentro da rede, sem definir a natureza pública ou privada dos serviços comprados.",
+          "source": "thematic_profile",
+          "source_position_id": "P28"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A interoperabilidade demonstra relação operacional com hospitais privados, porém compartilhar dados não é contratar atendimento. As alternativas de gestão de filas e regionalização tampouco rejeitam a contratação subsidiária.",
+      "reasons_to_keep": [
+        "O papel expresso dos hospitais privados é integrar o prontuário.",
+        "Nenhum trecho condiciona compra de serviços à falta de capacidade da rede pública."
+      ],
+      "reasons_to_reconsider": [
+        "A inclusão de hospitais privados no ecossistema interoperável facilitaria uma rede complementar.",
+        "A preocupação central com filas poderia ser compatível com contratação privada, mas o mecanismo não aparece."
+      ],
+      "human_review_question": "A integração informacional de hospitais privados ao SUS autoriza inferir contratação de atendimento, ou falta decisão sobre compra subsidiária de serviços?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q25",
+      "display_number": 12,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano determina abolir cotas na educação e, em alcance adicional expresso, abolir o sistema de cotas em geral. Uma abolição geral é incompatível com manter reserva racial de vagas em concursos públicos federais. A modalidade de concurso e o critério racial não são nomeados separadamente, por isso a oposição decorre do alcance inclusivo da formulação geral.",
+      "current_evidence": [
+        {
+          "page": 32,
+          "quote": "Abolir o sistema de cotas na educação brasileira e em geral.",
+          "role": "opposition"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano propõe abolir cotas na educação e acrescenta alcance geral, enquanto substitui cotas educacionais por bolsas de mérito. A regra geral inclui reservas de vagas fora da educação, embora concursos federais e critério racial não sejam nomeados.",
+      "semantic_context": [
+        {
+          "page": 32,
+          "quote": "Abolir o sistema de cotas na educação brasileira e em geral.",
+          "relation": "CONTRADIZ",
+          "semantic_relevance": "A abolição expressamente geral é incompatível com a manutenção de cotas raciais em concursos federais, uma modalidade do sistema de cotas.",
+          "source": "thematic_profile",
+          "source_position_id": "P36"
+        },
+        {
+          "page": 31,
+          "quote": "substituir o sistema de cotas por um sistema de bolsas de mérito;",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Explicita a alternativa meritocrática no ensino superior, mas isoladamente não responderia sobre concursos públicos.",
+          "source": "thematic_profile",
+          "source_position_id": "P36"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A expressão “em geral” amplia deliberadamente a abolição além da educação e alcança a reserva de vagas em concursos. A inferência é inclusiva, mas não permite detalhar transição, percentual ou exceções.",
+      "reasons_to_keep": [
+        "A manutenção de uma cota racial em concursos contraria a abolição do sistema de cotas em geral.",
+        "Não há exceção que preserve ação afirmativa no serviço público."
+      ],
+      "reasons_to_reconsider": [
+        "O contexto imediato é educacional e concursos não são nomeados individualmente.",
+        "O critério racial não aparece no trecho, de modo que a classificação depende do alcance universal da palavra “geral”."
+      ],
+      "human_review_question": "A expressão “na educação brasileira e em geral” inclui inequivocamente cotas raciais em concursos federais, apesar de essa modalidade não ser nomeada?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q14",
+      "display_number": 13,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não oferece cuidado domiciliar profissional a idosos ou pessoas com deficiência com alto grau de dependência.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O plano oferece telemedicina, monitoramento clínico, integração digital e priorização da perda de autonomia nas filas. Esses instrumentos podem apoiar pacientes em casa e pessoas dependentes, mas não criam equipe de cuidado domiciliar, apoio a cuidadores ou política dirigida conjuntamente a idosos e pessoas com deficiência de alta dependência.",
+      "semantic_context": [
+        {
+          "page": 26,
+          "quote": "Criação de um sistema digital de saúde, que combine telemedicina, diagnósticos por IA, monitora- mento clínico e histórico permanente, inspirado no DoctorSV, de El Salvador.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Telemedicina e monitoramento podem alcançar a residência, mas não equivalem a prestação de cuidado profissional contínuo no domicílio.",
+          "source": "thematic_profile",
+          "source_position_id": "P27"
+        },
+        {
+          "page": 25,
+          "quote": "A ideia central de nossa proposta é criar a ENER, um sistema de fila viva, que não fique engessado na ordem cronológica, mas atenda critérios objetivos de prioridade relativos ao estado do paciente. Com isso, devemos estabelecer uma fila a partir do grau de risco, não mais da simples prioridade cronológica, funda- da nos seguintes critérios: (i) gravidade clínica atual; (ii) risco de progressão em curto e médio prazo; (iii) impacto funcional (a ameaça de perda da capacidade laboral e autonomia do paciente); (iv) vulnerabilidade social associada; (v) tempo acumulado de espera.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A perda de autonomia entra no critério de prioridade assistencial, mas não gera modalidade domiciliar nem define os dois públicos da tese.",
+          "source": "thematic_profile",
+          "source_position_id": "P26"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano reconhece autonomia e oferece cuidado remoto, mas o objeto é acesso digital e ordenação de filas. Não há serviço de cuidados de longa duração no domicílio, nem apoio familiar ou profissional para dependência intensa.",
+      "reasons_to_keep": [
+        "Telemedicina e monitoramento clínico não substituem cuidado domiciliar profissional.",
+        "Idosos, pessoas com deficiência e alto grau de dependência não aparecem como público de uma política de cuidado."
+      ],
+      "reasons_to_reconsider": [
+        "O sistema digital poderia ser um componente de atenção domiciliar e alcança impacto funcional e autonomia.",
+        "A formulação tecnológica não esclarece onde o monitoramento será prestado nem se haverá equipes presenciais."
+      ],
+      "human_review_question": "Telemedicina e monitoramento clínico constituem cuidado domiciliar para alta dependência, ou falta uma oferta profissional e dirigida aos públicos da tese?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q15",
+      "display_number": 14,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano manda modular o VAAR, componente federal de financiamento educacional, combinando um ranking de disciplina com indicadores tradicionais de qualidade da educação. Em outro capítulo, identifica o IDEB como meta de resultado setorial. A conexão entre parte do recurso e resultado educacional medido é clara, embora a fórmula seja híbrida.",
+      "current_evidence": [
+        {
+          "page": 32,
+          "quote": "Estabelecer um ranking oficial de disciplina nas escolas que sirva para modular o VAAR (Valor Aluno Ano Resultado), que será aumentado, aliando o escrutínio da disciplina com os indicadores tradicio- nais da qualidade da educação.",
+          "role": "support"
+        },
+        {
+          "page": 18,
+          "quote": "Marco Gerencial Nacional: Instituição de um sistema de metas baseado em três famílias de indica- dores: resultados setoriais (IDEB, cobertura vacinal, saneamento, crescimento econômico), integri- dade de gestão e eficiência fiscal.",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano amplia o VAAR e determina que sua modulação combine disciplina com indicadores tradicionais de qualidade. Em seu sistema gerencial, usa o IDEB como resultado setorial. Assim, uma parcela federal fica dependente de desempenho medido, embora aprendizagem não seja critério exclusivo.",
+      "semantic_context": [
+        {
+          "page": 32,
+          "quote": "Estabelecer um ranking oficial de disciplina nas escolas que sirva para modular o VAAR (Valor Aluno Ano Resultado), que será aumentado, aliando o escrutínio da disciplina com os indicadores tradicio- nais da qualidade da educação. Em resumo: escolas mais ordeiras receberão mais recursos, gestores que mantenham a disciplina, de acordo com o código disciplinar, serão premiados. Queremos criar um sistema de incentivos para dirimir esse problema. Para isso deve ser necessário centralizar os poderes e competências na União, reformando as leis de competência da educação.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Vincula recursos a uma fórmula de desempenho que inclui qualidade educacional e disciplina; a síntese do plano enfatiza ordem escolar.",
+          "source": "thematic_profile",
+          "source_position_id": "P31"
+        },
+        {
+          "page": 31,
+          "quote": "No Brasil, o melhor exemplo de elevação da educação básica encontra-se no Ceará e é, portanto, a este modelo que nos remetemos, pensando modos de adequar as suas práticas no contexto nacional. Também buscaremos a adoção universal do sistema fônico de alfabetização, que se encontra amparado pelas melhores evidências científicas disponíveis, dando aliás respaldo a uma orientação que já se encontra contemplada na BNCC e na Política Nacional de Alfabetização.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "A prioridade explícita é elevar aprendizagem e adotar práticas avaliadas como eficazes, coerente com indicadores de qualidade, mas este trecho não condiciona recursos.",
+          "source": "thematic_profile",
+          "source_position_id": "P30"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A modulação do VAAR é uma consequência financeira explícita e inclui indicadores de qualidade ligados à aprendizagem. A regra é híbrida porque disciplina também altera os recursos, e o plano não especifica fórmula ou salvaguardas.",
+      "reasons_to_keep": [
+        "O VAAR é um componente de recursos e sua modulação inclui indicadores tradicionais de qualidade.",
+        "O IDEB é tratado como indicador de resultado educacional no sistema de metas do plano."
+      ],
+      "reasons_to_reconsider": [
+        "A síntese textual destaca que escolas ordeiras receberão mais, dando peso central à disciplina.",
+        "O documento não informa a parcela ligada especificamente à aprendizagem nem se o repasse é calculado no nível de rede exigido pela tese."
+      ],
+      "human_review_question": "A inclusão de indicadores tradicionais de qualidade na modulação do VAAR basta para caracterizar recursos condicionados a metas de aprendizagem, apesar da fórmula híbrida com disciplina?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q16",
+      "display_number": 15,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano observa que a carga horária formal brasileira supera ligeiramente a de países desenvolvidos, mas não propõe reduzir a jornada semanal nem preservar salários nessa redução.",
+      "current_evidence": [
+        {
+          "page": 20,
+          "quote": "Nesse modelo, ainda que a carga horária dos brasileiros em emprego formal seja ligeiramente maior que a de países já desenvolvidos, o esforço não se converte em riqueza proporcional ao potencial da nossa popu- lação e território.",
+          "role": "context"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano diagnostica carga horária relativamente alta e baixa produtividade e anuncia reforma trabalhista para flexibilizar relações. A combinação reconhece o problema do tempo de trabalho, mas flexibilização pode aumentar, reduzir ou redistribuir horas e não preserva necessariamente salário.",
+      "semantic_context": [
+        {
+          "page": 5,
+          "quote": "de reforma trabalhista para flexibilizar relações de trabalho",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Indica mudança na regulação trabalhista, mas não fixa redução do limite semanal nem proteção salarial.",
+          "source": "thematic_profile",
+          "source_position_id": "P37"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O diagnóstico de horas e a proposta de flexibilização são semanticamente próximos, porém não têm direção normativa suficiente. A tese exige duas decisões conjuntas — menos horas semanais e mesmo salário — e nenhuma é estabelecida.",
+      "reasons_to_keep": [
+        "A comparação de carga horária é descritiva e aparece em diagnóstico de produtividade.",
+        "Flexibilização trabalhista não determina redução do limite semanal nem remuneração preservada."
+      ],
+      "reasons_to_reconsider": [
+        "O plano reconhece que trabalhadores formais cumprem carga superior à de países desenvolvidos.",
+        "Uma reforma orientada a produtividade poderia incluir redução de jornada, mas essa consequência não é indicada."
+      ],
+      "human_review_question": "O diagnóstico de carga horária e a flexibilização proposta escolhem reduzir a jornada com salário preservado, ou deixam abertas reformas incompatíveis entre si?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano não menciona aborto voluntário, descriminalização ou prazo gestacional.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O capítulo de saúde amplia acesso, telemedicina, diagnóstico e monitoramento, mas não trata direitos reprodutivos, interrupção da gestação, exceções legais ou punição penal. A política geral de saúde não permite inferir posição jurídica sobre aborto voluntário.",
+      "semantic_context": [
+        {
+          "page": 26,
+          "quote": "Criação de um sistema digital de saúde, que combine telemedicina, diagnósticos por IA, monitora- mento clínico e histórico permanente, inspirado no DoctorSV, de El Salvador.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "É uma política abrangente de acesso e acompanhamento em saúde, sem conteúdo sobre gestação ou regime penal do aborto.",
+          "source": "thematic_profile",
+          "source_position_id": "P27"
+        },
+        {
+          "page": 25,
+          "quote": "A ideia central de nossa proposta é criar a ENER, um sistema de fila viva, que não fique engessado na ordem cronológica, mas atenda critérios objetivos de prioridade relativos ao estado do paciente. Com isso, devemos estabelecer uma fila a partir do grau de risco, não mais da simples prioridade cronológica, funda- da nos seguintes critérios: (i) gravidade clínica atual; (ii) risco de progressão em curto e médio prazo; (iii) impacto funcional (a ameaça de perda da capacidade laboral e autonomia do paciente); (iv) vulnerabilidade social associada; (v) tempo acumulado de espera.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Define princípios gerais de prioridade clínica no SUS, que não alteram a criminalização de uma conduta específica.",
+          "source": "thematic_profile",
+          "source_position_id": "P26"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "As propostas de saúde são neutras quanto à tese. Não há mecanismo jurídico, limite gestacional, ampliação ou restrição de exceções, nem princípio inequívoco que resolva a criminalização.",
+      "reasons_to_keep": [
+        "Nenhum trecho altera o Código Penal ou descreve aborto voluntário.",
+        "Acesso universal à saúde e prioridade clínica comportam posições opostas sobre descriminalização."
+      ],
+      "reasons_to_reconsider": [
+        "O plano cria infraestrutura ampla de saúde que poderia atender saúde reprodutiva, embora não a nomeie.",
+        "Uma política clínica baseada em risco pode alcançar complicações gestacionais, sem decidir legalidade do aborto voluntário."
+      ],
+      "human_review_question": "Existe no plano alguma decisão jurídica sobre aborto voluntário, ou as políticas gerais de saúde permanecem compatíveis com qualquer posição penal?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q18",
+      "display_number": 17,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano endurece o regime contra facções, reincidência e crimes de rua, mas não aplica o regime penal adulto a adolescentes de 16 e 17 anos. A referência ao ECA trata de disciplina escolar.",
+      "current_evidence": [],
+      "semantic_neighborhood_summary": "O plano endurece fortemente o tratamento de integrantes de facções e propõe sanções disciplinares escolares, inclusive em contexto de revisão do ECA. O regime excepcional é definido por vínculo com organização criminosa, não por idade, e a disciplina escolar não transfere adolescentes ao sistema penal adulto.",
+      "semantic_context": [
+        {
+          "page": 12,
+          "quote": "adoção imediata do Direito Penal do Inimigo (DPI) como framework jurídico para o combate ao crime organizado no Brasil. Essa doutrina, formulada pelo jurista alemão Günter Jakobs, distingue entre dois regimes penais: o direito penal do cidadão, que preserva garantias plenas, e o direito penal do inimigo, que aplica medidas preventivas e penas desproporcionais àqueles que demonstram não aceitar o pacto social mediante participação duradoura em organizações criminosas.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Endurece o regime por participação duradoura em organizações criminosas; não usa idade mínima de 16 anos nem abrange qualquer crime.",
+          "source": "thematic_profile",
+          "source_position_id": "P39"
+        },
+        {
+          "page": 32,
+          "quote": "Criar um código de conduta para o estudante, implementado em nível nacional, que lhe prescreva punições objetivas para comportamentos inadequados em sala de aula, com classificação das punições e rol de comportamentos. O código deverá ser amplamente publicizado nas escolas brasileiras.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Prevê punições escolares objetivas, instrumento distinto de imputabilidade criminal adulta.",
+          "source": "thematic_profile",
+          "source_position_id": "P31"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O princípio de endurecimento penal não resolve a idade de responsabilidade. Mesmo o regime excepcional é condicionado a facções e, portanto, não corresponde à aplicação adulta desde os 16 anos por qualquer crime.",
+      "reasons_to_keep": [
+        "Nenhum trecho define 16 ou 17 anos como idade de imputabilidade adulta.",
+        "O Direito Penal do Inimigo depende de participação em facção, enquanto a tese abrange qualquer crime."
+      ],
+      "reasons_to_reconsider": [
+        "A orientação punitiva e as medidas excepcionais mostram disposição de ampliar respostas penais severas.",
+        "A revisão disciplinar ligada ao ECA aproxima o plano de políticas para adolescentes, mas permanece escolar."
+      ],
+      "human_review_question": "O endurecimento por facção ou indisciplina permite inferir regime penal adulto universal aos 16 anos, ou faltam idade, alcance e transferência de regime?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q19",
+      "display_number": 18,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "current_classification": "CONCORDA",
+      "current_rationale": "No segundo front de combate à criminalidade urbana cotidiana, o plano integra reconhecimento facial em tempo real a drones, totens de denúncia e patrulhamento autônomo para prevenir crimes, além de identificação facial para solucionar crimes hediondos. Esse sistema de patrulhamento e vigilância urbana implica captação em espaços públicos e tem finalidades inequívocas de segurança.",
+      "current_evidence": [
+        {
+          "page": 13,
+          "quote": "Um novo sistema de drones e totens de denúncia transformará a reação ao crime em prevenção, com patrulhamento autônomo e reconhecimento facial em tempo real, integrado ao uso de dados genéticos e identificação facial para a resolução de crimes hediondos.",
+          "role": "support"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano cria vigilância urbana preventiva com drones, totens, patrulhamento autônomo e reconhecimento facial em tempo real, além de identificação para crimes hediondos. O contexto urbano e de patrulhamento implica espaços públicos, embora o plano não detalhe salvaguardas de dados ou contestação.",
+      "semantic_context": [
+        {
+          "page": 13,
+          "quote": "Um novo sistema de drones e totens de denúncia transformará a reação ao crime em prevenção, com patrulhamento autônomo e reconhecimento facial em tempo real, integrado ao uso de dados genéticos e identificação facial para a resolução de crimes hediondos.",
+          "relation": "APOIA",
+          "semantic_relevance": "Define identificação facial em tempo real integrada ao patrulhamento preventivo e à investigação criminal, funções de segurança em ambiente urbano.",
+          "source": "thematic_profile",
+          "source_position_id": "P42"
+        },
+        {
+          "page": 13,
+          "quote": "As lideranças condenadas serão deslocadas a superpresídios de segurança máxima em regiões remotas, no modelo do CECOT salvadorenho, equipados com blindagem eletromagnética e biometria contínua, neutralizando o comando das facções a partir do cárcere.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Mostra uso adicional de biometria na segurança, mas em presídios, escopo que não fundamenta a tese sobre espaços públicos.",
+          "source": "thematic_profile",
+          "source_position_id": "P41"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O reconhecimento facial é um componente explícito de patrulhamento e prevenção da criminalidade urbana. A inferência sobre espaço público decorre do sistema de drones, totens e patrulhamento; já a biometria carcerária é um instrumento separado.",
+      "reasons_to_keep": [
+        "O plano nomeia reconhecimento facial em tempo real com finalidade preventiva e policial.",
+        "Drones, totens e patrulhamento urbano situam o sistema em áreas abertas ao público."
+      ],
+      "reasons_to_reconsider": [
+        "O texto não usa literalmente a expressão “espaços públicos” nem delimita locais de captação.",
+        "Não há regras sobre precisão, vieses, retenção, auditoria ou direito de contestação."
+      ],
+      "human_review_question": "O contexto de patrulhamento urbano por drones e totens estabelece suficientemente o uso em espaços públicos, mesmo sem delimitação literal dos locais?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q21",
+      "display_number": 19,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano propõe uma estratégia brasileira dentro do BRICS+ para obter mercados, investimentos e tecnologia com autonomia decisória. Executar essa estratégia pressupõe permanecer no bloco.",
+      "current_evidence": [
+        {
+          "page": 46,
+          "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos, por meio dos mercados, investimentos e cooperação tecnológi- ca, enquanto evita ser subordinado aos objetivos geopolíticos de Pequim, mantendo autonomia decisória.",
+          "role": "support"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano adota pragmatismo externo e prevê atuação brasileira dentro do BRICS+ para obter mercados, investimento e tecnologia, ao mesmo tempo que critica a influência chinesa e exige autonomia. A tensão condiciona a permanência, mas não propõe saída.",
+      "semantic_context": [
+        {
+          "page": 46,
+          "quote": "Estratégia pragmática no BRICS+ reconhece a dominação crescente chinesa dentro do bloco e propõe que o Brasil extraia benefícios concretos, por meio dos mercados, investimentos e cooperação tecnológi- ca, enquanto evita ser subordinado aos objetivos geopolíticos de Pequim, mantendo autonomia decisória.",
+          "relation": "APOIA",
+          "semantic_relevance": "Propõe ação continuada dentro do bloco e, por consequência necessária, pressupõe permanência institucional.",
+          "source": "thematic_profile",
+          "source_position_id": "P45"
+        },
+        {
+          "page": 46,
+          "quote": "Adoção do pragmatismo como princípio de política externa rejeita tanto o alinhamento ideológico automático com os EUA quanto o ideologismo de esquerda, estabelecendo em seu lugar uma Estratégia Internacional institucionalizada que persista além de mudanças de governo, garantindo continuidade e previsibilidade nas relações exteriores;",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "O princípio é manter relações úteis com autonomia, coerente com permanência crítica no BRICS em vez de alinhamento automático.",
+          "source": "thematic_profile",
+          "source_position_id": "P43"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Extrair benefícios dentro do BRICS+ é incompatível com retirar o país do bloco. A crítica à influência chinesa define a forma autônoma de participação e não uma condição de saída.",
+      "reasons_to_keep": [
+        "A estratégia é formulada expressamente “dentro do bloco”.",
+        "Mercados, investimentos e cooperação tecnológica são benefícios buscados por meio da participação continuada."
+      ],
+      "reasons_to_reconsider": [
+        "O plano identifica dominação chinesa crescente, criando tensão com a permanência.",
+        "Não usa literalmente o verbo permanecer nem discute cenários em que a subordinação pudesse levar a retirada."
+      ],
+      "human_review_question": "A estratégia de obter benefícios dentro do BRICS+ com autonomia pressupõe permanência suficiente, apesar da crítica à influência chinesa?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q22",
+      "display_number": 20,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano propõe acordos bilaterais setoriais com a União Europeia e integração sul-americana, mas não menciona o acordo comercial Mercosul–União Europeia nem sua ratificação.",
+      "current_evidence": [
+        {
+          "page": 39,
+          "quote": "Celebração de acordos bilaterais com Estados Unidos e União Europeia que garantam off-take agree- ments (compromissos de compra de longo prazo) e transferência tecnológica em processamento de terras raras.",
+          "role": "counterevidence"
+        }
+      ],
+      "semantic_neighborhood_summary": "O plano favorece acordos bilaterais com a União Europeia para terras raras, diversificação de parceiros e integração multilateral sul-americana. Essas orientações são compatíveis com comércio e cooperação regional, mas não decidem aceitar o texto final específico Mercosul–UE, rejeitá-lo ou exigir renegociação.",
+      "semantic_context": [
+        {
+          "page": 39,
+          "quote": "Estabelecimento de zonas econômicas especiais (ZEEs) dedicadas ao processamento e manufatura de componentes de terras raras, com incentivos fiscais e regulatórios que atraiam investimento direto estrangeiro qualificado.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "Mostra abertura qualificada a investimento estrangeiro na cadeia mineral, sem vínculo ao texto do acordo Mercosul–UE.",
+          "source": "thematic_profile",
+          "source_position_id": "P04"
+        },
+        {
+          "page": 46,
+          "quote": "Proposta de sub-hegemonia brasileira, uma liderança regional sem imperialismo, propõe que o Brasil lidere a América do Sul por meio de mecanismos de integração multilateral, aprendendo tanto dos fra- cassos da Unasul quanto dos problemas da União Europeia, mantendo autonomia estratégica frente a grandes potências.",
+          "relation": "QUALIFICA",
+          "semantic_relevance": "Defende integração regional e autonomia, princípios que podem orientar avaliação do acordo, mas não escolhem ratificação do texto final.",
+          "source": "thematic_profile",
+          "source_position_id": "P43"
+        },
+        {
+          "page": 39,
+          "quote": "Celebração de acordos bilaterais com Estados Unidos e União Europeia que garantam off-take agree- ments (compromissos de compra de longo prazo) e transferência tecnológica em processamento de terras raras.",
+          "relation": "CONTEXTO",
+          "semantic_relevance": "O acordo proposto é bilateral e setorial; esse instrumento não equivale à ratificação de um acordo birregional comercial já negociado.",
+          "source": "full_plan_review",
+          "source_position_id": "BR26-T057"
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A disposição a celebrar acordos com a UE e integrar a América do Sul aproxima o plano da matéria, mas instrumentos bilaterais minerais e princípios regionais não resolvem cláusulas nem o ato de ratificação do acordo específico.",
+      "reasons_to_keep": [
+        "Nenhum trecho identifica o acordo Mercosul–União Europeia ou seu texto final.",
+        "Acordos bilaterais setoriais podem coexistir com apoio, rejeição ou renegociação do acordo birregional."
+      ],
+      "reasons_to_reconsider": [
+        "O plano demonstra abertura a acordos com a União Europeia e a mecanismos de integração regional.",
+        "A orientação pragmática e comercial pode favorecer ratificação, mas não define posição sobre cláusulas do texto concreto."
+      ],
+      "human_review_question": "A abertura a acordos bilaterais com a UE e à integração regional decide a ratificação do texto final Mercosul–UE, ou falta posição sobre esse acordo específico?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    }
+  ],
+  "summary": {
+    "recommendation_counts": {
+      "MANTER": 20,
+      "RECLASSIFICAR_CONCORDA": 0,
+      "RECLASSIFICAR_DISCORDA": 0,
+      "RECLASSIFICAR_CONDICIONAL": 0
+    },
+    "divergent_recommendations": [],
+    "overall_assessment": "A revisão semântica encontrou contexto próximo para todas as teses, inclusive onde a posição atual é NAO_ENCONTRADA. Nenhuma aproximação ultrapassa os limites de objeto, instrumento, público ou condição necessários para recomendar mudança de classificação."
+  }
+}

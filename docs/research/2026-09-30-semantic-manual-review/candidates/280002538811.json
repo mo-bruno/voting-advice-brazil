@@ -1,0 +1,825 @@
+{
+  "candidate_id": "280002538811",
+  "candidate_name": "Samara",
+  "reviewer_agent_id": "/root/semantic_samara",
+  "status": "complete",
+  "reviews": [
+    {
+      "question_id": "B01-Q01",
+      "display_number": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano propõe expressamente instituir imposto progressivo sobre grandes fortunas. A mesma frase também enumera lucros, dividendos e heranças, mas essa enumeração não apaga a existência do tributo patrimonial específico perguntado.",
+      "semantic_neighborhood_summary": "A proposta integra um desenho redistributivo que desonera renda do trabalho e bens essenciais e desloca tributação para grandes patrimônios e rendas do capital. Nesse conjunto, grandes fortunas aparecem como base tributária própria, ao lado de lucros, dividendos e heranças, sem definição de limiar ou alíquota.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "APOIA",
+          "page": 17,
+          "quote": "instituição do imposto progressivo sobre grandes fortunas, lucros, dividendos e heranças dos bilionários.",
+          "semantic_relevance": "A frase nomeia diretamente o imposto sobre grandes fortunas e o inclui numa lista de incidências progressivas sobre riqueza e capital."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P03",
+          "relation": "CONTEXTO",
+          "page": 16,
+          "quote": "Isenção total de imposto de renda para os trabalhadores, eliminação de impostos sobre itens da cesta básica e produtos essenciais de limpeza e higiene pessoal,",
+          "semantic_relevance": "A desoneração de trabalho e consumo essencial esclarece a lógica redistributiva da tributação sobre grandes fortunas, sem substituir esse instrumento."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Há decisão expressa sobre o instrumento exato. A enumeração conjunta não reduz grandes fortunas a sinônimo de dividendos ou heranças; apenas deixa em aberto o desenho operacional do tributo.",
+      "reasons_to_keep": [
+        "O trecho usa literalmente 'imposto progressivo sobre grandes fortunas'.",
+        "A base patrimonial perguntada está separada de lucros, dividendos e heranças na enumeração."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não define limiar patrimonial, alíquota ou transição, de modo que a concordância não pode receber conteúdo regulatório além da criação do tributo."
+      ],
+      "human_review_question": "A enumeração é suficiente para reconhecer um imposto específico sobre grandes fortunas, preservando como indeterminados seus limiares e alíquotas?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q02",
+      "display_number": 2,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano prevê uma política industrial ativa, dirigida a setores estratégicos, com ações de financiamento. Contudo, não caracteriza esse financiamento como linha de crédito ou programa de empréstimo, instrumento exato da afirmação aprovada. Financiamento pode abranger investimento público, aporte ou outro mecanismo e, sem essa definição, a proximidade temática não basta.",
+      "semantic_neighborhood_summary": "O plano reúne política industrial ativa, seleção de setores estratégicos e ações articuladas de financiamento. Também amplia pesquisa e bolsas e subordina a reindustrialização a metas ambientais. O ponto semântico decisivo é se 'financiamento' dirigido aos setores já designa crédito público funcionalmente equivalente ou permanece amplo o bastante para incluir aportes e investimento direto.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P17",
+          "relation": "QUALIFICA",
+          "page": 63,
+          "quote": "Vincular a reindustrialização a metas de redução de poluentes, eficiência energética, economia solidária, tecnologias limpas e recuperação de áreas degradadas;",
+          "semantic_relevance": "O plano seleciona condições e prioridades para a reindustrialização, reforçando o caráter dirigido da política industrial, mas não esclarece a forma financeira."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P21",
+          "relation": "CONTEXTO",
+          "page": 23,
+          "quote": "Ampliar as instituições de pesquisa e integrá-las aos programas de pós-graduação.",
+          "semantic_relevance": "A expansão de capacidade científica é instrumento complementar de política industrial e mostra que o plano emprega também investimento institucional, razão para não presumir que todo financiamento seja crédito."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A vizinhança é mais forte que mera política industrial genérica: há setores escolhidos e financiamento articulado. 'Financiamento' pode funcionar como equivalente semântico de crédito dirigido, mas o plano não identifica banco, empréstimo, juros, garantia ou modalidade reembolsável. É o caso mais plausível para reconsiderar a exigência lexical atual.",
+      "reasons_to_keep": [
+        "Financiamento é categoria mais ampla que linha de crédito e pode abranger aporte, subsídio ou investimento direto.",
+        "O plano não nomeia BNDES, empréstimo, taxa, garantia ou programa creditício para esses setores."
+      ],
+      "reasons_to_reconsider": [
+        "A formulação associa explicitamente setores estratégicos a ações de financiamento, podendo realizar a mesma decisão econômica de crédito setorial sem empregar a expressão 'linha de crédito'.",
+        "A regra do protocolo admite instrumentos funcionalmente equivalentes quando a equivalência é explicada."
+      ],
+      "human_review_question": "No contexto de uma política industrial estatal dirigida a setores estratégicos, 'ações conjuntas e articuladas de financiamento' já decide oferecer crédito setorial ou ainda permite somente instrumentos não creditícios?",
+      "preliminary_recommendation": "RECLASSIFICAR_CONCORDA",
+      "confidence": "baixa"
+    },
+    {
+      "question_id": "B01-Q03",
+      "display_number": 3,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano proíbe de modo geral a atuação do capital estrangeiro na economia nacional. A seção de reestatização identifica ainda empresas estrangeiras disputando a exploração de nióbio e terras raras, minerais estratégicos. A vedação geral alcança necessariamente a participação empresarial estrangeira na extração perguntada.",
+      "semantic_neighborhood_summary": "O plano adota soberania econômica por vedação geral à atuação de capital estrangeiro, reestatização da Vale e controle estatal do comércio exterior. A própria discussão mineral trata a disputa estrangeira por nióbio e terras raras como problema. O alcance é mais amplo que a tese e não contém exceção para mineração estratégica.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P06",
+          "relation": "CONTRADIZ",
+          "page": 58,
+          "quote": "Proibição de atuação do capital estrangeiro dentro da economia nacional;",
+          "semantic_relevance": "A exploração mineral por empresa estrangeira é atuação de capital estrangeiro na economia nacional e cai na vedação geral."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTEXTO",
+          "page": 60,
+          "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale",
+          "semantic_relevance": "A estatização da Vale reforça a preferência por controle público nacional na cadeia mineral, embora a discordância já decorra da proibição geral."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A regra geral, o exemplo mineral e a estatização da Vale convergem. Não é necessário inferir oposição apenas de um princípio abstrato de soberania; há aplicação próxima à atividade e aos minerais perguntados.",
+      "reasons_to_keep": [
+        "A proibição geral não abre exceção para mineração.",
+        "Nióbio e terras raras são citados como reservas cuja exploração é disputada por empresas estrangeiras."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não detalha separadamente concessões minerais, participação minoritária ou parceria tecnológica, de modo que a classificação deve permanecer restrita à participação empresarial na exploração."
+      ],
+      "human_review_question": "A vedação geral ao capital estrangeiro, aplicada no texto à disputa por nióbio e terras raras, é suficiente para excluir qualquer participação empresarial estrangeira na extração?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "B01-Q04",
+      "display_number": 4,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano manda suspender imediatamente juros e amortização da dívida pública e iniciar em seguida uma auditoria pública. Embora a ordem seja suspensão primeiro e auditoria depois, a formulação conjunta implica que a interrupção já estará em vigor durante a auditoria, respondendo ao objeto aprovado.",
+      "semantic_neighborhood_summary": "O plano trata suspensão e auditoria como sequência operacional única: primeiro interrompe juros e amortizações, depois inicia auditoria pública, redirecionando recursos a necessidades sociais. Não informa quando pagamentos voltariam nem resultados que encerrariam a suspensão.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P02",
+          "relation": "APOIA",
+          "page": 14,
+          "quote": "SUSPENSÃO IMEDIATA DO PAGAMENTO DE JUROS E AMORTIZAÇÃO DA DÍVIDA PÚBLICA, SEGUIDO DE PROCESSO PÚBLICO DE AUDITORIA",
+          "semantic_relevance": "A suspensão antecede e permanece logicamente vigente quando a auditoria subsequente começa, salvo retomada não indicada."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A ordem temporal não é idêntica à redação da tese, mas produz a situação descrita: pagamentos já suspensos durante a auditoria. A conclusão depende de continuidade implícita, não de simultaneidade literal.",
+      "reasons_to_keep": [
+        "Suspensão e auditoria aparecem no mesmo comando e em sequência imediata.",
+        "Não há etapa de retomada dos pagamentos antes ou durante a auditoria."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não escreve literalmente que a suspensão durará por todo o processo nem define seu termo final."
+      ],
+      "human_review_question": "A sequência 'suspensão imediata, seguida de auditoria' estabelece com segurança suficiente que a suspensão vigora durante o processo, mesmo sem prazo final?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q05",
+      "display_number": 5,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "category_id": "economia_desenvolvimento",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano rejeita o arcabouço fiscal vigente e o associa à retirada de recursos sociais, mas não decide se o governo federal deve ter alguma regra normativa que limite o crescimento das despesas. Revogar um instrumento específico não equivale a rejeitar qualquer regra possível.",
+      "semantic_neighborhood_summary": "O documento rejeita explicitamente o arcabouço fiscal vigente, critica austeridade e pretende ampliar despesas e redirecionar recursos da dívida para políticas sociais. Essa orientação contradiz o limite atual, mas não formula regra substitutiva nem rejeição abstrata a toda trajetória ou limite de despesa.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "CONTRADIZ",
+          "page": 9,
+          "quote": "Fim do Arcabouço Fiscal",
+          "semantic_relevance": "Rejeita a regra fiscal vigente que contém limites de crescimento, mas não resolve se outra regra deve existir."
+        },
+        {
+          "source": "full_plan_review",
+          "relation": "CONTRADIZ",
+          "page": 12,
+          "quote": "REVOGAR AS REFORMAS TRABALHISTA E PREVIDENCIÁRIA, A TERCEIRIZAÇÃO IRRESTRITA EOARCABOUÇOFISCAL",
+          "semantic_relevance": "A revogação é tratada como compromisso de governo e reforça oposição ao instrumento atual, ainda sem alcançar necessariamente qualquer limite normativo possível."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P02",
+          "relation": "CONTEXTO",
+          "page": 14,
+          "quote": "SUSPENSÃO IMEDIATA DO PAGAMENTO DE JUROS E AMORTIZAÇÃO DA DÍVIDA PÚBLICA, SEGUIDO DE PROCESSO PÚBLICO DE AUDITORIA",
+          "semantic_relevance": "O plano busca liberar espaço para despesas por outro caminho, evidenciando sua orientação fiscal expansiva sem definir uma regra permanente de gasto."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A oposição ao arcabouço é determinada, mas a tese pergunta pela existência de alguma regra de limitação. A orientação expansiva e anti-austeridade aumenta a plausibilidade de discordância, porém não elimina alternativas de regra fiscal com exceções ou desenho distinto.",
+      "reasons_to_keep": [
+        "Revogar uma regra identificada não equivale a rejeitar toda regra futura de crescimento das despesas.",
+        "Nenhum trecho apresenta regra substitutiva ou princípio geral sobre a existência de limites."
+      ],
+      "reasons_to_reconsider": [
+        "O plano associa reiteradamente o arcabouço à retirada de recursos sociais e adota expansão de gasto, o que pode ser lido como oposição substantiva ao tipo de contenção perguntado.",
+        "A redação da tese é ampla e um revisor pode considerar que o caso concreto do arcabouço materializa suficientemente seu objeto."
+      ],
+      "human_review_question": "A rejeição programática do arcabouço e da austeridade decide contra qualquer regra de crescimento da despesa, ou apenas contra o desenho vigente?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q06",
+      "display_number": 6,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "category_id": "estado_gestao",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano exige Petrobras com controle 100% estatal. Esse compromisso inclui diretamente, e excede, a manutenção do governo federal como acionista controlador pedida pela afirmação.",
+      "semantic_neighborhood_summary": "A Petrobras integra uma estratégia de reestatização de empresas consideradas estratégicas, com controle 100% estatal e reintegração das refinarias. O plano não apenas atribui função pública futura à empresa: decide explicitamente sua propriedade e controle.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "APOIA",
+          "page": 60,
+          "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale",
+          "semantic_relevance": "Controle 100% estatal é mais abrangente que a manutenção do controle federal exigida na tese."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A decisão de controle é literal e integra um instrumento de estatização, sem depender de inferência a partir de soberania energética ou do uso da empresa em políticas públicas.",
+      "reasons_to_keep": [
+        "O plano determina expressamente controle 100% estatal.",
+        "A estatização imediata exclui perda de controle para acionistas privados."
+      ],
+      "reasons_to_reconsider": [
+        "O texto não detalha qual ente estatal deterá cada participação; a leitura como controle do governo federal decorre da natureza da Petrobras e do objeto presidencial."
+      ],
+      "human_review_question": "A expressão 'controle 100% estatal' satisfaz diretamente a manutenção do controle federal, sem exigir uma descrição adicional da estrutura acionária?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano defende estabilidade, concursos, valorização de carreiras e formação continuada no serviço público, mas não propõe avaliação periódica de servidores estáveis nem permite demissão por baixo desempenho comprovado com direito de defesa. A consequência de desligamento exigida na versão 2 permanece ausente.",
+      "semantic_neighborhood_summary": "O plano favorece recomposição do serviço público por concursos regulares, valorização de carreiras e formação, enquanto restringe privilégios de altos cargos. Esses instrumentos tratam ingresso, capacitação e remuneração; não ligam avaliação periódica à perda de cargo nem descrevem garantia de defesa nesse procedimento.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P01",
+          "relation": "CONTEXTO",
+          "page": 12,
+          "quote": "A UP defende a criação de Frentes Emergenciais de Emprego Público. A execução de um plano nacional de obras de infraestrutura, moradia, saneamento básico, creches e postos de saúde nos bairros periféricos e interior do país, garantindo emprego formal com todos os direitos da CLT.",
+          "semantic_relevance": "Mostra expansão de emprego público, mas trata criação de postos e direitos trabalhistas, sem consequência para desempenho de servidores estáveis."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P12",
+          "relation": "CONTEXTO",
+          "page": 13,
+          "quote": "Fim dos Altos salários dos altos executivos do Estado, juízes, parlamentares e generais, eliminando penduricalhos, verbas indenizatórias e emendas secretas.",
+          "semantic_relevance": "O plano propõe consequência remuneratória para altos cargos, mas por privilégio e posição, não por baixo desempenho de servidor estável."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A agenda de serviço público não contém instrumento funcionalmente equivalente à demissão por desempenho. Valorização, concurso e corte de privilégios não resolvem avaliação periódica, desligamento nem defesa.",
+      "reasons_to_keep": [
+        "Nenhuma proposta conecta avaliação de desempenho à perda do cargo.",
+        "Os instrumentos próximos cuidam de ingresso, formação e remuneração de altos cargos."
+      ],
+      "reasons_to_reconsider": [
+        "A defesa geral da estabilidade pode sugerir tensão com a tese, mas sem dizer se estabilidade admite a hipótese constitucional de desempenho insuficiente; por isso ela não sustenta DISCORDA sozinha."
+      ],
+      "human_review_question": "A defesa de estabilidade e valorização contém alguma rejeição determinável à demissão por desempenho, ou o plano simplesmente não decide esse mecanismo?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q23",
+      "display_number": 8,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano rejeita expressamente os dois instrumentos perguntados. Ele descreve concessões e PPPs federais como entrega da infraestrutura a interesses privados, propõe revisar e revogar concessões de portos, aeroportos e estradas e escolhe reestatizar as malhas ferroviárias. A ampliação da infraestrutura de transportes aparece no plano, mas por investimento e operação públicos, regra incompatível com usar concessões e PPPs para esse fim.",
+      "semantic_neighborhood_summary": "A expansão de transportes é buscada por investimento prioritário público, empresas públicas operadoras e reestatização. Concessões de modais federais e PPPs são descritas como transferência a interesses privados e objeto de revisão ou revogação, formando uma alternativa operacional completa ao mecanismo da tese.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P14",
+          "relation": "CONTRADIZ",
+          "page": 52,
+          "quote": "Estatização das Empresas de Transporte Coletivo: Fim das concessões e dos cartéis privados de ônibus. Criação de empresas públicas municipais e estaduais para operar frotas estatizadas.",
+          "semantic_relevance": "No transporte coletivo, o plano substitui concessões por propriedade e operação públicas."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P16",
+          "relation": "CONTRADIZ",
+          "page": 52,
+          "quote": "Plano Nacional de Malha Ferroviária e Metroviária: Investimento prioritário em trens, metrôs e VLTs elétricos e de alta capacidade, integrando o país e reduzindo a emissão de poluentes.",
+          "semantic_relevance": "A ampliação de infraestrutura existe, mas é associada a plano nacional e investimento prioritário, compondo a alternativa pública às concessões e PPPs."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P07",
+          "relation": "CONTRADIZ",
+          "page": 60,
+          "quote": "Estatização imediata da Eletrobras, da Petrobrás (com controle 100% estatal e integração das refinarias), da Vale",
+          "semantic_relevance": "A política de estatização de empresas estratégicas reforça o modelo público, enquanto a matriz registra a inclusão das malhas ferroviárias na mesma proposta."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano não rejeita somente privatização patrimonial; rejeita concessões e PPPs na infraestrutura e oferece investimento, estatização e operação pública como instrumentos alternativos. A correspondência semântica é direta.",
+      "reasons_to_keep": [
+        "Concessões de portos, aeroportos e estradas são nominalmente destinadas à revogação.",
+        "A expansão ferroviária e metroviária é concebida por investimento público e reestatização."
+      ],
+      "reasons_to_reconsider": [
+        "A revisão e revogação podem, em abstrato, preservar contratos após exame; contudo, a crítica explícita às PPPs e a alternativa estatal tornam improvável apoio ao uso ampliado dos instrumentos."
+      ],
+      "human_review_question": "A combinação de revogação de concessões, crítica explícita às PPPs e expansão estatal permite classificar discordância para ambos os instrumentos federais?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q10",
+      "display_number": 9,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "category_id": "meio_ambiente_clima",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano trata de emissões, transição energética, redução de poluentes e recuperação ambiental, mas não propõe nem rejeita um mercado regulado de carbono. Metas ambientais e negociação obrigatória de créditos ou permissões são instrumentos diferentes.",
+      "semantic_neighborhood_summary": "O plano define fins climáticos e instrumentos administrativos e produtivos: metas de redução de poluentes, eficiência energética, tecnologias limpas, recuperação ambiental e transição de matrizes. Não aparece precificação, teto negociável, créditos, compra, venda ou registro de emissões. A orientação ecológica apoia o objetivo, sem decidir o mercado regulado.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P17",
+          "relation": "CONTEXTO",
+          "page": 63,
+          "quote": "Vincular a reindustrialização a metas de redução de poluentes, eficiência energética, economia solidária, tecnologias limpas e recuperação de áreas degradadas;",
+          "semantic_relevance": "Estabelece metas ambientais para a indústria, mas não cria permissões negociáveis ou precificação de carbono."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P20",
+          "relation": "CONTEXTO",
+          "page": 63,
+          "quote": "Realizar programa de transição de matrizes energéticas e de extração de matérias primas que respeite a conservação da natureza e evite catástrofes ambientais;",
+          "semantic_relevance": "A transição energética é um instrumento próximo para redução de emissões, mas pode ser executada sem mercado de carbono."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P19",
+          "relation": "CONTEXTO",
+          "page": 63,
+          "quote": "Criar frentes emergenciais de trabalho para recuperação ambiental, reflorestamento, proteção de nascentes, prevenção de incêndios, manejo de resíduos e adaptação urbana;",
+          "semantic_relevance": "Mostra preferência por ação pública direta em outras frentes ambientais, sem equivaler a regulação de comércio de emissões."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Há política climática substantiva, porém nenhum instrumento funcionalmente equivalente a mercado regulado. Metas, transição e recuperação não exigem compra e venda de unidades de emissão.",
+      "reasons_to_keep": [
+        "Os instrumentos ambientais citados funcionam independentemente de um mercado de carbono.",
+        "Não há decisão sobre créditos, permissões negociáveis ou precificação."
+      ],
+      "reasons_to_reconsider": [
+        "As metas obrigatórias de redução de poluentes poderiam integrar futuramente um mercado regulado, mas o plano não escolhe esse meio e não permite inferir apoio ou rejeição."
+      ],
+      "human_review_question": "As metas de redução de poluentes e a transição energética contêm algum mecanismo de negociação de emissões, ou permanecem instrumentos administrativos distintos?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q24",
+      "display_number": 10,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano investe em ciência e tecnologia para a soberania econômica, amplia instituições e bolsas de pesquisa e prevê pesquisa e desenvolvimento na política industrial. Não identifica, porém, inteligência artificial, desenvolvimento nacional de modelos, infraestrutura computacional ou pesquisa específica de IA. A agenda científica geral não permite atribuir a decisão específica perguntada.",
+      "semantic_neighborhood_summary": "O plano favorece soberania tecnológica, investimento em ciência, expansão de instituições e bolsas e controle nacional de redes digitais. Também exige transparência algorítmica no trabalho em plataformas. Esses elementos poderiam sustentar uma política de IA, mas não selecionam IA, modelos, dados ou computação como capacidade nacional a desenvolver.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P22",
+          "relation": "CONTEXTO",
+          "page": 23,
+          "quote": "Investir em ciência e tecnologia com vistas a fortalecer a soberania econômica, criando mecanismos de maior participação e controle popular na agenda de pesquisa e nos seus resultados.",
+          "semantic_relevance": "Apoia capacidade científica nacional em termos amplos, mas não prioriza IA."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P21",
+          "relation": "CONTEXTO",
+          "page": 23,
+          "quote": "Ampliar o número de bolsas de pesquisa nos cursos de graduação e pós-graduação.",
+          "semantic_relevance": "Forma e financia pesquisadores, uma condição de capacidade nacional, sem definir a área de inteligência artificial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P24",
+          "relation": "QUALIFICA",
+          "page": 38,
+          "quote": "Fim do monopólio estrangeiro sobre as redes digitais no Brasil;",
+          "semantic_relevance": "Exprime soberania digital e redução de dependência estrangeira, mas redes digitais não equivalem a modelos ou infraestrutura nacional de IA."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O plano oferece condições gerais e um princípio de soberania compatíveis com desenvolvimento nacional de IA. A área, porém, não é escolhida. Incluir IA automaticamente em toda política de ciência e tecnologia transformaria uma prioridade geral em decisão setorial não documentada.",
+      "reasons_to_keep": [
+        "Nenhum trecho seleciona IA, modelos, infraestrutura computacional ou dados como objeto de investimento.",
+        "Ciência geral e controle de redes digitais são instrumentos e objetos distintos."
+      ],
+      "reasons_to_reconsider": [
+        "A combinação de soberania econômica, bolsas e expansão de pesquisa cria capacidade nacional que pode abranger IA, mas não estabelece prioridade suficientemente determinada."
+      ],
+      "human_review_question": "A agenda ampla de ciência soberana inclui IA apenas como possibilidade ou já decide investir especificamente nessa capacidade?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q12",
+      "display_number": 11,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "category_id": "bem_estar_social",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano diagnostica filas e insuficiência de atendimento, mas responde com um SUS 100% estatal e toda a rede sanitária sob gestão direta pública. Embora não mencione literalmente a compra complementar de consultas, exames ou leitos, o desenho universalmente estatal da rede assistencial exclui a contratação de capacidade privada proposta pela afirmação.",
+      "semantic_neighborhood_summary": "O plano reconhece filas e superlotação, rejeita entrega da gestão hospitalar a OS, fundações privadas e cooperativas e escolhe uma rede sanitária de gestão direta pública. A dúvida semântica é se 'SUS 100% estatal' regula somente propriedade e gestão da rede ou também exclui compra subsidiária de atendimento privado durante insuficiência.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "CONTEXTO",
+          "page": 20,
+          "quote": "A consequência disso é que o povo sofre com as enormes filas para consultas e cirurgias, superlotação nos hospitais e falta de materiais e medicamentos básicos.",
+          "semantic_relevance": "O plano reconhece precisamente a insuficiência de capacidade que aciona a hipótese da tese."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P25",
+          "relation": "CONTRADIZ",
+          "page": 20,
+          "quote": "Fortalecimento e Unificação do SUS 100% Estatal: Fim da entrega da gestão hospitalar a Organizações Sociais (OSs), fundações privadas e cooperativas empresariais. Toda a rede sanitária deve ser de gestão direta e pública.",
+          "semantic_relevance": "O desenho universalmente estatal fornece a base para excluir capacidade assistencial privada contratada, embora a frase trate diretamente de gestão da rede."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P26",
+          "relation": "CONTEXTO",
+          "page": 20,
+          "quote": "Soberania Farmacêutica e Produção Nacional de Remédios: Fortalecimento dos laboratórios oficiais do Estado para a fabricação massiva de medicamentos,vacinas,equipamentos e insumos, para serem distribuídos gratuitamente à população.",
+          "semantic_relevance": "Em outro componente da saúde, o plano enfrenta insuficiência por expansão de oferta estatal, coerente com a leitura de solução pública direta."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O modelo de rede é fortemente contrário à privatização e favorece expansão estatal. Ainda assim, gestão direta de unidades e compra de procedimentos são relações jurídicas distintas. A expressão '100% estatal' e o quantificador 'toda' sustentam a inferência atual, mas ela permanece menos direta que as discordâncias expressas.",
+      "reasons_to_keep": [
+        "O plano responde às filas com rede 100% estatal e gestão direta pública de toda a rede sanitária.",
+        "A orientação de produção e provisão estatal aparece também em medicamentos e insumos."
+      ],
+      "reasons_to_reconsider": [
+        "Fim da gestão privada de unidades não é necessariamente fim da contratação de atendimentos prestados por terceiros.",
+        "O plano não menciona compra complementar, convênios, exceção emergencial ou transição, o que deixa uma inferência sobre o instrumento exato."
+      ],
+      "human_review_question": "'SUS 100% estatal' e 'toda a rede sanitária' abrangem também a compra subsidiária de atendimento privado, ou somente a propriedade e gestão das unidades da rede?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q25",
+      "display_number": 12,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano propõe ampliar vagas reservadas para a população negra nos setores públicos e, no capítulo do emprego público, realizar concursos públicos regulares. No programa de uma candidatura à Presidência, a combinação sustenta a reserva racial de vagas no ingresso por concursos do setor público federal, embora a frase sobre a reserva não repita literalmente a esfera federal nem a palavra concurso.",
+      "semantic_neighborhood_summary": "O plano adota ação afirmativa racial no setor público e concursos regulares como via de ingresso. Também amplia cotas para pessoas com deficiência, mas em recorte próprio. A concordância racial federal decorre da combinação entre reserva no setor público, ingresso por concurso e âmbito de uma candidatura presidencial.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P41",
+          "relation": "APOIA",
+          "page": 32,
+          "quote": "Ampliar vagas nos setores públicos reservadas para a população negra.",
+          "semantic_relevance": "Estabelece diretamente reserva de vagas por critério racial no setor público; ampliar pressupõe manter e aumentar a política."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P41",
+          "relation": "QUALIFICA",
+          "page": 34,
+          "quote": "Defesa e ampliação das cotas para pessoas com deficiência no trabalho, com fiscalização rigorosa das empresas, punição às que fraudarem ou descumprirem a legislação e fortalecimento da inclusão no serviço público.",
+          "semantic_relevance": "Mostra que o plano distingue públicos das ações afirmativas; a evidência racial deve permanecer fundada no trecho da população negra."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A decisão substantiva de reservar vagas raciais no setor público é clara. Concurso e esfera federal não aparecem na mesma frase, mas o mecanismo regular de ingresso e o âmbito do programa presidencial tornam a inferência coerente, sem autorizar percentual ou prazo.",
+      "reasons_to_keep": [
+        "Ampliar vagas reservadas à população negra é apoio inequívoco à reserva racial.",
+        "Concursos regulares são apresentados como mecanismo de ingresso no serviço público."
+      ],
+      "reasons_to_reconsider": [
+        "A reserva não é textual e exclusivamente vinculada a concursos federais; 'setores públicos' pode alcançar outras esferas e formas de ingresso."
+      ],
+      "human_review_question": "A combinação entre reserva racial nos setores públicos e concursos regulares, num plano presidencial, é suficiente para atribuir apoio específico aos concursos federais?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q14",
+      "display_number": 13,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "category_id": "bem_estar_social",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano trata cuidado como responsabilidade pública, prevê casas de convivência para idosos, centros de reabilitação para pessoas com deficiência e considera despesas familiares com cuidadores no BPC. Não oferece, porém, atendimento profissional no domicílio para idosos ou pessoas com deficiência com alto grau de dependência.",
+      "semantic_neighborhood_summary": "O plano socializa parte do cuidado por creches, restaurantes e lavanderias, amplia apoio a pessoas com deficiência e reconhece gastos familiares com cuidadores no BPC. Também prevê equipamentos para idosos e reabilitação. Nenhum desses instrumentos desloca equipe profissional pública para o domicílio nem cobre conjuntamente idosos e pessoas com deficiência altamente dependentes.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P27",
+          "relation": "CONTEXTO",
+          "page": 34,
+          "quote": "Fortalecer e ampliar o Benefício de Prestação Continuada (BPC). Ampliar critério de renda para acesso ao benefício, considerando efetivamente os gastos da família com medicamentos, alimentação especial, transporte, cuidadores e tecnologias assistivas; combater cortes arbitrários e burocracias que excluam quem necessita do benefício;",
+          "semantic_relevance": "Reconhece a necessidade e o custo de cuidadores nas famílias de pessoas com deficiência, mas responde por elegibilidade de benefício, não serviço domiciliar."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P28",
+          "relation": "CONTEXTO",
+          "page": 28,
+          "quote": "Rede pública de cuidados: Universalização do acesso a creches e pré-escolas públicas e em tempo integral, lavanderias comunitárias e restaurantes populares para retirar das costas das mulheres o fardo do trabalho doméstico não pago.",
+          "semantic_relevance": "Afirma responsabilidade pública pelo cuidado, porém lista equipamentos coletivos e outro público, sem atendimento no domicílio."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "O princípio de responsabilidade pública e o reconhecimento de cuidadores são semanticamente próximos, mas os instrumentos concretos são benefício de renda e equipamentos coletivos. O local, o grau de dependência, o caráter profissional e a cobertura dos dois públicos permanecem sem decisão.",
+      "reasons_to_keep": [
+        "Nenhum trecho cria atenção domiciliar ou equipe pública de cuidado no lar.",
+        "Considerar gasto com cuidadores no BPC não equivale a ofertar diretamente o serviço."
+      ],
+      "reasons_to_reconsider": [
+        "A 'rede pública de cuidados' estabelece um princípio operacional amplo que poderia comportar atenção domiciliar, mas os equipamentos enumerados não a incluem."
+      ],
+      "human_review_question": "O reconhecimento de cuidadores e a rede pública de cuidados decidem apenas apoio financeiro e equipamentos coletivos, ou implicam oferta profissional no domicílio aos dois públicos?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q15",
+      "display_number": 14,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano amplia recursos para educação pública, bolsas e infraestrutura e propõe mudanças curriculares, mas não condiciona nenhuma parte do financiamento federal das redes ao cumprimento de metas de aprendizagem. Avaliação ou expansão educacional não implica condicionalidade financeira por resultado.",
+      "semantic_neighborhood_summary": "O plano fixa prioridade quantitativa de financiamento público, suspende verbas ao ensino privado, amplia pesquisa e substitui o currículo do ensino médio. O dinheiro segue natureza pública e expansão de oferta, sem regra que varie transferências entre redes conforme aprendizagem ou avaliação externa.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "CONTEXTO",
+          "page": 22,
+          "quote": "Destinação de pelo menos 10% do PIB nacional para a educação pública, desde a educação infantil até a pós-graduação.",
+          "semantic_relevance": "Define volume agregado e destino público, não condição de desempenho para transferências às redes."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P31",
+          "relation": "CONTEXTO",
+          "page": 22,
+          "quote": "Suspensão do envio de verbas públicas para o ensino privado e estatização progressiva dos grandes conglomerados educacionais do capital financeiro.",
+          "semantic_relevance": "A condicionalidade financeira explícita do plano distingue natureza pública ou privada da instituição, não resultados de aprendizagem."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P33",
+          "relation": "CONTEXTO",
+          "page": 22,
+          "quote": "Revogação do Novo Ensino Médio e das Reformas Empresariais: Restauração de uma matriz curricular humanística, científica e crítica para todas as escolas públicas do país.",
+          "semantic_relevance": "A política educacional escolhe conteúdo curricular, sem conectar sua implantação ou resultados ao repasse de recursos."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Há decisões robustas sobre quanto financiar, quem pode receber e qual currículo adotar, mas nenhuma consequência financeira baseada em aprendizagem. Esses eixos não são funcionalmente equivalentes ao financiamento por desempenho.",
+      "reasons_to_keep": [
+        "A meta de 10% do PIB é de esforço financeiro agregado, não de aprendizagem.",
+        "Nenhum trecho vincula transferências federais a resultados ou avaliações."
+      ],
+      "reasons_to_reconsider": [
+        "O plano contém metas e prioridades educacionais, mas não há base para converter metas programáticas em condição de repasse."
+      ],
+      "human_review_question": "Existe alguma consequência financeira para redes que cumpram ou descumpram metas de aprendizagem, além da meta agregada de financiamento?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q16",
+      "display_number": 15,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano defende expressamente reduzir a jornada semanal sem reduzir salários. Há divergência interna entre 36 horas no parágrafo e 30 horas no item, mas ambas as formulações respondem na mesma direção à redação aprovada, que deliberadamente não fixa o novo limite.",
+      "semantic_neighborhood_summary": "O plano vincula redução de jornada à preservação salarial, fim da escala 6x1, mais tempo livre e criação de novos postos por turnos adicionais. Há tensão numérica interna entre 36 e 30 horas, sem explicação de etapas, mas nenhum sinal oposto quanto à direção perguntada.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P37",
+          "relation": "APOIA",
+          "page": 10,
+          "quote": "avançar ainda mais: defendemos 36 horas semanais, sem redução dos salários, garantindo mais tempo para descanso, família, estudo, cultura e lazer.",
+          "semantic_relevance": "Afirma diretamente redução do limite semanal com preservação salarial e explicita sua finalidade social."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P37",
+          "relation": "QUALIFICA",
+          "page": 10,
+          "quote": "Fim da Escala 6x1 e Redução da Jornada para 30 Horas Semanais: Implementação do regime de 30 horas sem redução salarial (escala 4x3 ou turnos de 6 horas diárias), permitindo a criação de múltiplos turnos nas indústrias e serviços para gerar novos postos formais de trabalho.",
+          "semantic_relevance": "Reafirma a mesma decisão com outro número e instrumentos de escala; qualifica o alcance, mas cria tensão interna sobre o limite exato."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "As duas formulações satisfazem a tese, que não fixa número. A inconsistência impede atribuir 30 ou 36 horas como única posição, mas não muda redução sem perda salarial.",
+      "reasons_to_keep": [
+        "Ambos os trechos preservam salário e reduzem a jornada semanal.",
+        "O enunciado não exige escolher o novo limite nem uma escala específica."
+      ],
+      "reasons_to_reconsider": [
+        "A divergência 30/36 horas deve constar como condição e impede usar a classificação para afirmar um desenho numérico único."
+      ],
+      "human_review_question": "A inconsistência entre 30 e 36 horas altera apenas o limite proposto, preservando concordância com a redução sem perda salarial?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "current_classification": "CONCORDA",
+      "current_rationale": "O plano toma uma decisão penal geral ao defender descriminalização e legalização do aborto, indo além das exceções atuais ou de mero atendimento médico. Essa decisão sustenta que o aborto voluntário não seja crime ao menos em algum período da gestação, embora o prazo não seja definido.",
+      "semantic_neighborhood_summary": "O plano combina descriminalização e legalização com saúde pública, direitos reprodutivos e atenção integral à saúde sexual. Decide alterar o regime penal geral, mas não fixa semanas, hipóteses clínicas ou procedimento. A tese exige a existência de algum período, não um período específico na própria redação.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P40",
+          "relation": "APOIA",
+          "page": 28,
+          "quote": "Direitos reprodutivos e saúde da mulher: Garantia de atenção integral à saúde sexual e reprodutiva. Descriminalização e legalização do aborto, primando pela vida das mulheres, tratando a saúde da mulher como questão de saúde pública.",
+          "semantic_relevance": "Descriminalização responde diretamente ao status penal e legalização oferece o marco assistencial; não é apenas prevenção ou apoio à gestante."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A decisão penal é explícita. O limite gestacional está indeterminado, mas uma descriminalização geral inclui logicamente ao menos algum período da gestação. A concordância não pode ser usada para afirmar prazo irrestrito.",
+      "reasons_to_keep": [
+        "O verbo 'descriminalização' responde diretamente à retirada do caráter criminal.",
+        "O plano vai além de ampliar exceções ou apenas oferecer atendimento."
+      ],
+      "reasons_to_reconsider": [
+        "A tese menciona um corte temporal e o plano não fornece nenhum; se 'determinado período' for entendido como requisito de prazo explícito, a concordância exigiria qualificação."
+      ],
+      "human_review_question": "Descriminalização e legalização sem semanas definidas bastam para concordar com a existência de algum período não criminalizado, ou a tese exige corte gestacional explícito?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "media"
+    },
+    {
+      "question_id": "FB-Q18",
+      "display_number": 17,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "category_id": "seguranca_publica",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano rejeita sem ressalva a redução da maioridade penal. Aplicar o regime penal adulto a adolescentes de 16 e 17 anos em qualquer crime reduziria a maioridade para 16 anos e, portanto, é diretamente contrariado pela negativa geral.",
+      "semantic_neighborhood_summary": "O plano rejeita qualquer redução declarada da maioridade penal e insere a medida numa agenda de direitos da juventude. Sua política penal privilegia saúde pública para drogas, polícia civil preventiva e reeducação nas prisões, mas não redesenha o regime socioeducativo juvenil. A negativa geral contém o caso amplo de regime adulto desde os 16 anos.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P45",
+          "relation": "CONTRADIZ",
+          "page": 30,
+          "quote": "Não à redução da maioridade penal. Pelo fim da repressão e em defesa da liberdade de organização e luta da juventude.",
+          "semantic_relevance": "Transferir todos os adolescentes de 16 e 17 anos ao regime adulto é precisamente uma redução geral da maioridade penal."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P46",
+          "relation": "CONTEXTO",
+          "page": 49,
+          "quote": "Transformar as penitenciárias e cadeias em Unidades de Reeducação. Serão centros para a formação, acompanhamento psicossocial e profissionalização de pessoas em conflito com a lei;",
+          "semantic_relevance": "Mostra orientação reeducativa na política penal, mas trata unidades adultas e não substitui a negativa específica à redução etária."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A tese propõe a forma mais ampla de redução aos 16 anos, para qualquer crime. A rejeição geral do plano a reduzir a maioridade a contradiz sem necessidade de conhecer exceções por gravidade.",
+      "reasons_to_keep": [
+        "A negativa não contém exceção por tipo de crime.",
+        "O enunciado necessariamente reduz a idade do regime adulto para 16 anos."
+      ],
+      "reasons_to_reconsider": [
+        "O plano não detalha medidas socioeducativas ou responsabilização juvenil; a discordância deve ser limitada ao regime penal adulto, sem inferir ausência de sanção."
+      ],
+      "human_review_question": "A negativa geral à redução da maioridade abrange sem ambiguidade a aplicação do regime adulto a todos os crimes desde os 16 anos?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q19",
+      "display_number": 18,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano propõe substituir operações policiais sem inteligência por ações de inteligência e controlar armas e munições, mas não menciona reconhecimento facial, identificação biométrica, câmeras em espaços públicos ou comparação de imagens com bases de pessoas. A finalidade ampla de segurança não supre a ausência do instrumento específico.",
+      "semantic_neighborhood_summary": "A segurança proposta é civil, preventiva, comunitária, orientada por direitos humanos, controle popular e ações de inteligência. Esses princípios podem condicionar tecnologias de vigilância, e a inteligência é finalidade próxima, mas não há decisão sobre captura de imagens, biometria, bases de comparação ou espaços monitorados.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P43",
+          "relation": "QUALIFICA",
+          "page": 48,
+          "quote": "Desmilitarização das Polícias: Unificação das polícias sob uma estrutura civil, preventiva, comunitária e humanizada, treinada na defesa dos direitos humanos da população trabalhadora e periférica.",
+          "semantic_relevance": "Estabelece princípios operacionais que poderiam exigir salvaguardas contra vigilância discriminatória, mas não autorizam nem proíbem a tecnologia."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "'Ações de inteligência' é uma categoria aberta e não equivale a identificação biométrica em espaço público. Os princípios de direitos humanos poderiam qualificar eventual uso, mas não produzem decisão negativa sem uma regra tecnológica ou de vigilância.",
+      "reasons_to_keep": [
+        "Não há instrumento de identificação por imagem nem infraestrutura de videomonitoramento descrita.",
+        "Inteligência preventiva pode usar muitos meios distintos de reconhecimento facial."
+      ],
+      "reasons_to_reconsider": [
+        "A defesa de inteligência preventiva torna o uso tecnologicamente compatível com a estratégia de segurança, enquanto direitos humanos geram tensão; nenhum dos lados é determinado o bastante para classificar."
+      ],
+      "human_review_question": "As ações de inteligência e os princípios de polícia humanizada autorizam ou vedam reconhecimento facial, ou deixam a escolha tecnológica inteiramente aberta?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q21",
+      "display_number": 19,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "NAO_ENCONTRADA",
+      "current_rationale": "O plano discute soberania, China, Estados Unidos, acordos comerciais e organismos internacionais, mas não menciona BRICS nem decide se o Brasil deve permanecer ou sair do grupo. Posição sobre um integrante ou sobre tratados de dependência não determina a participação no agrupamento.",
+      "semantic_neighborhood_summary": "A política externa busca independência econômica, controle estatal do comércio e ruptura de tratados ou relações qualificados como dependência, inclusive perante China. Ao mesmo tempo, mantém solidariedade e relações internacionais selecionadas. Nada identifica o BRICS como instrumento de dependência, cooperação Sul-Sul ou bloco a fortalecer ou abandonar.",
+      "semantic_context": [
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P48",
+          "relation": "CONTEXTO",
+          "page": 57,
+          "quote": "A UP defende a total independência econômica do Brasil frente aos países imperialistas, por isso, defende a transferência do comércio exterior para os órgãos do Estado.",
+          "semantic_relevance": "Define autonomia econômica e controle estatal como princípio, mas não diz se a participação no BRICS promove ou fere esse princípio."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P50",
+          "relation": "CONTEXTO",
+          "page": 65,
+          "quote": "Rompimento de tratados de submissão militar e econômica aos Estados Unidos, OTAN ou China.",
+          "semantic_relevance": "A China é citada como possível polo de submissão, porém o trecho não chama o BRICS de tratado de submissão nem decide a filiação ao grupo."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P50",
+          "relation": "CONTEXTO",
+          "page": 57,
+          "quote": "Rompimento de relações de dependência comercial, militar ou financeira com qualquer empresa ou Estado estrangeiro;",
+          "semantic_relevance": "A regra depende da qualificação de uma relação como dependente; falta essa qualificação específica para o BRICS."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "Há um critério de política externa que poderia ser aplicado ao BRICS, mas o plano não faz essa aplicação. Relação com a China e participação institucional num grupo multilateral são objetos distintos; tanto permanência autônoma quanto saída seriam compatíveis com os princípios gerais.",
+      "reasons_to_keep": [
+        "Nenhum trecho identifica ou avalia o BRICS como instituição.",
+        "Crítica a tratados de submissão à China não determina relação com os demais membros nem permanência no agrupamento."
+      ],
+      "reasons_to_reconsider": [
+        "O princípio de romper dependência perante a China poderia sustentar saída se o plano qualificasse o BRICS dessa forma, mas essa premissa documental não existe."
+      ],
+      "human_review_question": "O plano aplica seu critério de independência ao BRICS de modo identificável, ou deixa aberta tanto a permanência quanto a saída?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    },
+    {
+      "question_id": "FB-Q22",
+      "display_number": 20,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "current_classification": "DISCORDA",
+      "current_rationale": "O plano nomeia o acordo Mercosul–União Europeia como acordo de livre comércio que prioriza relações de dependência do capital imperialista. Em outra proposta, manda romper relações de dependência comercial com qualquer empresa ou Estado estrangeiro. A combinação é incompatível com ratificar o texto final do acordo avaliado.",
+      "semantic_neighborhood_summary": "O acordo específico é apresentado como exemplo de livre comércio que produz dependência, e o plano ordena romper relações comerciais qualificadas como dependentes. O controle estatal do comércio exterior completa a alternativa de soberania. Não há defesa de ratificação, mas também não há rito jurídico detalhado nem avaliação de eventual texto renegociado.",
+      "semantic_context": [
+        {
+          "source": "full_plan_review",
+          "relation": "CONTRADIZ",
+          "page": 64,
+          "quote": "Os chamados acordos de livre comércio, como o firmado entre o Mercosul e a União Europeia, priorizam",
+          "semantic_relevance": "Nomeia o acordo e inicia uma avaliação negativa que continua na página seguinte."
+        },
+        {
+          "source": "full_plan_review",
+          "relation": "CONTRADIZ",
+          "page": 65,
+          "quote": "relações de dependência em relação ao capital imperialista internacional.",
+          "semantic_relevance": "Conclui a caracterização do acordo como relação de dependência."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P50",
+          "relation": "CONTRADIZ",
+          "page": 57,
+          "quote": "Rompimento de relações de dependência comercial, militar ou financeira com qualquer empresa ou Estado estrangeiro;",
+          "semantic_relevance": "Fornece a consequência operacional para o acordo que o próprio plano qualificou como dependência comercial."
+        },
+        {
+          "source": "thematic_profile",
+          "source_position_id": "P48",
+          "relation": "CONTEXTO",
+          "page": 57,
+          "quote": "A UP defende a total independência econômica do Brasil frente aos países imperialistas, por isso, defende a transferência do comércio exterior para os órgãos do Estado.",
+          "semantic_relevance": "O controle estatal do comércio exterior integra a alternativa de soberania à ratificação do acordo avaliado negativamente."
+        }
+      ],
+      "semantic_context_absence_reason": null,
+      "semantic_assessment": "A inferência liga uma avaliação nominal do acordo a uma regra geral de ruptura exatamente para relações comerciais dependentes. Isso é mais determinado que crítica abstrata ao livre comércio e é incompatível com ratificar o texto final existente.",
+      "reasons_to_keep": [
+        "O acordo Mercosul–União Europeia é nomeado e qualificado como produtor de dependência.",
+        "O plano estabelece rompimento, não ratificação, para relações de dependência comercial."
+      ],
+      "reasons_to_reconsider": [
+        "Não há verbo literal 'não ratificar' nem descrição do procedimento legislativo, e a posição não deve ser projetada sobre uma versão futura materialmente renegociada."
+      ],
+      "human_review_question": "A avaliação nominal do acordo como dependência, combinada à regra de rompimento, basta para concluir oposição à ratificação do texto final atual?",
+      "preliminary_recommendation": "MANTER",
+      "confidence": "alta"
+    }
+  ]
+}

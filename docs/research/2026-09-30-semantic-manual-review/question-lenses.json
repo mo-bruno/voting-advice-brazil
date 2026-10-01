@@ -1,0 +1,366 @@
+{
+  "schema_version": 1,
+  "method": "semantic lenses guide document review; they are not keyword lists and do not decide classifications",
+  "items": [
+    {
+      "question_id": "B01-Q01",
+      "display_number": 1,
+      "statement": "O Brasil deve cobrar um imposto específico sobre grandes fortunas.",
+      "category_id": "economia_desenvolvimento",
+      "decision_object": "Cobrar um tributo federal cuja base seja o patrimônio muito elevado.",
+      "semantic_axes": [
+        "tributação patrimonial e progressividade",
+        "tratamento fiscal de renda e patrimônio no topo",
+        "heranças, dividendos e concentração de riqueza",
+        "redução, unificação ou rejeição de novos tributos"
+      ],
+      "interpretation_boundaries": [
+        "progressividade sobre renda ou consumo, isoladamente, não cria imposto patrimonial",
+        "tributar herança ou dividendos não é o mesmo instrumento"
+      ],
+      "human_review_question": "O conjunto do plano decide criar, rejeitar ou apenas tangencia um tributo sobre patrimônio muito elevado?"
+    },
+    {
+      "question_id": "B01-Q02",
+      "display_number": 2,
+      "statement": "O governo deve oferecer linhas de crédito específicas para setores industriais considerados prioritários.",
+      "category_id": "economia_desenvolvimento",
+      "decision_object": "Oferecer crédito dirigido a setores industriais escolhidos como prioritários.",
+      "semantic_axes": [
+        "política industrial e reindustrialização",
+        "papel do BNDES e bancos públicos",
+        "subsídios, garantias e financiamento produtivo",
+        "seleção setorial, conteúdo nacional e cadeias estratégicas"
+      ],
+      "interpretation_boundaries": [
+        "crédito geral a empresas não prova seleção de setores",
+        "investimento público direto e incentivo tributário são instrumentos distintos"
+      ],
+      "human_review_question": "O plano adota ou rejeita crédito setorial como instrumento de política industrial?"
+    },
+    {
+      "question_id": "B01-Q03",
+      "display_number": 3,
+      "statement": "Empresas estrangeiras devem poder participar da exploração de minerais estratégicos no Brasil.",
+      "category_id": "economia_desenvolvimento",
+      "decision_object": "Permitir participação de empresas estrangeiras na exploração de minerais estratégicos.",
+      "semantic_axes": [
+        "soberania mineral e controle de recursos naturais",
+        "capital estrangeiro, concessões e propriedade",
+        "beneficiamento nacional e transferência de tecnologia",
+        "restrições por mineral, território ou cadeia produtiva"
+      ],
+      "interpretation_boundaries": [
+        "exportar minerais não define quem pode explorá-los",
+        "parceria tecnológica não implica participação na extração"
+      ],
+      "human_review_question": "O plano permite, proíbe ou condiciona capital estrangeiro na exploração mineral estratégica?"
+    },
+    {
+      "question_id": "B01-Q04",
+      "display_number": 4,
+      "statement": "Durante uma auditoria da dívida pública, o governo deve suspender os pagamentos dessa dívida.",
+      "category_id": "economia_desenvolvimento",
+      "decision_object": "Suspender pagamentos da dívida pública durante uma auditoria.",
+      "semantic_axes": [
+        "auditoria da dívida e legitimidade dos passivos",
+        "serviço da dívida, juros e credores",
+        "moratória, suspensão, renegociação ou anulação",
+        "ordem temporal e alcance dos pagamentos afetados"
+      ],
+      "interpretation_boundaries": [
+        "criticar juros ou dívida não implica suspender pagamentos",
+        "auditoria sem medida durante sua execução não responde à tese"
+      ],
+      "human_review_question": "O plano vincula auditoria a suspensão dos pagamentos e com qual alcance?"
+    },
+    {
+      "question_id": "FB-Q05",
+      "display_number": 5,
+      "statement": "O governo federal deve ter uma regra que limite o crescimento das despesas públicas.",
+      "category_id": "economia_desenvolvimento",
+      "decision_object": "Adotar regra federal que limite o crescimento das despesas públicas.",
+      "semantic_axes": [
+        "teto, arcabouço, limite ou trajetória de despesas",
+        "metas fiscais, resultado primário e sustentabilidade da dívida",
+        "exceções para investimento ou áreas sociais",
+        "revogação de regras e eventual substituição"
+      ],
+      "interpretation_boundaries": [
+        "defender responsabilidade fiscal sem mecanismo de despesa é genérico",
+        "meta de receita ou dívida não é necessariamente limite de gasto"
+      ],
+      "human_review_question": "Há uma regra operacional que limite despesas, rejeição dessa regra ou apenas objetivo fiscal geral?"
+    },
+    {
+      "question_id": "FB-Q06",
+      "display_number": 6,
+      "statement": "A Petrobras deve permanecer sob controle do governo federal.",
+      "category_id": "estado_gestao",
+      "decision_object": "Manter a Petrobras sob controle do governo federal.",
+      "semantic_axes": [
+        "privatização ou estatização de empresas estratégicas",
+        "controle acionário e governança da Petrobras",
+        "soberania energética e papel da empresa",
+        "uso futuro da empresa em políticas públicas"
+      ],
+      "interpretation_boundaries": [
+        "atribuir função futura pode sugerir continuidade, mas não resolve necessariamente o controle acionário",
+        "política de petróleo não decide propriedade da empresa"
+      ],
+      "human_review_question": "O plano decide o controle estatal da Petrobras ou apenas descreve funções e políticas energéticas?"
+    },
+    {
+      "question_id": "FB-Q07",
+      "display_number": 7,
+      "statement": "A lei deve permitir a demissão de um servidor público estável por baixo desempenho comprovado em avaliações periódicas, com direito de defesa.",
+      "category_id": "estado_gestao",
+      "decision_object": "Permitir demissão de servidor estável por baixo desempenho comprovado, com avaliação periódica e defesa.",
+      "semantic_axes": [
+        "estabilidade e regime do serviço público",
+        "avaliação de desempenho e consequências",
+        "reforma administrativa, mérito e profissionalização",
+        "garantias processuais e direito de defesa"
+      ],
+      "interpretation_boundaries": [
+        "avaliar sem consequência demissional não basta",
+        "demissão por falta disciplinar não equivale a baixo desempenho"
+      ],
+      "human_review_question": "O plano liga avaliação periódica de desempenho à perda do cargo com garantias processuais?"
+    },
+    {
+      "question_id": "FB-Q23",
+      "display_number": 8,
+      "statement": "O governo federal deve usar concessões e parcerias público-privadas para ampliar a infraestrutura de transportes.",
+      "category_id": "infraestrutura_territorio",
+      "decision_object": "Usar concessões e PPPs para ampliar infraestrutura federal de transportes.",
+      "semantic_axes": [
+        "modelo público, privado ou combinado de infraestrutura",
+        "concessões, PPPs, autorizações e privatizações",
+        "financiamento, construção e operação de transportes",
+        "reestatização, fiscalização e condições contratuais"
+      ],
+      "interpretation_boundaries": [
+        "autorização, concessão e PPP são instrumentos distintos",
+        "investimento privado genérico não comprova adesão aos dois instrumentos"
+      ],
+      "human_review_question": "O plano apoia concessões, PPPs, ambos ou instrumentos privados diferentes?"
+    },
+    {
+      "question_id": "FB-Q10",
+      "display_number": 9,
+      "statement": "O Brasil deve adotar um mercado regulado de carbono.",
+      "category_id": "meio_ambiente_clima",
+      "decision_object": "Adotar mercado regulado de carbono.",
+      "semantic_axes": [
+        "precificação de emissões e comércio de créditos",
+        "mercado regulado versus voluntário",
+        "tributação da poluição e limites administrativos",
+        "metas de emissões, registro, fiscalização e integridade"
+      ],
+      "interpretation_boundaries": [
+        "política climática geral não cria mercado",
+        "créditos voluntários ou pagamento ambiental não equivalem automaticamente a mercado regulado"
+      ],
+      "human_review_question": "O plano cria ou rejeita um sistema regulado de compra e venda de emissões?"
+    },
+    {
+      "question_id": "FB-Q24",
+      "display_number": 10,
+      "statement": "O governo federal deve investir no desenvolvimento de capacidade nacional de inteligência artificial.",
+      "category_id": "ciencia_tecnologia_inovacao",
+      "decision_object": "Investir em capacidade nacional de inteligência artificial.",
+      "semantic_axes": [
+        "pesquisa, modelos e infraestrutura computacional nacionais",
+        "formação de especialistas e financiamento público",
+        "soberania de dados e tecnologia",
+        "adoção, regulação e compra de sistemas estrangeiros"
+      ],
+      "interpretation_boundaries": [
+        "digitalização ou uso de IA não implica desenvolvimento nacional",
+        "regular IA não prova investimento em capacidade própria"
+      ],
+      "human_review_question": "O plano financia desenvolvimento nacional de IA ou somente seu uso e regulação?"
+    },
+    {
+      "question_id": "FB-Q12",
+      "display_number": 11,
+      "statement": "O SUS deve contratar atendimento de clínicas e hospitais privados quando a rede pública não tiver capacidade suficiente para atender a demanda.",
+      "category_id": "bem_estar_social",
+      "decision_object": "Contratar atendimento privado pelo SUS quando a rede pública não tiver capacidade.",
+      "semantic_axes": [
+        "complementaridade público-privada no atendimento",
+        "compra de serviços, conveniamento e filas",
+        "expansão da rede pública e gestão de unidades",
+        "condições emergenciais ou subsidiárias para contratação"
+      ],
+      "interpretation_boundaries": [
+        "parceria administrativa genérica não prova compra de atendimento",
+        "defender SUS público não decide sozinho se admite complementaridade"
+      ],
+      "human_review_question": "O plano admite ou rejeita contratação privada como complemento diante de insuficiência pública?"
+    },
+    {
+      "question_id": "FB-Q25",
+      "display_number": 12,
+      "statement": "Concursos públicos federais devem reservar vagas com base em critérios raciais.",
+      "category_id": "cidadania_direitos",
+      "decision_object": "Reservar vagas por critérios raciais em concursos públicos federais.",
+      "semantic_axes": [
+        "ação afirmativa no serviço público",
+        "equidade racial e representação institucional",
+        "cotas em concursos versus educação",
+        "alcance setorial, federativo e percentual"
+      ],
+      "interpretation_boundaries": [
+        "cotas universitárias não decidem concursos",
+        "política antirracista geral não define reserva de vagas"
+      ],
+      "human_review_question": "O plano adota, rejeita ou limita cotas raciais em concursos federais?"
+    },
+    {
+      "question_id": "FB-Q14",
+      "display_number": 13,
+      "statement": "O poder público deve oferecer cuidado domiciliar a idosos e pessoas com deficiência com alto grau de dependência.",
+      "category_id": "bem_estar_social",
+      "decision_object": "Oferecer cuidado domiciliar público a idosos e pessoas com deficiência altamente dependentes.",
+      "semantic_axes": [
+        "atenção domiciliar e cuidados de longa duração",
+        "apoio a cuidadores e famílias",
+        "dependência, autonomia e deficiência",
+        "integração entre saúde e assistência social"
+      ],
+      "interpretation_boundaries": [
+        "reabilitação ambulatorial não é cuidado domiciliar",
+        "política apenas para idosos ou apenas para deficiência cobre parte do público"
+      ],
+      "human_review_question": "O plano oferece cuidado profissional no domicílio para os dois públicos e sob quais condições?"
+    },
+    {
+      "question_id": "FB-Q15",
+      "display_number": 14,
+      "statement": "Parte dos recursos federais para redes de ensino deve depender do cumprimento de metas de aprendizagem.",
+      "category_id": "educacao_cultura_sociedade",
+      "decision_object": "Condicionar parte dos recursos federais da educação ao cumprimento de metas de aprendizagem.",
+      "semantic_axes": [
+        "transferências federais e incentivos financeiros",
+        "avaliações externas e metas de aprendizagem",
+        "assistência técnica e responsabilização das redes",
+        "financiamento por matrícula, vulnerabilidade ou desempenho"
+      ],
+      "interpretation_boundaries": [
+        "avaliar aprendizagem sem consequência financeira não basta",
+        "premiar escola ou aluno não é necessariamente condicionar transferências à rede"
+      ],
+      "human_review_question": "O plano vincula recursos federais destinados às redes a resultados de aprendizagem?"
+    },
+    {
+      "question_id": "FB-Q16",
+      "display_number": 15,
+      "statement": "A jornada semanal de trabalho deve ser reduzida sem redução salarial.",
+      "category_id": "cidadania_direitos",
+      "decision_object": "Reduzir jornada semanal sem reduzir salário.",
+      "semantic_axes": [
+        "limite de horas e escala de trabalho",
+        "preservação salarial",
+        "transição setorial e negociação coletiva",
+        "produtividade, emprego e direitos trabalhistas"
+      ],
+      "interpretation_boundaries": [
+        "flexibilização de horário não implica redução",
+        "reduzir jornada com redução proporcional de salário não concorda"
+      ],
+      "human_review_question": "O plano reduz o limite semanal preservando remuneração e qual é o alcance?"
+    },
+    {
+      "question_id": "FB-Q17",
+      "display_number": 16,
+      "statement": "O aborto voluntário deve deixar de ser crime até determinado período da gestação.",
+      "category_id": "cidadania_direitos",
+      "decision_object": "Deixar de criminalizar o aborto voluntário até certo período gestacional.",
+      "semantic_axes": [
+        "descriminalização e regime jurídico do aborto",
+        "saúde e direitos reprodutivos",
+        "limites gestacionais e condições",
+        "manutenção, ampliação ou restrição das exceções legais"
+      ],
+      "interpretation_boundaries": [
+        "assistência à gestante não decide criminalização",
+        "menção genérica à vida ou saúde da mulher exige mecanismo jurídico para classificar"
+      ],
+      "human_review_question": "O plano altera a punição do aborto voluntário e define algum limite ou condição?"
+    },
+    {
+      "question_id": "FB-Q18",
+      "display_number": 17,
+      "statement": "A partir dos 16 anos, adolescentes devem responder pelo regime penal adulto por qualquer crime.",
+      "category_id": "seguranca_publica",
+      "decision_object": "Aplicar regime penal adulto desde os 16 anos para qualquer crime.",
+      "semantic_axes": [
+        "idade de responsabilidade penal",
+        "regime socioeducativo versus penal adulto",
+        "alcance por tipo ou gravidade do crime",
+        "reincidência, avaliação e garantias juvenis"
+      ],
+      "interpretation_boundaries": [
+        "endurecer medida socioeducativa não é regime adulto",
+        "redução apenas para crimes listados não cobre qualquer crime"
+      ],
+      "human_review_question": "O plano transfere todos os adolescentes de 16 e 17 anos ao regime adulto ou somente casos delimitados?"
+    },
+    {
+      "question_id": "FB-Q19",
+      "display_number": 18,
+      "statement": "O poder público deve usar reconhecimento facial em espaços públicos para fins de segurança.",
+      "category_id": "seguranca_publica",
+      "decision_object": "Usar reconhecimento facial em espaços públicos para segurança.",
+      "semantic_axes": [
+        "identificação biométrica por imagem",
+        "videomonitoramento e comparação com bases",
+        "finalidade policial e espaços monitorados",
+        "salvaguardas, proibição e riscos de vigilância"
+      ],
+      "interpretation_boundaries": [
+        "câmeras ou análise de imagens sem identificação não bastam",
+        "biometria para acesso a serviços não é necessariamente segurança pública"
+      ],
+      "human_review_question": "O plano autoriza, incentiva, condiciona ou rejeita identificação facial em espaços públicos?"
+    },
+    {
+      "question_id": "FB-Q21",
+      "display_number": 19,
+      "statement": "O Brasil deve permanecer nos BRICS.",
+      "category_id": "soberania_relacoes_internacionais",
+      "decision_object": "Permanecer no BRICS.",
+      "semantic_axes": [
+        "participação institucional e atuação no grupo",
+        "cooperação Sul-Sul e autonomia estratégica",
+        "relações com membros e banco do BRICS",
+        "saída, distanciamento ou fortalecimento do bloco"
+      ],
+      "interpretation_boundaries": [
+        "relações bilaterais com membros não decidem permanência",
+        "multilateralismo genérico não identifica o grupo"
+      ],
+      "human_review_question": "O plano pressupõe ou rejeita a continuidade institucional do Brasil no BRICS?"
+    },
+    {
+      "question_id": "FB-Q22",
+      "display_number": 20,
+      "statement": "O Brasil deve ratificar o texto final do acordo comercial entre Mercosul e União Europeia.",
+      "category_id": "soberania_relacoes_internacionais",
+      "decision_object": "Ratificar o texto final do acordo Mercosul–União Europeia.",
+      "semantic_axes": [
+        "apoio, rejeição ou renegociação do acordo específico",
+        "ratificação e aprovação interna",
+        "livre comércio, soberania e integração regional",
+        "cláusulas ambientais, industriais e agrícolas"
+      ],
+      "interpretation_boundaries": [
+        "defender acordos em geral não decide este texto",
+        "celebrar conclusão diplomática pode não equivaler a ratificação incondicional"
+      ],
+      "human_review_question": "O plano apoia ratificar o texto final, exige mudanças ou rejeita o acordo?"
+    }
+  ]
+}
