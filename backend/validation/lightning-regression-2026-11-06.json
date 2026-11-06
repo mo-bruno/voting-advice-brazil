@@ -1,0 +1,150 @@
+{
+  "timestamp_utc": "2026-11-06T21:16:30.260321+00:00",
+  "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+  "client_sha256": "55e873e94a539195155a512832685f266f6bc42e10fc7f164f93070f49c78472",
+  "fixtures_sha256": "4141459e7505e6d59f1a9f6da6b7fea9b502fc551904b341dbd1c408cca69248",
+  "case_count": 5,
+  "repeat": 3,
+  "status": "PASSED_SAMPLE",
+  "results": [
+    {
+      "id": "post-informal",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 4.852
+    },
+    {
+      "id": "extra-comment-informal",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.911
+    },
+    {
+      "id": "regression-opinion-no-evidence",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.65
+    },
+    {
+      "id": "regression-request-data",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.846
+    },
+    {
+      "id": "regression-foreign-politics",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata do orçamento do Parlamento da França, que não é contexto político brasileiro. Esta plataforma foca em política brasileira, salvo indicação explícita de outro país.",
+      "passed": true,
+      "elapsed_seconds": 3.773
+    },
+    {
+      "id": "post-informal",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.821
+    },
+    {
+      "id": "extra-comment-informal",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 4.257
+    },
+    {
+      "id": "regression-opinion-no-evidence",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.124
+    },
+    {
+      "id": "regression-request-data",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 4.011
+    },
+    {
+      "id": "regression-foreign-politics",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O tema abordado (orçamento do Parlamento da França) não refere-se ao contexto político brasileiro, que é o foco desta plataforma. Textos sobre assuntos estrangeiros devem ser evitados.",
+      "passed": true,
+      "elapsed_seconds": 4.166
+    },
+    {
+      "id": "post-informal",
+      "repetition": 3,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 13.195
+    },
+    {
+      "id": "extra-comment-informal",
+      "repetition": 3,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.516
+    },
+    {
+      "id": "regression-opinion-no-evidence",
+      "repetition": 3,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.843
+    },
+    {
+      "id": "regression-request-data",
+      "repetition": 3,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 3.838
+    },
+    {
+      "id": "regression-foreign-politics",
+      "repetition": 3,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata do orçamento do Parlamento da França, que não é contexto político brasileiro. Esta plataforma foca em política, governo, eleições, legislação e figuras públicas do Brasil, salvo indicaçã",
+      "passed": true,
+      "elapsed_seconds": 18.202
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "median_seconds": 3.911,
+  "max_seconds": 18.202
+}

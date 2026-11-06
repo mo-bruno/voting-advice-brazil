@@ -2,7 +2,7 @@
 
 O firmware ESP32 + Arduino Mega é mantido como referência histórica, sem suporte nas implantações atuais. O IoT físico está desativado por padrão desde 2026-09-09 e não tem deployment automático. Compilar firmware em CI não programa um dispositivo nem ativa um serviço de notificações.
 
-O produto atual funciona sem hardware. Cloud Run usa `IOT_FEATURE_ENABLED=false`, e Flutter usa `--dart-define=IOT_FEATURE_ENABLED=false`: pareamento e telas físicas ficam indisponíveis. O [desenho atual](../docs/superpowers/specs/2026-09-09-disable-iot-and-close-gaps-design.md) substitui as expectativas operacionais dos documentos antigos.
+O produto atual funciona sem hardware. Cloud Run usa `IOT_FEATURE_ENABLED=false`, e Flutter usa `--dart-define=IOT_FEATURE_ENABLED=false`: pareamento e telas físicas ficam indisponíveis. A [documentação do backend](../backend/README.md) descreve o comportamento atual e substitui as expectativas operacionais dos documentos antigos.
 
 ## Desenvolvimento histórico, sem suporte
 

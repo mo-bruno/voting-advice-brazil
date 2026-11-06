@@ -188,7 +188,7 @@ Cloud Build publica a API no Cloud Run com as duas flags em `false`; o workflow 
 
 A publicação automática da interface aguarda o sucesso do backend e usa o mesmo commit. Mudanças apenas na interface também acionam essa sequência para manter um único fluxo de release. A aprovação exigida por `main` não é contornada; consulte [PUBLICACAO_2026.md](PUBLICACAO_2026.md) para ordem, verificações e recuperação.
 
-Ativar as duas flags é apenas uma opção de desenvolvimento histórico sem suporte. Isso não fornece um motor completo de alinhamento entre votos e respostas, nem um scheduler de produção. O código retido exige invocação externa do job de execução única e ainda possui limitações de entrega. MQTT e GNews permanecem como integrações históricas do fluxo físico. Consulte [firmware/README.md](firmware/README.md) e o [desenho de desativação](docs/superpowers/specs/2026-09-09-disable-iot-and-close-gaps-design.md).
+Ativar as duas flags é apenas uma opção de desenvolvimento histórico sem suporte. Isso não fornece um motor completo de alinhamento entre votos e respostas, nem um scheduler de produção. O código retido exige invocação externa do job de execução única e ainda possui limitações de entrega. MQTT e GNews permanecem como integrações históricas do fluxo físico. Consulte [firmware/README.md](firmware/README.md) e a [documentação do backend](backend/README.md).
 
 ## Verificação
 

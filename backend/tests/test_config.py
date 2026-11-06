@@ -40,7 +40,7 @@ def test_settings_defaults(monkeypatch):
     assert s.allowed_origins_list == ["https://farol-politico-495210.web.app"]
     assert s.mqtt_broker_url == "mqtts://broker.hivemq.com:8883"
     assert s.nvidia_api_key is None
-    assert s.nvidia_moderation_model == "nvidia/nemotron-3-super-120b-a12b"
+    assert s.nvidia_moderation_model == "nvidia/nemotron-3.5-lightning-30b-a3b"
     assert s.iot_feature_enabled is False
     assert s.politician_follow_enabled is False
 

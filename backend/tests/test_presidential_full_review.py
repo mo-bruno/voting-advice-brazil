@@ -191,7 +191,7 @@ def test_cli_rejects_bad_photos_without_touching_any_output(cli_case, fault):
         "Foto oficial ausente" if fault == "missing" else "Arquivo não é JPEG"
     ) in result.stderr
     assert {
-        str(path.relative_to(output)): path.read_bytes()
+        path.relative_to(output).as_posix(): path.read_bytes()
         for path in output.rglob("*")
         if path.is_file()
     } == expected

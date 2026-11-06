@@ -87,7 +87,7 @@ O cache de notícias e os demais serviços não foram alterados.
 | `ALLOWED_ORIGINS` | `https://farol-politico-495210.web.app` | Origens CORS separadas por vírgulas |
 | `MODERATION_MODE` | `enforce` | `enforce` chama NVIDIA NIM; `disabled` aprova sem modelo, para desenvolvimento |
 | `NVIDIA_API_KEY` | ausente | Necessária para aprovar publicações em modo `enforce` |
-| `NVIDIA_MODERATION_MODEL` | `nvidia/nemotron-3-super-120b-a12b` | Modelo hospedado usado pelo gate de moderação |
+| `NVIDIA_MODERATION_MODEL` | `nvidia/nemotron-3.5-lightning-30b-a3b` | Modelo hospedado usado pelo gate de moderação; precisa aceitar `response_format=json_schema` |
 | `IOT_FEATURE_ENABLED` | `false` | Mantém rotas e efeitos do hardware dormentes |
 | `POLITICIAN_FOLLOW_ENABLED` | `false` | Retém o acompanhamento real e mantém disponível somente o registro de interesse sem nome ou contato |
 | `MQTT_BROKER_URL` | `mqtts://broker.hivemq.com:8883` | Broker da integração IoT histórica |
@@ -134,7 +134,11 @@ Fora do prefixo: `GET /health`, `/docs`, `/redoc`, `/openapi.json` e arquivos `/
 
 ## Integridade da comunidade
 
-Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de forma síncrona antes da publicação em modo `enforce`. A política rejeita conteúdo fora do tema, alegações claramente inventadas ou manipuladoras e ataques contra pessoas ou grupos — incluindo xingamentos direcionados, humilhação sexual, ameaças, incentivo à violência, assédio e discurso de ódio. Críticas duras a projetos, governos e atos públicos continuam permitidas quando não atacam pessoas. O modelo padrão é `nvidia/nemotron-3-super-120b-a12b` e pode ser trocado por configuração. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout, resposta inválida ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
+O cliente exige saída estruturada por `response_format` com `type=json_schema`, `strict=true`, `approved` booleano e `reason` textual obrigatórios, sem campos adicionais. A resposta continua sendo validada localmente. Um modelo configurado por `NVIDIA_MODERATION_MODEL` deve aceitar esse parâmetro. O contexto não confiável dos comentários e a falha fechada com 503 continuam sendo aplicados.
+
+Para repetir a avaliação real com textos sintéticos, veja [validação do Lightning](validation/README.md). A avaliação chama somente a NVIDIA, sem criar posts ou comentários no banco.
+
+Posts (até 500 caracteres) e comentários (até 300) passam pelo NVIDIA NIM de forma síncrona antes da publicação em modo `enforce`. A política rejeita conteúdo fora do tema, alegações claramente inventadas ou manipuladoras e ataques contra pessoas ou grupos — incluindo xingamentos direcionados, humilhação sexual, ameaças, incentivo à violência, assédio e discurso de ódio. Críticas duras a projetos, governos e atos públicos continuam permitidas quando não atacam pessoas. O modelo padrão é `nvidia/nemotron-3.5-lightning-30b-a3b` e pode ser trocado por configuração. Aprovações e rejeições são auditadas com hash do conteúdo. Rejeição retorna 422; chave ausente, timeout, resposta inválida ou erro do provedor retorna 503 e impede a publicação. Em `disabled`, o gate aprova sem consultar o modelo; essa opção não é o padrão de produção.
 
 A moderação de comentários recebe o texto a avaliar separado do contexto não confiável do post pai. Isso permite respostas relevantes e breves como “Concordo.” sem dispensar os critérios de integridade e civilidade ou aceitar assuntos alheios à discussão. Instruções no contexto não alteram a política. Se o pai foi removido, o contexto é explicitamente indisponível; essa ausência sozinha não deve reprovar uma resposta breve. O texto livre das denúncias permanece no banco e não é enviado ao modelo.
 

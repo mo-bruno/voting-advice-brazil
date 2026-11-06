@@ -62,9 +62,13 @@ def test_http_status_failure_is_unavailable_without_provider_details(
     _assert_unavailable_without_provider_details()
 
 
+@pytest.mark.parametrize("is_comment", [False, True])
 def test_moderation_uses_bounded_nvidia_nim_request(
     monkeypatch: pytest.MonkeyPatch,
+    is_comment: bool,
 ) -> None:
+    decode_json = json.loads
+
     def record_post(
         url: str,
         *,
@@ -75,20 +79,37 @@ def test_moderation_uses_bounded_nvidia_nim_request(
         assert url == "https://integrate.api.nvidia.com/v1/chat/completions"
         assert json["model"] == "nvidia/test-model"
         assert json["temperature"] == 0
-        assert json["max_tokens"] == 512
+        assert json["max_tokens"] == 1024
         assert json["stream"] is False
+        response_format = json["response_format"]
+        assert response_format["type"] == "json_schema"
+        assert response_format["json_schema"]["strict"] is True
+        assert response_format["json_schema"]["schema"] == {
+            "type": "object",
+            "properties": {
+                "approved": {"type": "boolean"},
+                "reason": {"type": "string"},
+            },
+            "required": ["approved", "reason"],
+            "additionalProperties": False,
+        }
         assert json["reasoning_effort"] == "high"
-        assert json["reasoning_budget"] == 256
+        assert json["reasoning_budget"] == 512
         assert "chat_template_kwargs" not in json
         assert headers == {
             "Authorization": "Bearer nvapi-test",
             "Accept": "application/json",
         }
-        assert 0 < timeout <= 30
+        assert timeout == 20.0
         messages = json["messages"]
         assert isinstance(messages, list)
         assert [message["role"] for message in messages] == ["system", "user"]
-        assert messages[1]["content"] == "Debate político"
+        if is_comment:
+            target = decode_json(messages[1]["content"])
+            assert target["comment"] == "Debate político"
+            assert target["parent_post_context"] == "Educação pública no Brasil"
+        else:
+            assert messages[1]["content"] == "Debate político"
         return httpx.Response(
             200,
             json={"choices": [{"message": {"content": '{"approved": true}'}}]},
@@ -97,9 +118,13 @@ def test_moderation_uses_bounded_nvidia_nim_request(
 
     monkeypatch.setattr(httpx, "post", record_post)
 
-    result = NvidiaNimModerationClient(
+    client = NvidiaNimModerationClient(
         api_key="nvapi-test", model="nvidia/test-model"
-    ).moderate("Debate político")
+    )
+    result = (
+        client.moderate_comment("Debate político", "Educação pública no Brasil")
+        if is_comment else client.moderate("Debate político")
+    )
 
     assert result.approved is True
 

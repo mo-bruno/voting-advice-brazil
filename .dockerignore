@@ -20,6 +20,10 @@ experimento-eleicoes-2026/
 .git/
 .github/
 .claude/
+.superpowers/
+**/superpowers/
+**/AGENTS.md
+**/agents.md
 *.md
 .env*
 
