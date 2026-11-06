@@ -82,17 +82,18 @@ def test_ready_no_traffic_revision_is_promoted_despite_stale_service_pointer(mon
     assert "--to-revisions=api-new=100" in calls[-1]
 
 
-def test_rollout_keeps_current_moderation_and_disabled_features(monkeypatch):
-    calls, execute = _run_rollout(monkeypatch, "activate")
+@pytest.mark.parametrize("mode", ["bridge", "activate"])
+def test_rollout_keeps_current_moderation_and_disabled_features(monkeypatch, mode):
+    calls, execute = _run_rollout(monkeypatch, mode)
     execute()
-    deploy = calls[0]
+    deploy = next(command for command in calls if command[1:3] == ["run", "deploy"])
     secrets = next(arg for arg in deploy if arg.startswith("--update-secrets="))
     assert "NVIDIA_API_KEY=nvidia-api-key:latest" in secrets
     assert "GROQ_API_KEY" not in secrets
     env = next(arg for arg in deploy if arg.startswith("--update-env-vars="))
     assert "IOT_FEATURE_ENABLED=false" in env
     assert "POLITICIAN_FOLLOW_ENABLED=false" in env
-    assert "NVIDIA_MODERATION_MODEL=nvidia/nemotron-3-super-120b-a12b" in env
+    assert "NVIDIA_MODERATION_MODEL=nvidia/nemotron-3.5-lightning-30b-a3b" in env
 
 
 def test_bridge_reports_exact_safe_rollback_revision(monkeypatch, capsys):

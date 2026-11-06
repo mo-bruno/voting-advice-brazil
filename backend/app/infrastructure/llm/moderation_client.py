@@ -15,9 +15,15 @@ Avalie o texto do usuário segundo três critérios:
 
 1. RELEVÂNCIA: O texto trata de política, governo, eleições, legislação, partidos
    ou figuras públicas do Brasil? Textos sobre outros assuntos devem ser rejeitados.
+   Nesta plataforma, referências genéricas a governo, Congresso, deputados e
+   projetos de lei tratam do contexto brasileiro, salvo indicação de outro país.
+   Não exija nomes de pessoas, partidos ou números para reconhecer esse tema.
 
 2. INTEGRIDADE: O texto contém afirmações factuais claramente falsas, números
    inventados, ou linguagem deliberadamente manipuladora sobre eventos políticos?
+   Ausência de dados ou de afirmações factuais não é uma violação de integridade.
+   Opiniões, perguntas e pedidos de explicação não precisam apresentar provas.
+   Não rejeite um texto apenas por ser genérico ou por pedir os dados de uma proposta.
 
 3. CIVILIDADE E SEGURANÇA: Rejeite ataques contra pessoas ou grupos, incluindo
    xingamentos direcionados, humilhação sexual, ameaças ou incentivo à violência,
@@ -32,11 +38,12 @@ sarcasmo ou linguagem coloquial, desde que não ataquem pessoas ou grupos.
 Exemplos:
 APROVAR: "As propostas desse partido são péssimas e seus representantes precisam explicar os impactos."
 APROVAR: "O governo foi incompetente nessa decisão."
+APROVAR: "Esse projeto de lei tá mal explicado, cadê os dados?"
 REJEITAR: "Esses políticos merecem apanhar."
 REJEITAR: "Esse deputado é um lixo humano."
 
 Responda SOMENTE com JSON, sem markdown, sem texto fora do JSON:
-{"approved": true} se o texto passa nos três critérios, ou
+{"approved": true, "reason": ""} se o texto passa nos três critérios, ou
 {"approved": false, "reason": "explicação curta em português para o autor (máx 200 chars)"}"""
 
 _NVIDIA_NIM_URL = "https://integrate.api.nvidia.com/v1/chat/completions"
@@ -63,7 +70,7 @@ class NvidiaNimModerationClient(ModerationPort):
     def __init__(
         self,
         api_key: str,
-        model: str = "nvidia/nemotron-3-super-120b-a12b",
+        model: str = "nvidia/nemotron-3.5-lightning-30b-a3b",
     ) -> None:
         self._api_key = api_key
         self._model = model
@@ -102,11 +109,28 @@ class NvidiaNimModerationClient(ModerationPort):
         payload = {
             "model": self._model,
             "temperature": 0,
-            "max_tokens": 512,
+            "max_tokens": 1024,
             "stream": False,
+            # Require the fields/types consumed below, not just arbitrary JSON.
+            "response_format": {
+                "type": "json_schema",
+                "json_schema": {
+                    "name": "moderation_decision",
+                    "strict": True,
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "approved": {"type": "boolean"},
+                            "reason": {"type": "string"},
+                        },
+                        "required": ["approved", "reason"],
+                        "additionalProperties": False,
+                    },
+                },
+            },
             "reasoning_effort": "high",
             # Reserve half of the output budget for the required JSON decision.
-            "reasoning_budget": 256,
+            "reasoning_budget": 512,
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content},

@@ -1,7 +1,7 @@
 """Lógica pura de cálculo de compatibilidade (Wahl-O-Mat City Block).
 
 Zero dependências de infra/API/repos. Testável em unidade pura.
-Ver docs/superpowers/specs/2026-04-21-algoritmo-match-score-design.md.
+Ver README.md para a metodologia e o contrato do cálculo.
 """
 
 from __future__ import annotations

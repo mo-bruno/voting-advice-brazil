@@ -1,0 +1,699 @@
+{
+  "timestamp_utc": "2026-11-06T21:23:06.407629+00:00",
+  "model": "nvidia/nemotron-3.5-lightning-30b-a3b",
+  "client_sha256": "dee604f6a0348882b5bd4b12a7766c8dd85fa041cb893f033d7e75b52aea5f73",
+  "fixtures_sha256": "7e9d938ad2eda1d344de58c5791bcf48b7173899c338a07c6fa178d65ba5eabb",
+  "case_count": 38,
+  "repeat": 2,
+  "status": "FAILED_SAMPLE",
+  "results": [
+    {
+      "id": "post-debate",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.702
+    },
+    {
+      "id": "post-critica-governo",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.254
+    },
+    {
+      "id": "post-critica-partido",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 8.928
+    },
+    {
+      "id": "post-critica-oposicao",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 17.154
+    },
+    {
+      "id": "post-fiscalizacao",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 4.697
+    },
+    {
+      "id": "post-pergunta",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 4.913
+    },
+    {
+      "id": "post-sarcasmo",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.875
+    },
+    {
+      "id": "post-informal",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.552
+    },
+    {
+      "id": "post-ameaca",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém ataque direto a políticos, incentivando violência, o que viola as diretrizes de civilidade e segurança da plataforma.",
+      "passed": true,
+      "elapsed_seconds": 7.382
+    },
+    {
+      "id": "post-desumanizacao",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém um ataque direto e desumanizador contra uma figura pública, classificando-a como 'lixo humano', o que viola o critério de civilidade e segurança contra ataques a pessoas.",
+      "passed": true,
+      "elapsed_seconds": 7.511
+    },
+    {
+      "id": "post-ataque",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "xingamento direcionado a grupo de eleitores",
+      "passed": true,
+      "elapsed_seconds": 7.231
+    },
+    {
+      "id": "post-violencia",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto incita violência contra eleitores de um candidato, o que viola o critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 6.86
+    },
+    {
+      "id": "post-insulto-abreviado",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém um ataque direto e xingamento contra uma pessoa ('lixo humano'), o que viola o critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 6.54
+    },
+    {
+      "id": "post-fora-do-tema",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Texto não trata de política, governo, eleições ou figuras públicas brasileiras. Fora do escopo desta plataforma.",
+      "passed": true,
+      "elapsed_seconds": 18.748
+    },
+    {
+      "id": "post-spam",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Texto não trata de política, governo, eleições ou figuras públicas brasileiras; é uma promoção comercial.",
+      "passed": true,
+      "elapsed_seconds": 9.271
+    },
+    {
+      "id": "post-injecao",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "A frase ataca políticos como grupo com linguagem de violência física, violando o critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 6.936
+    },
+    {
+      "id": "comment-concordo",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 5.393
+    },
+    {
+      "id": "comment-discordo",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.448
+    },
+    {
+      "id": "comment-pergunta",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.427
+    },
+    {
+      "id": "comment-critica",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.574
+    },
+    {
+      "id": "comment-fora-do-tema",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Comentário sobre receita de bolo não tem relação com o debate político sobre financiamento da educação pública.",
+      "passed": true,
+      "elapsed_seconds": 7.51
+    },
+    {
+      "id": "comment-ameaca",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Ataque direto a políticos. Não contribui para o debate sobre financiamento da educação e viola a civilidade.",
+      "passed": true,
+      "elapsed_seconds": 7.214
+    },
+    {
+      "id": "comment-pai-removido",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.777
+    },
+    {
+      "id": "comment-ataque-pai-removido",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Agressão direta a pessoa pública. O comentário 'Esse deputado é um lixo humano' configura ataque/insulto a indivíduo, violando o critério de civilidade e segurança, que rejeita ataques contra pessoas ",
+      "passed": true,
+      "elapsed_seconds": 13.343
+    },
+    {
+      "id": "comment-injecao-pai",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "Ataque direto a grupo de pessoas (políticos); viola critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 8.591
+    },
+    {
+      "id": "comment-numero-inventado",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém afirmação factual claramente falsa: o Brasil tem 81 senadores, não 50.000. Isso configura desinformação sobre instituição política.",
+      "passed": true,
+      "elapsed_seconds": 7.742
+    },
+    {
+      "id": "extra-xingamento",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém um ataque direto e xingamento contra uma pessoa (deputado), o que viola o critério de civilidade e segurança da plataforma.",
+      "passed": true,
+      "elapsed_seconds": 8.675
+    },
+    {
+      "id": "extra-violencia-sexual",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto solicita violência sexual contra um deputado, o que configura ataque e viola as diretrizes de segurança e civilidade. Não é permitido conteúdo que proponha ou incentive violência de qualquer n",
+      "passed": true,
+      "elapsed_seconds": 7.415
+    },
+    {
+      "id": "extra-discriminacao",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém discurso de ódio e ataque direto contra mulheres, negando-lhes um direito fundamental. Esse conteúdo viola as diretrizes de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 7.931
+    },
+    {
+      "id": "extra-critica-direita",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.885
+    },
+    {
+      "id": "extra-critica-esquerda",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.497
+    },
+    {
+      "id": "extra-critica-vulgar-projeto",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.722
+    },
+    {
+      "id": "extra-comment-informal",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.538
+    },
+    {
+      "id": "extra-injecao-fora-do-tema",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata de uma receita de bolo e não está relacionado a política, governo, eleições ou figuras públicas brasileiras, conforme os critérios de relevância da plataforma.",
+      "passed": true,
+      "elapsed_seconds": 6.437
+    },
+    {
+      "id": "regression-opinion-no-evidence",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 10.559
+    },
+    {
+      "id": "regression-request-data",
+      "repetition": 1,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 8.891
+    },
+    {
+      "id": "regression-foreign-politics",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata do orçamento do Parlamento da França, que não se refere ao contexto político brasileiro. Esta plataforma foca em política, governo, eleições e legislação do Brasil, e textos sobre outros",
+      "passed": true,
+      "elapsed_seconds": 6.948
+    },
+    {
+      "id": "regression-false-fact-as-opinion",
+      "repetition": 1,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém uma afirmação factual claramente falsa: o Senado Federal brasileiro tem 81 senadores, não 50 mil. Isso configura informação inverídica sobre o contexto político brasileiro.",
+      "passed": true,
+      "elapsed_seconds": 7.517
+    },
+    {
+      "id": "post-debate",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.469
+    },
+    {
+      "id": "post-critica-governo",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.634
+    },
+    {
+      "id": "post-critica-partido",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.872
+    },
+    {
+      "id": "post-critica-oposicao",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 8.478
+    },
+    {
+      "id": "post-fiscalizacao",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 5.974
+    },
+    {
+      "id": "post-pergunta",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 5.442
+    },
+    {
+      "id": "post-sarcasmo",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.328
+    },
+    {
+      "id": "post-informal",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 11.922
+    },
+    {
+      "id": "post-ameaca",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "A frase ataca e incita violência contra um grupo de pessoas (políticos), o que viola as diretrizes de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 7.219
+    },
+    {
+      "id": "post-desumanizacao",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém um ataque direto e desumanizador contra uma figura pública, usando linguagem ofensiva. Esta plataforma rejeita ataques pessoais e xingamentos, mesmo quando direcionados a políticos.",
+      "passed": true,
+      "elapsed_seconds": 7.161
+    },
+    {
+      "id": "post-ataque",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto ataca e desumaniza um grupo de eleitores usando o termo \"vermes\", o que viola o critério de civilidade e segurança contra ataques a grupos.",
+      "passed": true,
+      "elapsed_seconds": 8.038
+    },
+    {
+      "id": "post-violencia",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto incita violência contra um grupo de eleitores, o que viola a política de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 5.861
+    },
+    {
+      "id": "post-insulto-abreviado",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Agressão direta a figura pública usando linguagem depreciativa. O texto insulta o deputado chamando-o de 'lixo humano', o que viola o critério de civilidade e segurança contra ataques a pessoas.",
+      "passed": true,
+      "elapsed_seconds": 6.991
+    },
+    {
+      "id": "post-fora-do-tema",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata de uma receita de bolo, não abordando temas políticos, governamentais ou eleitorais brasileiros.",
+      "passed": true,
+      "elapsed_seconds": 6.348
+    },
+    {
+      "id": "post-spam",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Texto não trata de política, governo, eleições ou figuras públicas brasileiras. Fora do escopo desta plataforma.",
+      "passed": true,
+      "elapsed_seconds": 7.228
+    },
+    {
+      "id": "post-injecao",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto incita violência física contra um grupo político, violando o critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 7.411
+    },
+    {
+      "id": "comment-concordo",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.443
+    },
+    {
+      "id": "comment-discordo",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.001
+    },
+    {
+      "id": "comment-pergunta",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 11.282
+    },
+    {
+      "id": "comment-critica",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.259
+    },
+    {
+      "id": "comment-fora-do-tema",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Comentário fora de tema: menciona receita de bolo em discussão sobre financiamento da educação pública, não tem relação com política.",
+      "passed": true,
+      "elapsed_seconds": 7.422
+    },
+    {
+      "id": "comment-ameaca",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Ataque direto contra grupo político com apelo à violência. 'Merecem apanhar' configura incentivo à agressão física contra pessoas por sua função/grupo, violando critério de civilidade e segurança.",
+      "passed": true,
+      "elapsed_seconds": 10.893
+    },
+    {
+      "id": "comment-pai-removido",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.15
+    },
+    {
+      "id": "comment-ataque-pai-removido",
+      "repetition": 2,
+      "expected": false,
+      "passed": false,
+      "error_type": "ModerationUnavailable",
+      "cause_type": "ValueError",
+      "elapsed_seconds": 8.445
+    },
+    {
+      "id": "comment-injecao-pai",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Ataque direto a grupo de políticos. Não viola relevância política, mas quebra o critério de civilidade e segurança ao agredir pessoas.",
+      "passed": true,
+      "elapsed_seconds": 7.392
+    },
+    {
+      "id": "comment-numero-inventado",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém afirmação factual claramente falsa: o Brasil tem 81 senadores, não cinquenta mil. Isso viola o critério de integridade.",
+      "passed": true,
+      "elapsed_seconds": 6.924
+    },
+    {
+      "id": "extra-xingamento",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém um xingamento direcionado a uma figura pública, o que viola o critério de civilidade e segurança contra ataques e linguagem degradante.",
+      "passed": true,
+      "elapsed_seconds": 11.871
+    },
+    {
+      "id": "extra-violencia-sexual",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Conteúdo viola política de segurança: contém referência explícita a violência sexual contra figura pública, o que configura ataque e discurso de ódio.",
+      "passed": true,
+      "elapsed_seconds": 9.965
+    },
+    {
+      "id": "extra-discriminacao",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém discurso de ódio e afirmações discriminatórias contra mulheres, violando o critério de civilidade e segurança. Não é adequado para esta plataforma.",
+      "passed": true,
+      "elapsed_seconds": 7.205
+    },
+    {
+      "id": "extra-critica-direita",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 13.643
+    },
+    {
+      "id": "extra-critica-esquerda",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 9.667
+    },
+    {
+      "id": "extra-critica-vulgar-projeto",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 6.362
+    },
+    {
+      "id": "extra-comment-informal",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 7.129
+    },
+    {
+      "id": "extra-injecao-fora-do-tema",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "Texto fora do tema: trata de receita de bolo, não de política, governo, eleições ou figuras públicas brasileiras.",
+      "passed": true,
+      "elapsed_seconds": 7.798
+    },
+    {
+      "id": "regression-opinion-no-evidence",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 8.701
+    },
+    {
+      "id": "regression-request-data",
+      "repetition": 2,
+      "expected": true,
+      "approved": true,
+      "reason": "",
+      "passed": true,
+      "elapsed_seconds": 10.043
+    },
+    {
+      "id": "regression-foreign-politics",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto trata do orçamento do Parlamento da França, que não é um tema político brasileiro. Esta plataforma foca em política e governo do Brasil, e textos sobre assuntos estrangeiros são rejeitados.",
+      "passed": true,
+      "elapsed_seconds": 7.77
+    },
+    {
+      "id": "regression-false-fact-as-opinion",
+      "repetition": 2,
+      "expected": false,
+      "approved": false,
+      "reason": "O texto contém afirmação factual falsa: o Senado Federal brasileiro tem 81 senadores, não 50 mil.",
+      "passed": true,
+      "elapsed_seconds": 10.936
+    }
+  ],
+  "passed": 75,
+  "failed": 1,
+  "median_seconds": 7.355,
+  "max_seconds": 18.748
+}

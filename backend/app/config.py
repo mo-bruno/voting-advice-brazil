@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     # External services
     moderation_mode: Literal["enforce", "disabled"] = "enforce"
     nvidia_api_key: str | None = None
-    nvidia_moderation_model: str = "nvidia/nemotron-3-super-120b-a12b"
+    nvidia_moderation_model: str = "nvidia/nemotron-3.5-lightning-30b-a3b"
     mqtt_broker_url: str = "mqtts://broker.hivemq.com:8883"
     gnews_api_key: str | None = None
 
