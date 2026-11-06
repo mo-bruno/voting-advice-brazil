@@ -228,6 +228,9 @@ __marimo__/
 # AI agent configs
 .agents/
 .superpowers/
+superpowers/
+AGENTS.md
+agents.md
 skills-lock.json
 
 # Research docs
